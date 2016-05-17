@@ -1,0 +1,887 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit partition table in NetBSD/macppc - Guangchuang Yu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+  
+  <meta name="description" content="#disklabel wd0
+
+
+可以看到原始分区如下: 7 partitions:
+
+#        size    offset     fstype [fsize bsize cpg/sgs]
+a:  20971520  25167648     4.2BSD      0     0     0  # (Cyl.  24967*-  45772*)
+b:   1048576  46139168       swap                     # (Cyl.  45772*-  46813*)
+c: 117210240         0     unused      0     0        # (Cyl.      0 - 116279)
+d:  25165824      1824        HFS                     # (Cyl.      1*-  24967*)
+e:  28079456  89130784        HFS                     # (Cyl.  88423*- 116279)
+g:  41943040  47187744     4.2BSD      0     0     0  # (Cyl.  46813*-  88423*)
+
+
+a为netbsd的/分区，b为swap分区,c为整个硬盘，d为mac
+os的系统盘。e为两系统共享分区(在os9下格式化为fat)，g为netbsd下的/home分区。
+原本是两系统，os9.2一直都很少用，所以想删了，腾出空间来放数据。因为wd0d和wd0e不在连续的柱面上，所以无法将它们合并。
+
+新的分区方案如下：wd0d删了，分成两个，一个15M(需要一个HFS类型的分区来放置ofwboot.xcf，因为openfirmwire不支持从netbsd分区里加载loader),剩下的作为/home分区。把原来的/home分区(wd0g)和共享数据的分区(wd0e)合并为一个分区，用于放置数据。
+1. 第一步，也是最关键的一步，先备份好数据。
+">
+  <meta name="author" content="Guangchuang YU">
+  <meta itemprop="name" content="Edit partition table in NetBSD/macppc - Guangchuang Yu">
+  <meta itemprop="description" content="#disklabel wd0
+
+
+可以看到原始分区如下: 7 partitions:
+
+#        size    offset     fstype [fsize bsize cpg/sgs]
+a:  20971520  25167648     4.2BSD      0     0     0  # (Cyl.  24967*-  45772*)
+b:   1048576  46139168       swap                     # (Cyl.  45772*-  46813*)
+c: 117210240         0     unused      0     0        # (Cyl.      0 - 116279)
+d:  25165824      1824        HFS                     # (Cyl.      1*-  24967*)
+e:  28079456  89130784        HFS                     # (Cyl.  88423*- 116279)
+g:  41943040  47187744     4.2BSD      0     0     0  # (Cyl.  46813*-  88423*)
+
+
+a为netbsd的/分区，b为swap分区,c为整个硬盘，d为mac
+os的系统盘。e为两系统共享分区(在os9下格式化为fat)，g为netbsd下的/home分区。
+原本是两系统，os9.2一直都很少用，所以想删了，腾出空间来放数据。因为wd0d和wd0e不在连续的柱面上，所以无法将它们合并。
+
+新的分区方案如下：wd0d删了，分成两个，一个15M(需要一个HFS类型的分区来放置ofwboot.xcf，因为openfirmwire不支持从netbsd分区里加载loader),剩下的作为/home分区。把原来的/home分区(wd0g)和共享数据的分区(wd0e)合并为一个分区，用于放置数据。
+1. 第一步，也是最关键的一步，先备份好数据。
+">
+  <meta itemprop="image" content="http://guangchuangyu.github.io/cnimg/author.jpg">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@guangchuangyu" />
+  <meta name="twitter:title" content="Edit partition table in NetBSD/macppc - Guangchuang Yu" />
+  
+  <meta name="twitter:description" content="">
+  
+  <link rel="shortcut icon" href="http://guangchuangyu.github.io/cnimg/favicon.ico"/>
+  <link rel="apple-touch-icon" href="http://guangchuangyu.github.io/cnapple-touch-icon.png" />
+  <link rel="apple-touch-icon-precomposed" href="http://guangchuangyu.github.io/cnapple-touch-icon.png" />
+  <link rel="stylesheet" href="http://guangchuangyu.github.io/cnhighlight/styles/github.css">
+  <script src="http://guangchuangyu.github.io/cnhighlight/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <link rel="stylesheet" href="http://guangchuangyu.github.io/cnfont/hack/css/hack.min.css">
+  <link rel="stylesheet" href="http://guangchuangyu.github.io/cncss/style.css">
+</head>
+
+<body>
+  <header>
+    <div>
+  
+  <div id="imglogo">
+    <a href="http://guangchuangyu.github.io/cn"><img src="http://guangchuangyu.github.io/cnhttp://guangchuangyu.github.io/blog_images/icon.png" alt="Guangchuang Yu" title="Guangchuang Yu"/></a>
+  </div>
+  
+  <div id="textlogo">
+    <h1 class="site-name"><a href="http://guangchuangyu.github.io/cn" title="Guangchuang Yu">Guangchuang Yu</a></h1>
+    <h2 class="blog-motto">a senior-in-age-but-not-senior-in-knowledge bioinformatician</h2>
+  </div>
+  <div class="navbar"><a class="navbutton navmobile" href="#" title="menu"></a></div>
+  <nav class="animated">
+    <ul>
+      
+      <li><a href="/cn/">首页</a></li>
+      
+      <li><a href="/cn/about/">关于</a></li>
+      
+      <li>
+        <form class="search" method="get" action="https://www.google.com/search">
+          <div>
+            <input type="text" id="search" name="q" placeholder="搜索">
+          </div>
+        </form>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+  </header>
+  <div id="container">
+    <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody">
+    <header class="article-info clearfix">
+  <h1 itemprop="name">
+      <a href="http://guangchuangyu.github.io/cn/post/unix/2007_edit-partition-table-in-netbsd/" title="Edit partition table in NetBSD/macppc" itemprop="url">Edit partition table in NetBSD/macppc</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://guangchuangyu.github.io" title="Guangchuang YU">Guangchuang YU</a>
+    
+  </p>
+  <p class="article-time">
+    <time datetime="2007-05-14 04:43:00 &#43;0800 CST" itemprop="datePublished">2007年05月14日</time>
+  </p>
+</header>
+
+	<div class="article-content">
+    
+    <pre><code>#disklabel wd0
+</code></pre>
+
+<p>可以看到原始分区如下: 7 partitions:</p>
+
+<pre><code>#        size    offset     fstype [fsize bsize cpg/sgs]
+a:  20971520  25167648     4.2BSD      0     0     0  # (Cyl.  24967*-  45772*)
+b:   1048576  46139168       swap                     # (Cyl.  45772*-  46813*)
+c: 117210240         0     unused      0     0        # (Cyl.      0 - 116279)
+d:  25165824      1824        HFS                     # (Cyl.      1*-  24967*)
+e:  28079456  89130784        HFS                     # (Cyl.  88423*- 116279)
+g:  41943040  47187744     4.2BSD      0     0     0  # (Cyl.  46813*-  88423*)
+</code></pre>
+
+<p>a为netbsd的/分区，b为swap分区,c为整个硬盘，d为mac
+os的系统盘。e为两系统共享分区(在os9下格式化为fat)，g为netbsd下的/home分区。
+原本是两系统，os9.2一直都很少用，所以想删了，腾出空间来放数据。因为wd0d和wd0e不在连续的柱面上，所以无法将它们合并。</p>
+
+<p>新的分区方案如下：wd0d删了，分成两个，一个15M(需要一个HFS类型的分区来放置<code>ofwboot.xcf</code>，因为openfirmwire不支持从netbsd分区里加载loader),剩下的作为<code>/home</code>分区。把原来的<code>/home</code>分区(<code>wd0g</code>)和共享数据的分区(<code>wd0e</code>)合并为一个分区，用于放置数据。
+1. 第一步，也是最关键的一步，先备份好数据。</p>
+
+<p>2. 安装hfsutils。用于操作那个15M的HFS分区（格式化，拷贝文件等工具）。hfsutils是命令行的，xhfs是tk界面的。</p>
+
+<pre><code>    #cd /usr/pkgsrc/sysutils/hfsutils
+    #make install
+    #cd ../xhfs
+    #make install
+</code></pre>
+
+<p>3.    分区 pdisk : Apple partition table editor</p>
+
+<pre><code>    # pdisk /dev/wd0c
+    pdisk /dev/wd0c
+    Edit /dev/wd0c -
+    Command (? for help): p
+    p
+
+    Partition map (with 512 byte blocks) on '/dev/wd0c'
+    #:                type name              length   base     ( size )
+    1: Apple_partition_map Apple                 63 @ 1
+    2:      Apple_Driver43*Macintosh             56 @ 64
+    3:      Apple_Driver43*Macintosh             56 @ 120
+    4:    Apple_Driver_ATA*Macintosh             56 @ 176
+    5:    Apple_Driver_ATA*Macintosh             56 @ 232
+    6:      Apple_FWDriver Macintosh            512 @ 288
+    7:  Apple_Driver_IOKit Macintosh            512 @ 800
+    8:       Apple_Patches Patch Partition      512 @ 1312
+    9:           Apple_HFS MacOS           25165824 @ 1824     ( 12.0G)
+    10:     Apple_UNIX_SVR2 NetBSD          20971520 @ 25167648 ( 10.0G) S0 RUFS k0  /
+    11:     Apple_UNIX_SVR2 swap             1048576 @ 46139168 (512.0M) S1  SFS k0  (swap)
+    12:     Apple_UNIX_SVR2 home            41943040 @ 47187744 ( 20.0G) S2  UFS k0  /usr
+    13:           Apple_HFS Share           28079456 @ 89130784 ( 13.4G)
+
+    Device block size=512, Number of Blocks=117210240 (55.9G)
+    DeviceType=0x0, DeviceId=0x0
+    Drivers-
+    1:  23 @ 64, type=0x1
+    2:  36 @ 120, type=0xffff
+    3:  21 @ 176, type=0x701
+    4:  34 @ 232, type=0xf8ff
+
+##可以看出9分区即为wd0d,10分区为wd0a,11分区为wd0b,12分区为wd0g,13分区为wd0e。
+
+##删9分区 Command (? for help): d d Partition number: 9 9
+##创建15M分区(ofwboot.xcf只有52k,这个分区只须大于100k)
+
+    Command (? for help): C
+    C
+    First block: 9p
+    9p
+    Length in blocks: 15m
+    15m
+    Name of partition: Loader
+    Loader
+    Type of partition: Apple_HFS
+    Apple_HFS
+
+    Command (? for help): C
+    C
+    First block: 10p
+    10p
+    Length in blocks: 10p
+    10p
+    Name of partition: home
+    home
+    Type of partition: Apple_UNIX_SVR2
+    Apple_UNIX_SVR2
+    Available partition slices for Apple_UNIX_SVR2:
+    a   root partition
+    b   swap partition
+    c   do not set any bzb bits
+    g   user partition
+    Other lettered values will create user partitions
+    Select a slice for default bzb values: i
+    i
+
+#保存退出
+
+    Command (? for help): w
+    w
+    Writing the map destroys what was there before. Is that okay? [n/y]: y
+    y
+    Command (? for help): q
+    q
+</code></pre>
+
+<p>4. 改完分区后重新启动。此时netbsd的/分区已由10分区变为11分区，而硬盘上已经没有<code>ofwboot.xcf</code>可用来启动系统。这个时候需要用到netbsd的安装盘，开机时按住<code>command+option+o+f</code>四键。进入<code>openfirmwire</code>。放入光盘，敲命令：</p>
+
+<pre><code>boot
+cd:,\ofwboot.xcf
+hd:11,/netbsd
+</code></pre>
+
+<p>使用光盘上的ofwboot.xcf来引导硬盘上的系统。系统启动到了挂载分区时出错。提示wd0g非法。wd0g为/home分区，并无修改。</p>
+
+<p>5.    安装光盘启动。在<code>openfirmwire</code>里敲</p>
+
+<pre><code>boot cd:,\ofwboot.xcf netbsd.macppc
+</code></pre>
+
+<p>先择运行Shell. 查看分区</p>
+
+<pre><code>    #disklabel wd0
+    7 partitions:
+    #        size    offset     fstype [fsize bsize cpg/sgs]
+    a:  20971520  25167648     4.2BSD      0     0     0  # (Cyl.  24967*-  45772*)
+    b:   1048576  46139168       swap                     # (Cyl.  45772*-  46813*)
+    c: 117210240         0     unused      0     0        # (Cyl.      0 - 116279)
+    d:     30720      1824        HFS                     # (Cyl.      1*-     32*)
+    e:  41943040  47187744     4.2BSD      0     0     0  # (Cyl.  46813*-  88423*)
+    f:  28079456  89130784     4.2BSD      0     0     0  # (Cyl.  88423*- 116279)
+    g:  25135104     32544     4.2BSD      0     0     0  # (Cyl.     32*-  24967*)
+</code></pre>
+
+<p>原来的wd0g变成了wd0e,我也不知道为何。但是问题还是很好解决的。</p>
+
+<pre><code>#mount /dev/wd0a /mnt 
+#chroot /mnt 
+##修改fstab，改wd0g为wd0e
+#vi /etc/fstab 
+#reboot
+</code></pre>
+
+<p>6. 返回第4步启动系统。正常启动后。由第5步disklabel中的输出知道，9分区是wd0d.</p>
+
+<pre><code>## 将其格式化为hfs
+#hformat -l loader /dev/wd0d  
+$sudo xhfs
+</code></pre>
+
+<p>运行xhfs，把ofwboot.xcf拷入此分区。</p>
+
+<p><img src="http://guangchuangyu.github.io/blog_images/2007/05/xhfs.png" alt="" /></p>
+
+<p>7.  改变home分区</p>
+
+<pre><code>#newfs /dev/wd0g 
+#cd /home 
+##打包用户数据，并保留原始权限
+#tar cjpvf ygc.tar.bz2 ygc     
+#mount /dev/wd0g /mnt/share 
+#cd /mnt/share 
+#tar xjvpf ygc.tar.bz2 
+#vim /etc/fstab
+</code></pre>
+
+<p>把wd0e换成wd0g，修改home分区的挂载设备。</p>
+
+<p>8.  合并wd0e,wd0f 也就是原来的home分区和两系统的共享分区。</p>
+
+<pre><code>    #pdisk /dev/wd0c
+    Command (? for help): d
+    d
+    Partition number: 14
+    14
+    Command (? for help): d
+    d
+    Partition number: 13
+    13
+    Command (? for help): C
+    C
+    First block: 13p
+    13p
+    Length in blocks: 13p
+    13p
+    Name of partition: data
+    data
+    Type of partition: Apple_UNIX_SVR2
+    Apple_UNIX_SVR2
+    Available partition slices for Apple_UNIX_SVR2:
+    a   root partition
+    b   swap partition
+    c   do not set any bzb bits
+    g   user partition
+    Other lettered values will create user partitions
+    Select a slice for default bzb values: h
+    h
+
+    Command (? for help): w
+    w
+    Writing the map destroys what was there before. Is that okay? [n/y]: y
+    y
+    Command (? for help): q
+    q
+</code></pre>
+
+<p>9.    重设openfirmwire
+修改后保存重启，进入<code>openfirmwire</code>.使用<code>setenv</code>命令重设启动的环境变量</p>
+
+<pre><code>setenv
+boot-device hd:9,\ofwboot.xcf hd:11,/netbsd 
+reset-all
+</code></pre>
+
+<p>重新设置后，开机就会自动进入netbsd.</p>
+
+<p>10.    重启进入系统后</p>
+
+<pre><code>    #disklabel wd0
+    6 partitions:
+    #        size    offset     fstype [fsize bsize cpg/sgs]
+    a:  20971520  25167648     4.2BSD      0     0     0  # (Cyl.  24967*-  45772*)
+    b:   1048576  46139168       swap                     # (Cyl.  45772*-  46813*)
+    c: 117210240         0     unused      0     0        # (Cyl.      0 - 116279)
+    d:     30720      1824        HFS                     # (Cyl.      1*-     32*)
+    e:  70022496  47187744     4.2BSD      0     0     0  # (Cyl.  46813*- 116279)
+    g:  25135104     32544     4.2BSD      0     0     0  # (Cyl.     32*-  24967*)
+</code></pre>
+
+<p>新建的分区是wd0e</p>
+
+<pre><code>#newfs /dev/wd0e 
+#chmod 777 /dev/wd0e      
+##让用户对其有读写执行的权限 
+#chmod 777 /data ## 在/etc/fstab里添加：
+/dev/wd0e    /data        ffs    rw,softdep    1    2
+</code></pre>
+
+<p>这样就按照原来的设想修改了分区。</p>
+
+	</div>
+  <footer class="article-footer clearfix">
+  
+
+<div class="article-tags">
+  <span></span>
+  
+  <a href="http://guangchuangyu.github.io/cntags/partition">partition</a>
+  
+  <a href="http://guangchuangyu.github.io/cntags/netbsd">netbsd</a>
+  
+</div>
+
+
+
+
+
+<div class="article-categories">
+  <span></span>
+  
+  <a class="article-category-link" href="http://guangchuangyu.github.io/cncategories/bsd">BSD</a>
+  
+  <a class="article-category-link" href="http://guangchuangyu.github.io/cncategories/powerbook">Powerbook</a>
+  
+</div>
+
+
+
+  <div class="article-share" id="share">
+    <div data-url="http://guangchuangyu.github.io/cn/post/unix/2007_edit-partition-table-in-netbsd/" data-title="Edit partition table in NetBSD/macppc" data-tsina="2185528715" class="share clearfix">
+    </div>
+  </div>
+</footer>
+
+	</article>
+  
+
+
+<section class="comment">
+<div id="disqus_thread"></div>
+</section>
+<script>
+
+
+var disqus_config = function () {
+this.page.url = "http://guangchuangyu.github.io/cn/post/unix/2007_edit-partition-table-in-netbsd/";
+this.page.identifier = "http://guangchuangyu.github.io/cn/post/unix/2007_edit-partition-table-in-netbsd/";
+};
+(function() { 
+var d = document, s = d.createElement('script');
+
+s.src = '//coderzh.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+    <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+  
+
+<div class="categorieslist">
+  <p class="asidetitle">分类</p>
+  <ul>
+    
+    <li><a href="http://guangchuangyu.github.io/cncategories/biology" title="biology">biology<sup>1</sup></a></li>
+    
+    <li><a href="http://guangchuangyu.github.io/cncategories/blog" title="blog">blog<sup>2</sup></a></li>
+    
+    <li><a href="http://guangchuangyu.github.io/cncategories/bsd" title="bsd">bsd<sup>7</sup></a></li>
+    
+    <li><a href="http://guangchuangyu.github.io/cncategories/c" title="c">c<sup>1</sup></a></li>
+    
+    <li><a href="http://guangchuangyu.github.io/cncategories/evolution" title="evolution">evolution<sup>1</sup></a></li>
+    
+    <li><a href="http://guangchuangyu.github.io/cncategories/linux" title="linux">linux<sup>6</sup></a></li>
+    
+    <li><a href="http://guangchuangyu.github.io/cncategories/mac-os" title="mac-os">mac-os<sup>6</sup></a></li>
+    
+    <li><a href="http://guangchuangyu.github.io/cncategories/math" title="math">math<sup>1</sup></a></li>
+    
+    <li><a href="http://guangchuangyu.github.io/cncategories/personal" title="personal">personal<sup>1</sup></a></li>
+    
+    <li><a href="http://guangchuangyu.github.io/cncategories/powerbook" title="powerbook">powerbook<sup>4</sup></a></li>
+    
+    <li><a href="http://guangchuangyu.github.io/cncategories/programming" title="programming">programming<sup>1</sup></a></li>
+    
+    <li><a href="http://guangchuangyu.github.io/cncategories/research" title="research">research<sup>1</sup></a></li>
+    
+    <li><a href="http://guangchuangyu.github.io/cncategories/software" title="software">software<sup>5</sup></a></li>
+    
+    <li><a href="http://guangchuangyu.github.io/cncategories/statistics" title="statistics">statistics<sup>1</sup></a></li>
+    
+    <li><a href="http://guangchuangyu.github.io/cncategories/visualization" title="visualization">visualization<sup>2</sup></a></li>
+    
+    <li><a href="http://guangchuangyu.github.io/cncategories/windows" title="windows">windows<sup>3</sup></a></li>
+    
+  </ul>
+</div>
+
+
+
+  
+
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+      
+			<li><a href="http://guangchuangyu.github.io/cntags/bash" title="bash">bash<sup>1</sup></a></li>
+      
+			<li><a href="http://guangchuangyu.github.io/cntags/bmc" title="bmc">bmc<sup>1</sup></a></li>
+      
+			<li><a href="http://guangchuangyu.github.io/cntags/calculus" title="calculus">calculus<sup>1</sup></a></li>
+      
+			<li><a href="http://guangchuangyu.github.io/cntags/compilation" title="compilation">compilation<sup>1</sup></a></li>
+      
+			<li><a href="http://guangchuangyu.github.io/cntags/emacs" title="emacs">emacs<sup>1</sup></a></li>
+      
+			<li><a href="http://guangchuangyu.github.io/cntags/gentoo" title="gentoo">gentoo<sup>1</sup></a></li>
+      
+			<li><a href="http://guangchuangyu.github.io/cntags/ggtree" title="ggtree">ggtree<sup>1</sup></a></li>
+      
+			<li><a href="http://guangchuangyu.github.io/cntags/google" title="google">google<sup>1</sup></a></li>
+      
+			<li><a href="http://guangchuangyu.github.io/cntags/gosemsim" title="gosemsim">gosemsim<sup>1</sup></a></li>
+      
+			<li><a href="http://guangchuangyu.github.io/cntags/hackintosh" title="hackintosh">hackintosh<sup>1</sup></a></li>
+      
+			<li><a href="http://guangchuangyu.github.io/cntags/hugo" title="hugo">hugo<sup>1</sup></a></li>
+      
+			<li><a href="http://guangchuangyu.github.io/cntags/maxima" title="maxima">maxima<sup>1</sup></a></li>
+      
+			<li><a href="http://guangchuangyu.github.io/cntags/netbsd" title="netbsd">netbsd<sup>5</sup></a></li>
+      
+			<li><a href="http://guangchuangyu.github.io/cntags/netdisk" title="netdisk">netdisk<sup>1</sup></a></li>
+      
+			<li><a href="http://guangchuangyu.github.io/cntags/os9" title="os9">os9<sup>1</sup></a></li>
+      
+			<li><a href="http://guangchuangyu.github.io/cntags/osx" title="osx">osx<sup>2</sup></a></li>
+      
+			<li><a href="http://guangchuangyu.github.io/cntags/partition" title="partition">partition<sup>1</sup></a></li>
+      
+			<li><a href="http://guangchuangyu.github.io/cntags/phd" title="phd">phd<sup>1</sup></a></li>
+      
+			<li><a href="http://guangchuangyu.github.io/cntags/pkgsrc" title="pkgsrc">pkgsrc<sup>2</sup></a></li>
+      
+			<li><a href="http://guangchuangyu.github.io/cntags/plagiarism" title="plagiarism">plagiarism<sup>1</sup></a></li>
+      
+			<li><a href="http://guangchuangyu.github.io/cntags/regression" title="regression">regression<sup>1</sup></a></li>
+      
+			<li><a href="http://guangchuangyu.github.io/cntags/remote" title="remote">remote<sup>2</sup></a></li>
+      
+			<li><a href="http://guangchuangyu.github.io/cntags/scilab" title="scilab">scilab<sup>1</sup></a></li>
+      
+			<li><a href="http://guangchuangyu.github.io/cntags/screenshot" title="screenshot">screenshot<sup>3</sup></a></li>
+      
+			<li><a href="http://guangchuangyu.github.io/cntags/theme" title="theme">theme<sup>1</sup></a></li>
+      
+			<li><a href="http://guangchuangyu.github.io/cntags/ubuntu" title="ubuntu">ubuntu<sup>1</sup></a></li>
+      
+			<li><a href="http://guangchuangyu.github.io/cntags/wordpress" title="wordpress">wordpress<sup>2</sup></a></li>
+      
+			<li><a href="http://guangchuangyu.github.io/cntags/x11" title="x11">x11<sup>1</sup></a></li>
+      
+		</ul>
+</div>
+
+
+
+  
+  <div class="archiveslist">
+    <p class="asidetitle">归档</p>
+    <ul class="archive-list">
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://guangchuangyu.github.io/cnpost/#2016-03">2016年03月</a><span class="archive-list-count">2</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://guangchuangyu.github.io/cnpost/#2015-12">2015年12月</a><span class="archive-list-count">1</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://guangchuangyu.github.io/cnpost/#2015-11">2015年11月</a><span class="archive-list-count">1</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://guangchuangyu.github.io/cnpost/#2015-05">2015年05月</a><span class="archive-list-count">1</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://guangchuangyu.github.io/cnpost/#2014-07">2014年07月</a><span class="archive-list-count">1</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://guangchuangyu.github.io/cnpost/#2014-06">2014年06月</a><span class="archive-list-count">1</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://guangchuangyu.github.io/cnpost/#2014-05">2014年05月</a><span class="archive-list-count">1</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://guangchuangyu.github.io/cnpost/#2013-07">2013年07月</a><span class="archive-list-count">1</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://guangchuangyu.github.io/cnpost/#2012-03">2012年03月</a><span class="archive-list-count">1</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://guangchuangyu.github.io/cnpost/#2011-06">2011年06月</a><span class="archive-list-count">1</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://guangchuangyu.github.io/cnpost/#2010-07">2010年07月</a><span class="archive-list-count">1</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://guangchuangyu.github.io/cnpost/#2008-09">2008年09月</a><span class="archive-list-count">2</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://guangchuangyu.github.io/cnpost/#2008-08">2008年08月</a><span class="archive-list-count">1</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://guangchuangyu.github.io/cnpost/#2007-06">2007年06月</a><span class="archive-list-count">2</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://guangchuangyu.github.io/cnpost/#2007-05">2007年05月</a><span class="archive-list-count">4</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://guangchuangyu.github.io/cnpost/#2006-06">2006年06月</a><span class="archive-list-count">2</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://guangchuangyu.github.io/cnpost/#2005-05">2005年05月</a><span class="archive-list-count">1</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://guangchuangyu.github.io/cnpost/#2005-03">2005年03月</a><span class="archive-list-count">1</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://guangchuangyu.github.io/cnpost/#2005-01">2005年01月</a><span class="archive-list-count">1</span>
+      </li>
+      
+    </ul>
+
+  </div>
+
+
+  
+
+<div class="tagcloudlist">
+  <p class="asidetitle">标签云</p>
+  <div class="tagcloudlist clearfix">
+    
+    <a href="http://guangchuangyu.github.io/cntags/bash" style="font-size: 12px;">bash</a>
+    
+    <a href="http://guangchuangyu.github.io/cntags/bmc" style="font-size: 12px;">bmc</a>
+    
+    <a href="http://guangchuangyu.github.io/cntags/calculus" style="font-size: 12px;">calculus</a>
+    
+    <a href="http://guangchuangyu.github.io/cntags/compilation" style="font-size: 12px;">compilation</a>
+    
+    <a href="http://guangchuangyu.github.io/cntags/emacs" style="font-size: 12px;">emacs</a>
+    
+    <a href="http://guangchuangyu.github.io/cntags/gentoo" style="font-size: 12px;">gentoo</a>
+    
+    <a href="http://guangchuangyu.github.io/cntags/ggtree" style="font-size: 12px;">ggtree</a>
+    
+    <a href="http://guangchuangyu.github.io/cntags/google" style="font-size: 12px;">google</a>
+    
+    <a href="http://guangchuangyu.github.io/cntags/gosemsim" style="font-size: 12px;">gosemsim</a>
+    
+    <a href="http://guangchuangyu.github.io/cntags/hackintosh" style="font-size: 12px;">hackintosh</a>
+    
+    <a href="http://guangchuangyu.github.io/cntags/hugo" style="font-size: 12px;">hugo</a>
+    
+    <a href="http://guangchuangyu.github.io/cntags/maxima" style="font-size: 12px;">maxima</a>
+    
+    <a href="http://guangchuangyu.github.io/cntags/netbsd" style="font-size: 12px;">netbsd</a>
+    
+    <a href="http://guangchuangyu.github.io/cntags/netdisk" style="font-size: 12px;">netdisk</a>
+    
+    <a href="http://guangchuangyu.github.io/cntags/os9" style="font-size: 12px;">os9</a>
+    
+    <a href="http://guangchuangyu.github.io/cntags/osx" style="font-size: 12px;">osx</a>
+    
+    <a href="http://guangchuangyu.github.io/cntags/partition" style="font-size: 12px;">partition</a>
+    
+    <a href="http://guangchuangyu.github.io/cntags/phd" style="font-size: 12px;">phd</a>
+    
+    <a href="http://guangchuangyu.github.io/cntags/pkgsrc" style="font-size: 12px;">pkgsrc</a>
+    
+    <a href="http://guangchuangyu.github.io/cntags/plagiarism" style="font-size: 12px;">plagiarism</a>
+    
+    <a href="http://guangchuangyu.github.io/cntags/regression" style="font-size: 12px;">regression</a>
+    
+    <a href="http://guangchuangyu.github.io/cntags/remote" style="font-size: 12px;">remote</a>
+    
+    <a href="http://guangchuangyu.github.io/cntags/scilab" style="font-size: 12px;">scilab</a>
+    
+    <a href="http://guangchuangyu.github.io/cntags/screenshot" style="font-size: 12px;">screenshot</a>
+    
+    <a href="http://guangchuangyu.github.io/cntags/theme" style="font-size: 12px;">theme</a>
+    
+    <a href="http://guangchuangyu.github.io/cntags/ubuntu" style="font-size: 12px;">ubuntu</a>
+    
+    <a href="http://guangchuangyu.github.io/cntags/wordpress" style="font-size: 12px;">wordpress</a>
+    
+    <a href="http://guangchuangyu.github.io/cntags/x11" style="font-size: 12px;">x11</a>
+    
+  </div>
+</div>
+
+
+
+  
+
+</aside>
+</div>
+
+  </div>
+  <footer><div id="footer" >
+  
+  <div class="line">
+    <span></span>
+    <div style='background:no-repeat url("http://guangchuangyu.github.io/cnimg/author.jpg") left top;-webkit-background-size:6.875em 6.875em;-moz-background-size:6.875em 6.875em;background-size:6.875em 6.875em;' class="author" ></div>
+  </div>
+  
+  
+  <div class="social-font clearfix">
+    
+    <a href="http://weibo.com/uncleyy" target="_blank" title="weibo"></a>
+    
+    
+    <a href="https://twitter.com/guangchuangyu" target="_blank" title="twitter"></a>
+    
+    
+    <a href="https://github.com/GuangchuangYu" target="_blank" title="github"></a>
+    
+    
+    <a href="https://www.facebook.com/guangchuang.yu" target="_blank" title="facebook"></a>
+    
+    
+    <a href="https://www.linkedin.com/guangchuang-yu-86820120" target="_blank" title="linkedin"></a>
+    
+  </div>
+  <p class="copyright">Powered by <a href="http://gohugo.io" target="_blank" title="hugo">hugo</a> and Theme by <a href="https://github.com/coderzh/hugo-pacman-theme" target="_blank" title="hugo-pacman-theme">hugo-pacman-theme</a> © 2016
+    
+    <a href="http://guangchuangyu.github.io/cn" target="_blank" title="Guangchuang YU">Guangchuang YU</a>
+    
+  </p>
+</div>
+</footer>
+  <script src="http://guangchuangyu.github.io/cnjs/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+done = false;
+$(document).ready(function(){
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize();
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  $('form.search').on('submit', function (event) {
+    if (false === done) {
+      event.preventDefault();
+      var orgVal = $(this).find('#search').val();
+      $(this).find('#search').val('site:http:\/\/guangchuangyu.github.io\/cn ' + orgVal);
+      done = true;
+      $(this).submit();
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});
+</script>
+
+
+<link rel="stylesheet" href="http://guangchuangyu.github.io/cnfancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="http://guangchuangyu.github.io/cnfancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+});
+</script>
+
+
+
+
+</body>
+</html>
