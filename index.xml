@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Guangchuang Yu</title>
-    <link>http://guangchuangyu.github.io/</link>
+    <link>http://guangchuangyu.github.io/cn/</link>
     <description>Recent content on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 24 Mar 2016 15:40:22 +0800</lastBuildDate>
-    <atom:link href="http://guangchuangyu.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://guangchuangyu.github.io/cn/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Google Drive @ HKU</title>
-      <link>http://guangchuangyu.github.io/2016/03/google-drive--hku/</link>
+      <link>http://guangchuangyu.github.io/cn/2016/03/google-drive--hku/</link>
       <pubDate>Thu, 24 Mar 2016 15:40:22 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/2016/03/google-drive--hku/</guid>
+      <guid>http://guangchuangyu.github.io/cn/2016/03/google-drive--hku/</guid>
       <description>
 
 &lt;p&gt;寻找一个好的网盘一直是个困扰我的问题，Dropbox非常好，但空间有限，大陆的各种网盘都是渣渣，本来试用了一下&lt;a href=&#34;http://guangchuangyu.github.io/2014/05/%E6%9B%B4%E6%94%B9%E7%99%BE%E5%BA%A6%E4%BA%91%E5%90%8C%E6%AD%A5%E7%9B%98%E8%B7%AF%E5%BE%84/&#34;&gt;百度云&lt;/a&gt;，但度娘实在不争气，体验非常差。我后来找到了个比较好的方案，那就是&lt;a href=&#34;https://gitlab.com/&#34;&gt;gitlab&lt;/a&gt;，可以创建无限量的project，每个project有10G的空间，这比&lt;a href=&#34;https://github.com/&#34;&gt;github&lt;/a&gt;出手大方多了。唯一不足是&lt;code&gt;.git&lt;/code&gt;文件夹也是非常占空间的。&lt;/p&gt;
@@ -56,10 +56,10 @@
     
     <item>
       <title>使用ggtree实现进化树的可视化和注释</title>
-      <link>http://guangchuangyu.github.io/2016/03/%E4%BD%BF%E7%94%A8ggtree%E5%AE%9E%E7%8E%B0%E8%BF%9B%E5%8C%96%E6%A0%91%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E5%92%8C%E6%B3%A8%E9%87%8A/</link>
+      <link>http://guangchuangyu.github.io/cn/2016/03/%E4%BD%BF%E7%94%A8ggtree%E5%AE%9E%E7%8E%B0%E8%BF%9B%E5%8C%96%E6%A0%91%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E5%92%8C%E6%B3%A8%E9%87%8A/</link>
       <pubDate>Wed, 09 Mar 2016 13:17:48 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/2016/03/%E4%BD%BF%E7%94%A8ggtree%E5%AE%9E%E7%8E%B0%E8%BF%9B%E5%8C%96%E6%A0%91%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E5%92%8C%E6%B3%A8%E9%87%8A/</guid>
+      <guid>http://guangchuangyu.github.io/cn/2016/03/%E4%BD%BF%E7%94%A8ggtree%E5%AE%9E%E7%8E%B0%E8%BF%9B%E5%8C%96%E6%A0%91%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E5%92%8C%E6%B3%A8%E9%87%8A/</guid>
       <description>
 
 &lt;blockquote&gt;
@@ -340,10 +340,10 @@ pp + geom_tiplab(align=T, linetype=&#39;dashed&#39;, linesize=.5) + geom_tippoin
     
     <item>
       <title>喜新厌旧之hello Hugo</title>
-      <link>http://guangchuangyu.github.io/2015/12/%E5%96%9C%E6%96%B0%E5%8E%8C%E6%97%A7%E4%B9%8Bhello-hugo/</link>
+      <link>http://guangchuangyu.github.io/cn/2015/12/%E5%96%9C%E6%96%B0%E5%8E%8C%E6%97%A7%E4%B9%8Bhello-hugo/</link>
       <pubDate>Fri, 04 Dec 2015 00:42:26 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/2015/12/%E5%96%9C%E6%96%B0%E5%8E%8C%E6%97%A7%E4%B9%8Bhello-hugo/</guid>
+      <guid>http://guangchuangyu.github.io/cn/2015/12/%E5%96%9C%E6%96%B0%E5%8E%8C%E6%97%A7%E4%B9%8Bhello-hugo/</guid>
       <description>
 
 &lt;p&gt;最早在China Unix上写博客，后来转战新浪。在&lt;a href=&#34;http://azaleasays.com/&#34;&gt;azelea&lt;/a&gt;的说服下，&lt;a href=&#34;http://guangchuangyu.github.io/2008/09/%E5%8D%9A%E5%AE%A2%E8%BD%ACwordpress/&#34;&gt;果断换成wordpress&lt;/a&gt;，写技术博客贴点代码什么的，新浪必须是太渣。&lt;a href=&#34;http://azaleasays.com/&#34;&gt;azelea&lt;/a&gt;是我开始独立博客的领路人，为我提供了空间和域名。再后来自己买了空间和&lt;code&gt;ygc.name&lt;/code&gt;的域名，用了好几年。本来一直有想法要换成github+jekll，恰巧&lt;a href=&#34;http://blog.shenwei.me/&#34;&gt;Wei Shen&lt;/a&gt;强力推荐HUGO。于是再一次换博客。&lt;/p&gt;
@@ -461,10 +461,10 @@ MathJax.Hub.Config({
     
     <item>
       <title>合体中的操作系统</title>
-      <link>http://guangchuangyu.github.io/2015/11/%E5%90%88%E4%BD%93%E4%B8%AD%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link>
+      <link>http://guangchuangyu.github.io/cn/2015/11/%E5%90%88%E4%BD%93%E4%B8%AD%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link>
       <pubDate>Tue, 17 Nov 2015 16:06:59 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/2015/11/%E5%90%88%E4%BD%93%E4%B8%AD%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</guid>
+      <guid>http://guangchuangyu.github.io/cn/2015/11/%E5%90%88%E4%BD%93%E4%B8%AD%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</guid>
       <description>&lt;p&gt;更新EI Capitan已经近一个月，第一感觉就是明显变慢了。这是去年买的27&amp;rsquo;
 iMac，必须不慢。MS
 office程序可以打开，但打开文档直接闪退。升级安装总会有些问题，就像我去年在笔记本上&lt;a href=&#34;http://guangchuangyu.github.io/2014/11/hello-yosemite/&#34;&gt;升级yosemite&lt;/a&gt;一样，最后两分钟始终过不去，迫使我&lt;a href=&#34;http://guangchuangyu.github.io/2014/11/hello-yosemite/&#34;&gt;全新安装&lt;/a&gt;，当时我看后台记录就发现了是MacTex拷不过去，后来MacTex的网站上也写了升级Yosemite有这个问题。升级有些小问题是可以预见的，但很少有像EI
@@ -534,10 +534,10 @@ View嘛，还得靠BTT：
     
     <item>
       <title>BMC Favor Plagiarism</title>
-      <link>http://guangchuangyu.github.io/2015/05/bmc-favor-plagiarism/</link>
+      <link>http://guangchuangyu.github.io/cn/2015/05/bmc-favor-plagiarism/</link>
       <pubDate>Sun, 17 May 2015 21:51:43 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/2015/05/bmc-favor-plagiarism/</guid>
+      <guid>http://guangchuangyu.github.io/cn/2015/05/bmc-favor-plagiarism/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://cran.r-project.org/web/packages/ppiPre/index.html&#34;&gt;ppiPre&lt;/a&gt;抄袭了&lt;a href=&#34;https://github.com/GuangchuangYu/GOSemSim&#34;&gt;GOSemSim&lt;/a&gt;的代码，证据当然非常充分，比对一下代码就知道了，我在&lt;a href=&#34;http://guangchuangyu.github.io/2014/11/proper-use-of-gosemsim/&#34;&gt;Proper use of GOSemSim&lt;/a&gt;一文中，做出了一些比较，另外也可以参考&lt;a href=&#34;https://github.com/cran/ppiPre/commit/c267700ca09a599dab77326959a0aa6a2980ceed&#34;&gt;github&lt;/a&gt;页面，github记录了ppiPre被暴光抄袭之后所做的修改。
 从我给BMC Systems
 Biology的编辑反馈这件事开始，在这铁板钉钉的事实面前，编辑拖了整整一年，而这一年时间过去了，ppiPre仍没有被编辑部受理。从最早反应这件事情，编辑信誓旦旦说他们很重视这种事情，到后面对我的邮件视而不见，我愿意相信编辑部处理这些事情，需要时间，他们有自己的规则，但一年的时间，不回邮件，冷处理以淡化此事，这绝对不是应该有的规则。
@@ -614,10 +614,10 @@ Chairs，通讯作者和BMC编委是认识的，于是我空穴来风地猜测�
     
     <item>
       <title>R binary is untrustable</title>
-      <link>http://guangchuangyu.github.io/2014/07/r-binary-is-untrustable/</link>
+      <link>http://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustable/</link>
       <pubDate>Thu, 24 Jul 2014 04:22:35 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/2014/07/r-binary-is-untrustable/</guid>
+      <guid>http://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustable/</guid>
       <description>&lt;p&gt;去年ubuntu下apt-get了R-3.0.2,
 用了没多久就发现了system命令有问题，通常情况下调用系统命令是正常的，但是我调用bowtie的时候，就会报错：&lt;/p&gt;
 
@@ -701,10 +701,10 @@ R       22938  ygc  mem    REG   8,17    454082 49286705 /usr/lib/R/lib/libRblas
     
     <item>
       <title>use linux desktop again</title>
-      <link>http://guangchuangyu.github.io/2014/06/use-linux-desktop-again/</link>
+      <link>http://guangchuangyu.github.io/cn/2014/06/use-linux-desktop-again/</link>
       <pubDate>Sun, 01 Jun 2014 07:57:46 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/2014/06/use-linux-desktop-again/</guid>
+      <guid>http://guangchuangyu.github.io/cn/2014/06/use-linux-desktop-again/</guid>
       <description>&lt;p&gt;上个月写了《&lt;a href=&#34;http://guangchuangyu.github.io/2014/05/use-ggplot2/&#34;&gt;使用ggplot画图&lt;/a&gt;》一文，图片太多，一下子把博客的12G流量给用光了，月中博客就被停了，小伙伴们太给力了，blog不能访问，真是件不爽的事情。&lt;/p&gt;
 
 &lt;p&gt;言归正传，从2002年使用redhat
@@ -733,10 +733,10 @@ windows，另外fcitx的五笔是我最喜欢的输入法。&lt;/p&gt;
     
     <item>
       <title>更改百度云同步盘路径</title>
-      <link>http://guangchuangyu.github.io/2014/05/%E6%9B%B4%E6%94%B9%E7%99%BE%E5%BA%A6%E4%BA%91%E5%90%8C%E6%AD%A5%E7%9B%98%E8%B7%AF%E5%BE%84/</link>
+      <link>http://guangchuangyu.github.io/cn/2014/05/%E6%9B%B4%E6%94%B9%E7%99%BE%E5%BA%A6%E4%BA%91%E5%90%8C%E6%AD%A5%E7%9B%98%E8%B7%AF%E5%BE%84/</link>
       <pubDate>Mon, 05 May 2014 10:45:25 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/2014/05/%E6%9B%B4%E6%94%B9%E7%99%BE%E5%BA%A6%E4%BA%91%E5%90%8C%E6%AD%A5%E7%9B%98%E8%B7%AF%E5%BE%84/</guid>
+      <guid>http://guangchuangyu.github.io/cn/2014/05/%E6%9B%B4%E6%94%B9%E7%99%BE%E5%BA%A6%E4%BA%91%E5%90%8C%E6%AD%A5%E7%9B%98%E8%B7%AF%E5%BE%84/</guid>
       <description>&lt;p&gt;从2007年写了&lt;a href=&#34;http://cjbmb.bjmu.edu.cn/CN/abstract/abstract17570.shtml&#34;&gt;第一篇文章&lt;/a&gt;之后，我发现管理文献真不是人干的，一直以来使用Zotero来管理文献，自从有了dropbox之后，就想把文献库放在dropbox上，一来有个云备份，不怕硬盘坏，二来嘛，实验室电脑和个人电脑可以实时同步化，无奈dropbox空间太小，而我的zotero早已超过10G，因为电子书也放在里面，只能做罢。&lt;/p&gt;
 
 &lt;p&gt;度娘出手还是很大方的，我现在的网盘已经有3T，包括之前在推广阶段用1元买的1T。&lt;/p&gt;
@@ -769,10 +769,10 @@ X的问题，在&lt;a href=&#34;http://stackoverflow.com/questions/80875/what-is
     
     <item>
       <title>Permanent Head Damage to be</title>
-      <link>http://guangchuangyu.github.io/2013/07/permanent-head-damage-to-be/</link>
+      <link>http://guangchuangyu.github.io/cn/2013/07/permanent-head-damage-to-be/</link>
       <pubDate>Tue, 30 Jul 2013 16:18:26 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/2013/07/permanent-head-damage-to-be/</guid>
+      <guid>http://guangchuangyu.github.io/cn/2013/07/permanent-head-damage-to-be/</guid>
       <description>&lt;p&gt;看似寻常最奇崛，成如容易却艰辛。在暨大工作了几年，发几篇小文章，觉得要找个地方读PhD，是件手到擒来的事，结果却花了整整一年的时间，事实证明像我这样的科研屌丝男，举步唯艰啊。
 去年7月份就开始在计划这个事情，我几乎想都没想就联系了计算生物所的JD
 Han，紧接着就是面试，第一次尝试用英文去讲slides，从早上10点讲到中午12点。感觉还好吧，因为有听到Han说impressive，而她的学生又说经常看我blog。看上去还是蛮顺利的，然而最终reject了我，而且没有给我任何原因。&lt;/p&gt;
@@ -822,10 +822,10 @@ OFFER，但是UQ非常龟毛，成绩单不能自己寄，我只能花钱让中�
     
     <item>
       <title>Installing Hackintosh</title>
-      <link>http://guangchuangyu.github.io/2012/03/installing-hackintosh/</link>
+      <link>http://guangchuangyu.github.io/cn/2012/03/installing-hackintosh/</link>
       <pubDate>Thu, 15 Mar 2012 04:47:26 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/2012/03/installing-hackintosh/</guid>
+      <guid>http://guangchuangyu.github.io/cn/2012/03/installing-hackintosh/</guid>
       <description>&lt;p&gt;初中时在杂志上看到苹果的彩壳机，从此叔就开始成为了苹果的脑残粉，还在K6-2和win98那会，就在玩macintosh主题。&lt;/p&gt;
 
 &lt;p&gt;本科时，通过&lt;a href=&#34;http://pearpc.sourceforge.net/&#34;&gt;PearPC&lt;/a&gt;来虚拟PowerPC，硬是在ATHLON XP 1700+这个破CPU上破了OS X Jaguar，那个慢啊，是无法忍受的。&lt;/p&gt;
@@ -848,10 +848,10 @@ OFFER，但是UQ非常龟毛，成绩单不能自己寄，我只能花钱让中�
     
     <item>
       <title>screen shot</title>
-      <link>http://guangchuangyu.github.io/2011/06/screen-shot/</link>
+      <link>http://guangchuangyu.github.io/cn/2011/06/screen-shot/</link>
       <pubDate>Tue, 28 Jun 2011 12:17:30 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/2011/06/screen-shot/</guid>
+      <guid>http://guangchuangyu.github.io/cn/2011/06/screen-shot/</guid>
       <description>&lt;p&gt;买了苹果机，一直放在家里没用，准备开会带去用，拿过来装几个软件。&lt;/p&gt;
 
 &lt;p&gt;校园网用锐捷是个比较讨厌的东西。当年在华农，光这&lt;a href=&#34;http://guangchuangyu.github.io/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/&#34;&gt;认证&lt;/a&gt;就搞了很久。&lt;/p&gt;
@@ -877,10 +877,10 @@ OFFER，但是UQ非常龟毛，成绩单不能自己寄，我只能花钱让中�
     
     <item>
       <title>Xming-windows下远程linux桌面</title>
-      <link>http://guangchuangyu.github.io/2010/07/xming-windows%E4%B8%8B%E8%BF%9C%E7%A8%8Blinux%E6%A1%8C%E9%9D%A2/</link>
+      <link>http://guangchuangyu.github.io/cn/2010/07/xming-windows%E4%B8%8B%E8%BF%9C%E7%A8%8Blinux%E6%A1%8C%E9%9D%A2/</link>
       <pubDate>Mon, 05 Jul 2010 07:37:09 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/2010/07/xming-windows%E4%B8%8B%E8%BF%9C%E7%A8%8Blinux%E6%A1%8C%E9%9D%A2/</guid>
+      <guid>http://guangchuangyu.github.io/cn/2010/07/xming-windows%E4%B8%8B%E8%BF%9C%E7%A8%8Blinux%E6%A1%8C%E9%9D%A2/</guid>
       <description>&lt;p&gt;机房放着台机架机，闲着也是耗电，平时偶尔用putty登上去，没有图形界面还是有些不方便。&lt;/p&gt;
 
 &lt;p&gt;搜了一下，发现好几个软件可做这样的事，Xming是开源的，所以选择使用Xming+putty来远程连linux的桌面。&lt;/p&gt;
@@ -917,10 +917,10 @@ OFFER，但是UQ非常龟毛，成绩单不能自己寄，我只能花钱让中�
     
     <item>
       <title>博客转WordPress</title>
-      <link>http://guangchuangyu.github.io/2008/09/%E5%8D%9A%E5%AE%A2%E8%BD%ACwordpress/</link>
+      <link>http://guangchuangyu.github.io/cn/2008/09/%E5%8D%9A%E5%AE%A2%E8%BD%ACwordpress/</link>
       <pubDate>Tue, 30 Sep 2008 16:20:43 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/2008/09/%E5%8D%9A%E5%AE%A2%E8%BD%ACwordpress/</guid>
+      <guid>http://guangchuangyu.github.io/cn/2008/09/%E5%8D%9A%E5%AE%A2%E8%BD%ACwordpress/</guid>
       <description>&lt;p&gt;找了一个叫&lt;strong&gt;博客备份软件&lt;/strong&gt;的小工具,备份了新浪和ChinaUnix上的blog,导出为RSS
 2.0, sina的blog导出没问题,但是cu的blog导出后,文不对题.狂汗啊&amp;hellip;
 但是生成的xml文件导入到wordpress里不成功.需要改一下才行.&lt;/p&gt;
@@ -937,10 +937,10 @@ OFFER，但是UQ非常龟毛，成绩单不能自己寄，我只能花钱让中�
     
     <item>
       <title>通过局域网在linux下使用windows的程序</title>
-      <link>http://guangchuangyu.github.io/2008/09/%E9%80%9A%E8%BF%87%E5%B1%80%E5%9F%9F%E7%BD%91%E5%9C%A8linux%E4%B8%8B%E4%BD%BF%E7%94%A8windows%E7%9A%84%E7%A8%8B%E5%BA%8F/</link>
+      <link>http://guangchuangyu.github.io/cn/2008/09/%E9%80%9A%E8%BF%87%E5%B1%80%E5%9F%9F%E7%BD%91%E5%9C%A8linux%E4%B8%8B%E4%BD%BF%E7%94%A8windows%E7%9A%84%E7%A8%8B%E5%BA%8F/</link>
       <pubDate>Mon, 22 Sep 2008 01:26:00 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/2008/09/%E9%80%9A%E8%BF%87%E5%B1%80%E5%9F%9F%E7%BD%91%E5%9C%A8linux%E4%B8%8B%E4%BD%BF%E7%94%A8windows%E7%9A%84%E7%A8%8B%E5%BA%8F/</guid>
+      <guid>http://guangchuangyu.github.io/cn/2008/09/%E9%80%9A%E8%BF%87%E5%B1%80%E5%9F%9F%E7%BD%91%E5%9C%A8linux%E4%B8%8B%E4%BD%BF%E7%94%A8windows%E7%9A%84%E7%A8%8B%E5%BA%8F/</guid>
       <description>&lt;p&gt;用了好多年linux，现在用windows越来越少了，但是还是得用。没办法，上taobao买个东西，上网银都得用ie，有时候还得用office等其它一些软件。&lt;/p&gt;
 
 &lt;p&gt;实验室里有台机子是做文件服务的，装的是windows 2003
@@ -968,10 +968,10 @@ server。之前使用rdesktop远程桌面，最近发现配合seamlessrdp可以�
     
     <item>
       <title>screenshot</title>
-      <link>http://guangchuangyu.github.io/2007/06/screenshot/</link>
+      <link>http://guangchuangyu.github.io/cn/2007/06/screenshot/</link>
       <pubDate>Sat, 16 Jun 2007 00:18:00 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/2007/06/screenshot/</guid>
+      <guid>http://guangchuangyu.github.io/cn/2007/06/screenshot/</guid>
       <description>
 
 &lt;h2 id=&#34;os-9-2:ba11a7898e0e392a3a4c1229a801e666&#34;&gt;OS 9.2&lt;/h2&gt;

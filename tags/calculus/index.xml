@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Calculus on Guangchuang Yu</title>
-    <link>http://guangchuangyu.github.io/tags/calculus/</link>
+    <link>http://guangchuangyu.github.io/cn/tags/calculus/</link>
     <description>Recent content in Calculus on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 02 Jun 2007 13:53:00 +0800</lastBuildDate>
-    <atom:link href="http://guangchuangyu.github.io/tags/calculus/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://guangchuangyu.github.io/cn/tags/calculus/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Newton-Raphson Method估算函数的根</title>
-      <link>http://guangchuangyu.github.io/2007/06/newton-raphson-method%E4%BC%B0%E7%AE%97%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%B9/</link>
+      <link>http://guangchuangyu.github.io/cn/2007/06/newton-raphson-method%E4%BC%B0%E7%AE%97%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%B9/</link>
       <pubDate>Sat, 02 Jun 2007 13:53:00 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/2007/06/newton-raphson-method%E4%BC%B0%E7%AE%97%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%B9/</guid>
+      <guid>http://guangchuangyu.github.io/cn/2007/06/newton-raphson-method%E4%BC%B0%E7%AE%97%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%B9/</guid>
       <description>
 
 &lt;h2 id=&#34;newton-raphson-method:8c998fd44af3436f18eebfbca2f9fb1d&#34;&gt;Newton-Raphson Method&lt;/h2&gt;
