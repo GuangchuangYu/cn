@@ -967,48 +967,91 @@ server。之前使用rdesktop远程桌面，最近发现配合seamlessrdp可以�
     </item>
     
     <item>
-      <title>screenshot</title>
-      <link>http://guangchuangyu.github.io/cn/2007/06/screenshot/</link>
-      <pubDate>Sat, 16 Jun 2007 00:18:00 +0800</pubDate>
+      <title>从概率的角度看 如何告别单身</title>
+      <link>http://guangchuangyu.github.io/cn/2008/08/%E4%BB%8E%E6%A6%82%E7%8E%87%E7%9A%84%E8%A7%92%E5%BA%A6%E7%9C%8B-%E5%A6%82%E4%BD%95%E5%91%8A%E5%88%AB%E5%8D%95%E8%BA%AB/</link>
+      <pubDate>Tue, 26 Aug 2008 15:10:00 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/cn/2007/06/screenshot/</guid>
-      <description>
+      <guid>http://guangchuangyu.github.io/cn/2008/08/%E4%BB%8E%E6%A6%82%E7%8E%87%E7%9A%84%E8%A7%92%E5%BA%A6%E7%9C%8B-%E5%A6%82%E4%BD%95%E5%91%8A%E5%88%AB%E5%8D%95%E8%BA%AB/</guid>
+      <description>&lt;p&gt;国家人口统计男人比女人多了3700万，在大学校园里更是流传着“我很丑，可是我很抢手”（女生版）、“我很帅，可是我很无奈”（男生版）。&lt;/p&gt;
 
-&lt;h2 id=&#34;os-9-2:ba11a7898e0e392a3a4c1229a801e666&#34;&gt;OS 9.2&lt;/h2&gt;
+&lt;p&gt;鉴于大龄猥琐男越来越盛行，以及小平同志说“让一部分人先恋起来嘛”
+今日从科学的角度，让大家明白如何告别单身。
+授人与鱼不如授人与渔。即使没能让你奔小康，起码也解决温饱~~~&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2007/06/os9.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2008/11/xx0.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;xfce4-2:ba11a7898e0e392a3a4c1229a801e666&#34;&gt;xfce4.2&lt;/h2&gt;
+&lt;p&gt;告别单身的不二法则，三个字，“厚脸皮”，详见下面分析&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://guangchuangyu.github.io/blog_images/2005/01/070329182457.png&#34;&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2005/01/070329182457.png&#34; alt=&#34;070329182457&#34; title=&#34;070329182457&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果一个男人追一个女人，成功的概率只有0.2，
+那么连续追6个，至少有一个成功的概率，高达0.74&lt;/p&gt;
 
-&lt;h2 id=&#34;xfce4-4:ba11a7898e0e392a3a4c1229a801e666&#34;&gt;xfce4.4&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; 1-0.8^6
+[1] 0.737856
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://guangchuangyu.github.io/blog_images/2007/06/xfce44.png&#34;&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2007/06/xfce44.png&#34; alt=&#34;xfce44&#34; title=&#34;xfce44&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果连续追7个的话，至少一个成功的概率将达到0.79&lt;/p&gt;
 
-&lt;h2 id=&#34;qvwm:ba11a7898e0e392a3a4c1229a801e666&#34;&gt;qvwm&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; 1-0.8^7
+[1] 0.7902848
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://guangchuangyu.github.io/blog_images/2006/06/qvwm.png&#34;&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2006/06/qvwm.png&#34; alt=&#34;qvwm&#34; title=&#34;qvwm&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果你不是特别差，成功的概率假如是0.3，那么连续追几个的成功概率将更高。。&lt;/p&gt;
 
-&lt;h2 id=&#34;icewm:ba11a7898e0e392a3a4c1229a801e666&#34;&gt;icewm&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; 1-0.7^6
+[1] 0.882351
+&amp;gt; 1-0.7^7
+[1] 0.9176457
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://guangchuangyu.github.io/blog_images/2007/06/icewm.png&#34;&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2007/06/icewm.png&#34; alt=&#34;icewm&#34; title=&#34;icewm&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;连追女生个数从1到10,至少成功一次的机会，我们以成功概率0.1为例，90%的可能性拿到好人卡。（通常我们成功的概率会比这个高，恩！）
+，从下面的数字大家可以看到增长速度之快，是惊人的。多追几个，不成功那是小概率事件。&lt;/p&gt;
 
-&lt;h2 id=&#34;fluxbox:ba11a7898e0e392a3a4c1229a801e666&#34;&gt;fluxbox&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; x &amp;lt;- 1:20 
+&amp;gt; y &amp;lt;- sapply(x, function(i) 1-0.9^i) 
+&amp;gt; y
+[1] 0.1000000 0.1900000 0.2710000 0.3439000 0.4095100 0.4685590 0.5217031 0.5695328 0.6125795 0.6513216 0.6861894 0.7175705
+[13] 0.7458134 0.7712321 0.7941089 0.8146980 0.8332282 0.8499054 0.8649148 0.8784233
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://guangchuangyu.github.io/blog_images/2007/06/flubox.png&#34;&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2007/06/flubox.png&#34; alt=&#34;flubox&#34; title=&#34;flubox&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下面我用多项式回归对数据进行拟合。&lt;/p&gt;
 
-&lt;h2 id=&#34;wmaker:ba11a7898e0e392a3a4c1229a801e666&#34;&gt;wmaker&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; xv &amp;lt;- seq(1,20, 0.1) 
+&amp;gt; x2 &amp;lt;- x^2 
+&amp;gt; qualm &amp;lt;- lm(y ~ x+x2) 
+&amp;gt; yv &amp;lt;- predict(qualm, list(x=xv, x2=xv^2)) 
+&amp;gt; lines(xv,yv)
+&amp;gt; summary(qualm)
 
-&lt;p&gt;&lt;a href=&#34;http://guangchuangyu.github.io/blog_images/2007/06/wmaker.png&#34;&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2007/06/wmaker.png&#34; alt=&#34;wmaker&#34; title=&#34;wmaker&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+Call:
+lm(formula = y ~ x + x2)
 
-&lt;p&gt;越来越喜欢windowmaker&amp;hellip;&amp;hellip;喜欢它最小化到图标&lt;/p&gt;
+Residuals:
+Min 1Q Median 3Q Max
+-2.250e-02 -7.706e-03 -9.328e-07 8.678e-03 1.773e-02
 
-&lt;h2 id=&#34;wmii:ba11a7898e0e392a3a4c1229a801e666&#34;&gt;wmii&lt;/h2&gt;
+Coefficients:
+Estimate Std. Error t value Pr(&amp;gt;|t|)
+(Intercept) 4.396e-02 8.277e-03 5.311 5.75e-05 ***
+x 8.053e-02 1.815e-03 44.358 &amp;lt; 2e-16 ***
+x2 -1.984e-03 8.397e-05 -23.633 1.92e-14 ***
+---
+Signif. codes: 0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-&lt;p&gt;&lt;a href=&#34;http://guangchuangyu.github.io/blog_images/2007/06/wmii.png&#34;&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2007/06/wmii.png&#34; alt=&#34;wmii&#34; title=&#34;wmii&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+Residual standard error: 0.01113 on 17 degrees of freedom
+Multiple R-squared: 0.998, Adjusted R-squared: 0.9978
+F-statistic: 4334 on 2 and 17 DF, p-value: &amp;lt; 2.2e-16
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;最后是wmii，全屏的感觉就是爽。&lt;/p&gt;
+&lt;p&gt;拟合结果，显示，$ y = 0.04396 + 0.08053x - 0.001984x^2 $
+其中x表示表白次数，y是至少成功一次的概率。&lt;/p&gt;
+
+&lt;p&gt;拟合结果，如下图所示：
+&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2008/11/lm.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;男人对女人耍流氓，叫调戏，女人对男人耍流氓，叫勾引，男人女人互相耍流氓，叫两情相悦。
+脱单的不二法则，就是不断地耍流氓，焉知下一次耍流氓的结果，对方不是以耍流氓相报呢，同志们，这就是两情相悦啦。&lt;/p&gt;
+
+&lt;p&gt;流氓会学术，挡也挡不住。&lt;/p&gt;
 </description>
     </item>
     
