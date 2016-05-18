@@ -14,7 +14,7 @@
   <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
   
-  <title>screen shot</title>
+  <title>Bootstrap Method</title>
 
   
   
@@ -99,15 +99,15 @@
       <article class="hentry" role="article">
         <header>
           <h1 class="entry-title">
-            screen shot 
+            Bootstrap Method 
           </h1>
-          <p class="meta">Jun 28, 2011 - 1 minute read - 
+          <p class="meta">Jul 31, 2009 - 1 minute read - 
 
           
 
           
           
-          <a class="label" href="http://guangchuangyu.github.io/cn/categories/bsd">BSD</a><a class="label" href="http://guangchuangyu.github.io/cn/categories/mac-os">Mac OS</a>
+          <a class="label" href="http://guangchuangyu.github.io/cn/categories/statistics">statistics</a>
           </p>
         </header>
         <div class="entry-content">
@@ -119,26 +119,84 @@
     <span class='st_sina_hcount' displayText='Sina'></span>
     <span class='st_linkedin_hcount' displayText='LinkedIn'></span>
         
-    <p>买了苹果机，一直放在家里没用，准备开会带去用，拿过来装几个软件。</p>
+    
 
-<p>校园网用锐捷是个比较讨厌的东西。当年在华农，光这<a href="http://guangchuangyu.github.io/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/">认证</a>就搞了很久。</p>
+<p><a href="http://en.wikipedia.org/wiki/Bootstrapping_(statistics)">bootstrap</a>是对观测数据集进行有放回（replacement）的随机抽样，以评估总体的各项统计指标。可以用于假设检验、参数估计。好处是并不要求大样本，也不要求正态数据，并且对于不同的统计指标使用的是同样的计算方法。结果也更为可靠，坏处是计算量大。</p>
 
-<p>现在开源的认证客户端多了，搞起来也方便了，现在在linux下用的<a href="http://code.google.com/p/xmuruijie/">xmuruijie</a>，就比当年<a href="http://guangchuangyu.github.io/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/">mystar</a>好用。</p>
+<p>统计推断(statistical
+inference)是基于样本统计值的抽样分布来计算的，抽样分布需要从总体中许多的样本来计算，在只有一个样本的情况下，bootstrap对这一随机样本进行有放回的重复抽样，每一个重抽样本与原始随机样本一样大，每次计算相应的抽样的统计值，重复了N次之后，就可以计算统计值的bootstrap分布。</p>
 
-<p>估计xmuruijie也是可以在苹果机上用的，依赖python，搞不好还有些modules要装，懒得去弄，搜了一下，找到<a href="http://code.google.com/p/mentohust/">mentohust</a>，当然需要改一下mac address，用万能的ifconfig搞定。</p>
+<p>下面做一个小小的试验：</p>
 
-<p>为了编译软件，必要先装xcode，这个大家伙，4G多，中午挂到吃晚饭才下完。
-然后就可以装各种open source的软件。</p>
+<pre><code>a &lt;- c(seq(1:10), rnorm(50))  
+</code></pre>
 
-<p>mac上有fink支持debian一样的apt-get，还有原生的macport，gentoo的portage也支持，我选择使用<a href="http://guangchuangyu.github.io/categories/bsd">netbsd</a>的pkgsrc来安装各种开源软件。</p>
+<p>#创建一个样本，60个数据，非正态分布的，如下图</p>
 
-<p>以前用过比较长时间的netbsd，用着比较顺手。</p>
+<p><img src="http://guangchuangyu.github.io/blog_images/2009/07/sample_a.png" alt="" title="sample_a" /></p>
 
-<p>苹果机很酷的界面，又能使用熟悉的命令行，实在是爽-,-</p>
+<pre><code>b &lt;- rep(0, 1000)
+for (i in 1:1000) {
+    b[i] &lt;- mean(sample(a, replace=TRUE))
+}
+</code></pre>
 
-<p><img src="http://guangchuangyu.github.io/blog_images/2011/06/屏幕快照-2011-06-28-下午07.54.21.png" alt="" /></p>
+<p>对它进行1000次有放回重复抽样，计算均值，均值分布的柱状图和qq图如下：</p>
 
-<p>更多截屏，请移步：<a href="http://guangchuangyu.github.io/2007/06/screenshot/">http://guangchuangyu.github.io/2007/06/screenshot/</a></p>
+<p><img src="http://guangchuangyu.github.io/blog_images/2009/07/hist_qq.png" alt="" /></p>
+
+<p>分布是正态的。</p>
+
+<pre><code>&gt; mean(a)    #样本均值
+[1] 0.947186
+&gt; mean(b)   #重抽样1000个样本均值的均值
+[1] 0.9358049
+&gt; sd(b)
+[1] 0.3245479
+&gt; sd(a)/sqrt(60)
+[1] 0.3318863
+</code></pre>
+
+<p>由bootstrap方法得到的标准误是0.325，而由原先随机样本所估算的是0.332，两者是相当接近的。由此可见呢，bootstrap方法与理论上的从总体中抽样所得到的样本分布是一致的，这样子就可以基于一个样本来计算样本的分布，而不是要从总体中抽N个样本。</p>
+
+<p>还用上面的例子，使用样本均值$ \bar{x}$去估算总体的均值$
+\mu$，虽然我们的样本不是正态的，但如果bootstrap
+distribution是正态的话，就可以使用类似于单样本t置信区间（要求样本是正态的）的公式:$
+\bar{x} \pm t \cdot SE = \bar{x} \pm t \cdot
+\frac{s}{\sqrt{n}}$ 相应的bootstrap t置信区间是：$ statistic
+\pm t \cdot SE_{boot}$ 上面例子，总体均值$ \mu$
+95%的置信度，就会落在：$ mean(a) \pm 2.009 \cdot sd(b)$
+可以使用它，计算所有统计指标的置信区间。</p>
+
+<p>用于层次聚类分析的一个例子，使用Pvclust这个包，用于层次聚类，并通过multiscale
+bootstrap
+resampling给出相应的<em>p</em>-value用于评估聚类结果的不确定性。提供了两种<em>p</em>-values，AU（approximately
+unbiased p-value, 通过multiscale bootstrap
+resampling计算）和BP（bootstrap probability, 通过normal bootstrap
+resampling计算），AU比BP较为unbiased。
+Pvclust使用*hclust*（来自于stats包）进行层次聚类，并自动计算所有的子类的<em>p</em>-value。</p>
+
+<pre><code>library(pvclust)  # loads package
+a &lt;- matrix(rnorm(1000), 100, 10, dimnames=list(paste(&quot;g&quot;, 1:100, sep=&quot;&quot;), paste(&quot;t&quot;,1:10, sep=&quot;&quot;)))  # creats sample data
+at &lt;- t(a)  # transposes of a
+cl &lt;- pvclust(at, nboot=1000)  #performs hierarchical cluster analysis with multiscale bootstrap with 1000 repetitions.
+pvrect(cl, alpha=0.95)  #highlights with red rectangles all clusters in the dendrogram which have an AU value above 95%, AU p-value &gt; 0.95, the hypothesis that &quot;the cluster does not exist&quot; is rejected with significance level 0.05;
+</code></pre>
+
+<p><img src="http://guangchuangyu.github.io/blog_images/2009/07/pvclust_test.png" alt="" /></p>
+
+<pre><code>#pick significant clusters.
+clsig &lt;- pvpick(cl, alpha=0.95, pv=&quot;au&quot;, type=&quot;geq&quot;, max.only=TRUE)  
+</code></pre>
+
+<h3 id="reference:5129f3fc49180ee68d0efdb6ded483c8">Reference</h3>
+
+<p>1.  Moore, D.S., McCabe, G.P. &amp; Craig, B. Introduction to the Practice
+of Statistics w/CD-ROM.  (W. H. Freeman: 2007).</p>
+
+<p>2.  Suzuki, R. (2006). Pvclust: an R package for assessing the uncertainty in hierarchical clustering, Bioinformatics, 22(12), 1540-1542
+DOI:
+<a href="http://dx.doi.org/10.1093/bioinformatics/btl117">10.1093/bioinformatics/btl117</a></p>
 
 
     
@@ -153,12 +211,12 @@
   <p class="meta">
     <span class="byline author vcard">Posted by <span class="fn">Guangchuang Yu</span></span>
     
-    <time>Jun 28, 2011</time>
+    <time>Jul 31, 2009</time>
     <span class="categories">
       Tags:
         
         
-          <a class="category" href="http://guangchuangyu.github.io/cn/tags/screenshot">screenshot</a>  
+          <a class="category" href="http://guangchuangyu.github.io/cn/tags/bootstrap">bootstrap</a>  
         
     </span>
   </p>
@@ -170,16 +228,16 @@
 
   <p class="meta">
     
-        <a class="basic-alignment left" href="http://guangchuangyu.github.io/cn/2011/06/five-things-biologists-should-know-about-statistics/" title="Five things biologists should know about statistics">Five things biologists should know about statistics</a>
+        <a class="basic-alignment left" href="http://guangchuangyu.github.io/cn/2008/09/%E5%8D%9A%E5%AE%A2%E8%BD%ACwordpress/" title="博客转WordPress">博客转WordPress</a>
     
 
     
-      <a class="basic-alignment right" href="http://guangchuangyu.github.io/cn/2012/03/installing-hackintosh/" title="Installing Hackintosh">Installing Hackintosh</a>
+      <a class="basic-alignment right" href="http://guangchuangyu.github.io/cn/2010/07/xming-windows%E4%B8%8B%E8%BF%9C%E7%A8%8Blinux%E6%A1%8C%E9%9D%A2/" title="Xming-windows下远程linux桌面">Xming-windows下远程linux桌面</a>
     
   </p>
 
   
-<div class="ds-thread" data-thread-key= screen&#32;shot data-title= screen&#32;shot data-url= http://guangchuangyu.github.io/cn/2011/06/screen-shot/ ></div>
+<div class="ds-thread" data-thread-key= Bootstrap&#32;Method data-title= Bootstrap&#32;Method data-url= http://guangchuangyu.github.io/cn/2009/07/bootstrap-method/ ></div>
 
 
 <script type="text/javascript">

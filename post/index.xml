@@ -821,6 +821,111 @@ OFFER，但是UQ非常龟毛，成绩单不能自己寄，我只能花钱让中�
     </item>
     
     <item>
+      <title>enrichment analysis</title>
+      <link>http://guangchuangyu.github.io/cn/2012/04/enrichment-analysis/</link>
+      <pubDate>Sat, 28 Apr 2012 08:06:05 +0800</pubDate>
+      
+      <guid>http://guangchuangyu.github.io/cn/2012/04/enrichment-analysis/</guid>
+      <description>&lt;p&gt;经常看到一些饼图，描述某些事物的组成，比如说有钱人的学历分布，然后我们可以看到高学历所占比例并不高，根据这个比例下结论通常是错的，这些比例说明不了问题，如果把各种学历在总体人口中的分布做为背景进行考虑的话，你就会发现学历还是有点用的。
+当我们用组学测定了一大堆分子之后，我们希望站在更高的角度去看这些分子和那些生物学过程相关。那么通常各种注释，对这些基因/蛋白进行分类，那么从分类的比例上，是不能草率下结论，正如上面有钱人学历分布的例子一样。我们需要把总体的分布考虑进去。
+和某个注释/分类是否有相关性，把基因分成属于这一类，和不属于这一类两种，这就好比经典统计学中的白球和黑球的抽样问题。也可以列一个２x２的表，进行独立性分析。
+以文章&lt;a href=&#34;http://cancerres.aacrjournals.org/content/62/16/4722&#34;&gt;Gene Expression in Ovarian Cancer Reflects Both Morphology and Biological Behavior, Distinguishing Clear Cell from Other Poor-Prognosis Ovarian Carcinomas&lt;/a&gt;所鉴定的差异基因为例。&lt;/p&gt;
+
+&lt;p&gt;73个差异基因的Symbol，我把它转为 entrezgene
+ID得到57个（漏掉的不管它，只是做为一个例子）:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; eg
+ [1] &amp;quot;7980&amp;quot;   &amp;quot;3081&amp;quot;   &amp;quot;3162&amp;quot;   &amp;quot;3059&amp;quot;   &amp;quot;1545&amp;quot;   &amp;quot;1917&amp;quot;   &amp;quot;6696&amp;quot;   &amp;quot;5797&amp;quot;  
+ [9] &amp;quot;6648&amp;quot;   &amp;quot;10397&amp;quot;  &amp;quot;6781&amp;quot;   &amp;quot;5817&amp;quot;   &amp;quot;1282&amp;quot;   &amp;quot;1284&amp;quot;   &amp;quot;6948&amp;quot;   &amp;quot;7077&amp;quot;  
+[17] &amp;quot;5744&amp;quot;   &amp;quot;8566&amp;quot;   &amp;quot;1368&amp;quot;   &amp;quot;1474&amp;quot;   &amp;quot;11015&amp;quot;  &amp;quot;3306&amp;quot;   &amp;quot;728441&amp;quot; &amp;quot;2678&amp;quot;  
+[25] &amp;quot;4286&amp;quot;   &amp;quot;3929&amp;quot;   &amp;quot;5095&amp;quot;   &amp;quot;2064&amp;quot;   &amp;quot;1428&amp;quot;   &amp;quot;6590&amp;quot;   &amp;quot;3569&amp;quot;   &amp;quot;2745&amp;quot;  
+[33] &amp;quot;3912&amp;quot;   &amp;quot;978&amp;quot;    &amp;quot;5950&amp;quot;   &amp;quot;6539&amp;quot;   &amp;quot;9445&amp;quot;   &amp;quot;5004&amp;quot;   &amp;quot;9971&amp;quot;   &amp;quot;7453&amp;quot;  
+[41] &amp;quot;2719&amp;quot;   &amp;quot;1410&amp;quot;   &amp;quot;1311&amp;quot;   &amp;quot;4653&amp;quot;   &amp;quot;4162&amp;quot;   &amp;quot;5358&amp;quot;   &amp;quot;3484&amp;quot;   &amp;quot;3486&amp;quot;  
+[49] &amp;quot;2261&amp;quot;   &amp;quot;307&amp;quot;    &amp;quot;1672&amp;quot;   &amp;quot;4837&amp;quot;   &amp;quot;22795&amp;quot;  &amp;quot;486&amp;quot;    &amp;quot;4118&amp;quot;   &amp;quot;3915&amp;quot;  
+[57] &amp;quot;10140&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;下面测试一下这些基因和化学刺激响应的相关性。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;goid &amp;lt;- “GO:0042221” # response to chemical stimulus
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;那么做为背景，总体基因为N，属于“化学刺激响应”这个分类的基因有M个。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;allgeneInCategory &amp;lt;- unique(get(goid, org.Hs.egGO2ALLEGS))
+M &amp;lt;- length(allgeneInCategory)
+N &amp;lt;- length(mappedkeys(org.Hs.egGO))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;样本的大小是n，属于“化学刺激响应”这个分类的基因有k个。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;n &amp;lt;- length(eg)
+k &amp;lt;- sum(eg %in% allgeneInCategory)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;白球黑球问题，最简单的莫过于用二项式分布，从总体上看，要拿到一个基因属于“化学刺激响应”这个分类的概率是M/N。那么现在抽了n个基因，里面有k个基于这个分类，p值为：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; 1-sum(sapply(0:k-1, function(i) choose(n,i) * (M/N)^i * (1-M/N)^(n-i)))
+[1] 8.561432e-10
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;二项式分布，是有放回的抽样，你可以多次抽到同一基因，这是不符合的。所以这个计算只能说是做为近似的估计值，无放回的抽样，符合超几何分布，通过超几何分布的计算，p值为：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; phyper(k-1,M, N-M, n, lower.tail=FALSE)
+[1] 7.879194e-10
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果用2x2表做独立性分析，表如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; d &amp;lt;- data.frame(gene.not.interest=c(M-k, N-M-n+k), gene.in.interest=c(k, n-k))
+&amp;gt; row.names(d) &amp;lt;- c(&amp;quot;In_category&amp;quot;, &amp;quot;not_in_category&amp;quot;)
+&amp;gt; d
+                gene.not.interest gene.in.interest
+In_category                  2613               28
+not_in_category             15310               29
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这个也有很多方法可以做检验，经典的有卡方检验和fisher&amp;rsquo;s exact test。
+如果用卡方检验来做。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; chisq.test(d, )
+
+    Pearson&#39;s Chi-squared test with Yates&#39; continuity correction
+
+data:  d 
+X-squared = 51.3849, df = 1, p-value = 7.592e-13
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;对于２x２表来说，卡方检验通常也只能做为近似估计值，特别是当sample
+size或expected all count比较小的时候，计算并不准确。 fisher&amp;rsquo;s exact
+test，名副其实，真的就比较exact，因为它使用的是超几何分布来计算p值。这也是为什么fisher&amp;rsquo;s
+exact test和超几何模式计算的p-值是一样的，&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; fisher.test(d)
+
+    Fisher&#39;s Exact Test for Count Data
+
+data:  d 
+p-value = 7.879e-10
+alternative hypothesis: true odds ratio is not equal to 1 
+95 percent confidence interval:
+ 0.1013210 0.3089718 
+sample estimates:
+odds ratio 
+ 0.1767937 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;通常各种软件做GO富集性分析，都是使用超几何分布进行计算。
+IPA软件则是使用fisher&amp;rsquo;s exact test来检验基因在某个网络中是否富集。
+从这个例子上看，chi-squared
+test的表现最差，binomial做为p值的近似估计还是不错的，因为计算较为简单。
+富集性分析应用范围非常广，从&lt;a href=&#34;http://bioconductor.org/packages/devel/bioc/html/DOSE.html&#34;&gt;Disease Ontology&lt;/a&gt;,
+&lt;a href=&#34;http://bioconductor.org/packages/devel/bioc/html/clusterProfiler.html&#34;&gt;Gene Ontology, KEGG&lt;/a&gt;,
+到&lt;a href=&#34;http://bioconductor.org/packages/devel/bioc/html/ReactomePA.html&#34;&gt;Reactome Pathway&lt;/a&gt;等等。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Installing Hackintosh</title>
       <link>http://guangchuangyu.github.io/cn/2012/03/installing-hackintosh/</link>
       <pubDate>Thu, 15 Mar 2012 04:47:26 +0800</pubDate>
@@ -876,6 +981,168 @@ OFFER，但是UQ非常龟毛，成绩单不能自己寄，我只能花钱让中�
     </item>
     
     <item>
+      <title>Five things biologists should know about statistics</title>
+      <link>http://guangchuangyu.github.io/cn/2011/06/five-things-biologists-should-know-about-statistics/</link>
+      <pubDate>Fri, 24 Jun 2011 06:10:37 +0800</pubDate>
+      
+      <guid>http://guangchuangyu.github.io/cn/2011/06/five-things-biologists-should-know-about-statistics/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.ebi.ac.uk/~birney/&#34;&gt;Ewan Birney&lt;/a&gt;最近的一篇博文（&lt;a href=&#34;http://genomeinformatician.blogspot.com/2011/06/five-statistical-things-i-wished-i-had.html&#34;&gt;Five statistical things I wished I had been taught 20 years ago&lt;/a&gt;
+）讲述了统计对于生物学的重要性。&lt;/p&gt;
+
+&lt;p&gt;一开始从RA
+Fisher讲起，说生物压根就是统计。Fisher是个农业学家，他所建立的那些统计方法，都是从生物学问题出发。&lt;/p&gt;
+
+&lt;p&gt;Ewan所谈及的五个方面分别是：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;1. Non parametric statistics. These are statistical tests which make a
+bare minimum of assumptions of underlying distributions; in biology we
+are rarely confident that we know the underlying distribution, and hand
+waving about central limit theorem can only get you so far. Wherever
+possible you should use a non parameteric test. This is Mann-Whitney (or
+Wilcoxon if you prefer) for testing &amp;ldquo;medians&amp;rdquo; (Medians is in quotes
+because this is not quite true. They test something which is closely
+related to the median) of two distributions, Spearman&amp;rsquo;s Rho (rather
+pearson&amp;rsquo;s r2) for correlation, and the Kruskal test rather than ANOVAs
+(though if I get this right, you can&amp;rsquo;t in Kruskal do the more
+sophisticated nested models you can do with ANOVA). Finally, don&amp;rsquo;t
+forget the rather wonderful Kolmogorov-Smirnov (I always think it sounds
+like really good vodka) test of whether two sets of observations come
+from the same distribution. All of these methods have a basic theme of
+doing things on the rank of items in a distribution, not the actual
+level. So - if in doubt, do things on the rank of metric, rather than
+the metric itself.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;学校里教统计，多半是t检验和ANOVA，这些方法都有assumption需要满足，比如正态分布啥的。多半大家是默认它满足，然后就开始套着用，这是比较危险的，如果assumption不满足，或者数据中有outliers，都可能会导致错误的结论。&lt;/p&gt;
+
+&lt;p&gt;今年&lt;a href=&#34;http://guangchuangyu.github.io/2010/11/phosphoproteome-profile-of-human-lung-cancer-cell-line-a549/&#34;&gt;磷酸化谱的文章&lt;/a&gt;，用到了免疫组化，实验结果的量化是由医生给出来打分值，癌组织和癌旁组织两组数据，免疫组化的数据不可能用参数统计，这个结果我就是用Wilcoxon
+signed rank test去做检验。文中所提出的其它非参统计方法，全都不会。囧&lt;/p&gt;
+
+&lt;p&gt;关于相关性，这里有篇文章，比较了Pearson和Spearman： &lt;a href=&#34;http://www.jstor.org/stable/2346598&#34;&gt;On the Effects of
+Non-Normality on the Distribution of the Sample Product-Moment
+Correlation Coefficient&lt;/a&gt; (Kowalski,
+1975)&lt;/p&gt;
+
+&lt;p&gt;还有文章说用Kendall&amp;rsquo;s tau比Spearman&amp;rsquo;s Rho要好： Newson R. &lt;a href=&#34;http://www.stata-journal.com/sjpdf.html?articlenum=st0007&#34;&gt;Parameters
+behind &amp;ldquo;nonparametric&amp;rdquo; statistics: Kendall&amp;rsquo;s tau,Somers&amp;rsquo; D and median
+differences&lt;/a&gt;.
+Stata Journal 2002; 2(1):45-64.&lt;/p&gt;
+
+&lt;p&gt;虽然作者强调非参统计，但是如果数据分布满足参数统计的assumption的话，还是用参数统计好，更加powerful。这个可能需要我们在做统计之前对数据分布做一下检验。不过正态检验其实用处也不大，小样本的话，不够powerful，大样本的话，即使不是正态分布，t-test和ANOVA也是很robust的。&lt;/p&gt;
+
+&lt;p&gt;如果不满足参数统计检验的话，也不一定就得用非参统计，不负责任地说，可能用&lt;a href=&#34;http://guangchuangyu.github.io/2009/07/bootstrap-method/&#34;&gt;bootstrap&lt;/a&gt;效果还更好。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;2. R (or I guess S). R is a cranky, odd statistical language/system with
+a great scientific plotting package. Its a package written mainly by
+statisticians for statisticians, and is rather unforgiving the first
+time you use it. It is defnitely worth persevering. It&amp;rsquo;s basically a
+combination of excel spreadsheets on steriods (with no data entry. an
+Rdata frame is really the same logical set as a excel workbook - able to
+handle millions of points, not 1,000s), a statistical methods compendium
+(it&amp;rsquo;s usually the case that statistical methods are written first in R,
+and you can almost guarantee that there are no bugs in the major
+functions - unlike many other scenarios) and a graphical data
+exploration tool (in particular lattice and ggplot packages). The syntax
+is inconsistent, the documentation sometimes wonderful, often awful and
+the learning curve is like the face of the Eiger. But once you&amp;rsquo;ve met
+p.adjust(), xyplot() and apply(), you can never turn back.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.r-project.org&#34;&gt;R&lt;/a&gt;实在是太好用了，习惯用矢量运算之后，我就很少用perl了。不过学生物的，我所见过的人，能用好excel的人不多（我也不会用-,-），会用SPSS的人非常少，SAS从没见过有人用。每次我告诉身边的人，我用的是R，几乎都没人听说过的。在国内，目前主要也就高校里有人用。但至少做生信的，是需要学R的，&lt;a href=&#34;http://www.bioconductor.org/&#34;&gt;Bioconductor&lt;/a&gt;上面那一大堆的软件包，已然是无法回避。&lt;/p&gt;
+
+&lt;p&gt;学生物的人都喜欢有图形界面的软件，像spss这种，点菜单无非是为了选参数，而R这种，变成敲键盘而已，一样的。用编程语言比用分析软件要好，可自动化，而且有利于交流（看一下代码，就知道都干了些什么），像SPSS这种把很多分析模块化，点点鼠标就能把回归模型算出来，固然是好，但是现代的数据分析，已经很少有问题是点个鼠标就能解决的了。&lt;/p&gt;
+
+&lt;p&gt;至于画图，文中提到lattice和ggplot，lattice应该是目前R上面最复杂的图形包，功能比ggplot要强得多，画图速度也比ggplot要快，不过我没用过。只学了ggplot，因为ggplot的语法更加human
+friendly，我觉得，学了ggplot后，都会爱上画图的 =,=&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;3. The problem of multiple testing, and how to handle it, either with
+the Expected value, or FDR, and the backstop of many of piece of
+bioinformatics - large scale permutation. Large scale permutation is
+sometimes frowned upon by more maths/distribution purists but often is
+the only way to get a sensible sense of whether something is likely &amp;ldquo;by
+chance&amp;rdquo; (whatever the latter phrase means - it&amp;rsquo;s a very open question)
+given the complex, hetreogenous data we have. 10 years ago perhaps the
+lack of large scale compute resources meant this option was less open to
+people, but these days basically everyone should be working out how to
+appropriate permute the data to allow a good estimate of
+&amp;ldquo;surprisingness&amp;rdquo; of an observation.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;高通量的组学数据，变得越来越常见，pvalue算的是犯一类错误的概率，组学数据观测点多，而重复少，noise很多，如果单纯卡个pvalue，越高通量的数据，犯二类错误的概率会更大，假阳性没有得到控制。这个越来越重要，这周去给学生上课，我还专门讲了Bonferroni
+Method、Benjamini-Hochberg
+Method还有q-value，不过好像我讲的时候，学生都没啥兴趣，或许有一天，他们写文章，reviewer要求给出FDR的时候，希望还能记起。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;4. The relationship between Pvalue, Effect size, and Sample size This
+needs to be drilled into everyone - we&amp;rsquo;re far too trigger happy quoting
+Pvalues, when we should often be quoting Pvalues and Effect size. Once a
+Pvalue is significant, it&amp;rsquo;s higher significance is sort of meaningless
+(or rather it compounds Effect size things with Sample size things, the
+latter often being about relative frequency). So - if something is
+significantly correlated/different, then you want to know about how much
+of an effect this observation has. This is not just about GWAS like
+statistics - in genomic biology we&amp;rsquo;re all too happy about quoting some
+small Pvalue not realising that with a million or so points often, even
+very small deviations will be significant. Quote your r2, Rhos or
+proportion of variance explained&amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;从没接触过GWAS，不知道是怎么算的，从文中的描述看，这里讲的是power
+analysis，这个对实验设计有用，可以估计sample size。当然如果sample
+size已确定，那么设定pvalue和power，可以计算effect
+size，就是说，实验可以detect出多大的effect。或者知道sample size,effect
+size,
+pvalue，可以计算power，就是说effect存在的话，有多大的概率可以detect出来。这和pvalue不一样，pvalue算的是没有effect（$H_0$）的概率。&lt;/p&gt;
+
+&lt;p&gt;power analysis就是四个变量，颠来倒去，知道三个，算第四个。&lt;/p&gt;
+
+&lt;p&gt;差异越大，越容易检测出来，样本间的variance越大，就需要更大的样本量，来排除样本间差异所带来的干扰。差不多就是这样一些东西。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;5. Linear models and PCA. There is a tendency often to jump to quite
+complex models - networks, or biologically inspired combinations, when
+our first instinct should be to crack out the well established lm()
+(linear model) for prediction and princomp() (PCA) for dimensionality
+reduction. These are old school techniques - and often if you want to
+talk about statistical fits one needs to make gaussian assumptions about
+distributions - but most of the things we do could be either done well
+in a linear model, and most of the correlation we look at could have
+been found with a PCA biplot. The fact that these are 1970s bits of
+statistics doesn&amp;rsquo;t mean they don&amp;rsquo;t work well.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;PCA就是把高维空间映射到低维空间，在保留尽可能多信息的情况下进行降维处理，
+下面这段解释了linear model和PCA之间的不同之处：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;One may also see PCA as an analogue of the least squares method to
+find a line that goes as “near” the points as possible – to simplify,
+let us assume there are just two dimensions. But while the least
+squares method is asymetric (the two variables play different roles:
+they are not interchangeable, we try to predict one from the others,
+we measure the distance parallel to one coordinate axis), the PCA is
+symetric (the distance is measured orthogonally to the line we are
+looking for).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;John Mark在评论里写道，进阶还需要学什么，一并记录下来。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The next level - number 6 - would be to get beyond P values, and
+instead compute probability distributions of the quantities of
+interest. This leads naturally to number 7, which is to delve into the
+generative models that are currently solved by MCMC methods. This is
+basically the Bayesian approach. Just as an aside &amp;ldquo;non parametrics&amp;rdquo; in
+some new work is also used to mean models where the number of
+parameters varies, as a consequence of the method.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Xming-windows下远程linux桌面</title>
       <link>http://guangchuangyu.github.io/cn/2010/07/xming-windows%E4%B8%8B%E8%BF%9C%E7%A8%8Blinux%E6%A1%8C%E9%9D%A2/</link>
       <pubDate>Mon, 05 Jul 2010 07:37:09 +0800</pubDate>
@@ -916,142 +1183,89 @@ OFFER，但是UQ非常龟毛，成绩单不能自己寄，我只能花钱让中�
     </item>
     
     <item>
-      <title>博客转WordPress</title>
-      <link>http://guangchuangyu.github.io/cn/2008/09/%E5%8D%9A%E5%AE%A2%E8%BD%ACwordpress/</link>
-      <pubDate>Tue, 30 Sep 2008 16:20:43 +0800</pubDate>
+      <title>Bootstrap Method</title>
+      <link>http://guangchuangyu.github.io/cn/2009/07/bootstrap-method/</link>
+      <pubDate>Fri, 31 Jul 2009 09:14:42 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/cn/2008/09/%E5%8D%9A%E5%AE%A2%E8%BD%ACwordpress/</guid>
-      <description>&lt;p&gt;找了一个叫&lt;strong&gt;博客备份软件&lt;/strong&gt;的小工具,备份了新浪和ChinaUnix上的blog,导出为RSS
-2.0, sina的blog导出没问题,但是cu的blog导出后,文不对题.狂汗啊&amp;hellip;
-但是生成的xml文件导入到wordpress里不成功.需要改一下才行.&lt;/p&gt;
+      <guid>http://guangchuangyu.github.io/cn/2009/07/bootstrap-method/</guid>
+      <description>
 
-&lt;p&gt;从导出的xml文件里,把&amp;lt;description&amp;gt;&amp;lt;![CDATA[替换成&amp;lt;content:encoded&amp;gt;&amp;lt;![CDATA[&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Bootstrapping_(statistics)&#34;&gt;bootstrap&lt;/a&gt;是对观测数据集进行有放回（replacement）的随机抽样，以评估总体的各项统计指标。可以用于假设检验、参数估计。好处是并不要求大样本，也不要求正态数据，并且对于不同的统计指标使用的是同样的计算方法。结果也更为可靠，坏处是计算量大。&lt;/p&gt;
 
-&lt;p&gt;相应地把]]&amp;gt;&amp;lt;/description&amp;gt;替换成]]&amp;gt;&amp;lt;/content:encoded&amp;gt;&lt;/p&gt;
+&lt;p&gt;统计推断(statistical
+inference)是基于样本统计值的抽样分布来计算的，抽样分布需要从总体中许多的样本来计算，在只有一个样本的情况下，bootstrap对这一随机样本进行有放回的重复抽样，每一个重抽样本与原始随机样本一样大，每次计算相应的抽样的统计值，重复了N次之后，就可以计算统计值的bootstrap分布。&lt;/p&gt;
 
-&lt;p&gt;这样就可以导入了.&lt;/p&gt;
+&lt;p&gt;下面做一个小小的试验：&lt;/p&gt;
 
-&lt;p&gt;导出的时候编码要选utf-8,不然导入到wordpress里会是乱码.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>通过局域网在linux下使用windows的程序</title>
-      <link>http://guangchuangyu.github.io/cn/2008/09/%E9%80%9A%E8%BF%87%E5%B1%80%E5%9F%9F%E7%BD%91%E5%9C%A8linux%E4%B8%8B%E4%BD%BF%E7%94%A8windows%E7%9A%84%E7%A8%8B%E5%BA%8F/</link>
-      <pubDate>Mon, 22 Sep 2008 01:26:00 +0800</pubDate>
-      
-      <guid>http://guangchuangyu.github.io/cn/2008/09/%E9%80%9A%E8%BF%87%E5%B1%80%E5%9F%9F%E7%BD%91%E5%9C%A8linux%E4%B8%8B%E4%BD%BF%E7%94%A8windows%E7%9A%84%E7%A8%8B%E5%BA%8F/</guid>
-      <description>&lt;p&gt;用了好多年linux，现在用windows越来越少了，但是还是得用。没办法，上taobao买个东西，上网银都得用ie，有时候还得用office等其它一些软件。&lt;/p&gt;
-
-&lt;p&gt;实验室里有台机子是做文件服务的，装的是windows 2003
-server。之前使用rdesktop远程桌面，最近发现配合seamlessrdp可以让rdesktop实现更好的效果，运行windows程序，就像linux中原生程序一样。。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt; [下载
-&amp;gt; seamlessrdp.zip](http://www.cendio.se/files/thinlinc/seamlessrdp/seamlessrdp.zip)
-&amp;gt; 解压丢在C盘。
+&lt;pre&gt;&lt;code&gt;a &amp;lt;- c(seq(1:10), rnorm(50))  
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;在linux下运行这样的指令&lt;/p&gt;
+&lt;p&gt;#创建一个样本，60个数据，非正态分布的，如下图&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;gt; rdesktop -A -s &amp;quot;c:\\seamlessrdp/seamlessrdpshell.exe C:\\Program
-&amp;gt; Files\\Internet Explorer\\iexplore.exe&amp;quot; ip:3389 -u administrator -p
-&amp;gt; password
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2009/07/sample_a.png&#34; alt=&#34;&#34; title=&#34;sample_a&#34; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;b &amp;lt;- rep(0, 1000)
+for (i in 1:1000) {
+    b[i] &amp;lt;- mean(sample(a, replace=TRUE))
+}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;就可以在linux下运行服务器端的ie了。windows下所有程序都没问题。&lt;/p&gt;
+&lt;p&gt;对它进行1000次有放回重复抽样，计算均值，均值分布的柱状图和qq图如下：&lt;/p&gt;
 
-&lt;p&gt;这个指令有点长，最好是写个shell脚本，每次运行实际上是进行一次远程连接，windows2003默认只能支持两个远程的连接，所以只能运行两个。正确的做法是运行explorer，然后在里面双击程序，这样可以运行N个程序。运行的程序跟linux下native的程序是一样的。但是读写都在远程机子上，最好架个samba，这样两个机器就可以互相读写文件。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2009/07/hist_qq.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;ps: tsclient做为远程桌面客户端更强大点，不单支持RDP，还支持VNC,XDMCP。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>从概率的角度看 如何告别单身</title>
-      <link>http://guangchuangyu.github.io/cn/2008/08/%E4%BB%8E%E6%A6%82%E7%8E%87%E7%9A%84%E8%A7%92%E5%BA%A6%E7%9C%8B-%E5%A6%82%E4%BD%95%E5%91%8A%E5%88%AB%E5%8D%95%E8%BA%AB/</link>
-      <pubDate>Tue, 26 Aug 2008 15:10:00 +0800</pubDate>
-      
-      <guid>http://guangchuangyu.github.io/cn/2008/08/%E4%BB%8E%E6%A6%82%E7%8E%87%E7%9A%84%E8%A7%92%E5%BA%A6%E7%9C%8B-%E5%A6%82%E4%BD%95%E5%91%8A%E5%88%AB%E5%8D%95%E8%BA%AB/</guid>
-      <description>&lt;p&gt;国家人口统计男人比女人多了3700万，在大学校园里更是流传着“我很丑，可是我很抢手”（女生版）、“我很帅，可是我很无奈”（男生版）。&lt;/p&gt;
+&lt;p&gt;分布是正态的。&lt;/p&gt;
 
-&lt;p&gt;鉴于大龄猥琐男越来越盛行，以及小平同志说“让一部分人先恋起来嘛”
-今日从科学的角度，让大家明白如何告别单身。
-授人与鱼不如授人与渔。即使没能让你奔小康，起码也解决温饱~~~&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2008/11/xx0.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;告别单身的不二法则，三个字，“厚脸皮”，详见下面分析&lt;/p&gt;
-
-&lt;p&gt;如果一个男人追一个女人，成功的概率只有0.2，
-那么连续追6个，至少有一个成功的概率，高达0.74&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt; 1-0.8^6
-[1] 0.737856
+&lt;pre&gt;&lt;code&gt;&amp;gt; mean(a)    #样本均值
+[1] 0.947186
+&amp;gt; mean(b)   #重抽样1000个样本均值的均值
+[1] 0.9358049
+&amp;gt; sd(b)
+[1] 0.3245479
+&amp;gt; sd(a)/sqrt(60)
+[1] 0.3318863
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;如果连续追7个的话，至少一个成功的概率将达到0.79&lt;/p&gt;
+&lt;p&gt;由bootstrap方法得到的标准误是0.325，而由原先随机样本所估算的是0.332，两者是相当接近的。由此可见呢，bootstrap方法与理论上的从总体中抽样所得到的样本分布是一致的，这样子就可以基于一个样本来计算样本的分布，而不是要从总体中抽N个样本。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;gt; 1-0.8^7
-[1] 0.7902848
+&lt;p&gt;还用上面的例子，使用样本均值$ \bar{x}$去估算总体的均值$
+\mu$，虽然我们的样本不是正态的，但如果bootstrap
+distribution是正态的话，就可以使用类似于单样本t置信区间（要求样本是正态的）的公式:$
+\bar{x} \pm t \cdot SE = \bar{x} \pm t \cdot
+\frac{s}{\sqrt{n}}$ 相应的bootstrap t置信区间是：$ statistic
+\pm t \cdot SE_{boot}$ 上面例子，总体均值$ \mu$
+95%的置信度，就会落在：$ mean(a) \pm 2.009 \cdot sd(b)$
+可以使用它，计算所有统计指标的置信区间。&lt;/p&gt;
+
+&lt;p&gt;用于层次聚类分析的一个例子，使用Pvclust这个包，用于层次聚类，并通过multiscale
+bootstrap
+resampling给出相应的&lt;em&gt;p&lt;/em&gt;-value用于评估聚类结果的不确定性。提供了两种&lt;em&gt;p&lt;/em&gt;-values，AU（approximately
+unbiased p-value, 通过multiscale bootstrap
+resampling计算）和BP（bootstrap probability, 通过normal bootstrap
+resampling计算），AU比BP较为unbiased。
+Pvclust使用*hclust*（来自于stats包）进行层次聚类，并自动计算所有的子类的&lt;em&gt;p&lt;/em&gt;-value。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;library(pvclust)  # loads package
+a &amp;lt;- matrix(rnorm(1000), 100, 10, dimnames=list(paste(&amp;quot;g&amp;quot;, 1:100, sep=&amp;quot;&amp;quot;), paste(&amp;quot;t&amp;quot;,1:10, sep=&amp;quot;&amp;quot;)))  # creats sample data
+at &amp;lt;- t(a)  # transposes of a
+cl &amp;lt;- pvclust(at, nboot=1000)  #performs hierarchical cluster analysis with multiscale bootstrap with 1000 repetitions.
+pvrect(cl, alpha=0.95)  #highlights with red rectangles all clusters in the dendrogram which have an AU value above 95%, AU p-value &amp;gt; 0.95, the hypothesis that &amp;quot;the cluster does not exist&amp;quot; is rejected with significance level 0.05;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;如果你不是特别差，成功的概率假如是0.3，那么连续追几个的成功概率将更高。。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2009/07/pvclust_test.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;gt; 1-0.7^6
-[1] 0.882351
-&amp;gt; 1-0.7^7
-[1] 0.9176457
+&lt;pre&gt;&lt;code&gt;#pick significant clusters.
+clsig &amp;lt;- pvpick(cl, alpha=0.95, pv=&amp;quot;au&amp;quot;, type=&amp;quot;geq&amp;quot;, max.only=TRUE)  
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;连追女生个数从1到10,至少成功一次的机会，我们以成功概率0.1为例，90%的可能性拿到好人卡。（通常我们成功的概率会比这个高，恩！）
-，从下面的数字大家可以看到增长速度之快，是惊人的。多追几个，不成功那是小概率事件。&lt;/p&gt;
+&lt;h3 id=&#34;reference:5129f3fc49180ee68d0efdb6ded483c8&#34;&gt;Reference&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;gt; x &amp;lt;- 1:20 
-&amp;gt; y &amp;lt;- sapply(x, function(i) 1-0.9^i) 
-&amp;gt; y
-[1] 0.1000000 0.1900000 0.2710000 0.3439000 0.4095100 0.4685590 0.5217031 0.5695328 0.6125795 0.6513216 0.6861894 0.7175705
-[13] 0.7458134 0.7712321 0.7941089 0.8146980 0.8332282 0.8499054 0.8649148 0.8784233
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;1.  Moore, D.S., McCabe, G.P. &amp;amp; Craig, B. Introduction to the Practice
+of Statistics w/CD-ROM.  (W. H. Freeman: 2007).&lt;/p&gt;
 
-&lt;p&gt;下面我用多项式回归对数据进行拟合。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt; xv &amp;lt;- seq(1,20, 0.1) 
-&amp;gt; x2 &amp;lt;- x^2 
-&amp;gt; qualm &amp;lt;- lm(y ~ x+x2) 
-&amp;gt; yv &amp;lt;- predict(qualm, list(x=xv, x2=xv^2)) 
-&amp;gt; lines(xv,yv)
-&amp;gt; summary(qualm)
-
-Call:
-lm(formula = y ~ x + x2)
-
-Residuals:
-Min 1Q Median 3Q Max
--2.250e-02 -7.706e-03 -9.328e-07 8.678e-03 1.773e-02
-
-Coefficients:
-Estimate Std. Error t value Pr(&amp;gt;|t|)
-(Intercept) 4.396e-02 8.277e-03 5.311 5.75e-05 ***
-x 8.053e-02 1.815e-03 44.358 &amp;lt; 2e-16 ***
-x2 -1.984e-03 8.397e-05 -23.633 1.92e-14 ***
----
-Signif. codes: 0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-Residual standard error: 0.01113 on 17 degrees of freedom
-Multiple R-squared: 0.998, Adjusted R-squared: 0.9978
-F-statistic: 4334 on 2 and 17 DF, p-value: &amp;lt; 2.2e-16
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;拟合结果，显示，$ y = 0.04396 + 0.08053x - 0.001984x^2 $
-其中x表示表白次数，y是至少成功一次的概率。&lt;/p&gt;
-
-&lt;p&gt;拟合结果，如下图所示：
-&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2008/11/lm.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;男人对女人耍流氓，叫调戏，女人对男人耍流氓，叫勾引，男人女人互相耍流氓，叫两情相悦。
-脱单的不二法则，就是不断地耍流氓，焉知下一次耍流氓的结果，对方不是以耍流氓相报呢，同志们，这就是两情相悦啦。&lt;/p&gt;
-
-&lt;p&gt;流氓会学术，挡也挡不住。&lt;/p&gt;
+&lt;p&gt;2.  Suzuki, R. (2006). Pvclust: an R package for assessing the uncertainty in hierarchical clustering, Bioinformatics, 22(12), 1540-1542
+DOI:
+&lt;a href=&#34;http://dx.doi.org/10.1093/bioinformatics/btl117&#34;&gt;10.1093/bioinformatics/btl117&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
