@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
@@ -14,7 +17,7 @@
   <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
   
-  <title>scilab三维平面绘图</title>
+  <title>License</title>
 
   
   
@@ -99,140 +102,17 @@
       <article class="hentry" role="article">
         <header>
           <h1 class="entry-title">
-            scilab三维平面绘图 
+            License
           </h1>
-          <p class="meta">May 3, 2007 - 1 minute read - 
-
-          
-
-          
-          
-          <a class="label" href="http://guangchuangyu.github.io/cn/categories/software">Software</a><a class="label" href="http://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
-          </p>
         </header>
         <div class="entry-content">
-          
-          
-          
-    <span class='st_twitter_hcount' displayText='Tweet'></span>
-    <span class='st_facebook_hcount' displayText='Facebook'></span>
-    <span class='st_sina_hcount' displayText='Sina'></span>
-    <span class='st_linkedin_hcount' displayText='LinkedIn'></span>
-        
-    
+          <p>Unless otherwise noted, all of the material on this web site is Copyright © 2005-2016 by Guangchuang Yu.</p>
 
-<p>三维绘图可以分为两大类型：矩阵型和曲面型。</p>
+<p>All rights reserved. No part of this web site may be reproduced, published, distributed, displayed, performed, copied or stored for public or private use in any information retrieval system, or transmitted in any form by any mechanical, photographic or electronic process, including electronically or digitally on the Internet or World Wide Web, or over any network, or local area network, without written permission of the author.</p>
 
-<h2 id="矩阵型:8b9e6891715644f541f979f699d9fdf4">矩阵型</h2>
+<p>You may not, without the author&rsquo;s express written permission, &ldquo;mirror&rdquo; any material contained on this web site on any other server. Any unauthorized use of any material contained on this web site may violate copyright laws and subject to violator to legal judgement and penalties.</p>
 
-<p>通常是声明一个矩阵，以矩阵的长宽为x,y范围，以矩阵里面的数值为高z，
-使用<code>plot3d(t1,t2,Z,alpha=a,theta=b)</code></p>
-
-<ul>
-<li>t1:y轴方向的范围</li>
-<li>t2:x轴方向的范围</li>
-<li>Z:矩阵</li>
-<li>alpha</li>
-<li>theta参数用于指定角度，让图绘出来以某个特定的角度呈现出来。(optional)</li>
-</ul>
-
-<pre><code>-&gt;clear -&gt;A=[1 2 5 4 3;0 3 2 8 6;2 4 6 7 5;2 3 4 3 1];
--&gt;t1=1:4; -&gt;t2=1:5;
-//plot3d1与plot3d语法类似，能够嵌入多种颜色
--&gt;plot3d(t1,t2,A,alpha=45,theta=45);
-</code></pre>
-
-<p>mesh不需要边界声明， <code>-&gt;mesh(A);</code></p>
-
-<h2 id="曲面型:8b9e6891715644f541f979f699d9fdf4">曲面型</h2>
-
-<p>则是先声明一个连续函数，再选取x,y范围来绘图。
-<code>fplot3d()</code>指令用来绘制连续函数。
-用<code>fplot3d</code>之前，用<code>deff</code>或<code>function</code>声明函数z,然后再声明函数范围x,y.</p>
-
-<pre><code>-&gt;deff('z=f(x,y)','z=x\*y'); 
--&gt;x=-10:8; -&gt;y=-6:12;
--&gt;fplot3d(x,y,f);
-</code></pre>
-
-<h2 id="柱状图:8b9e6891715644f541f979f699d9fdf4">柱状图</h2>
-
-<pre><code>-&gt;A=[1 3 5 7;2 6 10 14]; //声明一个矩阵 
--&gt;hist3d(A);
-</code></pre>
-
-<h2 id="空间立体曲线图:8b9e6891715644f541f979f699d9fdf4">空间立体曲线图</h2>
-
-<p><code>param3d</code>绘制的是线，而非面。 <code>param3d(xf,yf,zf);</code></p>
-
-<ul>
-<li>xf:x方向的函数</li>
-<li>yf:y方向的函数</li>
-<li>zf:z方向的函数</li>
-</ul>
-
-<pre><code>-&gt;t=linspace(-%pi,%pi);
--&gt;param3d(sin(t),cos(t),t);
-</code></pre>
-
-
-    
-    <span class='st_twitter_hcount' displayText='Tweet'></span>
-    <span class='st_facebook_hcount' displayText='Facebook'></span>
-    <span class='st_sina_hcount' displayText='Sina'></span>
-    <span class='st_linkedin_hcount' displayText='LinkedIn'></span>
         </div>
-        
-
-<footer>
-  <p class="meta">
-    <span class="byline author vcard">Posted by <span class="fn">Guangchuang Yu</span></span>
-    
-    <time>May 3, 2007</time>
-    <span class="categories">
-      Tags:
-        
-        
-          <a class="category" href="http://guangchuangyu.github.io/cn/tags/scilab">scilab</a>  
-        
-    </span>
-  </p>
-
-  
-  
-
-  
-
-  <p class="meta">
-    
-        <a class="basic-alignment left" href="http://guangchuangyu.github.io/cn/2006/06/qvwm%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E5%99%A8%E7%9A%84windows2000%E4%B8%BB%E9%A2%98/" title="qvwm窗口管理器的windows2000主题">qvwm窗口管理器的windows2000主题</a>
-    
-
-    
-      <a class="basic-alignment right" href="http://guangchuangyu.github.io/cn/2007/05/pkgsrc-tips/" title="pkgsrc tips">pkgsrc tips</a>
-    
-  </p>
-
-  
-<div class="ds-thread" data-thread-key= scilab三维平面绘图 data-title= scilab三维平面绘图 data-url= http://guangchuangyu.github.io/cn/2007/05/scilab%E4%B8%89%E7%BB%B4%E5%B9%B3%E9%9D%A2%E7%BB%98%E5%9B%BE/ ></div>
-
-
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"ygc-hku"};
-  (function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] 
-     || document.getElementsByTagName('body')[0]).appendChild(ds);
-  })();
-  </script>
-
-  
-  
-</footer>
-
       </article>
     </div>
     
@@ -384,4 +264,5 @@ MathJax.Hub.Config({
 
 </body>
 </html>
+
 
