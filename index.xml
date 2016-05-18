@@ -732,6 +732,517 @@ windows，另外fcitx的五笔是我最喜欢的输入法。&lt;/p&gt;
     </item>
     
     <item>
+      <title>Use ggplot2</title>
+      <link>http://guangchuangyu.github.io/cn/2014/05/use-ggplot2/</link>
+      <pubDate>Sun, 11 May 2014 06:17:56 +0800</pubDate>
+      
+      <guid>http://guangchuangyu.github.io/cn/2014/05/use-ggplot2/</guid>
+      <description>
+
+&lt;h3 id=&#34;why-use-ggplot2:c38c63fac86d2290b6bc01da39216614&#34;&gt;Why use ggplot2&lt;/h3&gt;
+
+&lt;p&gt;ggplot2是我见过最human friendly的画图软件，这得益于Leland
+Wilkinson在他的著作《&lt;a href=&#34;http://book.douban.com/subject/10123863/&#34;&gt;The Grammar of
+Graphics&lt;/a&gt;》中提出了一套图形语法，把图形元素抽象成可以自由组合的成分，Hadley
+Wickham把这套想法在R中实现。&lt;/p&gt;
+
+&lt;p&gt;为什么要学习ggplot2，可以参考&lt;a href=&#34;http://book.douban.com/subject/24527091/&#34;&gt;ggplot2: 数据分析与图形艺术&lt;/a&gt;的&lt;a href=&#34;https://github.com/cosname/ggplot2-translation/blob/master/preface.md&#34;&gt;序言&lt;/a&gt;（btw:
+在序言的最后，我被致谢了）。&lt;/p&gt;
+
+&lt;p&gt;Hadley
+Wickham也给出&lt;a href=&#34;https://github.com/hadley/ggplot2/wiki/Why-use-ggplot2&#34;&gt;一堆理由&lt;/a&gt;让我们说服自己，我想再补充一点，Hadley
+Wickham是学医出身的，做为学生物出身的人有什么理由不支持呢:)&lt;/p&gt;
+
+&lt;p&gt;ggplot2基本要素&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;数据（Data）和映射（Mapping）&lt;/li&gt;
+&lt;li&gt;几何对象（Geometric）&lt;/li&gt;
+&lt;li&gt;标尺（Scale）&lt;/li&gt;
+&lt;li&gt;统计变换（Statistics）&lt;/li&gt;
+&lt;li&gt;坐标系统（Coordinante）&lt;/li&gt;
+&lt;li&gt;图层（Layer）&lt;/li&gt;
+&lt;li&gt;分面（Facet）&lt;/li&gt;
+&lt;li&gt;主题（Theme）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;这里将从这些基本要素对ggplot2进行介绍。&lt;/p&gt;
+
+&lt;h3 id=&#34;数据-data-和映射-mapping:c38c63fac86d2290b6bc01da39216614&#34;&gt;数据（Data）和映射（Mapping)&lt;/h3&gt;
+
+&lt;p&gt;下面以一份钻石的数据为例，这份数据非常大，随机取一个子集来画图。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;require(ggplot2)
+data(diamonds)
+set.seed(42)
+small &amp;lt;- diamonds[sample(nrow(diamonds), 1000), ]
+head(small)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;##       carat       cut color clarity depth table price    x    y    z
+## 49345  0.71 Very Good     H     SI1  62.5    60  2096 5.68 5.75 3.57
+## 50545  0.79   Premium     H     SI1  61.8    59  2275 5.97 5.91 3.67
+## 15434  1.03     Ideal     F     SI1  62.4    57  6178 6.48 6.44 4.03
+## 44792  0.50     Ideal     E     VS2  62.2    54  1624 5.08 5.11 3.17
+## 34614  0.27     Ideal     E     VS1  61.6    56   470 4.14 4.17 2.56
+## 27998  0.30   Premium     E     VS2  61.7    58   658 4.32 4.34 2.67
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;summary(small)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;##      carat              cut      color      clarity        depth     
+##  Min.   :0.220   Fair     : 28   D:121   SI1    :258   Min.   :55.2  
+##  1st Qu.:0.400   Good     : 88   E:186   VS2    :231   1st Qu.:61.0  
+##  Median :0.710   Very Good:227   F:164   SI2    :175   Median :61.8  
+##  Mean   :0.819   Premium  :257   G:216   VS1    :141   Mean   :61.7  
+##  3rd Qu.:1.070   Ideal    :400   H:154   VVS2   : 91   3rd Qu.:62.5  
+##  Max.   :2.660                   I:106   VVS1   : 67   Max.   :72.2  
+##                                  J: 53   (Other): 37                 
+##      table          price             x              y       
+##  Min.   :50.1   Min.   :  342   Min.   :3.85   Min.   :3.84  
+##  1st Qu.:56.0   1st Qu.:  990   1st Qu.:4.74   1st Qu.:4.76  
+##  Median :57.0   Median : 2595   Median :5.75   Median :5.78  
+##  Mean   :57.4   Mean   : 4111   Mean   :5.79   Mean   :5.79  
+##  3rd Qu.:59.0   3rd Qu.: 5495   3rd Qu.:6.60   3rd Qu.:6.61  
+##  Max.   :65.0   Max.   :18795   Max.   :8.83   Max.   :8.87  
+##                                                              
+##        z       
+##  Min.   :2.33  
+##  1st Qu.:2.92  
+##  Median :3.55  
+##  Mean   :3.57  
+##  3rd Qu.:4.07  
+##  Max.   :5.58  
+## 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;画图实际上是把数据中的变量映射到图形属性上。以克拉(carat)数为X轴变量，价格(price)为Y轴变量。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;p &amp;lt;- ggplot(data = small, mapping = aes(x = carat, y = price))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上面这行代码把数据映射XY坐标轴上，需要告诉ggplot2，这些数据要映射成什么样的几何对象，下面以散点为例：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;p + geom_point()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;几何对象将在下面的小节介绍，这一节，关注的是数据和图形属性之间的映射。&lt;/p&gt;
+
+&lt;p&gt;如果想将切工（cut）映射到形状属性。只需要：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;p &amp;lt;- ggplot(data=small, mapping=aes(x=carat, y=price, shape=cut))
+p+geom_point()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;再比如我想将钻石的颜色（color）映射颜色属性：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;p &amp;lt;- ggplot(data=small, mapping=aes(x=carat, y=price, shape=cut, colour=color))
+p+geom_point()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;几何对象-geometric:c38c63fac86d2290b6bc01da39216614&#34;&gt;几何对象（Geometric）&lt;/h3&gt;
+
+&lt;p&gt;在上面的例子中，各种属性映射由ggplot函数执行，只需要加一个图层，使用geom_point()告诉ggplot要画散点，于是所有的属性都映射到散点上。&lt;/p&gt;
+
+&lt;p&gt;geom_point()完成的就是几何对象的映射，ggplot2提供了各种几何对象映射，如geom_histogram用于直方图，geom_bar用于画柱状图，geom_boxplot用于画箱式图等等。&lt;/p&gt;
+
+&lt;p&gt;不同的几何对象，要求的属性会有些不同，这些属性也可以在几何对象映射时提供，比如上一图，也可以用以下语法来画：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;p &amp;lt;- ggplot(small)
+p+geom_point(aes(x=carat, y=price, shape=cut, colour=color))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ggplot2支持图层，我通常把不同的图层中共用的映射提供给ggplot函数，而某一几何对象才需要的映射参数提供给geom_xxx函数。&lt;/p&gt;
+
+&lt;p&gt;这一小节我们来看一下各种常用的几何对象。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;直方图&lt;/strong&gt; 直方图最容易，提供一个x变量，画出数据的分布。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_histogram(aes(x=price))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig4.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;同样可以根据另外的变量给它填充颜色，比如按不同的切工：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_histogram(aes(x=price, fill=cut))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig5.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;也可以将其分开，side-by-side地画直方图。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_histogram(aes(x=price, fill=cut), position=&amp;quot;dodge&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig6.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;还可以使用position=&amp;ldquo;fill&amp;rdquo;，按照相对比例来画。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_histogram(aes(x=price, fill=cut), position=&amp;quot;fill&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig7.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;柱状图&lt;/strong&gt;
+柱状图非常适合于画分类变量。在这里以透明度（clarity）变量为例。按照不同透明度的钻石的数目画柱状图。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_bar(aes(x=clarity))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig8.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;柱状图两个要素，一个是分类变量，一个是数目，也就是柱子的高度。数目在这里不用提供，因为ggplot2会通过x变量计算各个分类的数目。&lt;/p&gt;
+
+&lt;p&gt;当然你想提供也是可以的，通过stat参数，可以让geom_bar按指定高度画图，比如以下代码：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ggplot()+geom_bar(aes(x=c(LETTERS[1:3]),y=1:3), stat=&amp;quot;identity&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig24.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;柱状图和直方图是很像的，直方图把连续型的数据按照一个个等长的分区（bin）来切分，然后计数，画柱状图。而柱状图是分类数据，按类别计数。我们可以用前面直方图的参数来画side-by-side的柱状图，填充颜色或者按比例画图，它们是高度一致的。&lt;/p&gt;
+
+&lt;p&gt;柱状图是用来表示计数数据的，但在生物界却被经常拿来表示均值，加上误差来表示数据分布，这可以通常图层来实现，我将在图层一节中给出实例。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;密度函数图&lt;/strong&gt;
+说到直方图，就不得不说密度函数图，数据和映射和直方图是一样的，唯一不同的是几何对象，geom_histogram告诉ggplot要画直方图，而geom_density则说我们要画密度函数图，在我们熟悉前面语法的情况下，很容易画出：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_density(aes(x=price, colour=cut))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig9.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_density(aes(x=price,fill=clarity))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig10.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;colour参数指定的是曲线的颜色，而fill是往曲线下面填充颜色。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;箱式图&lt;/strong&gt;
+数据量比较大的时候，用直方图和密度函数图是表示数据分布的好方法，而在数据量较少的时候，比如很多的生物实验，很多时候大家都是使用柱状图+errorbar的形式来表示，不过这种方法的信息量非常低，被&lt;a href=&#34;http://guangchuangyu.github.io/2014/03/boxplot/&#34;&gt;Nature Methods吐槽&lt;/a&gt;，这种情况推荐使用boxplot。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_boxplot(aes(x=cut, y=price,fill=color))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;geom_boxplot将数据映射到箱式图上，上面的代码，我们应该很熟悉了，按切工(cut)分类，对价格(price)变量画箱式图，再分开按照color变量填充颜色。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig11.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ggplot2提供了很多的geom_xxx函数，可以满足我们对各种图形绘制的需求。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;geom_abline     geom_area   
+geom_bar        geom_bin2d
+geom_blank      geom_boxplot    
+geom_contour    geom_crossbar
+geom_density    geom_density2d  
+geom_dotplot    geom_errorbar
+geom_errorbarh  geom_freqpoly   
+geom_hex        geom_histogram
+geom_hline      geom_jitter     
+geom_line       geom_linerange
+geom_map        geom_path   
+geom_point      geom_pointrange
+geom_polygon    geom_quantile   
+geom_raster     geom_rect
+geom_ribbon     geom_rug    
+geom_segment    geom_smooth
+geom_step       geom_text   
+geom_tile       geom_violin
+geom_vline
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;标尺-scale:c38c63fac86d2290b6bc01da39216614&#34;&gt;标尺（Scale）&lt;/h3&gt;
+
+&lt;p&gt;前面我们已经看到了，画图就是在做映射，不管是映射到不同的几何对象上，还是映射各种图形属性。这一小节介绍标尺，在对图形属性进行映射之后，使用标尺可以控制这些属性的显示方式，比如坐标刻度，可能通过标尺，将坐标进行对数变换；比如颜色属性，也可以通过标尺，进行改变。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_point(aes(x=carat, y=price, shape=cut, colour=color))+scale_y_log10()+scale_colour_manual(values=rainbow(7))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig12.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;以数据（Data）和映射（Mapping)一节中所画散点图为例，将Y轴坐标进行log10变换，再自己定义颜色为彩虹色。&lt;/p&gt;
+
+&lt;h3 id=&#34;统计变换-statistics:c38c63fac86d2290b6bc01da39216614&#34;&gt;统计变换（Statistics）&lt;/h3&gt;
+
+&lt;p&gt;统计变换对原始数据进行某种计算，然后在图上表示出来，例如对散点图上加一条回归线。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ggplot(small, aes(x=carat, y=price))+geom_point()+scale_y_log10()+stat_smooth()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig13.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这里就不按颜色、切工来分了，不然ggplot会按不同的分类变量分别做回归，图就很乱，如果我们需要这样做，我们可以使用分面，这个将在后面介绍。&lt;/p&gt;
+
+&lt;p&gt;这里，aes所提供的参数，就通过ggplot提供，而不是提供给geom_point，因为ggplot里的参数，相当于全局变量，geom_point()和stat_smooth()都知道x,y的映射，如果只提供给geom_point()，则相当于是局部变量，geom_point知道这种映射，而stat_smooth不知道，当然你再给stat_smooth也提供x,y的映射，不过共用的映射，还是提供给ggplot好。
+ggplot2提供了多种统计变换方式：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;stat_abline       stat_contour      stat_identity     stat_summary
+stat_bin          stat_density      stat_qq           stat_summary2d
+stat_bin2d        stat_density2d    stat_quantile     stat_summary_hex
+stat_bindot       stat_ecdf         stat_smooth       stat_unique
+stat_binhex       stat_function     stat_spoke        stat_vline
+stat_boxplot      stat_hline        stat_sum          stat_ydensity
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;统计变换是非常重要的功能，我们可以自己写函数，基于原始数据做某种计算，并在图上表现出来，也可以通过它改变geom_xxx函数画图的默认统计参数。
+比如我在&lt;a href=&#34;http://www.sciencedirect.com/science/article/pii/S1874391912007567&#34;&gt;Proteomic investigation of the interactome of FMNL1 in hematopoietic cells unveils a role in calcium-dependent membrane plasticity&lt;/a&gt;的图一中，就把boxplot的中位线替换成了平均值来作图。&lt;/p&gt;
+
+&lt;h3 id=&#34;坐标系统-coordinante:c38c63fac86d2290b6bc01da39216614&#34;&gt;坐标系统（Coordinante）&lt;/h3&gt;
+
+&lt;p&gt;坐标系统控制坐标轴，可以进行变换，例如XY轴翻转，笛卡尔坐标和极坐标转换，以满足我们的各种需求。&lt;/p&gt;
+
+&lt;p&gt;坐标轴翻转由coord_flip()实现&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_bar(aes(x=cut, fill=cut))+coord_flip()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig14.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;而转换成极坐标可以由coord_polar()实现：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_bar(aes(x=factor(1), fill=cut))+coord_polar(theta=&amp;quot;y&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2.fig15.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这也是为什么之前介绍常用图形画法时没有提及饼图的原因，饼图实际上就是柱状图，只不过是使用极坐标而已，柱状图的高度，对应于饼图的弧度，饼图并不推荐，因为人类的眼睛比较弧度的能力比不上比较高度（柱状图）&lt;/p&gt;
+
+&lt;p&gt;还可以画靶心图：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_bar(aes(x=factor(1), fill=cut))+coord_polar()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig16.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;以及风玫瑰图(windrose)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_bar(aes(x=clarity, fill=cut))+coord_polar()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig17.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;图层-layer:c38c63fac86d2290b6bc01da39216614&#34;&gt;图层（Layer）&lt;/h3&gt;
+
+&lt;p&gt;photoshop流行的原因在于PS
+3.0时引入图层的概念，ggplot的牛B之处在于使用+号来叠加图层，这堪称是泛型编程的典范。
+在前面散点图上，我们已经见识过，加上了一个回归线拟合的图层。&lt;/p&gt;
+
+&lt;p&gt;有了图层的概念，使用ggplot画起图来，就更加得心应手。&lt;/p&gt;
+
+&lt;p&gt;做为图层的一个很好的例子是&lt;a href=&#34;http://guangchuangyu.github.io/2011/08/the-batman-equation/&#34;&gt;蝙蝠侠logo&lt;/a&gt;，batman
+logo由6个函数组成，在下面的例子中，我先画第一个函数，之后再加一个图层画第二个函数，不断重复这一过程，直到六个函数全部画好。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;require(ggplot2)
+f1 &amp;lt;- function(x) {
+    y1 &amp;lt;- 3*sqrt(1-(x/7)^2)
+    y2 &amp;lt;- -3*sqrt(1-(x/7)^2)
+    y &amp;lt;- c(y1,y2)
+    d &amp;lt;- data.frame(x=x,y=y)
+    d &amp;lt;- d[d$y &amp;gt; -3*sqrt(33)/7,]
+    return(d)
+}
+ 
+x1 &amp;lt;- c(seq(3, 7, 0.001), seq(-7, -3, 0.001))
+d1 &amp;lt;- f1(x1)
+p1 &amp;lt;- ggplot(d1,aes(x,y)) + geom_point(color=&amp;quot;red&amp;quot;) +xlab(&amp;quot;&amp;quot;) + ylab(&amp;quot;&amp;quot;) + theme_bw()
+ 
+x2 &amp;lt;- seq(-4,4, 0.001)
+y2 &amp;lt;- abs(x2/2)-(3*sqrt(33)-7)*x2^2/112-3 + sqrt(1-(abs(abs(x2)-2)-1)^2)
+d2 &amp;lt;- data.frame(x2=x2, y2=y2)
+p2 &amp;lt;- p1 + geom_point(data=d2, aes(x=x2,y=y2), color=&amp;quot;yellow&amp;quot;)
+ 
+x3 &amp;lt;- c(seq(0.75,1,0.001), seq(-1,-0.75,0.001))
+y3 &amp;lt;- 9-8*abs(x3)
+d3 &amp;lt;- data.frame(x3=x3, y3=y3)
+p3 &amp;lt;- p2+geom_point(data=d3, aes(x=x3,y=y3), color=&amp;quot;green&amp;quot;)
+ 
+x4 &amp;lt;- c(seq(0.5,0.75,0.001), seq(-0.75,-0.5,0.001))
+y4 &amp;lt;- 3*abs(x4)+0.75
+d4 &amp;lt;- data.frame(x4=x4,y4=y4)
+p4 &amp;lt;- p3+geom_point(data=d4, aes(x=x4,y=y4), color=&amp;quot;steelblue&amp;quot;)
+  
+x5 &amp;lt;- seq(-0.5,0.5,0.001)
+y5 &amp;lt;- rep(2.25,length(x5))
+d5 &amp;lt;- data.frame(x5=x5,y5=y5)
+p5 &amp;lt;- p4+geom_point(data=d5, aes(x=x5,y=y5))
+ 
+x6 &amp;lt;- c(seq(-3,-1,0.001), seq(1,3,0.001))
+y6 &amp;lt;- 6 * sqrt(10)/7 +
+    (1.5 - 0.5 * abs(x6)) * sqrt(abs(abs(x6)-1)/(abs(x6)-1)) -
+    6 * sqrt(10) * sqrt(4-(abs(x6)-1)^2)/14
+d6 &amp;lt;- data.frame(x6=x6,y6=y6)
+p6 &amp;lt;- p5+geom_point(data=d6,aes(x=x6,y=y6), colour=&amp;quot;blue&amp;quot;)
+
+multiplot &amp;lt;- function (..., plotlist = NULL, cols = 1, layout = NULL) {
+    plots &amp;lt;- c(list(...), plotlist)
+    numPlots = length(plots)
+    if (is.null(layout)) {
+        layout &amp;lt;- matrix(seq(1, cols * ceiling(numPlots/cols)),
+            ncol = cols, nrow = ceiling(numPlots/cols))
+    }
+    if (numPlots == 1) {
+        print(plots[[1]])
+    }
+    else {
+        grid.newpage()
+        pushViewport(viewport(layout = grid.layout(nrow(layout),
+            ncol(layout))))
+        for (i in 1:numPlots) {
+            matchidx &amp;lt;- as.data.frame(which(layout == i, arr.ind = TRUE))
+            print(plots[[i]], vp = viewport(layout.pos.row = matchidx$row,
+                layout.pos.col = matchidx$col))
+        }
+    }
+}
+
+multiplot(p1,p2,p3,p4,p5,p6, cols=2)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_batman.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;分面-facet:c38c63fac86d2290b6bc01da39216614&#34;&gt;分面（Facet）&lt;/h3&gt;
+
+&lt;p&gt;在《&lt;a href=&#34;http://book.douban.com/subject/24527091/&#34;&gt;ggplot2: 数据分析与图形艺术&lt;/a&gt;》一书的翻译中，一开始译者把facet翻译成切片，我在校稿的时候发现了，给他们写信，推荐翻译成分面，如果是slice这个词，翻译成切片倒是很精准，BSD的硬盘分区就叫slice，但facet从词源上看就是小脸的意思，翻译成分面才到位。给他们写信的时候，我还专门查了&lt;a href=&#34;http://dict.cnki.net/&#34;&gt;CNKI翻译助手&lt;/a&gt;，发现这词在信息学中，翻成分面早已是固定的。我感觉这是我对这本书翻译的最大贡献，校稿过程中发现的少量小问题远比不上这个关键词意思的把握上。&lt;/p&gt;
+
+&lt;p&gt;分面可以让我们按照某种给定的条件，对数据进行分组，然后分别画图。
+在统计变换一节中，提到如果按切工分组作回归线，显然图会很乱，有了分面功能，我们可以分别作图。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ggplot(small, aes(x=carat, y=price))+geom_point(aes(colour=cut))+scale_y_log10() +facet_wrap(~cut)+stat_smooth()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig18.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;主题-theme:c38c63fac86d2290b6bc01da39216614&#34;&gt;主题（Theme）&lt;/h3&gt;
+
+&lt;p&gt;通过ggplot画图之后，我们可能还需要对图进行定制，像title, xlab,
+ylab这些高频需要用到的，自不用说，ggplot2提供了ggtitle(),
+xlab()和ylab()来实现。 比如：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;p &amp;lt;- ggplot(small)+geom_boxplot(aes(x=cut, y=price,fill=color))
+p + ggtitle(&amp;quot;Price vs Cut&amp;quot;)+xlab(&amp;quot;Cut&amp;quot;)+ylab(&amp;quot;Price&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2.fig19.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;但是这个远远满足不了需求，我们需要改变字体，字体大小，坐标轴，背景等各种元素，这需要通过theme()函数来完成。&lt;/p&gt;
+
+&lt;p&gt;ggplot2提供一些已经写好的主题，比如&lt;code&gt;theme_grey()&lt;/code&gt;为默认主题，我经常用的&lt;code&gt;theme_bw()&lt;/code&gt;为白色背景的主题，还有&lt;code&gt;theme_classic()&lt;/code&gt;主题，和R的基础画图函数较像。&lt;/p&gt;
+
+&lt;p&gt;别外ggthemes包提供了一些主题可供使用，包括：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;theme_economist theme_economist_white
+theme_wsj       theme_excel
+theme_few       theme_foundation
+theme_igray     theme_solarized
+theme_stata     theme_tufte
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;require(ggthemes)
+p + theme_wsj()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig20.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在2013年发表的文章&lt;a href=&#34;http://pubs.rsc.org/en/content/articlelanding/2013/mt/c3mt00126a#!divAbstract&#34;&gt;Putative cobalt- and nickel-binding proteins and motifs in Streptococcus pneumoniae&lt;/a&gt;中的图3就是使用&lt;code&gt;theme_stata&lt;/code&gt;来画的。&lt;/p&gt;
+
+&lt;p&gt;至于如何改变这些元素，我觉得我之前&lt;a href=&#34;http://guangchuangyu.github.io/2012/02/draw-chinese-character-jiong-using-ggplot2/&#34;&gt;画囧字的博文&lt;/a&gt;可以做为例子：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;f &amp;lt;- function(x) 1/(x^2-1)
+x &amp;lt;- seq(-3,3, by=0.001)
+y &amp;lt;- f(x)
+d &amp;lt;- data.frame(x=x,y=y)
+ 
+p &amp;lt;- ggplot()
+p &amp;lt;- p+geom_rect(fill = &amp;quot;white&amp;quot;,color=&amp;quot;black&amp;quot;,size=3,
+aes(NULL, NULL,xmin=-3, xmax=3,
+ymin=-3,ymax=3, alpha=0.1))
+ 
+p &amp;lt;- p + geom_line(data=d, aes(x,y), size=3)+ylim(-3,3)
+theme_null &amp;lt;- function() {
+    theme_bw() %+replace%
+    theme(axis.text.x=element_blank(),
+    axis.text.y=element_blank(),
+    legend.position=&amp;quot;none&amp;quot;,
+    panel.grid.minor=element_blank(),
+    panel.grid.major=element_blank(),
+    panel.background=element_blank(),
+    axis.ticks=element_blank(),
+    panel.border=element_blank())
+}
+ 
+p+theme_null()+xlab(&amp;quot;&amp;quot;)+ylab(&amp;quot;&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2012/02/jiong.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;详细的说明，可以参考?theme的帮助文档。&lt;/p&gt;
+
+&lt;h3 id=&#34;二维密度图:c38c63fac86d2290b6bc01da39216614&#34;&gt;二维密度图&lt;/h3&gt;
+
+&lt;p&gt;在这个文档里，为了作图方便，我们使用diamonds数据集的一个子集，如果使用全集，数据量太大，画出来散点就糊了，这种情况可以使用二维密度力来呈现。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ggplot(diamonds, aes(carat, price))+ stat_density2d(aes(fill = ..level..), geom=&amp;quot;polygon&amp;quot;)+ scale_fill_continuous(high=&#39;darkred&#39;,low=&#39;darkgreen&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2.fig22.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;ggplot2实例:c38c63fac86d2290b6bc01da39216614&#34;&gt;ggplot2实例&lt;/h3&gt;
+
+&lt;p&gt;蝴蝶图：详见《Modern Applied Statistics with S-PLUS》第一章。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;theta &amp;lt;- seq(0,24*pi, len=2000)
+radius &amp;lt;- exp(cos(theta)) - 2*cos(4*theta) + sin(theta/12)^5
+dd &amp;lt;- data.frame(x=radius*sin(theta), y=radius*cos(theta))
+ggplot(dd, aes(x, y))+geom_path()+theme_null()+xlab(&amp;quot;&amp;quot;)+ylab(&amp;quot;&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig25.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这个图，我想展示的是对细节的修改上，在画囧字的时候，把画布上的元素都给清楚了，我把它定义为theme_null主题，在这里，直接应用，我们可以形成自己的画图风格，并写出自己的主题函数固定下来。&lt;/p&gt;
+
+&lt;p&gt;最后以生物界中常用的柱状图+误差图为实例，展示ggplot2非常灵活的图层。以我2011年发表的文章&lt;a href=&#34;http://guangchuangyu.github.io/2010/11/phosphoproteome-profile-of-human-lung-cancer-cell-line-a549/&#34;&gt;Phosphoproteome
+profile of human lung cancer cell line
+A549&lt;/a&gt;中的westernblot数据为例。这个实例展示了图层，标尺，主题，注释和各种细节微调多种元素。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Normal &amp;lt;- c(0.83, 0.79, 0.99, 0.69)
+Cancer &amp;lt;- c(0.56, 0.56, 0.64, 0.52)
+m &amp;lt;- c(mean(Normal), mean(Cancer))
+s &amp;lt;- c(sd(Normal), sd(Cancer))
+d &amp;lt;- data.frame(V=c(&amp;quot;Normal&amp;quot;, &amp;quot;Cancer&amp;quot;), mean=m, sd=s)
+d$V &amp;lt;- factor(d$V, levels=c(&amp;quot;Normal&amp;quot;, &amp;quot;Cancer&amp;quot;))
+
+p &amp;lt;- ggplot(d, aes(V, mean, fill=V, width=.5))
+p &amp;lt;- p+geom_errorbar(aes(ymin=mean, ymax=mean+sd, width=.2), 
+                     position=position_dodge(width=.8))
+p &amp;lt;- p + geom_bar(stat=&amp;quot;identity&amp;quot;, position=position_dodge(width=.8), colour=&amp;quot;black&amp;quot;)
+p &amp;lt;- p + scale_fill_manual(values=c(&amp;quot;grey80&amp;quot;, &amp;quot;white&amp;quot;))
+p &amp;lt;- p + theme_bw() +theme(legend.position=&amp;quot;none&amp;quot;) + xlab(&amp;quot;&amp;quot;) + ylab(&amp;quot;&amp;quot;)
+p &amp;lt;- p + theme(axis.text.x = element_text(face=&amp;quot;bold&amp;quot;, size=12), 
+               axis.text.y = element_text(face=&amp;quot;bold&amp;quot;, size=12))
+p &amp;lt;- p+scale_y_continuous(expand=c(0,0), limits=c(0, 1.2), breaks=seq(0, 1.2, by=.2))
+p &amp;lt;- p+geom_segment(aes(x=1, y=.98, xend=1, yend=1.1))
+p &amp;lt;- p+geom_segment(aes(x=2, y=.65, xend=2, yend=1.1))
+p &amp;lt;- p+geom_segment(aes(x=1, y=1.1, xend=2, yend=1.1))
+p &amp;lt;- p + annotate(&amp;quot;text&amp;quot;, x=1.5, y=1.08, label=&amp;quot;*&amp;quot;)
+print(p)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_26.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;更多实例，可以参考我使用&lt;a href=&#34;http://guangchuangyu.github.io/2011/08/ggplot2-version-of-figures-in-25-recipes-for-getting-started-with-r/&#34;&gt;ggplot2实现&lt;25 Recipes for Getting Started with R&gt;一书中的所有图片&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>更改百度云同步盘路径</title>
       <link>http://guangchuangyu.github.io/cn/2014/05/%E6%9B%B4%E6%94%B9%E7%99%BE%E5%BA%A6%E4%BA%91%E5%90%8C%E6%AD%A5%E7%9B%98%E8%B7%AF%E5%BE%84/</link>
       <pubDate>Mon, 05 May 2014 10:45:25 +0800</pubDate>
@@ -764,6 +1275,227 @@ X的问题，在&lt;a href=&#34;http://stackoverflow.com/questions/80875/what-is
 &lt;p&gt;把百度云同步盘换成个英文文件夹，整个世界清静了，firefox终于找到了它的好基友zotero。&lt;/p&gt;
 
 &lt;p&gt;TIPS：有了度娘网盘，再也不用担心下载问题了，找个BT种子，让度娘下载，速度极快，因为通常的东西度娘的网盘上是有的，它做的不过是链接一份给你而已，越多的人保留同一份东西，度娘就越省空间。度娘同步到电脑上速度也是极快的，秒杀其它下载工具。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>boxplot</title>
+      <link>http://guangchuangyu.github.io/cn/2014/03/boxplot/</link>
+      <pubDate>Tue, 04 Mar 2014 12:23:16 +0800</pubDate>
+      
+      <guid>http://guangchuangyu.github.io/cn/2014/03/boxplot/</guid>
+      <description>&lt;p&gt;生物坑很多人画图只会直方图，统计只会T检验，在暨大见过太多的学生连T检验都不会，分不清SEM和SD的差别，也不清楚T检验那几个简单参数的含义。我写统计笔记也是因为不想重复性地跟学生讲解T检验。&lt;/p&gt;
+
+&lt;p&gt;Barplot和T test一样普遍而流行，barplot适合于表示计数数据和比例，显示比例也可以用pie
+plot，但直方图比饼图要好，因为人类的眼睛适合于比较高度，而不是弧度。&lt;/p&gt;
+
+&lt;p&gt;多半时候生物学数据并非简单的计数数据，对于测量数据，在展示数据分布时，很多人会使用他们熟悉的barplot，用高度来表示mean，然后再加上errorbar，这样展示数据，信息量是非常低的，使用boxplot能够提供更多的数据分布信息，能更好地展现数据，但可能很多人只会在excel里画barplot，Nature
+Methods
+2013年的文章中有100个barplot图，而只有20个boxplot图，从这里就可以看出来，用boxplot的人远远没有barplot多，于是NPG怒了，写了两篇专栏文章&lt;a href=&#34;http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2807.html&#34;&gt;Points of View: Bar charts and box plots&lt;/a&gt;和&lt;a href=&#34;http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2813.html&#34;&gt;Points of Significance: Visualizing samples with box plots&lt;/a&gt;并且发表了一篇&lt;a href=&#34;http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2811.html&#34;&gt;BoxPlotR: a web tool for generation of box plots&lt;/a&gt;方便大家画boxplot，如此简单的web tool能够发Nature Methods，实在是让人羡慕妒忌恨啊。&lt;/p&gt;
+
+&lt;p&gt;Boxplot从1970年由John
+Tukey提示，到现在已经40多年了，他有很多的变种，比如&lt;a href=&#34;http://guangchuangyu.github.io/2012/02/violin-plot/&#34;&gt;violin plot&lt;/a&gt;和&lt;a href=&#34;http://www.jstatsoft.org/v28/c01/paper&#34;&gt;beanplot&lt;/a&gt;，violin
+plot和beanplot是很像的，都是把box换成density
+curve，beanplot另外把数据点在中间用线条表示出来，这个很容易加上去，正如我在&lt;a href=&#34;http://guangchuangyu.github.io/2012/02/violin-plot/&#34;&gt;violin plot&lt;/a&gt;中把数据点加进去一样。同样可以把数据点加进boxplot中，还有很多手法来展示boxplot，比如可以用缺口(notch)形式来画boxplot，可以把中间的宽度表示为median值的置信空间。boxplot的宽度可以用样本量来归一化，如果sample
+size足够大的话，$mean\pm errorbar$
+不会超出box，可以很清晰把这个信息也展示在boxplot中。&lt;/p&gt;
+
+&lt;p&gt;如果数据量比较少，可以用scatterplot+errorbar的形式展示数据，正如我在&lt;a href=&#34;http://pubs.rsc.org/en/Content/ArticleLanding/2011/MB/C0MB00055H#!divAbstract&#34;&gt;Phosphoproteome profile of human lung cancer cell line A549&lt;/a&gt;中所画的&lt;a href=&#34;http://www.douban.com/photos/photo/1560368200/&#34;&gt;图7&lt;/a&gt;。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>old habits die hard</title>
+      <link>http://guangchuangyu.github.io/cn/2014/01/old-habits-die-hard/</link>
+      <pubDate>Wed, 22 Jan 2014 13:27:22 +0800</pubDate>
+      
+      <guid>http://guangchuangyu.github.io/cn/2014/01/old-habits-die-hard/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/01/Screenshot-2014-01-23-01.10.07.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;从2011年1月我就在实验室的QQ群里发群邮件说IPI关门，时至今日，已经关门3年了，主页上一直停留在关门大吉的那一刻。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/01/Screenshot-2014-01-23-00.03.17.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我不断在邮件里, lab meeting上强调要换成uniprot来搜库，然而时至今日，依然还是有很多的人在使用IPI，想想真可怕，实验室真是100年不更新一下数据啊。
+另外一个我非常讨厌的就是GI号，它压根就不是正儿八经的ID号，但他们从来就不愿意尝试改变。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/01/Screenshot-2014-01-23-01.16.10.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;比如上面这个蛋白质序列的FASTA文件，注释行有很多信息，比如：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;gi|16128001|ref|NP_414548.1| putative transporter [Escherichia coli str. K-12 substr. MG1655]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;显然搜库时可以使用&lt;strong&gt;NP_414548.1&lt;/strong&gt;做为ID，这个问题我说过N多遍，但他们一定会用他们惯用的&lt;strong&gt;gi|16128001&lt;/strong&gt;来做ID。&lt;/p&gt;
+
+&lt;p&gt;问题是很明显的：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;GI number (sometimes written in lower case, &amp;ldquo;gi&amp;rdquo;) is simply a series
+of digits that are assigned consecutively to each sequence record
+processed by NCBI. The GI number bears no resemblance to the Accession
+number of the sequence record.
+The GI number has been used for many years by NCBI to track sequence
+histories in GenBank and the other sequence databases it maintains.
+The VERSION system of identifiers was adopted in February 1999 by the
+International Nucleotide Sequence Database Collaboration (GenBank,
+EMBL, and DDBJ).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这玩意不是蛋白的ID，是NCBI拿来做历史记录的，所以它老变，而且各种蛋白注释信息都不会基于GI号来。这就是问题了，给我一堆GI号，我要做分析的话，就得转成别的ID，但这货老变身。比如以蛋白NP_414680.4为例，它已经有几次revision：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;gi|90111089|ref|NP_414680.4| putative fimbrial-like adhesin protein [Escherichia coli str. K-12 substr. MG1655]
+MIKTTPHKIVILMGILLSPSVFATDINVEFTATVKATTCNITLTGNNVTNDGNNNYTLRIPKMGLDKIAN
+KTTESQADFKLVASGCSSGISWIDTTLTGNASSSSPKLIIPQSGDSSSTTSNIGMGFKKRTTDDATFLKP
+NSAEKIRWSTDEMQPDKGLEMTVALRETDAGQGVPGNFRALATFNFIYQ
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在这几次revision中，NP是不变的，但gi号做为NCBI数据库内部使用的primary
+ID，每一次revision都要有赋予unique的gi号，可以从&lt;a href=&#34;http://www.ncbi.nlm.nih.gov/protein/NP_414680.4?report=girevhist&#34;&gt;http://www.ncbi.nlm.nih.gov/protein/NP_414680.4?report=girevhist&lt;/a&gt;看到revision的历史记录，4个version对应4个gi号。&lt;/p&gt;
+
+&lt;p&gt;上面的序列数据来自&lt;a href=&#34;ftp://ftp.ncbi.nlm.nih.gov/genomes/Bacteria/Escherichia_coli_K_12_substr__MG1655_uid57779/NC_000913.faa&#34;&gt;ftp://ftp.ncbi.nlm.nih.gov/genomes/Bacteria/Escherichia_coli_K_12_substr__MG1655_uid57779/NC_000913.faa&lt;/a&gt;，这个实验室100年不更新数据，也不知道搜的是什么时间的库，但我从NCBI上获得的数据，只有这一个最新版本，好多GI号都变了，对不上，就没办法转成诸如NP_414680.4这样的参考序列号。&lt;/p&gt;
+
+&lt;p&gt;当然，对于这些老黄历的GI号，还是可以转的，通过NCBI的eutils，在线去抓数据回来解析，只不过把非常简单的事情复杂化了而已。&lt;/p&gt;
+
+&lt;p&gt;我一直强调搜库时匹配参考序列号，像NP_414680是永远都不会变的，它就是某个蛋白的终身编号，版本更新只会改变后面的.4。但某组永远都只会给出GI号，我在多次被虐身虐心之后，对这货竟然也熟悉了起来，sigh&amp;hellip;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;2016年3月，NCBI终于决定要抛弃GI号：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/news/03-02-2016-phase-out-of-GI-numbers/&#34;&gt;NCBI is phasing out sequence GIs - use Accession.Version instead!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2016年9月之后，将不再有GI号的存在.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Install Emacs on Mac</title>
+      <link>http://guangchuangyu.github.io/cn/2013/09/install-emacs-on-mac/</link>
+      <pubDate>Tue, 10 Sep 2013 18:04:22 +0800</pubDate>
+      
+      <guid>http://guangchuangyu.github.io/cn/2013/09/install-emacs-on-mac/</guid>
+      <description>
+
+&lt;h2 id=&#34;package-manager:a0d2dabbee19e6fccf2cd8eeaa0e67d0&#34;&gt;package manager&lt;/h2&gt;
+
+&lt;p&gt;之前一直用&lt;a href=&#34;http://guangchuangyu.github.io/categories/bsd/&#34;&gt;NetBSD&lt;/a&gt;的&lt;a href=&#34;http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/&#34;&gt;pkgsrc&lt;/a&gt;做为各种Unix-like系统的包管理系统，pkgsrc在自己内部解决依赖关系，这点对于生产环境来说，是很好的一个优点，我通常会在服务器里装一个pkgsrc，在用户目录下，维护一套UNIX软件。但是用在自己的机器上，内部解决软件依赖，就是个缺点，浪费编译时间和硬盘空间。&lt;/p&gt;
+
+&lt;p&gt;Mac上可用的包管理系统很多，Fink移植于&lt;a href=&#34;http://guangchuangyu.github.io/categories/linux/&#34;&gt;Debian&lt;/a&gt;的apt，&lt;a href=&#34;http://guangchuangyu.github.io/categories/linux/&#34;&gt;Gentoo&lt;/a&gt;的portage也支持OS
+X。OS X是基于BSD的系统，BSD有自己的一套包管理系统，如FreeBSD的ports和&lt;a href=&#34;http://guangchuangyu.github.io/categories/bsd/&#34;&gt;NetBSD&lt;/a&gt;的&lt;a href=&#34;http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/&#34;&gt;pkgsrc&lt;/a&gt;，MacPorts可以看作是这一系列中的一个，不过它并不是OS
+X原生的，它只是OpenDarwin的子项目，所以和pkgsrc一个样，也是内部解决依赖，真正为OS
+X设计的原生包管理系统非Homebrew莫属，它会尽量依赖系统里已有的软件。&lt;/p&gt;
+
+&lt;p&gt;自从用了Homebrew之后，再也不用为系统里有两套perl和python而crazy了，之前通过&lt;a href=&#34;http://guangchuangyu.github.io/2011/06/screen-shot/&#34;&gt;pkgsrc装的软件&lt;/a&gt;全删掉，改Homebrew来安装和管理。
+如果软件没有被pkgsrc收录，而想通过pkgsrc来管理的话，那就得自己&lt;a href=&#34;http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/&#34;&gt;写makefile&lt;/a&gt;，而homebrew，则可以自动帮你生成Formula，比如我要安装&lt;a href=&#34;http://users.soe.ucsc.edu/~kent/src/&#34;&gt;blat&lt;/a&gt;：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;brew create http://users.soe.ucsc.edu/~kent/src/blatSrc35.zip
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;当然有可能需要编辑一下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;brew edit blat
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;大多数情况下，并不需要修改，创建了formula之后，就可以使用homebrew安装。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;brew install blat
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;emacs:a0d2dabbee19e6fccf2cd8eeaa0e67d0&#34;&gt;Emacs&lt;/h2&gt;
+
+&lt;p&gt;虽然Homebrew是为OS
+X设计的，但它毕竟不是苹果的东西，无法管理系统内置的程序，OS
+X自带Emacs，版本22，已经很老了，而且没有图形界面，为了方便管理和升级，只能把系统自带的删掉，用Homebrew来安装新版的Emacs-24.3，安装时使用参数&amp;ndash;cocoa，使得emacs能够识别OS
+X的keybinding，创建链接到Applications下，这样可以在Applications中双击运行。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rm /usr/bin/emacs
+rm -rf /usr/share/emacs
+brew install --cocoa emacs
+ln -s /usr/local/Cellar/emacs/24.3/Emacs.app /Applications/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;site-lisp:a0d2dabbee19e6fccf2cd8eeaa0e67d0&#34;&gt;site-lisp&lt;/h2&gt;
+
+&lt;p&gt;在.emacs.d目录下新建site-lisp目录，用于放置各种第三方的包，在.emacs里加入：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(let ((default-directory &amp;quot;~/.emacs.d/site-lisp/&amp;quot;))
+  (normal-top-level-add-subdirs-to-load-path))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;让emacs启动时，加载site-lisp及其子目录。&lt;/p&gt;
+
+&lt;h2 id=&#34;eshell-path:a0d2dabbee19e6fccf2cd8eeaa0e67d0&#34;&gt;eshell PATH&lt;/h2&gt;
+
+&lt;p&gt;eshell是个非常美好的存在，在windows下安装Emacs，就拥有了一个小型的&lt;a href=&#34;http://guangchuangyu.github.io/categories/shell/&#34;&gt;shell&lt;/a&gt;，非常方便，当然它并不是bash，如果在windows下使用会缺少很多bash内置程序和许多的unix命令行工具，幸好可以配置emacs调用cygwin的bash。&lt;/p&gt;
+
+&lt;p&gt;eshell并不使用.bash_profile中定义的PATH，好在eshell中内置addpath程序，可以非常方便地把路径加入到PATH中去。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~ $ addpath 
+/usr/bin/
+/bin/
+/usr/sbin/
+/sbin/
+~ $ addpath -b /usr/local/bin
+/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+~ $ echo $PATH
+/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;不过这种方式，只是临时加路径而已。&lt;/p&gt;
+
+&lt;p&gt;要想永久性把改变PATH变量，还是需要把它加入到.emacs中去。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(setenv &amp;quot;PATH&amp;quot; (concat &amp;quot;/usr/local/bin:&amp;quot; (getenv &amp;quot;PATH&amp;quot;)))
+(setq exec-path (append exec-path &#39;(&amp;quot;/usr/local/bin&amp;quot; &amp;quot;/opt/bin&amp;quot;)))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;color-theme:a0d2dabbee19e6fccf2cd8eeaa0e67d0&#34;&gt;color-theme&lt;/h2&gt;
+
+&lt;p&gt;安装&lt;a href=&#34;http://www.nongnu.org/color-theme/&#34;&gt;color-theme&lt;/a&gt;，放在.emacs.d/site-lisp下，在.emacs里加入：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(require &#39;color-theme)
+(color-theme-initialize)
+(color-theme-robin-hood)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;启动时加载color-theme，搞代码很伤眼啊 =,=&lt;/p&gt;
+
+&lt;h2 id=&#34;maxima:a0d2dabbee19e6fccf2cd8eeaa0e67d0&#34;&gt;Maxima&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://guangchuangyu.github.io/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/&#34;&gt;Maxima&lt;/a&gt;是一个计算机代数运算系统，它是由MIT于1968至1982年间开发的Macsyma系统演变而来的。MIT于1982年将Macsyma源代码交与美国能源部（DOE），这部分代码后来被称作DOE
+Macsyma。DOE Macsyma的一个版本从1982年起由德克萨斯大学的William F.
+Schelter教授维护，直到Schelter教授于2001年去逝。在1998年，Schelter教授从能源部获得了授权，将DOE
+Macsyma源代码以GNU Public
+License版权协议发布。在2000年，他在SourceForge开始了Maxima项目，继续维护开发DOE
+Macsyma，自此该软件被称作Maxima。&lt;/p&gt;
+
+&lt;p&gt;在&lt;a href=&#34;http://guangchuangyu.github.io/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/&#34;&gt;Emacs调用maxima&lt;/a&gt;是非常爽的，公式可以通过&lt;a href=&#34;http://guangchuangyu.github.io/categories/latex&#34;&gt;LaTeX&lt;/a&gt;表示出来，非常漂亮，把buffer保存为txt，公式将被保存为&lt;a href=&#34;http://guangchuangyu.github.io/categories/latex&#34;&gt;LaTeX&lt;/a&gt;代码。&lt;/p&gt;
+
+&lt;h2 id=&#34;ess:a0d2dabbee19e6fccf2cd8eeaa0e67d0&#34;&gt;ESS&lt;/h2&gt;
+
+&lt;p&gt;另一个必备是&lt;code&gt;ESS&lt;/code&gt;，可以在emacs调用R，解压放在.emacs.d/site-lisp下，在.emacs里加入：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(require &#39;ess-site)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ESS在我心中，完胜RStudio，唯一不足的是画图时要弹窗口，如果能够像&lt;code&gt;imaxima&lt;/code&gt;一样，在emacs
+buffer中支持&lt;a href=&#34;http://guangchuangyu.github.io/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/&#34;&gt;inline
+plot&lt;/a&gt;就完美了。&lt;/p&gt;
+
+&lt;h2 id=&#34;markdown:a0d2dabbee19e6fccf2cd8eeaa0e67d0&#34;&gt;Markdown&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://jblevins.org/projects/markdown-mode/&#34;&gt;Markdown-mode&lt;/a&gt;让emacs支持markdown语法，安装之后，需要在.emacs中加入：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;;; markdown mode
+(autoload &#39;markdown-mode &amp;quot;markdown-mode&amp;quot;
+  &amp;quot;Major mode for editing Markdown files&amp;quot; t)
+(add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.text\\&#39;&amp;quot; . markdown-mode))
+(add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.markdown\\&#39;&amp;quot; . markdown-mode))
+(add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.md\\&#39;&amp;quot; . markdown-mode))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这样当在emacs中打开.text/.markdown/.md文件时，将自动加载markdown-mode。&lt;/p&gt;
 </description>
     </item>
     
@@ -926,346 +1658,59 @@ test的表现最差，binomial做为p值的近似估计还是不错的，因为�
     </item>
     
     <item>
-      <title>Installing Hackintosh</title>
-      <link>http://guangchuangyu.github.io/cn/2012/03/installing-hackintosh/</link>
-      <pubDate>Thu, 15 Mar 2012 04:47:26 +0800</pubDate>
+      <title>Support Vector Machine</title>
+      <link>http://guangchuangyu.github.io/cn/2012/04/support-vector-machine/</link>
+      <pubDate>Thu, 12 Apr 2012 05:37:55 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/cn/2012/03/installing-hackintosh/</guid>
-      <description>&lt;p&gt;初中时在杂志上看到苹果的彩壳机，从此叔就开始成为了苹果的脑残粉，还在K6-2和win98那会，就在玩macintosh主题。&lt;/p&gt;
+      <guid>http://guangchuangyu.github.io/cn/2012/04/support-vector-machine/</guid>
+      <description>&lt;p&gt;支持向量机(Support Vector Machines, SVM)最初由Vladimir
+Vapnik于1997年提出，SVM最简单的形式就是找出一下区分界限（descision
+boundary），也称之为超平面(hyperplane)，使得离它最近的点（称之为support
+vectors）与之间隔最大。
+&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2012/04/linearSVM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;本科时，通过&lt;a href=&#34;http://pearpc.sourceforge.net/&#34;&gt;PearPC&lt;/a&gt;来虚拟PowerPC，硬是在ATHLON XP 1700+这个破CPU上破了OS X Jaguar，那个慢啊，是无法忍受的。&lt;/p&gt;
+&lt;p&gt;这和logistic regression有些相似，区别在于logistic
+regression要求所有的点尽可能地远离中间那条线，而SVM是要求最接近中间线的点尽可能地远离中间线。也就是说SVM的主要目标是区分那些最难区分的点。&lt;/p&gt;
 
-&lt;p&gt;后来，有了一台&lt;a href=&#34;http://guangchuangyu.github.io/categories/powerbook&#34;&gt;powerbook&lt;/a&gt;，却拿它来装&lt;a href=&#34;http://guangchuangyu.github.io/2005/01/powerbook-g3%E4%B8%8A%E5%AE%89%E8%A3%85gentoo/&#34;&gt;gentoo&lt;/a&gt;和&lt;a href=&#34;http://guangchuangyu.github.io/2006/06/%E5%AE%89%E8%A3%85os9%E5%92%8Cnetbsd%E5%8F%8C%E7%B3%BB%E7%BB%9F/&#34;&gt;netbsd&lt;/a&gt;。从那里候开始，基本上就只用Linux/BSD。&lt;/p&gt;
+&lt;p&gt;SVM对于hyperplane的定义，在形式上和logistic regression一样,logistic
+regression的decision boundary由$\theta^TX=0$确定,SVM则用$w^TX+b=0$表示,其中b相当于logistic regression中的$\theta_0$，从形式上看，两者并无区别，当然如前面所说，两者的目标不一样，logistic regression着眼于全局，SVM着眼于support
+vectors。有监督算法都有label变量y，logistic
+regression取值是&lt;code&gt;{0,1}&lt;/code&gt;，而SVM为了计算距离方便，取值为&lt;code&gt;{-1,1}&lt;/code&gt;。&lt;/p&gt;
 
-&lt;p&gt;再后来，又有了一台&lt;a href=&#34;http://guangchuangyu.github.io/2011/06/screen-shot/&#34;&gt;macbook pro&lt;/a&gt;，除了出差，放在家里倒也没怎么用。囧rz&amp;hellip;
-在国内的工作环境，用linux与人格格不入。但windows搞开发又有不顺手的。各种编译环境搭建起来让人作呕，而且没有&lt;a href=&#34;http://guangchuangyu.github.io/categories/shell/&#34;&gt;shell&lt;/a&gt;，用起来就是不够爽，虽然&lt;a href=&#34;http://guangchuangyu.github.io/categories/emacs/&#34;&gt;emacs&lt;/a&gt;自带eshell，但在windows下缺少各种命令行程序，也只能算廖胜于无。&lt;/p&gt;
+&lt;p&gt;那么SVM的问题就变成为，确定参数w和b，以满足： $w^T x_i + b \ge
++1$ when $y_i = +1$ $w^T x_i + b \le +1$ when
+$ y_i = -1$
+对于上图中最简单的例子，中间线可以由Ax+By+c=0表示，图上一个$(x_0, y_0)$的点到中间线的距离为$\frac{|Ax_0+By_0+c|}{\sqrt{A^2+B^2}}$。&lt;/p&gt;
 
-&lt;p&gt;在北京那会，只用linux，因为有需要的时候可以&lt;a href=&#34;http://guangchuangyu.github.io/2008/09/%E9%80%9A%E8%BF%87%E5%B1%80%E5%9F%9F%E7%BD%91%E5%9C%A8linux%E4%B8%8B%E4%BD%BF%E7%94%A8windows%E7%9A%84%E7%A8%8B%E5%BA%8F/&#34;&gt;通过局域网运行windows程序&lt;/a&gt;。到了暨大，一直用win7，因为质谱相关的很多软件都只跑在winddows下，后来发现和我没啥关系，那些东西都在质谱房里搞。得益于机房里有一台机器跑&lt;a href=&#34;http://guangchuangyu.github.io/categories/linux&#34;&gt;CentOS&lt;/a&gt;，每天&lt;a href=&#34;http://guangchuangyu.github.io/2010/07/xming-windows%E4%B8%8B%E8%BF%9C%E7%A8%8Blinux%E6%A1%8C%E9%9D%A2/&#34;&gt;通过ssh&lt;/a&gt;，也免去了切换系统的麻烦，但是时间长了，我还是觉得诸多不便。&lt;/p&gt;
+&lt;p&gt;对于更高维的空间，点到hyperplane上的距离也是一样计算，定义为： $\frac{|w^Tx+b|}{||w||}=\frac{1}{||w||}$。
+要距离最大，也就是求||w||的最小值。 那么问题就相当于在给定条件g(x):
+$y_i(w^Tx_i)-b \ge 1$下，求f(x): $\frac{1}{2}||w||^2$的最大值。
+这是一个限定条件下的优化问题，可以通过&lt;a href=&#34;http://en.wikipedia.org/wiki/Lagrange_multiplier&#34;&gt;Lagrange multiplier&lt;/a&gt;解决。&lt;/p&gt;
 
-&lt;p&gt;前两天，突发奇想，不如把办公室里的dell机器装个黑苹果。可以应付国内的办公需求，同时也是个Unix-like系统，各种爽。&lt;/p&gt;
+&lt;p&gt;这里，拉格朗日公式为： $L=\frac{1}{2}||w||^2-\sum{\alpha_i[y_i(w^Tx_i+b)-1]}$&lt;/p&gt;
 
-&lt;p&gt;装起来倒也顺利，只是网卡、显卡、声卡全不认。搞起来倒也不难，就是kext有点难找。这种文件相当于Linux的kernel module。搞驱动的时候，让我有种10年前玩redhat 7.2时的感觉。&lt;/p&gt;
+&lt;p&gt;通过对拉格朗日公式的分析，问题变为： 给定$\alpha \ge 0$
+$\sum{\alpha_iy_i} = 0$ 求$\sum{\alpha_i} -
+\frac{1}{2}\sum{\alpha_i\alpha_jy_iy_jx_ix_j}$的最大值。&lt;/p&gt;
 
-&lt;p&gt;照例，有图有真相。
-&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2012/03/120315A000-e1331786719301.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>screen shot</title>
-      <link>http://guangchuangyu.github.io/cn/2011/06/screen-shot/</link>
-      <pubDate>Tue, 28 Jun 2011 12:17:30 +0800</pubDate>
-      
-      <guid>http://guangchuangyu.github.io/cn/2011/06/screen-shot/</guid>
-      <description>&lt;p&gt;买了苹果机，一直放在家里没用，准备开会带去用，拿过来装几个软件。&lt;/p&gt;
+&lt;p&gt;对于$\alpha$值，通常训练算法还通过C参数进行限制$C \ge
+\alpha \ge 0$，这个参数相当于logistic regression里的$\lambda$参数，对outlier数据点的penalty。&lt;/p&gt;
 
-&lt;p&gt;校园网用锐捷是个比较讨厌的东西。当年在华农，光这&lt;a href=&#34;http://guangchuangyu.github.io/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/&#34;&gt;认证&lt;/a&gt;就搞了很久。&lt;/p&gt;
+&lt;p&gt;通过Sequential Minimal Optimization（SMO）算法，可以快速地给出解。&lt;/p&gt;
 
-&lt;p&gt;现在开源的认证客户端多了，搞起来也方便了，现在在linux下用的&lt;a href=&#34;http://code.google.com/p/xmuruijie/&#34;&gt;xmuruijie&lt;/a&gt;，就比当年&lt;a href=&#34;http://guangchuangyu.github.io/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/&#34;&gt;mystar&lt;/a&gt;好用。&lt;/p&gt;
+&lt;p&gt;对于无法进行线性区分的数据，需要进行transformation，把数据映射到另一个空间里，使之可以线性区分，这就是kernel
+function所干的事情。&lt;/p&gt;
 
-&lt;p&gt;估计xmuruijie也是可以在苹果机上用的，依赖python，搞不好还有些modules要装，懒得去弄，搜了一下，找到&lt;a href=&#34;http://code.google.com/p/mentohust/&#34;&gt;mentohust&lt;/a&gt;，当然需要改一下mac address，用万能的ifconfig搞定。&lt;/p&gt;
+&lt;p&gt;参考了《machine learning in
+action》和ml-class的材料后，我在&lt;a href=&#34;https://github.com/GuangchuangYu/mlass&#34;&gt;mlass&lt;/a&gt;包里实现了简化版本的SMO算法。&lt;/p&gt;
 
-&lt;p&gt;为了编译软件，必要先装xcode，这个大家伙，4G多，中午挂到吃晚饭才下完。
-然后就可以装各种open source的软件。&lt;/p&gt;
-
-&lt;p&gt;mac上有fink支持debian一样的apt-get，还有原生的macport，gentoo的portage也支持，我选择使用&lt;a href=&#34;http://guangchuangyu.github.io/categories/bsd&#34;&gt;netbsd&lt;/a&gt;的pkgsrc来安装各种开源软件。&lt;/p&gt;
-
-&lt;p&gt;以前用过比较长时间的netbsd，用着比较顺手。&lt;/p&gt;
-
-&lt;p&gt;苹果机很酷的界面，又能使用熟悉的命令行，实在是爽-,-&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2011/06/屏幕快照-2011-06-28-下午07.54.21.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;更多截屏，请移步：&lt;a href=&#34;http://guangchuangyu.github.io/2007/06/screenshot/&#34;&gt;http://guangchuangyu.github.io/2007/06/screenshot/&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Five things biologists should know about statistics</title>
-      <link>http://guangchuangyu.github.io/cn/2011/06/five-things-biologists-should-know-about-statistics/</link>
-      <pubDate>Fri, 24 Jun 2011 06:10:37 +0800</pubDate>
-      
-      <guid>http://guangchuangyu.github.io/cn/2011/06/five-things-biologists-should-know-about-statistics/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://www.ebi.ac.uk/~birney/&#34;&gt;Ewan Birney&lt;/a&gt;最近的一篇博文（&lt;a href=&#34;http://genomeinformatician.blogspot.com/2011/06/five-statistical-things-i-wished-i-had.html&#34;&gt;Five statistical things I wished I had been taught 20 years ago&lt;/a&gt;
-）讲述了统计对于生物学的重要性。&lt;/p&gt;
-
-&lt;p&gt;一开始从RA
-Fisher讲起，说生物压根就是统计。Fisher是个农业学家，他所建立的那些统计方法，都是从生物学问题出发。&lt;/p&gt;
-
-&lt;p&gt;Ewan所谈及的五个方面分别是：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;1. Non parametric statistics. These are statistical tests which make a
-bare minimum of assumptions of underlying distributions; in biology we
-are rarely confident that we know the underlying distribution, and hand
-waving about central limit theorem can only get you so far. Wherever
-possible you should use a non parameteric test. This is Mann-Whitney (or
-Wilcoxon if you prefer) for testing &amp;ldquo;medians&amp;rdquo; (Medians is in quotes
-because this is not quite true. They test something which is closely
-related to the median) of two distributions, Spearman&amp;rsquo;s Rho (rather
-pearson&amp;rsquo;s r2) for correlation, and the Kruskal test rather than ANOVAs
-(though if I get this right, you can&amp;rsquo;t in Kruskal do the more
-sophisticated nested models you can do with ANOVA). Finally, don&amp;rsquo;t
-forget the rather wonderful Kolmogorov-Smirnov (I always think it sounds
-like really good vodka) test of whether two sets of observations come
-from the same distribution. All of these methods have a basic theme of
-doing things on the rank of items in a distribution, not the actual
-level. So - if in doubt, do things on the rank of metric, rather than
-the metric itself.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;学校里教统计，多半是t检验和ANOVA，这些方法都有assumption需要满足，比如正态分布啥的。多半大家是默认它满足，然后就开始套着用，这是比较危险的，如果assumption不满足，或者数据中有outliers，都可能会导致错误的结论。&lt;/p&gt;
-
-&lt;p&gt;今年&lt;a href=&#34;http://guangchuangyu.github.io/2010/11/phosphoproteome-profile-of-human-lung-cancer-cell-line-a549/&#34;&gt;磷酸化谱的文章&lt;/a&gt;，用到了免疫组化，实验结果的量化是由医生给出来打分值，癌组织和癌旁组织两组数据，免疫组化的数据不可能用参数统计，这个结果我就是用Wilcoxon
-signed rank test去做检验。文中所提出的其它非参统计方法，全都不会。囧&lt;/p&gt;
-
-&lt;p&gt;关于相关性，这里有篇文章，比较了Pearson和Spearman： &lt;a href=&#34;http://www.jstor.org/stable/2346598&#34;&gt;On the Effects of
-Non-Normality on the Distribution of the Sample Product-Moment
-Correlation Coefficient&lt;/a&gt; (Kowalski,
-1975)&lt;/p&gt;
-
-&lt;p&gt;还有文章说用Kendall&amp;rsquo;s tau比Spearman&amp;rsquo;s Rho要好： Newson R. &lt;a href=&#34;http://www.stata-journal.com/sjpdf.html?articlenum=st0007&#34;&gt;Parameters
-behind &amp;ldquo;nonparametric&amp;rdquo; statistics: Kendall&amp;rsquo;s tau,Somers&amp;rsquo; D and median
-differences&lt;/a&gt;.
-Stata Journal 2002; 2(1):45-64.&lt;/p&gt;
-
-&lt;p&gt;虽然作者强调非参统计，但是如果数据分布满足参数统计的assumption的话，还是用参数统计好，更加powerful。这个可能需要我们在做统计之前对数据分布做一下检验。不过正态检验其实用处也不大，小样本的话，不够powerful，大样本的话，即使不是正态分布，t-test和ANOVA也是很robust的。&lt;/p&gt;
-
-&lt;p&gt;如果不满足参数统计检验的话，也不一定就得用非参统计，不负责任地说，可能用&lt;a href=&#34;http://guangchuangyu.github.io/2009/07/bootstrap-method/&#34;&gt;bootstrap&lt;/a&gt;效果还更好。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;2. R (or I guess S). R is a cranky, odd statistical language/system with
-a great scientific plotting package. Its a package written mainly by
-statisticians for statisticians, and is rather unforgiving the first
-time you use it. It is defnitely worth persevering. It&amp;rsquo;s basically a
-combination of excel spreadsheets on steriods (with no data entry. an
-Rdata frame is really the same logical set as a excel workbook - able to
-handle millions of points, not 1,000s), a statistical methods compendium
-(it&amp;rsquo;s usually the case that statistical methods are written first in R,
-and you can almost guarantee that there are no bugs in the major
-functions - unlike many other scenarios) and a graphical data
-exploration tool (in particular lattice and ggplot packages). The syntax
-is inconsistent, the documentation sometimes wonderful, often awful and
-the learning curve is like the face of the Eiger. But once you&amp;rsquo;ve met
-p.adjust(), xyplot() and apply(), you can never turn back.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.r-project.org&#34;&gt;R&lt;/a&gt;实在是太好用了，习惯用矢量运算之后，我就很少用perl了。不过学生物的，我所见过的人，能用好excel的人不多（我也不会用-,-），会用SPSS的人非常少，SAS从没见过有人用。每次我告诉身边的人，我用的是R，几乎都没人听说过的。在国内，目前主要也就高校里有人用。但至少做生信的，是需要学R的，&lt;a href=&#34;http://www.bioconductor.org/&#34;&gt;Bioconductor&lt;/a&gt;上面那一大堆的软件包，已然是无法回避。&lt;/p&gt;
-
-&lt;p&gt;学生物的人都喜欢有图形界面的软件，像spss这种，点菜单无非是为了选参数，而R这种，变成敲键盘而已，一样的。用编程语言比用分析软件要好，可自动化，而且有利于交流（看一下代码，就知道都干了些什么），像SPSS这种把很多分析模块化，点点鼠标就能把回归模型算出来，固然是好，但是现代的数据分析，已经很少有问题是点个鼠标就能解决的了。&lt;/p&gt;
-
-&lt;p&gt;至于画图，文中提到lattice和ggplot，lattice应该是目前R上面最复杂的图形包，功能比ggplot要强得多，画图速度也比ggplot要快，不过我没用过。只学了ggplot，因为ggplot的语法更加human
-friendly，我觉得，学了ggplot后，都会爱上画图的 =,=&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;3. The problem of multiple testing, and how to handle it, either with
-the Expected value, or FDR, and the backstop of many of piece of
-bioinformatics - large scale permutation. Large scale permutation is
-sometimes frowned upon by more maths/distribution purists but often is
-the only way to get a sensible sense of whether something is likely &amp;ldquo;by
-chance&amp;rdquo; (whatever the latter phrase means - it&amp;rsquo;s a very open question)
-given the complex, hetreogenous data we have. 10 years ago perhaps the
-lack of large scale compute resources meant this option was less open to
-people, but these days basically everyone should be working out how to
-appropriate permute the data to allow a good estimate of
-&amp;ldquo;surprisingness&amp;rdquo; of an observation.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;高通量的组学数据，变得越来越常见，pvalue算的是犯一类错误的概率，组学数据观测点多，而重复少，noise很多，如果单纯卡个pvalue，越高通量的数据，犯二类错误的概率会更大，假阳性没有得到控制。这个越来越重要，这周去给学生上课，我还专门讲了Bonferroni
-Method、Benjamini-Hochberg
-Method还有q-value，不过好像我讲的时候，学生都没啥兴趣，或许有一天，他们写文章，reviewer要求给出FDR的时候，希望还能记起。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;4. The relationship between Pvalue, Effect size, and Sample size This
-needs to be drilled into everyone - we&amp;rsquo;re far too trigger happy quoting
-Pvalues, when we should often be quoting Pvalues and Effect size. Once a
-Pvalue is significant, it&amp;rsquo;s higher significance is sort of meaningless
-(or rather it compounds Effect size things with Sample size things, the
-latter often being about relative frequency). So - if something is
-significantly correlated/different, then you want to know about how much
-of an effect this observation has. This is not just about GWAS like
-statistics - in genomic biology we&amp;rsquo;re all too happy about quoting some
-small Pvalue not realising that with a million or so points often, even
-very small deviations will be significant. Quote your r2, Rhos or
-proportion of variance explained&amp;hellip;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;从没接触过GWAS，不知道是怎么算的，从文中的描述看，这里讲的是power
-analysis，这个对实验设计有用，可以估计sample size。当然如果sample
-size已确定，那么设定pvalue和power，可以计算effect
-size，就是说，实验可以detect出多大的effect。或者知道sample size,effect
-size,
-pvalue，可以计算power，就是说effect存在的话，有多大的概率可以detect出来。这和pvalue不一样，pvalue算的是没有effect（$H_0$）的概率。&lt;/p&gt;
-
-&lt;p&gt;power analysis就是四个变量，颠来倒去，知道三个，算第四个。&lt;/p&gt;
-
-&lt;p&gt;差异越大，越容易检测出来，样本间的variance越大，就需要更大的样本量，来排除样本间差异所带来的干扰。差不多就是这样一些东西。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;5. Linear models and PCA. There is a tendency often to jump to quite
-complex models - networks, or biologically inspired combinations, when
-our first instinct should be to crack out the well established lm()
-(linear model) for prediction and princomp() (PCA) for dimensionality
-reduction. These are old school techniques - and often if you want to
-talk about statistical fits one needs to make gaussian assumptions about
-distributions - but most of the things we do could be either done well
-in a linear model, and most of the correlation we look at could have
-been found with a PCA biplot. The fact that these are 1970s bits of
-statistics doesn&amp;rsquo;t mean they don&amp;rsquo;t work well.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;PCA就是把高维空间映射到低维空间，在保留尽可能多信息的情况下进行降维处理，
-下面这段解释了linear model和PCA之间的不同之处：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;One may also see PCA as an analogue of the least squares method to
-find a line that goes as “near” the points as possible – to simplify,
-let us assume there are just two dimensions. But while the least
-squares method is asymetric (the two variables play different roles:
-they are not interchangeable, we try to predict one from the others,
-we measure the distance parallel to one coordinate axis), the PCA is
-symetric (the distance is measured orthogonally to the line we are
-looking for).&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;John Mark在评论里写道，进阶还需要学什么，一并记录下来。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;The next level - number 6 - would be to get beyond P values, and
-instead compute probability distributions of the quantities of
-interest. This leads naturally to number 7, which is to delve into the
-generative models that are currently solved by MCMC methods. This is
-basically the Bayesian approach. Just as an aside &amp;ldquo;non parametrics&amp;rdquo; in
-some new work is also used to mean models where the number of
-parameters varies, as a consequence of the method.&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Xming-windows下远程linux桌面</title>
-      <link>http://guangchuangyu.github.io/cn/2010/07/xming-windows%E4%B8%8B%E8%BF%9C%E7%A8%8Blinux%E6%A1%8C%E9%9D%A2/</link>
-      <pubDate>Mon, 05 Jul 2010 07:37:09 +0800</pubDate>
-      
-      <guid>http://guangchuangyu.github.io/cn/2010/07/xming-windows%E4%B8%8B%E8%BF%9C%E7%A8%8Blinux%E6%A1%8C%E9%9D%A2/</guid>
-      <description>&lt;p&gt;机房放着台机架机，闲着也是耗电，平时偶尔用putty登上去，没有图形界面还是有些不方便。&lt;/p&gt;
-
-&lt;p&gt;搜了一下，发现好几个软件可做这样的事，Xming是开源的，所以选择使用Xming+putty来远程连linux的桌面。&lt;/p&gt;
-
-&lt;p&gt;试用了一下，果然不错。&lt;/p&gt;
-
-&lt;p&gt;需要修改/etc/ssh/sshd_config，添加：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;X11Forwrding yes
+&lt;pre&gt;&lt;code&gt;require(mlass)
+data(ex6data2)
+model &amp;lt;- svmTrain(X,y, C=1, kernelFunction=&amp;quot;gaussianKernel&amp;quot;)
+plot(model, X,y, type=&amp;quot;nonlinear&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;需要配置一下PuTTY，&lt;code&gt;Connection-SSh-X11&lt;/code&gt;中选中&lt;code&gt;Enable X11forwarding&lt;/code&gt;
-其中&lt;code&gt;X display location&lt;/code&gt;里填入&lt;code&gt;localhost:0&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;运行Xming，再用putty连到服务器上，运行程序，就OK了。就好像windows下的本地程序一般。整合性很好。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2010/07/putty.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;以后就可以不用重启了。直接在win7里远程用机房的linux。
-那台机子，网络中心的人给装的CentOS，我已经很多年没用redhat系列的系统了，CentOS是redhat企业版的社区版本。&lt;/p&gt;
-
-&lt;p&gt;redhat系列用yum去安装软件，有些像debian的apt，我总觉得yum这名字好奇怪，查了一下，是&lt;code&gt;yellow dog updater,modified&lt;/code&gt;的缩写，这样看来，这工具首先是出于黄狗系统中，黄狗系统是power构架上的Linux，也是redhat系列的，本科的时候，本来想在G3的机子上装这个，后来玩gentoo去了。&lt;/p&gt;
-
-&lt;p&gt;可能是因为CentOS是企业版的缘故，很多软件都没有源，这也是apt的共同缺点，遇到官方源里没有的软件，就得自己手工添加源，所以还是gentoo和BSD系列好，完全不需要知道软件在那里，通常都懒得弄，直接下源码编译，比如要装R的时候，发现一堆包没装，装完了gcc/g77/g++等编译器之后，再编辑还是出错，一堆libs没装，还好这些都能通过yum去装，如果依赖的包没有yum的源中，自己手工解决依赖关系，虽然也简单，但挺烦人的。这也是gentoo和BSD系列的好处之一，基于源码编译，装完系统之后，手工去编译一个软件，很少有依赖包需要安装，该有的开发库基本上系统都装好了。&lt;/p&gt;
-
-&lt;p&gt;CentOS源里的软件也比较老，装emacs，发现是老版本，还是gtk界面的，自己下cvs版本，编译。
-&lt;code&gt;.emacs&lt;/code&gt;里设置一下，也OK。 &lt;code&gt;(set-default-font &amp;quot;Monospace-14&amp;quot;)&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;以前曾在redhat上装过apt，显然现在有yum就不需要了，用了BSD和gentoo之后，感觉还是不爽，没玩过把gentoo的portage移植过来，倒是玩过netbsd的pkgsrc装到redhat上，&lt;a href=&#34;http://www.netbsd.org/docs/software/packages.html&#34;&gt;pkgsrc&lt;/a&gt;本身就支持其它的Unix和Linux系统，源生态，安装方便，相当推荐。&lt;/p&gt;
-
-&lt;p&gt;曾经还制作过&lt;a href=&#34;http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/&#34;&gt;eva和xlyrics的pkgsrc&lt;/a&gt;。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Bootstrap Method</title>
-      <link>http://guangchuangyu.github.io/cn/2009/07/bootstrap-method/</link>
-      <pubDate>Fri, 31 Jul 2009 09:14:42 +0800</pubDate>
-      
-      <guid>http://guangchuangyu.github.io/cn/2009/07/bootstrap-method/</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Bootstrapping_(statistics)&#34;&gt;bootstrap&lt;/a&gt;是对观测数据集进行有放回（replacement）的随机抽样，以评估总体的各项统计指标。可以用于假设检验、参数估计。好处是并不要求大样本，也不要求正态数据，并且对于不同的统计指标使用的是同样的计算方法。结果也更为可靠，坏处是计算量大。&lt;/p&gt;
-
-&lt;p&gt;统计推断(statistical
-inference)是基于样本统计值的抽样分布来计算的，抽样分布需要从总体中许多的样本来计算，在只有一个样本的情况下，bootstrap对这一随机样本进行有放回的重复抽样，每一个重抽样本与原始随机样本一样大，每次计算相应的抽样的统计值，重复了N次之后，就可以计算统计值的bootstrap分布。&lt;/p&gt;
-
-&lt;p&gt;下面做一个小小的试验：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;a &amp;lt;- c(seq(1:10), rnorm(50))  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;#创建一个样本，60个数据，非正态分布的，如下图&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2009/07/sample_a.png&#34; alt=&#34;&#34; title=&#34;sample_a&#34; /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;b &amp;lt;- rep(0, 1000)
-for (i in 1:1000) {
-    b[i] &amp;lt;- mean(sample(a, replace=TRUE))
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;对它进行1000次有放回重复抽样，计算均值，均值分布的柱状图和qq图如下：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2009/07/hist_qq.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;分布是正态的。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt; mean(a)    #样本均值
-[1] 0.947186
-&amp;gt; mean(b)   #重抽样1000个样本均值的均值
-[1] 0.9358049
-&amp;gt; sd(b)
-[1] 0.3245479
-&amp;gt; sd(a)/sqrt(60)
-[1] 0.3318863
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;由bootstrap方法得到的标准误是0.325，而由原先随机样本所估算的是0.332，两者是相当接近的。由此可见呢，bootstrap方法与理论上的从总体中抽样所得到的样本分布是一致的，这样子就可以基于一个样本来计算样本的分布，而不是要从总体中抽N个样本。&lt;/p&gt;
-
-&lt;p&gt;还用上面的例子，使用样本均值$ \bar{x}$去估算总体的均值$
-\mu$，虽然我们的样本不是正态的，但如果bootstrap
-distribution是正态的话，就可以使用类似于单样本t置信区间（要求样本是正态的）的公式:$
-\bar{x} \pm t \cdot SE = \bar{x} \pm t \cdot
-\frac{s}{\sqrt{n}}$ 相应的bootstrap t置信区间是：$ statistic
-\pm t \cdot SE_{boot}$ 上面例子，总体均值$ \mu$
-95%的置信度，就会落在：$ mean(a) \pm 2.009 \cdot sd(b)$
-可以使用它，计算所有统计指标的置信区间。&lt;/p&gt;
-
-&lt;p&gt;用于层次聚类分析的一个例子，使用Pvclust这个包，用于层次聚类，并通过multiscale
-bootstrap
-resampling给出相应的&lt;em&gt;p&lt;/em&gt;-value用于评估聚类结果的不确定性。提供了两种&lt;em&gt;p&lt;/em&gt;-values，AU（approximately
-unbiased p-value, 通过multiscale bootstrap
-resampling计算）和BP（bootstrap probability, 通过normal bootstrap
-resampling计算），AU比BP较为unbiased。
-Pvclust使用*hclust*（来自于stats包）进行层次聚类，并自动计算所有的子类的&lt;em&gt;p&lt;/em&gt;-value。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;library(pvclust)  # loads package
-a &amp;lt;- matrix(rnorm(1000), 100, 10, dimnames=list(paste(&amp;quot;g&amp;quot;, 1:100, sep=&amp;quot;&amp;quot;), paste(&amp;quot;t&amp;quot;,1:10, sep=&amp;quot;&amp;quot;)))  # creats sample data
-at &amp;lt;- t(a)  # transposes of a
-cl &amp;lt;- pvclust(at, nboot=1000)  #performs hierarchical cluster analysis with multiscale bootstrap with 1000 repetitions.
-pvrect(cl, alpha=0.95)  #highlights with red rectangles all clusters in the dendrogram which have an AU value above 95%, AU p-value &amp;gt; 0.95, the hypothesis that &amp;quot;the cluster does not exist&amp;quot; is rejected with significance level 0.05;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2009/07/pvclust_test.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;#pick significant clusters.
-clsig &amp;lt;- pvpick(cl, alpha=0.95, pv=&amp;quot;au&amp;quot;, type=&amp;quot;geq&amp;quot;, max.only=TRUE)  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;reference:5129f3fc49180ee68d0efdb6ded483c8&#34;&gt;Reference&lt;/h3&gt;
-
-&lt;p&gt;1.  Moore, D.S., McCabe, G.P. &amp;amp; Craig, B. Introduction to the Practice
-of Statistics w/CD-ROM.  (W. H. Freeman: 2007).&lt;/p&gt;
-
-&lt;p&gt;2.  Suzuki, R. (2006). Pvclust: an R package for assessing the uncertainty in hierarchical clustering, Bioinformatics, 22(12), 1540-1542
-DOI:
-&lt;a href=&#34;http://dx.doi.org/10.1093/bioinformatics/btl117&#34;&gt;10.1093/bioinformatics/btl117&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2012/04/Screen-Shot-2012-04-10-at-3.09.43-PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     

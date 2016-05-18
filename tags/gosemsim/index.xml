@@ -89,5 +89,29 @@ Chairs，通讯作者和BMC编委是认识的，于是我空穴来风地猜测�
 </description>
     </item>
     
+    <item>
+      <title>GOSemSim</title>
+      <link>http://guangchuangyu.github.io/cn/2008/08/gosemsim/</link>
+      <pubDate>Mon, 11 Aug 2008 14:21:00 +0800</pubDate>
+      
+      <guid>http://guangchuangyu.github.io/cn/2008/08/gosemsim/</guid>
+      <description>&lt;p&gt;第一次写软件包，计算基因和GO的语义相似性。&lt;/p&gt;
+
+&lt;p&gt;实现&lt;a href=&#34;http://bioinformatics.oxfordjournals.org/cgi/content/full/23/10/1274&#34;&gt;Wang&lt;/a&gt;的方法，基于GO的图结构。
+以及四种基于信息含量的计算方法（Resnik, Jiang, Lin, Rel）。&lt;/p&gt;
+
+&lt;p&gt;可以从Bioconductor下载到。
+&lt;a href=&#34;http://bioconductor.org/packages/release/bioc/html/GOSemSim.html&#34;&gt;http://bioconductor.org/packages/release/bioc/html/GOSemSim.html&lt;/a&gt;
+&lt;a href=&#34;http://bioconductor.org/packages/devel/bioc/html/GOSemSim.html&#34;&gt;http://bioconductor.org/packages/devel/bioc/html/GOSemSim.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;支持human, rat, mouse, fly, yeast, zebrafish,worm, E coli,
+arabidopsis等物种。&lt;/p&gt;
+
+&lt;p&gt;下载量统计如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://bioconductor.org/packages/stats/bioc/GOSemSim.png&#34; alt=&#34;&#34; title=&#34;GOSemSim_Downloads&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>

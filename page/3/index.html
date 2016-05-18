@@ -101,9 +101,37 @@
     <article>
       <header>
         <h1 class="entry-title">
-          <a href="http://guangchuangyu.github.io/cn/2012/03/installing-hackintosh/">Installing Hackintosh</a>
+          <a href="http://guangchuangyu.github.io/cn/2014/01/old-habits-die-hard/">old habits die hard</a>
         </h1>
-        <p class="meta">Mar 15, 2012 - 1 minute read - 
+        <p class="meta">Jan 22, 2014 - 1 minute read - 
+
+        
+        
+        
+        <a class="label" href="http://guangchuangyu.github.io/cn/categories/biology/">Biology</a><a class="label" href="http://guangchuangyu.github.io/cn/categories/research/">Research</a>
+        </p>
+
+      </header>
+
+        
+          <p>从2011年1月我就在实验室的QQ群里发群邮件说IPI关门，时至今日，已经关门3年了，主页上一直停留在关门大吉的那一刻。 我不断在邮件里, lab meeting上强调要换成uniprot来搜库，然而时至今日，依然还是有很多的人在使用IPI，想想真可怕，实验室真是100年不更新一下数据啊。 另外一个我非常讨厌的就是GI号，它压根就不是正儿八经的ID号，但他们从来就不愿意尝试改变。 比如上面这个蛋白质序列的FASTA文件，注释行有很多信息，比如： &gt;gi|16128001|ref|NP_414548.1| putative transporter [Escherichia coli str. K-12 substr. MG1655] 显然搜库时可以使用NP_414548.1做为ID，这个问题我说过N多遍，但他们一定会用他们惯用的gi|16128001来做ID。 问题是很明显的： GI number (sometimes written in lower case, &ldquo;gi&rdquo;) is simply a series of digits that are assigned consecutively to each sequence record processed by NCBI. The GI number bears no resemblance to the Accession number of the sequence record. The GI number has been used for many years by NCBI to track sequence histories in GenBank and the other sequence databases it maintains.</p>
+
+          
+              <footer>
+                  <a href="http://guangchuangyu.github.io/cn/2014/01/old-habits-die-hard/" rel="full-article">Read On &rarr;</a>
+              </footer>
+          
+
+        
+
+    </article>
+    
+    <article>
+      <header>
+        <h1 class="entry-title">
+          <a href="http://guangchuangyu.github.io/cn/2013/09/install-emacs-on-mac/">Install Emacs on Mac</a>
+        </h1>
+        <p class="meta">Sep 10, 2013 - 1 minute read - 
 
         
         
@@ -114,16 +142,19 @@
       </header>
 
         
-          <p><p>初中时在杂志上看到苹果的彩壳机，从此叔就开始成为了苹果的脑残粉，还在K6-2和win98那会，就在玩macintosh主题。</p>
+          <p><h2 id="package-manager:a0d2dabbee19e6fccf2cd8eeaa0e67d0">package manager</h2>
 
-<p>本科时，通过<a href="http://pearpc.sourceforge.net/">PearPC</a>来虚拟PowerPC，硬是在ATHLON XP 1700+这个破CPU上破了OS X Jaguar，那个慢啊，是无法忍受的。</p>
+<p>之前一直用<a href="http://guangchuangyu.github.io/categories/bsd/">NetBSD</a>的<a href="http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/">pkgsrc</a>做为各种Unix-like系统的包管理系统，pkgsrc在自己内部解决依赖关系，这点对于生产环境来说，是很好的一个优点，我通常会在服务器里装一个pkgsrc，在用户目录下，维护一套UNIX软件。但是用在自己的机器上，内部解决软件依赖，就是个缺点，浪费编译时间和硬盘空间。</p>
 
-<p>后来，有了一台<a href="http://guangchuangyu.github.io/categories/powerbook">powerbook</a>，却拿它来装<a href="http://guangchuangyu.github.io/2005/01/powerbook-g3%E4%B8%8A%E5%AE%89%E8%A3%85gentoo/">gentoo</a>和<a href="http://guangchuangyu.github.io/2006/06/%E5%AE%89%E8%A3%85os9%E5%92%8Cnetbsd%E5%8F%8C%E7%B3%BB%E7%BB%9F/">netbsd</a>。从那里候开始，基本上就只用Linux/BSD。</p>
+<p>Mac上可用的包管理系统很多，Fink移植于<a href="http://guangchuangyu.github.io/categories/linux/">Debian</a>的apt，<a href="http://guangchuangyu.github.io/categories/linux/">Gentoo</a>的portage也支持OS
+X。OS X是基于BSD的系统，BSD有自己的一套包管理系统，如FreeBSD的ports和<a href="http://guangchuangyu.github.io/categories/bsd/">NetBSD</a>的<a href="http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/">pkgsrc</a>，MacPorts可以看作是这一系列中的一个，不过它并不是OS
+X原生的，它只是OpenDarwin的子项目，所以和pkgsrc一个样，也是内部解决依赖，真正为OS
+X设计的原生包管理系统非Homebrew莫属，它会尽量依赖系统里已有的软件。</p>
 </p>
 
           
               <footer>
-                  <a href="http://guangchuangyu.github.io/cn/2012/03/installing-hackintosh/" rel="full-article">Read On &rarr;</a>
+                  <a href="http://guangchuangyu.github.io/cn/2013/09/install-emacs-on-mac/" rel="full-article">Read On &rarr;</a>
               </footer>
           
 
@@ -134,38 +165,32 @@
     <article>
       <header>
         <h1 class="entry-title">
-          <a href="http://guangchuangyu.github.io/cn/2011/06/screen-shot/">screen shot</a>
+          <a href="http://guangchuangyu.github.io/cn/2013/07/permanent-head-damage-to-be/">Permanent Head Damage to be</a>
         </h1>
-        <p class="meta">Jun 28, 2011 - 1 minute read - 
+        <p class="meta">Jul 30, 2013 - 1 minute read - 
 
         
         
         
-        <a class="label" href="http://guangchuangyu.github.io/cn/categories/bsd/">BSD</a><a class="label" href="http://guangchuangyu.github.io/cn/categories/mac-os/">Mac OS</a>
+        <a class="label" href="http://guangchuangyu.github.io/cn/categories/personal/">Personal</a>
         </p>
 
       </header>
 
         
-          <p><p>买了苹果机，一直放在家里没用，准备开会带去用，拿过来装几个软件。</p>
+          <p><p>看似寻常最奇崛，成如容易却艰辛。在暨大工作了几年，发几篇小文章，觉得要找个地方读PhD，是件手到擒来的事，结果却花了整整一年的时间，事实证明像我这样的科研屌丝男，举步唯艰啊。
+去年7月份就开始在计划这个事情，我几乎想都没想就联系了计算生物所的JD
+Han，紧接着就是面试，第一次尝试用英文去讲slides，从早上10点讲到中午12点。感觉还好吧，因为有听到Han说impressive，而她的学生又说经常看我blog。看上去还是蛮顺利的，然而最终reject了我，而且没有给我任何原因。</p>
 
-<p>校园网用锐捷是个比较讨厌的东西。当年在华农，光这<a href="http://guangchuangyu.github.io/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/">认证</a>就搞了很久。</p>
+<p>我去上海是非常低姿态的，说要面试，我就飞过去，当时想要是面试OK了，可能会让我留下来先了解一下正在进行的project，所以没有听老婆的话买返程票，结果从上海回广州，就变成了人在囧途，买不到火车票，就去南昌转车，结果遇到两趟车都是慢车，无空调，还无座。这个事情教会了我，不能太低姿态。</p>
 
-<p>现在开源的认证客户端多了，搞起来也方便了，现在在linux下用的<a href="http://code.google.com/p/xmuruijie/">xmuruijie</a>，就比当年<a href="http://guangchuangyu.github.io/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/">mystar</a>好用。</p>
-
-<p>估计xmuruijie也是可以在苹果机上用的，依赖python，搞不好还有些modules要装，懒得去弄，搜了一下，找到<a href="http://code.google.com/p/mentohust/">mentohust</a>，当然需要改一下mac address，用万能的ifconfig搞定。</p>
-
-<p>为了编译软件，必要先装xcode，这个大家伙，4G多，中午挂到吃晚饭才下完。
-然后就可以装各种open source的软件。</p>
-
-<p>mac上有fink支持debian一样的apt-get，还有原生的macport，gentoo的portage也支持，我选择使用<a href="http://guangchuangyu.github.io/categories/bsd">netbsd</a>的pkgsrc来安装各种开源软件。</p>
-
-<p>以前用过比较长时间的netbsd，用着比较顺手。</p>
+<p>我一直在想为什么会去上海，为什么会联系Han，或许是心理学上所谓的契可尼效应，俗称偷不如偷不着，当年考上生没中，心中依然有执念？我自认为早已释然，but
+maybe..，至于Han，我在研一的时候，去北大听过她的讲座，被系统生物学这个概念忽悠了，可能因此内心抱有幻想。</p>
 </p>
 
           
               <footer>
-                  <a href="http://guangchuangyu.github.io/cn/2011/06/screen-shot/" rel="full-article">Read On &rarr;</a>
+                  <a href="http://guangchuangyu.github.io/cn/2013/07/permanent-head-damage-to-be/" rel="full-article">Read On &rarr;</a>
               </footer>
           
 
@@ -176,9 +201,41 @@
     <article>
       <header>
         <h1 class="entry-title">
-          <a href="http://guangchuangyu.github.io/cn/2011/06/five-things-biologists-should-know-about-statistics/">Five things biologists should know about statistics</a>
+          <a href="http://guangchuangyu.github.io/cn/2012/04/enrichment-analysis/">enrichment analysis</a>
         </h1>
-        <p class="meta">Jun 24, 2011 - 5 minute read - 
+        <p class="meta">Apr 28, 2012 - 2 minute read - 
+
+        
+        
+        
+        <a class="label" href="http://guangchuangyu.github.io/cn/categories/statistics/">Statistics</a>
+        </p>
+
+      </header>
+
+        
+          <p><p>经常看到一些饼图，描述某些事物的组成，比如说有钱人的学历分布，然后我们可以看到高学历所占比例并不高，根据这个比例下结论通常是错的，这些比例说明不了问题，如果把各种学历在总体人口中的分布做为背景进行考虑的话，你就会发现学历还是有点用的。
+当我们用组学测定了一大堆分子之后，我们希望站在更高的角度去看这些分子和那些生物学过程相关。那么通常各种注释，对这些基因/蛋白进行分类，那么从分类的比例上，是不能草率下结论，正如上面有钱人学历分布的例子一样。我们需要把总体的分布考虑进去。
+和某个注释/分类是否有相关性，把基因分成属于这一类，和不属于这一类两种，这就好比经典统计学中的白球和黑球的抽样问题。也可以列一个２x２的表，进行独立性分析。
+以文章<a href="http://cancerres.aacrjournals.org/content/62/16/4722">Gene Expression in Ovarian Cancer Reflects Both Morphology and Biological Behavior, Distinguishing Clear Cell from Other Poor-Prognosis Ovarian Carcinomas</a>所鉴定的差异基因为例。</p>
+</p>
+
+          
+              <footer>
+                  <a href="http://guangchuangyu.github.io/cn/2012/04/enrichment-analysis/" rel="full-article">Read On &rarr;</a>
+              </footer>
+          
+
+        
+
+    </article>
+    
+    <article>
+      <header>
+        <h1 class="entry-title">
+          <a href="http://guangchuangyu.github.io/cn/2012/04/support-vector-machine/">Support Vector Machine</a>
+        </h1>
+        <p class="meta">Apr 12, 2012 - 1 minute read - 
 
         
         
@@ -189,122 +246,24 @@
       </header>
 
         
-          <p><p><a href="http://www.ebi.ac.uk/~birney/">Ewan Birney</a>最近的一篇博文（<a href="http://genomeinformatician.blogspot.com/2011/06/five-statistical-things-i-wished-i-had.html">Five statistical things I wished I had been taught 20 years ago</a>
-）讲述了统计对于生物学的重要性。</p>
+          <p><p>支持向量机(Support Vector Machines, SVM)最初由Vladimir
+Vapnik于1997年提出，SVM最简单的形式就是找出一下区分界限（descision
+boundary），也称之为超平面(hyperplane)，使得离它最近的点（称之为support
+vectors）与之间隔最大。
+<img src="http://guangchuangyu.github.io/blog_images/2012/04/linearSVM.png" alt="" /></p>
 
-<p>一开始从RA
-Fisher讲起，说生物压根就是统计。Fisher是个农业学家，他所建立的那些统计方法，都是从生物学问题出发。</p>
+<p>这和logistic regression有些相似，区别在于logistic
+regression要求所有的点尽可能地远离中间那条线，而SVM是要求最接近中间线的点尽可能地远离中间线。也就是说SVM的主要目标是区分那些最难区分的点。</p>
 
-<p>Ewan所谈及的五个方面分别是：</p>
-
-<blockquote>
-<p>1. Non parametric statistics. These are statistical tests which make a
-bare minimum of assumptions of underlying distributions; in biology we
-are rarely confident that we know the underlying distribution, and hand
-waving about central limit theorem can only get you so far. Wherever
-possible you should use a non parameteric test. This is Mann-Whitney (or
-Wilcoxon if you prefer) for testing &ldquo;medians&rdquo; (Medians is in quotes
-because this is not quite true. They test something which is closely
-related to the median) of two distributions, Spearman&rsquo;s Rho (rather
-pearson&rsquo;s r2) for correlation, and the Kruskal test rather than ANOVAs
-(though if I get this right, you can&rsquo;t in Kruskal do the more
-sophisticated nested models you can do with ANOVA). Finally, don&rsquo;t
-forget the rather wonderful Kolmogorov-Smirnov (I always think it sounds
-like really good vodka) test of whether two sets of observations come
-from the same distribution. All of these methods have a basic theme of
-doing things on the rank of items in a distribution, not the actual
-level. So - if in doubt, do things on the rank of metric, rather than
-the metric itself.</p>
-</blockquote>
+<p>SVM对于hyperplane的定义，在形式上和logistic regression一样,logistic
+regression的decision boundary由$\theta^TX=0$确定,SVM则用$w^TX+b=0$表示,其中b相当于logistic regression中的$\theta_0$，从形式上看，两者并无区别，当然如前面所说，两者的目标不一样，logistic regression着眼于全局，SVM着眼于support
+vectors。有监督算法都有label变量y，logistic
+regression取值是<code>{0,1}</code>，而SVM为了计算距离方便，取值为<code>{-1,1}</code>。</p>
 </p>
 
           
               <footer>
-                  <a href="http://guangchuangyu.github.io/cn/2011/06/five-things-biologists-should-know-about-statistics/" rel="full-article">Read On &rarr;</a>
-              </footer>
-          
-
-        
-
-    </article>
-    
-    <article>
-      <header>
-        <h1 class="entry-title">
-          <a href="http://guangchuangyu.github.io/cn/2010/07/xming-windows%E4%B8%8B%E8%BF%9C%E7%A8%8Blinux%E6%A1%8C%E9%9D%A2/">Xming-windows下远程linux桌面</a>
-        </h1>
-        <p class="meta">Jul 5, 2010 - 1 minute read - 
-
-        
-        
-        
-        <a class="label" href="http://guangchuangyu.github.io/cn/categories/windows/">Windows</a><a class="label" href="http://guangchuangyu.github.io/cn/categories/linux/">Linux</a>
-        </p>
-
-      </header>
-
-        
-          <p><p>机房放着台机架机，闲着也是耗电，平时偶尔用putty登上去，没有图形界面还是有些不方便。</p>
-
-<p>搜了一下，发现好几个软件可做这样的事，Xming是开源的，所以选择使用Xming+putty来远程连linux的桌面。</p>
-
-<p>试用了一下，果然不错。</p>
-
-<p>需要修改/etc/ssh/sshd_config，添加：</p>
-
-<pre><code>X11Forwrding yes
-</code></pre>
-
-<p>需要配置一下PuTTY，<code>Connection-SSh-X11</code>中选中<code>Enable X11forwarding</code>
-其中<code>X display location</code>里填入<code>localhost:0</code>。</p>
-
-<p>运行Xming，再用putty连到服务器上，运行程序，就OK了。就好像windows下的本地程序一般。整合性很好。</p>
-</p>
-
-          
-              <footer>
-                  <a href="http://guangchuangyu.github.io/cn/2010/07/xming-windows%E4%B8%8B%E8%BF%9C%E7%A8%8Blinux%E6%A1%8C%E9%9D%A2/" rel="full-article">Read On &rarr;</a>
-              </footer>
-          
-
-        
-
-    </article>
-    
-    <article>
-      <header>
-        <h1 class="entry-title">
-          <a href="http://guangchuangyu.github.io/cn/2009/07/bootstrap-method/">Bootstrap Method</a>
-        </h1>
-        <p class="meta">Jul 31, 2009 - 1 minute read - 
-
-        
-        
-        
-        <a class="label" href="http://guangchuangyu.github.io/cn/categories/statistics/">statistics</a>
-        </p>
-
-      </header>
-
-        
-          <p><p><a href="http://en.wikipedia.org/wiki/Bootstrapping_(statistics)">bootstrap</a>是对观测数据集进行有放回（replacement）的随机抽样，以评估总体的各项统计指标。可以用于假设检验、参数估计。好处是并不要求大样本，也不要求正态数据，并且对于不同的统计指标使用的是同样的计算方法。结果也更为可靠，坏处是计算量大。</p>
-
-<p>统计推断(statistical
-inference)是基于样本统计值的抽样分布来计算的，抽样分布需要从总体中许多的样本来计算，在只有一个样本的情况下，bootstrap对这一随机样本进行有放回的重复抽样，每一个重抽样本与原始随机样本一样大，每次计算相应的抽样的统计值，重复了N次之后，就可以计算统计值的bootstrap分布。</p>
-
-<p>下面做一个小小的试验：</p>
-
-<pre><code>a &lt;- c(seq(1:10), rnorm(50))  
-</code></pre>
-
-<p>#创建一个样本，60个数据，非正态分布的，如下图</p>
-
-<p><img src="http://guangchuangyu.github.io/blog_images/2009/07/sample_a.png" alt="" title="sample_a" /></p>
-</p>
-
-          
-              <footer>
-                  <a href="http://guangchuangyu.github.io/cn/2009/07/bootstrap-method/" rel="full-article">Read On &rarr;</a>
+                  <a href="http://guangchuangyu.github.io/cn/2012/04/support-vector-machine/" rel="full-article">Read On &rarr;</a>
               </footer>
           
 
@@ -324,36 +283,40 @@ inference)是基于样本统计值的抽样分布来计算的，抽样分布需�
         
         
         
-        <a href="/" aria-label="First" class="label-pagination"><i class="fa fa-angle-double-left fa-lg"></i></a>
+        <a href="http://guangchuangyu.github.io/cn/" aria-label="First" class="label-pagination"><i class="fa fa-angle-double-left fa-lg"></i></a>
     
 
     
     
-        <a href="/page/2/" aria-label="Previous" class="label-pagination"><i class="fa fa-angle-left fa-lg"></i></a>
+        <a href="http://guangchuangyu.github.io/cn/page/2/" aria-label="Previous" class="label-pagination"><i class="fa fa-angle-left fa-lg"></i></a>
     
 
     
-        <a href="/" class="label-pagination">1</a>
+        <a href="http://guangchuangyu.github.io/cn/" class="label-pagination">1</a>
     
-        <a href="/page/2/" class="label-pagination">2</a>
+        <a href="http://guangchuangyu.github.io/cn/page/2/" class="label-pagination">2</a>
     
-        <a href="/page/3/" class="label-pagination">3</a>
+        <a href="http://guangchuangyu.github.io/cn/page/3/" class="label-pagination">3</a>
     
-        <a href="/page/4/" class="label-pagination">4</a>
+        <a href="http://guangchuangyu.github.io/cn/page/4/" class="label-pagination">4</a>
     
-        <a href="/page/5/" class="label-pagination">5</a>
+        <a href="http://guangchuangyu.github.io/cn/page/5/" class="label-pagination">5</a>
     
-        <a href="/page/6/" class="label-pagination">6</a>
+        <a href="http://guangchuangyu.github.io/cn/page/6/" class="label-pagination">6</a>
+    
+        <a href="http://guangchuangyu.github.io/cn/page/7/" class="label-pagination">7</a>
+    
+        <a href="http://guangchuangyu.github.io/cn/page/8/" class="label-pagination">8</a>
     
 
     
     
-        <a href="/page/4/" aria-label="Next" class="label-pagination"><i class="fa fa-angle-right fa-lg"></i></a>
+        <a href="http://guangchuangyu.github.io/cn/page/4/" aria-label="Next" class="label-pagination"><i class="fa fa-angle-right fa-lg"></i></a>
     
 
     
     
-        <a href="/page/6/" aria-label="Last"><i class="fa fa-angle-double-right fa-lg"></i></a>
+        <a href="http://guangchuangyu.github.io/cn/page/8/" aria-label="Last"><i class="fa fa-angle-double-right fa-lg"></i></a>
     
 
 </div>
@@ -417,23 +380,23 @@ inference)是基于样本统计值的抽样分布来计算的，抽样分布需�
       
       
       <li class="post">
-        <a href="/cn/2016/03/google-drive--hku/">Google Drive @ HKU</a>
+        <a href="http://guangchuangyu.github.io/cn/2016/03/google-drive--hku/">Google Drive @ HKU</a>
       </li>
       
       <li class="post">
-        <a href="/cn/2016/03/%E4%BD%BF%E7%94%A8ggtree%E5%AE%9E%E7%8E%B0%E8%BF%9B%E5%8C%96%E6%A0%91%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E5%92%8C%E6%B3%A8%E9%87%8A/">使用ggtree实现进化树的可视化和注释</a>
+        <a href="http://guangchuangyu.github.io/cn/2016/03/%E4%BD%BF%E7%94%A8ggtree%E5%AE%9E%E7%8E%B0%E8%BF%9B%E5%8C%96%E6%A0%91%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E5%92%8C%E6%B3%A8%E9%87%8A/">使用ggtree实现进化树的可视化和注释</a>
       </li>
       
       <li class="post">
-        <a href="/cn/2015/12/%E5%96%9C%E6%96%B0%E5%8E%8C%E6%97%A7%E4%B9%8Bhello-hugo/">喜新厌旧之hello Hugo</a>
+        <a href="http://guangchuangyu.github.io/cn/2015/12/%E5%96%9C%E6%96%B0%E5%8E%8C%E6%97%A7%E4%B9%8Bhello-hugo/">喜新厌旧之hello Hugo</a>
       </li>
       
       <li class="post">
-        <a href="/cn/2015/11/%E5%90%88%E4%BD%93%E4%B8%AD%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">合体中的操作系统</a>
+        <a href="http://guangchuangyu.github.io/cn/2015/11/%E5%90%88%E4%BD%93%E4%B8%AD%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">合体中的操作系统</a>
       </li>
       
       <li class="post">
-        <a href="/cn/2015/05/bmc-favor-plagiarism/">BMC Favor Plagiarism</a>
+        <a href="http://guangchuangyu.github.io/cn/2015/05/bmc-favor-plagiarism/">BMC Favor Plagiarism</a>
       </li>
       
     </ul>
