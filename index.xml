@@ -6,8 +6,38 @@
     <description>Recent content on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 24 Mar 2016 15:40:22 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 31 May 2016 18:06:59 +0800</lastBuildDate>
     <atom:link href="//guangchuangyu.github.io/cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>第九届ChinaR会议生物信息学分会</title>
+      <link>//guangchuangyu.github.io/cn/2016/05/%E7%AC%AC%E4%B9%9D%E5%B1%8Achinar%E4%BC%9A%E8%AE%AE%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%88%86%E4%BC%9A/</link>
+      <pubDate>Tue, 31 May 2016 18:06:59 +0800</pubDate>
+      
+      <guid>//guangchuangyu.github.io/cn/2016/05/%E7%AC%AC%E4%B9%9D%E5%B1%8Achinar%E4%BC%9A%E8%AE%AE%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%88%86%E4%BC%9A/</guid>
+      <description>&lt;p&gt;不记得是什么时候知道统计之都的，但我记得最早知道的是太云，因为我用了他写的&lt;a href=&#34;https://cran.r-project.org/package=corrplot&#34;&gt;corrplot&lt;/a&gt;包。后来统计之都最早接触的也是太云，他给我写邮件问我能不能帮忙校对&lt;a href=&#34;https://book.douban.com/subject/24527091/&#34;&gt;《ggplot2：数据分析与图形艺术》&lt;/a&gt;，从此开始和太云变成了网友。&lt;/p&gt;
+
+&lt;p&gt;我在暨大的时候，太云曾经邀请我去China-R会议做报告，但我觉得自己没什么好分享的，&lt;a href=&#34;http://guangchuangyu.github.io/GOSemSim&#34;&gt;GOSemSim&lt;/a&gt;这个包是硕士的时候做的，不好去讲之前做的东西。而当时我写的另一个包&lt;a href=&#34;http://guangchuangyu.github.io/clusterProfiler&#34;&gt;clusterProfiler&lt;/a&gt;，纯粹是因为大量做富集分析的工具都是针对模式生物，而我们实验室有做各种细菌；另外有一些工具，背景设置是有问题的。自己实现一个包，不受别人的限制。即便是这个包现在受到了一定的认可，比如BioC 3.3中有个&lt;a href=&#34;http://bioconductor.org/packages/release/bioc/html/debrowser.html&#34;&gt;debrowser&lt;/a&gt;的包使用了clusterProfiler，而在BioC 3.4中又有个新包&lt;a href=&#34;http://bioconductor.org/packages/devel/bioc/html/bioCancer.html&#34;&gt;bioCancer&lt;/a&gt;也使用了clusterProfiler；再比如这次在北京，有好几个参会的人员在茶歇时问了clusterProfiler的问题。但始终觉得这只是个实用性的包而已，算法是别人的，而且已经比较老了，类似的工具简直就是成百上千。所以也是不好意思拿出来讲的。所以我拒绝了太云的邀请，一直也没有参加China-R的会议。&lt;/p&gt;
+
+&lt;p&gt;今年是第九届China-R会议，这次会议规模很大，有22个分会场，超过100个演讲嘉宾，参会人数超过4000人。这一次刚好有个Bioconductor的分会场，Matt写信给我，说我写过几个Bioconductor包，他本人喜欢我的&lt;a href=&#34;http://guangchuangyu.github.io/ChIPseeker&#34;&gt;ChIPseeker&lt;/a&gt;包，问我能否在会上分享与Bioconductor包相关的经验。这是Bioconductor在中国的首秀，我欣然接受，当然也是因为这两年我写了&lt;a href=&#34;http://guangchuangyu.github.io/ChIPseeker&#34;&gt;ChIPseeker&lt;/a&gt;和&lt;a href=&#34;http://guangchuangyu.github.io/ggtree&#34;&gt;ggtree&lt;/a&gt;，我自己觉得还拿得出手🙈。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2016/2016-05-30 10.36.12.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;做为Bioconductor在中国的首场会议，当然少不了Bioconductor的老大，Martin Morgan教授。早上Martin是第一个到会场的嘉宾，而我是第二个，做为一个讲蹩脚Chinglish的人，一般不会跟歪果仁搭讪，但看到Martin我主动坐到他旁边，并且跟他聊起来。&lt;/p&gt;
+
+&lt;p&gt;Martin在会议上介绍了Bioconductor项目，并且演示了基因组数据存储、检索和操作的强大功能和易用性，也介绍了Bioconductor强大的可视化功能。&lt;/p&gt;
+
+&lt;p&gt;Julie分享了CRISPRseek和GUIDEseq设计特异性gRNAs和评估CRISPR-Cas9准确性；Charity介绍了使用Bioconductor系列包进行RNA-seq分析的流程，特别推荐了limma包用于差异表达的检验；Jovana介绍了DNA甲基化分析，以及她们开发的MissMethyl包；腾飞分享了docker技术和七桥公司的Cancer Genomics Cloud云平台。&lt;/p&gt;
+
+&lt;p&gt;我在会上分享了&lt;a href=&#34;http://guangchuangyu.github.io/ggtree&#34;&gt;ggtree&lt;/a&gt;的功能特性。ggtree应该说是我写过最受欢迎的包，最主要是使用起来够简单直接，按照ggplot2的语法自由组合进化树的注释图层。在我刚来现在这个实验室时，我尝试去教labmates学ggplot2，但收效甚微，现在几乎所有人都在学R和ggplot2，因为他/她们都要用ggtree。在这次会议之前，太云也向我邀稿，当时在统计之都上发表了&lt;a href=&#34;http://cos.name/2015/11/to-achieve-the-visualization-and-annotation-of-evolutionary-tree-using-ggtree/&#34;&gt;使用ggtree实现进化树的可视化和注释&lt;/a&gt;，这次在会议上分享的内容要远超于之前在统计之都上发表的文章，同时也介绍了很多新的功能（&lt;a href=&#34;http://guangchuangyu.github.io/presentation/2016-ggtree-chinar/&#34;&gt;会议slides请猛戳此处&lt;/a&gt;）。&lt;/p&gt;
+
+&lt;p&gt;这次Bioconductor的会议相当成功，全程三个半小时，没人离场，后面一直站满了人。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2016/2016-05-29 11.00.29.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;PS: 在香港住惯了几平米，到了友谊宾馆后惊讶地发现竟然有阳台（据说是当年住苏联专家的地方）。两天的时间很短，但很开心，和几个多年的老网友，终于见到面，统计之都的太云，WeGene公司的陈钢，艾吉泰康公司的屈武斌；又认识了腾飞，沈侠、文锋等小伙伴；还认识了Julie教授，她一见到我说以为我很凶，着实有点不好意思，之前攻击了她的ChIPpeakAnno，算是不打不相识😬。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Google Drive @ HKU</title>
@@ -1653,63 +1683,6 @@ test的表现最差，binomial做为p值的近似估计还是不错的，因为�
 富集性分析应用范围非常广，从&lt;a href=&#34;http://bioconductor.org/packages/devel/bioc/html/DOSE.html&#34;&gt;Disease Ontology&lt;/a&gt;,
 &lt;a href=&#34;http://bioconductor.org/packages/devel/bioc/html/clusterProfiler.html&#34;&gt;Gene Ontology, KEGG&lt;/a&gt;,
 到&lt;a href=&#34;http://bioconductor.org/packages/devel/bioc/html/ReactomePA.html&#34;&gt;Reactome Pathway&lt;/a&gt;等等。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Support Vector Machine</title>
-      <link>//guangchuangyu.github.io/cn/2012/04/support-vector-machine/</link>
-      <pubDate>Thu, 12 Apr 2012 05:37:55 +0800</pubDate>
-      
-      <guid>//guangchuangyu.github.io/cn/2012/04/support-vector-machine/</guid>
-      <description>&lt;p&gt;支持向量机(Support Vector Machines, SVM)最初由Vladimir
-Vapnik于1997年提出，SVM最简单的形式就是找出一下区分界限（descision
-boundary），也称之为超平面(hyperplane)，使得离它最近的点（称之为support
-vectors）与之间隔最大。
-&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2012/04/linearSVM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这和logistic regression有些相似，区别在于logistic
-regression要求所有的点尽可能地远离中间那条线，而SVM是要求最接近中间线的点尽可能地远离中间线。也就是说SVM的主要目标是区分那些最难区分的点。&lt;/p&gt;
-
-&lt;p&gt;SVM对于hyperplane的定义，在形式上和logistic regression一样,logistic
-regression的decision boundary由$\theta^TX=0$确定,SVM则用$w^TX+b=0$表示,其中b相当于logistic regression中的$\theta_0$，从形式上看，两者并无区别，当然如前面所说，两者的目标不一样，logistic regression着眼于全局，SVM着眼于support
-vectors。有监督算法都有label变量y，logistic
-regression取值是&lt;code&gt;{0,1}&lt;/code&gt;，而SVM为了计算距离方便，取值为&lt;code&gt;{-1,1}&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;那么SVM的问题就变成为，确定参数w和b，以满足： $w^T x_i + b \ge
-+1$ when $y_i = +1$ $w^T x_i + b \le +1$ when
-$ y_i = -1$
-对于上图中最简单的例子，中间线可以由Ax+By+c=0表示，图上一个$(x_0, y_0)$的点到中间线的距离为$\frac{|Ax_0+By_0+c|}{\sqrt{A^2+B^2}}$。&lt;/p&gt;
-
-&lt;p&gt;对于更高维的空间，点到hyperplane上的距离也是一样计算，定义为： $\frac{|w^Tx+b|}{||w||}=\frac{1}{||w||}$。
-要距离最大，也就是求||w||的最小值。 那么问题就相当于在给定条件g(x):
-$y_i(w^Tx_i)-b \ge 1$下，求f(x): $\frac{1}{2}||w||^2$的最大值。
-这是一个限定条件下的优化问题，可以通过&lt;a href=&#34;http://en.wikipedia.org/wiki/Lagrange_multiplier&#34;&gt;Lagrange multiplier&lt;/a&gt;解决。&lt;/p&gt;
-
-&lt;p&gt;这里，拉格朗日公式为： $L=\frac{1}{2}||w||^2-\sum{\alpha_i[y_i(w^Tx_i+b)-1]}$&lt;/p&gt;
-
-&lt;p&gt;通过对拉格朗日公式的分析，问题变为： 给定$\alpha \ge 0$
-$\sum{\alpha_iy_i} = 0$ 求$\sum{\alpha_i} -
-\frac{1}{2}\sum{\alpha_i\alpha_jy_iy_jx_ix_j}$的最大值。&lt;/p&gt;
-
-&lt;p&gt;对于$\alpha$值，通常训练算法还通过C参数进行限制$C \ge
-\alpha \ge 0$，这个参数相当于logistic regression里的$\lambda$参数，对outlier数据点的penalty。&lt;/p&gt;
-
-&lt;p&gt;通过Sequential Minimal Optimization（SMO）算法，可以快速地给出解。&lt;/p&gt;
-
-&lt;p&gt;对于无法进行线性区分的数据，需要进行transformation，把数据映射到另一个空间里，使之可以线性区分，这就是kernel
-function所干的事情。&lt;/p&gt;
-
-&lt;p&gt;参考了《machine learning in
-action》和ml-class的材料后，我在&lt;a href=&#34;https://github.com/GuangchuangYu/mlass&#34;&gt;mlass&lt;/a&gt;包里实现了简化版本的SMO算法。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;require(mlass)
-data(ex6data2)
-model &amp;lt;- svmTrain(X,y, C=1, kernelFunction=&amp;quot;gaussianKernel&amp;quot;)
-plot(model, X,y, type=&amp;quot;nonlinear&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2012/04/Screen-Shot-2012-04-10-at-3.09.43-PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
