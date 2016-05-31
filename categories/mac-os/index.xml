@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mac Os on Guangchuang Yu</title>
-    <link>http://guangchuangyu.github.io/cn/categories/mac-os/</link>
+    <link>//guangchuangyu.github.io/cn/categories/mac-os/</link>
     <description>Recent content in Mac Os on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 17 Nov 2015 16:06:59 +0800</lastBuildDate>
-    <atom:link href="http://guangchuangyu.github.io/cn/categories/mac-os/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//guangchuangyu.github.io/cn/categories/mac-os/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>合体中的操作系统</title>
-      <link>http://guangchuangyu.github.io/cn/2015/11/%E5%90%88%E4%BD%93%E4%B8%AD%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link>
+      <link>//guangchuangyu.github.io/cn/2015/11/%E5%90%88%E4%BD%93%E4%B8%AD%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link>
       <pubDate>Tue, 17 Nov 2015 16:06:59 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/cn/2015/11/%E5%90%88%E4%BD%93%E4%B8%AD%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</guid>
+      <guid>//guangchuangyu.github.io/cn/2015/11/%E5%90%88%E4%BD%93%E4%B8%AD%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</guid>
       <description>&lt;p&gt;更新EI Capitan已经近一个月，第一感觉就是明显变慢了。这是去年买的27&amp;rsquo;
 iMac，必须不慢。MS
 office程序可以打开，但打开文档直接闪退。升级安装总会有些问题，就像我去年在笔记本上&lt;a href=&#34;http://guangchuangyu.github.io/2014/11/hello-yosemite/&#34;&gt;升级yosemite&lt;/a&gt;一样，最后两分钟始终过不去，迫使我&lt;a href=&#34;http://guangchuangyu.github.io/2014/11/hello-yosemite/&#34;&gt;全新安装&lt;/a&gt;，当时我看后台记录就发现了是MacTex拷不过去，后来MacTex的网站上也写了升级Yosemite有这个问题。升级有些小问题是可以预见的，但很少有像EI
@@ -84,10 +84,10 @@ View嘛，还得靠BTT：
     
     <item>
       <title>更改百度云同步盘路径</title>
-      <link>http://guangchuangyu.github.io/cn/2014/05/%E6%9B%B4%E6%94%B9%E7%99%BE%E5%BA%A6%E4%BA%91%E5%90%8C%E6%AD%A5%E7%9B%98%E8%B7%AF%E5%BE%84/</link>
+      <link>//guangchuangyu.github.io/cn/2014/05/%E6%9B%B4%E6%94%B9%E7%99%BE%E5%BA%A6%E4%BA%91%E5%90%8C%E6%AD%A5%E7%9B%98%E8%B7%AF%E5%BE%84/</link>
       <pubDate>Mon, 05 May 2014 10:45:25 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/cn/2014/05/%E6%9B%B4%E6%94%B9%E7%99%BE%E5%BA%A6%E4%BA%91%E5%90%8C%E6%AD%A5%E7%9B%98%E8%B7%AF%E5%BE%84/</guid>
+      <guid>//guangchuangyu.github.io/cn/2014/05/%E6%9B%B4%E6%94%B9%E7%99%BE%E5%BA%A6%E4%BA%91%E5%90%8C%E6%AD%A5%E7%9B%98%E8%B7%AF%E5%BE%84/</guid>
       <description>&lt;p&gt;从2007年写了&lt;a href=&#34;http://cjbmb.bjmu.edu.cn/CN/abstract/abstract17570.shtml&#34;&gt;第一篇文章&lt;/a&gt;之后，我发现管理文献真不是人干的，一直以来使用Zotero来管理文献，自从有了dropbox之后，就想把文献库放在dropbox上，一来有个云备份，不怕硬盘坏，二来嘛，实验室电脑和个人电脑可以实时同步化，无奈dropbox空间太小，而我的zotero早已超过10G，因为电子书也放在里面，只能做罢。&lt;/p&gt;
 
 &lt;p&gt;度娘出手还是很大方的，我现在的网盘已经有3T，包括之前在推广阶段用1元买的1T。&lt;/p&gt;
@@ -120,10 +120,10 @@ X的问题，在&lt;a href=&#34;http://stackoverflow.com/questions/80875/what-is
     
     <item>
       <title>Install Emacs on Mac</title>
-      <link>http://guangchuangyu.github.io/cn/2013/09/install-emacs-on-mac/</link>
+      <link>//guangchuangyu.github.io/cn/2013/09/install-emacs-on-mac/</link>
       <pubDate>Tue, 10 Sep 2013 18:04:22 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/cn/2013/09/install-emacs-on-mac/</guid>
+      <guid>//guangchuangyu.github.io/cn/2013/09/install-emacs-on-mac/</guid>
       <description>
 
 &lt;h2 id=&#34;package-manager:a0d2dabbee19e6fccf2cd8eeaa0e67d0&#34;&gt;package manager&lt;/h2&gt;
@@ -250,10 +250,10 @@ plot&lt;/a&gt;就完美了。&lt;/p&gt;
     
     <item>
       <title>Installing Hackintosh</title>
-      <link>http://guangchuangyu.github.io/cn/2012/03/installing-hackintosh/</link>
+      <link>//guangchuangyu.github.io/cn/2012/03/installing-hackintosh/</link>
       <pubDate>Thu, 15 Mar 2012 04:47:26 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/cn/2012/03/installing-hackintosh/</guid>
+      <guid>//guangchuangyu.github.io/cn/2012/03/installing-hackintosh/</guid>
       <description>&lt;p&gt;初中时在杂志上看到苹果的彩壳机，从此叔就开始成为了苹果的脑残粉，还在K6-2和win98那会，就在玩macintosh主题。&lt;/p&gt;
 
 &lt;p&gt;本科时，通过&lt;a href=&#34;http://pearpc.sourceforge.net/&#34;&gt;PearPC&lt;/a&gt;来虚拟PowerPC，硬是在ATHLON XP 1700+这个破CPU上破了OS X Jaguar，那个慢啊，是无法忍受的。&lt;/p&gt;
@@ -276,10 +276,10 @@ plot&lt;/a&gt;就完美了。&lt;/p&gt;
     
     <item>
       <title>screen shot</title>
-      <link>http://guangchuangyu.github.io/cn/2011/06/screen-shot/</link>
+      <link>//guangchuangyu.github.io/cn/2011/06/screen-shot/</link>
       <pubDate>Tue, 28 Jun 2011 12:17:30 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/cn/2011/06/screen-shot/</guid>
+      <guid>//guangchuangyu.github.io/cn/2011/06/screen-shot/</guid>
       <description>&lt;p&gt;买了苹果机，一直放在家里没用，准备开会带去用，拿过来装几个软件。&lt;/p&gt;
 
 &lt;p&gt;校园网用锐捷是个比较讨厌的东西。当年在华农，光这&lt;a href=&#34;http://guangchuangyu.github.io/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/&#34;&gt;认证&lt;/a&gt;就搞了很久。&lt;/p&gt;
@@ -305,10 +305,10 @@ plot&lt;/a&gt;就完美了。&lt;/p&gt;
     
     <item>
       <title>screenshot</title>
-      <link>http://guangchuangyu.github.io/cn/2007/06/screenshot/</link>
+      <link>//guangchuangyu.github.io/cn/2007/06/screenshot/</link>
       <pubDate>Sat, 16 Jun 2007 00:18:00 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/cn/2007/06/screenshot/</guid>
+      <guid>//guangchuangyu.github.io/cn/2007/06/screenshot/</guid>
       <description>
 
 &lt;h2 id=&#34;os-9-2:ba11a7898e0e392a3a4c1229a801e666&#34;&gt;OS 9.2&lt;/h2&gt;
@@ -351,10 +351,10 @@ plot&lt;/a&gt;就完美了。&lt;/p&gt;
     
     <item>
       <title>安装os9和netbsd双系统</title>
-      <link>http://guangchuangyu.github.io/cn/2006/06/%E5%AE%89%E8%A3%85os9%E5%92%8Cnetbsd%E5%8F%8C%E7%B3%BB%E7%BB%9F/</link>
+      <link>//guangchuangyu.github.io/cn/2006/06/%E5%AE%89%E8%A3%85os9%E5%92%8Cnetbsd%E5%8F%8C%E7%B3%BB%E7%BB%9F/</link>
       <pubDate>Wed, 14 Jun 2006 04:31:00 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/cn/2006/06/%E5%AE%89%E8%A3%85os9%E5%92%8Cnetbsd%E5%8F%8C%E7%B3%BB%E7%BB%9F/</guid>
+      <guid>//guangchuangyu.github.io/cn/2006/06/%E5%AE%89%E8%A3%85os9%E5%92%8Cnetbsd%E5%8F%8C%E7%B3%BB%E7%BB%9F/</guid>
       <description>
 
 &lt;h2 id=&#34;1-分区:7c364ac533cc06c9bf86bf33eb786a17&#34;&gt;1 分区&lt;/h2&gt;
