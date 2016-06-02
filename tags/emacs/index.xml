@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Emacs on Guangchuang Yu</title>
-    <link>//guangchuangyu.github.io/cn/tags/emacs/</link>
+    <link>https://guangchuangyu.github.io/cn/tags/emacs/</link>
     <description>Recent content in Emacs on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 10 Sep 2013 18:04:22 +0800</lastBuildDate>
-    <atom:link href="//guangchuangyu.github.io/cn/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://guangchuangyu.github.io/cn/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Install Emacs on Mac</title>
-      <link>//guangchuangyu.github.io/cn/2013/09/install-emacs-on-mac/</link>
+      <link>https://guangchuangyu.github.io/cn/2013/09/install-emacs-on-mac/</link>
       <pubDate>Tue, 10 Sep 2013 18:04:22 +0800</pubDate>
       
-      <guid>//guangchuangyu.github.io/cn/2013/09/install-emacs-on-mac/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2013/09/install-emacs-on-mac/</guid>
       <description>
 
 &lt;h2 id=&#34;package-manager:a0d2dabbee19e6fccf2cd8eeaa0e67d0&#34;&gt;package manager&lt;/h2&gt;
@@ -141,10 +141,10 @@ plot&lt;/a&gt;就完美了。&lt;/p&gt;
     
     <item>
       <title>在emacs里使用maxima</title>
-      <link>//guangchuangyu.github.io/cn/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/</link>
+      <link>https://guangchuangyu.github.io/cn/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/</link>
       <pubDate>Sat, 28 May 2005 08:15:00 +0800</pubDate>
       
-      <guid>//guangchuangyu.github.io/cn/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/</guid>
       <description>
 
 &lt;h2 id=&#34;下载imaxima:e6dedd294f68f0284e7032ee31b772ce&#34;&gt;下载imaxima   &lt;/h2&gt;

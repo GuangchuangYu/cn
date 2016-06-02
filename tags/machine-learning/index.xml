@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Machine Learning on Guangchuang Yu</title>
-    <link>//guangchuangyu.github.io/cn/tags/machine-learning/</link>
+    <link>https://guangchuangyu.github.io/cn/tags/machine-learning/</link>
     <description>Recent content in Machine Learning on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 12 Apr 2012 05:37:55 +0800</lastBuildDate>
-    <atom:link href="//guangchuangyu.github.io/cn/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://guangchuangyu.github.io/cn/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Support Vector Machine</title>
-      <link>//guangchuangyu.github.io/cn/2012/04/support-vector-machine/</link>
+      <link>https://guangchuangyu.github.io/cn/2012/04/support-vector-machine/</link>
       <pubDate>Thu, 12 Apr 2012 05:37:55 +0800</pubDate>
       
-      <guid>//guangchuangyu.github.io/cn/2012/04/support-vector-machine/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2012/04/support-vector-machine/</guid>
       <description>&lt;p&gt;支持向量机(Support Vector Machines, SVM)最初由Vladimir
 Vapnik于1997年提出，SVM最简单的形式就是找出一下区分界限（descision
 boundary），也称之为超平面(hyperplane)，使得离它最近的点（称之为support

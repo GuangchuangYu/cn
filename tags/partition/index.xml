@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Partition on Guangchuang Yu</title>
-    <link>//guangchuangyu.github.io/cn/tags/partition/</link>
+    <link>https://guangchuangyu.github.io/cn/tags/partition/</link>
     <description>Recent content in Partition on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 14 May 2007 04:43:00 +0800</lastBuildDate>
-    <atom:link href="//guangchuangyu.github.io/cn/tags/partition/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://guangchuangyu.github.io/cn/tags/partition/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Edit partition table in NetBSD/macppc</title>
-      <link>//guangchuangyu.github.io/cn/2007/05/edit-partition-table-in-netbsd/macppc/</link>
+      <link>https://guangchuangyu.github.io/cn/2007/05/edit-partition-table-in-netbsd/macppc/</link>
       <pubDate>Mon, 14 May 2007 04:43:00 +0800</pubDate>
       
-      <guid>//guangchuangyu.github.io/cn/2007/05/edit-partition-table-in-netbsd/macppc/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2007/05/edit-partition-table-in-netbsd/macppc/</guid>
       <description>&lt;pre&gt;&lt;code&gt;#disklabel wd0
 &lt;/code&gt;&lt;/pre&gt;
 

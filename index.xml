@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Guangchuang Yu</title>
-    <link>//guangchuangyu.github.io/cn/</link>
+    <link>https://guangchuangyu.github.io/cn/</link>
     <description>Recent content on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 31 May 2016 18:06:59 +0800</lastBuildDate>
-    <atom:link href="//guangchuangyu.github.io/cn/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://guangchuangyu.github.io/cn/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>第九届ChinaR会议生物信息学分会</title>
-      <link>//guangchuangyu.github.io/cn/2016/05/%E7%AC%AC%E4%B9%9D%E5%B1%8Achinar%E4%BC%9A%E8%AE%AE%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%88%86%E4%BC%9A/</link>
+      <link>https://guangchuangyu.github.io/cn/2016/05/%E7%AC%AC%E4%B9%9D%E5%B1%8Achinar%E4%BC%9A%E8%AE%AE%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%88%86%E4%BC%9A/</link>
       <pubDate>Tue, 31 May 2016 18:06:59 +0800</pubDate>
       
-      <guid>//guangchuangyu.github.io/cn/2016/05/%E7%AC%AC%E4%B9%9D%E5%B1%8Achinar%E4%BC%9A%E8%AE%AE%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%88%86%E4%BC%9A/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2016/05/%E7%AC%AC%E4%B9%9D%E5%B1%8Achinar%E4%BC%9A%E8%AE%AE%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%88%86%E4%BC%9A/</guid>
       <description>&lt;p&gt;不记得是什么时候知道统计之都的，但我记得最早知道的是太云，因为我用了他写的&lt;a href=&#34;https://cran.r-project.org/package=corrplot&#34;&gt;corrplot&lt;/a&gt;包。后来统计之都最早接触的也是太云，他给我写邮件问我能不能帮忙校对&lt;a href=&#34;https://book.douban.com/subject/24527091/&#34;&gt;《ggplot2：数据分析与图形艺术》&lt;/a&gt;，从此开始和太云变成了网友。&lt;/p&gt;
 
 &lt;p&gt;我在暨大的时候，太云曾经邀请我去China-R会议做报告，但我觉得自己没什么好分享的，&lt;a href=&#34;http://guangchuangyu.github.io/GOSemSim&#34;&gt;GOSemSim&lt;/a&gt;这个包是硕士的时候做的，不好去讲之前做的东西。而当时我写的另一个包&lt;a href=&#34;http://guangchuangyu.github.io/clusterProfiler&#34;&gt;clusterProfiler&lt;/a&gt;，纯粹是因为大量做富集分析的工具都是针对模式生物，而我们实验室有做各种细菌；另外有一些工具，背景设置是有问题的。自己实现一个包，不受别人的限制。即便是这个包现在受到了一定的认可，比如BioC 3.3中有个&lt;a href=&#34;http://bioconductor.org/packages/release/bioc/html/debrowser.html&#34;&gt;debrowser&lt;/a&gt;的包使用了clusterProfiler，而在BioC 3.4中又有个新包&lt;a href=&#34;http://bioconductor.org/packages/devel/bioc/html/bioCancer.html&#34;&gt;bioCancer&lt;/a&gt;也使用了clusterProfiler；再比如这次在北京，有好几个参会的人员在茶歇时问了clusterProfiler的问题。但始终觉得这只是个实用性的包而已，算法是别人的，而且已经比较老了，类似的工具简直就是成百上千。所以也是不好意思拿出来讲的。所以我拒绝了太云的邀请，一直也没有参加China-R的会议。&lt;/p&gt;
@@ -41,10 +41,10 @@
     
     <item>
       <title>Google Drive @ HKU</title>
-      <link>//guangchuangyu.github.io/cn/2016/03/google-drive--hku/</link>
+      <link>https://guangchuangyu.github.io/cn/2016/03/google-drive--hku/</link>
       <pubDate>Thu, 24 Mar 2016 15:40:22 +0800</pubDate>
       
-      <guid>//guangchuangyu.github.io/cn/2016/03/google-drive--hku/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2016/03/google-drive--hku/</guid>
       <description>
 
 &lt;p&gt;寻找一个好的网盘一直是个困扰我的问题，Dropbox非常好，但空间有限，大陆的各种网盘都是渣渣，本来试用了一下&lt;a href=&#34;http://guangchuangyu.github.io/2014/05/%E6%9B%B4%E6%94%B9%E7%99%BE%E5%BA%A6%E4%BA%91%E5%90%8C%E6%AD%A5%E7%9B%98%E8%B7%AF%E5%BE%84/&#34;&gt;百度云&lt;/a&gt;，但度娘实在不争气，体验非常差。我后来找到了个比较好的方案，那就是&lt;a href=&#34;https://gitlab.com/&#34;&gt;gitlab&lt;/a&gt;，可以创建无限量的project，每个project有10G的空间，这比&lt;a href=&#34;https://github.com/&#34;&gt;github&lt;/a&gt;出手大方多了。唯一不足是&lt;code&gt;.git&lt;/code&gt;文件夹也是非常占空间的。&lt;/p&gt;
@@ -86,10 +86,10 @@
     
     <item>
       <title>使用ggtree实现进化树的可视化和注释</title>
-      <link>//guangchuangyu.github.io/cn/2016/03/%E4%BD%BF%E7%94%A8ggtree%E5%AE%9E%E7%8E%B0%E8%BF%9B%E5%8C%96%E6%A0%91%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E5%92%8C%E6%B3%A8%E9%87%8A/</link>
+      <link>https://guangchuangyu.github.io/cn/2016/03/%E4%BD%BF%E7%94%A8ggtree%E5%AE%9E%E7%8E%B0%E8%BF%9B%E5%8C%96%E6%A0%91%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E5%92%8C%E6%B3%A8%E9%87%8A/</link>
       <pubDate>Wed, 09 Mar 2016 13:17:48 +0800</pubDate>
       
-      <guid>//guangchuangyu.github.io/cn/2016/03/%E4%BD%BF%E7%94%A8ggtree%E5%AE%9E%E7%8E%B0%E8%BF%9B%E5%8C%96%E6%A0%91%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E5%92%8C%E6%B3%A8%E9%87%8A/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2016/03/%E4%BD%BF%E7%94%A8ggtree%E5%AE%9E%E7%8E%B0%E8%BF%9B%E5%8C%96%E6%A0%91%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E5%92%8C%E6%B3%A8%E9%87%8A/</guid>
       <description>
 
 &lt;blockquote&gt;
@@ -370,10 +370,10 @@ pp + geom_tiplab(align=T, linetype=&#39;dashed&#39;, linesize=.5) + geom_tippoin
     
     <item>
       <title>喜新厌旧之hello Hugo</title>
-      <link>//guangchuangyu.github.io/cn/2015/12/%E5%96%9C%E6%96%B0%E5%8E%8C%E6%97%A7%E4%B9%8Bhello-hugo/</link>
+      <link>https://guangchuangyu.github.io/cn/2015/12/%E5%96%9C%E6%96%B0%E5%8E%8C%E6%97%A7%E4%B9%8Bhello-hugo/</link>
       <pubDate>Fri, 04 Dec 2015 00:42:26 +0800</pubDate>
       
-      <guid>//guangchuangyu.github.io/cn/2015/12/%E5%96%9C%E6%96%B0%E5%8E%8C%E6%97%A7%E4%B9%8Bhello-hugo/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2015/12/%E5%96%9C%E6%96%B0%E5%8E%8C%E6%97%A7%E4%B9%8Bhello-hugo/</guid>
       <description>
 
 &lt;p&gt;最早在China Unix上写博客，后来转战新浪。在&lt;a href=&#34;http://azaleasays.com/&#34;&gt;azelea&lt;/a&gt;的说服下，&lt;a href=&#34;http://guangchuangyu.github.io/2008/09/%E5%8D%9A%E5%AE%A2%E8%BD%ACwordpress/&#34;&gt;果断换成wordpress&lt;/a&gt;，写技术博客贴点代码什么的，新浪必须是太渣。&lt;a href=&#34;http://azaleasays.com/&#34;&gt;azelea&lt;/a&gt;是我开始独立博客的领路人，为我提供了空间和域名。再后来自己买了空间和&lt;code&gt;ygc.name&lt;/code&gt;的域名，用了好几年。本来一直有想法要换成github+jekll，恰巧&lt;a href=&#34;http://blog.shenwei.me/&#34;&gt;Wei Shen&lt;/a&gt;强力推荐HUGO。于是再一次换博客。&lt;/p&gt;
@@ -491,10 +491,10 @@ MathJax.Hub.Config({
     
     <item>
       <title>合体中的操作系统</title>
-      <link>//guangchuangyu.github.io/cn/2015/11/%E5%90%88%E4%BD%93%E4%B8%AD%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link>
+      <link>https://guangchuangyu.github.io/cn/2015/11/%E5%90%88%E4%BD%93%E4%B8%AD%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link>
       <pubDate>Tue, 17 Nov 2015 16:06:59 +0800</pubDate>
       
-      <guid>//guangchuangyu.github.io/cn/2015/11/%E5%90%88%E4%BD%93%E4%B8%AD%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2015/11/%E5%90%88%E4%BD%93%E4%B8%AD%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</guid>
       <description>&lt;p&gt;更新EI Capitan已经近一个月，第一感觉就是明显变慢了。这是去年买的27&amp;rsquo; iMac，必须不慢。
 MS office程序可以打开，但打开文档直接闪退。升级安装总会有些问题，就像我去年在笔记本上&lt;a href=&#34;http://guangchuangyu.github.io/2014/11/hello-yosemite/&#34;&gt;升级yosemite&lt;/a&gt;一样，最后两分钟始终过不去，迫使我&lt;a href=&#34;http://guangchuangyu.github.io/2014/11/hello-yosemite/&#34;&gt;全新安装&lt;/a&gt;，当时我看后台记录就发现了是MacTex拷不过去，
 后来MacTex的网站上也写了升级Yosemite有这个问题。升级有些小问题是可以预见的，但很少有像EI Capitan这么多的问题。&lt;/p&gt;
@@ -563,10 +563,10 @@ View嘛，还得靠BTT：
     
     <item>
       <title>BMC Favor Plagiarism</title>
-      <link>//guangchuangyu.github.io/cn/2015/05/bmc-favor-plagiarism/</link>
+      <link>https://guangchuangyu.github.io/cn/2015/05/bmc-favor-plagiarism/</link>
       <pubDate>Sun, 17 May 2015 21:51:43 +0800</pubDate>
       
-      <guid>//guangchuangyu.github.io/cn/2015/05/bmc-favor-plagiarism/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2015/05/bmc-favor-plagiarism/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://cran.r-project.org/web/packages/ppiPre/index.html&#34;&gt;ppiPre&lt;/a&gt;抄袭了&lt;a href=&#34;https://github.com/GuangchuangYu/GOSemSim&#34;&gt;GOSemSim&lt;/a&gt;的代码，证据当然非常充分，比对一下代码就知道了，我在&lt;a href=&#34;http://guangchuangyu.github.io/2014/11/proper-use-of-gosemsim/&#34;&gt;Proper use of GOSemSim&lt;/a&gt;一文中，做出了一些比较，另外也可以参考&lt;a href=&#34;https://github.com/cran/ppiPre/commit/c267700ca09a599dab77326959a0aa6a2980ceed&#34;&gt;github&lt;/a&gt;页面，github记录了ppiPre被暴光抄袭之后所做的修改。
 从我给BMC Systems
 Biology的编辑反馈这件事开始，在这铁板钉钉的事实面前，编辑拖了整整一年，而这一年时间过去了，ppiPre仍没有被编辑部受理。从最早反应这件事情，编辑信誓旦旦说他们很重视这种事情，到后面对我的邮件视而不见，我愿意相信编辑部处理这些事情，需要时间，他们有自己的规则，但一年的时间，不回邮件，冷处理以淡化此事，这绝对不是应该有的规则。
@@ -643,10 +643,10 @@ Chairs，通讯作者和BMC编委是认识的，于是我空穴来风地猜测�
     
     <item>
       <title>R binary is untrustable</title>
-      <link>//guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustable/</link>
+      <link>https://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustable/</link>
       <pubDate>Thu, 24 Jul 2014 04:22:35 +0800</pubDate>
       
-      <guid>//guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustable/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustable/</guid>
       <description>&lt;p&gt;去年ubuntu下apt-get了R-3.0.2,
 用了没多久就发现了system命令有问题，通常情况下调用系统命令是正常的，但是我调用bowtie的时候，就会报错：&lt;/p&gt;
 
@@ -730,10 +730,10 @@ R       22938  ygc  mem    REG   8,17    454082 49286705 /usr/lib/R/lib/libRblas
     
     <item>
       <title>use linux desktop again</title>
-      <link>//guangchuangyu.github.io/cn/2014/06/use-linux-desktop-again/</link>
+      <link>https://guangchuangyu.github.io/cn/2014/06/use-linux-desktop-again/</link>
       <pubDate>Sun, 01 Jun 2014 07:57:46 +0800</pubDate>
       
-      <guid>//guangchuangyu.github.io/cn/2014/06/use-linux-desktop-again/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2014/06/use-linux-desktop-again/</guid>
       <description>&lt;p&gt;上个月写了《&lt;a href=&#34;http://guangchuangyu.github.io/2014/05/use-ggplot2/&#34;&gt;使用ggplot画图&lt;/a&gt;》一文，图片太多，一下子把博客的12G流量给用光了，月中博客就被停了，小伙伴们太给力了，blog不能访问，真是件不爽的事情。&lt;/p&gt;
 
 &lt;p&gt;言归正传，从2002年使用redhat
@@ -762,10 +762,10 @@ windows，另外fcitx的五笔是我最喜欢的输入法。&lt;/p&gt;
     
     <item>
       <title>Use ggplot2</title>
-      <link>//guangchuangyu.github.io/cn/2014/05/use-ggplot2/</link>
+      <link>https://guangchuangyu.github.io/cn/2014/05/use-ggplot2/</link>
       <pubDate>Sun, 11 May 2014 06:17:56 +0800</pubDate>
       
-      <guid>//guangchuangyu.github.io/cn/2014/05/use-ggplot2/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2014/05/use-ggplot2/</guid>
       <description>
 
 &lt;h3 id=&#34;why-use-ggplot2:c38c63fac86d2290b6bc01da39216614&#34;&gt;Why use ggplot2&lt;/h3&gt;
@@ -1273,10 +1273,10 @@ print(p)
     
     <item>
       <title>更改百度云同步盘路径</title>
-      <link>//guangchuangyu.github.io/cn/2014/05/%E6%9B%B4%E6%94%B9%E7%99%BE%E5%BA%A6%E4%BA%91%E5%90%8C%E6%AD%A5%E7%9B%98%E8%B7%AF%E5%BE%84/</link>
+      <link>https://guangchuangyu.github.io/cn/2014/05/%E6%9B%B4%E6%94%B9%E7%99%BE%E5%BA%A6%E4%BA%91%E5%90%8C%E6%AD%A5%E7%9B%98%E8%B7%AF%E5%BE%84/</link>
       <pubDate>Mon, 05 May 2014 10:45:25 +0800</pubDate>
       
-      <guid>//guangchuangyu.github.io/cn/2014/05/%E6%9B%B4%E6%94%B9%E7%99%BE%E5%BA%A6%E4%BA%91%E5%90%8C%E6%AD%A5%E7%9B%98%E8%B7%AF%E5%BE%84/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2014/05/%E6%9B%B4%E6%94%B9%E7%99%BE%E5%BA%A6%E4%BA%91%E5%90%8C%E6%AD%A5%E7%9B%98%E8%B7%AF%E5%BE%84/</guid>
       <description>&lt;p&gt;从2007年写了&lt;a href=&#34;http://cjbmb.bjmu.edu.cn/CN/abstract/abstract17570.shtml&#34;&gt;第一篇文章&lt;/a&gt;之后，我发现管理文献真不是人干的，一直以来使用Zotero来管理文献，自从有了dropbox之后，就想把文献库放在dropbox上，一来有个云备份，不怕硬盘坏，二来嘛，实验室电脑和个人电脑可以实时同步化，无奈dropbox空间太小，而我的zotero早已超过10G，因为电子书也放在里面，只能做罢。&lt;/p&gt;
 
 &lt;p&gt;度娘出手还是很大方的，我现在的网盘已经有3T，包括之前在推广阶段用1元买的1T。&lt;/p&gt;
@@ -1309,10 +1309,10 @@ X的问题，在&lt;a href=&#34;http://stackoverflow.com/questions/80875/what-is
     
     <item>
       <title>boxplot</title>
-      <link>//guangchuangyu.github.io/cn/2014/03/boxplot/</link>
+      <link>https://guangchuangyu.github.io/cn/2014/03/boxplot/</link>
       <pubDate>Tue, 04 Mar 2014 12:23:16 +0800</pubDate>
       
-      <guid>//guangchuangyu.github.io/cn/2014/03/boxplot/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2014/03/boxplot/</guid>
       <description>&lt;p&gt;生物坑很多人画图只会直方图，统计只会T检验，在暨大见过太多的学生连T检验都不会，分不清SEM和SD的差别，也不清楚T检验那几个简单参数的含义。我写统计笔记也是因为不想重复性地跟学生讲解T检验。&lt;/p&gt;
 
 &lt;p&gt;Barplot和T test一样普遍而流行，barplot适合于表示计数数据和比例，显示比例也可以用pie
@@ -1335,10 +1335,10 @@ size足够大的话，$mean\pm errorbar$
     
     <item>
       <title>old habits die hard</title>
-      <link>//guangchuangyu.github.io/cn/2014/01/old-habits-die-hard/</link>
+      <link>https://guangchuangyu.github.io/cn/2014/01/old-habits-die-hard/</link>
       <pubDate>Wed, 22 Jan 2014 13:27:22 +0800</pubDate>
       
-      <guid>//guangchuangyu.github.io/cn/2014/01/old-habits-die-hard/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2014/01/old-habits-die-hard/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/01/Screenshot-2014-01-23-01.10.07.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;从2011年1月我就在实验室的QQ群里发群邮件说IPI关门，时至今日，已经关门3年了，主页上一直停留在关门大吉的那一刻。&lt;/p&gt;
@@ -1400,10 +1400,10 @@ ID，每一次revision都要有赋予unique的gi号，可以从&lt;a href=&#34;h
     
     <item>
       <title>Install Emacs on Mac</title>
-      <link>//guangchuangyu.github.io/cn/2013/09/install-emacs-on-mac/</link>
+      <link>https://guangchuangyu.github.io/cn/2013/09/install-emacs-on-mac/</link>
       <pubDate>Tue, 10 Sep 2013 18:04:22 +0800</pubDate>
       
-      <guid>//guangchuangyu.github.io/cn/2013/09/install-emacs-on-mac/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2013/09/install-emacs-on-mac/</guid>
       <description>
 
 &lt;h2 id=&#34;package-manager:a0d2dabbee19e6fccf2cd8eeaa0e67d0&#34;&gt;package manager&lt;/h2&gt;
@@ -1530,10 +1530,10 @@ plot&lt;/a&gt;就完美了。&lt;/p&gt;
     
     <item>
       <title>Permanent Head Damage to be</title>
-      <link>//guangchuangyu.github.io/cn/2013/07/permanent-head-damage-to-be/</link>
+      <link>https://guangchuangyu.github.io/cn/2013/07/permanent-head-damage-to-be/</link>
       <pubDate>Tue, 30 Jul 2013 16:18:26 +0800</pubDate>
       
-      <guid>//guangchuangyu.github.io/cn/2013/07/permanent-head-damage-to-be/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2013/07/permanent-head-damage-to-be/</guid>
       <description>&lt;p&gt;看似寻常最奇崛，成如容易却艰辛。在暨大工作了几年，发几篇小文章，觉得要找个地方读PhD，是件手到擒来的事，结果却花了整整一年的时间，事实证明像我这样的科研屌丝男，举步唯艰啊。
 去年7月份就开始在计划这个事情，我几乎想都没想就联系了计算生物所的JD
 Han，紧接着就是面试，第一次尝试用英文去讲slides，从早上10点讲到中午12点。感觉还好吧，因为有听到Han说impressive，而她的学生又说经常看我blog。看上去还是蛮顺利的，然而最终reject了我，而且没有给我任何原因。&lt;/p&gt;
@@ -1583,10 +1583,10 @@ OFFER，但是UQ非常龟毛，成绩单不能自己寄，我只能花钱让中�
     
     <item>
       <title>enrichment analysis</title>
-      <link>//guangchuangyu.github.io/cn/2012/04/enrichment-analysis/</link>
+      <link>https://guangchuangyu.github.io/cn/2012/04/enrichment-analysis/</link>
       <pubDate>Sat, 28 Apr 2012 08:06:05 +0800</pubDate>
       
-      <guid>//guangchuangyu.github.io/cn/2012/04/enrichment-analysis/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2012/04/enrichment-analysis/</guid>
       <description>&lt;p&gt;经常看到一些饼图，描述某些事物的组成，比如说有钱人的学历分布，然后我们可以看到高学历所占比例并不高，根据这个比例下结论通常是错的，这些比例说明不了问题，如果把各种学历在总体人口中的分布做为背景进行考虑的话，你就会发现学历还是有点用的。
 当我们用组学测定了一大堆分子之后，我们希望站在更高的角度去看这些分子和那些生物学过程相关。那么通常各种注释，对这些基因/蛋白进行分类，那么从分类的比例上，是不能草率下结论，正如上面有钱人学历分布的例子一样。我们需要把总体的分布考虑进去。
 和某个注释/分类是否有相关性，把基因分成属于这一类，和不属于这一类两种，这就好比经典统计学中的白球和黑球的抽样问题。也可以列一个２x２的表，进行独立性分析。
