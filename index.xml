@@ -1582,107 +1582,67 @@ OFFER，但是UQ非常龟毛，成绩单不能自己寄，我只能花钱让中�
     </item>
     
     <item>
-      <title>enrichment analysis</title>
-      <link>https://guangchuangyu.github.io/cn/2012/04/enrichment-analysis/</link>
-      <pubDate>Sat, 28 Apr 2012 08:06:05 +0800</pubDate>
+      <title>TALEN基因编辑</title>
+      <link>https://guangchuangyu.github.io/cn/2013/01/talen%E5%9F%BA%E5%9B%A0%E7%BC%96%E8%BE%91/</link>
+      <pubDate>Thu, 10 Jan 2013 08:40:22 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/2012/04/enrichment-analysis/</guid>
-      <description>&lt;p&gt;经常看到一些饼图，描述某些事物的组成，比如说有钱人的学历分布，然后我们可以看到高学历所占比例并不高，根据这个比例下结论通常是错的，这些比例说明不了问题，如果把各种学历在总体人口中的分布做为背景进行考虑的话，你就会发现学历还是有点用的。
-当我们用组学测定了一大堆分子之后，我们希望站在更高的角度去看这些分子和那些生物学过程相关。那么通常各种注释，对这些基因/蛋白进行分类，那么从分类的比例上，是不能草率下结论，正如上面有钱人学历分布的例子一样。我们需要把总体的分布考虑进去。
-和某个注释/分类是否有相关性，把基因分成属于这一类，和不属于这一类两种，这就好比经典统计学中的白球和黑球的抽样问题。也可以列一个２x２的表，进行独立性分析。
-以文章&lt;a href=&#34;http://cancerres.aacrjournals.org/content/62/16/4722&#34;&gt;Gene Expression in Ovarian Cancer Reflects Both Morphology and Biological Behavior, Distinguishing Clear Cell from Other Poor-Prognosis Ovarian Carcinomas&lt;/a&gt;所鉴定的差异基因为例。&lt;/p&gt;
+      <guid>https://guangchuangyu.github.io/cn/2013/01/talen%E5%9F%BA%E5%9B%A0%E7%BC%96%E8%BE%91/</guid>
+      <description>
 
-&lt;p&gt;73个差异基因的Symbol，我把它转为 entrezgene
-ID得到57个（漏掉的不管它，只是做为一个例子）:&lt;/p&gt;
+&lt;p&gt;分子生物学的基础和兴起离不开各种酶的发现和抗体的制备。没有抗体，蛋白质就玩不转，没有限制性内切酶和连接酶，就没有基因工程，如果没有耐高温酶的发现，连PCR都是件痛苦的事情，写到这里，我突然觉得做细菌也是蛮好的，因为比较有可能发现一些功能比较奇特的蛋白，而这些蛋白，一经改造，可能就是技术上的革新。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;gt; eg
- [1] &amp;quot;7980&amp;quot;   &amp;quot;3081&amp;quot;   &amp;quot;3162&amp;quot;   &amp;quot;3059&amp;quot;   &amp;quot;1545&amp;quot;   &amp;quot;1917&amp;quot;   &amp;quot;6696&amp;quot;   &amp;quot;5797&amp;quot;  
- [9] &amp;quot;6648&amp;quot;   &amp;quot;10397&amp;quot;  &amp;quot;6781&amp;quot;   &amp;quot;5817&amp;quot;   &amp;quot;1282&amp;quot;   &amp;quot;1284&amp;quot;   &amp;quot;6948&amp;quot;   &amp;quot;7077&amp;quot;  
-[17] &amp;quot;5744&amp;quot;   &amp;quot;8566&amp;quot;   &amp;quot;1368&amp;quot;   &amp;quot;1474&amp;quot;   &amp;quot;11015&amp;quot;  &amp;quot;3306&amp;quot;   &amp;quot;728441&amp;quot; &amp;quot;2678&amp;quot;  
-[25] &amp;quot;4286&amp;quot;   &amp;quot;3929&amp;quot;   &amp;quot;5095&amp;quot;   &amp;quot;2064&amp;quot;   &amp;quot;1428&amp;quot;   &amp;quot;6590&amp;quot;   &amp;quot;3569&amp;quot;   &amp;quot;2745&amp;quot;  
-[33] &amp;quot;3912&amp;quot;   &amp;quot;978&amp;quot;    &amp;quot;5950&amp;quot;   &amp;quot;6539&amp;quot;   &amp;quot;9445&amp;quot;   &amp;quot;5004&amp;quot;   &amp;quot;9971&amp;quot;   &amp;quot;7453&amp;quot;  
-[41] &amp;quot;2719&amp;quot;   &amp;quot;1410&amp;quot;   &amp;quot;1311&amp;quot;   &amp;quot;4653&amp;quot;   &amp;quot;4162&amp;quot;   &amp;quot;5358&amp;quot;   &amp;quot;3484&amp;quot;   &amp;quot;3486&amp;quot;  
-[49] &amp;quot;2261&amp;quot;   &amp;quot;307&amp;quot;    &amp;quot;1672&amp;quot;   &amp;quot;4837&amp;quot;   &amp;quot;22795&amp;quot;  &amp;quot;486&amp;quot;    &amp;quot;4118&amp;quot;   &amp;quot;3915&amp;quot;  
-[57] &amp;quot;10140&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;TALE(transcription activator-like
+effector)也不例外，最初在植物致病菌黄单胞菌（*Xanthomonas*）中被发现，在致病过程中，能够特异性地结合和调控植物基因。
+&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2013/01/tale.png&#34; alt=&#34;tale&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;下面测试一下这些基因和化学刺激响应的相关性。&lt;/p&gt;
+&lt;p&gt;TALE的结构中间（红色部分）是重复序列，介导DNA识别，每一个重复片段为33-35个氨基酸，其中12和13位置两个氨基酸决定碱基偏好性，这两个相邻的氨基酸被称之为重复可变双残基（repeat
+variable di-residue,
+RVD），RVD所编码的靶标碱基由上图b所示，基本上你看一段TALE的重复序列，就可以预测到它将结合到什么样的DNA序列上，或者你看一段DNA序列，可以很容易地设计结合它的TALE重复序列。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;goid &amp;lt;- “GO:0042221” # response to chemical stimulus
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;N端通常是288个残基，其中Δ152做为截断点，去掉前面用于进入植物细胞的功能，而保留TALE蛋白的其它功能。C端通常是278个残基。&lt;/p&gt;
 
-&lt;p&gt;那么做为背景，总体基因为N，属于“化学刺激响应”这个分类的基因有M个。&lt;/p&gt;
+&lt;p&gt;中间重复片段的特性使得TALE很容易被改造，应用于各种定点靶向的场景。
+&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2013/01/tale_domain.png&#34; alt=&#34;tale\_domain&#34; /&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;allgeneInCategory &amp;lt;- unique(get(goid, org.Hs.egGO2ALLEGS))
-M &amp;lt;- length(allgeneInCategory)
-N &amp;lt;- length(mappedkeys(org.Hs.egGO))
-&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;activator:7393467389792408e16b0639f01e929d&#34;&gt;Activator&lt;/h3&gt;
 
-&lt;p&gt;样本的大小是n，属于“化学刺激响应”这个分类的基因有k个。&lt;/p&gt;
+&lt;p&gt;2011年发表在NBT上的文章《A TALE nuclease architecture for efficient genome editing》将TALE改造成促进特定基因表达。将天然TALE进行PCR扩增，去掉前面152个残基，
+重复序列改造为结合NTF3的启动子邻近区域(proximal promoter)，C端连上VP16（转录激活结构域），结果诱导超过20倍的表达。NTF3基因编码一个分泌性的生长因子，对神经退行性疾病有一个的治疗功效。作者把C端截断，保留95个残基再接上VP16，同样也是mRNA超过20倍的表达。
+&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2013/01/NT_L.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;n &amp;lt;- length(eg)
-k &amp;lt;- sum(eg %in% allgeneInCategory)
-&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;nuclease:7393467389792408e16b0639f01e929d&#34;&gt;Nuclease&lt;/h3&gt;
 
-&lt;p&gt;白球黑球问题，最简单的莫过于用二项式分布，从总体上看，要拿到一个基因属于“化学刺激响应”这个分类的概率是M/N。那么现在抽了n个基因，里面有k个基于这个分类，p值为：&lt;/p&gt;
+&lt;p&gt;位点特异性的核酸酶是基因组工程的有力工具，产生断裂的双链DNA（double
+strand breaks, DSBs），可以进行同源重组、靶向插入、删除。锌指蛋白（zinc
+finger protein）连接FokI的水解结构域，构成了锌指核酶(zinc finger
+nuclease,
+ZFN)被用来进行基因组编辑，但是ZFN的特异性和效率较差，可重复性不好。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;gt; 1-sum(sapply(0:k-1, function(i) choose(n,i) * (M/N)^i * (1-M/N)^(n-i)))
-[1] 8.561432e-10
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;TALE的单碱基识别能力，显然在特异性上是无可比拟的，有了TALE，TALEN（TALE-nuclease，TALE接上核酸酶）技术应运而生，特异性好，效率高，而且可以应用于各种物种。TALEN通常以同二聚体（homodimer）或异二聚体（hterodimer）对DNA从两端进行切割，两端切割点的距离（spacer
+length）可以是10-30bp之间，取决于linker的长度，即连接重复结构域和切割结构域的长度，长的linker，需要长的spacer，反之亦然。&lt;/p&gt;
 
-&lt;p&gt;二项式分布，是有放回的抽样，你可以多次抽到同一基因，这是不符合的。所以这个计算只能说是做为近似的估计值，无放回的抽样，符合超几何分布，通过超几何分布的计算，p值为：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2013/01/zebrafish_talen.png&#34; alt=&#34;zebrafish\_talen&#34; /&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;gt; phyper(k-1,M, N-M, n, lower.tail=FALSE)
-[1] 7.879194e-10
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;两端切割后，产生DSB，就会引起系统对其进行修复，Miller等使用TALEN对NTF3基因进行切割，产生DSB，随后进行非同源末端连接（non-homologous
+end joining,
+NHEJ）修复，NHEJ在没有同源序列做为模版的情况下进行修复，这是一个不精确的修复途径，结果产生了3-30bp的删除。&lt;/p&gt;
 
-&lt;p&gt;如果用2x2表做独立性分析，表如下：&lt;/p&gt;
+&lt;p&gt;NHEJ是容易出错也不好控制的，可喜的是还存在一条精确可控的途径，同源依赖修复（homology
+dependent repair, HDR），在有供体ssDNA存在的情况下，通过HDR途径，可以对基因进行编辑，插入和缺失处理。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;gt; d &amp;lt;- data.frame(gene.not.interest=c(M-k, N-M-n+k), gene.in.interest=c(k, n-k))
-&amp;gt; row.names(d) &amp;lt;- c(&amp;quot;In_category&amp;quot;, &amp;quot;not_in_category&amp;quot;)
-&amp;gt; d
-                gene.not.interest gene.in.interest
-In_category                  2613               28
-not_in_category             15310               29
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;于是牛B的事情就产生了，2012年Nature的文章报道在斑马鱼活体组织里使用TALEN技术，引入了定制的EcoRV位点和修改的loxP序列。&lt;/p&gt;
 
-&lt;p&gt;这个也有很多方法可以做检验，经典的有卡方检验和fisher&amp;rsquo;s exact test。
-如果用卡方检验来做。&lt;/p&gt;
+&lt;h3 id=&#34;reference:7393467389792408e16b0639f01e929d&#34;&gt;Reference&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;gt; chisq.test(d, )
-
-    Pearson&#39;s Chi-squared test with Yates&#39; continuity correction
-
-data:  d 
-X-squared = 51.3849, df = 1, p-value = 7.592e-13
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;对于２x２表来说，卡方检验通常也只能做为近似估计值，特别是当sample
-size或expected all count比较小的时候，计算并不准确。 fisher&amp;rsquo;s exact
-test，名副其实，真的就比较exact，因为它使用的是超几何分布来计算p值。这也是为什么fisher&amp;rsquo;s
-exact test和超几何模式计算的p-值是一样的，&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt; fisher.test(d)
-
-    Fisher&#39;s Exact Test for Count Data
-
-data:  d 
-p-value = 7.879e-10
-alternative hypothesis: true odds ratio is not equal to 1 
-95 percent confidence interval:
- 0.1013210 0.3089718 
-sample estimates:
-odds ratio 
- 0.1767937 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;通常各种软件做GO富集性分析，都是使用超几何分布进行计算。
-IPA软件则是使用fisher&amp;rsquo;s exact test来检验基因在某个网络中是否富集。
-从这个例子上看，chi-squared
-test的表现最差，binomial做为p值的近似估计还是不错的，因为计算较为简单。
-富集性分析应用范围非常广，从&lt;a href=&#34;http://bioconductor.org/packages/devel/bioc/html/DOSE.html&#34;&gt;Disease Ontology&lt;/a&gt;,
-&lt;a href=&#34;http://bioconductor.org/packages/devel/bioc/html/clusterProfiler.html&#34;&gt;Gene Ontology, KEGG&lt;/a&gt;,
-到&lt;a href=&#34;http://bioconductor.org/packages/devel/bioc/html/ReactomePA.html&#34;&gt;Reactome Pathway&lt;/a&gt;等等。&lt;/p&gt;
+&lt;p&gt;1. Miller, Jeffrey C., Siyuan Tan, Guijuan Qiao, Kyle A. Barlow, Jianbin
+Wang, Danny F. Xia, Xiangdong Meng, et al. “A TALE Nuclease Architecture
+for Efficient Genome Editing.” Nature Biotechnology 29, no. 2 (2011):
+143–148. doi:10.1038/nbt.1755. 2. Mahfouz, Magdy M, and Lixin Li. “TALE
+Nucleases and Next Generation GM Crops.” GM Crops 2, no. 2 (June 2011):
+99–103. doi:10.4161/gmcr.2.2.17254. 3. Bedell, Victoria M., Ying Wang,
+Jarryd M. Campbell, Tanya L. Poshusta, Colby G. Starker, Randall G. Krug
+Ii, Wenfang Tan, et al. “In Vivo Genome Editing Using a High-efficiency
+TALEN System.” Nature (2012). doi:10.1038/nature11537.&lt;/p&gt;
 </description>
     </item>
     
