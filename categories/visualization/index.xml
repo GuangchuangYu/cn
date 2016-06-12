@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Visualization on Guangchuang Yu</title>
-    <link>http://guangchuangyu.github.io/cn/categories/visualization/</link>
+    <link>https://guangchuangyu.github.io/cn/categories/visualization/</link>
     <description>Recent content in Visualization on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 09 Mar 2016 13:17:48 +0800</lastBuildDate>
-    <atom:link href="http://guangchuangyu.github.io/cn/categories/visualization/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://guangchuangyu.github.io/cn/categories/visualization/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>使用ggtree实现进化树的可视化和注释</title>
-      <link>http://guangchuangyu.github.io/cn/2016/03/%E4%BD%BF%E7%94%A8ggtree%E5%AE%9E%E7%8E%B0%E8%BF%9B%E5%8C%96%E6%A0%91%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E5%92%8C%E6%B3%A8%E9%87%8A/</link>
+      <link>https://guangchuangyu.github.io/cn/2016/03/%E4%BD%BF%E7%94%A8ggtree%E5%AE%9E%E7%8E%B0%E8%BF%9B%E5%8C%96%E6%A0%91%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E5%92%8C%E6%B3%A8%E9%87%8A/</link>
       <pubDate>Wed, 09 Mar 2016 13:17:48 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/cn/2016/03/%E4%BD%BF%E7%94%A8ggtree%E5%AE%9E%E7%8E%B0%E8%BF%9B%E5%8C%96%E6%A0%91%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E5%92%8C%E6%B3%A8%E9%87%8A/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2016/03/%E4%BD%BF%E7%94%A8ggtree%E5%AE%9E%E7%8E%B0%E8%BF%9B%E5%8C%96%E6%A0%91%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E5%92%8C%E6%B3%A8%E9%87%8A/</guid>
       <description>
 
 &lt;blockquote&gt;
@@ -295,10 +295,10 @@ pp + geom_tiplab(align=T, linetype=&#39;dashed&#39;, linesize=.5) + geom_tippoin
     
     <item>
       <title>Use ggplot2</title>
-      <link>http://guangchuangyu.github.io/cn/2014/05/use-ggplot2/</link>
+      <link>https://guangchuangyu.github.io/cn/2014/05/use-ggplot2/</link>
       <pubDate>Sun, 11 May 2014 06:17:56 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/cn/2014/05/use-ggplot2/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2014/05/use-ggplot2/</guid>
       <description>
 
 &lt;h3 id=&#34;why-use-ggplot2:c38c63fac86d2290b6bc01da39216614&#34;&gt;Why use ggplot2&lt;/h3&gt;
@@ -806,10 +806,10 @@ print(p)
     
     <item>
       <title>boxplot</title>
-      <link>http://guangchuangyu.github.io/cn/2014/03/boxplot/</link>
+      <link>https://guangchuangyu.github.io/cn/2014/03/boxplot/</link>
       <pubDate>Tue, 04 Mar 2014 12:23:16 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/cn/2014/03/boxplot/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2014/03/boxplot/</guid>
       <description>&lt;p&gt;生物坑很多人画图只会直方图，统计只会T检验，在暨大见过太多的学生连T检验都不会，分不清SEM和SD的差别，也不清楚T检验那几个简单参数的含义。我写统计笔记也是因为不想重复性地跟学生讲解T检验。&lt;/p&gt;
 
 &lt;p&gt;Barplot和T test一样普遍而流行，barplot适合于表示计数数据和比例，显示比例也可以用pie
@@ -832,10 +832,10 @@ size足够大的话，$mean\pm errorbar$
     
     <item>
       <title>violin plot</title>
-      <link>http://guangchuangyu.github.io/cn/2012/02/violin-plot/</link>
+      <link>https://guangchuangyu.github.io/cn/2012/02/violin-plot/</link>
       <pubDate>Tue, 07 Feb 2012 06:31:55 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/cn/2012/02/violin-plot/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2012/02/violin-plot/</guid>
       <description>&lt;p&gt;ggplot2 0.9.0版本将在3月1号发布，改动较大，最近bioc mailing
 list也有诸多讨论，因为它导致了某些包编译出错（估计是NAMESPACE引起的）。&lt;/p&gt;
 
@@ -857,10 +857,10 @@ plot基本可以扔了。&lt;/p&gt;
     
     <item>
       <title>scilab三维平面绘图</title>
-      <link>http://guangchuangyu.github.io/cn/2007/05/scilab%E4%B8%89%E7%BB%B4%E5%B9%B3%E9%9D%A2%E7%BB%98%E5%9B%BE/</link>
+      <link>https://guangchuangyu.github.io/cn/2007/05/scilab%E4%B8%89%E7%BB%B4%E5%B9%B3%E9%9D%A2%E7%BB%98%E5%9B%BE/</link>
       <pubDate>Thu, 03 May 2007 10:27:00 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/cn/2007/05/scilab%E4%B8%89%E7%BB%B4%E5%B9%B3%E9%9D%A2%E7%BB%98%E5%9B%BE/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2007/05/scilab%E4%B8%89%E7%BB%B4%E5%B9%B3%E9%9D%A2%E7%BB%98%E5%9B%BE/</guid>
       <description>
 
 &lt;p&gt;三维绘图可以分为两大类型：矩阵型和曲面型。&lt;/p&gt;

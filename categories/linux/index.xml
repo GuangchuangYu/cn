@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on Guangchuang Yu</title>
-    <link>http://guangchuangyu.github.io/cn/categories/linux/</link>
+    <link>https://guangchuangyu.github.io/cn/categories/linux/</link>
     <description>Recent content in Linux on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 01 Jun 2014 07:57:46 +0800</lastBuildDate>
-    <atom:link href="http://guangchuangyu.github.io/cn/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://guangchuangyu.github.io/cn/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>use linux desktop again</title>
-      <link>http://guangchuangyu.github.io/cn/2014/06/use-linux-desktop-again/</link>
+      <link>https://guangchuangyu.github.io/cn/2014/06/use-linux-desktop-again/</link>
       <pubDate>Sun, 01 Jun 2014 07:57:46 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/cn/2014/06/use-linux-desktop-again/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2014/06/use-linux-desktop-again/</guid>
       <description>&lt;p&gt;上个月写了《&lt;a href=&#34;http://guangchuangyu.github.io/2014/05/use-ggplot2/&#34;&gt;使用ggplot画图&lt;/a&gt;》一文，图片太多，一下子把博客的12G流量给用光了，月中博客就被停了，小伙伴们太给力了，blog不能访问，真是件不爽的事情。&lt;/p&gt;
 
 &lt;p&gt;言归正传，从2002年使用redhat
@@ -43,10 +43,10 @@ windows，另外fcitx的五笔是我最喜欢的输入法。&lt;/p&gt;
     
     <item>
       <title>Xming-windows下远程linux桌面</title>
-      <link>http://guangchuangyu.github.io/cn/2010/07/xming-windows%E4%B8%8B%E8%BF%9C%E7%A8%8Blinux%E6%A1%8C%E9%9D%A2/</link>
+      <link>https://guangchuangyu.github.io/cn/2010/07/xming-windows%E4%B8%8B%E8%BF%9C%E7%A8%8Blinux%E6%A1%8C%E9%9D%A2/</link>
       <pubDate>Mon, 05 Jul 2010 07:37:09 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/cn/2010/07/xming-windows%E4%B8%8B%E8%BF%9C%E7%A8%8Blinux%E6%A1%8C%E9%9D%A2/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2010/07/xming-windows%E4%B8%8B%E8%BF%9C%E7%A8%8Blinux%E6%A1%8C%E9%9D%A2/</guid>
       <description>&lt;p&gt;机房放着台机架机，闲着也是耗电，平时偶尔用putty登上去，没有图形界面还是有些不方便。&lt;/p&gt;
 
 &lt;p&gt;搜了一下，发现好几个软件可做这样的事，Xming是开源的，所以选择使用Xming+putty来远程连linux的桌面。&lt;/p&gt;
@@ -83,10 +83,10 @@ windows，另外fcitx的五笔是我最喜欢的输入法。&lt;/p&gt;
     
     <item>
       <title>通过局域网在linux下使用windows的程序</title>
-      <link>http://guangchuangyu.github.io/cn/2008/09/%E9%80%9A%E8%BF%87%E5%B1%80%E5%9F%9F%E7%BD%91%E5%9C%A8linux%E4%B8%8B%E4%BD%BF%E7%94%A8windows%E7%9A%84%E7%A8%8B%E5%BA%8F/</link>
+      <link>https://guangchuangyu.github.io/cn/2008/09/%E9%80%9A%E8%BF%87%E5%B1%80%E5%9F%9F%E7%BD%91%E5%9C%A8linux%E4%B8%8B%E4%BD%BF%E7%94%A8windows%E7%9A%84%E7%A8%8B%E5%BA%8F/</link>
       <pubDate>Mon, 22 Sep 2008 01:26:00 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/cn/2008/09/%E9%80%9A%E8%BF%87%E5%B1%80%E5%9F%9F%E7%BD%91%E5%9C%A8linux%E4%B8%8B%E4%BD%BF%E7%94%A8windows%E7%9A%84%E7%A8%8B%E5%BA%8F/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2008/09/%E9%80%9A%E8%BF%87%E5%B1%80%E5%9F%9F%E7%BD%91%E5%9C%A8linux%E4%B8%8B%E4%BD%BF%E7%94%A8windows%E7%9A%84%E7%A8%8B%E5%BA%8F/</guid>
       <description>&lt;p&gt;用了好多年linux，现在用windows越来越少了，但是还是得用。没办法，上taobao买个东西，上网银都得用ie，有时候还得用office等其它一些软件。&lt;/p&gt;
 
 &lt;p&gt;实验室里有台机子是做文件服务的，装的是windows 2003
@@ -114,10 +114,10 @@ server。之前使用rdesktop远程桌面，最近发现配合seamlessrdp可以�
     
     <item>
       <title>screenshot</title>
-      <link>http://guangchuangyu.github.io/cn/2007/06/screenshot/</link>
+      <link>https://guangchuangyu.github.io/cn/2007/06/screenshot/</link>
       <pubDate>Sat, 16 Jun 2007 00:18:00 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/cn/2007/06/screenshot/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2007/06/screenshot/</guid>
       <description>
 
 &lt;h2 id=&#34;os-9-2:ba11a7898e0e392a3a4c1229a801e666&#34;&gt;OS 9.2&lt;/h2&gt;
@@ -160,10 +160,10 @@ server。之前使用rdesktop远程桌面，最近发现配合seamlessrdp可以�
     
     <item>
       <title>scau校园网认证</title>
-      <link>http://guangchuangyu.github.io/cn/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/</link>
+      <link>https://guangchuangyu.github.io/cn/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/</link>
       <pubDate>Mon, 14 Mar 2005 04:30:00 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/cn/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/</guid>
       <description>&lt;p&gt;锐捷认证。非标准的802.1认证。 我采用mystar来认证，但是不会重连。。
 我自已写了个shell script来实现断线后重连。。。&lt;/p&gt;
 
@@ -239,10 +239,10 @@ kill掉，并重新运行。&lt;/p&gt;
     
     <item>
       <title>Powerbook G3上安装gentoo</title>
-      <link>http://guangchuangyu.github.io/cn/2005/01/powerbook-g3%E4%B8%8A%E5%AE%89%E8%A3%85gentoo/</link>
+      <link>https://guangchuangyu.github.io/cn/2005/01/powerbook-g3%E4%B8%8A%E5%AE%89%E8%A3%85gentoo/</link>
       <pubDate>Fri, 14 Jan 2005 04:32:00 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/cn/2005/01/powerbook-g3%E4%B8%8A%E5%AE%89%E8%A3%85gentoo/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2005/01/powerbook-g3%E4%B8%8A%E5%AE%89%E8%A3%85gentoo/</guid>
       <description>
 
 &lt;p&gt;下面是我在PowerBook G3上安装Gentoo的全过程。。&lt;/p&gt;

@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Plagiarism on Guangchuang Yu</title>
-    <link>http://guangchuangyu.github.io/cn/tags/plagiarism/</link>
+    <link>https://guangchuangyu.github.io/cn/tags/plagiarism/</link>
     <description>Recent content in Plagiarism on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 17 May 2015 21:51:43 +0800</lastBuildDate>
-    <atom:link href="http://guangchuangyu.github.io/cn/tags/plagiarism/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://guangchuangyu.github.io/cn/tags/plagiarism/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>BMC Favor Plagiarism</title>
-      <link>http://guangchuangyu.github.io/cn/2015/05/bmc-favor-plagiarism/</link>
+      <link>https://guangchuangyu.github.io/cn/2015/05/bmc-favor-plagiarism/</link>
       <pubDate>Sun, 17 May 2015 21:51:43 +0800</pubDate>
       
-      <guid>http://guangchuangyu.github.io/cn/2015/05/bmc-favor-plagiarism/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2015/05/bmc-favor-plagiarism/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://cran.r-project.org/web/packages/ppiPre/index.html&#34;&gt;ppiPre&lt;/a&gt;抄袭了&lt;a href=&#34;https://github.com/GuangchuangYu/GOSemSim&#34;&gt;GOSemSim&lt;/a&gt;的代码，证据当然非常充分，比对一下代码就知道了，我在&lt;a href=&#34;http://guangchuangyu.github.io/2014/11/proper-use-of-gosemsim/&#34;&gt;Proper use of GOSemSim&lt;/a&gt;一文中，做出了一些比较，另外也可以参考&lt;a href=&#34;https://github.com/cran/ppiPre/commit/c267700ca09a599dab77326959a0aa6a2980ceed&#34;&gt;github&lt;/a&gt;页面，github记录了ppiPre被暴光抄袭之后所做的修改。
 从我给BMC Systems
 Biology的编辑反馈这件事开始，在这铁板钉钉的事实面前，编辑拖了整整一年，而这一年时间过去了，ppiPre仍没有被编辑部受理。从最早反应这件事情，编辑信誓旦旦说他们很重视这种事情，到后面对我的邮件视而不见，我愿意相信编辑部处理这些事情，需要时间，他们有自己的规则，但一年的时间，不回邮件，冷处理以淡化此事，这绝对不是应该有的规则。
