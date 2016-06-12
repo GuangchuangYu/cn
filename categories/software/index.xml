@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Software on Guangchuang Yu</title>
-    <link>https://guangchuangyu.github.io/cn/categories/software/</link>
+    <link>http://guangchuangyu.github.io/cn/categories/software/</link>
     <description>Recent content in Software on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 24 Mar 2016 15:40:22 +0800</lastBuildDate>
-    <atom:link href="https://guangchuangyu.github.io/cn/categories/software/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://guangchuangyu.github.io/cn/categories/software/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Google Drive @ HKU</title>
-      <link>https://guangchuangyu.github.io/cn/2016/03/google-drive--hku/</link>
+      <link>http://guangchuangyu.github.io/cn/2016/03/google-drive--hku/</link>
       <pubDate>Thu, 24 Mar 2016 15:40:22 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/2016/03/google-drive--hku/</guid>
+      <guid>http://guangchuangyu.github.io/cn/2016/03/google-drive--hku/</guid>
       <description>
 
 &lt;p&gt;寻找一个好的网盘一直是个困扰我的问题，Dropbox非常好，但空间有限，大陆的各种网盘都是渣渣，本来试用了一下&lt;a href=&#34;http://guangchuangyu.github.io/2014/05/%E6%9B%B4%E6%94%B9%E7%99%BE%E5%BA%A6%E4%BA%91%E5%90%8C%E6%AD%A5%E7%9B%98%E8%B7%AF%E5%BE%84/&#34;&gt;百度云&lt;/a&gt;，但度娘实在不争气，体验非常差。我后来找到了个比较好的方案，那就是&lt;a href=&#34;https://gitlab.com/&#34;&gt;gitlab&lt;/a&gt;，可以创建无限量的project，每个project有10G的空间，这比&lt;a href=&#34;https://github.com/&#34;&gt;github&lt;/a&gt;出手大方多了。唯一不足是&lt;code&gt;.git&lt;/code&gt;文件夹也是非常占空间的。&lt;/p&gt;
@@ -56,10 +56,10 @@
     
     <item>
       <title>R binary is untrustable</title>
-      <link>https://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustable/</link>
+      <link>http://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustable/</link>
       <pubDate>Thu, 24 Jul 2014 04:22:35 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustable/</guid>
+      <guid>http://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustable/</guid>
       <description>&lt;p&gt;去年ubuntu下apt-get了R-3.0.2,
 用了没多久就发现了system命令有问题，通常情况下调用系统命令是正常的，但是我调用bowtie的时候，就会报错：&lt;/p&gt;
 
@@ -143,10 +143,10 @@ R       22938  ygc  mem    REG   8,17    454082 49286705 /usr/lib/R/lib/libRblas
     
     <item>
       <title>更改百度云同步盘路径</title>
-      <link>https://guangchuangyu.github.io/cn/2014/05/%E6%9B%B4%E6%94%B9%E7%99%BE%E5%BA%A6%E4%BA%91%E5%90%8C%E6%AD%A5%E7%9B%98%E8%B7%AF%E5%BE%84/</link>
+      <link>http://guangchuangyu.github.io/cn/2014/05/%E6%9B%B4%E6%94%B9%E7%99%BE%E5%BA%A6%E4%BA%91%E5%90%8C%E6%AD%A5%E7%9B%98%E8%B7%AF%E5%BE%84/</link>
       <pubDate>Mon, 05 May 2014 10:45:25 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/2014/05/%E6%9B%B4%E6%94%B9%E7%99%BE%E5%BA%A6%E4%BA%91%E5%90%8C%E6%AD%A5%E7%9B%98%E8%B7%AF%E5%BE%84/</guid>
+      <guid>http://guangchuangyu.github.io/cn/2014/05/%E6%9B%B4%E6%94%B9%E7%99%BE%E5%BA%A6%E4%BA%91%E5%90%8C%E6%AD%A5%E7%9B%98%E8%B7%AF%E5%BE%84/</guid>
       <description>&lt;p&gt;从2007年写了&lt;a href=&#34;http://cjbmb.bjmu.edu.cn/CN/abstract/abstract17570.shtml&#34;&gt;第一篇文章&lt;/a&gt;之后，我发现管理文献真不是人干的，一直以来使用Zotero来管理文献，自从有了dropbox之后，就想把文献库放在dropbox上，一来有个云备份，不怕硬盘坏，二来嘛，实验室电脑和个人电脑可以实时同步化，无奈dropbox空间太小，而我的zotero早已超过10G，因为电子书也放在里面，只能做罢。&lt;/p&gt;
 
 &lt;p&gt;度娘出手还是很大方的，我现在的网盘已经有3T，包括之前在推广阶段用1元买的1T。&lt;/p&gt;
@@ -179,10 +179,10 @@ X的问题，在&lt;a href=&#34;http://stackoverflow.com/questions/80875/what-is
     
     <item>
       <title>scilab三维平面绘图</title>
-      <link>https://guangchuangyu.github.io/cn/2007/05/scilab%E4%B8%89%E7%BB%B4%E5%B9%B3%E9%9D%A2%E7%BB%98%E5%9B%BE/</link>
+      <link>http://guangchuangyu.github.io/cn/2007/05/scilab%E4%B8%89%E7%BB%B4%E5%B9%B3%E9%9D%A2%E7%BB%98%E5%9B%BE/</link>
       <pubDate>Thu, 03 May 2007 10:27:00 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/2007/05/scilab%E4%B8%89%E7%BB%B4%E5%B9%B3%E9%9D%A2%E7%BB%98%E5%9B%BE/</guid>
+      <guid>http://guangchuangyu.github.io/cn/2007/05/scilab%E4%B8%89%E7%BB%B4%E5%B9%B3%E9%9D%A2%E7%BB%98%E5%9B%BE/</guid>
       <description>
 
 &lt;p&gt;三维绘图可以分为两大类型：矩阵型和曲面型。&lt;/p&gt;
@@ -243,10 +243,10 @@ X的问题，在&lt;a href=&#34;http://stackoverflow.com/questions/80875/what-is
     
     <item>
       <title>在emacs里使用maxima</title>
-      <link>https://guangchuangyu.github.io/cn/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/</link>
+      <link>http://guangchuangyu.github.io/cn/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/</link>
       <pubDate>Sat, 28 May 2005 08:15:00 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/</guid>
+      <guid>http://guangchuangyu.github.io/cn/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/</guid>
       <description>
 
 &lt;h2 id=&#34;下载imaxima:e6dedd294f68f0284e7032ee31b772ce&#34;&gt;下载imaxima   &lt;/h2&gt;

@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ggplot2 on Guangchuang Yu</title>
-    <link>https://guangchuangyu.github.io/cn/tags/ggplot2/</link>
+    <link>http://guangchuangyu.github.io/cn/tags/ggplot2/</link>
     <description>Recent content in Ggplot2 on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 11 May 2014 06:17:56 +0800</lastBuildDate>
-    <atom:link href="https://guangchuangyu.github.io/cn/tags/ggplot2/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://guangchuangyu.github.io/cn/tags/ggplot2/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Use ggplot2</title>
-      <link>https://guangchuangyu.github.io/cn/2014/05/use-ggplot2/</link>
+      <link>http://guangchuangyu.github.io/cn/2014/05/use-ggplot2/</link>
       <pubDate>Sun, 11 May 2014 06:17:56 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/2014/05/use-ggplot2/</guid>
+      <guid>http://guangchuangyu.github.io/cn/2014/05/use-ggplot2/</guid>
       <description>
 
 &lt;h3 id=&#34;why-use-ggplot2:c38c63fac86d2290b6bc01da39216614&#34;&gt;Why use ggplot2&lt;/h3&gt;
@@ -522,10 +522,10 @@ print(p)
     
     <item>
       <title>violin plot</title>
-      <link>https://guangchuangyu.github.io/cn/2012/02/violin-plot/</link>
+      <link>http://guangchuangyu.github.io/cn/2012/02/violin-plot/</link>
       <pubDate>Tue, 07 Feb 2012 06:31:55 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/2012/02/violin-plot/</guid>
+      <guid>http://guangchuangyu.github.io/cn/2012/02/violin-plot/</guid>
       <description>&lt;p&gt;ggplot2 0.9.0版本将在3月1号发布，改动较大，最近bioc mailing
 list也有诸多讨论，因为它导致了某些包编译出错（估计是NAMESPACE引起的）。&lt;/p&gt;
 

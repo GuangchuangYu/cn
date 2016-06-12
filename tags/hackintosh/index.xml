@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hackintosh on Guangchuang Yu</title>
-    <link>https://guangchuangyu.github.io/cn/tags/hackintosh/</link>
+    <link>http://guangchuangyu.github.io/cn/tags/hackintosh/</link>
     <description>Recent content in Hackintosh on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 15 Mar 2012 04:47:26 +0800</lastBuildDate>
-    <atom:link href="https://guangchuangyu.github.io/cn/tags/hackintosh/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://guangchuangyu.github.io/cn/tags/hackintosh/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Installing Hackintosh</title>
-      <link>https://guangchuangyu.github.io/cn/2012/03/installing-hackintosh/</link>
+      <link>http://guangchuangyu.github.io/cn/2012/03/installing-hackintosh/</link>
       <pubDate>Thu, 15 Mar 2012 04:47:26 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/2012/03/installing-hackintosh/</guid>
+      <guid>http://guangchuangyu.github.io/cn/2012/03/installing-hackintosh/</guid>
       <description>&lt;p&gt;初中时在杂志上看到苹果的彩壳机，从此叔就开始成为了苹果的脑残粉，还在K6-2和win98那会，就在玩macintosh主题。&lt;/p&gt;
 
 &lt;p&gt;本科时，通过&lt;a href=&#34;http://pearpc.sourceforge.net/&#34;&gt;PearPC&lt;/a&gt;来虚拟PowerPC，硬是在ATHLON XP 1700+这个破CPU上破了OS X Jaguar，那个慢啊，是无法忍受的。&lt;/p&gt;

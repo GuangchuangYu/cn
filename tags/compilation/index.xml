@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Compilation on Guangchuang Yu</title>
-    <link>https://guangchuangyu.github.io/cn/tags/compilation/</link>
+    <link>http://guangchuangyu.github.io/cn/tags/compilation/</link>
     <description>Recent content in Compilation on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 24 Jul 2014 04:22:35 +0800</lastBuildDate>
-    <atom:link href="https://guangchuangyu.github.io/cn/tags/compilation/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://guangchuangyu.github.io/cn/tags/compilation/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>R binary is untrustable</title>
-      <link>https://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustable/</link>
+      <link>http://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustable/</link>
       <pubDate>Thu, 24 Jul 2014 04:22:35 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustable/</guid>
+      <guid>http://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustable/</guid>
       <description>&lt;p&gt;去年ubuntu下apt-get了R-3.0.2,
 用了没多久就发现了system命令有问题，通常情况下调用系统命令是正常的，但是我调用bowtie的时候，就会报错：&lt;/p&gt;
 

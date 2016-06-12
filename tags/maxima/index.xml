@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Maxima on Guangchuang Yu</title>
-    <link>https://guangchuangyu.github.io/cn/tags/maxima/</link>
+    <link>http://guangchuangyu.github.io/cn/tags/maxima/</link>
     <description>Recent content in Maxima on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 28 May 2005 08:15:00 +0800</lastBuildDate>
-    <atom:link href="https://guangchuangyu.github.io/cn/tags/maxima/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://guangchuangyu.github.io/cn/tags/maxima/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>在emacs里使用maxima</title>
-      <link>https://guangchuangyu.github.io/cn/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/</link>
+      <link>http://guangchuangyu.github.io/cn/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/</link>
       <pubDate>Sat, 28 May 2005 08:15:00 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/</guid>
+      <guid>http://guangchuangyu.github.io/cn/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/</guid>
       <description>
 
 &lt;h2 id=&#34;下载imaxima:e6dedd294f68f0284e7032ee31b772ce&#34;&gt;下载imaxima   &lt;/h2&gt;

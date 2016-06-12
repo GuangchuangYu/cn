@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Powerbook on Guangchuang Yu</title>
-    <link>https://guangchuangyu.github.io/cn/categories/powerbook/</link>
+    <link>http://guangchuangyu.github.io/cn/categories/powerbook/</link>
     <description>Recent content in Powerbook on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 14 May 2007 04:43:00 +0800</lastBuildDate>
-    <atom:link href="https://guangchuangyu.github.io/cn/categories/powerbook/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://guangchuangyu.github.io/cn/categories/powerbook/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Edit partition table in NetBSD/macppc</title>
-      <link>https://guangchuangyu.github.io/cn/2007/05/edit-partition-table-in-netbsd/macppc/</link>
+      <link>http://guangchuangyu.github.io/cn/2007/05/edit-partition-table-in-netbsd/macppc/</link>
       <pubDate>Mon, 14 May 2007 04:43:00 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/2007/05/edit-partition-table-in-netbsd/macppc/</guid>
+      <guid>http://guangchuangyu.github.io/cn/2007/05/edit-partition-table-in-netbsd/macppc/</guid>
       <description>&lt;pre&gt;&lt;code&gt;#disklabel wd0
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -259,10 +259,10 @@ reset-all
     
     <item>
       <title>安装os9和netbsd双系统</title>
-      <link>https://guangchuangyu.github.io/cn/2006/06/%E5%AE%89%E8%A3%85os9%E5%92%8Cnetbsd%E5%8F%8C%E7%B3%BB%E7%BB%9F/</link>
+      <link>http://guangchuangyu.github.io/cn/2006/06/%E5%AE%89%E8%A3%85os9%E5%92%8Cnetbsd%E5%8F%8C%E7%B3%BB%E7%BB%9F/</link>
       <pubDate>Wed, 14 Jun 2006 04:31:00 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/2006/06/%E5%AE%89%E8%A3%85os9%E5%92%8Cnetbsd%E5%8F%8C%E7%B3%BB%E7%BB%9F/</guid>
+      <guid>http://guangchuangyu.github.io/cn/2006/06/%E5%AE%89%E8%A3%85os9%E5%92%8Cnetbsd%E5%8F%8C%E7%B3%BB%E7%BB%9F/</guid>
       <description>
 
 &lt;h2 id=&#34;1-分区:7c364ac533cc06c9bf86bf33eb786a17&#34;&gt;1 分区&lt;/h2&gt;
@@ -403,10 +403,10 @@ exec qvwm
     
     <item>
       <title>scau校园网认证</title>
-      <link>https://guangchuangyu.github.io/cn/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/</link>
+      <link>http://guangchuangyu.github.io/cn/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/</link>
       <pubDate>Mon, 14 Mar 2005 04:30:00 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/</guid>
+      <guid>http://guangchuangyu.github.io/cn/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/</guid>
       <description>&lt;p&gt;锐捷认证。非标准的802.1认证。 我采用mystar来认证，但是不会重连。。
 我自已写了个shell script来实现断线后重连。。。&lt;/p&gt;
 
@@ -482,10 +482,10 @@ kill掉，并重新运行。&lt;/p&gt;
     
     <item>
       <title>Powerbook G3上安装gentoo</title>
-      <link>https://guangchuangyu.github.io/cn/2005/01/powerbook-g3%E4%B8%8A%E5%AE%89%E8%A3%85gentoo/</link>
+      <link>http://guangchuangyu.github.io/cn/2005/01/powerbook-g3%E4%B8%8A%E5%AE%89%E8%A3%85gentoo/</link>
       <pubDate>Fri, 14 Jan 2005 04:32:00 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/2005/01/powerbook-g3%E4%B8%8A%E5%AE%89%E8%A3%85gentoo/</guid>
+      <guid>http://guangchuangyu.github.io/cn/2005/01/powerbook-g3%E4%B8%8A%E5%AE%89%E8%A3%85gentoo/</guid>
       <description>
 
 &lt;p&gt;下面是我在PowerBook G3上安装Gentoo的全过程。。&lt;/p&gt;
