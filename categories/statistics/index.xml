@@ -180,8 +180,7 @@ plot(model, X,y, type=&amp;quot;nonlinear&amp;quot;)
       <description>&lt;p&gt;&lt;a href=&#34;http://www.ebi.ac.uk/~birney/&#34;&gt;Ewan Birney&lt;/a&gt;最近的一篇博文（&lt;a href=&#34;http://genomeinformatician.blogspot.com/2011/06/five-statistical-things-i-wished-i-had.html&#34;&gt;Five statistical things I wished I had been taught 20 years ago&lt;/a&gt;
 ）讲述了统计对于生物学的重要性。&lt;/p&gt;
 
-&lt;p&gt;一开始从RA
-Fisher讲起，说生物压根就是统计。Fisher是个农业学家，他所建立的那些统计方法，都是从生物学问题出发。&lt;/p&gt;
+&lt;p&gt;一开始从RA Fisher讲起，说生物压根就是统计。Fisher是个农业学家，他所建立的那些统计方法，都是从生物学问题出发。&lt;/p&gt;
 
 &lt;p&gt;Ewan所谈及的五个方面分别是：&lt;/p&gt;
 
@@ -210,14 +209,9 @@ the metric itself.&lt;/p&gt;
 &lt;p&gt;今年&lt;a href=&#34;http://guangchuangyu.github.io/2010/11/phosphoproteome-profile-of-human-lung-cancer-cell-line-a549/&#34;&gt;磷酸化谱的文章&lt;/a&gt;，用到了免疫组化，实验结果的量化是由医生给出来打分值，癌组织和癌旁组织两组数据，免疫组化的数据不可能用参数统计，这个结果我就是用Wilcoxon
 signed rank test去做检验。文中所提出的其它非参统计方法，全都不会。囧&lt;/p&gt;
 
-&lt;p&gt;关于相关性，这里有篇文章，比较了Pearson和Spearman： &lt;a href=&#34;http://www.jstor.org/stable/2346598&#34;&gt;On the Effects of
-Non-Normality on the Distribution of the Sample Product-Moment
-Correlation Coefficient&lt;/a&gt; (Kowalski,
-1975)&lt;/p&gt;
+&lt;p&gt;关于相关性，这里有篇文章，比较了Pearson和Spearman： &lt;a href=&#34;http://www.jstor.org/stable/2346598&#34;&gt;On the Effects of Non-Normality on the Distribution of the Sample Product-Moment Correlation Coefficient&lt;/a&gt; (Kowalski, 1975)&lt;/p&gt;
 
-&lt;p&gt;还有文章说用Kendall&amp;rsquo;s tau比Spearman&amp;rsquo;s Rho要好： Newson R. &lt;a href=&#34;http://www.stata-journal.com/sjpdf.html?articlenum=st0007&#34;&gt;Parameters
-behind &amp;ldquo;nonparametric&amp;rdquo; statistics: Kendall&amp;rsquo;s tau,Somers&amp;rsquo; D and median
-differences&lt;/a&gt;.
+&lt;p&gt;还有文章说用Kendall&amp;rsquo;s tau比Spearman&amp;rsquo;s Rho要好： Newson R. &lt;a href=&#34;http://www.stata-journal.com/sjpdf.html?articlenum=st0007&#34;&gt;Parameters behind &amp;ldquo;nonparametric&amp;rdquo; statistics: Kendall&amp;rsquo;s tau,Somers&amp;rsquo; D and median differences&lt;/a&gt;.
 Stata Journal 2002; 2(1):45-64.&lt;/p&gt;
 
 &lt;p&gt;虽然作者强调非参统计，但是如果数据分布满足参数统计的assumption的话，还是用参数统计好，更加powerful。这个可能需要我们在做统计之前对数据分布做一下检验。不过正态检验其实用处也不大，小样本的话，不够powerful，大样本的话，即使不是正态分布，t-test和ANOVA也是很robust的。&lt;/p&gt;
