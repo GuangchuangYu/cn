@@ -6,8 +6,39 @@
     <description>Recent content in R on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 31 May 2016 18:06:59 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 13 Jul 2016 21:06:59 +0800</lastBuildDate>
     <atom:link href="https://guangchuangyu.github.io/cn/categories/r/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Evolution of my BioC packages</title>
+      <link>https://guangchuangyu.github.io/cn/2016/07/evolution-of-my-bioc-packages/</link>
+      <pubDate>Wed, 13 Jul 2016 21:06:59 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2016/07/evolution-of-my-bioc-packages/</guid>
+      <description>&lt;p&gt;发现Youtube上有一个视频叫&lt;a href=&#34;https://www.youtube.com/watch?v=MYTblx-5Yog&#34;&gt;Evolution of clusterProfiler&lt;/a&gt;, 是Landon Wilkins用&lt;a href=&#34;http://gource.io/&#34;&gt;Gource&lt;/a&gt;做的。于是我也来玩一下，看一下自己这几年码代码的过程。&lt;/p&gt;
+
+&lt;p&gt;把我几个Bioconductor包的commit log整合到一起，做了以下视频：&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//player.vimeo.com/video/174519724&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&#34; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+ &lt;/div&gt;
+
+
+&lt;p&gt;下面是这几个包的下载统计，从下图可以知道各个包在视频中出现的大概时间。2015年之后活动很频繁，因为在过去的一年半时间里，我花了非常多时间在&lt;code&gt;ggtree&lt;/code&gt;上面。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/dlstat.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;PS1: 下载统计由&lt;a href=&#34;https://cran.r-project.org/package=dlstats&#34;&gt;dlstats&lt;/a&gt;获取。
+PS2: 最近更新了这几个包的主页，包含最全面的信息，官方指定唯一入口哈:)
++ &lt;a href=&#34;https://guangchuangyu.github.io/ChIPseeker&#34;&gt;ChIPseeker&lt;/a&gt;
++ &lt;a href=&#34;https://guangchuangyu.github.io/clusterProfiler&#34;&gt;clusterProfiler&lt;/a&gt;
++ &lt;a href=&#34;https://guangchuangyu.github.io/DOSE&#34;&gt;DOSE&lt;/a&gt;
++ &lt;a href=&#34;https://guangchuangyu.github.io/ggtree&#34;&gt;ggtree&lt;/a&gt;
++ &lt;a href=&#34;https://guangchuangyu.github.io/GOSemSim&#34;&gt;GOSemSim&lt;/a&gt;
++ &lt;a href=&#34;https://guangchuangyu.github.io/ReactomePA&#34;&gt;ReactomePA&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>第九届ChinaR会议生物信息学分会</title>
