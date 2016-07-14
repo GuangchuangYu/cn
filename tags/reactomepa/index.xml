@@ -27,7 +27,1036 @@
 
 &lt;p&gt;下面是这几个包的下载统计，从下图可以知道各个包在视频中出现的大概时间。2015年之后活动很频繁，因为在过去的一年半时间里，我花了非常多时间在&lt;code&gt;ggtree&lt;/code&gt;上面。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/dlstat.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;link rel=&#39;stylesheet&#39; href=//guangchuangyu.github.io/resume/css/morris.css&gt;
+&lt;script src=&#39;//guangchuangyu.github.io/resume/css/jquery.min.js&#39; type=&#39;text/javascript&#39;&gt;&lt;/script&gt;
+&lt;script src=&#39;//guangchuangyu.github.io/resume/css/raphael-min.js&#39; type=&#39;text/javascript&#39;&gt;&lt;/script&gt;
+&lt;script src=&#39;//guangchuangyu.github.io/resume/css/morris-0.4.2.min.js&#39; type=&#39;text/javascript&#39;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;style&gt;
+  .rChart {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    height: 400px;
+  }
+&lt;/style&gt;
+
+&lt;p&gt;&lt;div id = &#39;chart3aa9109e4e73&#39; class = &#39;rChart morris&#39;&gt;&lt;/div&gt;
+&lt;script type=&#39;text/javascript&#39;&gt;
+    var chartParams = {
+ &amp;ldquo;element&amp;rdquo;: &amp;ldquo;chart3aa9109e4e73&amp;rdquo;,
+&amp;ldquo;width&amp;rdquo;:            800,
+&amp;ldquo;height&amp;rdquo;:            400,
+&amp;ldquo;xkey&amp;rdquo;: &amp;ldquo;end&amp;rdquo;,
+&amp;ldquo;ykeys&amp;rdquo;: [
+ &amp;ldquo;ChIPseeker&amp;rdquo;,
+&amp;ldquo;clusterProfiler&amp;rdquo;,
+&amp;ldquo;DOSE&amp;rdquo;,
+&amp;ldquo;ggtree&amp;rdquo;,
+&amp;ldquo;GOSemSim&amp;rdquo;,
+&amp;ldquo;ReactomePA&amp;rdquo;
+],
+&amp;ldquo;data&amp;rdquo;: [
+ {
+ &amp;ldquo;start&amp;rdquo;:          14245,
+&amp;ldquo;end&amp;rdquo;: 2009.082191781,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: null,
+&amp;ldquo;DOSE&amp;rdquo;: null,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 20,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          14276,
+&amp;ldquo;end&amp;rdquo;:  2009.15890411,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: null,
+&amp;ldquo;DOSE&amp;rdquo;: null,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 40,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          14304,
+&amp;ldquo;end&amp;rdquo;: 2009.243835616,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: null,
+&amp;ldquo;DOSE&amp;rdquo;: null,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 75,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          14335,
+&amp;ldquo;end&amp;rdquo;: 2009.326027397,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: null,
+&amp;ldquo;DOSE&amp;rdquo;: null,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 141,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          14365,
+&amp;ldquo;end&amp;rdquo;: 2009.410958904,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: null,
+&amp;ldquo;DOSE&amp;rdquo;: null,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 219,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          14396,
+&amp;ldquo;end&amp;rdquo;: 2009.493150685,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: null,
+&amp;ldquo;DOSE&amp;rdquo;: null,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 183,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          14426,
+&amp;ldquo;end&amp;rdquo;: 2009.578082192,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: null,
+&amp;ldquo;DOSE&amp;rdquo;: null,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 178,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          14457,
+&amp;ldquo;end&amp;rdquo;: 2009.663013699,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: null,
+&amp;ldquo;DOSE&amp;rdquo;: null,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 157,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          14488,
+&amp;ldquo;end&amp;rdquo;: 2009.745205479,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: null,
+&amp;ldquo;DOSE&amp;rdquo;: null,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 281,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          14518,
+&amp;ldquo;end&amp;rdquo;: 2009.830136986,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: null,
+&amp;ldquo;DOSE&amp;rdquo;: null,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 222,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          14549,
+&amp;ldquo;end&amp;rdquo;: 2009.912328767,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: null,
+&amp;ldquo;DOSE&amp;rdquo;: null,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 284,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          14579,
+&amp;ldquo;end&amp;rdquo;: 2009.997260274,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: null,
+&amp;ldquo;DOSE&amp;rdquo;: null,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 263,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          14610,
+&amp;ldquo;end&amp;rdquo;: 2010.082191781,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: null,
+&amp;ldquo;DOSE&amp;rdquo;: null,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 235,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          14641,
+&amp;ldquo;end&amp;rdquo;:  2010.15890411,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: null,
+&amp;ldquo;DOSE&amp;rdquo;: null,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 291,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          14669,
+&amp;ldquo;end&amp;rdquo;: 2010.243835616,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: null,
+&amp;ldquo;DOSE&amp;rdquo;: null,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 278,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          14700,
+&amp;ldquo;end&amp;rdquo;: 2010.326027397,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: null,
+&amp;ldquo;DOSE&amp;rdquo;: null,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 274,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          14730,
+&amp;ldquo;end&amp;rdquo;: 2010.410958904,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: null,
+&amp;ldquo;DOSE&amp;rdquo;: null,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 400,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          14761,
+&amp;ldquo;end&amp;rdquo;: 2010.493150685,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: null,
+&amp;ldquo;DOSE&amp;rdquo;: null,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 323,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          14791,
+&amp;ldquo;end&amp;rdquo;: 2010.578082192,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: null,
+&amp;ldquo;DOSE&amp;rdquo;: null,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 242,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          14822,
+&amp;ldquo;end&amp;rdquo;: 2010.663013699,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: null,
+&amp;ldquo;DOSE&amp;rdquo;: null,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 176,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          14853,
+&amp;ldquo;end&amp;rdquo;: 2010.745205479,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: null,
+&amp;ldquo;DOSE&amp;rdquo;: null,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 214,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          14883,
+&amp;ldquo;end&amp;rdquo;: 2010.830136986,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: null,
+&amp;ldquo;DOSE&amp;rdquo;: null,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 191,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          14914,
+&amp;ldquo;end&amp;rdquo;: 2010.912328767,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: null,
+&amp;ldquo;DOSE&amp;rdquo;: null,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 231,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          14944,
+&amp;ldquo;end&amp;rdquo;: 2010.997260274,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: null,
+&amp;ldquo;DOSE&amp;rdquo;: null,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 207,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          14975,
+&amp;ldquo;end&amp;rdquo;: 2011.082191781,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: null,
+&amp;ldquo;DOSE&amp;rdquo;: null,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 207,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          15006,
+&amp;ldquo;end&amp;rdquo;:  2011.15890411,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: null,
+&amp;ldquo;DOSE&amp;rdquo;: null,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 158,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          15034,
+&amp;ldquo;end&amp;rdquo;: 2011.243835616,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 14,
+&amp;ldquo;DOSE&amp;rdquo;: null,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 169,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          15065,
+&amp;ldquo;end&amp;rdquo;: 2011.326027397,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 49,
+&amp;ldquo;DOSE&amp;rdquo;: null,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 205,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          15095,
+&amp;ldquo;end&amp;rdquo;: 2011.410958904,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 111,
+&amp;ldquo;DOSE&amp;rdquo;: null,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 218,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          15126,
+&amp;ldquo;end&amp;rdquo;: 2011.493150685,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 104,
+&amp;ldquo;DOSE&amp;rdquo;: 19,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 279,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          15156,
+&amp;ldquo;end&amp;rdquo;: 2011.578082192,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 102,
+&amp;ldquo;DOSE&amp;rdquo;: 7,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 170,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          15187,
+&amp;ldquo;end&amp;rdquo;: 2011.663013699,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 108,
+&amp;ldquo;DOSE&amp;rdquo;: 4,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 180,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          15218,
+&amp;ldquo;end&amp;rdquo;: 2011.745205479,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 78,
+&amp;ldquo;DOSE&amp;rdquo;: 4,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 200,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          15248,
+&amp;ldquo;end&amp;rdquo;: 2011.830136986,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 92,
+&amp;ldquo;DOSE&amp;rdquo;: 10,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 707,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          15279,
+&amp;ldquo;end&amp;rdquo;: 2011.912328767,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 164,
+&amp;ldquo;DOSE&amp;rdquo;: 155,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 207,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          15309,
+&amp;ldquo;end&amp;rdquo;: 2011.997260274,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 99,
+&amp;ldquo;DOSE&amp;rdquo;: 88,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 150,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          15340,
+&amp;ldquo;end&amp;rdquo;: 2012.082191781,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 153,
+&amp;ldquo;DOSE&amp;rdquo;: 137,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 192,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          15371,
+&amp;ldquo;end&amp;rdquo;: 2012.161643836,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 215,
+&amp;ldquo;DOSE&amp;rdquo;: 171,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 257,
+&amp;ldquo;ReactomePA&amp;rdquo;: null
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          15400,
+&amp;ldquo;end&amp;rdquo;: 2012.246575342,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 334,
+&amp;ldquo;DOSE&amp;rdquo;: 326,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 362,
+&amp;ldquo;ReactomePA&amp;rdquo;: 8
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          15431,
+&amp;ldquo;end&amp;rdquo;: 2012.328767123,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 380,
+&amp;ldquo;DOSE&amp;rdquo;: 397,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 418,
+&amp;ldquo;ReactomePA&amp;rdquo;: 214
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          15461,
+&amp;ldquo;end&amp;rdquo;:  2012.41369863,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 308,
+&amp;ldquo;DOSE&amp;rdquo;: 307,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 328,
+&amp;ldquo;ReactomePA&amp;rdquo;: 159
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          15492,
+&amp;ldquo;end&amp;rdquo;: 2012.495890411,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 270,
+&amp;ldquo;DOSE&amp;rdquo;: 275,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 325,
+&amp;ldquo;ReactomePA&amp;rdquo;: 222
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          15522,
+&amp;ldquo;end&amp;rdquo;: 2012.580821918,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 268,
+&amp;ldquo;DOSE&amp;rdquo;: 224,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 215,
+&amp;ldquo;ReactomePA&amp;rdquo;: 150
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          15553,
+&amp;ldquo;end&amp;rdquo;: 2012.665753425,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 321,
+&amp;ldquo;DOSE&amp;rdquo;: 264,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 279,
+&amp;ldquo;ReactomePA&amp;rdquo;: 193
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          15584,
+&amp;ldquo;end&amp;rdquo;: 2012.747945205,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 210,
+&amp;ldquo;DOSE&amp;rdquo;: 191,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 214,
+&amp;ldquo;ReactomePA&amp;rdquo;: 175
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          15614,
+&amp;ldquo;end&amp;rdquo;: 2012.832876712,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 341,
+&amp;ldquo;DOSE&amp;rdquo;: 369,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 421,
+&amp;ldquo;ReactomePA&amp;rdquo;: 242
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          15645,
+&amp;ldquo;end&amp;rdquo;: 2012.915068493,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 331,
+&amp;ldquo;DOSE&amp;rdquo;: 347,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 417,
+&amp;ldquo;ReactomePA&amp;rdquo;: 253
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          15675,
+&amp;ldquo;end&amp;rdquo;:           2013,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 258,
+&amp;ldquo;DOSE&amp;rdquo;: 252,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 347,
+&amp;ldquo;ReactomePA&amp;rdquo;: 196
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          15706,
+&amp;ldquo;end&amp;rdquo;: 2013.082191781,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 455,
+&amp;ldquo;DOSE&amp;rdquo;: 278,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 633,
+&amp;ldquo;ReactomePA&amp;rdquo;: 198
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          15737,
+&amp;ldquo;end&amp;rdquo;:  2013.15890411,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 604,
+&amp;ldquo;DOSE&amp;rdquo;: 286,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 634,
+&amp;ldquo;ReactomePA&amp;rdquo;: 229
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          15765,
+&amp;ldquo;end&amp;rdquo;: 2013.243835616,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 441,
+&amp;ldquo;DOSE&amp;rdquo;: 452,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 476,
+&amp;ldquo;ReactomePA&amp;rdquo;: 363
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          15796,
+&amp;ldquo;end&amp;rdquo;: 2013.326027397,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 474,
+&amp;ldquo;DOSE&amp;rdquo;: 491,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 544,
+&amp;ldquo;ReactomePA&amp;rdquo;: 348
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          15826,
+&amp;ldquo;end&amp;rdquo;: 2013.410958904,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 531,
+&amp;ldquo;DOSE&amp;rdquo;: 559,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 638,
+&amp;ldquo;ReactomePA&amp;rdquo;: 442
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          15857,
+&amp;ldquo;end&amp;rdquo;: 2013.493150685,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 496,
+&amp;ldquo;DOSE&amp;rdquo;: 526,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 608,
+&amp;ldquo;ReactomePA&amp;rdquo;: 403
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          15887,
+&amp;ldquo;end&amp;rdquo;: 2013.578082192,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 381,
+&amp;ldquo;DOSE&amp;rdquo;: 355,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 456,
+&amp;ldquo;ReactomePA&amp;rdquo;: 250
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          15918,
+&amp;ldquo;end&amp;rdquo;: 2013.663013699,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 400,
+&amp;ldquo;DOSE&amp;rdquo;: 432,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 438,
+&amp;ldquo;ReactomePA&amp;rdquo;: 322
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          15949,
+&amp;ldquo;end&amp;rdquo;: 2013.745205479,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 458,
+&amp;ldquo;DOSE&amp;rdquo;: 488,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 459,
+&amp;ldquo;ReactomePA&amp;rdquo;: 303
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          15979,
+&amp;ldquo;end&amp;rdquo;: 2013.830136986,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 604,
+&amp;ldquo;DOSE&amp;rdquo;: 563,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 620,
+&amp;ldquo;ReactomePA&amp;rdquo;: 363
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          16010,
+&amp;ldquo;end&amp;rdquo;: 2013.912328767,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 561,
+&amp;ldquo;DOSE&amp;rdquo;: 519,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 701,
+&amp;ldquo;ReactomePA&amp;rdquo;: 354
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          16040,
+&amp;ldquo;end&amp;rdquo;: 2013.997260274,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 586,
+&amp;ldquo;DOSE&amp;rdquo;: 537,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 672,
+&amp;ldquo;ReactomePA&amp;rdquo;: 457
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          16071,
+&amp;ldquo;end&amp;rdquo;: 2014.082191781,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 395,
+&amp;ldquo;DOSE&amp;rdquo;: 423,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 714,
+&amp;ldquo;ReactomePA&amp;rdquo;: 342
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          16102,
+&amp;ldquo;end&amp;rdquo;:  2014.15890411,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 292,
+&amp;ldquo;DOSE&amp;rdquo;: 313,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 737,
+&amp;ldquo;ReactomePA&amp;rdquo;: 241
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          16130,
+&amp;ldquo;end&amp;rdquo;: 2014.243835616,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: null,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 515,
+&amp;ldquo;DOSE&amp;rdquo;: 559,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 808,
+&amp;ldquo;ReactomePA&amp;rdquo;: 455
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          16161,
+&amp;ldquo;end&amp;rdquo;: 2014.326027397,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: 201,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 675,
+&amp;ldquo;DOSE&amp;rdquo;: 688,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 897,
+&amp;ldquo;ReactomePA&amp;rdquo;: 452
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          16191,
+&amp;ldquo;end&amp;rdquo;: 2014.410958904,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: 415,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 657,
+&amp;ldquo;DOSE&amp;rdquo;: 703,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 831,
+&amp;ldquo;ReactomePA&amp;rdquo;: 586
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          16222,
+&amp;ldquo;end&amp;rdquo;: 2014.493150685,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: 533,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 592,
+&amp;ldquo;DOSE&amp;rdquo;: 650,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 820,
+&amp;ldquo;ReactomePA&amp;rdquo;: 454
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          16252,
+&amp;ldquo;end&amp;rdquo;: 2014.578082192,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: 336,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 452,
+&amp;ldquo;DOSE&amp;rdquo;: 628,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 631,
+&amp;ldquo;ReactomePA&amp;rdquo;: 384
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          16283,
+&amp;ldquo;end&amp;rdquo;: 2014.663013699,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: 405,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 648,
+&amp;ldquo;DOSE&amp;rdquo;: 747,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 798,
+&amp;ldquo;ReactomePA&amp;rdquo;: 465
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          16314,
+&amp;ldquo;end&amp;rdquo;: 2014.745205479,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: 482,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 742,
+&amp;ldquo;DOSE&amp;rdquo;: 810,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 823,
+&amp;ldquo;ReactomePA&amp;rdquo;: 452
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          16344,
+&amp;ldquo;end&amp;rdquo;: 2014.830136986,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: 372,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 616,
+&amp;ldquo;DOSE&amp;rdquo;: 758,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 1033,
+&amp;ldquo;ReactomePA&amp;rdquo;: 437
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          16375,
+&amp;ldquo;end&amp;rdquo;: 2014.912328767,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: 369,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 672,
+&amp;ldquo;DOSE&amp;rdquo;: 761,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 907,
+&amp;ldquo;ReactomePA&amp;rdquo;: 488
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          16405,
+&amp;ldquo;end&amp;rdquo;: 2014.997260274,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: 272,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 468,
+&amp;ldquo;DOSE&amp;rdquo;: 554,
+&amp;ldquo;ggtree&amp;rdquo;: null,
+&amp;ldquo;GOSemSim&amp;rdquo;: 727,
+&amp;ldquo;ReactomePA&amp;rdquo;: 380
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          16436,
+&amp;ldquo;end&amp;rdquo;: 2015.082191781,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: 477,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 612,
+&amp;ldquo;DOSE&amp;rdquo;: 772,
+&amp;ldquo;ggtree&amp;rdquo;: 34,
+&amp;ldquo;GOSemSim&amp;rdquo;: 941,
+&amp;ldquo;ReactomePA&amp;rdquo;: 491
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          16467,
+&amp;ldquo;end&amp;rdquo;:  2015.15890411,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: 559,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 609,
+&amp;ldquo;DOSE&amp;rdquo;: 790,
+&amp;ldquo;ggtree&amp;rdquo;: 42,
+&amp;ldquo;GOSemSim&amp;rdquo;: 968,
+&amp;ldquo;ReactomePA&amp;rdquo;: 398
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          16495,
+&amp;ldquo;end&amp;rdquo;: 2015.243835616,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: 564,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 1011,
+&amp;ldquo;DOSE&amp;rdquo;: 870,
+&amp;ldquo;ggtree&amp;rdquo;: 39,
+&amp;ldquo;GOSemSim&amp;rdquo;: 1219,
+&amp;ldquo;ReactomePA&amp;rdquo;: 464
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          16526,
+&amp;ldquo;end&amp;rdquo;: 2015.326027397,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: 580,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 1048,
+&amp;ldquo;DOSE&amp;rdquo;: 974,
+&amp;ldquo;ggtree&amp;rdquo;: 187,
+&amp;ldquo;GOSemSim&amp;rdquo;: 1214,
+&amp;ldquo;ReactomePA&amp;rdquo;: 440
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          16556,
+&amp;ldquo;end&amp;rdquo;: 2015.410958904,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: 555,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 1022,
+&amp;ldquo;DOSE&amp;rdquo;: 939,
+&amp;ldquo;ggtree&amp;rdquo;: 310,
+&amp;ldquo;GOSemSim&amp;rdquo;: 978,
+&amp;ldquo;ReactomePA&amp;rdquo;: 445
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          16587,
+&amp;ldquo;end&amp;rdquo;: 2015.493150685,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: 395,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 1074,
+&amp;ldquo;DOSE&amp;rdquo;: 963,
+&amp;ldquo;ggtree&amp;rdquo;: 383,
+&amp;ldquo;GOSemSim&amp;rdquo;: 991,
+&amp;ldquo;ReactomePA&amp;rdquo;: 447
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          16617,
+&amp;ldquo;end&amp;rdquo;: 2015.578082192,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: 650,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 1096,
+&amp;ldquo;DOSE&amp;rdquo;: 1290,
+&amp;ldquo;ggtree&amp;rdquo;: 352,
+&amp;ldquo;GOSemSim&amp;rdquo;: 970,
+&amp;ldquo;ReactomePA&amp;rdquo;: 519
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          16648,
+&amp;ldquo;end&amp;rdquo;: 2015.663013699,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: 639,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 1225,
+&amp;ldquo;DOSE&amp;rdquo;: 1093,
+&amp;ldquo;ggtree&amp;rdquo;: 465,
+&amp;ldquo;GOSemSim&amp;rdquo;: 962,
+&amp;ldquo;ReactomePA&amp;rdquo;: 548
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          16679,
+&amp;ldquo;end&amp;rdquo;: 2015.745205479,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: 652,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 1484,
+&amp;ldquo;DOSE&amp;rdquo;: 1267,
+&amp;ldquo;ggtree&amp;rdquo;: 625,
+&amp;ldquo;GOSemSim&amp;rdquo;: 1031,
+&amp;ldquo;ReactomePA&amp;rdquo;: 509
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          16709,
+&amp;ldquo;end&amp;rdquo;: 2015.830136986,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: 724,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 1460,
+&amp;ldquo;DOSE&amp;rdquo;: 1236,
+&amp;ldquo;ggtree&amp;rdquo;: 678,
+&amp;ldquo;GOSemSim&amp;rdquo;: 1309,
+&amp;ldquo;ReactomePA&amp;rdquo;: 577
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          16740,
+&amp;ldquo;end&amp;rdquo;: 2015.912328767,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: 685,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 3035,
+&amp;ldquo;DOSE&amp;rdquo;: 1267,
+&amp;ldquo;ggtree&amp;rdquo;: 801,
+&amp;ldquo;GOSemSim&amp;rdquo;: 1345,
+&amp;ldquo;ReactomePA&amp;rdquo;: 649
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          16770,
+&amp;ldquo;end&amp;rdquo;: 2015.997260274,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: 647,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 2886,
+&amp;ldquo;DOSE&amp;rdquo;: 1233,
+&amp;ldquo;ggtree&amp;rdquo;: 692,
+&amp;ldquo;GOSemSim&amp;rdquo;: 1338,
+&amp;ldquo;ReactomePA&amp;rdquo;: 522
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          16801,
+&amp;ldquo;end&amp;rdquo;: 2016.082191781,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: 686,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 3327,
+&amp;ldquo;DOSE&amp;rdquo;: 1400,
+&amp;ldquo;ggtree&amp;rdquo;: 796,
+&amp;ldquo;GOSemSim&amp;rdquo;: 1464,
+&amp;ldquo;ReactomePA&amp;rdquo;: 572
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          16832,
+&amp;ldquo;end&amp;rdquo;: 2016.161643836,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: 701,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 2866,
+&amp;ldquo;DOSE&amp;rdquo;: 1170,
+&amp;ldquo;ggtree&amp;rdquo;: 757,
+&amp;ldquo;GOSemSim&amp;rdquo;: 1193,
+&amp;ldquo;ReactomePA&amp;rdquo;: 608
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          16861,
+&amp;ldquo;end&amp;rdquo;: 2016.246575342,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: 845,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 3188,
+&amp;ldquo;DOSE&amp;rdquo;: 1435,
+&amp;ldquo;ggtree&amp;rdquo;: 1135,
+&amp;ldquo;GOSemSim&amp;rdquo;: 1767,
+&amp;ldquo;ReactomePA&amp;rdquo;: 721
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          16892,
+&amp;ldquo;end&amp;rdquo;: 2016.328767123,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: 736,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 2834,
+&amp;ldquo;DOSE&amp;rdquo;: 2020,
+&amp;ldquo;ggtree&amp;rdquo;: 1030,
+&amp;ldquo;GOSemSim&amp;rdquo;: 1532,
+&amp;ldquo;ReactomePA&amp;rdquo;: 671
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          16922,
+&amp;ldquo;end&amp;rdquo;:  2016.41369863,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: 857,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 2209,
+&amp;ldquo;DOSE&amp;rdquo;: 2352,
+&amp;ldquo;ggtree&amp;rdquo;: 1040,
+&amp;ldquo;GOSemSim&amp;rdquo;: 2061,
+&amp;ldquo;ReactomePA&amp;rdquo;: 883
+},
+{
+ &amp;ldquo;start&amp;rdquo;:          16953,
+&amp;ldquo;end&amp;rdquo;: 2016.495890411,
+&amp;ldquo;type&amp;rdquo;: &amp;ldquo;Nb_of_downloads&amp;rdquo;,
+&amp;ldquo;ChIPseeker&amp;rdquo;: 1039,
+&amp;ldquo;clusterProfiler&amp;rdquo;: 1880,
+&amp;ldquo;DOSE&amp;rdquo;: 2129,
+&amp;ldquo;ggtree&amp;rdquo;: 1245,
+&amp;ldquo;GOSemSim&amp;rdquo;: 1637,
+&amp;ldquo;ReactomePA&amp;rdquo;: 687
+}
+],
+&amp;ldquo;pointSize&amp;rdquo;:              0,
+&amp;ldquo;lineWidth&amp;rdquo;:              1,
+&amp;ldquo;id&amp;rdquo;: &amp;ldquo;chart3aa9109e4e73&amp;rdquo;,
+&amp;ldquo;labels&amp;rdquo;: [ &amp;ldquo;ChIPseeker&amp;rdquo;, &amp;ldquo;clusterProfiler&amp;rdquo;, &amp;ldquo;DOSE&amp;rdquo;, &amp;ldquo;ggtree&amp;rdquo;, &amp;ldquo;GOSemSim&amp;rdquo;, &amp;ldquo;ReactomePA&amp;rdquo; ]
+},
+      chartType = &amp;ldquo;Line&amp;rdquo;
+    new Morris&lt;a href=&#34;chartParams&#34;&gt;chartType&lt;/a&gt;
+&lt;/script&gt;&lt;/p&gt;
 
 &lt;p&gt;PS1: 下载统计由&lt;a href=&#34;https://cran.r-project.org/package=dlstats&#34;&gt;dlstats&lt;/a&gt;获取。&lt;/p&gt;
 
