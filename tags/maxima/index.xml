@@ -17,7 +17,7 @@
       <guid>https://guangchuangyu.github.io/cn/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/</guid>
       <description>
 
-&lt;h2 id=&#34;下载imaxima&#34;&gt;下载imaxima   &lt;/h2&gt;
+&lt;h2 id=&#34;下载imaxima:e6dedd294f68f0284e7032ee31b772ce&#34;&gt;下载imaxima   &lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://members3.jcom.home.ne.jp/imaxima/Site/Download%20and%20Install_files/imaxima-imath-0.97a.tar.gz&#34;&gt;http://members3.jcom.home.ne.jp/imaxima/Site/Download%20and%20Install_files/imaxima-imath-0.97a.tar.gz&lt;/a&gt;&lt;/p&gt;
 
@@ -44,7 +44,7 @@ sudo texhash
 
 &lt;p&gt;重新启动emacs，运行maxima，就可以正常使用了。&lt;/p&gt;
 
-&lt;h2 id=&#34;http-guangchuangyu-github-io-blog-images-2005-05-070902123015-png&#34;&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2005/05/070902123015.png&#34; alt=&#34;&#34; /&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;http-guangchuangyu-github-io-blog-images-2005-05-070902123015-png:e6dedd294f68f0284e7032ee31b772ce&#34;&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2005/05/070902123015.png&#34; alt=&#34;&#34; /&gt;&lt;/h2&gt;
 
 &lt;p&gt;原来我在05年就在用imaxima模式了，当年机器性能差，为了跑快点，很多软件我都尽量不使用gtk2界面，而编译成gtk界面。土灰的界面多么怀旧啊。&lt;/p&gt;
 

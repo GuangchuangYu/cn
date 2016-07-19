@@ -125,7 +125,7 @@ X的问题，在&lt;a href=&#34;http://stackoverflow.com/questions/80875/what-is
       <guid>https://guangchuangyu.github.io/cn/2013/09/install-emacs-on-mac/</guid>
       <description>
 
-&lt;h2 id=&#34;package-manager&#34;&gt;package manager&lt;/h2&gt;
+&lt;h2 id=&#34;package-manager:a0d2dabbee19e6fccf2cd8eeaa0e67d0&#34;&gt;package manager&lt;/h2&gt;
 
 &lt;p&gt;之前一直用&lt;a href=&#34;http://guangchuangyu.github.io/categories/bsd/&#34;&gt;NetBSD&lt;/a&gt;的&lt;a href=&#34;http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/&#34;&gt;pkgsrc&lt;/a&gt;做为各种Unix-like系统的包管理系统，pkgsrc在自己内部解决依赖关系，这点对于生产环境来说，是很好的一个优点，我通常会在服务器里装一个pkgsrc，在用户目录下，维护一套UNIX软件。但是用在自己的机器上，内部解决软件依赖，就是个缺点，浪费编译时间和硬盘空间。&lt;/p&gt;
 
@@ -150,7 +150,7 @@ X设计的原生包管理系统非Homebrew莫属，它会尽量依赖系统里�
 &lt;pre&gt;&lt;code&gt;brew install blat
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;emacs&#34;&gt;Emacs&lt;/h2&gt;
+&lt;h2 id=&#34;emacs:a0d2dabbee19e6fccf2cd8eeaa0e67d0&#34;&gt;Emacs&lt;/h2&gt;
 
 &lt;p&gt;虽然Homebrew是为OS
 X设计的，但它毕竟不是苹果的东西，无法管理系统内置的程序，OS
@@ -163,7 +163,7 @@ brew install --cocoa emacs
 ln -s /usr/local/Cellar/emacs/24.3/Emacs.app /Applications/
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;site-lisp&#34;&gt;site-lisp&lt;/h2&gt;
+&lt;h2 id=&#34;site-lisp:a0d2dabbee19e6fccf2cd8eeaa0e67d0&#34;&gt;site-lisp&lt;/h2&gt;
 
 &lt;p&gt;在.emacs.d目录下新建site-lisp目录，用于放置各种第三方的包，在.emacs里加入：&lt;/p&gt;
 
@@ -173,7 +173,7 @@ ln -s /usr/local/Cellar/emacs/24.3/Emacs.app /Applications/
 
 &lt;p&gt;让emacs启动时，加载site-lisp及其子目录。&lt;/p&gt;
 
-&lt;h2 id=&#34;eshell-path&#34;&gt;eshell PATH&lt;/h2&gt;
+&lt;h2 id=&#34;eshell-path:a0d2dabbee19e6fccf2cd8eeaa0e67d0&#34;&gt;eshell PATH&lt;/h2&gt;
 
 &lt;p&gt;eshell是个非常美好的存在，在windows下安装Emacs，就拥有了一个小型的&lt;a href=&#34;http://guangchuangyu.github.io/categories/shell/&#34;&gt;shell&lt;/a&gt;，非常方便，当然它并不是bash，如果在windows下使用会缺少很多bash内置程序和许多的unix命令行工具，幸好可以配置emacs调用cygwin的bash。&lt;/p&gt;
 
@@ -198,7 +198,7 @@ ln -s /usr/local/Cellar/emacs/24.3/Emacs.app /Applications/
 (setq exec-path (append exec-path &#39;(&amp;quot;/usr/local/bin&amp;quot; &amp;quot;/opt/bin&amp;quot;)))
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;color-theme&#34;&gt;color-theme&lt;/h2&gt;
+&lt;h2 id=&#34;color-theme:a0d2dabbee19e6fccf2cd8eeaa0e67d0&#34;&gt;color-theme&lt;/h2&gt;
 
 &lt;p&gt;安装&lt;a href=&#34;http://www.nongnu.org/color-theme/&#34;&gt;color-theme&lt;/a&gt;，放在.emacs.d/site-lisp下，在.emacs里加入：&lt;/p&gt;
 
@@ -209,7 +209,7 @@ ln -s /usr/local/Cellar/emacs/24.3/Emacs.app /Applications/
 
 &lt;p&gt;启动时加载color-theme，搞代码很伤眼啊 =,=&lt;/p&gt;
 
-&lt;h2 id=&#34;maxima&#34;&gt;Maxima&lt;/h2&gt;
+&lt;h2 id=&#34;maxima:a0d2dabbee19e6fccf2cd8eeaa0e67d0&#34;&gt;Maxima&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://guangchuangyu.github.io/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/&#34;&gt;Maxima&lt;/a&gt;是一个计算机代数运算系统，它是由MIT于1968至1982年间开发的Macsyma系统演变而来的。MIT于1982年将Macsyma源代码交与美国能源部（DOE），这部分代码后来被称作DOE
 Macsyma。DOE Macsyma的一个版本从1982年起由德克萨斯大学的William F.
@@ -220,7 +220,7 @@ Macsyma，自此该软件被称作Maxima。&lt;/p&gt;
 
 &lt;p&gt;在&lt;a href=&#34;http://guangchuangyu.github.io/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/&#34;&gt;Emacs调用maxima&lt;/a&gt;是非常爽的，公式可以通过&lt;a href=&#34;http://guangchuangyu.github.io/categories/latex&#34;&gt;LaTeX&lt;/a&gt;表示出来，非常漂亮，把buffer保存为txt，公式将被保存为&lt;a href=&#34;http://guangchuangyu.github.io/categories/latex&#34;&gt;LaTeX&lt;/a&gt;代码。&lt;/p&gt;
 
-&lt;h2 id=&#34;ess&#34;&gt;ESS&lt;/h2&gt;
+&lt;h2 id=&#34;ess:a0d2dabbee19e6fccf2cd8eeaa0e67d0&#34;&gt;ESS&lt;/h2&gt;
 
 &lt;p&gt;另一个必备是&lt;code&gt;ESS&lt;/code&gt;，可以在emacs调用R，解压放在.emacs.d/site-lisp下，在.emacs里加入：&lt;/p&gt;
 
@@ -231,7 +231,7 @@ Macsyma，自此该软件被称作Maxima。&lt;/p&gt;
 buffer中支持&lt;a href=&#34;http://guangchuangyu.github.io/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/&#34;&gt;inline
 plot&lt;/a&gt;就完美了。&lt;/p&gt;
 
-&lt;h2 id=&#34;markdown&#34;&gt;Markdown&lt;/h2&gt;
+&lt;h2 id=&#34;markdown:a0d2dabbee19e6fccf2cd8eeaa0e67d0&#34;&gt;Markdown&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://jblevins.org/projects/markdown-mode/&#34;&gt;Markdown-mode&lt;/a&gt;让emacs支持markdown语法，安装之后，需要在.emacs中加入：&lt;/p&gt;
 
@@ -310,37 +310,37 @@ plot&lt;/a&gt;就完美了。&lt;/p&gt;
       <guid>https://guangchuangyu.github.io/cn/2007/06/screenshot/</guid>
       <description>
 
-&lt;h2 id=&#34;os-9-2&#34;&gt;OS 9.2&lt;/h2&gt;
+&lt;h2 id=&#34;os-9-2:ba11a7898e0e392a3a4c1229a801e666&#34;&gt;OS 9.2&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2007/06/os9.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;xfce4-2&#34;&gt;xfce4.2&lt;/h2&gt;
+&lt;h2 id=&#34;xfce4-2:ba11a7898e0e392a3a4c1229a801e666&#34;&gt;xfce4.2&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://guangchuangyu.github.io/blog_images/2005/01/070329182457.png&#34;&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2005/01/070329182457.png&#34; alt=&#34;070329182457&#34; title=&#34;070329182457&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;xfce4-4&#34;&gt;xfce4.4&lt;/h2&gt;
+&lt;h2 id=&#34;xfce4-4:ba11a7898e0e392a3a4c1229a801e666&#34;&gt;xfce4.4&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://guangchuangyu.github.io/blog_images/2007/06/xfce44.png&#34;&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2007/06/xfce44.png&#34; alt=&#34;xfce44&#34; title=&#34;xfce44&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;qvwm&#34;&gt;qvwm&lt;/h2&gt;
+&lt;h2 id=&#34;qvwm:ba11a7898e0e392a3a4c1229a801e666&#34;&gt;qvwm&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://guangchuangyu.github.io/blog_images/2006/06/qvwm.png&#34;&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2006/06/qvwm.png&#34; alt=&#34;qvwm&#34; title=&#34;qvwm&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;icewm&#34;&gt;icewm&lt;/h2&gt;
+&lt;h2 id=&#34;icewm:ba11a7898e0e392a3a4c1229a801e666&#34;&gt;icewm&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://guangchuangyu.github.io/blog_images/2007/06/icewm.png&#34;&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2007/06/icewm.png&#34; alt=&#34;icewm&#34; title=&#34;icewm&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;fluxbox&#34;&gt;fluxbox&lt;/h2&gt;
+&lt;h2 id=&#34;fluxbox:ba11a7898e0e392a3a4c1229a801e666&#34;&gt;fluxbox&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://guangchuangyu.github.io/blog_images/2007/06/flubox.png&#34;&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2007/06/flubox.png&#34; alt=&#34;flubox&#34; title=&#34;flubox&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;wmaker&#34;&gt;wmaker&lt;/h2&gt;
+&lt;h2 id=&#34;wmaker:ba11a7898e0e392a3a4c1229a801e666&#34;&gt;wmaker&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://guangchuangyu.github.io/blog_images/2007/06/wmaker.png&#34;&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2007/06/wmaker.png&#34; alt=&#34;wmaker&#34; title=&#34;wmaker&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;越来越喜欢windowmaker&amp;hellip;&amp;hellip;喜欢它最小化到图标&lt;/p&gt;
 
-&lt;h2 id=&#34;wmii&#34;&gt;wmii&lt;/h2&gt;
+&lt;h2 id=&#34;wmii:ba11a7898e0e392a3a4c1229a801e666&#34;&gt;wmii&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://guangchuangyu.github.io/blog_images/2007/06/wmii.png&#34;&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2007/06/wmii.png&#34; alt=&#34;wmii&#34; title=&#34;wmii&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -356,18 +356,18 @@ plot&lt;/a&gt;就完美了。&lt;/p&gt;
       <guid>https://guangchuangyu.github.io/cn/2006/06/%E5%AE%89%E8%A3%85os9%E5%92%8Cnetbsd%E5%8F%8C%E7%B3%BB%E7%BB%9F/</guid>
       <description>
 
-&lt;h2 id=&#34;1-分区&#34;&gt;1 分区&lt;/h2&gt;
+&lt;h2 id=&#34;1-分区:7c364ac533cc06c9bf86bf33eb786a17&#34;&gt;1 分区&lt;/h2&gt;
 
 &lt;p&gt;用MacOS X 10.2 的光盘启动，运行Disk Utility，选择“Install Mac OS
 9 Disk
 Drivers”不然分区将不能在OS9中使用，我一共分了5个分区，12G,10G,512M,20G,13.4G。其中12Ｇ装OS9系统，10Ｇ装netbsd系统，512Ｍ为swap分区，20Ｇ为home
 分区，最后一个为fat32格式，为两个系统所共享。&lt;/p&gt;
 
-&lt;h2 id=&#34;2-安装os9&#34;&gt;2 安装os9&lt;/h2&gt;
+&lt;h2 id=&#34;2-安装os9:7c364ac533cc06c9bf86bf33eb786a17&#34;&gt;2 安装os9&lt;/h2&gt;
 
 &lt;p&gt;开机放入os9安装光盘，按住&lt;code&gt;Ｃ&lt;/code&gt;键，由光盘启动进入os9，在光盘根目录下点安装系统。指定第一个分区，选择安装的软件，十来分钟，便装完了。重新启动，将netbsd的启动程序&lt;code&gt;ofwboot.xcf&lt;/code&gt;放在os9的根目录下。&lt;/p&gt;
 
-&lt;h2 id=&#34;3-安装netbsd&#34;&gt;3 安装netbsd&lt;/h2&gt;
+&lt;h2 id=&#34;3-安装netbsd:7c364ac533cc06c9bf86bf33eb786a17&#34;&gt;3 安装netbsd&lt;/h2&gt;
 
 &lt;p&gt;开机按住&lt;code&gt;command+option+o+f&lt;/code&gt;进入open firmware。&lt;code&gt;open
 firmware&lt;/code&gt;启动命令的语法是 &lt;code&gt;boot boot-device [boot-file] [-as]&lt;/code&gt;&lt;/p&gt;

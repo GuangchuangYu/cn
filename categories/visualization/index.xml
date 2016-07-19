@@ -72,13 +72,13 @@ tree_text
 
 &lt;p&gt;这种做法只能展示一元信息，而且修改节点label真心是个脏活，满满的都是不爽，我心中理想的方式是树与注释信息分开，注释信息可以方便地通过图层加上去，而且可以自由组合。于是着手开发&lt;a href=&#34;http://www.bioconductor.org/packages/ggtree&#34;&gt;ggtree&lt;/a&gt;。&lt;a href=&#34;http://www.bioconductor.org/packages/ggtree&#34;&gt;ggtree&lt;/a&gt;是个简单易用的R包，一行代码&lt;code&gt;ggtree(read.tree(file))&lt;/code&gt;即可实现树的可视化。而注释通过图层来实现，多个图层可以完成复杂的注释，这得力于&lt;a href=&#34;http://www.bioconductor.org/packages/ggtree&#34;&gt;ggtree&lt;/a&gt;的设计。其中最重要的一点是如何来解析进化树。&lt;/p&gt;
 
-&lt;h2 id=&#34;ggtree的设计&#34;&gt;ggtree的设计&lt;/h2&gt;
+&lt;h2 id=&#34;ggtree的设计:d1d9992be5d6848a0489ec268963cadb&#34;&gt;ggtree的设计&lt;/h2&gt;
 
-&lt;h3 id=&#34;进化树的解析&#34;&gt;进化树的解析&lt;/h3&gt;
+&lt;h3 id=&#34;进化树的解析:d1d9992be5d6848a0489ec268963cadb&#34;&gt;进化树的解析&lt;/h3&gt;
 
 &lt;p&gt;除了&lt;a href=&#34;http://www.bioconductor.org/packages/ggtree&#34;&gt;ggtree&lt;/a&gt;之外，我所了解到的其它画树软件在画树的时候都把树当成是线条的集合。很明显画出来的进化树就是在画一堆线条，但是线条表示的是父节点和子节点的关系，除此之外没有任何意义，而节点在进化树上代表物种，叶子节点是我们构建进化树的物种，内部节点是根据叶子节点推断的共同祖先。我们所有的进化分析、推断、实验都是针对节点，节点才是进化树上有意义的实体。这是&lt;a href=&#34;http://www.bioconductor.org/packages/ggtree&#34;&gt;ggtree&lt;/a&gt;设计的基础，&lt;a href=&#34;http://www.bioconductor.org/packages/ggtree&#34;&gt;ggtree&lt;/a&gt;只映射节点到坐标系统中，而线条在&lt;code&gt;geom_tree&lt;/code&gt;图层中计算并画出来。这是与其它软件最根本的不同，也是ggtree能够简单地用图层加注释信息的基础。&lt;/p&gt;
 
-&lt;h3 id=&#34;扩展ggplot2&#34;&gt;扩展ggplot2&lt;/h3&gt;
+&lt;h3 id=&#34;扩展ggplot2:d1d9992be5d6848a0489ec268963cadb&#34;&gt;扩展ggplot2&lt;/h3&gt;
 
 &lt;p&gt;有很多可视化包基于ggplot2实现，包括各种&lt;code&gt;gg&lt;/code&gt;打头的，号称扩展了ggplot2，支持图形语法(grammar
 of
@@ -125,7 +125,7 @@ ggplot(tree, aes(x, y)) + geom_tree()
 
 &lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/ggtree_cos_files/figure-markdown_strict/unnamed-chunk-4-1.png&#34; alt=&#34;&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;树的操作与注释&#34;&gt;树的操作与注释&lt;/h2&gt;
+&lt;h2 id=&#34;树的操作与注释:d1d9992be5d6848a0489ec268963cadb&#34;&gt;树的操作与注释&lt;/h2&gt;
 
 &lt;p&gt;ggtree提供了多个函数可以把clade放大缩小(scaleClade)，折叠(collapse)和展开(expand)，位置调换和旋转，以及分类(groupOTU,
 groupClade)。&lt;/p&gt;
@@ -143,7 +143,7 @@ grid.arrange(cp, ep, hp, rp, ncol=2)
 
 &lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/ggtree_cos_files/figure-markdown_strict/unnamed-chunk-5-1.png&#34; alt=&#34;&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;支持多种文件格式&#34;&gt;支持多种文件格式&lt;/h2&gt;
+&lt;h2 id=&#34;支持多种文件格式:d1d9992be5d6848a0489ec268963cadb&#34;&gt;支持多种文件格式&lt;/h2&gt;
 
 &lt;p&gt;ggtree支持的文件格式包括Newick, Nexus, NHX和jplace。&lt;/p&gt;
 
@@ -159,7 +159,7 @@ ggtree(nhx, ladderize=F) + geom_tiplab() + geom_point(aes(color=S), size=8, alph
 
 &lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/ggtree_cos_files/figure-markdown_strict/unnamed-chunk-6-1.png&#34; alt=&#34;&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;支持解析多种软件的输出文件&#34;&gt;支持解析多种软件的输出文件&lt;/h2&gt;
+&lt;h2 id=&#34;支持解析多种软件的输出文件:d1d9992be5d6848a0489ec268963cadb&#34;&gt;支持解析多种软件的输出文件&lt;/h2&gt;
 
 &lt;p&gt;我们知道FigTree是针对&lt;a href=&#34;http://guangchuangyu.github.io/2015/04/an-example-of-drawing-beast-tree-using-ggtree/&#34;&gt;BEAST&lt;/a&gt;的输出设计的，可以把BEAST的统计推断拿来给树做注释，但很多的进化分析软件并没有相应的画树软件支持，用户很难把信息展示出来。&lt;/p&gt;
 
@@ -167,7 +167,7 @@ ggtree(nhx, ladderize=F) + geom_tiplab() + geom_point(aes(color=S), size=8, alph
 &lt;code&gt;pplacer&lt;/code&gt;和&lt;code&gt;BEAST&lt;/code&gt;的输出。相应的统计分析结果可以应用于树的注释。可以说&lt;code&gt;ggtree&lt;/code&gt;把这些软件分析的结果带给了R用户，通过ggtree的解析，
 这些进化分析结果可以进一点在R里进行处理和统计分析，并不单单是在ggtree中展示而已。&lt;/p&gt;
 
-&lt;h3 id=&#34;raxml-bootstrap分析&#34;&gt;RAxML bootstrap分析&lt;/h3&gt;
+&lt;h3 id=&#34;raxml-bootstrap分析:d1d9992be5d6848a0489ec268963cadb&#34;&gt;RAxML bootstrap分析&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;raxml_file &amp;lt;- system.file(&amp;quot;extdata/RAxML&amp;quot;, &amp;quot;RAxML_bipartitionsBranchLabels.H3&amp;quot;, package=&amp;quot;ggtree&amp;quot;)
 raxml &amp;lt;- read.raxml(raxml_file)
@@ -189,7 +189,7 @@ ggtree(btree) + facet_wrap(~.id, ncol=10)
 
 &lt;p&gt;如果不分面，这100颗树会重叠画在一起，这也能很好地展示bootstrap分析的结果，bootstrap值低的clade，线条会比较乱，而bootstrap值高的地方，线条一致性比较好。&lt;/p&gt;
 
-&lt;h3 id=&#34;paml&#34;&gt;PAML&lt;/h3&gt;
+&lt;h3 id=&#34;paml:d1d9992be5d6848a0489ec268963cadb&#34;&gt;PAML&lt;/h3&gt;
 
 &lt;p&gt;使用BaseML预测的祖先序列，ggtree解析结果的同时会把父节点到子节点的subsitution给统计出来，可以直接在树上注释：&lt;/p&gt;
 
@@ -223,7 +223,7 @@ ggtree(mlc, aes(color=dN_vs_dS)) +
 
 &lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/ggtree_cos_files/figure-markdown_strict/unnamed-chunk-11-1.png&#34; alt=&#34;&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;使用用户定义数据&#34;&gt;使用用户定义数据&lt;/h3&gt;
+&lt;h3 id=&#34;使用用户定义数据:d1d9992be5d6848a0489ec268963cadb&#34;&gt;使用用户定义数据&lt;/h3&gt;
 
 &lt;p&gt;进化树已经被广泛应用于各种跨学科的研究中，随着实验技术的发展，各种数据也更易于获得，使用用户数据注释进化树，也是ggtree所支持的。&lt;/p&gt;
 
@@ -275,7 +275,7 @@ support values、物种和基因型
 (genotype）等多维信息，6种不同的信息同时展示在一颗进化树上，这是个复杂的例子，我们在附件1中展示了可重复的代码。如果有兴趣，可以留意一下我们的文章。
 :)&lt;/p&gt;
 
-&lt;h2 id=&#34;其它好玩的功能&#34;&gt;其它好玩的功能&lt;/h2&gt;
+&lt;h2 id=&#34;其它好玩的功能:d1d9992be5d6848a0489ec268963cadb&#34;&gt;其它好玩的功能&lt;/h2&gt;
 
 &lt;p&gt;我们把树当成节点的集合，而不是线条的集合，这一点回归到了进化树的本质意义上，使这一实现成为可能。而支持图形语法，与ggplot2的无缝衔接又让注释变得更加容易。&lt;code&gt;ggtree&lt;/code&gt;为我们打开了各种注释和操作的可能性。甚至于可以创造出好玩的图，比如使用showtext来&lt;a href=&#34;http://guangchuangyu.github.io/2015/06/ggtree-with-funny-fonts/&#34;&gt;加载图形化的字体&lt;/a&gt;、&lt;a href=&#34;http://guangchuangyu.github.io/2015/12/use-emoji-font-in-r/&#34;&gt;用emoji来画树&lt;/a&gt;、&lt;a href=&#34;http://guangchuangyu.github.io/2015/08/ggtree-annotate-phylogenetic-tree-with-local-images/&#34;&gt;使用图片来注释树&lt;/a&gt;等等。&lt;/p&gt;
 
@@ -330,7 +330,7 @@ pp + geom_tiplab(align=T, linetype=&#39;dashed&#39;, linesize=.5) + geom_tippoin
       <guid>https://guangchuangyu.github.io/cn/2014/05/use-ggplot2/</guid>
       <description>
 
-&lt;h3 id=&#34;why-use-ggplot2&#34;&gt;Why use ggplot2&lt;/h3&gt;
+&lt;h3 id=&#34;why-use-ggplot2:c38c63fac86d2290b6bc01da39216614&#34;&gt;Why use ggplot2&lt;/h3&gt;
 
 &lt;p&gt;ggplot2是我见过最human friendly的画图软件，这得益于Leland
 Wilkinson在他的著作《&lt;a href=&#34;http://book.douban.com/subject/10123863/&#34;&gt;The Grammar of
@@ -359,7 +359,7 @@ Wickham是学医出身的，做为学生物出身的人有什么理由不支持�
 
 &lt;p&gt;这里将从这些基本要素对ggplot2进行介绍。&lt;/p&gt;
 
-&lt;h3 id=&#34;数据-data-和映射-mapping&#34;&gt;数据（Data）和映射（Mapping)&lt;/h3&gt;
+&lt;h3 id=&#34;数据-data-和映射-mapping:c38c63fac86d2290b6bc01da39216614&#34;&gt;数据（Data）和映射（Mapping)&lt;/h3&gt;
 
 &lt;p&gt;下面以一份钻石的数据为例，这份数据非常大，随机取一个子集来画图。&lt;/p&gt;
 
@@ -438,7 +438,7 @@ p+geom_point()
 
 &lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;几何对象-geometric&#34;&gt;几何对象（Geometric）&lt;/h3&gt;
+&lt;h3 id=&#34;几何对象-geometric:c38c63fac86d2290b6bc01da39216614&#34;&gt;几何对象（Geometric）&lt;/h3&gt;
 
 &lt;p&gt;在上面的例子中，各种属性映射由ggplot函数执行，只需要加一个图层，使用geom_point()告诉ggplot要画散点，于是所有的属性都映射到散点上。&lt;/p&gt;
 
@@ -551,7 +551,7 @@ geom_tile       geom_violin
 geom_vline
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;标尺-scale&#34;&gt;标尺（Scale）&lt;/h3&gt;
+&lt;h3 id=&#34;标尺-scale:c38c63fac86d2290b6bc01da39216614&#34;&gt;标尺（Scale）&lt;/h3&gt;
 
 &lt;p&gt;前面我们已经看到了，画图就是在做映射，不管是映射到不同的几何对象上，还是映射各种图形属性。这一小节介绍标尺，在对图形属性进行映射之后，使用标尺可以控制这些属性的显示方式，比如坐标刻度，可能通过标尺，将坐标进行对数变换；比如颜色属性，也可以通过标尺，进行改变。&lt;/p&gt;
 
@@ -562,7 +562,7 @@ geom_vline
 
 &lt;p&gt;以数据（Data）和映射（Mapping)一节中所画散点图为例，将Y轴坐标进行log10变换，再自己定义颜色为彩虹色。&lt;/p&gt;
 
-&lt;h3 id=&#34;统计变换-statistics&#34;&gt;统计变换（Statistics）&lt;/h3&gt;
+&lt;h3 id=&#34;统计变换-statistics:c38c63fac86d2290b6bc01da39216614&#34;&gt;统计变换（Statistics）&lt;/h3&gt;
 
 &lt;p&gt;统计变换对原始数据进行某种计算，然后在图上表示出来，例如对散点图上加一条回归线。&lt;/p&gt;
 
@@ -587,7 +587,7 @@ stat_boxplot      stat_hline        stat_sum          stat_ydensity
 &lt;p&gt;统计变换是非常重要的功能，我们可以自己写函数，基于原始数据做某种计算，并在图上表现出来，也可以通过它改变geom_xxx函数画图的默认统计参数。
 比如我在&lt;a href=&#34;http://www.sciencedirect.com/science/article/pii/S1874391912007567&#34;&gt;Proteomic investigation of the interactome of FMNL1 in hematopoietic cells unveils a role in calcium-dependent membrane plasticity&lt;/a&gt;的图一中，就把boxplot的中位线替换成了平均值来作图。&lt;/p&gt;
 
-&lt;h3 id=&#34;坐标系统-coordinante&#34;&gt;坐标系统（Coordinante）&lt;/h3&gt;
+&lt;h3 id=&#34;坐标系统-coordinante:c38c63fac86d2290b6bc01da39216614&#34;&gt;坐标系统（Coordinante）&lt;/h3&gt;
 
 &lt;p&gt;坐标系统控制坐标轴，可以进行变换，例如XY轴翻转，笛卡尔坐标和极坐标转换，以满足我们的各种需求。&lt;/p&gt;
 
@@ -621,7 +621,7 @@ stat_boxplot      stat_hline        stat_sum          stat_ydensity
 
 &lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig17.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;图层-layer&#34;&gt;图层（Layer）&lt;/h3&gt;
+&lt;h3 id=&#34;图层-layer:c38c63fac86d2290b6bc01da39216614&#34;&gt;图层（Layer）&lt;/h3&gt;
 
 &lt;p&gt;photoshop流行的原因在于PS
 3.0时引入图层的概念，ggplot的牛B之处在于使用+号来叠加图层，这堪称是泛型编程的典范。
@@ -700,7 +700,7 @@ multiplot(p1,p2,p3,p4,p5,p6, cols=2)
 
 &lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_batman.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;分面-facet&#34;&gt;分面（Facet）&lt;/h3&gt;
+&lt;h3 id=&#34;分面-facet:c38c63fac86d2290b6bc01da39216614&#34;&gt;分面（Facet）&lt;/h3&gt;
 
 &lt;p&gt;在《&lt;a href=&#34;http://book.douban.com/subject/24527091/&#34;&gt;ggplot2: 数据分析与图形艺术&lt;/a&gt;》一书的翻译中，一开始译者把facet翻译成切片，我在校稿的时候发现了，给他们写信，推荐翻译成分面，如果是slice这个词，翻译成切片倒是很精准，BSD的硬盘分区就叫slice，但facet从词源上看就是小脸的意思，翻译成分面才到位。给他们写信的时候，我还专门查了&lt;a href=&#34;http://dict.cnki.net/&#34;&gt;CNKI翻译助手&lt;/a&gt;，发现这词在信息学中，翻成分面早已是固定的。我感觉这是我对这本书翻译的最大贡献，校稿过程中发现的少量小问题远比不上这个关键词意思的把握上。&lt;/p&gt;
 
@@ -712,7 +712,7 @@ multiplot(p1,p2,p3,p4,p5,p6, cols=2)
 
 &lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig18.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;主题-theme&#34;&gt;主题（Theme）&lt;/h3&gt;
+&lt;h3 id=&#34;主题-theme:c38c63fac86d2290b6bc01da39216614&#34;&gt;主题（Theme）&lt;/h3&gt;
 
 &lt;p&gt;通过ggplot画图之后，我们可能还需要对图进行定制，像title, xlab,
 ylab这些高频需要用到的，自不用说，ggplot2提供了ggtitle(),
@@ -777,7 +777,7 @@ p+theme_null()+xlab(&amp;quot;&amp;quot;)+ylab(&amp;quot;&amp;quot;)
 
 &lt;p&gt;详细的说明，可以参考?theme的帮助文档。&lt;/p&gt;
 
-&lt;h3 id=&#34;二维密度图&#34;&gt;二维密度图&lt;/h3&gt;
+&lt;h3 id=&#34;二维密度图:c38c63fac86d2290b6bc01da39216614&#34;&gt;二维密度图&lt;/h3&gt;
 
 &lt;p&gt;在这个文档里，为了作图方便，我们使用diamonds数据集的一个子集，如果使用全集，数据量太大，画出来散点就糊了，这种情况可以使用二维密度力来呈现。&lt;/p&gt;
 
@@ -786,7 +786,7 @@ p+theme_null()+xlab(&amp;quot;&amp;quot;)+ylab(&amp;quot;&amp;quot;)
 
 &lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2.fig22.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;ggplot2实例&#34;&gt;ggplot2实例&lt;/h3&gt;
+&lt;h3 id=&#34;ggplot2实例:c38c63fac86d2290b6bc01da39216614&#34;&gt;ggplot2实例&lt;/h3&gt;
 
 &lt;p&gt;蝴蝶图：详见《Modern Applied Statistics with S-PLUS》第一章。&lt;/p&gt;
 
@@ -894,7 +894,7 @@ plot基本可以扔了。&lt;/p&gt;
 
 &lt;p&gt;三维绘图可以分为两大类型：矩阵型和曲面型。&lt;/p&gt;
 
-&lt;h2 id=&#34;矩阵型&#34;&gt;矩阵型&lt;/h2&gt;
+&lt;h2 id=&#34;矩阵型:8b9e6891715644f541f979f699d9fdf4&#34;&gt;矩阵型&lt;/h2&gt;
 
 &lt;p&gt;通常是声明一个矩阵，以矩阵的长宽为x,y范围，以矩阵里面的数值为高z，
 使用&lt;code&gt;plot3d(t1,t2,Z,alpha=a,theta=b)&lt;/code&gt;&lt;/p&gt;
@@ -915,7 +915,7 @@ plot基本可以扔了。&lt;/p&gt;
 
 &lt;p&gt;mesh不需要边界声明， &lt;code&gt;-&amp;gt;mesh(A);&lt;/code&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;曲面型&#34;&gt;曲面型&lt;/h2&gt;
+&lt;h2 id=&#34;曲面型:8b9e6891715644f541f979f699d9fdf4&#34;&gt;曲面型&lt;/h2&gt;
 
 &lt;p&gt;则是先声明一个连续函数，再选取x,y范围来绘图。
 &lt;code&gt;fplot3d()&lt;/code&gt;指令用来绘制连续函数。
@@ -926,13 +926,13 @@ plot基本可以扔了。&lt;/p&gt;
 -&amp;gt;fplot3d(x,y,f);
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;柱状图&#34;&gt;柱状图&lt;/h2&gt;
+&lt;h2 id=&#34;柱状图:8b9e6891715644f541f979f699d9fdf4&#34;&gt;柱状图&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;-&amp;gt;A=[1 3 5 7;2 6 10 14]; //声明一个矩阵 
 -&amp;gt;hist3d(A);
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;空间立体曲线图&#34;&gt;空间立体曲线图&lt;/h2&gt;
+&lt;h2 id=&#34;空间立体曲线图:8b9e6891715644f541f979f699d9fdf4&#34;&gt;空间立体曲线图&lt;/h2&gt;
 
 &lt;p&gt;&lt;code&gt;param3d&lt;/code&gt;绘制的是线，而非面。 &lt;code&gt;param3d(xf,yf,zf);&lt;/code&gt;&lt;/p&gt;
 
