@@ -18,7 +18,7 @@
 
   
   
-  <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/hugo-octopress.css">
+  <link rel="stylesheet" href="https://guangchuangyu.github.io/css/hugo-octopress.css">
 
   
   
@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
   
-  <link href="https://guangchuangyu.github.io/cn/favicon.png" rel="icon">
+  <link href="https://guangchuangyu.github.io/favicon.png" rel="icon">
 
   
   
@@ -41,7 +41,7 @@
   <meta name="author" content="Guangchuang Yu">
 
   
-  <meta name="generator" content="Hugo 0.15" />
+  <meta name="generator" content="Hugo 0.16" />
 
   
   
@@ -62,7 +62,7 @@ ga('send', 'pageview');
 
 <header role="banner"><hgroup>
   
-  <h1><a href="https://guangchuangyu.github.io/cn/">Guangchuang Yu</a></h1>
+  <h1><a href="https://guangchuangyu.github.io/">Guangchuang Yu</a></h1>
     <h2>a senior-in-age-but-not-senior-in-knowledge bioinformatician</h2>
 </hgroup></header>
 
@@ -92,7 +92,7 @@ ga('send', 'pageview');
 
 
 <ul class="subscription">
-  <a href="https://guangchuangyu.github.io/cn/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss-square fa-lg"></i></a>
+  <a href="https://guangchuangyu.github.io/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss-square fa-lg"></i></a>
 
   
   
@@ -117,7 +117,7 @@ ga('send', 'pageview');
 
           
           
-          <a class="label" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
+          <a class="label" href="https://guangchuangyu.github.io/categories/visualization">Visualization</a>
           </p>
         </header>
         <div class="entry-content">
@@ -138,7 +138,7 @@ ga('send', 'pageview');
 
     
 
-<h3 id="why-use-ggplot2:c38c63fac86d2290b6bc01da39216614">Why use ggplot2</h3>
+<h3 id="why-use-ggplot2">Why use ggplot2</h3>
 
 <p>ggplot2是我见过最human friendly的画图软件，这得益于Leland
 Wilkinson在他的著作《<a href="http://book.douban.com/subject/10123863/">The Grammar of
@@ -167,7 +167,7 @@ Wickham是学医出身的，做为学生物出身的人有什么理由不支持�
 
 <p>这里将从这些基本要素对ggplot2进行介绍。</p>
 
-<h3 id="数据-data-和映射-mapping:c38c63fac86d2290b6bc01da39216614">数据（Data）和映射（Mapping)</h3>
+<h3 id="数据-data-和映射-mapping">数据（Data）和映射（Mapping)</h3>
 
 <p>下面以一份钻石的数据为例，这份数据非常大，随机取一个子集来画图。</p>
 
@@ -246,7 +246,7 @@ p+geom_point()
 
 <p><img src="http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig3.png" alt="" /></p>
 
-<h3 id="几何对象-geometric:c38c63fac86d2290b6bc01da39216614">几何对象（Geometric）</h3>
+<h3 id="几何对象-geometric">几何对象（Geometric）</h3>
 
 <p>在上面的例子中，各种属性映射由ggplot函数执行，只需要加一个图层，使用geom_point()告诉ggplot要画散点，于是所有的属性都映射到散点上。</p>
 
@@ -359,7 +359,7 @@ geom_tile       geom_violin
 geom_vline
 </code></pre>
 
-<h3 id="标尺-scale:c38c63fac86d2290b6bc01da39216614">标尺（Scale）</h3>
+<h3 id="标尺-scale">标尺（Scale）</h3>
 
 <p>前面我们已经看到了，画图就是在做映射，不管是映射到不同的几何对象上，还是映射各种图形属性。这一小节介绍标尺，在对图形属性进行映射之后，使用标尺可以控制这些属性的显示方式，比如坐标刻度，可能通过标尺，将坐标进行对数变换；比如颜色属性，也可以通过标尺，进行改变。</p>
 
@@ -370,7 +370,7 @@ geom_vline
 
 <p>以数据（Data）和映射（Mapping)一节中所画散点图为例，将Y轴坐标进行log10变换，再自己定义颜色为彩虹色。</p>
 
-<h3 id="统计变换-statistics:c38c63fac86d2290b6bc01da39216614">统计变换（Statistics）</h3>
+<h3 id="统计变换-statistics">统计变换（Statistics）</h3>
 
 <p>统计变换对原始数据进行某种计算，然后在图上表示出来，例如对散点图上加一条回归线。</p>
 
@@ -395,7 +395,7 @@ stat_boxplot      stat_hline        stat_sum          stat_ydensity
 <p>统计变换是非常重要的功能，我们可以自己写函数，基于原始数据做某种计算，并在图上表现出来，也可以通过它改变geom_xxx函数画图的默认统计参数。
 比如我在<a href="http://www.sciencedirect.com/science/article/pii/S1874391912007567">Proteomic investigation of the interactome of FMNL1 in hematopoietic cells unveils a role in calcium-dependent membrane plasticity</a>的图一中，就把boxplot的中位线替换成了平均值来作图。</p>
 
-<h3 id="坐标系统-coordinante:c38c63fac86d2290b6bc01da39216614">坐标系统（Coordinante）</h3>
+<h3 id="坐标系统-coordinante">坐标系统（Coordinante）</h3>
 
 <p>坐标系统控制坐标轴，可以进行变换，例如XY轴翻转，笛卡尔坐标和极坐标转换，以满足我们的各种需求。</p>
 
@@ -429,7 +429,7 @@ stat_boxplot      stat_hline        stat_sum          stat_ydensity
 
 <p><img src="http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig17.png" alt="" /></p>
 
-<h3 id="图层-layer:c38c63fac86d2290b6bc01da39216614">图层（Layer）</h3>
+<h3 id="图层-layer">图层（Layer）</h3>
 
 <p>photoshop流行的原因在于PS
 3.0时引入图层的概念，ggplot的牛B之处在于使用+号来叠加图层，这堪称是泛型编程的典范。
@@ -508,7 +508,7 @@ multiplot(p1,p2,p3,p4,p5,p6, cols=2)
 
 <p><img src="http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_batman.png" alt="" /></p>
 
-<h3 id="分面-facet:c38c63fac86d2290b6bc01da39216614">分面（Facet）</h3>
+<h3 id="分面-facet">分面（Facet）</h3>
 
 <p>在《<a href="http://book.douban.com/subject/24527091/">ggplot2: 数据分析与图形艺术</a>》一书的翻译中，一开始译者把facet翻译成切片，我在校稿的时候发现了，给他们写信，推荐翻译成分面，如果是slice这个词，翻译成切片倒是很精准，BSD的硬盘分区就叫slice，但facet从词源上看就是小脸的意思，翻译成分面才到位。给他们写信的时候，我还专门查了<a href="http://dict.cnki.net/">CNKI翻译助手</a>，发现这词在信息学中，翻成分面早已是固定的。我感觉这是我对这本书翻译的最大贡献，校稿过程中发现的少量小问题远比不上这个关键词意思的把握上。</p>
 
@@ -520,7 +520,7 @@ multiplot(p1,p2,p3,p4,p5,p6, cols=2)
 
 <p><img src="http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig18.png" alt="" /></p>
 
-<h3 id="主题-theme:c38c63fac86d2290b6bc01da39216614">主题（Theme）</h3>
+<h3 id="主题-theme">主题（Theme）</h3>
 
 <p>通过ggplot画图之后，我们可能还需要对图进行定制，像title, xlab,
 ylab这些高频需要用到的，自不用说，ggplot2提供了ggtitle(),
@@ -585,7 +585,7 @@ p+theme_null()+xlab(&quot;&quot;)+ylab(&quot;&quot;)
 
 <p>详细的说明，可以参考?theme的帮助文档。</p>
 
-<h3 id="二维密度图:c38c63fac86d2290b6bc01da39216614">二维密度图</h3>
+<h3 id="二维密度图">二维密度图</h3>
 
 <p>在这个文档里，为了作图方便，我们使用diamonds数据集的一个子集，如果使用全集，数据量太大，画出来散点就糊了，这种情况可以使用二维密度力来呈现。</p>
 
@@ -594,7 +594,7 @@ p+theme_null()+xlab(&quot;&quot;)+ylab(&quot;&quot;)
 
 <p><img src="http://guangchuangyu.github.io/blog_images/2014/05/ggplot2.fig22.png" alt="" /></p>
 
-<h3 id="ggplot2实例:c38c63fac86d2290b6bc01da39216614">ggplot2实例</h3>
+<h3 id="ggplot2实例">ggplot2实例</h3>
 
 <p>蝴蝶图：详见《Modern Applied Statistics with S-PLUS》第一章。</p>
 
@@ -653,7 +653,7 @@ print(p)
       Tags:
         
         
-          <a class="category" href="https://guangchuangyu.github.io/cn/tags/ggplot2">ggplot2</a>  
+          <a class="category" href="https://guangchuangyu.github.io/tags/ggplot2">ggplot2</a>  
         
     </span>
   </p>
@@ -799,7 +799,7 @@ var duoshuoQuery = {short_name:"ygc-hku"};
 
 
 <footer role="contentinfo">
-  <p>Copyright &copy; 2016 Guangchuang Yu - <a href="https://guangchuangyu.github.io/cn/license/">License</a> - 
+  <p>Copyright &copy; 2016 Guangchuang Yu - <a href="https://guangchuangyu.github.io/license/">License</a> - 
   <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
 </p>
 

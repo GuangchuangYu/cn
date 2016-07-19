@@ -18,7 +18,7 @@
 
   
   
-  <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/hugo-octopress.css">
+  <link rel="stylesheet" href="https://guangchuangyu.github.io/css/hugo-octopress.css">
 
   
   
@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
   
-  <link href="https://guangchuangyu.github.io/cn/favicon.png" rel="icon">
+  <link href="https://guangchuangyu.github.io/favicon.png" rel="icon">
 
   
   
@@ -41,7 +41,7 @@
   <meta name="author" content="Guangchuang Yu">
 
   
-  <meta name="generator" content="Hugo 0.15" />
+  <meta name="generator" content="Hugo 0.16" />
 
   
   
@@ -62,7 +62,7 @@ ga('send', 'pageview');
 
 <header role="banner"><hgroup>
   
-  <h1><a href="https://guangchuangyu.github.io/cn/">Guangchuang Yu</a></h1>
+  <h1><a href="https://guangchuangyu.github.io/">Guangchuang Yu</a></h1>
     <h2>a senior-in-age-but-not-senior-in-knowledge bioinformatician</h2>
 </hgroup></header>
 
@@ -92,7 +92,7 @@ ga('send', 'pageview');
 
 
 <ul class="subscription">
-  <a href="https://guangchuangyu.github.io/cn/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss-square fa-lg"></i></a>
+  <a href="https://guangchuangyu.github.io/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss-square fa-lg"></i></a>
 
   
   
@@ -111,6 +111,45 @@ ga('send', 'pageview');
     <article>
       <header>
         <h1 class="entry-title">
+          <a href="https://guangchuangyu.github.io/cn/2012/02/violin-plot/">violin plot</a>
+        </h1>
+        <p class="meta">Feb 7, 2012 - 1 minute read - 
+
+        
+        
+        
+        <a class="label" href="https://guangchuangyu.github.io/categories/visualization/">Visualization</a>
+        </p>
+
+      </header>
+
+        
+          <p><p>ggplot2 0.9.0版本将在3月1号发布，改动较大，最近bioc mailing
+list也有诸多讨论，因为它导致了某些包编译出错（估计是NAMESPACE引起的）。</p>
+
+<p>按照hadley的说法是这是为了把他个人的项目变成一个社区项目。</p>
+
+<p>大多数的改动对用户来说是invisible的，用roxygen2去注释函数，核心代码使用S3重写，分离出一些特性（scales包）等。</p>
+
+<p>最明显的是现在画图速度变快了，不过我觉得最让人兴奋的是<code>guide_legend()</code>和<code>guide_colorbar()</code>两个函数，可以修改legend.</p>
+
+<p>画图的话，加了四个函数<code>geom_map()</code>, <code>geom_raster()</code>,
+<code>geom_dotplot()</code>和<code>geom_violin()</code>.</p>
+</p>
+
+          
+              <footer>
+                  <a href="https://guangchuangyu.github.io/cn/2012/02/violin-plot/" rel="full-article">Read On &rarr;</a>
+              </footer>
+          
+
+        
+
+    </article>
+    
+    <article>
+      <header>
+        <h1 class="entry-title">
           <a href="https://guangchuangyu.github.io/cn/2011/06/screen-shot/">screen shot</a>
         </h1>
         <p class="meta">Jun 28, 2011 - 1 minute read - 
@@ -118,7 +157,7 @@ ga('send', 'pageview');
         
         
         
-        <a class="label" href="https://guangchuangyu.github.io/cn/categories/bsd/">BSD</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/mac-os/">Mac OS</a>
+        <a class="label" href="https://guangchuangyu.github.io/categories/bsd/">BSD</a><a class="label" href="https://guangchuangyu.github.io/categories/mac-os/">Mac OS</a>
         </p>
 
       </header>
@@ -160,7 +199,7 @@ ga('send', 'pageview');
         
         
         
-        <a class="label" href="https://guangchuangyu.github.io/cn/categories/statistics/">statistics</a>
+        <a class="label" href="https://guangchuangyu.github.io/categories/statistics/">statistics</a>
         </p>
 
       </header>
@@ -214,7 +253,7 @@ the metric itself.</p>
         
         
         
-        <a class="label" href="https://guangchuangyu.github.io/cn/categories/windows/">Windows</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/linux/">Linux</a>
+        <a class="label" href="https://guangchuangyu.github.io/categories/windows/">Windows</a><a class="label" href="https://guangchuangyu.github.io/categories/linux/">Linux</a>
         </p>
 
       </header>
@@ -257,13 +296,13 @@ the metric itself.</p>
         
         
         
-        <a class="label" href="https://guangchuangyu.github.io/cn/categories/statistics/">statistics</a>
+        <a class="label" href="https://guangchuangyu.github.io/categories/statistics/">statistics</a>
         </p>
 
       </header>
 
         
-          <p><p><a href="http://en.wikipedia.org/wiki/Bootstrapping_(statistics)">bootstrap</a>是对观测数据集进行有放回（replacement）的随机抽样，以评估总体的各项统计指标。可以用于假设检验、参数估计。好处是并不要求大样本，也不要求正态数据，并且对于不同的统计指标使用的是同样的计算方法。结果也更为可靠，坏处是计算量大。</p>
+          <p><p>[bootstrap](<a href="http://en.wikipedia.org/wiki/Bootstrapping_(statistics))是对观测数据集进行有放回（replacement）的随机抽样，以评估总体的各项统计指标。可以用于假设检验、参数估计。好处是并不要求大样本，也不要求正态数据，并且对于不同的统计指标使用的是同样的计算方法。结果也更为可靠，坏处是计算量大。">http://en.wikipedia.org/wiki/Bootstrapping_(statistics))是对观测数据集进行有放回（replacement）的随机抽样，以评估总体的各项统计指标。可以用于假设检验、参数估计。好处是并不要求大样本，也不要求正态数据，并且对于不同的统计指标使用的是同样的计算方法。结果也更为可靠，坏处是计算量大。</a></p>
 
 <p>统计推断(statistical
 inference)是基于样本统计值的抽样分布来计算的，抽样分布需要从总体中许多的样本来计算，在只有一个样本的情况下，bootstrap对这一随机样本进行有放回的重复抽样，每一个重抽样本与原始随机样本一样大，每次计算相应的抽样的统计值，重复了N次之后，就可以计算统计值的bootstrap分布。</p>
@@ -281,41 +320,6 @@ inference)是基于样本统计值的抽样分布来计算的，抽样分布需�
           
               <footer>
                   <a href="https://guangchuangyu.github.io/cn/2009/07/bootstrap-method/" rel="full-article">Read On &rarr;</a>
-              </footer>
-          
-
-        
-
-    </article>
-    
-    <article>
-      <header>
-        <h1 class="entry-title">
-          <a href="https://guangchuangyu.github.io/cn/2008/09/%E5%8D%9A%E5%AE%A2%E8%BD%ACwordpress/">博客转WordPress</a>
-        </h1>
-        <p class="meta">Sep 30, 2008 - 1 minute read - 
-
-        
-        
-        
-        <a class="label" href="https://guangchuangyu.github.io/cn/categories/blog/">Blog</a>
-        </p>
-
-      </header>
-
-        
-          <p><p>找了一个叫<strong>博客备份软件</strong>的小工具,备份了新浪和ChinaUnix上的blog,导出为RSS
-2.0, sina的blog导出没问题,但是cu的blog导出后,文不对题.狂汗啊&hellip;
-但是生成的xml文件导入到wordpress里不成功.需要改一下才行.</p>
-
-<p>从导出的xml文件里,把&lt;description&gt;&lt;![CDATA[替换成&lt;content:encoded&gt;&lt;![CDATA[</p>
-
-<p>相应地把]]&gt;&lt;/description&gt;替换成]]&gt;&lt;/content:encoded&gt;</p>
-</p>
-
-          
-              <footer>
-                  <a href="https://guangchuangyu.github.io/cn/2008/09/%E5%8D%9A%E5%AE%A2%E8%BD%ACwordpress/" rel="full-article">Read On &rarr;</a>
               </footer>
           
 
@@ -360,6 +364,8 @@ inference)是基于样本统计值的抽样分布来计算的，抽样分布需�
     
         <a href="https://guangchuangyu.github.io/cn/page/8/" class="label-pagination">8</a>
     
+        <a href="https://guangchuangyu.github.io/cn/page/9/" class="label-pagination">9</a>
+    
 
     
     
@@ -368,7 +374,7 @@ inference)是基于样本统计值的抽样分布来计算的，抽样分布需�
 
     
     
-        <a href="https://guangchuangyu.github.io/cn/page/8/" aria-label="Last"><i class="fa fa-angle-double-right fa-lg"></i></a>
+        <a href="https://guangchuangyu.github.io/cn/page/9/" aria-label="Last"><i class="fa fa-angle-double-right fa-lg"></i></a>
     
 
 </div>
@@ -479,7 +485,7 @@ inference)是基于样本统计值的抽样分布来计算的，抽样分布需�
 
 
 <footer role="contentinfo">
-  <p>Copyright &copy; 2016 Guangchuang Yu - <a href="https://guangchuangyu.github.io/cn/license/">License</a> - 
+  <p>Copyright &copy; 2016 Guangchuang Yu - <a href="https://guangchuangyu.github.io/license/">License</a> - 
   <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
 </p>
 

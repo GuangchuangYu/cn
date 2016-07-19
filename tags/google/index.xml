@@ -35,18 +35,18 @@
 &lt;p&gt;介绍给实验室的小伙伴之后，看到&lt;code&gt;unlimited&lt;/code&gt;都好兴奋，但同时又担心毕业后的问题。看来普遍不清楚HKU的邮箱政策。所以写下这个post，一来让更多的人知道这么重大利好的网盘，另一方面也回答以下几个FAQ（看来像我这种来的时候就去读FAQ的人不多 -,-）。&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&#34;faq1-毕业了邮箱还能用不:f7ce54e33cd721c19b1e5d4fc4d3d4fd&#34;&gt;FAQ1: 毕业了邮箱还能用不？&lt;/h2&gt;
+&lt;h2 id=&#34;faq1-毕业了邮箱还能用不&#34;&gt;FAQ1: 毕业了邮箱还能用不？&lt;/h2&gt;
 
 &lt;p&gt;实验室师姐临毕业时经常收不到学校催她提交各种材料的信件，原因不是邮箱不能用了，而是&lt;code&gt;@hku.hk&lt;/code&gt;不能用了。我在刚来的时候就看了相关的细则，知道HKU的邮箱是终身可用的，才开始使用的，而且我知道&lt;code&gt;@hku.hk&lt;/code&gt;毕业后不能用，我给学校的材料一直都只会填写&lt;code&gt;@connect.hku.hk&lt;/code&gt;，以防毕业期间丢邮件。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2016/Screenshot 2016-03-24 15.33.41.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;faq2-毕业了服务还在么:f7ce54e33cd721c19b1e5d4fc4d3d4fd&#34;&gt;FAQ2: 毕业了服务还在么？&lt;/h2&gt;
+&lt;h2 id=&#34;faq2-毕业了服务还在么&#34;&gt;FAQ2: 毕业了服务还在么？&lt;/h2&gt;
 
 &lt;p&gt;HKU的邮箱终身免费使用google drive无限量空间。
 &lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2016/Screenshot 2016-03-24 15.34.38.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;faq3-回大陆怎么用:f7ce54e33cd721c19b1e5d4fc4d3d4fd&#34;&gt;FAQ3: 回大陆怎么用？&lt;/h2&gt;
+&lt;h2 id=&#34;faq3-回大陆怎么用&#34;&gt;FAQ3: 回大陆怎么用？&lt;/h2&gt;
 
 &lt;p&gt;上google简直太容易，Windows/MacOSX/Linux用户都可以使用&lt;a href=&#34;https://github.com/XX-net/XX-Net&#34;&gt;XX-Net&lt;/a&gt;，自动切换代理，不需要代理的网站并不使用代理，所以不像vpn一样，速度慢，体验差。如果是windows用户又觉得设置太繁琐，可以使用集成了XX-Net的&lt;a href=&#34;http://www.ccav1.me/chromegae.html&#34;&gt;ChromeGAE&lt;/a&gt;，一键安装，开箱即用，且支持自动更新。&lt;/p&gt;
 

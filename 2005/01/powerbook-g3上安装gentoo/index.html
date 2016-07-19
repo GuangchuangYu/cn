@@ -18,7 +18,7 @@
 
   
   
-  <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/hugo-octopress.css">
+  <link rel="stylesheet" href="https://guangchuangyu.github.io/css/hugo-octopress.css">
 
   
   
@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
   
-  <link href="https://guangchuangyu.github.io/cn/favicon.png" rel="icon">
+  <link href="https://guangchuangyu.github.io/favicon.png" rel="icon">
 
   
   
@@ -41,7 +41,7 @@
   <meta name="author" content="Guangchuang Yu">
 
   
-  <meta name="generator" content="Hugo 0.15" />
+  <meta name="generator" content="Hugo 0.16" />
 
   
   
@@ -62,7 +62,7 @@ ga('send', 'pageview');
 
 <header role="banner"><hgroup>
   
-  <h1><a href="https://guangchuangyu.github.io/cn/">Guangchuang Yu</a></h1>
+  <h1><a href="https://guangchuangyu.github.io/">Guangchuang Yu</a></h1>
     <h2>a senior-in-age-but-not-senior-in-knowledge bioinformatician</h2>
 </hgroup></header>
 
@@ -92,7 +92,7 @@ ga('send', 'pageview');
 
 
 <ul class="subscription">
-  <a href="https://guangchuangyu.github.io/cn/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss-square fa-lg"></i></a>
+  <a href="https://guangchuangyu.github.io/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss-square fa-lg"></i></a>
 
   
   
@@ -117,7 +117,7 @@ ga('send', 'pageview');
 
           
           
-          <a class="label" href="https://guangchuangyu.github.io/cn/categories/linux">Linux</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/powerbook">Powerbook</a>
+          <a class="label" href="https://guangchuangyu.github.io/categories/linux">Linux</a><a class="label" href="https://guangchuangyu.github.io/categories/powerbook">Powerbook</a>
           </p>
         </header>
         <div class="entry-content">
@@ -150,14 +150,14 @@ ga('send', 'pageview');
 
 <p>用2004.3LiveCD进入。</p>
 
-<h2 id="1-配置网络:e579a454946bcfc93435fb8404ad15ed">1. 配置网络</h2>
+<h2 id="1-配置网络">1. 配置网络</h2>
 
 <pre><code>＃net-setup eth0
 </code></pre>
 
 <p>回答它几个问题就行了。</p>
 
-<h2 id="2-分区:e579a454946bcfc93435fb8404ad15ed">2.分区</h2>
+<h2 id="2-分区">2.分区</h2>
 
 <pre><code>#mac-fdisk /dev/hda
 </code></pre>
@@ -176,7 +176,7 @@ Block size=512, Number of Blocks=19640880
 DeviceType=0x0, DeviceId=0x0
 </code></pre>
 
-<h2 id="3-建立文件系统:e579a454946bcfc93435fb8404ad15ed">3.建立文件系统</h2>
+<h2 id="3-建立文件系统">3.建立文件系统</h2>
 
 <pre><code>#mke2fs -j /dev/hda3
 #mkswap /dev/hda4
@@ -184,19 +184,19 @@ DeviceType=0x0, DeviceId=0x0
 #swapon /dev/hda4
 </code></pre>
 
-<h2 id="4-挂载分区:e579a454946bcfc93435fb8404ad15ed">4.挂载分区</h2>
+<h2 id="4-挂载分区">4.挂载分区</h2>
 
 <pre><code>#mount /dev/hda3 /mnt/gentoo
 </code></pre>
 
-<h2 id="5-解开stage-tarball用portgage:e579a454946bcfc93435fb8404ad15ed">5.解开Stage Tarball用Portgage</h2>
+<h2 id="5-解开stage-tarball用portgage">5.解开Stage Tarball用Portgage</h2>
 
 <pre><code>#cd /mnt/gentoo
 #tar xvjpf /mnt/cdrom/stages/stage3-\*g3\*.tar.bz2
 #tar xvjf portage-20040926.tar.bz2 -C /mnt/gentoo/usr
 </code></pre>
 
-<h2 id="6-设置编译选项:e579a454946bcfc93435fb8404ad15ed">6.设置编译选项</h2>
+<h2 id="6-设置编译选项">6.设置编译选项</h2>
 
 <p>以下是我的make.conf</p>
 
@@ -214,13 +214,13 @@ USE=&quot;acpi cjk nls ppc freetype fbdev f77 java ncurses gpm gtk gtk2 -gnome q
 LINGUAS=&quot;zh_CN&quot;
 </code></pre>
 
-<h2 id="7-挂载分区:e579a454946bcfc93435fb8404ad15ed">7. 挂载分区</h2>
+<h2 id="7-挂载分区">7. 挂载分区</h2>
 
 <pre><code>#mount -t proc none /mnt/gentoo/proc
 #chroot /mnt/gentoo /bin/bash
 </code></pre>
 
-<h2 id="8-更新系统:e579a454946bcfc93435fb8404ad15ed">8.更新系统</h2>
+<h2 id="8-更新系统">8.更新系统</h2>
 
 <pre><code>#env-update &amp;&amp; source /etc/profile
 #emerge sync
@@ -228,7 +228,7 @@ LINGUAS=&quot;zh_CN&quot;
 #emerge --update world
 </code></pre>
 
-<h2 id="9-安装内核:e579a454946bcfc93435fb8404ad15ed">9.安装内核</h2>
+<h2 id="9-安装内核">9.安装内核</h2>
 
 <pre><code>#emerge gentoo-dev-sources
 #cd /usr/src/linux
@@ -1673,9 +1673,9 @@ CONFIG_ZLIB_DEFLATE=y
 <pre><code>#modules-update
 </code></pre>
 
-<h2 id="10-配置系统:e579a454946bcfc93435fb8404ad15ed">10.配置系统</h2>
+<h2 id="10-配置系统">10.配置系统</h2>
 
-<h3 id="fstab:e579a454946bcfc93435fb8404ad15ed">fstab</h3>
+<h3 id="fstab">fstab</h3>
 
 <pre><code>#nano /etc/fstab
 </code></pre>
@@ -1693,7 +1693,7 @@ none /proc proc defaults 0 0
 none /dev/shm tmpfs defaults 0 0
 </code></pre>
 
-<h3 id="网络信息:e579a454946bcfc93435fb8404ad15ed">网络信息</h3>
+<h3 id="网络信息">网络信息</h3>
 
 <pre><code># echo tux &gt; /etc/hostname
 # echo homenetwork &gt; /etc/dnsdomainname
@@ -1701,14 +1701,14 @@ none /dev/shm tmpfs defaults 0 0
 # rc-update add domainname default
 </code></pre>
 
-<h3 id="配置网络:e579a454946bcfc93435fb8404ad15ed">配置网络</h3>
+<h3 id="配置网络">配置网络</h3>
 
 <pre><code>#nano /etc/conf.d/net
 #nano /etc/resolv.conf
 #rc-update add net.eth0 default
 </code></pre>
 
-<h3 id="安装系统工具:e579a454946bcfc93435fb8404ad15ed">安装系统工具</h3>
+<h3 id="安装系统工具">安装系统工具</h3>
 
 <pre><code>#emerge metalog
 #rc-update add metalog default
@@ -1716,7 +1716,7 @@ none /dev/shm tmpfs defaults 0 0
 #rc-update add vixie-cron default
 </code></pre>
 
-<h2 id="11-配置启动:e579a454946bcfc93435fb8404ad15ed">11.配置启动</h2>
+<h2 id="11-配置启动">11.配置启动</h2>
 
 <pre><code>#emerge yaboot
 #nano yaboot.conf
@@ -1748,14 +1748,14 @@ image=/boot/kernel-gentoo-2.6.10
  read-only
 </code></pre>
 
-<h2 id="12-重启系统:e579a454946bcfc93435fb8404ad15ed">12.重启系统</h2>
+<h2 id="12-重启系统">12.重启系统</h2>
 
 <pre><code>#exit
 #umount /mnt/gentoo/proc /mnt/gentoo/dev /mnt/gentoo
 #reboot
 </code></pre>
 
-<h2 id="13-安装并配置x:e579a454946bcfc93435fb8404ad15ed">13. 安装并配置X</h2>
+<h2 id="13-安装并配置x">13. 安装并配置X</h2>
 
 <p>在/etc/make.conf中加入</p>
 
@@ -1763,7 +1763,7 @@ image=/boot/kernel-gentoo-2.6.10
 LINGUAS=&quot;zh_CN&quot;
 </code></pre>
 
-<h3 id="安装字体:e579a454946bcfc93435fb8404ad15ed">安装字体</h3>
+<h3 id="安装字体">安装字体</h3>
 
 <pre><code>#emerge arphicfonts #(台湾文鼎字体，简体繁体都有）
 #fc-cache -f -v #(fontconfig的命令，安装字库）
@@ -1781,7 +1781,7 @@ LINGUAS=&quot;zh_CN&quot;
 #fc-cache
 </code></pre>
 
-<h3 id="安装x:e579a454946bcfc93435fb8404ad15ed">安装X</h3>
+<h3 id="安装x">安装X</h3>
 
 <pre><code>#emerge xorg-x11
 #emerge Xautoconfig
@@ -1951,7 +1951,7 @@ exec starxfce4
 
 <p>and enjoy&hellip;&hellip;&hellip;.</p>
 
-<h3 id="laptop-support:e579a454946bcfc93435fb8404ad15ed">Laptop Support</h3>
+<h3 id="laptop-support">Laptop Support</h3>
 
 <ul>
 <li>pbbuttonsd is a tool that enables the brightness and volume keys on
@@ -1990,7 +1990,7 @@ other preferences.</li>
       Tags:
         
         
-          <a class="category" href="https://guangchuangyu.github.io/cn/tags/gentoo">gentoo</a>  
+          <a class="category" href="https://guangchuangyu.github.io/tags/gentoo">gentoo</a>  
         
     </span>
   </p>
@@ -2134,7 +2134,7 @@ var duoshuoQuery = {short_name:"ygc-hku"};
 
 
 <footer role="contentinfo">
-  <p>Copyright &copy; 2016 Guangchuang Yu - <a href="https://guangchuangyu.github.io/cn/license/">License</a> - 
+  <p>Copyright &copy; 2016 Guangchuang Yu - <a href="https://guangchuangyu.github.io/license/">License</a> - 
   <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
 </p>
 

@@ -1014,5 +1014,34 @@ var chartParams = {
 </description>
     </item>
     
+    <item>
+      <title>如何画类似MEME的注释序列</title>
+      <link>https://guangchuangyu.github.io/cn/2015/05/%E5%A6%82%E4%BD%95%E7%94%BB%E7%B1%BB%E4%BC%BCmeme%E7%9A%84%E6%B3%A8%E9%87%8A%E5%BA%8F%E5%88%97/</link>
+      <pubDate>Thu, 21 May 2015 14:53:35 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2015/05/%E5%A6%82%E4%BD%95%E7%94%BB%E7%B1%BB%E4%BC%BCmeme%E7%9A%84%E6%B3%A8%E9%87%8A%E5%BA%8F%E5%88%97/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2015/Screenshot%202015-05-21%2010.31.46.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://meme-suite.org&#34;&gt;MEME&lt;/a&gt;是motif分析的webserver，所谓的注释序列就是一条线条上画一些长方形的box。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2015/Screenshot%202015-05-20%2020.50.54.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;当有人问R是否可以画的时候，你回答说可以，他立马就会问，什么函数！这才是他想要问的。这正好中了我的槽点，很多人都认为R是个magic box，
+有各种各样的magic packages/functions，然后input-&amp;gt;output-&amp;gt;done!&lt;/p&gt;
+
+&lt;p&gt;当magic不存在的时候，那就是crap。顺道吐槽一下，不给个四四方方的数据，很多人都不知道该怎么读了，吐槽归吐槽，还是要告诉他怎么去画：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2015/Screenshot%202015-05-20%2020.51.22.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;事实证明我吐槽的现象是多么普遍，下面继续有人在诠释我的槽点，他们需要的是神奇的函数：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2015/Screenshot%202015-05-20%2020.52.31.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;所谓吐槽吐全套，既然这样，我只能碾压他们：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2015/Screenshot%202015-05-20%2015.17.08.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>

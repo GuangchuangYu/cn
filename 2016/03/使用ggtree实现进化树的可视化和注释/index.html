@@ -18,7 +18,7 @@
 
   
   
-  <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/hugo-octopress.css">
+  <link rel="stylesheet" href="https://guangchuangyu.github.io/css/hugo-octopress.css">
 
   
   
@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
   
-  <link href="https://guangchuangyu.github.io/cn/favicon.png" rel="icon">
+  <link href="https://guangchuangyu.github.io/favicon.png" rel="icon">
 
   
   
@@ -41,7 +41,7 @@
   <meta name="author" content="Guangchuang Yu">
 
   
-  <meta name="generator" content="Hugo 0.15" />
+  <meta name="generator" content="Hugo 0.16" />
 
   
   
@@ -62,7 +62,7 @@ ga('send', 'pageview');
 
 <header role="banner"><hgroup>
   
-  <h1><a href="https://guangchuangyu.github.io/cn/">Guangchuang Yu</a></h1>
+  <h1><a href="https://guangchuangyu.github.io/">Guangchuang Yu</a></h1>
     <h2>a senior-in-age-but-not-senior-in-knowledge bioinformatician</h2>
 </hgroup></header>
 
@@ -92,7 +92,7 @@ ga('send', 'pageview');
 
 
 <ul class="subscription">
-  <a href="https://guangchuangyu.github.io/cn/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss-square fa-lg"></i></a>
+  <a href="https://guangchuangyu.github.io/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss-square fa-lg"></i></a>
 
   
   
@@ -117,7 +117,7 @@ ga('send', 'pageview');
 
           
           
-          <a class="label" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/evolution">Evolution</a>
+          <a class="label" href="https://guangchuangyu.github.io/categories/visualization">Visualization</a><a class="label" href="https://guangchuangyu.github.io/categories/evolution">Evolution</a>
           </p>
         </header>
         <div class="entry-content">
@@ -193,13 +193,13 @@ tree_text
 
 <p>这种做法只能展示一元信息，而且修改节点label真心是个脏活，满满的都是不爽，我心中理想的方式是树与注释信息分开，注释信息可以方便地通过图层加上去，而且可以自由组合。于是着手开发<a href="http://www.bioconductor.org/packages/ggtree">ggtree</a>。<a href="http://www.bioconductor.org/packages/ggtree">ggtree</a>是个简单易用的R包，一行代码<code>ggtree(read.tree(file))</code>即可实现树的可视化。而注释通过图层来实现，多个图层可以完成复杂的注释，这得力于<a href="http://www.bioconductor.org/packages/ggtree">ggtree</a>的设计。其中最重要的一点是如何来解析进化树。</p>
 
-<h2 id="ggtree的设计:d1d9992be5d6848a0489ec268963cadb">ggtree的设计</h2>
+<h2 id="ggtree的设计">ggtree的设计</h2>
 
-<h3 id="进化树的解析:d1d9992be5d6848a0489ec268963cadb">进化树的解析</h3>
+<h3 id="进化树的解析">进化树的解析</h3>
 
 <p>除了<a href="http://www.bioconductor.org/packages/ggtree">ggtree</a>之外，我所了解到的其它画树软件在画树的时候都把树当成是线条的集合。很明显画出来的进化树就是在画一堆线条，但是线条表示的是父节点和子节点的关系，除此之外没有任何意义，而节点在进化树上代表物种，叶子节点是我们构建进化树的物种，内部节点是根据叶子节点推断的共同祖先。我们所有的进化分析、推断、实验都是针对节点，节点才是进化树上有意义的实体。这是<a href="http://www.bioconductor.org/packages/ggtree">ggtree</a>设计的基础，<a href="http://www.bioconductor.org/packages/ggtree">ggtree</a>只映射节点到坐标系统中，而线条在<code>geom_tree</code>图层中计算并画出来。这是与其它软件最根本的不同，也是ggtree能够简单地用图层加注释信息的基础。</p>
 
-<h3 id="扩展ggplot2:d1d9992be5d6848a0489ec268963cadb">扩展ggplot2</h3>
+<h3 id="扩展ggplot2">扩展ggplot2</h3>
 
 <p>有很多可视化包基于ggplot2实现，包括各种<code>gg</code>打头的，号称扩展了ggplot2，支持图形语法(grammar
 of
@@ -246,7 +246,7 @@ ggplot(tree, aes(x, y)) + geom_tree()
 
 <p><img src="http://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/ggtree_cos_files/figure-markdown_strict/unnamed-chunk-4-1.png" alt="" /><!-- --></p>
 
-<h2 id="树的操作与注释:d1d9992be5d6848a0489ec268963cadb">树的操作与注释</h2>
+<h2 id="树的操作与注释">树的操作与注释</h2>
 
 <p>ggtree提供了多个函数可以把clade放大缩小(scaleClade)，折叠(collapse)和展开(expand)，位置调换和旋转，以及分类(groupOTU,
 groupClade)。</p>
@@ -264,7 +264,7 @@ grid.arrange(cp, ep, hp, rp, ncol=2)
 
 <p><img src="http://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/ggtree_cos_files/figure-markdown_strict/unnamed-chunk-5-1.png" alt="" /><!-- --></p>
 
-<h2 id="支持多种文件格式:d1d9992be5d6848a0489ec268963cadb">支持多种文件格式</h2>
+<h2 id="支持多种文件格式">支持多种文件格式</h2>
 
 <p>ggtree支持的文件格式包括Newick, Nexus, NHX和jplace。</p>
 
@@ -280,7 +280,7 @@ ggtree(nhx, ladderize=F) + geom_tiplab() + geom_point(aes(color=S), size=8, alph
 
 <p><img src="http://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/ggtree_cos_files/figure-markdown_strict/unnamed-chunk-6-1.png" alt="" /><!-- --></p>
 
-<h2 id="支持解析多种软件的输出文件:d1d9992be5d6848a0489ec268963cadb">支持解析多种软件的输出文件</h2>
+<h2 id="支持解析多种软件的输出文件">支持解析多种软件的输出文件</h2>
 
 <p>我们知道FigTree是针对<a href="http://guangchuangyu.github.io/2015/04/an-example-of-drawing-beast-tree-using-ggtree/">BEAST</a>的输出设计的，可以把BEAST的统计推断拿来给树做注释，但很多的进化分析软件并没有相应的画树软件支持，用户很难把信息展示出来。</p>
 
@@ -288,7 +288,7 @@ ggtree(nhx, ladderize=F) + geom_tiplab() + geom_point(aes(color=S), size=8, alph
 <code>pplacer</code>和<code>BEAST</code>的输出。相应的统计分析结果可以应用于树的注释。可以说<code>ggtree</code>把这些软件分析的结果带给了R用户，通过ggtree的解析，
 这些进化分析结果可以进一点在R里进行处理和统计分析，并不单单是在ggtree中展示而已。</p>
 
-<h3 id="raxml-bootstrap分析:d1d9992be5d6848a0489ec268963cadb">RAxML bootstrap分析</h3>
+<h3 id="raxml-bootstrap分析">RAxML bootstrap分析</h3>
 
 <pre><code>raxml_file &lt;- system.file(&quot;extdata/RAxML&quot;, &quot;RAxML_bipartitionsBranchLabels.H3&quot;, package=&quot;ggtree&quot;)
 raxml &lt;- read.raxml(raxml_file)
@@ -310,7 +310,7 @@ ggtree(btree) + facet_wrap(~.id, ncol=10)
 
 <p>如果不分面，这100颗树会重叠画在一起，这也能很好地展示bootstrap分析的结果，bootstrap值低的clade，线条会比较乱，而bootstrap值高的地方，线条一致性比较好。</p>
 
-<h3 id="paml:d1d9992be5d6848a0489ec268963cadb">PAML</h3>
+<h3 id="paml">PAML</h3>
 
 <p>使用BaseML预测的祖先序列，ggtree解析结果的同时会把父节点到子节点的subsitution给统计出来，可以直接在树上注释：</p>
 
@@ -344,7 +344,7 @@ ggtree(mlc, aes(color=dN_vs_dS)) +
 
 <p><img src="http://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/ggtree_cos_files/figure-markdown_strict/unnamed-chunk-11-1.png" alt="" /><!-- --></p>
 
-<h3 id="使用用户定义数据:d1d9992be5d6848a0489ec268963cadb">使用用户定义数据</h3>
+<h3 id="使用用户定义数据">使用用户定义数据</h3>
 
 <p>进化树已经被广泛应用于各种跨学科的研究中，随着实验技术的发展，各种数据也更易于获得，使用用户数据注释进化树，也是ggtree所支持的。</p>
 
@@ -396,7 +396,7 @@ support values、物种和基因型
 (genotype）等多维信息，6种不同的信息同时展示在一颗进化树上，这是个复杂的例子，我们在附件1中展示了可重复的代码。如果有兴趣，可以留意一下我们的文章。
 :)</p>
 
-<h2 id="其它好玩的功能:d1d9992be5d6848a0489ec268963cadb">其它好玩的功能</h2>
+<h2 id="其它好玩的功能">其它好玩的功能</h2>
 
 <p>我们把树当成节点的集合，而不是线条的集合，这一点回归到了进化树的本质意义上，使这一实现成为可能。而支持图形语法，与ggplot2的无缝衔接又让注释变得更加容易。<code>ggtree</code>为我们打开了各种注释和操作的可能性。甚至于可以创造出好玩的图，比如使用showtext来<a href="http://guangchuangyu.github.io/2015/06/ggtree-with-funny-fonts/">加载图形化的字体</a>、<a href="http://guangchuangyu.github.io/2015/12/use-emoji-font-in-r/">用emoji来画树</a>、<a href="http://guangchuangyu.github.io/2015/08/ggtree-annotate-phylogenetic-tree-with-local-images/">使用图片来注释树</a>等等。</p>
 
@@ -426,7 +426,7 @@ pp + geom_tiplab(align=T, linetype='dashed', linesize=.5) + geom_tippoint(color=
       Tags:
         
         
-          <a class="category" href="https://guangchuangyu.github.io/cn/tags/ggtree">ggtree</a>  
+          <a class="category" href="https://guangchuangyu.github.io/tags/ggtree">ggtree</a>  
         
     </span>
   </p>
@@ -572,7 +572,7 @@ var duoshuoQuery = {short_name:"ygc-hku"};
 
 
 <footer role="contentinfo">
-  <p>Copyright &copy; 2016 Guangchuang Yu - <a href="https://guangchuangyu.github.io/cn/license/">License</a> - 
+  <p>Copyright &copy; 2016 Guangchuang Yu - <a href="https://guangchuangyu.github.io/license/">License</a> - 
   <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
 </p>
 

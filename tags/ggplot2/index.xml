@@ -17,7 +17,7 @@
       <guid>https://guangchuangyu.github.io/cn/2014/05/use-ggplot2/</guid>
       <description>
 
-&lt;h3 id=&#34;why-use-ggplot2:c38c63fac86d2290b6bc01da39216614&#34;&gt;Why use ggplot2&lt;/h3&gt;
+&lt;h3 id=&#34;why-use-ggplot2&#34;&gt;Why use ggplot2&lt;/h3&gt;
 
 &lt;p&gt;ggplot2是我见过最human friendly的画图软件，这得益于Leland
 Wilkinson在他的著作《&lt;a href=&#34;http://book.douban.com/subject/10123863/&#34;&gt;The Grammar of
@@ -46,7 +46,7 @@ Wickham是学医出身的，做为学生物出身的人有什么理由不支持�
 
 &lt;p&gt;这里将从这些基本要素对ggplot2进行介绍。&lt;/p&gt;
 
-&lt;h3 id=&#34;数据-data-和映射-mapping:c38c63fac86d2290b6bc01da39216614&#34;&gt;数据（Data）和映射（Mapping)&lt;/h3&gt;
+&lt;h3 id=&#34;数据-data-和映射-mapping&#34;&gt;数据（Data）和映射（Mapping)&lt;/h3&gt;
 
 &lt;p&gt;下面以一份钻石的数据为例，这份数据非常大，随机取一个子集来画图。&lt;/p&gt;
 
@@ -125,7 +125,7 @@ p+geom_point()
 
 &lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;几何对象-geometric:c38c63fac86d2290b6bc01da39216614&#34;&gt;几何对象（Geometric）&lt;/h3&gt;
+&lt;h3 id=&#34;几何对象-geometric&#34;&gt;几何对象（Geometric）&lt;/h3&gt;
 
 &lt;p&gt;在上面的例子中，各种属性映射由ggplot函数执行，只需要加一个图层，使用geom_point()告诉ggplot要画散点，于是所有的属性都映射到散点上。&lt;/p&gt;
 
@@ -238,7 +238,7 @@ geom_tile       geom_violin
 geom_vline
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;标尺-scale:c38c63fac86d2290b6bc01da39216614&#34;&gt;标尺（Scale）&lt;/h3&gt;
+&lt;h3 id=&#34;标尺-scale&#34;&gt;标尺（Scale）&lt;/h3&gt;
 
 &lt;p&gt;前面我们已经看到了，画图就是在做映射，不管是映射到不同的几何对象上，还是映射各种图形属性。这一小节介绍标尺，在对图形属性进行映射之后，使用标尺可以控制这些属性的显示方式，比如坐标刻度，可能通过标尺，将坐标进行对数变换；比如颜色属性，也可以通过标尺，进行改变。&lt;/p&gt;
 
@@ -249,7 +249,7 @@ geom_vline
 
 &lt;p&gt;以数据（Data）和映射（Mapping)一节中所画散点图为例，将Y轴坐标进行log10变换，再自己定义颜色为彩虹色。&lt;/p&gt;
 
-&lt;h3 id=&#34;统计变换-statistics:c38c63fac86d2290b6bc01da39216614&#34;&gt;统计变换（Statistics）&lt;/h3&gt;
+&lt;h3 id=&#34;统计变换-statistics&#34;&gt;统计变换（Statistics）&lt;/h3&gt;
 
 &lt;p&gt;统计变换对原始数据进行某种计算，然后在图上表示出来，例如对散点图上加一条回归线。&lt;/p&gt;
 
@@ -274,7 +274,7 @@ stat_boxplot      stat_hline        stat_sum          stat_ydensity
 &lt;p&gt;统计变换是非常重要的功能，我们可以自己写函数，基于原始数据做某种计算，并在图上表现出来，也可以通过它改变geom_xxx函数画图的默认统计参数。
 比如我在&lt;a href=&#34;http://www.sciencedirect.com/science/article/pii/S1874391912007567&#34;&gt;Proteomic investigation of the interactome of FMNL1 in hematopoietic cells unveils a role in calcium-dependent membrane plasticity&lt;/a&gt;的图一中，就把boxplot的中位线替换成了平均值来作图。&lt;/p&gt;
 
-&lt;h3 id=&#34;坐标系统-coordinante:c38c63fac86d2290b6bc01da39216614&#34;&gt;坐标系统（Coordinante）&lt;/h3&gt;
+&lt;h3 id=&#34;坐标系统-coordinante&#34;&gt;坐标系统（Coordinante）&lt;/h3&gt;
 
 &lt;p&gt;坐标系统控制坐标轴，可以进行变换，例如XY轴翻转，笛卡尔坐标和极坐标转换，以满足我们的各种需求。&lt;/p&gt;
 
@@ -308,7 +308,7 @@ stat_boxplot      stat_hline        stat_sum          stat_ydensity
 
 &lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig17.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;图层-layer:c38c63fac86d2290b6bc01da39216614&#34;&gt;图层（Layer）&lt;/h3&gt;
+&lt;h3 id=&#34;图层-layer&#34;&gt;图层（Layer）&lt;/h3&gt;
 
 &lt;p&gt;photoshop流行的原因在于PS
 3.0时引入图层的概念，ggplot的牛B之处在于使用+号来叠加图层，这堪称是泛型编程的典范。
@@ -387,7 +387,7 @@ multiplot(p1,p2,p3,p4,p5,p6, cols=2)
 
 &lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_batman.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;分面-facet:c38c63fac86d2290b6bc01da39216614&#34;&gt;分面（Facet）&lt;/h3&gt;
+&lt;h3 id=&#34;分面-facet&#34;&gt;分面（Facet）&lt;/h3&gt;
 
 &lt;p&gt;在《&lt;a href=&#34;http://book.douban.com/subject/24527091/&#34;&gt;ggplot2: 数据分析与图形艺术&lt;/a&gt;》一书的翻译中，一开始译者把facet翻译成切片，我在校稿的时候发现了，给他们写信，推荐翻译成分面，如果是slice这个词，翻译成切片倒是很精准，BSD的硬盘分区就叫slice，但facet从词源上看就是小脸的意思，翻译成分面才到位。给他们写信的时候，我还专门查了&lt;a href=&#34;http://dict.cnki.net/&#34;&gt;CNKI翻译助手&lt;/a&gt;，发现这词在信息学中，翻成分面早已是固定的。我感觉这是我对这本书翻译的最大贡献，校稿过程中发现的少量小问题远比不上这个关键词意思的把握上。&lt;/p&gt;
 
@@ -399,7 +399,7 @@ multiplot(p1,p2,p3,p4,p5,p6, cols=2)
 
 &lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig18.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;主题-theme:c38c63fac86d2290b6bc01da39216614&#34;&gt;主题（Theme）&lt;/h3&gt;
+&lt;h3 id=&#34;主题-theme&#34;&gt;主题（Theme）&lt;/h3&gt;
 
 &lt;p&gt;通过ggplot画图之后，我们可能还需要对图进行定制，像title, xlab,
 ylab这些高频需要用到的，自不用说，ggplot2提供了ggtitle(),
@@ -464,7 +464,7 @@ p+theme_null()+xlab(&amp;quot;&amp;quot;)+ylab(&amp;quot;&amp;quot;)
 
 &lt;p&gt;详细的说明，可以参考?theme的帮助文档。&lt;/p&gt;
 
-&lt;h3 id=&#34;二维密度图:c38c63fac86d2290b6bc01da39216614&#34;&gt;二维密度图&lt;/h3&gt;
+&lt;h3 id=&#34;二维密度图&#34;&gt;二维密度图&lt;/h3&gt;
 
 &lt;p&gt;在这个文档里，为了作图方便，我们使用diamonds数据集的一个子集，如果使用全集，数据量太大，画出来散点就糊了，这种情况可以使用二维密度力来呈现。&lt;/p&gt;
 
@@ -473,7 +473,7 @@ p+theme_null()+xlab(&amp;quot;&amp;quot;)+ylab(&amp;quot;&amp;quot;)
 
 &lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2.fig22.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;ggplot2实例:c38c63fac86d2290b6bc01da39216614&#34;&gt;ggplot2实例&lt;/h3&gt;
+&lt;h3 id=&#34;ggplot2实例&#34;&gt;ggplot2实例&lt;/h3&gt;
 
 &lt;p&gt;蝴蝶图：详见《Modern Applied Statistics with S-PLUS》第一章。&lt;/p&gt;
 
