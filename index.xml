@@ -53,6 +53,72 @@ barplot(1:7, col=pal2)
     </item>
     
     <item>
+      <title>DNA序列差异作图</title>
+      <link>https://guangchuangyu.github.io/cn/2016/11/dna%E5%BA%8F%E5%88%97%E5%B7%AE%E5%BC%82%E4%BD%9C%E5%9B%BE/</link>
+      <pubDate>Sat, 19 Nov 2016 12:23:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2016/11/dna%E5%BA%8F%E5%88%97%E5%B7%AE%E5%BC%82%E4%BD%9C%E5%9B%BE/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2016/640.jpeg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这是高老师&lt;a href=&#34;http://link.springer.com/article/10.1007/s11540-015-9307-3&#34;&gt;文章&lt;/a&gt;里的图，每一个小图都是通过比较两条比对序列差异而做出来的，从图A和B中可以看出，CF_YL21有可能是Mont和Oz两条序列重组而来。高老师自己做出这图后，深知手工统计序列差异、画图、拼图之困难。问我有没有办法读两条序列，生成一个图。&lt;/p&gt;
+
+&lt;p&gt;很多东西都没有现成的，需要自己造轮子，于是我写了个R包来做这个事情：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;library(seqcombo)
+fas = list.files(system.file(&amp;quot;examples&amp;quot;,&amp;quot;GVariation&amp;quot;, package=&amp;quot;seqcombo&amp;quot;), 
+pattern=&amp;quot;fas&amp;quot;, full.names=TRUE)
+x = seqdiff(fas[1])
+plot(x)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2016/Screen Shot 2016-11-17 at 8.25.26 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;一行代码读文件，然后plot画出来，就是这么简单。&lt;/p&gt;
+
+&lt;p&gt;这里有三个文件，我们可以三个文件一起读，三个图一起画。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;x = lapply(fas, seqdiff)
+plts = lapply(x, plot)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然后可以很容易把三张图拼在一起&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cowplot::plot_grid(plotlist=plts, ncol=1, labels=LETTERS[1:3])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2016/Screen Shot 2016-11-17 at 8.20.21 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;简直完美，跟文章中的图一毛一样。&lt;/p&gt;
+
+&lt;p&gt;这个包我取名&lt;a href=&#34;https://github.com/GuangchuangYu/seqcombo&#34;&gt;seqcombo&lt;/a&gt;，90后大概不知道何为combo，如果你知道，没错，说的就是你，你已经暴露年龄了！因为这个图是可以辅助看序列重组的，所以取这个名字，以后有可能的话，再实现一些其它的可视化方法，起码得有三把刷子，才对得起combo这名字。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ggtree: reverse time scale</title>
+      <link>https://guangchuangyu.github.io/cn/2016/11/ggtree-reverse-time-scale/</link>
+      <pubDate>Tue, 08 Nov 2016 12:23:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2016/11/ggtree-reverse-time-scale/</guid>
+      <description>&lt;p&gt;这是最近github上的问题，如何反转time scale，也就是把最近的时间设为0。而内部节点为距今多少年，这个很容易，把x轴的值变成x-max(x)就可以，感觉这个也只会在时间树上使用，所以取名revts（reverse time scale），revts之后，x轴最大值是0，其它为负数，可以使用scale_x_continuous改label为绝对值。&lt;/p&gt;
+
+&lt;p&gt;如下示例：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; library(ggtree)
+&amp;gt; tr = rtree(30)
+&amp;gt; p =ggtree(tr) + theme_tree2()
+&amp;gt; p1 = revts(p)
+&amp;gt; p2 = p1 + scale_x_continuous(
+              breaks=c(-4:0), 
+              labels=abs(-4:0))
+&amp;gt; multiplot(p, p1, p2, ncol=3)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2016/Screen Shot 2016-11-07 at 11.00.08 AM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Update R packages</title>
       <link>https://guangchuangyu.github.io/cn/2016/10/update-r-packages/</link>
       <pubDate>Wed, 19 Oct 2016 09:53:00 +0800</pubDate>
@@ -2380,68 +2446,6 @@ print(p)
 &lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_26.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;更多实例，可以参考我使用&lt;a href=&#34;http://guangchuangyu.github.io/2011/08/ggplot2-version-of-figures-in-25-recipes-for-getting-started-with-r/&#34;&gt;ggplot2实现&lt;25 Recipes for Getting Started with R&gt;一书中的所有图片&lt;/a&gt;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>更改百度云同步盘路径</title>
-      <link>https://guangchuangyu.github.io/cn/2014/05/%E6%9B%B4%E6%94%B9%E7%99%BE%E5%BA%A6%E4%BA%91%E5%90%8C%E6%AD%A5%E7%9B%98%E8%B7%AF%E5%BE%84/</link>
-      <pubDate>Mon, 05 May 2014 10:45:25 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2014/05/%E6%9B%B4%E6%94%B9%E7%99%BE%E5%BA%A6%E4%BA%91%E5%90%8C%E6%AD%A5%E7%9B%98%E8%B7%AF%E5%BE%84/</guid>
-      <description>&lt;p&gt;从2007年写了&lt;a href=&#34;http://cjbmb.bjmu.edu.cn/CN/abstract/abstract17570.shtml&#34;&gt;第一篇文章&lt;/a&gt;之后，我发现管理文献真不是人干的，一直以来使用Zotero来管理文献，自从有了dropbox之后，就想把文献库放在dropbox上，一来有个云备份，不怕硬盘坏，二来嘛，实验室电脑和个人电脑可以实时同步化，无奈dropbox空间太小，而我的zotero早已超过10G，因为电子书也放在里面，只能做罢。&lt;/p&gt;
-
-&lt;p&gt;度娘出手还是很大方的，我现在的网盘已经有3T，包括之前在推广阶段用1元买的1T。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/Screenshot-2014-05-05-21.31.57.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;于是我要把zotero放在度娘的网盘里，有可能是因为我用英文版，firefox不认中文路径。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/04/Screenshot-2014-04-30-17.44.16.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;第一反应就是给个英文路径的软链接，OS
-X自带的Terminal和iTerm都不支持我输入中文，只能在Emacs里跑eshell来搞。事实证明软链接是不行的，会被还原回实际路径，依然是中文。&lt;/p&gt;
-
-&lt;p&gt;那么就用硬链接，但是系统不干，真是邪门，搜索一下发现这是OS
-X的问题，在&lt;a href=&#34;http://stackoverflow.com/questions/80875/what-is-the-unix-command-to-create-a-hardlink-to-a-directory-in-os-x&#34;&gt;stackoverflow&lt;/a&gt;上还有人提供了一段C代码来做硬链接，不过我编译后运行依然是失败，无法创建硬链接。&lt;/p&gt;
-
-&lt;p&gt;于是只能土办法了，软件的路径并不是死的，那么总得有个配置文件来定位，通过修改配置文件总应该可以的吧。于是在下面的路径下，找到了macosnetdisk.plist&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/04/Screenshot-2014-04-30-18.02.09.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;    user_workpath
-    /Volumes/DATA/Users/ygc/百度云同步盘
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;把百度云同步盘换成个英文文件夹，整个世界清静了，firefox终于找到了它的好基友zotero。&lt;/p&gt;
-
-&lt;p&gt;TIPS：有了度娘网盘，再也不用担心下载问题了，找个BT种子，让度娘下载，速度极快，因为通常的东西度娘的网盘上是有的，它做的不过是链接一份给你而已，越多的人保留同一份东西，度娘就越省空间。度娘同步到电脑上速度也是极快的，秒杀其它下载工具。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>boxplot</title>
-      <link>https://guangchuangyu.github.io/cn/2014/03/boxplot/</link>
-      <pubDate>Tue, 04 Mar 2014 12:23:16 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2014/03/boxplot/</guid>
-      <description>&lt;p&gt;生物坑很多人画图只会直方图，统计只会T检验，在暨大见过太多的学生连T检验都不会，分不清SEM和SD的差别，也不清楚T检验那几个简单参数的含义。我写统计笔记也是因为不想重复性地跟学生讲解T检验。&lt;/p&gt;
-
-&lt;p&gt;Barplot和T test一样普遍而流行，barplot适合于表示计数数据和比例，显示比例也可以用pie
-plot，但直方图比饼图要好，因为人类的眼睛适合于比较高度，而不是弧度。&lt;/p&gt;
-
-&lt;p&gt;多半时候生物学数据并非简单的计数数据，对于测量数据，在展示数据分布时，很多人会使用他们熟悉的barplot，用高度来表示mean，然后再加上errorbar，这样展示数据，信息量是非常低的，使用boxplot能够提供更多的数据分布信息，能更好地展现数据，但可能很多人只会在excel里画barplot，Nature
-Methods
-2013年的文章中有100个barplot图，而只有20个boxplot图，从这里就可以看出来，用boxplot的人远远没有barplot多，于是NPG怒了，写了两篇专栏文章&lt;a href=&#34;http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2807.html&#34;&gt;Points of View: Bar charts and box plots&lt;/a&gt;和&lt;a href=&#34;http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2813.html&#34;&gt;Points of Significance: Visualizing samples with box plots&lt;/a&gt;并且发表了一篇&lt;a href=&#34;http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2811.html&#34;&gt;BoxPlotR: a web tool for generation of box plots&lt;/a&gt;方便大家画boxplot，如此简单的web tool能够发Nature Methods，实在是让人羡慕妒忌恨啊。&lt;/p&gt;
-
-&lt;p&gt;Boxplot从1970年由John
-Tukey提示，到现在已经40多年了，他有很多的变种，比如&lt;a href=&#34;http://guangchuangyu.github.io/2012/02/violin-plot/&#34;&gt;violin plot&lt;/a&gt;和&lt;a href=&#34;http://www.jstatsoft.org/v28/c01/paper&#34;&gt;beanplot&lt;/a&gt;，violin
-plot和beanplot是很像的，都是把box换成density
-curve，beanplot另外把数据点在中间用线条表示出来，这个很容易加上去，正如我在&lt;a href=&#34;http://guangchuangyu.github.io/2012/02/violin-plot/&#34;&gt;violin plot&lt;/a&gt;中把数据点加进去一样。同样可以把数据点加进boxplot中，还有很多手法来展示boxplot，比如可以用缺口(notch)形式来画boxplot，可以把中间的宽度表示为median值的置信空间。boxplot的宽度可以用样本量来归一化，如果sample
-size足够大的话，$mean\pm errorbar$
-不会超出box，可以很清晰把这个信息也展示在boxplot中。&lt;/p&gt;
-
-&lt;p&gt;如果数据量比较少，可以用scatterplot+errorbar的形式展示数据，正如我在&lt;a href=&#34;http://pubs.rsc.org/en/Content/ArticleLanding/2011/MB/C0MB00055H#!divAbstract&#34;&gt;Phosphoproteome profile of human lung cancer cell line A549&lt;/a&gt;中所画的&lt;a href=&#34;http://www.douban.com/photos/photo/1560368200/&#34;&gt;图7&lt;/a&gt;。&lt;/p&gt;
 </description>
     </item>
     
