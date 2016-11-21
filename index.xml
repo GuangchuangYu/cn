@@ -6,8 +6,51 @@
     <description>Recent content on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 19 Oct 2016 09:53:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 21 Nov 2016 12:23:16 +0800</lastBuildDate>
     <atom:link href="https://guangchuangyu.github.io/cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>食色性也</title>
+      <link>https://guangchuangyu.github.io/cn/2016/11/%E9%A3%9F%E8%89%B2%E6%80%A7%E4%B9%9F/</link>
+      <pubDate>Mon, 21 Nov 2016 12:23:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2016/11/%E9%A3%9F%E8%89%B2%E6%80%A7%E4%B9%9F/</guid>
+      <description>&lt;p&gt;画图配色并不是一件简单的事情，好的配色让人眼前一亮，虽然R有很多配色方案，做为ggplot2的爱好者，ggthemes也提供了很多主题，内置了很多配色方案，还有一些其它的包，比如ggtech，包含了一些科技公司比如facebook, twitter, google的典型配色方案，甚至于ggsci，提供了nature, lancet的配色方案。&lt;/p&gt;
+
+&lt;p&gt;但这些远远不够！
+但这些远远不够！
+但这些远远不够！&lt;/p&gt;
+
+&lt;p&gt;看到一张图片让我眼前一亮，我想用它的配色方案呢！我想拿最新电影的海报的配色来装个逼呢！画图时不想用现成的配色，想要另类一些，我想用一些大自然的风格，比如求偶期间各种鸟类的羽毛颜色来画！&lt;/p&gt;
+
+&lt;p&gt;这些在R里面，都是可以的，可以的，可以的&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;下面隆重推荐一个叫rPlotter的R包，&lt;a href=&#34;https://github.com/woobe/rPlotter，可以非常方便地在图片中抽提颜色。其实实现起来也容易，用EBImage把图片读进去，存成一个RGB的三维矩阵，通过kmeans聚类，把中心点颜色报出来就可以了。若干年前我写过用kmeans压缩图片，用的就是把颜色填充成中心点颜色，稍微把之前的代码改一改，也能实现这个颜色抽提的功能。&#34;&gt;https://github.com/woobe/rPlotter，可以非常方便地在图片中抽提颜色。其实实现起来也容易，用EBImage把图片读进去，存成一个RGB的三维矩阵，通过kmeans聚类，把中心点颜色报出来就可以了。若干年前我写过用kmeans压缩图片，用的就是把颜色填充成中心点颜色，稍微把之前的代码改一改，也能实现这个颜色抽提的功能。&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;实例演示，我google了一张spider的图片，把颜色提出来，拿来画barplot：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2016/Jumping-spider.jpeg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pal = extract_colours(&amp;quot;http://i1.mirror.co.uk/incoming/article8566552.ece/ALTERNATES/s615b/Jumping-spider.jpg&amp;quot;)
+barplot(1:5, col=pal)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2016/spider_color.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;再来一张homer simpson的图片：
+&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2016/kissing-Homer-Simpson-The-Simpsons-Marge-Simpson-_578180-20_zx1jpk.jpeg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pal2 = extract_colours(&amp;quot;https://images.complex.com/complex/image/upload/t_article_image/kissing-Homer-Simpson-The-Simpsons-Marge-Simpson-_578180-20_zx1jpk.jpg&amp;quot;, 7)
+barplot(1:7, col=pal2)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2016/homer_color.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;之前说的各种场景，都是可以实现的，最新海报配色，你可以有！你想画图用美队来配色，可以有！拿蜘蛛小鸟来配色，可以有！甚至于拿肌肉男的肉色也可以的。下次发文章在愁配色的时候，何不搜索图片，看看有什么图片顺眼的，就拿来用了。&lt;/p&gt;
+
+&lt;p&gt;即使你不会用R画图，你也可以把这配色方案应该于M$的office中，word/excel/powerpoint都是支持自定义颜色主题的，请自行搜索 &amp;ldquo;office 自定义主题颜色&amp;rdquo;。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Update R packages</title>
@@ -2399,71 +2442,6 @@ size足够大的话，$mean\pm errorbar$
 不会超出box，可以很清晰把这个信息也展示在boxplot中。&lt;/p&gt;
 
 &lt;p&gt;如果数据量比较少，可以用scatterplot+errorbar的形式展示数据，正如我在&lt;a href=&#34;http://pubs.rsc.org/en/Content/ArticleLanding/2011/MB/C0MB00055H#!divAbstract&#34;&gt;Phosphoproteome profile of human lung cancer cell line A549&lt;/a&gt;中所画的&lt;a href=&#34;http://www.douban.com/photos/photo/1560368200/&#34;&gt;图7&lt;/a&gt;。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>old habits die hard</title>
-      <link>https://guangchuangyu.github.io/cn/2014/01/old-habits-die-hard/</link>
-      <pubDate>Wed, 22 Jan 2014 13:27:22 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2014/01/old-habits-die-hard/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/01/Screenshot-2014-01-23-01.10.07.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;从2011年1月我就在实验室的QQ群里发群邮件说IPI关门，时至今日，已经关门3年了，主页上一直停留在关门大吉的那一刻。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/01/Screenshot-2014-01-23-00.03.17.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;我不断在邮件里, lab meeting上强调要换成uniprot来搜库，然而时至今日，依然还是有很多的人在使用IPI，想想真可怕，实验室真是100年不更新一下数据啊。
-另外一个我非常讨厌的就是GI号，它压根就不是正儿八经的ID号，但他们从来就不愿意尝试改变。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/01/Screenshot-2014-01-23-01.16.10.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;比如上面这个蛋白质序列的FASTA文件，注释行有很多信息，比如：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt;gi|16128001|ref|NP_414548.1| putative transporter [Escherichia coli str. K-12 substr. MG1655]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;显然搜库时可以使用&lt;strong&gt;NP_414548.1&lt;/strong&gt;做为ID，这个问题我说过N多遍，但他们一定会用他们惯用的&lt;strong&gt;gi|16128001&lt;/strong&gt;来做ID。&lt;/p&gt;
-
-&lt;p&gt;问题是很明显的：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;GI number (sometimes written in lower case, &amp;ldquo;gi&amp;rdquo;) is simply a series
-of digits that are assigned consecutively to each sequence record
-processed by NCBI. The GI number bears no resemblance to the Accession
-number of the sequence record.
-The GI number has been used for many years by NCBI to track sequence
-histories in GenBank and the other sequence databases it maintains.
-The VERSION system of identifiers was adopted in February 1999 by the
-International Nucleotide Sequence Database Collaboration (GenBank,
-EMBL, and DDBJ).&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;这玩意不是蛋白的ID，是NCBI拿来做历史记录的，所以它老变，而且各种蛋白注释信息都不会基于GI号来。这就是问题了，给我一堆GI号，我要做分析的话，就得转成别的ID，但这货老变身。比如以蛋白NP_414680.4为例，它已经有几次revision：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt;gi|90111089|ref|NP_414680.4| putative fimbrial-like adhesin protein [Escherichia coli str. K-12 substr. MG1655]
-MIKTTPHKIVILMGILLSPSVFATDINVEFTATVKATTCNITLTGNNVTNDGNNNYTLRIPKMGLDKIAN
-KTTESQADFKLVASGCSSGISWIDTTLTGNASSSSPKLIIPQSGDSSSTTSNIGMGFKKRTTDDATFLKP
-NSAEKIRWSTDEMQPDKGLEMTVALRETDAGQGVPGNFRALATFNFIYQ
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;在这几次revision中，NP是不变的，但gi号做为NCBI数据库内部使用的primary
-ID，每一次revision都要有赋予unique的gi号，可以从&lt;a href=&#34;http://www.ncbi.nlm.nih.gov/protein/NP_414680.4?report=girevhist&#34;&gt;http://www.ncbi.nlm.nih.gov/protein/NP_414680.4?report=girevhist&lt;/a&gt;看到revision的历史记录，4个version对应4个gi号。&lt;/p&gt;
-
-&lt;p&gt;上面的序列数据来自&lt;a href=&#34;ftp://ftp.ncbi.nlm.nih.gov/genomes/Bacteria/Escherichia_coli_K_12_substr__MG1655_uid57779/NC_000913.faa&#34;&gt;ftp://ftp.ncbi.nlm.nih.gov/genomes/Bacteria/Escherichia_coli_K_12_substr__MG1655_uid57779/NC_000913.faa&lt;/a&gt;，这个实验室100年不更新数据，也不知道搜的是什么时间的库，但我从NCBI上获得的数据，只有这一个最新版本，好多GI号都变了，对不上，就没办法转成诸如NP_414680.4这样的参考序列号。&lt;/p&gt;
-
-&lt;p&gt;当然，对于这些老黄历的GI号，还是可以转的，通过NCBI的eutils，在线去抓数据回来解析，只不过把非常简单的事情复杂化了而已。&lt;/p&gt;
-
-&lt;p&gt;我一直强调搜库时匹配参考序列号，像NP_414680是永远都不会变的，它就是某个蛋白的终身编号，版本更新只会改变后面的.4。但某组永远都只会给出GI号，我在多次被虐身虐心之后，对这货竟然也熟悉了起来，sigh&amp;hellip;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;2016年3月，NCBI终于决定要抛弃GI号：&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/news/03-02-2016-phase-out-of-GI-numbers/&#34;&gt;NCBI is phasing out sequence GIs - use Accession.Version instead!&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;2016年9月之后，将不再有GI号的存在.&lt;/p&gt;
-&lt;/blockquote&gt;
 </description>
     </item>
     
