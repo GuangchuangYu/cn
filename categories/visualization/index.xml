@@ -6,8 +6,150 @@
     <description>Recent content in Visualization on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 21 Nov 2016 12:23:16 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 03 Dec 2016 00:53:00 +0800</lastBuildDate>
     <atom:link href="https://guangchuangyu.github.io/cn/categories/visualization/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>中空的环形树</title>
+      <link>https://guangchuangyu.github.io/cn/2016/12/%E4%B8%AD%E7%A9%BA%E7%9A%84%E7%8E%AF%E5%BD%A2%E6%A0%91/</link>
+      <pubDate>Sat, 03 Dec 2016 00:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2016/12/%E4%B8%AD%E7%A9%BA%E7%9A%84%E7%8E%AF%E5%BD%A2%E6%A0%91/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/iss95.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这是&lt;a href=&#34;https://github.com/GuangchuangYu/ggtree/issues/95&#34;&gt;github&lt;/a&gt;上的问题，他想画环形树的时候，加一条长长的root length把tips给顶出去。&lt;/p&gt;
+
+&lt;p&gt;这个问题在google forum上我早已解答：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/Screen Shot 2016-11-30 at 9.06.01 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我在google group上教会的这个人，他的文章发表在&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/27605062&#34;&gt;nature communications&lt;/a&gt;上，下面是pubmed上的截图。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/Screen Shot 2016-11-30 at 9.06.57 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;简直亮瞎了我的狗眼，我看到这图，一口老血差别喷出来，这画的什么玩意，啥都看不清。&lt;/p&gt;
+
+&lt;p&gt;我本来以为他要把中间做空，是为了把legend放进去，结果不是，尼玛也太空了，而且tips根本分不清关系，满篇文章都是这种图，附件上更多，好一朵奇葩。&lt;/p&gt;
+
+&lt;p&gt;但是github上的问题，让我重新认识了这样的图，就像提问者说的，他想把tip给顶出去，这样容易看到tip label，某种程度上，这不失为一个好方法，一种好折中，但像上面那个顶得太厉害了，我依然接受不了。&lt;/p&gt;
+
+&lt;p&gt;实现起来也容易，提问者说figtree可以做，通过搞一条长长的root length来实现，这个在ggtree里，当然也可以这么做，但我做空环形树或者说顶一顶tip label，根本就不需要用额外画条线来顶/撑开圆形，但思路是一样的，无非是要给左边留更多空间，这样在旋转成极坐标的时候，左边的空间就变成了内部的空间，于是中间就空了。&lt;/p&gt;
+
+&lt;p&gt;所以呢，+xlim(负数, NA) 就是这么简单，就可以了。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>vertical dendrogram in ggtree</title>
+      <link>https://guangchuangyu.github.io/cn/2016/11/vertical-dendrogram-in-ggtree/</link>
+      <pubDate>Tue, 29 Nov 2016 00:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2016/11/vertical-dendrogram-in-ggtree/</guid>
+      <description>&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/guangchuangyu&#34;&gt;@guangchuangyu&lt;/a&gt; Is it possible to plot horizontal trees with ggtree? (a la plot.hclust default).&lt;/p&gt;&amp;mdash; Diego Diez (@kurai_yousei) &lt;a href=&#34;https://twitter.com/kurai_yousei/status/799532564633518080&#34;&gt;November 18, 2016&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;这个Diego在推特上问的问题，他最近在写一个&lt;a href=&#34;https://github.com/ddiez/motiftools&#34;&gt;motiftools&lt;/a&gt;的R包，里面用了ggtree来画图，我想他应该是要解决他在包里的画树/聚类功能吧。&lt;/p&gt;
+
+&lt;p&gt;他问题写的horizontal，但其实plot.hclust默认是vertical，ggtree默认也是horizontal，所以我认为他问的是vertical layout，这个在我的回答中也得到了他的确认。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; require(ggtree)
+&amp;gt; set.seed(123)
+&amp;gt; tr = rtree(30)
+&amp;gt; ggtree(tr) + scale_x_reverse() + coord_flip()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这个问题很简单，无非是坐标轴翻转而已。于是上面的代码，就得到下面的图：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/Screen Shot 2016-11-21 at 7.53.54 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ggtree支持多种布局(layout)，rectangular（上面这种就是，父节点到子节点由90度折线连接），slated（父节点到子节点由直线连接）， circular（圆圈型，父节点到子节点的连接方式可以是rectangular也可以是slanted），fan（顾名思义-扇子型，也可以理解为有开口的圆圈，实际上ggtree提供了open_tree函数，可以把circular的树转变为fan layout），unrooted（无根树，连接方式是slanted，但没有根节点，所以可以说有些说圆圈型，但没有中心），还有二维树（把y轴利用起来，可以映射到节点的phenotype或者是统计推断的估值）。&lt;/p&gt;
+
+&lt;p&gt;上面提到的这些布局，都可以有画phylogram或cladogram，差别在于phylogram有branch length而cladogram没有。而在层次聚类中，做的是聚类，而不是进化树，这是不同的概念，所以画出来的图相似，但却是不一样的东西，所以聚类分析的图叫dendrogram，像上面这个图，就是典型的dendrogram画法，显然看着和进化树是没什么差别的，只不过进化树一般从左到右画，而dendrogram画这种从上到下的形状还是比较常见的。虽然是不一样的东西，但从画图的角度来看，dendrogram和rectangular layout的phylogram/cladogram是一样的。所以要问ggtree能不能画dendrogram的形状，当然可以，要问能不能从上到下，当然可以，无非是坐标轴颠过来倒过去而已，就算你要画出从下到上，从右到左，都是没有问题的。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>使用emoji画图</title>
+      <link>https://guangchuangyu.github.io/cn/2016/11/%E4%BD%BF%E7%94%A8emoji%E7%94%BB%E5%9B%BE/</link>
+      <pubDate>Fri, 25 Nov 2016 00:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2016/11/%E4%BD%BF%E7%94%A8emoji%E7%94%BB%E5%9B%BE/</guid>
+      <description>&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/hashtag/rstats?src=hash&#34;&gt;#rstats&lt;/a&gt; code for the PhD/cute animals gestation &lt;a href=&#34;https://twitter.com/hashtag/ggplot2?src=hash&#34;&gt;#ggplot2&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/gganimate?src=hash&#34;&gt;#gganimate&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/emojifont?src=hash&#34;&gt;#emojifont&lt;/a&gt; plot &lt;a href=&#34;https://t.co/qWM0bCHoHJ&#34;&gt;https://t.co/qWM0bCHoHJ&lt;/a&gt; 🐭🐶🐱🐺🐯🐷🐏🐻👶🐳🐘📕 &lt;a href=&#34;https://t.co/a4GYl191a8&#34;&gt;https://t.co/a4GYl191a8&lt;/a&gt;&lt;/p&gt;&amp;mdash; Maëlle Salmon (@ma_salmon) &lt;a href=&#34;https://twitter.com/ma_salmon/status/800007428096094209&#34;&gt;November 19, 2016&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;无缘无故收到好几条消息，原来是用emoji画图。&lt;/p&gt;
+
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/pboesu&#34;&gt;@pboesu&lt;/a&gt; btw do you know the &lt;a href=&#34;https://twitter.com/guangchuangyu&#34;&gt;@guangchuangyu&lt;/a&gt; emojifont pkg? I&amp;#39;ve used it more than &lt;a href=&#34;https://twitter.com/millerdl&#34;&gt;@millerdl&lt;/a&gt; emoGG &lt;a href=&#34;https://t.co/p27fwEmDSD&#34;&gt;https://t.co/p27fwEmDSD&lt;/a&gt; but I like both &lt;a href=&#34;https://t.co/uV49WjOSp3&#34;&gt;https://t.co/uV49WjOSp3&lt;/a&gt;&lt;/p&gt;&amp;mdash; Maëlle Salmon (@ma_salmon) &lt;a href=&#34;https://twitter.com/ma_salmon/status/800009044123586560&#34;&gt;November 19, 2016&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;做为emojifont包的作者，我表示很高兴看到自己的包给大家带来乐趣，在回复中@milerdl说emoGG是他用了两个晚上写的，emojifont刚好也是我用了两个晚上写的，一个晚上支持了emoji字体，另一个晚上加入了fontawesome字体。&lt;/p&gt;
+
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Hi &lt;a href=&#34;https://twitter.com/guangchuangyu&#34;&gt;@guangchuangyu&lt;/a&gt; excellent &lt;a href=&#34;https://twitter.com/hashtag/rstats?src=hash&#34;&gt;#rstats&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/emojifont?src=hash&#34;&gt;#emojifont&lt;/a&gt; implementation! &lt;a href=&#34;https://t.co/lTIWDQ1zq0&#34;&gt;https://t.co/lTIWDQ1zq0&lt;/a&gt; very cool! &lt;a href=&#34;https://t.co/sCALpuWW28&#34;&gt;pic.twitter.com/sCALpuWW28&lt;/a&gt;&lt;/p&gt;&amp;mdash; Jo-fai (Joe) Chow (@matlabulous) &lt;a href=&#34;https://twitter.com/matlabulous/status/677205176663588865&#34;&gt;December 16, 2015&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;在写这个包之前，我早就有用emoji在R画图中，写这个包也正是为了回应emoGG，因为我觉得他的实现方式并不理想，而我的更为灵活。&lt;/p&gt;
+
+&lt;p&gt;回到主题上，我将展示使用emojifont来画图。&lt;/p&gt;
+
+&lt;p&gt;下面这个数据是我每年读书、看电影、听专辑的数目：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; d
+   year category num
+1  2009     book  35
+2  2009    movie  64
+3  2009    music  24
+4  2010     book  34
+5  2010    movie  47
+6  2010    music  13
+7  2011     book  17
+8  2011    movie  18
+9  2011    music   2
+10 2012     book  25
+11 2012    movie  25
+12 2012    music   0
+13 2013     book  15
+14 2013    movie  17
+15 2013    music   0
+16 2014     book   8
+17 2014    movie  11
+18 2014    music   1
+19 2015     book   5
+20 2015    movie  14
+21 2015    music   0
+22 2016     book   4
+23 2016    movie  14
+24 2016    music   0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;先加载所需的包和emoji字体：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;require(ggplot2)
+require(ggthemes)
+require(emojifont)
+load.emojifont()
+emo &amp;lt;- emoji(c(&amp;quot;book&amp;quot;, &amp;quot;movie_camera&amp;quot;, &amp;quot;musical_note&amp;quot;))
+names(emo) &amp;lt;- c(&#39;book&#39;, &#39;movie&#39;, &#39;music&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;画出趋势图，并在每个点上用相应的emoji字体标注：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;p &amp;lt;- ggplot(d, aes(x=factor(year), y=num, group=category, colour=category))
+p &amp;lt;- p +geom_line() +geom_text(aes(label=emo[category]), family=&#39;OpenSansEmoji&#39;, size=10) +xlab(NULL) + ylab(NULL) 
+
+更改一些背景等主题细节，设置中文字体等：
+p &amp;lt;- p + theme_fivethirtyeight() + scale_color_tableau()
+p &amp;lt;- p+theme(axis.text.x=element_text(face=&amp;quot;bold&amp;quot;, size=16), 
+        axis.text.y=element_text(face=&amp;quot;bold&amp;quot;, size=16))
+ p &amp;lt;- p+theme(legend.text=element_text(size=16, family=&amp;quot;OpenSansEmoji&amp;quot;), 
+            legend.title=element_blank(), legend.position=&#39;none&#39;)
+p+ ggtitle(&#39;Y叔的书影音&#39;) + theme(plot.title=element_text(family=&#39;STKaiti&#39;))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;于是产生下图：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/Screen Shot 2016-11-21 at 7.47.34 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>食色性也</title>

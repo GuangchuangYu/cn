@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blast on Guangchuang Yu</title>
+    <link>https://guangchuangyu.github.io/cn/tags/blast/</link>
+    <description>Recent content in Blast on Guangchuang Yu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 17 Nov 2016 00:53:00 +0800</lastBuildDate>
+    <atom:link href="https://guangchuangyu.github.io/cn/tags/blast/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>blast一大坑：无法输出query sequence title</title>
+      <link>https://guangchuangyu.github.io/cn/2016/11/blast%E4%B8%80%E5%A4%A7%E5%9D%91%E6%97%A0%E6%B3%95%E8%BE%93%E5%87%BAquery-sequence-title/</link>
+      <pubDate>Thu, 17 Nov 2016 00:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2016/11/blast%E4%B8%80%E5%A4%A7%E5%9D%91%E6%97%A0%E6%B3%95%E8%BE%93%E5%87%BAquery-sequence-title/</guid>
+      <description>&lt;p&gt;通常做blast，我都是输出asn格式，然后用blast_formatter抽出需要的信息写成表格格式。&lt;/p&gt;
+
+&lt;p&gt;序列的description行当然不会有重复，但是ID (第一个空白前面的字符）是有重复的，从qseqid来看，就分不清是那个序列，于是准备让blast_formatter把query title（整个description line）给输出来，结果仔细阅读了blastn -help发现不支持呀不支持！然而它支持stitle和salltitle，也就是subject的可以，但query的不行，这绝逼是一个大坑！＿|￣|○&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/screenshots/blast.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

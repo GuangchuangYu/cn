@@ -6,8 +6,220 @@
     <description>Recent content in R on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 21 Nov 2016 12:23:16 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 03 Dec 2016 00:53:00 +0800</lastBuildDate>
     <atom:link href="https://guangchuangyu.github.io/cn/categories/r/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>中空的环形树</title>
+      <link>https://guangchuangyu.github.io/cn/2016/12/%E4%B8%AD%E7%A9%BA%E7%9A%84%E7%8E%AF%E5%BD%A2%E6%A0%91/</link>
+      <pubDate>Sat, 03 Dec 2016 00:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2016/12/%E4%B8%AD%E7%A9%BA%E7%9A%84%E7%8E%AF%E5%BD%A2%E6%A0%91/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/iss95.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这是&lt;a href=&#34;https://github.com/GuangchuangYu/ggtree/issues/95&#34;&gt;github&lt;/a&gt;上的问题，他想画环形树的时候，加一条长长的root length把tips给顶出去。&lt;/p&gt;
+
+&lt;p&gt;这个问题在google forum上我早已解答：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/Screen Shot 2016-11-30 at 9.06.01 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我在google group上教会的这个人，他的文章发表在&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/27605062&#34;&gt;nature communications&lt;/a&gt;上，下面是pubmed上的截图。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/Screen Shot 2016-11-30 at 9.06.57 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;简直亮瞎了我的狗眼，我看到这图，一口老血差别喷出来，这画的什么玩意，啥都看不清。&lt;/p&gt;
+
+&lt;p&gt;我本来以为他要把中间做空，是为了把legend放进去，结果不是，尼玛也太空了，而且tips根本分不清关系，满篇文章都是这种图，附件上更多，好一朵奇葩。&lt;/p&gt;
+
+&lt;p&gt;但是github上的问题，让我重新认识了这样的图，就像提问者说的，他想把tip给顶出去，这样容易看到tip label，某种程度上，这不失为一个好方法，一种好折中，但像上面那个顶得太厉害了，我依然接受不了。&lt;/p&gt;
+
+&lt;p&gt;实现起来也容易，提问者说figtree可以做，通过搞一条长长的root length来实现，这个在ggtree里，当然也可以这么做，但我做空环形树或者说顶一顶tip label，根本就不需要用额外画条线来顶/撑开圆形，但思路是一样的，无非是要给左边留更多空间，这样在旋转成极坐标的时候，左边的空间就变成了内部的空间，于是中间就空了。&lt;/p&gt;
+
+&lt;p&gt;所以呢，+xlim(负数, NA) 就是这么简单，就可以了。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>无中生有windows版R包</title>
+      <link>https://guangchuangyu.github.io/cn/2016/11/%E6%97%A0%E4%B8%AD%E7%94%9F%E6%9C%89windows%E7%89%88r%E5%8C%85/</link>
+      <pubDate>Wed, 30 Nov 2016 00:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2016/11/%E6%97%A0%E4%B8%AD%E7%94%9F%E6%9C%89windows%E7%89%88r%E5%8C%85/</guid>
+      <description>&lt;p&gt;之前帮助高老师实现比对序列的做图，把代码打包为R包seqcombo，方便安装使用。花两小时的作品，发现还有些用户在使用 -，-&lt;/p&gt;
+
+&lt;p&gt;之前有人联系我说安装不上，我觉得不应该有这个问题，因为是纯R代码代码，不涉及到编译，源码包安装不应该有问题。但既然有人问，又都是windows用户，我想可以给他们提供编译好的windows包，简化安装过程（这么体贴用户，我都要被自己感动了）。&lt;/p&gt;
+
+&lt;p&gt;放在CRAN或Bioconductor上的R包，CRAN和Bioconductor会编译出不同平台的二进制包，但seqcobo放在github上，只有源代码，没有预编译好的包，但没有不是问题，我编译好放上去就行了。&lt;/p&gt;
+
+&lt;p&gt;但问题是我没有windows！多年来一直是OSX和linux，MacBook Pro跑Arch Linux，一台iMac跑OSX，我自己根本没有跑windows的机器，所以难为无米之炊，借台机器总是有的，但总不能每次一更新，就拷个代码去别人的机器上打包，再拷回来上传到网上，想想也是蛋疼。&lt;/p&gt;
+
+&lt;p&gt;所以没有windows，这事干起来还不太容易，！在想怎么来无中生有生出个windows包出来的时候，我想起了rhub，也是因为没有windows，之前就用rhub来进行windows平台的R check，在把代码push到CRAN或Bioconductor之前，我总会测试没问题了，再提交代码过去，而rhub正好可以给我提供windows平台的检测。&lt;/p&gt;
+
+&lt;p&gt;在R check完之后，rhub会把check之前build的包存起来，正是这一点，为我们提供了这无米之炊，这时候我就可以下载它来放到我的repo里，这也算是一个变通的办法。&lt;/p&gt;
+
+&lt;p&gt;然而，我要等它check完，再去下载，放到repo，push到github上，动作太多，太繁琐，所以必须写代码让它自动化起来。&lt;/p&gt;
+
+&lt;p&gt;于是写了Makefile:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-make&#34;&gt;windows:
+	Rscript -e &#39;rhub::check_on_windows(&amp;quot;.&amp;quot;)&#39;
+addtorepo: windows
+	Rscript -e &#39;drat:::insert(&amp;quot;../$(PKGNAME)_$(PKGVERS).tar.gz&amp;quot;, &amp;quot;../drat/docs&amp;quot;)&#39;;\
+	Rscript -e &#39;drat:::insert(ypages::get_windows_binary(), &amp;quot;../drat/docs&amp;quot;);\
+	cd ../drat;\
+	git add .; git commit -m &#39;$(PKGNAME)_$(PKGVERS)&#39;; git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;我只要&lt;code&gt;make addtorepo&lt;/code&gt;一条指令，它就会自动运行传到rhub的windows平台check我的包，check结束后，下载rhub平台编译的包，然后用&lt;code&gt;drat:::insert&lt;/code&gt;来把它放到合适的位置，并生成相应的文件（如包的依赖关系、md5sum等），再把它push到github上去。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/Bioconductor/Screen Shot 2016-11-23 at 6.11.14 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这里我用了一条&lt;code&gt;ypages::get_windows_binary()&lt;/code&gt;指令来检验rhub check是否结束，如果是则把编译的包下载到临时文件，并作为输入传到&lt;code&gt;drat:::insert&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;ypages&lt;/code&gt;也是一个R包，我用来搞github pages的私人定制包，比如我各种包的主页上那些badge图标，显示下载量、版本号、文章引用数目等相关信息的图标，都是通过ypages自动生成的，没有放出来，所以细节不在这里讲，这里主要介绍一个思路，利用rhub云平台来编译windows二进制包，放入私人repo供用户下载安装，通过makefile自动化这一过程。Makefile才是最通用的可重复性研究工具，你值得拥有。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>vertical dendrogram in ggtree</title>
+      <link>https://guangchuangyu.github.io/cn/2016/11/vertical-dendrogram-in-ggtree/</link>
+      <pubDate>Tue, 29 Nov 2016 00:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2016/11/vertical-dendrogram-in-ggtree/</guid>
+      <description>&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/guangchuangyu&#34;&gt;@guangchuangyu&lt;/a&gt; Is it possible to plot horizontal trees with ggtree? (a la plot.hclust default).&lt;/p&gt;&amp;mdash; Diego Diez (@kurai_yousei) &lt;a href=&#34;https://twitter.com/kurai_yousei/status/799532564633518080&#34;&gt;November 18, 2016&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;这个Diego在推特上问的问题，他最近在写一个&lt;a href=&#34;https://github.com/ddiez/motiftools&#34;&gt;motiftools&lt;/a&gt;的R包，里面用了ggtree来画图，我想他应该是要解决他在包里的画树/聚类功能吧。&lt;/p&gt;
+
+&lt;p&gt;他问题写的horizontal，但其实plot.hclust默认是vertical，ggtree默认也是horizontal，所以我认为他问的是vertical layout，这个在我的回答中也得到了他的确认。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; require(ggtree)
+&amp;gt; set.seed(123)
+&amp;gt; tr = rtree(30)
+&amp;gt; ggtree(tr) + scale_x_reverse() + coord_flip()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这个问题很简单，无非是坐标轴翻转而已。于是上面的代码，就得到下面的图：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/Screen Shot 2016-11-21 at 7.53.54 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ggtree支持多种布局(layout)，rectangular（上面这种就是，父节点到子节点由90度折线连接），slated（父节点到子节点由直线连接）， circular（圆圈型，父节点到子节点的连接方式可以是rectangular也可以是slanted），fan（顾名思义-扇子型，也可以理解为有开口的圆圈，实际上ggtree提供了open_tree函数，可以把circular的树转变为fan layout），unrooted（无根树，连接方式是slanted，但没有根节点，所以可以说有些说圆圈型，但没有中心），还有二维树（把y轴利用起来，可以映射到节点的phenotype或者是统计推断的估值）。&lt;/p&gt;
+
+&lt;p&gt;上面提到的这些布局，都可以有画phylogram或cladogram，差别在于phylogram有branch length而cladogram没有。而在层次聚类中，做的是聚类，而不是进化树，这是不同的概念，所以画出来的图相似，但却是不一样的东西，所以聚类分析的图叫dendrogram，像上面这个图，就是典型的dendrogram画法，显然看着和进化树是没什么差别的，只不过进化树一般从左到右画，而dendrogram画这种从上到下的形状还是比较常见的。虽然是不一样的东西，但从画图的角度来看，dendrogram和rectangular layout的phylogram/cladogram是一样的。所以要问ggtree能不能画dendrogram的形状，当然可以，要问能不能从上到下，当然可以，无非是坐标轴颠过来倒过去而已，就算你要画出从下到上，从右到左，都是没有问题的。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>buildGOmap</title>
+      <link>https://guangchuangyu.github.io/cn/2016/11/buildgomap/</link>
+      <pubDate>Mon, 28 Nov 2016 00:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2016/11/buildgomap/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/Bioconductor/clusterProfiler/640.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;周末Bioconductor上的问题，说的是他用了buildGOmap之后，在终端上输出了一长串，但没有文件产生，今天就来讲讲这个buildGOmap的前世今生。&lt;/p&gt;
+
+&lt;p&gt;当年写clusterProfiler的时候在暨大工作，主要也是自己的需求驱动，因为实验室里有做细菌，比如肺炎链球菌D39，在细菌界基本上所谓的GO分析，就是跑个电子注释，然后数一下数目，列个表格画个饼图。很难看到有富集性分析的身影，因为绝大多数的工具是只支持少量模式生物的，还有部分工具比如支持某些细菌，支持某些植物或者某些真菌，比如支持植物的，也只是支持少量的植物物种而已，都是些自己定制给自己用的玩意，放出来只是为了顺道灌水而已。&lt;/p&gt;
+
+&lt;p&gt;说到富集性分析，大家第一感觉是这玩意烂大街了，工具非常多。如果是说超几何分布检验的话，可以说是对的。但如果说GSEA的话，工具并没有那么多，也不像超几何分布那种，有一堆web server，你看大家喜欢/最有名的DAVID, wego都不能做GSEA，因为GSEA复杂一些（门槛高一点），计算量大一些（让web sever不太现实）。即使是超几何分布，烂大街的也是模式生物，对于一些细菌真菌、新物种什么的，还是很难找到称手的工具，当然有一些工具，可以支持用户自己的注释文件，像在R里面，可以支持用户自己的注释信息存在data.frame或list做为输入，这极大方便了用户整理注释信息并继而做分析。&lt;/p&gt;
+
+&lt;p&gt;我当年一开始是用GO::TermFinder (&lt;a href=&#34;http://search.cpan.org/dist/GO-TermFinder/lib/GO/TermFinder.pm)，&#34;&gt;http://search.cpan.org/dist/GO-TermFinder/lib/GO/TermFinder.pm)，&lt;/a&gt; 一个perl module，我印象中要定制分析非常麻烦，而且要修改配置文件。当然在Bioconductor上有GOstats，这个包是可以支持用户注释的，然而调用时要先构建参数对象，我老记不住，对于我这种脑容量不够的人来说，最好是直接调用函数出结果，然后它的输出也有一些问题，比如不会列出到底有那些基因属于这些报出来的enriched terms。当时还写过一些helper function来导出结果时把额外的一些信息加进去。&lt;/p&gt;
+
+&lt;p&gt;当时写clusterProfiler的驱动主要有：
+我要用自己的注释数据，我希望改变实验室所谓GO分析只是列表格计数画饼图的现状，
+我希望能够有更全面的信息，比如上面提到的genes in enrich term，这个我还专门加了个readable的参数，自己转化为gene symbol方便人类阅读
+画图的需求，当时有比较不同情况的想法，这也是这个包名的出处。&lt;/p&gt;
+
+&lt;p&gt;当时写了GO和KEGG，并且支持了大概20个物种，而用户自己的GO注释，是这样来实现的，如果输入的物种不是支持的那20个，那么在工作目录里寻找注释文件，而这些注释文件，就是由buildGOmap产生，所以流程就是buildGOmap -&amp;gt; enrichGO。这个buildGOmap会把间接注释加上去（所以比较慢）然后整理成enrichGO所需要的注释，产生文件保存在工具目录中。&lt;/p&gt;
+
+&lt;p&gt;然而这只是最初的clusterProfiler，做为一个良心之作，在发表文章之后，不断更新，现在GO已经支持非常多的物种，KEGG支持超过3千个物种而且是在线数据（多半的工具在用过时数据），还有其它比如Broad Institute的Molecular Signatures Database等各种注释，以及用户自己的注释信息。并且GSEA也是支持的。&lt;/p&gt;
+
+&lt;p&gt;所以呢用户自己（定制）的注释信息现在是单独支持，不仅限于GO，那么之前buildGOmap -&amp;gt; enrichGO的流程就不再需要了，你可以用你的注释信息直接用enricher/GSEA分析，如果你分析的是GO，并用你的注释只有直接注释，那么你可以用buildGOmap把间接注释加上去，然后再用enricher/GSEA分析，所以现在的流程是buildGOmap(optional and only for GO) -&amp;gt; enricher/GSEA。在现在clusterProfiler里，buildGOmap不会产生文件，而是输出一个data.frame，做为background annotation输入给enricher(超几何检验）或GSEA。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>使用emoji画图</title>
+      <link>https://guangchuangyu.github.io/cn/2016/11/%E4%BD%BF%E7%94%A8emoji%E7%94%BB%E5%9B%BE/</link>
+      <pubDate>Fri, 25 Nov 2016 00:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2016/11/%E4%BD%BF%E7%94%A8emoji%E7%94%BB%E5%9B%BE/</guid>
+      <description>&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/hashtag/rstats?src=hash&#34;&gt;#rstats&lt;/a&gt; code for the PhD/cute animals gestation &lt;a href=&#34;https://twitter.com/hashtag/ggplot2?src=hash&#34;&gt;#ggplot2&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/gganimate?src=hash&#34;&gt;#gganimate&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/emojifont?src=hash&#34;&gt;#emojifont&lt;/a&gt; plot &lt;a href=&#34;https://t.co/qWM0bCHoHJ&#34;&gt;https://t.co/qWM0bCHoHJ&lt;/a&gt; 🐭🐶🐱🐺🐯🐷🐏🐻👶🐳🐘📕 &lt;a href=&#34;https://t.co/a4GYl191a8&#34;&gt;https://t.co/a4GYl191a8&lt;/a&gt;&lt;/p&gt;&amp;mdash; Maëlle Salmon (@ma_salmon) &lt;a href=&#34;https://twitter.com/ma_salmon/status/800007428096094209&#34;&gt;November 19, 2016&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;无缘无故收到好几条消息，原来是用emoji画图。&lt;/p&gt;
+
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/pboesu&#34;&gt;@pboesu&lt;/a&gt; btw do you know the &lt;a href=&#34;https://twitter.com/guangchuangyu&#34;&gt;@guangchuangyu&lt;/a&gt; emojifont pkg? I&amp;#39;ve used it more than &lt;a href=&#34;https://twitter.com/millerdl&#34;&gt;@millerdl&lt;/a&gt; emoGG &lt;a href=&#34;https://t.co/p27fwEmDSD&#34;&gt;https://t.co/p27fwEmDSD&lt;/a&gt; but I like both &lt;a href=&#34;https://t.co/uV49WjOSp3&#34;&gt;https://t.co/uV49WjOSp3&lt;/a&gt;&lt;/p&gt;&amp;mdash; Maëlle Salmon (@ma_salmon) &lt;a href=&#34;https://twitter.com/ma_salmon/status/800009044123586560&#34;&gt;November 19, 2016&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;做为emojifont包的作者，我表示很高兴看到自己的包给大家带来乐趣，在回复中@milerdl说emoGG是他用了两个晚上写的，emojifont刚好也是我用了两个晚上写的，一个晚上支持了emoji字体，另一个晚上加入了fontawesome字体。&lt;/p&gt;
+
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Hi &lt;a href=&#34;https://twitter.com/guangchuangyu&#34;&gt;@guangchuangyu&lt;/a&gt; excellent &lt;a href=&#34;https://twitter.com/hashtag/rstats?src=hash&#34;&gt;#rstats&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/emojifont?src=hash&#34;&gt;#emojifont&lt;/a&gt; implementation! &lt;a href=&#34;https://t.co/lTIWDQ1zq0&#34;&gt;https://t.co/lTIWDQ1zq0&lt;/a&gt; very cool! &lt;a href=&#34;https://t.co/sCALpuWW28&#34;&gt;pic.twitter.com/sCALpuWW28&lt;/a&gt;&lt;/p&gt;&amp;mdash; Jo-fai (Joe) Chow (@matlabulous) &lt;a href=&#34;https://twitter.com/matlabulous/status/677205176663588865&#34;&gt;December 16, 2015&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;在写这个包之前，我早就有用emoji在R画图中，写这个包也正是为了回应emoGG，因为我觉得他的实现方式并不理想，而我的更为灵活。&lt;/p&gt;
+
+&lt;p&gt;回到主题上，我将展示使用emojifont来画图。&lt;/p&gt;
+
+&lt;p&gt;下面这个数据是我每年读书、看电影、听专辑的数目：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; d
+   year category num
+1  2009     book  35
+2  2009    movie  64
+3  2009    music  24
+4  2010     book  34
+5  2010    movie  47
+6  2010    music  13
+7  2011     book  17
+8  2011    movie  18
+9  2011    music   2
+10 2012     book  25
+11 2012    movie  25
+12 2012    music   0
+13 2013     book  15
+14 2013    movie  17
+15 2013    music   0
+16 2014     book   8
+17 2014    movie  11
+18 2014    music   1
+19 2015     book   5
+20 2015    movie  14
+21 2015    music   0
+22 2016     book   4
+23 2016    movie  14
+24 2016    music   0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;先加载所需的包和emoji字体：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;require(ggplot2)
+require(ggthemes)
+require(emojifont)
+load.emojifont()
+emo &amp;lt;- emoji(c(&amp;quot;book&amp;quot;, &amp;quot;movie_camera&amp;quot;, &amp;quot;musical_note&amp;quot;))
+names(emo) &amp;lt;- c(&#39;book&#39;, &#39;movie&#39;, &#39;music&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;画出趋势图，并在每个点上用相应的emoji字体标注：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;p &amp;lt;- ggplot(d, aes(x=factor(year), y=num, group=category, colour=category))
+p &amp;lt;- p +geom_line() +geom_text(aes(label=emo[category]), family=&#39;OpenSansEmoji&#39;, size=10) +xlab(NULL) + ylab(NULL) 
+
+更改一些背景等主题细节，设置中文字体等：
+p &amp;lt;- p + theme_fivethirtyeight() + scale_color_tableau()
+p &amp;lt;- p+theme(axis.text.x=element_text(face=&amp;quot;bold&amp;quot;, size=16), 
+        axis.text.y=element_text(face=&amp;quot;bold&amp;quot;, size=16))
+ p &amp;lt;- p+theme(legend.text=element_text(size=16, family=&amp;quot;OpenSansEmoji&amp;quot;), 
+            legend.title=element_blank(), legend.position=&#39;none&#39;)
+p+ ggtitle(&#39;Y叔的书影音&#39;) + theme(plot.title=element_text(family=&#39;STKaiti&#39;))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;于是产生下图：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/Screen Shot 2016-11-21 at 7.47.34 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>食色性也</title>

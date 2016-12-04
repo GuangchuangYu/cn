@@ -111,27 +111,29 @@ ga('send', 'pageview');
     <article>
       <header>
         <h1 class="entry-title">
-          <a href="https://guangchuangyu.github.io/cn/2015/05/%E5%A6%82%E4%BD%95%E7%94%BB%E7%B1%BB%E4%BC%BCmeme%E7%9A%84%E6%B3%A8%E9%87%8A%E5%BA%8F%E5%88%97/">如何画类似MEME的注释序列</a>
+          <a href="https://guangchuangyu.github.io/cn/2016/10/update-r-packages/">Update R packages</a>
         </h1>
-        <p class="meta">May 21, 2015 - 1 minute read - 
+        <p class="meta">Oct 19, 2016 - 1 minute read - 
 
         
         
         
-        <a class="label" href="https://guangchuangyu.github.io/cn/categories/biology/">Biology</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/r/">R</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/visualization/">Visualization</a>
+        <a class="label" href="https://guangchuangyu.github.io/cn/categories/r/">R</a>
         </p>
 
       </header>
 
         
-          <p><p><img src="https://guangchuangyu.github.io/blog_images/2015/Screenshot%202015-05-21%2010.31.46.png" alt="" /></p>
+          <p><p>更新R较为无痛的方法已经在<a href="http://guangchuangyu.github.io/2014/11/hello-yosemite/">hello yosemite</a>一文中提及。今天Bioconductor发布3.4版本，又是更新R包的时候了。</p>
 
-<p><a href="http://meme-suite.org">MEME</a>是motif分析的webserver，所谓的注释序列就是一条线条上画一些长方形的box。</p>
+<p>之前为了<a href="https://guangchuangyu.github.io/2016/07/how-to-bug-author/">吐槽</a>很多人问问题都是在使用早已不维护的老版本，写了<a href="https://cran.r-project.org/web/packages/rvcheck/">rvcheck</a>来帮忙检查版本。既然能够帮我们检查版本，自然能够帮忙升级。</p>
+
+<p>使用<code>rvcheck::update_all()</code>可以自动更新CRAN, Bioconductor和Github上的R包。其实可以放到系统任务里，每月自动更新一次，然后就可以完全不用管升级的事情。</p>
 </p>
 
           
               <footer>
-                  <a href="https://guangchuangyu.github.io/cn/2015/05/%E5%A6%82%E4%BD%95%E7%94%BB%E7%B1%BB%E4%BC%BCmeme%E7%9A%84%E6%B3%A8%E9%87%8A%E5%BA%8F%E5%88%97/" rel="full-article">Read On &rarr;</a>
+                  <a href="https://guangchuangyu.github.io/cn/2016/10/update-r-packages/" rel="full-article">Read On &rarr;</a>
               </footer>
           
 
@@ -142,29 +144,25 @@ ga('send', 'pageview');
     <article>
       <header>
         <h1 class="entry-title">
-          <a href="https://guangchuangyu.github.io/cn/2015/05/bmc-favor-plagiarism/">BMC Favor Plagiarism</a>
+          <a href="https://guangchuangyu.github.io/cn/2016/07/evolution-of-my-bioc-packages/">Evolution of my BioC packages</a>
         </h1>
-        <p class="meta">May 17, 2015 - 3 minute read - 
+        <p class="meta">Jul 13, 2016 - 9 minute read - 
 
         
         
         
-        <a class="label" href="https://guangchuangyu.github.io/cn/categories/biology/">Biology</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/research/">Research</a>
+        <a class="label" href="https://guangchuangyu.github.io/cn/categories/r/">R</a>
         </p>
 
       </header>
 
         
-          <p><p><a href="http://cran.r-project.org/web/packages/ppiPre/index.html">ppiPre</a>抄袭了<a href="https://github.com/GuangchuangYu/GOSemSim">GOSemSim</a>的代码，证据当然非常充分，比对一下代码就知道了，我在<a href="http://guangchuangyu.github.io/2014/11/proper-use-of-gosemsim/">Proper use of GOSemSim</a>一文中，做出了一些比较，另外也可以参考<a href="https://github.com/cran/ppiPre/commit/c267700ca09a599dab77326959a0aa6a2980ceed">github</a>页面，github记录了ppiPre被暴光抄袭之后所做的修改。
-从我给BMC Systems
-Biology的编辑反馈这件事开始，在这铁板钉钉的事实面前，编辑拖了整整一年，而这一年时间过去了，ppiPre仍没有被编辑部受理。从最早反应这件事情，编辑信誓旦旦说他们很重视这种事情，到后面对我的邮件视而不见，我愿意相信编辑部处理这些事情，需要时间，他们有自己的规则，但一年的时间，不回邮件，冷处理以淡化此事，这绝对不是应该有的规则。
-在编辑一直无视我的情况下，我写出了<a href="http://guangchuangyu.github.io/2014/11/proper-use-of-gosemsim/">Proper use of GOSemSim</a>一文，列举了一些一模一样的代码，并告知CRAN，当ppiPre被CRAN移除时，我写信给编辑，这时候，编辑告诉我说他们准备要去联系作者了，这时候已经过去半年了，是的！你没有看错，半年过去了，编辑说他们还没去联系作者！我是不相信的。必然是联系了之后，有某些不为人知的原因，所以编辑态度反常，对抄袭这种打鸡血的事情，不断在打太极。
-再过二个月，ppiPre的作者<a href="http://web.xidian.edu.cn/dengyue/">邓岳</a>给我写了信：</p>
+          <p><p>发现Youtube上有一个视频叫<a href="https://www.youtube.com/watch?v=MYTblx-5Yog">Evolution of clusterProfiler</a>, 是Landon Wilkins用<a href="http://gource.io/">Gource</a>做的。于是我也来玩一下，看一下自己这几年码代码的过程。</p>
 </p>
 
           
               <footer>
-                  <a href="https://guangchuangyu.github.io/cn/2015/05/bmc-favor-plagiarism/" rel="full-article">Read On &rarr;</a>
+                  <a href="https://guangchuangyu.github.io/cn/2016/07/evolution-of-my-bioc-packages/" rel="full-article">Read On &rarr;</a>
               </footer>
           
 
@@ -175,9 +173,42 @@ Biology的编辑反馈这件事开始，在这铁板钉钉的事实面前，编�
     <article>
       <header>
         <h1 class="entry-title">
-          <a href="https://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustable/">R binary is untrustable</a>
+          <a href="https://guangchuangyu.github.io/cn/2016/05/%E7%AC%AC%E4%B9%9D%E5%B1%8Achinar%E4%BC%9A%E8%AE%AE%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%88%86%E4%BC%9A/">第九届ChinaR会议生物信息学分会</a>
         </h1>
-        <p class="meta">Jul 24, 2014 - 2 minute read - 
+        <p class="meta">May 31, 2016 - 1 minute read - 
+
+        
+        
+        
+        <a class="label" href="https://guangchuangyu.github.io/cn/categories/r/">R</a>
+        </p>
+
+      </header>
+
+        
+          <p><p>不记得是什么时候知道统计之都的，但我记得最早知道的是太云，因为我用了他写的<a href="https://cran.r-project.org/package=corrplot">corrplot</a>包。后来统计之都最早接触的也是太云，他给我写邮件问我能不能帮忙校对<a href="https://book.douban.com/subject/24527091/">《ggplot2：数据分析与图形艺术》</a>，从此开始和太云变成了网友。</p>
+
+<p>我在暨大的时候，太云曾经邀请我去China-R会议做报告，但我觉得自己没什么好分享的，<a href="http://guangchuangyu.github.io/GOSemSim">GOSemSim</a>这个包是硕士的时候做的，不好去讲之前做的东西。而当时我写的另一个包<a href="http://guangchuangyu.github.io/clusterProfiler">clusterProfiler</a>，纯粹是因为大量做富集分析的工具都是针对模式生物，而我们实验室有做各种细菌；另外有一些工具，背景设置是有问题的。自己实现一个包，不受别人的限制。即便是这个包现在受到了一定的认可，比如BioC 3.3中有个<a href="http://bioconductor.org/packages/release/bioc/html/debrowser.html">debrowser</a>的包使用了clusterProfiler，而在BioC 3.4中又有个新包<a href="http://bioconductor.org/packages/devel/bioc/html/bioCancer.html">bioCancer</a>也使用了clusterProfiler；再比如这次在北京，有好几个参会的人员在茶歇时问了clusterProfiler的问题。但始终觉得这只是个实用性的包而已，算法是别人的，而且已经比较老了，类似的工具简直就是成百上千。所以也是不好意思拿出来讲的。所以我拒绝了太云的邀请，一直也没有参加China-R的会议。</p>
+
+<p>今年是第九届China-R会议，这次会议规模很大，有22个分会场，超过100个演讲嘉宾，参会人数超过4000人。这一次刚好有个Bioconductor的分会场，Matt写信给我，说我写过几个Bioconductor包，他本人喜欢我的<a href="http://guangchuangyu.github.io/ChIPseeker">ChIPseeker</a>包，问我能否在会上分享与Bioconductor包相关的经验。这是Bioconductor在中国的首秀，我欣然接受，当然也是因为这两年我写了<a href="http://guangchuangyu.github.io/ChIPseeker">ChIPseeker</a>和<a href="http://guangchuangyu.github.io/ggtree">ggtree</a>，我自己觉得还拿得出手🙈。</p>
+</p>
+
+          
+              <footer>
+                  <a href="https://guangchuangyu.github.io/cn/2016/05/%E7%AC%AC%E4%B9%9D%E5%B1%8Achinar%E4%BC%9A%E8%AE%AE%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%88%86%E4%BC%9A/" rel="full-article">Read On &rarr;</a>
+              </footer>
+          
+
+        
+
+    </article>
+    
+    <article>
+      <header>
+        <h1 class="entry-title">
+          <a href="https://guangchuangyu.github.io/cn/2016/03/google-drive--hku/">Google Drive @ HKU</a>
+        </h1>
+        <p class="meta">Mar 24, 2016 - 1 minute read - 
 
         
         
@@ -188,11 +219,16 @@ Biology的编辑反馈这件事开始，在这铁板钉钉的事实面前，编�
       </header>
 
         
-          <p>去年ubuntu下apt-get了R-3.0.2, 用了没多久就发现了system命令有问题，通常情况下调用系统命令是正常的，但是我调用bowtie的时候，就会报错： Warning: Could not open read file &quot;/tmp/8156.inpipe1&quot; for reading; skipping... Error: Encountered internal Bowtie 2 exception (#1) Command: /usr/bin/bowtie2-align --wrapper basic-0 -p 12 -x /ssd/genomes/hg19 -S tmp.sam -1 /tmp/8156.inpipe1 -2 /tmp/8156.inpipe2 这很明显是因为fasta.gz文件，bowtie需要调用zcat来读的，在R里调用bowtie就找不到好基友zcat的输出管道。当时没在意，R不干，那就找shell。 去年用NMF包的时候，报出了人类不友好的错误，联系了包作者Gaujoux，在作者的帮助下，找到了是doParallel包的问题： &gt; library(doParallel) &gt; Loading required package: foreach foreach: simple, scalable parallel programming from Revolution Analytics Use Revolution R for scalability, fault tolerance and more. http://www.revolutionanalytics.com Loading required package: iterators Loading required package: parallel &gt; registerDoParallel(11) &gt; &gt; foreach(i = 1:10) %dopar% { getwd() } &gt; *** caught segfault *** address 0x7fbeb6d399d0, cause 'memory not mapped' 其实parallel包中用mclapply也是同样报错。于是又把维护deb包的Dirk拉进来，Dirk是Rcpp的作者，高人就是不一样，看了错误，立刻就指出是BLAS库的问题。 Sorry -- I have no idea what this is about and no ability whatsoever to do debugging for your here.</p>
+          <p><p>寻找一个好的网盘一直是个困扰我的问题，Dropbox非常好，但空间有限，大陆的各种网盘都是渣渣，本来试用了一下<a href="http://guangchuangyu.github.io/2014/05/%E6%9B%B4%E6%94%B9%E7%99%BE%E5%BA%A6%E4%BA%91%E5%90%8C%E6%AD%A5%E7%9B%98%E8%B7%AF%E5%BE%84/">百度云</a>，但度娘实在不争气，体验非常差。我后来找到了个比较好的方案，那就是<a href="https://gitlab.com/">gitlab</a>，可以创建无限量的project，每个project有10G的空间，这比<a href="https://github.com/">github</a>出手大方多了。唯一不足是<code>.git</code>文件夹也是非常占空间的。</p>
+
+<p>到HKU两年多，才发现HKU的邮箱自带无限量的google drive网盘。</p>
+
+<p><img src="http://guangchuangyu.github.io/blog_images/2016/google_drive.jpg" alt="" /></p>
+</p>
 
           
               <footer>
-                  <a href="https://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustable/" rel="full-article">Read On &rarr;</a>
+                  <a href="https://guangchuangyu.github.io/cn/2016/03/google-drive--hku/" rel="full-article">Read On &rarr;</a>
               </footer>
           
 
@@ -203,74 +239,42 @@ Biology的编辑反馈这件事开始，在这铁板钉钉的事实面前，编�
     <article>
       <header>
         <h1 class="entry-title">
-          <a href="https://guangchuangyu.github.io/cn/2014/06/use-linux-desktop-again/">use linux desktop again</a>
+          <a href="https://guangchuangyu.github.io/cn/2016/03/%E4%BD%BF%E7%94%A8ggtree%E5%AE%9E%E7%8E%B0%E8%BF%9B%E5%8C%96%E6%A0%91%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E5%92%8C%E6%B3%A8%E9%87%8A/">使用ggtree实现进化树的可视化和注释</a>
         </h1>
-        <p class="meta">Jun 1, 2014 - 1 minute read - 
+        <p class="meta">Mar 9, 2016 - 3 minute read - 
 
         
         
         
-        <a class="label" href="https://guangchuangyu.github.io/cn/categories/linux/">Linux</a>
+        <a class="label" href="https://guangchuangyu.github.io/cn/categories/visualization/">Visualization</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/evolution/">Evolution</a>
         </p>
 
       </header>
 
         
-          <p><p>上个月写了《<a href="http://guangchuangyu.github.io/2014/05/use-ggplot2/">使用ggplot画图</a>》一文，图片太多，一下子把博客的12G流量给用光了，月中博客就被停了，小伙伴们太给力了，blog不能访问，真是件不爽的事情。</p>
+          <p><blockquote>
+<p>本文受魏太云（<a href="http://www.weibo.com/taiyun">@cloud_wei</a>)的邀请，最初发表于<a href="http://cos.name/2015/11/to-achieve-the-visualization-and-annotation-of-evolutionary-tree-using-ggtree/">统计之都</a>。</p>
 
-<p>言归正传，从2002年使用redhat
-7.1开始，就没中止过使用linux，为什么要说again呢，因为在过去几年的工作时间里，使用的是<a href="http://guangchuangyu.github.io/2011/06/screen-shot/">OS X</a>和win7做为桌面的，linux只在服务器端使用。自从用了OS
-X之后，就不想再用linux当桌面了，OS
-X绝对是节省生命的系统，本身是unix-like系统，对各种桌面软件支持又好，特别是中华大地，linux还是小众，用来当桌面实在是各种坑。</p>
+<p>文章最后提到的可以在图上嵌入小图，比如饼图，柱状图等，<a href="http://guangchuangyu.github.io/2016/01/annotate-a-phylogenetic-tree-with-insets/">已经实现</a>, 也可以使用用户自己图片来嵌入注释。</p>
+</blockquote>
 
-<p>不过现在又回到学生时代了，所以还得继续学生屌丝的折腾，本科时从redhat,debian到gentoo，硕士时实验室的机器用ubuntu，而笔记本用NetBSD。这么多年的使用，该有的坑都填了，但是时代在发展，新坑还是不断有的，使用<a href="http://guangchuangyu.github.io/2014/05/%E6%9B%B4%E6%94%B9%E7%99%BE%E5%BA%A6%E4%BA%91%E5%90%8C%E6%AD%A5%E7%9B%98%E8%B7%AF%E5%BE%84/">百度云</a>来同步化文献库，就是最近的新坑，装上linux之后，发现度娘没有客户端，首先想到的当然是wine，wine出来的偶尔能行，时常崩溃，跟它死磕我也会崩溃，github上寻找开源实现，各种功能缺失和限制，那就只能虚拟机了，把home目录做为共享盘，挂到虚拟机中，但是度娘一直都是占100%
-CPU，然后数据无法同步，只有两个原因，不是硬盘就是网络，感觉好像我一个分区800G太大了，但在虚拟中对硬盘读写正常，网络因为使用NAT，虚拟成内网，有可能是这个原因，于是换成bridge，把虚拟机当成现实网络中的另一台主机，但度娘依然只占CPU，不干活。那只能还是硬盘问题，最后问题解决了，通过在linux中提供samba服务，然后在虚拟机中通过网上邻居把共享目录映射成网络驱动器，这时候度娘终于肯干活了。都不知道是virtualbox的驱动有问题，还是度娘太挑，这太TM坑了。</p>
+<p>进化树看起来和层次聚类很像。有必要解释一下两者的一些区别。</p>
+
+<p>层次聚类的侧重点在于分类，把距离近的聚在一起。而进化树的构建可以说也是一个聚类过程，但侧重点在于推测进化关系和进化距离(evolutionary
+distance)。</p>
+
+<p>层次聚类的输入是距离，比如euclidean或manhattan距离。把距离近的聚在一起。而进化树推断是从生物序列（DNA或氨基酸）的比对开始。最简单的方法是计算一下序列中不匹配的数目，称之为hamming
+distance（通常用序列长度做归一化），使用距离当然也可以应用层次聚类的方法。进化树的构建最简单的方法是非加权配对平均法（Unweighted
+Pair Group Method with Arithmetic Mean, UPGMA），这其实是使用average
+linkage的层次聚类。这种方法在进化树推断上现在基本没人用。更为常用的是邻接法（neighbor
+joining），两个节点距离其它节点都比较远，而这两个节点又比较近，它们就是neighbor，可以看出neighbor不一定是距离最近的两个节点。真正做进化的人，这个方法也基本不用。现在主流的方法是最大似然法(Maximum
+likelihood, ML)，通过进化模型（evolutionary
+model)估计拓朴结构和分支长度，估计的结果具有最高的概率能够产生观测数据（多序列比对）。另外还有最大简约法和贝叶斯推断等方法用于构建进化树。</p>
 </p>
 
           
               <footer>
-                  <a href="https://guangchuangyu.github.io/cn/2014/06/use-linux-desktop-again/" rel="full-article">Read On &rarr;</a>
-              </footer>
-          
-
-        
-
-    </article>
-    
-    <article>
-      <header>
-        <h1 class="entry-title">
-          <a href="https://guangchuangyu.github.io/cn/2014/05/use-ggplot2/">Use ggplot2</a>
-        </h1>
-        <p class="meta">May 11, 2014 - 5 minute read - 
-
-        
-        
-        
-        <a class="label" href="https://guangchuangyu.github.io/cn/categories/visualization/">Visualization</a>
-        </p>
-
-      </header>
-
-        
-          <p><h3 id="why-use-ggplot2:c38c63fac86d2290b6bc01da39216614">Why use ggplot2</h3>
-
-<p>ggplot2是我见过最human friendly的画图软件，这得益于Leland
-Wilkinson在他的著作《<a href="http://book.douban.com/subject/10123863/">The Grammar of
-Graphics</a>》中提出了一套图形语法，把图形元素抽象成可以自由组合的成分，Hadley
-Wickham把这套想法在R中实现。</p>
-
-<p>为什么要学习ggplot2，可以参考<a href="http://book.douban.com/subject/24527091/">ggplot2: 数据分析与图形艺术</a>的<a href="https://github.com/cosname/ggplot2-translation/blob/master/preface.md">序言</a>（btw:
-在序言的最后，我被致谢了）。</p>
-
-<p>Hadley
-Wickham也给出<a href="https://github.com/hadley/ggplot2/wiki/Why-use-ggplot2">一堆理由</a>让我们说服自己，我想再补充一点，Hadley
-Wickham是学医出身的，做为学生物出身的人有什么理由不支持呢:)</p>
-</p>
-
-          
-              <footer>
-                  <a href="https://guangchuangyu.github.io/cn/2014/05/use-ggplot2/" rel="full-article">Read On &rarr;</a>
+                  <a href="https://guangchuangyu.github.io/cn/2016/03/%E4%BD%BF%E7%94%A8ggtree%E5%AE%9E%E7%8E%B0%E8%BF%9B%E5%8C%96%E6%A0%91%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E5%92%8C%E6%B3%A8%E9%87%8A/" rel="full-article">Read On &rarr;</a>
               </footer>
           
 
@@ -317,6 +321,10 @@ Wickham是学医出身的，做为学生物出身的人有什么理由不支持�
     
         <a href="https://guangchuangyu.github.io/cn/page/9/" class="label-pagination">9</a>
     
+        <a href="https://guangchuangyu.github.io/cn/page/10/" class="label-pagination">10</a>
+    
+        <a href="https://guangchuangyu.github.io/cn/page/11/" class="label-pagination">11</a>
+    
 
     
     
@@ -325,7 +333,7 @@ Wickham是学医出身的，做为学生物出身的人有什么理由不支持�
 
     
     
-        <a href="https://guangchuangyu.github.io/cn/page/9/" aria-label="Last"><i class="fa fa-angle-double-right fa-lg"></i></a>
+        <a href="https://guangchuangyu.github.io/cn/page/11/" aria-label="Last"><i class="fa fa-angle-double-right fa-lg"></i></a>
     
 
 </div>
@@ -375,23 +383,23 @@ Wickham是学医出身的，做为学生物出身的人有什么理由不支持�
       
       
       <li class="post">
-        <a href="https://guangchuangyu.github.io/cn/2016/11/%E9%A3%9F%E8%89%B2%E6%80%A7%E4%B9%9F/">食色性也</a>
+        <a href="https://guangchuangyu.github.io/cn/2016/12/using-linked-list-to-solve-josephus-problem/">Using Linked List to solve Josephus problem</a>
       </li>
       
       <li class="post">
-        <a href="https://guangchuangyu.github.io/cn/2016/11/dna%E5%BA%8F%E5%88%97%E5%B7%AE%E5%BC%82%E4%BD%9C%E5%9B%BE/">DNA序列差异作图</a>
+        <a href="https://guangchuangyu.github.io/cn/2016/12/%E4%B8%AD%E7%A9%BA%E7%9A%84%E7%8E%AF%E5%BD%A2%E6%A0%91/">中空的环形树</a>
       </li>
       
       <li class="post">
-        <a href="https://guangchuangyu.github.io/cn/2016/11/ggtree-reverse-time-scale/">ggtree: reverse time scale</a>
+        <a href="https://guangchuangyu.github.io/cn/2016/11/%E6%97%A0%E4%B8%AD%E7%94%9F%E6%9C%89windows%E7%89%88r%E5%8C%85/">无中生有windows版R包</a>
       </li>
       
       <li class="post">
-        <a href="https://guangchuangyu.github.io/cn/2016/10/update-r-packages/">Update R packages</a>
+        <a href="https://guangchuangyu.github.io/cn/2016/11/vertical-dendrogram-in-ggtree/">vertical dendrogram in ggtree</a>
       </li>
       
       <li class="post">
-        <a href="https://guangchuangyu.github.io/cn/2016/07/evolution-of-my-bioc-packages/">Evolution of my BioC packages</a>
+        <a href="https://guangchuangyu.github.io/cn/2016/11/buildgomap/">buildGOmap</a>
       </li>
       
     </ul>

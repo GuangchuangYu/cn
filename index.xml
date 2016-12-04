@@ -6,8 +6,284 @@
     <description>Recent content on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 21 Nov 2016 12:23:16 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 04 Dec 2016 00:53:00 +0800</lastBuildDate>
     <atom:link href="https://guangchuangyu.github.io/cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Using Linked List to solve Josephus problem</title>
+      <link>https://guangchuangyu.github.io/cn/2016/12/using-linked-list-to-solve-josephus-problem/</link>
+      <pubDate>Sun, 04 Dec 2016 00:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2016/12/using-linked-list-to-solve-josephus-problem/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;这个问题是以弗拉维奥·约瑟夫斯命名的，它是1世纪的一名犹太历史学家。他在自己的日记中写道，他和他的40个战友被罗马军队包围在洞中。他们讨论是自杀还是被俘，最终决定自杀，并以抽签的方式决定谁杀掉谁。约瑟夫斯和另外一个人是最后两个留下的人。约瑟夫斯说服了那个人，他们将向罗马军队投降，不再自杀。约瑟夫斯把他的存活归因于运气或天意，他不知道是哪一个。  &amp;ndash; &lt;a href=&#34;https://zh.wikipedia.org/wiki/约瑟夫斯问题&#34;&gt;https://zh.wikipedia.org/wiki/约瑟夫斯问题&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这是一个比较简单的问题，n个人围成圆圈，越过k-1个人，杀掉第k个人，如此反复直到只剩下最后一个人。可以用数学推导给出答案，问题本身已经足够简单，用链表可以模拟整个过程。实现起来比较直观。这里在初始化这个链表的时候，需要注意，到了最后一人的时候，他应该指向第一个人，这样才能形成一个环状的链表，然后问题就非常简单了，从第一人开始，后面就无所谓头和尾了，按照规则来，每次杀掉一个人，直到只剩下最后一人，就是结果。从维基的解释可以看出，最后两个人没死，这没节操的事情被拿来说，如果你数学好，你就可以救自己一命（站在合适的位置，让自己是最后一个）。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;fstream&amp;gt;
+#include &amp;lt;sstream&amp;gt;
+
+typedef struct person {
+  int ID;
+  struct person * next;
+} person;
+
+int main() {
+  std::ifstream infile(&amp;quot;data/id32.txt&amp;quot;);
+  std::string line;
+  getline(infile, line);
+  int n, k;
+  std::stringstream ss(line);
+  ss &amp;gt;&amp;gt; n;
+  ss &amp;gt;&amp;gt; k;
+
+  person *head = new person;
+  head-&amp;gt;ID = 1;
+  person *prenode = head;
+  for (int i=2; i&amp;lt;=n; i++) {
+    person *node = new person;
+    node-&amp;gt;ID = i;
+    prenode-&amp;gt;next = node;
+    prenode = node;
+    if (i == n)
+      node-&amp;gt;next = head;
+  }
+
+
+  int left = n;
+  int i=1;
+  person *node = new person;
+  node = head;
+  while (left &amp;gt; 1) {
+    if (i % k == 0) {
+      prenode-&amp;gt;next = node-&amp;gt;next;
+      left--;
+    } else {
+      prenode = node;
+    }
+
+    i++;
+    node = node-&amp;gt;next;
+  }
+  std::cout &amp;lt;&amp;lt; node-&amp;gt;ID &amp;lt;&amp;lt; std::endl;
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>中空的环形树</title>
+      <link>https://guangchuangyu.github.io/cn/2016/12/%E4%B8%AD%E7%A9%BA%E7%9A%84%E7%8E%AF%E5%BD%A2%E6%A0%91/</link>
+      <pubDate>Sat, 03 Dec 2016 00:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2016/12/%E4%B8%AD%E7%A9%BA%E7%9A%84%E7%8E%AF%E5%BD%A2%E6%A0%91/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/iss95.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这是&lt;a href=&#34;https://github.com/GuangchuangYu/ggtree/issues/95&#34;&gt;github&lt;/a&gt;上的问题，他想画环形树的时候，加一条长长的root length把tips给顶出去。&lt;/p&gt;
+
+&lt;p&gt;这个问题在google forum上我早已解答：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/Screen Shot 2016-11-30 at 9.06.01 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我在google group上教会的这个人，他的文章发表在&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/27605062&#34;&gt;nature communications&lt;/a&gt;上，下面是pubmed上的截图。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/Screen Shot 2016-11-30 at 9.06.57 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;简直亮瞎了我的狗眼，我看到这图，一口老血差别喷出来，这画的什么玩意，啥都看不清。&lt;/p&gt;
+
+&lt;p&gt;我本来以为他要把中间做空，是为了把legend放进去，结果不是，尼玛也太空了，而且tips根本分不清关系，满篇文章都是这种图，附件上更多，好一朵奇葩。&lt;/p&gt;
+
+&lt;p&gt;但是github上的问题，让我重新认识了这样的图，就像提问者说的，他想把tip给顶出去，这样容易看到tip label，某种程度上，这不失为一个好方法，一种好折中，但像上面那个顶得太厉害了，我依然接受不了。&lt;/p&gt;
+
+&lt;p&gt;实现起来也容易，提问者说figtree可以做，通过搞一条长长的root length来实现，这个在ggtree里，当然也可以这么做，但我做空环形树或者说顶一顶tip label，根本就不需要用额外画条线来顶/撑开圆形，但思路是一样的，无非是要给左边留更多空间，这样在旋转成极坐标的时候，左边的空间就变成了内部的空间，于是中间就空了。&lt;/p&gt;
+
+&lt;p&gt;所以呢，+xlim(负数, NA) 就是这么简单，就可以了。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>无中生有windows版R包</title>
+      <link>https://guangchuangyu.github.io/cn/2016/11/%E6%97%A0%E4%B8%AD%E7%94%9F%E6%9C%89windows%E7%89%88r%E5%8C%85/</link>
+      <pubDate>Wed, 30 Nov 2016 00:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2016/11/%E6%97%A0%E4%B8%AD%E7%94%9F%E6%9C%89windows%E7%89%88r%E5%8C%85/</guid>
+      <description>&lt;p&gt;之前帮助高老师实现比对序列的做图，把代码打包为R包seqcombo，方便安装使用。花两小时的作品，发现还有些用户在使用 -，-&lt;/p&gt;
+
+&lt;p&gt;之前有人联系我说安装不上，我觉得不应该有这个问题，因为是纯R代码代码，不涉及到编译，源码包安装不应该有问题。但既然有人问，又都是windows用户，我想可以给他们提供编译好的windows包，简化安装过程（这么体贴用户，我都要被自己感动了）。&lt;/p&gt;
+
+&lt;p&gt;放在CRAN或Bioconductor上的R包，CRAN和Bioconductor会编译出不同平台的二进制包，但seqcobo放在github上，只有源代码，没有预编译好的包，但没有不是问题，我编译好放上去就行了。&lt;/p&gt;
+
+&lt;p&gt;但问题是我没有windows！多年来一直是OSX和linux，MacBook Pro跑Arch Linux，一台iMac跑OSX，我自己根本没有跑windows的机器，所以难为无米之炊，借台机器总是有的，但总不能每次一更新，就拷个代码去别人的机器上打包，再拷回来上传到网上，想想也是蛋疼。&lt;/p&gt;
+
+&lt;p&gt;所以没有windows，这事干起来还不太容易，！在想怎么来无中生有生出个windows包出来的时候，我想起了rhub，也是因为没有windows，之前就用rhub来进行windows平台的R check，在把代码push到CRAN或Bioconductor之前，我总会测试没问题了，再提交代码过去，而rhub正好可以给我提供windows平台的检测。&lt;/p&gt;
+
+&lt;p&gt;在R check完之后，rhub会把check之前build的包存起来，正是这一点，为我们提供了这无米之炊，这时候我就可以下载它来放到我的repo里，这也算是一个变通的办法。&lt;/p&gt;
+
+&lt;p&gt;然而，我要等它check完，再去下载，放到repo，push到github上，动作太多，太繁琐，所以必须写代码让它自动化起来。&lt;/p&gt;
+
+&lt;p&gt;于是写了Makefile:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-make&#34;&gt;windows:
+	Rscript -e &#39;rhub::check_on_windows(&amp;quot;.&amp;quot;)&#39;
+addtorepo: windows
+	Rscript -e &#39;drat:::insert(&amp;quot;../$(PKGNAME)_$(PKGVERS).tar.gz&amp;quot;, &amp;quot;../drat/docs&amp;quot;)&#39;;\
+	Rscript -e &#39;drat:::insert(ypages::get_windows_binary(), &amp;quot;../drat/docs&amp;quot;);\
+	cd ../drat;\
+	git add .; git commit -m &#39;$(PKGNAME)_$(PKGVERS)&#39;; git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;我只要&lt;code&gt;make addtorepo&lt;/code&gt;一条指令，它就会自动运行传到rhub的windows平台check我的包，check结束后，下载rhub平台编译的包，然后用&lt;code&gt;drat:::insert&lt;/code&gt;来把它放到合适的位置，并生成相应的文件（如包的依赖关系、md5sum等），再把它push到github上去。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/Bioconductor/Screen Shot 2016-11-23 at 6.11.14 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这里我用了一条&lt;code&gt;ypages::get_windows_binary()&lt;/code&gt;指令来检验rhub check是否结束，如果是则把编译的包下载到临时文件，并作为输入传到&lt;code&gt;drat:::insert&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;ypages&lt;/code&gt;也是一个R包，我用来搞github pages的私人定制包，比如我各种包的主页上那些badge图标，显示下载量、版本号、文章引用数目等相关信息的图标，都是通过ypages自动生成的，没有放出来，所以细节不在这里讲，这里主要介绍一个思路，利用rhub云平台来编译windows二进制包，放入私人repo供用户下载安装，通过makefile自动化这一过程。Makefile才是最通用的可重复性研究工具，你值得拥有。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>vertical dendrogram in ggtree</title>
+      <link>https://guangchuangyu.github.io/cn/2016/11/vertical-dendrogram-in-ggtree/</link>
+      <pubDate>Tue, 29 Nov 2016 00:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2016/11/vertical-dendrogram-in-ggtree/</guid>
+      <description>&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/guangchuangyu&#34;&gt;@guangchuangyu&lt;/a&gt; Is it possible to plot horizontal trees with ggtree? (a la plot.hclust default).&lt;/p&gt;&amp;mdash; Diego Diez (@kurai_yousei) &lt;a href=&#34;https://twitter.com/kurai_yousei/status/799532564633518080&#34;&gt;November 18, 2016&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;这个Diego在推特上问的问题，他最近在写一个&lt;a href=&#34;https://github.com/ddiez/motiftools&#34;&gt;motiftools&lt;/a&gt;的R包，里面用了ggtree来画图，我想他应该是要解决他在包里的画树/聚类功能吧。&lt;/p&gt;
+
+&lt;p&gt;他问题写的horizontal，但其实plot.hclust默认是vertical，ggtree默认也是horizontal，所以我认为他问的是vertical layout，这个在我的回答中也得到了他的确认。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; require(ggtree)
+&amp;gt; set.seed(123)
+&amp;gt; tr = rtree(30)
+&amp;gt; ggtree(tr) + scale_x_reverse() + coord_flip()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这个问题很简单，无非是坐标轴翻转而已。于是上面的代码，就得到下面的图：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/Screen Shot 2016-11-21 at 7.53.54 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ggtree支持多种布局(layout)，rectangular（上面这种就是，父节点到子节点由90度折线连接），slated（父节点到子节点由直线连接）， circular（圆圈型，父节点到子节点的连接方式可以是rectangular也可以是slanted），fan（顾名思义-扇子型，也可以理解为有开口的圆圈，实际上ggtree提供了open_tree函数，可以把circular的树转变为fan layout），unrooted（无根树，连接方式是slanted，但没有根节点，所以可以说有些说圆圈型，但没有中心），还有二维树（把y轴利用起来，可以映射到节点的phenotype或者是统计推断的估值）。&lt;/p&gt;
+
+&lt;p&gt;上面提到的这些布局，都可以有画phylogram或cladogram，差别在于phylogram有branch length而cladogram没有。而在层次聚类中，做的是聚类，而不是进化树，这是不同的概念，所以画出来的图相似，但却是不一样的东西，所以聚类分析的图叫dendrogram，像上面这个图，就是典型的dendrogram画法，显然看着和进化树是没什么差别的，只不过进化树一般从左到右画，而dendrogram画这种从上到下的形状还是比较常见的。虽然是不一样的东西，但从画图的角度来看，dendrogram和rectangular layout的phylogram/cladogram是一样的。所以要问ggtree能不能画dendrogram的形状，当然可以，要问能不能从上到下，当然可以，无非是坐标轴颠过来倒过去而已，就算你要画出从下到上，从右到左，都是没有问题的。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>buildGOmap</title>
+      <link>https://guangchuangyu.github.io/cn/2016/11/buildgomap/</link>
+      <pubDate>Mon, 28 Nov 2016 00:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2016/11/buildgomap/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/Bioconductor/clusterProfiler/640.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;周末Bioconductor上的问题，说的是他用了buildGOmap之后，在终端上输出了一长串，但没有文件产生，今天就来讲讲这个buildGOmap的前世今生。&lt;/p&gt;
+
+&lt;p&gt;当年写clusterProfiler的时候在暨大工作，主要也是自己的需求驱动，因为实验室里有做细菌，比如肺炎链球菌D39，在细菌界基本上所谓的GO分析，就是跑个电子注释，然后数一下数目，列个表格画个饼图。很难看到有富集性分析的身影，因为绝大多数的工具是只支持少量模式生物的，还有部分工具比如支持某些细菌，支持某些植物或者某些真菌，比如支持植物的，也只是支持少量的植物物种而已，都是些自己定制给自己用的玩意，放出来只是为了顺道灌水而已。&lt;/p&gt;
+
+&lt;p&gt;说到富集性分析，大家第一感觉是这玩意烂大街了，工具非常多。如果是说超几何分布检验的话，可以说是对的。但如果说GSEA的话，工具并没有那么多，也不像超几何分布那种，有一堆web server，你看大家喜欢/最有名的DAVID, wego都不能做GSEA，因为GSEA复杂一些（门槛高一点），计算量大一些（让web sever不太现实）。即使是超几何分布，烂大街的也是模式生物，对于一些细菌真菌、新物种什么的，还是很难找到称手的工具，当然有一些工具，可以支持用户自己的注释文件，像在R里面，可以支持用户自己的注释信息存在data.frame或list做为输入，这极大方便了用户整理注释信息并继而做分析。&lt;/p&gt;
+
+&lt;p&gt;我当年一开始是用GO::TermFinder (&lt;a href=&#34;http://search.cpan.org/dist/GO-TermFinder/lib/GO/TermFinder.pm)，&#34;&gt;http://search.cpan.org/dist/GO-TermFinder/lib/GO/TermFinder.pm)，&lt;/a&gt; 一个perl module，我印象中要定制分析非常麻烦，而且要修改配置文件。当然在Bioconductor上有GOstats，这个包是可以支持用户注释的，然而调用时要先构建参数对象，我老记不住，对于我这种脑容量不够的人来说，最好是直接调用函数出结果，然后它的输出也有一些问题，比如不会列出到底有那些基因属于这些报出来的enriched terms。当时还写过一些helper function来导出结果时把额外的一些信息加进去。&lt;/p&gt;
+
+&lt;p&gt;当时写clusterProfiler的驱动主要有：
+我要用自己的注释数据，我希望改变实验室所谓GO分析只是列表格计数画饼图的现状，
+我希望能够有更全面的信息，比如上面提到的genes in enrich term，这个我还专门加了个readable的参数，自己转化为gene symbol方便人类阅读
+画图的需求，当时有比较不同情况的想法，这也是这个包名的出处。&lt;/p&gt;
+
+&lt;p&gt;当时写了GO和KEGG，并且支持了大概20个物种，而用户自己的GO注释，是这样来实现的，如果输入的物种不是支持的那20个，那么在工作目录里寻找注释文件，而这些注释文件，就是由buildGOmap产生，所以流程就是buildGOmap -&amp;gt; enrichGO。这个buildGOmap会把间接注释加上去（所以比较慢）然后整理成enrichGO所需要的注释，产生文件保存在工具目录中。&lt;/p&gt;
+
+&lt;p&gt;然而这只是最初的clusterProfiler，做为一个良心之作，在发表文章之后，不断更新，现在GO已经支持非常多的物种，KEGG支持超过3千个物种而且是在线数据（多半的工具在用过时数据），还有其它比如Broad Institute的Molecular Signatures Database等各种注释，以及用户自己的注释信息。并且GSEA也是支持的。&lt;/p&gt;
+
+&lt;p&gt;所以呢用户自己（定制）的注释信息现在是单独支持，不仅限于GO，那么之前buildGOmap -&amp;gt; enrichGO的流程就不再需要了，你可以用你的注释信息直接用enricher/GSEA分析，如果你分析的是GO，并用你的注释只有直接注释，那么你可以用buildGOmap把间接注释加上去，然后再用enricher/GSEA分析，所以现在的流程是buildGOmap(optional and only for GO) -&amp;gt; enricher/GSEA。在现在clusterProfiler里，buildGOmap不会产生文件，而是输出一个data.frame，做为background annotation输入给enricher(超几何检验）或GSEA。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>使用emoji画图</title>
+      <link>https://guangchuangyu.github.io/cn/2016/11/%E4%BD%BF%E7%94%A8emoji%E7%94%BB%E5%9B%BE/</link>
+      <pubDate>Fri, 25 Nov 2016 00:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2016/11/%E4%BD%BF%E7%94%A8emoji%E7%94%BB%E5%9B%BE/</guid>
+      <description>&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/hashtag/rstats?src=hash&#34;&gt;#rstats&lt;/a&gt; code for the PhD/cute animals gestation &lt;a href=&#34;https://twitter.com/hashtag/ggplot2?src=hash&#34;&gt;#ggplot2&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/gganimate?src=hash&#34;&gt;#gganimate&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/emojifont?src=hash&#34;&gt;#emojifont&lt;/a&gt; plot &lt;a href=&#34;https://t.co/qWM0bCHoHJ&#34;&gt;https://t.co/qWM0bCHoHJ&lt;/a&gt; 🐭🐶🐱🐺🐯🐷🐏🐻👶🐳🐘📕 &lt;a href=&#34;https://t.co/a4GYl191a8&#34;&gt;https://t.co/a4GYl191a8&lt;/a&gt;&lt;/p&gt;&amp;mdash; Maëlle Salmon (@ma_salmon) &lt;a href=&#34;https://twitter.com/ma_salmon/status/800007428096094209&#34;&gt;November 19, 2016&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;无缘无故收到好几条消息，原来是用emoji画图。&lt;/p&gt;
+
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/pboesu&#34;&gt;@pboesu&lt;/a&gt; btw do you know the &lt;a href=&#34;https://twitter.com/guangchuangyu&#34;&gt;@guangchuangyu&lt;/a&gt; emojifont pkg? I&amp;#39;ve used it more than &lt;a href=&#34;https://twitter.com/millerdl&#34;&gt;@millerdl&lt;/a&gt; emoGG &lt;a href=&#34;https://t.co/p27fwEmDSD&#34;&gt;https://t.co/p27fwEmDSD&lt;/a&gt; but I like both &lt;a href=&#34;https://t.co/uV49WjOSp3&#34;&gt;https://t.co/uV49WjOSp3&lt;/a&gt;&lt;/p&gt;&amp;mdash; Maëlle Salmon (@ma_salmon) &lt;a href=&#34;https://twitter.com/ma_salmon/status/800009044123586560&#34;&gt;November 19, 2016&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;做为emojifont包的作者，我表示很高兴看到自己的包给大家带来乐趣，在回复中@milerdl说emoGG是他用了两个晚上写的，emojifont刚好也是我用了两个晚上写的，一个晚上支持了emoji字体，另一个晚上加入了fontawesome字体。&lt;/p&gt;
+
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Hi &lt;a href=&#34;https://twitter.com/guangchuangyu&#34;&gt;@guangchuangyu&lt;/a&gt; excellent &lt;a href=&#34;https://twitter.com/hashtag/rstats?src=hash&#34;&gt;#rstats&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/emojifont?src=hash&#34;&gt;#emojifont&lt;/a&gt; implementation! &lt;a href=&#34;https://t.co/lTIWDQ1zq0&#34;&gt;https://t.co/lTIWDQ1zq0&lt;/a&gt; very cool! &lt;a href=&#34;https://t.co/sCALpuWW28&#34;&gt;pic.twitter.com/sCALpuWW28&lt;/a&gt;&lt;/p&gt;&amp;mdash; Jo-fai (Joe) Chow (@matlabulous) &lt;a href=&#34;https://twitter.com/matlabulous/status/677205176663588865&#34;&gt;December 16, 2015&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;在写这个包之前，我早就有用emoji在R画图中，写这个包也正是为了回应emoGG，因为我觉得他的实现方式并不理想，而我的更为灵活。&lt;/p&gt;
+
+&lt;p&gt;回到主题上，我将展示使用emojifont来画图。&lt;/p&gt;
+
+&lt;p&gt;下面这个数据是我每年读书、看电影、听专辑的数目：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; d
+   year category num
+1  2009     book  35
+2  2009    movie  64
+3  2009    music  24
+4  2010     book  34
+5  2010    movie  47
+6  2010    music  13
+7  2011     book  17
+8  2011    movie  18
+9  2011    music   2
+10 2012     book  25
+11 2012    movie  25
+12 2012    music   0
+13 2013     book  15
+14 2013    movie  17
+15 2013    music   0
+16 2014     book   8
+17 2014    movie  11
+18 2014    music   1
+19 2015     book   5
+20 2015    movie  14
+21 2015    music   0
+22 2016     book   4
+23 2016    movie  14
+24 2016    music   0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;先加载所需的包和emoji字体：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;require(ggplot2)
+require(ggthemes)
+require(emojifont)
+load.emojifont()
+emo &amp;lt;- emoji(c(&amp;quot;book&amp;quot;, &amp;quot;movie_camera&amp;quot;, &amp;quot;musical_note&amp;quot;))
+names(emo) &amp;lt;- c(&#39;book&#39;, &#39;movie&#39;, &#39;music&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;画出趋势图，并在每个点上用相应的emoji字体标注：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;p &amp;lt;- ggplot(d, aes(x=factor(year), y=num, group=category, colour=category))
+p &amp;lt;- p +geom_line() +geom_text(aes(label=emo[category]), family=&#39;OpenSansEmoji&#39;, size=10) +xlab(NULL) + ylab(NULL) 
+
+更改一些背景等主题细节，设置中文字体等：
+p &amp;lt;- p + theme_fivethirtyeight() + scale_color_tableau()
+p &amp;lt;- p+theme(axis.text.x=element_text(face=&amp;quot;bold&amp;quot;, size=16), 
+        axis.text.y=element_text(face=&amp;quot;bold&amp;quot;, size=16))
+ p &amp;lt;- p+theme(legend.text=element_text(size=16, family=&amp;quot;OpenSansEmoji&amp;quot;), 
+            legend.title=element_blank(), legend.position=&#39;none&#39;)
+p+ ggtitle(&#39;Y叔的书影音&#39;) + theme(plot.title=element_text(family=&#39;STKaiti&#39;))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;于是产生下图：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/Screen Shot 2016-11-21 at 7.47.34 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>食色性也</title>
@@ -91,6 +367,20 @@ plts = lapply(x, plot)
 &lt;p&gt;简直完美，跟文章中的图一毛一样。&lt;/p&gt;
 
 &lt;p&gt;这个包我取名&lt;a href=&#34;https://github.com/GuangchuangYu/seqcombo&#34;&gt;seqcombo&lt;/a&gt;，90后大概不知道何为combo，如果你知道，没错，说的就是你，你已经暴露年龄了！因为这个图是可以辅助看序列重组的，所以取这个名字，以后有可能的话，再实现一些其它的可视化方法，起码得有三把刷子，才对得起combo这名字。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>blast一大坑：无法输出query sequence title</title>
+      <link>https://guangchuangyu.github.io/cn/2016/11/blast%E4%B8%80%E5%A4%A7%E5%9D%91%E6%97%A0%E6%B3%95%E8%BE%93%E5%87%BAquery-sequence-title/</link>
+      <pubDate>Thu, 17 Nov 2016 00:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2016/11/blast%E4%B8%80%E5%A4%A7%E5%9D%91%E6%97%A0%E6%B3%95%E8%BE%93%E5%87%BAquery-sequence-title/</guid>
+      <description>&lt;p&gt;通常做blast，我都是输出asn格式，然后用blast_formatter抽出需要的信息写成表格格式。&lt;/p&gt;
+
+&lt;p&gt;序列的description行当然不会有重复，但是ID (第一个空白前面的字符）是有重复的，从qseqid来看，就分不清是那个序列，于是准备让blast_formatter把query title（整个description line）给输出来，结果仔细阅读了blastn -help发现不支持呀不支持！然而它支持stitle和salltitle，也就是subject的可以，但query的不行，这绝逼是一个大坑！＿|￣|○&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/screenshots/blast.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -1514,938 +1804,6 @@ pp + geom_tiplab(align=T, linetype=&#39;dashed&#39;, linesize=.5) + geom_tippoin
 
 &lt;p&gt;&lt;script type=&#34;text/javascript&#34; src=&#34;https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js&#34;&gt;&lt;/script&gt;
 &lt;div data-badge-popover=&#34;right&#34; data-badge-type=&#34;donut&#34; data-doi=&#34;10.1111/2041-210X.12628&#34; class=&#34;altmetric-embed&#34;&gt;&lt;/div&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>喜新厌旧之hello Hugo</title>
-      <link>https://guangchuangyu.github.io/cn/2015/12/%E5%96%9C%E6%96%B0%E5%8E%8C%E6%97%A7%E4%B9%8Bhello-hugo/</link>
-      <pubDate>Fri, 04 Dec 2015 00:42:26 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2015/12/%E5%96%9C%E6%96%B0%E5%8E%8C%E6%97%A7%E4%B9%8Bhello-hugo/</guid>
-      <description>
-
-&lt;p&gt;最早在China Unix上写博客，后来转战新浪。在&lt;a href=&#34;http://azaleasays.com/&#34;&gt;azelea&lt;/a&gt;的说服下，&lt;a href=&#34;http://guangchuangyu.github.io/2008/09/%E5%8D%9A%E5%AE%A2%E8%BD%ACwordpress/&#34;&gt;果断换成wordpress&lt;/a&gt;，写技术博客贴点代码什么的，新浪必须是太渣。&lt;a href=&#34;http://azaleasays.com/&#34;&gt;azelea&lt;/a&gt;是我开始独立博客的领路人，为我提供了空间和域名。再后来自己买了空间和&lt;code&gt;ygc.name&lt;/code&gt;的域名，用了好几年。本来一直有想法要换成github+jekll，恰巧&lt;a href=&#34;http://blog.shenwei.me/&#34;&gt;Wei Shen&lt;/a&gt;强力推荐HUGO。于是再一次换博客。&lt;/p&gt;
-
-&lt;p&gt;首先面临着wordpress迁移的问题。&lt;/p&gt;
-
-&lt;h1 id=&#34;导入wordpress-posts为markdown文件:3ff7f092e18423fcdd26eedc8fc08766&#34;&gt;导入wordpress posts为markdown文件&lt;/h1&gt;
-
-&lt;p&gt;试用了多个插件或脚本，都是各种出错。最后发现了神器&lt;a href=&#34;https://github.com/jprichardson/potter-wordpress&#34;&gt;potter-wordpress&lt;/a&gt;，通过npm安装：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;npm install -g pottercms-wordpress
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;然后一个语句:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;potter-wordpress -h WORDPRESS_SITE_URL -u USER_NAME -p PASSWORD --dir PATH_TO_STORE_MD_FILES
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;自动从线上把posts抓下来，并转化为&lt;code&gt;markdown&lt;/code&gt;。在之前各种搞不定之后，看到下面的输出有种莫名的快感。&lt;/p&gt;
-
-&lt;p&gt;Fetching articles&amp;hellip;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;   Got : [Sun Nov 29 2015] R kernel in Jupyter notebook 3
-   Got : [Mon Nov 09 2015] phylomoji with ggtree
-   Got : [Tue Nov 17 2015] 合体中的操作系统
-   Got : [Mon Nov 02 2015] Comparison of clusterProfiler and GSEA-P
-   Got : [Thu Oct 01 2015] ChIPseq data mining with ChIPseeker
-   Got : [Tue Oct 06 2015] TRIE
-   Got : [Thu Oct 15 2015] [BioC 3.2] NEWS of my BioC packages
-   Got : [Wed Oct 21 2015] use simplify to remove redundancy of enriched GO terms
-
-   ...
-
-   Got : [Mon May 14 2007] Edit partition table in NetBSD/macppc
-   Got : [Mon May 14 2007] 我的emacs配置文件
-   Got : [Mon May 14 2007] pkgsrc tips
-   Got : [Thu May 03 2007] scilab三维平面绘图
-   Got : [Sat Jun 24 2006] qvwm窗口管理器的windows2000主题
-   Got : [Wed Jun 14 2006] 安装os9和netbsd双系统
-   Got : [Sat May 28 2005] 在emacs里使用maxima
-   Got : [Mon Mar 14 2005] scau校园网认证
-   Got : [Fri Jan 14 2005] Powerbook G3上安装gentoo
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Done.&lt;/p&gt;
-
-&lt;h1 id=&#34;导出wordpress的评论:3ff7f092e18423fcdd26eedc8fc08766&#34;&gt;导出wordpress的评论&lt;/h1&gt;
-
-&lt;p&gt;安装&lt;code&gt;Disqus Comment System plugin&lt;/code&gt;， 点击&lt;code&gt;Export comments to Disqus&lt;/code&gt;搞定&lt;/p&gt;
-
-&lt;p&gt;再到Disqus后台弄迁移，做个域名映射。&lt;/p&gt;
-
-&lt;h1 id=&#34;安装hugo:3ff7f092e18423fcdd26eedc8fc08766&#34;&gt;安装HUGO&lt;/h1&gt;
-
-&lt;p&gt;安装hugo对于Mac用户来说，太容易，brew大法搞定。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;brew install hubo
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;mathjax支持:3ff7f092e18423fcdd26eedc8fc08766&#34;&gt;MathJax支持&lt;/h1&gt;
-
-&lt;p&gt;把下面的代码:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot;
-  src=&amp;quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;quot;&amp;gt;
-&amp;lt;/script&amp;gt;
-&amp;lt;script type=&amp;quot;text/x-mathjax-config&amp;quot;&amp;gt;
-MathJax.Hub.Config({
-  tex2jax: {
-    inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],
-    displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\[&#39;,&#39;\]&#39;]],
-    processEscapes: true,
-    processEnvironments: true,
-    skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],
-    TeX: { equationNumbers: { autoNumber: &amp;quot;AMS&amp;quot; },
-         extensions: [&amp;quot;AMSmath.js&amp;quot;, &amp;quot;AMSsymbols.js&amp;quot;] }
-  }
-});
-&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;加入主题到文件&lt;code&gt;layouts/partials/foot.html&lt;/code&gt;中，就可以实现&lt;code&gt;$\LaTeX$&lt;/code&gt;公式的解析。&lt;/p&gt;
-
-&lt;h1 id=&#34;social网分享:3ff7f092e18423fcdd26eedc8fc08766&#34;&gt;social网分享&lt;/h1&gt;
-
-&lt;p&gt;使用&lt;a href=&#34;http://www.sharethis.com&#34;&gt;ShareThis&lt;/a&gt;.
-把下面代码加到&lt;code&gt;layouts/post/single.html&lt;/code&gt;的适当位置。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;span class=&#39;st_twitter_hcount&#39; displayText=&#39;Tweet&#39;&amp;gt;&amp;lt;/span&amp;gt;
-&amp;lt;span class=&#39;st_facebook_hcount&#39; displayText=&#39;Facebook&#39;&amp;gt;&amp;lt;/span&amp;gt;
-&amp;lt;span class=&#39;st_sina_hcount&#39; displayText=&#39;Sina&#39;&amp;gt;&amp;lt;/span&amp;gt;
-&amp;lt;span class=&#39;st_linkedin_hcount&#39; displayText=&#39;LinkedIn&#39;&amp;gt;&amp;lt;/span&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;再加&lt;code&gt;script&lt;/code&gt;加到&lt;code&gt;layouts/partials/foot.html&lt;/code&gt;中。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;http://w.sharethis.com/button/buttons.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
-&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;stLight.options({publisher: &amp;quot;d135f460-3fc5-4802-8169-bd08e4734a09&amp;quot;, doNotHash: false, doNotCopy: false, hashAddressBar: false});&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;代码高亮:3ff7f092e18423fcdd26eedc8fc08766&#34;&gt;代码高亮&lt;/h1&gt;
-
-&lt;p&gt;加代码到&lt;code&gt;layouts/partials/foot.html&lt;/code&gt;中。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/zenburn.min.css&amp;quot;&amp;gt;
-&amp;lt;script src=&amp;quot;//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
-&amp;lt;script&amp;gt;hljs.initHighlightingOnLoad();&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;访问统计:3ff7f092e18423fcdd26eedc8fc08766&#34;&gt;访问统计&lt;/h1&gt;
-
-&lt;p&gt;以前在wordpress中使用&lt;a href=&#34;http://flagcounter.com/gmap/88/&#34;&gt;flagcounter&lt;/a&gt;，现在发现了&lt;a href=&#34;https://www.revolvermaps.com/?target=enlarge&amp;amp;i=5qpvv5zz7fp&#34;&gt;RevolverMaps&lt;/a&gt;，功能更好，把相应的代码加到sidebar中去即可。2016-03-18开始记录访问。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>合体中的操作系统</title>
-      <link>https://guangchuangyu.github.io/cn/2015/11/%E5%90%88%E4%BD%93%E4%B8%AD%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link>
-      <pubDate>Tue, 17 Nov 2015 16:06:59 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2015/11/%E5%90%88%E4%BD%93%E4%B8%AD%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</guid>
-      <description>&lt;p&gt;更新EI Capitan已经近一个月，第一感觉就是明显变慢了。这是去年买的27&amp;rsquo; iMac，必须不慢。
-MS office程序可以打开，但打开文档直接闪退。升级安装总会有些问题，就像我去年在笔记本上&lt;a href=&#34;http://guangchuangyu.github.io/2014/11/hello-yosemite/&#34;&gt;升级yosemite&lt;/a&gt;一样，最后两分钟始终过不去，迫使我&lt;a href=&#34;http://guangchuangyu.github.io/2014/11/hello-yosemite/&#34;&gt;全新安装&lt;/a&gt;，当时我看后台记录就发现了是MacTex拷不过去，
-后来MacTex的网站上也写了升级Yosemite有这个问题。升级有些小问题是可以预见的，但很少有像EI Capitan这么多的问题。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.macworld.com/article/2987277/operating-systems/os-x-el-capitan-review-mac-upgrade-thats-as-solid-as-a-rock.html&#34;&gt;Macworld EI Capitan review&lt;/a&gt;文章中有人这样评论：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;haha nice review ! did you tried the update ?? slow connection safari
-freezes on launch outlook crash printer does not work anymore great
-job from Apple . My confidence in Apple has been seriously dented!&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;最不可思议的是开发者发现升级后&lt;a href=&#34;https://ohthehugemanatee.org/blog/2015/10/01/how-i-got-el-capitain-working-with-my-developer-tools/&#34;&gt;开发工具都有问题&lt;/a&gt;了：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Last night I installed OSX’s new “El Capitain” update, and it broke
-most of the tools I use in my daily life as a developer, including
-homebrew and git.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;git我倒没发现有问题，不过subversion每次都要求我输入密码了，&lt;a href=&#34;https://discussions.apple.com/thread/7276820&#34;&gt;keychain&lt;/a&gt;问题也是普遍存在的。&lt;/p&gt;
-
-&lt;p&gt;第一时间升级EI Capitan的原因是我想要Split View，做为一个&lt;a href=&#34;http://guangchuangyu.github.io/2014/06/use-linux-desktop-again/&#34;&gt;tiling window manager&lt;/a&gt;的爱好者，Split
-View是有吸引力的，分屏确实是有助于提高工作效率，然后我发现它竟然&lt;a href=&#34;http://www.cnet.com/how-to/how-to-use-split-view-in-os-x-el-capitan/&#34;&gt;没有键盘操作&lt;/a&gt;！！！WTF，这个功能显然又是iPad送的，Apple并不是为了所谓的提高工作效率，而是为了消耗iPad过多的计算能力，可以让你一边聊天一边还在打游戏，顺道又送给了OS
-X。&lt;/p&gt;
-
-&lt;p&gt;总的来说，我的吐槽只有一点，电脑长得越来越像手机了，但手机我已经有了，我不需要也不想电脑跟手机一样。&lt;/p&gt;
-
-&lt;p&gt;PC的发展历程中经历了一次成功的合体，那就是工作站X了桌面系统，不管是微软还是苹果，都是这样。&lt;/p&gt;
-
-&lt;p&gt;微软当年9x系列的桌面系统，NT系列的工作站系统，首次尝试合体是windows
-2000，但2k与其说是合体，倒不如说是把NT推向大众的桌面，所以不太成功，因为大量的游戏不兼容，用户不买帐，但用户又喜欢2k的漂亮界面。微软给出了两个方案，一个是2k上面打游戏补丁，一个是9x内核+2k界面的ME系统。最终合体成功的是XP，XP两个字母来自于eXPerience，旨在给用户更好的体验。实际上2k比XP稳定，且2k土灰土灰的界面，如果长期盯着电脑看的话，对眼睛比较友好。是我所喜欢的经典系统之一。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2006/06/qvwm.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;当年苹果笔记本(Power构架) + NetBSD + 仿2k界面，这样的合体非常好👍。&lt;/p&gt;
-
-&lt;p&gt;很多人不知道win7为什么版本是7，因为NT出到4，2k是版本5，XP是6，不要跟我说什么Vista，那只是微软进展太慢，而苹果每年一新版本，压力太大，把半成品拿出来，微软自己也没给Vista个主版本号。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2007/06/os9.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;苹果也经历了这样的合体，当年的os
-9当然比win98好很多，但如果要跟工作站出身的2k比的话，完全没法比。乔帮主被苹果赶走了，专心在搞工作站，推出了NeXTStep操作系统。苹果笔记本
-+ NetBSD + 仿NeXTStep界面，这样的合体也非常好💪。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2007/06/wmaker.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;乔帮主回到苹果后，也是一次合体，于是有了OS X，就像2k一样，刚出来的OS
-X用户也不买帐，同样的原因，软件不兼容。到了10.2
-Jaguar情况才好转，而到了10.4
-Tiger的时候，速度提升了很多，系统已经非常现代化，而XP界面是如此粗糙，苹果再一次领先，且因为走了Intel路线，微软压力山大。&lt;/p&gt;
-
-&lt;p&gt;一直到OS X 10.6 Snow Leopard和Windows
-7，都是这次合体的延续，都是成功的，至此经典系统宣布结束。从10.7
-Lion开始，苹果开始尝试让手机系统和桌面系统合体，微软后来跟上，推出Win8，应该说OS
-X还是没有太多的违和感，但微软合体的结果就是同时拥有鼠标键盘操作和触屏操作两套界面，违和感太强！已吐槽无力。Ubuntu所采用的Unity也是为手持设备设计的，实际上Canonical已经开始在做手持设备了。所以我也不喜欢Unity，&lt;a href=&#34;http://guangchuangyu.github.io/2014/06/use-linux-desktop-again/&#34;&gt;i3是最好的选择&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;从最初iPad送来了LaunchPad，到现在EI Capitan的Split
-View。对于有键盘的电脑来说，Spotlight是最好的程序启动器，而Split
-View嘛，还得靠BTT：
-&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/screenshots/Screenshot%202015-11-13%2011.33.50.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;现在这些系统做得好像你对着电脑屏幕用手指戳就行了，他们完全不在乎你的电脑压根就戳不动，就算戳得动，用处也不大，键盘是工作中最好的人机交互👻。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>如何画类似MEME的注释序列</title>
-      <link>https://guangchuangyu.github.io/cn/2015/05/%E5%A6%82%E4%BD%95%E7%94%BB%E7%B1%BB%E4%BC%BCmeme%E7%9A%84%E6%B3%A8%E9%87%8A%E5%BA%8F%E5%88%97/</link>
-      <pubDate>Thu, 21 May 2015 14:53:35 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2015/05/%E5%A6%82%E4%BD%95%E7%94%BB%E7%B1%BB%E4%BC%BCmeme%E7%9A%84%E6%B3%A8%E9%87%8A%E5%BA%8F%E5%88%97/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2015/Screenshot%202015-05-21%2010.31.46.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://meme-suite.org&#34;&gt;MEME&lt;/a&gt;是motif分析的webserver，所谓的注释序列就是一条线条上画一些长方形的box。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2015/Screenshot%202015-05-20%2020.50.54.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;当有人问R是否可以画的时候，你回答说可以，他立马就会问，什么函数！这才是他想要问的。这正好中了我的槽点，很多人都认为R是个magic box，
-有各种各样的magic packages/functions，然后input-&amp;gt;output-&amp;gt;done!&lt;/p&gt;
-
-&lt;p&gt;当magic不存在的时候，那就是crap。顺道吐槽一下，不给个四四方方的数据，很多人都不知道该怎么读了，吐槽归吐槽，还是要告诉他怎么去画：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2015/Screenshot%202015-05-20%2020.51.22.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;事实证明我吐槽的现象是多么普遍，下面继续有人在诠释我的槽点，他们需要的是神奇的函数：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2015/Screenshot%202015-05-20%2020.52.31.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;所谓吐槽吐全套，既然这样，我只能碾压他们：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2015/Screenshot%202015-05-20%2015.17.08.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>BMC Favor Plagiarism</title>
-      <link>https://guangchuangyu.github.io/cn/2015/05/bmc-favor-plagiarism/</link>
-      <pubDate>Sun, 17 May 2015 21:51:43 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2015/05/bmc-favor-plagiarism/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://cran.r-project.org/web/packages/ppiPre/index.html&#34;&gt;ppiPre&lt;/a&gt;抄袭了&lt;a href=&#34;https://github.com/GuangchuangYu/GOSemSim&#34;&gt;GOSemSim&lt;/a&gt;的代码，证据当然非常充分，比对一下代码就知道了，我在&lt;a href=&#34;http://guangchuangyu.github.io/2014/11/proper-use-of-gosemsim/&#34;&gt;Proper use of GOSemSim&lt;/a&gt;一文中，做出了一些比较，另外也可以参考&lt;a href=&#34;https://github.com/cran/ppiPre/commit/c267700ca09a599dab77326959a0aa6a2980ceed&#34;&gt;github&lt;/a&gt;页面，github记录了ppiPre被暴光抄袭之后所做的修改。
-从我给BMC Systems
-Biology的编辑反馈这件事开始，在这铁板钉钉的事实面前，编辑拖了整整一年，而这一年时间过去了，ppiPre仍没有被编辑部受理。从最早反应这件事情，编辑信誓旦旦说他们很重视这种事情，到后面对我的邮件视而不见，我愿意相信编辑部处理这些事情，需要时间，他们有自己的规则，但一年的时间，不回邮件，冷处理以淡化此事，这绝对不是应该有的规则。
-在编辑一直无视我的情况下，我写出了&lt;a href=&#34;http://guangchuangyu.github.io/2014/11/proper-use-of-gosemsim/&#34;&gt;Proper use of GOSemSim&lt;/a&gt;一文，列举了一些一模一样的代码，并告知CRAN，当ppiPre被CRAN移除时，我写信给编辑，这时候，编辑告诉我说他们准备要去联系作者了，这时候已经过去半年了，是的！你没有看错，半年过去了，编辑说他们还没去联系作者！我是不相信的。必然是联系了之后，有某些不为人知的原因，所以编辑态度反常，对抄袭这种打鸡血的事情，不断在打太极。
-再过二个月，ppiPre的作者&lt;a href=&#34;http://web.xidian.edu.cn/dengyue/&#34;&gt;邓岳&lt;/a&gt;给我写了信：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2015/plagiarism/Screenshot%202015-06-08%2020.19.23.png&#34; alt=&#34;&#34; /&gt;
-按照我在&lt;a href=&#34;http://guangchuangyu.github.io/2014/11/proper-use-of-gosemsim/&#34;&gt;Proper use of GOSemSim&lt;/a&gt;中说的:&amp;ldquo;你们可以抄我的代码，但要注明出处，引用我的文章&amp;rdquo;，进行了修改。我给他回信就是我可以接受这样的版本。事实上如果他们基于现在的版本发表文章，我没有任何问题。但现在的版本是迫于抄袭暴光所做出的修改，而发表文章时，抄代码不注出处，更改函数名，刻意回避我的文章，而且对抄袭部分在他们的文章中宣称是自己的实现，这是恶意抄袭。
-回信说现在的版本OK之后，我觉得这会给出错误信息，于是我再写一封信，强调抄袭的严重性：
-&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2015/plagiarism/Screenshot%202015-06-08%2020.18.52.png&#34; alt=&#34;&#34; /&gt;
-从他的回信中，我感觉得出，态度并不好。他觉得只是对open
-source的版权不够重视而已，这不单单是版权的问题，还是出版伦理（publication
-ethics）的问题，再怎么对版权无知，你不能发表文章说别人做的东西是你做的。
-事实上邓岳并没有意识到问题，2015年继续发表抄袭的R包&lt;a href=&#34;http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4321842/&#34;&gt;HPOSim&lt;/a&gt;，这个包的代码抄袭了哈医大李霞实验室的&lt;a href=&#34;http://www.biomedcentral.com/1471-2105/12/266&#34;&gt;DOSim&lt;/a&gt;，而DOSim又是抄了&lt;a href=&#34;http://www.bioconductor.org/packages/release/bioc/html/GOSim.html&#34;&gt;GOSim&lt;/a&gt;，我手贱对比了一下代码，竟然发现抄袭链条，而且抄袭者都发了文章，但发完文章，相应的包也就被CRAN移除了，要么是不维护，要么是主动要求移除。这个圈子好乱有木有！
-我也没必要去跟他掐，而是等待编辑的处理，我期望编辑给他上一课，做科研没有这样的捷径。&lt;/p&gt;
-
-&lt;p&gt;最终编辑给出的邮件是：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Dear Guangchuang,&lt;/p&gt;
-
-&lt;p&gt;Looking back through my emails, I did receive a response back from the authors previously. They in turn said that the email address I had originally been trying to contact them with earlier last year was no longer in use, so they only received my emails when I found an additional alternative email address for the authors in my more recent emails.&lt;/p&gt;
-
-&lt;p&gt;Their explanation for the use of your code was that as the similarity measures were not their main focus of their study they had intended to either implement existing methods themselves or as in the case of GoSemSim, import the packages. However they had some problems with this and instead utilised the source code directly. Their rationale was that as the code was GPL licenced that this was acceptable, without realising that it was also required to cite the original source.&lt;/p&gt;
-
-&lt;p&gt;They say they have now created an updated version which they say has the following changes:&lt;/p&gt;
-
-&lt;p&gt;(1) ppiPre imports GOSemSim.&lt;/p&gt;
-
-&lt;p&gt;(2) ppiPre calls function geneSim() exported by GOSemSim to calculate Wang’s measure, instead of deriving code from GOSemSim directly.&lt;/p&gt;
-
-&lt;p&gt;(3) Several internal functions of ppiPre (TCSSGetAncestors, GetOntology, GetGOParents, GetLatestCommonAncestor, TCSSCompute_ICA) are derived from GOSemSim since GOSemSim don’t export them. In source code (.R) and manuals (.RD), acknowledgement has been added including the information of author and publication of GOSemSim.
-(4) The author of GOSemSim (Guangchuang Yu) has been added in the ‘Author’ filed as contributor, as required by CRAN Repository Policy.
-(5) All the information content data in data directory of ppiPre have been removed. ppiPre directly obtained data from GOSemSim.&lt;/p&gt;
-
-&lt;p&gt;This version has been available in SourceForge (&lt;a href=&#34;https://sourceforge.net/p/ppipre/&#34;&gt;https://sourceforge.net/p/ppipre/&lt;/a&gt;). And we are submitting ppiPre to CRAN. We will notify you after ppiPre is available on CRAN.&lt;/p&gt;
-
-&lt;p&gt;They also apologise for failing to cite you correctly and have asked if they may submit a correction to their article to rectify this. This would be within our policy if this sounds acceptable to you. Please let me know if you would need more details or if you need to get in touch with the authors&lt;/p&gt;
-
-&lt;p&gt;Best wishes,
-Tim&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;列举的几点跟邓岳给我的中文信一样，但多了两点： 1.
-强调这是由于对版权的无知。 2. 抄袭的，不是文章的重点。
-1是给自己找个借口，犯错是因为无知。2则淡化的抄袭的严重性。完全没有认错的意思。我们完全可以想像，所谓的“they
-may submit a correction to their article to rectify
-this”是什么样子的。所以我不能接受。
-如果是真心认错，不遮遮掩掩，大胆地接受所犯的错误，那么发表声明，对此事进行道歉，我可以接受。
-但在作者没有认错的情况下，在编辑最后明显倾向性的言语中，我无法接受，无知是对版权，你做科研，能发paper说别人的东西是自己的？总不能这样无知吧？代码2/3是抄GOSemSim的，并且文章中大篇幅在说实现了这些算法，还能睁眼说瞎话，说不是重点，就差说出来not
-a big deal了。
-我坚决不能同意，于是回信给了编辑，然而编辑又再次遁了！一年以来，不是我不断给编辑压力，编辑根本就无视我，而最后到了该给个说法的时候了，又继续玩消失。要说没有内幕，有人相信么？我反正是不信。
-对于抄袭，这是铁的事实，开源和版权，不是重点，这本身是严重的出版伦理问题。而这一整年编辑的表现，又使这一事情，呈现出更严重的一面，编辑一直在袒护抄袭者，这是非常反常的，编辑对这种事情，一直应该是打鸡血的，他们善于站在道德的制高点，对科研工作者指手画脚，而BMC也一直以此宣传他们，像今年撤了四十多篇中国的文章，说是manipulating
-review process，这种事情大家也是非常支持的，再怎么想文章，不能走偏门。
-正如&lt;a href=&#34;http://www.stat.columbia.edu/~gelman/&#34;&gt;Andrew
-Gelman&lt;/a&gt;在评论ppiPre抄袭这件事时说的：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;we’re talking about people who already are skating on the ethical edge (as scientists, we should always respond to serious criticism; if we don’t, that’s bordering on ethical violation already)&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;做为科研工作者，我们已经在道德的边缘上如履薄冰，对严重批评不做出回应，则已然是违反道德。
-BMC现在就是在做违反道德的事情，非常反常！这可能是比&amp;rsquo;manipulating review
-process&amp;rsquo; 更严重的mainipulating editorial
-board。我知道掐这事于我没有任何好处，还会得罪很多人，但科研的正义必须维护，抄袭的行为必须打击，编辑部腐败更不能容忍！这件事情必须得有个说法。
-ppiPre是发表在&lt;a href=&#34;http://www.aporc.org/ISB/2012/&#34;&gt;ISB
-2012&lt;/a&gt;会议上的，这个会议明显是和BMC
-Systems Biology合作的，会议文章发表在BMC Systems
-Biology专刊上，而ppiPre的通讯作者&lt;a href=&#34;http://web.xidian.edu.cn/lgao/&#34;&gt;高琳&lt;/a&gt;是会议的Program
-Chairs，而某些BMC Systems Biology的编委是General
-Chairs，通讯作者和BMC编委是认识的，于是我空穴来风地猜测了一下，某些编委不顾道德伦理在袒护ppiPre的抄袭行为。事情真相到底是什么，期待BMC最终能给个说法。如果抄袭都能不撤稿，如果编委都能被操控，我们有什么理由相信科研！还不如趁早转工业界去赚点养家糊口的钱。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>R binary is untrustable</title>
-      <link>https://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustable/</link>
-      <pubDate>Thu, 24 Jul 2014 04:22:35 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustable/</guid>
-      <description>&lt;p&gt;去年ubuntu下apt-get了R-3.0.2,
-用了没多久就发现了system命令有问题，通常情况下调用系统命令是正常的，但是我调用bowtie的时候，就会报错：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Warning: Could not open read file &amp;quot;/tmp/8156.inpipe1&amp;quot; for reading; skipping...
-Error: Encountered internal Bowtie 2 exception (#1)
-Command: /usr/bin/bowtie2-align --wrapper basic-0 -p 12 -x /ssd/genomes/hg19 -S tmp.sam -1 /tmp/8156.inpipe1 -2 /tmp/8156.inpipe2
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这很明显是因为fasta.gz文件，bowtie需要调用zcat来读的，在R里调用bowtie就找不到好基友zcat的输出管道。当时没在意，R不干，那就找shell。
-去年用NMF包的时候，报出了人类不友好的错误，联系了包作者Gaujoux，在作者的帮助下，找到了是doParallel包的问题：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt; library(doParallel)
-&amp;gt; Loading required package: foreach
-foreach: simple, scalable parallel programming from Revolution Analytics
-Use Revolution R for scalability, fault tolerance and more.
-http://www.revolutionanalytics.com
-Loading required package: iterators
-Loading required package: parallel
-
-&amp;gt;
-registerDoParallel(11)
-&amp;gt; &amp;gt;
-foreach(i = 1:10) %dopar% { getwd() }
-
-&amp;gt;
- *** caught segfault ***
-address 0x7fbeb6d399d0, cause &#39;memory not mapped&#39;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;其实parallel包中用mclapply也是同样报错。于是又把维护deb包的Dirk拉进来，Dirk是Rcpp的作者，高人就是不一样，看了错误，立刻就指出是BLAS库的问题。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Sorry -- I have no idea what this is about and no ability whatsoever to do
-debugging for your here.  Segfaults like this are rarely due to R&#39;s build are
-more often due to the BLAS libraries you plug in or out.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Dirk指出他是用libopenblas的，我确实也是用这个的，重新用apt-get安装，确认和Dirk的一致，也是有问题的。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;root@jz:/home/ygc# ps aux |grep exec/R
-root     26790  0.6  0.4 282124 132156 pts/3   Sl+  15:30   0:00 /usr/lib/R/bin/exec/R
-root     26799  0.0  0.3 273920 129776 pts/3   S+   15:30   0:00 /usr/lib/R/bin/exec/R
-root     26800  0.0  0.3 273920 129760 pts/3   S+   15:30   0:00 /usr/lib/R/bin/exec/R
-root     26821  0.0  0.0   6300   596 pts/0    S+   15:31   0:00 grep exec/R
-root@jz:/home/ygc# lsof -p 26790 |grep &#39;blas\|lapack&#39;
-R       26790 root  mem    REG   8,17 10294080  48234941 /usr/lib/lapack/liblapack.so.3.0
-R       26790 root  mem    REG   8,17 19536904  49942482 /usr/lib/openblas-base/libopenblas.so.0
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;我自己编译的R，使用的是libRblas，完全没有问题，不过性能没有libopenblas好。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;root@jz:~/R-3.0.2# ps aux |grep exec/R
-ygc      22938 80.9  0.4 257764 163560 pts/0   S+   13:36  89:14 /usr/lib/R/bin/exec/R
-root     25609  0.0  0.0   6304   600 pts/3    S+   15:26   0:00 grep exec/R
-root@jz:~/R-3.0.2# lsof -p 22938 |grep &#39;blas\|lapack&#39;
-R       22938  ygc  mem    REG   8,17   4823581 49286712 /usr/lib/R/lib/libRlapack.so
-R       22938  ygc  mem    REG   8,17    454082 49286705 /usr/lib/R/lib/libRblas.so
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;由于Dirk说无法重复我的错误，而我自己编译的版本也能够work了，这事情也就告一段落。&lt;/p&gt;
-
-&lt;p&gt;前天用RMarkdown写了个slide，在R-3.1.0下面编译得好好的，手痒apt-get了R-3.1.1，改了一张slide，再编译的时候，各种错误。回到宿舍，用mac下编译又没问题，于是确定又是R的问题，ssh到实验室的机器，自己编译R，果然问题就不存在了，编译版的R实在是坑！！！不过我编译的版本也有问题，在画图时设置透明色时，会报错：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;semi-transparency is not supported on this device
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这是由于机器缺少某些X11相关的库，于是更新r-base-dev以及安装它所需的所有库。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ygc@SPH:R-3.1.1$ sudo apt-get build-dep r-base-dev  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;另外要安装tk-dev，然后在./configure的时候，指定：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;--with-tcltk --with-tcl-config=/usr/lib/tcl8.6/tclConfig.sh --with-tk-config=/usr/lib/tk8.6/tkConfig.sh
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这样才能支持tcltk。&lt;/p&gt;
-
-&lt;p&gt;再次编译，整个世界就清静了！所以说，在linux下使用R，还是自己编译来得靠谱。由于环境的细小差别，预编译版的R，实在是各种坑！！！&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>use linux desktop again</title>
-      <link>https://guangchuangyu.github.io/cn/2014/06/use-linux-desktop-again/</link>
-      <pubDate>Sun, 01 Jun 2014 07:57:46 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2014/06/use-linux-desktop-again/</guid>
-      <description>&lt;p&gt;上个月写了《&lt;a href=&#34;http://guangchuangyu.github.io/2014/05/use-ggplot2/&#34;&gt;使用ggplot画图&lt;/a&gt;》一文，图片太多，一下子把博客的12G流量给用光了，月中博客就被停了，小伙伴们太给力了，blog不能访问，真是件不爽的事情。&lt;/p&gt;
-
-&lt;p&gt;言归正传，从2002年使用redhat
-7.1开始，就没中止过使用linux，为什么要说again呢，因为在过去几年的工作时间里，使用的是&lt;a href=&#34;http://guangchuangyu.github.io/2011/06/screen-shot/&#34;&gt;OS X&lt;/a&gt;和win7做为桌面的，linux只在服务器端使用。自从用了OS
-X之后，就不想再用linux当桌面了，OS
-X绝对是节省生命的系统，本身是unix-like系统，对各种桌面软件支持又好，特别是中华大地，linux还是小众，用来当桌面实在是各种坑。&lt;/p&gt;
-
-&lt;p&gt;不过现在又回到学生时代了，所以还得继续学生屌丝的折腾，本科时从redhat,debian到gentoo，硕士时实验室的机器用ubuntu，而笔记本用NetBSD。这么多年的使用，该有的坑都填了，但是时代在发展，新坑还是不断有的，使用&lt;a href=&#34;http://guangchuangyu.github.io/2014/05/%E6%9B%B4%E6%94%B9%E7%99%BE%E5%BA%A6%E4%BA%91%E5%90%8C%E6%AD%A5%E7%9B%98%E8%B7%AF%E5%BE%84/&#34;&gt;百度云&lt;/a&gt;来同步化文献库，就是最近的新坑，装上linux之后，发现度娘没有客户端，首先想到的当然是wine，wine出来的偶尔能行，时常崩溃，跟它死磕我也会崩溃，github上寻找开源实现，各种功能缺失和限制，那就只能虚拟机了，把home目录做为共享盘，挂到虚拟机中，但是度娘一直都是占100%
-CPU，然后数据无法同步，只有两个原因，不是硬盘就是网络，感觉好像我一个分区800G太大了，但在虚拟中对硬盘读写正常，网络因为使用NAT，虚拟成内网，有可能是这个原因，于是换成bridge，把虚拟机当成现实网络中的另一台主机，但度娘依然只占CPU，不干活。那只能还是硬盘问题，最后问题解决了，通过在linux中提供samba服务，然后在虚拟机中通过网上邻居把共享目录映射成网络驱动器，这时候度娘终于肯干活了。都不知道是virtualbox的驱动有问题，还是度娘太挑，这太TM坑了。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/06/2014-05-22-161939_1024x768_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;不想自己太geek，假装我在用windows 7，不过我还是喜欢当年的&lt;a href=&#34;http://guangchuangyu.github.io/2006/06/qvwm%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E5%99%A8%E7%9A%84windows2000%E4%B8%BB%E9%A2%98/&#34;&gt;windows 2000的主题&lt;/a&gt;，可惜qvwm已经很久不更新了，现在想编译成功已经非常困难了。&lt;/p&gt;
-
-&lt;p&gt;假装了一星期，我就觉得用着很不爽，屏幕太小，又老用鼠标，手臂不舒服，于是想起了&lt;a href=&#34;http://guangchuangyu.github.io/2007/06/screenshot/&#34;&gt;当年的wmii&lt;/a&gt;，这次我装的是wmii的增强版&lt;a href=&#34;http://i3-wm.org/&#34;&gt;i3-wm&lt;/a&gt;，有了tab这些元素，用着更舒服一点，于是窗口都全屏了，这样小屏幕也还凑合了。最主要的是提高效率，减少鼠标操作，我现在把鼠标放在左上角，因为使用频率非常少，偶尔要用，就用左手搞一下。告别鼠标手，这酸爽，谁用谁知道！有了OS
-X之后，linux桌面依然有吸引我的地方，最主要的就是tiling
-windows，另外fcitx的五笔是我最喜欢的输入法。&lt;/p&gt;
-
-&lt;p&gt;小屏毕竟还是不爽，准备把宿舍的显示器搬去实验室用了，囧rz&amp;hellip;
-&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/06/20140601_141609.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;搬来显示器之后，无比爽。
-&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/06/2014-06-05-132832_1920x1080_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Use ggplot2</title>
-      <link>https://guangchuangyu.github.io/cn/2014/05/use-ggplot2/</link>
-      <pubDate>Sun, 11 May 2014 06:17:56 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2014/05/use-ggplot2/</guid>
-      <description>
-
-&lt;h3 id=&#34;why-use-ggplot2:c38c63fac86d2290b6bc01da39216614&#34;&gt;Why use ggplot2&lt;/h3&gt;
-
-&lt;p&gt;ggplot2是我见过最human friendly的画图软件，这得益于Leland
-Wilkinson在他的著作《&lt;a href=&#34;http://book.douban.com/subject/10123863/&#34;&gt;The Grammar of
-Graphics&lt;/a&gt;》中提出了一套图形语法，把图形元素抽象成可以自由组合的成分，Hadley
-Wickham把这套想法在R中实现。&lt;/p&gt;
-
-&lt;p&gt;为什么要学习ggplot2，可以参考&lt;a href=&#34;http://book.douban.com/subject/24527091/&#34;&gt;ggplot2: 数据分析与图形艺术&lt;/a&gt;的&lt;a href=&#34;https://github.com/cosname/ggplot2-translation/blob/master/preface.md&#34;&gt;序言&lt;/a&gt;（btw:
-在序言的最后，我被致谢了）。&lt;/p&gt;
-
-&lt;p&gt;Hadley
-Wickham也给出&lt;a href=&#34;https://github.com/hadley/ggplot2/wiki/Why-use-ggplot2&#34;&gt;一堆理由&lt;/a&gt;让我们说服自己，我想再补充一点，Hadley
-Wickham是学医出身的，做为学生物出身的人有什么理由不支持呢:)&lt;/p&gt;
-
-&lt;p&gt;ggplot2基本要素&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;数据（Data）和映射（Mapping）&lt;/li&gt;
-&lt;li&gt;几何对象（Geometric）&lt;/li&gt;
-&lt;li&gt;标尺（Scale）&lt;/li&gt;
-&lt;li&gt;统计变换（Statistics）&lt;/li&gt;
-&lt;li&gt;坐标系统（Coordinante）&lt;/li&gt;
-&lt;li&gt;图层（Layer）&lt;/li&gt;
-&lt;li&gt;分面（Facet）&lt;/li&gt;
-&lt;li&gt;主题（Theme）&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;这里将从这些基本要素对ggplot2进行介绍。&lt;/p&gt;
-
-&lt;h3 id=&#34;数据-data-和映射-mapping:c38c63fac86d2290b6bc01da39216614&#34;&gt;数据（Data）和映射（Mapping)&lt;/h3&gt;
-
-&lt;p&gt;下面以一份钻石的数据为例，这份数据非常大，随机取一个子集来画图。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;require(ggplot2)
-data(diamonds)
-set.seed(42)
-small &amp;lt;- diamonds[sample(nrow(diamonds), 1000), ]
-head(small)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;##       carat       cut color clarity depth table price    x    y    z
-## 49345  0.71 Very Good     H     SI1  62.5    60  2096 5.68 5.75 3.57
-## 50545  0.79   Premium     H     SI1  61.8    59  2275 5.97 5.91 3.67
-## 15434  1.03     Ideal     F     SI1  62.4    57  6178 6.48 6.44 4.03
-## 44792  0.50     Ideal     E     VS2  62.2    54  1624 5.08 5.11 3.17
-## 34614  0.27     Ideal     E     VS1  61.6    56   470 4.14 4.17 2.56
-## 27998  0.30   Premium     E     VS2  61.7    58   658 4.32 4.34 2.67
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;summary(small)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;##      carat              cut      color      clarity        depth     
-##  Min.   :0.220   Fair     : 28   D:121   SI1    :258   Min.   :55.2  
-##  1st Qu.:0.400   Good     : 88   E:186   VS2    :231   1st Qu.:61.0  
-##  Median :0.710   Very Good:227   F:164   SI2    :175   Median :61.8  
-##  Mean   :0.819   Premium  :257   G:216   VS1    :141   Mean   :61.7  
-##  3rd Qu.:1.070   Ideal    :400   H:154   VVS2   : 91   3rd Qu.:62.5  
-##  Max.   :2.660                   I:106   VVS1   : 67   Max.   :72.2  
-##                                  J: 53   (Other): 37                 
-##      table          price             x              y       
-##  Min.   :50.1   Min.   :  342   Min.   :3.85   Min.   :3.84  
-##  1st Qu.:56.0   1st Qu.:  990   1st Qu.:4.74   1st Qu.:4.76  
-##  Median :57.0   Median : 2595   Median :5.75   Median :5.78  
-##  Mean   :57.4   Mean   : 4111   Mean   :5.79   Mean   :5.79  
-##  3rd Qu.:59.0   3rd Qu.: 5495   3rd Qu.:6.60   3rd Qu.:6.61  
-##  Max.   :65.0   Max.   :18795   Max.   :8.83   Max.   :8.87  
-##                                                              
-##        z       
-##  Min.   :2.33  
-##  1st Qu.:2.92  
-##  Median :3.55  
-##  Mean   :3.57  
-##  3rd Qu.:4.07  
-##  Max.   :5.58  
-## 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;画图实际上是把数据中的变量映射到图形属性上。以克拉(carat)数为X轴变量，价格(price)为Y轴变量。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;p &amp;lt;- ggplot(data = small, mapping = aes(x = carat, y = price))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;上面这行代码把数据映射XY坐标轴上，需要告诉ggplot2，这些数据要映射成什么样的几何对象，下面以散点为例：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;p + geom_point()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;几何对象将在下面的小节介绍，这一节，关注的是数据和图形属性之间的映射。&lt;/p&gt;
-
-&lt;p&gt;如果想将切工（cut）映射到形状属性。只需要：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;p &amp;lt;- ggplot(data=small, mapping=aes(x=carat, y=price, shape=cut))
-p+geom_point()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;再比如我想将钻石的颜色（color）映射颜色属性：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;p &amp;lt;- ggplot(data=small, mapping=aes(x=carat, y=price, shape=cut, colour=color))
-p+geom_point()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;几何对象-geometric:c38c63fac86d2290b6bc01da39216614&#34;&gt;几何对象（Geometric）&lt;/h3&gt;
-
-&lt;p&gt;在上面的例子中，各种属性映射由ggplot函数执行，只需要加一个图层，使用geom_point()告诉ggplot要画散点，于是所有的属性都映射到散点上。&lt;/p&gt;
-
-&lt;p&gt;geom_point()完成的就是几何对象的映射，ggplot2提供了各种几何对象映射，如geom_histogram用于直方图，geom_bar用于画柱状图，geom_boxplot用于画箱式图等等。&lt;/p&gt;
-
-&lt;p&gt;不同的几何对象，要求的属性会有些不同，这些属性也可以在几何对象映射时提供，比如上一图，也可以用以下语法来画：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;p &amp;lt;- ggplot(small)
-p+geom_point(aes(x=carat, y=price, shape=cut, colour=color))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ggplot2支持图层，我通常把不同的图层中共用的映射提供给ggplot函数，而某一几何对象才需要的映射参数提供给geom_xxx函数。&lt;/p&gt;
-
-&lt;p&gt;这一小节我们来看一下各种常用的几何对象。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;直方图&lt;/strong&gt; 直方图最容易，提供一个x变量，画出数据的分布。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_histogram(aes(x=price))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig4.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;同样可以根据另外的变量给它填充颜色，比如按不同的切工：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_histogram(aes(x=price, fill=cut))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig5.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;也可以将其分开，side-by-side地画直方图。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_histogram(aes(x=price, fill=cut), position=&amp;quot;dodge&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig6.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;还可以使用position=&amp;ldquo;fill&amp;rdquo;，按照相对比例来画。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_histogram(aes(x=price, fill=cut), position=&amp;quot;fill&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig7.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;柱状图&lt;/strong&gt;
-柱状图非常适合于画分类变量。在这里以透明度（clarity）变量为例。按照不同透明度的钻石的数目画柱状图。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_bar(aes(x=clarity))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig8.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;柱状图两个要素，一个是分类变量，一个是数目，也就是柱子的高度。数目在这里不用提供，因为ggplot2会通过x变量计算各个分类的数目。&lt;/p&gt;
-
-&lt;p&gt;当然你想提供也是可以的，通过stat参数，可以让geom_bar按指定高度画图，比如以下代码：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ggplot()+geom_bar(aes(x=c(LETTERS[1:3]),y=1:3), stat=&amp;quot;identity&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig24.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;柱状图和直方图是很像的，直方图把连续型的数据按照一个个等长的分区（bin）来切分，然后计数，画柱状图。而柱状图是分类数据，按类别计数。我们可以用前面直方图的参数来画side-by-side的柱状图，填充颜色或者按比例画图，它们是高度一致的。&lt;/p&gt;
-
-&lt;p&gt;柱状图是用来表示计数数据的，但在生物界却被经常拿来表示均值，加上误差来表示数据分布，这可以通常图层来实现，我将在图层一节中给出实例。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;密度函数图&lt;/strong&gt;
-说到直方图，就不得不说密度函数图，数据和映射和直方图是一样的，唯一不同的是几何对象，geom_histogram告诉ggplot要画直方图，而geom_density则说我们要画密度函数图，在我们熟悉前面语法的情况下，很容易画出：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_density(aes(x=price, colour=cut))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig9.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_density(aes(x=price,fill=clarity))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig10.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;colour参数指定的是曲线的颜色，而fill是往曲线下面填充颜色。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;箱式图&lt;/strong&gt;
-数据量比较大的时候，用直方图和密度函数图是表示数据分布的好方法，而在数据量较少的时候，比如很多的生物实验，很多时候大家都是使用柱状图+errorbar的形式来表示，不过这种方法的信息量非常低，被&lt;a href=&#34;http://guangchuangyu.github.io/2014/03/boxplot/&#34;&gt;Nature Methods吐槽&lt;/a&gt;，这种情况推荐使用boxplot。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_boxplot(aes(x=cut, y=price,fill=color))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;geom_boxplot将数据映射到箱式图上，上面的代码，我们应该很熟悉了，按切工(cut)分类，对价格(price)变量画箱式图，再分开按照color变量填充颜色。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig11.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;ggplot2提供了很多的geom_xxx函数，可以满足我们对各种图形绘制的需求。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;geom_abline     geom_area   
-geom_bar        geom_bin2d
-geom_blank      geom_boxplot    
-geom_contour    geom_crossbar
-geom_density    geom_density2d  
-geom_dotplot    geom_errorbar
-geom_errorbarh  geom_freqpoly   
-geom_hex        geom_histogram
-geom_hline      geom_jitter     
-geom_line       geom_linerange
-geom_map        geom_path   
-geom_point      geom_pointrange
-geom_polygon    geom_quantile   
-geom_raster     geom_rect
-geom_ribbon     geom_rug    
-geom_segment    geom_smooth
-geom_step       geom_text   
-geom_tile       geom_violin
-geom_vline
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;标尺-scale:c38c63fac86d2290b6bc01da39216614&#34;&gt;标尺（Scale）&lt;/h3&gt;
-
-&lt;p&gt;前面我们已经看到了，画图就是在做映射，不管是映射到不同的几何对象上，还是映射各种图形属性。这一小节介绍标尺，在对图形属性进行映射之后，使用标尺可以控制这些属性的显示方式，比如坐标刻度，可能通过标尺，将坐标进行对数变换；比如颜色属性，也可以通过标尺，进行改变。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_point(aes(x=carat, y=price, shape=cut, colour=color))+scale_y_log10()+scale_colour_manual(values=rainbow(7))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig12.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;以数据（Data）和映射（Mapping)一节中所画散点图为例，将Y轴坐标进行log10变换，再自己定义颜色为彩虹色。&lt;/p&gt;
-
-&lt;h3 id=&#34;统计变换-statistics:c38c63fac86d2290b6bc01da39216614&#34;&gt;统计变换（Statistics）&lt;/h3&gt;
-
-&lt;p&gt;统计变换对原始数据进行某种计算，然后在图上表示出来，例如对散点图上加一条回归线。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ggplot(small, aes(x=carat, y=price))+geom_point()+scale_y_log10()+stat_smooth()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig13.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这里就不按颜色、切工来分了，不然ggplot会按不同的分类变量分别做回归，图就很乱，如果我们需要这样做，我们可以使用分面，这个将在后面介绍。&lt;/p&gt;
-
-&lt;p&gt;这里，aes所提供的参数，就通过ggplot提供，而不是提供给geom_point，因为ggplot里的参数，相当于全局变量，geom_point()和stat_smooth()都知道x,y的映射，如果只提供给geom_point()，则相当于是局部变量，geom_point知道这种映射，而stat_smooth不知道，当然你再给stat_smooth也提供x,y的映射，不过共用的映射，还是提供给ggplot好。
-ggplot2提供了多种统计变换方式：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;stat_abline       stat_contour      stat_identity     stat_summary
-stat_bin          stat_density      stat_qq           stat_summary2d
-stat_bin2d        stat_density2d    stat_quantile     stat_summary_hex
-stat_bindot       stat_ecdf         stat_smooth       stat_unique
-stat_binhex       stat_function     stat_spoke        stat_vline
-stat_boxplot      stat_hline        stat_sum          stat_ydensity
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;统计变换是非常重要的功能，我们可以自己写函数，基于原始数据做某种计算，并在图上表现出来，也可以通过它改变geom_xxx函数画图的默认统计参数。
-比如我在&lt;a href=&#34;http://www.sciencedirect.com/science/article/pii/S1874391912007567&#34;&gt;Proteomic investigation of the interactome of FMNL1 in hematopoietic cells unveils a role in calcium-dependent membrane plasticity&lt;/a&gt;的图一中，就把boxplot的中位线替换成了平均值来作图。&lt;/p&gt;
-
-&lt;h3 id=&#34;坐标系统-coordinante:c38c63fac86d2290b6bc01da39216614&#34;&gt;坐标系统（Coordinante）&lt;/h3&gt;
-
-&lt;p&gt;坐标系统控制坐标轴，可以进行变换，例如XY轴翻转，笛卡尔坐标和极坐标转换，以满足我们的各种需求。&lt;/p&gt;
-
-&lt;p&gt;坐标轴翻转由coord_flip()实现&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_bar(aes(x=cut, fill=cut))+coord_flip()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig14.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;而转换成极坐标可以由coord_polar()实现：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_bar(aes(x=factor(1), fill=cut))+coord_polar(theta=&amp;quot;y&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2.fig15.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这也是为什么之前介绍常用图形画法时没有提及饼图的原因，饼图实际上就是柱状图，只不过是使用极坐标而已，柱状图的高度，对应于饼图的弧度，饼图并不推荐，因为人类的眼睛比较弧度的能力比不上比较高度（柱状图）&lt;/p&gt;
-
-&lt;p&gt;还可以画靶心图：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_bar(aes(x=factor(1), fill=cut))+coord_polar()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig16.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;以及风玫瑰图(windrose)&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_bar(aes(x=clarity, fill=cut))+coord_polar()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig17.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;图层-layer:c38c63fac86d2290b6bc01da39216614&#34;&gt;图层（Layer）&lt;/h3&gt;
-
-&lt;p&gt;photoshop流行的原因在于PS
-3.0时引入图层的概念，ggplot的牛B之处在于使用+号来叠加图层，这堪称是泛型编程的典范。
-在前面散点图上，我们已经见识过，加上了一个回归线拟合的图层。&lt;/p&gt;
-
-&lt;p&gt;有了图层的概念，使用ggplot画起图来，就更加得心应手。&lt;/p&gt;
-
-&lt;p&gt;做为图层的一个很好的例子是&lt;a href=&#34;http://guangchuangyu.github.io/2011/08/the-batman-equation/&#34;&gt;蝙蝠侠logo&lt;/a&gt;，batman
-logo由6个函数组成，在下面的例子中，我先画第一个函数，之后再加一个图层画第二个函数，不断重复这一过程，直到六个函数全部画好。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;require(ggplot2)
-f1 &amp;lt;- function(x) {
-    y1 &amp;lt;- 3*sqrt(1-(x/7)^2)
-    y2 &amp;lt;- -3*sqrt(1-(x/7)^2)
-    y &amp;lt;- c(y1,y2)
-    d &amp;lt;- data.frame(x=x,y=y)
-    d &amp;lt;- d[d$y &amp;gt; -3*sqrt(33)/7,]
-    return(d)
-}
- 
-x1 &amp;lt;- c(seq(3, 7, 0.001), seq(-7, -3, 0.001))
-d1 &amp;lt;- f1(x1)
-p1 &amp;lt;- ggplot(d1,aes(x,y)) + geom_point(color=&amp;quot;red&amp;quot;) +xlab(&amp;quot;&amp;quot;) + ylab(&amp;quot;&amp;quot;) + theme_bw()
- 
-x2 &amp;lt;- seq(-4,4, 0.001)
-y2 &amp;lt;- abs(x2/2)-(3*sqrt(33)-7)*x2^2/112-3 + sqrt(1-(abs(abs(x2)-2)-1)^2)
-d2 &amp;lt;- data.frame(x2=x2, y2=y2)
-p2 &amp;lt;- p1 + geom_point(data=d2, aes(x=x2,y=y2), color=&amp;quot;yellow&amp;quot;)
- 
-x3 &amp;lt;- c(seq(0.75,1,0.001), seq(-1,-0.75,0.001))
-y3 &amp;lt;- 9-8*abs(x3)
-d3 &amp;lt;- data.frame(x3=x3, y3=y3)
-p3 &amp;lt;- p2+geom_point(data=d3, aes(x=x3,y=y3), color=&amp;quot;green&amp;quot;)
- 
-x4 &amp;lt;- c(seq(0.5,0.75,0.001), seq(-0.75,-0.5,0.001))
-y4 &amp;lt;- 3*abs(x4)+0.75
-d4 &amp;lt;- data.frame(x4=x4,y4=y4)
-p4 &amp;lt;- p3+geom_point(data=d4, aes(x=x4,y=y4), color=&amp;quot;steelblue&amp;quot;)
-  
-x5 &amp;lt;- seq(-0.5,0.5,0.001)
-y5 &amp;lt;- rep(2.25,length(x5))
-d5 &amp;lt;- data.frame(x5=x5,y5=y5)
-p5 &amp;lt;- p4+geom_point(data=d5, aes(x=x5,y=y5))
- 
-x6 &amp;lt;- c(seq(-3,-1,0.001), seq(1,3,0.001))
-y6 &amp;lt;- 6 * sqrt(10)/7 +
-    (1.5 - 0.5 * abs(x6)) * sqrt(abs(abs(x6)-1)/(abs(x6)-1)) -
-    6 * sqrt(10) * sqrt(4-(abs(x6)-1)^2)/14
-d6 &amp;lt;- data.frame(x6=x6,y6=y6)
-p6 &amp;lt;- p5+geom_point(data=d6,aes(x=x6,y=y6), colour=&amp;quot;blue&amp;quot;)
-
-multiplot &amp;lt;- function (..., plotlist = NULL, cols = 1, layout = NULL) {
-    plots &amp;lt;- c(list(...), plotlist)
-    numPlots = length(plots)
-    if (is.null(layout)) {
-        layout &amp;lt;- matrix(seq(1, cols * ceiling(numPlots/cols)),
-            ncol = cols, nrow = ceiling(numPlots/cols))
-    }
-    if (numPlots == 1) {
-        print(plots[[1]])
-    }
-    else {
-        grid.newpage()
-        pushViewport(viewport(layout = grid.layout(nrow(layout),
-            ncol(layout))))
-        for (i in 1:numPlots) {
-            matchidx &amp;lt;- as.data.frame(which(layout == i, arr.ind = TRUE))
-            print(plots[[i]], vp = viewport(layout.pos.row = matchidx$row,
-                layout.pos.col = matchidx$col))
-        }
-    }
-}
-
-multiplot(p1,p2,p3,p4,p5,p6, cols=2)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_batman.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;分面-facet:c38c63fac86d2290b6bc01da39216614&#34;&gt;分面（Facet）&lt;/h3&gt;
-
-&lt;p&gt;在《&lt;a href=&#34;http://book.douban.com/subject/24527091/&#34;&gt;ggplot2: 数据分析与图形艺术&lt;/a&gt;》一书的翻译中，一开始译者把facet翻译成切片，我在校稿的时候发现了，给他们写信，推荐翻译成分面，如果是slice这个词，翻译成切片倒是很精准，BSD的硬盘分区就叫slice，但facet从词源上看就是小脸的意思，翻译成分面才到位。给他们写信的时候，我还专门查了&lt;a href=&#34;http://dict.cnki.net/&#34;&gt;CNKI翻译助手&lt;/a&gt;，发现这词在信息学中，翻成分面早已是固定的。我感觉这是我对这本书翻译的最大贡献，校稿过程中发现的少量小问题远比不上这个关键词意思的把握上。&lt;/p&gt;
-
-&lt;p&gt;分面可以让我们按照某种给定的条件，对数据进行分组，然后分别画图。
-在统计变换一节中，提到如果按切工分组作回归线，显然图会很乱，有了分面功能，我们可以分别作图。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ggplot(small, aes(x=carat, y=price))+geom_point(aes(colour=cut))+scale_y_log10() +facet_wrap(~cut)+stat_smooth()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig18.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;主题-theme:c38c63fac86d2290b6bc01da39216614&#34;&gt;主题（Theme）&lt;/h3&gt;
-
-&lt;p&gt;通过ggplot画图之后，我们可能还需要对图进行定制，像title, xlab,
-ylab这些高频需要用到的，自不用说，ggplot2提供了ggtitle(),
-xlab()和ylab()来实现。 比如：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;p &amp;lt;- ggplot(small)+geom_boxplot(aes(x=cut, y=price,fill=color))
-p + ggtitle(&amp;quot;Price vs Cut&amp;quot;)+xlab(&amp;quot;Cut&amp;quot;)+ylab(&amp;quot;Price&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2.fig19.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;但是这个远远满足不了需求，我们需要改变字体，字体大小，坐标轴，背景等各种元素，这需要通过theme()函数来完成。&lt;/p&gt;
-
-&lt;p&gt;ggplot2提供一些已经写好的主题，比如&lt;code&gt;theme_grey()&lt;/code&gt;为默认主题，我经常用的&lt;code&gt;theme_bw()&lt;/code&gt;为白色背景的主题，还有&lt;code&gt;theme_classic()&lt;/code&gt;主题，和R的基础画图函数较像。&lt;/p&gt;
-
-&lt;p&gt;别外ggthemes包提供了一些主题可供使用，包括：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;theme_economist theme_economist_white
-theme_wsj       theme_excel
-theme_few       theme_foundation
-theme_igray     theme_solarized
-theme_stata     theme_tufte
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;require(ggthemes)
-p + theme_wsj()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig20.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;在2013年发表的文章&lt;a href=&#34;http://pubs.rsc.org/en/content/articlelanding/2013/mt/c3mt00126a#!divAbstract&#34;&gt;Putative cobalt- and nickel-binding proteins and motifs in Streptococcus pneumoniae&lt;/a&gt;中的图3就是使用&lt;code&gt;theme_stata&lt;/code&gt;来画的。&lt;/p&gt;
-
-&lt;p&gt;至于如何改变这些元素，我觉得我之前&lt;a href=&#34;http://guangchuangyu.github.io/2012/02/draw-chinese-character-jiong-using-ggplot2/&#34;&gt;画囧字的博文&lt;/a&gt;可以做为例子：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;f &amp;lt;- function(x) 1/(x^2-1)
-x &amp;lt;- seq(-3,3, by=0.001)
-y &amp;lt;- f(x)
-d &amp;lt;- data.frame(x=x,y=y)
- 
-p &amp;lt;- ggplot()
-p &amp;lt;- p+geom_rect(fill = &amp;quot;white&amp;quot;,color=&amp;quot;black&amp;quot;,size=3,
-aes(NULL, NULL,xmin=-3, xmax=3,
-ymin=-3,ymax=3, alpha=0.1))
- 
-p &amp;lt;- p + geom_line(data=d, aes(x,y), size=3)+ylim(-3,3)
-theme_null &amp;lt;- function() {
-    theme_bw() %+replace%
-    theme(axis.text.x=element_blank(),
-    axis.text.y=element_blank(),
-    legend.position=&amp;quot;none&amp;quot;,
-    panel.grid.minor=element_blank(),
-    panel.grid.major=element_blank(),
-    panel.background=element_blank(),
-    axis.ticks=element_blank(),
-    panel.border=element_blank())
-}
- 
-p+theme_null()+xlab(&amp;quot;&amp;quot;)+ylab(&amp;quot;&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2012/02/jiong.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;详细的说明，可以参考?theme的帮助文档。&lt;/p&gt;
-
-&lt;h3 id=&#34;二维密度图:c38c63fac86d2290b6bc01da39216614&#34;&gt;二维密度图&lt;/h3&gt;
-
-&lt;p&gt;在这个文档里，为了作图方便，我们使用diamonds数据集的一个子集，如果使用全集，数据量太大，画出来散点就糊了，这种情况可以使用二维密度力来呈现。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ggplot(diamonds, aes(carat, price))+ stat_density2d(aes(fill = ..level..), geom=&amp;quot;polygon&amp;quot;)+ scale_fill_continuous(high=&#39;darkred&#39;,low=&#39;darkgreen&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2.fig22.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;ggplot2实例:c38c63fac86d2290b6bc01da39216614&#34;&gt;ggplot2实例&lt;/h3&gt;
-
-&lt;p&gt;蝴蝶图：详见《Modern Applied Statistics with S-PLUS》第一章。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;theta &amp;lt;- seq(0,24*pi, len=2000)
-radius &amp;lt;- exp(cos(theta)) - 2*cos(4*theta) + sin(theta/12)^5
-dd &amp;lt;- data.frame(x=radius*sin(theta), y=radius*cos(theta))
-ggplot(dd, aes(x, y))+geom_path()+theme_null()+xlab(&amp;quot;&amp;quot;)+ylab(&amp;quot;&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig25.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这个图，我想展示的是对细节的修改上，在画囧字的时候，把画布上的元素都给清楚了，我把它定义为theme_null主题，在这里，直接应用，我们可以形成自己的画图风格，并写出自己的主题函数固定下来。&lt;/p&gt;
-
-&lt;p&gt;最后以生物界中常用的柱状图+误差图为实例，展示ggplot2非常灵活的图层。以我2011年发表的文章&lt;a href=&#34;http://guangchuangyu.github.io/2010/11/phosphoproteome-profile-of-human-lung-cancer-cell-line-a549/&#34;&gt;Phosphoproteome
-profile of human lung cancer cell line
-A549&lt;/a&gt;中的westernblot数据为例。这个实例展示了图层，标尺，主题，注释和各种细节微调多种元素。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Normal &amp;lt;- c(0.83, 0.79, 0.99, 0.69)
-Cancer &amp;lt;- c(0.56, 0.56, 0.64, 0.52)
-m &amp;lt;- c(mean(Normal), mean(Cancer))
-s &amp;lt;- c(sd(Normal), sd(Cancer))
-d &amp;lt;- data.frame(V=c(&amp;quot;Normal&amp;quot;, &amp;quot;Cancer&amp;quot;), mean=m, sd=s)
-d$V &amp;lt;- factor(d$V, levels=c(&amp;quot;Normal&amp;quot;, &amp;quot;Cancer&amp;quot;))
-
-p &amp;lt;- ggplot(d, aes(V, mean, fill=V, width=.5))
-p &amp;lt;- p+geom_errorbar(aes(ymin=mean, ymax=mean+sd, width=.2), 
-                     position=position_dodge(width=.8))
-p &amp;lt;- p + geom_bar(stat=&amp;quot;identity&amp;quot;, position=position_dodge(width=.8), colour=&amp;quot;black&amp;quot;)
-p &amp;lt;- p + scale_fill_manual(values=c(&amp;quot;grey80&amp;quot;, &amp;quot;white&amp;quot;))
-p &amp;lt;- p + theme_bw() +theme(legend.position=&amp;quot;none&amp;quot;) + xlab(&amp;quot;&amp;quot;) + ylab(&amp;quot;&amp;quot;)
-p &amp;lt;- p + theme(axis.text.x = element_text(face=&amp;quot;bold&amp;quot;, size=12), 
-               axis.text.y = element_text(face=&amp;quot;bold&amp;quot;, size=12))
-p &amp;lt;- p+scale_y_continuous(expand=c(0,0), limits=c(0, 1.2), breaks=seq(0, 1.2, by=.2))
-p &amp;lt;- p+geom_segment(aes(x=1, y=.98, xend=1, yend=1.1))
-p &amp;lt;- p+geom_segment(aes(x=2, y=.65, xend=2, yend=1.1))
-p &amp;lt;- p+geom_segment(aes(x=1, y=1.1, xend=2, yend=1.1))
-p &amp;lt;- p + annotate(&amp;quot;text&amp;quot;, x=1.5, y=1.08, label=&amp;quot;*&amp;quot;)
-print(p)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_26.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;更多实例，可以参考我使用&lt;a href=&#34;http://guangchuangyu.github.io/2011/08/ggplot2-version-of-figures-in-25-recipes-for-getting-started-with-r/&#34;&gt;ggplot2实现&lt;25 Recipes for Getting Started with R&gt;一书中的所有图片&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
