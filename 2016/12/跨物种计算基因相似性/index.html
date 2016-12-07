@@ -149,7 +149,7 @@ ga('send', 'pageview');
 <p>Thanks &amp; regards</p>
 </blockquote>
 
-<p>这是Bioconductor support site上的<a href="https://support.bioconductor.org/p/90063/">问题</a>，问的是他想要计算人类和老鼠的直系同源基因通过GO注释来计算语义相似性，问GOSemSim是否支持，这个答应是yes and no。</p>
+<p>这是Bioconductor support site上的<a href="https://support.bioconductor.org/p/90063/">问题</a>，问的是他想要计算人类和老鼠的直系同源基因通过GO注释来计算语义相似性，问GOSemSim是否支持，这个答案是yes and no。</p>
 
 <p>本身是没有直接支持跨物种计算的，GOSemSim最初支持5个物种，后面扩展为20个物种，现在是支持有OrgDb的所有物种，而OrgDb是可以通过AnnotationHub在线获取的，也可以通过AnnotationForge::makeOrgPackage()函数或者是makeOrgPackageFromNCBI()函数构建，所以现在基本上GOSemSim和clusterProfiler都是可以说支持所有有注释的物种，当然没注释的也可以自己注释，通过拿来计算。</p>
 
