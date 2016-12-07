@@ -111,6 +111,58 @@ ga('send', 'pageview');
     <article>
       <header>
         <h1 class="entry-title">
+          <a href="https://guangchuangyu.github.io/cn/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/">在emacs里使用maxima</a>
+        </h1>
+        <p class="meta">May 28, 2005 - 1 minute read - 
+
+        
+        
+        
+        <a class="label" href="https://guangchuangyu.github.io/cn/categories/software/">Software</a>
+        </p>
+
+      </header>
+
+        
+          <p><h2 id="下载imaxima:e6dedd294f68f0284e7032ee31b772ce">下载imaxima   </h2>
+
+<p><a href="http://members3.jcom.home.ne.jp/imaxima/Site/Download%20and%20Install_files/imaxima-imath-0.97a.tar.gz">http://members3.jcom.home.ne.jp/imaxima/Site/Download%20and%20Install_files/imaxima-imath-0.97a.tar.gz</a></p>
+
+<pre><code>./configure
+make
+sudo make install
+</code></pre>
+
+<p>进行安装。
+默认将安装在/usr/local/share/emacs/site-lisp下，在~/.emacs下加入</p>
+
+<pre><code>(load &quot;imaxima&quot;)
+</code></pre>
+
+<p>启动emacs,按M-x,键入imaxima运行maxima 但是进行运算时出错。
+<img src="http://guangchuangyu.github.io/blog_images/2005/05/070902122953.png" alt="" /></p>
+
+<p>需要breqn094包，可从<a href="ftp://ftp.ams.org/pub/tex/breqn.zip">ftp://ftp.ams.org/pub/tex/breqn.zip</a>下载，</p>
+
+<pre><code>cd /usr/share/texmf/tex/latex/
+sudo unzip ~/Downloads/breqn.zip
+sudo texhash
+</code></pre>
+</p>
+
+          
+              <footer>
+                  <a href="https://guangchuangyu.github.io/cn/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/" rel="full-article">Read On &rarr;</a>
+              </footer>
+          
+
+        
+
+    </article>
+    
+    <article>
+      <header>
+        <h1 class="entry-title">
           <a href="https://guangchuangyu.github.io/cn/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/">scau校园网认证</a>
         </h1>
         <p class="meta">Mar 14, 2005 - 1 minute read - 
@@ -322,6 +374,10 @@ DeviceType=0x0, DeviceId=0x0
       
       
       <li class="post">
+        <a href="https://guangchuangyu.github.io/cn/2016/12/%E8%B7%A8%E7%89%A9%E7%A7%8D%E8%AE%A1%E7%AE%97%E5%9F%BA%E5%9B%A0%E7%9B%B8%E4%BC%BC%E6%80%A7/">跨物种计算基因相似性</a>
+      </li>
+      
+      <li class="post">
         <a href="https://guangchuangyu.github.io/cn/2016/12/using-linked-list-to-solve-josephus-problem/">Using Linked List to solve Josephus problem</a>
       </li>
       
@@ -335,10 +391,6 @@ DeviceType=0x0, DeviceId=0x0
       
       <li class="post">
         <a href="https://guangchuangyu.github.io/cn/2016/11/vertical-dendrogram-in-ggtree/">vertical dendrogram in ggtree</a>
-      </li>
-      
-      <li class="post">
-        <a href="https://guangchuangyu.github.io/cn/2016/11/buildgomap/">buildGOmap</a>
       </li>
       
     </ul>

@@ -6,8 +6,32 @@
     <description>Recent content in R on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 03 Dec 2016 00:53:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 07 Dec 2016 00:53:00 +0800</lastBuildDate>
     <atom:link href="https://guangchuangyu.github.io/cn/categories/r/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>跨物种计算基因相似性</title>
+      <link>https://guangchuangyu.github.io/cn/2016/12/%E8%B7%A8%E7%89%A9%E7%A7%8D%E8%AE%A1%E7%AE%97%E5%9F%BA%E5%9B%A0%E7%9B%B8%E4%BC%BC%E6%80%A7/</link>
+      <pubDate>Wed, 07 Dec 2016 00:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2016/12/%E8%B7%A8%E7%89%A9%E7%A7%8D%E8%AE%A1%E7%AE%97%E5%9F%BA%E5%9B%A0%E7%9B%B8%E4%BC%BC%E6%80%A7/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Hi,&lt;/p&gt;
+
+&lt;p&gt;I know this question has been asked before a long time ago and I don&amp;rsquo;t see an answer of that question in the mailing list or in the vignette of GOsemsim package. So I was wondering what is the easiest possible way of calculating GO semantic similarity value for orthologus gene pairs between two species using the above R package or any other package you know of. I am not doing this for less annotated species I need to calculate that for orthologus genes between Human and Mouse (both of which are well annotated IMHO). So I would much appreciate it if anyone who has already done this before can point me to a resource which already has pre-calculated semantic similarity values for Mouse and Human orthologues or has inbuilt code to do that.&lt;/p&gt;
+
+&lt;p&gt;Thanks &amp;amp; regards&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这是Bioconductor support site上的&lt;a href=&#34;https://support.bioconductor.org/p/90063/&#34;&gt;问题&lt;/a&gt;，问的是他想要计算人类和老鼠的直系同源基因通过GO注释来计算语义相似性，问GOSemSim是否支持，这个答应是yes and no。&lt;/p&gt;
+
+&lt;p&gt;本身是没有直接支持跨物种计算的，GOSemSim最初支持5个物种，后面扩展为20个物种，现在是支持有OrgDb的所有物种，而OrgDb是可以通过AnnotationHub在线获取的，也可以通过AnnotationForge::makeOrgPackage()函数或者是makeOrgPackageFromNCBI()函数构建，所以现在基本上GOSemSim和clusterProfiler都是可以说支持所有有注释的物种，当然没注释的也可以自己注释，通过拿来计算。&lt;/p&gt;
+
+&lt;p&gt;GOSemSim默认是支持单一物种，首先通过godata()函数把OrgDb转化为GOSemSim所需要的注释，包括基因映射到GO以及GOID的信息含量，然后这个背景注释传给geneSim/mgeneSim函数，godata()只支持传入单一OrgDb，所以这里只能是支持单一物种，要跨物种也不是不可能，我再写一个merge函数，把godata()输出的GOSemSimDATA对象合并起来，比如一个人的，一个老鼠的，merge完之后，你还可以再merge，这样就可以有多个物种的注释在里面。就可以传给geneSim/mgeneSim来计算了，所有的函数都不需要做出改变，只需要添加这一功能就好。对于使用GO图结构的算法，这没什么问题，但对于使用信息含量的算法，merge的过程，可能需要对信息含量重新计算/处理，这也是我迟迟没写扩展的原因，因为没时间研究这些-,-&lt;/p&gt;
+
+&lt;p&gt;虽然直接是不支持的，至少目前是这样（以后可以真会加入像上面提到的功能），但稍微变通一下，就知道其实是可以的，因为你可以使用图结构算法（不涉及信息含量的计算），然后用mgoSim来计算啊，只不过你需要自己做基因到GO的映射而已，你拿一人的基因，对应一个GOID向量，一个老鼠基因，对应另一个GOID向量，做为输入给mgoSim，就可以算出来这两个基因的相似性，简单的wrapper函数，就可以干这个事情了。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>中空的环形树</title>
