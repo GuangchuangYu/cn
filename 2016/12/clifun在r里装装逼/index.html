@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
+
+  
+  <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <title>clifun:在R里装装逼</title>
+
+  
+  
+  <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/hugo-octopress.css">
+
+  
+  
+
+  
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  
+  <link href="https://guangchuangyu.github.io/cn/favicon.png" rel="icon">
+
+  
+  
+  
+
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <meta name="author" content="Guangchuang Yu">
+
+  
+  <meta name="generator" content="Hugo 0.15" />
+
+  
+  
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-77901140-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+</head>
+<body>
+
+
+<header role="banner"><hgroup>
+  
+  <h1><a href="https://guangchuangyu.github.io/cn/">Guangchuang Yu</a></h1>
+    <h2>a senior-in-age-but-not-senior-in-knowledge bioinformatician</h2>
+</hgroup></header>
+
+
+<nav role="navigation">
+
+<ul class="main-navigation">
+  
+  
+    
+      <li><a href="https://guangchuangyu.github.io/cn/" target="_blank" title="Blog">Blog</a></li>
+    
+  
+    
+      <li><a href="https://guangchuangyu.github.io/resume" target="_blank" title="Resume">Resume</a></li>
+    
+  
+    
+      <li><a href="https://guangchuangyu.github.io/cn/douban" target="_blank" title="Douban">Douban</a></li>
+    
+  
+    
+      <li><a href="https://guangchuangyu.github.io/cn/archive" target="_blank" title="Archive">Archive</a></li>
+    
+  
+</ul>
+
+
+<ul class="subscription">
+  <a href="https://guangchuangyu.github.io/cn/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss-square fa-lg"></i></a>
+
+  
+  
+
+</ul>
+
+
+</nav>
+
+
+<div id="main">
+  <div id="content">
+    <div>
+      <article class="hentry" role="article">
+        <header>
+          <h1 class="entry-title">
+            clifun:在R里装装逼 
+          </h1>
+          <p class="meta">Dec 13, 2016 - 1 minute read - 
+
+          
+
+          
+          
+          <a class="label" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+          </p>
+        </header>
+        <div class="entry-content">
+          
+          
+          
+
+	  
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+<a class="a2a_dd" href="//www.addtoany.com/share"></a>
+<a class="a2a_button_facebook"></a>
+<a class="a2a_button_twitter"></a>
+<a class="a2a_button_google_plus"></a>
+<a class="a2a_button_pinterest"></a>
+<a class="a2a_button_reddit"></a>
+<a class="a2a_button_sina_weibo"></a>
+<a class="a2a_button_wechat"></a>
+<a class="a2a_button_douban"></a>
+</div>
+<script async src="//static.addtoany.com/menu/page.js"></script>
+
+<br>
+
+    <p>天天活在命令行下，需要一些有趣的小命令来调节一下枯燥的生活（其实是需要装装逼）。</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/R/clifun/Screen Shot 2016-12-12 at 1.42.00 PM.png" alt="" /></p>
+
+<p>fortune可以随机打印一些「名言」，figlet可以把字母变成ascii图案，而cowsay可以画一只小动物来打印输入的句子，最后是lolcat，让输出变成彩虹色。然后它们的组合，通过管道，让逼格升级。</p>
+
+<p>在R命令行里面呢，fortune有R包，不过名言换成了R社区的「名言」，你可以把fortunes::fortune()加到~/.Rprofile里面，这样每次打开R，都可以随机看到一句「名言」，不过看久了，也会厌烦，因为大量的话都是在吹R有多牛逼、用户有多傻。</p>
+
+<p>&lsquo;They&rsquo; did write documentation that told you that Perl was needed, but &lsquo;they&rsquo; can&rsquo;t read it for you.
+   &ndash; Brian D. Ripley
+      R-help (February 2001</p>
+
+<p>像这种吐槽用户不看文档之类的，我还是挺赞同的😜</p>
+
+<p>cowsay也有个相应的R包，就像fortune是不一样的fortune一样，这个cowsay和命令行的cowsay也是不一样的，行为差不多，但收集的动物是不一样的。</p>
+
+<p>最近我给这个包加了个小恶魔，BSD的logo，我一直比较喜欢。</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/R/clifun/2016-12-13 09.44.53.png" alt="" /></p>
+
+<p>比如你每次打开R，可以让R显示一只小动物在讲一句「名言」：</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/R/clifun/Screen Shot 2016-12-13 at 7.34.13 PM.png" alt="" /></p>
+
+<p>但对于用figlet和lolcat装逼的人来讲，总还是觉得少了点什么。</p>
+
+<p>所以呢，我写了两个wrapper functions，打包在<a href="https://github.com/GuangchuangYu/clifun">clifun</a>，分别是figlet和lolcat函数。</p>
+
+<p><img src="https://raw.githubusercontent.com/GuangchuangYu/clifun/master/clifun.png" alt="" /></p>
+
+<p>于是大家可以在R里装装逼了，特别是你可以加入类似于下面的命令：
+clifun::lolcat(cowsay::say(clifun::figlet(&ldquo;YGC&rdquo;), by=&lsquo;fish&rsquo;, type=&lsquo;string&rsquo;))</p>
+
+<p>到~/.Rprofile里面。</p>
+
+<p>这样子，每次你打开R：</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/R/clifun/Screen Shot 2016-12-13 at 7.55.48 PM.png" alt="" /></p>
+
+<p>不一样的欢迎消息，不一样的逼格。</p>
+
+
+ 
+        </div>
+        
+
+<footer>
+  <p class="meta">
+    <span class="byline author vcard">Posted by <span class="fn">Guangchuang Yu</span></span>
+    
+    <time>Dec 13, 2016</time>
+    <span class="categories">
+      Tags:
+        
+        
+          <a class="category" href="https://guangchuangyu.github.io/cn/tags/clifun">clifun</a>  <a class="category" href="https://guangchuangyu.github.io/cn/tags/lolcat">lolcat</a>  <a class="category" href="https://guangchuangyu.github.io/cn/tags/figlet">figlet</a>  <a class="category" href="https://guangchuangyu.github.io/cn/tags/cowsay">cowsay</a>  
+        
+    </span>
+  </p>
+
+  
+  
+
+  
+
+  <p class="meta">
+    
+        <a class="basic-alignment left" href="https://guangchuangyu.github.io/cn/2016/12/%E8%B7%A8%E7%89%A9%E7%A7%8D%E8%AE%A1%E7%AE%97%E5%9F%BA%E5%9B%A0%E7%9B%B8%E4%BC%BC%E6%80%A7/" title="跨物种计算基因相似性">跨物种计算基因相似性</a>
+    
+
+    
+  </p>
+
+  
+  <img src="//guangchuangyu.github.io/blog_images/biobabble.jpg" width="250" height="250" />
+  <br>关注Y叔微信公众账号biobabble
+
+  
+  
+<div class="ds-thread" data-thread-key= clifun:在R里装装逼 data-title= clifun:在R里装装逼 data-url= https://guangchuangyu.github.io/cn/2016/12/clifun%E5%9C%A8r%E9%87%8C%E8%A3%85%E8%A3%85%E9%80%BC/ ></div>
+
+
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"ygc-hku"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+
+  
+  
+</footer>
+
+      </article>
+    </div>
+    
+
+
+<aside class="sidebar thirds">
+  <section class="first odd">
+    
+
+    <p>
+      
+      
+      <script src="//tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+      关注Y叔微信公众账号biobabble<br>
+      <img src="//guangchuangyu.github.io/blog_images/biobabble.jpg" width="250" height="250" />
+      <wb:follow-button uid="2185528715" type="red_3" width="100%" height="24" ></wb:follow-button>
+
+      
+
+    
+  </section>
+
+
+
+  
+
+
+
+    
+     
+  
+  
+  <section class="even">
+    <h1>Recent Posts</h1>
+
+    
+    <ul id="recent_posts">
+      
+      
+        
+      
+      
+      <li class="post">
+        <a href="https://guangchuangyu.github.io/cn/2016/12/clifun%E5%9C%A8r%E9%87%8C%E8%A3%85%E8%A3%85%E9%80%BC/">clifun:在R里装装逼</a>
+      </li>
+      
+      <li class="post">
+        <a href="https://guangchuangyu.github.io/cn/2016/12/%E8%B7%A8%E7%89%A9%E7%A7%8D%E8%AE%A1%E7%AE%97%E5%9F%BA%E5%9B%A0%E7%9B%B8%E4%BC%BC%E6%80%A7/">跨物种计算基因相似性</a>
+      </li>
+      
+      <li class="post">
+        <a href="https://guangchuangyu.github.io/cn/2016/12/using-linked-list-to-solve-josephus-problem/">Using Linked List to solve Josephus problem</a>
+      </li>
+      
+      <li class="post">
+        <a href="https://guangchuangyu.github.io/cn/2016/12/%E4%B8%AD%E7%A9%BA%E7%9A%84%E7%8E%AF%E5%BD%A2%E6%A0%91/">中空的环形树</a>
+      </li>
+      
+      <li class="post">
+        <a href="https://guangchuangyu.github.io/cn/2016/11/%E6%97%A0%E4%B8%AD%E7%94%9F%E6%9C%89windows%E7%89%88r%E5%8C%85/">无中生有windows版R包</a>
+      </li>
+      
+    </ul>
+  </section>
+
+  
+  
+  <section class="even">
+    <h1>Book to Read</h1>
+    Analysis of Phylogenetic and Evolution with R<br>
+    Inferring phylogenies<br>
+    Statistical Models: Theory and Practice<br>
+    Algorithms on Strings, Trees, and Sequences
+    <h1>Links</h1>
+    <a href="http://www.biostathandbook.com/">Handbook of Biological Statistics</a><br>
+    <a href="http://r-bloggers.com/">R-bloggers</a>
+    <h1>友邻</h1>
+    <a href="http://azaleasays.com/">azalea</a><br>
+    <a href="http://blog.shenwei.me/">shenwei</a><br>
+    <a href="http://ztpala.com/">ztpala</a>
+
+  </section>
+
+
+
+
+  <script type="text/javascript" src="//rf.revolvermaps.com/0/0/7.js?i=5qpvv5zz7fp&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;sx=0" async="async"></script>
+
+  <script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'GuangchuangYu/Bioinformatics'
+  };
+</script>
+  <script src="//sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+  
+</aside>
+
+  </div>
+</div>
+
+
+
+
+<footer role="contentinfo">
+  <p>Copyright &copy; 2016 Guangchuang Yu - <a href="https://guangchuangyu.github.io/cn/license/">License</a> - 
+  <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
+</p>
+
+</footer>
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/zenburn.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script type="text/javascript"
+  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+<script type="text/javascript" src="//w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "d135f460-3fc5-4802-8169-bd08e4734a09", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+
+
+</body>
+</html>
+
