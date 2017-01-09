@@ -14,7 +14,7 @@
   <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
   
-  <title>enrichment analysis</title>
+  <title>什么是T 检验</title>
 
   
   
@@ -109,9 +109,9 @@ ga('send', 'pageview');
       <article class="hentry" role="article">
         <header>
           <h1 class="entry-title">
-            enrichment analysis 
+            什么是T 检验 
           </h1>
-          <p class="meta">Apr 28, 2012 - 2 minute read - 
+          <p class="meta">May 29, 2012 - 1 minute read - 
 
           
 
@@ -141,102 +141,53 @@ ga('send', 'pageview');
 
 <br>
 
-    <p>经常看到一些饼图，描述某些事物的组成，比如说有钱人的学历分布，然后我们可以看到高学历所占比例并不高，根据这个比例下结论通常是错的，这些比例说明不了问题，如果把各种学历在总体人口中的分布做为背景进行考虑的话，你就会发现学历还是有点用的。
-当我们用组学测定了一大堆分子之后，我们希望站在更高的角度去看这些分子和那些生物学过程相关。那么通常各种注释，对这些基因/蛋白进行分类，那么从分类的比例上，是不能草率下结论，正如上面有钱人学历分布的例子一样。我们需要把总体的分布考虑进去。
-和某个注释/分类是否有相关性，把基因分成属于这一类，和不属于这一类两种，这就好比经典统计学中的白球和黑球的抽样问题。也可以列一个２x２的表，进行独立性分析。
-以文章<a href="http://cancerres.aacrjournals.org/content/62/16/4722">Gene Expression in Ovarian Cancer Reflects Both Morphology and Biological Behavior, Distinguishing Clear Cell from Other Poor-Prognosis Ovarian Carcinomas</a>所鉴定的差异基因为例。</p>
+    <p>跟某同学讲了T test之后，整理一下。</p>
 
-<p>73个差异基因的Symbol，我把它转为 entrezgene
-ID得到57个（漏掉的不管它，只是做为一个例子）:</p>
+<p>很多的检验和我们的直觉是一致的，前阵子在一个群里，有管理学院的人问说想看两个样本是不是来自于同一个分布，我叫他画两个CDF，一看就知道。对方说不要看图，我就让他用Kolmogorov-Smirnov
+Tests。我自己搜了一下，发现ks.test检验的就是拿两个CDF的距离做为统计量，虽然计算很复杂，但是和intuition那是相当一致啊。</p>
 
-<pre><code>&gt; eg
- [1] &quot;7980&quot;   &quot;3081&quot;   &quot;3162&quot;   &quot;3059&quot;   &quot;1545&quot;   &quot;1917&quot;   &quot;6696&quot;   &quot;5797&quot;  
- [9] &quot;6648&quot;   &quot;10397&quot;  &quot;6781&quot;   &quot;5817&quot;   &quot;1282&quot;   &quot;1284&quot;   &quot;6948&quot;   &quot;7077&quot;  
-[17] &quot;5744&quot;   &quot;8566&quot;   &quot;1368&quot;   &quot;1474&quot;   &quot;11015&quot;  &quot;3306&quot;   &quot;728441&quot; &quot;2678&quot;  
-[25] &quot;4286&quot;   &quot;3929&quot;   &quot;5095&quot;   &quot;2064&quot;   &quot;1428&quot;   &quot;6590&quot;   &quot;3569&quot;   &quot;2745&quot;  
-[33] &quot;3912&quot;   &quot;978&quot;    &quot;5950&quot;   &quot;6539&quot;   &quot;9445&quot;   &quot;5004&quot;   &quot;9971&quot;   &quot;7453&quot;  
-[41] &quot;2719&quot;   &quot;1410&quot;   &quot;1311&quot;   &quot;4653&quot;   &quot;4162&quot;   &quot;5358&quot;   &quot;3484&quot;   &quot;3486&quot;  
-[49] &quot;2261&quot;   &quot;307&quot;    &quot;1672&quot;   &quot;4837&quot;   &quot;22795&quot;  &quot;486&quot;    &quot;4118&quot;   &quot;3915&quot;  
-[57] &quot;10140&quot;
-</code></pre>
+<p>最简单也最常用的，莫过于T检验，用我们的直觉就可以理解了，但是我发现不理解还有用错的人也挺多的。</p>
 
-<p>下面测试一下这些基因和化学刺激响应的相关性。</p>
+<p>我们要看一个样本的均值是不是等于0，最naive的办法就是看样本的均值和0差别多大。</p>
 
-<pre><code>goid &lt;- “GO:0042221” # response to chemical stimulus
-</code></pre>
+<p><img src="https://guangchuangyu.github.io/blog_images/2012/05/distribution.png" alt="" /></p>
 
-<p>那么做为背景，总体基因为N，属于“化学刺激响应”这个分类的基因有M个。</p>
+<p>这个比较之所以naive，因为没有考虑到数据的分布，从上图的两个populations来看，它们的均值都是0，从绿色的分布中抽到一个均值为3的样本，概率并不小，但是从红色的分布中得到这样一个样本，那就是小概率事件。所以不能单纯比较均值，而是要看均值的分布，从上面的populations上看，和数据的离散程度有关。
+我们随机抽取100个sample，得到以下的均值分布：</p>
 
-<pre><code>allgeneInCategory &lt;- unique(get(goid, org.Hs.egGO2ALLEGS))
-M &lt;- length(allgeneInCategory)
-N &lt;- length(mappedkeys(org.Hs.egGO))
-</code></pre>
+<p><img src="https://guangchuangyu.github.io/blog_images/2012/05/meandist2.png" alt="" /></p>
 
-<p>样本的大小是n，属于“化学刺激响应”这个分类的基因有k个。</p>
+<p>我们需要对均值的离散程度做penalty，那么就可以考虑这样一个统计量mean(x)/SEM,
+SEM代表standard error of the mean，那么这个统计量比单纯的均值要科学得多。这个统计量，就是学生氏所定义的t。</p>
 
-<pre><code>n &lt;- length(eg)
-k &lt;- sum(eg %in% allgeneInCategory)
-</code></pre>
+<p>如果没有大量的样本，是没办法估计SEM的，但是从上面两个图上看，样本间均值的标准误SEM，和总体数据的标准误是正相关的。而总体的标准误可以用样本的标准误,sd(x),来估计。如果我们考虑最简单的形式呢？定义统计量mean(x)/sd(x)。</p>
 
-<p>白球黑球问题，最简单的莫过于用二项式分布，从总体上看，要拿到一个基因属于“化学刺激响应”这个分类的概率是M/N。那么现在抽了n个基因，里面有k个基于这个分类，p值为：</p>
+<p>那么，请等一下，我们还需要考虑到样本量的影响，如果sample
+size没有影响，那么我们就不需要采集大样本了。从我们的直觉上看，肯定是样本量越大，对总体参数的估计越准确了。</p>
 
-<pre><code>&gt; 1-sum(sapply(0:k-1, function(i) choose(n,i) * (M/N)^i * (1-M/N)^(n-i)))
-[1] 8.561432e-10
-</code></pre>
+<p><img src="https://guangchuangyu.github.io/blog_images/2012/05/meandist.png" alt="" /></p>
 
-<p>二项式分布，是有放回的抽样，你可以多次抽到同一基因，这是不符合的。所以这个计算只能说是做为近似的估计值，无放回的抽样，符合超几何分布，通过超几何分布的计算，p值为：</p>
+<p>从图上看，还是和直觉很一致。sample
+size越大，分布越compact，对总体均值的估计也就越准确。那么就需要使用sample
+size进行加权，把统计量修改为mean(x)/sd(x) * f(n)，其中n为sample size。</p>
 
-<pre><code>&gt; phyper(k-1,M, N-M, n, lower.tail=FALSE)
-[1] 7.879194e-10
-</code></pre>
+<p>我们可以想像，学生氏当年try了几种形式的f(n)，发现sqrt(n)效果最好。于是他就定义了统计量:
+t = mean(x)/(sd(x)/sqrt(n))。
+sqrt(n)效果好，因为sd(x)/sqrt(n)正好是对样本间均值标准误SEM的估计。</p>
 
-<p>如果用2x2表做独立性分析，表如下：</p>
+<p>我们又可以想像，学生氏当年收集了很多个样本，计算了多个t值，发现这些t值的分布是有规律的，有点像正态分布，学生氏把它定义为t分布，利用t分布的probability density function，就可以计算p-value啦。</p>
 
-<pre><code>&gt; d &lt;- data.frame(gene.not.interest=c(M-k, N-M-n+k), gene.in.interest=c(k, n-k))
-&gt; row.names(d) &lt;- c(&quot;In_category&quot;, &quot;not_in_category&quot;)
-&gt; d
-                gene.not.interest gene.in.interest
-In_category                  2613               28
-not_in_category             15310               29
-</code></pre>
+<p><img src="https://guangchuangyu.github.io/blog_images/2012/05/t.png" alt="" /></p>
 
-<p>这个也有很多方法可以做检验，经典的有卡方检验和fisher&rsquo;s exact test。
-如果用卡方检验来做。</p>
+<p>上图就是从标准正态分布里抽取100个样本，所计算的t值分布。</p>
 
-<pre><code>&gt; chisq.test(d, )
+<p>很多人上课学不懂，我觉得是因为一上来告诉你t怎么算，但是没让你理解SEM，SEM是理解t值计算的关键。</p>
 
-    Pearson's Chi-squared test with Yates' continuity correction
+<p>算完t之后，一句话，符合t分布，然后就是查表看p值,或者让计算机算，太抽象，这世界本来没有t分布，是学生氏定义了t统计量，并发现符合某分布，把它定义为t分布，有计算机做simulation，重现这个过程，就不抽象了，也就好理解了。</p>
 
-data:  d 
-X-squared = 51.3849, df = 1, p-value = 7.592e-13
-</code></pre>
+<p>至于两样本，如果是paired的话，那就是paired之间相减，用差值做单样本t检验。如果不是成对，那就是t=(mean(x1)-mean(x2))/SEDM.</p>
 
-<p>对于２x２表来说，卡方检验通常也只能做为近似估计值，特别是当sample
-size或expected all count比较小的时候，计算并不准确。 fisher&rsquo;s exact
-test，名副其实，真的就比较exact，因为它使用的是超几何分布来计算p值。这也是为什么fisher&rsquo;s
-exact test和超几何模式计算的p-值是一样的，</p>
-
-<pre><code>&gt; fisher.test(d)
-
-    Fisher's Exact Test for Count Data
-
-data:  d 
-p-value = 7.879e-10
-alternative hypothesis: true odds ratio is not equal to 1 
-95 percent confidence interval:
- 0.1013210 0.3089718 
-sample estimates:
-odds ratio 
- 0.1767937 
-</code></pre>
-
-<p>通常各种软件做GO富集性分析，都是使用超几何分布进行计算。
-IPA软件则是使用fisher&rsquo;s exact test来检验基因在某个网络中是否富集。
-从这个例子上看，chi-squared
-test的表现最差，binomial做为p值的近似估计还是不错的，因为计算较为简单。
-富集性分析应用范围非常广，从<a href="http://bioconductor.org/packages/devel/bioc/html/DOSE.html">Disease Ontology</a>,
-<a href="http://bioconductor.org/packages/devel/bioc/html/clusterProfiler.html">Gene Ontology, KEGG</a>,
-到<a href="http://bioconductor.org/packages/devel/bioc/html/ReactomePA.html">Reactome Pathway</a>等等。</p>
+<p>其中SEDM代表standard error of difference of means，这里有一个pool与否的问题，SEDM看上去稍微复杂了一点点，但是basic idea是一样的，非常好理解。</p>
 
 
  
@@ -247,12 +198,12 @@ test的表现最差，binomial做为p值的近似估计还是不错的，因为�
   <p class="meta">
     <span class="byline author vcard">Posted by <span class="fn">Guangchuang Yu</span></span>
     
-    <time>Apr 28, 2012</time>
+    <time>May 29, 2012</time>
     <span class="categories">
       Tags:
         
         
-          <a class="category" href="https://guangchuangyu.github.io/cn/tags/hypergeometric">hypergeometric</a>  
+          <a class="category" href="https://guangchuangyu.github.io/cn/tags/test">test</a>  
         
     </span>
   </p>
@@ -264,11 +215,11 @@ test的表现最差，binomial做为p值的近似估计还是不错的，因为�
 
   <p class="meta">
     
-        <a class="basic-alignment left" href="https://guangchuangyu.github.io/cn/2012/04/support-vector-machine/" title="Support Vector Machine">Support Vector Machine</a>
+        <a class="basic-alignment left" href="https://guangchuangyu.github.io/cn/2012/04/enrichment-analysis/" title="enrichment analysis">enrichment analysis</a>
     
 
     
-      <a class="basic-alignment right" href="https://guangchuangyu.github.io/cn/2012/05/%E4%BB%80%E4%B9%88%E6%98%AFt-%E6%A3%80%E9%AA%8C/" title="什么是T 检验">什么是T 检验</a>
+      <a class="basic-alignment right" href="https://guangchuangyu.github.io/cn/2013/01/talen%E5%9F%BA%E5%9B%A0%E7%BC%96%E8%BE%91/" title="TALEN基因编辑">TALEN基因编辑</a>
     
   </p>
 
@@ -278,7 +229,7 @@ test的表现最差，binomial做为p值的近似估计还是不错的，因为�
 
   
   
-<div class="ds-thread" data-thread-key= enrichment&#32;analysis data-title= enrichment&#32;analysis data-url= https://guangchuangyu.github.io/cn/2012/04/enrichment-analysis/ ></div>
+<div class="ds-thread" data-thread-key= 什么是T&#32;检验 data-title= 什么是T&#32;检验 data-url= https://guangchuangyu.github.io/cn/2012/05/%E4%BB%80%E4%B9%88%E6%98%AFt-%E6%A3%80%E9%AA%8C/ ></div>
 
 
 <script type="text/javascript">

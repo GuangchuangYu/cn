@@ -485,7 +485,7 @@ ggplot(dd, aes(x, y))+geom_path()+theme_null()+xlab(&amp;quot;&amp;quot;)+ylab(&
 
 &lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig25.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;这个图，我想展示的是对细节的修改上，在画囧字的时候，把画布上的元素都给清楚了，我把它定义为theme_null主题，在这里，直接应用，我们可以形成自己的画图风格，并写出自己的主题函数固定下来。&lt;/p&gt;
+&lt;p&gt;这个图，我想展示的是对细节的修改上，在画囧字的时候，把画布上的元素都给清除了，我把它定义为theme_null主题，在这里，直接应用，我们可以形成自己的画图风格，并写出自己的主题函数固定下来。&lt;/p&gt;
 
 &lt;p&gt;最后以生物界中常用的柱状图+误差图为实例，展示ggplot2非常灵活的图层。以我2011年发表的文章&lt;a href=&#34;http://guangchuangyu.github.io/2010/11/phosphoproteome-profile-of-human-lung-cancer-cell-line-a549/&#34;&gt;Phosphoproteome
 profile of human lung cancer cell line

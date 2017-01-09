@@ -111,202 +111,61 @@ ga('send', 'pageview');
     <article>
       <header>
         <h1 class="entry-title">
-          <a href="https://guangchuangyu.github.io/cn/2008/09/%E5%8D%9A%E5%AE%A2%E8%BD%ACwordpress/">博客转WordPress</a>
+          <a href="https://guangchuangyu.github.io/cn/2005/01/powerbook-g3%E4%B8%8A%E5%AE%89%E8%A3%85gentoo/">Powerbook G3上安装gentoo</a>
         </h1>
-        <p class="meta">Sep 30, 2008 - 1 minute read - 
+        <p class="meta">Jan 14, 2005 - 24 minute read - 
 
         
         
         
-        <a class="label" href="https://guangchuangyu.github.io/cn/categories/blog/">Blog</a>
+        <a class="label" href="https://guangchuangyu.github.io/cn/categories/linux/">Linux</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/powerbook/">Powerbook</a>
         </p>
 
       </header>
 
         
-          <p><p>找了一个叫<strong>博客备份软件</strong>的小工具,备份了新浪和ChinaUnix上的blog,导出为RSS
-2.0, sina的blog导出没问题,但是cu的blog导出后,文不对题.狂汗啊&hellip;
-但是生成的xml文件导入到wordpress里不成功.需要改一下才行.</p>
+          <p><p>下面是我在PowerBook G3上安装Gentoo的全过程。。</p>
 
-<p>从导出的xml文件里,把&lt;description&gt;&lt;![CDATA[替换成&lt;content:encoded&gt;&lt;![CDATA[</p>
+<p>自己做一个备忘录，也给想在Powerbook上装Gentoo的做一个参考。</p>
 
-<p>相应地把]]&gt;&lt;/description&gt;替换成]]&gt;&lt;/content:encoded&gt;</p>
-</p>
+<p>以下为基本的安装过程，详细请参考Gentoo的文档</p>
 
-          
-              <footer>
-                  <a href="https://guangchuangyu.github.io/cn/2008/09/%E5%8D%9A%E5%AE%A2%E8%BD%ACwordpress/" rel="full-article">Read On &rarr;</a>
-              </footer>
-          
+<p><a href="http://www.gentoo.org/doc/en/handbook/handbook-ppc.xml">http://www.gentoo.org/doc/en/handbook/handbook-ppc.xml</a></p>
 
-        
+<p>基本的安装步骤如下：</p>
 
-    </article>
-    
-    <article>
-      <header>
-        <h1 class="entry-title">
-          <a href="https://guangchuangyu.github.io/cn/2008/09/%E9%80%9A%E8%BF%87%E5%B1%80%E5%9F%9F%E7%BD%91%E5%9C%A8linux%E4%B8%8B%E4%BD%BF%E7%94%A8windows%E7%9A%84%E7%A8%8B%E5%BA%8F/">通过局域网在linux下使用windows的程序</a>
-        </h1>
-        <p class="meta">Sep 22, 2008 - 1 minute read - 
+<p>用2004.3LiveCD进入。</p>
 
-        
-        
-        
-        <a class="label" href="https://guangchuangyu.github.io/cn/categories/linux/">Linux</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/windows/">Windows</a>
-        </p>
+<h2 id="1-配置网络:e579a454946bcfc93435fb8404ad15ed">1. 配置网络</h2>
 
-      </header>
-
-        
-          <p><p>用了好多年linux，现在用windows越来越少了，但是还是得用。没办法，上taobao买个东西，上网银都得用ie，有时候还得用office等其它一些软件。</p>
-
-<p>实验室里有台机子是做文件服务的，装的是windows 2003
-server。之前使用rdesktop远程桌面，最近发现配合seamlessrdp可以让rdesktop实现更好的效果，运行windows程序，就像linux中原生程序一样。。</p>
-
-<pre><code>&gt; [下载
-&gt; seamlessrdp.zip](http://www.cendio.se/files/thinlinc/seamlessrdp/seamlessrdp.zip)
-&gt; 解压丢在C盘。
+<pre><code>＃net-setup eth0
 </code></pre>
 
-<p>在linux下运行这样的指令</p>
+<p>回答它几个问题就行了。</p>
 
-<pre><code>&gt; rdesktop -A -s &quot;c:\\seamlessrdp/seamlessrdpshell.exe C:\\Program
-&gt; Files\\Internet Explorer\\iexplore.exe&quot; ip:3389 -u administrator -p
-&gt; password
+<h2 id="2-分区:e579a454946bcfc93435fb8404ad15ed">2.分区</h2>
+
+<pre><code>#mac-fdisk /dev/hda
 </code></pre>
 
-<p>就可以在linux下运行服务器端的ie了。windows下所有程序都没问题。</p>
-</p>
+<p>以下是我的分区。</p>
 
-          
-              <footer>
-                  <a href="https://guangchuangyu.github.io/cn/2008/09/%E9%80%9A%E8%BF%87%E5%B1%80%E5%9F%9F%E7%BD%91%E5%9C%A8linux%E4%B8%8B%E4%BD%BF%E7%94%A8windows%E7%9A%84%E7%A8%8B%E5%BA%8F/" rel="full-article">Read On &rarr;</a>
-              </footer>
-          
+<pre><code>/dev/hda
+ # type name length base ( size ) system
+/dev/hda1 Apple_partition_map Apple 63 @ 1 ( 31.5k) Partition map
+/dev/hda2 Apple_Bootstrap bootstrap 1600 @ 64 (800.0k) NewWorld bootblock
+/dev/hda3 Apple_UNIX_SVR2 / 12582912 @ 1664 ( 6.0G) Linux native
+/dev/hda4 Apple_UNIX_SVR2 swap 1048576 @ 12584576 (512.0M) Linux swap
+/dev/hda5 Apple_UNIX_SVR2 /home 6007728 @ 13633152 ( 2.9G) Linux native
 
-        
-
-    </article>
-    
-    <article>
-      <header>
-        <h1 class="entry-title">
-          <a href="https://guangchuangyu.github.io/cn/2008/08/%E4%BB%8E%E6%A6%82%E7%8E%87%E7%9A%84%E8%A7%92%E5%BA%A6%E7%9C%8B-%E5%A6%82%E4%BD%95%E5%91%8A%E5%88%AB%E5%8D%95%E8%BA%AB/">从概率的角度看 如何告别单身</a>
-        </h1>
-        <p class="meta">Aug 26, 2008 - 1 minute read - 
-
-        
-        
-        
-        <a class="label" href="https://guangchuangyu.github.io/cn/categories/statistics/">Statistics</a>
-        </p>
-
-      </header>
-
-        
-          <p><p>国家人口统计男人比女人多了3700万，在大学校园里更是流传着“我很丑，可是我很抢手”（女生版）、“我很帅，可是我很无奈”（男生版）。</p>
-
-<p>鉴于大龄猥琐男越来越盛行，以及小平同志说“让一部分人先恋起来嘛”
-今日从科学的角度，让大家明白如何告别单身。
-授人与鱼不如授人与渔。即使没能让你奔小康，起码也解决温饱~~~</p>
-
-<p><img src="http://guangchuangyu.github.io/blog_images/2008/11/xx0.jpg" alt="" /></p>
-
-<p>告别单身的不二法则，三个字，“厚脸皮”，详见下面分析</p>
-
-<p>如果一个男人追一个女人，成功的概率只有0.2，
-那么连续追6个，至少有一个成功的概率，高达0.74</p>
-
-<pre><code>&gt; 1-0.8^6
-[1] 0.737856
-</code></pre>
-
-<p>如果连续追7个的话，至少一个成功的概率将达到0.79</p>
-
-<pre><code>&gt; 1-0.8^7
-[1] 0.7902848
-</code></pre>
-
-<p>如果你不是特别差，成功的概率假如是0.3，那么连续追几个的成功概率将更高。。</p>
-
-<pre><code>&gt; 1-0.7^6
-[1] 0.882351
-&gt; 1-0.7^7
-[1] 0.9176457
+Block size=512, Number of Blocks=19640880
+DeviceType=0x0, DeviceId=0x0
 </code></pre>
 </p>
 
           
               <footer>
-                  <a href="https://guangchuangyu.github.io/cn/2008/08/%E4%BB%8E%E6%A6%82%E7%8E%87%E7%9A%84%E8%A7%92%E5%BA%A6%E7%9C%8B-%E5%A6%82%E4%BD%95%E5%91%8A%E5%88%AB%E5%8D%95%E8%BA%AB/" rel="full-article">Read On &rarr;</a>
-              </footer>
-          
-
-        
-
-    </article>
-    
-    <article>
-      <header>
-        <h1 class="entry-title">
-          <a href="https://guangchuangyu.github.io/cn/2008/08/gosemsim/">GOSemSim</a>
-        </h1>
-        <p class="meta">Aug 11, 2008 - 1 minute read - 
-
-        
-        
-        
-        <a class="label" href="https://guangchuangyu.github.io/cn/categories/bioinformatics/">Bioinformatics</a>
-        </p>
-
-      </header>
-
-        
-          <p><p>第一次写软件包，计算基因和GO的语义相似性。</p>
-
-<p>实现<a href="http://bioinformatics.oxfordjournals.org/cgi/content/full/23/10/1274">Wang</a>的方法，基于GO的图结构。
-以及四种基于信息含量的计算方法（Resnik, Jiang, Lin, Rel）。</p>
-
-<p>可以从Bioconductor下载到。
-<a href="http://bioconductor.org/packages/release/bioc/html/GOSemSim.html">http://bioconductor.org/packages/release/bioc/html/GOSemSim.html</a>
-<a href="http://bioconductor.org/packages/devel/bioc/html/GOSemSim.html">http://bioconductor.org/packages/devel/bioc/html/GOSemSim.html</a></p>
-
-<p>支持human, rat, mouse, fly, yeast, zebrafish,worm, E coli,
-arabidopsis等物种。</p>
-</p>
-
-          
-              <footer>
-                  <a href="https://guangchuangyu.github.io/cn/2008/08/gosemsim/" rel="full-article">Read On &rarr;</a>
-              </footer>
-          
-
-        
-
-    </article>
-    
-    <article>
-      <header>
-        <h1 class="entry-title">
-          <a href="https://guangchuangyu.github.io/cn/2008/08/screen%E4%BD%BF%E5%BE%97%E8%BF%9C%E7%A8%8B%E7%BB%88%E7%AB%AF%E6%9B%B4%E5%8A%A0%E6%9C%89%E6%95%88%E7%8E%87/">Screen使得远程终端更加有效率</a>
-        </h1>
-        <p class="meta">Aug 8, 2008 - 1 minute read - 
-
-        
-        
-        
-        <a class="label" href="https://guangchuangyu.github.io/cn/categories/software/">Software</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/linux/">Linux</a>
-        </p>
-
-      </header>
-
-        
-          <p>根据主页Screen的描述 “Screen is a full-screen window manager that multiplexes a physical terminal between several processes, typically interactive shells. Each virtual terminal provides the functions of the DEC VT100 terminal and, in addition, several control functions from the ANSI X3.64 (ISO 6429) and ISO 2022 standards (e.g., insert/delete line and support for multiple character sets). There is a scrollback history buffer for each virtual terminal and a copy-and-paste mechanism that allows the user to move text regions between windows.</p>
-
-          
-              <footer>
-                  <a href="https://guangchuangyu.github.io/cn/2008/08/screen%E4%BD%BF%E5%BE%97%E8%BF%9C%E7%A8%8B%E7%BB%88%E7%AB%AF%E6%9B%B4%E5%8A%A0%E6%9C%89%E6%95%88%E7%8E%87/" rel="full-article">Read On &rarr;</a>
+                  <a href="https://guangchuangyu.github.io/cn/2005/01/powerbook-g3%E4%B8%8A%E5%AE%89%E8%A3%85gentoo/" rel="full-article">Read On &rarr;</a>
               </footer>
           
 
@@ -331,7 +190,7 @@ arabidopsis等物种。</p>
 
     
     
-        <a href="https://guangchuangyu.github.io/cn/page/8/" aria-label="Previous" class="label-pagination"><i class="fa fa-angle-left fa-lg"></i></a>
+        <a href="https://guangchuangyu.github.io/cn/page/11/" aria-label="Previous" class="label-pagination"><i class="fa fa-angle-left fa-lg"></i></a>
     
 
     
@@ -360,9 +219,6 @@ arabidopsis等物种。</p>
         <a href="https://guangchuangyu.github.io/cn/page/12/" class="label-pagination">12</a>
     
 
-    
-    
-        <a href="https://guangchuangyu.github.io/cn/page/10/" aria-label="Next" class="label-pagination"><i class="fa fa-angle-right fa-lg"></i></a>
     
 
     
