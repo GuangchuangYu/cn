@@ -590,17 +590,12 @@ pp + geom_tiplab(align=T, linetype=&#39;dashed&#39;, linesize=.5) + geom_tippoin
 
 &lt;h3 id=&#34;why-use-ggplot2:c38c63fac86d2290b6bc01da39216614&#34;&gt;Why use ggplot2&lt;/h3&gt;
 
-&lt;p&gt;ggplot2是我见过最human friendly的画图软件，这得益于Leland
-Wilkinson在他的著作《&lt;a href=&#34;http://book.douban.com/subject/10123863/&#34;&gt;The Grammar of
-Graphics&lt;/a&gt;》中提出了一套图形语法，把图形元素抽象成可以自由组合的成分，Hadley
+&lt;p&gt;ggplot2是我见过最human friendly的画图软件，这得益于Leland Wilkinson在他的著作《&lt;a href=&#34;http://book.douban.com/subject/10123863/&#34;&gt;The Grammar of Graphics&lt;/a&gt;》中提出了一套图形语法，把图形元素抽象成可以自由组合的成分，Hadley
 Wickham把这套想法在R中实现。&lt;/p&gt;
 
-&lt;p&gt;为什么要学习ggplot2，可以参考&lt;a href=&#34;http://book.douban.com/subject/24527091/&#34;&gt;ggplot2: 数据分析与图形艺术&lt;/a&gt;的&lt;a href=&#34;https://github.com/cosname/ggplot2-translation/blob/master/preface.md&#34;&gt;序言&lt;/a&gt;（btw:
-在序言的最后，我被致谢了）。&lt;/p&gt;
+&lt;p&gt;为什么要学习ggplot2，可以参考&lt;a href=&#34;http://book.douban.com/subject/24527091/&#34;&gt;ggplot2: 数据分析与图形艺术&lt;/a&gt;的&lt;a href=&#34;https://github.com/cosname/ggplot2-translation/blob/master/preface.md&#34;&gt;序言&lt;/a&gt;（btw: 在序言的最后，我被致谢了）。&lt;/p&gt;
 
-&lt;p&gt;Hadley
-Wickham也给出&lt;a href=&#34;https://github.com/hadley/ggplot2/wiki/Why-use-ggplot2&#34;&gt;一堆理由&lt;/a&gt;让我们说服自己，我想再补充一点，Hadley
-Wickham是学医出身的，做为学生物出身的人有什么理由不支持呢:)&lt;/p&gt;
+&lt;p&gt;Hadley Wickham也给出&lt;a href=&#34;https://github.com/hadley/ggplot2/wiki/Why-use-ggplot2&#34;&gt;一堆理由&lt;/a&gt;让我们说服自己，我想再补充一点，Hadley Wickham是学医出身的，做为学生物出身的人有什么理由不支持呢:)&lt;/p&gt;
 
 &lt;p&gt;ggplot2基本要素&lt;/p&gt;
 
