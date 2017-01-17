@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
+
+  
+  <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <title>微信公众文markdown一键排版</title>
+
+  
+  
+  <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/hugo-octopress.css">
+
+  
+  
+
+  
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  
+  <link href="https://guangchuangyu.github.io/cn/favicon.png" rel="icon">
+
+  
+  
+  
+
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <meta name="author" content="Guangchuang Yu">
+
+  
+  <meta name="generator" content="Hugo 0.15" />
+
+  
+  
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-77901140-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+</head>
+<body>
+
+
+<header role="banner"><hgroup>
+  
+  <h1><a href="https://guangchuangyu.github.io/cn/">Guangchuang Yu</a></h1>
+    <h2>a senior-in-age-but-not-senior-in-knowledge bioinformatician</h2>
+</hgroup></header>
+
+
+<nav role="navigation">
+
+<ul class="main-navigation">
+  
+  
+    
+      <li><a href="https://guangchuangyu.github.io/cn/" target="_blank" title="Blog">Blog</a></li>
+    
+  
+    
+      <li><a href="https://guangchuangyu.github.io/resume" target="_blank" title="Resume">Resume</a></li>
+    
+  
+    
+      <li><a href="https://guangchuangyu.github.io/cn/douban" target="_blank" title="Douban">Douban</a></li>
+    
+  
+    
+      <li><a href="https://guangchuangyu.github.io/cn/archive" target="_blank" title="Archive">Archive</a></li>
+    
+  
+</ul>
+
+
+<ul class="subscription">
+  <a href="https://guangchuangyu.github.io/cn/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss-square fa-lg"></i></a>
+
+  
+  
+
+</ul>
+
+
+</nav>
+
+
+<div id="main">
+  <div id="content">
+    <div>
+      <article class="hentry" role="article">
+        <header>
+          <h1 class="entry-title">
+            微信公众文markdown一键排版 
+          </h1>
+          <p class="meta">Jan 18, 2017 - 1 minute read - 
+
+          
+
+          
+          
+          <a class="label" href="https://guangchuangyu.github.io/cn/categories/publish">Publish</a>
+          </p>
+        </header>
+        <div class="entry-content">
+          
+          
+          
+
+	  
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+<a class="a2a_dd" href="//www.addtoany.com/share"></a>
+<a class="a2a_button_facebook"></a>
+<a class="a2a_button_twitter"></a>
+<a class="a2a_button_google_plus"></a>
+<a class="a2a_button_pinterest"></a>
+<a class="a2a_button_reddit"></a>
+<a class="a2a_button_sina_weibo"></a>
+<a class="a2a_button_wechat"></a>
+<a class="a2a_button_douban"></a>
+</div>
+<script async src="//static.addtoany.com/menu/page.js"></script>
+
+<br>
+
+    <p>微信公众号的后台排版功能很差，要想让读者阅读起来舒服，写作的人要花很多时间，于是出现了像<code>秀米</code>这样的第三方排版网站，即便如此，要想排出好的版面，仍然是件耗时的事情，而且像在文章里贴代码这种小众需求，是不被支持的，代码就像普通文本，那叫一个乱。</p>
+
+<p>好在微信平台是支持富文本的，我们复制粘贴过来，格式都还会在，像抄我ggplot2那篇文的<code>生信人</code>，就是完全复制粘贴的，还是我博客上的排版，当然它到了公众号上就乱了，我们其实很容易发现很多复制粘贴的，都没自己排一下版面，直接<code>ctrl-C</code>, <code>ctrl-V</code>一点诚意都没有。</p>
+
+<p>支持富文本这一点，意味着我们可以用<code>markdown</code>呀！排版很容易，并且可以支持语法高亮。上一篇文章<a href="https://guangchuangyu.github.io/cn/2017/01/r%E5%8C%85%E8%BE%A3%E9%B8%A1%E4%B9%8Bcormut/">CorMut</a>里，就是用了<code>markdown</code>，被眼尖的小朋友发现，所以写出来，解答一下。</p>
+
+<p>我们需要的是，安装一个<code>markdown here</code>的插件，firefox，chrome等都是支持的。</p>
+
+<p>比如下面这个：</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/2017/2017-01-18-003058_1280x800_scrot.png" alt="" /></p>
+
+<p>我点一下markdown渲染，它自己就变成：</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/2017/2017-01-18-003121_1280x800_scrot.png" alt="" /></p>
+
+<p>这玩意其实是设计来写邮件的，有了它，邮件排版可以很牛逼，比如还是刚才的代码：</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/2017/2017-01-18-003253_516x590_scrot.png" alt="" /></p>
+
+<p>我们还可以通过定制<code>css</code>，来改变字体、颜色等。简单的markdown语法，让排版轻松愉快，而且本身我的博客就是用markdown写的，写一份文档，博客和公众号两边推送。</p>
+
+
+ 
+        </div>
+        
+
+<footer>
+  <p class="meta">
+    <span class="byline author vcard">Posted by <span class="fn">Guangchuang Yu</span></span>
+    
+    <time>Jan 18, 2017</time>
+    <span class="categories">
+      Tags:
+        
+        
+          <a class="category" href="https://guangchuangyu.github.io/cn/tags/markdown">markdown</a>  
+        
+    </span>
+  </p>
+
+  
+  
+
+  
+
+  <p class="meta">
+    
+        <a class="basic-alignment left" href="https://guangchuangyu.github.io/cn/2017/01/r%E5%8C%85%E8%BE%A3%E9%B8%A1%E4%B9%8Bcormut/" title=" R包辣鸡之CorMut"> R包辣鸡之CorMut</a>
+    
+
+    
+  </p>
+
+  
+  <img src="//guangchuangyu.github.io/blog_images/biobabble.jpg" width="250" height="250" />
+  <br>关注Y叔微信公众账号biobabble
+
+  
+  
+<div class="ds-thread" data-thread-key= 微信公众文markdown一键排版 data-title= 微信公众文markdown一键排版 data-url= https://guangchuangyu.github.io/cn/2017/01/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E6%96%87markdown%E4%B8%80%E9%94%AE%E6%8E%92%E7%89%88/ ></div>
+
+
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"ygc-hku"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+
+  
+  
+</footer>
+
+      </article>
+    </div>
+    
+
+
+<aside class="sidebar thirds">
+  <section class="first odd">
+    
+
+    <p>
+      
+      
+      <script src="//tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+      关注Y叔微信公众账号biobabble<br>
+      <img src="//guangchuangyu.github.io/blog_images/biobabble.jpg" width="250" height="250" />
+      <wb:follow-button uid="2185528715" type="red_3" width="100%" height="24" ></wb:follow-button>
+
+      
+
+    
+  </section>
+
+
+
+  
+
+
+
+    
+     
+  
+  
+  <section class="even">
+    <h1>Recent Posts</h1>
+
+    
+    <ul id="recent_posts">
+      
+      
+        
+      
+      
+      <li class="post">
+        <a href="https://guangchuangyu.github.io/cn/2017/01/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E6%96%87markdown%E4%B8%80%E9%94%AE%E6%8E%92%E7%89%88/">微信公众文markdown一键排版</a>
+      </li>
+      
+      <li class="post">
+        <a href="https://guangchuangyu.github.io/cn/2017/01/r%E5%8C%85%E8%BE%A3%E9%B8%A1%E4%B9%8Bcormut/"> R包辣鸡之CorMut</a>
+      </li>
+      
+      <li class="post">
+        <a href="https://guangchuangyu.github.io/cn/2017/01/chipseq%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E6%94%BE%E5%BC%83/">ChIPseq从入门到放弃</a>
+      </li>
+      
+      <li class="post">
+        <a href="https://guangchuangyu.github.io/cn/2016/12/clifun%E5%9C%A8r%E9%87%8C%E8%A3%85%E8%A3%85%E9%80%BC/">clifun:在R里装装逼</a>
+      </li>
+      
+      <li class="post">
+        <a href="https://guangchuangyu.github.io/cn/2016/12/%E8%B7%A8%E7%89%A9%E7%A7%8D%E8%AE%A1%E7%AE%97%E5%9F%BA%E5%9B%A0%E7%9B%B8%E4%BC%BC%E6%80%A7/">跨物种计算基因相似性</a>
+      </li>
+      
+    </ul>
+  </section>
+
+  
+  
+  <section class="even">
+    <h1>Book to Read</h1>
+    Analysis of Phylogenetic and Evolution with R<br>
+    Inferring phylogenies<br>
+    Statistical Models: Theory and Practice<br>
+    Algorithms on Strings, Trees, and Sequences
+    <h1>Links</h1>
+    <a href="http://www.biostathandbook.com/">Handbook of Biological Statistics</a><br>
+    <a href="http://r-bloggers.com/">R-bloggers</a>
+    <h1>友邻</h1>
+    <a href="http://azaleasays.com/">azalea</a><br>
+    <a href="http://blog.shenwei.me/">shenwei</a><br>
+    <a href="http://ztpala.com/">ztpala</a>
+
+  </section>
+
+
+
+
+  <script type="text/javascript" src="//rf.revolvermaps.com/0/0/7.js?i=5qpvv5zz7fp&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;sx=0" async="async"></script>
+
+  <script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'GuangchuangYu/Bioinformatics'
+  };
+</script>
+  <script src="//sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+  
+</aside>
+
+  </div>
+</div>
+
+
+
+
+<footer role="contentinfo">
+  <p>Copyright &copy; 2017 Guangchuang Yu - <a href="https://guangchuangyu.github.io/cn/license/">License</a> - 
+  <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
+</p>
+
+</footer>
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/zenburn.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script type="text/javascript"
+  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+<script type="text/javascript" src="//w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "d135f460-3fc5-4802-8169-bd08e4734a09", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+
+
+</body>
+</html>
+

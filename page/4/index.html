@@ -111,6 +111,39 @@ ga('send', 'pageview');
     <article>
       <header>
         <h1 class="entry-title">
+          <a href="https://guangchuangyu.github.io/cn/2016/10/update-r-packages/">Update R packages</a>
+        </h1>
+        <p class="meta">Oct 19, 2016 - 1 minute read - 
+
+        
+        
+        
+        <a class="label" href="https://guangchuangyu.github.io/cn/categories/r/">R</a>
+        </p>
+
+      </header>
+
+        
+          <p><p>更新R较为无痛的方法已经在<a href="http://guangchuangyu.github.io/2014/11/hello-yosemite/">hello yosemite</a>一文中提及。今天Bioconductor发布3.4版本，又是更新R包的时候了。</p>
+
+<p>之前为了<a href="https://guangchuangyu.github.io/2016/07/how-to-bug-author/">吐槽</a>很多人问问题都是在使用早已不维护的老版本，写了<a href="https://cran.r-project.org/web/packages/rvcheck/">rvcheck</a>来帮忙检查版本。既然能够帮我们检查版本，自然能够帮忙升级。</p>
+
+<p>使用<code>rvcheck::update_all()</code>可以自动更新CRAN, Bioconductor和Github上的R包。其实可以放到系统任务里，每月自动更新一次，然后就可以完全不用管升级的事情。</p>
+</p>
+
+          
+              <footer>
+                  <a href="https://guangchuangyu.github.io/cn/2016/10/update-r-packages/" rel="full-article">Read On &rarr;</a>
+              </footer>
+          
+
+        
+
+    </article>
+    
+    <article>
+      <header>
+        <h1 class="entry-title">
           <a href="https://guangchuangyu.github.io/cn/2016/07/evolution-of-my-bioc-packages/">Evolution of my BioC packages</a>
         </h1>
         <p class="meta">Jul 13, 2016 - 9 minute read - 
@@ -249,77 +282,6 @@ model)估计拓朴结构和分支长度，估计的结果具有最高的概率�
 
     </article>
     
-    <article>
-      <header>
-        <h1 class="entry-title">
-          <a href="https://guangchuangyu.github.io/cn/2015/12/%E5%96%9C%E6%96%B0%E5%8E%8C%E6%97%A7%E4%B9%8Bhello-hugo/">喜新厌旧之hello Hugo</a>
-        </h1>
-        <p class="meta">Dec 4, 2015 - 2 minute read - 
-
-        
-        
-        
-        <a class="label" href="https://guangchuangyu.github.io/cn/categories/blog/">blog</a>
-        </p>
-
-      </header>
-
-        
-          <p><p>最早在China Unix上写博客，后来转战新浪。在<a href="http://azaleasays.com/">azelea</a>的说服下，<a href="http://guangchuangyu.github.io/2008/09/%E5%8D%9A%E5%AE%A2%E8%BD%ACwordpress/">果断换成wordpress</a>，写技术博客贴点代码什么的，新浪必须是太渣。<a href="http://azaleasays.com/">azelea</a>是我开始独立博客的领路人，为我提供了空间和域名。再后来自己买了空间和<code>ygc.name</code>的域名，用了好几年。本来一直有想法要换成github+jekll，恰巧<a href="http://blog.shenwei.me/">Wei Shen</a>强力推荐HUGO。于是再一次换博客。</p>
-
-<p>首先面临着wordpress迁移的问题。</p>
-
-<h1 id="导入wordpress-posts为markdown文件:3ff7f092e18423fcdd26eedc8fc08766">导入wordpress posts为markdown文件</h1>
-
-<p>试用了多个插件或脚本，都是各种出错。最后发现了神器<a href="https://github.com/jprichardson/potter-wordpress">potter-wordpress</a>，通过npm安装：</p>
-
-<pre><code>npm install -g pottercms-wordpress
-</code></pre>
-
-<p>然后一个语句:</p>
-
-<pre><code>potter-wordpress -h WORDPRESS_SITE_URL -u USER_NAME -p PASSWORD --dir PATH_TO_STORE_MD_FILES
-</code></pre>
-
-<p>自动从线上把posts抓下来，并转化为<code>markdown</code>。在之前各种搞不定之后，看到下面的输出有种莫名的快感。</p>
-
-<p>Fetching articles&hellip;</p>
-
-<pre><code>   Got : [Sun Nov 29 2015] R kernel in Jupyter notebook 3
-   Got : [Mon Nov 09 2015] phylomoji with ggtree
-   Got : [Tue Nov 17 2015] 合体中的操作系统
-   Got : [Mon Nov 02 2015] Comparison of clusterProfiler and GSEA-P
-   Got : [Thu Oct 01 2015] ChIPseq data mining with ChIPseeker
-   Got : [Tue Oct 06 2015] TRIE
-   Got : [Thu Oct 15 2015] [BioC 3.2] NEWS of my BioC packages
-   Got : [Wed Oct 21 2015] use simplify to remove redundancy of enriched GO terms
-
-   ...
-
-   Got : [Mon May 14 2007] Edit partition table in NetBSD/macppc
-   Got : [Mon May 14 2007] 我的emacs配置文件
-   Got : [Mon May 14 2007] pkgsrc tips
-   Got : [Thu May 03 2007] scilab三维平面绘图
-   Got : [Sat Jun 24 2006] qvwm窗口管理器的windows2000主题
-   Got : [Wed Jun 14 2006] 安装os9和netbsd双系统
-   Got : [Sat May 28 2005] 在emacs里使用maxima
-   Got : [Mon Mar 14 2005] scau校园网认证
-   Got : [Fri Jan 14 2005] Powerbook G3上安装gentoo
-</code></pre>
-
-<p>Done.</p>
-</p>
-
-          
-              <footer>
-                  <a href="https://guangchuangyu.github.io/cn/2015/12/%E5%96%9C%E6%96%B0%E5%8E%8C%E6%97%A7%E4%B9%8Bhello-hugo/" rel="full-article">Read On &rarr;</a>
-              </footer>
-          
-
-        
-
-    </article>
-    
     
     
 
@@ -423,6 +385,10 @@ model)估计拓朴结构和分支长度，估计的结果具有最高的概率�
       
       
       <li class="post">
+        <a href="https://guangchuangyu.github.io/cn/2017/01/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E6%96%87markdown%E4%B8%80%E9%94%AE%E6%8E%92%E7%89%88/">微信公众文markdown一键排版</a>
+      </li>
+      
+      <li class="post">
         <a href="https://guangchuangyu.github.io/cn/2017/01/r%E5%8C%85%E8%BE%A3%E9%B8%A1%E4%B9%8Bcormut/"> R包辣鸡之CorMut</a>
       </li>
       
@@ -436,10 +402,6 @@ model)估计拓朴结构和分支长度，估计的结果具有最高的概率�
       
       <li class="post">
         <a href="https://guangchuangyu.github.io/cn/2016/12/%E8%B7%A8%E7%89%A9%E7%A7%8D%E8%AE%A1%E7%AE%97%E5%9F%BA%E5%9B%A0%E7%9B%B8%E4%BC%BC%E6%80%A7/">跨物种计算基因相似性</a>
-      </li>
-      
-      <li class="post">
-        <a href="https://guangchuangyu.github.io/cn/2016/12/using-linked-list-to-solve-josephus-problem/">Using Linked List to solve Josephus problem</a>
       </li>
       
     </ul>
