@@ -31,8 +31,7 @@ Tests。我自己搜了一下，发现ks.test检验的就是拿两个CDF的距�
 
 &lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2012/05/meandist2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;我们需要对均值的离散程度做penalty，那么就可以考虑这样一个统计量mean(x)/SEM,
-SEM代表standard error of the mean，那么这个统计量比单纯的均值要科学得多。这个统计量，就是学生氏所定义的t。&lt;/p&gt;
+&lt;p&gt;我们需要对均值的离散程度做penalty，那么就可以考虑这样一个统计量mean(x)/SEM, SEM代表standard error of the mean，那么这个统计量比单纯的均值要科学得多。这个统计量，就是学生氏所定义的t。&lt;/p&gt;
 
 &lt;p&gt;如果没有大量的样本，是没办法估计SEM的，但是从上面两个图上看，样本间均值的标准误SEM，和总体数据的标准误是正相关的。而总体的标准误可以用样本的标准误,sd(x),来估计。如果我们考虑最简单的形式呢？定义统计量mean(x)/sd(x)。&lt;/p&gt;
 
@@ -41,9 +40,7 @@ size没有影响，那么我们就不需要采集大样本了。从我们的直�
 
 &lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2012/05/meandist.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;从图上看，还是和直觉很一致。sample
-size越大，分布越compact，对总体均值的估计也就越准确。那么就需要使用sample
-size进行加权，把统计量修改为mean(x)/sd(x) * f(n)，其中n为sample size。&lt;/p&gt;
+&lt;p&gt;从图上看，还是和直觉很一致。sample size越大，分布越compact，对总体均值的估计也就越准确。那么就需要使用sample size进行加权，把统计量修改为mean(x)/sd(x) * f(n)，其中n为sample size。&lt;/p&gt;
 
 &lt;p&gt;我们可以想像，学生氏当年try了几种形式的f(n)，发现sqrt(n)效果最好。于是他就定义了统计量:
 t = mean(x)/(sd(x)/sqrt(n))。
