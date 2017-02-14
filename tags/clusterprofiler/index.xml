@@ -6,8 +6,36 @@
     <description>Recent content in Clusterprofiler on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Nov 2016 00:53:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 14 Feb 2017 09:50:00 +0800</lastBuildDate>
     <atom:link href="https://guangchuangyu.github.io/cn/tags/clusterprofiler/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>wrapping labels in ggplot2</title>
+      <link>https://guangchuangyu.github.io/cn/2017/02/wrapping-labels-in-ggplot2/</link>
+      <pubDate>Tue, 14 Feb 2017 09:50:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/02/wrapping-labels-in-ggplot2/</guid>
+      <description>&lt;p&gt;在公众号biobabble后台有多人同时在问这个问题：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/2017-02-12-223832_646x667_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;晒这个截屏主要想说一点，如果是一两句话就能说清楚的问题，可以提问，如果不是，则不要在后台提问，写邮件或者到论坛提问，是更好的方式，像截屏中显示的，图片显示过期，我根本就没看到过图片。在手机上是无法看的，而我正好几天没在电脑前，于是你们发的图片我看不了，而且我如果没有在24小时之内回复，公众平台就不允许我回复了，因为问题已经过期。所以在此强调，不要在后台发图片提问，不要在后台问稍复杂的问题。&lt;/p&gt;
+
+&lt;p&gt;这个问题其实很简单，用&lt;code&gt;stringr&lt;/code&gt;包的&lt;code&gt;str_wrap&lt;/code&gt;来完成文本自动换行就行了。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(stringr)
+library(ggplot2)
+library(clusterProfiler)
+data(geneList)
+de &amp;lt;- names(geneList)[1:100]
+x &amp;lt;- enrichKEGG(de)
+p &amp;lt;- barplot(x) 
+p + scale_x_discrete(labels=function(x) str_wrap(x, width=10))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/2017-02-12-225944_635x776_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>buildGOmap</title>
