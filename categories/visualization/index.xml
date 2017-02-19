@@ -1113,6 +1113,31 @@ size足够大的话，$mean\pm errorbar$
     </item>
     
     <item>
+      <title>happy valentine</title>
+      <link>https://guangchuangyu.github.io/cn/2012/02/happy-valentine/</link>
+      <pubDate>Tue, 14 Feb 2012 05:37:55 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2012/02/happy-valentine/</guid>
+      <description>&lt;p&gt;今天看到&lt;a href=&#34;http://cos.name/2012/02/valentines-gift-by-using-r/&#34;&gt;统计之都上的情人节心形图&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;这次画的心形函数是：
+$ x = 16 (sin t)^3$
+$ y = 13 cos t - 5 cos 2t - 2 cos 3t - cos 4t$&lt;/p&gt;
+
+&lt;p&gt;尝试用ggplot2来画，结果如下：
+&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2012/02/heart2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2012/02/heart.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;代码见&lt;a href=&#34;https://gist.github.com/1823931&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://guangchuangyu.github.io/cn/2011/08/love-function-plot/&#34;&gt;类似的心形图以前也是画过的&lt;/a&gt;，当然这样的函数图有很多，详见&lt;a href=&#34;http://www.mathematische-basteleien.de/heart.htm&#34;&gt;http://www.mathematische-basteleien.de/heart.htm&lt;/a&gt;，画起来也很容易。&lt;/p&gt;
+
+&lt;p&gt;倒是以前画过的&lt;a href=&#34;https://guangchuangyu.github.io/2011/08/the-batman-equation/&#34;&gt;蝙蝠侠logo&lt;/a&gt;，更有成就感些。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>violin plot</title>
       <link>https://guangchuangyu.github.io/cn/2012/02/violin-plot/</link>
       <pubDate>Tue, 07 Feb 2012 06:31:55 +0800</pubDate>
@@ -1134,6 +1159,54 @@ list也有诸多讨论，因为它导致了某些包编译出错（估计是NAME
 plot基本可以扔了。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2012/02/violin.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>love function plot</title>
+      <link>https://guangchuangyu.github.io/cn/2011/08/love-function-plot/</link>
+      <pubDate>Sat, 06 Aug 2011 05:37:55 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2011/08/love-function-plot/</guid>
+      <description>&lt;p&gt;今天在微博上看到这坑爹的方程： $ (x^2+y^2-1)^3 = {x^2} {y^3}$&lt;/p&gt;
+
+&lt;p&gt;画出来如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2011/08/pp.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;跟个屁股似的，sigh&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;翻出azalea的老文：&lt;a href=&#34;http://azaleasays.com/2008/06/18/fomula-of-love/&#34;&gt;http://azaleasays.com/2008/06/18/fomula-of-love/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;用ggplot2画一下这个爱的方程：$17x^2-16|x|y+17y^2 = 225 $&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;x &amp;lt;- seq(-sqrt(17), sqrt(17), 0.001)
+y1 &amp;lt;- 8*abs(x)/17 + 15* sqrt(17 - x^2)/17
+y2 &amp;lt;- 8*abs(x)/17 - 15* sqrt(17 - x^2)/17
+d &amp;lt;- data.frame(x=c(x,x),y=c(y1,y2))
+require(ggplot2)
+
+p &amp;lt;- ggplot(d, aes(x,y))
+p + geom_point(color=&amp;quot;red&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2011/08/love2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;还可以画出红心，适合今天七夕的日子。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;p + geom_line(color=&amp;quot;red&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2011/08/love3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;画函数图，这种事情，还是用CAS方便点。&lt;/p&gt;
+
+&lt;p&gt;通过&lt;a href=&#34;https://guangchuangyu.github.io/cn/tags/maxima/&#34;&gt;maxima&lt;/a&gt;来画，一条指令就行，还不用解方程：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;contour_plot(17*x^2-16*abs(x)*y+17*y^2-225, [x,-sqrt(17),sqrt(17)],[y,-15*sqrt(17)/17, sqrt(17)])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2011/08/love_maxima.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     

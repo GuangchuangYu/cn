@@ -6,8 +6,56 @@
     <description>Recent content in Maxima on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 28 May 2005 08:15:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 06 Aug 2011 05:37:55 +0800</lastBuildDate>
     <atom:link href="https://guangchuangyu.github.io/cn/tags/maxima/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>love function plot</title>
+      <link>https://guangchuangyu.github.io/cn/2011/08/love-function-plot/</link>
+      <pubDate>Sat, 06 Aug 2011 05:37:55 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2011/08/love-function-plot/</guid>
+      <description>&lt;p&gt;今天在微博上看到这坑爹的方程： $ (x^2+y^2-1)^3 = {x^2} {y^3}$&lt;/p&gt;
+
+&lt;p&gt;画出来如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2011/08/pp.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;跟个屁股似的，sigh&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;翻出azalea的老文：&lt;a href=&#34;http://azaleasays.com/2008/06/18/fomula-of-love/&#34;&gt;http://azaleasays.com/2008/06/18/fomula-of-love/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;用ggplot2画一下这个爱的方程：$17x^2-16|x|y+17y^2 = 225 $&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;x &amp;lt;- seq(-sqrt(17), sqrt(17), 0.001)
+y1 &amp;lt;- 8*abs(x)/17 + 15* sqrt(17 - x^2)/17
+y2 &amp;lt;- 8*abs(x)/17 - 15* sqrt(17 - x^2)/17
+d &amp;lt;- data.frame(x=c(x,x),y=c(y1,y2))
+require(ggplot2)
+
+p &amp;lt;- ggplot(d, aes(x,y))
+p + geom_point(color=&amp;quot;red&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2011/08/love2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;还可以画出红心，适合今天七夕的日子。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;p + geom_line(color=&amp;quot;red&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2011/08/love3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;画函数图，这种事情，还是用CAS方便点。&lt;/p&gt;
+
+&lt;p&gt;通过&lt;a href=&#34;https://guangchuangyu.github.io/cn/tags/maxima/&#34;&gt;maxima&lt;/a&gt;来画，一条指令就行，还不用解方程：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;contour_plot(17*x^2-16*abs(x)*y+17*y^2-225, [x,-sqrt(17),sqrt(17)],[y,-15*sqrt(17)/17, sqrt(17)])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2011/08/love_maxima.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>在emacs里使用maxima</title>

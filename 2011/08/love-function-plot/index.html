@@ -14,7 +14,7 @@
   <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
   
-  <title>screen shot</title>
+  <title>love function plot</title>
 
   
   
@@ -109,15 +109,15 @@ ga('send', 'pageview');
       <article class="hentry" role="article">
         <header>
           <h1 class="entry-title">
-            screen shot 
+            love function plot 
           </h1>
-          <p class="meta">Jun 28, 2011 - 1 minute read - 
+          <p class="meta">Aug 6, 2011 - 1 minute read - 
 
           
 
           
           
-          <a class="label" href="https://guangchuangyu.github.io/cn/categories/bsd">BSD</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/mac-os">Mac OS</a>
+          <a class="label" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
           </p>
         </header>
         <div class="entry-content">
@@ -141,26 +141,45 @@ ga('send', 'pageview');
 
 <br>
 
-    <p>买了苹果机，一直放在家里没用，准备开会带去用，拿过来装几个软件。</p>
+    <p>今天在微博上看到这坑爹的方程： $ (x^2+y^2-1)^3 = {x^2} {y^3}$</p>
 
-<p>校园网用锐捷是个比较讨厌的东西。当年在华农，光这<a href="http://guangchuangyu.github.io/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/">认证</a>就搞了很久。</p>
+<p>画出来如下：</p>
 
-<p>现在开源的认证客户端多了，搞起来也方便了，现在在linux下用的<a href="http://code.google.com/p/xmuruijie/">xmuruijie</a>，就比当年<a href="http://guangchuangyu.github.io/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/">mystar</a>好用。</p>
+<p><img src="https://guangchuangyu.github.io/blog_images/2011/08/pp.png" alt="" /></p>
 
-<p>估计xmuruijie也是可以在苹果机上用的，依赖python，搞不好还有些modules要装，懒得去弄，搜了一下，找到<a href="http://code.google.com/p/mentohust/">mentohust</a>，当然需要改一下mac address，用万能的ifconfig搞定。</p>
+<p>跟个屁股似的，sigh&hellip;</p>
 
-<p>为了编译软件，必要先装xcode，这个大家伙，4G多，中午挂到吃晚饭才下完。
-然后就可以装各种open source的软件。</p>
+<p>翻出azalea的老文：<a href="http://azaleasays.com/2008/06/18/fomula-of-love/">http://azaleasays.com/2008/06/18/fomula-of-love/</a></p>
 
-<p>mac上有fink支持debian一样的apt-get，还有原生的macport，gentoo的portage也支持，我选择使用<a href="http://guangchuangyu.github.io/categories/bsd">netbsd</a>的pkgsrc来安装各种开源软件。</p>
+<p>用ggplot2画一下这个爱的方程：$17x^2-16|x|y+17y^2 = 225 $</p>
 
-<p>以前用过比较长时间的netbsd，用着比较顺手。</p>
+<pre><code>x &lt;- seq(-sqrt(17), sqrt(17), 0.001)
+y1 &lt;- 8*abs(x)/17 + 15* sqrt(17 - x^2)/17
+y2 &lt;- 8*abs(x)/17 - 15* sqrt(17 - x^2)/17
+d &lt;- data.frame(x=c(x,x),y=c(y1,y2))
+require(ggplot2)
 
-<p>苹果机很酷的界面，又能使用熟悉的命令行，实在是爽-,-</p>
+p &lt;- ggplot(d, aes(x,y))
+p + geom_point(color=&quot;red&quot;)
+</code></pre>
 
-<p><img src="http://guangchuangyu.github.io/blog_images/2011/06/屏幕快照-2011-06-28-下午07.54.21.png" alt="" /></p>
+<p><img src="https://guangchuangyu.github.io/blog_images/2011/08/love2.png" alt="" /></p>
 
-<p>更多截屏，请移步：<a href="http://guangchuangyu.github.io/2007/06/screenshot/">http://guangchuangyu.github.io/2007/06/screenshot/</a></p>
+<p>还可以画出红心，适合今天七夕的日子。</p>
+
+<pre><code>p + geom_line(color=&quot;red&quot;)
+</code></pre>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/2011/08/love3.png" alt="" /></p>
+
+<p>画函数图，这种事情，还是用CAS方便点。</p>
+
+<p>通过<a href="https://guangchuangyu.github.io/cn/tags/maxima/">maxima</a>来画，一条指令就行，还不用解方程：</p>
+
+<pre><code>contour_plot(17*x^2-16*abs(x)*y+17*y^2-225, [x,-sqrt(17),sqrt(17)],[y,-15*sqrt(17)/17, sqrt(17)])
+</code></pre>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/2011/08/love_maxima.png" alt="" /></p>
 
 
  
@@ -171,12 +190,12 @@ ga('send', 'pageview');
   <p class="meta">
     <span class="byline author vcard">Posted by <span class="fn">Guangchuang Yu</span></span>
     
-    <time>Jun 28, 2011</time>
+    <time>Aug 6, 2011</time>
     <span class="categories">
       Tags:
         
         
-          <a class="category" href="https://guangchuangyu.github.io/cn/tags/screenshot">screenshot</a>  
+          <a class="category" href="https://guangchuangyu.github.io/cn/tags/ggplot2">ggplot2</a>  <a class="category" href="https://guangchuangyu.github.io/cn/tags/maxima">maxima</a>  
         
     </span>
   </p>
@@ -188,11 +207,11 @@ ga('send', 'pageview');
 
   <p class="meta">
     
-        <a class="basic-alignment left" href="https://guangchuangyu.github.io/cn/2011/06/five-things-biologists-should-know-about-statistics/" title="Five things biologists should know about statistics">Five things biologists should know about statistics</a>
+        <a class="basic-alignment left" href="https://guangchuangyu.github.io/cn/2011/06/screen-shot/" title="screen shot">screen shot</a>
     
 
     
-      <a class="basic-alignment right" href="https://guangchuangyu.github.io/cn/2011/08/love-function-plot/" title="love function plot">love function plot</a>
+      <a class="basic-alignment right" href="https://guangchuangyu.github.io/cn/2012/02/violin-plot/" title="violin plot">violin plot</a>
     
   </p>
 
@@ -202,7 +221,7 @@ ga('send', 'pageview');
 
   
   
-<div class="ds-thread" data-thread-key= screen&#32;shot data-title= screen&#32;shot data-url= https://guangchuangyu.github.io/cn/2011/06/screen-shot/ ></div>
+<div class="ds-thread" data-thread-key= love&#32;function&#32;plot data-title= love&#32;function&#32;plot data-url= https://guangchuangyu.github.io/cn/2011/08/love-function-plot/ ></div>
 
 
 <script type="text/javascript">
