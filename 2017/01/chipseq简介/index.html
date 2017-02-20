@@ -14,7 +14,7 @@
   <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
   
-  <title>pkgsrc tips</title>
+  <title>ChIPseq简介</title>
 
   
   
@@ -109,15 +109,15 @@ ga('send', 'pageview');
       <article class="hentry" role="article">
         <header>
           <h1 class="entry-title">
-            pkgsrc tips 
+            ChIPseq简介 
           </h1>
-          <p class="meta">May 14, 2007 - 1 minute read - 
+          <p class="meta">Jan 19, 2017 - 1 minute read - 
 
           
 
           
           
-          <a class="label" href="https://guangchuangyu.github.io/cn/categories/bsd">BSD</a>
+          <a class="label" href="https://guangchuangyu.github.io/cn/categories/r">R</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/chipseq">ChIPseq</a>
           </p>
         </header>
         <div class="entry-content">
@@ -141,54 +141,42 @@ ga('send', 'pageview');
 
 <br>
 
-    
+    <p>ChIP是指染色质免疫沉淀，它通特异结合抗体将DNA结合蛋白免疫沉淀，可以用于捕获蛋白质（如转录因子，组蛋白修饰）的DNA靶点。这技术存在非常久了，在二代测序之前，结合microarray，它的名字叫<code>ChIP-on-chip</code>，二代测序出来之后，显而易见的，免疫沉淀拉下来的DNA拿去NGS测序，这必然是下一代的ChIP技术，优点也是显而易见的，不再需要设计探针（往往存在着一定的偏向性）。所以NGS出来以后，不差钱的牛逼实验室显然占据上风，谁先做出来，谁就定义了新技术。这是有钱人的竞赛，没钱的只能等着技术烂大街的时候跟风做。</p>
 
-<h2 id="1-cpuflags:9e5aca7625f61216ac68fadbe5625718">1.cpuflags</h2>
+<p>这是显而易见的下一代技术，外加技术上完全是可行的，所以这是一场单纯的时间竞赛，于是几乎同时出来CNS文章，基本上谁也不比谁差地同时扔出来。</p>
 
-<p><strong>devel/cpuflags:Determine compiler flags to best target current cpu</strong></p>
+<blockquote>
+<ul>
+<li>Johnson DS, Mortazavi A et al. (2007) Genome-wide mapping of in vivo protein–DNA interactions. Science 316: 1497–1502</li>
+<li>Robertson G et al.(2007) Genome-wide profiles of STAT1 DNA association using chromatin immunoprecipitation and massively parallel sequencing. Nature Methods 4: 651–657</li>
+<li>Schmid et al. (2007) ChIP-Seq Data reveal nucleosome architecture of human promoters. Cell 131: 831–832</li>
+</ul>
+</blockquote>
 
-<pre><code>#cd /usr/pkgsrc/devel/cpuflags 
-#make install
-</code></pre>
+<p>2007年来自三个不同的实验室，几乎是同时间出来（最长差不了3个月），分别发CNS，一起定义了这个<code>ChIPseq</code>技术。</p>
 
-<p>然后在/etc/mk.conf中加入:</p>
+<hr />
 
-<pre><code>.sinclude &quot;/usr/pkg/share/mk/cpuflags.mk&quot;
-.sinclude &quot;/usr/pkg/share/mk/optimize_gcc.mk&quot;
-</code></pre>
+<p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/CS/chipseq.png" alt="" /></p>
 
-<p>这样make时便能够根据cpuflags进行优化编译了。</p>
+<p>这个技术分为4步：</p>
 
-<h2 id="2-pkgclean:9e5aca7625f61216ac68fadbe5625718">2.pkgclean</h2>
+<ul>
+<li>Cross-linking</li>
+<li>Sonication</li>
+<li>IP</li>
+<li>Sequencing</li>
+</ul>
 
-<p><strong>pkgtools/pkgclean:Quickly clean up all work directories in
-pkgsrc</strong></p>
+<p>DNA和蛋白质交联(cross-linking)，超声(sonication)将染色体随机切割，利用抗原抗体的特异性识别(IP)，把<strong>目标蛋白</strong>相结合的DNA片段沉淀下来，反交联释放DNA片段，最后是测序(sequencing)。</p>
 
-<pre><code>#cd /usr/pkgsrc/pkgtools/pkgclean 
-#make install
-</code></pre>
+<p>一个典型的分析流程如下：</p>
 
-<p>运行pkgclean快速清除所有work</p>
+<p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/CS/ChIP-seq-1.jpg" alt="" /></p>
 
-<h2 id="3-fetch-cmd:9e5aca7625f61216ac68fadbe5625718">3.FETCH_CMD</h2>
+<p>测序之后，我们当然首先需要做质量控制，然后就是做mapping，拿到这些DNA片段在染色体上的位置信息，ChIPseq的数据我们还需要做peak calling，把背景噪声去掉，比如上图中使用MACS做peak calling，这样我们就得到了protein binding site (peak)，就可以做下游的分析，比如可视化、相关的基因（比如最近的基因、宿主基因）、Motif分析等等。</p>
 
-<p>在/etc/mk.conf中加入： <code>FETCH_CMD=/usr/pkg/bin/wget -cT 20</code></p>
-
-<p>使用wget来下载源码包。 -c 为断点续传，T 20为20秒没响应则断开重连。</p>
-
-<h2 id="4-pkg-tarup:9e5aca7625f61216ac68fadbe5625718">4.pkg_tarup</h2>
-
-<p><strong>pkgtools/pkg_tarup:Generates binary package(s) from
-installed pkg(s)</strong></p>
-
-<pre><code>#cd /usr/pkgsrc/pkgtools/pkg_tarup 
-#make install
-</code></pre>
-
-<p>运行<code>pkg_tarup pkg_name</code>将生成<code>pkg_name</code>的相应二进制包。
-运行<code>pkg_tarup_all</code>将把所有通过pkgsrc安装的软件都生成二进制包。</p>
-
-<p>待续&hellip;</p>
+<p>Peak annotation做的就是binding site的相关基因注释，在讲解<code>ChIPseeker</code>的注释功能之前，下次先讲解一下peak calling的输出，BED文件。</p>
 
 
  
@@ -199,12 +187,12 @@ installed pkg(s)</strong></p>
   <p class="meta">
     <span class="byline author vcard">Posted by <span class="fn">Guangchuang Yu</span></span>
     
-    <time>May 14, 2007</time>
+    <time>Jan 19, 2017</time>
     <span class="categories">
       Tags:
         
         
-          <a class="category" href="https://guangchuangyu.github.io/cn/tags/netbsd">netbsd</a>  <a class="category" href="https://guangchuangyu.github.io/cn/tags/pkgsrc">pkgsrc</a>  
+          <a class="category" href="https://guangchuangyu.github.io/cn/tags/chipseeker">ChIPseeker</a>  
         
     </span>
   </p>
@@ -216,11 +204,11 @@ installed pkg(s)</strong></p>
 
   <p class="meta">
     
-        <a class="basic-alignment left" href="https://guangchuangyu.github.io/cn/2007/05/scilab%E4%B8%89%E7%BB%B4%E5%B9%B3%E9%9D%A2%E7%BB%98%E5%9B%BE/" title="scilab三维平面绘图">scilab三维平面绘图</a>
+        <a class="basic-alignment left" href="https://guangchuangyu.github.io/cn/2017/01/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E6%96%87markdown%E4%B8%80%E9%94%AE%E6%8E%92%E7%89%88/" title="微信公众文markdown一键排版">微信公众文markdown一键排版</a>
     
 
     
-      <a class="basic-alignment right" href="https://guangchuangyu.github.io/cn/2007/05/edit-partition-table-in-netbsd/macppc/" title="Edit partition table in NetBSD/macppc">Edit partition table in NetBSD/macppc</a>
+      <a class="basic-alignment right" href="https://guangchuangyu.github.io/cn/2017/02/wrapping-labels-in-ggplot2/" title="wrapping labels in ggplot2">wrapping labels in ggplot2</a>
     
   </p>
 
@@ -230,7 +218,7 @@ installed pkg(s)</strong></p>
 
   
   
-<div class="ds-thread" data-thread-key= pkgsrc&#32;tips data-title= pkgsrc&#32;tips data-url= https://guangchuangyu.github.io/cn/2007/05/pkgsrc-tips/ ></div>
+<div class="ds-thread" data-thread-key= ChIPseq简介 data-title= ChIPseq简介 data-url= https://guangchuangyu.github.io/cn/2017/01/chipseq%E7%AE%80%E4%BB%8B/ ></div>
 
 
 <script type="text/javascript">

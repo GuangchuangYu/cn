@@ -6,8 +6,53 @@
     <description>Recent content in Chipseeker on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 08 Jan 2017 22:53:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 19 Jan 2017 12:23:16 +0800</lastBuildDate>
     <atom:link href="https://guangchuangyu.github.io/cn/tags/chipseeker/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ChIPseq简介</title>
+      <link>https://guangchuangyu.github.io/cn/2017/01/chipseq%E7%AE%80%E4%BB%8B/</link>
+      <pubDate>Thu, 19 Jan 2017 12:23:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/01/chipseq%E7%AE%80%E4%BB%8B/</guid>
+      <description>&lt;p&gt;ChIP是指染色质免疫沉淀，它通特异结合抗体将DNA结合蛋白免疫沉淀，可以用于捕获蛋白质（如转录因子，组蛋白修饰）的DNA靶点。这技术存在非常久了，在二代测序之前，结合microarray，它的名字叫&lt;code&gt;ChIP-on-chip&lt;/code&gt;，二代测序出来之后，显而易见的，免疫沉淀拉下来的DNA拿去NGS测序，这必然是下一代的ChIP技术，优点也是显而易见的，不再需要设计探针（往往存在着一定的偏向性）。所以NGS出来以后，不差钱的牛逼实验室显然占据上风，谁先做出来，谁就定义了新技术。这是有钱人的竞赛，没钱的只能等着技术烂大街的时候跟风做。&lt;/p&gt;
+
+&lt;p&gt;这是显而易见的下一代技术，外加技术上完全是可行的，所以这是一场单纯的时间竞赛，于是几乎同时出来CNS文章，基本上谁也不比谁差地同时扔出来。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Johnson DS, Mortazavi A et al. (2007) Genome-wide mapping of in vivo protein–DNA interactions. Science 316: 1497–1502&lt;/li&gt;
+&lt;li&gt;Robertson G et al.(2007) Genome-wide profiles of STAT1 DNA association using chromatin immunoprecipitation and massively parallel sequencing. Nature Methods 4: 651–657&lt;/li&gt;
+&lt;li&gt;Schmid et al. (2007) ChIP-Seq Data reveal nucleosome architecture of human promoters. Cell 131: 831–832&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;2007年来自三个不同的实验室，几乎是同时间出来（最长差不了3个月），分别发CNS，一起定义了这个&lt;code&gt;ChIPseq&lt;/code&gt;技术。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/CS/chipseq.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这个技术分为4步：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Cross-linking&lt;/li&gt;
+&lt;li&gt;Sonication&lt;/li&gt;
+&lt;li&gt;IP&lt;/li&gt;
+&lt;li&gt;Sequencing&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;DNA和蛋白质交联(cross-linking)，超声(sonication)将染色体随机切割，利用抗原抗体的特异性识别(IP)，把&lt;strong&gt;目标蛋白&lt;/strong&gt;相结合的DNA片段沉淀下来，反交联释放DNA片段，最后是测序(sequencing)。&lt;/p&gt;
+
+&lt;p&gt;一个典型的分析流程如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/CS/ChIP-seq-1.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;测序之后，我们当然首先需要做质量控制，然后就是做mapping，拿到这些DNA片段在染色体上的位置信息，ChIPseq的数据我们还需要做peak calling，把背景噪声去掉，比如上图中使用MACS做peak calling，这样我们就得到了protein binding site (peak)，就可以做下游的分析，比如可视化、相关的基因（比如最近的基因、宿主基因）、Motif分析等等。&lt;/p&gt;
+
+&lt;p&gt;Peak annotation做的就是binding site的相关基因注释，在讲解&lt;code&gt;ChIPseeker&lt;/code&gt;的注释功能之前，下次先讲解一下peak calling的输出，BED文件。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>ChIPseq从入门到放弃</title>
