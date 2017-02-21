@@ -6,8 +6,49 @@
     <description>Recent content in Visualization on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 03 Dec 2016 00:53:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 21 Feb 2017 12:23:16 +0800</lastBuildDate>
     <atom:link href="https://guangchuangyu.github.io/cn/categories/visualization/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>根据GTF画基因的多个转录本结构</title>
+      <link>https://guangchuangyu.github.io/cn/2017/02/%E6%A0%B9%E6%8D%AEgtf%E7%94%BB%E5%9F%BA%E5%9B%A0%E7%9A%84%E5%A4%9A%E4%B8%AA%E8%BD%AC%E5%BD%95%E6%9C%AC%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Tue, 21 Feb 2017 12:23:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/02/%E6%A0%B9%E6%8D%AEgtf%E7%94%BB%E5%9F%BA%E5%9B%A0%E7%9A%84%E5%A4%9A%E4%B8%AA%E8%BD%AC%E5%BD%95%E6%9C%AC%E7%BB%93%E6%9E%84/</guid>
+      <description>&lt;p&gt;这是&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzAxMDkxODM1Ng==&amp;amp;mid=2247484044&amp;amp;idx=2&amp;amp;sn=56b45eaeb4ad344481afa05abeb1c53e&amp;amp;chksm=9b484237ac3fcb219e41d5653fb800f987e7d217bbb3a5a0c0170ffb8e402f4cc5f726212ef7&amp;amp;mpshare=1&amp;amp;scene=1&amp;amp;srcid=0220calgiLgIZmjiiaNXZ0BE&amp;amp;key=df0a0b140e64a33b97880a54ee7cc95794b60a225d5338e88620674bed463405e61c5365394b7830750de8d3a88e122babd535c88c7d74b974b20c509218cf00d106c991a3a3f049c698a8f847aa5e06&amp;amp;ascene=0&amp;amp;uin=MTMxNjc4OTY2Mg%3D%3D&amp;amp;devicetype=iMac14%2C2+OSX+OSX+10.11.6+build(15G1217&#34;&gt;生物技能树的一道习题&lt;/a&gt;&amp;amp;version=12010310&amp;amp;nettype=WIFI&amp;amp;fontScale=100&amp;amp;pass_ticket=J1eAvg1veHMBZIOMVGYm1PxOxXHeQHJpF8%2BD0NyGdpCpT0gzYYAkuagjrw0kvQNd)，使用了base plot来画，做为补充，我使用ggplot2来重画一遍。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;url &amp;lt;- &amp;quot;http://www.broadinstitute.org/cancer/cga/sites/default/files/data/tools/rnaseqc/gencode.v7.annotation_goodContig.gtf.gz&amp;quot;
+tmpfile &amp;lt;- tempfile(fileext=&amp;quot;.gtf.gz&amp;quot;)
+download.file(url, tmpfile)
+gtf &amp;lt;- read.table(tmpfile,stringsAsFactors = F,
+                  header = F,comment.char = &amp;quot;#&amp;quot;,sep = &#39;\t&#39;
+                  )
+gtf &amp;lt;- gtf[gtf[,2] ==&#39;HAVANA&#39;,]
+gtf &amp;lt;- gtf[grepl(&#39;protein_coding&#39;,gtf[,9]),]
+gtf$gene &amp;lt;- sapply(as.character(gtf[,9]), function(x) sub(&amp;quot;.*gene_name\\s([^;]+);.*&amp;quot;, &amp;quot;\\1&amp;quot;, x))
+
+draw_gene &amp;lt;- &#39;ANXA1&#39;
+structure &amp;lt;- gtf[gtf$gene==draw_gene,c(1,3:5)]
+names(structure) &amp;lt;- c(&amp;quot;chr&amp;quot;, &amp;quot;record&amp;quot;, &amp;quot;start&amp;quot;, &amp;quot;end&amp;quot;)
+idx &amp;lt;- which(structure$record == &amp;quot;transcript&amp;quot;)
+s &amp;lt;- idx+1
+e &amp;lt;- c(idx[-1]-1, nrow(structure))
+g &amp;lt;- lapply(seq_along(s), function(i) {
+  x &amp;lt;- structure[s[i]:e[i],]
+  x$transcript &amp;lt;- i
+  return(x)
+}) %&amp;gt;% do.call(rbind, .)
+
+g &amp;lt;- g[g$record == &amp;quot;exon&amp;quot;,]
+g$transcript &amp;lt;- factor(g$transcript)
+
+library(ggplot2)
+ggplot(g) + geom_segment(aes(x=start, xend=end, y=transcript, yend=transcript, color=transcript), size=2) + theme(legend.position=&amp;quot;none&amp;quot;) + labs(title=&amp;quot;ANXA1&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/gtf.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>中空的环形树</title>
@@ -1098,15 +1139,11 @@ print(p)
 plot，但直方图比饼图要好，因为人类的眼睛适合于比较高度，而不是弧度。&lt;/p&gt;
 
 &lt;p&gt;多半时候生物学数据并非简单的计数数据，对于测量数据，在展示数据分布时，很多人会使用他们熟悉的barplot，用高度来表示mean，然后再加上errorbar，这样展示数据，信息量是非常低的，使用boxplot能够提供更多的数据分布信息，能更好地展现数据，但可能很多人只会在excel里画barplot，Nature
-Methods
-2013年的文章中有100个barplot图，而只有20个boxplot图，从这里就可以看出来，用boxplot的人远远没有barplot多，于是NPG怒了，写了两篇专栏文章&lt;a href=&#34;http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2807.html&#34;&gt;Points of View: Bar charts and box plots&lt;/a&gt;和&lt;a href=&#34;http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2813.html&#34;&gt;Points of Significance: Visualizing samples with box plots&lt;/a&gt;并且发表了一篇&lt;a href=&#34;http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2811.html&#34;&gt;BoxPlotR: a web tool for generation of box plots&lt;/a&gt;方便大家画boxplot，如此简单的web tool能够发Nature Methods，实在是让人羡慕妒忌恨啊。&lt;/p&gt;
+Methods 2013年的文章中有100个barplot图，而只有20个boxplot图，从这里就可以看出来，用boxplot的人远远没有barplot多，于是NPG怒了，写了两篇专栏文章&lt;a href=&#34;http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2807.html&#34;&gt;Points of View: Bar charts and box plots&lt;/a&gt;和&lt;a href=&#34;http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2813.html&#34;&gt;Points of Significance: Visualizing samples with box plots&lt;/a&gt;并且发表了一篇&lt;a href=&#34;http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2811.html&#34;&gt;BoxPlotR: a web tool for generation of box plots&lt;/a&gt;方便大家画boxplot，如此简单的web tool能够发Nature Methods，实在是让人羡慕妒忌恨啊。&lt;/p&gt;
 
-&lt;p&gt;Boxplot从1970年由John
-Tukey提示，到现在已经40多年了，他有很多的变种，比如&lt;a href=&#34;http://guangchuangyu.github.io/2012/02/violin-plot/&#34;&gt;violin plot&lt;/a&gt;和&lt;a href=&#34;http://www.jstatsoft.org/v28/c01/paper&#34;&gt;beanplot&lt;/a&gt;，violin
-plot和beanplot是很像的，都是把box换成density
-curve，beanplot另外把数据点在中间用线条表示出来，这个很容易加上去，正如我在&lt;a href=&#34;http://guangchuangyu.github.io/2012/02/violin-plot/&#34;&gt;violin plot&lt;/a&gt;中把数据点加进去一样。同样可以把数据点加进boxplot中，还有很多手法来展示boxplot，比如可以用缺口(notch)形式来画boxplot，可以把中间的宽度表示为median值的置信空间。boxplot的宽度可以用样本量来归一化，如果sample
-size足够大的话，$mean\pm errorbar$
-不会超出box，可以很清晰把这个信息也展示在boxplot中。&lt;/p&gt;
+&lt;p&gt;Boxplot从1970年由John Tukey提示，到现在已经40多年了，他有很多的变种，比如&lt;a href=&#34;http://guangchuangyu.github.io/2012/02/violin-plot/&#34;&gt;violin plot&lt;/a&gt;和&lt;a href=&#34;http://www.jstatsoft.org/v28/c01/paper&#34;&gt;beanplot&lt;/a&gt;，violin
+plot和beanplot是很像的，都是把box换成density curve，beanplot另外把数据点在中间用线条表示出来，这个很容易加上去，正如我在&lt;a href=&#34;http://guangchuangyu.github.io/2012/02/violin-plot/&#34;&gt;violin plot&lt;/a&gt;中把数据点加进去一样。同样可以把数据点加进boxplot中，还有很多手法来展示boxplot，比如可以用缺口(notch)形式来画boxplot，可以把中间的宽度表示为median值的置信空间。boxplot的宽度可以用样本量来归一化，如果sample
+size足够大的话，$mean\pm errorbar$ 不会超出box，可以很清晰把这个信息也展示在boxplot中。&lt;/p&gt;
 
 &lt;p&gt;如果数据量比较少，可以用scatterplot+errorbar的形式展示数据，正如我在&lt;a href=&#34;http://pubs.rsc.org/en/Content/ArticleLanding/2011/MB/C0MB00055H#!divAbstract&#34;&gt;Phosphoproteome profile of human lung cancer cell line A549&lt;/a&gt;中所画的&lt;a href=&#34;http://www.douban.com/photos/photo/1560368200/&#34;&gt;图7&lt;/a&gt;。&lt;/p&gt;
 </description>
