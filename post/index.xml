@@ -43,7 +43,10 @@ g &amp;lt;- g[g$record == &amp;quot;exon&amp;quot;,]
 g$transcript &amp;lt;- factor(g$transcript)
 
 library(ggplot2)
-ggplot(g) + geom_segment(aes(x=start, xend=end, y=transcript, yend=transcript, color=transcript), size=2) + theme(legend.position=&amp;quot;none&amp;quot;) + labs(title=&amp;quot;ANXA1&amp;quot;)
+ggplot(g) + 
+    geom_segment(aes(x=start, xend=end, y=transcript, 
+                yend=transcript, color=transcript), size=2) + 
+    theme(legend.position=&amp;quot;none&amp;quot;) + labs(title=&amp;quot;ANXA1&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/gtf.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
