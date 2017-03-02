@@ -6,8 +6,80 @@
     <description>Recent content in Posts on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 21 Feb 2017 12:23:16 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 03 Mar 2017 00:10:37 +0800</lastBuildDate>
     <atom:link href="https://guangchuangyu.github.io/cn/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>unknown annotation in enrichment analysis</title>
+      <link>https://guangchuangyu.github.io/cn/2017/03/unknown-annotation-in-enrichment-analysis/</link>
+      <pubDate>Fri, 03 Mar 2017 00:10:37 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/03/unknown-annotation-in-enrichment-analysis/</guid>
+      <description>
+
+&lt;p&gt;小伙伴说注释不全，比如KEGG只有不到1万个基因有注释，但他一次RNA-seq出来的基因有2万多个，那其它没注释那1万多个岂不是扔了？！就某个通路来说，两种情况，要么属于，要么不属于这个通路。那1万多个应该放在背景里，不要扔。&lt;/p&gt;
+
+&lt;p&gt;我的解答是三种情况，1属于，2不属于，3不知道。对于缺失信息的，当然是扔。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/685336006.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然而他觉得影响不大，这必须是有影响的。我们算一下p值就知道了。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;第一种情况-只搞大n:78c05f2a964a410613eebad16c9db2dc&#34;&gt;第一种情况，只搞大N&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; k
+[1] 10
+&amp;gt; n
+[1] 100
+&amp;gt; M
+[1] 500
+&amp;gt; N1
+[1] 10000
+&amp;gt; phyper(k-1, M, N1-M, n, lower.tail=F)
+[1] 0.02751124
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;比如有这样的情况，算出来&lt;strong&gt;0.0275&lt;/strong&gt;，假如背景现在翻一翻，我们来看一下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; N2
+[1] 20000
+&amp;gt; phyper(k-1, M, N2-M, n, lower.tail=F)
+[1] 0.0002018491
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;p值变成正确的100分之一了。影响是如此之大！&lt;/p&gt;
+
+&lt;h2 id=&#34;第二种情况-n和n都搞大:78c05f2a964a410613eebad16c9db2dc&#34;&gt;第二种情况，N和n都搞大&lt;/h2&gt;
+
+&lt;p&gt;第一种情况是最常见的，有些web-server或软件，会有参数说估计一下物种的基因总数，这就是在搞大&lt;strong&gt;N&lt;/strong&gt;啊。&lt;/p&gt;
+
+&lt;p&gt;然后你可能会觉得，N大了，那你的基因列表里没注释的也不能扔啊，N翻倍了，n也应该翻倍？！&lt;/p&gt;
+
+&lt;p&gt;我们就当n也翻倍吧，看一下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; phyper(k-1, M, N2-M, n*2, lower.tail=F)
+[1] 0.02930878
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;好像是和正确答案差不多，然而大家有没有想到，这是有前提条件的，建立在完全随机的基因上，也就是说基因有没有注释的概率是一样的，我们在一个基因池子里随机捞一些出来研究，这显然是不成立的，有些通路就是被研究得很透，有些就是基本未知。科学上有些东西，就像个死火山，要靠某个突破之后突然喷发，研究上的东西，从来不是随机在发展。还拿KEGG来说吧，也就是代谢通路比较全。&lt;/p&gt;
+
+&lt;p&gt;所以第一点，N翻倍了，n在事实上不会刚好也翻倍的。假如n是乘1.5吧，我们来看p值:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; phyper(k-1, M, N2-M, n*1.5, lower.tail=F)
+[1] 0.004529063
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;是正确p值的1/7，差别还有蛮大的。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;即使第二种情况成立，注释是随机的，你拿到的基因列表，也不应该是随机的，你无法对缺失注释的基因的分布做任何的估计，特别是对你的基因列表，不扔是错的。&lt;/p&gt;
+
+&lt;p&gt;所以必须要扔，注释信息本身是不全的，是有bias的，但这是现实，你没办法改善现实的情况下，起码不要想当然去把情况弄得更糟。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>根据GTF画基因的多个转录本结构</title>
@@ -624,49 +696,6 @@ p+ ggtitle(&#39;Y叔的书影音&#39;) + theme(plot.title=element_text(family=&#
 &lt;p&gt;于是产生下图：&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/Screen Shot 2016-11-21 at 7.47.34 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>食色性也</title>
-      <link>https://guangchuangyu.github.io/cn/2016/11/%E9%A3%9F%E8%89%B2%E6%80%A7%E4%B9%9F/</link>
-      <pubDate>Mon, 21 Nov 2016 12:23:16 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2016/11/%E9%A3%9F%E8%89%B2%E6%80%A7%E4%B9%9F/</guid>
-      <description>&lt;p&gt;画图配色并不是一件简单的事情，好的配色让人眼前一亮，虽然R有很多配色方案，做为ggplot2的爱好者，ggthemes也提供了很多主题，内置了很多配色方案，还有一些其它的包，比如ggtech，包含了一些科技公司比如facebook, twitter, google的典型配色方案，甚至于ggsci，提供了nature, lancet的配色方案。&lt;/p&gt;
-
-&lt;p&gt;但这些远远不够！
-但这些远远不够！
-但这些远远不够！&lt;/p&gt;
-
-&lt;p&gt;看到一张图片让我眼前一亮，我想用它的配色方案呢！我想拿最新电影的海报的配色来装个逼呢！画图时不想用现成的配色，想要另类一些，我想用一些大自然的风格，比如求偶期间各种鸟类的羽毛颜色来画！&lt;/p&gt;
-
-&lt;p&gt;这些在R里面，都是可以的，可以的，可以的&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;下面隆重推荐一个叫rPlotter的R包，&lt;a href=&#34;https://github.com/woobe/rPlotter&#34;&gt;https://github.com/woobe/rPlotter&lt;/a&gt;，可以非常方便地在图片中抽提颜色。其实实现起来也容易，用EBImage把图片读进去，存成一个RGB的三维矩阵，通过kmeans聚类，把中心点颜色报出来就可以了。若干年前我写过用kmeans压缩图片，用的就是把颜色填充成中心点颜色，稍微把之前的代码改一改，也能实现这个颜色抽提的功能。&lt;/p&gt;
-
-&lt;p&gt;实例演示，我google了一张spider的图片，把颜色提出来，拿来画barplot：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2016/Jumping-spider.jpeg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;pal = extract_colours(&amp;quot;http://i1.mirror.co.uk/incoming/article8566552.ece/ALTERNATES/s615b/Jumping-spider.jpg&amp;quot;)
-barplot(1:5, col=pal)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2016/spider_color.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;再来一张homer simpson的图片：
-&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2016/kissing-Homer-Simpson-The-Simpsons-Marge-Simpson-_578180-20_zx1jpk.jpeg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;pal2 = extract_colours(&amp;quot;https://images.complex.com/complex/image/upload/t_article_image/kissing-Homer-Simpson-The-Simpsons-Marge-Simpson-_578180-20_zx1jpk.jpg&amp;quot;, 7)
-barplot(1:7, col=pal2)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2016/homer_color.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;之前说的各种场景，都是可以实现的，最新海报配色，你可以有！你想画图用美队来配色，可以有！拿蜘蛛小鸟来配色，可以有！甚至于拿肌肉男的肉色也可以的。下次发文章在愁配色的时候，何不搜索图片，看看有什么图片顺眼的，就拿来用了。&lt;/p&gt;
-
-&lt;p&gt;即使你不会用R画图，你也可以把这配色方案应该于M$的office中，word/excel/powerpoint都是支持自定义颜色主题的，请自行搜索 &amp;ldquo;office 自定义主题颜色&amp;rdquo;。&lt;/p&gt;
 </description>
     </item>
     
