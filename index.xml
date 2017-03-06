@@ -6,8 +6,36 @@
     <description>Recent content on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Mar 2017 00:10:37 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 06 Mar 2017 23:53:00 +0800</lastBuildDate>
     <atom:link href="https://guangchuangyu.github.io/cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>linux版迅雷</title>
+      <link>https://guangchuangyu.github.io/cn/2017/03/linux%E7%89%88%E8%BF%85%E9%9B%B7/</link>
+      <pubDate>Mon, 06 Mar 2017 23:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/03/linux%E7%89%88%E8%BF%85%E9%9B%B7/</guid>
+      <description>&lt;p&gt;上次讲了&lt;a href=&#34;http://guangchuangyu.github.io/2016/03/yet-an-unofficial-bioedit-for-osx/&#34;&gt;OSX版BioEdit&lt;/a&gt;，还蛮受欢迎，说到下载工具，linux的小伙伴们都想用迅雷，有没有？毕竟大家都想耍流氓。许久没打开迅雷，今日一打开，发现被学校给墙掉了。&lt;strong&gt;大写的杯具啊！&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;You have attempted to use an application which is in violation of your internet usage policy.
+Thunder.Xunlei
+Category: P2P&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;老司机不能偷偷地下片 了，唯有分享出来，带大家上车。还好我有一张半年前的截屏，不然连张图都没有。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/2016-08-29-121755_1280x800_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这就是linux版的迅雷，系统状态栏最右下角有个小图标，也有个状态窗口，同时还支持浏览器整合，可以说该有的都有了。&lt;/p&gt;
+
+&lt;p&gt;这实际上是迅雷的官方作品，是迅雷路由固件（Xware），要带到linux来做为桌面软件，需要一张皮，也就是今天要说的xware-desktop（社区开源作品），所以这是个半官方半社区的软件。&lt;/p&gt;
+
+&lt;p&gt;安装还是挺简单的，到全球最大的同性交友网站github上搜索XwareDesktop，到了项目主页上，照着文档来就行。&lt;/p&gt;
+
+&lt;p&gt;一打开xware-desktop的&lt;a href=&#34;https://github.com/Xinkai/XwareDesktop&#34;&gt;github repo&lt;/a&gt;，发现作者说他不维护了。不过不维护也没关系，因为这只是一张皮，等到什么时候不能用的，自会有人接手或者写新的，只要能在PC上跑的东西，没有搞不了的，只要迅雷有提供路由固件，老司机们就能开车。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>unknown annotation in enrichment analysis</title>
@@ -615,89 +643,6 @@ addtorepo: windows
 &lt;p&gt;然而这只是最初的clusterProfiler，做为一个良心之作，在发表文章之后，不断更新，现在GO已经支持非常多的物种，KEGG支持超过3千个物种而且是在线数据（多半的工具在用过时数据），还有其它比如Broad Institute的Molecular Signatures Database等各种注释，以及用户自己的注释信息。并且GSEA也是支持的。&lt;/p&gt;
 
 &lt;p&gt;所以呢用户自己（定制）的注释信息现在是单独支持，不仅限于GO，那么之前buildGOmap -&amp;gt; enrichGO的流程就不再需要了，你可以用你的注释信息直接用enricher/GSEA分析，如果你分析的是GO，并用你的注释只有直接注释，那么你可以用buildGOmap把间接注释加上去，然后再用enricher/GSEA分析，所以现在的流程是buildGOmap(optional and only for GO) -&amp;gt; enricher/GSEA。在现在clusterProfiler里，buildGOmap不会产生文件，而是输出一个data.frame，做为background annotation输入给enricher(超几何检验）或GSEA。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>使用emoji画图</title>
-      <link>https://guangchuangyu.github.io/cn/2016/11/%E4%BD%BF%E7%94%A8emoji%E7%94%BB%E5%9B%BE/</link>
-      <pubDate>Fri, 25 Nov 2016 00:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2016/11/%E4%BD%BF%E7%94%A8emoji%E7%94%BB%E5%9B%BE/</guid>
-      <description>&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/hashtag/rstats?src=hash&#34;&gt;#rstats&lt;/a&gt; code for the PhD/cute animals gestation &lt;a href=&#34;https://twitter.com/hashtag/ggplot2?src=hash&#34;&gt;#ggplot2&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/gganimate?src=hash&#34;&gt;#gganimate&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/emojifont?src=hash&#34;&gt;#emojifont&lt;/a&gt; plot &lt;a href=&#34;https://t.co/qWM0bCHoHJ&#34;&gt;https://t.co/qWM0bCHoHJ&lt;/a&gt; 🐭🐶🐱🐺🐯🐷🐏🐻👶🐳🐘📕 &lt;a href=&#34;https://t.co/a4GYl191a8&#34;&gt;https://t.co/a4GYl191a8&lt;/a&gt;&lt;/p&gt;&amp;mdash; Maëlle Salmon (@ma_salmon) &lt;a href=&#34;https://twitter.com/ma_salmon/status/800007428096094209&#34;&gt;November 19, 2016&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;无缘无故收到好几条消息，原来是用emoji画图。&lt;/p&gt;
-
-&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/pboesu&#34;&gt;@pboesu&lt;/a&gt; btw do you know the &lt;a href=&#34;https://twitter.com/guangchuangyu&#34;&gt;@guangchuangyu&lt;/a&gt; emojifont pkg? I&amp;#39;ve used it more than &lt;a href=&#34;https://twitter.com/millerdl&#34;&gt;@millerdl&lt;/a&gt; emoGG &lt;a href=&#34;https://t.co/p27fwEmDSD&#34;&gt;https://t.co/p27fwEmDSD&lt;/a&gt; but I like both &lt;a href=&#34;https://t.co/uV49WjOSp3&#34;&gt;https://t.co/uV49WjOSp3&lt;/a&gt;&lt;/p&gt;&amp;mdash; Maëlle Salmon (@ma_salmon) &lt;a href=&#34;https://twitter.com/ma_salmon/status/800009044123586560&#34;&gt;November 19, 2016&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;做为emojifont包的作者，我表示很高兴看到自己的包给大家带来乐趣，在回复中@milerdl说emoGG是他用了两个晚上写的，emojifont刚好也是我用了两个晚上写的，一个晚上支持了emoji字体，另一个晚上加入了fontawesome字体。&lt;/p&gt;
-
-&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Hi &lt;a href=&#34;https://twitter.com/guangchuangyu&#34;&gt;@guangchuangyu&lt;/a&gt; excellent &lt;a href=&#34;https://twitter.com/hashtag/rstats?src=hash&#34;&gt;#rstats&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/emojifont?src=hash&#34;&gt;#emojifont&lt;/a&gt; implementation! &lt;a href=&#34;https://t.co/lTIWDQ1zq0&#34;&gt;https://t.co/lTIWDQ1zq0&lt;/a&gt; very cool! &lt;a href=&#34;https://t.co/sCALpuWW28&#34;&gt;pic.twitter.com/sCALpuWW28&lt;/a&gt;&lt;/p&gt;&amp;mdash; Jo-fai (Joe) Chow (@matlabulous) &lt;a href=&#34;https://twitter.com/matlabulous/status/677205176663588865&#34;&gt;December 16, 2015&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;在写这个包之前，我早就有用emoji在R画图中，写这个包也正是为了回应emoGG，因为我觉得他的实现方式并不理想，而我的更为灵活。&lt;/p&gt;
-
-&lt;p&gt;回到主题上，我将展示使用emojifont来画图。&lt;/p&gt;
-
-&lt;p&gt;下面这个数据是我每年读书、看电影、听专辑的数目：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt; d
-   year category num
-1  2009     book  35
-2  2009    movie  64
-3  2009    music  24
-4  2010     book  34
-5  2010    movie  47
-6  2010    music  13
-7  2011     book  17
-8  2011    movie  18
-9  2011    music   2
-10 2012     book  25
-11 2012    movie  25
-12 2012    music   0
-13 2013     book  15
-14 2013    movie  17
-15 2013    music   0
-16 2014     book   8
-17 2014    movie  11
-18 2014    music   1
-19 2015     book   5
-20 2015    movie  14
-21 2015    music   0
-22 2016     book   4
-23 2016    movie  14
-24 2016    music   0
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;先加载所需的包和emoji字体：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;require(ggplot2)
-require(ggthemes)
-require(emojifont)
-load.emojifont()
-emo &amp;lt;- emoji(c(&amp;quot;book&amp;quot;, &amp;quot;movie_camera&amp;quot;, &amp;quot;musical_note&amp;quot;))
-names(emo) &amp;lt;- c(&#39;book&#39;, &#39;movie&#39;, &#39;music&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;画出趋势图，并在每个点上用相应的emoji字体标注：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;p &amp;lt;- ggplot(d, aes(x=factor(year), y=num, group=category, colour=category))
-p &amp;lt;- p +geom_line() +geom_text(aes(label=emo[category]), family=&#39;OpenSansEmoji&#39;, size=10) +xlab(NULL) + ylab(NULL) 
-
-更改一些背景等主题细节，设置中文字体等：
-p &amp;lt;- p + theme_fivethirtyeight() + scale_color_tableau()
-p &amp;lt;- p+theme(axis.text.x=element_text(face=&amp;quot;bold&amp;quot;, size=16), 
-        axis.text.y=element_text(face=&amp;quot;bold&amp;quot;, size=16))
- p &amp;lt;- p+theme(legend.text=element_text(size=16, family=&amp;quot;OpenSansEmoji&amp;quot;), 
-            legend.title=element_blank(), legend.position=&#39;none&#39;)
-p+ ggtitle(&#39;Y叔的书影音&#39;) + theme(plot.title=element_text(family=&#39;STKaiti&#39;))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;于是产生下图：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/Screen Shot 2016-11-21 at 7.47.34 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     

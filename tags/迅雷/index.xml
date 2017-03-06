@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>迅雷 on Guangchuang Yu</title>
+    <link>https://guangchuangyu.github.io/cn/tags/%E8%BF%85%E9%9B%B7/</link>
+    <description>Recent content in 迅雷 on Guangchuang Yu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 06 Mar 2017 23:53:00 +0800</lastBuildDate>
+    <atom:link href="https://guangchuangyu.github.io/cn/tags/%E8%BF%85%E9%9B%B7/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>linux版迅雷</title>
+      <link>https://guangchuangyu.github.io/cn/2017/03/linux%E7%89%88%E8%BF%85%E9%9B%B7/</link>
+      <pubDate>Mon, 06 Mar 2017 23:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/03/linux%E7%89%88%E8%BF%85%E9%9B%B7/</guid>
+      <description>&lt;p&gt;上次讲了&lt;a href=&#34;http://guangchuangyu.github.io/2016/03/yet-an-unofficial-bioedit-for-osx/&#34;&gt;OSX版BioEdit&lt;/a&gt;，还蛮受欢迎，说到下载工具，linux的小伙伴们都想用迅雷，有没有？毕竟大家都想耍流氓。许久没打开迅雷，今日一打开，发现被学校给墙掉了。&lt;strong&gt;大写的杯具啊！&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;You have attempted to use an application which is in violation of your internet usage policy.
+Thunder.Xunlei
+Category: P2P&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;老司机不能偷偷地下片 了，唯有分享出来，带大家上车。还好我有一张半年前的截屏，不然连张图都没有。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/2016-08-29-121755_1280x800_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这就是linux版的迅雷，系统状态栏最右下角有个小图标，也有个状态窗口，同时还支持浏览器整合，可以说该有的都有了。&lt;/p&gt;
+
+&lt;p&gt;这实际上是迅雷的官方作品，是迅雷路由固件（Xware），要带到linux来做为桌面软件，需要一张皮，也就是今天要说的xware-desktop（社区开源作品），所以这是个半官方半社区的软件。&lt;/p&gt;
+
+&lt;p&gt;安装还是挺简单的，到全球最大的同性交友网站github上搜索XwareDesktop，到了项目主页上，照着文档来就行。&lt;/p&gt;
+
+&lt;p&gt;一打开xware-desktop的&lt;a href=&#34;https://github.com/Xinkai/XwareDesktop&#34;&gt;github repo&lt;/a&gt;，发现作者说他不维护了。不过不维护也没关系，因为这只是一张皮，等到什么时候不能用的，自会有人接手或者写新的，只要能在PC上跑的东西，没有搞不了的，只要迅雷有提供路由固件，老司机们就能开车。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
