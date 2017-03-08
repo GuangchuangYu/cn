@@ -14,7 +14,7 @@
   <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
   
-  <title>如何获取文献</title>
+  <title>BED文件</title>
 
   
   
@@ -109,15 +109,15 @@ ga('send', 'pageview');
       <article class="hentry" role="article">
         <header>
           <h1 class="entry-title">
-            如何获取文献 
+            BED文件 
           </h1>
-          <p class="meta">Sep 10, 2012 - 1 minute read - 
+          <p class="meta">Mar 9, 2017 - 1 minute read - 
 
           
 
           
           
-          <a class="label" href="https://guangchuangyu.github.io/cn/categories/biology">Biology</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/research">Research</a>
+          <a class="label" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
           </p>
         </header>
         <div class="entry-content">
@@ -141,46 +141,89 @@ ga('send', 'pageview');
 
 <br>
 
-    <p>这个题目又标题党了，不过是share一下一些地球人都应该知道的小tips而已。</p>
+    
 
-<p>据说是电信出口出了问题，学校里这两天大家都在叫pubmed上不去，我反正是上得去，就是慢点。大家好像少了pubmed就无法干活似的，不过也是，正所谓：熟读唐诗三百首，不会作诗也会吟。</p>
+<p>BED的全称是Browser Extensible Data，顾名思义是为genome browser设计的，大名鼎鼎的bedtools可不是什么「床上用品」。</p>
 
-<p>1.有备无患</p>
+<p>BED包含有3个必须的字段和9个可选字段。</p>
 
-<p>pubmed上不去，完全没影响，因为有<a href="http://www.hubmed.org">hubmed</a>,hubmed主页上写着：An alternative interface to the PubMed medical literature database，所以完全可以把它当作是pubmed的镜像。这个站点至少我在暨大上是超级快的。搜完底上还有链接，让你很方便地用同样的关键词在google (scholar)，Scirus, CrossRef，EBIMed等其它数据库里搜。</p>
+<p>三个字段包括：</p>
 
-<p>另外一个备选的站点是<a href="http://www.gopubmed.org/web/gopubmed/">gopubmed</a>，这个站点的亮点是整合了ontology。</p>
+<ul>
+<li>1 chrom - 染色体名字</li>
+<li>2 chromStart - 染色体起始位点</li>
+<li>3 chromEnd - 染色体终止位点</li>
+</ul>
 
-<p>最近欧洲大名鼎鼎的EBI也开始搞文献服务了，新开的<a href="http://europepmc.org/">Europe PubMed
-Central</a>，我比较喜欢它的排序功能，可以按文章的相关性或引用数来排。除了文献之后，还可以biological
-patents, clinical guidelines, PhD theses and research
-reports。这个站点现在刚创立，我觉得一两年之后，肯定会有更多的服务提供，前途无量啊。</p>
+<blockquote>
+<p>这里必须指出的是<strong>chromStart</strong>是起始于0，而不是1。很多分析软件都忽略了这一点，会有一个碱基的位移，据我说知Homer和ChIPseeker没有这个问题，而像peakAnalyzer, ChIPpeakAnno等都有位移的问题。</p>
+</blockquote>
 
-<ol>
-<li>文献管理
-读文献是人干的事，管理文献却是疯子干的事。如果你还活在手工整理文献的黑客帝国里，请赶紧吞下<a href="http://aurora1625.github.com/blog/2012/02/16/tame-the-beast/">红色药丸</a>。</li>
-</ol>
+<p>可选的9个字段包括：</p>
 
-<p>3.个性化推荐
-上网买本书，电商都会推荐给你，某本书可能你也想买。这是个性化推荐的时代，读文献也不例外，Google Scholar的新功能My updates，干的就是这个事，可以根据自己文章的内容，推荐相关的最新文献，想要用到这个功能，你需要建立<a href="http://scholar.google.com/citations?user=DO5oG40AAAAJ&amp;hl=en">google
-scholar profile</a>页面。</p>
+<ul>
+<li>4 name - 名字</li>
+<li>5 score - 分值(0-1000), 用于genome browser展示时上色。</li>
+<li>6 strand - 正负链，对于ChIPseq数据来说，<strong>一般</strong>没有正负链信息。</li>
+<li>7 thickStart - 画矩形的起点</li>
+<li>8 thickEnd - 画矩形的终点</li>
+<li>9 itemRgb - RGB值</li>
+<li>10 blockCount - 子元件（比如外显子）的数目</li>
+<li>11 blockSizes - 子元件的大小</li>
+<li>12 blockStarts - 子元件的起始位点</li>
+</ul>
 
-<p>4.订阅
-RSS改变了人类的阅读，很多的期刊都提供了RSS，如果你是火星人，不知道啥是RSS，那么打开你的QQ邮箱，点一下阅读空间，那玩意实现的就是RSS订阅了。个人比较推荐google reader。</p>
+<p>一般情况下，我们只用到前面5个字段，这也是做peak calling的MACS输出的字段。</p>
 
-<p>另一个值得一提的是NCBI的个性化服务<a href="http://www.ncbi.nlm.nih.gov/sites/myncbi/">My
-NCBI</a>，你可以设定关键词，当pubmed上有新文献和这个关键词匹配的话，NCBI可以定期给你发邮件提醒。</p>
+<p>其中第5个字段，MACS的解释是这样子的：</p>
 
-<p>5.求文献</p>
+<blockquote>
+<p>The 5th column in this file is the summit height of fragment pileup.</p>
+</blockquote>
 
-<p>科研大军越来越庞大，笑到最后的是各大出版社，不是读者给它送钱，就是作者给它送钱，当我们点full text时却被告知没付费么有permission，天下文章一大抄，没得抄是多么的不爽。我以前喜欢在FriendFeed上的references wanted里求下载。不过上friendfeed需要<a href="http://ygc.name/2010/10/11/the-chinese-complex-of-cross-wall/">一支红杏出墙来</a>。现在好了，国内的丁香园有个<a href="http://pubmed.cn/help/tools">一键求助</a>的功能，是个求文献的好去处。</p>
+<p>是片段堆积的峰高，这也不难理解，为什么我在ChIPseeker是画peak coverage的函数<strong>covplot</strong>要有个*weightCol*的参数了。</p>
 
-<p>6.下文献</p>
+<h2 id="数据可视化:99328489e3689b55705b2759560872b2">数据可视化</h2>
 
-<p>文献下不了，很多时候是不用求的，sci-hub.org这个代理就是个下文献的好地方，比<code>Phosphoproteome profile of human lung cancer cell line A549</code>这篇文章的网址是<a href="http://pubs.rsc.org/en/Content/ArticleLanding/2011/MB/C0MB00055H">http://pubs.rsc.org/en/Content/ArticleLanding/2011/MB/C0MB00055H</a>，把URL加上sci-hub.org这个代理，变成<a href="http://pubs.rsc.org.sci-hub.org/en/Content/ArticleLanding/2011/MB/C0MB00055H">http://pubs.rsc.org.sci-hub.org/en/Content/ArticleLanding/2011/MB/C0MB00055H</a>，就可以下到相应的PDF文件。</p>
+<p>从名字上看，它是为genome browser而生，相应的，<strong>ChIPseeker</strong>实现了*covplot*来可视化BED数据。</p>
 
-<p>欢迎补充。 PS:今天收到一颗树~
-<img src="https://guangchuangyu.github.io/blog_images/2012/09/120910A000-e1347326956761-768x1024.jpg" alt="" /></p>
+<h3 id="covplot-支持直接读文件出图:99328489e3689b55705b2759560872b2"><strong>covplot</strong>支持直接读文件出图：</h3>
+
+<pre><code class="language-r">library(ChIPseeker)
+library(ggplot2)
+
+files &lt;- getSampleFiles()
+
+covplot(files[[4]])
+</code></pre>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/covplot_1.png" alt="" /></p>
+
+<h3 id="支持granges对象-同时可以多个文件或者grangeslist:99328489e3689b55705b2759560872b2">支持GRanges对象，同时可以多个文件或者GRangesList</h3>
+
+<pre><code>peak=GenomicRanges::GRangesList(CBX6=readPeakFile(files[[4]]),
+                                CBX7=readPeakFile(files[[5]]))
+covplot(peak, weightCol=&quot;V5&quot;) + facet_grid(chr ~ .id)
+</code></pre>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/covplot_2.png" alt="" /></p>
+
+<h3 id="支持可视化某个窗口:99328489e3689b55705b2759560872b2">支持可视化某个窗口</h3>
+
+<pre><code>covplot(peak, weightCol=&quot;V5&quot;, chrs=c(&quot;chr17&quot;, &quot;chr18&quot;), xlim=c(4e7, 5e7)) + facet_grid(chr ~ .id)
+</code></pre>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/covplot_3.png" alt="" /></p>
+
+<p>拿到数据后，我们首先会可视化看一下数据，接下来就会想知道这些peak都和什么样的基因有关，这将在下次讲解，如何做注释。</p>
+
+<hr />
+
+<h2 id="citation:99328489e3689b55705b2759560872b2">Citation</h2>
+
+<p><strong><em>Yu G</em></strong>, Wang LG and He QY<sup>*</sup>. <a href="http://bioinformatics.oxfordjournals.org/content/31/14/2382">ChIPseeker: an R/Bioconductor package for ChIP peak annotation, comparison and visualization</a>. <strong><em>Bioinformatics</em></strong> 2015, 31(14):2382-2383.</p>
+
+<p><script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script><div class="altmetric-embed" data-badge-type="donut" data-badge-popover="right" data-altmetric-id="3781087"></div></p>
 
 
  
@@ -191,12 +234,12 @@ NCBI</a>，你可以设定关键词，当pubmed上有新文献和这个关键词
   <p class="meta">
     <span class="byline author vcard">Posted by <span class="fn">Guangchuang Yu</span></span>
     
-    <time>Sep 10, 2012</time>
+    <time>Mar 9, 2017</time>
     <span class="categories">
       Tags:
         
         
-          <a class="category" href="https://guangchuangyu.github.io/cn/tags/paper">paper</a>  
+          <a class="category" href="https://guangchuangyu.github.io/cn/tags/chipseeker">ChIPseeker</a>  <a class="category" href="https://guangchuangyu.github.io/cn/tags/chipseq">ChIPseq</a>  
         
     </span>
   </p>
@@ -208,17 +251,15 @@ NCBI</a>，你可以设定关键词，当pubmed上有新文献和这个关键词
 
   <p class="meta">
     
-        <a class="basic-alignment left" href="https://guangchuangyu.github.io/cn/2012/05/%E4%BB%80%E4%B9%88%E6%98%AFt-%E6%A3%80%E9%AA%8C/" title="什么是T 检验">什么是T 检验</a>
+        <a class="basic-alignment left" href="https://guangchuangyu.github.io/cn/2017/03/linux%E7%89%88%E8%BF%85%E9%9B%B7/" title="linux版迅雷">linux版迅雷</a>
     
 
-    
-      <a class="basic-alignment right" href="https://guangchuangyu.github.io/cn/2013/01/talen%E5%9F%BA%E5%9B%A0%E7%BC%96%E8%BE%91/" title="TALEN基因编辑">TALEN基因编辑</a>
     
   </p>
 
 
   
-<div class="ds-thread" data-thread-key= 如何获取文献 data-title= 如何获取文献 data-url= https://guangchuangyu.github.io/cn/2012/09/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E6%96%87%E7%8C%AE/ ></div>
+<div class="ds-thread" data-thread-key= BED文件 data-title= BED文件 data-url= https://guangchuangyu.github.io/cn/2017/03/bed%E6%96%87%E4%BB%B6/ ></div>
 
 
 <script type="text/javascript">

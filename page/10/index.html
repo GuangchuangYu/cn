@@ -111,6 +111,45 @@ ga('send', 'pageview');
     <article>
       <header>
         <h1 class="entry-title">
+          <a href="https://guangchuangyu.github.io/cn/2012/02/violin-plot/">violin plot</a>
+        </h1>
+        <p class="meta">Feb 7, 2012 - 1 minute read - 
+
+        
+        
+        
+        <a class="label" href="https://guangchuangyu.github.io/cn/categories/visualization/">Visualization</a>
+        </p>
+
+      </header>
+
+        
+          <p><p>ggplot2 0.9.0版本将在3月1号发布，改动较大，最近bioc mailing
+list也有诸多讨论，因为它导致了某些包编译出错（估计是NAMESPACE引起的）。</p>
+
+<p>按照hadley的说法是这是为了把他个人的项目变成一个社区项目。</p>
+
+<p>大多数的改动对用户来说是invisible的，用roxygen2去注释函数，核心代码使用S3重写，分离出一些特性（scales包）等。</p>
+
+<p>最明显的是现在画图速度变快了，不过我觉得最让人兴奋的是<code>guide_legend()</code>和<code>guide_colorbar()</code>两个函数，可以修改legend.</p>
+
+<p>画图的话，加了四个函数<code>geom_map()</code>, <code>geom_raster()</code>,
+<code>geom_dotplot()</code>和<code>geom_violin()</code>.</p>
+</p>
+
+          
+              <footer>
+                  <a href="https://guangchuangyu.github.io/cn/2012/02/violin-plot/" rel="full-article">Read On &rarr;</a>
+              </footer>
+          
+
+        
+
+    </article>
+    
+    <article>
+      <header>
+        <h1 class="entry-title">
           <a href="https://guangchuangyu.github.io/cn/2011/08/love-function-plot/">love function plot</a>
         </h1>
         <p class="meta">Aug 6, 2011 - 1 minute read - 
@@ -271,47 +310,6 @@ the metric itself.</p>
 
     </article>
     
-    <article>
-      <header>
-        <h1 class="entry-title">
-          <a href="https://guangchuangyu.github.io/cn/2009/07/bootstrap-method/">Bootstrap Method</a>
-        </h1>
-        <p class="meta">Jul 31, 2009 - 1 minute read - 
-
-        
-        
-        
-        <a class="label" href="https://guangchuangyu.github.io/cn/categories/statistics/">statistics</a>
-        </p>
-
-      </header>
-
-        
-          <p><p><a href="http://en.wikipedia.org/wiki/Bootstrapping_(statistics)">bootstrap</a>是对观测数据集进行有放回（replacement）的随机抽样，以评估总体的各项统计指标。可以用于假设检验、参数估计。好处是并不要求大样本，也不要求正态数据，并且对于不同的统计指标使用的是同样的计算方法。结果也更为可靠，坏处是计算量大。</p>
-
-<p>统计推断(statistical
-inference)是基于样本统计值的抽样分布来计算的，抽样分布需要从总体中许多的样本来计算，在只有一个样本的情况下，bootstrap对这一随机样本进行有放回的重复抽样，每一个重抽样本与原始随机样本一样大，每次计算相应的抽样的统计值，重复了N次之后，就可以计算统计值的bootstrap分布。</p>
-
-<p>下面做一个小小的试验：</p>
-
-<pre><code>a &lt;- c(seq(1:10), rnorm(50))  
-</code></pre>
-
-<p>#创建一个样本，60个数据，非正态分布的，如下图</p>
-
-<p><img src="http://guangchuangyu.github.io/blog_images/2009/07/sample_a.png" alt="" title="sample_a" /></p>
-</p>
-
-          
-              <footer>
-                  <a href="https://guangchuangyu.github.io/cn/2009/07/bootstrap-method/" rel="full-article">Read On &rarr;</a>
-              </footer>
-          
-
-        
-
-    </article>
-    
     
     
 
@@ -419,6 +417,10 @@ inference)是基于样本统计值的抽样分布来计算的，抽样分布需�
       
       
       <li class="post">
+        <a href="https://guangchuangyu.github.io/cn/2017/03/bed%E6%96%87%E4%BB%B6/">BED文件</a>
+      </li>
+      
+      <li class="post">
         <a href="https://guangchuangyu.github.io/cn/2017/03/linux%E7%89%88%E8%BF%85%E9%9B%B7/">linux版迅雷</a>
       </li>
       
@@ -432,10 +434,6 @@ inference)是基于样本统计值的抽样分布来计算的，抽样分布需�
       
       <li class="post">
         <a href="https://guangchuangyu.github.io/cn/2017/02/chipseq%E7%AE%80%E4%BB%8B/">ChIPseq简介</a>
-      </li>
-      
-      <li class="post">
-        <a href="https://guangchuangyu.github.io/cn/2017/02/wrapping-labels-in-ggplot2/">wrapping labels in ggplot2</a>
       </li>
       
     </ul>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chipseq on Guangchuang Yu</title>
+    <link>https://guangchuangyu.github.io/cn/tags/chipseq/</link>
+    <description>Recent content in Chipseq on Guangchuang Yu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 09 Mar 2017 00:13:57 +0800</lastBuildDate>
+    <atom:link href="https://guangchuangyu.github.io/cn/tags/chipseq/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>BED文件</title>
+      <link>https://guangchuangyu.github.io/cn/2017/03/bed%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Thu, 09 Mar 2017 00:13:57 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/03/bed%E6%96%87%E4%BB%B6/</guid>
+      <description>
+
+&lt;p&gt;BED的全称是Browser Extensible Data，顾名思义是为genome browser设计的，大名鼎鼎的bedtools可不是什么「床上用品」。&lt;/p&gt;
+
+&lt;p&gt;BED包含有3个必须的字段和9个可选字段。&lt;/p&gt;
+
+&lt;p&gt;三个字段包括：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1 chrom - 染色体名字&lt;/li&gt;
+&lt;li&gt;2 chromStart - 染色体起始位点&lt;/li&gt;
+&lt;li&gt;3 chromEnd - 染色体终止位点&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;这里必须指出的是&lt;strong&gt;chromStart&lt;/strong&gt;是起始于0，而不是1。很多分析软件都忽略了这一点，会有一个碱基的位移，据我说知Homer和ChIPseeker没有这个问题，而像peakAnalyzer, ChIPpeakAnno等都有位移的问题。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;可选的9个字段包括：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;4 name - 名字&lt;/li&gt;
+&lt;li&gt;5 score - 分值(0-1000), 用于genome browser展示时上色。&lt;/li&gt;
+&lt;li&gt;6 strand - 正负链，对于ChIPseq数据来说，&lt;strong&gt;一般&lt;/strong&gt;没有正负链信息。&lt;/li&gt;
+&lt;li&gt;7 thickStart - 画矩形的起点&lt;/li&gt;
+&lt;li&gt;8 thickEnd - 画矩形的终点&lt;/li&gt;
+&lt;li&gt;9 itemRgb - RGB值&lt;/li&gt;
+&lt;li&gt;10 blockCount - 子元件（比如外显子）的数目&lt;/li&gt;
+&lt;li&gt;11 blockSizes - 子元件的大小&lt;/li&gt;
+&lt;li&gt;12 blockStarts - 子元件的起始位点&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;一般情况下，我们只用到前面5个字段，这也是做peak calling的MACS输出的字段。&lt;/p&gt;
+
+&lt;p&gt;其中第5个字段，MACS的解释是这样子的：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The 5th column in this file is the summit height of fragment pileup.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;是片段堆积的峰高，这也不难理解，为什么我在ChIPseeker是画peak coverage的函数&lt;strong&gt;covplot&lt;/strong&gt;要有个*weightCol*的参数了。&lt;/p&gt;
+
+&lt;h2 id=&#34;数据可视化:99328489e3689b55705b2759560872b2&#34;&gt;数据可视化&lt;/h2&gt;
+
+&lt;p&gt;从名字上看，它是为genome browser而生，相应的，&lt;strong&gt;ChIPseeker&lt;/strong&gt;实现了*covplot*来可视化BED数据。&lt;/p&gt;
+
+&lt;h3 id=&#34;covplot-支持直接读文件出图:99328489e3689b55705b2759560872b2&#34;&gt;&lt;strong&gt;covplot&lt;/strong&gt;支持直接读文件出图：&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(ChIPseeker)
+library(ggplot2)
+
+files &amp;lt;- getSampleFiles()
+
+covplot(files[[4]])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/covplot_1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;支持granges对象-同时可以多个文件或者grangeslist:99328489e3689b55705b2759560872b2&#34;&gt;支持GRanges对象，同时可以多个文件或者GRangesList&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;peak=GenomicRanges::GRangesList(CBX6=readPeakFile(files[[4]]),
+                                CBX7=readPeakFile(files[[5]]))
+covplot(peak, weightCol=&amp;quot;V5&amp;quot;) + facet_grid(chr ~ .id)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/covplot_2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;支持可视化某个窗口:99328489e3689b55705b2759560872b2&#34;&gt;支持可视化某个窗口&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;covplot(peak, weightCol=&amp;quot;V5&amp;quot;, chrs=c(&amp;quot;chr17&amp;quot;, &amp;quot;chr18&amp;quot;), xlim=c(4e7, 5e7)) + facet_grid(chr ~ .id)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/covplot_3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;拿到数据后，我们首先会可视化看一下数据，接下来就会想知道这些peak都和什么样的基因有关，这将在下次讲解，如何做注释。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;citation:99328489e3689b55705b2759560872b2&#34;&gt;Citation&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Yu G&lt;/em&gt;&lt;/strong&gt;, Wang LG and He QY&lt;sup&gt;*&lt;/sup&gt;. &lt;a href=&#34;http://bioinformatics.oxfordjournals.org/content/31/14/2382&#34;&gt;ChIPseeker: an R/Bioconductor package for ChIP peak annotation, comparison and visualization&lt;/a&gt;. &lt;strong&gt;&lt;em&gt;Bioinformatics&lt;/em&gt;&lt;/strong&gt; 2015, 31(14):2382-2383.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&#34;text/javascript&#34; src=&#34;https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js&#34;&gt;&lt;/script&gt;&lt;div class=&#34;altmetric-embed&#34; data-badge-type=&#34;donut&#34; data-badge-popover=&#34;right&#34; data-altmetric-id=&#34;3781087&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
