@@ -111,6 +111,69 @@ ga('send', 'pageview');
     <article>
       <header>
         <h1 class="entry-title">
+          <a href="https://guangchuangyu.github.io/cn/2017/03/peak%E6%B3%A8%E9%87%8A/">peak注释</a>
+        </h1>
+        <p class="meta">Mar 16, 2017 - 1 minute read - 
+
+        
+        
+        
+        <a class="label" href="https://guangchuangyu.github.io/cn/categories/r/">R</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/chipseq/">ChIPseq</a>
+        </p>
+
+      </header>
+
+        
+          <p><p>这一次讲解非常重要的peak注释，注释在<strong>ChIPseeker</strong>里只需要用到一个函数<strong>annotatePeak</strong>，它可以满足大家各方面的需求。</p>
+
+<h2 id="输入:c540e375f54dab440eeaca7e52b07f3d">输入</h2>
+
+<p>当然需要我们上次讲到的BED文件，<strong>ChIPseeker</strong>自带了5个BED文件，用<strong>getSampleFiles()</strong>可以拿到文件的全路径，它返回的是个named list，我这里取第4个文件来演示。<strong>annotatePeak</strong>的输入也可以是<strong>GRanges</strong>对象，你如果用R做peak calling的话,直接就可以衔接上<strong>ChIPseeker</strong>了。</p>
+
+<pre><code>&gt; require(ChIPseeker)
+&gt; f = getSampleFiles()[[4]]
+</code></pre>
+
+<p>巧妇难为无米之炊，就像拿到<strong>fastq</strong>要跑<strong>BWA</strong>，你需要全基因组的序列一样，做注释当然需要注释信息，基因的起始终止，基因有那些内含子，外显子，以及它们的起始终止，非编码区的位置，功能元件的位置等各种信息。</p>
+
+<p>很多软件会针对特定的物种去整理这些信息供软件使用，但这样就限制了软件的物种支持，有些开发者写软件本意也是解决自己的问题，可能对自己的研究无关的物种也没兴趣去支持。</p>
+
+<p>然而<strong>ChIPseeker</strong>支持所有的物种，你没有看错，<strong>ChIPseeker</strong>没有物种限制，当然这是有前提的，物种本身起码是有基因的位置这些注释信息，不然就变无米之炊了。</p>
+
+<p>这里我们需要的是一个<strong>TxDb</strong>对象，这个<strong>TxDb</strong>就包含了我们需要的各种信息，<strong>ChIPseeker</strong>会把信息抽取出来，用于注释时使用。</p>
+
+<pre><code>&gt; require(TxDb.Hsapiens.UCSC.hg19.knownGene)
+&gt; txdb = TxDb.Hsapiens.UCSC.hg19.knownGene
+&gt; x = annotatePeak(f, tssRegion=c(-1000, 1000), TxDb=txdb)
+&gt;&gt; loading peak file...				 2017-03-09 11:29:18 PM 
+&gt;&gt; preparing features information...		 2017-03-09 11:29:18 PM 
+&gt;&gt; identifying nearest features...		 2017-03-09 11:29:19 PM 
+&gt;&gt; calculating distance from peak to TSS...	 2017-03-09 11:29:20 PM 
+&gt;&gt; assigning genomic annotation...		 2017-03-09 11:29:20 PM 
+&gt;&gt; assigning chromosome lengths			 2017-03-09 11:29:42 PM 
+&gt;&gt; done...					 2017-03-09 11:29:42 PM 
+</code></pre>
+
+<blockquote>
+<p>这里需要注意的是，启动子区域是没有明确的定义的，所以你可能需要指定<strong>tssRegion</strong>，把基因起始转录位点的上下游区域来做为启动子区域。</p>
+</blockquote>
+
+<p>有了这两个输入（BED文件和TxDb对象），你就可以跑注释了，然后就可以出结果了。</p>
+</p>
+
+          
+              <footer>
+                  <a href="https://guangchuangyu.github.io/cn/2017/03/peak%E6%B3%A8%E9%87%8A/" rel="full-article">Read On &rarr;</a>
+              </footer>
+          
+
+        
+
+    </article>
+    
+    <article>
+      <header>
+        <h1 class="entry-title">
           <a href="https://guangchuangyu.github.io/cn/2017/03/bed%E6%96%87%E4%BB%B6/">BED文件</a>
         </h1>
         <p class="meta">Mar 9, 2017 - 1 minute read - 
@@ -265,47 +328,6 @@ ga('send', 'pageview');
 
     </article>
     
-    <article>
-      <header>
-        <h1 class="entry-title">
-          <a href="https://guangchuangyu.github.io/cn/2017/02/chipseq%E7%AE%80%E4%BB%8B/">ChIPseq简介</a>
-        </h1>
-        <p class="meta">Feb 20, 2017 - 1 minute read - 
-
-        
-        
-        
-        <a class="label" href="https://guangchuangyu.github.io/cn/categories/r/">R</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/chipseq/">ChIPseq</a>
-        </p>
-
-      </header>
-
-        
-          <p><p>ChIP是指染色质免疫沉淀，它通过特异结合抗体将DNA结合蛋白免疫沉淀，可以用于捕获蛋白质（如转录因子，组蛋白修饰）的DNA靶点。这技术存在非常久了，在二代测序之前，结合microarray，它的名字叫<code>ChIP-on-chip</code>，二代测序出来之后，显而易见的，免疫沉淀拉下来的DNA拿去NGS测序，这必然是下一代的ChIP技术，优点也是显而易见的，不再需要设计探针（往往存在着一定的偏向性）。所以NGS出来以后，不差钱的牛逼实验室显然占据上风，谁先做出来，谁就定义了新技术。这是有钱人的竞赛，没钱的只能等着技术烂大街的时候跟风做。</p>
-
-<p>这是显而易见的下一代技术，外加技术上完全是可行的，所以这是一场单纯的时间竞赛，于是几乎同时出来CNS文章，基本上谁也不比谁差地同时扔出来。</p>
-
-<blockquote>
-<ul>
-<li>Johnson DS, Mortazavi A et al. (2007) Genome-wide mapping of in vivo protein–DNA interactions. Science 316: 1497–1502</li>
-<li>Robertson G et al.(2007) Genome-wide profiles of STAT1 DNA association using chromatin immunoprecipitation and massively parallel sequencing. Nature Methods 4: 651–657</li>
-<li>Schmid et al. (2007) ChIP-Seq Data reveal nucleosome architecture of human promoters. Cell 131: 831–832</li>
-</ul>
-</blockquote>
-
-<p>2007年来自三个不同的实验室，几乎是同时间出来（最长差不了3个月），分别发CNS，一起定义了这个<code>ChIPseq</code>技术。</p>
-</p>
-
-          
-              <footer>
-                  <a href="https://guangchuangyu.github.io/cn/2017/02/chipseq%E7%AE%80%E4%BB%8B/" rel="full-article">Read On &rarr;</a>
-              </footer>
-          
-
-        
-
-    </article>
-    
     
     
 
@@ -410,6 +432,10 @@ ga('send', 'pageview');
       
       
       <li class="post">
+        <a href="https://guangchuangyu.github.io/cn/2017/03/peak%E6%B3%A8%E9%87%8A/">peak注释</a>
+      </li>
+      
+      <li class="post">
         <a href="https://guangchuangyu.github.io/cn/2017/03/bed%E6%96%87%E4%BB%B6/">BED文件</a>
       </li>
       
@@ -423,10 +449,6 @@ ga('send', 'pageview');
       
       <li class="post">
         <a href="https://guangchuangyu.github.io/cn/2017/02/%E6%A0%B9%E6%8D%AEgtf%E7%94%BB%E5%9F%BA%E5%9B%A0%E7%9A%84%E5%A4%9A%E4%B8%AA%E8%BD%AC%E5%BD%95%E6%9C%AC%E7%BB%93%E6%9E%84/">根据GTF画基因的多个转录本结构</a>
-      </li>
-      
-      <li class="post">
-        <a href="https://guangchuangyu.github.io/cn/2017/02/chipseq%E7%AE%80%E4%BB%8B/">ChIPseq简介</a>
       </li>
       
     </ul>
