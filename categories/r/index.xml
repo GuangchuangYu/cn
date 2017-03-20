@@ -6,8 +6,46 @@
     <description>Recent content in R on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Mar 2017 12:23:16 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 20 Mar 2017 15:10:00 +0800</lastBuildDate>
     <atom:link href="https://guangchuangyu.github.io/cn/categories/r/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>how to bug author</title>
+      <link>https://guangchuangyu.github.io/cn/2017/03/how-to-bug-author/</link>
+      <pubDate>Mon, 20 Mar 2017 15:10:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/03/how-to-bug-author/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;http://blog.devtang.com/2017/03/05/how-to-get-help/&#34;&gt;http://blog.devtang.com/2017/03/05/how-to-get-help/&lt;/a&gt; 这篇文章讲问问题的礼仪，会问问题的人容易得到别人的帮助，并不是作者拽，而是对着一群不会问问题，且一副理所当然的用户，早就有了深深的无力感，也看看我写的这篇吧，&lt;a href=&#34;https://guangchuangyu.github.io/2016/07/how-to-bug-author/&#34;&gt;https://guangchuangyu.github.io/2016/07/how-to-bug-author/&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这是前几天的文字推送，不知道大家有没有阅读这两篇博客文？如何提问，这是一项重要的技能，很遗憾很多人并没有这项技能！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/413360782.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;就在上周，我正好就在微信群里跟某位老师说不要给我个截屏，说能不能在ggtree里实现某功能。懂的人知道，我只是希望大家用正确的方式来做事情，不懂的人，当然觉得我拽，JJYY什么的。&lt;/p&gt;
+
+&lt;p&gt;以前暨大有个博士生，跟我QQ和微信上都留言说要学某个R包，快点教他，我没回复，过几天又继续留言，我就把他给喷一顿。港真，都读到博士了，这点道理不应该不懂，要学自己学，遇到问题再来问，唯有下图可以表达我的观点：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/ubiaoqing581356c41441430498.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;UNIX的世界里，那句”read the fucking man”，早有了属于它自己的缩写RTFM，不信你们google一下这4个字母，这里的man是指manual，因为UNIX下查看manual的指令就是man，读文档是非常重要的，很多问题在文档里已经有了答案，但用户就是不愿意花时间去读。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/2017-03-19-234106_792x722_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;最近有人看我博客文，说没有&lt;strong&gt;geom_barh&lt;/strong&gt;，简直日狗了，那篇博客明明就专门介绍了&lt;strong&gt;ggstance&lt;/strong&gt;包，所以我专门贴了XKCD画的RTFM图，最好他们会脸红！&lt;/p&gt;
+
+&lt;p&gt;学术界很多人情商低得很，有问题直接甩作者，还认为作者应该毕恭毕敬地回复。&lt;strong&gt;没有任何人有义务要帮你解决问题！没有任何人有义务要帮你解决问题！没有任何人有义务要帮你解决问题！&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/2017-03-19-235129_854x663_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我在github上设了模版，如果用户提问，就会有向导，像上面截屏这个，他愿意花时间按着我的向导来，我就愿意花时间帮他解决问题。&lt;/p&gt;
+
+&lt;p&gt;为什么我要强调看文档？要什么提问前要先google一下？原因很简单，你首先愿意对自己的问题花时间！你自己不愿意花时间，你凭什么要求别人为你花时间！&lt;/p&gt;
+
+&lt;p&gt;为什么在上面微信截图里我强调在github开个issue好好描述问题？为什么我在github模版里要强调可重复性例子？你花时间把自己的问题描述情楚，整理自己的代码让别人可以重复出你的问题，这是在节省别人帮你解决问题的时间，也就是说这是在尊重别人的时间！尊重别人也是尊重自己！你的问题更有可能得到解答，别人会更愿意帮助你，即使你的问题很白痴，别人也会本着要对新手nice的态度对待你。而那些不读文档的伸手党，则往往只会得到RTFM四个字母的回(xiu)复(ru)。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>peak注释</title>
@@ -340,6 +378,32 @@ p + scale_x_discrete(labels=function(x) str_wrap(x, width=10))
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/2017-02-12-225944_635x776_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ggtree发表</title>
+      <link>https://guangchuangyu.github.io/cn/2017/01/ggtree%E5%8F%91%E8%A1%A8/</link>
+      <pubDate>Sun, 22 Jan 2017 15:10:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/01/ggtree%E5%8F%91%E8%A1%A8/</guid>
+      <description>&lt;p&gt;MEE在18号出版了今年（第8卷）第1期，ggtree正好在这一期出版，一经出版就有几条推在传播, 我也是在推特上看到，才发现，哦原来我的文章出版了。然后我又发现2017年新鲜出炉有了一篇PNAS的引用。&lt;/p&gt;
+
+&lt;p&gt;我以前没接触过进化，来了现在这个实验室，发现可视化是个大问题，大家都在用AI，慢慢地抠，对于一些和进化树相关的数据，自己一点一点地在AI里面加上去。甚至于genotype table是一个框一个框地在AI里面加的。一方面画一顆树可能用掉你几天的时间，另一方面，太容易出错了，再者你花的时间并不能转化为生产力，每一次你都要这么搞！这简直就是水深火热啊！&lt;/p&gt;
+
+&lt;p&gt;我也帮师兄写过一些代码，给定进化树上节点的序列，我比较父节点和子节点，把碱基或氨基酸替换写到newick树的node label，然后就可以用软件展示序列的替换情况。教会了师兄，他再去给他的师弟师妹们演示，说以后咱们可以这么干了，一个个觉得很牛逼，我内心想的是，愚蠢的人类啊，node label只能存一个信息，牛逼的方式应该是可以展示多个维度的信息，通过图层自由组合。这个时候我就产生了要写ggtree的想法。&lt;/p&gt;
+
+&lt;p&gt;我其实也挺惊讶的，进化这个领域，竟然有这么大的坑，等我这个新手来填。在2014年底开始写，在我写了基本几个图层，可以画树做一些注释的时候，我首要解决的就是你来个数据，我可以加到树上去做注释，所以在最初的版本，就有%&amp;lt;+%这个操作符，使用的是p %&amp;lt;+% d + geom这样的语法，你画了颗树p，有个数据d，可以通过%&amp;lt;+%操作符把数据关联起来，然后这个数据就可以在后续的图层geom里用了。我对这个操作符还是很满意的，主要是傻瓜化，然后它可以解决一大票关联数据做注释的事情。后面一个相关的是facet_plot函数，这个关联的是图，使用的语法是facet_plot(p, panel, data, geom, mapping), 你有数据data，要用geom(mapping, data)来画一个图，我可以把这个图和树p关联起来，画在panel上，而geom(mapping, data)画出来的图，会自动按照树的拓扑结构重新排列。&lt;/p&gt;
+
+&lt;p&gt;在之前我跟实验室的小伙伴推荐ggplot2，大家觉得很牛逼，但没人想学。学生物出身的人，天生对命令行是抗拒的，但有了ggtree，很多人都愿意学了，因为用AI搞进化树真心水深火热！学ggtree也需要时间，但花的时间可以转化为生产力啊，越搞越顺手，越来越有能力做出逼格高的图，而且花费的时间越来越少。虽然和我同级的同学都是纯生物出身，但现在已经一个个可以做出很有逼格的图了，当然和作者在同一屋檐下也是很有关系的😜。&lt;/p&gt;
+
+&lt;p&gt;ggtree有很多好玩的东西，可以做出非常复杂的图，前阵子推送了我在人大做报告的幻灯片，后台有人问我第一张图中那些小动物的图是那里找来的？显然如果有看我之前的emojifont包，就会知道，这是ggtree+emojifont画出来的。那个幻灯片里面所有的进化树，都是ggtree画的。ggtree有很多的功能，其实大家还不清楚，尽管我写了很详细的文档，写了很多篇博客来介绍，但还是有些细节没讲到，也有些东西可能大家想不到应用场景，或者你有东西想要做，却不知道怎么来实现。我的邮箱里ggtree这个标签下面已经有344封邮件（其实起码要翻倍，因为同一主题的来来往往好多邮只会被当成1封，几乎每天都会有邮件），很多的问题其实反复被问到，所以我后来不直接在邮件里回复，而是要求大家去google group里问。google group其实是邮件列表，有个好处，就如同如何获取文献中说的RSS推送一般，如果用户订阅了，但凡有人提问，有人回答，你都可以收到邮件，这样子，用户可以参与帮忙解决问题，一个问题的解决，大家都可以看到，或者也有收益。别的用户有同样的问题，在网上还能搜到答案，多方收益，我也可以减少回答问题。有兴趣的同学，可以往&lt;a href=&#34;mailto:bioc-ggtree+subscribe@googlegroups.com&#34;&gt;bioc-ggtree+subscribe@googlegroups.com&lt;/a&gt;发邮件订阅。&lt;/p&gt;
+
+&lt;p&gt;正好准备过年停止更新，等年后再来，又正好ggtree刚好出版，算是庆祝一下吧。不管你有任何关于ggtree的问题，你都可以在留言区里问我，大家可以分享这篇文章，让更多的人参与，因为别人可能会问出你想不到的问题，而我解答别人的问题，你或许也能学习受益。如果有人提的问题正好也是你关心的，请给他/她点赞，点赞多的问题，我会优先回答。这个过程持续到年后，我会在年后找个时间集中回答。&lt;/p&gt;
+
+&lt;p&gt;虽然现在引文不多，但我已经开始在收集&lt;a href=&#34;https://guangchuangyu.github.io/ggtree/gallery/&#34;&gt;论文里用ggtree画的图&lt;/a&gt;了，以后肯定会有越来越多有逼格的图出来，也算是一个侧面给大家展示ggtree可以做什么。&lt;/p&gt;
+
+&lt;p&gt;请记住一点，投入时间学习是有回报的，因为你的投入可以转化为生产力，而不像AI你搞再多，也只是机械式重复，并不能因为你用AI注释树而让你有能力去做美工-,-，但学ggtree，你会的不止是进化树的可视化，你同时必须还会用ggplot2来展示你其它的各种数据。套用如何获取文献中的梗，如果你还在用AI手工注释你的进化树，你该吞下红色药丸了。ggtree是你的朋友！&lt;/p&gt;
 </description>
     </item>
     
@@ -677,132 +741,6 @@ addtorepo: windows
 &lt;p&gt;然而这只是最初的clusterProfiler，做为一个良心之作，在发表文章之后，不断更新，现在GO已经支持非常多的物种，KEGG支持超过3千个物种而且是在线数据（多半的工具在用过时数据），还有其它比如Broad Institute的Molecular Signatures Database等各种注释，以及用户自己的注释信息。并且GSEA也是支持的。&lt;/p&gt;
 
 &lt;p&gt;所以呢用户自己（定制）的注释信息现在是单独支持，不仅限于GO，那么之前buildGOmap -&amp;gt; enrichGO的流程就不再需要了，你可以用你的注释信息直接用enricher/GSEA分析，如果你分析的是GO，并用你的注释只有直接注释，那么你可以用buildGOmap把间接注释加上去，然后再用enricher/GSEA分析，所以现在的流程是buildGOmap(optional and only for GO) -&amp;gt; enricher/GSEA。在现在clusterProfiler里，buildGOmap不会产生文件，而是输出一个data.frame，做为background annotation输入给enricher(超几何检验）或GSEA。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>使用emoji画图</title>
-      <link>https://guangchuangyu.github.io/cn/2016/11/%E4%BD%BF%E7%94%A8emoji%E7%94%BB%E5%9B%BE/</link>
-      <pubDate>Fri, 25 Nov 2016 00:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2016/11/%E4%BD%BF%E7%94%A8emoji%E7%94%BB%E5%9B%BE/</guid>
-      <description>&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/hashtag/rstats?src=hash&#34;&gt;#rstats&lt;/a&gt; code for the PhD/cute animals gestation &lt;a href=&#34;https://twitter.com/hashtag/ggplot2?src=hash&#34;&gt;#ggplot2&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/gganimate?src=hash&#34;&gt;#gganimate&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/emojifont?src=hash&#34;&gt;#emojifont&lt;/a&gt; plot &lt;a href=&#34;https://t.co/qWM0bCHoHJ&#34;&gt;https://t.co/qWM0bCHoHJ&lt;/a&gt; 🐭🐶🐱🐺🐯🐷🐏🐻👶🐳🐘📕 &lt;a href=&#34;https://t.co/a4GYl191a8&#34;&gt;https://t.co/a4GYl191a8&lt;/a&gt;&lt;/p&gt;&amp;mdash; Maëlle Salmon (@ma_salmon) &lt;a href=&#34;https://twitter.com/ma_salmon/status/800007428096094209&#34;&gt;November 19, 2016&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;无缘无故收到好几条消息，原来是用emoji画图。&lt;/p&gt;
-
-&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/pboesu&#34;&gt;@pboesu&lt;/a&gt; btw do you know the &lt;a href=&#34;https://twitter.com/guangchuangyu&#34;&gt;@guangchuangyu&lt;/a&gt; emojifont pkg? I&amp;#39;ve used it more than &lt;a href=&#34;https://twitter.com/millerdl&#34;&gt;@millerdl&lt;/a&gt; emoGG &lt;a href=&#34;https://t.co/p27fwEmDSD&#34;&gt;https://t.co/p27fwEmDSD&lt;/a&gt; but I like both &lt;a href=&#34;https://t.co/uV49WjOSp3&#34;&gt;https://t.co/uV49WjOSp3&lt;/a&gt;&lt;/p&gt;&amp;mdash; Maëlle Salmon (@ma_salmon) &lt;a href=&#34;https://twitter.com/ma_salmon/status/800009044123586560&#34;&gt;November 19, 2016&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;做为emojifont包的作者，我表示很高兴看到自己的包给大家带来乐趣，在回复中@milerdl说emoGG是他用了两个晚上写的，emojifont刚好也是我用了两个晚上写的，一个晚上支持了emoji字体，另一个晚上加入了fontawesome字体。&lt;/p&gt;
-
-&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Hi &lt;a href=&#34;https://twitter.com/guangchuangyu&#34;&gt;@guangchuangyu&lt;/a&gt; excellent &lt;a href=&#34;https://twitter.com/hashtag/rstats?src=hash&#34;&gt;#rstats&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/emojifont?src=hash&#34;&gt;#emojifont&lt;/a&gt; implementation! &lt;a href=&#34;https://t.co/lTIWDQ1zq0&#34;&gt;https://t.co/lTIWDQ1zq0&lt;/a&gt; very cool! &lt;a href=&#34;https://t.co/sCALpuWW28&#34;&gt;pic.twitter.com/sCALpuWW28&lt;/a&gt;&lt;/p&gt;&amp;mdash; Jo-fai (Joe) Chow (@matlabulous) &lt;a href=&#34;https://twitter.com/matlabulous/status/677205176663588865&#34;&gt;December 16, 2015&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;在写这个包之前，我早就有用emoji在R画图中，写这个包也正是为了回应emoGG，因为我觉得他的实现方式并不理想，而我的更为灵活。&lt;/p&gt;
-
-&lt;p&gt;回到主题上，我将展示使用emojifont来画图。&lt;/p&gt;
-
-&lt;p&gt;下面这个数据是我每年读书、看电影、听专辑的数目：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt; d
-   year category num
-1  2009     book  35
-2  2009    movie  64
-3  2009    music  24
-4  2010     book  34
-5  2010    movie  47
-6  2010    music  13
-7  2011     book  17
-8  2011    movie  18
-9  2011    music   2
-10 2012     book  25
-11 2012    movie  25
-12 2012    music   0
-13 2013     book  15
-14 2013    movie  17
-15 2013    music   0
-16 2014     book   8
-17 2014    movie  11
-18 2014    music   1
-19 2015     book   5
-20 2015    movie  14
-21 2015    music   0
-22 2016     book   4
-23 2016    movie  14
-24 2016    music   0
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;先加载所需的包和emoji字体：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;require(ggplot2)
-require(ggthemes)
-require(emojifont)
-load.emojifont()
-emo &amp;lt;- emoji(c(&amp;quot;book&amp;quot;, &amp;quot;movie_camera&amp;quot;, &amp;quot;musical_note&amp;quot;))
-names(emo) &amp;lt;- c(&#39;book&#39;, &#39;movie&#39;, &#39;music&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;画出趋势图，并在每个点上用相应的emoji字体标注：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;p &amp;lt;- ggplot(d, aes(x=factor(year), y=num, group=category, colour=category))
-p &amp;lt;- p +geom_line() +geom_text(aes(label=emo[category]), family=&#39;OpenSansEmoji&#39;, size=10) +xlab(NULL) + ylab(NULL) 
-
-更改一些背景等主题细节，设置中文字体等：
-p &amp;lt;- p + theme_fivethirtyeight() + scale_color_tableau()
-p &amp;lt;- p+theme(axis.text.x=element_text(face=&amp;quot;bold&amp;quot;, size=16), 
-        axis.text.y=element_text(face=&amp;quot;bold&amp;quot;, size=16))
- p &amp;lt;- p+theme(legend.text=element_text(size=16, family=&amp;quot;OpenSansEmoji&amp;quot;), 
-            legend.title=element_blank(), legend.position=&#39;none&#39;)
-p+ ggtitle(&#39;Y叔的书影音&#39;) + theme(plot.title=element_text(family=&#39;STKaiti&#39;))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;于是产生下图：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/Screen Shot 2016-11-21 at 7.47.34 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>食色性也</title>
-      <link>https://guangchuangyu.github.io/cn/2016/11/%E9%A3%9F%E8%89%B2%E6%80%A7%E4%B9%9F/</link>
-      <pubDate>Mon, 21 Nov 2016 12:23:16 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2016/11/%E9%A3%9F%E8%89%B2%E6%80%A7%E4%B9%9F/</guid>
-      <description>&lt;p&gt;画图配色并不是一件简单的事情，好的配色让人眼前一亮，虽然R有很多配色方案，做为ggplot2的爱好者，ggthemes也提供了很多主题，内置了很多配色方案，还有一些其它的包，比如ggtech，包含了一些科技公司比如facebook, twitter, google的典型配色方案，甚至于ggsci，提供了nature, lancet的配色方案。&lt;/p&gt;
-
-&lt;p&gt;但这些远远不够！
-但这些远远不够！
-但这些远远不够！&lt;/p&gt;
-
-&lt;p&gt;看到一张图片让我眼前一亮，我想用它的配色方案呢！我想拿最新电影的海报的配色来装个逼呢！画图时不想用现成的配色，想要另类一些，我想用一些大自然的风格，比如求偶期间各种鸟类的羽毛颜色来画！&lt;/p&gt;
-
-&lt;p&gt;这些在R里面，都是可以的，可以的，可以的&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;下面隆重推荐一个叫rPlotter的R包，&lt;a href=&#34;https://github.com/woobe/rPlotter&#34;&gt;https://github.com/woobe/rPlotter&lt;/a&gt;，可以非常方便地在图片中抽提颜色。其实实现起来也容易，用EBImage把图片读进去，存成一个RGB的三维矩阵，通过kmeans聚类，把中心点颜色报出来就可以了。若干年前我写过用kmeans压缩图片，用的就是把颜色填充成中心点颜色，稍微把之前的代码改一改，也能实现这个颜色抽提的功能。&lt;/p&gt;
-
-&lt;p&gt;实例演示，我google了一张spider的图片，把颜色提出来，拿来画barplot：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2016/Jumping-spider.jpeg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;pal = extract_colours(&amp;quot;http://i1.mirror.co.uk/incoming/article8566552.ece/ALTERNATES/s615b/Jumping-spider.jpg&amp;quot;)
-barplot(1:5, col=pal)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2016/spider_color.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;再来一张homer simpson的图片：
-&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2016/kissing-Homer-Simpson-The-Simpsons-Marge-Simpson-_578180-20_zx1jpk.jpeg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;pal2 = extract_colours(&amp;quot;https://images.complex.com/complex/image/upload/t_article_image/kissing-Homer-Simpson-The-Simpsons-Marge-Simpson-_578180-20_zx1jpk.jpg&amp;quot;, 7)
-barplot(1:7, col=pal2)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2016/homer_color.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;之前说的各种场景，都是可以实现的，最新海报配色，你可以有！你想画图用美队来配色，可以有！拿蜘蛛小鸟来配色，可以有！甚至于拿肌肉男的肉色也可以的。下次发文章在愁配色的时候，何不搜索图片，看看有什么图片顺眼的，就拿来用了。&lt;/p&gt;
-
-&lt;p&gt;即使你不会用R画图，你也可以把这配色方案应该于M$的office中，word/excel/powerpoint都是支持自定义颜色主题的，请自行搜索 &amp;ldquo;office 自定义主题颜色&amp;rdquo;。&lt;/p&gt;
 </description>
     </item>
     

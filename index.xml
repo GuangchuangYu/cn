@@ -6,8 +6,46 @@
     <description>Recent content on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Mar 2017 12:23:16 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 20 Mar 2017 15:10:00 +0800</lastBuildDate>
     <atom:link href="https://guangchuangyu.github.io/cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>how to bug author</title>
+      <link>https://guangchuangyu.github.io/cn/2017/03/how-to-bug-author/</link>
+      <pubDate>Mon, 20 Mar 2017 15:10:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/03/how-to-bug-author/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;http://blog.devtang.com/2017/03/05/how-to-get-help/&#34;&gt;http://blog.devtang.com/2017/03/05/how-to-get-help/&lt;/a&gt; 这篇文章讲问问题的礼仪，会问问题的人容易得到别人的帮助，并不是作者拽，而是对着一群不会问问题，且一副理所当然的用户，早就有了深深的无力感，也看看我写的这篇吧，&lt;a href=&#34;https://guangchuangyu.github.io/2016/07/how-to-bug-author/&#34;&gt;https://guangchuangyu.github.io/2016/07/how-to-bug-author/&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这是前几天的文字推送，不知道大家有没有阅读这两篇博客文？如何提问，这是一项重要的技能，很遗憾很多人并没有这项技能！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/413360782.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;就在上周，我正好就在微信群里跟某位老师说不要给我个截屏，说能不能在ggtree里实现某功能。懂的人知道，我只是希望大家用正确的方式来做事情，不懂的人，当然觉得我拽，JJYY什么的。&lt;/p&gt;
+
+&lt;p&gt;以前暨大有个博士生，跟我QQ和微信上都留言说要学某个R包，快点教他，我没回复，过几天又继续留言，我就把他给喷一顿。港真，都读到博士了，这点道理不应该不懂，要学自己学，遇到问题再来问，唯有下图可以表达我的观点：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/ubiaoqing581356c41441430498.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;UNIX的世界里，那句”read the fucking man”，早有了属于它自己的缩写RTFM，不信你们google一下这4个字母，这里的man是指manual，因为UNIX下查看manual的指令就是man，读文档是非常重要的，很多问题在文档里已经有了答案，但用户就是不愿意花时间去读。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/2017-03-19-234106_792x722_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;最近有人看我博客文，说没有&lt;strong&gt;geom_barh&lt;/strong&gt;，简直日狗了，那篇博客明明就专门介绍了&lt;strong&gt;ggstance&lt;/strong&gt;包，所以我专门贴了XKCD画的RTFM图，最好他们会脸红！&lt;/p&gt;
+
+&lt;p&gt;学术界很多人情商低得很，有问题直接甩作者，还认为作者应该毕恭毕敬地回复。&lt;strong&gt;没有任何人有义务要帮你解决问题！没有任何人有义务要帮你解决问题！没有任何人有义务要帮你解决问题！&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/2017-03-19-235129_854x663_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我在github上设了模版，如果用户提问，就会有向导，像上面截屏这个，他愿意花时间按着我的向导来，我就愿意花时间帮他解决问题。&lt;/p&gt;
+
+&lt;p&gt;为什么我要强调看文档？要什么提问前要先google一下？原因很简单，你首先愿意对自己的问题花时间！你自己不愿意花时间，你凭什么要求别人为你花时间！&lt;/p&gt;
+
+&lt;p&gt;为什么在上面微信截图里我强调在github开个issue好好描述问题？为什么我在github模版里要强调可重复性例子？你花时间把自己的问题描述情楚，整理自己的代码让别人可以重复出你的问题，这是在节省别人帮你解决问题的时间，也就是说这是在尊重别人的时间！尊重别人也是尊重自己！你的问题更有可能得到解答，别人会更愿意帮助你，即使你的问题很白痴，别人也会本着要对新手nice的态度对待你。而那些不读文档的伸手党，则往往只会得到RTFM四个字母的回(xiu)复(ru)。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>peak注释</title>
@@ -448,6 +486,32 @@ p + scale_x_discrete(labels=function(x) str_wrap(x, width=10))
     </item>
     
     <item>
+      <title>ggtree发表</title>
+      <link>https://guangchuangyu.github.io/cn/2017/01/ggtree%E5%8F%91%E8%A1%A8/</link>
+      <pubDate>Sun, 22 Jan 2017 15:10:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/01/ggtree%E5%8F%91%E8%A1%A8/</guid>
+      <description>&lt;p&gt;MEE在18号出版了今年（第8卷）第1期，ggtree正好在这一期出版，一经出版就有几条推在传播, 我也是在推特上看到，才发现，哦原来我的文章出版了。然后我又发现2017年新鲜出炉有了一篇PNAS的引用。&lt;/p&gt;
+
+&lt;p&gt;我以前没接触过进化，来了现在这个实验室，发现可视化是个大问题，大家都在用AI，慢慢地抠，对于一些和进化树相关的数据，自己一点一点地在AI里面加上去。甚至于genotype table是一个框一个框地在AI里面加的。一方面画一顆树可能用掉你几天的时间，另一方面，太容易出错了，再者你花的时间并不能转化为生产力，每一次你都要这么搞！这简直就是水深火热啊！&lt;/p&gt;
+
+&lt;p&gt;我也帮师兄写过一些代码，给定进化树上节点的序列，我比较父节点和子节点，把碱基或氨基酸替换写到newick树的node label，然后就可以用软件展示序列的替换情况。教会了师兄，他再去给他的师弟师妹们演示，说以后咱们可以这么干了，一个个觉得很牛逼，我内心想的是，愚蠢的人类啊，node label只能存一个信息，牛逼的方式应该是可以展示多个维度的信息，通过图层自由组合。这个时候我就产生了要写ggtree的想法。&lt;/p&gt;
+
+&lt;p&gt;我其实也挺惊讶的，进化这个领域，竟然有这么大的坑，等我这个新手来填。在2014年底开始写，在我写了基本几个图层，可以画树做一些注释的时候，我首要解决的就是你来个数据，我可以加到树上去做注释，所以在最初的版本，就有%&amp;lt;+%这个操作符，使用的是p %&amp;lt;+% d + geom这样的语法，你画了颗树p，有个数据d，可以通过%&amp;lt;+%操作符把数据关联起来，然后这个数据就可以在后续的图层geom里用了。我对这个操作符还是很满意的，主要是傻瓜化，然后它可以解决一大票关联数据做注释的事情。后面一个相关的是facet_plot函数，这个关联的是图，使用的语法是facet_plot(p, panel, data, geom, mapping), 你有数据data，要用geom(mapping, data)来画一个图，我可以把这个图和树p关联起来，画在panel上，而geom(mapping, data)画出来的图，会自动按照树的拓扑结构重新排列。&lt;/p&gt;
+
+&lt;p&gt;在之前我跟实验室的小伙伴推荐ggplot2，大家觉得很牛逼，但没人想学。学生物出身的人，天生对命令行是抗拒的，但有了ggtree，很多人都愿意学了，因为用AI搞进化树真心水深火热！学ggtree也需要时间，但花的时间可以转化为生产力啊，越搞越顺手，越来越有能力做出逼格高的图，而且花费的时间越来越少。虽然和我同级的同学都是纯生物出身，但现在已经一个个可以做出很有逼格的图了，当然和作者在同一屋檐下也是很有关系的😜。&lt;/p&gt;
+
+&lt;p&gt;ggtree有很多好玩的东西，可以做出非常复杂的图，前阵子推送了我在人大做报告的幻灯片，后台有人问我第一张图中那些小动物的图是那里找来的？显然如果有看我之前的emojifont包，就会知道，这是ggtree+emojifont画出来的。那个幻灯片里面所有的进化树，都是ggtree画的。ggtree有很多的功能，其实大家还不清楚，尽管我写了很详细的文档，写了很多篇博客来介绍，但还是有些细节没讲到，也有些东西可能大家想不到应用场景，或者你有东西想要做，却不知道怎么来实现。我的邮箱里ggtree这个标签下面已经有344封邮件（其实起码要翻倍，因为同一主题的来来往往好多邮只会被当成1封，几乎每天都会有邮件），很多的问题其实反复被问到，所以我后来不直接在邮件里回复，而是要求大家去google group里问。google group其实是邮件列表，有个好处，就如同如何获取文献中说的RSS推送一般，如果用户订阅了，但凡有人提问，有人回答，你都可以收到邮件，这样子，用户可以参与帮忙解决问题，一个问题的解决，大家都可以看到，或者也有收益。别的用户有同样的问题，在网上还能搜到答案，多方收益，我也可以减少回答问题。有兴趣的同学，可以往&lt;a href=&#34;mailto:bioc-ggtree+subscribe@googlegroups.com&#34;&gt;bioc-ggtree+subscribe@googlegroups.com&lt;/a&gt;发邮件订阅。&lt;/p&gt;
+
+&lt;p&gt;正好准备过年停止更新，等年后再来，又正好ggtree刚好出版，算是庆祝一下吧。不管你有任何关于ggtree的问题，你都可以在留言区里问我，大家可以分享这篇文章，让更多的人参与，因为别人可能会问出你想不到的问题，而我解答别人的问题，你或许也能学习受益。如果有人提的问题正好也是你关心的，请给他/她点赞，点赞多的问题，我会优先回答。这个过程持续到年后，我会在年后找个时间集中回答。&lt;/p&gt;
+
+&lt;p&gt;虽然现在引文不多，但我已经开始在收集&lt;a href=&#34;https://guangchuangyu.github.io/ggtree/gallery/&#34;&gt;论文里用ggtree画的图&lt;/a&gt;了，以后肯定会有越来越多有逼格的图出来，也算是一个侧面给大家展示ggtree可以做什么。&lt;/p&gt;
+
+&lt;p&gt;请记住一点，投入时间学习是有回报的，因为你的投入可以转化为生产力，而不像AI你搞再多，也只是机械式重复，并不能因为你用AI注释树而让你有能力去做美工-,-，但学ggtree，你会的不止是进化树的可视化，你同时必须还会用ggplot2来展示你其它的各种数据。套用如何获取文献中的梗，如果你还在用AI手工注释你的进化树，你该吞下红色药丸了。ggtree是你的朋友！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>微信公众文markdown一键排版</title>
       <link>https://guangchuangyu.github.io/cn/2017/01/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E6%96%87markdown%E4%B8%80%E9%94%AE%E6%8E%92%E7%89%88/</link>
       <pubDate>Wed, 18 Jan 2017 00:53:00 +0800</pubDate>
@@ -746,77 +810,6 @@ int main() {
   std::cout &amp;lt;&amp;lt; node-&amp;gt;ID &amp;lt;&amp;lt; std::endl;
 }
 &lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>中空的环形树</title>
-      <link>https://guangchuangyu.github.io/cn/2016/12/%E4%B8%AD%E7%A9%BA%E7%9A%84%E7%8E%AF%E5%BD%A2%E6%A0%91/</link>
-      <pubDate>Sat, 03 Dec 2016 00:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2016/12/%E4%B8%AD%E7%A9%BA%E7%9A%84%E7%8E%AF%E5%BD%A2%E6%A0%91/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/iss95.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这是&lt;a href=&#34;https://github.com/GuangchuangYu/ggtree/issues/95&#34;&gt;github&lt;/a&gt;上的问题，他想画环形树的时候，加一条长长的root length把tips给顶出去。&lt;/p&gt;
-
-&lt;p&gt;这个问题在google forum上我早已解答：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/Screen Shot 2016-11-30 at 9.06.01 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;我在google group上教会的这个人，他的文章发表在&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/27605062&#34;&gt;nature communications&lt;/a&gt;上，下面是pubmed上的截图。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/Screen Shot 2016-11-30 at 9.06.57 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;简直亮瞎了我的狗眼，我看到这图，一口老血差别喷出来，这画的什么玩意，啥都看不清。&lt;/p&gt;
-
-&lt;p&gt;我本来以为他要把中间做空，是为了把legend放进去，结果不是，尼玛也太空了，而且tips根本分不清关系，满篇文章都是这种图，附件上更多，好一朵奇葩。&lt;/p&gt;
-
-&lt;p&gt;但是github上的问题，让我重新认识了这样的图，就像提问者说的，他想把tip给顶出去，这样容易看到tip label，某种程度上，这不失为一个好方法，一种好折中，但像上面那个顶得太厉害了，我依然接受不了。&lt;/p&gt;
-
-&lt;p&gt;实现起来也容易，提问者说figtree可以做，通过搞一条长长的root length来实现，这个在ggtree里，当然也可以这么做，但我做空环形树或者说顶一顶tip label，根本就不需要用额外画条线来顶/撑开圆形，但思路是一样的，无非是要给左边留更多空间，这样在旋转成极坐标的时候，左边的空间就变成了内部的空间，于是中间就空了。&lt;/p&gt;
-
-&lt;p&gt;所以呢，+xlim(负数, NA) 就是这么简单，就可以了。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>无中生有windows版R包</title>
-      <link>https://guangchuangyu.github.io/cn/2016/11/%E6%97%A0%E4%B8%AD%E7%94%9F%E6%9C%89windows%E7%89%88r%E5%8C%85/</link>
-      <pubDate>Wed, 30 Nov 2016 00:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2016/11/%E6%97%A0%E4%B8%AD%E7%94%9F%E6%9C%89windows%E7%89%88r%E5%8C%85/</guid>
-      <description>&lt;p&gt;之前帮助高老师实现比对序列的做图，把代码打包为R包seqcombo，方便安装使用。花两小时的作品，发现还有些用户在使用 -，-&lt;/p&gt;
-
-&lt;p&gt;之前有人联系我说安装不上，我觉得不应该有这个问题，因为是纯R代码代码，不涉及到编译，源码包安装不应该有问题。但既然有人问，又都是windows用户，我想可以给他们提供编译好的windows包，简化安装过程（这么体贴用户，我都要被自己感动了）。&lt;/p&gt;
-
-&lt;p&gt;放在CRAN或Bioconductor上的R包，CRAN和Bioconductor会编译出不同平台的二进制包，但seqcobo放在github上，只有源代码，没有预编译好的包，但没有不是问题，我编译好放上去就行了。&lt;/p&gt;
-
-&lt;p&gt;但问题是我没有windows！多年来一直是OSX和linux，MacBook Pro跑Arch Linux，一台iMac跑OSX，我自己根本没有跑windows的机器，所以难为无米之炊，借台机器总是有的，但总不能每次一更新，就拷个代码去别人的机器上打包，再拷回来上传到网上，想想也是蛋疼。&lt;/p&gt;
-
-&lt;p&gt;所以没有windows，这事干起来还不太容易，！在想怎么来无中生有生出个windows包出来的时候，我想起了rhub，也是因为没有windows，之前就用rhub来进行windows平台的R check，在把代码push到CRAN或Bioconductor之前，我总会测试没问题了，再提交代码过去，而rhub正好可以给我提供windows平台的检测。&lt;/p&gt;
-
-&lt;p&gt;在R check完之后，rhub会把check之前build的包存起来，正是这一点，为我们提供了这无米之炊，这时候我就可以下载它来放到我的repo里，这也算是一个变通的办法。&lt;/p&gt;
-
-&lt;p&gt;然而，我要等它check完，再去下载，放到repo，push到github上，动作太多，太繁琐，所以必须写代码让它自动化起来。&lt;/p&gt;
-
-&lt;p&gt;于是写了Makefile:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-make&#34;&gt;windows:
-	Rscript -e &#39;rhub::check_on_windows(&amp;quot;.&amp;quot;)&#39;
-addtorepo: windows
-	Rscript -e &#39;drat:::insert(&amp;quot;../$(PKGNAME)_$(PKGVERS).tar.gz&amp;quot;, &amp;quot;../drat/docs&amp;quot;)&#39;;\
-	Rscript -e &#39;drat:::insert(ypages::get_windows_binary(), &amp;quot;../drat/docs&amp;quot;);\
-	cd ../drat;\
-	git add .; git commit -m &#39;$(PKGNAME)_$(PKGVERS)&#39;; git push -u origin master
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;我只要&lt;code&gt;make addtorepo&lt;/code&gt;一条指令，它就会自动运行传到rhub的windows平台check我的包，check结束后，下载rhub平台编译的包，然后用&lt;code&gt;drat:::insert&lt;/code&gt;来把它放到合适的位置，并生成相应的文件（如包的依赖关系、md5sum等），再把它push到github上去。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/Bioconductor/Screen Shot 2016-11-23 at 6.11.14 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这里我用了一条&lt;code&gt;ypages::get_windows_binary()&lt;/code&gt;指令来检验rhub check是否结束，如果是则把编译的包下载到临时文件，并作为输入传到&lt;code&gt;drat:::insert&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;ypages&lt;/code&gt;也是一个R包，我用来搞github pages的私人定制包，比如我各种包的主页上那些badge图标，显示下载量、版本号、文章引用数目等相关信息的图标，都是通过ypages自动生成的，没有放出来，所以细节不在这里讲，这里主要介绍一个思路，利用rhub云平台来编译windows二进制包，放入私人repo供用户下载安装，通过makefile自动化这一过程。Makefile才是最通用的可重复性研究工具，你值得拥有。&lt;/p&gt;
 </description>
     </item>
     

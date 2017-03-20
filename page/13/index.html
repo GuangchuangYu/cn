@@ -111,6 +111,88 @@ ga('send', 'pageview');
     <article>
       <header>
         <h1 class="entry-title">
+          <a href="https://guangchuangyu.github.io/cn/2007/06/newton-raphson-method%E4%BC%B0%E7%AE%97%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%B9/">Newton-Raphson Method估算函数的根</a>
+        </h1>
+        <p class="meta">Jun 2, 2007 - 1 minute read - 
+
+        
+        
+        
+        <a class="label" href="https://guangchuangyu.github.io/cn/categories/math/">Math</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/programming/">Programming</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/c/">C</a>
+        </p>
+
+      </header>
+
+        
+          <p><h2 id="newton-raphson-method:8c998fd44af3436f18eebfbca2f9fb1d">Newton-Raphson Method</h2>
+
+<p>曲线<code>f(x)</code>有根c,取曲线上一点$(x_1,f(x_1))$, 过此点的切线交x轴$x_2$,过曲线上$(x_2,f(x_2))$的切线交x轴$x_3$，如此反复得到一个序列 $x_1,x_2,\cdot \cdot \cdot,x_n$ 逼近c值.</p>
+
+<p>过<code>$(x_n,f(x_n))$</code>的切线方程为 <code>$y-f(x_n) = f'(x_n)\,(x-x_n)$</code>,假设此方程与x轴的交点为<code>$x_{n+1}$</code>, 即有: <code>$0 - f(x_n) = f'(x_n)(x_n+1 - x_n)$</code>， 即<code>$x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$</code> <code>&lt;Eq. 1&gt;</code>.</p>
+
+<p>下面利用此法来求一个数的开方。 $f(x) = x^2 - a$ 有根$\sqrt{a}$,
+由<code>$f'(x_n) = 2x_n$</code>, 代入式<code>&lt;Eq. 1&gt;</code>可得$x_{n+1} = (x_n + a/x_n)/2$; 当i -&gt; INF 时, $x_i$ -&gt; $\sqrt{a}$;</p>
+
+<h2 id="c-implementation:8c998fd44af3436f18eebfbca2f9fb1d">C implementation</h2>
+</p>
+
+          
+              <footer>
+                  <a href="https://guangchuangyu.github.io/cn/2007/06/newton-raphson-method%E4%BC%B0%E7%AE%97%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%B9/" rel="full-article">Read On &rarr;</a>
+              </footer>
+          
+
+        
+
+    </article>
+    
+    <article>
+      <header>
+        <h1 class="entry-title">
+          <a href="https://guangchuangyu.github.io/cn/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/">我制作的pkgsrc</a>
+        </h1>
+        <p class="meta">May 16, 2007 - 1 minute read - 
+
+        
+        
+        
+        <a class="label" href="https://guangchuangyu.github.io/cn/categories/bsd/">BSD</a>
+        </p>
+
+      </header>
+
+        
+          <p><h2 id="xlyrics-unix下的歌词秀软件:62e13d3f4ba7021ace12bca4646b8a10">xlyrics: unix下的歌词秀软件   </h2>
+
+<p><a href="http://files.getdropbox.com/u/774072/software/pkgsrc/xlyrics-0.4.6.tar.bz2">点此下载</a></p>
+
+<h2 id="eva-kde下的qq客户端:62e13d3f4ba7021ace12bca4646b8a10">EVA: KDE下的QQ客户端     </h2>
+
+<p><a href="http://files.getdropbox.com/u/774072/software/pkgsrc/eva-20070327.tar.bz2">点此下载</a></p>
+
+<pre><code>#cd /usr/pkgsrc/wip-cn 
+#tar xjvf eva.tar.bz2 
+#cd eva 
+#make install clean
+</code></pre>
+
+<p>就可以啦。在我的机子（NetBSD 3.0.1 macppc）上测试通过。。
+更新到eva-20070327</p>
+</p>
+
+          
+              <footer>
+                  <a href="https://guangchuangyu.github.io/cn/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/" rel="full-article">Read On &rarr;</a>
+              </footer>
+          
+
+        
+
+    </article>
+    
+    <article>
+      <header>
+        <h1 class="entry-title">
           <a href="https://guangchuangyu.github.io/cn/2007/05/edit-partition-table-in-netbsd/macppc/">Edit partition table in NetBSD/macppc</a>
         </h1>
         <p class="meta">May 14, 2007 - 4 minute read - 
@@ -249,80 +331,6 @@ os的系统盘。e为两系统共享分区(在os9下格式化为fat)，g为netbs
 
     </article>
     
-    <article>
-      <header>
-        <h1 class="entry-title">
-          <a href="https://guangchuangyu.github.io/cn/2006/06/qvwm%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E5%99%A8%E7%9A%84windows2000%E4%B8%BB%E9%A2%98/">qvwm窗口管理器的windows2000主题</a>
-        </h1>
-        <p class="meta">Jun 24, 2006 - 1 minute read - 
-
-        
-        
-        
-        <a class="label" href="https://guangchuangyu.github.io/cn/categories/bsd/">BSD</a>
-        </p>
-
-      </header>
-
-        
-          <p><p><em>qvwm</em> is a window manager for the X Window system which provides a user
-experience very close to Windows <sup>95</sup>&frasl;<sub>98</sub>. It is small and extremely fast.</p>
-
-<p>可从其<a href="http://qvwm.sourceforge.net/index_en.html">主页</a>上看到它的介绍及下载源码。</p>
-
-<p>这是我做的一个windows2000的主题。。</p>
-</p>
-
-          
-              <footer>
-                  <a href="https://guangchuangyu.github.io/cn/2006/06/qvwm%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E5%99%A8%E7%9A%84windows2000%E4%B8%BB%E9%A2%98/" rel="full-article">Read On &rarr;</a>
-              </footer>
-          
-
-        
-
-    </article>
-    
-    <article>
-      <header>
-        <h1 class="entry-title">
-          <a href="https://guangchuangyu.github.io/cn/2006/06/%E5%AE%89%E8%A3%85os9%E5%92%8Cnetbsd%E5%8F%8C%E7%B3%BB%E7%BB%9F/">安装os9和netbsd双系统</a>
-        </h1>
-        <p class="meta">Jun 14, 2006 - 1 minute read - 
-
-        
-        
-        
-        <a class="label" href="https://guangchuangyu.github.io/cn/categories/bsd/">BSD</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/mac-os/">Mac OS</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/powerbook/">Powerbook</a>
-        </p>
-
-      </header>
-
-        
-          <p><h2 id="1-分区:7c364ac533cc06c9bf86bf33eb786a17">1 分区</h2>
-
-<p>用MacOS X 10.2 的光盘启动，运行Disk Utility，选择“Install Mac OS
-9 Disk
-Drivers”不然分区将不能在OS9中使用，我一共分了5个分区，12G,10G,512M,20G,13.4G。其中12Ｇ装OS9系统，10Ｇ装netbsd系统，512Ｍ为swap分区，20Ｇ为home
-分区，最后一个为fat32格式，为两个系统所共享。</p>
-
-<h2 id="2-安装os9:7c364ac533cc06c9bf86bf33eb786a17">2 安装os9</h2>
-
-<p>开机放入os9安装光盘，按住<code>Ｃ</code>键，由光盘启动进入os9，在光盘根目录下点安装系统。指定第一个分区，选择安装的软件，十来分钟，便装完了。重新启动，将netbsd的启动程序<code>ofwboot.xcf</code>放在os9的根目录下。</p>
-
-<h2 id="3-安装netbsd:7c364ac533cc06c9bf86bf33eb786a17">3 安装netbsd</h2>
-</p>
-
-          
-              <footer>
-                  <a href="https://guangchuangyu.github.io/cn/2006/06/%E5%AE%89%E8%A3%85os9%E5%92%8Cnetbsd%E5%8F%8C%E7%B3%BB%E7%BB%9F/" rel="full-article">Read On &rarr;</a>
-              </footer>
-          
-
-        
-
-    </article>
-    
     
     
 
@@ -430,6 +438,10 @@ Drivers”不然分区将不能在OS9中使用，我一共分了5个分区，12G
       
       
       <li class="post">
+        <a href="https://guangchuangyu.github.io/cn/2017/03/how-to-bug-author/">how to bug author</a>
+      </li>
+      
+      <li class="post">
         <a href="https://guangchuangyu.github.io/cn/2017/03/peak%E6%B3%A8%E9%87%8A/">peak注释</a>
       </li>
       
@@ -443,10 +455,6 @@ Drivers”不然分区将不能在OS9中使用，我一共分了5个分区，12G
       
       <li class="post">
         <a href="https://guangchuangyu.github.io/cn/2017/03/unknown-annotation-in-enrichment-analysis/">unknown annotation in enrichment analysis</a>
-      </li>
-      
-      <li class="post">
-        <a href="https://guangchuangyu.github.io/cn/2017/02/%E6%A0%B9%E6%8D%AEgtf%E7%94%BB%E5%9F%BA%E5%9B%A0%E7%9A%84%E5%A4%9A%E4%B8%AA%E8%BD%AC%E5%BD%95%E6%9C%AC%E7%BB%93%E6%9E%84/">根据GTF画基因的多个转录本结构</a>
       </li>
       
     </ul>
