@@ -6,8 +6,100 @@
     <description>Recent content in Emojifont on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 25 Nov 2016 00:53:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 23 Mar 2017 14:30:00 +0800</lastBuildDate>
     <atom:link href="https://guangchuangyu.github.io/cn/tags/emojifont/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>News in emojifont</title>
+      <link>https://guangchuangyu.github.io/cn/2017/03/news-in-emojifont/</link>
+      <pubDate>Thu, 23 Mar 2017 14:30:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/03/news-in-emojifont/</guid>
+      <description>&lt;p&gt;面向对象有多种实现方式，R里面就有3种，class-based, method-based, object-based，R6与C++/JAVA一样是class-based的，S3/S4是method-based的，还有一种是object-based的，这在proto包中实现，很多人可能没听说过，但是ggplot2你们一定听过，ggplot2就是object-based的实现，它现在是自己的定制实现，称之为ggproto。&lt;/p&gt;
+
+&lt;p&gt;emojifont就是用proto实现的，属于我的练手之作，很高兴深受大家的喜欢。&lt;/p&gt;
+
+&lt;p&gt;如果我想看一个emoji长啥样，用&lt;strong&gt;ggplot2&lt;/strong&gt;还是麻烦点，用ggplot2是这样画的：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/emojifont/tree.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;而用base plot，则相对简单些：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/emojifont/Screen Shot 2017-02-14 at 8.00.23 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;于是我有了要写个&lt;strong&gt;geom_emoji&lt;/strong&gt;图层的想法：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;我在想应该利用emojifont，写个geom_emoji图层，这样直接ggplot()+geom_emoji(&amp;ldquo;broken_heart&amp;rdquo;)就可以直接出来，ggplot()+geom_emoji(&amp;ldquo;chicken&amp;rdquo;)就出来一只，虽然emojifont已足够易用，但减少输入更加傻瓜，还是可以有的。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;过了一天，我就写了&lt;strong&gt;geom_emoji&lt;/strong&gt;，于是如果我想看某个emoji长什么样，比如下面画个玫瑰花：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot() + geom_emoji(&amp;quot;rose&amp;quot;) + theme_void()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/emojifont/rose.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这次的更新，我还换个emoji字体，升级到unicode 9，也就是最新加入的鸭子也能用咯：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot() + geom_emoji(&amp;quot;duck&amp;quot;) + theme_void()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/emojifont/duck.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;geom_emoji&lt;/strong&gt;让画散点也变得简单:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;x &amp;lt;- seq(-sqrt(17), sqrt(17), length.out=30)
+y1 &amp;lt;- 8*abs(x)/17 + 15* sqrt(17 - x^2)/17
+y2 &amp;lt;- 8*abs(x)/17 - 15* sqrt(17 - x^2)/17
+ggplot() + geom_emoji(&amp;quot;gift_heart&amp;quot;, x=x, y=c(y1, y2), color=&amp;quot;red&amp;quot;, size=10)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/emojifont/heart_of_heart.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;制作动图gif也是非常简单，这个代码简直如同人类语言一般：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;require(ggplot2)
+require(magick)
+require(purrr)
+
+x &amp;lt;- search_emoji(&amp;quot;heart&amp;quot;)
+
+plot_heart=function(x) {
+ p = ggplot() + geom_emoji(x)
+ o = paste0(x, &amp;quot;.png&amp;quot;)
+ ggsave(o, p, width=5, height=5)
+ o
+ }
+
+x %&amp;gt;% map(plot_heart) %&amp;gt;% map(image_read) %&amp;gt;% image_join() %&amp;gt;% image_animate(fps=1) %&amp;gt;% image_write(&amp;quot;heart.gif&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/emojifont/heart.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;因为换了字体，所以和之前的不同，如果要去背景，只需要&lt;code&gt;+theme_void()&lt;/code&gt;就可以。&lt;/p&gt;
+
+&lt;p&gt;新版也不同你加载字体的，随包载入自动加载，当然以前的字体还能用，还用一样的办法手工加载。（所以说我这次升级很考究，原来的字体，老方法，新字体你啥都不用干）&lt;/p&gt;
+
+&lt;p&gt;同时加入的还有&lt;strong&gt;geom_fontawesome&lt;/strong&gt;图层，最新画hex sticker，用fontawesome蛮好用 -,-&lt;/p&gt;
+
+&lt;p&gt;这次更新，主要有3方面：升级了新字体，支持unicode 9；新加入的图层让你非常方便地看一看emoji表情长啥样；再者不需要手工加载字体了。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;我在网上看到香港R用户组的教学视频，发现我被‘出镜了’，讲解了emojifont包，好像我在香港还有点小名气，然而我并没有露过脸，视频中也没有。&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/t-tLnvaYKHw&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&#34; allowfullscreen frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
+ &lt;/div&gt;
+
+</description>
+    </item>
     
     <item>
       <title>使用emoji画图</title>

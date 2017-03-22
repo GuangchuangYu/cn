@@ -6,8 +6,100 @@
     <description>Recent content in Posts on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Mar 2017 15:10:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 23 Mar 2017 14:30:00 +0800</lastBuildDate>
     <atom:link href="https://guangchuangyu.github.io/cn/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>News in emojifont</title>
+      <link>https://guangchuangyu.github.io/cn/2017/03/news-in-emojifont/</link>
+      <pubDate>Thu, 23 Mar 2017 14:30:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/03/news-in-emojifont/</guid>
+      <description>&lt;p&gt;面向对象有多种实现方式，R里面就有3种，class-based, method-based, object-based，R6与C++/JAVA一样是class-based的，S3/S4是method-based的，还有一种是object-based的，这在proto包中实现，很多人可能没听说过，但是ggplot2你们一定听过，ggplot2就是object-based的实现，它现在是自己的定制实现，称之为ggproto。&lt;/p&gt;
+
+&lt;p&gt;emojifont就是用proto实现的，属于我的练手之作，很高兴深受大家的喜欢。&lt;/p&gt;
+
+&lt;p&gt;如果我想看一个emoji长啥样，用&lt;strong&gt;ggplot2&lt;/strong&gt;还是麻烦点，用ggplot2是这样画的：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/emojifont/tree.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;而用base plot，则相对简单些：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/emojifont/Screen Shot 2017-02-14 at 8.00.23 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;于是我有了要写个&lt;strong&gt;geom_emoji&lt;/strong&gt;图层的想法：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;我在想应该利用emojifont，写个geom_emoji图层，这样直接ggplot()+geom_emoji(&amp;ldquo;broken_heart&amp;rdquo;)就可以直接出来，ggplot()+geom_emoji(&amp;ldquo;chicken&amp;rdquo;)就出来一只，虽然emojifont已足够易用，但减少输入更加傻瓜，还是可以有的。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;过了一天，我就写了&lt;strong&gt;geom_emoji&lt;/strong&gt;，于是如果我想看某个emoji长什么样，比如下面画个玫瑰花：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot() + geom_emoji(&amp;quot;rose&amp;quot;) + theme_void()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/emojifont/rose.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这次的更新，我还换个emoji字体，升级到unicode 9，也就是最新加入的鸭子也能用咯：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot() + geom_emoji(&amp;quot;duck&amp;quot;) + theme_void()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/emojifont/duck.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;geom_emoji&lt;/strong&gt;让画散点也变得简单:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;x &amp;lt;- seq(-sqrt(17), sqrt(17), length.out=30)
+y1 &amp;lt;- 8*abs(x)/17 + 15* sqrt(17 - x^2)/17
+y2 &amp;lt;- 8*abs(x)/17 - 15* sqrt(17 - x^2)/17
+ggplot() + geom_emoji(&amp;quot;gift_heart&amp;quot;, x=x, y=c(y1, y2), color=&amp;quot;red&amp;quot;, size=10)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/emojifont/heart_of_heart.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;制作动图gif也是非常简单，这个代码简直如同人类语言一般：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;require(ggplot2)
+require(magick)
+require(purrr)
+
+x &amp;lt;- search_emoji(&amp;quot;heart&amp;quot;)
+
+plot_heart=function(x) {
+ p = ggplot() + geom_emoji(x)
+ o = paste0(x, &amp;quot;.png&amp;quot;)
+ ggsave(o, p, width=5, height=5)
+ o
+ }
+
+x %&amp;gt;% map(plot_heart) %&amp;gt;% map(image_read) %&amp;gt;% image_join() %&amp;gt;% image_animate(fps=1) %&amp;gt;% image_write(&amp;quot;heart.gif&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/emojifont/heart.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;因为换了字体，所以和之前的不同，如果要去背景，只需要&lt;code&gt;+theme_void()&lt;/code&gt;就可以。&lt;/p&gt;
+
+&lt;p&gt;新版也不同你加载字体的，随包载入自动加载，当然以前的字体还能用，还用一样的办法手工加载。（所以说我这次升级很考究，原来的字体，老方法，新字体你啥都不用干）&lt;/p&gt;
+
+&lt;p&gt;同时加入的还有&lt;strong&gt;geom_fontawesome&lt;/strong&gt;图层，最新画hex sticker，用fontawesome蛮好用 -,-&lt;/p&gt;
+
+&lt;p&gt;这次更新，主要有3方面：升级了新字体，支持unicode 9；新加入的图层让你非常方便地看一看emoji表情长啥样；再者不需要手工加载字体了。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;我在网上看到香港R用户组的教学视频，发现我被‘出镜了’，讲解了emojifont包，好像我在香港还有点小名气，然而我并没有露过脸，视频中也没有。&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/t-tLnvaYKHw&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&#34; allowfullscreen frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
+ &lt;/div&gt;
+
+</description>
+    </item>
     
     <item>
       <title>how to bug author</title>
@@ -746,70 +838,6 @@ clifun::lolcat(cowsay::say(clifun::figlet(&amp;ldquo;YGC&amp;rdquo;), by=&amp;ls
 &lt;p&gt;GOSemSim默认是支持单一物种，首先通过godata()函数把OrgDb转化为GOSemSim所需要的注释，包括基因映射到GO以及GOID的信息含量，然后这个背景注释传给geneSim/mgeneSim函数，godata()只支持传入单一OrgDb，所以这里只能是支持单一物种，要跨物种也不是不可能，我再写一个merge函数，把godata()输出的GOSemSimDATA对象合并起来，比如一个人的，一个老鼠的，merge完之后，你还可以再merge，这样就可以有多个物种的注释在里面。就可以传给geneSim/mgeneSim来计算了，所有的函数都不需要做出改变，只需要添加这一功能就好。对于使用GO图结构的算法，这没什么问题，但对于使用信息含量的算法，merge的过程，可能需要对信息含量重新计算/处理，这也是我迟迟没写扩展的原因，因为没时间研究这些-,-&lt;/p&gt;
 
 &lt;p&gt;虽然直接是不支持的，至少目前是这样（以后可以真会加入像上面提到的功能），但稍微变通一下，就知道其实是可以的，因为你可以使用图结构算法（不涉及信息含量的计算），然后用mgoSim来计算啊，只不过你需要自己做基因到GO的映射而已，你拿一人的基因，对应一个GOID向量，一个老鼠基因，对应另一个GOID向量，做为输入给mgoSim，就可以算出来这两个基因的相似性，简单的wrapper函数，就可以干这个事情了。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Using Linked List to solve Josephus problem</title>
-      <link>https://guangchuangyu.github.io/cn/2016/12/using-linked-list-to-solve-josephus-problem/</link>
-      <pubDate>Sun, 04 Dec 2016 00:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2016/12/using-linked-list-to-solve-josephus-problem/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;这个问题是以弗拉维奥·约瑟夫斯命名的，它是1世纪的一名犹太历史学家。他在自己的日记中写道，他和他的40个战友被罗马军队包围在洞中。他们讨论是自杀还是被俘，最终决定自杀，并以抽签的方式决定谁杀掉谁。约瑟夫斯和另外一个人是最后两个留下的人。约瑟夫斯说服了那个人，他们将向罗马军队投降，不再自杀。约瑟夫斯把他的存活归因于运气或天意，他不知道是哪一个。  &amp;ndash; &lt;a href=&#34;https://zh.wikipedia.org/wiki/约瑟夫斯问题&#34;&gt;https://zh.wikipedia.org/wiki/约瑟夫斯问题&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;这是一个比较简单的问题，n个人围成圆圈，越过k-1个人，杀掉第k个人，如此反复直到只剩下最后一个人。可以用数学推导给出答案，问题本身已经足够简单，用链表可以模拟整个过程。实现起来比较直观。这里在初始化这个链表的时候，需要注意，到了最后一人的时候，他应该指向第一个人，这样才能形成一个环状的链表，然后问题就非常简单了，从第一人开始，后面就无所谓头和尾了，按照规则来，每次杀掉一个人，直到只剩下最后一人，就是结果。从维基的解释可以看出，最后两个人没死，这没节操的事情被拿来说，如果你数学好，你就可以救自己一命（站在合适的位置，让自己是最后一个）。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;lt;iostream&amp;gt;
-#include &amp;lt;fstream&amp;gt;
-#include &amp;lt;sstream&amp;gt;
-
-typedef struct person {
-  int ID;
-  struct person * next;
-} person;
-
-int main() {
-  std::ifstream infile(&amp;quot;data/id32.txt&amp;quot;);
-  std::string line;
-  getline(infile, line);
-  int n, k;
-  std::stringstream ss(line);
-  ss &amp;gt;&amp;gt; n;
-  ss &amp;gt;&amp;gt; k;
-
-  person *head = new person;
-  head-&amp;gt;ID = 1;
-  person *prenode = head;
-  for (int i=2; i&amp;lt;=n; i++) {
-    person *node = new person;
-    node-&amp;gt;ID = i;
-    prenode-&amp;gt;next = node;
-    prenode = node;
-    if (i == n)
-      node-&amp;gt;next = head;
-  }
-
-
-  int left = n;
-  int i=1;
-  person *node = new person;
-  node = head;
-  while (left &amp;gt; 1) {
-    if (i % k == 0) {
-      prenode-&amp;gt;next = node-&amp;gt;next;
-      left--;
-    } else {
-      prenode = node;
-    }
-
-    i++;
-    node = node-&amp;gt;next;
-  }
-  std::cout &amp;lt;&amp;lt; node-&amp;gt;ID &amp;lt;&amp;lt; std::endl;
-}
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
