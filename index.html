@@ -127,20 +127,6 @@ ga('send', 'pageview');
           <p><p>面向对象有多种实现方式，R里面就有3种，class-based, method-based, object-based，R6与C++/JAVA一样是class-based的，S3/S4是method-based的，还有一种是object-based的，这在proto包中实现，很多人可能没听说过，但是ggplot2你们一定听过，ggplot2就是object-based的实现，它现在是自己的定制实现，称之为ggproto。</p>
 
 <p>emojifont就是用proto实现的，属于我的练手之作，很高兴深受大家的喜欢。</p>
-
-<p>如果我想看一个emoji长啥样，用<strong>ggplot2</strong>还是麻烦点，用ggplot2是这样画的：</p>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/R/emojifont/tree.png" alt="" /></p>
-
-<p>而用base plot，则相对简单些：</p>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/R/emojifont/Screen Shot 2017-02-14 at 8.00.23 PM.png" alt="" /></p>
-
-<p>于是我有了要写个<strong>geom_emoji</strong>图层的想法：</p>
-
-<blockquote>
-<p>我在想应该利用emojifont，写个geom_emoji图层，这样直接ggplot()+geom_emoji(&ldquo;broken_heart&rdquo;)就可以直接出来，ggplot()+geom_emoji(&ldquo;chicken&rdquo;)就出来一只，虽然emojifont已足够易用，但减少输入更加傻瓜，还是可以有的。</p>
-</blockquote>
 </p>
 
           
