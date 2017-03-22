@@ -202,7 +202,9 @@ plot_heart=function(x) {
  o
  }
 
-x %&gt;% map(plot_heart) %&gt;% map(image_read) %&gt;% image_join() %&gt;% image_animate(fps=1) %&gt;% image_write(&quot;heart.gif&quot;)
+x %&gt;% map(plot_heart) %&gt;% map(image_read) %&gt;% 
+image_join() %&gt;% image_animate(fps=1) %&gt;% 
+image_write(&quot;heart.gif&quot;)
 </code></pre>
 
 <p><img src="https://guangchuangyu.github.io/blog_images/R/emojifont/heart.gif" alt="" /></p>
