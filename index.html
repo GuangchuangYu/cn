@@ -111,6 +111,58 @@ ga('send', 'pageview');
     <article>
       <header>
         <h1 class="entry-title">
+          <a href="https://guangchuangyu.github.io/cn/2017/03/%E5%85%B3%E4%BA%8Echipseq%E6%B3%A8%E9%87%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/">关于ChIPseq注释的几个问题</a>
+        </h1>
+        <p class="meta">Mar 31, 2017 - 1 minute read -  <a href="https://guangchuangyu.github.io/cn/2017/03/%E5%85%B3%E4%BA%8Echipseq%E6%B3%A8%E9%87%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/#disqus_thread">Comments</a>
+
+        
+        
+        
+        <a class="label" href="https://guangchuangyu.github.io/cn/categories/r/">R</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/chipseq/">ChIPseq</a>
+        </p>
+
+      </header>
+
+        
+          <p><h2 id="为什么我要用某个基因组版本:015d79cbc951e2a010a6c641978ec0b8">为什么我要用某个基因组版本？</h2>
+
+<p>在上一篇文章中，我用了<code>TxDb.Hsapiens.UCSC.hg19.knownGene</code>。 <strong>hg19</strong>的<strong>TxDb</strong>, 或者有人就要问了，为什么不用<strong>hg38</strong>？</p>
+
+<p>这个问题，不是说要用那一个，不能用那一个。而是你必须得用某一个，这取决于你最初<strong>fastq</strong>用BWA/Bowtie2比对于某个版本的基因组，你最初用了某个版本，后面就得用相应的版本，不能混，因为不同版本的位置信息有所不同。</p>
+
+<p>当然如果要（贵圈喜欢的）强搞，也不是不可以，你得有chain file，先跑个liftOver，实际上就是在两个基因组版本之间做了位置转换。</p>
+
+<h2 id="为什么说-chipseeker-支持所有物种:015d79cbc951e2a010a6c641978ec0b8">为什么说<strong>ChIPseeker</strong>支持所有物种？</h2>
+
+<p>背景注释信息用了<strong>TxDb</strong>就能保证所有物种都支持了？我去哪里找我要的<strong>TxDb</strong>?</p>
+
+<p>我写<strong>ChIPseeker</strong>的时候，我做的物种是人，<strong>ChIPseeker</strong>在线一周就有剑桥大学的人写信跟我说在用<strong>ChIPseeker</strong>做果蝇，在<a href="https://guangchuangyu.github.io/cn/2017/03/bed%E6%96%87%E4%BB%B6/">BED文件</a>一文中，也提到了最近有人在Biostars上问用<strong>ChIPseeker</strong>做裂殖酵母。</p>
+
+<p>首先Bioconductor提供了30个TxDb包，可以供我们使用，这当然只能覆盖到一小部分物种，我们的物种基因组信息，多半要从UCSC或者Ensembl获得，我敢说支持所有物种，就是因为UCSC和ensembl上所有的基因组都可以被<strong>ChIPseeker</strong>支持。</p>
+
+<p>因为我们可以使用<strong>GenomicFeatures</strong>包函数来制作TxDb对象：</p>
+
+<ul>
+<li>makeTxDbFromUCSC： 通过UCSC在线制作TxDb</li>
+<li>makeTxDbFromBiomart: 通过ensembl在线制作TxDb</li>
+<li>makeTxDbFromGRanges：通过GRanges对象制作TxDb</li>
+<li>makeTxDbFromGFF：通过解析GFF文件制作TxDb</li>
+</ul>
+</p>
+
+          
+              <footer>
+                  <a href="https://guangchuangyu.github.io/cn/2017/03/%E5%85%B3%E4%BA%8Echipseq%E6%B3%A8%E9%87%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/" rel="full-article">Read On &rarr;</a>
+              </footer>
+          
+
+        
+
+    </article>
+    
+    <article>
+      <header>
+        <h1 class="entry-title">
           <a href="https://guangchuangyu.github.io/cn/2017/03/news-in-emojifont/">News in emojifont</a>
         </h1>
         <p class="meta">Mar 23, 2017 - 1 minute read -  <a href="https://guangchuangyu.github.io/cn/2017/03/news-in-emojifont/#disqus_thread">Comments</a>
@@ -194,7 +246,7 @@ ga('send', 'pageview');
         
           <p><p>这一次讲解非常重要的peak注释，注释在<strong>ChIPseeker</strong>里只需要用到一个函数<strong>annotatePeak</strong>，它可以满足大家各方面的需求。</p>
 
-<h2 id="输入:c540e375f54dab440eeaca7e52b07f3d">输入</h2>
+<h2 id="输入:4b21ea5970cfe309bb59877ac4e1f485">输入</h2>
 
 <p>当然需要我们上次讲到的BED文件，<strong>ChIPseeker</strong>自带了5个BED文件，用<strong>getSampleFiles()</strong>可以拿到文件的全路径，它返回的是个named list，我这里取第4个文件来演示。<strong>annotatePeak</strong>的输入也可以是<strong>GRanges</strong>对象，你如果用R做peak calling的话,直接就可以衔接上<strong>ChIPseeker</strong>了。</p>
 
@@ -290,45 +342,6 @@ ga('send', 'pageview');
           
               <footer>
                   <a href="https://guangchuangyu.github.io/cn/2017/03/bed%E6%96%87%E4%BB%B6/" rel="full-article">Read On &rarr;</a>
-              </footer>
-          
-
-        
-
-    </article>
-    
-    <article>
-      <header>
-        <h1 class="entry-title">
-          <a href="https://guangchuangyu.github.io/cn/2017/03/linux%E7%89%88%E8%BF%85%E9%9B%B7/">linux版迅雷</a>
-        </h1>
-        <p class="meta">Mar 6, 2017 - 1 minute read -  <a href="https://guangchuangyu.github.io/cn/2017/03/linux%E7%89%88%E8%BF%85%E9%9B%B7/#disqus_thread">Comments</a>
-
-        
-        
-        
-        <a class="label" href="https://guangchuangyu.github.io/cn/categories/sofware/">sofware</a>
-        </p>
-
-      </header>
-
-        
-          <p><p>上次讲了<a href="http://guangchuangyu.github.io/2016/03/yet-an-unofficial-bioedit-for-osx/">OSX版BioEdit</a>，还蛮受欢迎，说到下载工具，linux的小伙伴们都想用迅雷，有没有？毕竟大家都想耍流氓。许久没打开迅雷，今日一打开，发现被学校给墙掉了。<strong>大写的杯具啊！</strong></p>
-
-<blockquote>
-<p>You have attempted to use an application which is in violation of your internet usage policy.</p>
-
-<p>Thunder.Xunlei</p>
-
-<p>Category: P2P</p>
-</blockquote>
-
-<p>老司机不能偷偷地下片 了，唯有分享出来，带大家上车。还好我有一张半年前的截屏，不然连张图都没有。</p>
-</p>
-
-          
-              <footer>
-                  <a href="https://guangchuangyu.github.io/cn/2017/03/linux%E7%89%88%E8%BF%85%E9%9B%B7/" rel="full-article">Read On &rarr;</a>
               </footer>
           
 
@@ -442,6 +455,10 @@ ga('send', 'pageview');
       
       
       <li class="post">
+        <a href="https://guangchuangyu.github.io/cn/2017/03/%E5%85%B3%E4%BA%8Echipseq%E6%B3%A8%E9%87%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/">关于ChIPseq注释的几个问题</a>
+      </li>
+      
+      <li class="post">
         <a href="https://guangchuangyu.github.io/cn/2017/03/news-in-emojifont/">News in emojifont</a>
       </li>
       
@@ -455,10 +472,6 @@ ga('send', 'pageview');
       
       <li class="post">
         <a href="https://guangchuangyu.github.io/cn/2017/03/bed%E6%96%87%E4%BB%B6/">BED文件</a>
-      </li>
-      
-      <li class="post">
-        <a href="https://guangchuangyu.github.io/cn/2017/03/linux%E7%89%88%E8%BF%85%E9%9B%B7/">linux版迅雷</a>
       </li>
       
     </ul>

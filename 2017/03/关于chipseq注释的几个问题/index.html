@@ -14,7 +14,7 @@
   <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
   
-  <title>peak注释</title>
+  <title>关于ChIPseq注释的几个问题</title>
 
   
   
@@ -109,9 +109,9 @@ ga('send', 'pageview');
       <article class="hentry" role="article">
         <header>
           <h1 class="entry-title">
-            peak注释 
+            关于ChIPseq注释的几个问题 
           </h1>
-          <p class="meta">Mar 16, 2017 - 1 minute read -  <a href="https://guangchuangyu.github.io/cn/2017/03/peak%E6%B3%A8%E9%87%8A/#disqus_thread">Comments</a>
+          <p class="meta">Mar 31, 2017 - 1 minute read -  <a href="https://guangchuangyu.github.io/cn/2017/03/%E5%85%B3%E4%BA%8Echipseq%E6%B3%A8%E9%87%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/#disqus_thread">Comments</a>
 
           
 
@@ -143,112 +143,82 @@ ga('send', 'pageview');
 
     
 
-<p>这一次讲解非常重要的peak注释，注释在<strong>ChIPseeker</strong>里只需要用到一个函数<strong>annotatePeak</strong>，它可以满足大家各方面的需求。</p>
+<h2 id="为什么我要用某个基因组版本:015d79cbc951e2a010a6c641978ec0b8">为什么我要用某个基因组版本？</h2>
 
-<h2 id="输入:4b21ea5970cfe309bb59877ac4e1f485">输入</h2>
+<p>在上一篇文章中，我用了<code>TxDb.Hsapiens.UCSC.hg19.knownGene</code>。 <strong>hg19</strong>的<strong>TxDb</strong>, 或者有人就要问了，为什么不用<strong>hg38</strong>？</p>
 
-<p>当然需要我们上次讲到的BED文件，<strong>ChIPseeker</strong>自带了5个BED文件，用<strong>getSampleFiles()</strong>可以拿到文件的全路径，它返回的是个named list，我这里取第4个文件来演示。<strong>annotatePeak</strong>的输入也可以是<strong>GRanges</strong>对象，你如果用R做peak calling的话,直接就可以衔接上<strong>ChIPseeker</strong>了。</p>
+<p>这个问题，不是说要用那一个，不能用那一个。而是你必须得用某一个，这取决于你最初<strong>fastq</strong>用BWA/Bowtie2比对于某个版本的基因组，你最初用了某个版本，后面就得用相应的版本，不能混，因为不同版本的位置信息有所不同。</p>
 
-<pre><code>&gt; require(ChIPseeker)
-&gt; f = getSampleFiles()[[4]]
+<p>当然如果要（贵圈喜欢的）强搞，也不是不可以，你得有chain file，先跑个liftOver，实际上就是在两个基因组版本之间做了位置转换。</p>
+
+<h2 id="为什么说-chipseeker-支持所有物种:015d79cbc951e2a010a6c641978ec0b8">为什么说<strong>ChIPseeker</strong>支持所有物种？</h2>
+
+<p>背景注释信息用了<strong>TxDb</strong>就能保证所有物种都支持了？我去哪里找我要的<strong>TxDb</strong>?</p>
+
+<p>我写<strong>ChIPseeker</strong>的时候，我做的物种是人，<strong>ChIPseeker</strong>在线一周就有剑桥大学的人写信跟我说在用<strong>ChIPseeker</strong>做果蝇，在<a href="https://guangchuangyu.github.io/cn/2017/03/bed%E6%96%87%E4%BB%B6/">BED文件</a>一文中，也提到了最近有人在Biostars上问用<strong>ChIPseeker</strong>做裂殖酵母。</p>
+
+<p>首先Bioconductor提供了30个TxDb包，可以供我们使用，这当然只能覆盖到一小部分物种，我们的物种基因组信息，多半要从UCSC或者Ensembl获得，我敢说支持所有物种，就是因为UCSC和ensembl上所有的基因组都可以被<strong>ChIPseeker</strong>支持。</p>
+
+<p>因为我们可以使用<strong>GenomicFeatures</strong>包函数来制作TxDb对象：</p>
+
+<ul>
+<li>makeTxDbFromUCSC： 通过UCSC在线制作TxDb</li>
+<li>makeTxDbFromBiomart: 通过ensembl在线制作TxDb</li>
+<li>makeTxDbFromGRanges：通过GRanges对象制作TxDb</li>
+<li>makeTxDbFromGFF：通过解析GFF文件制作TxDb</li>
+</ul>
+
+<p>比如我想用人的参考基因信息来做注释，我们可以直接在线从UCSC生成<strong>TxDb</strong>:</p>
+
+<pre><code class="language-r">require(GenomicFeatures)
+hg19.refseq.db &lt;- makeTxDbFromUCSC(genome=&quot;hg19&quot;, table=&quot;refGene&quot;)
 </code></pre>
 
-<p>巧妇难为无米之炊，就像拿到<strong>fastq</strong>要跑<strong>BWA</strong>，你需要全基因组的序列一样，做注释当然需要注释信息，基因的起始终止，基因有那些内含子，外显子，以及它们的起始终止，非编码区的位置，功能元件的位置等各种信息。</p>
+<p>比如最近在<strong>biostars</strong>上有用户问到的，做裂殖酵母的注释，我们可以下载相应的<strong>GFF</strong>文件，然后通过<strong>makeTxDbFromGFF</strong>函数生成<strong>TxDb</strong>对象，像下面的命令所演示，<strong>spombe</strong>就是生成的<strong>TxDb</strong>，就可以拿来做裂殖酵母的ChIPseq注释。</p>
 
-<p>很多软件会针对特定的物种去整理这些信息供软件使用，但这样就限制了软件的物种支持，有些开发者写软件本意也是解决自己的问题，可能对自己的研究无关的物种也没兴趣去支持。</p>
+<pre><code class="language-r">download.file(&quot;ftp://ftp.ebi.ac.uk/pub/databases/pombase/pombe/Chromosome_Dumps/gff3/schizosaccharomyces_pombe.chr.gff3&quot;, &quot;schizosaccharomyces_pombe.chr.gff3&quot;)
 
-<p>然而<strong>ChIPseeker</strong>支持所有的物种，你没有看错，<strong>ChIPseeker</strong>没有物种限制，当然这是有前提的，物种本身起码是有基因的位置这些注释信息，不然就变无米之炊了。</p>
-
-<p>这里我们需要的是一个<strong>TxDb</strong>对象，这个<strong>TxDb</strong>就包含了我们需要的各种信息，<strong>ChIPseeker</strong>会把信息抽取出来，用于注释时使用。</p>
-
-<pre><code>&gt; require(TxDb.Hsapiens.UCSC.hg19.knownGene)
-&gt; txdb = TxDb.Hsapiens.UCSC.hg19.knownGene
-&gt; x = annotatePeak(f, tssRegion=c(-1000, 1000), TxDb=txdb)
-&gt;&gt; loading peak file...				 2017-03-09 11:29:18 PM 
-&gt;&gt; preparing features information...		 2017-03-09 11:29:18 PM 
-&gt;&gt; identifying nearest features...		 2017-03-09 11:29:19 PM 
-&gt;&gt; calculating distance from peak to TSS...	 2017-03-09 11:29:20 PM 
-&gt;&gt; assigning genomic annotation...		 2017-03-09 11:29:20 PM 
-&gt;&gt; assigning chromosome lengths			 2017-03-09 11:29:42 PM 
-&gt;&gt; done...					 2017-03-09 11:29:42 PM 
+require(GenomicFeatures)
+spombe &lt;- makeTxDbFromGFF(&quot;schizosaccharomyces_pombe.chr.gff3&quot;)
 </code></pre>
+
+<p>所以我敢说，所有物种都支持。像Johns Hopkins出品的CisGenome就只支持到12个物种而已，极大地限制了它的应用。</p>
+
+<h2 id="chipseeker-有什么不能注释的吗:015d79cbc951e2a010a6c641978ec0b8"><strong>ChIPseeker</strong>有什么不能注释的吗？</h2>
+
+<p>这个我还没想到，像CpG是不支持的，但也有人「黑」出来了：</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/CS/2017-03-13-003520_618x444_scrot.png" alt="" /></p>
+
+<p>当然他的做法是把CpG也整合进去，如果你单纯只想看那些peak落在CpG上，或者说离CpG最近，不需要「黑」也能做到的，因为<strong>annotatePeak</strong>的背景注释信息除了TxDb之外，其实它还可以是自定义的<strong>GRanges</strong>对象，这保证了用户各种各样的需求，因为TxDb也不是万能的，如果能自定义，比如说我就只想看蛋白的结合位点会不会在内含子和外显子的交界处，再比如说我做的并不是编码蛋白的基因表达调控，而是非编码RNA，那么我想要用lncRNA的位置信息来做注释。像这样的需求，<strong>ChIPseeker</strong>都是可以满足的。</p>
+
+<h2 id="可以按正负链分开注释吗:015d79cbc951e2a010a6c641978ec0b8">可以按正负链分开注释吗？</h2>
+
+<p>上一篇文章中就有人问了，能否同时给出正负链上最近的基因。首先ChIPseq数据通常情况下是没有正负链信息的（有特殊的实验可以有），<strong>annotatePeak</strong>函数有参数是<strong>sameStrand</strong>，默认是FALSE，你可以给你的peak分别赋正负链，然后传入<strong>sameStrand=TRUE</strong>，分开做两次，你就可以分开拿到正链和负链的最近基因。</p>
+
+<h2 id="最近基因位置是相对于tss的-能否相对于整个基因:015d79cbc951e2a010a6c641978ec0b8">最近基因位置是相对于TSS的，能否相对于整个基因？</h2>
+
+<p>答案也是可以的！</p>
+
+<p>首先如果peak和TSS有overlap，genomic annotation就是promoter，而最近基因也是同一个，所以在这种情况下，两种注释都指向同一个基因，可以说信息是冗余的，能不能不要冗余信息？这个是可以的，你可以传入参数<strong>ignoreOverlap=TRUE</strong>，那么最近基因就会去找不overlap的。</p>
+
+<p>最近基因是相对于TSS，如果和TSS有overlap，距离是0, 必须是最近。回到标题的问题，如果我想说只要和基因有overlap就是最近基因，这种情况其实你的最近基因就是host gene，也就是annotation这个column给出来的是相对应的，我们就想找peak所在位置的基因信息，那么这当然也是可以的，默认参数<strong>overlap=&ldquo;TSS&rdquo;</strong>, 如果改为<strong>overlap=&ldquo;all&rdquo;</strong>，它看的就是整个基因而不是TSS，当然<strong>distanceToTSS</strong>也还是会计算，如果overlap的不是TSS，而是基因体里，并不会因为而设为0。</p>
+
+<h2 id="如果我只想注释上游或者是下游的基因呢:015d79cbc951e2a010a6c641978ec0b8">如果我只想注释上游或者是下游的基因呢？</h2>
+
+<p>当然也可以，我们有<strong>ignoreUpstream</strong>和<strong>ignoreDownstream</strong>参数，默认都是FALSE。随便你想看上游还是下游，都可以。</p>
+
+<h2 id="为什么要有这么多参数:015d79cbc951e2a010a6c641978ec0b8">为什么要有这么多参数？</h2>
+
+<p>我在前一篇，只讲了输入，输出，你知道两个输入，会看输出，你就可以做ChIPseq注释了，非常简单。但是我不能把annotatePeak能做的全列出来，会让大家觉得复杂。（而且简单的情况是最常见的行为）</p>
+
+<p>在大家知道输入输出，觉得简单之后，再讲一讲，它有一些参数，可以应对别的情况，这些情况可能并不是我们做ChIPseq所需要的，但不同参数的灵活组合，是可以解决和应对不同的需求的。</p>
+
+<p>比如说, DNA是可以断的，如果我们要对（DNA breakpoints）断点位置做注释，优先是overlap基因，再者是上游，你会发现很多软件都不能做了，但<strong>ChIPseeker</strong>可以。</p>
 
 <blockquote>
-<p>这里需要注意的是，启动子区域是没有明确的定义的，所以你可能需要指定<strong>tssRegion</strong>，把基因起始转录位点的上下游区域来做为启动子区域。</p>
+<p>做软件关键是要注重细节，不单注重自己需求的细节，更主要是要注重别人的细节</p>
 </blockquote>
-
-<p>有了这两个输入（BED文件和TxDb对象），你就可以跑注释了，然后就可以出结果了。</p>
-
-<h2 id="输出:4b21ea5970cfe309bb59877ac4e1f485">输出</h2>
-
-<p>如果在R里打输出的对象，它会告诉我们ChIPseq的位点落在基因组上什么样的区域，分布情况如何。</p>
-
-<pre><code>&gt; x
-Annotated peaks generated by ChIPseeker
-1331/1331  peaks were annotated
-Genomic Annotation Summary:
-             Feature  Frequency
-9           Promoter 48.1592787
-4             5' UTR  0.7513148
-3             3' UTR  4.2073629
-1           1st Exon  0.7513148
-7         Other Exon  3.9068370
-2         1st Intron  3.6814425
-8       Other Intron  7.7385424
-6 Downstream (&lt;=3kb)  1.1269722
-5  Distal Intergenic 29.6769346
-</code></pre>
-
-<p>如果我想看具体的信息呢？你可以用<strong>as.GRanges</strong>方法，这里我只打印前三行：</p>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/CS/2017-03-09-235213_697x358_scrot.png" alt="" /></p>
-
-<p>Bioconductor里有很多包是针对<strong>GRanges</strong>对象的，这样方便你在R里做后续的处理，如果你说你不懂这些，只想输出个Excel表格。那么也很容易，用<strong>as.data.frame</strong>就可以转成<strong>data.frame</strong>，然后你就可以用<strong>write.table</strong>输出表格了。</p>
-
-<h2 id="两种-不同的注释:4b21ea5970cfe309bb59877ac4e1f485">两种<strong>不同的注释</strong></h2>
-
-<p>这里注释有两种，一种是genomic annotation (也就是annotation这一列）还有就是nearest gene annotation（也就是多出来的其它列）。</p>
-
-<p>经常有人问我问题，把这两种搞混。genomic annotation注释的是peak的位置，它落在什么地方了，可以是UTR，可以是内含子或者外显子。</p>
-
-<p>而最近基因是peak相对于转录起始位点的距离，不管这个peak是落在内含子或者别的什么位置上，即使它落在基因间区上，我都能够找到一个离它最近的基因（即使它可能非常远）。</p>
-
-<p>这两种注释的策略是不一样的。针对不同的问题。第一种策略peak所在位置，可能就是调控的根本，比如你要做可变剪切的，最近基因的注释显然不是你关注的点。</p>
-
-<p>而做基因表达调控的，当然promoter区域是重点，离结合位点最近的基因更有可能被调控。</p>
-
-<p>最近基因的注释信息虽然是以基因为单位给出，但我们针对的是转录起始位点来计算距离，针对于不同的转录本，一个基因可能有多个转录起始位点，所以注释是在转录本的水平上进行的，我们可以看到输出有一列是<strong>transcriptId</strong>.</p>
-
-<h2 id="第三种注释:4b21ea5970cfe309bb59877ac4e1f485">第三种注释</h2>
-
-<p>两种注释有时候还不够，我想看peak上下游某个范围内（比如说-5k到5k的距离）都有什么基因，<strong>annotatePeak</strong>也可以做到。</p>
-
-<p>你只要传个参数说你要这个信息，还有什么区间内，就可以了。</p>
-
-<pre><code>x = annotatePeak(f[[4]], tssRegion=c(-1000, 1000), TxDb=txdb, addFlankGeneInfo=TRUE, flankDistance=5000)
-</code></pre>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/CS/2017-03-10-001539_1280x800_scrot.png" alt="" /></p>
-
-<p>输出中多三列: <strong>flank_txIds</strong>, <strong>flank_geneIds</strong>和<strong>flank_gene_distances</strong>，在指定范围内所有的基因都被列出。</p>
-
-<h2 id="基因注释:4b21ea5970cfe309bb59877ac4e1f485">基因注释</h2>
-
-<p>对于通常情况找最近基因的策略，最近基因给出来了，但都是各种人类不友好的ID，我们不能把一切都交给计算机，输出的结果我们还是要看一看的，能不能把基因的ID换成对人类友好的基因名，并给出描述性的全称，这个必然可以有。</p>
-
-<p>只需要给<strong>annotatePeak</strong>传入<strong>annoDb</strong>参数就行了。</p>
-
-<p>如果你的<strong>TxDb</strong>的基因ID是Entrez，它会转成ENSEMBL，反之亦然，当然不管是那一种，都会给出SYMBOL，还有描述性的GENENAME.</p>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/CS/2017-03-10-001907_1280x800_scrot.png" alt="" /></p>
-
-<hr />
-
-<h2 id="citation:4b21ea5970cfe309bb59877ac4e1f485">Citation</h2>
-
-<p><strong><em>Yu G</em></strong>, Wang LG and He QY<sup>*</sup>. <a href="http://bioinformatics.oxfordjournals.org/content/31/14/2382">ChIPseeker: an R/Bioconductor package for ChIP peak annotation, comparison and visualization</a>. <strong><em>Bioinformatics</em></strong> 2015, 31(14):2382-2383.</p>
-
-<p><script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script><div class="altmetric-embed" data-badge-type="donut" data-badge-popover="right" data-altmetric-id="3781087"></div></p>
 
 
  
@@ -259,7 +229,7 @@ Genomic Annotation Summary:
   <p class="meta">
     <span class="byline author vcard">Posted by <span class="fn">Guangchuang Yu</span></span>
     
-    <time>Mar 16, 2017</time>
+    <time>Mar 31, 2017</time>
     <span class="categories">
       Tags:
         
@@ -276,11 +246,9 @@ Genomic Annotation Summary:
 
   <p class="meta">
     
-        <a class="basic-alignment left" href="https://guangchuangyu.github.io/cn/2017/03/bed%E6%96%87%E4%BB%B6/" title="BED文件">BED文件</a>
+        <a class="basic-alignment left" href="https://guangchuangyu.github.io/cn/2017/03/news-in-emojifont/" title="News in emojifont">News in emojifont</a>
     
 
-    
-      <a class="basic-alignment right" href="https://guangchuangyu.github.io/cn/2017/03/how-to-bug-author/" title="how to bug author">how to bug author</a>
     
   </p>
 
