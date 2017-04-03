@@ -6,8 +6,45 @@
     <description>Recent content in Ggplot2 on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 23 Mar 2017 14:30:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 03 Apr 2017 15:10:00 +0800</lastBuildDate>
     <atom:link href="https://guangchuangyu.github.io/cn/tags/ggplot2/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ggplot2字体溢出的那点破事</title>
+      <link>https://guangchuangyu.github.io/cn/2017/04/ggplot2%E5%AD%97%E4%BD%93%E6%BA%A2%E5%87%BA%E7%9A%84%E9%82%A3%E7%82%B9%E7%A0%B4%E4%BA%8B/</link>
+      <pubDate>Mon, 03 Apr 2017 15:10:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/04/ggplot2%E5%AD%97%E4%BD%93%E6%BA%A2%E5%87%BA%E7%9A%84%E9%82%A3%E7%82%B9%E7%A0%B4%E4%BA%8B/</guid>
+      <description>&lt;p&gt;比如下面的代码：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;require(ggplot2)
+d &amp;lt;- data.frame(x=c(0, 0.002, 0.00575), y = 1:3)
+p &amp;lt;- ggplot(d, aes(x, y)) + geom_point() + xlab(NULL) + ylab(NULL)
+print(p)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/geom_text_files/figure-markdown_strict/unnamed-chunk-1-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;上面图中x轴的文本&lt;strong&gt;0.006&lt;/strong&gt;，这个数字中的&lt;strong&gt;6&lt;/strong&gt;几乎看不到，因为一半过界了。&lt;/p&gt;
+
+&lt;p&gt;这种情况还可以更糟糕，比如我把字体搞大点：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;p &amp;lt;- p + theme(axis.text=element_text(size=12))
+print(p)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/geom_text_files/figure-markdown_strict/unnamed-chunk-1-2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;简直了，&lt;strong&gt;6&lt;/strong&gt;都看不见了。第一次遇到这种情况，都会觉得这软件也太傻了！连坐标轴都会过界！但事实上，这是一个普遍的现象。因为像点这些，是数据空间，但文本是像素空间，只会按照指定的大小转化为多少个像素，然后把字打出来，这些当然容易打过界了。特别是如果把文本打在数据点的右边，比如我们画进化树时，需要画tip label，这纯粹是在右边打字的，文本通常只有部分显示出来，解决方案就在&lt;strong&gt;ggtree&lt;/strong&gt;的&lt;a href=&#34;https://guangchuangyu.github.io/ggtree/faq/#tip-label-truncated&#34;&gt;文档&lt;/a&gt;里，用&lt;code&gt;xlim&lt;/code&gt;搞大右边。比如这个例子的话，&lt;code&gt;+xlim&lt;/code&gt;很容易解决的：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;p + xlim(NA, 0.0062)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/geom_text_files/figure-markdown_strict/unnamed-chunk-1-3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;当然复杂的情况也是有的，比如你在分面的时候，只有某个分面溢出了，而&lt;code&gt;scales&lt;/code&gt;又是&lt;code&gt;free&lt;/code&gt;的，你直接&lt;code&gt;+xlim&lt;/code&gt;会应用于所有分面，但在free scale的情况下，你只想应用到某一分面，这个也是可以搞的，参考&lt;a href=&#34;https://guangchuangyu.github.io/2016/10/xlim_tree-set-x-axis-limits-for-only-tree-panel/&#34;&gt;xlim_tree&lt;/a&gt;，做为思考题，看大家能不能悟出来。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>News in emojifont</title>

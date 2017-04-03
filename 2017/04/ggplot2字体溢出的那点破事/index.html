@@ -14,7 +14,7 @@
   <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
   
-  <title>Installing Hackintosh</title>
+  <title>ggplot2字体溢出的那点破事</title>
 
   
   
@@ -109,15 +109,15 @@ ga('send', 'pageview');
       <article class="hentry" role="article">
         <header>
           <h1 class="entry-title">
-            Installing Hackintosh 
+            ggplot2字体溢出的那点破事 
           </h1>
-          <p class="meta">Mar 15, 2012 - 1 minute read -  <a href="https://guangchuangyu.github.io/cn/2012/03/installing-hackintosh/#disqus_thread">Comments</a>
+          <p class="meta">Apr 3, 2017 - 1 minute read -  <a href="https://guangchuangyu.github.io/cn/2017/04/ggplot2%E5%AD%97%E4%BD%93%E6%BA%A2%E5%87%BA%E7%9A%84%E9%82%A3%E7%82%B9%E7%A0%B4%E4%BA%8B/#disqus_thread">Comments</a>
 
           
 
           
           
-          <a class="label" href="https://guangchuangyu.github.io/cn/categories/mac-os">Mac OS</a>
+          <a class="label" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
           </p>
         </header>
         <div class="entry-content">
@@ -141,23 +141,34 @@ ga('send', 'pageview');
 
 <br>
 
-    <p>初中时在杂志上看到苹果的彩壳机，从此叔就开始成为了苹果的脑残粉，还在K6-2和win98那会，就在玩macintosh主题。</p>
+    <p>比如下面的代码：</p>
 
-<p>本科时，通过<a href="http://pearpc.sourceforge.net/">PearPC</a>来虚拟PowerPC，硬是在ATHLON XP 1700+这个破CPU上破了OS X Jaguar，那个慢啊，是无法忍受的。</p>
+<pre><code>require(ggplot2)
+d &lt;- data.frame(x=c(0, 0.002, 0.00575), y = 1:3)
+p &lt;- ggplot(d, aes(x, y)) + geom_point() + xlab(NULL) + ylab(NULL)
+print(p)
+</code></pre>
 
-<p>后来，有了一台<a href="http://guangchuangyu.github.io/categories/powerbook">powerbook</a>，却拿它来装<a href="http://guangchuangyu.github.io/2005/01/powerbook-g3%E4%B8%8A%E5%AE%89%E8%A3%85gentoo/">gentoo</a>和<a href="http://guangchuangyu.github.io/2006/06/%E5%AE%89%E8%A3%85os9%E5%92%8Cnetbsd%E5%8F%8C%E7%B3%BB%E7%BB%9F/">netbsd</a>。从那里候开始，基本上就只用Linux/BSD。</p>
+<p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/geom_text_files/figure-markdown_strict/unnamed-chunk-1-1.png" alt="" /></p>
 
-<p>再后来，又有了一台<a href="http://guangchuangyu.github.io/2011/06/screen-shot/">macbook pro</a>，除了出差，放在家里倒也没怎么用。囧rz&hellip;
-在国内的工作环境，用linux与人格格不入。但windows搞开发又有不顺手的。各种编译环境搭建起来让人作呕，而且没有<a href="http://guangchuangyu.github.io/categories/shell/">shell</a>，用起来就是不够爽，虽然<a href="http://guangchuangyu.github.io/categories/emacs/">emacs</a>自带eshell，但在windows下缺少各种命令行程序，也只能算廖胜于无。</p>
+<p>上面图中x轴的文本<strong>0.006</strong>，这个数字中的<strong>6</strong>几乎看不到，因为一半过界了。</p>
 
-<p>在北京那会，只用linux，因为有需要的时候可以<a href="http://guangchuangyu.github.io/2008/09/%E9%80%9A%E8%BF%87%E5%B1%80%E5%9F%9F%E7%BD%91%E5%9C%A8linux%E4%B8%8B%E4%BD%BF%E7%94%A8windows%E7%9A%84%E7%A8%8B%E5%BA%8F/">通过局域网运行windows程序</a>。到了暨大，一直用win7，因为质谱相关的很多软件都只跑在winddows下，后来发现和我没啥关系，那些东西都在质谱房里搞。得益于机房里有一台机器跑<a href="http://guangchuangyu.github.io/categories/linux">CentOS</a>，每天<a href="http://guangchuangyu.github.io/2010/07/xming-windows%E4%B8%8B%E8%BF%9C%E7%A8%8Blinux%E6%A1%8C%E9%9D%A2/">通过ssh</a>，也免去了切换系统的麻烦，但是时间长了，我还是觉得诸多不便。</p>
+<p>这种情况还可以更糟糕，比如我把字体搞大点：</p>
 
-<p>前两天，突发奇想，不如把办公室里的dell机器装个黑苹果。可以应付国内的办公需求，同时也是个Unix-like系统，各种爽。</p>
+<pre><code>p &lt;- p + theme(axis.text=element_text(size=12))
+print(p)
+</code></pre>
 
-<p>装起来倒也顺利，只是网卡、显卡、声卡全不认。搞起来倒也不难，就是kext有点难找。这种文件相当于Linux的kernel module。搞驱动的时候，让我有种10年前玩redhat 7.2时的感觉。</p>
+<p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/geom_text_files/figure-markdown_strict/unnamed-chunk-1-2.png" alt="" /></p>
 
-<p>照例，有图有真相。
-<img src="http://guangchuangyu.github.io/blog_images/2012/03/120315A000-e1331786719301.jpg" alt="" /></p>
+<p>简直了，<strong>6</strong>都看不见了。第一次遇到这种情况，都会觉得这软件也太傻了！连坐标轴都会过界！但事实上，这是一个普遍的现象。因为像点这些，是数据空间，但文本是像素空间，只会按照指定的大小转化为多少个像素，然后把字打出来，这些当然容易打过界了。特别是如果把文本打在数据点的右边，比如我们画进化树时，需要画tip label，这纯粹是在右边打字的，文本通常只有部分显示出来，解决方案就在<strong>ggtree</strong>的<a href="https://guangchuangyu.github.io/ggtree/faq/#tip-label-truncated">文档</a>里，用<code>xlim</code>搞大右边。比如这个例子的话，<code>+xlim</code>很容易解决的：</p>
+
+<pre><code>p + xlim(NA, 0.0062)
+</code></pre>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/geom_text_files/figure-markdown_strict/unnamed-chunk-1-3.png" alt="" /></p>
+
+<p>当然复杂的情况也是有的，比如你在分面的时候，只有某个分面溢出了，而<code>scales</code>又是<code>free</code>的，你直接<code>+xlim</code>会应用于所有分面，但在free scale的情况下，你只想应用到某一分面，这个也是可以搞的，参考<a href="https://guangchuangyu.github.io/2016/10/xlim_tree-set-x-axis-limits-for-only-tree-panel/">xlim_tree</a>，做为思考题，看大家能不能悟出来。</p>
 
 
  
@@ -168,12 +179,12 @@ ga('send', 'pageview');
   <p class="meta">
     <span class="byline author vcard">Posted by <span class="fn">Guangchuang Yu</span></span>
     
-    <time>Mar 15, 2012</time>
+    <time>Apr 3, 2017</time>
     <span class="categories">
       Tags:
         
         
-          <a class="category" href="https://guangchuangyu.github.io/cn/tags/osx">OSX</a>  <a class="category" href="https://guangchuangyu.github.io/cn/tags/hackintosh">hackintosh</a>  
+          <a class="category" href="https://guangchuangyu.github.io/cn/tags/ggtree">ggtree</a>  <a class="category" href="https://guangchuangyu.github.io/cn/tags/ggplot2">ggplot2</a>  
         
     </span>
   </p>
@@ -185,11 +196,9 @@ ga('send', 'pageview');
 
   <p class="meta">
     
-        <a class="basic-alignment left" href="https://guangchuangyu.github.io/cn/2012/02/happy-valentine/" title="happy valentine">happy valentine</a>
+        <a class="basic-alignment left" href="https://guangchuangyu.github.io/cn/2017/03/%E5%85%B3%E4%BA%8Echipseq%E6%B3%A8%E9%87%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/" title="关于ChIPseq注释的几个问题">关于ChIPseq注释的几个问题</a>
     
 
-    
-      <a class="basic-alignment right" href="https://guangchuangyu.github.io/cn/2012/04/support-vector-machine/" title="Support Vector Machine">Support Vector Machine</a>
     
   </p>
 

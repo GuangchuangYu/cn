@@ -6,8 +6,45 @@
     <description>Recent content in R on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 31 Mar 2017 12:23:16 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 03 Apr 2017 15:10:00 +0800</lastBuildDate>
     <atom:link href="https://guangchuangyu.github.io/cn/categories/r/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ggplot2字体溢出的那点破事</title>
+      <link>https://guangchuangyu.github.io/cn/2017/04/ggplot2%E5%AD%97%E4%BD%93%E6%BA%A2%E5%87%BA%E7%9A%84%E9%82%A3%E7%82%B9%E7%A0%B4%E4%BA%8B/</link>
+      <pubDate>Mon, 03 Apr 2017 15:10:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/04/ggplot2%E5%AD%97%E4%BD%93%E6%BA%A2%E5%87%BA%E7%9A%84%E9%82%A3%E7%82%B9%E7%A0%B4%E4%BA%8B/</guid>
+      <description>&lt;p&gt;比如下面的代码：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;require(ggplot2)
+d &amp;lt;- data.frame(x=c(0, 0.002, 0.00575), y = 1:3)
+p &amp;lt;- ggplot(d, aes(x, y)) + geom_point() + xlab(NULL) + ylab(NULL)
+print(p)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/geom_text_files/figure-markdown_strict/unnamed-chunk-1-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;上面图中x轴的文本&lt;strong&gt;0.006&lt;/strong&gt;，这个数字中的&lt;strong&gt;6&lt;/strong&gt;几乎看不到，因为一半过界了。&lt;/p&gt;
+
+&lt;p&gt;这种情况还可以更糟糕，比如我把字体搞大点：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;p &amp;lt;- p + theme(axis.text=element_text(size=12))
+print(p)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/geom_text_files/figure-markdown_strict/unnamed-chunk-1-2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;简直了，&lt;strong&gt;6&lt;/strong&gt;都看不见了。第一次遇到这种情况，都会觉得这软件也太傻了！连坐标轴都会过界！但事实上，这是一个普遍的现象。因为像点这些，是数据空间，但文本是像素空间，只会按照指定的大小转化为多少个像素，然后把字打出来，这些当然容易打过界了。特别是如果把文本打在数据点的右边，比如我们画进化树时，需要画tip label，这纯粹是在右边打字的，文本通常只有部分显示出来，解决方案就在&lt;strong&gt;ggtree&lt;/strong&gt;的&lt;a href=&#34;https://guangchuangyu.github.io/ggtree/faq/#tip-label-truncated&#34;&gt;文档&lt;/a&gt;里，用&lt;code&gt;xlim&lt;/code&gt;搞大右边。比如这个例子的话，&lt;code&gt;+xlim&lt;/code&gt;很容易解决的：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;p + xlim(NA, 0.0062)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/geom_text_files/figure-markdown_strict/unnamed-chunk-1-3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;当然复杂的情况也是有的，比如你在分面的时候，只有某个分面溢出了，而&lt;code&gt;scales&lt;/code&gt;又是&lt;code&gt;free&lt;/code&gt;的，你直接&lt;code&gt;+xlim&lt;/code&gt;会应用于所有分面，但在free scale的情况下，你只想应用到某一分面，这个也是可以搞的，参考&lt;a href=&#34;https://guangchuangyu.github.io/2016/10/xlim_tree-set-x-axis-limits-for-only-tree-panel/&#34;&gt;xlim_tree&lt;/a&gt;，做为思考题，看大家能不能悟出来。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>关于ChIPseq注释的几个问题</title>
@@ -823,47 +860,6 @@ clifun::lolcat(cowsay::say(clifun::figlet(&amp;ldquo;YGC&amp;rdquo;), by=&amp;ls
 &lt;p&gt;实现起来也容易，提问者说figtree可以做，通过搞一条长长的root length来实现，这个在ggtree里，当然也可以这么做，但我做空环形树或者说顶一顶tip label，根本就不需要用额外画条线来顶/撑开圆形，但思路是一样的，无非是要给左边留更多空间，这样在旋转成极坐标的时候，左边的空间就变成了内部的空间，于是中间就空了。&lt;/p&gt;
 
 &lt;p&gt;所以呢，+xlim(负数, NA) 就是这么简单，就可以了。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>无中生有windows版R包</title>
-      <link>https://guangchuangyu.github.io/cn/2016/11/%E6%97%A0%E4%B8%AD%E7%94%9F%E6%9C%89windows%E7%89%88r%E5%8C%85/</link>
-      <pubDate>Wed, 30 Nov 2016 00:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2016/11/%E6%97%A0%E4%B8%AD%E7%94%9F%E6%9C%89windows%E7%89%88r%E5%8C%85/</guid>
-      <description>&lt;p&gt;之前帮助高老师实现比对序列的做图，把代码打包为R包seqcombo，方便安装使用。花两小时的作品，发现还有些用户在使用 -，-&lt;/p&gt;
-
-&lt;p&gt;之前有人联系我说安装不上，我觉得不应该有这个问题，因为是纯R代码代码，不涉及到编译，源码包安装不应该有问题。但既然有人问，又都是windows用户，我想可以给他们提供编译好的windows包，简化安装过程（这么体贴用户，我都要被自己感动了）。&lt;/p&gt;
-
-&lt;p&gt;放在CRAN或Bioconductor上的R包，CRAN和Bioconductor会编译出不同平台的二进制包，但seqcobo放在github上，只有源代码，没有预编译好的包，但没有不是问题，我编译好放上去就行了。&lt;/p&gt;
-
-&lt;p&gt;但问题是我没有windows！多年来一直是OSX和linux，MacBook Pro跑Arch Linux，一台iMac跑OSX，我自己根本没有跑windows的机器，所以难为无米之炊，借台机器总是有的，但总不能每次一更新，就拷个代码去别人的机器上打包，再拷回来上传到网上，想想也是蛋疼。&lt;/p&gt;
-
-&lt;p&gt;所以没有windows，这事干起来还不太容易，！在想怎么来无中生有生出个windows包出来的时候，我想起了rhub，也是因为没有windows，之前就用rhub来进行windows平台的R check，在把代码push到CRAN或Bioconductor之前，我总会测试没问题了，再提交代码过去，而rhub正好可以给我提供windows平台的检测。&lt;/p&gt;
-
-&lt;p&gt;在R check完之后，rhub会把check之前build的包存起来，正是这一点，为我们提供了这无米之炊，这时候我就可以下载它来放到我的repo里，这也算是一个变通的办法。&lt;/p&gt;
-
-&lt;p&gt;然而，我要等它check完，再去下载，放到repo，push到github上，动作太多，太繁琐，所以必须写代码让它自动化起来。&lt;/p&gt;
-
-&lt;p&gt;于是写了Makefile:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-make&#34;&gt;windows:
-	Rscript -e &#39;rhub::check_on_windows(&amp;quot;.&amp;quot;)&#39;
-addtorepo: windows
-	Rscript -e &#39;drat:::insert(&amp;quot;../$(PKGNAME)_$(PKGVERS).tar.gz&amp;quot;, &amp;quot;../drat/docs&amp;quot;)&#39;;\
-	Rscript -e &#39;drat:::insert(ypages::get_windows_binary(), &amp;quot;../drat/docs&amp;quot;);\
-	cd ../drat;\
-	git add .; git commit -m &#39;$(PKGNAME)_$(PKGVERS)&#39;; git push -u origin master
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;我只要&lt;code&gt;make addtorepo&lt;/code&gt;一条指令，它就会自动运行传到rhub的windows平台check我的包，check结束后，下载rhub平台编译的包，然后用&lt;code&gt;drat:::insert&lt;/code&gt;来把它放到合适的位置，并生成相应的文件（如包的依赖关系、md5sum等），再把它push到github上去。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/Bioconductor/Screen Shot 2016-11-23 at 6.11.14 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这里我用了一条&lt;code&gt;ypages::get_windows_binary()&lt;/code&gt;指令来检验rhub check是否结束，如果是则把编译的包下载到临时文件，并作为输入传到&lt;code&gt;drat:::insert&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;ypages&lt;/code&gt;也是一个R包，我用来搞github pages的私人定制包，比如我各种包的主页上那些badge图标，显示下载量、版本号、文章引用数目等相关信息的图标，都是通过ypages自动生成的，没有放出来，所以细节不在这里讲，这里主要介绍一个思路，利用rhub云平台来编译windows二进制包，放入私人repo供用户下载安装，通过makefile自动化这一过程。Makefile才是最通用的可重复性研究工具，你值得拥有。&lt;/p&gt;
 </description>
     </item>
     
