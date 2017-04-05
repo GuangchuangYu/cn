@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ggimage on Guangchuang Yu</title>
+    <link>https://guangchuangyu.github.io/cn/tags/ggimage/</link>
+    <description>Recent content in Ggimage on Guangchuang Yu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 04 Mar 2014 12:23:16 +0800</lastBuildDate>
+    <atom:link href="https://guangchuangyu.github.io/cn/tags/ggimage/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>generate biobabble banner using ggimage</title>
+      <link>https://guangchuangyu.github.io/cn/2014/03/generate-biobabble-banner-using-ggimage/</link>
+      <pubDate>Tue, 04 Mar 2014 12:23:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2014/03/generate-biobabble-banner-using-ggimage/</guid>
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/biobabble_banner.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;制作了一个banner，用来插入到文后，方便阅读到最后的时候，直接扫描关注。&lt;/p&gt;
+
+&lt;p&gt;这图当然用PS一下就可以得到，无非是拼图和加点文字。但做为天天写代码画图的人来说，必然是要纯代码来产生的，而且做科学的人，讲究自动化、可重复性。&lt;/p&gt;
+
+&lt;p&gt;就像有些人不理解data scentist为什么讨厌excel一样，觉得无非是工具，没什么好搞阵营的。试想一下，一个分析流程中间有一步要用到excel，需要人工去点点鼠标，这对于讲究自动化、可重复性的data scientist来说是不可接受的。&lt;/p&gt;
+
+&lt;h2 id=&#34;加载中文字体:966da26016f51c32cab8c8a1572665e3&#34;&gt;加载中文字体&lt;/h2&gt;
+
+&lt;p&gt;为了打几个中文字，需要先加载字体，这里我用showtext。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;require(showtext)
+font.add(&amp;quot;heiti&amp;quot;, &amp;quot;/Library/Fonts/华文黑体.ttf&amp;quot;)
+showtext.auto()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;读图:966da26016f51c32cab8c8a1572665e3&#34;&gt;读图&lt;/h2&gt;
+
+&lt;p&gt;两个图，一个是logo，一个是二维码，分别用&lt;strong&gt;EBImage&lt;/strong&gt;读入&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;require(EBImage)
+require(grid)
+
+gc &amp;lt;- rasterGrob(image=readImage(&#39;gc.png&#39;))
+page &amp;lt;- rasterGrob(image=readImage(&#39;biobabble_page.png&#39;))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;图上嵌图:966da26016f51c32cab8c8a1572665e3&#34;&gt;图上嵌图&lt;/h2&gt;
+
+&lt;p&gt;这里用我自己写的&lt;strong&gt;ggimage&lt;/strong&gt;包的&lt;strong&gt;geom_subview&lt;/strong&gt;来嵌图，然后无非打几个字，设一下字体。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;require(ggimage)
+pg &amp;lt;- ggplot(d=data.frame(x=c(0,10), y=c(0,5)), aes(x, y)) + geom_blank() + coord_fixed()
+pg &amp;lt;- pg+geom_subview(gc, x=2.5, y=2.5, width=5.1, height=5.1) + geom_subview(page, x=7.5, y=2.5, width=4.8, height=4.8)
+
+pg &amp;lt;- pg+theme_void() + labs(title=&amp;quot;长按二维码关注biobabble&amp;quot;, subtitle=&amp;quot;欢迎分享朋友圈&amp;quot;,caption=&#39;guangchuangyu@gmail.com&#39;) + theme(title=element_text(family=&amp;quot;heiti&amp;quot;, size=20))
+ggsave(pg, file=&amp;quot;biobabble_banner.png&amp;quot;, width=8, height=5)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;于是产生下图：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/biobabble_banner.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
