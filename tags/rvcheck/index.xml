@@ -23,15 +23,15 @@
 
 &lt;p&gt;使用&lt;code&gt;rvcheck::update_all()&lt;/code&gt;可以自动更新CRAN, Bioconductor和Github上的R包。其实可以放到系统任务里，每月自动更新一次，然后就可以完全不用管升级的事情。&lt;/p&gt;
 
-&lt;h4 id=&#34;更新cran包:150a81b0d05c3800a0a879e5599ed96d&#34;&gt;更新CRAN包&lt;/h4&gt;
+&lt;h4 id=&#34;更新cran包:f5991eac301125c9532028bb48aea13d&#34;&gt;更新CRAN包&lt;/h4&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/screenshots/Screen Shot 2016-10-19 at 9.15.14 AM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;更新bioconductor包:150a81b0d05c3800a0a879e5599ed96d&#34;&gt;更新Bioconductor包&lt;/h4&gt;
+&lt;h4 id=&#34;更新bioconductor包:f5991eac301125c9532028bb48aea13d&#34;&gt;更新Bioconductor包&lt;/h4&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/screenshots/Screen Shot 2016-10-19 at 9.15.43 AM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;更新github包:150a81b0d05c3800a0a879e5599ed96d&#34;&gt;更新Github包&lt;/h4&gt;
+&lt;h4 id=&#34;更新github包:f5991eac301125c9532028bb48aea13d&#34;&gt;更新Github包&lt;/h4&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/screenshots/Screen Shot 2016-10-19 at 9.23.38 AM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 </description>
