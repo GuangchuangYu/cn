@@ -111,6 +111,47 @@ ga('send', 'pageview');
     <article>
       <header>
         <h1 class="entry-title">
+          <a href="https://guangchuangyu.github.io/cn/2012/04/support-vector-machine/">Support Vector Machine</a>
+        </h1>
+        <p class="meta">Apr 12, 2012 - 1 minute read -  <a href="https://guangchuangyu.github.io/cn/2012/04/support-vector-machine/#disqus_thread">Comments</a>
+
+        
+        
+        
+        <a class="label" href="https://guangchuangyu.github.io/cn/categories/statistics/">statistics</a>
+        </p>
+
+      </header>
+
+        
+          <p><p>支持向量机(Support Vector Machines, SVM)最初由Vladimir
+Vapnik于1997年提出，SVM最简单的形式就是找出一下区分界限（descision
+boundary），也称之为超平面(hyperplane)，使得离它最近的点（称之为support
+vectors）与之间隔最大。
+<img src="http://guangchuangyu.github.io/blog_images/2012/04/linearSVM.png" alt="" /></p>
+
+<p>这和logistic regression有些相似，区别在于logistic
+regression要求所有的点尽可能地远离中间那条线，而SVM是要求最接近中间线的点尽可能地远离中间线。也就是说SVM的主要目标是区分那些最难区分的点。</p>
+
+<p>SVM对于hyperplane的定义，在形式上和logistic regression一样,logistic
+regression的decision boundary由$\theta^TX=0$确定,SVM则用$w^TX+b=0$表示,其中b相当于logistic regression中的$\theta_0$，从形式上看，两者并无区别，当然如前面所说，两者的目标不一样，logistic regression着眼于全局，SVM着眼于support
+vectors。有监督算法都有label变量y，logistic
+regression取值是<code>{0,1}</code>，而SVM为了计算距离方便，取值为<code>{-1,1}</code>。</p>
+</p>
+
+          
+              <footer>
+                  <a href="https://guangchuangyu.github.io/cn/2012/04/support-vector-machine/" rel="full-article">Read On &rarr;</a>
+              </footer>
+          
+
+        
+
+    </article>
+    
+    <article>
+      <header>
+        <h1 class="entry-title">
           <a href="https://guangchuangyu.github.io/cn/2012/03/installing-hackintosh/">Installing Hackintosh</a>
         </h1>
         <p class="meta">Mar 15, 2012 - 1 minute read -  <a href="https://guangchuangyu.github.io/cn/2012/03/installing-hackintosh/#disqus_thread">Comments</a>
@@ -228,48 +269,6 @@ list也有诸多讨论，因为它导致了某些包编译出错（估计是NAME
 
     </article>
     
-    <article>
-      <header>
-        <h1 class="entry-title">
-          <a href="https://guangchuangyu.github.io/cn/2011/06/screen-shot/">screen shot</a>
-        </h1>
-        <p class="meta">Jun 28, 2011 - 1 minute read -  <a href="https://guangchuangyu.github.io/cn/2011/06/screen-shot/#disqus_thread">Comments</a>
-
-        
-        
-        
-        <a class="label" href="https://guangchuangyu.github.io/cn/categories/bsd/">BSD</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/mac-os/">Mac OS</a>
-        </p>
-
-      </header>
-
-        
-          <p><p>买了苹果机，一直放在家里没用，准备开会带去用，拿过来装几个软件。</p>
-
-<p>校园网用锐捷是个比较讨厌的东西。当年在华农，光这<a href="http://guangchuangyu.github.io/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/">认证</a>就搞了很久。</p>
-
-<p>现在开源的认证客户端多了，搞起来也方便了，现在在linux下用的<a href="http://code.google.com/p/xmuruijie/">xmuruijie</a>，就比当年<a href="http://guangchuangyu.github.io/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/">mystar</a>好用。</p>
-
-<p>估计xmuruijie也是可以在苹果机上用的，依赖python，搞不好还有些modules要装，懒得去弄，搜了一下，找到<a href="http://code.google.com/p/mentohust/">mentohust</a>，当然需要改一下mac address，用万能的ifconfig搞定。</p>
-
-<p>为了编译软件，必要先装xcode，这个大家伙，4G多，中午挂到吃晚饭才下完。
-然后就可以装各种open source的软件。</p>
-
-<p>mac上有fink支持debian一样的apt-get，还有原生的macport，gentoo的portage也支持，我选择使用<a href="http://guangchuangyu.github.io/categories/bsd">netbsd</a>的pkgsrc来安装各种开源软件。</p>
-
-<p>以前用过比较长时间的netbsd，用着比较顺手。</p>
-</p>
-
-          
-              <footer>
-                  <a href="https://guangchuangyu.github.io/cn/2011/06/screen-shot/" rel="full-article">Read On &rarr;</a>
-              </footer>
-          
-
-        
-
-    </article>
-    
     
     
 
@@ -379,6 +378,10 @@ list也有诸多讨论，因为它导致了某些包编译出错（估计是NAME
       
       
       <li class="post">
+        <a href="https://guangchuangyu.github.io/cn/2017/04/ggimageggplot2%E4%B8%AD%E6%84%89%E5%BF%AB%E5%9C%B0%E4%BD%BF%E7%94%A8%E5%9B%BE%E7%89%87/">ggimage：ggplot2中愉快地使用图片</a>
+      </li>
+      
+      <li class="post">
         <a href="https://guangchuangyu.github.io/cn/2017/04/generate-biobabble-banner-using-ggimage/">generate biobabble banner using ggimage</a>
       </li>
       
@@ -392,10 +395,6 @@ list也有诸多讨论，因为它导致了某些包编译出错（估计是NAME
       
       <li class="post">
         <a href="https://guangchuangyu.github.io/cn/2017/03/news-in-emojifont/">News in emojifont</a>
-      </li>
-      
-      <li class="post">
-        <a href="https://guangchuangyu.github.io/cn/2017/03/how-to-bug-author/">how to bug author</a>
       </li>
       
     </ul>

@@ -6,8 +6,449 @@
     <description>Recent content in Posts on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Apr 2017 12:23:16 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 11 Apr 2017 10:06:59 +0800</lastBuildDate>
     <atom:link href="https://guangchuangyu.github.io/cn/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ggimage：ggplot2中愉快地使用图片</title>
+      <link>https://guangchuangyu.github.io/cn/2017/04/ggimageggplot2%E4%B8%AD%E6%84%89%E5%BF%AB%E5%9C%B0%E4%BD%BF%E7%94%A8%E5%9B%BE%E7%89%87/</link>
+      <pubDate>Tue, 11 Apr 2017 10:06:59 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/04/ggimageggplot2%E4%B8%AD%E6%84%89%E5%BF%AB%E5%9C%B0%E4%BD%BF%E7%94%A8%E5%9B%BE%E7%89%87/</guid>
+      <description>
+
+&lt;h1 id=&#34;导言:da73b643e87724fe5d7ff0bc3037a1b6&#34;&gt;导言&lt;/h1&gt;
+
+&lt;p&gt;本文介绍了&lt;strong&gt;ggimage&lt;/strong&gt;包，允许在&lt;strong&gt;ggplot2&lt;/strong&gt;作图时嵌入图片，并支持&lt;code&gt;aes&lt;/code&gt;映射，可以把离散型变量映射到不同图片。目前有几个包可以使用图片嵌入做图，但都是针对特定的场景，这里使用&lt;strong&gt;ggimage&lt;/strong&gt;来展示在这些特定领域里的应用，&lt;strong&gt;ggimage&lt;/strong&gt;的设计是通用的，并不被特定场景所限定，文末又介绍了用R图标来画出R、用饼图来画气泡图等实例。&lt;/p&gt;
+
+&lt;h1 id=&#34;图上嵌图片:da73b643e87724fe5d7ff0bc3037a1b6&#34;&gt;图上嵌图片&lt;/h1&gt;
+
+&lt;p&gt;R 基础图形库（base graphics）可以在做图的时候嵌入图片，使用的是&lt;code&gt;graphics::rasterImage&lt;/code&gt;：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;imgurl &amp;lt;- &amp;quot;http://phylopic.org/assets/images/submissions/295cd9f7-eef2-441e-ba7e-40c772ca7611.256.png&amp;quot;
+library(EBImage)
+x &amp;lt;- readImage(imgurl)
+plot(1, type = &amp;quot;n&amp;quot;, xlab = &amp;quot;&amp;quot;, ylab = &amp;quot;&amp;quot;, xlim = c(0, 8), ylim = c(0, 8))
+rasterImage(x, 2, 2, 6, 4)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/raster.png&#34; alt=&#34;R绘图嵌入图片演示&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;如果我们搜索&amp;rdquo;ggplot2 image&amp;rdquo;，会找到类似于下面这样的帖子/博文：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/9917049/inserting-an-image-to-ggplot2&#34;&gt;r - Inserting an image to ggplot2 - Stack Overflow&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.r-bloggers.com/add-a-background-png-image-to-ggplot2/&#34;&gt;Add a background png image to ggplot2 | R-bloggers&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;也就是说通过程序员秘笈，搜索，我们用&lt;strong&gt;ggplot2&lt;/strong&gt;同样也可以做到。&lt;/p&gt;
+
+&lt;p&gt;这里我们需要用到&lt;code&gt;annotation_custom(rasterGrob)&lt;/code&gt;来把图片加到&lt;strong&gt;ggplot2&lt;/strong&gt;图形中，这和基础图形库是一模一样的。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(grid)
+library(ggplot2)
+
+p &amp;lt;- ggplot(d = data.frame(x = c(0, 8), y = c(0, 8)), aes(x, y)) + geom_blank()
+p + annotation_custom(rasterGrob(x), 2, 6, 2, 4)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果要使用图片来打点画一个散点图，我们就需要&lt;code&gt;for&lt;/code&gt;循环，对每一个点进行操作，这显然是底层的操作，而&lt;strong&gt;ggplot2&lt;/strong&gt;是一个高抽象的画图系统，我们希望能够使用&lt;strong&gt;ggplot2&lt;/strong&gt;的语法。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ggimage&lt;/strong&gt;就是来实现这样一个功能，它只是一个简单的包，允许我们在ggplot2中把离散性变量映射到不同的图片来画图。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/Screenshot1.png&#34; alt=&#34;推特截屏：把图片当字体一样使用&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;实现这个功能的想法已经酝酿很久了，在&lt;strong&gt;ggtree&lt;/strong&gt;的开发中，我实现了&lt;code&gt;phylopic&lt;/code&gt;函数来使用Phylopic数据库的图片注释进化树，也实现了&lt;code&gt;subview&lt;/code&gt;函数在图上嵌入小图。用图片来注释进化树在进化分析上还是很常见的，特别是在一些分类学的研究中，需要把一些分类学特征在进化树上展示出来，而像我们做病毒，也经常会把一些图片放在进化树上来展示病毒的宿主信息。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ggtree&lt;/strong&gt;和可视化有关的函数分两类，一类是加注释的图层，另一类是可视化操作树（比如像旋转、合并分支）。操作树的都是普通函数，而加注释的都是&lt;code&gt;geom&lt;/code&gt;图层，除了&lt;code&gt;subview&lt;/code&gt;和&lt;code&gt;phylopic&lt;/code&gt;，这种所谓逼死处女座的存在，我早就想改成了&lt;code&gt;geom_subview&lt;/code&gt;和&lt;code&gt;geom_phylopic&lt;/code&gt;了（已实现），这也是为什么我要写&lt;strong&gt;ggimage&lt;/strong&gt;的原因了。&lt;/p&gt;
+
+&lt;h1 id=&#34;安装:da73b643e87724fe5d7ff0bc3037a1b6&#34;&gt;安装&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;ggimage&lt;/strong&gt;依赖于&lt;strong&gt;EBImage&lt;/strong&gt;来读图片，这是个Bioconductor包，所以我们需要额外的动作来安装它，用&lt;code&gt;setRepositories&lt;/code&gt;把Bioconductor软件仓库加进来，这样&lt;code&gt;install.packages&lt;/code&gt;也可以搜索到它的包。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;setRepositories(ind = 1:2)
+install.packages(&amp;quot;ggimage&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;实例分析:da73b643e87724fe5d7ff0bc3037a1b6&#34;&gt;实例分析&lt;/h1&gt;
+
+&lt;p&gt;据我所知目前支持使用图片的R包有&lt;strong&gt;CatterPlots&lt;/strong&gt;, &lt;strong&gt;rphylopic&lt;/strong&gt;, &lt;strong&gt;emoGG&lt;/strong&gt;,
+&lt;strong&gt;ggflags&lt;/strong&gt;这几个，都是为特定的目的而实现的，都有其特定的应用场景，而&lt;strong&gt;ggimage&lt;/strong&gt;是的
+&lt;code&gt;geom_image&lt;/code&gt;是通用的，通过对它进行简单的包装，同样可以实现这些特殊场景的应用图层。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;CatterPlots&lt;/strong&gt;这个包只可以应用于基础图形库（base graphics）中，通过预设的几个猫图（R对象，随包载入）来画散点图。最近&lt;a href=&#34;http://blog.revolutionanalytics.com/2017/02/catterplots-plots-with-cats.html&#34;&gt;RevolutionAnalytics 有博文&lt;/a&gt;介绍。&lt;strong&gt;ggplot2&lt;/strong&gt;没有相应画猫的包。我们可以使用&lt;strong&gt;ggimage&lt;/strong&gt;来画，而且不用限制于&lt;strong&gt;CatterPlots&lt;/strong&gt;预设的几个图形。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(ggplot2)
+library(ggimage)
+
+mytheme &amp;lt;- theme_minimal() +
+    theme(axis.title = element_blank())
+theme_set(mytheme)
+
+x &amp;lt;- seq(-2 * pi, 2 * pi, length.out = 30)
+d &amp;lt;- data.frame(x = x, y = sin(x))
+
+img &amp;lt;- &amp;quot;http://www.belleamibengals.com/bengal_cat_2.png&amp;quot;
+ggplot(d, aes(x, y)) + geom_image(image = img, size = .1)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/ggimage_CatterPlots.png&#34; alt=&#34;ggimage画猫散点图演示&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;CatterPlots&lt;/strong&gt;实现的方式就是上面谈到的&lt;code&gt;rasterImage&lt;/code&gt;内部使用了循环。&lt;strong&gt;rphylopic&lt;/strong&gt;同时支持基础图形库（base graphics）和&lt;strong&gt;ggplot2&lt;/strong&gt;，也是一样的实现方式，不过&lt;strong&gt;rphylopic&lt;/strong&gt;内部没有使用循环，一次只能加一个图，它使用的图来自于&lt;a href=&#34;http://phylopic.org/&#34;&gt;phylopic&lt;/a&gt;数据库。&lt;/p&gt;
+
+&lt;p&gt;我们用&lt;strong&gt;ggimage&lt;/strong&gt;同样可以使用&lt;code&gt;phylopic&lt;/code&gt;图片：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(d, aes(x, y)) + geom_phylopic(image = &amp;quot;500bd7c6-71c1-4b86-8e54-55f72ad1beca&amp;quot;, size = .1)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/ggimage_rphylopic.png&#34; alt=&#34;ggimage使用phylopic图片演示&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;图中是&lt;code&gt;翼足目&lt;/code&gt;动物。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;emoGG&lt;/strong&gt;是专门来画&lt;code&gt;emoji&lt;/code&gt;的，如果要画&lt;code&gt;emoji&lt;/code&gt;的话，我推荐我写的&lt;strong&gt;emojifont&lt;/strong&gt;包，在轩哥的&lt;a href=&#34;https://cos.name/2014/01/showtext-interesting-fonts-and-graphs/&#34;&gt;&lt;strong&gt;showtext&lt;/strong&gt;基础&lt;/a&gt;上，把&lt;code&gt;emoji&lt;/code&gt;当做普通字体一样操作，更方便。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;emoGG&lt;/strong&gt;这个包提供了&lt;code&gt;geom_emoji&lt;/code&gt;图层，虽然一次可以画出散点，但因为不支持&lt;code&gt;aes&lt;/code&gt;映射，而&lt;strong&gt;ggimage&lt;/strong&gt;所提供的&lt;code&gt;geom_emoji&lt;/code&gt;则支持映射，下面的例子中我们做了一个简单的回归分析，如果残差&lt;code&gt;&amp;lt;0.5&lt;/code&gt;用笑脸表示，&lt;code&gt;&amp;gt;0.5&lt;/code&gt;则用哭脸来表示。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;set.seed(123)
+iris2 &amp;lt;- iris[sample(1:nrow(iris), 30), ]
+model &amp;lt;- lm(Petal.Length ~ Sepal.Length, data = iris2)
+iris2$fitted &amp;lt;- predict(model)
+
+p &amp;lt;- ggplot(iris2, aes(x = Sepal.Length, y = Petal.Length)) +
+  geom_linerange(aes(ymin = fitted, ymax = Petal.Length),
+                 colour = &amp;quot;purple&amp;quot;) +
+  geom_abline(intercept = model$coefficients[1],
+              slope = model$coefficients[2])
+
+p + ggimage::geom_emoji(aes(image = ifelse(abs(Petal.Length-fitted) &amp;gt; 0.5, &#39;1f622&#39;, &#39;1f600&#39;)))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/emoji_residual2.png&#34; alt=&#34;ggimage画emoji演示&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;如果要用&lt;strong&gt;emoGG&lt;/strong&gt;来做的话，则需要自己切数据分两次来进行：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;p + emoGG::geom_emoji(data = subset(iris2, (Petal.Length-fitted) &amp;lt; 0.5), emoji = &amp;quot;1f600&amp;quot;) +
+    emoGG::geom_emoji(data = subset(iris2, (Petal.Length-fitted) &amp;gt; 0.5), emoji = &amp;quot;1f622&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这里我们只分两类(残差是否大于0.5)，所以需要加两次，试想我们的分类变量有多种可能的取值，则我们需要分多次切数据加图层，&lt;strong&gt;CatterPlots&lt;/strong&gt;、&lt;strong&gt;rphylopic&lt;/strong&gt;和&lt;strong&gt;emoGG&lt;/strong&gt;都有这个问题，这也是&lt;code&gt;aes&lt;/code&gt;映射之于&lt;strong&gt;ggplot2&lt;/strong&gt;的重要和强大之处，它让我们可以在更高的抽像水平思考，&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ggflags&lt;/strong&gt;是支持&lt;code&gt;aes&lt;/code&gt;映射的，只不过它只能用来画国旗而已。同样&lt;strong&gt;ggimage&lt;/strong&gt;也提供
+了相应的&lt;code&gt;geom_flag&lt;/code&gt;来使用国旗用于做图。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(rvest)
+library(dplyr)
+
+url &amp;lt;- &amp;quot;http://www.nbcolympics.com/medals&amp;quot;
+
+medals &amp;lt;- read_html(url) %&amp;gt;%
+    html_nodes(&amp;quot;table&amp;quot;) %&amp;gt;%
+    html_table() %&amp;gt;% .[[1]]
+
+library(countrycode)
+library(tidyr)
+
+medals &amp;lt;- medals %&amp;gt;%
+    mutate(code = countrycode(Country, &amp;quot;country.name&amp;quot;, &amp;quot;iso2c&amp;quot;)) %&amp;gt;%
+    gather(medal, count, Gold:Bronze) %&amp;gt;%
+    filter(Total &amp;gt;= 10)
+
+head(medals)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;Country&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;Total&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;code&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;medal&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;count&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Russia&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;33&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;RU&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Gold&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;13&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;United States&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;28&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;US&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Gold&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;9&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Norway&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;26&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;NO&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Gold&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;11&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Canada&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;25&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;CA&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Gold&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;10&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Netherlands&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;24&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;NL&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Gold&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;8&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Germany&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;19&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;DE&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Gold&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;首先我们从网站上爬回来2016年各个国家的奥林匹克奖牌数，画出柱状图，并在&lt;code&gt;xlab&lt;/code&gt;国家名边上用&lt;strong&gt;ggimage&lt;/strong&gt;画上国旗：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;p &amp;lt;- ggplot(medals, aes(Country, count)) + geom_col(aes(fill = medal), width = .8)
+
+p + geom_flag(y = -2, aes(image = code)) +
+    coord_flip() + expand_limits(y = -2)  +
+    scale_fill_manual(values = c(&amp;quot;Gold&amp;quot; = &amp;quot;gold&amp;quot;, &amp;quot;Bronze&amp;quot; = &amp;quot;#cd7f32&amp;quot;, &amp;quot;Silver&amp;quot; = &amp;quot;#C0C0C0&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/olympics_2016.png&#34; alt=&#34;ggimage画国旗演示&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;ggimage:da73b643e87724fe5d7ff0bc3037a1b6&#34;&gt;&lt;strong&gt;ggimage&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;前面我们介绍了&lt;strong&gt;ggimage&lt;/strong&gt;在一些场景的应用实例，虽然有专门的包针对这些应用场景，但&lt;strong&gt;ggimage&lt;/strong&gt;在这些领域中的表现要比大多数的包要好（支持aes映射）。但&lt;strong&gt;ggimage&lt;/strong&gt;的使用并不限于这些(&lt;code&gt;geom_phylopic&lt;/code&gt;，&lt;code&gt;geom_emoji&lt;/code&gt;和&lt;code&gt;geom_flag&lt;/code&gt;只是通用图层&lt;code&gt;geom_image&lt;/code&gt;的简单封装)，这里将展示一些有趣的例子。&lt;/p&gt;
+
+&lt;h3 id=&#34;用r图标来画r形状:da73b643e87724fe5d7ff0bc3037a1b6&#34;&gt;用R图标来画R形状&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;x &amp;lt;- c(2, 2, 2, 2, 2, 3, 3, 3.5, 3.5, 4)
+y &amp;lt;- c(2, 3, 4, 5, 6, 4, 6, 3, 5, 2)
+d &amp;lt;- data.frame(x = x, y = y)
+
+img &amp;lt;- system.file(&amp;quot;img&amp;quot;, &amp;quot;Rlogo.png&amp;quot;, package = &amp;quot;png&amp;quot;)
+ggplot(d, aes(x, y)) + geom_image(image = img, size = .1) +
+  xlim(0, 6) + ylim(0, 7)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/R.png&#34; alt=&#34;用R图标画R形状演示&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;嵌套式绘图:da73b643e87724fe5d7ff0bc3037a1b6&#34;&gt;嵌套式绘图&lt;/h3&gt;
+
+&lt;p&gt;这里我要展示的是非常有名的气泡图（Bubble Plot），但气泡不是圆圈，而是使用
+&lt;strong&gt;ggplot2&lt;/strong&gt;画的饼图，我先把饼图保存起来，再用&lt;strong&gt;ggimage&lt;/strong&gt;拿来画，饼图的大小
+与人口总数正相关。这个例子可以应用到很多场景中去，比如一个时间序列的曲线，你要用统计图在某些时间点上展示相关的信息，比如你要在地图上加某些地方的相关统计信息（如果要在地图上画饼图，可以使用我写的&lt;a href=&#34;https://cran.r-project.org/package=scatterpie&#34;&gt;&lt;strong&gt;scatterpie&lt;/strong&gt;&lt;/a&gt;包）。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;crime &amp;lt;- read.csv(&amp;quot;http://datasets.flowingdata.com/crimeRatesByState2005.tsv&amp;quot;,
+                  header = TRUE, sep = &amp;quot;\t&amp;quot;, stringsAsFactors = F)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;state&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;murder&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;Forcible_rate&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;Robbery&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;aggravated_assult&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;burglary&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;larceny_theft&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;motor_vehicle_theft&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;population&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Alabama&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;8.2&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;34.3&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;141.4&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;247.8&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;953.8&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2650.0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;288.3&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4627851&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Alaska&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4.8&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;81.1&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;80.9&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;465.1&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;622.5&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2599.1&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;391.0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;686293&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Arizona&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;7.5&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;33.8&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;144.4&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;327.4&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;948.4&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2965.2&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;924.4&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;6500180&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Arkansas&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;6.7&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;42.9&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;91.1&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;386.8&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1084.6&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2711.2&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;262.1&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2855390&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;California&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;6.9&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;26.0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;176.1&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;317.3&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;693.3&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1916.5&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;712.8&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;36756666&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Colorado&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;3.7&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;43.4&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;84.6&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;264.7&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;744.8&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2735.2&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;559.5&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4861515&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(gtable)
+
+plot_pie &amp;lt;- function(i) {
+    df &amp;lt;- gather(crime[i, ], type, value, murder:motor_vehicle_theft)
+    ggplot(df, aes(x = 1, value, fill = type)) +
+        geom_col() + coord_polar(theta = &#39;y&#39;) +
+        ggtitle(crime[i, &amp;quot;state&amp;quot;]) +
+        theme_void() + theme_transparent() +
+        theme(legend.position = &amp;quot;none&amp;quot;,
+              plot.title = element_text(size = rel(6), hjust = 0.5))
+}
+
+pies &amp;lt;- sapply(1:nrow(crime), function(i) {
+    outfile &amp;lt;- paste0(&amp;quot;crime_&amp;quot;, i, &amp;quot;.png&amp;quot;)
+    plot_pie(i) + ggsave(outfile, bg = &amp;quot;transparent&amp;quot;)
+    outfile
+})
+
+radius &amp;lt;- sqrt(crime$population / pi)
+crime$radius &amp;lt;- 0.2 * radius/max(radius)
+crime$pie &amp;lt;- pies
+
+leg1 &amp;lt;- gtable_filter(
+    ggplot_gtable(
+        ggplot_build(plot_pie(1) + theme(legend.position = &amp;quot;right&amp;quot;))
+    ), &amp;quot;guide-box&amp;quot;)
+
+ggplot(crime, aes(murder, Robbery)) +
+  geom_image(aes(image = pie, size = I(radius))) +
+  geom_subview(leg1, x = 8.8, y = 50)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/us_crime.png&#34; alt=&#34;嵌套式绘图演示：用饼图来画气泡图&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我们还可以每次只画一个州的数据，制作成动图。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;plot_crime &amp;lt;- function(i) {
+    o &amp;lt;- paste0(i, &amp;quot;.png&amp;quot;)
+    ggplot(crime, aes(murder, Robbery)) + geom_blank() +
+        geom_image(data = crime[i, ], aes(image = pie, size = I(radius))) +
+        geom_subview(p, leg1, x = 8.8, y = 50) + ggsave(o)
+    o
+}
+
+library(magick)
+library(purrr)
+order(crime$murder, decreasing = F) %&amp;gt;%
+    map(plot_crime) %&amp;gt;%
+    map(image_read) %&amp;gt;%
+    image_join() %&amp;gt;%
+    image_animate(fps = 2) %&amp;gt;%
+    image_write(&amp;quot;crime.gif&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/us_crime.gif&#34; alt=&#34;嵌套式绘图演示，动图版本&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;geom_subview&lt;/code&gt;可以图上嵌图，并不需要保存为图片，但对于&lt;strong&gt;ggplot2&lt;/strong&gt;来讲，保存图片也是有好处的，因为&lt;strong&gt;ggplot2&lt;/strong&gt;画图，点线是在数据空间上，随着我们保存图片的大小是按比例缩小或放大的，但文字是在像素空间上，和画图空间并不相关。所以当我们嵌图时缩小了画图窗口之后，字体会显得格外大，微调起来也比较繁琐，这时候保存为合适尺寸的图片，再用&lt;code&gt;geom_image&lt;/code&gt;来加上去，显然就轻松得多。&lt;/p&gt;
+
+&lt;h3 id=&#34;其它来自r社区的例子:da73b643e87724fe5d7ff0bc3037a1b6&#34;&gt;其它来自R社区的例子&lt;/h3&gt;
+
+&lt;p&gt;SAS博客对&lt;code&gt;M&amp;amp;M&lt;/code&gt;巧克力的&lt;a href=&#34;http://blogs.sas.com/content/iml/2017/02/20/proportion-of-colors-mandms.html&#34;&gt;颜色分布做了分析&lt;/a&gt;，通过模拟估计不同颜色的置信区间。这个&lt;a href=&#34;http://rpubs.com/hrbrmstr/mms&#34;&gt;分析被翻译成R&lt;/a&gt;，并产生下图：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/mm.png&#34; alt=&#34;M&amp;amp;M例子展示&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;其中垂直片段|是真实值，水平片段当然就是置信空间了，而估计值用了&lt;strong&gt;ggimage&lt;/strong&gt;来画不同颜色的巧克力。&lt;/p&gt;
+
+&lt;p&gt;另一个例子是&lt;a href=&#34;https://rpubs.com/bhaskarvk/disney&#34;&gt;迪斯尼电影主人公名字的流行程度&lt;/a&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/Screenshot3.png&#34; alt=&#34;迪斯尼例子展示&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;最近我还添加了&lt;code&gt;geom_pokemon&lt;/code&gt;图层，让大家可以用pokemon来画图，比如：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/geom_pokemon.png&#34; alt=&#34;pokemon例子展示&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ggimage&lt;/strong&gt;是通用的包，所以可以被应用于不同的领域/场景中，起码可以让我们画出更好玩的图出来，后续我有时间的话，会写一个&lt;code&gt;draw_key_image&lt;/code&gt;的函数，实现使用图片来当legend key的功能。&lt;/p&gt;
+
+&lt;p&gt;最后祝大家玩得开心！不要把图画得太有魔性哦:)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/Screenshot2.png&#34; alt=&#34;推特截屏&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;感谢大为和太云的校稿，特别是大为提出很多修改意见以及给出了用R画R的例子。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;参考资料:da73b643e87724fe5d7ff0bc3037a1b6&#34;&gt;参考资料&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/9917049/inserting-an-image-to-ggplot2&#34;&gt;https://stackoverflow.com/questions/9917049/inserting-an-image-to-ggplot2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.r-bloggers.com/add-a-background-png-image-to-ggplot2/&#34;&gt;https://www.r-bloggers.com/add-a-background-png-image-to-ggplot2/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/GuangchuangYu/ggimage&#34;&gt;https://github.com/GuangchuangYu/ggimage&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Gibbsdavidl/CatterPlots&#34;&gt;https://github.com/Gibbsdavidl/CatterPlots&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/sckott/rphylopic&#34;&gt;https://github.com/sckott/rphylopic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/baptiste/ggflags&#34;&gt;https://github.com/baptiste/ggflags&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.revolutionanalytics.com/2017/02/catterplots-plots-with-cats.html&#34;&gt;http://blog.revolutionanalytics.com/2017/02/catterplots-plots-with-cats.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blogs.sas.com/content/iml/2017/02/20/proportion-of-colors-mandms.html&#34;&gt;http://blogs.sas.com/content/iml/2017/02/20/proportion-of-colors-mandms.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://rpubs.com/hrbrmstr/mms&#34;&gt;http://rpubs.com/hrbrmstr/mms&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://rpubs.com/bhaskarvk/disney&#34;&gt;https://rpubs.com/bhaskarvk/disney&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cran.r-project.org/package=scatterpie&#34;&gt;https://cran.r-project.org/package=scatterpie&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>generate biobabble banner using ggimage</title>
@@ -814,87 +1255,6 @@ p + scale_x_discrete(labels=function(x) str_wrap(x, width=10))
 &lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/2017-01-18-003253_516x590_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;我们还可以通过定制&lt;code&gt;css&lt;/code&gt;，来改变字体、颜色等。简单的markdown语法，让排版轻松愉快，而且本身我的博客就是用markdown写的，写一份文档，博客和公众号两边推送。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title> R包辣鸡之CorMut</title>
-      <link>https://guangchuangyu.github.io/cn/2017/01/r%E5%8C%85%E8%BE%A3%E9%B8%A1%E4%B9%8Bcormut/</link>
-      <pubDate>Tue, 17 Jan 2017 12:23:16 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2017/01/r%E5%8C%85%E8%BE%A3%E9%B8%A1%E4%B9%8Bcormut/</guid>
-      <description>
-
-&lt;blockquote&gt;
-&lt;p&gt;曾经QQ上有人叫我帮忙，跑某个R包做个分析，我一看那包，一堆bug，显然不能用，那就不是简单的事了，我可没空帮他写代码，于是他就经常恶心我，有事没事就来说我写ggtree没意义，不是实质科研，不如跟他做点牛逼的，不如再写个R包干他那事。昨天用马甲在进化群里问画树，我还热心贴个代码给他，说看不懂，我在群里说了，我写个文详细介绍一下。然而他的马甲身份暴露啦，所以今日跳票，我写好的文也不发了，你牛逼就不要用马甲来骗代码呀，ggtree没用你不要用呀，叔就是这么任性😎&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;之前讲过某个R包我一看一堆bug，直接放弃，今天倒是拿出来晒一下，不为别的，我只想说一句，一知半解是很危险的，盲目相信软件也是很危险的。&lt;/p&gt;
-
-&lt;h2 id=&#34;比对-不比对-这是个严肃的问题:73d341715265d4d00941b1a9c2cbba18&#34;&gt;比对？不比对？这是个严肃的问题&lt;/h2&gt;
-
-&lt;p&gt;话说此包的输入是alignment，我刚开始也没看代码，照着示例跑一下，但读序列的时候，我就惊呆了，怎么读个fasta这么慢，于是我开始看代码，不看不知道，一看吓一跳：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;seq_f01=as.list(sapply(allSeq,function(x)c2s(s2c(x)[ref01!=&amp;quot;-&amp;quot;])))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这个s2c把string变成character vector，c2s则反过来，这一句就干一件简单的事情，就是把所有string（fasta读进来的sequences）中的-全部删除。就这么一切一贴，非常非常慢，简单地用&lt;code&gt;gsub(“-“, “”, allSeq)&lt;/code&gt;就可以非常快速做同样的事情。
-然后这时候我们似乎觉得那里不妥！你把&lt;code&gt;-&lt;/code&gt;全删了，等于是把比对序列变成了非比对序列。那么你要求输入是比对序列是为什么？！
-确实序列必须得是比对好的，因为这包就是要检测correlated mutations，它比的是codon, 这必须是比对好的序列才行，但在读序列的时候，就把-给删了，序列不再是比对好的，本来对应的codon现在必然很多都移位了，这在一开始就挖了巨大的坑。后面所有的计算必须都是辣鸡了。&lt;/p&gt;
-
-&lt;h2 id=&#34;codon比较-数数字你会吗:73d341715265d4d00941b1a9c2cbba18&#34;&gt;codon比较，数数字你会吗？&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/Bioconductor-mirror/CorMut/blob/master/R/CorMut-internal.R#L125-L129&#34;&gt;https://github.com/Bioconductor-mirror/CorMut/blob/master/R/CorMut-internal.R#L125-L129&lt;/a&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;for(j in 1:length(seqf[[i]])){
-	if(j%%3==1){ tris=seqf[[i]][j:(j+2)]
-	}else if(j%%3==2){ tris=seqf[[i]][(j-1):(j+1)]
-	}else if(j%%3==0){ tris=seqf[[i]][(j-2):j]
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这循环竟然不是一个codon一个codon来，而是一个base一个base地迭代，这里移动三个位置，拿到的都是同一个codon，然后它就去比较是否不同，数数目了，一个不同，数它3遍，我也是醉了。&lt;/p&gt;
-
-&lt;h2 id=&#34;p值你会算吗:73d341715265d4d00941b1a9c2cbba18&#34;&gt;p值你会算吗？&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/Bioconductor-mirror/CorMut/blob/release-3.4/R/kaksAA.R#L67-L77&#34;&gt;https://github.com/Bioconductor-mirror/CorMut/blob/release-3.4/R/kaksAA.R#L67-L77&lt;/a&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;LOD=0
-Nnum=NS+NY
-for(ii in NYs:Nnum){
-	per_item=choose(Nnum,ii)*(q^ii)*((1-q)^(Nnum-ii))
-	#avoid the appear of NaN
-	if(per_item!=&amp;quot;NaN&amp;quot;){
-		LOD=per_item+LOD
-	}
-	#print(choose(dim(mat)[2],i)*(q^i)*((1-q)^(dim(mat)[2]-i)))
-}
-LOD=-log10(LOD)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;我们知道算p值是算积分面积，它倒好，离散性分布这一个个数字来计算，然后求合。
-这里用的是二项式分布：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;per_item=choose(Nnum,ii)(q^ii)((1-q)^(Nnum-ii))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这个基本上你算出来会有很多0和NaN，精度问题嘛，这样算必须是不准的。然后他必须是跑了自己代码出不来p值，发现有很多NaN，也不去想为什么，直接把NaN给扔了。这根本就是错的，也不知道用pbinom去算，我也是服了。&lt;/p&gt;
-
-&lt;h2 id=&#34;总结:73d341715265d4d00941b1a9c2cbba18&#34;&gt;总结&lt;/h2&gt;
-
-&lt;p&gt;我只是粗略地看了一下代码，就发现很多错误，而且几乎每个重要的部分都出错。问题肯定比我粗略看一下所能发现地多得多。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;读序列，把比对的序列搞成了非比对。&lt;/li&gt;
-&lt;li&gt;比较codon，序列非比对这比毛线啊，然后连数数目都数错。&lt;/li&gt;
-&lt;li&gt;p值，简单二项式，你都不会算啊，简单粗暴地对NaN视而不见。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;这货中国CDC出品，竟然还发了Bioinformatics，reviewer简直瞎眼了！&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/2017-01-09-002515_560x405_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;​&lt;/p&gt;
 </description>
     </item>
     
