@@ -6,8 +6,45 @@
     <description>Recent content in Posts on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Apr 2017 10:06:59 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 11 Apr 2017 12:23:16 +0800</lastBuildDate>
     <atom:link href="https://guangchuangyu.github.io/cn/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>来自R的桌面提醒</title>
+      <link>https://guangchuangyu.github.io/cn/2017/04/%E6%9D%A5%E8%87%AAr%E7%9A%84%E6%A1%8C%E9%9D%A2%E6%8F%90%E9%86%92/</link>
+      <pubDate>Tue, 11 Apr 2017 12:23:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/04/%E6%9D%A5%E8%87%AAr%E7%9A%84%E6%A1%8C%E9%9D%A2%E6%8F%90%E9%86%92/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;notifier&lt;/strong&gt;包实现了跨平台的桌面提醒功能，当然它是调用了外部的命令，比如windows使用了&lt;strong&gt;toaster&lt;/strong&gt;，老版本windows使用的是&lt;strong&gt;notifu&lt;/strong&gt;，在linux下使用&lt;strong&gt;notify-send&lt;/strong&gt;，而在OSX下，则调用了&lt;strong&gt;terminal-notifier&lt;/strong&gt;，通过了简单的封装之后，就可以给桌面发布消息提醒了。&lt;/p&gt;
+
+&lt;p&gt;比如：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(notifier)
+notify(
+  title = &amp;quot;15 Packages out of date&amp;quot;,
+  msg = c(&amp;quot;You can run update.packages() to update them.&amp;quot;,
+  &amp;quot;Outdated packages: Boom colorspace desc memuse networkD3&amp;quot;,
+  &amp;quot;pbapply revealjs rgl rmdformats timevis and 5 more&amp;quot;)
+)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;​
+效果如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/gaborcsardi/notifier/master//inst/linux.png&#34; width=&#34;400&#34; alt=&#34;Linux&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/gaborcsardi/notifier/master//inst/windows.png&#34; width=&#34;400&#34; alt=&#34;Windows 8 or newer&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/gaborcsardi/notifier/master/inst/macos.png&#34; width=&#34;400&#34; alt=&#34;macOS&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/gaborcsardi/notifier/master//inst/oldwindows.png&#34; width=&#34;400&#34; alt=&#34;Old Windows&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;安装只需要：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;source(&amp;quot;https://install-github.me/gaborcsardi/notifier&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这个包还是很有用的，比如写点简单的脚本，放到系统服务里，可以做监测，有情况就可以给出提醒。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>ggimage：ggplot2中愉快地使用图片</title>
@@ -1225,36 +1262,6 @@ p + scale_x_discrete(labels=function(x) str_wrap(x, width=10))
 &lt;p&gt;虽然现在引文不多，但我已经开始在收集&lt;a href=&#34;https://guangchuangyu.github.io/ggtree/gallery/&#34;&gt;论文里用ggtree画的图&lt;/a&gt;了，以后肯定会有越来越多有逼格的图出来，也算是一个侧面给大家展示ggtree可以做什么。&lt;/p&gt;
 
 &lt;p&gt;请记住一点，投入时间学习是有回报的，因为你的投入可以转化为生产力，而不像AI你搞再多，也只是机械式重复，并不能因为你用AI注释树而让你有能力去做美工-,-，但学ggtree，你会的不止是进化树的可视化，你同时必须还会用ggplot2来展示你其它的各种数据。套用如何获取文献中的梗，如果你还在用AI手工注释你的进化树，你该吞下红色药丸了。ggtree是你的朋友！&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>微信公众文markdown一键排版</title>
-      <link>https://guangchuangyu.github.io/cn/2017/01/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E6%96%87markdown%E4%B8%80%E9%94%AE%E6%8E%92%E7%89%88/</link>
-      <pubDate>Wed, 18 Jan 2017 00:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2017/01/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E6%96%87markdown%E4%B8%80%E9%94%AE%E6%8E%92%E7%89%88/</guid>
-      <description>&lt;p&gt;微信公众号的后台排版功能很差，要想让读者阅读起来舒服，写作的人要花很多时间，于是出现了像&lt;code&gt;秀米&lt;/code&gt;这样的第三方排版网站，即便如此，要想排出好的版面，仍然是件耗时的事情，而且像在文章里贴代码这种小众需求，是不被支持的，代码就像普通文本，那叫一个乱。&lt;/p&gt;
-
-&lt;p&gt;好在微信平台是支持富文本的，我们复制粘贴过来，格式都还会在，像抄我ggplot2那篇文的&lt;code&gt;生信人&lt;/code&gt;，就是完全复制粘贴的，还是我博客上的排版，当然它到了公众号上就乱了，我们其实很容易发现很多复制粘贴的，都没自己排一下版面，直接&lt;code&gt;ctrl-C&lt;/code&gt;, &lt;code&gt;ctrl-V&lt;/code&gt;一点诚意都没有。&lt;/p&gt;
-
-&lt;p&gt;支持富文本这一点，意味着我们可以用&lt;code&gt;markdown&lt;/code&gt;呀！排版很容易，并且可以支持语法高亮。上一篇文章&lt;a href=&#34;https://guangchuangyu.github.io/cn/2017/01/r%E5%8C%85%E8%BE%A3%E9%B8%A1%E4%B9%8Bcormut/&#34;&gt;CorMut&lt;/a&gt;里，就是用了&lt;code&gt;markdown&lt;/code&gt;，被眼尖的小朋友发现，所以写出来，解答一下。&lt;/p&gt;
-
-&lt;p&gt;我们需要的是，安装一个&lt;code&gt;markdown here&lt;/code&gt;的插件，firefox，chrome等都是支持的。&lt;/p&gt;
-
-&lt;p&gt;比如下面这个：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/2017-01-18-003058_1280x800_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;我点一下markdown渲染，它自己就变成：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/2017-01-18-003121_1280x800_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这玩意其实是设计来写邮件的，有了它，邮件排版可以很牛逼，比如还是刚才的代码：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/2017-01-18-003253_516x590_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;我们还可以通过定制&lt;code&gt;css&lt;/code&gt;，来改变字体、颜色等。简单的markdown语法，让排版轻松愉快，而且本身我的博客就是用markdown写的，写一份文档，博客和公众号两边推送。&lt;/p&gt;
 </description>
     </item>
     
