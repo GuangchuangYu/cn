@@ -14,7 +14,7 @@
   <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
   
-  <title>ggplot2字体溢出的那点破事</title>
+  <title>公号狗的福音</title>
 
   
   
@@ -109,15 +109,15 @@ ga('send', 'pageview');
       <article class="hentry" role="article">
         <header>
           <h1 class="entry-title">
-            ggplot2字体溢出的那点破事 
+            公号狗的福音 
           </h1>
-          <p class="meta">Apr 3, 2017 - 1 minute read -  <a href="https://guangchuangyu.github.io/cn/2017/04/ggplot2%E5%AD%97%E4%BD%93%E6%BA%A2%E5%87%BA%E7%9A%84%E9%82%A3%E7%82%B9%E7%A0%B4%E4%BA%8B/#disqus_thread">Comments</a>
+          <p class="meta">Apr 23, 2017 - 1 minute read -  <a href="https://guangchuangyu.github.io/cn/2017/04/%E5%85%AC%E5%8F%B7%E7%8B%97%E7%9A%84%E7%A6%8F%E9%9F%B3/#disqus_thread">Comments</a>
 
           
 
           
           
-          <a class="label" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+          <a class="label" href="https://guangchuangyu.github.io/cn/categories/publish">Publish</a>
           </p>
         </header>
         <div class="entry-content">
@@ -141,38 +141,20 @@ ga('send', 'pageview');
 
 <br>
 
-    <p>比如下面的代码：</p>
+    <p>苹果和企鹅分赃没谈好，反正林子大了，就不顾小鸟的死活！取消了iOS的赞赏功能，一个个觉得错过了一个亿，我真不知道原来你的赞赏有这么多！我半年来得到的还不够我的日薪多。虽然少得可怜，但我还是及时地在当天给出方案来吸引眼球，创作了一个绿色的赞赏按纽。</p>
 
-<pre><code>require(ggplot2)
-d &lt;- data.frame(x=c(0, 0.002, 0.00575), y = 1:3)
-p &lt;- ggplot(d, aes(x, y)) + geom_point() + xlab(NULL) + ylab(NULL)
-print(p)
+<p>我的文章排版都是<a href="https://guangchuangyu.github.io/cn/2017/01/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E6%96%87markdown%E4%B8%80%E9%94%AE%E6%8E%92%E7%89%88/">markdown</a>，markdown是外部驱动的，要什么效果，CSS话事。这个赞赏按纽无非是个链接，赞赏二字链接到转帐二维码，而要实现按纽的效果，可以专门定义一个style来实现。</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/2017/markdown_css_zanshang.png" alt="" /></p>
+
+<p>我定义了<code>zb</code>做为赞赏按纽的style，再定义<code>zaln</code>把它放置在中间。</p>
+
+<p>下面简单的代码，把这些style应用于赞赏链接里，你要把代码中的<code>url</code>改为你放置二维码的文章就可以了。</p>
+
+<pre><code class="language-html">&lt;span class=&quot;zaln&quot;&gt;&lt;a href=&quot;url&quot; class=&quot;zb&quot;&gt;赞赏&lt;/a&gt;&lt;/span&gt;
 </code></pre>
 
-<p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/geom_text_files/figure-markdown_strict/unnamed-chunk-1-1.png" alt="" /></p>
-
-<p>上面图中x轴的文本<strong>0.006</strong>，这个数字中的<strong>6</strong>几乎看不到，因为一半过界了。</p>
-
-<p>这种情况还可以更糟糕，比如我把字体搞大点：</p>
-
-<pre><code>p &lt;- p + theme(axis.text=element_text(size=12))
-print(p)
-</code></pre>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/geom_text_files/figure-markdown_strict/unnamed-chunk-1-2.png" alt="" /></p>
-
-<p>简直了，<strong>6</strong>都看不见了。第一次遇到这种情况，都会觉得这软件也太傻了！连坐标轴都会过界！但事实上，这是一个普遍的现象。因为像点这些，是数据空间，但文本是像素空间，只会按照指定的大小转化为多少个像素，然后把字打出来，这些当然容易打过界了。特别是如果把文本打在数据点的右边，比如我们画进化树时，需要画tip label，这纯粹是在右边打字的，文本通常只有部分显示出来，解决方案就在<strong>ggtree</strong>的<a href="https://guangchuangyu.github.io/ggtree/faq/#tip-label-truncated">文档</a>里，用<code>xlim</code>搞大右边。比如这个例子的话，<code>+xlim</code>很容易解决的：</p>
-
-<pre><code>p + xlim(NA, 0.0062)
-</code></pre>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/geom_text_files/figure-markdown_strict/unnamed-chunk-1-3.png" alt="" /></p>
-
-<p>当然复杂的情况也是有的，比如你在分面的时候，只有某个分面溢出了，而<code>scales</code>又是<code>free</code>的，你直接<code>+xlim</code>会应用于所有分面，但在free scale的情况下，你只想应用到某一分面，这个也是可以搞的，参考<a href="https://guangchuangyu.github.io/2016/10/xlim_tree-set-x-axis-limits-for-only-tree-panel/">xlim_tree</a>，做为思考题，看大家能不能悟出来。</p>
-
-<blockquote>
-<p>讲ggtree各种技巧，对于你们学ggplot2也是极有帮助的！</p>
-</blockquote>
+<p>然后点一下markdown-here的按纽，萌萌哒的绿色按纽就出来了。<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484177&amp;idx=1&amp;sn=04027cb4ab8cefb5e0ae9fbf93e0359b&amp;chksm=ec43b256db343b40454a30594d38ad3a2694d2f50df7ae7253c98b13313ff2f03e3b32997eae#rd">效果此猛击此处</a></p>
 
 
  
@@ -183,12 +165,12 @@ print(p)
   <p class="meta">
     <span class="byline author vcard">Posted by <span class="fn">Guangchuang Yu</span></span>
     
-    <time>Apr 3, 2017</time>
+    <time>Apr 23, 2017</time>
     <span class="categories">
       Tags:
         
         
-          <a class="category" href="https://guangchuangyu.github.io/cn/tags/ggtree">ggtree</a>  <a class="category" href="https://guangchuangyu.github.io/cn/tags/ggplot2">ggplot2</a>  
+          <a class="category" href="https://guangchuangyu.github.io/cn/tags/markdown">markdown</a>  <a class="category" href="https://guangchuangyu.github.io/cn/tags/wechat">wechat</a>  
         
     </span>
   </p>
@@ -200,11 +182,9 @@ print(p)
 
   <p class="meta">
     
-        <a class="basic-alignment left" href="https://guangchuangyu.github.io/cn/2017/03/%E5%85%B3%E4%BA%8Echipseq%E6%B3%A8%E9%87%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/" title="关于ChIPseq注释的几个问题">关于ChIPseq注释的几个问题</a>
+        <a class="basic-alignment left" href="https://guangchuangyu.github.io/cn/2017/04/%E6%9D%A5%E8%87%AAr%E7%9A%84%E6%A1%8C%E9%9D%A2%E6%8F%90%E9%86%92/" title="来自R的桌面提醒">来自R的桌面提醒</a>
     
 
-    
-      <a class="basic-alignment right" href="https://guangchuangyu.github.io/cn/2017/04/generate-biobabble-banner-using-ggimage/" title="generate biobabble banner using ggimage">generate biobabble banner using ggimage</a>
     
   </p>
 

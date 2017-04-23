@@ -111,6 +111,34 @@ ga('send', 'pageview');
     <article>
       <header>
         <h1 class="entry-title">
+          <a href="https://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustable/">R binary is untrustable</a>
+        </h1>
+        <p class="meta">Jul 24, 2014 - 2 minute read -  <a href="https://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustable/#disqus_thread">Comments</a>
+
+        
+        
+        
+        <a class="label" href="https://guangchuangyu.github.io/cn/categories/software/">Software</a>
+        </p>
+
+      </header>
+
+        
+          <p>去年ubuntu下apt-get了R-3.0.2, 用了没多久就发现了system命令有问题，通常情况下调用系统命令是正常的，但是我调用bowtie的时候，就会报错： Warning: Could not open read file &quot;/tmp/8156.inpipe1&quot; for reading; skipping... Error: Encountered internal Bowtie 2 exception (#1) Command: /usr/bin/bowtie2-align --wrapper basic-0 -p 12 -x /ssd/genomes/hg19 -S tmp.sam -1 /tmp/8156.inpipe1 -2 /tmp/8156.inpipe2 这很明显是因为fasta.gz文件，bowtie需要调用zcat来读的，在R里调用bowtie就找不到好基友zcat的输出管道。当时没在意，R不干，那就找shell。 去年用NMF包的时候，报出了人类不友好的错误，联系了包作者Gaujoux，在作者的帮助下，找到了是doParallel包的问题： &gt; library(doParallel) &gt; Loading required package: foreach foreach: simple, scalable parallel programming from Revolution Analytics Use Revolution R for scalability, fault tolerance and more. http://www.revolutionanalytics.com Loading required package: iterators Loading required package: parallel &gt; registerDoParallel(11) &gt; &gt; foreach(i = 1:10) %dopar% { getwd() } &gt; *** caught segfault *** address 0x7fbeb6d399d0, cause 'memory not mapped' 其实parallel包中用mclapply也是同样报错。于是又把维护deb包的Dirk拉进来，Dirk是Rcpp的作者，高人就是不一样，看了错误，立刻就指出是BLAS库的问题。 Sorry -- I have no idea what this is about and no ability whatsoever to do debugging for your here.</p>
+
+          
+              <footer>
+                  <a href="https://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustable/" rel="full-article">Read On &rarr;</a>
+              </footer>
+          
+
+        
+
+    </article>
+    
+    <article>
+      <header>
+        <h1 class="entry-title">
           <a href="https://guangchuangyu.github.io/cn/2014/06/use-linux-desktop-again/">use linux desktop again</a>
         </h1>
         <p class="meta">Jun 1, 2014 - 1 minute read -  <a href="https://guangchuangyu.github.io/cn/2014/06/use-linux-desktop-again/#disqus_thread">Comments</a>
@@ -249,34 +277,6 @@ Methods 2013年的文章中有100个barplot图，而只有20个boxplot图，从�
 
     </article>
     
-    <article>
-      <header>
-        <h1 class="entry-title">
-          <a href="https://guangchuangyu.github.io/cn/2014/01/old-habits-die-hard/">old habits die hard</a>
-        </h1>
-        <p class="meta">Jan 22, 2014 - 1 minute read -  <a href="https://guangchuangyu.github.io/cn/2014/01/old-habits-die-hard/#disqus_thread">Comments</a>
-
-        
-        
-        
-        <a class="label" href="https://guangchuangyu.github.io/cn/categories/biology/">Biology</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/research/">Research</a>
-        </p>
-
-      </header>
-
-        
-          <p>从2011年1月我就在实验室的QQ群里发群邮件说IPI关门，时至今日，已经关门3年了，主页上一直停留在关门大吉的那一刻。 我不断在邮件里, lab meeting上强调要换成uniprot来搜库，然而时至今日，依然还是有很多的人在使用IPI，想想真可怕，实验室真是100年不更新一下数据啊。 另外一个我非常讨厌的就是GI号，它压根就不是正儿八经的ID号，但他们从来就不愿意尝试改变。 比如上面这个蛋白质序列的FASTA文件，注释行有很多信息，比如： &gt;gi|16128001|ref|NP_414548.1| putative transporter [Escherichia coli str. K-12 substr. MG1655] 显然搜库时可以使用NP_414548.1做为ID，这个问题我说过N多遍，但他们一定会用他们惯用的gi|16128001来做ID。 问题是很明显的： GI number (sometimes written in lower case, &ldquo;gi&rdquo;) is simply a series of digits that are assigned consecutively to each sequence record processed by NCBI. The GI number bears no resemblance to the Accession number of the sequence record. The GI number has been used for many years by NCBI to track sequence histories in GenBank and the other sequence databases it maintains.</p>
-
-          
-              <footer>
-                  <a href="https://guangchuangyu.github.io/cn/2014/01/old-habits-die-hard/" rel="full-article">Read On &rarr;</a>
-              </footer>
-          
-
-        
-
-    </article>
-    
     
     
 
@@ -388,6 +388,10 @@ Methods 2013年的文章中有100个barplot图，而只有20个boxplot图，从�
       
       
       <li class="post">
+        <a href="https://guangchuangyu.github.io/cn/2017/04/%E5%85%AC%E5%8F%B7%E7%8B%97%E7%9A%84%E7%A6%8F%E9%9F%B3/">公号狗的福音</a>
+      </li>
+      
+      <li class="post">
         <a href="https://guangchuangyu.github.io/cn/2017/04/%E6%9D%A5%E8%87%AAr%E7%9A%84%E6%A1%8C%E9%9D%A2%E6%8F%90%E9%86%92/">来自R的桌面提醒</a>
       </li>
       
@@ -401,10 +405,6 @@ Methods 2013年的文章中有100个barplot图，而只有20个boxplot图，从�
       
       <li class="post">
         <a href="https://guangchuangyu.github.io/cn/2017/04/ggplot2%E5%AD%97%E4%BD%93%E6%BA%A2%E5%87%BA%E7%9A%84%E9%82%A3%E7%82%B9%E7%A0%B4%E4%BA%8B/">ggplot2字体溢出的那点破事</a>
-      </li>
-      
-      <li class="post">
-        <a href="https://guangchuangyu.github.io/cn/2017/03/%E5%85%B3%E4%BA%8Echipseq%E6%B3%A8%E9%87%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/">关于ChIPseq注释的几个问题</a>
       </li>
       
     </ul>
