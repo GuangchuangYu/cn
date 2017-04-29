@@ -111,6 +111,30 @@ ga('send', 'pageview');
     <article>
       <header>
         <h1 class="entry-title">
+          <a href="https://guangchuangyu.github.io/cn/2012/02/happy-valentine/">happy valentine</a>
+        </h1>
+        <p class="meta">Feb 14, 2012 - 1 minute read -  <a href="https://guangchuangyu.github.io/cn/2012/02/happy-valentine/#disqus_thread">Comments</a>
+
+        
+        
+        
+        <a class="label" href="https://guangchuangyu.github.io/cn/categories/visualization/">Visualization</a>
+        </p>
+
+      </header>
+
+        
+          <p>今天看到统计之都上的情人节心形图。 这次画的心形函数是： $ x = 16 (sin t)^3$ $ y = 13 cos t - 5 cos 2t - 2 cos 3t - cos 4t$ 尝试用ggplot2来画，结果如下： 代码见Github. 类似的心形图以前也是画过的，当然这样的函数图有很多，详见http://www.mathematische-basteleien.de/heart.htm，画起来也很容易。 倒是以前画过的蝙蝠侠logo，更有成就感些。</p>
+
+          
+
+        
+
+    </article>
+    
+    <article>
+      <header>
+        <h1 class="entry-title">
           <a href="https://guangchuangyu.github.io/cn/2012/02/violin-plot/">violin plot</a>
         </h1>
         <p class="meta">Feb 7, 2012 - 1 minute read -  <a href="https://guangchuangyu.github.io/cn/2012/02/violin-plot/#disqus_thread">Comments</a>
@@ -267,49 +291,6 @@ the metric itself.</p>
 
     </article>
     
-    <article>
-      <header>
-        <h1 class="entry-title">
-          <a href="https://guangchuangyu.github.io/cn/2010/07/xming-windows%E4%B8%8B%E8%BF%9C%E7%A8%8Blinux%E6%A1%8C%E9%9D%A2/">Xming-windows下远程linux桌面</a>
-        </h1>
-        <p class="meta">Jul 5, 2010 - 1 minute read -  <a href="https://guangchuangyu.github.io/cn/2010/07/xming-windows%E4%B8%8B%E8%BF%9C%E7%A8%8Blinux%E6%A1%8C%E9%9D%A2/#disqus_thread">Comments</a>
-
-        
-        
-        
-        <a class="label" href="https://guangchuangyu.github.io/cn/categories/windows/">Windows</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/linux/">Linux</a>
-        </p>
-
-      </header>
-
-        
-          <p><p>机房放着台机架机，闲着也是耗电，平时偶尔用putty登上去，没有图形界面还是有些不方便。</p>
-
-<p>搜了一下，发现好几个软件可做这样的事，Xming是开源的，所以选择使用Xming+putty来远程连linux的桌面。</p>
-
-<p>试用了一下，果然不错。</p>
-
-<p>需要修改/etc/ssh/sshd_config，添加：</p>
-
-<pre><code>X11Forwrding yes
-</code></pre>
-
-<p>需要配置一下PuTTY，<code>Connection-SSh-X11</code>中选中<code>Enable X11forwarding</code>
-其中<code>X display location</code>里填入<code>localhost:0</code>。</p>
-
-<p>运行Xming，再用putty连到服务器上，运行程序，就OK了。就好像windows下的本地程序一般。整合性很好。</p>
-</p>
-
-          
-              <footer>
-                  <a href="https://guangchuangyu.github.io/cn/2010/07/xming-windows%E4%B8%8B%E8%BF%9C%E7%A8%8Blinux%E6%A1%8C%E9%9D%A2/" rel="full-article">Read On &rarr;</a>
-              </footer>
-          
-
-        
-
-    </article>
-    
     
     
 
@@ -421,6 +402,10 @@ the metric itself.</p>
       
       
       <li class="post">
+        <a href="https://guangchuangyu.github.io/cn/2017/04/annotate-tree-with-user-specific-data/">annotate tree with user specific data</a>
+      </li>
+      
+      <li class="post">
         <a href="https://guangchuangyu.github.io/cn/2017/04/%E5%85%AC%E5%8F%B7%E7%8B%97%E7%9A%84%E7%A6%8F%E9%9F%B3/">公号狗的福音</a>
       </li>
       
@@ -434,10 +419,6 @@ the metric itself.</p>
       
       <li class="post">
         <a href="https://guangchuangyu.github.io/cn/2017/04/generate-biobabble-banner-using-ggimage/">generate biobabble banner using ggimage</a>
-      </li>
-      
-      <li class="post">
-        <a href="https://guangchuangyu.github.io/cn/2017/04/ggplot2%E5%AD%97%E4%BD%93%E6%BA%A2%E5%87%BA%E7%9A%84%E9%82%A3%E7%82%B9%E7%A0%B4%E4%BA%8B/">ggplot2字体溢出的那点破事</a>
       </li>
       
     </ul>

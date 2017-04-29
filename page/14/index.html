@@ -111,6 +111,45 @@ ga('send', 'pageview');
     <article>
       <header>
         <h1 class="entry-title">
+          <a href="https://guangchuangyu.github.io/cn/2008/08/gosemsim/">GOSemSim</a>
+        </h1>
+        <p class="meta">Aug 11, 2008 - 1 minute read -  <a href="https://guangchuangyu.github.io/cn/2008/08/gosemsim/#disqus_thread">Comments</a>
+
+        
+        
+        
+        <a class="label" href="https://guangchuangyu.github.io/cn/categories/bioinformatics/">Bioinformatics</a>
+        </p>
+
+      </header>
+
+        
+          <p><p>第一次写软件包，计算基因和GO的语义相似性。</p>
+
+<p>实现<a href="http://bioinformatics.oxfordjournals.org/cgi/content/full/23/10/1274">Wang</a>的方法，基于GO的图结构。
+以及四种基于信息含量的计算方法（Resnik, Jiang, Lin, Rel）。</p>
+
+<p>可以从Bioconductor下载到。
+<a href="http://bioconductor.org/packages/release/bioc/html/GOSemSim.html">http://bioconductor.org/packages/release/bioc/html/GOSemSim.html</a>
+<a href="http://bioconductor.org/packages/devel/bioc/html/GOSemSim.html">http://bioconductor.org/packages/devel/bioc/html/GOSemSim.html</a></p>
+
+<p>支持human, rat, mouse, fly, yeast, zebrafish,worm, E coli,
+arabidopsis等物种。</p>
+</p>
+
+          
+              <footer>
+                  <a href="https://guangchuangyu.github.io/cn/2008/08/gosemsim/" rel="full-article">Read On &rarr;</a>
+              </footer>
+          
+
+        
+
+    </article>
+    
+    <article>
+      <header>
+        <h1 class="entry-title">
           <a href="https://guangchuangyu.github.io/cn/2008/08/screen%E4%BD%BF%E5%BE%97%E8%BF%9C%E7%A8%8B%E7%BB%88%E7%AB%AF%E6%9B%B4%E5%8A%A0%E6%9C%89%E6%95%88%E7%8E%87/">Screen使得远程终端更加有效率</a>
         </h1>
         <p class="meta">Aug 8, 2008 - 1 minute read -  <a href="https://guangchuangyu.github.io/cn/2008/08/screen%E4%BD%BF%E5%BE%97%E8%BF%9C%E7%A8%8B%E7%BB%88%E7%AB%AF%E6%9B%B4%E5%8A%A0%E6%9C%89%E6%95%88%E7%8E%87/#disqus_thread">Comments</a>
@@ -249,54 +288,6 @@ ga('send', 'pageview');
 
     </article>
     
-    <article>
-      <header>
-        <h1 class="entry-title">
-          <a href="https://guangchuangyu.github.io/cn/2007/05/edit-partition-table-in-netbsd/macppc/">Edit partition table in NetBSD/macppc</a>
-        </h1>
-        <p class="meta">May 14, 2007 - 4 minute read -  <a href="https://guangchuangyu.github.io/cn/2007/05/edit-partition-table-in-netbsd/macppc/#disqus_thread">Comments</a>
-
-        
-        
-        
-        <a class="label" href="https://guangchuangyu.github.io/cn/categories/bsd/">BSD</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/powerbook/">Powerbook</a>
-        </p>
-
-      </header>
-
-        
-          <p><pre><code>#disklabel wd0
-</code></pre>
-
-<p>可以看到原始分区如下: 7 partitions:</p>
-
-<pre><code>#        size    offset     fstype [fsize bsize cpg/sgs]
-a:  20971520  25167648     4.2BSD      0     0     0  # (Cyl.  24967*-  45772*)
-b:   1048576  46139168       swap                     # (Cyl.  45772*-  46813*)
-c: 117210240         0     unused      0     0        # (Cyl.      0 - 116279)
-d:  25165824      1824        HFS                     # (Cyl.      1*-  24967*)
-e:  28079456  89130784        HFS                     # (Cyl.  88423*- 116279)
-g:  41943040  47187744     4.2BSD      0     0     0  # (Cyl.  46813*-  88423*)
-</code></pre>
-
-<p>a为netbsd的/分区，b为swap分区,c为整个硬盘，d为mac
-os的系统盘。e为两系统共享分区(在os9下格式化为fat)，g为netbsd下的/home分区。
-原本是两系统，os9.2一直都很少用，所以想删了，腾出空间来放数据。因为wd0d和wd0e不在连续的柱面上，所以无法将它们合并。</p>
-
-<p>新的分区方案如下：wd0d删了，分成两个，一个15M(需要一个HFS类型的分区来放置<code>ofwboot.xcf</code>，因为openfirmwire不支持从netbsd分区里加载loader),剩下的作为<code>/home</code>分区。把原来的<code>/home</code>分区(<code>wd0g</code>)和共享数据的分区(<code>wd0e</code>)合并为一个分区，用于放置数据。
-1. 第一步，也是最关键的一步，先备份好数据。</p>
-</p>
-
-          
-              <footer>
-                  <a href="https://guangchuangyu.github.io/cn/2007/05/edit-partition-table-in-netbsd/macppc/" rel="full-article">Read On &rarr;</a>
-              </footer>
-          
-
-        
-
-    </article>
-    
     
     
 
@@ -408,6 +399,10 @@ os的系统盘。e为两系统共享分区(在os9下格式化为fat)，g为netbs
       
       
       <li class="post">
+        <a href="https://guangchuangyu.github.io/cn/2017/04/annotate-tree-with-user-specific-data/">annotate tree with user specific data</a>
+      </li>
+      
+      <li class="post">
         <a href="https://guangchuangyu.github.io/cn/2017/04/%E5%85%AC%E5%8F%B7%E7%8B%97%E7%9A%84%E7%A6%8F%E9%9F%B3/">公号狗的福音</a>
       </li>
       
@@ -421,10 +416,6 @@ os的系统盘。e为两系统共享分区(在os9下格式化为fat)，g为netbs
       
       <li class="post">
         <a href="https://guangchuangyu.github.io/cn/2017/04/generate-biobabble-banner-using-ggimage/">generate biobabble banner using ggimage</a>
-      </li>
-      
-      <li class="post">
-        <a href="https://guangchuangyu.github.io/cn/2017/04/ggplot2%E5%AD%97%E4%BD%93%E6%BA%A2%E5%87%BA%E7%9A%84%E9%82%A3%E7%82%B9%E7%A0%B4%E4%BA%8B/">ggplot2字体溢出的那点破事</a>
       </li>
       
     </ul>

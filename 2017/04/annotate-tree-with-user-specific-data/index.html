@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
@@ -17,7 +14,7 @@
   <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
   
-  <title>Bioc</title>
+  <title>annotate tree with user specific data</title>
 
   
   
@@ -36,7 +33,7 @@
   
   
 
-  <link href="https://guangchuangyu.github.io/cn/tags/bioc/index.xml" rel="alternate" type="application/rss+xml" title="Guangchuang Yu" />
+  
 
   <meta name="description" content="">
   <meta name="keywords" content="">
@@ -109,70 +106,132 @@ ga('send', 'pageview');
 <div id="main">
   <div id="content">
     <div>
-      <article role="article">
+      <article class="hentry" role="article">
         <header>
           <h1 class="entry-title">
-            Tag: Bioc
+            annotate tree with user specific data 
           </h1>
+          <p class="meta">Apr 29, 2017 - 1 minute read -  <a href="https://guangchuangyu.github.io/cn/2017/04/annotate-tree-with-user-specific-data/#disqus_thread">Comments</a>
+
+          
+
+          
+          
+          <a class="label" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+          </p>
         </header>
-        <div id="blog-archives" class="category">
+        <div class="entry-content">
           
-          <h2>
-            2016
-          </h2>
-          <article>
-            <h1>
-              <a href="https://guangchuangyu.github.io/cn/2016/07/evolution-of-my-bioc-packages/" title="Evolution of my BioC packages">Evolution of my BioC packages</a>
-            </h1>
-            <time>
-              <span class="month">Jul</span>
-              <span class="day">13</span>
-            </time>
-            <footer>
-              <span class="categories"> 
-                posted in:
-                
-                 <a class="category" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-                
-              </br>
-                tags:
-                
-                 <a class="category" href="https://guangchuangyu.github.io/cn/tags/bioc">BioC</a> <a class="category" href="https://guangchuangyu.github.io/cn/tags/clusterprofiler">clusterProfiler</a> <a class="category" href="https://guangchuangyu.github.io/cn/tags/dose">DOSE</a> <a class="category" href="https://guangchuangyu.github.io/cn/tags/chipseeker">ChIPseeker</a> <a class="category" href="https://guangchuangyu.github.io/cn/tags/gosemsim">GOSemSim</a> <a class="category" href="https://guangchuangyu.github.io/cn/tags/reactomepa">ReactomePA</a> <a class="category" href="https://guangchuangyu.github.io/cn/tags/ggtree">ggtree</a>
-                
-              </span>
-            </footer>
-          </article>
           
-          <h2>
-            2008
-          </h2>
-          <article>
-            <h1>
-              <a href="https://guangchuangyu.github.io/cn/2008/08/gosemsim/" title="GOSemSim">GOSemSim</a>
-            </h1>
-            <time>
-              <span class="month">Aug</span>
-              <span class="day">11</span>
-            </time>
-            <footer>
-              <span class="categories"> 
-                posted in:
-                
-                 <a class="category" href="https://guangchuangyu.github.io/cn/categories/bioinformatics">Bioinformatics</a>
-                
-              </br>
-                tags:
-                
-                 <a class="category" href="https://guangchuangyu.github.io/cn/tags/gosemsim">GOSemSim</a> <a class="category" href="https://guangchuangyu.github.io/cn/tags/bioc">BioC</a>
-                
-              </span>
-            </footer>
-          </article>
           
+
+	  
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+<a class="a2a_dd" href="//www.addtoany.com/share"></a>
+<a class="a2a_button_facebook"></a>
+<a class="a2a_button_twitter"></a>
+<a class="a2a_button_google_plus"></a>
+<a class="a2a_button_pinterest"></a>
+<a class="a2a_button_reddit"></a>
+<a class="a2a_button_sina_weibo"></a>
+<a class="a2a_button_wechat"></a>
+<a class="a2a_button_douban"></a>
+</div>
+<script async src="//static.addtoany.com/menu/page.js"></script>
+
+<br>
+
+    <p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/Screen Shot 2017-04-29 at 1.46.28 PM.png" alt="" /></p>
+
+<p>最新的一个问题，大致讲他有两个trait, A和B，想拿A来给label上色，B来画热图。</p>
+
+<p>加载用户数据我们有<code>%&lt;+%</code>操作符，热图有<code>gheatmap</code>函数。</p>
+
+<p>我给了他一个简单的例子：</p>
+
+<pre><code>library(&quot;ggtree&quot;)
+nwk &lt;- system.file(&quot;extdata&quot;, &quot;sample.nwk&quot;, package=&quot;treeio&quot;)
+tree &lt;- read.tree(nwk)
+n &lt;- Ntip(tree)
+
+set.seed(123)
+df &lt;- data.frame(label = tree$tip.label,
+              traitA = sample(letters[1:3], n, replace=T), 
+              traitB = sample(LETTERS[5:8], n, replace=T)) 
+row.names(df) &lt;- df[,1]
+
+p1 &lt;- ggtree(tree) %&lt;+% df + geom_tiplab(aes(color=traitA))
+gheatmap(p1, df[,&quot;traitB&quot;, drop=FALSE], offset = 0.8, width=0.1)
+</code></pre>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/Screen Shot 2017-04-29 at 1.45.06 PM.png" alt="" /></p>
+
+<p><strong>G Yu</strong>, DK Smith, H Zhu, Y Guan, TTY Lam<sup>*</sup>. <a href="http://onlinelibrary.wiley.com/doi/10.1111/2041-210X.12628/abstract">ggtree: an R package for visualization and annotation of phylogenetic trees with their covariates and other associated data</a>. <strong><em>Methods in Ecology and Evolution</em></strong>. 2017, 8(1):28-36.</p>
+
+<p><script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+<div data-badge-popover="right" data-badge-type="donut" data-doi="10.1111/2041-210X.12628" class="altmetric-embed"></div></p>
+
+
+ 
         </div>
+        
+
+<footer>
+  <p class="meta">
+    <span class="byline author vcard">Posted by <span class="fn">Guangchuang Yu</span></span>
+    
+    <time>Apr 29, 2017</time>
+    <span class="categories">
+      Tags:
+        
+        
+          <a class="category" href="https://guangchuangyu.github.io/cn/tags/ggtree">ggtree</a>  
+        
+    </span>
+  </p>
+
+  
+  
+
+  
+
+  <p class="meta">
+    
+        <a class="basic-alignment left" href="https://guangchuangyu.github.io/cn/2017/04/%E5%85%AC%E5%8F%B7%E7%8B%97%E7%9A%84%E7%A6%8F%E9%9F%B3/" title="公号狗的福音">公号狗的福音</a>
+    
+
+    
+  </p>
+
+
+  
+
+  
+    
+      <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    
+    
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'gcyu';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+  
+</footer>
+
       </article>
     </div>
-
     
 
 
