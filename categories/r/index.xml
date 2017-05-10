@@ -6,8 +6,46 @@
     <description>Recent content in R on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 29 Apr 2017 15:10:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 10 May 2017 15:10:00 +0800</lastBuildDate>
     <atom:link href="https://guangchuangyu.github.io/cn/categories/r/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>bootstrap value分段标记</title>
+      <link>https://guangchuangyu.github.io/cn/2017/05/bootstrap-value%E5%88%86%E6%AE%B5%E6%A0%87%E8%AE%B0/</link>
+      <pubDate>Wed, 10 May 2017 15:10:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/05/bootstrap-value%E5%88%86%E6%AE%B5%E6%A0%87%E8%AE%B0/</guid>
+      <description>&lt;p&gt;想要分段标记bootstrap，比如&lt;code&gt;0-70&lt;/code&gt;, &lt;code&gt;70-90&lt;/code&gt;, &lt;code&gt;90-100&lt;/code&gt;之类的。这个对于ggtree来说，太简单。&lt;/p&gt;
+
+&lt;p&gt;首先我们要读树，用&lt;code&gt;treeio&lt;/code&gt;的&lt;code&gt;read.newick&lt;/code&gt;，它和&lt;code&gt;read.tree&lt;/code&gt;的不同之处是，加入了参数&lt;code&gt;node.label&lt;/code&gt;，当&lt;code&gt;node.label&lt;/code&gt;存的不是&lt;code&gt;label&lt;/code&gt;，而是&lt;code&gt;bootstrap&lt;/code&gt;等数字型的时候，你可以传入&lt;code&gt;node.label=&#39;support&#39;&lt;/code&gt;，这样它会把node label解析为support value，另存为树注释数据，而不是和tip label混在一起。label变量只能存为字符型，因为和tip label混了，而字符型会让数字操作稍微复杂点。所以我们要用&lt;code&gt;read.newick&lt;/code&gt;。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tree &amp;lt;- read.newick(&amp;quot;RMI.phy_phyml_tree_rooted_labeled.txt&amp;quot;, node.label=&#39;support&#39;)
+root &amp;lt;- getRoot(tree@phylo)
+
+p &amp;lt;- ggtree(tree, color=&amp;quot;black&amp;quot;, size=1.5, linetype=1,  ladderize=TRUE) + ggtitle(label=&amp;quot;Figure A&amp;quot;) + geom_tiplab(size=4.5, hjust = -0.060, fontface=&amp;quot;bold&amp;quot;) +  xlim(0, 0.09)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;首先用ggtree画出树的结构，用ggtitle加title，用geom_tiplab加tip label，出图如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/640.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然后我们就可以用geom_point2来打点了，我们要指定只打内部节点，但不打root node，因为root和外部节点都是没有值的。然后这个support值是数字型，我们想按区间分段，这太容易，用cut来切就可以了。这里的值是做了1000次的bootstrap。于是得到下面的图：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;p &amp;lt;- p + geom_point2(aes(subset=!isTip &amp;amp; node != root, fill=cut(support, c(0, 700, 900, 1000))), shape=21, size=4) + theme_tree(legend.position=c(0.2, 0.3))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/641.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;已然是近乎完美，但我们仍需要修图，想用简单的颜色来填充，低值用白色，中间值用灰色，而高值用黑色。 label想除以1000，换成百分比，legend的名字想换成bootstrap百分值，legend的label想到数学公式表达区间，这些都可以在scale_fill_manual中实现：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;p + scale_fill_manual(values=c(&amp;quot;white&amp;quot;, &amp;quot;grey&amp;quot;, &amp;quot;black&amp;quot;), guide=&#39;legend&#39;, name=&#39;Bootstrap Percentage(BP)&#39;, breaks=c(&#39;(900,1e+03]&#39;, &#39;(700,900]&#39;, &#39;(0,700]&#39;), labels=expression(BP&amp;gt;=90,70 &amp;lt;= BP * &amp;quot; &amp;lt; 90&amp;quot;, BP &amp;lt; 70))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;华丽丽的图就产生了：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/642.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>annotate tree with user specific data</title>
@@ -1206,87 +1244,6 @@ p + scale_x_discrete(labels=function(x) str_wrap(x, width=10))
 
 &lt;p&gt;&lt;script type=&#34;text/javascript&#34; src=&#34;https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js&#34;&gt;&lt;/script&gt;
 &lt;div data-badge-popover=&#34;right&#34; data-badge-type=&#34;donut&#34; data-doi=&#34;10.1111/2041-210X.12628&#34; class=&#34;altmetric-embed&#34;&gt;&lt;/div&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title> R包辣鸡之CorMut</title>
-      <link>https://guangchuangyu.github.io/cn/2017/01/r%E5%8C%85%E8%BE%A3%E9%B8%A1%E4%B9%8Bcormut/</link>
-      <pubDate>Tue, 17 Jan 2017 12:23:16 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2017/01/r%E5%8C%85%E8%BE%A3%E9%B8%A1%E4%B9%8Bcormut/</guid>
-      <description>
-
-&lt;blockquote&gt;
-&lt;p&gt;曾经QQ上有人叫我帮忙，跑某个R包做个分析，我一看那包，一堆bug，显然不能用，那就不是简单的事了，我可没空帮他写代码，于是他就经常恶心我，有事没事就来说我写ggtree没意义，不是实质科研，不如跟他做点牛逼的，不如再写个R包干他那事。昨天用马甲在进化群里问画树，我还热心贴个代码给他，说看不懂，我在群里说了，我写个文详细介绍一下。然而他的马甲身份暴露啦，所以今日跳票，我写好的文也不发了，你牛逼就不要用马甲来骗代码呀，ggtree没用你不要用呀，叔就是这么任性😎&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;之前讲过某个R包我一看一堆bug，直接放弃，今天倒是拿出来晒一下，不为别的，我只想说一句，一知半解是很危险的，盲目相信软件也是很危险的。&lt;/p&gt;
-
-&lt;h2 id=&#34;比对-不比对-这是个严肃的问题:73d341715265d4d00941b1a9c2cbba18&#34;&gt;比对？不比对？这是个严肃的问题&lt;/h2&gt;
-
-&lt;p&gt;话说此包的输入是alignment，我刚开始也没看代码，照着示例跑一下，但读序列的时候，我就惊呆了，怎么读个fasta这么慢，于是我开始看代码，不看不知道，一看吓一跳：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;seq_f01=as.list(sapply(allSeq,function(x)c2s(s2c(x)[ref01!=&amp;quot;-&amp;quot;])))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这个s2c把string变成character vector，c2s则反过来，这一句就干一件简单的事情，就是把所有string（fasta读进来的sequences）中的-全部删除。就这么一切一贴，非常非常慢，简单地用&lt;code&gt;gsub(“-“, “”, allSeq)&lt;/code&gt;就可以非常快速做同样的事情。
-然后这时候我们似乎觉得那里不妥！你把&lt;code&gt;-&lt;/code&gt;全删了，等于是把比对序列变成了非比对序列。那么你要求输入是比对序列是为什么？！
-确实序列必须得是比对好的，因为这包就是要检测correlated mutations，它比的是codon, 这必须是比对好的序列才行，但在读序列的时候，就把-给删了，序列不再是比对好的，本来对应的codon现在必然很多都移位了，这在一开始就挖了巨大的坑。后面所有的计算必须都是辣鸡了。&lt;/p&gt;
-
-&lt;h2 id=&#34;codon比较-数数字你会吗:73d341715265d4d00941b1a9c2cbba18&#34;&gt;codon比较，数数字你会吗？&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/Bioconductor-mirror/CorMut/blob/master/R/CorMut-internal.R#L125-L129&#34;&gt;https://github.com/Bioconductor-mirror/CorMut/blob/master/R/CorMut-internal.R#L125-L129&lt;/a&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;for(j in 1:length(seqf[[i]])){
-	if(j%%3==1){ tris=seqf[[i]][j:(j+2)]
-	}else if(j%%3==2){ tris=seqf[[i]][(j-1):(j+1)]
-	}else if(j%%3==0){ tris=seqf[[i]][(j-2):j]
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这循环竟然不是一个codon一个codon来，而是一个base一个base地迭代，这里移动三个位置，拿到的都是同一个codon，然后它就去比较是否不同，数数目了，一个不同，数它3遍，我也是醉了。&lt;/p&gt;
-
-&lt;h2 id=&#34;p值你会算吗:73d341715265d4d00941b1a9c2cbba18&#34;&gt;p值你会算吗？&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/Bioconductor-mirror/CorMut/blob/release-3.4/R/kaksAA.R#L67-L77&#34;&gt;https://github.com/Bioconductor-mirror/CorMut/blob/release-3.4/R/kaksAA.R#L67-L77&lt;/a&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;LOD=0
-Nnum=NS+NY
-for(ii in NYs:Nnum){
-	per_item=choose(Nnum,ii)*(q^ii)*((1-q)^(Nnum-ii))
-	#avoid the appear of NaN
-	if(per_item!=&amp;quot;NaN&amp;quot;){
-		LOD=per_item+LOD
-	}
-	#print(choose(dim(mat)[2],i)*(q^i)*((1-q)^(dim(mat)[2]-i)))
-}
-LOD=-log10(LOD)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;我们知道算p值是算积分面积，它倒好，离散性分布这一个个数字来计算，然后求合。
-这里用的是二项式分布：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;per_item=choose(Nnum,ii)(q^ii)((1-q)^(Nnum-ii))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这个基本上你算出来会有很多0和NaN，精度问题嘛，这样算必须是不准的。然后他必须是跑了自己代码出不来p值，发现有很多NaN，也不去想为什么，直接把NaN给扔了。这根本就是错的，也不知道用pbinom去算，我也是服了。&lt;/p&gt;
-
-&lt;h2 id=&#34;总结:73d341715265d4d00941b1a9c2cbba18&#34;&gt;总结&lt;/h2&gt;
-
-&lt;p&gt;我只是粗略地看了一下代码，就发现很多错误，而且几乎每个重要的部分都出错。问题肯定比我粗略看一下所能发现地多得多。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;读序列，把比对的序列搞成了非比对。&lt;/li&gt;
-&lt;li&gt;比较codon，序列非比对这比毛线啊，然后连数数目都数错。&lt;/li&gt;
-&lt;li&gt;p值，简单二项式，你都不会算啊，简单粗暴地对NaN视而不见。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;这货中国CDC出品，竟然还发了Bioinformatics，reviewer简直瞎眼了！&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/2017-01-09-002515_560x405_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;​&lt;/p&gt;
 </description>
     </item>
     

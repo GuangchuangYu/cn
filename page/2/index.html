@@ -111,6 +111,50 @@ ga('send', 'pageview');
     <article>
       <header>
         <h1 class="entry-title">
+          <a href="https://guangchuangyu.github.io/cn/2017/04/generate-biobabble-banner-using-ggimage/">generate biobabble banner using ggimage</a>
+        </h1>
+        <p class="meta">Apr 5, 2017 - 1 minute read -  <a href="https://guangchuangyu.github.io/cn/2017/04/generate-biobabble-banner-using-ggimage/#disqus_thread">Comments</a>
+
+        
+        
+        
+        <a class="label" href="https://guangchuangyu.github.io/cn/categories/r/">R</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/visualization/">Visualization</a>
+        </p>
+
+      </header>
+
+        
+          <p><p><img src="https://guangchuangyu.github.io/blog_images/biobabble_banner.png" alt="" /></p>
+
+<p>制作了一个banner，用来插入到文后，方便阅读到最后的时候，直接扫描关注。</p>
+
+<p>这图当然用PS一下就可以得到，无非是拼图和加点文字。但做为天天写代码画图的人来说，必然是要纯代码来产生的，而且做科学的人，讲究自动化、可重复性。</p>
+
+<p>就像有些人不理解data scentist为什么讨厌excel一样，觉得无非是工具，没什么好搞阵营的。试想一下，一个分析流程中间有一步要用到excel，需要人工去点点鼠标，这对于讲究自动化、可重复性的data scientist来说是不可接受的。</p>
+
+<h2 id="加载中文字体:966da26016f51c32cab8c8a1572665e3">加载中文字体</h2>
+
+<p>为了打几个中文字，需要先加载字体，这里我用showtext。</p>
+
+<pre><code class="language-r">require(showtext)
+font.add(&quot;heiti&quot;, &quot;/Library/Fonts/华文黑体.ttf&quot;)
+showtext.auto()
+</code></pre>
+</p>
+
+          
+              <footer>
+                  <a href="https://guangchuangyu.github.io/cn/2017/04/generate-biobabble-banner-using-ggimage/" rel="full-article">Read On &rarr;</a>
+              </footer>
+          
+
+        
+
+    </article>
+    
+    <article>
+      <header>
+        <h1 class="entry-title">
           <a href="https://guangchuangyu.github.io/cn/2017/04/ggplot2%E5%AD%97%E4%BD%93%E6%BA%A2%E5%87%BA%E7%9A%84%E9%82%A3%E7%82%B9%E7%A0%B4%E4%BA%8B/">ggplot2字体溢出的那点破事</a>
         </h1>
         <p class="meta">Apr 3, 2017 - 1 minute read -  <a href="https://guangchuangyu.github.io/cn/2017/04/ggplot2%E5%AD%97%E4%BD%93%E6%BA%A2%E5%87%BA%E7%9A%84%E9%82%A3%E7%82%B9%E7%A0%B4%E4%BA%8B/#disqus_thread">Comments</a>
@@ -267,69 +311,6 @@ print(p)
 
     </article>
     
-    <article>
-      <header>
-        <h1 class="entry-title">
-          <a href="https://guangchuangyu.github.io/cn/2017/03/peak%E6%B3%A8%E9%87%8A/">peak注释</a>
-        </h1>
-        <p class="meta">Mar 16, 2017 - 1 minute read -  <a href="https://guangchuangyu.github.io/cn/2017/03/peak%E6%B3%A8%E9%87%8A/#disqus_thread">Comments</a>
-
-        
-        
-        
-        <a class="label" href="https://guangchuangyu.github.io/cn/categories/r/">R</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/chipseq/">ChIPseq</a>
-        </p>
-
-      </header>
-
-        
-          <p><p>这一次讲解非常重要的peak注释，注释在<strong>ChIPseeker</strong>里只需要用到一个函数<strong>annotatePeak</strong>，它可以满足大家各方面的需求。</p>
-
-<h2 id="输入:4b21ea5970cfe309bb59877ac4e1f485">输入</h2>
-
-<p>当然需要我们上次讲到的BED文件，<strong>ChIPseeker</strong>自带了5个BED文件，用<strong>getSampleFiles()</strong>可以拿到文件的全路径，它返回的是个named list，我这里取第4个文件来演示。<strong>annotatePeak</strong>的输入也可以是<strong>GRanges</strong>对象，你如果用R做peak calling的话,直接就可以衔接上<strong>ChIPseeker</strong>了。</p>
-
-<pre><code>&gt; require(ChIPseeker)
-&gt; f = getSampleFiles()[[4]]
-</code></pre>
-
-<p>巧妇难为无米之炊，就像拿到<strong>fastq</strong>要跑<strong>BWA</strong>，你需要全基因组的序列一样，做注释当然需要注释信息，基因的起始终止，基因有那些内含子，外显子，以及它们的起始终止，非编码区的位置，功能元件的位置等各种信息。</p>
-
-<p>很多软件会针对特定的物种去整理这些信息供软件使用，但这样就限制了软件的物种支持，有些开发者写软件本意也是解决自己的问题，可能对自己的研究无关的物种也没兴趣去支持。</p>
-
-<p>然而<strong>ChIPseeker</strong>支持所有的物种，你没有看错，<strong>ChIPseeker</strong>没有物种限制，当然这是有前提的，物种本身起码是有基因的位置这些注释信息，不然就变无米之炊了。</p>
-
-<p>这里我们需要的是一个<strong>TxDb</strong>对象，这个<strong>TxDb</strong>就包含了我们需要的各种信息，<strong>ChIPseeker</strong>会把信息抽取出来，用于注释时使用。</p>
-
-<pre><code>&gt; require(TxDb.Hsapiens.UCSC.hg19.knownGene)
-&gt; txdb = TxDb.Hsapiens.UCSC.hg19.knownGene
-&gt; x = annotatePeak(f, tssRegion=c(-1000, 1000), TxDb=txdb)
-&gt;&gt; loading peak file...				 2017-03-09 11:29:18 PM 
-&gt;&gt; preparing features information...		 2017-03-09 11:29:18 PM 
-&gt;&gt; identifying nearest features...		 2017-03-09 11:29:19 PM 
-&gt;&gt; calculating distance from peak to TSS...	 2017-03-09 11:29:20 PM 
-&gt;&gt; assigning genomic annotation...		 2017-03-09 11:29:20 PM 
-&gt;&gt; assigning chromosome lengths			 2017-03-09 11:29:42 PM 
-&gt;&gt; done...					 2017-03-09 11:29:42 PM 
-</code></pre>
-
-<blockquote>
-<p>这里需要注意的是，启动子区域是没有明确的定义的，所以你可能需要指定<strong>tssRegion</strong>，把基因起始转录位点的上下游区域来做为启动子区域。</p>
-</blockquote>
-
-<p>有了这两个输入（BED文件和TxDb对象），你就可以跑注释了，然后就可以出结果了。</p>
-</p>
-
-          
-              <footer>
-                  <a href="https://guangchuangyu.github.io/cn/2017/03/peak%E6%B3%A8%E9%87%8A/" rel="full-article">Read On &rarr;</a>
-              </footer>
-          
-
-        
-
-    </article>
-    
     
     
 
@@ -441,6 +422,10 @@ print(p)
       
       
       <li class="post">
+        <a href="https://guangchuangyu.github.io/cn/2017/05/bootstrap-value%E5%88%86%E6%AE%B5%E6%A0%87%E8%AE%B0/">bootstrap value分段标记</a>
+      </li>
+      
+      <li class="post">
         <a href="https://guangchuangyu.github.io/cn/2017/04/annotate-tree-with-user-specific-data/">annotate tree with user specific data</a>
       </li>
       
@@ -454,10 +439,6 @@ print(p)
       
       <li class="post">
         <a href="https://guangchuangyu.github.io/cn/2017/04/ggimageggplot2%E4%B8%AD%E6%84%89%E5%BF%AB%E5%9C%B0%E4%BD%BF%E7%94%A8%E5%9B%BE%E7%89%87/">ggimage：ggplot2中愉快地使用图片</a>
-      </li>
-      
-      <li class="post">
-        <a href="https://guangchuangyu.github.io/cn/2017/04/generate-biobabble-banner-using-ggimage/">generate biobabble banner using ggimage</a>
       </li>
       
     </ul>

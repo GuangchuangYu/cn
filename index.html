@@ -111,6 +111,43 @@ ga('send', 'pageview');
     <article>
       <header>
         <h1 class="entry-title">
+          <a href="https://guangchuangyu.github.io/cn/2017/05/bootstrap-value%E5%88%86%E6%AE%B5%E6%A0%87%E8%AE%B0/">bootstrap value分段标记</a>
+        </h1>
+        <p class="meta">May 10, 2017 - 1 minute read -  <a href="https://guangchuangyu.github.io/cn/2017/05/bootstrap-value%E5%88%86%E6%AE%B5%E6%A0%87%E8%AE%B0/#disqus_thread">Comments</a>
+
+        
+        
+        
+        <a class="label" href="https://guangchuangyu.github.io/cn/categories/r/">R</a>
+        </p>
+
+      </header>
+
+        
+          <p><p>想要分段标记bootstrap，比如<code>0-70</code>, <code>70-90</code>, <code>90-100</code>之类的。这个对于ggtree来说，太简单。</p>
+
+<p>首先我们要读树，用<code>treeio</code>的<code>read.newick</code>，它和<code>read.tree</code>的不同之处是，加入了参数<code>node.label</code>，当<code>node.label</code>存的不是<code>label</code>，而是<code>bootstrap</code>等数字型的时候，你可以传入<code>node.label='support'</code>，这样它会把node label解析为support value，另存为树注释数据，而不是和tip label混在一起。label变量只能存为字符型，因为和tip label混了，而字符型会让数字操作稍微复杂点。所以我们要用<code>read.newick</code>。</p>
+
+<pre><code>tree &lt;- read.newick(&quot;RMI.phy_phyml_tree_rooted_labeled.txt&quot;, node.label='support')
+root &lt;- getRoot(tree@phylo)
+
+p &lt;- ggtree(tree, color=&quot;black&quot;, size=1.5, linetype=1,  ladderize=TRUE) + ggtitle(label=&quot;Figure A&quot;) + geom_tiplab(size=4.5, hjust = -0.060, fontface=&quot;bold&quot;) +  xlim(0, 0.09)
+</code></pre>
+</p>
+
+          
+              <footer>
+                  <a href="https://guangchuangyu.github.io/cn/2017/05/bootstrap-value%E5%88%86%E6%AE%B5%E6%A0%87%E8%AE%B0/" rel="full-article">Read On &rarr;</a>
+              </footer>
+          
+
+        
+
+    </article>
+    
+    <article>
+      <header>
+        <h1 class="entry-title">
           <a href="https://guangchuangyu.github.io/cn/2017/04/annotate-tree-with-user-specific-data/">annotate tree with user specific data</a>
         </h1>
         <p class="meta">Apr 29, 2017 - 1 minute read -  <a href="https://guangchuangyu.github.io/cn/2017/04/annotate-tree-with-user-specific-data/#disqus_thread">Comments</a>
@@ -261,50 +298,6 @@ rasterImage(x, 2, 2, 6, 4)
 
     </article>
     
-    <article>
-      <header>
-        <h1 class="entry-title">
-          <a href="https://guangchuangyu.github.io/cn/2017/04/generate-biobabble-banner-using-ggimage/">generate biobabble banner using ggimage</a>
-        </h1>
-        <p class="meta">Apr 5, 2017 - 1 minute read -  <a href="https://guangchuangyu.github.io/cn/2017/04/generate-biobabble-banner-using-ggimage/#disqus_thread">Comments</a>
-
-        
-        
-        
-        <a class="label" href="https://guangchuangyu.github.io/cn/categories/r/">R</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/visualization/">Visualization</a>
-        </p>
-
-      </header>
-
-        
-          <p><p><img src="https://guangchuangyu.github.io/blog_images/biobabble_banner.png" alt="" /></p>
-
-<p>制作了一个banner，用来插入到文后，方便阅读到最后的时候，直接扫描关注。</p>
-
-<p>这图当然用PS一下就可以得到，无非是拼图和加点文字。但做为天天写代码画图的人来说，必然是要纯代码来产生的，而且做科学的人，讲究自动化、可重复性。</p>
-
-<p>就像有些人不理解data scentist为什么讨厌excel一样，觉得无非是工具，没什么好搞阵营的。试想一下，一个分析流程中间有一步要用到excel，需要人工去点点鼠标，这对于讲究自动化、可重复性的data scientist来说是不可接受的。</p>
-
-<h2 id="加载中文字体:966da26016f51c32cab8c8a1572665e3">加载中文字体</h2>
-
-<p>为了打几个中文字，需要先加载字体，这里我用showtext。</p>
-
-<pre><code class="language-r">require(showtext)
-font.add(&quot;heiti&quot;, &quot;/Library/Fonts/华文黑体.ttf&quot;)
-showtext.auto()
-</code></pre>
-</p>
-
-          
-              <footer>
-                  <a href="https://guangchuangyu.github.io/cn/2017/04/generate-biobabble-banner-using-ggimage/" rel="full-article">Read On &rarr;</a>
-              </footer>
-          
-
-        
-
-    </article>
-    
     
     
 
@@ -413,6 +406,10 @@ showtext.auto()
       
       
       <li class="post">
+        <a href="https://guangchuangyu.github.io/cn/2017/05/bootstrap-value%E5%88%86%E6%AE%B5%E6%A0%87%E8%AE%B0/">bootstrap value分段标记</a>
+      </li>
+      
+      <li class="post">
         <a href="https://guangchuangyu.github.io/cn/2017/04/annotate-tree-with-user-specific-data/">annotate tree with user specific data</a>
       </li>
       
@@ -426,10 +423,6 @@ showtext.auto()
       
       <li class="post">
         <a href="https://guangchuangyu.github.io/cn/2017/04/ggimageggplot2%E4%B8%AD%E6%84%89%E5%BF%AB%E5%9C%B0%E4%BD%BF%E7%94%A8%E5%9B%BE%E7%89%87/">ggimage：ggplot2中愉快地使用图片</a>
-      </li>
-      
-      <li class="post">
-        <a href="https://guangchuangyu.github.io/cn/2017/04/generate-biobabble-banner-using-ggimage/">generate biobabble banner using ggimage</a>
       </li>
       
     </ul>
