@@ -145,18 +145,13 @@ ga('send', 'pageview');
 
 <blockquote>
 <p>本文受魏太云（<a href="http://www.weibo.com/taiyun">@cloud_wei</a>)的邀请，最初在2015年发表于<a href="http://cos.name/2015/11/to-achieve-the-visualization-and-annotation-of-evolutionary-tree-using-ggtree/">统计之都</a>。</p>
-
-<p>2017/05/10结合ggtree最新版本进行更新。</p>
-
-<p>文章最后提到的可以在图上嵌入小图，比如饼图，柱状图等，<a href="http://guangchuangyu.github.io/2016/01/annotate-a-phylogenetic-tree-with-insets/">已经实现</a>, 也可以使用用户自己图片来嵌入注释。</p>
 </blockquote>
 
 <p>进化树看起来和层次聚类很像。有必要解释一下两者的一些区别。</p>
 
 <p>层次聚类的侧重点在于分类，把距离近的聚在一起。而进化树的构建可以说也是一个聚类过程，但侧重点在于推测进化关系和进化距离(evolutionary distance)。</p>
 
-<p>层次聚类的输入是距离，比如euclidean或manhattan距离。把距离近的聚在一起。而进化树推断是从生物序列（DNA或氨基酸）的比对开始。最简单的方法是计算一下序列中不匹配的数目，称之为hamming
-distance（通常用序列长度做归一化），使用距离当然也可以应用层次聚类的方法。进化树的构建最简单的方法是非加权配对平均法（Unweighted Pair Group Method with Arithmetic Mean, UPGMA），这其实是使用average linkage的层次聚类。这种方法在进化树推断上现在基本没人用。更为常用的是邻接法（neighbor joining），两个节点距离其它节点都比较远，而这两个节点又比较近，它们就是neighbor，可以看出neighbor不一定是距离最近的两个节点。真正做进化的人，这个方法也基本不用。现在主流的方法是最大似然法(Maximum likelihood, ML)，通过进化模型（evolutionary model)估计拓朴结构和分支长度，估计的结果具有最高的概率能够产生观测数据（多序列比对）。另外还有最大简约法和贝叶斯推断等方法用于构建进化树。</p>
+<p>层次聚类的输入是距离，比如euclidean或manhattan距离。把距离近的聚在一起。而进化树推断是从生物序列（DNA或氨基酸）的比对开始。最简单的方法是计算一下序列中不匹配的数目，称之为hamming distance（通常用序列长度做归一化），使用距离当然也可以应用层次聚类的方法。进化树的构建最简单的方法是非加权配对平均法（Unweighted Pair Group Method with Arithmetic Mean, UPGMA），这其实是使用average linkage的层次聚类。这种方法在进化树推断上现在基本没人用。更为常用的是邻接法（neighbor joining），两个节点距离其它节点都比较远，而这两个节点又比较近，它们就是neighbor，可以看出neighbor不一定是距离最近的两个节点。真正做进化的人，这个方法也基本不用。现在主流的方法是最大似然法(Maximum likelihood, ML)，通过进化模型（evolutionary model)估计拓朴结构和分支长度，估计的结果具有最高的概率能够产生观测数据（多序列比对）。另外还有最大简约法和贝叶斯推断等方法用于构建进化树。</p>
 
 <p><img src="http://evolution.genetics.washington.edu/phylip/newicktree.gif" alt="" /></p>
 
@@ -218,8 +213,7 @@ tree_text
 
 <p>这几个包所实现的画图函数，都可以很容易地用<code>ggtree</code>实现，并用经过测试，ggtree运行速度比这几个包都要快。更多信息请参考<a href="https://github.com/GuangchuangYu/ggtree/wiki/Why-ggtree-is-special%3F">ggtree的wiki页面</a>。</p>
 
-<p><code>ggtree</code>是真正扩展<code>ggplot2</code>，支持图形语法的包。我们首先扩展ggplot支持tree
-object做为输入，并实现<code>geom_tree</code>图层来画线条。</p>
+<p><code>ggtree</code>是真正扩展<code>ggplot2</code>，支持图形语法的包。我们首先扩展ggplot支持tree object做为输入，并实现<code>geom_tree</code>图层来画线条。</p>
 
 <pre><code>library(ggplot2)
 library(ggtree)
@@ -228,7 +222,7 @@ tree &lt;- rtree(30)
 ggplot(tree, aes(x, y)) + geom_tree()
 </code></pre>
 
-<p><img src="http://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/ggtree_cos_files/figure-markdown_strict/unnamed-chunk-2-1.png" alt="" /><!-- --></p>
+<p><img src="http://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/ggtree_cos_files/figure-markdown_strict/unnamed-chunk-2-1.png" alt="" /></p>
 
 <p>ggtree函数是<code>ggplot() + geom_tree() + xlab(NA) + ylab(NA) + theme_tree()</code>的简单组合。</p>
 
@@ -276,7 +270,7 @@ ggtree(nhx, ladderize=F) + geom_tiplab() + geom_point(aes(color=S), size=8, alph
            xlim(NA, 0.3)
 </code></pre>
 
-<p><img src="http://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/ggtree_cos_files/figure-markdown_strict/unnamed-chunk-6-1.png" alt="" /><!-- --></p>
+<p><img src="http://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/ggtree_cos_files/figure-markdown_strict/unnamed-chunk-6-1.png" alt="" /></p>
 
 <h2 id="支持解析多种软件的输出文件:d1d9992be5d6848a0489ec268963cadb">支持解析多种软件的输出文件</h2>
 
@@ -295,7 +289,7 @@ ggtree(raxml) + geom_text(aes(label=bootstrap, color=bootstrap)) +
        theme(legend.position='right')
 </code></pre>
 
-<p><img src="http://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/ggtree_cos_files/figure-markdown_strict/unnamed-chunk-7-1.png" alt="" /><!-- --></p>
+<p><img src="http://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/ggtree_cos_files/figure-markdown_strict/unnamed-chunk-7-1.png" alt="" /></p>
 
 <p><code>multiPhylo</code>也是支持的，所以100颗bootstrap树可以同时用一行代码展示出来。</p>
 
@@ -318,10 +312,9 @@ p &lt;- ggtree(rst) + geom_text(aes(label=marginal_AA_subs, x=branch), vjust=-.5
 print(p)
 </code></pre>
 
-<p><img src="http://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/ggtree_cos_files/figure-markdown_strict/unnamed-chunk-9-1.png" alt="" /><!-- --></p>
+<p><img src="http://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/ggtree_cos_files/figure-markdown_strict/unnamed-chunk-9-1.png" alt="" /></p>
 
-<p>不同于BaseML以碱基为单位，CodeML预测祖先序列，以密码子为单位。<code>ggtree</code>定义了一个操作符<a href="http://guangchuangyu.github.io/2015/02/ggtree-updating-a-tree-view-using--operator/">%&lt;%</a>，如果有相同的注释信息要展示，可以用tree
-object来更新tree view。</p>
+<p>不同于BaseML以碱基为单位，CodeML预测祖先序列，以密码子为单位。<code>ggtree</code>定义了一个操作符<a href="http://guangchuangyu.github.io/2015/02/ggtree-updating-a-tree-view-using--operator/">%&lt;%</a>，如果有相同的注释信息要展示，可以用tree object来更新tree view。</p>
 
 <pre><code>rstfile &lt;- system.file(&quot;extdata/PAML_Codeml&quot;, &quot;rst&quot;, package=&quot;ggtree&quot;)
 crst &lt;- read.paml_rst(rstfile)
@@ -340,7 +333,7 @@ ggtree(mlc, aes(color=dN_vs_dS)) +
       theme(legend.position='right')
 </code></pre>
 
-<p><img src="http://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/ggtree_cos_files/figure-markdown_strict/unnamed-chunk-11-1.png" alt="" /><!-- --></p>
+<p><img src="http://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/ggtree_cos_files/figure-markdown_strict/unnamed-chunk-11-1.png" alt="" /></p>
 
 <h3 id="使用用户定义数据:d1d9992be5d6848a0489ec268963cadb">使用用户定义数据</h3>
 
@@ -383,16 +376,13 @@ label。ggtree中定义了操作符<code>%&lt;+%</code>，来添加数据。添�
 p+theme(legend.position=&quot;right&quot;)       
 </code></pre>
 
-<p><img src="http://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/ggtree_cos_files/figure-markdown_strict/unnamed-chunk-13-1.png" alt="" /><!-- --></p>
+<p><img src="http://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/ggtree_cos_files/figure-markdown_strict/unnamed-chunk-13-1.png" alt="" /></p>
 
 <p>ggtree还支持用户把自己的数据和树保存为jplace格式。</p>
 
-<p>更多的实例请参考<a href="http://www.bioconductor.org/packages/release/bioc/vignettes/ggtree/inst/doc/ggtree.html#tree-annotation-with-output-from-evolution-software">vignette</a>。</p>
+<p>更多的实例请参考<a href="http://www.bioconductor.org/packages/release/bioc/vignettes/ggtree/inst/doc/ggtree.html">vignette</a>。</p>
 
-<p>ggtree允许把不同软件的分析结果整合在一起，同时在树上展示或者比较结果。在我们提交的论文中，使用了整合BEAST和CodeML的例子，在树上展示dN/dS、时间轴、氨基酸替换、clade
-support values、物种和基因型
-(genotype）等多维信息，6种不同的信息同时展示在一颗进化树上，这是个复杂的例子，我们在附件1中展示了可重复的代码。如果有兴趣，可以留意一下我们的文章。
-:)</p>
+<p>ggtree允许把不同软件的分析结果整合在一起，同时在树上展示或者比较结果。在我们提交的论文中，使用了整合BEAST和CodeML的例子，在树上展示dN/dS、时间轴、氨基酸替换、clade support values、物种和基因型 (genotype）等多维信息，6种不同的信息同时展示在一颗进化树上，这是个复杂的例子，我们在附件1中展示了可重复的代码。如果有兴趣，可以留意一下我们的文章。:)</p>
 
 <h2 id="其它好玩的功能:d1d9992be5d6848a0489ec268963cadb">其它好玩的功能</h2>
 
@@ -400,13 +390,11 @@ support values、物种和基因型
 
 <p>一个比较正经又好玩的是使用PhyloPic数据库上的图形。</p>
 
-<pre><code>pp &lt;- ggtree(tree) %&gt;% phylopic(&quot;79ad5f09-cf21-4c89-8e7d-0c82a00ce728&quot;, color=&quot;steelblue&quot;, alpha = .3)
+<pre><code>pp &lt;- ggtree(tree) + geom_phylopic(image=&quot;79ad5f09-cf21-4c89-8e7d-0c82a00ce728&quot;, color=&quot;steelblue&quot;, alpha = .3, size=Inf)
 pp + geom_tiplab(align=T, linetype='dashed', linesize=.5) + geom_tippoint(color='firebrick', size=2)
 </code></pre>
 
-<p><img src="http://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/ggtree_cos_files/figure-markdown_strict/unnamed-chunk-14-1.png" alt="" /><!-- --></p>
-
-<p>另一个好玩又为我们展现各种可能性的是<a href="http://guangchuangyu.github.io/2015/08/subview/">subview</a>函数，它使得图上加小图变得特别容易。并且已经被应用于<a href="http://stackoverflow.com/questions/10368180/plotting-pie-graphs-on-map-in-ggplot/32380396#32380396">地图上加饼图</a>。解决这个问题的初衷在于，想要给节点加饼图注释。有了subview函数之后，这会变得很容易，当然我还没有写出给节点加饼图的函数，因为我还没有这个需求，得有一些实际的数据做参考，这样才能够设计出更易用的函数呈现给用户。</p>
+<p><img src="http://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/ggtree_cos_files/figure-markdown_strict/unnamed-chunk-14-1.png" alt="" /></p>
 
 <p>很多的功能还在开发之中，有问题/建议请及时在<a href="https://github.com/GuangchuangYu/ggtree/issues">Github</a>上报告(中英文都可以)。</p>
 
