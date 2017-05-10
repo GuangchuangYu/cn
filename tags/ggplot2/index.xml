@@ -1162,13 +1162,11 @@ list也有诸多讨论，因为它导致了某些包编译出错（估计是NAME
 
 &lt;p&gt;大多数的改动对用户来说是invisible的，用roxygen2去注释函数，核心代码使用S3重写，分离出一些特性（scales包）等。&lt;/p&gt;
 
-&lt;p&gt;最明显的是现在画图速度变快了，不过我觉得最让人兴奋的是&lt;code&gt;guide_legend()&lt;/code&gt;和&lt;code&gt;guide_colorbar()&lt;/code&gt;两个函数，可以修改legend.&lt;/p&gt;
+&lt;p&gt;最明显的是现在画图速度变快了，不过我觉得最让人兴奋的是&lt;code&gt;guide_legend()&lt;/code&gt;和&lt;code&gt;guide_colorbar()&lt;/code&gt;两个函数，可以修改legend.&lt;/p&gt;
 
-&lt;p&gt;画图的话，加了四个函数&lt;code&gt;geom_map()&lt;/code&gt;, &lt;code&gt;geom_raster()&lt;/code&gt;,
-&lt;code&gt;geom_dotplot()&lt;/code&gt;和&lt;code&gt;geom_violin()&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;画图的话，加了四个函数&lt;code&gt;geom_map()&lt;/code&gt;, &lt;code&gt;geom_raster()&lt;/code&gt;,&lt;code&gt;geom_dotplot()&lt;/code&gt;和&lt;code&gt;geom_violin()&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;violin plot结合了box plot和kernel density estimate，有了它，box
-plot基本可以扔了。&lt;/p&gt;
+&lt;p&gt;violin plot结合了box plot和kernel density estimate，有了它，boxplot基本可以扔了。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2012/02/violin.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 </description>
