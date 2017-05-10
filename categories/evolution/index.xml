@@ -18,23 +18,19 @@
       <description>
 
 &lt;blockquote&gt;
-&lt;p&gt;本文受魏太云（&lt;a href=&#34;http://www.weibo.com/taiyun&#34;&gt;@cloud_wei&lt;/a&gt;)的邀请，最初发表于&lt;a href=&#34;http://cos.name/2015/11/to-achieve-the-visualization-and-annotation-of-evolutionary-tree-using-ggtree/&#34;&gt;统计之都&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;本文受魏太云（&lt;a href=&#34;http://www.weibo.com/taiyun&#34;&gt;@cloud_wei&lt;/a&gt;)的邀请，最初在2015年发表于&lt;a href=&#34;http://cos.name/2015/11/to-achieve-the-visualization-and-annotation-of-evolutionary-tree-using-ggtree/&#34;&gt;统计之都&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;2017/05/10结合ggtree最新版本进行更新。&lt;/p&gt;
 
 &lt;p&gt;文章最后提到的可以在图上嵌入小图，比如饼图，柱状图等，&lt;a href=&#34;http://guangchuangyu.github.io/2016/01/annotate-a-phylogenetic-tree-with-insets/&#34;&gt;已经实现&lt;/a&gt;, 也可以使用用户自己图片来嵌入注释。&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;进化树看起来和层次聚类很像。有必要解释一下两者的一些区别。&lt;/p&gt;
 
-&lt;p&gt;层次聚类的侧重点在于分类，把距离近的聚在一起。而进化树的构建可以说也是一个聚类过程，但侧重点在于推测进化关系和进化距离(evolutionary
-distance)。&lt;/p&gt;
+&lt;p&gt;层次聚类的侧重点在于分类，把距离近的聚在一起。而进化树的构建可以说也是一个聚类过程，但侧重点在于推测进化关系和进化距离(evolutionary distance)。&lt;/p&gt;
 
 &lt;p&gt;层次聚类的输入是距离，比如euclidean或manhattan距离。把距离近的聚在一起。而进化树推断是从生物序列（DNA或氨基酸）的比对开始。最简单的方法是计算一下序列中不匹配的数目，称之为hamming
-distance（通常用序列长度做归一化），使用距离当然也可以应用层次聚类的方法。进化树的构建最简单的方法是非加权配对平均法（Unweighted
-Pair Group Method with Arithmetic Mean, UPGMA），这其实是使用average
-linkage的层次聚类。这种方法在进化树推断上现在基本没人用。更为常用的是邻接法（neighbor
-joining），两个节点距离其它节点都比较远，而这两个节点又比较近，它们就是neighbor，可以看出neighbor不一定是距离最近的两个节点。真正做进化的人，这个方法也基本不用。现在主流的方法是最大似然法(Maximum
-likelihood, ML)，通过进化模型（evolutionary
-model)估计拓朴结构和分支长度，估计的结果具有最高的概率能够产生观测数据（多序列比对）。另外还有最大简约法和贝叶斯推断等方法用于构建进化树。&lt;/p&gt;
+distance（通常用序列长度做归一化），使用距离当然也可以应用层次聚类的方法。进化树的构建最简单的方法是非加权配对平均法（Unweighted Pair Group Method with Arithmetic Mean, UPGMA），这其实是使用average linkage的层次聚类。这种方法在进化树推断上现在基本没人用。更为常用的是邻接法（neighbor joining），两个节点距离其它节点都比较远，而这两个节点又比较近，它们就是neighbor，可以看出neighbor不一定是距离最近的两个节点。真正做进化的人，这个方法也基本不用。现在主流的方法是最大似然法(Maximum likelihood, ML)，通过进化模型（evolutionary model)估计拓朴结构和分支长度，估计的结果具有最高的概率能够产生观测数据（多序列比对）。另外还有最大简约法和贝叶斯推断等方法用于构建进化树。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://evolution.genetics.washington.edu/phylip/newicktree.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
@@ -80,12 +76,9 @@ tree_text
 
 &lt;h3 id=&#34;扩展ggplot2:d1d9992be5d6848a0489ec268963cadb&#34;&gt;扩展ggplot2&lt;/h3&gt;
 
-&lt;p&gt;有很多可视化包基于ggplot2实现，包括各种&lt;code&gt;gg&lt;/code&gt;打头的，号称扩展了ggplot2，支持图形语法(grammar
-of
-graphics)，我并不认同。虽然基于&lt;code&gt;ggplot2&lt;/code&gt;产生的图，我们可以用&lt;code&gt;theme&lt;/code&gt;来进一步调整细节，用&lt;code&gt;scale_&lt;/code&gt;系列函数来调整颜色和标尺的映射，但这些不足以称之为&amp;rsquo;支持图形语法&amp;rsquo;，图形语法最关键核心的部分我认为是图层和映射。&lt;/p&gt;
+&lt;p&gt;有很多可视化包基于ggplot2实现，包括各种&lt;code&gt;gg&lt;/code&gt;打头的，号称扩展了ggplot2，支持图形语法(grammar of graphics)，我并不认同。虽然基于&lt;code&gt;ggplot2&lt;/code&gt;产生的图，我们可以用&lt;code&gt;theme&lt;/code&gt;来进一步调整细节，用&lt;code&gt;scale_&lt;/code&gt;系列函数来调整颜色和标尺的映射，但这些不足以称之为&amp;rsquo;支持图形语法&amp;rsquo;，图形语法最关键核心的部分我认为是图层和映射。&lt;/p&gt;
 
-&lt;p&gt;像&lt;code&gt;ggphylo&lt;/code&gt;,
-&lt;code&gt;OutbreakTools&lt;/code&gt;和&lt;code&gt;phyloseq&lt;/code&gt;这几个包都有基于ggplot2的画树函数，但其实都不支持图形语法，它们所实现的是复杂的函数，画完就完事了，用户并不能使用图层来添加相关的信息。&lt;/p&gt;
+&lt;p&gt;像&lt;code&gt;ggphylo&lt;/code&gt;, &lt;code&gt;OutbreakTools&lt;/code&gt;和&lt;code&gt;phyloseq&lt;/code&gt;这几个包都有基于ggplot2的画树函数，但其实都不支持图形语法，它们所实现的是复杂的函数，画完就完事了，用户并不能使用图层来添加相关的信息。&lt;/p&gt;
 
 &lt;p&gt;如果在&lt;code&gt;OutbreakTools&lt;/code&gt;这个包中：&lt;/p&gt;
 

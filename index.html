@@ -131,7 +131,9 @@ ga('send', 'pageview');
 <pre><code>tree &lt;- read.newick(&quot;RMI.phy_phyml_tree_rooted_labeled.txt&quot;, node.label='support')
 root &lt;- getRoot(tree@phylo)
 
-p &lt;- ggtree(tree, color=&quot;black&quot;, size=1.5, linetype=1,  ladderize=TRUE) + ggtitle(label=&quot;Figure A&quot;) + geom_tiplab(size=4.5, hjust = -0.060, fontface=&quot;bold&quot;) +  xlim(0, 0.09)
+p &lt;- ggtree(tree, color=&quot;black&quot;, size=1.5, linetype=1,  ladderize=TRUE) + 
+     ggtitle(label=&quot;Figure A&quot;) + 
+    geom_tiplab(size=4.5, hjust = -0.060, fontface=&quot;bold&quot;) +  xlim(0, 0.09)
 </code></pre>
 </p>
 

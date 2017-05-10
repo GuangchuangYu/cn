@@ -148,7 +148,9 @@ ga('send', 'pageview');
 <pre><code>tree &lt;- read.newick(&quot;RMI.phy_phyml_tree_rooted_labeled.txt&quot;, node.label='support')
 root &lt;- getRoot(tree@phylo)
 
-p &lt;- ggtree(tree, color=&quot;black&quot;, size=1.5, linetype=1,  ladderize=TRUE) + ggtitle(label=&quot;Figure A&quot;) + geom_tiplab(size=4.5, hjust = -0.060, fontface=&quot;bold&quot;) +  xlim(0, 0.09)
+p &lt;- ggtree(tree, color=&quot;black&quot;, size=1.5, linetype=1,  ladderize=TRUE) + 
+     ggtitle(label=&quot;Figure A&quot;) + 
+    geom_tiplab(size=4.5, hjust = -0.060, fontface=&quot;bold&quot;) +  xlim(0, 0.09)
 </code></pre>
 
 <p>首先用ggtree画出树的结构，用ggtitle加title，用geom_tiplab加tip label，出图如下：</p>
@@ -157,14 +159,21 @@ p &lt;- ggtree(tree, color=&quot;black&quot;, size=1.5, linetype=1,  ladderize=T
 
 <p>然后我们就可以用geom_point2来打点了，我们要指定只打内部节点，但不打root node，因为root和外部节点都是没有值的。然后这个support值是数字型，我们想按区间分段，这太容易，用cut来切就可以了。这里的值是做了1000次的bootstrap。于是得到下面的图：</p>
 
-<pre><code>p &lt;- p + geom_point2(aes(subset=!isTip &amp; node != root, fill=cut(support, c(0, 700, 900, 1000))), shape=21, size=4) + theme_tree(legend.position=c(0.2, 0.3))
+<pre><code>p &lt;- p + geom_point2(aes(subset=!isTip &amp; node != root, 
+                                            fill=cut(support, c(0, 700, 900, 1000))), 
+                                     shape=21, size=4) + 
+        theme_tree(legend.position=c(0.2, 0.3))
 </code></pre>
 
 <p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/641.jpg" alt="" /></p>
 
 <p>已然是近乎完美，但我们仍需要修图，想用简单的颜色来填充，低值用白色，中间值用灰色，而高值用黑色。 label想除以1000，换成百分比，legend的名字想换成bootstrap百分值，legend的label想到数学公式表达区间，这些都可以在scale_fill_manual中实现：</p>
 
-<pre><code>p + scale_fill_manual(values=c(&quot;white&quot;, &quot;grey&quot;, &quot;black&quot;), guide='legend', name='Bootstrap Percentage(BP)', breaks=c('(900,1e+03]', '(700,900]', '(0,700]'), labels=expression(BP&gt;=90,70 &lt;= BP * &quot; &lt; 90&quot;, BP &lt; 70))
+<pre><code>p + scale_fill_manual(values=c(&quot;white&quot;, &quot;grey&quot;, &quot;black&quot;), 
+                                    guide='legend', name='Bootstrap Percentage(BP)', 
+                                    breaks=c('(900,1e+03]', '(700,900]', '(0,700]'), 
+                                    labelsWednesday, 10. May 2017 12:28PM 
+=expression(BP&gt;=90,70 &lt;= BP * &quot; &lt; 90&quot;, BP &lt; 70))
 </code></pre>
 
 <p>华丽丽的图就产生了：</p>
