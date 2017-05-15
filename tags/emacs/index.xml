@@ -21,9 +21,7 @@
 
 &lt;p&gt;之前一直用&lt;a href=&#34;http://guangchuangyu.github.io/categories/bsd/&#34;&gt;NetBSD&lt;/a&gt;的&lt;a href=&#34;http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/&#34;&gt;pkgsrc&lt;/a&gt;做为各种Unix-like系统的包管理系统，pkgsrc在自己内部解决依赖关系，这点对于生产环境来说，是很好的一个优点，我通常会在服务器里装一个pkgsrc，在用户目录下，维护一套UNIX软件。但是用在自己的机器上，内部解决软件依赖，就是个缺点，浪费编译时间和硬盘空间。&lt;/p&gt;
 
-&lt;p&gt;Mac上可用的包管理系统很多，Fink移植于&lt;a href=&#34;http://guangchuangyu.github.io/categories/linux/&#34;&gt;Debian&lt;/a&gt;的apt，&lt;a href=&#34;http://guangchuangyu.github.io/categories/linux/&#34;&gt;Gentoo&lt;/a&gt;的portage也支持OS
-X。OS X是基于BSD的系统，BSD有自己的一套包管理系统，如FreeBSD的ports和&lt;a href=&#34;http://guangchuangyu.github.io/categories/bsd/&#34;&gt;NetBSD&lt;/a&gt;的&lt;a href=&#34;http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/&#34;&gt;pkgsrc&lt;/a&gt;，MacPorts可以看作是这一系列中的一个，不过它并不是OS
-X原生的，它只是OpenDarwin的子项目，所以和pkgsrc一个样，也是内部解决依赖，真正为OS
+&lt;p&gt;Mac上可用的包管理系统很多，Fink移植于&lt;a href=&#34;http://guangchuangyu.github.io/categories/linux/&#34;&gt;Debian&lt;/a&gt;的apt，&lt;a href=&#34;http://guangchuangyu.github.io/categories/linux/&#34;&gt;Gentoo&lt;/a&gt;的portage也支持OS X。OS X是基于BSD的系统，BSD有自己的一套包管理系统，如FreeBSD的ports和&lt;a href=&#34;http://guangchuangyu.github.io/categories/bsd/&#34;&gt;NetBSD&lt;/a&gt;的&lt;a href=&#34;http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/&#34;&gt;pkgsrc&lt;/a&gt;，MacPorts可以看作是这一系列中的一个，不过它并不是OS X原生的，它只是OpenDarwin的子项目，所以和pkgsrc一个样，也是内部解决依赖，真正为OS
 X设计的原生包管理系统非Homebrew莫属，它会尽量依赖系统里已有的软件。&lt;/p&gt;
 
 &lt;p&gt;自从用了Homebrew之后，再也不用为系统里有两套perl和python而crazy了，之前通过&lt;a href=&#34;http://guangchuangyu.github.io/2011/06/screen-shot/&#34;&gt;pkgsrc装的软件&lt;/a&gt;全删掉，改Homebrew来安装和管理。
@@ -46,8 +44,7 @@ X设计的原生包管理系统非Homebrew莫属，它会尽量依赖系统里�
 
 &lt;p&gt;虽然Homebrew是为OS
 X设计的，但它毕竟不是苹果的东西，无法管理系统内置的程序，OS
-X自带Emacs，版本22，已经很老了，而且没有图形界面，为了方便管理和升级，只能把系统自带的删掉，用Homebrew来安装新版的Emacs-24.3，安装时使用参数&amp;ndash;cocoa，使得emacs能够识别OS
-X的keybinding，创建链接到Applications下，这样可以在Applications中双击运行。&lt;/p&gt;
+X自带Emacs，版本22，已经很老了，而且没有图形界面，为了方便管理和升级，只能把系统自带的删掉，用Homebrew来安装新版的Emacs-24.3，安装时使用参数&amp;ndash;cocoa，使得emacs能够识别OS X的keybinding，创建链接到Applications下，这样可以在Applications中双击运行。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;rm /usr/bin/emacs
 rm -rf /usr/share/emacs

@@ -48,7 +48,7 @@
 
 &lt;p&gt;就像有些人不理解data scentist为什么讨厌excel一样，觉得无非是工具，没什么好搞阵营的。试想一下，一个分析流程中间有一步要用到excel，需要人工去点点鼠标，这对于讲究自动化、可重复性的data scientist来说是不可接受的。&lt;/p&gt;
 
-&lt;h2 id=&#34;加载中文字体:966da26016f51c32cab8c8a1572665e3&#34;&gt;加载中文字体&lt;/h2&gt;
+&lt;h2 id=&#34;加载中文字体:b8aeb0db2e33c1cb77f701d0be3ba647&#34;&gt;加载中文字体&lt;/h2&gt;
 
 &lt;p&gt;为了打几个中文字，需要先加载字体，这里我用showtext。&lt;/p&gt;
 
@@ -57,7 +57,7 @@ font.add(&amp;quot;heiti&amp;quot;, &amp;quot;/Library/Fonts/华文黑体.ttf&am
 showtext.auto()
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;读图:966da26016f51c32cab8c8a1572665e3&#34;&gt;读图&lt;/h2&gt;
+&lt;h2 id=&#34;读图:b8aeb0db2e33c1cb77f701d0be3ba647&#34;&gt;读图&lt;/h2&gt;
 
 &lt;p&gt;两个图，一个是logo，一个是二维码，分别用&lt;strong&gt;EBImage&lt;/strong&gt;读入&lt;/p&gt;
 
@@ -68,7 +68,7 @@ gc &amp;lt;- rasterGrob(image=readImage(&#39;gc.png&#39;))
 page &amp;lt;- rasterGrob(image=readImage(&#39;biobabble_page.png&#39;))
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;图上嵌图:966da26016f51c32cab8c8a1572665e3&#34;&gt;图上嵌图&lt;/h2&gt;
+&lt;h2 id=&#34;图上嵌图:b8aeb0db2e33c1cb77f701d0be3ba647&#34;&gt;图上嵌图&lt;/h2&gt;
 
 &lt;p&gt;这里用我自己写的&lt;strong&gt;ggimage&lt;/strong&gt;包的&lt;strong&gt;geom_subview&lt;/strong&gt;来嵌图，然后无非打几个字，设一下字体。&lt;/p&gt;
 

@@ -37,9 +37,7 @@ homebrew and git.&lt;/p&gt;
 
 &lt;p&gt;git我倒没发现有问题，不过subversion每次都要求我输入密码了，&lt;a href=&#34;https://discussions.apple.com/thread/7276820&#34;&gt;keychain&lt;/a&gt;问题也是普遍存在的。&lt;/p&gt;
 
-&lt;p&gt;第一时间升级EI Capitan的原因是我想要Split View，做为一个&lt;a href=&#34;http://guangchuangyu.github.io/2014/06/use-linux-desktop-again/&#34;&gt;tiling window manager&lt;/a&gt;的爱好者，Split
-View是有吸引力的，分屏确实是有助于提高工作效率，然后我发现它竟然&lt;a href=&#34;http://www.cnet.com/how-to/how-to-use-split-view-in-os-x-el-capitan/&#34;&gt;没有键盘操作&lt;/a&gt;！！！WTF，这个功能显然又是iPad送的，Apple并不是为了所谓的提高工作效率，而是为了消耗iPad过多的计算能力，可以让你一边聊天一边还在打游戏，顺道又送给了OS
-X。&lt;/p&gt;
+&lt;p&gt;第一时间升级EI Capitan的原因是我想要Split View，做为一个&lt;a href=&#34;http://guangchuangyu.github.io/2014/06/use-linux-desktop-again/&#34;&gt;tiling window manager&lt;/a&gt;的爱好者，Split View是有吸引力的，分屏确实是有助于提高工作效率，然后我发现它竟然&lt;a href=&#34;http://www.cnet.com/how-to/how-to-use-split-view-in-os-x-el-capitan/&#34;&gt;没有键盘操作&lt;/a&gt;！！！WTF，这个功能显然又是iPad送的，Apple并不是为了所谓的提高工作效率，而是为了消耗iPad过多的计算能力，可以让你一边聊天一边还在打游戏，顺道又送给了OS X。&lt;/p&gt;
 
 &lt;p&gt;总的来说，我的吐槽只有一点，电脑长得越来越像手机了，但手机我已经有了，我不需要也不想电脑跟手机一样。&lt;/p&gt;
 
@@ -56,21 +54,16 @@ X。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2007/06/os9.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;苹果也经历了这样的合体，当年的os
-9当然比win98好很多，但如果要跟工作站出身的2k比的话，完全没法比。乔帮主被苹果赶走了，专心在搞工作站，推出了NeXTStep操作系统。苹果笔记本
-+ NetBSD + 仿NeXTStep界面，这样的合体也非常好💪。&lt;/p&gt;
+&lt;p&gt;苹果也经历了这样的合体，当年的os9当然比win98好很多，但如果要跟工作站出身的2k比的话，完全没法比。乔帮主被苹果赶走了，专心在搞工作站，推出了NeXTStep操作系统。&lt;/p&gt;
+
+&lt;p&gt;苹果笔记本 + NetBSD + 仿NeXTStep界面，这样的合体也非常好💪。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2007/06/wmaker.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;乔帮主回到苹果后，也是一次合体，于是有了OS X，就像2k一样，刚出来的OS
-X用户也不买帐，同样的原因，软件不兼容。到了10.2
-Jaguar情况才好转，而到了10.4
-Tiger的时候，速度提升了很多，系统已经非常现代化，而XP界面是如此粗糙，苹果再一次领先，且因为走了Intel路线，微软压力山大。&lt;/p&gt;
+X用户也不买帐，同样的原因，软件不兼容。到了10.2 Jaguar情况才好转，而到了10.4 Tiger的时候，速度提升了很多，系统已经非常现代化，而XP界面是如此粗糙，苹果再一次领先，且因为走了Intel路线，微软压力山大。&lt;/p&gt;
 
-&lt;p&gt;一直到OS X 10.6 Snow Leopard和Windows
-7，都是这次合体的延续，都是成功的，至此经典系统宣布结束。从10.7
-Lion开始，苹果开始尝试让手机系统和桌面系统合体，微软后来跟上，推出Win8，应该说OS
-X还是没有太多的违和感，但微软合体的结果就是同时拥有鼠标键盘操作和触屏操作两套界面，违和感太强！已吐槽无力。Ubuntu所采用的Unity也是为手持设备设计的，实际上Canonical已经开始在做手持设备了。所以我也不喜欢Unity，&lt;a href=&#34;http://guangchuangyu.github.io/2014/06/use-linux-desktop-again/&#34;&gt;i3是最好的选择&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;一直到OS X 10.6 Snow Leopard和Windows 7，都是这次合体的延续，都是成功的，至此经典系统宣布结束。从10.7 Lion开始，苹果开始尝试让手机系统和桌面系统合体，微软后来跟上，推出Win8，应该说OS X还是没有太多的违和感，但微软合体的结果就是同时拥有鼠标键盘操作和触屏操作两套界面，违和感太强！已吐槽无力。Ubuntu所采用的Unity也是为手持设备设计的，实际上Canonical已经开始在做手持设备了。所以我也不喜欢Unity，&lt;a href=&#34;http://guangchuangyu.github.io/2014/06/use-linux-desktop-again/&#34;&gt;i3是最好的选择&lt;/a&gt;。&lt;/p&gt;
 
 &lt;p&gt;从最初iPad送来了LaunchPad，到现在EI Capitan的Split
 View。对于有键盘的电脑来说，Spotlight是最好的程序启动器，而Split

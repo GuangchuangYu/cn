@@ -55,11 +55,11 @@
     </item>
     
     <item>
-      <title>R binary is untrustable</title>
-      <link>https://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustable/</link>
+      <title>R binary is untrustworthy</title>
+      <link>https://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustworthy/</link>
       <pubDate>Thu, 24 Jul 2014 04:22:35 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustable/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustworthy/</guid>
       <description>&lt;p&gt;去年ubuntu下apt-get了R-3.0.2,
 用了没多久就发现了system命令有问题，通常情况下调用系统命令是正常的，但是我调用bowtie的时候，就会报错：&lt;/p&gt;
 
