@@ -14,7 +14,7 @@
   <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
   
-  <title>Xming-windows下远程linux桌面</title>
+  <title>Phosphoproteome profile of human lung cancer cell line A549</title>
 
   
   
@@ -109,15 +109,15 @@ ga('send', 'pageview');
       <article class="hentry" role="article">
         <header>
           <h1 class="entry-title">
-            Xming-windows下远程linux桌面 
+            Phosphoproteome profile of human lung cancer cell line A549 
           </h1>
-          <p class="meta">Jul 5, 2010 - 1 minute read -  <a href="https://guangchuangyu.github.io/cn/2010/07/xming-windows%E4%B8%8B%E8%BF%9C%E7%A8%8Blinux%E6%A1%8C%E9%9D%A2/#disqus_thread">Comments</a>
+          <p class="meta">Nov 23, 2010 - 1 minute read -  <a href="https://guangchuangyu.github.io/cn/2010/11/phosphoproteome-profile-of-human-lung-cancer-cell-line-a549/#disqus_thread">Comments</a>
 
           
 
           
           
-          <a class="label" href="https://guangchuangyu.github.io/cn/categories/windows">Windows</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/linux">Linux</a>
+          <a class="label" href="https://guangchuangyu.github.io/cn/categories/bioinformatics">Bioinformatics</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/proteomics">Proteomics</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/publication">Publication</a>
           </p>
         </header>
         <div class="entry-content">
@@ -141,37 +141,42 @@ ga('send', 'pageview');
 
 <br>
 
-    <p>机房放着台机架机，闲着也是耗电，平时偶尔用putty登上去，没有图形界面还是有些不方便。</p>
+    <p>As an in vitro model for type II human lung cancer, A549 cells resist
+cytotoxicity via phosphorylation of proteins as demonstrated by many
+studies. However, to date, no large-scale phosphoproteome investigation
+has been conducted on A549. Here, we performed a systematical analysis
+of the phosphoproteome of A549 by using mass spectrometry (MS)-based
+strategies. This investigation led to the identification of 337
+phosphorylation sites on 181 phosphoproteins. Among them, 67
+phosphoproteins and 230 phosphorylation sites identified appeared to be
+novel with no previous characterization in lung cancer. Based on their
+known functions as reported in the literature, these phosphoproteins
+were functionally organized into highly interconnected networks. Western
+blotting and immunohistochemistry analyses were performed to validate
+the expression of a bottleneck phosphoprotein YAP1 in cancer cell lines
+and tissues. This dataset provides a valuable resource for further
+studies on phosphorylation and lung carcinogenesis.</p>
 
-<p>搜了一下，发现好几个软件可做这样的事，Xming是开源的，所以选择使用Xming+putty来远程连linux的桌面。</p>
+<p><img src="http://pubs.rsc.org/services/images/RSCpubs.ePlatform.Service.FreeContent.ImageService.svc/ImageService/image/GA?id=C0MB00055H" alt="" title="GO analysis" /></p>
 
-<p>试用了一下，果然不错。</p>
+<p>这篇文章，打了A549细胞的磷酸化谱，总体上分析了一下。最后通过网络分析，找到candidate，作了验证。</p>
 
-<p>需要修改/etc/ssh/sshd_config，添加：</p>
+<p><a href="http://guangchuangyu.github.io/blog_images/2010/11/figure2.png"><img src="http://guangchuangyu.github.io/blog_images/2010/11/figure2.png" alt="" title="figure2" /></a></p>
 
-<pre><code>X11Forwrding yes
-</code></pre>
+<p>构建网络之后，进行了一些拓扑分析：
+<a href="http://guangchuangyu.github.io/blog_images/2010/11/figure4.png"><img src="http://guangchuangyu.github.io/blog_images/2010/11/figure4.png" alt="" title="figure4" /></a></p>
 
-<p>需要配置一下PuTTY，<code>Connection-SSh-X11</code>中选中<code>Enable X11forwarding</code>
-其中<code>X display location</code>里填入<code>localhost:0</code>。</p>
+<p>最后通过betweenness的分析，鉴定网络中的bottleneck分子：
+<a href="http://guangchuangyu.github.io/blog_images/2010/11/figure5.png"><img src="http://guangchuangyu.github.io/blog_images/2010/11/figure5.png" alt="" title="figure5" /></a></p>
 
-<p>运行Xming，再用putty连到服务器上，运行程序，就OK了。就好像windows下的本地程序一般。整合性很好。</p>
+<p>选取其中一个bottleneck分子YAP1进行了Westernblot和免疫组化验证，结果均具有统计学显著性。
+<a href="http://guangchuangyu.github.io/blog_images/2010/11/figure6.png"><img src="http://guangchuangyu.github.io/blog_images/2010/11/figure6.png" alt="" title="figure6" /></a></p>
 
-<p><img src="http://guangchuangyu.github.io/blog_images/2010/07/putty.png" alt="" /></p>
+<p><a href="http://guangchuangyu.github.io/blog_images/2010/11/figure8.png"><img src="http://guangchuangyu.github.io/blog_images/2010/11/figure8.png" alt="" title="figure8" /></a></p>
 
-<p>以后就可以不用重启了。直接在win7里远程用机房的linux。
-那台机子，网络中心的人给装的CentOS，我已经很多年没用redhat系列的系统了，CentOS是redhat企业版的社区版本。</p>
-
-<p>redhat系列用yum去安装软件，有些像debian的apt，我总觉得yum这名字好奇怪，查了一下，是<code>yellow dog updater,modified</code>的缩写，这样看来，这工具首先是出于黄狗系统中，黄狗系统是power构架上的Linux，也是redhat系列的，本科的时候，本来想在G3的机子上装这个，后来玩gentoo去了。</p>
-
-<p>可能是因为CentOS是企业版的缘故，很多软件都没有源，这也是apt的共同缺点，遇到官方源里没有的软件，就得自己手工添加源，所以还是gentoo和BSD系列好，完全不需要知道软件在那里，通常都懒得弄，直接下源码编译，比如要装R的时候，发现一堆包没装，装完了gcc/g77/g++等编译器之后，再编辑还是出错，一堆libs没装，还好这些都能通过yum去装，如果依赖的包没有yum的源中，自己手工解决依赖关系，虽然也简单，但挺烦人的。这也是gentoo和BSD系列的好处之一，基于源码编译，装完系统之后，手工去编译一个软件，很少有依赖包需要安装，该有的开发库基本上系统都装好了。</p>
-
-<p>CentOS源里的软件也比较老，装emacs，发现是老版本，还是gtk界面的，自己下cvs版本，编译。
-<code>.emacs</code>里设置一下，也OK。 <code>(set-default-font &quot;Monospace-14&quot;)</code></p>
-
-<p>以前曾在redhat上装过apt，显然现在有yum就不需要了，用了BSD和gentoo之后，感觉还是不爽，没玩过把gentoo的portage移植过来，倒是玩过netbsd的pkgsrc装到redhat上，<a href="http://www.netbsd.org/docs/software/packages.html">pkgsrc</a>本身就支持其它的Unix和Linux系统，源生态，安装方便，相当推荐。</p>
-
-<p>曾经还制作过<a href="http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/">eva和xlyrics的pkgsrc</a>。</p>
+<p>细胞样本的westernblot用ANOVA分析，p =
+0.01046；组织样本的westernblot用Welch two sample t test， p =
+0.01969；IHC用Wilcoxon signed rank test，p = 0.03301。</p>
 
 
  
@@ -182,12 +187,12 @@ ga('send', 'pageview');
   <p class="meta">
     <span class="byline author vcard">Posted by <span class="fn">Guangchuang Yu</span></span>
     
-    <time>Jul 5, 2010</time>
+    <time>Nov 23, 2010</time>
     <span class="categories">
       Tags:
         
         
-          <a class="category" href="https://guangchuangyu.github.io/cn/tags/x11">X11</a>  <a class="category" href="https://guangchuangyu.github.io/cn/tags/remote">remote</a>  
+          <a class="category" href="https://guangchuangyu.github.io/cn/tags/cancer">cancer</a>  <a class="category" href="https://guangchuangyu.github.io/cn/tags/phosphorylation">phosphorylation</a>  <a class="category" href="https://guangchuangyu.github.io/cn/tags/profile">profile</a>  
         
     </span>
   </p>
@@ -199,11 +204,11 @@ ga('send', 'pageview');
 
   <p class="meta">
     
-        <a class="basic-alignment left" href="https://guangchuangyu.github.io/cn/2009/07/bootstrap-method/" title="Bootstrap Method">Bootstrap Method</a>
+        <a class="basic-alignment left" href="https://guangchuangyu.github.io/cn/2010/07/xming-windows%E4%B8%8B%E8%BF%9C%E7%A8%8Blinux%E6%A1%8C%E9%9D%A2/" title="Xming-windows下远程linux桌面">Xming-windows下远程linux桌面</a>
     
 
     
-      <a class="basic-alignment right" href="https://guangchuangyu.github.io/cn/2010/11/phosphoproteome-profile-of-human-lung-cancer-cell-line-a549/" title="Phosphoproteome profile of human lung cancer cell line A549">Phosphoproteome profile of human lung cancer cell line A549</a>
+      <a class="basic-alignment right" href="https://guangchuangyu.github.io/cn/2011/06/five-things-biologists-should-know-about-statistics/" title="Five things biologists should know about statistics">Five things biologists should know about statistics</a>
     
   </p>
 
