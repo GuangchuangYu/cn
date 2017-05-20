@@ -111,6 +111,40 @@ ga('send', 'pageview');
     <article>
       <header>
         <h1 class="entry-title">
+          <a href="https://guangchuangyu.github.io/cn/2013/09/install-emacs-on-mac/">Install Emacs on Mac</a>
+        </h1>
+        <p class="meta">Sep 10, 2013 - 1 minute read -  <a href="https://guangchuangyu.github.io/cn/2013/09/install-emacs-on-mac/#disqus_thread">Comments</a>
+
+        
+        
+        
+        <a class="label" href="https://guangchuangyu.github.io/cn/categories/mac-os/">Mac OS</a>
+        </p>
+
+      </header>
+
+        
+          <p><h2 id="package-manager:a0d2dabbee19e6fccf2cd8eeaa0e67d0">package manager</h2>
+
+<p>之前一直用<a href="http://guangchuangyu.github.io/categories/bsd/">NetBSD</a>的<a href="http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/">pkgsrc</a>做为各种Unix-like系统的包管理系统，pkgsrc在自己内部解决依赖关系，这点对于生产环境来说，是很好的一个优点，我通常会在服务器里装一个pkgsrc，在用户目录下，维护一套UNIX软件。但是用在自己的机器上，内部解决软件依赖，就是个缺点，浪费编译时间和硬盘空间。</p>
+
+<p>Mac上可用的包管理系统很多，Fink移植于<a href="http://guangchuangyu.github.io/categories/linux/">Debian</a>的apt，<a href="http://guangchuangyu.github.io/categories/linux/">Gentoo</a>的portage也支持OS X。OS X是基于BSD的系统，BSD有自己的一套包管理系统，如FreeBSD的ports和<a href="http://guangchuangyu.github.io/categories/bsd/">NetBSD</a>的<a href="http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/">pkgsrc</a>，MacPorts可以看作是这一系列中的一个，不过它并不是OS X原生的，它只是OpenDarwin的子项目，所以和pkgsrc一个样，也是内部解决依赖，真正为OS
+X设计的原生包管理系统非Homebrew莫属，它会尽量依赖系统里已有的软件。</p>
+</p>
+
+          
+              <footer>
+                  <a href="https://guangchuangyu.github.io/cn/2013/09/install-emacs-on-mac/" rel="full-article">Read On &rarr;</a>
+              </footer>
+          
+
+        
+
+    </article>
+    
+    <article>
+      <header>
+        <h1 class="entry-title">
           <a href="https://guangchuangyu.github.io/cn/2013/07/permanent-head-damage-to-be/">Permanent Head Damage to be</a>
         </h1>
         <p class="meta">Jul 30, 2013 - 1 minute read -  <a href="https://guangchuangyu.github.io/cn/2013/07/permanent-head-damage-to-be/#disqus_thread">Comments</a>
@@ -214,38 +248,6 @@ maybe..，至于Han，我在研一的时候，去北大听过她的讲座，被�
         
           <p>跟某同学讲了T test之后，整理一下。 很多的检验和我们的直觉是一致的，前阵子在一个群里，有管理学院的人问说想看两个样本是不是来自于同一个分布，我叫他画两个CDF，一看就知道。对方说不要看图，我就让他用Kolmogorov-Smirnov Tests。我自己搜了一下，发现ks.test检验的就是拿两个CDF的距离做为统计量，虽然计算很复杂，但是和intuition那是相当一致啊。 最简单也最常用的，莫过于T检验，用我们的直觉就可以理解了，但是我发现不理解还有用错的人也挺多的。 我们要看一个样本的均值是不是等于0，最naive的办法就是看样本的均值和0差别多大。 这个比较之所以naive，因为没有考虑到数据的分布，从上图的两个populations来看，它们的均值都是0，从绿色的分布中抽到一个均值为3的样本，概率并不小，但是从红色的分布中得到这样一个样本，那就是小概率事件。所以不能单纯比较均值，而是要看均值的分布，从上面的populations上看，和数据的离散程度有关。 我们随机抽取100个sample，得到以下的均值分布： 我们需要对均值的离散程度做penalty，那么就可以考虑这样一个统计量mean(x)/SEM, SEM代表standard error of the mean，那么这个统计量比单纯的均值要科学得多。这个统计量，就是学生氏所定义的t。 如果没有大量的样本，是没办法估计SEM的，但是从上面两个图上看，样本间均值的标准误SEM，和总体数据的标准误是正相关的。而总体的标准误可以用样本的标准误,sd(x),来估计。如果我们考虑最简单的形式呢？定义统计量mean(x)/sd(x)。 那么，请等一下，我们还需要考虑到样本量的影响，如果sample size没有影响，那么我们就不需要采集大样本了。从我们的直觉上看，肯定是样本量越大，对总体参数的估计越准确了。 从图上看，还是和直觉很一致。sample size越大，分布越compact，对总体均值的估计也就越准确。那么就需要使用sample size进行加权，把统计量修改为mean(x)/sd(x) * f(n)，其中n为sample size。 我们可以想像，学生氏当年try了几种形式的f(n)，发现sqrt(n)效果最好。于是他就定义了统计量: t = mean(x)/(sd(x)/sqrt(n))。 sqrt(n)效果好，因为sd(x)/sqrt(n)正好是对样本间均值标准误SEM的估计。 我们又可以想像，学生氏当年收集了很多个样本，计算了多个t值，发现这些t值的分布是有规律的，有点像正态分布，学生氏把它定义为t分布，利用t分布的probability density function，就可以计算p-value啦。 上图就是从标准正态分布里抽取100个样本，所计算的t值分布。 很多人上课学不懂，我觉得是因为一上来告诉你t怎么算，但是没让你理解SEM，SEM是理解t值计算的关键。 算完t之后，一句话，符合t分布，然后就是查表看p值,或者让计算机算，太抽象，这世界本来没有t分布，是学生氏定义了t统计量，并发现符合某分布，把它定义为t分布，有计算机做simulation，重现这个过程，就不抽象了，也就好理解了。 至于两样本，如果是paired的话，那就是paired之间相减，用差值做单样本t检验。如果不是成对，那就是t=(mean(x1)-mean(x2))/SEDM. 其中SEDM代表standard error of difference of means，这里有一个pool与否的问题，SEDM看上去稍微复杂了一点点，但是basic idea是一样的，非常好理解。</p>
 
-          
-
-        
-
-    </article>
-    
-    <article>
-      <header>
-        <h1 class="entry-title">
-          <a href="https://guangchuangyu.github.io/cn/2012/04/enrichment-analysis/">enrichment analysis</a>
-        </h1>
-        <p class="meta">Apr 28, 2012 - 2 minute read -  <a href="https://guangchuangyu.github.io/cn/2012/04/enrichment-analysis/#disqus_thread">Comments</a>
-
-        
-        
-        
-        <a class="label" href="https://guangchuangyu.github.io/cn/categories/statistics/">Statistics</a>
-        </p>
-
-      </header>
-
-        
-          <p><p>经常看到一些饼图，描述某些事物的组成，比如说有钱人的学历分布，然后我们可以看到高学历所占比例并不高，根据这个比例下结论通常是错的，这些比例说明不了问题，如果把各种学历在总体人口中的分布做为背景进行考虑的话，你就会发现学历还是有点用的。
-当我们用组学测定了一大堆分子之后，我们希望站在更高的角度去看这些分子和那些生物学过程相关。那么通常各种注释，对这些基因/蛋白进行分类，那么从分类的比例上，是不能草率下结论，正如上面有钱人学历分布的例子一样。我们需要把总体的分布考虑进去。
-和某个注释/分类是否有相关性，把基因分成属于这一类，和不属于这一类两种，这就好比经典统计学中的白球和黑球的抽样问题。也可以列一个２x２的表，进行独立性分析。
-以文章<a href="http://cancerres.aacrjournals.org/content/62/16/4722">Gene Expression in Ovarian Cancer Reflects Both Morphology and Biological Behavior, Distinguishing Clear Cell from Other Poor-Prognosis Ovarian Carcinomas</a>所鉴定的差异基因为例。</p>
-</p>
-
-          
-              <footer>
-                  <a href="https://guangchuangyu.github.io/cn/2012/04/enrichment-analysis/" rel="full-article">Read On &rarr;</a>
-              </footer>
           
 
         
@@ -365,6 +367,10 @@ maybe..，至于Han，我在研一的时候，去北大听过她的讲座，被�
       
       
       <li class="post">
+        <a href="https://guangchuangyu.github.io/cn/2017/05/viziometric/">viziometric</a>
+      </li>
+      
+      <li class="post">
         <a href="https://guangchuangyu.github.io/cn/2017/05/enrichdavid%E6%94%AF%E6%8C%81%E8%87%AA%E5%AE%9A%E4%B9%89%E8%83%8C%E6%99%AF/">enrichDAVID支持自定义背景</a>
       </li>
       
@@ -378,10 +384,6 @@ maybe..，至于Han，我在研一的时候，去北大听过她的讲座，被�
       
       <li class="post">
         <a href="https://guangchuangyu.github.io/cn/2017/04/%E5%85%AC%E5%8F%B7%E7%8B%97%E7%9A%84%E7%A6%8F%E9%9F%B3/">公号狗的福音</a>
-      </li>
-      
-      <li class="post">
-        <a href="https://guangchuangyu.github.io/cn/2017/04/%E6%9D%A5%E8%87%AAr%E7%9A%84%E6%A1%8C%E9%9D%A2%E6%8F%90%E9%86%92/">来自R的桌面提醒</a>
       </li>
       
     </ul>
