@@ -18,7 +18,7 @@
 
   
   
-  <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/hugo-octopress.css">
+  <link rel="stylesheet" href="https://guangchuangyu.github.io/css/hugo-octopress.css">
 
   
   
@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
   
-  <link href="https://guangchuangyu.github.io/cn/favicon.png" rel="icon">
+  <link href="https://guangchuangyu.github.io/favicon.png" rel="icon">
 
   
   
@@ -41,7 +41,7 @@
   <meta name="author" content="Guangchuang Yu">
 
   
-  <meta name="generator" content="Hugo 0.15" />
+  <meta name="generator" content="Hugo 0.21" />
 
   
   
@@ -49,7 +49,7 @@
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
 ga('create', 'UA-77901140-1', 'auto');
 ga('send', 'pageview');
@@ -62,7 +62,7 @@ ga('send', 'pageview');
 
 <header role="banner"><hgroup>
   
-  <h1><a href="https://guangchuangyu.github.io/cn/">Guangchuang Yu</a></h1>
+  <h1><a href="https://guangchuangyu.github.io/">Guangchuang Yu</a></h1>
     <h2>a senior-in-age-but-not-senior-in-knowledge bioinformatician</h2>
 </hgroup></header>
 
@@ -92,7 +92,7 @@ ga('send', 'pageview');
 
 
 <ul class="subscription">
-  <a href="https://guangchuangyu.github.io/cn/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss-square fa-lg"></i></a>
+  <a href="https://guangchuangyu.github.io/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss-square fa-lg"></i></a>
 
   
   
@@ -117,7 +117,7 @@ ga('send', 'pageview');
 
           
           
-          <a class="label" href="https://guangchuangyu.github.io/cn/categories/r">R</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
+          <a class="label" href="https://guangchuangyu.github.io/categories/r">R</a><a class="label" href="https://guangchuangyu.github.io/categories/visualization">Visualization</a>
           </p>
         </header>
         <div class="entry-content">
@@ -141,13 +141,11 @@ ga('send', 'pageview');
 
 <br>
 
-    
-
-<h1 id="导言:da73b643e87724fe5d7ff0bc3037a1b6">导言</h1>
+    <h1 id="导言">导言</h1>
 
 <p>本文介绍了<strong>ggimage</strong>包，允许在<strong>ggplot2</strong>作图时嵌入图片，并支持<code>aes</code>映射，可以把离散型变量映射到不同图片。目前有几个包可以使用图片嵌入做图，但都是针对特定的场景，这里使用<strong>ggimage</strong>来展示在这些特定领域里的应用，<strong>ggimage</strong>的设计是通用的，并不被特定场景所限定，文末又介绍了用R图标来画出R、用饼图来画气泡图等实例。</p>
 
-<h1 id="图上嵌图片:da73b643e87724fe5d7ff0bc3037a1b6">图上嵌图片</h1>
+<h1 id="图上嵌图片">图上嵌图片</h1>
 
 <p>R 基础图形库（base graphics）可以在做图的时候嵌入图片，使用的是<code>graphics::rasterImage</code>：</p>
 
@@ -159,6 +157,8 @@ rasterImage(x, 2, 2, 6, 4)
 </code></pre>
 
 <p><img src="https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/raster.png" alt="R绘图嵌入图片演示" /></p>
+
+<p></p>
 
 <p>如果我们搜索&rdquo;ggplot2 image&rdquo;，会找到类似于下面这样的帖子/博文：</p>
 
@@ -188,7 +188,7 @@ p + annotation_custom(rasterGrob(x), 2, 6, 2, 4)
 
 <p><strong>ggtree</strong>和可视化有关的函数分两类，一类是加注释的图层，另一类是可视化操作树（比如像旋转、合并分支）。操作树的都是普通函数，而加注释的都是<code>geom</code>图层，除了<code>subview</code>和<code>phylopic</code>，这种所谓逼死处女座的存在，我早就想改成了<code>geom_subview</code>和<code>geom_phylopic</code>了（已实现），这也是为什么我要写<strong>ggimage</strong>的原因了。</p>
 
-<h1 id="安装:da73b643e87724fe5d7ff0bc3037a1b6">安装</h1>
+<h1 id="安装">安装</h1>
 
 <p><strong>ggimage</strong>依赖于<strong>EBImage</strong>来读图片，这是个Bioconductor包，所以我们需要额外的动作来安装它，用<code>setRepositories</code>把Bioconductor软件仓库加进来，这样<code>install.packages</code>也可以搜索到它的包。</p>
 
@@ -196,7 +196,7 @@ p + annotation_custom(rasterGrob(x), 2, 6, 2, 4)
 install.packages(&quot;ggimage&quot;)
 </code></pre>
 
-<h1 id="实例分析:da73b643e87724fe5d7ff0bc3037a1b6">实例分析</h1>
+<h1 id="实例分析">实例分析</h1>
 
 <p>据我所知目前支持使用图片的R包有<strong>CatterPlots</strong>, <strong>rphylopic</strong>, <strong>emoGG</strong>,
 <strong>ggflags</strong>这几个，都是为特定的目的而实现的，都有其特定的应用场景，而<strong>ggimage</strong>是的
@@ -357,11 +357,11 @@ p + geom_flag(y = -2, aes(image = code)) +
 
 <p><img src="https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/olympics_2016.png" alt="ggimage画国旗演示" /></p>
 
-<h2 id="ggimage:da73b643e87724fe5d7ff0bc3037a1b6"><strong>ggimage</strong></h2>
+<h2 id="ggimage"><strong>ggimage</strong></h2>
 
 <p>前面我们介绍了<strong>ggimage</strong>在一些场景的应用实例，虽然有专门的包针对这些应用场景，但<strong>ggimage</strong>在这些领域中的表现要比大多数的包要好（支持aes映射）。但<strong>ggimage</strong>的使用并不限于这些(<code>geom_phylopic</code>，<code>geom_emoji</code>和<code>geom_flag</code>只是通用图层<code>geom_image</code>的简单封装)，这里将展示一些有趣的例子。</p>
 
-<h3 id="用r图标来画r形状:da73b643e87724fe5d7ff0bc3037a1b6">用R图标来画R形状</h3>
+<h3 id="用r图标来画r形状">用R图标来画R形状</h3>
 
 <pre><code class="language-r">x &lt;- c(2, 2, 2, 2, 2, 3, 3, 3.5, 3.5, 4)
 y &lt;- c(2, 3, 4, 5, 6, 4, 6, 3, 5, 2)
@@ -374,7 +374,7 @@ ggplot(d, aes(x, y)) + geom_image(image = img, size = .1) +
 
 <p><img src="https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/R.png" alt="用R图标画R形状演示" /></p>
 
-<h3 id="嵌套式绘图:da73b643e87724fe5d7ff0bc3037a1b6">嵌套式绘图</h3>
+<h3 id="嵌套式绘图">嵌套式绘图</h3>
 
 <p>这里我要展示的是非常有名的气泡图（Bubble Plot），但气泡不是圆圈，而是使用
 <strong>ggplot2</strong>画的饼图，我先把饼图保存起来，再用<strong>ggimage</strong>拿来画，饼图的大小
@@ -532,7 +532,7 @@ order(crime$murder, decreasing = F) %&gt;%
 
 <p><code>geom_subview</code>可以图上嵌图，并不需要保存为图片，但对于<strong>ggplot2</strong>来讲，保存图片也是有好处的，因为<strong>ggplot2</strong>画图，点线是在数据空间上，随着我们保存图片的大小是按比例缩小或放大的，但文字是在像素空间上，和画图空间并不相关。所以当我们嵌图时缩小了画图窗口之后，字体会显得格外大，微调起来也比较繁琐，这时候保存为合适尺寸的图片，再用<code>geom_image</code>来加上去，显然就轻松得多。</p>
 
-<h3 id="其它来自r社区的例子:da73b643e87724fe5d7ff0bc3037a1b6">其它来自R社区的例子</h3>
+<h3 id="其它来自r社区的例子">其它来自R社区的例子</h3>
 
 <p>SAS博客对<code>M&amp;M</code>巧克力的<a href="http://blogs.sas.com/content/iml/2017/02/20/proportion-of-colors-mandms.html">颜色分布做了分析</a>，通过模拟估计不同颜色的置信区间。这个<a href="http://rpubs.com/hrbrmstr/mms">分析被翻译成R</a>，并产生下图：</p>
 
@@ -558,7 +558,7 @@ order(crime$murder, decreasing = F) %&gt;%
 <p>感谢大为和太云的校稿，特别是大为提出很多修改意见以及给出了用R画R的例子。</p>
 </blockquote>
 
-<h2 id="参考资料:da73b643e87724fe5d7ff0bc3037a1b6">参考资料</h2>
+<h2 id="参考资料">参考资料</h2>
 
 <ul>
 <li><a href="https://stackoverflow.com/questions/9917049/inserting-an-image-to-ggplot2">https://stackoverflow.com/questions/9917049/inserting-an-image-to-ggplot2</a></li>
@@ -574,7 +574,6 @@ order(crime$murder, decreasing = F) %&gt;%
 <li><a href="https://cran.r-project.org/package=scatterpie">https://cran.r-project.org/package=scatterpie</a></li>
 </ul>
 
-
  
         </div>
         
@@ -588,7 +587,7 @@ order(crime$murder, decreasing = F) %&gt;%
       Tags:
         
         
-          <a class="category" href="https://guangchuangyu.github.io/cn/tags/ggimage">ggimage</a>  <a class="category" href="https://guangchuangyu.github.io/cn/tags/ggplot2">ggplot2</a>  
+          <a class="category" href="https://guangchuangyu.github.io/tags/ggimage">ggimage</a>  <a class="category" href="https://guangchuangyu.github.io/tags/ggplot2">ggplot2</a>  
         
     </span>
   </p>
@@ -611,27 +610,6 @@ order(crime$murder, decreasing = F) %&gt;%
 
   
 
-  
-    
-      <div id="disqus_thread"></div>
-<script type="text/javascript">
-
-(function() {
-    
-    
-    
-    
-
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    var disqus_shortname = 'gcyu';
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-    
   
 </footer>
 
@@ -673,8 +651,6 @@ order(crime$murder, decreasing = F) %&gt;%
     
     <ul id="recent_posts">
       
-      
-        
       
       
       <li class="post">
@@ -739,7 +715,7 @@ order(crime$murder, decreasing = F) %&gt;%
 
 
 <footer role="contentinfo">
-  <p>Copyright &copy; 2017 Guangchuang Yu - <a href="https://guangchuangyu.github.io/cn/license/">License</a> - 
+  <p>Copyright &copy; 2017 Guangchuang Yu - <a href="https://guangchuangyu.github.io/license/">License</a> - 
   <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
 </p>
 

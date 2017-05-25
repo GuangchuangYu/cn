@@ -18,7 +18,7 @@
 
   
   
-  <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/hugo-octopress.css">
+  <link rel="stylesheet" href="https://guangchuangyu.github.io/css/hugo-octopress.css">
 
   
   
@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
   
-  <link href="https://guangchuangyu.github.io/cn/favicon.png" rel="icon">
+  <link href="https://guangchuangyu.github.io/favicon.png" rel="icon">
 
   
   
@@ -41,7 +41,7 @@
   <meta name="author" content="Guangchuang Yu">
 
   
-  <meta name="generator" content="Hugo 0.15" />
+  <meta name="generator" content="Hugo 0.21" />
 
   
   
@@ -49,7 +49,7 @@
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
 ga('create', 'UA-77901140-1', 'auto');
 ga('send', 'pageview');
@@ -62,7 +62,7 @@ ga('send', 'pageview');
 
 <header role="banner"><hgroup>
   
-  <h1><a href="https://guangchuangyu.github.io/cn/">Guangchuang Yu</a></h1>
+  <h1><a href="https://guangchuangyu.github.io/">Guangchuang Yu</a></h1>
     <h2>a senior-in-age-but-not-senior-in-knowledge bioinformatician</h2>
 </hgroup></header>
 
@@ -92,7 +92,7 @@ ga('send', 'pageview');
 
 
 <ul class="subscription">
-  <a href="https://guangchuangyu.github.io/cn/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss-square fa-lg"></i></a>
+  <a href="https://guangchuangyu.github.io/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss-square fa-lg"></i></a>
 
   
   
@@ -118,7 +118,7 @@ ga('send', 'pageview');
         
         
         
-        <a class="label" href="https://guangchuangyu.github.io/cn/categories/statistics/">Statistics</a>
+        <a class="label" href="https://guangchuangyu.github.io/categories/statistics/">Statistics</a>
         </p>
 
       </header>
@@ -127,8 +127,10 @@ ga('send', 'pageview');
           <p><p>经常看到一些饼图，描述某些事物的组成，比如说有钱人的学历分布，然后我们可以看到高学历所占比例并不高，根据这个比例下结论通常是错的，这些比例说明不了问题，如果把各种学历在总体人口中的分布做为背景进行考虑的话，你就会发现学历还是有点用的。
 当我们用组学测定了一大堆分子之后，我们希望站在更高的角度去看这些分子和那些生物学过程相关。那么通常各种注释，对这些基因/蛋白进行分类，那么从分类的比例上，是不能草率下结论，正如上面有钱人学历分布的例子一样。我们需要把总体的分布考虑进去。
 和某个注释/分类是否有相关性，把基因分成属于这一类，和不属于这一类两种，这就好比经典统计学中的白球和黑球的抽样问题。也可以列一个２x２的表，进行独立性分析。
-以文章<a href="http://cancerres.aacrjournals.org/content/62/16/4722">Gene Expression in Ovarian Cancer Reflects Both Morphology and Biological Behavior, Distinguishing Clear Cell from Other Poor-Prognosis Ovarian Carcinomas</a>所鉴定的差异基因为例。</p>
-</p>
+以文章<a href="http://cancerres.aacrjournals.org/content/62/16/4722">Gene Expression in Ovarian Cancer Reflects Both Morphology and Biological Behavior, Distinguishing Clear Cell from Other Poor-Prognosis Ovarian Carcinomas</a>所鉴定的差异基因为例。
+
+73个差异基因的Symbol，我把它转为 entrezgene
+ID得到57个（漏掉的不管它，只是做为一个例子）:</p></p>
 
           
               <footer>
@@ -150,7 +152,7 @@ ga('send', 'pageview');
         
         
         
-        <a class="label" href="https://guangchuangyu.github.io/cn/categories/statistics/">statistics</a>
+        <a class="label" href="https://guangchuangyu.github.io/categories/statistics/">statistics</a>
         </p>
 
       </header>
@@ -168,8 +170,7 @@ regression要求所有的点尽可能地远离中间那条线，而SVM是要求�
 <p>SVM对于hyperplane的定义，在形式上和logistic regression一样,logistic
 regression的decision boundary由$\theta^TX=0$确定,SVM则用$w^TX+b=0$表示,其中b相当于logistic regression中的$\theta_0$，从形式上看，两者并无区别，当然如前面所说，两者的目标不一样，logistic regression着眼于全局，SVM着眼于support
 vectors。有监督算法都有label变量y，logistic
-regression取值是<code>{0,1}</code>，而SVM为了计算距离方便，取值为<code>{-1,1}</code>。</p>
-</p>
+regression取值是<code>{0,1}</code>，而SVM为了计算距离方便，取值为<code>{-1,1}</code>。</p></p>
 
           
               <footer>
@@ -191,7 +192,7 @@ regression取值是<code>{0,1}</code>，而SVM为了计算距离方便，取值�
         
         
         
-        <a class="label" href="https://guangchuangyu.github.io/cn/categories/mac-os/">Mac OS</a>
+        <a class="label" href="https://guangchuangyu.github.io/categories/mac-os/">Mac OS</a>
         </p>
 
       </header>
@@ -199,10 +200,7 @@ regression取值是<code>{0,1}</code>，而SVM为了计算距离方便，取值�
         
           <p><p>初中时在杂志上看到苹果的彩壳机，从此叔就开始成为了苹果的脑残粉，还在K6-2和win98那会，就在玩macintosh主题。</p>
 
-<p>本科时，通过<a href="http://pearpc.sourceforge.net/">PearPC</a>来虚拟PowerPC，硬是在ATHLON XP 1700+这个破CPU上破了OS X Jaguar，那个慢啊，是无法忍受的。</p>
-
-<p>后来，有了一台<a href="http://guangchuangyu.github.io/categories/powerbook">powerbook</a>，却拿它来装<a href="http://guangchuangyu.github.io/2005/01/powerbook-g3%E4%B8%8A%E5%AE%89%E8%A3%85gentoo/">gentoo</a>和<a href="http://guangchuangyu.github.io/2006/06/%E5%AE%89%E8%A3%85os9%E5%92%8Cnetbsd%E5%8F%8C%E7%B3%BB%E7%BB%9F/">netbsd</a>。从那里候开始，基本上就只用Linux/BSD。</p>
-</p>
+<p>本科时，通过<a href="http://pearpc.sourceforge.net/">PearPC</a>来虚拟PowerPC，硬是在ATHLON XP 1700+这个破CPU上破了OS X Jaguar，那个慢啊，是无法忍受的。</p></p>
 
           
               <footer>
@@ -224,13 +222,17 @@ regression取值是<code>{0,1}</code>，而SVM为了计算距离方便，取值�
         
         
         
-        <a class="label" href="https://guangchuangyu.github.io/cn/categories/visualization/">Visualization</a>
+        <a class="label" href="https://guangchuangyu.github.io/categories/visualization/">Visualization</a>
         </p>
 
       </header>
 
         
-          <p>今天看到统计之都上的情人节心形图。 这次画的心形函数是： $ x = 16 (sin t)^3$ $ y = 13 cos t - 5 cos 2t - 2 cos 3t - cos 4t$ 尝试用ggplot2来画，结果如下： 代码见Github. 类似的心形图以前也是画过的，当然这样的函数图有很多，详见http://www.mathematische-basteleien.de/heart.htm，画起来也很容易。 倒是以前画过的蝙蝠侠logo，更有成就感些。</p>
+          <p>今天看到统计之都上的情人节心形图。
+这次画的心形函数是： $ x = 16 (sin t)^3$ $ y = 13 cos t - 5 cos 2t - 2 cos 3t - cos 4t$
+尝试用ggplot2来画，结果如下： 代码见Github.
+类似的心形图以前也是画过的，当然这样的函数图有很多，详见http://www.mathematische-basteleien.de/heart.htm，画起来也很容易。
+倒是以前画过的蝙蝠侠logo，更有成就感些。</p>
 
           
 
@@ -248,7 +250,7 @@ regression取值是<code>{0,1}</code>，而SVM为了计算距离方便，取值�
         
         
         
-        <a class="label" href="https://guangchuangyu.github.io/cn/categories/visualization/">Visualization</a>
+        <a class="label" href="https://guangchuangyu.github.io/categories/visualization/">Visualization</a>
         </p>
 
       </header>
@@ -263,8 +265,8 @@ list也有诸多讨论，因为它导致了某些包编译出错（估计是NAME
 
 <p>最明显的是现在画图速度变快了，不过我觉得最让人兴奋的是<code>guide_legend()</code>和<code>guide_colorbar()</code>两个函数，可以修改legend.</p>
 
-<p>画图的话，加了四个函数<code>geom_map()</code>, <code>geom_raster()</code>,<code>geom_dotplot()</code>和<code>geom_violin()</code>.</p>
-</p>
+<p>画图的话，加了四个函数<code>geom_map()</code>, <code>geom_raster()</code>,<code>geom_dotplot()</code>和<code>geom_violin()</code>.
+</p></p>
 
           
               <footer>
@@ -385,8 +387,6 @@ list也有诸多讨论，因为它导致了某些包编译出错（估计是NAME
     <ul id="recent_posts">
       
       
-        
-      
       
       <li class="post">
         <a href="https://guangchuangyu.github.io/cn/2017/05/viziometric/">viziometric</a>
@@ -450,7 +450,7 @@ list也有诸多讨论，因为它导致了某些包编译出错（估计是NAME
 
 
 <footer role="contentinfo">
-  <p>Copyright &copy; 2017 Guangchuang Yu - <a href="https://guangchuangyu.github.io/cn/license/">License</a> - 
+  <p>Copyright &copy; 2017 Guangchuang Yu - <a href="https://guangchuangyu.github.io/license/">License</a> - 
   <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
 </p>
 

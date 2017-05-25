@@ -18,7 +18,7 @@
 
   
   
-  <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/hugo-octopress.css">
+  <link rel="stylesheet" href="https://guangchuangyu.github.io/css/hugo-octopress.css">
 
   
   
@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
   
-  <link href="https://guangchuangyu.github.io/cn/favicon.png" rel="icon">
+  <link href="https://guangchuangyu.github.io/favicon.png" rel="icon">
 
   
   
@@ -41,7 +41,7 @@
   <meta name="author" content="Guangchuang Yu">
 
   
-  <meta name="generator" content="Hugo 0.15" />
+  <meta name="generator" content="Hugo 0.21" />
 
   
   
@@ -49,7 +49,7 @@
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
 ga('create', 'UA-77901140-1', 'auto');
 ga('send', 'pageview');
@@ -62,7 +62,7 @@ ga('send', 'pageview');
 
 <header role="banner"><hgroup>
   
-  <h1><a href="https://guangchuangyu.github.io/cn/">Guangchuang Yu</a></h1>
+  <h1><a href="https://guangchuangyu.github.io/">Guangchuang Yu</a></h1>
     <h2>a senior-in-age-but-not-senior-in-knowledge bioinformatician</h2>
 </hgroup></header>
 
@@ -92,7 +92,7 @@ ga('send', 'pageview');
 
 
 <ul class="subscription">
-  <a href="https://guangchuangyu.github.io/cn/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss-square fa-lg"></i></a>
+  <a href="https://guangchuangyu.github.io/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss-square fa-lg"></i></a>
 
   
   
@@ -117,7 +117,7 @@ ga('send', 'pageview');
 
           
           
-          <a class="label" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+          <a class="label" href="https://guangchuangyu.github.io/categories/r">R</a>
           </p>
         </header>
         <div class="entry-content">
@@ -141,15 +141,15 @@ ga('send', 'pageview');
 
 <br>
 
-    
-
-<blockquote>
+    <blockquote>
 <p>曾经QQ上有人叫我帮忙，跑某个R包做个分析，我一看那包，一堆bug，显然不能用，那就不是简单的事了，我可没空帮他写代码，于是他就经常恶心我，有事没事就来说我写ggtree没意义，不是实质科研，不如跟他做点牛逼的，不如再写个R包干他那事。昨天用马甲在进化群里问画树，我还热心贴个代码给他，说看不懂，我在群里说了，我写个文详细介绍一下。然而他的马甲身份暴露啦，所以今日跳票，我写好的文也不发了，你牛逼就不要用马甲来骗代码呀，ggtree没用你不要用呀，叔就是这么任性😎</p>
 </blockquote>
 
 <p>之前讲过某个R包我一看一堆bug，直接放弃，今天倒是拿出来晒一下，不为别的，我只想说一句，一知半解是很危险的，盲目相信软件也是很危险的。</p>
 
-<h2 id="比对-不比对-这是个严肃的问题:73d341715265d4d00941b1a9c2cbba18">比对？不比对？这是个严肃的问题</h2>
+<p></p>
+
+<h2 id="比对-不比对-这是个严肃的问题">比对？不比对？这是个严肃的问题</h2>
 
 <p>话说此包的输入是alignment，我刚开始也没看代码，照着示例跑一下，但读序列的时候，我就惊呆了，怎么读个fasta这么慢，于是我开始看代码，不看不知道，一看吓一跳：</p>
 
@@ -160,7 +160,7 @@ ga('send', 'pageview');
 然后这时候我们似乎觉得那里不妥！你把<code>-</code>全删了，等于是把比对序列变成了非比对序列。那么你要求输入是比对序列是为什么？！
 确实序列必须得是比对好的，因为这包就是要检测correlated mutations，它比的是codon, 这必须是比对好的序列才行，但在读序列的时候，就把-给删了，序列不再是比对好的，本来对应的codon现在必然很多都移位了，这在一开始就挖了巨大的坑。后面所有的计算必须都是辣鸡了。</p>
 
-<h2 id="codon比较-数数字你会吗:73d341715265d4d00941b1a9c2cbba18">codon比较，数数字你会吗？</h2>
+<h2 id="codon比较-数数字你会吗">codon比较，数数字你会吗？</h2>
 
 <p><a href="https://github.com/Bioconductor-mirror/CorMut/blob/master/R/CorMut-internal.R#L125-L129">https://github.com/Bioconductor-mirror/CorMut/blob/master/R/CorMut-internal.R#L125-L129</a>:</p>
 
@@ -173,7 +173,7 @@ ga('send', 'pageview');
 
 <p>这循环竟然不是一个codon一个codon来，而是一个base一个base地迭代，这里移动三个位置，拿到的都是同一个codon，然后它就去比较是否不同，数数目了，一个不同，数它3遍，我也是醉了。</p>
 
-<h2 id="p值你会算吗:73d341715265d4d00941b1a9c2cbba18">p值你会算吗？</h2>
+<h2 id="p值你会算吗">p值你会算吗？</h2>
 
 <p><a href="https://github.com/Bioconductor-mirror/CorMut/blob/release-3.4/R/kaksAA.R#L67-L77">https://github.com/Bioconductor-mirror/CorMut/blob/release-3.4/R/kaksAA.R#L67-L77</a>:</p>
 
@@ -198,7 +198,7 @@ LOD=-log10(LOD)
 
 <p>这个基本上你算出来会有很多0和NaN，精度问题嘛，这样算必须是不准的。然后他必须是跑了自己代码出不来p值，发现有很多NaN，也不去想为什么，直接把NaN给扔了。这根本就是错的，也不知道用pbinom去算，我也是服了。</p>
 
-<h2 id="总结:73d341715265d4d00941b1a9c2cbba18">总结</h2>
+<h2 id="总结">总结</h2>
 
 <p>我只是粗略地看了一下代码，就发现很多错误，而且几乎每个重要的部分都出错。问题肯定比我粗略看一下所能发现地多得多。</p>
 
@@ -214,7 +214,6 @@ LOD=-log10(LOD)
 
 <p>​</p>
 
-
  
         </div>
         
@@ -228,7 +227,7 @@ LOD=-log10(LOD)
       Tags:
         
         
-          <a class="category" href="https://guangchuangyu.github.io/cn/tags/cormut">CorMut</a>  
+          <a class="category" href="https://guangchuangyu.github.io/tags/cormut">CorMut</a>  
         
     </span>
   </p>
@@ -251,27 +250,6 @@ LOD=-log10(LOD)
 
   
 
-  
-    
-      <div id="disqus_thread"></div>
-<script type="text/javascript">
-
-(function() {
-    
-    
-    
-    
-
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    var disqus_shortname = 'gcyu';
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-    
   
 </footer>
 
@@ -313,8 +291,6 @@ LOD=-log10(LOD)
     
     <ul id="recent_posts">
       
-      
-        
       
       
       <li class="post">
@@ -379,7 +355,7 @@ LOD=-log10(LOD)
 
 
 <footer role="contentinfo">
-  <p>Copyright &copy; 2017 Guangchuang Yu - <a href="https://guangchuangyu.github.io/cn/license/">License</a> - 
+  <p>Copyright &copy; 2017 Guangchuang Yu - <a href="https://guangchuangyu.github.io/license/">License</a> - 
   <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
 </p>
 

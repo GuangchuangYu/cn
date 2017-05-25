@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 23 Mar 2017 14:30:00 +0800</lastBuildDate>
-    <atom:link href="https://guangchuangyu.github.io/cn/tags/emojifont/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://guangchuangyu.github.io/cn/tags/emojifont/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>News in emojifont</title>
@@ -19,88 +21,7 @@
 
 &lt;p&gt;emojifont就是用proto实现的，属于我的练手之作，很高兴深受大家的喜欢。&lt;/p&gt;
 
-&lt;p&gt;如果我想看一个emoji长啥样，用&lt;strong&gt;ggplot2&lt;/strong&gt;还是麻烦点，用ggplot2是这样画的：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/emojifont/tree.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;而用base plot，则相对简单些：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/emojifont/Screen Shot 2017-02-14 at 8.00.23 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;于是我有了要写个&lt;strong&gt;geom_emoji&lt;/strong&gt;图层的想法：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;我在想应该利用emojifont，写个geom_emoji图层，这样直接ggplot()+geom_emoji(&amp;ldquo;broken_heart&amp;rdquo;)就可以直接出来，ggplot()+geom_emoji(&amp;ldquo;chicken&amp;rdquo;)就出来一只，虽然emojifont已足够易用，但减少输入更加傻瓜，还是可以有的。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;过了一天，我就写了&lt;strong&gt;geom_emoji&lt;/strong&gt;，于是如果我想看某个emoji长什么样，比如下面画个玫瑰花：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot() + geom_emoji(&amp;quot;rose&amp;quot;) + theme_void()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/emojifont/rose.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这次的更新，我还换个emoji字体，升级到unicode 9，也就是最新加入的鸭子也能用咯：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot() + geom_emoji(&amp;quot;duck&amp;quot;) + theme_void()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/emojifont/duck.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;geom_emoji&lt;/strong&gt;让画散点也变得简单:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;x &amp;lt;- seq(-sqrt(17), sqrt(17), length.out=30)
-y1 &amp;lt;- 8*abs(x)/17 + 15* sqrt(17 - x^2)/17
-y2 &amp;lt;- 8*abs(x)/17 - 15* sqrt(17 - x^2)/17
-ggplot() + geom_emoji(&amp;quot;gift_heart&amp;quot;, x=x, y=c(y1, y2), color=&amp;quot;red&amp;quot;, size=10)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/emojifont/heart_of_heart.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;制作动图gif也是非常简单，这个代码简直如同人类语言一般：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;require(ggplot2)
-require(magick)
-require(purrr)
-
-x &amp;lt;- search_emoji(&amp;quot;heart&amp;quot;)
-
-plot_heart=function(x) {
- p = ggplot() + geom_emoji(x)
- o = paste0(x, &amp;quot;.png&amp;quot;)
- ggsave(o, p, width=5, height=5)
- o
- }
-
-x %&amp;gt;% map(plot_heart) %&amp;gt;% map(image_read) %&amp;gt;% 
-image_join() %&amp;gt;% image_animate(fps=1) %&amp;gt;% 
-image_write(&amp;quot;heart.gif&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/emojifont/heart.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;因为换了字体，所以和之前的不同，如果要去背景，只需要&lt;code&gt;+theme_void()&lt;/code&gt;就可以。&lt;/p&gt;
-
-&lt;p&gt;新版也不同你加载字体的，随包载入自动加载，当然以前的字体还能用，还用一样的办法手工加载。（所以说我这次升级很考究，原来的字体，老方法，新字体你啥都不用干）&lt;/p&gt;
-
-&lt;p&gt;同时加入的还有&lt;strong&gt;geom_fontawesome&lt;/strong&gt;图层，最新画hex sticker，用fontawesome蛮好用 -,-&lt;/p&gt;
-
-&lt;p&gt;这次更新，主要有3方面：升级了新字体，支持unicode 9；新加入的图层让你非常方便地看一看emoji表情长啥样；再者不需要手工加载字体了。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;我在网上看到香港R用户组的教学视频，发现我被‘出镜了’，讲解了emojifont包，好像我在香港还有点小名气，然而我并没有露过脸，视频中也没有。&lt;/p&gt;
-
-
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;//www.youtube.com/embed/t-tLnvaYKHw&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&#34; allowfullscreen frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
- &lt;/div&gt;
-
-</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -114,76 +35,7 @@ image_write(&amp;quot;heart.gif&amp;quot;)
 
 &lt;p&gt;无缘无故收到好几条消息，原来是用emoji画图。&lt;/p&gt;
 
-&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/pboesu&#34;&gt;@pboesu&lt;/a&gt; btw do you know the &lt;a href=&#34;https://twitter.com/guangchuangyu&#34;&gt;@guangchuangyu&lt;/a&gt; emojifont pkg? I&amp;#39;ve used it more than &lt;a href=&#34;https://twitter.com/millerdl&#34;&gt;@millerdl&lt;/a&gt; emoGG &lt;a href=&#34;https://t.co/p27fwEmDSD&#34;&gt;https://t.co/p27fwEmDSD&lt;/a&gt; but I like both &lt;a href=&#34;https://t.co/uV49WjOSp3&#34;&gt;https://t.co/uV49WjOSp3&lt;/a&gt;&lt;/p&gt;&amp;mdash; Maëlle Salmon (@ma_salmon) &lt;a href=&#34;https://twitter.com/ma_salmon/status/800009044123586560&#34;&gt;November 19, 2016&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;做为emojifont包的作者，我表示很高兴看到自己的包给大家带来乐趣，在回复中@milerdl说emoGG是他用了两个晚上写的，emojifont刚好也是我用了两个晚上写的，一个晚上支持了emoji字体，另一个晚上加入了fontawesome字体。&lt;/p&gt;
-
-&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Hi &lt;a href=&#34;https://twitter.com/guangchuangyu&#34;&gt;@guangchuangyu&lt;/a&gt; excellent &lt;a href=&#34;https://twitter.com/hashtag/rstats?src=hash&#34;&gt;#rstats&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/emojifont?src=hash&#34;&gt;#emojifont&lt;/a&gt; implementation! &lt;a href=&#34;https://t.co/lTIWDQ1zq0&#34;&gt;https://t.co/lTIWDQ1zq0&lt;/a&gt; very cool! &lt;a href=&#34;https://t.co/sCALpuWW28&#34;&gt;pic.twitter.com/sCALpuWW28&lt;/a&gt;&lt;/p&gt;&amp;mdash; Jo-fai (Joe) Chow (@matlabulous) &lt;a href=&#34;https://twitter.com/matlabulous/status/677205176663588865&#34;&gt;December 16, 2015&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;在写这个包之前，我早就有用emoji在R画图中，写这个包也正是为了回应emoGG，因为我觉得他的实现方式并不理想，而我的更为灵活。&lt;/p&gt;
-
-&lt;p&gt;回到主题上，我将展示使用emojifont来画图。&lt;/p&gt;
-
-&lt;p&gt;下面这个数据是我每年读书、看电影、听专辑的数目：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt; d
-   year category num
-1  2009     book  35
-2  2009    movie  64
-3  2009    music  24
-4  2010     book  34
-5  2010    movie  47
-6  2010    music  13
-7  2011     book  17
-8  2011    movie  18
-9  2011    music   2
-10 2012     book  25
-11 2012    movie  25
-12 2012    music   0
-13 2013     book  15
-14 2013    movie  17
-15 2013    music   0
-16 2014     book   8
-17 2014    movie  11
-18 2014    music   1
-19 2015     book   5
-20 2015    movie  14
-21 2015    music   0
-22 2016     book   4
-23 2016    movie  14
-24 2016    music   0
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;先加载所需的包和emoji字体：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;require(ggplot2)
-require(ggthemes)
-require(emojifont)
-load.emojifont()
-emo &amp;lt;- emoji(c(&amp;quot;book&amp;quot;, &amp;quot;movie_camera&amp;quot;, &amp;quot;musical_note&amp;quot;))
-names(emo) &amp;lt;- c(&#39;book&#39;, &#39;movie&#39;, &#39;music&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;画出趋势图，并在每个点上用相应的emoji字体标注：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;p &amp;lt;- ggplot(d, aes(x=factor(year), y=num, group=category, colour=category))
-p &amp;lt;- p +geom_line() +geom_text(aes(label=emo[category]), family=&#39;OpenSansEmoji&#39;, size=10) +xlab(NULL) + ylab(NULL) 
-
-更改一些背景等主题细节，设置中文字体等：
-p &amp;lt;- p + theme_fivethirtyeight() + scale_color_tableau()
-p &amp;lt;- p+theme(axis.text.x=element_text(face=&amp;quot;bold&amp;quot;, size=16), 
-        axis.text.y=element_text(face=&amp;quot;bold&amp;quot;, size=16))
- p &amp;lt;- p+theme(legend.text=element_text(size=16, family=&amp;quot;OpenSansEmoji&amp;quot;), 
-            legend.title=element_blank(), legend.position=&#39;none&#39;)
-p+ ggtitle(&#39;Y叔的书影音&#39;) + theme(plot.title=element_text(family=&#39;STKaiti&#39;))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;于是产生下图：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/Screen Shot 2016-11-21 at 7.47.34 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

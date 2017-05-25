@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 11 Apr 2017 12:23:16 +0800</lastBuildDate>
-    <atom:link href="https://guangchuangyu.github.io/cn/tags/notifier/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://guangchuangyu.github.io/cn/tags/notifier/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>来自R的桌面提醒</title>
@@ -31,19 +33,7 @@ notify(
 &lt;p&gt;​
 效果如下：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/gaborcsardi/notifier/master//inst/linux.png&#34; width=&#34;400&#34; alt=&#34;Linux&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/gaborcsardi/notifier/master//inst/windows.png&#34; width=&#34;400&#34; alt=&#34;Windows 8 or newer&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/gaborcsardi/notifier/master/inst/macos.png&#34; width=&#34;400&#34; alt=&#34;macOS&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/gaborcsardi/notifier/master//inst/oldwindows.png&#34; width=&#34;400&#34; alt=&#34;Old Windows&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;安装只需要：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;source(&amp;quot;https://install-github.me/gaborcsardi/notifier&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这个包还是很有用的，比如写点简单的脚本，放到系统服务里，可以做监测，有情况就可以给出提醒。&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

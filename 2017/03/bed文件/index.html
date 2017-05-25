@@ -18,7 +18,7 @@
 
   
   
-  <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/hugo-octopress.css">
+  <link rel="stylesheet" href="https://guangchuangyu.github.io/css/hugo-octopress.css">
 
   
   
@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
   
-  <link href="https://guangchuangyu.github.io/cn/favicon.png" rel="icon">
+  <link href="https://guangchuangyu.github.io/favicon.png" rel="icon">
 
   
   
@@ -41,7 +41,7 @@
   <meta name="author" content="Guangchuang Yu">
 
   
-  <meta name="generator" content="Hugo 0.15" />
+  <meta name="generator" content="Hugo 0.21" />
 
   
   
@@ -49,7 +49,7 @@
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
 ga('create', 'UA-77901140-1', 'auto');
 ga('send', 'pageview');
@@ -62,7 +62,7 @@ ga('send', 'pageview');
 
 <header role="banner"><hgroup>
   
-  <h1><a href="https://guangchuangyu.github.io/cn/">Guangchuang Yu</a></h1>
+  <h1><a href="https://guangchuangyu.github.io/">Guangchuang Yu</a></h1>
     <h2>a senior-in-age-but-not-senior-in-knowledge bioinformatician</h2>
 </hgroup></header>
 
@@ -92,7 +92,7 @@ ga('send', 'pageview');
 
 
 <ul class="subscription">
-  <a href="https://guangchuangyu.github.io/cn/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss-square fa-lg"></i></a>
+  <a href="https://guangchuangyu.github.io/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss-square fa-lg"></i></a>
 
   
   
@@ -117,7 +117,7 @@ ga('send', 'pageview');
 
           
           
-          <a class="label" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+          <a class="label" href="https://guangchuangyu.github.io/categories/r">R</a>
           </p>
         </header>
         <div class="entry-content">
@@ -141,9 +141,7 @@ ga('send', 'pageview');
 
 <br>
 
-    
-
-<p>BED的全称是Browser Extensible Data，顾名思义是为genome browser设计的，大名鼎鼎的bedtools可不是什么「床上用品」。</p>
+    <p>BED的全称是Browser Extensible Data，顾名思义是为genome browser设计的，大名鼎鼎的bedtools可不是什么「床上用品」。</p>
 
 <p>BED包含有3个必须的字段和9个可选字段。</p>
 
@@ -174,6 +172,8 @@ ga('send', 'pageview');
 <li>12 blockStarts - 子元件的起始位点</li>
 </ul>
 
+<p></p>
+
 <p>一般情况下，我们只用到前面5个字段，这也是做peak calling的MACS输出的字段。</p>
 
 <p>其中第5个字段，MACS的解释是这样子的：</p>
@@ -184,11 +184,11 @@ ga('send', 'pageview');
 
 <p>是片段堆积的峰高，这也不难理解，为什么我在ChIPseeker是画peak coverage的函数<strong>covplot</strong>要有个*weightCol*的参数了。</p>
 
-<h2 id="数据可视化:99328489e3689b55705b2759560872b2">数据可视化</h2>
+<h2 id="数据可视化">数据可视化</h2>
 
 <p>从名字上看，它是为genome browser而生，相应的，<strong>ChIPseeker</strong>实现了*covplot*来可视化BED数据。</p>
 
-<h3 id="covplot-支持直接读文件出图:99328489e3689b55705b2759560872b2"><strong>covplot</strong>支持直接读文件出图：</h3>
+<h3 id="covplot-支持直接读文件出图"><strong>covplot</strong>支持直接读文件出图：</h3>
 
 <pre><code class="language-r">library(ChIPseeker)
 library(ggplot2)
@@ -200,7 +200,7 @@ covplot(files[[4]])
 
 <p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/covplot_1.png" alt="" /></p>
 
-<h3 id="支持granges对象-同时可以多个文件或者grangeslist:99328489e3689b55705b2759560872b2">支持GRanges对象，同时可以多个文件或者GRangesList</h3>
+<h3 id="支持granges对象-同时可以多个文件或者grangeslist">支持GRanges对象，同时可以多个文件或者GRangesList</h3>
 
 <pre><code>peak=GenomicRanges::GRangesList(CBX6=readPeakFile(files[[4]]),
                                 CBX7=readPeakFile(files[[5]]))
@@ -209,7 +209,7 @@ covplot(peak, weightCol=&quot;V5&quot;) + facet_grid(chr ~ .id)
 
 <p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/covplot_2.png" alt="" /></p>
 
-<h3 id="支持可视化某个窗口:99328489e3689b55705b2759560872b2">支持可视化某个窗口</h3>
+<h3 id="支持可视化某个窗口">支持可视化某个窗口</h3>
 
 <pre><code>covplot(peak, weightCol=&quot;V5&quot;, chrs=c(&quot;chr17&quot;, &quot;chr18&quot;), xlim=c(4e7, 5e7)) + facet_grid(chr ~ .id)
 </code></pre>
@@ -220,12 +220,11 @@ covplot(peak, weightCol=&quot;V5&quot;) + facet_grid(chr ~ .id)
 
 <hr />
 
-<h2 id="citation:99328489e3689b55705b2759560872b2">Citation</h2>
+<h2 id="citation">Citation</h2>
 
 <p><strong><em>Yu G</em></strong>, Wang LG and He QY<sup>*</sup>. <a href="http://bioinformatics.oxfordjournals.org/content/31/14/2382">ChIPseeker: an R/Bioconductor package for ChIP peak annotation, comparison and visualization</a>. <strong><em>Bioinformatics</em></strong> 2015, 31(14):2382-2383.</p>
 
 <p><script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script><div class="altmetric-embed" data-badge-type="donut" data-badge-popover="right" data-altmetric-id="3781087"></div></p>
-
 
  
         </div>
@@ -240,7 +239,7 @@ covplot(peak, weightCol=&quot;V5&quot;) + facet_grid(chr ~ .id)
       Tags:
         
         
-          <a class="category" href="https://guangchuangyu.github.io/cn/tags/chipseeker">ChIPseeker</a>  <a class="category" href="https://guangchuangyu.github.io/cn/tags/chipseq">ChIPseq</a>  
+          <a class="category" href="https://guangchuangyu.github.io/tags/chipseeker">ChIPseeker</a>  <a class="category" href="https://guangchuangyu.github.io/tags/chipseq">ChIPseq</a>  
         
     </span>
   </p>
@@ -263,27 +262,6 @@ covplot(peak, weightCol=&quot;V5&quot;) + facet_grid(chr ~ .id)
 
   
 
-  
-    
-      <div id="disqus_thread"></div>
-<script type="text/javascript">
-
-(function() {
-    
-    
-    
-    
-
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    var disqus_shortname = 'gcyu';
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-    
   
 </footer>
 
@@ -325,8 +303,6 @@ covplot(peak, weightCol=&quot;V5&quot;) + facet_grid(chr ~ .id)
     
     <ul id="recent_posts">
       
-      
-        
       
       
       <li class="post">
@@ -391,7 +367,7 @@ covplot(peak, weightCol=&quot;V5&quot;) + facet_grid(chr ~ .id)
 
 
 <footer role="contentinfo">
-  <p>Copyright &copy; 2017 Guangchuang Yu - <a href="https://guangchuangyu.github.io/cn/license/">License</a> - 
+  <p>Copyright &copy; 2017 Guangchuang Yu - <a href="https://guangchuangyu.github.io/license/">License</a> - 
   <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
 </p>
 
