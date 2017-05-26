@@ -18,7 +18,7 @@
 
   
   
-  <link rel="stylesheet" href="https://guangchuangyu.github.io/css/hugo-octopress.css">
+  <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/hugo-octopress.css">
 
   
   
@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
   
-  <link href="https://guangchuangyu.github.io/favicon.png" rel="icon">
+  <link href="https://guangchuangyu.github.io/cn/favicon.png" rel="icon">
 
   
   
@@ -41,7 +41,7 @@
   <meta name="author" content="Guangchuang Yu">
 
   
-  <meta name="generator" content="Hugo 0.21" />
+  <meta name="generator" content="Hugo 0.15" />
 
   
   
@@ -49,7 +49,7 @@
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 ga('create', 'UA-77901140-1', 'auto');
 ga('send', 'pageview');
@@ -62,7 +62,7 @@ ga('send', 'pageview');
 
 <header role="banner"><hgroup>
   
-  <h1><a href="https://guangchuangyu.github.io/">Guangchuang Yu</a></h1>
+  <h1><a href="https://guangchuangyu.github.io/cn/">Guangchuang Yu</a></h1>
     <h2>a senior-in-age-but-not-senior-in-knowledge bioinformatician</h2>
 </hgroup></header>
 
@@ -92,7 +92,7 @@ ga('send', 'pageview');
 
 
 <ul class="subscription">
-  <a href="https://guangchuangyu.github.io/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss-square fa-lg"></i></a>
+  <a href="https://guangchuangyu.github.io/cn/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss-square fa-lg"></i></a>
 
   
   
@@ -117,7 +117,7 @@ ga('send', 'pageview');
 
           
           
-          <a class="label" href="https://guangchuangyu.github.io/categories/visualization">Visualization</a><a class="label" href="https://guangchuangyu.github.io/categories/r">R</a>
+          <a class="label" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
           </p>
         </header>
         <div class="entry-content">
@@ -148,8 +148,6 @@ ga('send', 'pageview');
 
 <p>他问题写的horizontal，但其实plot.hclust默认是vertical，ggtree默认也是horizontal，所以我认为他问的是vertical layout，这个在我的回答中也得到了他的确认。</p>
 
-<p></p>
-
 <pre><code>&gt; require(ggtree)
 &gt; set.seed(123)
 &gt; tr = rtree(30)
@@ -164,6 +162,7 @@ ga('send', 'pageview');
 
 <p>上面提到的这些布局，都可以有画phylogram或cladogram，差别在于phylogram有branch length而cladogram没有。而在层次聚类中，做的是聚类，而不是进化树，这是不同的概念，所以画出来的图相似，但却是不一样的东西，所以聚类分析的图叫dendrogram，像上面这个图，就是典型的dendrogram画法，显然看着和进化树是没什么差别的，只不过进化树一般从左到右画，而dendrogram画这种从上到下的形状还是比较常见的。虽然是不一样的东西，但从画图的角度来看，dendrogram和rectangular layout的phylogram/cladogram是一样的。所以要问ggtree能不能画dendrogram的形状，当然可以，要问能不能从上到下，当然可以，无非是坐标轴颠过来倒过去而已，就算你要画出从下到上，从右到左，都是没有问题的。</p>
 
+
  
         </div>
         
@@ -177,7 +176,7 @@ ga('send', 'pageview');
       Tags:
         
         
-          <a class="category" href="https://guangchuangyu.github.io/tags/ggtree">ggtree</a>  
+          <a class="category" href="https://guangchuangyu.github.io/cn/tags/ggtree">ggtree</a>  
         
     </span>
   </p>
@@ -200,6 +199,27 @@ ga('send', 'pageview');
 
   
 
+  
+    
+      <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    
+    
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'gcyu';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
   
 </footer>
 
@@ -241,6 +261,8 @@ ga('send', 'pageview');
     
     <ul id="recent_posts">
       
+      
+        
       
       
       <li class="post">
@@ -305,7 +327,7 @@ ga('send', 'pageview');
 
 
 <footer role="contentinfo">
-  <p>Copyright &copy; 2017 Guangchuang Yu - <a href="https://guangchuangyu.github.io/license/">License</a> - 
+  <p>Copyright &copy; 2017 Guangchuang Yu - <a href="https://guangchuangyu.github.io/cn/license/">License</a> - 
   <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
 </p>
 

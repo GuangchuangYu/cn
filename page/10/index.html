@@ -18,7 +18,7 @@
 
   
   
-  <link rel="stylesheet" href="https://guangchuangyu.github.io/css/hugo-octopress.css">
+  <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/hugo-octopress.css">
 
   
   
@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
   
-  <link href="https://guangchuangyu.github.io/favicon.png" rel="icon">
+  <link href="https://guangchuangyu.github.io/cn/favicon.png" rel="icon">
 
   
   
@@ -41,7 +41,7 @@
   <meta name="author" content="Guangchuang Yu">
 
   
-  <meta name="generator" content="Hugo 0.21" />
+  <meta name="generator" content="Hugo 0.15" />
 
   
   
@@ -49,7 +49,7 @@
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 ga('create', 'UA-77901140-1', 'auto');
 ga('send', 'pageview');
@@ -62,7 +62,7 @@ ga('send', 'pageview');
 
 <header role="banner"><hgroup>
   
-  <h1><a href="https://guangchuangyu.github.io/">Guangchuang Yu</a></h1>
+  <h1><a href="https://guangchuangyu.github.io/cn/">Guangchuang Yu</a></h1>
     <h2>a senior-in-age-but-not-senior-in-knowledge bioinformatician</h2>
 </hgroup></header>
 
@@ -92,7 +92,7 @@ ga('send', 'pageview');
 
 
 <ul class="subscription">
-  <a href="https://guangchuangyu.github.io/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss-square fa-lg"></i></a>
+  <a href="https://guangchuangyu.github.io/cn/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss-square fa-lg"></i></a>
 
   
   
@@ -118,7 +118,7 @@ ga('send', 'pageview');
         
         
         
-        <a class="label" href="https://guangchuangyu.github.io/categories/linux/">Linux</a>
+        <a class="label" href="https://guangchuangyu.github.io/cn/categories/linux/">Linux</a>
         </p>
 
       </header>
@@ -131,8 +131,7 @@ ga('send', 'pageview');
 
 <p>不过现在又回到学生时代了，所以还得继续学生屌丝的折腾，本科时从redhat,debian到gentoo，硕士时实验室的机器用ubuntu，而笔记本用NetBSD。这么多年的使用，该有的坑都填了，但是时代在发展，新坑还是不断有的，使用<a href="http://guangchuangyu.github.io/2014/05/%E6%9B%B4%E6%94%B9%E7%99%BE%E5%BA%A6%E4%BA%91%E5%90%8C%E6%AD%A5%E7%9B%98%E8%B7%AF%E5%BE%84/">百度云</a>来同步化文献库，就是最近的新坑，装上linux之后，发现度娘没有客户端，首先想到的当然是wine，wine出来的偶尔能行，时常崩溃，跟它死磕我也会崩溃，github上寻找开源实现，各种功能缺失和限制，那就只能虚拟机了，把home目录做为共享盘，挂到虚拟机中，但是度娘一直都是占100%
 CPU，然后数据无法同步，只有两个原因，不是硬盘就是网络，感觉好像我一个分区800G太大了，但在虚拟中对硬盘读写正常，网络因为使用NAT，虚拟成内网，有可能是这个原因，于是换成bridge，把虚拟机当成现实网络中的另一台主机，但度娘依然只占CPU，不干活。那只能还是硬盘问题，最后问题解决了，通过在linux中提供samba服务，然后在虚拟机中通过网上邻居把共享目录映射成网络驱动器，这时候度娘终于肯干活了。都不知道是virtualbox的驱动有问题，还是度娘太挑，这太TM坑了。</p>
-
-<p></p></p>
+</p>
 
           
               <footer>
@@ -154,13 +153,13 @@ CPU，然后数据无法同步，只有两个原因，不是硬盘就是网络�
         
         
         
-        <a class="label" href="https://guangchuangyu.github.io/categories/visualization/">Visualization</a>
+        <a class="label" href="https://guangchuangyu.github.io/cn/categories/visualization/">Visualization</a>
         </p>
 
       </header>
 
         
-          <p><h3 id="why-use-ggplot2">Why use ggplot2</h3>
+          <p><h3 id="why-use-ggplot2:c38c63fac86d2290b6bc01da39216614">Why use ggplot2</h3>
 
 <p>ggplot2是我见过最human friendly的画图软件，这得益于Leland Wilkinson在他的著作《<a href="http://book.douban.com/subject/10123863/">The Grammar of Graphics</a>》中提出了一套图形语法，把图形元素抽象成可以自由组合的成分，Hadley
 Wickham把这套想法在R中实现。</p>
@@ -168,8 +167,7 @@ Wickham把这套想法在R中实现。</p>
 <p>为什么要学习ggplot2，可以参考<a href="http://book.douban.com/subject/24527091/">ggplot2: 数据分析与图形艺术</a>的<a href="https://github.com/cosname/ggplot2-translation/blob/master/preface.md">序言</a>（btw: 在序言的最后，我被致谢了）。</p>
 
 <p>Hadley Wickham也给出<a href="https://github.com/hadley/ggplot2/wiki/Why-use-ggplot2">一堆理由</a>让我们说服自己，我想再补充一点，Hadley Wickham是学医出身的，做为学生物出身的人有什么理由不支持呢:)</p>
-
-<p></p></p>
+</p>
 
           
               <footer>
@@ -191,7 +189,7 @@ Wickham把这套想法在R中实现。</p>
         
         
         
-        <a class="label" href="https://guangchuangyu.github.io/categories/mac-os/">Mac OS</a><a class="label" href="https://guangchuangyu.github.io/categories/software/">Software</a>
+        <a class="label" href="https://guangchuangyu.github.io/cn/categories/mac-os/">Mac OS</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/software/">Software</a>
         </p>
 
       </header>
@@ -202,8 +200,7 @@ Wickham把这套想法在R中实现。</p>
 <p>度娘出手还是很大方的，我现在的网盘已经有3T，包括之前在推广阶段用1元买的1T。</p>
 
 <p><img src="http://guangchuangyu.github.io/blog_images/2014/05/Screenshot-2014-05-05-21.31.57.png" alt="" /></p>
-
-<p></p></p>
+</p>
 
           
               <footer>
@@ -225,7 +222,7 @@ Wickham把这套想法在R中实现。</p>
         
         
         
-        <a class="label" href="https://guangchuangyu.github.io/categories/visualization/">Visualization</a>
+        <a class="label" href="https://guangchuangyu.github.io/cn/categories/visualization/">Visualization</a>
         </p>
 
       </header>
@@ -237,8 +234,8 @@ Wickham把这套想法在R中实现。</p>
 plot，但直方图比饼图要好，因为人类的眼睛适合于比较高度，而不是弧度。</p>
 
 <p>多半时候生物学数据并非简单的计数数据，对于测量数据，在展示数据分布时，很多人会使用他们熟悉的barplot，用高度来表示mean，然后再加上errorbar，这样展示数据，信息量是非常低的，使用boxplot能够提供更多的数据分布信息，能更好地展现数据，但可能很多人只会在excel里画barplot，Nature
-Methods 2013年的文章中有100个barplot图，而只有20个boxplot图，从这里就可以看出来，用boxplot的人远远没有barplot多，于是NPG怒了，写了两篇专栏文章<a href="http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2807.html">Points of View: Bar charts and box plots</a>和<a href="http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2813.html">Points of Significance: Visualizing samples with box plots</a>并且发表了一篇<a href="http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2811.html">BoxPlotR: a web tool for generation of box plots</a>方便大家画boxplot，如此简单的web tool能够发Nature Methods，实在是让人羡慕妒忌恨啊。
-</p></p>
+Methods 2013年的文章中有100个barplot图，而只有20个boxplot图，从这里就可以看出来，用boxplot的人远远没有barplot多，于是NPG怒了，写了两篇专栏文章<a href="http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2807.html">Points of View: Bar charts and box plots</a>和<a href="http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2813.html">Points of Significance: Visualizing samples with box plots</a>并且发表了一篇<a href="http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2811.html">BoxPlotR: a web tool for generation of box plots</a>方便大家画boxplot，如此简单的web tool能够发Nature Methods，实在是让人羡慕妒忌恨啊。</p>
+</p>
 
           
               <footer>
@@ -260,18 +257,13 @@ Methods 2013年的文章中有100个barplot图，而只有20个boxplot图，从�
         
         
         
-        <a class="label" href="https://guangchuangyu.github.io/categories/biology/">Biology</a><a class="label" href="https://guangchuangyu.github.io/categories/research/">Research</a>
+        <a class="label" href="https://guangchuangyu.github.io/cn/categories/biology/">Biology</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/research/">Research</a>
         </p>
 
       </header>
 
         
-          <p>从2011年1月我就在实验室的QQ群里发群邮件说IPI关门，时至今日，已经关门3年了，主页上一直停留在关门大吉的那一刻。
-我不断在邮件里, lab meeting上强调要换成uniprot来搜库，然而时至今日，依然还是有很多的人在使用IPI，想想真可怕，实验室真是100年不更新一下数据啊。 另外一个我非常讨厌的就是GI号，它压根就不是正儿八经的ID号，但他们从来就不愿意尝试改变。
-比如上面这个蛋白质序列的FASTA文件，注释行有很多信息，比如：
-&gt;gi|16128001|ref|NP_414548.1| putative transporter [Escherichia coli str. K-12 substr. MG1655]  显然搜库时可以使用NP_414548.1做为ID，这个问题我说过N多遍，但他们一定会用他们惯用的gi|16128001来做ID。
-问题是很明显的：
- GI number (sometimes written in lower case, &ldquo;gi&rdquo;) is simply a series of digits that are assigned consecutively to each sequence record processed by NCBI. The GI number bears no resemblance to the Accession number of the sequence record. The GI number has been used for many years by NCBI to track sequence histories in GenBank and the other sequence databases it maintains.</p>
+          <p>从2011年1月我就在实验室的QQ群里发群邮件说IPI关门，时至今日，已经关门3年了，主页上一直停留在关门大吉的那一刻。 我不断在邮件里, lab meeting上强调要换成uniprot来搜库，然而时至今日，依然还是有很多的人在使用IPI，想想真可怕，实验室真是100年不更新一下数据啊。 另外一个我非常讨厌的就是GI号，它压根就不是正儿八经的ID号，但他们从来就不愿意尝试改变。 比如上面这个蛋白质序列的FASTA文件，注释行有很多信息，比如： &gt;gi|16128001|ref|NP_414548.1| putative transporter [Escherichia coli str. K-12 substr. MG1655] 显然搜库时可以使用NP_414548.1做为ID，这个问题我说过N多遍，但他们一定会用他们惯用的gi|16128001来做ID。 问题是很明显的： GI number (sometimes written in lower case, &ldquo;gi&rdquo;) is simply a series of digits that are assigned consecutively to each sequence record processed by NCBI. The GI number bears no resemblance to the Accession number of the sequence record. The GI number has been used for many years by NCBI to track sequence histories in GenBank and the other sequence databases it maintains.</p>
 
           
               <footer>
@@ -392,6 +384,8 @@ Methods 2013年的文章中有100个barplot图，而只有20个boxplot图，从�
     <ul id="recent_posts">
       
       
+        
+      
       
       <li class="post">
         <a href="https://guangchuangyu.github.io/cn/2017/05/viziometric/">viziometric</a>
@@ -455,7 +449,7 @@ Methods 2013年的文章中有100个barplot图，而只有20个boxplot图，从�
 
 
 <footer role="contentinfo">
-  <p>Copyright &copy; 2017 Guangchuang Yu - <a href="https://guangchuangyu.github.io/license/">License</a> - 
+  <p>Copyright &copy; 2017 Guangchuang Yu - <a href="https://guangchuangyu.github.io/cn/license/">License</a> - 
   <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
 </p>
 

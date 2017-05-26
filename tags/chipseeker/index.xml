@@ -7,9 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 31 Mar 2017 12:23:16 +0800</lastBuildDate>
-    
-	<atom:link href="https://guangchuangyu.github.io/cn/tags/chipseeker/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="https://guangchuangyu.github.io/cn/tags/chipseeker/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>关于ChIPseq注释的几个问题</title>
@@ -17,7 +15,9 @@
       <pubDate>Fri, 31 Mar 2017 12:23:16 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2017/03/%E5%85%B3%E4%BA%8Echipseq%E6%B3%A8%E9%87%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/</guid>
-      <description>&lt;h2 id=&#34;为什么我要用某个基因组版本&#34;&gt;为什么我要用某个基因组版本？&lt;/h2&gt;
+      <description>
+
+&lt;h2 id=&#34;为什么我要用某个基因组版本:015d79cbc951e2a010a6c641978ec0b8&#34;&gt;为什么我要用某个基因组版本？&lt;/h2&gt;
 
 &lt;p&gt;在上一篇文章中，我用了&lt;code&gt;TxDb.Hsapiens.UCSC.hg19.knownGene&lt;/code&gt;。 &lt;strong&gt;hg19&lt;/strong&gt;的&lt;strong&gt;TxDb&lt;/strong&gt;, 或者有人就要问了，为什么不用&lt;strong&gt;hg38&lt;/strong&gt;？&lt;/p&gt;
 
@@ -25,7 +25,7 @@
 
 &lt;p&gt;当然如果要（贵圈喜欢的）强搞，也不是不可以，你得有chain file，先跑个liftOver，实际上就是在两个基因组版本之间做了位置转换。&lt;/p&gt;
 
-&lt;h2 id=&#34;为什么说-chipseeker-支持所有物种&#34;&gt;为什么说&lt;strong&gt;ChIPseeker&lt;/strong&gt;支持所有物种？&lt;/h2&gt;
+&lt;h2 id=&#34;为什么说-chipseeker-支持所有物种:015d79cbc951e2a010a6c641978ec0b8&#34;&gt;为什么说&lt;strong&gt;ChIPseeker&lt;/strong&gt;支持所有物种？&lt;/h2&gt;
 
 &lt;p&gt;背景注释信息用了&lt;strong&gt;TxDb&lt;/strong&gt;就能保证所有物种都支持了？我去哪里找我要的&lt;strong&gt;TxDb&lt;/strong&gt;?&lt;/p&gt;
 
@@ -42,7 +42,58 @@
 &lt;li&gt;makeTxDbFromGFF：通过解析GFF文件制作TxDb&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;比如我想用人的参考基因信息来做注释，我们可以直接在线从UCSC生成&lt;strong&gt;TxDb&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;require(GenomicFeatures)
+hg19.refseq.db &amp;lt;- makeTxDbFromUCSC(genome=&amp;quot;hg19&amp;quot;, table=&amp;quot;refGene&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;比如最近在&lt;strong&gt;biostars&lt;/strong&gt;上有用户问到的，做裂殖酵母的注释，我们可以下载相应的&lt;strong&gt;GFF&lt;/strong&gt;文件，然后通过&lt;strong&gt;makeTxDbFromGFF&lt;/strong&gt;函数生成&lt;strong&gt;TxDb&lt;/strong&gt;对象，像下面的命令所演示，&lt;strong&gt;spombe&lt;/strong&gt;就是生成的&lt;strong&gt;TxDb&lt;/strong&gt;，就可以拿来做裂殖酵母的ChIPseq注释。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;download.file(&amp;quot;ftp://ftp.ebi.ac.uk/pub/databases/pombase/pombe/Chromosome_Dumps/gff3/schizosaccharomyces_pombe.chr.gff3&amp;quot;, &amp;quot;schizosaccharomyces_pombe.chr.gff3&amp;quot;)
+
+require(GenomicFeatures)
+spombe &amp;lt;- makeTxDbFromGFF(&amp;quot;schizosaccharomyces_pombe.chr.gff3&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;所以我敢说，所有物种都支持。像Johns Hopkins出品的CisGenome就只支持到12个物种而已，极大地限制了它的应用。&lt;/p&gt;
+
+&lt;h2 id=&#34;chipseeker-有什么不能注释的吗:015d79cbc951e2a010a6c641978ec0b8&#34;&gt;&lt;strong&gt;ChIPseeker&lt;/strong&gt;有什么不能注释的吗？&lt;/h2&gt;
+
+&lt;p&gt;这个我还没想到，像CpG是不支持的，但也有人「黑」出来了：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/CS/2017-03-13-003520_618x444_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;当然他的做法是把CpG也整合进去，如果你单纯只想看那些peak落在CpG上，或者说离CpG最近，不需要「黑」也能做到的，因为&lt;strong&gt;annotatePeak&lt;/strong&gt;的背景注释信息除了TxDb之外，其实它还可以是自定义的&lt;strong&gt;GRanges&lt;/strong&gt;对象，这保证了用户各种各样的需求，因为TxDb也不是万能的，如果能自定义，比如说我就只想看蛋白的结合位点会不会在内含子和外显子的交界处，再比如说我做的并不是编码蛋白的基因表达调控，而是非编码RNA，那么我想要用lncRNA的位置信息来做注释。像这样的需求，&lt;strong&gt;ChIPseeker&lt;/strong&gt;都是可以满足的。&lt;/p&gt;
+
+&lt;h2 id=&#34;可以按正负链分开注释吗:015d79cbc951e2a010a6c641978ec0b8&#34;&gt;可以按正负链分开注释吗？&lt;/h2&gt;
+
+&lt;p&gt;上一篇文章中就有人问了，能否同时给出正负链上最近的基因。首先ChIPseq数据通常情况下是没有正负链信息的（有特殊的实验可以有），&lt;strong&gt;annotatePeak&lt;/strong&gt;函数有参数是&lt;strong&gt;sameStrand&lt;/strong&gt;，默认是FALSE，你可以给你的peak分别赋正负链，然后传入&lt;strong&gt;sameStrand=TRUE&lt;/strong&gt;，分开做两次，你就可以分开拿到正链和负链的最近基因。&lt;/p&gt;
+
+&lt;h2 id=&#34;最近基因位置是相对于tss的-能否相对于整个基因:015d79cbc951e2a010a6c641978ec0b8&#34;&gt;最近基因位置是相对于TSS的，能否相对于整个基因？&lt;/h2&gt;
+
+&lt;p&gt;答案也是可以的！&lt;/p&gt;
+
+&lt;p&gt;首先如果peak和TSS有overlap，genomic annotation就是promoter，而最近基因也是同一个，所以在这种情况下，两种注释都指向同一个基因，可以说信息是冗余的，能不能不要冗余信息？这个是可以的，你可以传入参数&lt;strong&gt;ignoreOverlap=TRUE&lt;/strong&gt;，那么最近基因就会去找不overlap的。&lt;/p&gt;
+
+&lt;p&gt;最近基因是相对于TSS，如果和TSS有overlap，距离是0, 必须是最近。回到标题的问题，如果我想说只要和基因有overlap就是最近基因，这种情况其实你的最近基因就是host gene，也就是annotation这个column给出来的是相对应的，我们就想找peak所在位置的基因信息，那么这当然也是可以的，默认参数&lt;strong&gt;overlap=&amp;ldquo;TSS&amp;rdquo;&lt;/strong&gt;, 如果改为&lt;strong&gt;overlap=&amp;ldquo;all&amp;rdquo;&lt;/strong&gt;，它看的就是整个基因而不是TSS，当然&lt;strong&gt;distanceToTSS&lt;/strong&gt;也还是会计算，如果overlap的不是TSS，而是基因体里，并不会因为而设为0。&lt;/p&gt;
+
+&lt;h2 id=&#34;如果我只想注释上游或者是下游的基因呢:015d79cbc951e2a010a6c641978ec0b8&#34;&gt;如果我只想注释上游或者是下游的基因呢？&lt;/h2&gt;
+
+&lt;p&gt;当然也可以，我们有&lt;strong&gt;ignoreUpstream&lt;/strong&gt;和&lt;strong&gt;ignoreDownstream&lt;/strong&gt;参数，默认都是FALSE。随便你想看上游还是下游，都可以。&lt;/p&gt;
+
+&lt;h2 id=&#34;为什么要有这么多参数:015d79cbc951e2a010a6c641978ec0b8&#34;&gt;为什么要有这么多参数？&lt;/h2&gt;
+
+&lt;p&gt;我在前一篇，只讲了输入，输出，你知道两个输入，会看输出，你就可以做ChIPseq注释了，非常简单。但是我不能把annotatePeak能做的全列出来，会让大家觉得复杂。（而且简单的情况是最常见的行为）&lt;/p&gt;
+
+&lt;p&gt;在大家知道输入输出，觉得简单之后，再讲一讲，它有一些参数，可以应对别的情况，这些情况可能并不是我们做ChIPseq所需要的，但不同参数的灵活组合，是可以解决和应对不同的需求的。&lt;/p&gt;
+
+&lt;p&gt;比如说, DNA是可以断的，如果我们要对（DNA breakpoints）断点位置做注释，优先是overlap基因，再者是上游，你会发现很多软件都不能做了，但&lt;strong&gt;ChIPseeker&lt;/strong&gt;可以。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;做软件关键是要注重细节，不单注重自己需求的细节，更主要是要注重别人的细节&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
     </item>
     
     <item>
@@ -51,9 +102,11 @@
       <pubDate>Thu, 16 Mar 2017 12:23:16 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2017/03/peak%E6%B3%A8%E9%87%8A/</guid>
-      <description>&lt;p&gt;这一次讲解非常重要的peak注释，注释在&lt;strong&gt;ChIPseeker&lt;/strong&gt;里只需要用到一个函数&lt;strong&gt;annotatePeak&lt;/strong&gt;，它可以满足大家各方面的需求。&lt;/p&gt;
+      <description>
 
-&lt;h2 id=&#34;输入&#34;&gt;输入&lt;/h2&gt;
+&lt;p&gt;这一次讲解非常重要的peak注释，注释在&lt;strong&gt;ChIPseeker&lt;/strong&gt;里只需要用到一个函数&lt;strong&gt;annotatePeak&lt;/strong&gt;，它可以满足大家各方面的需求。&lt;/p&gt;
+
+&lt;h2 id=&#34;输入:4b21ea5970cfe309bb59877ac4e1f485&#34;&gt;输入&lt;/h2&gt;
 
 &lt;p&gt;当然需要我们上次讲到的BED文件，&lt;strong&gt;ChIPseeker&lt;/strong&gt;自带了5个BED文件，用&lt;strong&gt;getSampleFiles()&lt;/strong&gt;可以拿到文件的全路径，它返回的是个named list，我这里取第4个文件来演示。&lt;strong&gt;annotatePeak&lt;/strong&gt;的输入也可以是&lt;strong&gt;GRanges&lt;/strong&gt;对象，你如果用R做peak calling的话,直接就可以衔接上&lt;strong&gt;ChIPseeker&lt;/strong&gt;了。&lt;/p&gt;
 
@@ -85,8 +138,79 @@
 &lt;p&gt;这里需要注意的是，启动子区域是没有明确的定义的，所以你可能需要指定&lt;strong&gt;tssRegion&lt;/strong&gt;，把基因起始转录位点的上下游区域来做为启动子区域。&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;有了这两个输入（BED文件和TxDb对象），你就可以跑注释了，然后就可以出结果了。
-&lt;/p&gt;</description>
+&lt;p&gt;有了这两个输入（BED文件和TxDb对象），你就可以跑注释了，然后就可以出结果了。&lt;/p&gt;
+
+&lt;h2 id=&#34;输出:4b21ea5970cfe309bb59877ac4e1f485&#34;&gt;输出&lt;/h2&gt;
+
+&lt;p&gt;如果在R里打输出的对象，它会告诉我们ChIPseq的位点落在基因组上什么样的区域，分布情况如何。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; x
+Annotated peaks generated by ChIPseeker
+1331/1331  peaks were annotated
+Genomic Annotation Summary:
+             Feature  Frequency
+9           Promoter 48.1592787
+4             5&#39; UTR  0.7513148
+3             3&#39; UTR  4.2073629
+1           1st Exon  0.7513148
+7         Other Exon  3.9068370
+2         1st Intron  3.6814425
+8       Other Intron  7.7385424
+6 Downstream (&amp;lt;=3kb)  1.1269722
+5  Distal Intergenic 29.6769346
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果我想看具体的信息呢？你可以用&lt;strong&gt;as.GRanges&lt;/strong&gt;方法，这里我只打印前三行：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/CS/2017-03-09-235213_697x358_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Bioconductor里有很多包是针对&lt;strong&gt;GRanges&lt;/strong&gt;对象的，这样方便你在R里做后续的处理，如果你说你不懂这些，只想输出个Excel表格。那么也很容易，用&lt;strong&gt;as.data.frame&lt;/strong&gt;就可以转成&lt;strong&gt;data.frame&lt;/strong&gt;，然后你就可以用&lt;strong&gt;write.table&lt;/strong&gt;输出表格了。&lt;/p&gt;
+
+&lt;h2 id=&#34;两种-不同的注释:4b21ea5970cfe309bb59877ac4e1f485&#34;&gt;两种&lt;strong&gt;不同的注释&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;这里注释有两种，一种是genomic annotation (也就是annotation这一列）还有就是nearest gene annotation（也就是多出来的其它列）。&lt;/p&gt;
+
+&lt;p&gt;经常有人问我问题，把这两种搞混。genomic annotation注释的是peak的位置，它落在什么地方了，可以是UTR，可以是内含子或者外显子。&lt;/p&gt;
+
+&lt;p&gt;而最近基因是peak相对于转录起始位点的距离，不管这个peak是落在内含子或者别的什么位置上，即使它落在基因间区上，我都能够找到一个离它最近的基因（即使它可能非常远）。&lt;/p&gt;
+
+&lt;p&gt;这两种注释的策略是不一样的。针对不同的问题。第一种策略peak所在位置，可能就是调控的根本，比如你要做可变剪切的，最近基因的注释显然不是你关注的点。&lt;/p&gt;
+
+&lt;p&gt;而做基因表达调控的，当然promoter区域是重点，离结合位点最近的基因更有可能被调控。&lt;/p&gt;
+
+&lt;p&gt;最近基因的注释信息虽然是以基因为单位给出，但我们针对的是转录起始位点来计算距离，针对于不同的转录本，一个基因可能有多个转录起始位点，所以注释是在转录本的水平上进行的，我们可以看到输出有一列是&lt;strong&gt;transcriptId&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;第三种注释:4b21ea5970cfe309bb59877ac4e1f485&#34;&gt;第三种注释&lt;/h2&gt;
+
+&lt;p&gt;两种注释有时候还不够，我想看peak上下游某个范围内（比如说-5k到5k的距离）都有什么基因，&lt;strong&gt;annotatePeak&lt;/strong&gt;也可以做到。&lt;/p&gt;
+
+&lt;p&gt;你只要传个参数说你要这个信息，还有什么区间内，就可以了。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;x = annotatePeak(f[[4]], tssRegion=c(-1000, 1000), TxDb=txdb, addFlankGeneInfo=TRUE, flankDistance=5000)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/CS/2017-03-10-001539_1280x800_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;输出中多三列: &lt;strong&gt;flank_txIds&lt;/strong&gt;, &lt;strong&gt;flank_geneIds&lt;/strong&gt;和&lt;strong&gt;flank_gene_distances&lt;/strong&gt;，在指定范围内所有的基因都被列出。&lt;/p&gt;
+
+&lt;h2 id=&#34;基因注释:4b21ea5970cfe309bb59877ac4e1f485&#34;&gt;基因注释&lt;/h2&gt;
+
+&lt;p&gt;对于通常情况找最近基因的策略，最近基因给出来了，但都是各种人类不友好的ID，我们不能把一切都交给计算机，输出的结果我们还是要看一看的，能不能把基因的ID换成对人类友好的基因名，并给出描述性的全称，这个必然可以有。&lt;/p&gt;
+
+&lt;p&gt;只需要给&lt;strong&gt;annotatePeak&lt;/strong&gt;传入&lt;strong&gt;annoDb&lt;/strong&gt;参数就行了。&lt;/p&gt;
+
+&lt;p&gt;如果你的&lt;strong&gt;TxDb&lt;/strong&gt;的基因ID是Entrez，它会转成ENSEMBL，反之亦然，当然不管是那一种，都会给出SYMBOL，还有描述性的GENENAME.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/CS/2017-03-10-001907_1280x800_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;citation:4b21ea5970cfe309bb59877ac4e1f485&#34;&gt;Citation&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Yu G&lt;/em&gt;&lt;/strong&gt;, Wang LG and He QY&lt;sup&gt;*&lt;/sup&gt;. &lt;a href=&#34;http://bioinformatics.oxfordjournals.org/content/31/14/2382&#34;&gt;ChIPseeker: an R/Bioconductor package for ChIP peak annotation, comparison and visualization&lt;/a&gt;. &lt;strong&gt;&lt;em&gt;Bioinformatics&lt;/em&gt;&lt;/strong&gt; 2015, 31(14):2382-2383.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&#34;text/javascript&#34; src=&#34;https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js&#34;&gt;&lt;/script&gt;&lt;div class=&#34;altmetric-embed&#34; data-badge-type=&#34;donut&#34; data-badge-popover=&#34;right&#34; data-altmetric-id=&#34;3781087&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -95,7 +219,9 @@
       <pubDate>Thu, 09 Mar 2017 00:13:57 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2017/03/bed%E6%96%87%E4%BB%B6/</guid>
-      <description>&lt;p&gt;BED的全称是Browser Extensible Data，顾名思义是为genome browser设计的，大名鼎鼎的bedtools可不是什么「床上用品」。&lt;/p&gt;
+      <description>
+
+&lt;p&gt;BED的全称是Browser Extensible Data，顾名思义是为genome browser设计的，大名鼎鼎的bedtools可不是什么「床上用品」。&lt;/p&gt;
 
 &lt;p&gt;BED包含有3个必须的字段和9个可选字段。&lt;/p&gt;
 
@@ -126,7 +252,58 @@
 &lt;li&gt;12 blockStarts - 子元件的起始位点&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;一般情况下，我们只用到前面5个字段，这也是做peak calling的MACS输出的字段。&lt;/p&gt;
+
+&lt;p&gt;其中第5个字段，MACS的解释是这样子的：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The 5th column in this file is the summit height of fragment pileup.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;是片段堆积的峰高，这也不难理解，为什么我在ChIPseeker是画peak coverage的函数&lt;strong&gt;covplot&lt;/strong&gt;要有个*weightCol*的参数了。&lt;/p&gt;
+
+&lt;h2 id=&#34;数据可视化:99328489e3689b55705b2759560872b2&#34;&gt;数据可视化&lt;/h2&gt;
+
+&lt;p&gt;从名字上看，它是为genome browser而生，相应的，&lt;strong&gt;ChIPseeker&lt;/strong&gt;实现了*covplot*来可视化BED数据。&lt;/p&gt;
+
+&lt;h3 id=&#34;covplot-支持直接读文件出图:99328489e3689b55705b2759560872b2&#34;&gt;&lt;strong&gt;covplot&lt;/strong&gt;支持直接读文件出图：&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(ChIPseeker)
+library(ggplot2)
+
+files &amp;lt;- getSampleFiles()
+
+covplot(files[[4]])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/covplot_1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;支持granges对象-同时可以多个文件或者grangeslist:99328489e3689b55705b2759560872b2&#34;&gt;支持GRanges对象，同时可以多个文件或者GRangesList&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;peak=GenomicRanges::GRangesList(CBX6=readPeakFile(files[[4]]),
+                                CBX7=readPeakFile(files[[5]]))
+covplot(peak, weightCol=&amp;quot;V5&amp;quot;) + facet_grid(chr ~ .id)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/covplot_2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;支持可视化某个窗口:99328489e3689b55705b2759560872b2&#34;&gt;支持可视化某个窗口&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;covplot(peak, weightCol=&amp;quot;V5&amp;quot;, chrs=c(&amp;quot;chr17&amp;quot;, &amp;quot;chr18&amp;quot;), xlim=c(4e7, 5e7)) + facet_grid(chr ~ .id)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/covplot_3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;拿到数据后，我们首先会可视化看一下数据，接下来就会想知道这些peak都和什么样的基因有关，这将在下次讲解，如何做注释。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;citation:99328489e3689b55705b2759560872b2&#34;&gt;Citation&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Yu G&lt;/em&gt;&lt;/strong&gt;, Wang LG and He QY&lt;sup&gt;*&lt;/sup&gt;. &lt;a href=&#34;http://bioinformatics.oxfordjournals.org/content/31/14/2382&#34;&gt;ChIPseeker: an R/Bioconductor package for ChIP peak annotation, comparison and visualization&lt;/a&gt;. &lt;strong&gt;&lt;em&gt;Bioinformatics&lt;/em&gt;&lt;/strong&gt; 2015, 31(14):2382-2383.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&#34;text/javascript&#34; src=&#34;https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js&#34;&gt;&lt;/script&gt;&lt;div class=&#34;altmetric-embed&#34; data-badge-type=&#34;donut&#34; data-badge-popover=&#34;right&#34; data-altmetric-id=&#34;3781087&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -135,7 +312,9 @@
       <pubDate>Mon, 20 Feb 2017 12:23:16 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2017/02/chipseq%E7%AE%80%E4%BB%8B/</guid>
-      <description>&lt;p&gt;ChIP是指染色质免疫沉淀，它通过特异结合抗体将DNA结合蛋白免疫沉淀，可以用于捕获蛋白质（如转录因子，组蛋白修饰）的DNA靶点。这技术存在非常久了，在二代测序之前，结合microarray，它的名字叫&lt;code&gt;ChIP-on-chip&lt;/code&gt;，二代测序出来之后，显而易见的，免疫沉淀拉下来的DNA拿去NGS测序，这必然是下一代的ChIP技术，优点也是显而易见的，不再需要设计探针（往往存在着一定的偏向性）。所以NGS出来以后，不差钱的牛逼实验室显然占据上风，谁先做出来，谁就定义了新技术。这是有钱人的竞赛，没钱的只能等着技术烂大街的时候跟风做。&lt;/p&gt;
+      <description>
+
+&lt;p&gt;ChIP是指染色质免疫沉淀，它通过特异结合抗体将DNA结合蛋白免疫沉淀，可以用于捕获蛋白质（如转录因子，组蛋白修饰）的DNA靶点。这技术存在非常久了，在二代测序之前，结合microarray，它的名字叫&lt;code&gt;ChIP-on-chip&lt;/code&gt;，二代测序出来之后，显而易见的，免疫沉淀拉下来的DNA拿去NGS测序，这必然是下一代的ChIP技术，优点也是显而易见的，不再需要设计探针（往往存在着一定的偏向性）。所以NGS出来以后，不差钱的牛逼实验室显然占据上风，谁先做出来，谁就定义了新技术。这是有钱人的竞赛，没钱的只能等着技术烂大街的时候跟风做。&lt;/p&gt;
 
 &lt;p&gt;这是显而易见的下一代技术，外加技术上完全是可行的，所以这是一场单纯的时间竞赛，于是几乎同时出来CNS文章，基本上谁也不比谁差地同时扔出来。&lt;/p&gt;
 
@@ -149,7 +328,35 @@
 
 &lt;p&gt;2007年来自三个不同的实验室，几乎是同时间出来（最长差不了3个月），分别发CNS，一起定义了这个&lt;code&gt;ChIPseq&lt;/code&gt;技术。&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/CS/chipseq.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这个技术分为4步：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Cross-linking&lt;/li&gt;
+&lt;li&gt;Sonication&lt;/li&gt;
+&lt;li&gt;IP&lt;/li&gt;
+&lt;li&gt;Sequencing&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;DNA和蛋白质交联(cross-linking)，超声(sonication)将染色体随机切割，利用抗原抗体的特异性识别(IP)，把&lt;strong&gt;目标蛋白&lt;/strong&gt;相结合的DNA片段沉淀下来，反交联释放DNA片段，最后是测序(sequencing)。&lt;/p&gt;
+
+&lt;p&gt;一个典型的分析流程如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/CS/ChIP-seq-1.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;测序之后，我们当然首先需要做质量控制，然后就是做mapping，拿到这些DNA片段在染色体上的位置信息，ChIPseq的数据我们还需要做peak calling，把背景噪声去掉，比如上图中使用MACS做peak calling，这样我们就得到了protein binding site (peak)，就可以做下游的分析，比如可视化、相关的基因（比如最近的基因、宿主基因）、Motif分析等等。&lt;/p&gt;
+
+&lt;p&gt;Peak annotation做的就是binding site的相关基因注释，在讲解&lt;code&gt;ChIPseeker&lt;/code&gt;的注释功能之前，下次先讲解一下peak calling的输出，BED文件。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;citation:f7b0a5b14beddee41d112cfd5bca1431&#34;&gt;Citation&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Yu G&lt;/em&gt;&lt;/strong&gt;, Wang LG and He QY&lt;sup&gt;*&lt;/sup&gt;. &lt;a href=&#34;http://bioinformatics.oxfordjournals.org/content/31/14/2382&#34;&gt;ChIPseeker: an R/Bioconductor package for ChIP peak annotation, comparison and visualization&lt;/a&gt;. &lt;strong&gt;&lt;em&gt;Bioinformatics&lt;/em&gt;&lt;/strong&gt; 2015, 31(14):2382-2383.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&#34;text/javascript&#34; src=&#34;https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js&#34;&gt;&lt;/script&gt;&lt;div class=&#34;altmetric-embed&#34; data-badge-type=&#34;donut&#34; data-badge-popover=&#34;right&#34; data-altmetric-id=&#34;3781087&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -158,7 +365,9 @@
       <pubDate>Sun, 08 Jan 2017 22:53:00 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2017/01/chipseq%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E6%94%BE%E5%BC%83/</guid>
-      <description>&lt;p&gt;接下来要出一个ChIPseq系列，讲一讲ChIPseq和我的ChIPseeker包，从入门到放弃是我自己的个人写照。我做ChIPseq总共也就3个月的时间，做的事情并不多，在一知半解的情况下写下了ChIPseeker包。&lt;/p&gt;
+      <description>
+
+&lt;p&gt;接下来要出一个ChIPseq系列，讲一讲ChIPseq和我的ChIPseeker包，从入门到放弃是我自己的个人写照。我做ChIPseq总共也就3个月的时间，做的事情并不多，在一知半解的情况下写下了ChIPseeker包。&lt;/p&gt;
 
 &lt;p&gt;我当时被要求做ChIPseq分析是为他人做嫁衣，而且是完全白干那种，但做为学生，白干也得干。&lt;/p&gt;
 
@@ -166,7 +375,42 @@
 
 &lt;p&gt;当时一开始使用ChIPpeakAnno做注释，但用UCSC genome browser检验结果的时候，发现对不上。在对ChIPpeakAnno包不满意的情况下，开始着手写ChIPseeker，其实在使用ChIPpeakAnno的时候，我就有写代码对结果做一些可视化，所以未有ChIPseeker先有ChIPseeker的部分可视化功能。当时写了篇博客文说ChIPpeakAnno的问题，一个月后就在Bioconductor上发表了ChIPseeker，这包完全是我半夜在宿舍里写出来的。&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;当时还在生物系，被我炒掉的前老板每天要求必须起码在实验室待够12小时，我每天都待到10点半左右才回宿舍，日常在实验室里啥都干不了，白天各种瞎折腾，晚上还要陪他聊天，但说来说去，每天几乎都差不多，无非是他很牛逼，我们这帮人读他phd实在太幸运，日复一日传销式洗脑。而我因为结婚了，家又离得近，周末回家，白天经常多一段单独对我的洗脑，做为一个PhD学生，在发表文章之前是不能够有周末的。每天10半从实验室里出来，回到宿舍11点，跟老婆打电话再洗澡，12点。然后从12点开始写代码到2点睡觉，才有了这个包。&lt;/p&gt;
+
+&lt;p&gt;虽然是一知半解的时候开发的，但还是受到大家的欢迎，半年前Matt邀请我去人大做报告时，也专门提到了ChIPseeker。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/2017-01-08-212729_758x479_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;也有美国的助理教授，跟我要paper，说是上课的时候，要给学生读的，这广告效果我给满分。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/2017-01-08-213021_777x396_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;文章发表了一年，已经被33篇文章引用，其中不乏有影响因子比较高的杂志：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/2017-01-08-213354_874x413_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;下面是其中一些引用文章的图：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/featured_img/ChIPseeker/journal.pcbi.1004751.g003.PNG&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/featured_img/ChIPseeker/F9.large.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/featured_img/ChIPseeker/heatmap2016.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;虽然ChIPseeker是我写给自己做ChIPseq注释的，但Ming Tang (&lt;a href=&#34;https://github.com/crazyhottommy/ChIP-seq-analysis）用它去做DNA&#34;&gt;https://github.com/crazyhottommy/ChIP-seq-analysis）用它去做DNA&lt;/a&gt; breakdown注释，当然像lincRNA注释也是有人做并且完全是支持的。有一些我以前从没在文档里提到的东西，也应该会在这个系列里写出来。&lt;/p&gt;
+
+&lt;p&gt;这个系列基本上是围绕着ChIPseeker的功能而来，名副其实从入门到放弃，因为我自己也是入了门然后放弃，如果想看从入门到精通的，这显然不适合你。&lt;/p&gt;
+
+&lt;p&gt;然而今天只是个剧透，敬请期待。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;citation:a8b93710fa062264a16d6634eafe708c&#34;&gt;Citation&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Yu G&lt;/em&gt;&lt;/strong&gt;, Wang LG and He QY&lt;sup&gt;*&lt;/sup&gt;. &lt;a href=&#34;http://bioinformatics.oxfordjournals.org/content/31/14/2382&#34;&gt;ChIPseeker: an R/Bioconductor package for ChIP peak annotation, comparison and visualization&lt;/a&gt;. &lt;strong&gt;&lt;em&gt;Bioinformatics&lt;/em&gt;&lt;/strong&gt; 2015, 31(14):2382-2383.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&#34;text/javascript&#34; src=&#34;https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js&#34;&gt;&lt;/script&gt;&lt;div class=&#34;altmetric-embed&#34; data-badge-type=&#34;donut&#34; data-badge-popover=&#34;right&#34; data-altmetric-id=&#34;3781087&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -175,9 +419,1003 @@
       <pubDate>Wed, 13 Jul 2016 21:06:59 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2016/07/evolution-of-my-bioc-packages/</guid>
-      <description>&lt;p&gt;发现Youtube上有一个视频叫&lt;a href=&#34;https://www.youtube.com/watch?v=MYTblx-5Yog&#34;&gt;Evolution of clusterProfiler&lt;/a&gt;, 是Landon Wilkins用&lt;a href=&#34;http://gource.io/&#34;&gt;Gource&lt;/a&gt;做的。于是我也来玩一下，看一下自己这几年码代码的过程。&lt;/p&gt;
+      <description>
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;发现Youtube上有一个视频叫&lt;a href=&#34;https://www.youtube.com/watch?v=MYTblx-5Yog&#34;&gt;Evolution of clusterProfiler&lt;/a&gt;, 是Landon Wilkins用&lt;a href=&#34;http://gource.io/&#34;&gt;Gource&lt;/a&gt;做的。于是我也来玩一下，看一下自己这几年码代码的过程。&lt;/p&gt;
+
+&lt;p&gt;把我几个Bioconductor包的commit log整合到一起，做了以下视频：&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//player.vimeo.com/video/174519724&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&#34; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+ &lt;/div&gt;
+
+
+&lt;p&gt;下面是这几个包的下载统计，从下图可以知道各个包在视频中出现的大概时间。2015年之后活动很频繁，因为在过去的一年半时间里，我花了非常多时间在&lt;code&gt;ggtree&lt;/code&gt;上面。&lt;/p&gt;
+
+&lt;p&gt;&lt;link rel=&#39;stylesheet&#39; href=&#39;https://guangchuangyu.github.io/resume/css/morris.css&#39;&gt;
+&lt;script src=&#39;https://guangchuangyu.github.io/resume/css/jquery.min.js&#39; type=&#39;text/javascript&#39;&gt;&lt;/script&gt;
+&lt;script src=&#39;https://guangchuangyu.github.io/resume/css/raphael-min.js&#39; type=&#39;text/javascript&#39;&gt;&lt;/script&gt;
+&lt;script src=&#39;https://guangchuangyu.github.io/resume/css/morris-0.4.2.min.js&#39; type=&#39;text/javascript&#39;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;style&gt;
+.rChart {
+display: block;
+margin-left: auto; 
+margin-right: auto;
+width: 800px;
+height: 400px;
+}
+&lt;/style&gt;
+
+&lt;div id = &#39;chart468345f7b2f0&#39; class = &#39;rChart morris&#39;&gt;&lt;/div&gt;
+
+&lt;script type=&#39;text/javascript&#39;&gt;
+var chartParams = {
+&#34;element&#34;: &#34;chart468345f7b2f0&#34;,
+&#34;width&#34;:            800,
+&#34;height&#34;:            400,
+&#34;xkey&#34;: &#34;end&#34;,
+&#34;ykeys&#34;: [
+ &#34;ChIPseeker&#34;,
+&#34;clusterProfiler&#34;,
+&#34;DOSE&#34;,
+&#34;ggtree&#34;,
+&#34;GOSemSim&#34;,
+&#34;ReactomePA&#34; 
+],
+&#34;data&#34;: [
+ {
+ &#34;start&#34;:          14245,
+&#34;end&#34;: &#34;2009-01-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 20,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14276,
+&#34;end&#34;: &#34;2009-02-28&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 40,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14304,
+&#34;end&#34;: &#34;2009-03-31&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 75,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14335,
+&#34;end&#34;: &#34;2009-04-29&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 141,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14365,
+&#34;end&#34;: &#34;2009-05-31&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 219,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14396,
+&#34;end&#34;: &#34;2009-06-29&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 183,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14426,
+&#34;end&#34;: &#34;2009-07-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 178,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14457,
+&#34;end&#34;: &#34;2009-08-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 157,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14488,
+&#34;end&#34;: &#34;2009-09-29&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 281,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14518,
+&#34;end&#34;: &#34;2009-10-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 222,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14549,
+&#34;end&#34;: &#34;2009-11-29&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 284,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14579,
+&#34;end&#34;: &#34;2009-12-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 263,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14610,
+&#34;end&#34;: &#34;2010-01-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 235,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14641,
+&#34;end&#34;: &#34;2010-02-28&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 291,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14669,
+&#34;end&#34;: &#34;2010-03-31&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 278,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14700,
+&#34;end&#34;: &#34;2010-04-29&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 274,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14730,
+&#34;end&#34;: &#34;2010-05-31&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 400,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14761,
+&#34;end&#34;: &#34;2010-06-29&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 323,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14791,
+&#34;end&#34;: &#34;2010-07-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 242,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14822,
+&#34;end&#34;: &#34;2010-08-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 176,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14853,
+&#34;end&#34;: &#34;2010-09-29&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 214,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14883,
+&#34;end&#34;: &#34;2010-10-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 191,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14914,
+&#34;end&#34;: &#34;2010-11-29&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 231,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14944,
+&#34;end&#34;: &#34;2010-12-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 207,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14975,
+&#34;end&#34;: &#34;2011-01-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 207,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          15006,
+&#34;end&#34;: &#34;2011-02-28&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 158,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          15034,
+&#34;end&#34;: &#34;2011-03-31&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 14,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 169,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          15065,
+&#34;end&#34;: &#34;2011-04-29&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 49,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 205,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          15095,
+&#34;end&#34;: &#34;2011-05-31&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 111,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 218,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          15126,
+&#34;end&#34;: &#34;2011-06-29&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 104,
+&#34;DOSE&#34;: 19,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 279,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          15156,
+&#34;end&#34;: &#34;2011-07-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 102,
+&#34;DOSE&#34;: 7,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 170,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          15187,
+&#34;end&#34;: &#34;2011-08-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 108,
+&#34;DOSE&#34;: 4,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 180,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          15218,
+&#34;end&#34;: &#34;2011-09-29&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 78,
+&#34;DOSE&#34;: 4,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 200,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          15248,
+&#34;end&#34;: &#34;2011-10-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 92,
+&#34;DOSE&#34;: 10,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 707,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          15279,
+&#34;end&#34;: &#34;2011-11-29&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 164,
+&#34;DOSE&#34;: 155,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 207,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          15309,
+&#34;end&#34;: &#34;2011-12-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 99,
+&#34;DOSE&#34;: 88,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 150,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          15340,
+&#34;end&#34;: &#34;2012-01-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 153,
+&#34;DOSE&#34;: 137,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 192,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          15371,
+&#34;end&#34;: &#34;2012-02-29&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 215,
+&#34;DOSE&#34;: 171,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 257,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          15400,
+&#34;end&#34;: &#34;2012-03-31&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 334,
+&#34;DOSE&#34;: 326,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 362,
+&#34;ReactomePA&#34;: 8 
+},
+{
+ &#34;start&#34;:          15431,
+&#34;end&#34;: &#34;2012-04-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 380,
+&#34;DOSE&#34;: 397,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 418,
+&#34;ReactomePA&#34;: 214 
+},
+{
+ &#34;start&#34;:          15461,
+&#34;end&#34;: &#34;2012-05-31&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 308,
+&#34;DOSE&#34;: 307,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 328,
+&#34;ReactomePA&#34;: 159 
+},
+{
+ &#34;start&#34;:          15492,
+&#34;end&#34;: &#34;2012-06-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 270,
+&#34;DOSE&#34;: 275,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 325,
+&#34;ReactomePA&#34;: 222 
+},
+{
+ &#34;start&#34;:          15522,
+&#34;end&#34;: &#34;2012-07-31&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 268,
+&#34;DOSE&#34;: 224,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 215,
+&#34;ReactomePA&#34;: 150 
+},
+{
+ &#34;start&#34;:          15553,
+&#34;end&#34;: &#34;2012-08-31&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 321,
+&#34;DOSE&#34;: 264,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 279,
+&#34;ReactomePA&#34;: 193 
+},
+{
+ &#34;start&#34;:          15584,
+&#34;end&#34;: &#34;2012-09-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 210,
+&#34;DOSE&#34;: 191,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 214,
+&#34;ReactomePA&#34;: 175 
+},
+{
+ &#34;start&#34;:          15614,
+&#34;end&#34;: &#34;2012-10-31&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 341,
+&#34;DOSE&#34;: 369,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 421,
+&#34;ReactomePA&#34;: 242 
+},
+{
+ &#34;start&#34;:          15645,
+&#34;end&#34;: &#34;2012-11-29&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 331,
+&#34;DOSE&#34;: 347,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 417,
+&#34;ReactomePA&#34;: 253 
+},
+{
+ &#34;start&#34;:          15675,
+&#34;end&#34;: &#34;2013-01-01&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 258,
+&#34;DOSE&#34;: 252,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 347,
+&#34;ReactomePA&#34;: 196 
+},
+{
+ &#34;start&#34;:          15706,
+&#34;end&#34;: &#34;2013-01-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 455,
+&#34;DOSE&#34;: 278,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 633,
+&#34;ReactomePA&#34;: 198 
+},
+{
+ &#34;start&#34;:          15737,
+&#34;end&#34;: &#34;2013-02-28&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 604,
+&#34;DOSE&#34;: 286,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 634,
+&#34;ReactomePA&#34;: 229 
+},
+{
+ &#34;start&#34;:          15765,
+&#34;end&#34;: &#34;2013-03-31&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 441,
+&#34;DOSE&#34;: 452,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 476,
+&#34;ReactomePA&#34;: 363 
+},
+{
+ &#34;start&#34;:          15796,
+&#34;end&#34;: &#34;2013-04-29&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 474,
+&#34;DOSE&#34;: 491,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 544,
+&#34;ReactomePA&#34;: 348 
+},
+{
+ &#34;start&#34;:          15826,
+&#34;end&#34;: &#34;2013-05-31&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 531,
+&#34;DOSE&#34;: 559,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 638,
+&#34;ReactomePA&#34;: 442 
+},
+{
+ &#34;start&#34;:          15857,
+&#34;end&#34;: &#34;2013-06-29&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 496,
+&#34;DOSE&#34;: 526,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 608,
+&#34;ReactomePA&#34;: 403 
+},
+{
+ &#34;start&#34;:          15887,
+&#34;end&#34;: &#34;2013-07-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 381,
+&#34;DOSE&#34;: 355,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 456,
+&#34;ReactomePA&#34;: 250 
+},
+{
+ &#34;start&#34;:          15918,
+&#34;end&#34;: &#34;2013-08-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 400,
+&#34;DOSE&#34;: 432,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 438,
+&#34;ReactomePA&#34;: 322 
+},
+{
+ &#34;start&#34;:          15949,
+&#34;end&#34;: &#34;2013-09-29&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 458,
+&#34;DOSE&#34;: 488,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 459,
+&#34;ReactomePA&#34;: 303 
+},
+{
+ &#34;start&#34;:          15979,
+&#34;end&#34;: &#34;2013-10-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 604,
+&#34;DOSE&#34;: 563,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 620,
+&#34;ReactomePA&#34;: 363 
+},
+{
+ &#34;start&#34;:          16010,
+&#34;end&#34;: &#34;2013-11-29&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 561,
+&#34;DOSE&#34;: 519,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 701,
+&#34;ReactomePA&#34;: 354 
+},
+{
+ &#34;start&#34;:          16040,
+&#34;end&#34;: &#34;2013-12-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 586,
+&#34;DOSE&#34;: 537,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 672,
+&#34;ReactomePA&#34;: 457 
+},
+{
+ &#34;start&#34;:          16071,
+&#34;end&#34;: &#34;2014-01-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 395,
+&#34;DOSE&#34;: 423,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 714,
+&#34;ReactomePA&#34;: 342 
+},
+{
+ &#34;start&#34;:          16102,
+&#34;end&#34;: &#34;2014-02-28&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 292,
+&#34;DOSE&#34;: 313,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 737,
+&#34;ReactomePA&#34;: 241 
+},
+{
+ &#34;start&#34;:          16130,
+&#34;end&#34;: &#34;2014-03-31&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 515,
+&#34;DOSE&#34;: 559,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 808,
+&#34;ReactomePA&#34;: 455 
+},
+{
+ &#34;start&#34;:          16161,
+&#34;end&#34;: &#34;2014-04-29&#34;,
+&#34;ChIPseeker&#34;: 201,
+&#34;clusterProfiler&#34;: 675,
+&#34;DOSE&#34;: 688,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 897,
+&#34;ReactomePA&#34;: 452 
+},
+{
+ &#34;start&#34;:          16191,
+&#34;end&#34;: &#34;2014-05-31&#34;,
+&#34;ChIPseeker&#34;: 415,
+&#34;clusterProfiler&#34;: 657,
+&#34;DOSE&#34;: 703,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 831,
+&#34;ReactomePA&#34;: 586 
+},
+{
+ &#34;start&#34;:          16222,
+&#34;end&#34;: &#34;2014-06-29&#34;,
+&#34;ChIPseeker&#34;: 533,
+&#34;clusterProfiler&#34;: 592,
+&#34;DOSE&#34;: 650,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 820,
+&#34;ReactomePA&#34;: 454 
+},
+{
+ &#34;start&#34;:          16252,
+&#34;end&#34;: &#34;2014-07-30&#34;,
+&#34;ChIPseeker&#34;: 336,
+&#34;clusterProfiler&#34;: 452,
+&#34;DOSE&#34;: 628,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 631,
+&#34;ReactomePA&#34;: 384 
+},
+{
+ &#34;start&#34;:          16283,
+&#34;end&#34;: &#34;2014-08-30&#34;,
+&#34;ChIPseeker&#34;: 405,
+&#34;clusterProfiler&#34;: 648,
+&#34;DOSE&#34;: 747,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 798,
+&#34;ReactomePA&#34;: 465 
+},
+{
+ &#34;start&#34;:          16314,
+&#34;end&#34;: &#34;2014-09-29&#34;,
+&#34;ChIPseeker&#34;: 482,
+&#34;clusterProfiler&#34;: 742,
+&#34;DOSE&#34;: 810,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 823,
+&#34;ReactomePA&#34;: 452 
+},
+{
+ &#34;start&#34;:          16344,
+&#34;end&#34;: &#34;2014-10-30&#34;,
+&#34;ChIPseeker&#34;: 372,
+&#34;clusterProfiler&#34;: 616,
+&#34;DOSE&#34;: 758,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 1033,
+&#34;ReactomePA&#34;: 437 
+},
+{
+ &#34;start&#34;:          16375,
+&#34;end&#34;: &#34;2014-11-29&#34;,
+&#34;ChIPseeker&#34;: 369,
+&#34;clusterProfiler&#34;: 672,
+&#34;DOSE&#34;: 761,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 907,
+&#34;ReactomePA&#34;: 488 
+},
+{
+ &#34;start&#34;:          16405,
+&#34;end&#34;: &#34;2014-12-30&#34;,
+&#34;ChIPseeker&#34;: 272,
+&#34;clusterProfiler&#34;: 468,
+&#34;DOSE&#34;: 554,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 727,
+&#34;ReactomePA&#34;: 380 
+},
+{
+ &#34;start&#34;:          16436,
+&#34;end&#34;: &#34;2015-01-30&#34;,
+&#34;ChIPseeker&#34;: 477,
+&#34;clusterProfiler&#34;: 612,
+&#34;DOSE&#34;: 772,
+&#34;ggtree&#34;: 34,
+&#34;GOSemSim&#34;: 941,
+&#34;ReactomePA&#34;: 491 
+},
+{
+ &#34;start&#34;:          16467,
+&#34;end&#34;: &#34;2015-02-28&#34;,
+&#34;ChIPseeker&#34;: 559,
+&#34;clusterProfiler&#34;: 609,
+&#34;DOSE&#34;: 790,
+&#34;ggtree&#34;: 42,
+&#34;GOSemSim&#34;: 968,
+&#34;ReactomePA&#34;: 398 
+},
+{
+ &#34;start&#34;:          16495,
+&#34;end&#34;: &#34;2015-03-31&#34;,
+&#34;ChIPseeker&#34;: 564,
+&#34;clusterProfiler&#34;: 1011,
+&#34;DOSE&#34;: 870,
+&#34;ggtree&#34;: 39,
+&#34;GOSemSim&#34;: 1219,
+&#34;ReactomePA&#34;: 464 
+},
+{
+ &#34;start&#34;:          16526,
+&#34;end&#34;: &#34;2015-04-29&#34;,
+&#34;ChIPseeker&#34;: 580,
+&#34;clusterProfiler&#34;: 1048,
+&#34;DOSE&#34;: 974,
+&#34;ggtree&#34;: 187,
+&#34;GOSemSim&#34;: 1214,
+&#34;ReactomePA&#34;: 440 
+},
+{
+ &#34;start&#34;:          16556,
+&#34;end&#34;: &#34;2015-05-31&#34;,
+&#34;ChIPseeker&#34;: 555,
+&#34;clusterProfiler&#34;: 1022,
+&#34;DOSE&#34;: 939,
+&#34;ggtree&#34;: 310,
+&#34;GOSemSim&#34;: 978,
+&#34;ReactomePA&#34;: 445 
+},
+{
+ &#34;start&#34;:          16587,
+&#34;end&#34;: &#34;2015-06-29&#34;,
+&#34;ChIPseeker&#34;: 395,
+&#34;clusterProfiler&#34;: 1074,
+&#34;DOSE&#34;: 963,
+&#34;ggtree&#34;: 383,
+&#34;GOSemSim&#34;: 991,
+&#34;ReactomePA&#34;: 447 
+},
+{
+ &#34;start&#34;:          16617,
+&#34;end&#34;: &#34;2015-07-30&#34;,
+&#34;ChIPseeker&#34;: 650,
+&#34;clusterProfiler&#34;: 1096,
+&#34;DOSE&#34;: 1290,
+&#34;ggtree&#34;: 352,
+&#34;GOSemSim&#34;: 970,
+&#34;ReactomePA&#34;: 519 
+},
+{
+ &#34;start&#34;:          16648,
+&#34;end&#34;: &#34;2015-08-30&#34;,
+&#34;ChIPseeker&#34;: 639,
+&#34;clusterProfiler&#34;: 1225,
+&#34;DOSE&#34;: 1093,
+&#34;ggtree&#34;: 465,
+&#34;GOSemSim&#34;: 962,
+&#34;ReactomePA&#34;: 548 
+},
+{
+ &#34;start&#34;:          16679,
+&#34;end&#34;: &#34;2015-09-29&#34;,
+&#34;ChIPseeker&#34;: 652,
+&#34;clusterProfiler&#34;: 1484,
+&#34;DOSE&#34;: 1267,
+&#34;ggtree&#34;: 625,
+&#34;GOSemSim&#34;: 1031,
+&#34;ReactomePA&#34;: 509 
+},
+{
+ &#34;start&#34;:          16709,
+&#34;end&#34;: &#34;2015-10-30&#34;,
+&#34;ChIPseeker&#34;: 724,
+&#34;clusterProfiler&#34;: 1460,
+&#34;DOSE&#34;: 1236,
+&#34;ggtree&#34;: 678,
+&#34;GOSemSim&#34;: 1309,
+&#34;ReactomePA&#34;: 577 
+},
+{
+ &#34;start&#34;:          16740,
+&#34;end&#34;: &#34;2015-11-29&#34;,
+&#34;ChIPseeker&#34;: 685,
+&#34;clusterProfiler&#34;: 3035,
+&#34;DOSE&#34;: 1267,
+&#34;ggtree&#34;: 801,
+&#34;GOSemSim&#34;: 1345,
+&#34;ReactomePA&#34;: 649 
+},
+{
+ &#34;start&#34;:          16770,
+&#34;end&#34;: &#34;2015-12-30&#34;,
+&#34;ChIPseeker&#34;: 647,
+&#34;clusterProfiler&#34;: 2886,
+&#34;DOSE&#34;: 1233,
+&#34;ggtree&#34;: 692,
+&#34;GOSemSim&#34;: 1338,
+&#34;ReactomePA&#34;: 522 
+},
+{
+ &#34;start&#34;:          16801,
+&#34;end&#34;: &#34;2016-01-30&#34;,
+&#34;ChIPseeker&#34;: 686,
+&#34;clusterProfiler&#34;: 3327,
+&#34;DOSE&#34;: 1400,
+&#34;ggtree&#34;: 796,
+&#34;GOSemSim&#34;: 1464,
+&#34;ReactomePA&#34;: 572 
+},
+{
+ &#34;start&#34;:          16832,
+&#34;end&#34;: &#34;2016-02-29&#34;,
+&#34;ChIPseeker&#34;: 701,
+&#34;clusterProfiler&#34;: 2866,
+&#34;DOSE&#34;: 1170,
+&#34;ggtree&#34;: 757,
+&#34;GOSemSim&#34;: 1193,
+&#34;ReactomePA&#34;: 608 
+},
+{
+ &#34;start&#34;:          16861,
+&#34;end&#34;: &#34;2016-03-31&#34;,
+&#34;ChIPseeker&#34;: 845,
+&#34;clusterProfiler&#34;: 3188,
+&#34;DOSE&#34;: 1435,
+&#34;ggtree&#34;: 1135,
+&#34;GOSemSim&#34;: 1767,
+&#34;ReactomePA&#34;: 721 
+},
+{
+ &#34;start&#34;:          16892,
+&#34;end&#34;: &#34;2016-04-30&#34;,
+&#34;ChIPseeker&#34;: 736,
+&#34;clusterProfiler&#34;: 2834,
+&#34;DOSE&#34;: 2020,
+&#34;ggtree&#34;: 1030,
+&#34;GOSemSim&#34;: 1532,
+&#34;ReactomePA&#34;: 671 
+},
+{
+ &#34;start&#34;:          16922,
+&#34;end&#34;: &#34;2016-05-31&#34;,
+&#34;ChIPseeker&#34;: 857,
+&#34;clusterProfiler&#34;: 2209,
+&#34;DOSE&#34;: 2352,
+&#34;ggtree&#34;: 1040,
+&#34;GOSemSim&#34;: 2061,
+&#34;ReactomePA&#34;: 883 
+},
+{
+ &#34;start&#34;:          16953,
+&#34;end&#34;: &#34;2016-06-30&#34;,
+&#34;ChIPseeker&#34;: 1039,
+&#34;clusterProfiler&#34;: 1880,
+&#34;DOSE&#34;: 2129,
+&#34;ggtree&#34;: 1245,
+&#34;GOSemSim&#34;: 1637,
+&#34;ReactomePA&#34;: 687 
+} 
+],
+&#34;pointSize&#34;:              0,
+&#34;hideHover&#34;: &#34;auto&#34;,
+&#34;id&#34;: &#34;chart468345f7b2f0&#34;,
+&#34;labels&#34;: [ &#34;ChIPseeker&#34;, &#34;clusterProfiler&#34;, &#34;DOSE&#34;, &#34;ggtree&#34;, &#34;GOSemSim&#34;, &#34;ReactomePA&#34; ] 
+},
+      chartType = &#34;Line&#34;
+    new Morris[chartType](chartParams)
+&lt;/script&gt;
+
+&lt;p&gt;PS1: 下载统计由&lt;a href=&#34;https://cran.r-project.org/package=dlstats&#34;&gt;dlstats&lt;/a&gt;获取。&lt;/p&gt;
+
+&lt;p&gt;PS2: 最近更新了这几个包的主页，包含最全面的信息，官方指定唯一入口哈:)&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://guangchuangyu.github.io/ChIPseeker&#34;&gt;ChIPseeker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://guangchuangyu.github.io/clusterProfiler&#34;&gt;clusterProfiler&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://guangchuangyu.github.io/DOSE&#34;&gt;DOSE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://guangchuangyu.github.io/ggtree&#34;&gt;ggtree&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://guangchuangyu.github.io/GOSemSim&#34;&gt;GOSemSim&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://guangchuangyu.github.io/ReactomePA&#34;&gt;ReactomePA&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;citation:2e88ad1e047b3b91f6382eb2bf16624f&#34;&gt;Citation&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Yu G&lt;/em&gt;&lt;/strong&gt;, Wang LG and He QY&lt;sup&gt;*&lt;/sup&gt;. &lt;a href=&#34;http://bioinformatics.oxfordjournals.org/content/31/14/2382&#34;&gt;ChIPseeker: an R/Bioconductor package for ChIP peak annotation, comparison and visualization&lt;/a&gt;. &lt;strong&gt;&lt;em&gt;Bioinformatics&lt;/em&gt;&lt;/strong&gt; 2015, 31(14):2382-2383.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&#34;text/javascript&#34; src=&#34;https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js&#34;&gt;&lt;/script&gt;&lt;div class=&#34;altmetric-embed&#34; data-badge-type=&#34;donut&#34; data-badge-popover=&#34;right&#34; data-altmetric-id=&#34;3781087&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Yu G&lt;/em&gt;&lt;/strong&gt;, Wang L, Han Y and He Q&lt;sup&gt;*&lt;/sup&gt;. &lt;a href=&#34;http://online.liebertpub.com/doi/abs/10.1089/omi.2011.0118&#34;&gt;clusterProfiler: an R package for comparing biological themes among gene clusters&lt;/a&gt;. &lt;strong&gt;&lt;em&gt;OMICS: A Journal of Integrative Biology&lt;/em&gt;&lt;/strong&gt;. 2012, 16(5):284-287.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&#34;text/javascript&#34; src=&#34;https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js&#34;&gt;&lt;/script&gt;&lt;div class=&#34;altmetric-embed&#34; data-badge-type=&#34;donut&#34; data-badge-popover=&#34;right&#34; data-altmetric-id=&#34;681089&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;G Yu&lt;/em&gt;&lt;/strong&gt;, LG Wang, GR Yan, QY He. &lt;a href=&#34;http://bioinformatics.oxfordjournals.org/content/31/4/608&#34;&gt;DOSE: an R/Bioconductor package for Disease Ontology Semantic and Enrichment analysis&lt;/a&gt;. &lt;strong&gt;&lt;em&gt;Bioinformatics&lt;/em&gt;&lt;/strong&gt; 2015, 31(4):608-609.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&#34;text/javascript&#34; src=&#34;https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js&#34;&gt;&lt;/script&gt;&lt;div class=&#34;altmetric-embed&#34; data-badge-popover=&#34;right&#34; data-badge-type=&#34;donut&#34; data-altmetric-id=&#34;2788597&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;G Yu&lt;/strong&gt;, DK Smith, H Zhu, Y Guan, TTY Lam&lt;sup&gt;*&lt;/sup&gt;. &lt;a href=&#34;http://onlinelibrary.wiley.com/doi/10.1111/2041-210X.12628/abstract&#34;&gt;ggtree: an R package for visualization and annotation of phylogenetic trees with their covariates and other associated data&lt;/a&gt;. &lt;strong&gt;&lt;em&gt;Methods in Ecology and Evolution&lt;/em&gt;&lt;/strong&gt;. &lt;a href=&#34;http://dx.doi.org/10.1111/2041-210X.12628&#34;&gt;&lt;code&gt;doi:10.1111/2041-210X.12628&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&#34;text/javascript&#34; src=&#34;https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js&#34;&gt;&lt;/script&gt;
+&lt;div data-badge-popover=&#34;right&#34; data-badge-type=&#34;donut&#34; data-doi=&#34;10.1111/2041-210X.12628&#34; class=&#34;altmetric-embed&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Yu G&lt;/strong&gt;&lt;sup&gt;†&lt;/sup&gt;, Li F&lt;sup&gt;†&lt;/sup&gt;, Qin Y, Bo X&lt;sup&gt;*&lt;/sup&gt;, Wu Y and Wang S&lt;sup&gt;*&lt;/sup&gt;. &lt;a href=&#34;http://bioinformatics.oxfordjournals.org/content/26/7/976&#34;&gt;GOSemSim: an R package for measuring semantic similarity among GO terms and gene products&lt;/a&gt;. &lt;strong&gt;&lt;em&gt;Bioinformatics&lt;/em&gt;&lt;/strong&gt;. 2010, 26(7):976-978.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&#34;text/javascript&#34; src=&#34;https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js&#34;&gt;&lt;/script&gt;
+&lt;div class=&#34;altmetric-embed&#34; data-badge-popover=&#34;right&#34; data-badge-type=&#34;donut&#34; data-altmetric-id=&#34;100979&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;G Yu&lt;/em&gt;&lt;/strong&gt;, QY He&lt;sup&gt;*&lt;/sup&gt;. &lt;a href=&#34;http://pubs.rsc.org/en/Content/ArticleLanding/2016/MB/C5MB00663E#!divAbstract&#34;&gt;ReactomePA: an R/Bioconductor package for reactome pathway analysis and visualization&lt;/a&gt;. &lt;strong&gt;&lt;em&gt;Molecular BioSystems&lt;/em&gt;&lt;/strong&gt; 2016, 12(2):477-479.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&#34;text/javascript&#34; src=&#34;https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js&#34;&gt;&lt;/script&gt;&lt;div class=&#34;altmetric-embed&#34; data-badge-popover=&#34;right&#34; data-badge-type=&#34;donut&#34; data-altmetric-id=&#34;4796667&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+</description>
     </item>
     
   </channel>

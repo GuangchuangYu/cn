@@ -7,9 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 16 May 2017 07:04:22 +0800</lastBuildDate>
-    
-	<atom:link href="https://guangchuangyu.github.io/cn/categories/r/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="https://guangchuangyu.github.io/cn/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>enrichDAVID支持自定义背景</title>
@@ -34,7 +32,12 @@
 I downloaded KEGG pathway dataset to apply fisher exact test. however, genes are in entrez ID and i am still dont know how to convert.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;他提到&lt;code&gt;enrichKEGG&lt;/code&gt;不支持&lt;em&gt;ENSEMBL&lt;/em&gt; ID，这个可以通过&lt;code&gt;bitr&lt;/code&gt;进行ID转换啊，简单得很，只要是有看文档的人都应该知道。&lt;/p&gt;
+
+&lt;p&gt;说到&lt;code&gt;enrichDAVID&lt;/code&gt;不支持自定义背景，这倒是真的，但这有何难，我随手就支持了。&lt;code&gt;clusterProfiler version&amp;gt;=3.5.3&lt;/code&gt;中&lt;code&gt;enrichDAVID&lt;/code&gt;也可以使用&lt;code&gt;universe&lt;/code&gt;参数了：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://cloud.githubusercontent.com/assets/626539/26083728/f7f16552-3a09-11e7-9177-13db9b9a241a.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -55,7 +58,33 @@ p &amp;lt;- ggtree(tree, color=&amp;quot;black&amp;quot;, size=1.5, linetype=1, 
     geom_tiplab(size=4.5, hjust = -0.060, fontface=&amp;quot;bold&amp;quot;) +  xlim(0, 0.09)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;首先用ggtree画出树的结构，用ggtitle加title，用geom_tiplab加tip label，出图如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/640.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然后我们就可以用geom_point2来打点了，我们要指定只打内部节点，但不打root node，因为root和外部节点都是没有值的。然后这个support值是数字型，我们想按区间分段，这太容易，用cut来切就可以了。这里的值是做了1000次的bootstrap。于是得到下面的图：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;p &amp;lt;- p + geom_point2(aes(subset=!isTip &amp;amp; node != root, 
+                                            fill=cut(support, c(0, 700, 900, 1000))), 
+                                     shape=21, size=4) + 
+        theme_tree(legend.position=c(0.2, 0.3))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/641.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;已然是近乎完美，但我们仍需要修图，想用简单的颜色来填充，低值用白色，中间值用灰色，而高值用黑色。 label想除以1000，换成百分比，legend的名字想换成bootstrap百分值，legend的label想到数学公式表达区间，这些都可以在scale_fill_manual中实现：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;p + scale_fill_manual(values=c(&amp;quot;white&amp;quot;, &amp;quot;grey&amp;quot;, &amp;quot;black&amp;quot;), 
+                                    guide=&#39;legend&#39;, name=&#39;Bootstrap Percentage(BP)&#39;, 
+                                    breaks=c(&#39;(900,1e+03]&#39;, &#39;(700,900]&#39;, &#39;(0,700]&#39;), 
+                                    labelsWednesday, 10. May 2017 12:28PM 
+=expression(BP&amp;gt;=90,70 &amp;lt;= BP * &amp;quot; &amp;lt; 90&amp;quot;, BP &amp;lt; 70))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;华丽丽的图就产生了：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/642.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -72,7 +101,28 @@ p &amp;lt;- ggtree(tree, color=&amp;quot;black&amp;quot;, size=1.5, linetype=1, 
 
 &lt;p&gt;我给了他一个简单的例子：&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;pre&gt;&lt;code&gt;library(&amp;quot;ggtree&amp;quot;)
+nwk &amp;lt;- system.file(&amp;quot;extdata&amp;quot;, &amp;quot;sample.nwk&amp;quot;, package=&amp;quot;treeio&amp;quot;)
+tree &amp;lt;- read.tree(nwk)
+n &amp;lt;- Ntip(tree)
+
+set.seed(123)
+df &amp;lt;- data.frame(label = tree$tip.label,
+              traitA = sample(letters[1:3], n, replace=T), 
+              traitB = sample(LETTERS[5:8], n, replace=T)) 
+row.names(df) &amp;lt;- df[,1]
+
+p1 &amp;lt;- ggtree(tree) %&amp;lt;+% df + geom_tiplab(aes(color=traitA))
+gheatmap(p1, df[,&amp;quot;traitB&amp;quot;, drop=FALSE], offset = 0.8, width=0.1)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/Screen Shot 2017-04-29 at 1.45.06 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;G Yu&lt;/strong&gt;, DK Smith, H Zhu, Y Guan, TTY Lam&lt;sup&gt;*&lt;/sup&gt;. &lt;a href=&#34;http://onlinelibrary.wiley.com/doi/10.1111/2041-210X.12628/abstract&#34;&gt;ggtree: an R package for visualization and annotation of phylogenetic trees with their covariates and other associated data&lt;/a&gt;. &lt;strong&gt;&lt;em&gt;Methods in Ecology and Evolution&lt;/em&gt;&lt;/strong&gt;. 2017, 8(1):28-36.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&#34;text/javascript&#34; src=&#34;https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js&#34;&gt;&lt;/script&gt;
+&lt;div data-badge-popover=&#34;right&#34; data-badge-type=&#34;donut&#34; data-doi=&#34;10.1111/2041-210X.12628&#34; class=&#34;altmetric-embed&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -97,7 +147,19 @@ notify(
 &lt;p&gt;​
 效果如下：&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/gaborcsardi/notifier/master//inst/linux.png&#34; width=&#34;400&#34; alt=&#34;Linux&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/gaborcsardi/notifier/master//inst/windows.png&#34; width=&#34;400&#34; alt=&#34;Windows 8 or newer&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/gaborcsardi/notifier/master/inst/macos.png&#34; width=&#34;400&#34; alt=&#34;macOS&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/gaborcsardi/notifier/master//inst/oldwindows.png&#34; width=&#34;400&#34; alt=&#34;Old Windows&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;安装只需要：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;source(&amp;quot;https://install-github.me/gaborcsardi/notifier&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这个包还是很有用的，比如写点简单的脚本，放到系统服务里，可以做监测，有情况就可以给出提醒。&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -106,11 +168,13 @@ notify(
       <pubDate>Tue, 11 Apr 2017 10:06:59 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2017/04/ggimageggplot2%E4%B8%AD%E6%84%89%E5%BF%AB%E5%9C%B0%E4%BD%BF%E7%94%A8%E5%9B%BE%E7%89%87/</guid>
-      <description>&lt;h1 id=&#34;导言&#34;&gt;导言&lt;/h1&gt;
+      <description>
+
+&lt;h1 id=&#34;导言:da73b643e87724fe5d7ff0bc3037a1b6&#34;&gt;导言&lt;/h1&gt;
 
 &lt;p&gt;本文介绍了&lt;strong&gt;ggimage&lt;/strong&gt;包，允许在&lt;strong&gt;ggplot2&lt;/strong&gt;作图时嵌入图片，并支持&lt;code&gt;aes&lt;/code&gt;映射，可以把离散型变量映射到不同图片。目前有几个包可以使用图片嵌入做图，但都是针对特定的场景，这里使用&lt;strong&gt;ggimage&lt;/strong&gt;来展示在这些特定领域里的应用，&lt;strong&gt;ggimage&lt;/strong&gt;的设计是通用的，并不被特定场景所限定，文末又介绍了用R图标来画出R、用饼图来画气泡图等实例。&lt;/p&gt;
 
-&lt;h1 id=&#34;图上嵌图片&#34;&gt;图上嵌图片&lt;/h1&gt;
+&lt;h1 id=&#34;图上嵌图片:da73b643e87724fe5d7ff0bc3037a1b6&#34;&gt;图上嵌图片&lt;/h1&gt;
 
 &lt;p&gt;R 基础图形库（base graphics）可以在做图的时候嵌入图片，使用的是&lt;code&gt;graphics::rasterImage&lt;/code&gt;：&lt;/p&gt;
 
@@ -123,7 +187,420 @@ rasterImage(x, 2, 2, 6, 4)
 
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/raster.png&#34; alt=&#34;R绘图嵌入图片演示&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;如果我们搜索&amp;rdquo;ggplot2 image&amp;rdquo;，会找到类似于下面这样的帖子/博文：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/9917049/inserting-an-image-to-ggplot2&#34;&gt;r - Inserting an image to ggplot2 - Stack Overflow&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.r-bloggers.com/add-a-background-png-image-to-ggplot2/&#34;&gt;Add a background png image to ggplot2 | R-bloggers&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;也就是说通过程序员秘笈，搜索，我们用&lt;strong&gt;ggplot2&lt;/strong&gt;同样也可以做到。&lt;/p&gt;
+
+&lt;p&gt;这里我们需要用到&lt;code&gt;annotation_custom(rasterGrob)&lt;/code&gt;来把图片加到&lt;strong&gt;ggplot2&lt;/strong&gt;图形中，这和基础图形库是一模一样的。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(grid)
+library(ggplot2)
+
+p &amp;lt;- ggplot(d = data.frame(x = c(0, 8), y = c(0, 8)), aes(x, y)) + geom_blank()
+p + annotation_custom(rasterGrob(x), 2, 6, 2, 4)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果要使用图片来打点画一个散点图，我们就需要&lt;code&gt;for&lt;/code&gt;循环，对每一个点进行操作，这显然是底层的操作，而&lt;strong&gt;ggplot2&lt;/strong&gt;是一个高抽象的画图系统，我们希望能够使用&lt;strong&gt;ggplot2&lt;/strong&gt;的语法。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ggimage&lt;/strong&gt;就是来实现这样一个功能，它只是一个简单的包，允许我们在ggplot2中把离散性变量映射到不同的图片来画图。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/Screenshot1.png&#34; alt=&#34;推特截屏：把图片当字体一样使用&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;实现这个功能的想法已经酝酿很久了，在&lt;strong&gt;ggtree&lt;/strong&gt;的开发中，我实现了&lt;code&gt;phylopic&lt;/code&gt;函数来使用Phylopic数据库的图片注释进化树，也实现了&lt;code&gt;subview&lt;/code&gt;函数在图上嵌入小图。用图片来注释进化树在进化分析上还是很常见的，特别是在一些分类学的研究中，需要把一些分类学特征在进化树上展示出来，而像我们做病毒，也经常会把一些图片放在进化树上来展示病毒的宿主信息。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ggtree&lt;/strong&gt;和可视化有关的函数分两类，一类是加注释的图层，另一类是可视化操作树（比如像旋转、合并分支）。操作树的都是普通函数，而加注释的都是&lt;code&gt;geom&lt;/code&gt;图层，除了&lt;code&gt;subview&lt;/code&gt;和&lt;code&gt;phylopic&lt;/code&gt;，这种所谓逼死处女座的存在，我早就想改成了&lt;code&gt;geom_subview&lt;/code&gt;和&lt;code&gt;geom_phylopic&lt;/code&gt;了（已实现），这也是为什么我要写&lt;strong&gt;ggimage&lt;/strong&gt;的原因了。&lt;/p&gt;
+
+&lt;h1 id=&#34;安装:da73b643e87724fe5d7ff0bc3037a1b6&#34;&gt;安装&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;ggimage&lt;/strong&gt;依赖于&lt;strong&gt;EBImage&lt;/strong&gt;来读图片，这是个Bioconductor包，所以我们需要额外的动作来安装它，用&lt;code&gt;setRepositories&lt;/code&gt;把Bioconductor软件仓库加进来，这样&lt;code&gt;install.packages&lt;/code&gt;也可以搜索到它的包。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;setRepositories(ind = 1:2)
+install.packages(&amp;quot;ggimage&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;实例分析:da73b643e87724fe5d7ff0bc3037a1b6&#34;&gt;实例分析&lt;/h1&gt;
+
+&lt;p&gt;据我所知目前支持使用图片的R包有&lt;strong&gt;CatterPlots&lt;/strong&gt;, &lt;strong&gt;rphylopic&lt;/strong&gt;, &lt;strong&gt;emoGG&lt;/strong&gt;,
+&lt;strong&gt;ggflags&lt;/strong&gt;这几个，都是为特定的目的而实现的，都有其特定的应用场景，而&lt;strong&gt;ggimage&lt;/strong&gt;是的
+&lt;code&gt;geom_image&lt;/code&gt;是通用的，通过对它进行简单的包装，同样可以实现这些特殊场景的应用图层。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;CatterPlots&lt;/strong&gt;这个包只可以应用于基础图形库（base graphics）中，通过预设的几个猫图（R对象，随包载入）来画散点图。最近&lt;a href=&#34;http://blog.revolutionanalytics.com/2017/02/catterplots-plots-with-cats.html&#34;&gt;RevolutionAnalytics 有博文&lt;/a&gt;介绍。&lt;strong&gt;ggplot2&lt;/strong&gt;没有相应画猫的包。我们可以使用&lt;strong&gt;ggimage&lt;/strong&gt;来画，而且不用限制于&lt;strong&gt;CatterPlots&lt;/strong&gt;预设的几个图形。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(ggplot2)
+library(ggimage)
+
+mytheme &amp;lt;- theme_minimal() +
+    theme(axis.title = element_blank())
+theme_set(mytheme)
+
+x &amp;lt;- seq(-2 * pi, 2 * pi, length.out = 30)
+d &amp;lt;- data.frame(x = x, y = sin(x))
+
+img &amp;lt;- &amp;quot;http://www.belleamibengals.com/bengal_cat_2.png&amp;quot;
+ggplot(d, aes(x, y)) + geom_image(image = img, size = .1)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/ggimage_CatterPlots.png&#34; alt=&#34;ggimage画猫散点图演示&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;CatterPlots&lt;/strong&gt;实现的方式就是上面谈到的&lt;code&gt;rasterImage&lt;/code&gt;内部使用了循环。&lt;strong&gt;rphylopic&lt;/strong&gt;同时支持基础图形库（base graphics）和&lt;strong&gt;ggplot2&lt;/strong&gt;，也是一样的实现方式，不过&lt;strong&gt;rphylopic&lt;/strong&gt;内部没有使用循环，一次只能加一个图，它使用的图来自于&lt;a href=&#34;http://phylopic.org/&#34;&gt;phylopic&lt;/a&gt;数据库。&lt;/p&gt;
+
+&lt;p&gt;我们用&lt;strong&gt;ggimage&lt;/strong&gt;同样可以使用&lt;code&gt;phylopic&lt;/code&gt;图片：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(d, aes(x, y)) + geom_phylopic(image = &amp;quot;500bd7c6-71c1-4b86-8e54-55f72ad1beca&amp;quot;, size = .1)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/ggimage_rphylopic.png&#34; alt=&#34;ggimage使用phylopic图片演示&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;图中是&lt;code&gt;翼足目&lt;/code&gt;动物。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;emoGG&lt;/strong&gt;是专门来画&lt;code&gt;emoji&lt;/code&gt;的，如果要画&lt;code&gt;emoji&lt;/code&gt;的话，我推荐我写的&lt;strong&gt;emojifont&lt;/strong&gt;包，在轩哥的&lt;a href=&#34;https://cos.name/2014/01/showtext-interesting-fonts-and-graphs/&#34;&gt;&lt;strong&gt;showtext&lt;/strong&gt;基础&lt;/a&gt;上，把&lt;code&gt;emoji&lt;/code&gt;当做普通字体一样操作，更方便。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;emoGG&lt;/strong&gt;这个包提供了&lt;code&gt;geom_emoji&lt;/code&gt;图层，虽然一次可以画出散点，但因为不支持&lt;code&gt;aes&lt;/code&gt;映射，而&lt;strong&gt;ggimage&lt;/strong&gt;所提供的&lt;code&gt;geom_emoji&lt;/code&gt;则支持映射，下面的例子中我们做了一个简单的回归分析，如果残差&lt;code&gt;&amp;lt;0.5&lt;/code&gt;用笑脸表示，&lt;code&gt;&amp;gt;0.5&lt;/code&gt;则用哭脸来表示。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;set.seed(123)
+iris2 &amp;lt;- iris[sample(1:nrow(iris), 30), ]
+model &amp;lt;- lm(Petal.Length ~ Sepal.Length, data = iris2)
+iris2$fitted &amp;lt;- predict(model)
+
+p &amp;lt;- ggplot(iris2, aes(x = Sepal.Length, y = Petal.Length)) +
+  geom_linerange(aes(ymin = fitted, ymax = Petal.Length),
+                 colour = &amp;quot;purple&amp;quot;) +
+  geom_abline(intercept = model$coefficients[1],
+              slope = model$coefficients[2])
+
+p + ggimage::geom_emoji(aes(image = ifelse(abs(Petal.Length-fitted) &amp;gt; 0.5, &#39;1f622&#39;, &#39;1f600&#39;)))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/emoji_residual2.png&#34; alt=&#34;ggimage画emoji演示&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;如果要用&lt;strong&gt;emoGG&lt;/strong&gt;来做的话，则需要自己切数据分两次来进行：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;p + emoGG::geom_emoji(data = subset(iris2, (Petal.Length-fitted) &amp;lt; 0.5), emoji = &amp;quot;1f600&amp;quot;) +
+    emoGG::geom_emoji(data = subset(iris2, (Petal.Length-fitted) &amp;gt; 0.5), emoji = &amp;quot;1f622&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这里我们只分两类(残差是否大于0.5)，所以需要加两次，试想我们的分类变量有多种可能的取值，则我们需要分多次切数据加图层，&lt;strong&gt;CatterPlots&lt;/strong&gt;、&lt;strong&gt;rphylopic&lt;/strong&gt;和&lt;strong&gt;emoGG&lt;/strong&gt;都有这个问题，这也是&lt;code&gt;aes&lt;/code&gt;映射之于&lt;strong&gt;ggplot2&lt;/strong&gt;的重要和强大之处，它让我们可以在更高的抽像水平思考，&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ggflags&lt;/strong&gt;是支持&lt;code&gt;aes&lt;/code&gt;映射的，只不过它只能用来画国旗而已。同样&lt;strong&gt;ggimage&lt;/strong&gt;也提供
+了相应的&lt;code&gt;geom_flag&lt;/code&gt;来使用国旗用于做图。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(rvest)
+library(dplyr)
+
+url &amp;lt;- &amp;quot;http://www.nbcolympics.com/medals&amp;quot;
+
+medals &amp;lt;- read_html(url) %&amp;gt;%
+    html_nodes(&amp;quot;table&amp;quot;) %&amp;gt;%
+    html_table() %&amp;gt;% .[[1]]
+
+library(countrycode)
+library(tidyr)
+
+medals &amp;lt;- medals %&amp;gt;%
+    mutate(code = countrycode(Country, &amp;quot;country.name&amp;quot;, &amp;quot;iso2c&amp;quot;)) %&amp;gt;%
+    gather(medal, count, Gold:Bronze) %&amp;gt;%
+    filter(Total &amp;gt;= 10)
+
+head(medals)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;Country&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;Total&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;code&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;medal&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;count&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Russia&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;33&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;RU&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Gold&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;13&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;United States&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;28&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;US&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Gold&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;9&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Norway&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;26&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;NO&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Gold&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;11&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Canada&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;25&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;CA&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Gold&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;10&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Netherlands&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;24&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;NL&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Gold&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;8&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Germany&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;19&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;DE&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Gold&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;首先我们从网站上爬回来2016年各个国家的奥林匹克奖牌数，画出柱状图，并在&lt;code&gt;xlab&lt;/code&gt;国家名边上用&lt;strong&gt;ggimage&lt;/strong&gt;画上国旗：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;p &amp;lt;- ggplot(medals, aes(Country, count)) + geom_col(aes(fill = medal), width = .8)
+
+p + geom_flag(y = -2, aes(image = code)) +
+    coord_flip() + expand_limits(y = -2)  +
+    scale_fill_manual(values = c(&amp;quot;Gold&amp;quot; = &amp;quot;gold&amp;quot;, &amp;quot;Bronze&amp;quot; = &amp;quot;#cd7f32&amp;quot;, &amp;quot;Silver&amp;quot; = &amp;quot;#C0C0C0&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/olympics_2016.png&#34; alt=&#34;ggimage画国旗演示&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;ggimage:da73b643e87724fe5d7ff0bc3037a1b6&#34;&gt;&lt;strong&gt;ggimage&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;前面我们介绍了&lt;strong&gt;ggimage&lt;/strong&gt;在一些场景的应用实例，虽然有专门的包针对这些应用场景，但&lt;strong&gt;ggimage&lt;/strong&gt;在这些领域中的表现要比大多数的包要好（支持aes映射）。但&lt;strong&gt;ggimage&lt;/strong&gt;的使用并不限于这些(&lt;code&gt;geom_phylopic&lt;/code&gt;，&lt;code&gt;geom_emoji&lt;/code&gt;和&lt;code&gt;geom_flag&lt;/code&gt;只是通用图层&lt;code&gt;geom_image&lt;/code&gt;的简单封装)，这里将展示一些有趣的例子。&lt;/p&gt;
+
+&lt;h3 id=&#34;用r图标来画r形状:da73b643e87724fe5d7ff0bc3037a1b6&#34;&gt;用R图标来画R形状&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;x &amp;lt;- c(2, 2, 2, 2, 2, 3, 3, 3.5, 3.5, 4)
+y &amp;lt;- c(2, 3, 4, 5, 6, 4, 6, 3, 5, 2)
+d &amp;lt;- data.frame(x = x, y = y)
+
+img &amp;lt;- system.file(&amp;quot;img&amp;quot;, &amp;quot;Rlogo.png&amp;quot;, package = &amp;quot;png&amp;quot;)
+ggplot(d, aes(x, y)) + geom_image(image = img, size = .1) +
+  xlim(0, 6) + ylim(0, 7)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/R.png&#34; alt=&#34;用R图标画R形状演示&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;嵌套式绘图:da73b643e87724fe5d7ff0bc3037a1b6&#34;&gt;嵌套式绘图&lt;/h3&gt;
+
+&lt;p&gt;这里我要展示的是非常有名的气泡图（Bubble Plot），但气泡不是圆圈，而是使用
+&lt;strong&gt;ggplot2&lt;/strong&gt;画的饼图，我先把饼图保存起来，再用&lt;strong&gt;ggimage&lt;/strong&gt;拿来画，饼图的大小
+与人口总数正相关。这个例子可以应用到很多场景中去，比如一个时间序列的曲线，你要用统计图在某些时间点上展示相关的信息，比如你要在地图上加某些地方的相关统计信息（如果要在地图上画饼图，可以使用我写的&lt;a href=&#34;https://cran.r-project.org/package=scatterpie&#34;&gt;&lt;strong&gt;scatterpie&lt;/strong&gt;&lt;/a&gt;包）。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;crime &amp;lt;- read.csv(&amp;quot;http://datasets.flowingdata.com/crimeRatesByState2005.tsv&amp;quot;,
+                  header = TRUE, sep = &amp;quot;\t&amp;quot;, stringsAsFactors = F)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;state&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;murder&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;Forcible_rate&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;Robbery&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;aggravated_assult&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;burglary&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;larceny_theft&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;motor_vehicle_theft&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;population&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Alabama&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;8.2&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;34.3&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;141.4&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;247.8&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;953.8&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2650.0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;288.3&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4627851&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Alaska&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4.8&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;81.1&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;80.9&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;465.1&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;622.5&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2599.1&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;391.0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;686293&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Arizona&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;7.5&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;33.8&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;144.4&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;327.4&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;948.4&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2965.2&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;924.4&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;6500180&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Arkansas&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;6.7&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;42.9&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;91.1&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;386.8&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1084.6&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2711.2&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;262.1&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2855390&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;California&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;6.9&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;26.0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;176.1&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;317.3&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;693.3&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1916.5&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;712.8&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;36756666&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Colorado&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;3.7&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;43.4&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;84.6&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;264.7&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;744.8&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2735.2&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;559.5&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4861515&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(gtable)
+
+plot_pie &amp;lt;- function(i) {
+    df &amp;lt;- gather(crime[i, ], type, value, murder:motor_vehicle_theft)
+    ggplot(df, aes(x = 1, value, fill = type)) +
+        geom_col() + coord_polar(theta = &#39;y&#39;) +
+        ggtitle(crime[i, &amp;quot;state&amp;quot;]) +
+        theme_void() + theme_transparent() +
+        theme(legend.position = &amp;quot;none&amp;quot;,
+              plot.title = element_text(size = rel(6), hjust = 0.5))
+}
+
+pies &amp;lt;- sapply(1:nrow(crime), function(i) {
+    outfile &amp;lt;- paste0(&amp;quot;crime_&amp;quot;, i, &amp;quot;.png&amp;quot;)
+    plot_pie(i) + ggsave(outfile, bg = &amp;quot;transparent&amp;quot;)
+    outfile
+})
+
+radius &amp;lt;- sqrt(crime$population / pi)
+crime$radius &amp;lt;- 0.2 * radius/max(radius)
+crime$pie &amp;lt;- pies
+
+leg1 &amp;lt;- gtable_filter(
+    ggplot_gtable(
+        ggplot_build(plot_pie(1) + theme(legend.position = &amp;quot;right&amp;quot;))
+    ), &amp;quot;guide-box&amp;quot;)
+
+ggplot(crime, aes(murder, Robbery)) +
+  geom_image(aes(image = pie, size = I(radius))) +
+  geom_subview(leg1, x = 8.8, y = 50)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/us_crime.png&#34; alt=&#34;嵌套式绘图演示：用饼图来画气泡图&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我们还可以每次只画一个州的数据，制作成动图。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;plot_crime &amp;lt;- function(i) {
+    o &amp;lt;- paste0(i, &amp;quot;.png&amp;quot;)
+    ggplot(crime, aes(murder, Robbery)) + geom_blank() +
+        geom_image(data = crime[i, ], aes(image = pie, size = I(radius))) +
+        geom_subview(p, leg1, x = 8.8, y = 50) + ggsave(o)
+    o
+}
+
+library(magick)
+library(purrr)
+order(crime$murder, decreasing = F) %&amp;gt;%
+    map(plot_crime) %&amp;gt;%
+    map(image_read) %&amp;gt;%
+    image_join() %&amp;gt;%
+    image_animate(fps = 2) %&amp;gt;%
+    image_write(&amp;quot;crime.gif&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/us_crime.gif&#34; alt=&#34;嵌套式绘图演示，动图版本&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;geom_subview&lt;/code&gt;可以图上嵌图，并不需要保存为图片，但对于&lt;strong&gt;ggplot2&lt;/strong&gt;来讲，保存图片也是有好处的，因为&lt;strong&gt;ggplot2&lt;/strong&gt;画图，点线是在数据空间上，随着我们保存图片的大小是按比例缩小或放大的，但文字是在像素空间上，和画图空间并不相关。所以当我们嵌图时缩小了画图窗口之后，字体会显得格外大，微调起来也比较繁琐，这时候保存为合适尺寸的图片，再用&lt;code&gt;geom_image&lt;/code&gt;来加上去，显然就轻松得多。&lt;/p&gt;
+
+&lt;h3 id=&#34;其它来自r社区的例子:da73b643e87724fe5d7ff0bc3037a1b6&#34;&gt;其它来自R社区的例子&lt;/h3&gt;
+
+&lt;p&gt;SAS博客对&lt;code&gt;M&amp;amp;M&lt;/code&gt;巧克力的&lt;a href=&#34;http://blogs.sas.com/content/iml/2017/02/20/proportion-of-colors-mandms.html&#34;&gt;颜色分布做了分析&lt;/a&gt;，通过模拟估计不同颜色的置信区间。这个&lt;a href=&#34;http://rpubs.com/hrbrmstr/mms&#34;&gt;分析被翻译成R&lt;/a&gt;，并产生下图：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/mm.png&#34; alt=&#34;M&amp;amp;M例子展示&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;其中垂直片段|是真实值，水平片段当然就是置信空间了，而估计值用了&lt;strong&gt;ggimage&lt;/strong&gt;来画不同颜色的巧克力。&lt;/p&gt;
+
+&lt;p&gt;另一个例子是&lt;a href=&#34;https://rpubs.com/bhaskarvk/disney&#34;&gt;迪斯尼电影主人公名字的流行程度&lt;/a&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/Screenshot3.png&#34; alt=&#34;迪斯尼例子展示&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;最近我还添加了&lt;code&gt;geom_pokemon&lt;/code&gt;图层，让大家可以用pokemon来画图，比如：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/geom_pokemon.png&#34; alt=&#34;pokemon例子展示&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ggimage&lt;/strong&gt;是通用的包，所以可以被应用于不同的领域/场景中，起码可以让我们画出更好玩的图出来，后续我有时间的话，会写一个&lt;code&gt;draw_key_image&lt;/code&gt;的函数，实现使用图片来当legend key的功能。&lt;/p&gt;
+
+&lt;p&gt;最后祝大家玩得开心！不要把图画得太有魔性哦:)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/Screenshot2.png&#34; alt=&#34;推特截屏&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;感谢大为和太云的校稿，特别是大为提出很多修改意见以及给出了用R画R的例子。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;参考资料:da73b643e87724fe5d7ff0bc3037a1b6&#34;&gt;参考资料&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/9917049/inserting-an-image-to-ggplot2&#34;&gt;https://stackoverflow.com/questions/9917049/inserting-an-image-to-ggplot2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.r-bloggers.com/add-a-background-png-image-to-ggplot2/&#34;&gt;https://www.r-bloggers.com/add-a-background-png-image-to-ggplot2/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/GuangchuangYu/ggimage&#34;&gt;https://github.com/GuangchuangYu/ggimage&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Gibbsdavidl/CatterPlots&#34;&gt;https://github.com/Gibbsdavidl/CatterPlots&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/sckott/rphylopic&#34;&gt;https://github.com/sckott/rphylopic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/baptiste/ggflags&#34;&gt;https://github.com/baptiste/ggflags&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.revolutionanalytics.com/2017/02/catterplots-plots-with-cats.html&#34;&gt;http://blog.revolutionanalytics.com/2017/02/catterplots-plots-with-cats.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blogs.sas.com/content/iml/2017/02/20/proportion-of-colors-mandms.html&#34;&gt;http://blogs.sas.com/content/iml/2017/02/20/proportion-of-colors-mandms.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://rpubs.com/hrbrmstr/mms&#34;&gt;http://rpubs.com/hrbrmstr/mms&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://rpubs.com/bhaskarvk/disney&#34;&gt;https://rpubs.com/bhaskarvk/disney&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cran.r-project.org/package=scatterpie&#34;&gt;https://cran.r-project.org/package=scatterpie&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
@@ -132,7 +609,9 @@ rasterImage(x, 2, 2, 6, 4)
       <pubDate>Wed, 05 Apr 2017 12:23:16 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2017/04/generate-biobabble-banner-using-ggimage/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/biobabble_banner.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/biobabble_banner.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;制作了一个banner，用来插入到文后，方便阅读到最后的时候，直接扫描关注。&lt;/p&gt;
 
@@ -140,7 +619,7 @@ rasterImage(x, 2, 2, 6, 4)
 
 &lt;p&gt;就像有些人不理解data scentist为什么讨厌excel一样，觉得无非是工具，没什么好搞阵营的。试想一下，一个分析流程中间有一步要用到excel，需要人工去点点鼠标，这对于讲究自动化、可重复性的data scientist来说是不可接受的。&lt;/p&gt;
 
-&lt;h2 id=&#34;加载中文字体&#34;&gt;加载中文字体&lt;/h2&gt;
+&lt;h2 id=&#34;加载中文字体:b8aeb0db2e33c1cb77f701d0be3ba647&#34;&gt;加载中文字体&lt;/h2&gt;
 
 &lt;p&gt;为了打几个中文字，需要先加载字体，这里我用showtext。&lt;/p&gt;
 
@@ -149,7 +628,33 @@ font.add(&amp;quot;heiti&amp;quot;, &amp;quot;/Library/Fonts/华文黑体.ttf&am
 showtext.auto()
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;h2 id=&#34;读图:b8aeb0db2e33c1cb77f701d0be3ba647&#34;&gt;读图&lt;/h2&gt;
+
+&lt;p&gt;两个图，一个是logo，一个是二维码，分别用&lt;strong&gt;EBImage&lt;/strong&gt;读入&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;require(EBImage)
+require(grid)
+
+gc &amp;lt;- rasterGrob(image=readImage(&#39;gc.png&#39;))
+page &amp;lt;- rasterGrob(image=readImage(&#39;biobabble_page.png&#39;))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;图上嵌图:b8aeb0db2e33c1cb77f701d0be3ba647&#34;&gt;图上嵌图&lt;/h2&gt;
+
+&lt;p&gt;这里用我自己写的&lt;strong&gt;ggimage&lt;/strong&gt;包的&lt;strong&gt;geom_subview&lt;/strong&gt;来嵌图，然后无非打几个字，设一下字体。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;require(ggimage)
+pg &amp;lt;- ggplot(d=data.frame(x=c(0,10), y=c(0,5)), aes(x, y)) + geom_blank() + coord_fixed()
+pg &amp;lt;- pg+geom_subview(gc, x=2.5, y=2.5, width=5.1, height=5.1) + geom_subview(page, x=7.5, y=2.5, width=4.8, height=4.8)
+
+pg &amp;lt;- pg+theme_void() + labs(title=&amp;quot;长按二维码关注biobabble&amp;quot;, subtitle=&amp;quot;欢迎分享朋友圈&amp;quot;,caption=&#39;guangchuangyu@gmail.com&#39;) + theme(title=element_text(family=&amp;quot;heiti&amp;quot;, size=20))
+ggsave(pg, file=&amp;quot;biobabble_banner.png&amp;quot;, width=8, height=5)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;于是产生下图：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/biobabble_banner.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -170,7 +675,32 @@ print(p)
 
 &lt;p&gt;上面图中x轴的文本&lt;strong&gt;0.006&lt;/strong&gt;，这个数字中的&lt;strong&gt;6&lt;/strong&gt;几乎看不到，因为一半过界了。&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;这种情况还可以更糟糕，比如我把字体搞大点：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;p &amp;lt;- p + theme(axis.text=element_text(size=12))
+print(p)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/geom_text_files/figure-markdown_strict/unnamed-chunk-1-2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;简直了，&lt;strong&gt;6&lt;/strong&gt;都看不见了。第一次遇到这种情况，都会觉得这软件也太傻了！连坐标轴都会过界！但事实上，这是一个普遍的现象。因为像点这些，是数据空间，但文本是像素空间，只会按照指定的大小转化为多少个像素，然后把字打出来，这些当然容易打过界了。特别是如果把文本打在数据点的右边，比如我们画进化树时，需要画tip label，这纯粹是在右边打字的，文本通常只有部分显示出来，解决方案就在&lt;strong&gt;ggtree&lt;/strong&gt;的&lt;a href=&#34;https://guangchuangyu.github.io/ggtree/faq/#tip-label-truncated&#34;&gt;文档&lt;/a&gt;里，用&lt;code&gt;xlim&lt;/code&gt;搞大右边。比如这个例子的话，&lt;code&gt;+xlim&lt;/code&gt;很容易解决的：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;p + xlim(NA, 0.0062)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/geom_text_files/figure-markdown_strict/unnamed-chunk-1-3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;当然复杂的情况也是有的，比如你在分面的时候，只有某个分面溢出了，而&lt;code&gt;scales&lt;/code&gt;又是&lt;code&gt;free&lt;/code&gt;的，你直接&lt;code&gt;+xlim&lt;/code&gt;会应用于所有分面，但在free scale的情况下，你只想应用到某一分面，这个也是可以搞的，参考&lt;a href=&#34;https://guangchuangyu.github.io/2016/10/xlim_tree-set-x-axis-limits-for-only-tree-panel/&#34;&gt;xlim_tree&lt;/a&gt;，做为思考题，看大家能不能悟出来。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;讲ggtree各种技巧，对于你们学ggplot2也是极有帮助的！&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;G Yu&lt;/strong&gt;, DK Smith, H Zhu, Y Guan, TTY Lam&lt;sup&gt;*&lt;/sup&gt;. &lt;a href=&#34;http://onlinelibrary.wiley.com/doi/10.1111/2041-210X.12628/abstract&#34;&gt;ggtree: an R package for visualization and annotation of phylogenetic trees with their covariates and other associated data&lt;/a&gt;. &lt;strong&gt;&lt;em&gt;Methods in Ecology and Evolution&lt;/em&gt;&lt;/strong&gt;. 2017, 8(1):28-36.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&#34;text/javascript&#34; src=&#34;https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js&#34;&gt;&lt;/script&gt;
+&lt;div data-badge-popover=&#34;right&#34; data-badge-type=&#34;donut&#34; data-doi=&#34;10.1111/2041-210X.12628&#34; class=&#34;altmetric-embed&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -179,7 +709,9 @@ print(p)
       <pubDate>Fri, 31 Mar 2017 12:23:16 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2017/03/%E5%85%B3%E4%BA%8Echipseq%E6%B3%A8%E9%87%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/</guid>
-      <description>&lt;h2 id=&#34;为什么我要用某个基因组版本&#34;&gt;为什么我要用某个基因组版本？&lt;/h2&gt;
+      <description>
+
+&lt;h2 id=&#34;为什么我要用某个基因组版本:015d79cbc951e2a010a6c641978ec0b8&#34;&gt;为什么我要用某个基因组版本？&lt;/h2&gt;
 
 &lt;p&gt;在上一篇文章中，我用了&lt;code&gt;TxDb.Hsapiens.UCSC.hg19.knownGene&lt;/code&gt;。 &lt;strong&gt;hg19&lt;/strong&gt;的&lt;strong&gt;TxDb&lt;/strong&gt;, 或者有人就要问了，为什么不用&lt;strong&gt;hg38&lt;/strong&gt;？&lt;/p&gt;
 
@@ -187,7 +719,7 @@ print(p)
 
 &lt;p&gt;当然如果要（贵圈喜欢的）强搞，也不是不可以，你得有chain file，先跑个liftOver，实际上就是在两个基因组版本之间做了位置转换。&lt;/p&gt;
 
-&lt;h2 id=&#34;为什么说-chipseeker-支持所有物种&#34;&gt;为什么说&lt;strong&gt;ChIPseeker&lt;/strong&gt;支持所有物种？&lt;/h2&gt;
+&lt;h2 id=&#34;为什么说-chipseeker-支持所有物种:015d79cbc951e2a010a6c641978ec0b8&#34;&gt;为什么说&lt;strong&gt;ChIPseeker&lt;/strong&gt;支持所有物种？&lt;/h2&gt;
 
 &lt;p&gt;背景注释信息用了&lt;strong&gt;TxDb&lt;/strong&gt;就能保证所有物种都支持了？我去哪里找我要的&lt;strong&gt;TxDb&lt;/strong&gt;?&lt;/p&gt;
 
@@ -204,7 +736,58 @@ print(p)
 &lt;li&gt;makeTxDbFromGFF：通过解析GFF文件制作TxDb&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;比如我想用人的参考基因信息来做注释，我们可以直接在线从UCSC生成&lt;strong&gt;TxDb&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;require(GenomicFeatures)
+hg19.refseq.db &amp;lt;- makeTxDbFromUCSC(genome=&amp;quot;hg19&amp;quot;, table=&amp;quot;refGene&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;比如最近在&lt;strong&gt;biostars&lt;/strong&gt;上有用户问到的，做裂殖酵母的注释，我们可以下载相应的&lt;strong&gt;GFF&lt;/strong&gt;文件，然后通过&lt;strong&gt;makeTxDbFromGFF&lt;/strong&gt;函数生成&lt;strong&gt;TxDb&lt;/strong&gt;对象，像下面的命令所演示，&lt;strong&gt;spombe&lt;/strong&gt;就是生成的&lt;strong&gt;TxDb&lt;/strong&gt;，就可以拿来做裂殖酵母的ChIPseq注释。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;download.file(&amp;quot;ftp://ftp.ebi.ac.uk/pub/databases/pombase/pombe/Chromosome_Dumps/gff3/schizosaccharomyces_pombe.chr.gff3&amp;quot;, &amp;quot;schizosaccharomyces_pombe.chr.gff3&amp;quot;)
+
+require(GenomicFeatures)
+spombe &amp;lt;- makeTxDbFromGFF(&amp;quot;schizosaccharomyces_pombe.chr.gff3&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;所以我敢说，所有物种都支持。像Johns Hopkins出品的CisGenome就只支持到12个物种而已，极大地限制了它的应用。&lt;/p&gt;
+
+&lt;h2 id=&#34;chipseeker-有什么不能注释的吗:015d79cbc951e2a010a6c641978ec0b8&#34;&gt;&lt;strong&gt;ChIPseeker&lt;/strong&gt;有什么不能注释的吗？&lt;/h2&gt;
+
+&lt;p&gt;这个我还没想到，像CpG是不支持的，但也有人「黑」出来了：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/CS/2017-03-13-003520_618x444_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;当然他的做法是把CpG也整合进去，如果你单纯只想看那些peak落在CpG上，或者说离CpG最近，不需要「黑」也能做到的，因为&lt;strong&gt;annotatePeak&lt;/strong&gt;的背景注释信息除了TxDb之外，其实它还可以是自定义的&lt;strong&gt;GRanges&lt;/strong&gt;对象，这保证了用户各种各样的需求，因为TxDb也不是万能的，如果能自定义，比如说我就只想看蛋白的结合位点会不会在内含子和外显子的交界处，再比如说我做的并不是编码蛋白的基因表达调控，而是非编码RNA，那么我想要用lncRNA的位置信息来做注释。像这样的需求，&lt;strong&gt;ChIPseeker&lt;/strong&gt;都是可以满足的。&lt;/p&gt;
+
+&lt;h2 id=&#34;可以按正负链分开注释吗:015d79cbc951e2a010a6c641978ec0b8&#34;&gt;可以按正负链分开注释吗？&lt;/h2&gt;
+
+&lt;p&gt;上一篇文章中就有人问了，能否同时给出正负链上最近的基因。首先ChIPseq数据通常情况下是没有正负链信息的（有特殊的实验可以有），&lt;strong&gt;annotatePeak&lt;/strong&gt;函数有参数是&lt;strong&gt;sameStrand&lt;/strong&gt;，默认是FALSE，你可以给你的peak分别赋正负链，然后传入&lt;strong&gt;sameStrand=TRUE&lt;/strong&gt;，分开做两次，你就可以分开拿到正链和负链的最近基因。&lt;/p&gt;
+
+&lt;h2 id=&#34;最近基因位置是相对于tss的-能否相对于整个基因:015d79cbc951e2a010a6c641978ec0b8&#34;&gt;最近基因位置是相对于TSS的，能否相对于整个基因？&lt;/h2&gt;
+
+&lt;p&gt;答案也是可以的！&lt;/p&gt;
+
+&lt;p&gt;首先如果peak和TSS有overlap，genomic annotation就是promoter，而最近基因也是同一个，所以在这种情况下，两种注释都指向同一个基因，可以说信息是冗余的，能不能不要冗余信息？这个是可以的，你可以传入参数&lt;strong&gt;ignoreOverlap=TRUE&lt;/strong&gt;，那么最近基因就会去找不overlap的。&lt;/p&gt;
+
+&lt;p&gt;最近基因是相对于TSS，如果和TSS有overlap，距离是0, 必须是最近。回到标题的问题，如果我想说只要和基因有overlap就是最近基因，这种情况其实你的最近基因就是host gene，也就是annotation这个column给出来的是相对应的，我们就想找peak所在位置的基因信息，那么这当然也是可以的，默认参数&lt;strong&gt;overlap=&amp;ldquo;TSS&amp;rdquo;&lt;/strong&gt;, 如果改为&lt;strong&gt;overlap=&amp;ldquo;all&amp;rdquo;&lt;/strong&gt;，它看的就是整个基因而不是TSS，当然&lt;strong&gt;distanceToTSS&lt;/strong&gt;也还是会计算，如果overlap的不是TSS，而是基因体里，并不会因为而设为0。&lt;/p&gt;
+
+&lt;h2 id=&#34;如果我只想注释上游或者是下游的基因呢:015d79cbc951e2a010a6c641978ec0b8&#34;&gt;如果我只想注释上游或者是下游的基因呢？&lt;/h2&gt;
+
+&lt;p&gt;当然也可以，我们有&lt;strong&gt;ignoreUpstream&lt;/strong&gt;和&lt;strong&gt;ignoreDownstream&lt;/strong&gt;参数，默认都是FALSE。随便你想看上游还是下游，都可以。&lt;/p&gt;
+
+&lt;h2 id=&#34;为什么要有这么多参数:015d79cbc951e2a010a6c641978ec0b8&#34;&gt;为什么要有这么多参数？&lt;/h2&gt;
+
+&lt;p&gt;我在前一篇，只讲了输入，输出，你知道两个输入，会看输出，你就可以做ChIPseq注释了，非常简单。但是我不能把annotatePeak能做的全列出来，会让大家觉得复杂。（而且简单的情况是最常见的行为）&lt;/p&gt;
+
+&lt;p&gt;在大家知道输入输出，觉得简单之后，再讲一讲，它有一些参数，可以应对别的情况，这些情况可能并不是我们做ChIPseq所需要的，但不同参数的灵活组合，是可以解决和应对不同的需求的。&lt;/p&gt;
+
+&lt;p&gt;比如说, DNA是可以断的，如果我们要对（DNA breakpoints）断点位置做注释，优先是overlap基因，再者是上游，你会发现很多软件都不能做了，但&lt;strong&gt;ChIPseeker&lt;/strong&gt;可以。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;做软件关键是要注重细节，不单注重自己需求的细节，更主要是要注重别人的细节&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
     </item>
     
     <item>
@@ -217,7 +800,88 @@ print(p)
 
 &lt;p&gt;emojifont就是用proto实现的，属于我的练手之作，很高兴深受大家的喜欢。&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;如果我想看一个emoji长啥样，用&lt;strong&gt;ggplot2&lt;/strong&gt;还是麻烦点，用ggplot2是这样画的：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/emojifont/tree.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;而用base plot，则相对简单些：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/emojifont/Screen Shot 2017-02-14 at 8.00.23 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;于是我有了要写个&lt;strong&gt;geom_emoji&lt;/strong&gt;图层的想法：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;我在想应该利用emojifont，写个geom_emoji图层，这样直接ggplot()+geom_emoji(&amp;ldquo;broken_heart&amp;rdquo;)就可以直接出来，ggplot()+geom_emoji(&amp;ldquo;chicken&amp;rdquo;)就出来一只，虽然emojifont已足够易用，但减少输入更加傻瓜，还是可以有的。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;过了一天，我就写了&lt;strong&gt;geom_emoji&lt;/strong&gt;，于是如果我想看某个emoji长什么样，比如下面画个玫瑰花：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot() + geom_emoji(&amp;quot;rose&amp;quot;) + theme_void()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/emojifont/rose.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这次的更新，我还换个emoji字体，升级到unicode 9，也就是最新加入的鸭子也能用咯：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot() + geom_emoji(&amp;quot;duck&amp;quot;) + theme_void()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/emojifont/duck.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;geom_emoji&lt;/strong&gt;让画散点也变得简单:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;x &amp;lt;- seq(-sqrt(17), sqrt(17), length.out=30)
+y1 &amp;lt;- 8*abs(x)/17 + 15* sqrt(17 - x^2)/17
+y2 &amp;lt;- 8*abs(x)/17 - 15* sqrt(17 - x^2)/17
+ggplot() + geom_emoji(&amp;quot;gift_heart&amp;quot;, x=x, y=c(y1, y2), color=&amp;quot;red&amp;quot;, size=10)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/emojifont/heart_of_heart.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;制作动图gif也是非常简单，这个代码简直如同人类语言一般：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;require(ggplot2)
+require(magick)
+require(purrr)
+
+x &amp;lt;- search_emoji(&amp;quot;heart&amp;quot;)
+
+plot_heart=function(x) {
+ p = ggplot() + geom_emoji(x)
+ o = paste0(x, &amp;quot;.png&amp;quot;)
+ ggsave(o, p, width=5, height=5)
+ o
+ }
+
+x %&amp;gt;% map(plot_heart) %&amp;gt;% map(image_read) %&amp;gt;% 
+image_join() %&amp;gt;% image_animate(fps=1) %&amp;gt;% 
+image_write(&amp;quot;heart.gif&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/emojifont/heart.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;因为换了字体，所以和之前的不同，如果要去背景，只需要&lt;code&gt;+theme_void()&lt;/code&gt;就可以。&lt;/p&gt;
+
+&lt;p&gt;新版也不同你加载字体的，随包载入自动加载，当然以前的字体还能用，还用一样的办法手工加载。（所以说我这次升级很考究，原来的字体，老方法，新字体你啥都不用干）&lt;/p&gt;
+
+&lt;p&gt;同时加入的还有&lt;strong&gt;geom_fontawesome&lt;/strong&gt;图层，最新画hex sticker，用fontawesome蛮好用 -,-&lt;/p&gt;
+
+&lt;p&gt;这次更新，主要有3方面：升级了新字体，支持unicode 9；新加入的图层让你非常方便地看一看emoji表情长啥样；再者不需要手工加载字体了。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;我在网上看到香港R用户组的教学视频，发现我被‘出镜了’，讲解了emojifont包，好像我在香港还有点小名气，然而我并没有露过脸，视频中也没有。&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/t-tLnvaYKHw&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&#34; allowfullscreen frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
+ &lt;/div&gt;
+
+</description>
     </item>
     
     <item>
@@ -236,7 +900,26 @@ print(p)
 
 &lt;p&gt;就在上周，我正好就在微信群里跟某位老师说不要给我个截屏，说能不能在ggtree里实现某功能。懂的人知道，我只是希望大家用正确的方式来做事情，不懂的人，当然觉得我拽，JJYY什么的。&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;以前暨大有个博士生，跟我QQ和微信上都留言说要学某个R包，快点教他，我没回复，过几天又继续留言，我就把他给喷一顿。港真，都读到博士了，这点道理不应该不懂，要学自己学，遇到问题再来问，唯有下图可以表达我的观点：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/ubiaoqing581356c41441430498.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;UNIX的世界里，那句”read the fucking man”，早有了属于它自己的缩写RTFM，不信你们google一下这4个字母，这里的man是指manual，因为UNIX下查看manual的指令就是man，读文档是非常重要的，很多问题在文档里已经有了答案，但用户就是不愿意花时间去读。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/2017-03-19-234106_792x722_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;最近有人看我博客文，说没有&lt;strong&gt;geom_barh&lt;/strong&gt;，简直日狗了，那篇博客明明就专门介绍了&lt;strong&gt;ggstance&lt;/strong&gt;包，所以我专门贴了XKCD画的RTFM图，最好他们会脸红！&lt;/p&gt;
+
+&lt;p&gt;学术界很多人情商低得很，有问题直接甩作者，还认为作者应该毕恭毕敬地回复。&lt;strong&gt;没有任何人有义务要帮你解决问题！没有任何人有义务要帮你解决问题！没有任何人有义务要帮你解决问题！&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/2017-03-19-235129_854x663_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我在github上设了模版，如果用户提问，就会有向导，像上面截屏这个，他愿意花时间按着我的向导来，我就愿意花时间帮他解决问题。&lt;/p&gt;
+
+&lt;p&gt;为什么我要强调看文档？要什么提问前要先google一下？原因很简单，你首先愿意对自己的问题花时间！你自己不愿意花时间，你凭什么要求别人为你花时间！&lt;/p&gt;
+
+&lt;p&gt;为什么在上面微信截图里我强调在github开个issue好好描述问题？为什么我在github模版里要强调可重复性例子？你花时间把自己的问题描述情楚，整理自己的代码让别人可以重复出你的问题，这是在节省别人帮你解决问题的时间，也就是说这是在尊重别人的时间！尊重别人也是尊重自己！你的问题更有可能得到解答，别人会更愿意帮助你，即使你的问题很白痴，别人也会本着要对新手nice的态度对待你。而那些不读文档的伸手党，则往往只会得到RTFM四个字母的回(xiu)复(ru)。&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -245,9 +928,11 @@ print(p)
       <pubDate>Thu, 16 Mar 2017 12:23:16 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2017/03/peak%E6%B3%A8%E9%87%8A/</guid>
-      <description>&lt;p&gt;这一次讲解非常重要的peak注释，注释在&lt;strong&gt;ChIPseeker&lt;/strong&gt;里只需要用到一个函数&lt;strong&gt;annotatePeak&lt;/strong&gt;，它可以满足大家各方面的需求。&lt;/p&gt;
+      <description>
 
-&lt;h2 id=&#34;输入&#34;&gt;输入&lt;/h2&gt;
+&lt;p&gt;这一次讲解非常重要的peak注释，注释在&lt;strong&gt;ChIPseeker&lt;/strong&gt;里只需要用到一个函数&lt;strong&gt;annotatePeak&lt;/strong&gt;，它可以满足大家各方面的需求。&lt;/p&gt;
+
+&lt;h2 id=&#34;输入:4b21ea5970cfe309bb59877ac4e1f485&#34;&gt;输入&lt;/h2&gt;
 
 &lt;p&gt;当然需要我们上次讲到的BED文件，&lt;strong&gt;ChIPseeker&lt;/strong&gt;自带了5个BED文件，用&lt;strong&gt;getSampleFiles()&lt;/strong&gt;可以拿到文件的全路径，它返回的是个named list，我这里取第4个文件来演示。&lt;strong&gt;annotatePeak&lt;/strong&gt;的输入也可以是&lt;strong&gt;GRanges&lt;/strong&gt;对象，你如果用R做peak calling的话,直接就可以衔接上&lt;strong&gt;ChIPseeker&lt;/strong&gt;了。&lt;/p&gt;
 
@@ -279,8 +964,79 @@ print(p)
 &lt;p&gt;这里需要注意的是，启动子区域是没有明确的定义的，所以你可能需要指定&lt;strong&gt;tssRegion&lt;/strong&gt;，把基因起始转录位点的上下游区域来做为启动子区域。&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;有了这两个输入（BED文件和TxDb对象），你就可以跑注释了，然后就可以出结果了。
-&lt;/p&gt;</description>
+&lt;p&gt;有了这两个输入（BED文件和TxDb对象），你就可以跑注释了，然后就可以出结果了。&lt;/p&gt;
+
+&lt;h2 id=&#34;输出:4b21ea5970cfe309bb59877ac4e1f485&#34;&gt;输出&lt;/h2&gt;
+
+&lt;p&gt;如果在R里打输出的对象，它会告诉我们ChIPseq的位点落在基因组上什么样的区域，分布情况如何。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; x
+Annotated peaks generated by ChIPseeker
+1331/1331  peaks were annotated
+Genomic Annotation Summary:
+             Feature  Frequency
+9           Promoter 48.1592787
+4             5&#39; UTR  0.7513148
+3             3&#39; UTR  4.2073629
+1           1st Exon  0.7513148
+7         Other Exon  3.9068370
+2         1st Intron  3.6814425
+8       Other Intron  7.7385424
+6 Downstream (&amp;lt;=3kb)  1.1269722
+5  Distal Intergenic 29.6769346
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果我想看具体的信息呢？你可以用&lt;strong&gt;as.GRanges&lt;/strong&gt;方法，这里我只打印前三行：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/CS/2017-03-09-235213_697x358_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Bioconductor里有很多包是针对&lt;strong&gt;GRanges&lt;/strong&gt;对象的，这样方便你在R里做后续的处理，如果你说你不懂这些，只想输出个Excel表格。那么也很容易，用&lt;strong&gt;as.data.frame&lt;/strong&gt;就可以转成&lt;strong&gt;data.frame&lt;/strong&gt;，然后你就可以用&lt;strong&gt;write.table&lt;/strong&gt;输出表格了。&lt;/p&gt;
+
+&lt;h2 id=&#34;两种-不同的注释:4b21ea5970cfe309bb59877ac4e1f485&#34;&gt;两种&lt;strong&gt;不同的注释&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;这里注释有两种，一种是genomic annotation (也就是annotation这一列）还有就是nearest gene annotation（也就是多出来的其它列）。&lt;/p&gt;
+
+&lt;p&gt;经常有人问我问题，把这两种搞混。genomic annotation注释的是peak的位置，它落在什么地方了，可以是UTR，可以是内含子或者外显子。&lt;/p&gt;
+
+&lt;p&gt;而最近基因是peak相对于转录起始位点的距离，不管这个peak是落在内含子或者别的什么位置上，即使它落在基因间区上，我都能够找到一个离它最近的基因（即使它可能非常远）。&lt;/p&gt;
+
+&lt;p&gt;这两种注释的策略是不一样的。针对不同的问题。第一种策略peak所在位置，可能就是调控的根本，比如你要做可变剪切的，最近基因的注释显然不是你关注的点。&lt;/p&gt;
+
+&lt;p&gt;而做基因表达调控的，当然promoter区域是重点，离结合位点最近的基因更有可能被调控。&lt;/p&gt;
+
+&lt;p&gt;最近基因的注释信息虽然是以基因为单位给出，但我们针对的是转录起始位点来计算距离，针对于不同的转录本，一个基因可能有多个转录起始位点，所以注释是在转录本的水平上进行的，我们可以看到输出有一列是&lt;strong&gt;transcriptId&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;第三种注释:4b21ea5970cfe309bb59877ac4e1f485&#34;&gt;第三种注释&lt;/h2&gt;
+
+&lt;p&gt;两种注释有时候还不够，我想看peak上下游某个范围内（比如说-5k到5k的距离）都有什么基因，&lt;strong&gt;annotatePeak&lt;/strong&gt;也可以做到。&lt;/p&gt;
+
+&lt;p&gt;你只要传个参数说你要这个信息，还有什么区间内，就可以了。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;x = annotatePeak(f[[4]], tssRegion=c(-1000, 1000), TxDb=txdb, addFlankGeneInfo=TRUE, flankDistance=5000)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/CS/2017-03-10-001539_1280x800_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;输出中多三列: &lt;strong&gt;flank_txIds&lt;/strong&gt;, &lt;strong&gt;flank_geneIds&lt;/strong&gt;和&lt;strong&gt;flank_gene_distances&lt;/strong&gt;，在指定范围内所有的基因都被列出。&lt;/p&gt;
+
+&lt;h2 id=&#34;基因注释:4b21ea5970cfe309bb59877ac4e1f485&#34;&gt;基因注释&lt;/h2&gt;
+
+&lt;p&gt;对于通常情况找最近基因的策略，最近基因给出来了，但都是各种人类不友好的ID，我们不能把一切都交给计算机，输出的结果我们还是要看一看的，能不能把基因的ID换成对人类友好的基因名，并给出描述性的全称，这个必然可以有。&lt;/p&gt;
+
+&lt;p&gt;只需要给&lt;strong&gt;annotatePeak&lt;/strong&gt;传入&lt;strong&gt;annoDb&lt;/strong&gt;参数就行了。&lt;/p&gt;
+
+&lt;p&gt;如果你的&lt;strong&gt;TxDb&lt;/strong&gt;的基因ID是Entrez，它会转成ENSEMBL，反之亦然，当然不管是那一种，都会给出SYMBOL，还有描述性的GENENAME.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/CS/2017-03-10-001907_1280x800_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;citation:4b21ea5970cfe309bb59877ac4e1f485&#34;&gt;Citation&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Yu G&lt;/em&gt;&lt;/strong&gt;, Wang LG and He QY&lt;sup&gt;*&lt;/sup&gt;. &lt;a href=&#34;http://bioinformatics.oxfordjournals.org/content/31/14/2382&#34;&gt;ChIPseeker: an R/Bioconductor package for ChIP peak annotation, comparison and visualization&lt;/a&gt;. &lt;strong&gt;&lt;em&gt;Bioinformatics&lt;/em&gt;&lt;/strong&gt; 2015, 31(14):2382-2383.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&#34;text/javascript&#34; src=&#34;https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js&#34;&gt;&lt;/script&gt;&lt;div class=&#34;altmetric-embed&#34; data-badge-type=&#34;donut&#34; data-badge-popover=&#34;right&#34; data-altmetric-id=&#34;3781087&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -289,7 +1045,9 @@ print(p)
       <pubDate>Thu, 09 Mar 2017 00:13:57 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2017/03/bed%E6%96%87%E4%BB%B6/</guid>
-      <description>&lt;p&gt;BED的全称是Browser Extensible Data，顾名思义是为genome browser设计的，大名鼎鼎的bedtools可不是什么「床上用品」。&lt;/p&gt;
+      <description>
+
+&lt;p&gt;BED的全称是Browser Extensible Data，顾名思义是为genome browser设计的，大名鼎鼎的bedtools可不是什么「床上用品」。&lt;/p&gt;
 
 &lt;p&gt;BED包含有3个必须的字段和9个可选字段。&lt;/p&gt;
 
@@ -320,7 +1078,58 @@ print(p)
 &lt;li&gt;12 blockStarts - 子元件的起始位点&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;一般情况下，我们只用到前面5个字段，这也是做peak calling的MACS输出的字段。&lt;/p&gt;
+
+&lt;p&gt;其中第5个字段，MACS的解释是这样子的：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The 5th column in this file is the summit height of fragment pileup.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;是片段堆积的峰高，这也不难理解，为什么我在ChIPseeker是画peak coverage的函数&lt;strong&gt;covplot&lt;/strong&gt;要有个*weightCol*的参数了。&lt;/p&gt;
+
+&lt;h2 id=&#34;数据可视化:99328489e3689b55705b2759560872b2&#34;&gt;数据可视化&lt;/h2&gt;
+
+&lt;p&gt;从名字上看，它是为genome browser而生，相应的，&lt;strong&gt;ChIPseeker&lt;/strong&gt;实现了*covplot*来可视化BED数据。&lt;/p&gt;
+
+&lt;h3 id=&#34;covplot-支持直接读文件出图:99328489e3689b55705b2759560872b2&#34;&gt;&lt;strong&gt;covplot&lt;/strong&gt;支持直接读文件出图：&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(ChIPseeker)
+library(ggplot2)
+
+files &amp;lt;- getSampleFiles()
+
+covplot(files[[4]])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/covplot_1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;支持granges对象-同时可以多个文件或者grangeslist:99328489e3689b55705b2759560872b2&#34;&gt;支持GRanges对象，同时可以多个文件或者GRangesList&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;peak=GenomicRanges::GRangesList(CBX6=readPeakFile(files[[4]]),
+                                CBX7=readPeakFile(files[[5]]))
+covplot(peak, weightCol=&amp;quot;V5&amp;quot;) + facet_grid(chr ~ .id)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/covplot_2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;支持可视化某个窗口:99328489e3689b55705b2759560872b2&#34;&gt;支持可视化某个窗口&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;covplot(peak, weightCol=&amp;quot;V5&amp;quot;, chrs=c(&amp;quot;chr17&amp;quot;, &amp;quot;chr18&amp;quot;), xlim=c(4e7, 5e7)) + facet_grid(chr ~ .id)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/covplot_3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;拿到数据后，我们首先会可视化看一下数据，接下来就会想知道这些peak都和什么样的基因有关，这将在下次讲解，如何做注释。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;citation:99328489e3689b55705b2759560872b2&#34;&gt;Citation&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Yu G&lt;/em&gt;&lt;/strong&gt;, Wang LG and He QY&lt;sup&gt;*&lt;/sup&gt;. &lt;a href=&#34;http://bioinformatics.oxfordjournals.org/content/31/14/2382&#34;&gt;ChIPseeker: an R/Bioconductor package for ChIP peak annotation, comparison and visualization&lt;/a&gt;. &lt;strong&gt;&lt;em&gt;Bioinformatics&lt;/em&gt;&lt;/strong&gt; 2015, 31(14):2382-2383.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&#34;text/javascript&#34; src=&#34;https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js&#34;&gt;&lt;/script&gt;&lt;div class=&#34;altmetric-embed&#34; data-badge-type=&#34;donut&#34; data-badge-popover=&#34;right&#34; data-altmetric-id=&#34;3781087&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -331,7 +1140,39 @@ print(p)
       <guid>https://guangchuangyu.github.io/cn/2017/02/%E6%A0%B9%E6%8D%AEgtf%E7%94%BB%E5%9F%BA%E5%9B%A0%E7%9A%84%E5%A4%9A%E4%B8%AA%E8%BD%AC%E5%BD%95%E6%9C%AC%E7%BB%93%E6%9E%84/</guid>
       <description>&lt;p&gt;这是&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzAxMDkxODM1Ng==&amp;amp;mid=2247484044&amp;amp;idx=2&amp;amp;sn=56b45eaeb4ad344481afa05abeb1c53e&amp;amp;chksm=9b484237ac3fcb219e41d5653fb800f987e7d217bbb3a5a0c0170ffb8e402f4cc5f726212ef7&amp;amp;mpshare=1&amp;amp;scene=1&amp;amp;srcid=0220calgiLgIZmjiiaNXZ0BE&amp;amp;key=df0a0b140e64a33b97880a54ee7cc95794b60a225d5338e88620674bed463405e61c5365394b7830750de8d3a88e122babd535c88c7d74b974b20c509218cf00d106c991a3a3f049c698a8f847aa5e06&amp;amp;ascene=0&amp;amp;uin=MTMxNjc4OTY2Mg%3D%3D&amp;amp;devicetype=iMac14%2C2+OSX+OSX+10.11.6+build&#34;&gt;生物技能树的一道习题&lt;/a&gt;，使用了base plot来画，做为补充，我使用ggplot2来重画一遍。&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;url &amp;lt;- &amp;quot;http://www.broadinstitute.org/cancer/cga/sites/default/files/data/tools/rnaseqc/gencode.v7.annotation_goodContig.gtf.gz&amp;quot;
+tmpfile &amp;lt;- tempfile(fileext=&amp;quot;.gtf.gz&amp;quot;)
+download.file(url, tmpfile)
+gtf &amp;lt;- read.table(tmpfile,stringsAsFactors = F,
+                  header = F,comment.char = &amp;quot;#&amp;quot;,sep = &#39;\t&#39;
+                  )
+gtf &amp;lt;- gtf[gtf[,2] ==&#39;HAVANA&#39;,]
+gtf &amp;lt;- gtf[grepl(&#39;protein_coding&#39;,gtf[,9]),]
+gtf$gene &amp;lt;- sapply(as.character(gtf[,9]), function(x) sub(&amp;quot;.*gene_name\\s([^;]+);.*&amp;quot;, &amp;quot;\\1&amp;quot;, x))
+
+draw_gene &amp;lt;- &#39;ANXA1&#39;
+structure &amp;lt;- gtf[gtf$gene==draw_gene,c(1,3:5)]
+names(structure) &amp;lt;- c(&amp;quot;chr&amp;quot;, &amp;quot;record&amp;quot;, &amp;quot;start&amp;quot;, &amp;quot;end&amp;quot;)
+idx &amp;lt;- which(structure$record == &amp;quot;transcript&amp;quot;)
+s &amp;lt;- idx+1
+e &amp;lt;- c(idx[-1]-1, nrow(structure))
+g &amp;lt;- lapply(seq_along(s), function(i) {
+  x &amp;lt;- structure[s[i]:e[i],]
+  x$transcript &amp;lt;- i
+  return(x)
+}) %&amp;gt;% do.call(rbind, .)
+
+g &amp;lt;- g[g$record == &amp;quot;exon&amp;quot;,]
+g$transcript &amp;lt;- factor(g$transcript)
+
+library(ggplot2)
+ggplot(g) + 
+	geom_segment(aes(x=start, xend=end, y=transcript, yend=transcript, color=transcript), size=2) + 
+	theme(legend.position=&amp;quot;none&amp;quot;) + labs(title=&amp;quot;ANXA1&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/gtf.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -340,7 +1181,9 @@ print(p)
       <pubDate>Mon, 20 Feb 2017 12:23:16 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2017/02/chipseq%E7%AE%80%E4%BB%8B/</guid>
-      <description>&lt;p&gt;ChIP是指染色质免疫沉淀，它通过特异结合抗体将DNA结合蛋白免疫沉淀，可以用于捕获蛋白质（如转录因子，组蛋白修饰）的DNA靶点。这技术存在非常久了，在二代测序之前，结合microarray，它的名字叫&lt;code&gt;ChIP-on-chip&lt;/code&gt;，二代测序出来之后，显而易见的，免疫沉淀拉下来的DNA拿去NGS测序，这必然是下一代的ChIP技术，优点也是显而易见的，不再需要设计探针（往往存在着一定的偏向性）。所以NGS出来以后，不差钱的牛逼实验室显然占据上风，谁先做出来，谁就定义了新技术。这是有钱人的竞赛，没钱的只能等着技术烂大街的时候跟风做。&lt;/p&gt;
+      <description>
+
+&lt;p&gt;ChIP是指染色质免疫沉淀，它通过特异结合抗体将DNA结合蛋白免疫沉淀，可以用于捕获蛋白质（如转录因子，组蛋白修饰）的DNA靶点。这技术存在非常久了，在二代测序之前，结合microarray，它的名字叫&lt;code&gt;ChIP-on-chip&lt;/code&gt;，二代测序出来之后，显而易见的，免疫沉淀拉下来的DNA拿去NGS测序，这必然是下一代的ChIP技术，优点也是显而易见的，不再需要设计探针（往往存在着一定的偏向性）。所以NGS出来以后，不差钱的牛逼实验室显然占据上风，谁先做出来，谁就定义了新技术。这是有钱人的竞赛，没钱的只能等着技术烂大街的时候跟风做。&lt;/p&gt;
 
 &lt;p&gt;这是显而易见的下一代技术，外加技术上完全是可行的，所以这是一场单纯的时间竞赛，于是几乎同时出来CNS文章，基本上谁也不比谁差地同时扔出来。&lt;/p&gt;
 
@@ -354,7 +1197,35 @@ print(p)
 
 &lt;p&gt;2007年来自三个不同的实验室，几乎是同时间出来（最长差不了3个月），分别发CNS，一起定义了这个&lt;code&gt;ChIPseq&lt;/code&gt;技术。&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/CS/chipseq.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这个技术分为4步：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Cross-linking&lt;/li&gt;
+&lt;li&gt;Sonication&lt;/li&gt;
+&lt;li&gt;IP&lt;/li&gt;
+&lt;li&gt;Sequencing&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;DNA和蛋白质交联(cross-linking)，超声(sonication)将染色体随机切割，利用抗原抗体的特异性识别(IP)，把&lt;strong&gt;目标蛋白&lt;/strong&gt;相结合的DNA片段沉淀下来，反交联释放DNA片段，最后是测序(sequencing)。&lt;/p&gt;
+
+&lt;p&gt;一个典型的分析流程如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/CS/ChIP-seq-1.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;测序之后，我们当然首先需要做质量控制，然后就是做mapping，拿到这些DNA片段在染色体上的位置信息，ChIPseq的数据我们还需要做peak calling，把背景噪声去掉，比如上图中使用MACS做peak calling，这样我们就得到了protein binding site (peak)，就可以做下游的分析，比如可视化、相关的基因（比如最近的基因、宿主基因）、Motif分析等等。&lt;/p&gt;
+
+&lt;p&gt;Peak annotation做的就是binding site的相关基因注释，在讲解&lt;code&gt;ChIPseeker&lt;/code&gt;的注释功能之前，下次先讲解一下peak calling的输出，BED文件。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;citation:f7b0a5b14beddee41d112cfd5bca1431&#34;&gt;Citation&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Yu G&lt;/em&gt;&lt;/strong&gt;, Wang LG and He QY&lt;sup&gt;*&lt;/sup&gt;. &lt;a href=&#34;http://bioinformatics.oxfordjournals.org/content/31/14/2382&#34;&gt;ChIPseeker: an R/Bioconductor package for ChIP peak annotation, comparison and visualization&lt;/a&gt;. &lt;strong&gt;&lt;em&gt;Bioinformatics&lt;/em&gt;&lt;/strong&gt; 2015, 31(14):2382-2383.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&#34;text/javascript&#34; src=&#34;https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js&#34;&gt;&lt;/script&gt;&lt;div class=&#34;altmetric-embed&#34; data-badge-type=&#34;donut&#34; data-badge-popover=&#34;right&#34; data-altmetric-id=&#34;3781087&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -371,261 +1242,18 @@ print(p)
 
 &lt;p&gt;这个问题其实很简单，用&lt;code&gt;stringr&lt;/code&gt;包的&lt;code&gt;str_wrap&lt;/code&gt;来完成文本自动换行就行了。&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>ggtree发表</title>
-      <link>https://guangchuangyu.github.io/cn/2017/01/ggtree%E5%8F%91%E8%A1%A8/</link>
-      <pubDate>Sun, 22 Jan 2017 15:10:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2017/01/ggtree%E5%8F%91%E8%A1%A8/</guid>
-      <description>&lt;p&gt;MEE在18号出版了今年（第8卷）第1期，ggtree正好在这一期出版，一经出版就有几条推在传播, 我也是在推特上看到，才发现，哦原来我的文章出版了。然后我又发现2017年新鲜出炉有了一篇PNAS的引用。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(stringr)
+library(ggplot2)
+library(clusterProfiler)
+data(geneList)
+de &amp;lt;- names(geneList)[1:100]
+x &amp;lt;- enrichKEGG(de)
+p &amp;lt;- barplot(x) 
+p + scale_x_discrete(labels=function(x) str_wrap(x, width=10))
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;我以前没接触过进化，来了现在这个实验室，发现可视化是个大问题，大家都在用AI，慢慢地抠，对于一些和进化树相关的数据，自己一点一点地在AI里面加上去。甚至于genotype table是一个框一个框地在AI里面加的。一方面画一顆树可能用掉你几天的时间，另一方面，太容易出错了，再者你花的时间并不能转化为生产力，每一次你都要这么搞！这简直就是水深火热啊！&lt;/p&gt;
-
-&lt;p&gt;我也帮师兄写过一些代码，给定进化树上节点的序列，我比较父节点和子节点，把碱基或氨基酸替换写到newick树的node label，然后就可以用软件展示序列的替换情况。教会了师兄，他再去给他的师弟师妹们演示，说以后咱们可以这么干了，一个个觉得很牛逼，我内心想的是，愚蠢的人类啊，node label只能存一个信息，牛逼的方式应该是可以展示多个维度的信息，通过图层自由组合。这个时候我就产生了要写ggtree的想法。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title> R包辣鸡之CorMut</title>
-      <link>https://guangchuangyu.github.io/cn/2017/01/r%E5%8C%85%E8%BE%A3%E9%B8%A1%E4%B9%8Bcormut/</link>
-      <pubDate>Tue, 17 Jan 2017 12:23:16 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2017/01/r%E5%8C%85%E8%BE%A3%E9%B8%A1%E4%B9%8Bcormut/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;曾经QQ上有人叫我帮忙，跑某个R包做个分析，我一看那包，一堆bug，显然不能用，那就不是简单的事了，我可没空帮他写代码，于是他就经常恶心我，有事没事就来说我写ggtree没意义，不是实质科研，不如跟他做点牛逼的，不如再写个R包干他那事。昨天用马甲在进化群里问画树，我还热心贴个代码给他，说看不懂，我在群里说了，我写个文详细介绍一下。然而他的马甲身份暴露啦，所以今日跳票，我写好的文也不发了，你牛逼就不要用马甲来骗代码呀，ggtree没用你不要用呀，叔就是这么任性😎&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;之前讲过某个R包我一看一堆bug，直接放弃，今天倒是拿出来晒一下，不为别的，我只想说一句，一知半解是很危险的，盲目相信软件也是很危险的。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>ChIPseq从入门到放弃</title>
-      <link>https://guangchuangyu.github.io/cn/2017/01/chipseq%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E6%94%BE%E5%BC%83/</link>
-      <pubDate>Sun, 08 Jan 2017 22:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2017/01/chipseq%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E6%94%BE%E5%BC%83/</guid>
-      <description>&lt;p&gt;接下来要出一个ChIPseq系列，讲一讲ChIPseq和我的ChIPseeker包，从入门到放弃是我自己的个人写照。我做ChIPseq总共也就3个月的时间，做的事情并不多，在一知半解的情况下写下了ChIPseeker包。&lt;/p&gt;
-
-&lt;p&gt;我当时被要求做ChIPseq分析是为他人做嫁衣，而且是完全白干那种，但做为学生，白干也得干。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/1487166664.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;当时一开始使用ChIPpeakAnno做注释，但用UCSC genome browser检验结果的时候，发现对不上。在对ChIPpeakAnno包不满意的情况下，开始着手写ChIPseeker，其实在使用ChIPpeakAnno的时候，我就有写代码对结果做一些可视化，所以未有ChIPseeker先有ChIPseeker的部分可视化功能。当时写了篇博客文说ChIPpeakAnno的问题，一个月后就在Bioconductor上发表了ChIPseeker，这包完全是我半夜在宿舍里写出来的。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>clifun:在R里装装逼</title>
-      <link>https://guangchuangyu.github.io/cn/2016/12/clifun%E5%9C%A8r%E9%87%8C%E8%A3%85%E8%A3%85%E9%80%BC/</link>
-      <pubDate>Tue, 13 Dec 2016 00:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2016/12/clifun%E5%9C%A8r%E9%87%8C%E8%A3%85%E8%A3%85%E9%80%BC/</guid>
-      <description>&lt;p&gt;天天活在命令行下，需要一些有趣的小命令来调节一下枯燥的生活（其实是需要装装逼）。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/clifun/Screen Shot 2016-12-12 at 1.42.00 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>跨物种计算基因相似性</title>
-      <link>https://guangchuangyu.github.io/cn/2016/12/%E8%B7%A8%E7%89%A9%E7%A7%8D%E8%AE%A1%E7%AE%97%E5%9F%BA%E5%9B%A0%E7%9B%B8%E4%BC%BC%E6%80%A7/</link>
-      <pubDate>Wed, 07 Dec 2016 00:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2016/12/%E8%B7%A8%E7%89%A9%E7%A7%8D%E8%AE%A1%E7%AE%97%E5%9F%BA%E5%9B%A0%E7%9B%B8%E4%BC%BC%E6%80%A7/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;Hi,&lt;/p&gt;
-
-&lt;p&gt;I know this question has been asked before a long time ago and I don&amp;rsquo;t see an answer of that question in the mailing list or in the vignette of GOsemsim package. So I was wondering what is the easiest possible way of calculating GO semantic similarity value for orthologus gene pairs between two species using the above R package or any other package you know of. I am not doing this for less annotated species I need to calculate that for orthologus genes between Human and Mouse (both of which are well annotated IMHO). So I would much appreciate it if anyone who has already done this before can point me to a resource which already has pre-calculated semantic similarity values for Mouse and Human orthologues or has inbuilt code to do that.&lt;/p&gt;
-
-&lt;p&gt;Thanks &amp;amp; regards&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;这是Bioconductor support site上的&lt;a href=&#34;https://support.bioconductor.org/p/90063/&#34;&gt;问题&lt;/a&gt;，问的是他想要计算人类和老鼠的直系同源基因通过GO注释来计算语义相似性，问GOSemSim是否支持，这个答案是yes and no。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>中空的环形树</title>
-      <link>https://guangchuangyu.github.io/cn/2016/12/%E4%B8%AD%E7%A9%BA%E7%9A%84%E7%8E%AF%E5%BD%A2%E6%A0%91/</link>
-      <pubDate>Sat, 03 Dec 2016 00:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2016/12/%E4%B8%AD%E7%A9%BA%E7%9A%84%E7%8E%AF%E5%BD%A2%E6%A0%91/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/iss95.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这是&lt;a href=&#34;https://github.com/GuangchuangYu/ggtree/issues/95&#34;&gt;github&lt;/a&gt;上的问题，他想画环形树的时候，加一条长长的root length把tips给顶出去。&lt;/p&gt;
-
-&lt;p&gt;这个问题在google forum上我早已解答：
-&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>无中生有windows版R包</title>
-      <link>https://guangchuangyu.github.io/cn/2016/11/%E6%97%A0%E4%B8%AD%E7%94%9F%E6%9C%89windows%E7%89%88r%E5%8C%85/</link>
-      <pubDate>Wed, 30 Nov 2016 00:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2016/11/%E6%97%A0%E4%B8%AD%E7%94%9F%E6%9C%89windows%E7%89%88r%E5%8C%85/</guid>
-      <description>&lt;p&gt;之前帮助高老师实现比对序列的做图，把代码打包为R包seqcombo，方便安装使用。花两小时的作品，发现还有些用户在使用 -，-&lt;/p&gt;
-
-&lt;p&gt;之前有人联系我说安装不上，我觉得不应该有这个问题，因为是纯R代码代码，不涉及到编译，源码包安装不应该有问题。但既然有人问，又都是windows用户，我想可以给他们提供编译好的windows包，简化安装过程（这么体贴用户，我都要被自己感动了）。&lt;/p&gt;
-
-&lt;p&gt;放在CRAN或Bioconductor上的R包，CRAN和Bioconductor会编译出不同平台的二进制包，但seqcobo放在github上，只有源代码，没有预编译好的包，但没有不是问题，我编译好放上去就行了。&lt;/p&gt;
-
-&lt;p&gt;但问题是我没有windows！多年来一直是OSX和linux，MacBook Pro跑Arch Linux，一台iMac跑OSX，我自己根本没有跑windows的机器，所以难为无米之炊，借台机器总是有的，但总不能每次一更新，就拷个代码去别人的机器上打包，再拷回来上传到网上，想想也是蛋疼。&lt;/p&gt;
-
-&lt;p&gt;所以没有windows，这事干起来还不太容易，！在想怎么来无中生有生出个windows包出来的时候，我想起了rhub，也是因为没有windows，之前就用rhub来进行windows平台的R check，在把代码push到CRAN或Bioconductor之前，我总会测试没问题了，再提交代码过去，而rhub正好可以给我提供windows平台的检测。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>vertical dendrogram in ggtree</title>
-      <link>https://guangchuangyu.github.io/cn/2016/11/vertical-dendrogram-in-ggtree/</link>
-      <pubDate>Tue, 29 Nov 2016 00:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2016/11/vertical-dendrogram-in-ggtree/</guid>
-      <description>&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/guangchuangyu&#34;&gt;@guangchuangyu&lt;/a&gt; Is it possible to plot horizontal trees with ggtree? (a la plot.hclust default).&lt;/p&gt;&amp;mdash; Diego Diez (@kurai_yousei) &lt;a href=&#34;https://twitter.com/kurai_yousei/status/799532564633518080&#34;&gt;November 18, 2016&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;这个Diego在推特上问的问题，他最近在写一个&lt;a href=&#34;https://github.com/ddiez/motiftools&#34;&gt;motiftools&lt;/a&gt;的R包，里面用了ggtree来画图，我想他应该是要解决他在包里的画树/聚类功能吧。&lt;/p&gt;
-
-&lt;p&gt;他问题写的horizontal，但其实plot.hclust默认是vertical，ggtree默认也是horizontal，所以我认为他问的是vertical layout，这个在我的回答中也得到了他的确认。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>buildGOmap</title>
-      <link>https://guangchuangyu.github.io/cn/2016/11/buildgomap/</link>
-      <pubDate>Mon, 28 Nov 2016 00:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2016/11/buildgomap/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/Bioconductor/clusterProfiler/640.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;周末Bioconductor上的问题，说的是他用了buildGOmap之后，在终端上输出了一长串，但没有文件产生，今天就来讲讲这个buildGOmap的前世今生。&lt;/p&gt;
-
-&lt;p&gt;当年写clusterProfiler的时候在暨大工作，主要也是自己的需求驱动，因为实验室里有做细菌，比如肺炎链球菌D39，在细菌界基本上所谓的GO分析，就是跑个电子注释，然后数一下数目，列个表格画个饼图。很难看到有富集性分析的身影，因为绝大多数的工具是只支持少量模式生物的，还有部分工具比如支持某些细菌，支持某些植物或者某些真菌，比如支持植物的，也只是支持少量的植物物种而已，都是些自己定制给自己用的玩意，放出来只是为了顺道灌水而已。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>使用emoji画图</title>
-      <link>https://guangchuangyu.github.io/cn/2016/11/%E4%BD%BF%E7%94%A8emoji%E7%94%BB%E5%9B%BE/</link>
-      <pubDate>Fri, 25 Nov 2016 00:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2016/11/%E4%BD%BF%E7%94%A8emoji%E7%94%BB%E5%9B%BE/</guid>
-      <description>&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/hashtag/rstats?src=hash&#34;&gt;#rstats&lt;/a&gt; code for the PhD/cute animals gestation &lt;a href=&#34;https://twitter.com/hashtag/ggplot2?src=hash&#34;&gt;#ggplot2&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/gganimate?src=hash&#34;&gt;#gganimate&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/emojifont?src=hash&#34;&gt;#emojifont&lt;/a&gt; plot &lt;a href=&#34;https://t.co/qWM0bCHoHJ&#34;&gt;https://t.co/qWM0bCHoHJ&lt;/a&gt; 🐭🐶🐱🐺🐯🐷🐏🐻👶🐳🐘📕 &lt;a href=&#34;https://t.co/a4GYl191a8&#34;&gt;https://t.co/a4GYl191a8&lt;/a&gt;&lt;/p&gt;&amp;mdash; Maëlle Salmon (@ma_salmon) &lt;a href=&#34;https://twitter.com/ma_salmon/status/800007428096094209&#34;&gt;November 19, 2016&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;无缘无故收到好几条消息，原来是用emoji画图。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>食色性也</title>
-      <link>https://guangchuangyu.github.io/cn/2016/11/%E9%A3%9F%E8%89%B2%E6%80%A7%E4%B9%9F/</link>
-      <pubDate>Mon, 21 Nov 2016 12:23:16 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2016/11/%E9%A3%9F%E8%89%B2%E6%80%A7%E4%B9%9F/</guid>
-      <description>&lt;p&gt;画图配色并不是一件简单的事情，好的配色让人眼前一亮，虽然R有很多配色方案，做为ggplot2的爱好者，ggthemes也提供了很多主题，内置了很多配色方案，还有一些其它的包，比如ggtech，包含了一些科技公司比如facebook, twitter, google的典型配色方案，甚至于ggsci，提供了nature, lancet的配色方案。&lt;/p&gt;
-
-&lt;p&gt;但这些远远不够！
-但这些远远不够！
-但这些远远不够！&lt;/p&gt;
-
-&lt;p&gt;看到一张图片让我眼前一亮，我想用它的配色方案呢！我想拿最新电影的海报的配色来装个逼呢！画图时不想用现成的配色，想要另类一些，我想用一些大自然的风格，比如求偶期间各种鸟类的羽毛颜色来画！&lt;/p&gt;
-
-&lt;p&gt;这些在R里面，都是可以的，可以的，可以的&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>DNA序列差异作图</title>
-      <link>https://guangchuangyu.github.io/cn/2016/11/dna%E5%BA%8F%E5%88%97%E5%B7%AE%E5%BC%82%E4%BD%9C%E5%9B%BE/</link>
-      <pubDate>Sat, 19 Nov 2016 12:23:16 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2016/11/dna%E5%BA%8F%E5%88%97%E5%B7%AE%E5%BC%82%E4%BD%9C%E5%9B%BE/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2016/Screen Shot 2016-11-17 at 8.20.21 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这是高老师&lt;a href=&#34;http://link.springer.com/article/10.1007/s11540-015-9307-3&#34;&gt;文章&lt;/a&gt;里的图，每一个小图都是通过比较两条比对序列差异而做出来的，从图A和B中可以看出，CF_YL21有可能是Mont和Oz两条序列重组而来。高老师自己做出这图后，深知手工统计序列差异、画图、拼图之困难。问我有没有办法读两条序列，生成一个图。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>ggtree: reverse time scale</title>
-      <link>https://guangchuangyu.github.io/cn/2016/11/ggtree-reverse-time-scale/</link>
-      <pubDate>Tue, 08 Nov 2016 12:23:16 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2016/11/ggtree-reverse-time-scale/</guid>
-      <description>&lt;p&gt;这是最近github上的问题，如何反转time scale，也就是把最近的时间设为0。而内部节点为距今多少年，这个很容易，把x轴的值变成x-max(x)就可以，感觉这个也只会在时间树上使用，所以取名revts（reverse time scale），revts之后，x轴最大值是0，其它为负数，可以使用scale_x_continuous改label为绝对值。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Update R packages</title>
-      <link>https://guangchuangyu.github.io/cn/2016/10/update-r-packages/</link>
-      <pubDate>Wed, 19 Oct 2016 09:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2016/10/update-r-packages/</guid>
-      <description>&lt;p&gt;更新R较为无痛的方法已经在&lt;a href=&#34;http://guangchuangyu.github.io/2014/11/hello-yosemite/&#34;&gt;hello yosemite&lt;/a&gt;一文中提及。今天Bioconductor发布3.4版本，又是更新R包的时候了。&lt;/p&gt;
-
-&lt;p&gt;之前为了&lt;a href=&#34;https://guangchuangyu.github.io/2016/07/how-to-bug-author/&#34;&gt;吐槽&lt;/a&gt;很多人问问题都是在使用早已不维护的老版本，写了&lt;a href=&#34;https://cran.r-project.org/web/packages/rvcheck/&#34;&gt;rvcheck&lt;/a&gt;来帮忙检查版本。既然能够帮我们检查版本，自然能够帮忙升级。&lt;/p&gt;
-
-&lt;p&gt;使用&lt;code&gt;rvcheck::update_all()&lt;/code&gt;可以自动更新CRAN, Bioconductor和Github上的R包。其实可以放到系统任务里，每月自动更新一次，然后就可以完全不用管升级的事情。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Evolution of my BioC packages</title>
-      <link>https://guangchuangyu.github.io/cn/2016/07/evolution-of-my-bioc-packages/</link>
-      <pubDate>Wed, 13 Jul 2016 21:06:59 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2016/07/evolution-of-my-bioc-packages/</guid>
-      <description>&lt;p&gt;发现Youtube上有一个视频叫&lt;a href=&#34;https://www.youtube.com/watch?v=MYTblx-5Yog&#34;&gt;Evolution of clusterProfiler&lt;/a&gt;, 是Landon Wilkins用&lt;a href=&#34;http://gource.io/&#34;&gt;Gource&lt;/a&gt;做的。于是我也来玩一下，看一下自己这几年码代码的过程。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>第九届ChinaR会议生物信息学分会</title>
-      <link>https://guangchuangyu.github.io/cn/2016/05/%E7%AC%AC%E4%B9%9D%E5%B1%8Achinar%E4%BC%9A%E8%AE%AE%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%88%86%E4%BC%9A/</link>
-      <pubDate>Tue, 31 May 2016 18:06:59 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2016/05/%E7%AC%AC%E4%B9%9D%E5%B1%8Achinar%E4%BC%9A%E8%AE%AE%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%88%86%E4%BC%9A/</guid>
-      <description>&lt;p&gt;不记得是什么时候知道统计之都的，但我记得最早知道的是太云，因为我用了他写的&lt;a href=&#34;https://cran.r-project.org/package=corrplot&#34;&gt;corrplot&lt;/a&gt;包。后来统计之都最早接触的也是太云，他给我写邮件问我能不能帮忙校对&lt;a href=&#34;https://book.douban.com/subject/24527091/&#34;&gt;《ggplot2：数据分析与图形艺术》&lt;/a&gt;，从此开始和太云变成了网友。&lt;/p&gt;
-
-&lt;p&gt;我在暨大的时候，太云曾经邀请我去China-R会议做报告，但我觉得自己没什么好分享的，&lt;a href=&#34;http://guangchuangyu.github.io/GOSemSim&#34;&gt;GOSemSim&lt;/a&gt;这个包是硕士的时候做的，不好去讲之前做的东西。而当时我写的另一个包&lt;a href=&#34;http://guangchuangyu.github.io/clusterProfiler&#34;&gt;clusterProfiler&lt;/a&gt;，纯粹是因为大量做富集分析的工具都是针对模式生物，而我们实验室有做各种细菌；另外有一些工具，背景设置是有问题的。自己实现一个包，不受别人的限制。即便是这个包现在受到了一定的认可，比如BioC 3.3中有个&lt;a href=&#34;http://bioconductor.org/packages/release/bioc/html/debrowser.html&#34;&gt;debrowser&lt;/a&gt;的包使用了clusterProfiler，而在BioC 3.4中又有个新包&lt;a href=&#34;http://bioconductor.org/packages/devel/bioc/html/bioCancer.html&#34;&gt;bioCancer&lt;/a&gt;也使用了clusterProfiler；再比如这次在北京，有好几个参会的人员在茶歇时问了clusterProfiler的问题。但始终觉得这只是个实用性的包而已，算法是别人的，而且已经比较老了，类似的工具简直就是成百上千。所以也是不好意思拿出来讲的。所以我拒绝了太云的邀请，一直也没有参加China-R的会议。&lt;/p&gt;
-
-&lt;p&gt;今年是第九届China-R会议，这次会议规模很大，有22个分会场，超过100个演讲嘉宾，参会人数超过4000人。这一次刚好有个Bioconductor的分会场，Matt写信给我，说我写过几个Bioconductor包，他本人喜欢我的&lt;a href=&#34;http://guangchuangyu.github.io/ChIPseeker&#34;&gt;ChIPseeker&lt;/a&gt;包，问我能否在会上分享与Bioconductor包相关的经验。这是Bioconductor在中国的首秀，我欣然接受，当然也是因为这两年我写了&lt;a href=&#34;http://guangchuangyu.github.io/ChIPseeker&#34;&gt;ChIPseeker&lt;/a&gt;和&lt;a href=&#34;http://guangchuangyu.github.io/ggtree&#34;&gt;ggtree&lt;/a&gt;，我自己觉得还拿得出手🙈。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>如何画类似MEME的注释序列</title>
-      <link>https://guangchuangyu.github.io/cn/2015/05/%E5%A6%82%E4%BD%95%E7%94%BB%E7%B1%BB%E4%BC%BCmeme%E7%9A%84%E6%B3%A8%E9%87%8A%E5%BA%8F%E5%88%97/</link>
-      <pubDate>Thu, 21 May 2015 14:53:35 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2015/05/%E5%A6%82%E4%BD%95%E7%94%BB%E7%B1%BB%E4%BC%BCmeme%E7%9A%84%E6%B3%A8%E9%87%8A%E5%BA%8F%E5%88%97/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2015/Screenshot%202015-05-21%2010.31.46.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://meme-suite.org&#34;&gt;MEME&lt;/a&gt;是motif分析的webserver，所谓的注释序列就是一条线条上画一些长方形的box。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/2017-02-12-225944_635x776_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
     </item>
     
   </channel>

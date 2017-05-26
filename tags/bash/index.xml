@@ -7,9 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 14 Mar 2005 04:30:00 +0800</lastBuildDate>
-    
-	<atom:link href="https://guangchuangyu.github.io/cn/tags/bash/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="https://guangchuangyu.github.io/cn/tags/bash/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>scau校园网认证</title>
@@ -41,7 +39,53 @@ vim mystar.conf
 
 &lt;p&gt;随后我发现一个问题，就是不会自动重连，老是会断线。在mystar.conf里面有一段&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;pre&gt;&lt;code&gt;#enable intelligent reconnect?
+# 1 means enable, and 0 means disable
+
+intelligentReconnect=1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;我将其设置为1也不行。&lt;/p&gt;
+
+&lt;p&gt;这样每次过几分钟我就要&lt;code&gt;^C&lt;/code&gt;，再&lt;code&gt;./mystar&lt;/code&gt;，很不爽。。于是我决定写个script来实现自动重连。&lt;/p&gt;
+
+&lt;p&gt;一开始我采用一个笨方法。写一个循环让它过三分钟就kill
+mystar，再重新运行。 如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+cd ~/mystarV0.1
+while :
+do
+    ./mystar &amp;amp;
+    sleep 180
+    killall mystar
+done
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;后面我改进了这个脚本。代码如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+cd ~/mystarV0.1
+./mystar &amp;amp;
+while :
+do
+    ping -c 5 -W 3 219.222.66.254 &amp;amp;&amp;gt;/dev/null
+    if [ $? -ne 0 ] ; then
+        kill -9 `pidof mystar`
+        ./mystar &amp;amp;
+    fi
+    sleep 10
+done
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;每10秒钟ping一次华农的网关。如果不通过，证明已经断线。将&lt;code&gt;mystar&lt;/code&gt;
+kill掉，并重新运行。&lt;/p&gt;
+
+&lt;p&gt;这样子就可以了。。
+只要开机运行一个这个script就行。当然也可以用&lt;code&gt;rc-update&lt;/code&gt;将其加入到系统运行级别。现在上网根本就没感觉到认证的存在。。
+哈哈。。。&lt;/p&gt;
+</description>
     </item>
     
   </channel>

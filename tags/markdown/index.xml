@@ -7,9 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 23 Apr 2017 00:53:00 +0800</lastBuildDate>
-    
-	<atom:link href="https://guangchuangyu.github.io/cn/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="https://guangchuangyu.github.io/cn/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>公号狗的福音</title>
@@ -21,7 +19,17 @@
 
 &lt;p&gt;我的文章排版都是&lt;a href=&#34;https://guangchuangyu.github.io/cn/2017/01/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E6%96%87markdown%E4%B8%80%E9%94%AE%E6%8E%92%E7%89%88/&#34;&gt;markdown&lt;/a&gt;，markdown是外部驱动的，要什么效果，CSS话事。这个赞赏按纽无非是个链接，赞赏二字链接到转帐二维码，而要实现按纽的效果，可以专门定义一个style来实现。&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/markdown_css_zanshang.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我定义了&lt;code&gt;zb&lt;/code&gt;做为赞赏按纽的style，再定义&lt;code&gt;zaln&lt;/code&gt;把它放置在中间。&lt;/p&gt;
+
+&lt;p&gt;下面简单的代码，把这些style应用于赞赏链接里，你要把代码中的&lt;code&gt;url&lt;/code&gt;改为你放置二维码的文章就可以了。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;span class=&amp;quot;zaln&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;url&amp;quot; class=&amp;quot;zb&amp;quot;&amp;gt;赞赏&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然后点一下markdown-here的按纽，萌萌哒的绿色按纽就出来了。&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484177&amp;amp;idx=1&amp;amp;sn=04027cb4ab8cefb5e0ae9fbf93e0359b&amp;amp;chksm=ec43b256db343b40454a30594d38ad3a2694d2f50df7ae7253c98b13313ff2f03e3b32997eae#rd&#34;&gt;效果此猛击此处&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -34,7 +42,24 @@
 
 &lt;p&gt;好在微信平台是支持富文本的，我们复制粘贴过来，格式都还会在，像抄我ggplot2那篇文的&lt;code&gt;生信人&lt;/code&gt;，就是完全复制粘贴的，还是我博客上的排版，当然它到了公众号上就乱了，我们其实很容易发现很多复制粘贴的，都没自己排一下版面，直接&lt;code&gt;ctrl-C&lt;/code&gt;, &lt;code&gt;ctrl-V&lt;/code&gt;一点诚意都没有。&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;支持富文本这一点，意味着我们可以用&lt;code&gt;markdown&lt;/code&gt;呀！排版很容易，并且可以支持语法高亮。上一篇文章&lt;a href=&#34;https://guangchuangyu.github.io/cn/2017/01/r%E5%8C%85%E8%BE%A3%E9%B8%A1%E4%B9%8Bcormut/&#34;&gt;CorMut&lt;/a&gt;里，就是用了&lt;code&gt;markdown&lt;/code&gt;，被眼尖的小朋友发现，所以写出来，解答一下。&lt;/p&gt;
+
+&lt;p&gt;我们需要的是，安装一个&lt;code&gt;markdown here&lt;/code&gt;的插件，firefox，chrome等都是支持的。&lt;/p&gt;
+
+&lt;p&gt;比如下面这个：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/2017-01-18-003058_1280x800_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我点一下markdown渲染，它自己就变成：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/2017-01-18-003121_1280x800_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这玩意其实是设计来写邮件的，有了它，邮件排版可以很牛逼，比如还是刚才的代码：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/2017-01-18-003253_516x590_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我们还可以通过定制&lt;code&gt;css&lt;/code&gt;，来改变字体、颜色等。简单的markdown语法，让排版轻松愉快，而且本身我的博客就是用markdown写的，写一份文档，博客和公众号两边推送。&lt;/p&gt;
+</description>
     </item>
     
   </channel>

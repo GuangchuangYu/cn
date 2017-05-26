@@ -18,7 +18,7 @@
 
   
   
-  <link rel="stylesheet" href="https://guangchuangyu.github.io/css/hugo-octopress.css">
+  <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/hugo-octopress.css">
 
   
   
@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
   
-  <link href="https://guangchuangyu.github.io/favicon.png" rel="icon">
+  <link href="https://guangchuangyu.github.io/cn/favicon.png" rel="icon">
 
   
   
@@ -41,7 +41,7 @@
   <meta name="author" content="Guangchuang Yu">
 
   
-  <meta name="generator" content="Hugo 0.21" />
+  <meta name="generator" content="Hugo 0.15" />
 
   
   
@@ -49,7 +49,7 @@
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 ga('create', 'UA-77901140-1', 'auto');
 ga('send', 'pageview');
@@ -62,7 +62,7 @@ ga('send', 'pageview');
 
 <header role="banner"><hgroup>
   
-  <h1><a href="https://guangchuangyu.github.io/">Guangchuang Yu</a></h1>
+  <h1><a href="https://guangchuangyu.github.io/cn/">Guangchuang Yu</a></h1>
     <h2>a senior-in-age-but-not-senior-in-knowledge bioinformatician</h2>
 </hgroup></header>
 
@@ -92,7 +92,7 @@ ga('send', 'pageview');
 
 
 <ul class="subscription">
-  <a href="https://guangchuangyu.github.io/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss-square fa-lg"></i></a>
+  <a href="https://guangchuangyu.github.io/cn/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss-square fa-lg"></i></a>
 
   
   
@@ -117,7 +117,7 @@ ga('send', 'pageview');
 
           
           
-          <a class="label" href="https://guangchuangyu.github.io/categories/visualization">Visualization</a><a class="label" href="https://guangchuangyu.github.io/categories/r">R</a>
+          <a class="label" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
           </p>
         </header>
         <div class="entry-content">
@@ -144,8 +144,6 @@ ga('send', 'pageview');
     <p><img src="https://guangchuangyu.github.io/blog_images/2016/Screen Shot 2016-11-17 at 8.20.21 PM.png" alt="" /></p>
 
 <p>这是高老师<a href="http://link.springer.com/article/10.1007/s11540-015-9307-3">文章</a>里的图，每一个小图都是通过比较两条比对序列差异而做出来的，从图A和B中可以看出，CF_YL21有可能是Mont和Oz两条序列重组而来。高老师自己做出这图后，深知手工统计序列差异、画图、拼图之困难。问我有没有办法读两条序列，生成一个图。</p>
-
-<p></p>
 
 <p>很多东西都没有现成的，需要自己造轮子，于是我写了个R包来做这个事情：</p>
 
@@ -177,6 +175,7 @@ plts = lapply(x, plot)
 
 <p>这个包我取名<a href="https://github.com/GuangchuangYu/seqcombo">seqcombo</a>，90后大概不知道何为combo，如果你知道，没错，说的就是你，你已经暴露年龄了！因为这个图是可以辅助看序列重组的，所以取这个名字，以后有可能的话，再实现一些其它的可视化方法，起码得有三把刷子，才对得起combo这名字。</p>
 
+
  
         </div>
         
@@ -190,7 +189,7 @@ plts = lapply(x, plot)
       Tags:
         
         
-          <a class="category" href="https://guangchuangyu.github.io/tags/seqcombo">seqcombo</a>  
+          <a class="category" href="https://guangchuangyu.github.io/cn/tags/seqcombo">seqcombo</a>  
         
     </span>
   </p>
@@ -213,6 +212,27 @@ plts = lapply(x, plot)
 
   
 
+  
+    
+      <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    
+    
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'gcyu';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
   
 </footer>
 
@@ -254,6 +274,8 @@ plts = lapply(x, plot)
     
     <ul id="recent_posts">
       
+      
+        
       
       
       <li class="post">
@@ -318,7 +340,7 @@ plts = lapply(x, plot)
 
 
 <footer role="contentinfo">
-  <p>Copyright &copy; 2017 Guangchuang Yu - <a href="https://guangchuangyu.github.io/license/">License</a> - 
+  <p>Copyright &copy; 2017 Guangchuang Yu - <a href="https://guangchuangyu.github.io/cn/license/">License</a> - 
   <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
 </p>
 

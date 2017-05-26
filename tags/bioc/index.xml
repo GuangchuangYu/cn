@@ -7,9 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 13 Jul 2016 21:06:59 +0800</lastBuildDate>
-    
-	<atom:link href="https://guangchuangyu.github.io/cn/tags/bioc/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="https://guangchuangyu.github.io/cn/tags/bioc/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Evolution of my BioC packages</title>
@@ -17,9 +15,1003 @@
       <pubDate>Wed, 13 Jul 2016 21:06:59 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2016/07/evolution-of-my-bioc-packages/</guid>
-      <description>&lt;p&gt;发现Youtube上有一个视频叫&lt;a href=&#34;https://www.youtube.com/watch?v=MYTblx-5Yog&#34;&gt;Evolution of clusterProfiler&lt;/a&gt;, 是Landon Wilkins用&lt;a href=&#34;http://gource.io/&#34;&gt;Gource&lt;/a&gt;做的。于是我也来玩一下，看一下自己这几年码代码的过程。&lt;/p&gt;
+      <description>
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;发现Youtube上有一个视频叫&lt;a href=&#34;https://www.youtube.com/watch?v=MYTblx-5Yog&#34;&gt;Evolution of clusterProfiler&lt;/a&gt;, 是Landon Wilkins用&lt;a href=&#34;http://gource.io/&#34;&gt;Gource&lt;/a&gt;做的。于是我也来玩一下，看一下自己这几年码代码的过程。&lt;/p&gt;
+
+&lt;p&gt;把我几个Bioconductor包的commit log整合到一起，做了以下视频：&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//player.vimeo.com/video/174519724&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&#34; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+ &lt;/div&gt;
+
+
+&lt;p&gt;下面是这几个包的下载统计，从下图可以知道各个包在视频中出现的大概时间。2015年之后活动很频繁，因为在过去的一年半时间里，我花了非常多时间在&lt;code&gt;ggtree&lt;/code&gt;上面。&lt;/p&gt;
+
+&lt;p&gt;&lt;link rel=&#39;stylesheet&#39; href=&#39;https://guangchuangyu.github.io/resume/css/morris.css&#39;&gt;
+&lt;script src=&#39;https://guangchuangyu.github.io/resume/css/jquery.min.js&#39; type=&#39;text/javascript&#39;&gt;&lt;/script&gt;
+&lt;script src=&#39;https://guangchuangyu.github.io/resume/css/raphael-min.js&#39; type=&#39;text/javascript&#39;&gt;&lt;/script&gt;
+&lt;script src=&#39;https://guangchuangyu.github.io/resume/css/morris-0.4.2.min.js&#39; type=&#39;text/javascript&#39;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;style&gt;
+.rChart {
+display: block;
+margin-left: auto; 
+margin-right: auto;
+width: 800px;
+height: 400px;
+}
+&lt;/style&gt;
+
+&lt;div id = &#39;chart468345f7b2f0&#39; class = &#39;rChart morris&#39;&gt;&lt;/div&gt;
+
+&lt;script type=&#39;text/javascript&#39;&gt;
+var chartParams = {
+&#34;element&#34;: &#34;chart468345f7b2f0&#34;,
+&#34;width&#34;:            800,
+&#34;height&#34;:            400,
+&#34;xkey&#34;: &#34;end&#34;,
+&#34;ykeys&#34;: [
+ &#34;ChIPseeker&#34;,
+&#34;clusterProfiler&#34;,
+&#34;DOSE&#34;,
+&#34;ggtree&#34;,
+&#34;GOSemSim&#34;,
+&#34;ReactomePA&#34; 
+],
+&#34;data&#34;: [
+ {
+ &#34;start&#34;:          14245,
+&#34;end&#34;: &#34;2009-01-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 20,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14276,
+&#34;end&#34;: &#34;2009-02-28&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 40,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14304,
+&#34;end&#34;: &#34;2009-03-31&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 75,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14335,
+&#34;end&#34;: &#34;2009-04-29&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 141,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14365,
+&#34;end&#34;: &#34;2009-05-31&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 219,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14396,
+&#34;end&#34;: &#34;2009-06-29&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 183,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14426,
+&#34;end&#34;: &#34;2009-07-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 178,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14457,
+&#34;end&#34;: &#34;2009-08-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 157,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14488,
+&#34;end&#34;: &#34;2009-09-29&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 281,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14518,
+&#34;end&#34;: &#34;2009-10-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 222,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14549,
+&#34;end&#34;: &#34;2009-11-29&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 284,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14579,
+&#34;end&#34;: &#34;2009-12-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 263,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14610,
+&#34;end&#34;: &#34;2010-01-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 235,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14641,
+&#34;end&#34;: &#34;2010-02-28&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 291,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14669,
+&#34;end&#34;: &#34;2010-03-31&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 278,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14700,
+&#34;end&#34;: &#34;2010-04-29&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 274,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14730,
+&#34;end&#34;: &#34;2010-05-31&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 400,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14761,
+&#34;end&#34;: &#34;2010-06-29&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 323,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14791,
+&#34;end&#34;: &#34;2010-07-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 242,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14822,
+&#34;end&#34;: &#34;2010-08-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 176,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14853,
+&#34;end&#34;: &#34;2010-09-29&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 214,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14883,
+&#34;end&#34;: &#34;2010-10-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 191,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14914,
+&#34;end&#34;: &#34;2010-11-29&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 231,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14944,
+&#34;end&#34;: &#34;2010-12-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 207,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          14975,
+&#34;end&#34;: &#34;2011-01-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 207,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          15006,
+&#34;end&#34;: &#34;2011-02-28&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: null,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 158,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          15034,
+&#34;end&#34;: &#34;2011-03-31&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 14,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 169,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          15065,
+&#34;end&#34;: &#34;2011-04-29&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 49,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 205,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          15095,
+&#34;end&#34;: &#34;2011-05-31&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 111,
+&#34;DOSE&#34;: null,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 218,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          15126,
+&#34;end&#34;: &#34;2011-06-29&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 104,
+&#34;DOSE&#34;: 19,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 279,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          15156,
+&#34;end&#34;: &#34;2011-07-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 102,
+&#34;DOSE&#34;: 7,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 170,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          15187,
+&#34;end&#34;: &#34;2011-08-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 108,
+&#34;DOSE&#34;: 4,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 180,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          15218,
+&#34;end&#34;: &#34;2011-09-29&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 78,
+&#34;DOSE&#34;: 4,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 200,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          15248,
+&#34;end&#34;: &#34;2011-10-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 92,
+&#34;DOSE&#34;: 10,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 707,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          15279,
+&#34;end&#34;: &#34;2011-11-29&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 164,
+&#34;DOSE&#34;: 155,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 207,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          15309,
+&#34;end&#34;: &#34;2011-12-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 99,
+&#34;DOSE&#34;: 88,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 150,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          15340,
+&#34;end&#34;: &#34;2012-01-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 153,
+&#34;DOSE&#34;: 137,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 192,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          15371,
+&#34;end&#34;: &#34;2012-02-29&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 215,
+&#34;DOSE&#34;: 171,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 257,
+&#34;ReactomePA&#34;: null 
+},
+{
+ &#34;start&#34;:          15400,
+&#34;end&#34;: &#34;2012-03-31&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 334,
+&#34;DOSE&#34;: 326,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 362,
+&#34;ReactomePA&#34;: 8 
+},
+{
+ &#34;start&#34;:          15431,
+&#34;end&#34;: &#34;2012-04-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 380,
+&#34;DOSE&#34;: 397,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 418,
+&#34;ReactomePA&#34;: 214 
+},
+{
+ &#34;start&#34;:          15461,
+&#34;end&#34;: &#34;2012-05-31&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 308,
+&#34;DOSE&#34;: 307,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 328,
+&#34;ReactomePA&#34;: 159 
+},
+{
+ &#34;start&#34;:          15492,
+&#34;end&#34;: &#34;2012-06-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 270,
+&#34;DOSE&#34;: 275,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 325,
+&#34;ReactomePA&#34;: 222 
+},
+{
+ &#34;start&#34;:          15522,
+&#34;end&#34;: &#34;2012-07-31&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 268,
+&#34;DOSE&#34;: 224,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 215,
+&#34;ReactomePA&#34;: 150 
+},
+{
+ &#34;start&#34;:          15553,
+&#34;end&#34;: &#34;2012-08-31&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 321,
+&#34;DOSE&#34;: 264,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 279,
+&#34;ReactomePA&#34;: 193 
+},
+{
+ &#34;start&#34;:          15584,
+&#34;end&#34;: &#34;2012-09-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 210,
+&#34;DOSE&#34;: 191,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 214,
+&#34;ReactomePA&#34;: 175 
+},
+{
+ &#34;start&#34;:          15614,
+&#34;end&#34;: &#34;2012-10-31&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 341,
+&#34;DOSE&#34;: 369,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 421,
+&#34;ReactomePA&#34;: 242 
+},
+{
+ &#34;start&#34;:          15645,
+&#34;end&#34;: &#34;2012-11-29&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 331,
+&#34;DOSE&#34;: 347,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 417,
+&#34;ReactomePA&#34;: 253 
+},
+{
+ &#34;start&#34;:          15675,
+&#34;end&#34;: &#34;2013-01-01&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 258,
+&#34;DOSE&#34;: 252,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 347,
+&#34;ReactomePA&#34;: 196 
+},
+{
+ &#34;start&#34;:          15706,
+&#34;end&#34;: &#34;2013-01-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 455,
+&#34;DOSE&#34;: 278,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 633,
+&#34;ReactomePA&#34;: 198 
+},
+{
+ &#34;start&#34;:          15737,
+&#34;end&#34;: &#34;2013-02-28&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 604,
+&#34;DOSE&#34;: 286,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 634,
+&#34;ReactomePA&#34;: 229 
+},
+{
+ &#34;start&#34;:          15765,
+&#34;end&#34;: &#34;2013-03-31&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 441,
+&#34;DOSE&#34;: 452,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 476,
+&#34;ReactomePA&#34;: 363 
+},
+{
+ &#34;start&#34;:          15796,
+&#34;end&#34;: &#34;2013-04-29&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 474,
+&#34;DOSE&#34;: 491,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 544,
+&#34;ReactomePA&#34;: 348 
+},
+{
+ &#34;start&#34;:          15826,
+&#34;end&#34;: &#34;2013-05-31&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 531,
+&#34;DOSE&#34;: 559,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 638,
+&#34;ReactomePA&#34;: 442 
+},
+{
+ &#34;start&#34;:          15857,
+&#34;end&#34;: &#34;2013-06-29&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 496,
+&#34;DOSE&#34;: 526,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 608,
+&#34;ReactomePA&#34;: 403 
+},
+{
+ &#34;start&#34;:          15887,
+&#34;end&#34;: &#34;2013-07-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 381,
+&#34;DOSE&#34;: 355,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 456,
+&#34;ReactomePA&#34;: 250 
+},
+{
+ &#34;start&#34;:          15918,
+&#34;end&#34;: &#34;2013-08-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 400,
+&#34;DOSE&#34;: 432,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 438,
+&#34;ReactomePA&#34;: 322 
+},
+{
+ &#34;start&#34;:          15949,
+&#34;end&#34;: &#34;2013-09-29&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 458,
+&#34;DOSE&#34;: 488,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 459,
+&#34;ReactomePA&#34;: 303 
+},
+{
+ &#34;start&#34;:          15979,
+&#34;end&#34;: &#34;2013-10-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 604,
+&#34;DOSE&#34;: 563,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 620,
+&#34;ReactomePA&#34;: 363 
+},
+{
+ &#34;start&#34;:          16010,
+&#34;end&#34;: &#34;2013-11-29&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 561,
+&#34;DOSE&#34;: 519,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 701,
+&#34;ReactomePA&#34;: 354 
+},
+{
+ &#34;start&#34;:          16040,
+&#34;end&#34;: &#34;2013-12-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 586,
+&#34;DOSE&#34;: 537,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 672,
+&#34;ReactomePA&#34;: 457 
+},
+{
+ &#34;start&#34;:          16071,
+&#34;end&#34;: &#34;2014-01-30&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 395,
+&#34;DOSE&#34;: 423,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 714,
+&#34;ReactomePA&#34;: 342 
+},
+{
+ &#34;start&#34;:          16102,
+&#34;end&#34;: &#34;2014-02-28&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 292,
+&#34;DOSE&#34;: 313,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 737,
+&#34;ReactomePA&#34;: 241 
+},
+{
+ &#34;start&#34;:          16130,
+&#34;end&#34;: &#34;2014-03-31&#34;,
+&#34;ChIPseeker&#34;: null,
+&#34;clusterProfiler&#34;: 515,
+&#34;DOSE&#34;: 559,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 808,
+&#34;ReactomePA&#34;: 455 
+},
+{
+ &#34;start&#34;:          16161,
+&#34;end&#34;: &#34;2014-04-29&#34;,
+&#34;ChIPseeker&#34;: 201,
+&#34;clusterProfiler&#34;: 675,
+&#34;DOSE&#34;: 688,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 897,
+&#34;ReactomePA&#34;: 452 
+},
+{
+ &#34;start&#34;:          16191,
+&#34;end&#34;: &#34;2014-05-31&#34;,
+&#34;ChIPseeker&#34;: 415,
+&#34;clusterProfiler&#34;: 657,
+&#34;DOSE&#34;: 703,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 831,
+&#34;ReactomePA&#34;: 586 
+},
+{
+ &#34;start&#34;:          16222,
+&#34;end&#34;: &#34;2014-06-29&#34;,
+&#34;ChIPseeker&#34;: 533,
+&#34;clusterProfiler&#34;: 592,
+&#34;DOSE&#34;: 650,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 820,
+&#34;ReactomePA&#34;: 454 
+},
+{
+ &#34;start&#34;:          16252,
+&#34;end&#34;: &#34;2014-07-30&#34;,
+&#34;ChIPseeker&#34;: 336,
+&#34;clusterProfiler&#34;: 452,
+&#34;DOSE&#34;: 628,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 631,
+&#34;ReactomePA&#34;: 384 
+},
+{
+ &#34;start&#34;:          16283,
+&#34;end&#34;: &#34;2014-08-30&#34;,
+&#34;ChIPseeker&#34;: 405,
+&#34;clusterProfiler&#34;: 648,
+&#34;DOSE&#34;: 747,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 798,
+&#34;ReactomePA&#34;: 465 
+},
+{
+ &#34;start&#34;:          16314,
+&#34;end&#34;: &#34;2014-09-29&#34;,
+&#34;ChIPseeker&#34;: 482,
+&#34;clusterProfiler&#34;: 742,
+&#34;DOSE&#34;: 810,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 823,
+&#34;ReactomePA&#34;: 452 
+},
+{
+ &#34;start&#34;:          16344,
+&#34;end&#34;: &#34;2014-10-30&#34;,
+&#34;ChIPseeker&#34;: 372,
+&#34;clusterProfiler&#34;: 616,
+&#34;DOSE&#34;: 758,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 1033,
+&#34;ReactomePA&#34;: 437 
+},
+{
+ &#34;start&#34;:          16375,
+&#34;end&#34;: &#34;2014-11-29&#34;,
+&#34;ChIPseeker&#34;: 369,
+&#34;clusterProfiler&#34;: 672,
+&#34;DOSE&#34;: 761,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 907,
+&#34;ReactomePA&#34;: 488 
+},
+{
+ &#34;start&#34;:          16405,
+&#34;end&#34;: &#34;2014-12-30&#34;,
+&#34;ChIPseeker&#34;: 272,
+&#34;clusterProfiler&#34;: 468,
+&#34;DOSE&#34;: 554,
+&#34;ggtree&#34;: null,
+&#34;GOSemSim&#34;: 727,
+&#34;ReactomePA&#34;: 380 
+},
+{
+ &#34;start&#34;:          16436,
+&#34;end&#34;: &#34;2015-01-30&#34;,
+&#34;ChIPseeker&#34;: 477,
+&#34;clusterProfiler&#34;: 612,
+&#34;DOSE&#34;: 772,
+&#34;ggtree&#34;: 34,
+&#34;GOSemSim&#34;: 941,
+&#34;ReactomePA&#34;: 491 
+},
+{
+ &#34;start&#34;:          16467,
+&#34;end&#34;: &#34;2015-02-28&#34;,
+&#34;ChIPseeker&#34;: 559,
+&#34;clusterProfiler&#34;: 609,
+&#34;DOSE&#34;: 790,
+&#34;ggtree&#34;: 42,
+&#34;GOSemSim&#34;: 968,
+&#34;ReactomePA&#34;: 398 
+},
+{
+ &#34;start&#34;:          16495,
+&#34;end&#34;: &#34;2015-03-31&#34;,
+&#34;ChIPseeker&#34;: 564,
+&#34;clusterProfiler&#34;: 1011,
+&#34;DOSE&#34;: 870,
+&#34;ggtree&#34;: 39,
+&#34;GOSemSim&#34;: 1219,
+&#34;ReactomePA&#34;: 464 
+},
+{
+ &#34;start&#34;:          16526,
+&#34;end&#34;: &#34;2015-04-29&#34;,
+&#34;ChIPseeker&#34;: 580,
+&#34;clusterProfiler&#34;: 1048,
+&#34;DOSE&#34;: 974,
+&#34;ggtree&#34;: 187,
+&#34;GOSemSim&#34;: 1214,
+&#34;ReactomePA&#34;: 440 
+},
+{
+ &#34;start&#34;:          16556,
+&#34;end&#34;: &#34;2015-05-31&#34;,
+&#34;ChIPseeker&#34;: 555,
+&#34;clusterProfiler&#34;: 1022,
+&#34;DOSE&#34;: 939,
+&#34;ggtree&#34;: 310,
+&#34;GOSemSim&#34;: 978,
+&#34;ReactomePA&#34;: 445 
+},
+{
+ &#34;start&#34;:          16587,
+&#34;end&#34;: &#34;2015-06-29&#34;,
+&#34;ChIPseeker&#34;: 395,
+&#34;clusterProfiler&#34;: 1074,
+&#34;DOSE&#34;: 963,
+&#34;ggtree&#34;: 383,
+&#34;GOSemSim&#34;: 991,
+&#34;ReactomePA&#34;: 447 
+},
+{
+ &#34;start&#34;:          16617,
+&#34;end&#34;: &#34;2015-07-30&#34;,
+&#34;ChIPseeker&#34;: 650,
+&#34;clusterProfiler&#34;: 1096,
+&#34;DOSE&#34;: 1290,
+&#34;ggtree&#34;: 352,
+&#34;GOSemSim&#34;: 970,
+&#34;ReactomePA&#34;: 519 
+},
+{
+ &#34;start&#34;:          16648,
+&#34;end&#34;: &#34;2015-08-30&#34;,
+&#34;ChIPseeker&#34;: 639,
+&#34;clusterProfiler&#34;: 1225,
+&#34;DOSE&#34;: 1093,
+&#34;ggtree&#34;: 465,
+&#34;GOSemSim&#34;: 962,
+&#34;ReactomePA&#34;: 548 
+},
+{
+ &#34;start&#34;:          16679,
+&#34;end&#34;: &#34;2015-09-29&#34;,
+&#34;ChIPseeker&#34;: 652,
+&#34;clusterProfiler&#34;: 1484,
+&#34;DOSE&#34;: 1267,
+&#34;ggtree&#34;: 625,
+&#34;GOSemSim&#34;: 1031,
+&#34;ReactomePA&#34;: 509 
+},
+{
+ &#34;start&#34;:          16709,
+&#34;end&#34;: &#34;2015-10-30&#34;,
+&#34;ChIPseeker&#34;: 724,
+&#34;clusterProfiler&#34;: 1460,
+&#34;DOSE&#34;: 1236,
+&#34;ggtree&#34;: 678,
+&#34;GOSemSim&#34;: 1309,
+&#34;ReactomePA&#34;: 577 
+},
+{
+ &#34;start&#34;:          16740,
+&#34;end&#34;: &#34;2015-11-29&#34;,
+&#34;ChIPseeker&#34;: 685,
+&#34;clusterProfiler&#34;: 3035,
+&#34;DOSE&#34;: 1267,
+&#34;ggtree&#34;: 801,
+&#34;GOSemSim&#34;: 1345,
+&#34;ReactomePA&#34;: 649 
+},
+{
+ &#34;start&#34;:          16770,
+&#34;end&#34;: &#34;2015-12-30&#34;,
+&#34;ChIPseeker&#34;: 647,
+&#34;clusterProfiler&#34;: 2886,
+&#34;DOSE&#34;: 1233,
+&#34;ggtree&#34;: 692,
+&#34;GOSemSim&#34;: 1338,
+&#34;ReactomePA&#34;: 522 
+},
+{
+ &#34;start&#34;:          16801,
+&#34;end&#34;: &#34;2016-01-30&#34;,
+&#34;ChIPseeker&#34;: 686,
+&#34;clusterProfiler&#34;: 3327,
+&#34;DOSE&#34;: 1400,
+&#34;ggtree&#34;: 796,
+&#34;GOSemSim&#34;: 1464,
+&#34;ReactomePA&#34;: 572 
+},
+{
+ &#34;start&#34;:          16832,
+&#34;end&#34;: &#34;2016-02-29&#34;,
+&#34;ChIPseeker&#34;: 701,
+&#34;clusterProfiler&#34;: 2866,
+&#34;DOSE&#34;: 1170,
+&#34;ggtree&#34;: 757,
+&#34;GOSemSim&#34;: 1193,
+&#34;ReactomePA&#34;: 608 
+},
+{
+ &#34;start&#34;:          16861,
+&#34;end&#34;: &#34;2016-03-31&#34;,
+&#34;ChIPseeker&#34;: 845,
+&#34;clusterProfiler&#34;: 3188,
+&#34;DOSE&#34;: 1435,
+&#34;ggtree&#34;: 1135,
+&#34;GOSemSim&#34;: 1767,
+&#34;ReactomePA&#34;: 721 
+},
+{
+ &#34;start&#34;:          16892,
+&#34;end&#34;: &#34;2016-04-30&#34;,
+&#34;ChIPseeker&#34;: 736,
+&#34;clusterProfiler&#34;: 2834,
+&#34;DOSE&#34;: 2020,
+&#34;ggtree&#34;: 1030,
+&#34;GOSemSim&#34;: 1532,
+&#34;ReactomePA&#34;: 671 
+},
+{
+ &#34;start&#34;:          16922,
+&#34;end&#34;: &#34;2016-05-31&#34;,
+&#34;ChIPseeker&#34;: 857,
+&#34;clusterProfiler&#34;: 2209,
+&#34;DOSE&#34;: 2352,
+&#34;ggtree&#34;: 1040,
+&#34;GOSemSim&#34;: 2061,
+&#34;ReactomePA&#34;: 883 
+},
+{
+ &#34;start&#34;:          16953,
+&#34;end&#34;: &#34;2016-06-30&#34;,
+&#34;ChIPseeker&#34;: 1039,
+&#34;clusterProfiler&#34;: 1880,
+&#34;DOSE&#34;: 2129,
+&#34;ggtree&#34;: 1245,
+&#34;GOSemSim&#34;: 1637,
+&#34;ReactomePA&#34;: 687 
+} 
+],
+&#34;pointSize&#34;:              0,
+&#34;hideHover&#34;: &#34;auto&#34;,
+&#34;id&#34;: &#34;chart468345f7b2f0&#34;,
+&#34;labels&#34;: [ &#34;ChIPseeker&#34;, &#34;clusterProfiler&#34;, &#34;DOSE&#34;, &#34;ggtree&#34;, &#34;GOSemSim&#34;, &#34;ReactomePA&#34; ] 
+},
+      chartType = &#34;Line&#34;
+    new Morris[chartType](chartParams)
+&lt;/script&gt;
+
+&lt;p&gt;PS1: 下载统计由&lt;a href=&#34;https://cran.r-project.org/package=dlstats&#34;&gt;dlstats&lt;/a&gt;获取。&lt;/p&gt;
+
+&lt;p&gt;PS2: 最近更新了这几个包的主页，包含最全面的信息，官方指定唯一入口哈:)&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://guangchuangyu.github.io/ChIPseeker&#34;&gt;ChIPseeker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://guangchuangyu.github.io/clusterProfiler&#34;&gt;clusterProfiler&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://guangchuangyu.github.io/DOSE&#34;&gt;DOSE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://guangchuangyu.github.io/ggtree&#34;&gt;ggtree&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://guangchuangyu.github.io/GOSemSim&#34;&gt;GOSemSim&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://guangchuangyu.github.io/ReactomePA&#34;&gt;ReactomePA&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;citation:2e88ad1e047b3b91f6382eb2bf16624f&#34;&gt;Citation&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Yu G&lt;/em&gt;&lt;/strong&gt;, Wang LG and He QY&lt;sup&gt;*&lt;/sup&gt;. &lt;a href=&#34;http://bioinformatics.oxfordjournals.org/content/31/14/2382&#34;&gt;ChIPseeker: an R/Bioconductor package for ChIP peak annotation, comparison and visualization&lt;/a&gt;. &lt;strong&gt;&lt;em&gt;Bioinformatics&lt;/em&gt;&lt;/strong&gt; 2015, 31(14):2382-2383.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&#34;text/javascript&#34; src=&#34;https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js&#34;&gt;&lt;/script&gt;&lt;div class=&#34;altmetric-embed&#34; data-badge-type=&#34;donut&#34; data-badge-popover=&#34;right&#34; data-altmetric-id=&#34;3781087&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Yu G&lt;/em&gt;&lt;/strong&gt;, Wang L, Han Y and He Q&lt;sup&gt;*&lt;/sup&gt;. &lt;a href=&#34;http://online.liebertpub.com/doi/abs/10.1089/omi.2011.0118&#34;&gt;clusterProfiler: an R package for comparing biological themes among gene clusters&lt;/a&gt;. &lt;strong&gt;&lt;em&gt;OMICS: A Journal of Integrative Biology&lt;/em&gt;&lt;/strong&gt;. 2012, 16(5):284-287.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&#34;text/javascript&#34; src=&#34;https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js&#34;&gt;&lt;/script&gt;&lt;div class=&#34;altmetric-embed&#34; data-badge-type=&#34;donut&#34; data-badge-popover=&#34;right&#34; data-altmetric-id=&#34;681089&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;G Yu&lt;/em&gt;&lt;/strong&gt;, LG Wang, GR Yan, QY He. &lt;a href=&#34;http://bioinformatics.oxfordjournals.org/content/31/4/608&#34;&gt;DOSE: an R/Bioconductor package for Disease Ontology Semantic and Enrichment analysis&lt;/a&gt;. &lt;strong&gt;&lt;em&gt;Bioinformatics&lt;/em&gt;&lt;/strong&gt; 2015, 31(4):608-609.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&#34;text/javascript&#34; src=&#34;https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js&#34;&gt;&lt;/script&gt;&lt;div class=&#34;altmetric-embed&#34; data-badge-popover=&#34;right&#34; data-badge-type=&#34;donut&#34; data-altmetric-id=&#34;2788597&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;G Yu&lt;/strong&gt;, DK Smith, H Zhu, Y Guan, TTY Lam&lt;sup&gt;*&lt;/sup&gt;. &lt;a href=&#34;http://onlinelibrary.wiley.com/doi/10.1111/2041-210X.12628/abstract&#34;&gt;ggtree: an R package for visualization and annotation of phylogenetic trees with their covariates and other associated data&lt;/a&gt;. &lt;strong&gt;&lt;em&gt;Methods in Ecology and Evolution&lt;/em&gt;&lt;/strong&gt;. &lt;a href=&#34;http://dx.doi.org/10.1111/2041-210X.12628&#34;&gt;&lt;code&gt;doi:10.1111/2041-210X.12628&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&#34;text/javascript&#34; src=&#34;https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js&#34;&gt;&lt;/script&gt;
+&lt;div data-badge-popover=&#34;right&#34; data-badge-type=&#34;donut&#34; data-doi=&#34;10.1111/2041-210X.12628&#34; class=&#34;altmetric-embed&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Yu G&lt;/strong&gt;&lt;sup&gt;†&lt;/sup&gt;, Li F&lt;sup&gt;†&lt;/sup&gt;, Qin Y, Bo X&lt;sup&gt;*&lt;/sup&gt;, Wu Y and Wang S&lt;sup&gt;*&lt;/sup&gt;. &lt;a href=&#34;http://bioinformatics.oxfordjournals.org/content/26/7/976&#34;&gt;GOSemSim: an R package for measuring semantic similarity among GO terms and gene products&lt;/a&gt;. &lt;strong&gt;&lt;em&gt;Bioinformatics&lt;/em&gt;&lt;/strong&gt;. 2010, 26(7):976-978.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&#34;text/javascript&#34; src=&#34;https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js&#34;&gt;&lt;/script&gt;
+&lt;div class=&#34;altmetric-embed&#34; data-badge-popover=&#34;right&#34; data-badge-type=&#34;donut&#34; data-altmetric-id=&#34;100979&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;G Yu&lt;/em&gt;&lt;/strong&gt;, QY He&lt;sup&gt;*&lt;/sup&gt;. &lt;a href=&#34;http://pubs.rsc.org/en/Content/ArticleLanding/2016/MB/C5MB00663E#!divAbstract&#34;&gt;ReactomePA: an R/Bioconductor package for reactome pathway analysis and visualization&lt;/a&gt;. &lt;strong&gt;&lt;em&gt;Molecular BioSystems&lt;/em&gt;&lt;/strong&gt; 2016, 12(2):477-479.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&#34;text/javascript&#34; src=&#34;https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js&#34;&gt;&lt;/script&gt;&lt;div class=&#34;altmetric-embed&#34; data-badge-popover=&#34;right&#34; data-badge-type=&#34;donut&#34; data-altmetric-id=&#34;4796667&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -28,7 +1020,9 @@
       <pubDate>Mon, 11 Aug 2008 14:21:00 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2008/08/gosemsim/</guid>
-      <description>&lt;p&gt;第一次写软件包，计算基因和GO的语义相似性。&lt;/p&gt;
+      <description>
+
+&lt;p&gt;第一次写软件包，计算基因和GO的语义相似性。&lt;/p&gt;
 
 &lt;p&gt;实现&lt;a href=&#34;http://bioinformatics.oxfordjournals.org/cgi/content/full/23/10/1274&#34;&gt;Wang&lt;/a&gt;的方法，基于GO的图结构。
 以及四种基于信息含量的计算方法（Resnik, Jiang, Lin, Rel）。&lt;/p&gt;
@@ -40,7 +1034,17 @@
 &lt;p&gt;支持human, rat, mouse, fly, yeast, zebrafish,worm, E coli,
 arabidopsis等物种。&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;下载量统计如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://bioconductor.org/packages/stats/bioc/GOSemSim/GOSemSim_2009_stats.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;citation:9587f727a1438b03d182893b7a2e45b4&#34;&gt;Citation&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Yu G&lt;/strong&gt;&lt;sup&gt;†&lt;/sup&gt;, Li F&lt;sup&gt;†&lt;/sup&gt;, Qin Y, Bo X&lt;sup&gt;*&lt;/sup&gt;, Wu Y and Wang S&lt;sup&gt;*&lt;/sup&gt;. &lt;a href=&#34;http://bioinformatics.oxfordjournals.org/content/26/7/976&#34;&gt;GOSemSim: an R package for measuring semantic similarity among GO terms and gene products&lt;/a&gt;. &lt;strong&gt;&lt;em&gt;Bioinformatics&lt;/em&gt;&lt;/strong&gt;. 2010, 26(7):976-978.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&#34;text/javascript&#34; src=&#34;https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js&#34;&gt;&lt;/script&gt;
+&lt;div class=&#34;altmetric-embed&#34; data-badge-popover=&#34;right&#34; data-badge-type=&#34;donut&#34; data-altmetric-id=&#34;100979&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+</description>
     </item>
     
   </channel>

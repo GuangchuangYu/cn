@@ -7,9 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 10 Sep 2013 18:04:22 +0800</lastBuildDate>
-    
-	<atom:link href="https://guangchuangyu.github.io/cn/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="https://guangchuangyu.github.io/cn/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Install Emacs on Mac</title>
@@ -17,15 +15,125 @@
       <pubDate>Tue, 10 Sep 2013 18:04:22 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2013/09/install-emacs-on-mac/</guid>
-      <description>&lt;h2 id=&#34;package-manager&#34;&gt;package manager&lt;/h2&gt;
+      <description>
+
+&lt;h2 id=&#34;package-manager:a0d2dabbee19e6fccf2cd8eeaa0e67d0&#34;&gt;package manager&lt;/h2&gt;
 
 &lt;p&gt;之前一直用&lt;a href=&#34;http://guangchuangyu.github.io/categories/bsd/&#34;&gt;NetBSD&lt;/a&gt;的&lt;a href=&#34;http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/&#34;&gt;pkgsrc&lt;/a&gt;做为各种Unix-like系统的包管理系统，pkgsrc在自己内部解决依赖关系，这点对于生产环境来说，是很好的一个优点，我通常会在服务器里装一个pkgsrc，在用户目录下，维护一套UNIX软件。但是用在自己的机器上，内部解决软件依赖，就是个缺点，浪费编译时间和硬盘空间。&lt;/p&gt;
 
 &lt;p&gt;Mac上可用的包管理系统很多，Fink移植于&lt;a href=&#34;http://guangchuangyu.github.io/categories/linux/&#34;&gt;Debian&lt;/a&gt;的apt，&lt;a href=&#34;http://guangchuangyu.github.io/categories/linux/&#34;&gt;Gentoo&lt;/a&gt;的portage也支持OS X。OS X是基于BSD的系统，BSD有自己的一套包管理系统，如FreeBSD的ports和&lt;a href=&#34;http://guangchuangyu.github.io/categories/bsd/&#34;&gt;NetBSD&lt;/a&gt;的&lt;a href=&#34;http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/&#34;&gt;pkgsrc&lt;/a&gt;，MacPorts可以看作是这一系列中的一个，不过它并不是OS X原生的，它只是OpenDarwin的子项目，所以和pkgsrc一个样，也是内部解决依赖，真正为OS
-X设计的原生包管理系统非Homebrew莫属，它会尽量依赖系统里已有的软件。
+X设计的原生包管理系统非Homebrew莫属，它会尽量依赖系统里已有的软件。&lt;/p&gt;
 
-自从用了Homebrew之后，再也不用为系统里有两套perl和python而crazy了，之前通过&lt;a href=&#34;http://guangchuangyu.github.io/2011/06/screen-shot/&#34;&gt;pkgsrc装的软件&lt;/a&gt;全删掉，改Homebrew来安装和管理。
-如果软件没有被pkgsrc收录，而想通过pkgsrc来管理的话，那就得自己&lt;a href=&#34;http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/&#34;&gt;写makefile&lt;/a&gt;，而homebrew，则可以自动帮你生成Formula，比如我要安装&lt;a href=&#34;http://users.soe.ucsc.edu/~kent/src/&#34;&gt;blat&lt;/a&gt;：&lt;/p&gt;</description>
+&lt;p&gt;自从用了Homebrew之后，再也不用为系统里有两套perl和python而crazy了，之前通过&lt;a href=&#34;http://guangchuangyu.github.io/2011/06/screen-shot/&#34;&gt;pkgsrc装的软件&lt;/a&gt;全删掉，改Homebrew来安装和管理。
+如果软件没有被pkgsrc收录，而想通过pkgsrc来管理的话，那就得自己&lt;a href=&#34;http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/&#34;&gt;写makefile&lt;/a&gt;，而homebrew，则可以自动帮你生成Formula，比如我要安装&lt;a href=&#34;http://users.soe.ucsc.edu/~kent/src/&#34;&gt;blat&lt;/a&gt;：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;brew create http://users.soe.ucsc.edu/~kent/src/blatSrc35.zip
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;当然有可能需要编辑一下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;brew edit blat
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;大多数情况下，并不需要修改，创建了formula之后，就可以使用homebrew安装。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;brew install blat
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;emacs:a0d2dabbee19e6fccf2cd8eeaa0e67d0&#34;&gt;Emacs&lt;/h2&gt;
+
+&lt;p&gt;虽然Homebrew是为OS
+X设计的，但它毕竟不是苹果的东西，无法管理系统内置的程序，OS
+X自带Emacs，版本22，已经很老了，而且没有图形界面，为了方便管理和升级，只能把系统自带的删掉，用Homebrew来安装新版的Emacs-24.3，安装时使用参数&amp;ndash;cocoa，使得emacs能够识别OS X的keybinding，创建链接到Applications下，这样可以在Applications中双击运行。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rm /usr/bin/emacs
+rm -rf /usr/share/emacs
+brew install --cocoa emacs
+ln -s /usr/local/Cellar/emacs/24.3/Emacs.app /Applications/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;site-lisp:a0d2dabbee19e6fccf2cd8eeaa0e67d0&#34;&gt;site-lisp&lt;/h2&gt;
+
+&lt;p&gt;在.emacs.d目录下新建site-lisp目录，用于放置各种第三方的包，在.emacs里加入：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(let ((default-directory &amp;quot;~/.emacs.d/site-lisp/&amp;quot;))
+  (normal-top-level-add-subdirs-to-load-path))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;让emacs启动时，加载site-lisp及其子目录。&lt;/p&gt;
+
+&lt;h2 id=&#34;eshell-path:a0d2dabbee19e6fccf2cd8eeaa0e67d0&#34;&gt;eshell PATH&lt;/h2&gt;
+
+&lt;p&gt;eshell是个非常美好的存在，在windows下安装Emacs，就拥有了一个小型的&lt;a href=&#34;http://guangchuangyu.github.io/categories/shell/&#34;&gt;shell&lt;/a&gt;，非常方便，当然它并不是bash，如果在windows下使用会缺少很多bash内置程序和许多的unix命令行工具，幸好可以配置emacs调用cygwin的bash。&lt;/p&gt;
+
+&lt;p&gt;eshell并不使用.bash_profile中定义的PATH，好在eshell中内置addpath程序，可以非常方便地把路径加入到PATH中去。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~ $ addpath 
+/usr/bin/
+/bin/
+/usr/sbin/
+/sbin/
+~ $ addpath -b /usr/local/bin
+/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+~ $ echo $PATH
+/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;不过这种方式，只是临时加路径而已。&lt;/p&gt;
+
+&lt;p&gt;要想永久性把改变PATH变量，还是需要把它加入到.emacs中去。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(setenv &amp;quot;PATH&amp;quot; (concat &amp;quot;/usr/local/bin:&amp;quot; (getenv &amp;quot;PATH&amp;quot;)))
+(setq exec-path (append exec-path &#39;(&amp;quot;/usr/local/bin&amp;quot; &amp;quot;/opt/bin&amp;quot;)))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;color-theme:a0d2dabbee19e6fccf2cd8eeaa0e67d0&#34;&gt;color-theme&lt;/h2&gt;
+
+&lt;p&gt;安装&lt;a href=&#34;http://www.nongnu.org/color-theme/&#34;&gt;color-theme&lt;/a&gt;，放在.emacs.d/site-lisp下，在.emacs里加入：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(require &#39;color-theme)
+(color-theme-initialize)
+(color-theme-robin-hood)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;启动时加载color-theme，搞代码很伤眼啊 =,=&lt;/p&gt;
+
+&lt;h2 id=&#34;maxima:a0d2dabbee19e6fccf2cd8eeaa0e67d0&#34;&gt;Maxima&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://guangchuangyu.github.io/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/&#34;&gt;Maxima&lt;/a&gt;是一个计算机代数运算系统，它是由MIT于1968至1982年间开发的Macsyma系统演变而来的。MIT于1982年将Macsyma源代码交与美国能源部（DOE），这部分代码后来被称作DOE
+Macsyma。DOE Macsyma的一个版本从1982年起由德克萨斯大学的William F.
+Schelter教授维护，直到Schelter教授于2001年去逝。在1998年，Schelter教授从能源部获得了授权，将DOE
+Macsyma源代码以GNU Public
+License版权协议发布。在2000年，他在SourceForge开始了Maxima项目，继续维护开发DOE
+Macsyma，自此该软件被称作Maxima。&lt;/p&gt;
+
+&lt;p&gt;在&lt;a href=&#34;http://guangchuangyu.github.io/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/&#34;&gt;Emacs调用maxima&lt;/a&gt;是非常爽的，公式可以通过&lt;a href=&#34;http://guangchuangyu.github.io/categories/latex&#34;&gt;LaTeX&lt;/a&gt;表示出来，非常漂亮，把buffer保存为txt，公式将被保存为&lt;a href=&#34;http://guangchuangyu.github.io/categories/latex&#34;&gt;LaTeX&lt;/a&gt;代码。&lt;/p&gt;
+
+&lt;h2 id=&#34;ess:a0d2dabbee19e6fccf2cd8eeaa0e67d0&#34;&gt;ESS&lt;/h2&gt;
+
+&lt;p&gt;另一个必备是&lt;code&gt;ESS&lt;/code&gt;，可以在emacs调用R，解压放在.emacs.d/site-lisp下，在.emacs里加入：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(require &#39;ess-site)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ESS在我心中，完胜RStudio，唯一不足的是画图时要弹窗口，如果能够像&lt;code&gt;imaxima&lt;/code&gt;一样，在emacs
+buffer中支持&lt;a href=&#34;http://guangchuangyu.github.io/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/&#34;&gt;inline
+plot&lt;/a&gt;就完美了。&lt;/p&gt;
+
+&lt;h2 id=&#34;markdown:a0d2dabbee19e6fccf2cd8eeaa0e67d0&#34;&gt;Markdown&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://jblevins.org/projects/markdown-mode/&#34;&gt;Markdown-mode&lt;/a&gt;让emacs支持markdown语法，安装之后，需要在.emacs中加入：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;;; markdown mode
+(autoload &#39;markdown-mode &amp;quot;markdown-mode&amp;quot;
+  &amp;quot;Major mode for editing Markdown files&amp;quot; t)
+(add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.text\\&#39;&amp;quot; . markdown-mode))
+(add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.markdown\\&#39;&amp;quot; . markdown-mode))
+(add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.md\\&#39;&amp;quot; . markdown-mode))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这样当在emacs中打开.text/.markdown/.md文件时，将自动加载markdown-mode。&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -34,7 +142,9 @@ X设计的原生包管理系统非Homebrew莫属，它会尽量依赖系统里�
       <pubDate>Sat, 28 May 2005 08:15:00 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/</guid>
-      <description>&lt;h2 id=&#34;下载imaxima&#34;&gt;下载imaxima   &lt;/h2&gt;
+      <description>
+
+&lt;h2 id=&#34;下载imaxima:e6dedd294f68f0284e7032ee31b772ce&#34;&gt;下载imaxima   &lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://members3.jcom.home.ne.jp/imaxima/Site/Download%20and%20Install_files/imaxima-imath-0.97a.tar.gz&#34;&gt;http://members3.jcom.home.ne.jp/imaxima/Site/Download%20and%20Install_files/imaxima-imath-0.97a.tar.gz&lt;/a&gt;&lt;/p&gt;
 
@@ -57,7 +167,42 @@ sudo make install
 &lt;pre&gt;&lt;code&gt;cd /usr/share/texmf/tex/latex/
 sudo unzip ~/Downloads/breqn.zip
 sudo texhash
-&lt;/code&gt;&lt;/pre&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;重新启动emacs，运行maxima，就可以正常使用了。&lt;/p&gt;
+
+&lt;h2 id=&#34;http-guangchuangyu-github-io-blog-images-2005-05-070902123015-png:e6dedd294f68f0284e7032ee31b772ce&#34;&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2005/05/070902123015.png&#34; alt=&#34;&#34; /&gt;&lt;/h2&gt;
+
+&lt;p&gt;原来我在05年就在用imaxima模式了，当年机器性能差，为了跑快点，很多软件我都尽量不使用gtk2界面，而编译成gtk界面。土灰的界面多么怀旧啊。&lt;/p&gt;
+
+&lt;p&gt;安装过程还是一样，不过原来的链接早已失效。
+imaxima的homepage改为&lt;a href=&#34;https://sites.google.com/site/imaximaimath&#34;&gt;https://sites.google.com/site/imaximaimath&lt;/a&gt;，现在已经不需要下载imaxima了，因为它已经被整合进maxima中，会随着maxima被安装到系统中，把目录加载到.emacs中即可。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(push &amp;quot;/usr/local/share/maxima/5.28.0/emacs/&amp;quot; load-path)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;MacTeX太大，我使用&lt;a href=&#34;http://tug.org/mactex/morepackages.html&#34;&gt;BasicTeX&lt;/a&gt;，为了正常显示数学符号，同样需要安装breqn，这个sty文件现已整合到&lt;a href=&#34;http://www.ctan.org/tex-archive/macros/latex/contrib/mh/&#34;&gt;mh包&lt;/a&gt;中。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd /usr/local/texlive/2013basic/texmf-local
+sudo unzip ~/Downloads/mh.zip
+sudo texhash
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;texhash让TeX知道mh包的安装。&lt;/p&gt;
+
+&lt;p&gt;最后是让Emacs知道加载什么文件来执行，比如执行imaxima时要加载imaxima.el文件：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(autoload &#39;maxima-mode &amp;quot;maxima&amp;quot; &amp;quot;Maxima mode&amp;quot; t)
+(autoload &#39;imaxima &amp;quot;imaxima&amp;quot; &amp;quot;Frontend for maxima with Image support&amp;quot; t)
+(autoload &#39;maxima &amp;quot;maxima&amp;quot; &amp;quot;Maxima interaction&amp;quot; t)
+(autoload &#39;imath &amp;quot;imath&amp;quot; &amp;quot;Imath mode for math formula input&amp;quot; t)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2005/05/Screen-Shot-2013-09-12-at-%E4%B8%8B%E5%8D%882.16.43.png&#34; alt=&#34;&#34; /&gt;
+现在imaxima已经可以直接在Emacs里插图了，画图时弹出个窗口神马的，最讨厌了。&lt;/p&gt;
+
+&lt;p&gt;更新于2013年9月。&lt;/p&gt;
+</description>
     </item>
     
   </channel>

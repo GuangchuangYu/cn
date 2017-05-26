@@ -7,9 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 19 Nov 2016 12:23:16 +0800</lastBuildDate>
-    
-	<atom:link href="https://guangchuangyu.github.io/cn/tags/seqcombo/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="https://guangchuangyu.github.io/cn/tags/seqcombo/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>DNA序列差异作图</title>
@@ -21,7 +19,36 @@
 
 &lt;p&gt;这是高老师&lt;a href=&#34;http://link.springer.com/article/10.1007/s11540-015-9307-3&#34;&gt;文章&lt;/a&gt;里的图，每一个小图都是通过比较两条比对序列差异而做出来的，从图A和B中可以看出，CF_YL21有可能是Mont和Oz两条序列重组而来。高老师自己做出这图后，深知手工统计序列差异、画图、拼图之困难。问我有没有办法读两条序列，生成一个图。&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;很多东西都没有现成的，需要自己造轮子，于是我写了个R包来做这个事情：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;library(seqcombo)
+fas = list.files(system.file(&amp;quot;examples&amp;quot;,&amp;quot;GVariation&amp;quot;, package=&amp;quot;seqcombo&amp;quot;), 
+pattern=&amp;quot;fas&amp;quot;, full.names=TRUE)
+x = seqdiff(fas[1])
+plot(x)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2016/Screen Shot 2016-11-17 at 8.25.26 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;一行代码读文件，然后plot画出来，就是这么简单。&lt;/p&gt;
+
+&lt;p&gt;这里有三个文件，我们可以三个文件一起读，三个图一起画。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;x = lapply(fas, seqdiff)
+plts = lapply(x, plot)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然后可以很容易把三张图拼在一起&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;plot_grid(plotlist=plts, ncol=1, labels=LETTERS[1:3])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/GuangchuangYu/seqcombo/master/inst/figures/GVariation.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;简直完美，跟文章中的图一毛一样。&lt;/p&gt;
+
+&lt;p&gt;这个包我取名&lt;a href=&#34;https://github.com/GuangchuangYu/seqcombo&#34;&gt;seqcombo&lt;/a&gt;，90后大概不知道何为combo，如果你知道，没错，说的就是你，你已经暴露年龄了！因为这个图是可以辅助看序列重组的，所以取这个名字，以后有可能的话，再实现一些其它的可视化方法，起码得有三把刷子，才对得起combo这名字。&lt;/p&gt;
+</description>
     </item>
     
   </channel>

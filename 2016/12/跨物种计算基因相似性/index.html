@@ -18,7 +18,7 @@
 
   
   
-  <link rel="stylesheet" href="https://guangchuangyu.github.io/css/hugo-octopress.css">
+  <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/hugo-octopress.css">
 
   
   
@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
   
-  <link href="https://guangchuangyu.github.io/favicon.png" rel="icon">
+  <link href="https://guangchuangyu.github.io/cn/favicon.png" rel="icon">
 
   
   
@@ -41,7 +41,7 @@
   <meta name="author" content="Guangchuang Yu">
 
   
-  <meta name="generator" content="Hugo 0.21" />
+  <meta name="generator" content="Hugo 0.15" />
 
   
   
@@ -49,7 +49,7 @@
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 ga('create', 'UA-77901140-1', 'auto');
 ga('send', 'pageview');
@@ -62,7 +62,7 @@ ga('send', 'pageview');
 
 <header role="banner"><hgroup>
   
-  <h1><a href="https://guangchuangyu.github.io/">Guangchuang Yu</a></h1>
+  <h1><a href="https://guangchuangyu.github.io/cn/">Guangchuang Yu</a></h1>
     <h2>a senior-in-age-but-not-senior-in-knowledge bioinformatician</h2>
 </hgroup></header>
 
@@ -92,7 +92,7 @@ ga('send', 'pageview');
 
 
 <ul class="subscription">
-  <a href="https://guangchuangyu.github.io/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss-square fa-lg"></i></a>
+  <a href="https://guangchuangyu.github.io/cn/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss-square fa-lg"></i></a>
 
   
   
@@ -117,7 +117,7 @@ ga('send', 'pageview');
 
           
           
-          <a class="label" href="https://guangchuangyu.github.io/categories/r">R</a>
+          <a class="label" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
           </p>
         </header>
         <div class="entry-content">
@@ -151,13 +151,12 @@ ga('send', 'pageview');
 
 <p>这是Bioconductor support site上的<a href="https://support.bioconductor.org/p/90063/">问题</a>，问的是他想要计算人类和老鼠的直系同源基因通过GO注释来计算语义相似性，问GOSemSim是否支持，这个答案是yes and no。</p>
 
-<p></p>
-
 <p>本身是没有直接支持跨物种计算的，GOSemSim最初支持5个物种，后面扩展为20个物种，现在是支持有OrgDb的所有物种，而OrgDb是可以通过AnnotationHub在线获取的，也可以通过AnnotationForge::makeOrgPackage()函数或者是makeOrgPackageFromNCBI()函数构建，所以现在基本上GOSemSim和clusterProfiler都是可以说支持所有有注释的物种，当然没注释的也可以自己注释，通过拿来计算。</p>
 
 <p>GOSemSim默认是支持单一物种，首先通过godata()函数把OrgDb转化为GOSemSim所需要的注释，包括基因映射到GO以及GOID的信息含量，然后这个背景注释传给geneSim/mgeneSim函数，godata()只支持传入单一OrgDb，所以这里只能是支持单一物种，要跨物种也不是不可能，我再写一个merge函数，把godata()输出的GOSemSimDATA对象合并起来，比如一个人的，一个老鼠的，merge完之后，你还可以再merge，这样就可以有多个物种的注释在里面。就可以传给geneSim/mgeneSim来计算了，所有的函数都不需要做出改变，只需要添加这一功能就好。对于使用GO图结构的算法，这没什么问题，但对于使用信息含量的算法，merge的过程，可能需要对信息含量重新计算/处理，这也是我迟迟没写扩展的原因，因为没时间研究这些-,-</p>
 
 <p>虽然直接是不支持的，至少目前是这样（以后可以真会加入像上面提到的功能），但稍微变通一下，就知道其实是可以的，因为你可以使用图结构算法（不涉及信息含量的计算），然后用mgoSim来计算啊，只不过你需要自己做基因到GO的映射而已，你拿一人的基因，对应一个GOID向量，一个老鼠基因，对应另一个GOID向量，做为输入给mgoSim，就可以算出来这两个基因的相似性，简单的wrapper函数，就可以干这个事情了。</p>
+
 
  
         </div>
@@ -172,7 +171,7 @@ ga('send', 'pageview');
       Tags:
         
         
-          <a class="category" href="https://guangchuangyu.github.io/tags/gosemsim">GOSemSim</a>  
+          <a class="category" href="https://guangchuangyu.github.io/cn/tags/gosemsim">GOSemSim</a>  
         
     </span>
   </p>
@@ -195,6 +194,27 @@ ga('send', 'pageview');
 
   
 
+  
+    
+      <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    
+    
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'gcyu';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
   
 </footer>
 
@@ -236,6 +256,8 @@ ga('send', 'pageview');
     
     <ul id="recent_posts">
       
+      
+        
       
       
       <li class="post">
@@ -300,7 +322,7 @@ ga('send', 'pageview');
 
 
 <footer role="contentinfo">
-  <p>Copyright &copy; 2017 Guangchuang Yu - <a href="https://guangchuangyu.github.io/license/">License</a> - 
+  <p>Copyright &copy; 2017 Guangchuang Yu - <a href="https://guangchuangyu.github.io/cn/license/">License</a> - 
   <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
 </p>
 

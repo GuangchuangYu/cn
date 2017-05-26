@@ -7,9 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 04 Dec 2016 00:53:00 +0800</lastBuildDate>
-    
-	<atom:link href="https://guangchuangyu.github.io/cn/tags/linkedlist/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="https://guangchuangyu.github.io/cn/tags/linkedlist/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Using Linked List to solve Josephus problem</title>
@@ -23,7 +21,56 @@
 
 &lt;p&gt;这是一个比较简单的问题，n个人围成圆圈，越过k-1个人，杀掉第k个人，如此反复直到只剩下最后一个人。可以用数学推导给出答案，问题本身已经足够简单，用链表可以模拟整个过程。实现起来比较直观。这里在初始化这个链表的时候，需要注意，到了最后一人的时候，他应该指向第一个人，这样才能形成一个环状的链表，然后问题就非常简单了，从第一人开始，后面就无所谓头和尾了，按照规则来，每次杀掉一个人，直到只剩下最后一人，就是结果。从维基的解释可以看出，最后两个人没死，这没节操的事情被拿来说，如果你数学好，你就可以救自己一命（站在合适的位置，让自己是最后一个）。&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;fstream&amp;gt;
+#include &amp;lt;sstream&amp;gt;
+
+typedef struct person {
+  int ID;
+  struct person * next;
+} person;
+
+int main() {
+  std::ifstream infile(&amp;quot;data/id32.txt&amp;quot;);
+  std::string line;
+  getline(infile, line);
+  int n, k;
+  std::stringstream ss(line);
+  ss &amp;gt;&amp;gt; n;
+  ss &amp;gt;&amp;gt; k;
+
+  person *head = new person;
+  head-&amp;gt;ID = 1;
+  person *prenode = head;
+  for (int i=2; i&amp;lt;=n; i++) {
+    person *node = new person;
+    node-&amp;gt;ID = i;
+    prenode-&amp;gt;next = node;
+    prenode = node;
+    if (i == n)
+      node-&amp;gt;next = head;
+  }
+
+
+  int left = n;
+  int i=1;
+  person *node = new person;
+  node = head;
+  while (left &amp;gt; 1) {
+    if (i % k == 0) {
+      prenode-&amp;gt;next = node-&amp;gt;next;
+      left--;
+    } else {
+      prenode = node;
+    }
+
+    i++;
+    node = node-&amp;gt;next;
+  }
+  std::cout &amp;lt;&amp;lt; node-&amp;gt;ID &amp;lt;&amp;lt; std::endl;
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
     </item>
     
   </channel>

@@ -7,9 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 06 Aug 2011 05:37:55 +0800</lastBuildDate>
-    
-	<atom:link href="https://guangchuangyu.github.io/cn/tags/maxima/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="https://guangchuangyu.github.io/cn/tags/maxima/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>love function plot</title>
@@ -17,15 +15,46 @@
       <pubDate>Sat, 06 Aug 2011 05:37:55 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2011/08/love-function-plot/</guid>
-      <description>今天在微博上看到这坑爹的方程： $ (x^2+y^2-1)^3 = {x^2} {y^3}$
-画出来如下：
-跟个屁股似的，sigh&amp;hellip;
-翻出azalea的老文：http://azaleasays.com/2008/06/18/fomula-of-love/
-用ggplot2画一下这个爱的方程：$17x^2-16|x|y+17y^2 = 225 $
-x &amp;lt;- seq(-sqrt(17), sqrt(17), 0.001) y1 &amp;lt;- 8*abs(x)/17 + 15* sqrt(17 - x^2)/17 y2 &amp;lt;- 8*abs(x)/17 - 15* sqrt(17 - x^2)/17 d &amp;lt;- data.frame(x=c(x,x),y=c(y1,y2)) require(ggplot2) p &amp;lt;- ggplot(d, aes(x,y)) p + geom_point(color=&amp;quot;red&amp;quot;)  还可以画出红心，适合今天七夕的日子。
-p + geom_line(color=&amp;quot;red&amp;quot;)  画函数图，这种事情，还是用CAS方便点。
-通过maxima来画，一条指令就行，还不用解方程：
-contour_plot(17*x^2-16*abs(x)*y+17*y^2-225, [x,-sqrt(17),sqrt(17)],[y,-15*sqrt(17)/17, sqrt(17)])  </description>
+      <description>&lt;p&gt;今天在微博上看到这坑爹的方程： $ (x^2+y^2-1)^3 = {x^2} {y^3}$&lt;/p&gt;
+
+&lt;p&gt;画出来如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2011/08/pp.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;跟个屁股似的，sigh&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;翻出azalea的老文：&lt;a href=&#34;http://azaleasays.com/2008/06/18/fomula-of-love/&#34;&gt;http://azaleasays.com/2008/06/18/fomula-of-love/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;用ggplot2画一下这个爱的方程：$17x^2-16|x|y+17y^2 = 225 $&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;x &amp;lt;- seq(-sqrt(17), sqrt(17), 0.001)
+y1 &amp;lt;- 8*abs(x)/17 + 15* sqrt(17 - x^2)/17
+y2 &amp;lt;- 8*abs(x)/17 - 15* sqrt(17 - x^2)/17
+d &amp;lt;- data.frame(x=c(x,x),y=c(y1,y2))
+require(ggplot2)
+
+p &amp;lt;- ggplot(d, aes(x,y))
+p + geom_point(color=&amp;quot;red&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2011/08/love2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;还可以画出红心，适合今天七夕的日子。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;p + geom_line(color=&amp;quot;red&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2011/08/love3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;画函数图，这种事情，还是用CAS方便点。&lt;/p&gt;
+
+&lt;p&gt;通过&lt;a href=&#34;https://guangchuangyu.github.io/cn/tags/maxima/&#34;&gt;maxima&lt;/a&gt;来画，一条指令就行，还不用解方程：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;contour_plot(17*x^2-16*abs(x)*y+17*y^2-225, [x,-sqrt(17),sqrt(17)],[y,-15*sqrt(17)/17, sqrt(17)])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2011/08/love_maxima.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -34,7 +63,9 @@ contour_plot(17*x^2-16*abs(x)*y+17*y^2-225, [x,-sqrt(17),sqrt(17)],[y,-15*sqrt(1
       <pubDate>Sat, 28 May 2005 08:15:00 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/</guid>
-      <description>&lt;h2 id=&#34;下载imaxima&#34;&gt;下载imaxima   &lt;/h2&gt;
+      <description>
+
+&lt;h2 id=&#34;下载imaxima:e6dedd294f68f0284e7032ee31b772ce&#34;&gt;下载imaxima   &lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://members3.jcom.home.ne.jp/imaxima/Site/Download%20and%20Install_files/imaxima-imath-0.97a.tar.gz&#34;&gt;http://members3.jcom.home.ne.jp/imaxima/Site/Download%20and%20Install_files/imaxima-imath-0.97a.tar.gz&lt;/a&gt;&lt;/p&gt;
 
@@ -57,7 +88,42 @@ sudo make install
 &lt;pre&gt;&lt;code&gt;cd /usr/share/texmf/tex/latex/
 sudo unzip ~/Downloads/breqn.zip
 sudo texhash
-&lt;/code&gt;&lt;/pre&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;重新启动emacs，运行maxima，就可以正常使用了。&lt;/p&gt;
+
+&lt;h2 id=&#34;http-guangchuangyu-github-io-blog-images-2005-05-070902123015-png:e6dedd294f68f0284e7032ee31b772ce&#34;&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2005/05/070902123015.png&#34; alt=&#34;&#34; /&gt;&lt;/h2&gt;
+
+&lt;p&gt;原来我在05年就在用imaxima模式了，当年机器性能差，为了跑快点，很多软件我都尽量不使用gtk2界面，而编译成gtk界面。土灰的界面多么怀旧啊。&lt;/p&gt;
+
+&lt;p&gt;安装过程还是一样，不过原来的链接早已失效。
+imaxima的homepage改为&lt;a href=&#34;https://sites.google.com/site/imaximaimath&#34;&gt;https://sites.google.com/site/imaximaimath&lt;/a&gt;，现在已经不需要下载imaxima了，因为它已经被整合进maxima中，会随着maxima被安装到系统中，把目录加载到.emacs中即可。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(push &amp;quot;/usr/local/share/maxima/5.28.0/emacs/&amp;quot; load-path)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;MacTeX太大，我使用&lt;a href=&#34;http://tug.org/mactex/morepackages.html&#34;&gt;BasicTeX&lt;/a&gt;，为了正常显示数学符号，同样需要安装breqn，这个sty文件现已整合到&lt;a href=&#34;http://www.ctan.org/tex-archive/macros/latex/contrib/mh/&#34;&gt;mh包&lt;/a&gt;中。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd /usr/local/texlive/2013basic/texmf-local
+sudo unzip ~/Downloads/mh.zip
+sudo texhash
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;texhash让TeX知道mh包的安装。&lt;/p&gt;
+
+&lt;p&gt;最后是让Emacs知道加载什么文件来执行，比如执行imaxima时要加载imaxima.el文件：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(autoload &#39;maxima-mode &amp;quot;maxima&amp;quot; &amp;quot;Maxima mode&amp;quot; t)
+(autoload &#39;imaxima &amp;quot;imaxima&amp;quot; &amp;quot;Frontend for maxima with Image support&amp;quot; t)
+(autoload &#39;maxima &amp;quot;maxima&amp;quot; &amp;quot;Maxima interaction&amp;quot; t)
+(autoload &#39;imath &amp;quot;imath&amp;quot; &amp;quot;Imath mode for math formula input&amp;quot; t)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2005/05/Screen-Shot-2013-09-12-at-%E4%B8%8B%E5%8D%882.16.43.png&#34; alt=&#34;&#34; /&gt;
+现在imaxima已经可以直接在Emacs里插图了，画图时弹出个窗口神马的，最讨厌了。&lt;/p&gt;
+
+&lt;p&gt;更新于2013年9月。&lt;/p&gt;
+</description>
     </item>
     
   </channel>

@@ -18,7 +18,7 @@
 
   
   
-  <link rel="stylesheet" href="https://guangchuangyu.github.io/css/hugo-octopress.css">
+  <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/hugo-octopress.css">
 
   
   
@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
   
-  <link href="https://guangchuangyu.github.io/favicon.png" rel="icon">
+  <link href="https://guangchuangyu.github.io/cn/favicon.png" rel="icon">
 
   
   
@@ -41,7 +41,7 @@
   <meta name="author" content="Guangchuang Yu">
 
   
-  <meta name="generator" content="Hugo 0.21" />
+  <meta name="generator" content="Hugo 0.15" />
 
   
   
@@ -49,7 +49,7 @@
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 ga('create', 'UA-77901140-1', 'auto');
 ga('send', 'pageview');
@@ -62,7 +62,7 @@ ga('send', 'pageview');
 
 <header role="banner"><hgroup>
   
-  <h1><a href="https://guangchuangyu.github.io/">Guangchuang Yu</a></h1>
+  <h1><a href="https://guangchuangyu.github.io/cn/">Guangchuang Yu</a></h1>
     <h2>a senior-in-age-but-not-senior-in-knowledge bioinformatician</h2>
 </hgroup></header>
 
@@ -92,7 +92,7 @@ ga('send', 'pageview');
 
 
 <ul class="subscription">
-  <a href="https://guangchuangyu.github.io/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss-square fa-lg"></i></a>
+  <a href="https://guangchuangyu.github.io/cn/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss-square fa-lg"></i></a>
 
   
   
@@ -117,7 +117,7 @@ ga('send', 'pageview');
 
           
           
-          <a class="label" href="https://guangchuangyu.github.io/categories/r">R</a>
+          <a class="label" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
           </p>
         </header>
         <div class="entry-content">
@@ -151,8 +151,6 @@ ga('send', 'pageview');
 
 <p>所以没有windows，这事干起来还不太容易，！在想怎么来无中生有生出个windows包出来的时候，我想起了rhub，也是因为没有windows，之前就用rhub来进行windows平台的R check，在把代码push到CRAN或Bioconductor之前，我总会测试没问题了，再提交代码过去，而rhub正好可以给我提供windows平台的检测。</p>
 
-<p></p>
-
 <p>在R check完之后，rhub会把check之前build的包存起来，正是这一点，为我们提供了这无米之炊，这时候我就可以下载它来放到我的repo里，这也算是一个变通的办法。</p>
 
 <p>然而，我要等它check完，再去下载，放到repo，push到github上，动作太多，太繁琐，所以必须写代码让它自动化起来。</p>
@@ -176,6 +174,7 @@ addtorepo: windows
 
 <p><code>ypages</code>也是一个R包，我用来搞github pages的私人定制包，比如我各种包的主页上那些badge图标，显示下载量、版本号、文章引用数目等相关信息的图标，都是通过ypages自动生成的，没有放出来，所以细节不在这里讲，这里主要介绍一个思路，利用rhub云平台来编译windows二进制包，放入私人repo供用户下载安装，通过makefile自动化这一过程。Makefile才是最通用的可重复性研究工具，你值得拥有。</p>
 
+
  
         </div>
         
@@ -189,7 +188,7 @@ addtorepo: windows
       Tags:
         
         
-          <a class="category" href="https://guangchuangyu.github.io/tags/windows">windows</a>  
+          <a class="category" href="https://guangchuangyu.github.io/cn/tags/windows">windows</a>  
         
     </span>
   </p>
@@ -212,6 +211,27 @@ addtorepo: windows
 
   
 
+  
+    
+      <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    
+    
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'gcyu';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
   
 </footer>
 
@@ -253,6 +273,8 @@ addtorepo: windows
     
     <ul id="recent_posts">
       
+      
+        
       
       
       <li class="post">
@@ -317,7 +339,7 @@ addtorepo: windows
 
 
 <footer role="contentinfo">
-  <p>Copyright &copy; 2017 Guangchuang Yu - <a href="https://guangchuangyu.github.io/license/">License</a> - 
+  <p>Copyright &copy; 2017 Guangchuang Yu - <a href="https://guangchuangyu.github.io/cn/license/">License</a> - 
   <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
 </p>
 

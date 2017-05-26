@@ -7,9 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 16 May 2017 07:04:22 +0800</lastBuildDate>
-    
-	<atom:link href="https://guangchuangyu.github.io/cn/tags/david/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="https://guangchuangyu.github.io/cn/tags/david/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>enrichDAVID支持自定义背景</title>
@@ -34,7 +32,12 @@
 I downloaded KEGG pathway dataset to apply fisher exact test. however, genes are in entrez ID and i am still dont know how to convert.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;他提到&lt;code&gt;enrichKEGG&lt;/code&gt;不支持&lt;em&gt;ENSEMBL&lt;/em&gt; ID，这个可以通过&lt;code&gt;bitr&lt;/code&gt;进行ID转换啊，简单得很，只要是有看文档的人都应该知道。&lt;/p&gt;
+
+&lt;p&gt;说到&lt;code&gt;enrichDAVID&lt;/code&gt;不支持自定义背景，这倒是真的，但这有何难，我随手就支持了。&lt;code&gt;clusterProfiler version&amp;gt;=3.5.3&lt;/code&gt;中&lt;code&gt;enrichDAVID&lt;/code&gt;也可以使用&lt;code&gt;universe&lt;/code&gt;参数了：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://cloud.githubusercontent.com/assets/626539/26083728/f7f16552-3a09-11e7-9177-13db9b9a241a.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
     </item>
     
   </channel>
