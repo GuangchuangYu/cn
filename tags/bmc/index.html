@@ -337,6 +337,50 @@ Biology的编辑反馈这件事开始，在这铁板钉钉的事实面前，编�
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/05/%E5%BC%80%E6%BA%90%E7%9A%84macos%E5%92%8Clinux%E7%89%88%E5%BE%AE%E4%BF%A1/">
+                <h3 class="media-heading">开源的macOS和linux版微信</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>做为一个上了年纪的人，显然已经离不开微信了，macOS还好，企鹅还有照顾到，但linux难道就只能用web版吗？显然不应该的。</p>
+
+<p>如果你是Arch Linux用户的话，那么aur源里已经有好几个款式可以选了：</p>
+
+<pre><code class="language-shell"> ygc  ~  yaourt -Ss wechat
+aur/electronic-wechat 2.0-2 (8) (1.29)
+    A better WeChat client
+aur/electronic-wechat-bin 2.0-1 [installed] (3) (0.36)
+    A better WeChat on macOS and Linux. Built with Electron by Zhongyi Tong.
+aur/electronic-wechat-git 1.4.0.43.gb18ff6d-1 (6) (0.00)
+    An Electron application for WeChat
+aur/franz-bin 4.0.4-5 (86) (12.73)
+    Franz is a free messaging app / former Emperor of Austria and combines 
+    chat &amp; messaging services into one application. Franz currently supports 
+    Slack, WhatsApp, WeChat, HipChat, Facebook Messenger, Telegram, Google 
+    Hangouts, GroupMe, Skype and many more.
+aur/wechat-web-devtools-git 0.17.171900-1 (1) (0.78)
+    Wechat Web Developer Tools
+aur/wechatircd-git r85.bb8f354-1 (0) (0.00)
+    IRC server capable of controlling Web WeChat
+</code></pre>
+
+<p>这里我要介绍的是electronic-wechat。我比较懒，用下面的代码，安装二进制版：</p>
+
+<pre><code class="language-shell">yaourt -S electronic-wechat-bin
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/05/emojifont%E5%85%AC%E4%BC%97%E5%8F%B7%E6%96%87%E7%AB%A0/">
                 <h3 class="media-heading">emojifont公众号文章</h3>
               </a>
@@ -592,35 +636,6 @@ showtext.auto()
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/04/ggplot2%E5%AD%97%E4%BD%93%E6%BA%A2%E5%87%BA%E7%9A%84%E9%82%A3%E7%82%B9%E7%A0%B4%E4%BA%8B/">
-                <h3 class="media-heading">ggplot2字体溢出的那点破事</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>比如下面的代码：</p>
-
-<pre><code>require(ggplot2)
-d &lt;- data.frame(x=c(0, 0.002, 0.00575), y = 1:3)
-p &lt;- ggplot(d, aes(x, y)) + geom_point() + xlab(NULL) + ylab(NULL)
-print(p)
-</code></pre>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/geom_text_files/figure-markdown_strict/unnamed-chunk-1-1.png" alt="" /></p>
-
-<p>上面图中x轴的文本<strong>0.006</strong>，这个数字中的<strong>6</strong>几乎看不到，因为一半过界了。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -628,7 +643,7 @@ print(p)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         84 posts found
+         85 posts found
       </p>
     </div>
   </div>

@@ -225,6 +225,105 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2015/12/%E5%96%9C%E6%96%B0%E5%8E%8C%E6%97%A7%E4%B9%8Bhello-hugo/">
+          喜新厌旧之hello Hugo
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2015-12-04T00:42:26&#43;08:00">
+      
+  December 4, 2015
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/blog">blog</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        最早在China Unix上写博客，后来转战新浪。在<a href="http://azaleasays.com/">azelea</a>的说服下，<a href="http://guangchuangyu.github.io/2008/09/%E5%8D%9A%E5%AE%A2%E8%BD%ACwordpress/">果断换成wordpress</a>，写技术博客贴点代码什么的，新浪必须是太渣。<a href="http://azaleasays.com/">azelea</a>是我开始独立博客的领路人，为我提供了空间和域名。再后来自己买了空间和<code>ygc.name</code>的域名，用了好几年。本来一直有想法要换成github+jekll，恰巧<a href="http://blog.shenwei.me/">Wei Shen</a>强力推荐HUGO。于是再一次换博客。</p>
+
+<p>首先面临着wordpress迁移的问题。</p>
+
+<h1 id="导入wordpress-posts为markdown文件">导入wordpress posts为markdown文件</h1>
+
+<p>试用了多个插件或脚本，都是各种出错。最后发现了神器<a href="https://github.com/jprichardson/potter-wordpress">potter-wordpress</a>，通过npm安装：</p>
+
+<pre><code>npm install -g pottercms-wordpress
+</code></pre>
+
+<p>然后一个语句:</p>
+
+<pre><code>potter-wordpress -h WORDPRESS_SITE_URL -u USER_NAME -p PASSWORD --dir PATH_TO_STORE_MD_FILES
+</code></pre>
+
+<p>自动从线上把posts抓下来，并转化为<code>markdown</code>。在之前各种搞不定之后，看到下面的输出有种莫名的快感。</p>
+
+<p>Fetching articles&hellip;</p>
+
+<pre><code>   Got : [Sun Nov 29 2015] R kernel in Jupyter notebook 3
+   Got : [Mon Nov 09 2015] phylomoji with ggtree
+   Got : [Tue Nov 17 2015] 合体中的操作系统
+   Got : [Mon Nov 02 2015] Comparison of clusterProfiler and GSEA-P
+   Got : [Thu Oct 01 2015] ChIPseq data mining with ChIPseeker
+   Got : [Tue Oct 06 2015] TRIE
+   Got : [Thu Oct 15 2015] [BioC 3.2] NEWS of my BioC packages
+   Got : [Wed Oct 21 2015] use simplify to remove redundancy of enriched GO terms
+
+   ...
+
+   Got : [Mon May 14 2007] Edit partition table in NetBSD/macppc
+   Got : [Mon May 14 2007] 我的emacs配置文件
+   Got : [Mon May 14 2007] pkgsrc tips
+   Got : [Thu May 03 2007] scilab三维平面绘图
+   Got : [Sat Jun 24 2006] qvwm窗口管理器的windows2000主题
+   Got : [Wed Jun 14 2006] 安装os9和netbsd双系统
+   Got : [Sat May 28 2005] 在emacs里使用maxima
+   Got : [Mon Mar 14 2005] scau校园网认证
+   Got : [Fri Jan 14 2005] Powerbook G3上安装gentoo
+</code></pre>
+
+<p>Done.</p>
+
+<p>
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2015/12/%E5%96%9C%E6%96%B0%E5%8E%8C%E6%97%A7%E4%B9%8Bhello-hugo/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2015/11/%E5%90%88%E4%BD%93%E4%B8%AD%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
           合体中的操作系统
         </a>
@@ -586,69 +685,6 @@ Wickham把这套想法在R中实现。</p>
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2014/05/%E6%9B%B4%E6%94%B9%E7%99%BE%E5%BA%A6%E4%BA%91%E5%90%8C%E6%AD%A5%E7%9B%98%E8%B7%AF%E5%BE%84/">
-          更改百度云同步盘路径
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2014-05-05T10:45:25&#43;08:00">
-      
-  May 5, 2014
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/mac-os">Mac OS</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/software">Software</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        从2007年写了<a href="http://cjbmb.bjmu.edu.cn/CN/abstract/abstract17570.shtml">第一篇文章</a>之后，我发现管理文献真不是人干的，一直以来使用Zotero来管理文献，自从有了dropbox之后，就想把文献库放在dropbox上，一来有个云备份，不怕硬盘坏，二来嘛，实验室电脑和个人电脑可以实时同步化，无奈dropbox空间太小，而我的zotero早已超过10G，因为电子书也放在里面，只能做罢。</p>
-
-<p>度娘出手还是很大方的，我现在的网盘已经有3T，包括之前在推广阶段用1元买的1T。</p>
-
-<p><img src="http://guangchuangyu.github.io/blog_images/2014/05/Screenshot-2014-05-05-21.31.57.png" alt="" /></p>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2014/05/%E6%9B%B4%E6%94%B9%E7%99%BE%E5%BA%A6%E4%BA%91%E5%90%8C%E6%AD%A5%E7%9B%98%E8%B7%AF%E5%BE%84/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -730,6 +766,50 @@ Wickham把这套想法在R中实现。</p>
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/05/%E5%BC%80%E6%BA%90%E7%9A%84macos%E5%92%8Clinux%E7%89%88%E5%BE%AE%E4%BF%A1/">
+                <h3 class="media-heading">开源的macOS和linux版微信</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>做为一个上了年纪的人，显然已经离不开微信了，macOS还好，企鹅还有照顾到，但linux难道就只能用web版吗？显然不应该的。</p>
+
+<p>如果你是Arch Linux用户的话，那么aur源里已经有好几个款式可以选了：</p>
+
+<pre><code class="language-shell"> ygc  ~  yaourt -Ss wechat
+aur/electronic-wechat 2.0-2 (8) (1.29)
+    A better WeChat client
+aur/electronic-wechat-bin 2.0-1 [installed] (3) (0.36)
+    A better WeChat on macOS and Linux. Built with Electron by Zhongyi Tong.
+aur/electronic-wechat-git 1.4.0.43.gb18ff6d-1 (6) (0.00)
+    An Electron application for WeChat
+aur/franz-bin 4.0.4-5 (86) (12.73)
+    Franz is a free messaging app / former Emperor of Austria and combines 
+    chat &amp; messaging services into one application. Franz currently supports 
+    Slack, WhatsApp, WeChat, HipChat, Facebook Messenger, Telegram, Google 
+    Hangouts, GroupMe, Skype and many more.
+aur/wechat-web-devtools-git 0.17.171900-1 (1) (0.78)
+    Wechat Web Developer Tools
+aur/wechatircd-git r85.bb8f354-1 (0) (0.00)
+    IRC server capable of controlling Web WeChat
+</code></pre>
+
+<p>这里我要介绍的是electronic-wechat。我比较懒，用下面的代码，安装二进制版：</p>
+
+<pre><code class="language-shell">yaourt -S electronic-wechat-bin
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -989,35 +1069,6 @@ showtext.auto()
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/04/ggplot2%E5%AD%97%E4%BD%93%E6%BA%A2%E5%87%BA%E7%9A%84%E9%82%A3%E7%82%B9%E7%A0%B4%E4%BA%8B/">
-                <h3 class="media-heading">ggplot2字体溢出的那点破事</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>比如下面的代码：</p>
-
-<pre><code>require(ggplot2)
-d &lt;- data.frame(x=c(0, 0.002, 0.00575), y = 1:3)
-p &lt;- ggplot(d, aes(x, y)) + geom_point() + xlab(NULL) + ylab(NULL)
-print(p)
-</code></pre>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/geom_text_files/figure-markdown_strict/unnamed-chunk-1-1.png" alt="" /></p>
-
-<p>上面图中x轴的文本<strong>0.006</strong>，这个数字中的<strong>6</strong>几乎看不到，因为一半过界了。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1025,7 +1076,7 @@ print(p)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         84 posts found
+         85 posts found
       </p>
     </div>
   </div>
