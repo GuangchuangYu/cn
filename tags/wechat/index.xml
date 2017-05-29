@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 23 Apr 2017 00:53:00 +0800</lastBuildDate>
-    <atom:link href="https://guangchuangyu.github.io/cn/tags/wechat/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://guangchuangyu.github.io/cn/tags/wechat/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>公号狗的福音</title>
@@ -19,17 +21,7 @@
 
 &lt;p&gt;我的文章排版都是&lt;a href=&#34;https://guangchuangyu.github.io/cn/2017/01/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E6%96%87markdown%E4%B8%80%E9%94%AE%E6%8E%92%E7%89%88/&#34;&gt;markdown&lt;/a&gt;，markdown是外部驱动的，要什么效果，CSS话事。这个赞赏按纽无非是个链接，赞赏二字链接到转帐二维码，而要实现按纽的效果，可以专门定义一个style来实现。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/markdown_css_zanshang.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;我定义了&lt;code&gt;zb&lt;/code&gt;做为赞赏按纽的style，再定义&lt;code&gt;zaln&lt;/code&gt;把它放置在中间。&lt;/p&gt;
-
-&lt;p&gt;下面简单的代码，把这些style应用于赞赏链接里，你要把代码中的&lt;code&gt;url&lt;/code&gt;改为你放置二维码的文章就可以了。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;span class=&amp;quot;zaln&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;url&amp;quot; class=&amp;quot;zb&amp;quot;&amp;gt;赞赏&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;然后点一下markdown-here的按纽，萌萌哒的绿色按纽就出来了。&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484177&amp;amp;idx=1&amp;amp;sn=04027cb4ab8cefb5e0ae9fbf93e0359b&amp;amp;chksm=ec43b256db343b40454a30594d38ad3a2694d2f50df7ae7253c98b13313ff2f03e3b32997eae#rd&#34;&gt;效果此猛击此处&lt;/a&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -38,9 +30,7 @@
       <pubDate>Wed, 05 Apr 2017 12:23:16 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2017/04/generate-biobabble-banner-using-ggimage/</guid>
-      <description>
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/biobabble_banner.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/biobabble_banner.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;制作了一个banner，用来插入到文后，方便阅读到最后的时候，直接扫描关注。&lt;/p&gt;
 
@@ -48,7 +38,7 @@
 
 &lt;p&gt;就像有些人不理解data scentist为什么讨厌excel一样，觉得无非是工具，没什么好搞阵营的。试想一下，一个分析流程中间有一步要用到excel，需要人工去点点鼠标，这对于讲究自动化、可重复性的data scientist来说是不可接受的。&lt;/p&gt;
 
-&lt;h2 id=&#34;加载中文字体:b8aeb0db2e33c1cb77f701d0be3ba647&#34;&gt;加载中文字体&lt;/h2&gt;
+&lt;h2 id=&#34;加载中文字体&#34;&gt;加载中文字体&lt;/h2&gt;
 
 &lt;p&gt;为了打几个中文字，需要先加载字体，这里我用showtext。&lt;/p&gt;
 
@@ -57,33 +47,7 @@ font.add(&amp;quot;heiti&amp;quot;, &amp;quot;/Library/Fonts/华文黑体.ttf&am
 showtext.auto()
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;读图:b8aeb0db2e33c1cb77f701d0be3ba647&#34;&gt;读图&lt;/h2&gt;
-
-&lt;p&gt;两个图，一个是logo，一个是二维码，分别用&lt;strong&gt;EBImage&lt;/strong&gt;读入&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;require(EBImage)
-require(grid)
-
-gc &amp;lt;- rasterGrob(image=readImage(&#39;gc.png&#39;))
-page &amp;lt;- rasterGrob(image=readImage(&#39;biobabble_page.png&#39;))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;图上嵌图:b8aeb0db2e33c1cb77f701d0be3ba647&#34;&gt;图上嵌图&lt;/h2&gt;
-
-&lt;p&gt;这里用我自己写的&lt;strong&gt;ggimage&lt;/strong&gt;包的&lt;strong&gt;geom_subview&lt;/strong&gt;来嵌图，然后无非打几个字，设一下字体。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;require(ggimage)
-pg &amp;lt;- ggplot(d=data.frame(x=c(0,10), y=c(0,5)), aes(x, y)) + geom_blank() + coord_fixed()
-pg &amp;lt;- pg+geom_subview(gc, x=2.5, y=2.5, width=5.1, height=5.1) + geom_subview(page, x=7.5, y=2.5, width=4.8, height=4.8)
-
-pg &amp;lt;- pg+theme_void() + labs(title=&amp;quot;长按二维码关注biobabble&amp;quot;, subtitle=&amp;quot;欢迎分享朋友圈&amp;quot;,caption=&#39;guangchuangyu@gmail.com&#39;) + theme(title=element_text(family=&amp;quot;heiti&amp;quot;, size=20))
-ggsave(pg, file=&amp;quot;biobabble_banner.png&amp;quot;, width=8, height=5)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;于是产生下图：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/biobabble_banner.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

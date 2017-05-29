@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 20 Mar 2017 15:10:00 +0800</lastBuildDate>
-    <atom:link href="https://guangchuangyu.github.io/cn/tags/bug/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://guangchuangyu.github.io/cn/tags/bug/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>how to bug author</title>
@@ -25,26 +27,7 @@
 
 &lt;p&gt;就在上周，我正好就在微信群里跟某位老师说不要给我个截屏，说能不能在ggtree里实现某功能。懂的人知道，我只是希望大家用正确的方式来做事情，不懂的人，当然觉得我拽，JJYY什么的。&lt;/p&gt;
 
-&lt;p&gt;以前暨大有个博士生，跟我QQ和微信上都留言说要学某个R包，快点教他，我没回复，过几天又继续留言，我就把他给喷一顿。港真，都读到博士了，这点道理不应该不懂，要学自己学，遇到问题再来问，唯有下图可以表达我的观点：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/ubiaoqing581356c41441430498.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;UNIX的世界里，那句”read the fucking man”，早有了属于它自己的缩写RTFM，不信你们google一下这4个字母，这里的man是指manual，因为UNIX下查看manual的指令就是man，读文档是非常重要的，很多问题在文档里已经有了答案，但用户就是不愿意花时间去读。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/2017-03-19-234106_792x722_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;最近有人看我博客文，说没有&lt;strong&gt;geom_barh&lt;/strong&gt;，简直日狗了，那篇博客明明就专门介绍了&lt;strong&gt;ggstance&lt;/strong&gt;包，所以我专门贴了XKCD画的RTFM图，最好他们会脸红！&lt;/p&gt;
-
-&lt;p&gt;学术界很多人情商低得很，有问题直接甩作者，还认为作者应该毕恭毕敬地回复。&lt;strong&gt;没有任何人有义务要帮你解决问题！没有任何人有义务要帮你解决问题！没有任何人有义务要帮你解决问题！&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/2017-03-19-235129_854x663_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;我在github上设了模版，如果用户提问，就会有向导，像上面截屏这个，他愿意花时间按着我的向导来，我就愿意花时间帮他解决问题。&lt;/p&gt;
-
-&lt;p&gt;为什么我要强调看文档？要什么提问前要先google一下？原因很简单，你首先愿意对自己的问题花时间！你自己不愿意花时间，你凭什么要求别人为你花时间！&lt;/p&gt;
-
-&lt;p&gt;为什么在上面微信截图里我强调在github开个issue好好描述问题？为什么我在github模版里要强调可重复性例子？你花时间把自己的问题描述情楚，整理自己的代码让别人可以重复出你的问题，这是在节省别人帮你解决问题的时间，也就是说这是在尊重别人的时间！尊重别人也是尊重自己！你的问题更有可能得到解答，别人会更愿意帮助你，即使你的问题很白痴，别人也会本着要对新手nice的态度对待你。而那些不读文档的伸手党，则往往只会得到RTFM四个字母的回(xiu)复(ru)。&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

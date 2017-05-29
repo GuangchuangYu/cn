@@ -10,24 +10,26 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
 
   
+  
   <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
   <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  
 
   
   <title>boxplot</title>
 
   
   
-  <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/hugo-octopress.css">
+  <link rel="stylesheet" href="https://guangchuangyu.github.io/css/hugo-octopress.css">
 
   
   
 
   
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 
   
-  <link href="https://guangchuangyu.github.io/cn/favicon.png" rel="icon">
+  <link href="https://guangchuangyu.github.io/favicon.png" rel="icon">
 
   
   
@@ -41,19 +43,16 @@
   <meta name="author" content="Guangchuang Yu">
 
   
-  <meta name="generator" content="Hugo 0.15" />
+  <meta name="generator" content="Hugo 0.21" />
 
   
   
 <script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-77901140-1', 'auto');
 ga('send', 'pageview');
 </script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
 
 
 </head>
@@ -62,7 +61,7 @@ ga('send', 'pageview');
 
 <header role="banner"><hgroup>
   
-  <h1><a href="https://guangchuangyu.github.io/cn/">Guangchuang Yu</a></h1>
+  <h1><a href="https://guangchuangyu.github.io/">Guangchuang Yu</a></h1>
     <h2>a senior-in-age-but-not-senior-in-knowledge bioinformatician</h2>
 </hgroup></header>
 
@@ -73,28 +72,29 @@ ga('send', 'pageview');
   
   
     
-      <li><a href="https://guangchuangyu.github.io/cn/" target="_blank" title="Blog">Blog</a></li>
+      <li><a href="https://guangchuangyu.github.io/cn/" title="Blog" >Blog</a></li>
     
   
     
-      <li><a href="https://guangchuangyu.github.io/resume" target="_blank" title="Resume">Resume</a></li>
+      <li><a href="https://guangchuangyu.github.io/resume" title="Resume" >Resume</a></li>
     
   
     
-      <li><a href="https://guangchuangyu.github.io/cn/douban" target="_blank" title="Douban">Douban</a></li>
+      <li><a href="https://guangchuangyu.github.io/cn/douban" title="Douban" >Douban</a></li>
     
   
     
-      <li><a href="https://guangchuangyu.github.io/cn/archive" target="_blank" title="Archive">Archive</a></li>
+      <li><a href="https://guangchuangyu.github.io/cn/archive" title="Archive" >Archive</a></li>
     
   
 </ul>
 
 
 <ul class="subscription">
-  <a href="https://guangchuangyu.github.io/cn/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss-square fa-lg"></i></a>
-
   
+    
+        <a href="https://guangchuangyu.github.io/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss-square fa-lg"></i></a>
+    
   
 
 </ul>
@@ -107,56 +107,46 @@ ga('send', 'pageview');
   <div id="content">
     <div>
       <article class="hentry" role="article">
-        <header>
-          <h1 class="entry-title">
-            boxplot 
-          </h1>
-          <p class="meta">Mar 4, 2014 - 1 minute read -  <a href="https://guangchuangyu.github.io/cn/2014/03/boxplot/#disqus_thread">Comments</a>
 
-          
+        
+        
 
-          
-          
-          <a class="label" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
-          </p>
-        </header>
+<header>
+    <p class="meta">Mar 4, 2014
+         - 1 minute read 
+         - <a href="https://guangchuangyu.github.io/cn/2014/03/boxplot/#disqus_thread">Comments</a>
+
+        
+        
+        
+            - <a class="label" href="https://guangchuangyu.github.io/categories/visualization/">Visualization </a>
+        
+    </p>
+    <h1 class="entry-title">
+         boxplot 
+    </h1>
+</header>
+
+
         <div class="entry-content">
           
           
           
-
-	  
-<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
-<a class="a2a_dd" href="//www.addtoany.com/share"></a>
-<a class="a2a_button_facebook"></a>
-<a class="a2a_button_twitter"></a>
-<a class="a2a_button_google_plus"></a>
-<a class="a2a_button_pinterest"></a>
-<a class="a2a_button_reddit"></a>
-<a class="a2a_button_sina_weibo"></a>
-<a class="a2a_button_wechat"></a>
-<a class="a2a_button_douban"></a>
-</div>
-<script async src="//static.addtoany.com/menu/page.js"></script>
-
-<br>
-
-    <p>生物坑很多人画图只会直方图，统计只会T检验，在暨大见过太多的学生连T检验都不会，分不清SEM和SD的差别，也不清楚T检验那几个简单参数的含义。我写统计笔记也是因为不想重复性地跟学生讲解T检验。</p>
+          
+          <p>生物坑很多人画图只会直方图，统计只会T检验，在暨大见过太多的学生连T检验都不会，分不清SEM和SD的差别，也不清楚T检验那几个简单参数的含义。我写统计笔记也是因为不想重复性地跟学生讲解T检验。</p>
 
 <p>Barplot和T test一样普遍而流行，barplot适合于表示计数数据和比例，显示比例也可以用pie
 plot，但直方图比饼图要好，因为人类的眼睛适合于比较高度，而不是弧度。</p>
 
 <p>多半时候生物学数据并非简单的计数数据，对于测量数据，在展示数据分布时，很多人会使用他们熟悉的barplot，用高度来表示mean，然后再加上errorbar，这样展示数据，信息量是非常低的，使用boxplot能够提供更多的数据分布信息，能更好地展现数据，但可能很多人只会在excel里画barplot，Nature
-Methods 2013年的文章中有100个barplot图，而只有20个boxplot图，从这里就可以看出来，用boxplot的人远远没有barplot多，于是NPG怒了，写了两篇专栏文章<a href="http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2807.html">Points of View: Bar charts and box plots</a>和<a href="http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2813.html">Points of Significance: Visualizing samples with box plots</a>并且发表了一篇<a href="http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2811.html">BoxPlotR: a web tool for generation of box plots</a>方便大家画boxplot，如此简单的web tool能够发Nature Methods，实在是让人羡慕妒忌恨啊。</p>
+Methods 2013年的文章中有100个barplot图，而只有20个boxplot图，从这里就可以看出来，用boxplot的人远远没有barplot多，于是NPG怒了，写了两篇专栏文章<a href="http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2807.html">Points of View: Bar charts and box plots</a>和<a href="http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2813.html">Points of Significance: Visualizing samples with box plots</a>并且发表了一篇<a href="http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2811.html">BoxPlotR: a web tool for generation of box plots</a>方便大家画boxplot，如此简单的web tool能够发Nature Methods，实在是让人羡慕妒忌恨啊。
+</p>
 
 <p>Boxplot从1970年由John Tukey提示，到现在已经40多年了，他有很多的变种，比如<a href="http://guangchuangyu.github.io/2012/02/violin-plot/">violin plot</a>和<a href="http://www.jstatsoft.org/v28/c01/paper">beanplot</a>，violin
 plot和beanplot是很像的，都是把box换成density curve，beanplot另外把数据点在中间用线条表示出来，这个很容易加上去，正如我在<a href="http://guangchuangyu.github.io/2012/02/violin-plot/">violin plot</a>中把数据点加进去一样。同样可以把数据点加进boxplot中，还有很多手法来展示boxplot，比如可以用缺口(notch)形式来画boxplot，可以把中间的宽度表示为median值的置信空间。boxplot的宽度可以用样本量来归一化，如果sample
 size足够大的话，$mean\pm errorbar$ 不会超出box，可以很清晰把这个信息也展示在boxplot中。</p>
 
 <p>如果数据量比较少，可以用scatterplot+errorbar的形式展示数据，正如我在<a href="http://pubs.rsc.org/en/Content/ArticleLanding/2011/MB/C0MB00055H#!divAbstract">Phosphoproteome profile of human lung cancer cell line A549</a>中所画的<a href="http://www.douban.com/photos/photo/1560368200/">图7</a>。</p>
-
-
- 
         </div>
         
 
@@ -165,12 +155,12 @@ size足够大的话，$mean\pm errorbar$ 不会超出box，可以很清晰把这
     <span class="byline author vcard">Posted by <span class="fn">Guangchuang Yu</span></span>
     
     <time>Mar 4, 2014</time>
-    <span class="categories">
-      Tags:
+    
+      <span class="categories">
+        Tags:
         
-        
-          <a class="category" href="https://guangchuangyu.github.io/cn/tags/boxplot">boxplot</a>  
-        
+          <a class="category" href="https://guangchuangyu.github.io/tags/boxplot">boxplot</a>  
+    
     </span>
   </p>
 
@@ -188,10 +178,6 @@ size足够大的话，$mean\pm errorbar$ 不会超出box，可以很清晰把这
       <a class="basic-alignment right" href="https://guangchuangyu.github.io/cn/2014/05/%E6%9B%B4%E6%94%B9%E7%99%BE%E5%BA%A6%E4%BA%91%E5%90%8C%E6%AD%A5%E7%9B%98%E8%B7%AF%E5%BE%84/" title="更改百度云同步盘路径">更改百度云同步盘路径</a>
     
   </p>
-
-
-  
-
   
     
       <div id="disqus_thread"></div>
@@ -201,7 +187,8 @@ size足够大的话，$mean\pm errorbar$ 不会超出box，可以很清晰把这
     
     
     
-    
+    if (window.location.hostname == "localhost")
+        return;
 
     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
     var disqus_shortname = 'gcyu';
@@ -220,137 +207,100 @@ size足够大的话，$mean\pm errorbar$ 不会超出box，可以很清晰把这
     </div>
     
 
-
 <aside class="sidebar thirds">
   <section class="first odd">
+
     
 
     <p>
       
-      
-      <script src="//tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
-      关注Y叔微信公众账号biobabble<br>
-      <img src="//guangchuangyu.github.io/blog_images/biobabble.jpg" width="250" height="250" />
-      <wb:follow-button uid="2185528715" type="red_3" width="100%" height="24" ></wb:follow-button>
-
-      
-
-    
+    </p>
+    关注Y叔微信公众账号biobabble<br>
+  <img src="//guangchuangyu.github.io/blog_images/biobabble.jpg" width="250" height="250" />
   </section>
 
 
 
   
-
-
+  <ul class="sidebar-nav">
+    <li class="sidebar-nav-item">
+      <a target="_blank" href="https://github.com/GuangchuangYu" title="https://github.com/GuangchuangYu"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a target="_blank" href="https://twitter.com/guangchuangyu" title="https://twitter.com/guangchuangyu"><i class="fa fa-twitter fa-3x"></i></a>
+       
+      <a target="_blank" href="https://www.linkedin.com/in/guangchuang-yu-86820120" title="https://www.linkedin.com/in/guangchuang-yu-86820120"><i class="fa fa-linkedin fa-3x"></i></a>
+      
+      
+      <a target="_blank" href="https://www.facebook.com/guangchuang.yu" title="https://www.facebook.com/guangchuang.yu"><i class="fa fa-facebook fa-3x"></i></a>
+      
+      
 
     
-     
-  
-  
-  <section class="even">
-    <h1>Recent Posts</h1>
-
     
-    <ul id="recent_posts">
-      
-      
-        
-      
-      
-      <li class="post">
-        <a href="https://guangchuangyu.github.io/cn/2017/05/viziometric/">viziometric</a>
-      </li>
-      
-      <li class="post">
-        <a href="https://guangchuangyu.github.io/cn/2017/05/enrichdavid%E6%94%AF%E6%8C%81%E8%87%AA%E5%AE%9A%E4%B9%89%E8%83%8C%E6%99%AF/">enrichDAVID支持自定义背景</a>
-      </li>
-      
-      <li class="post">
-        <a href="https://guangchuangyu.github.io/cn/2017/05/bootstrap-value%E5%88%86%E6%AE%B5%E6%A0%87%E8%AE%B0/">bootstrap value分段标记</a>
-      </li>
-      
-      <li class="post">
-        <a href="https://guangchuangyu.github.io/cn/2017/04/annotate-tree-with-user-specific-data/">annotate tree with user specific data</a>
-      </li>
-      
-      <li class="post">
-        <a href="https://guangchuangyu.github.io/cn/2017/04/%E5%85%AC%E5%8F%B7%E7%8B%97%E7%9A%84%E7%A6%8F%E9%9F%B3/">公号狗的福音</a>
-      </li>
-      
-    </ul>
-  </section>
+    </li>
+  </ul>
+
+  
+
+  
 
   
   
-  <section class="even">
-    <h1>Book to Read</h1>
-    Analysis of Phylogenetic and Evolution with R<br>
-    Inferring phylogenies<br>
-    Statistical Models: Theory and Practice<br>
-    Algorithms on Strings, Trees, and Sequences
-    <h1>Links</h1>
-    <a href="http://www.biostathandbook.com/">Handbook of Biological Statistics</a><br>
-    <a href="http://r-bloggers.com/">R-bloggers</a>
-    <h1>友邻</h1>
-    <a href="http://azaleasays.com/">azalea</a><br>
-    <a href="http://blog.shenwei.me/">shenwei</a><br>
-    <a href="http://ztpala.com/">ztpala</a>
-
-  </section>
-
-
-
-
+  
+    
+      <section class="even">
+        <h1>Recent Posts</h1>
+        <ul id="recent_posts">
+          
+            <li class="post">
+              <a href="/cn/2017/05/viziometric/">viziometric</a>
+            </li>
+          
+            <li class="post">
+              <a href="/cn/2017/05/enrichdavid%E6%94%AF%E6%8C%81%E8%87%AA%E5%AE%9A%E4%B9%89%E8%83%8C%E6%99%AF/">enrichDAVID支持自定义背景</a>
+            </li>
+          
+            <li class="post">
+              <a href="/cn/2017/05/bootstrap-value%E5%88%86%E6%AE%B5%E6%A0%87%E8%AE%B0/">bootstrap value分段标记</a>
+            </li>
+          
+            <li class="post">
+              <a href="/cn/2017/04/annotate-tree-with-user-specific-data/">annotate tree with user specific data</a>
+            </li>
+          
+            <li class="post">
+              <a href="/cn/2017/04/%E5%85%AC%E5%8F%B7%E7%8B%97%E7%9A%84%E7%A6%8F%E9%9F%B3/">公号狗的福音</a>
+            </li>
+          
+            <li class="post">
+              <a href="/cn/2017/04/%E6%9D%A5%E8%87%AAr%E7%9A%84%E6%A1%8C%E9%9D%A2%E6%8F%90%E9%86%92/">来自R的桌面提醒</a>
+            </li>
+          
+            <li class="post">
+              <a href="/cn/2017/04/ggimageggplot2%E4%B8%AD%E6%84%89%E5%BF%AB%E5%9C%B0%E4%BD%BF%E7%94%A8%E5%9B%BE%E7%89%87/">ggimage：ggplot2中愉快地使用图片</a>
+            </li>
+          
+            <li class="post">
+              <a href="/cn/2017/04/generate-biobabble-banner-using-ggimage/">generate biobabble banner using ggimage</a>
+            </li>
+          
+        </ul>
+      </section>
+    
+  
   <script type="text/javascript" src="//rf.revolvermaps.com/0/0/7.js?i=5qpvv5zz7fp&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;sx=0" async="async"></script>
-
-  <script>
-  ((window.gitter = {}).chat = {}).options = {
-    room: 'GuangchuangYu/Bioinformatics'
-  };
-</script>
-  <script src="//sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
-  
 </aside>
 
   </div>
 </div>
 
-
-
-
 <footer role="contentinfo">
-  <p>Copyright &copy; 2017 Guangchuang Yu - <a href="https://guangchuangyu.github.io/cn/license/">License</a> - 
+  <p>Copyright &copy; 2017 Guangchuang Yu - <a href="https://guangchuangyu.github.io/license/">License</a> -
   <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
 </p>
 
 </footer>
-
-
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/zenburn.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-
-<script type="text/javascript"
-  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']],
-    displayMath: [['$$','$$'], ['\[','\]']],
-    processEscapes: true,
-    processEnvironments: true,
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-    TeX: { equationNumbers: { autoNumber: "AMS" },
-         extensions: ["AMSmath.js", "AMSsymbols.js"] }
-  }
-});
-</script>
-
-<script type="text/javascript" src="//w.sharethis.com/button/buttons.js"></script>
-<script type="text/javascript">stLight.options({publisher: "d135f460-3fc5-4802-8169-bd08e4734a09", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
-
 
 
 </body>

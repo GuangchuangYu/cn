@@ -10,24 +10,26 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
 
   
+  
   <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
   <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  
 
   
   <title>Guangchuang Yu</title>
 
   
   
-  <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/hugo-octopress.css">
+  <link rel="stylesheet" href="https://guangchuangyu.github.io/css/hugo-octopress.css">
 
   
   
 
   
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 
   
-  <link href="https://guangchuangyu.github.io/cn/favicon.png" rel="icon">
+  <link href="https://guangchuangyu.github.io/favicon.png" rel="icon">
 
   
   
@@ -41,19 +43,16 @@
   <meta name="author" content="Guangchuang Yu">
 
   
-  <meta name="generator" content="Hugo 0.15" />
+  <meta name="generator" content="Hugo 0.21" />
 
   
   
 <script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-77901140-1', 'auto');
 ga('send', 'pageview');
 </script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
 
 
 </head>
@@ -62,7 +61,7 @@ ga('send', 'pageview');
 
 <header role="banner"><hgroup>
   
-  <h1><a href="https://guangchuangyu.github.io/cn/">Guangchuang Yu</a></h1>
+  <h1><a href="https://guangchuangyu.github.io/">Guangchuang Yu</a></h1>
     <h2>a senior-in-age-but-not-senior-in-knowledge bioinformatician</h2>
 </hgroup></header>
 
@@ -73,28 +72,29 @@ ga('send', 'pageview');
   
   
     
-      <li><a href="https://guangchuangyu.github.io/cn/" target="_blank" title="Blog">Blog</a></li>
+      <li><a href="https://guangchuangyu.github.io/cn/" title="Blog" >Blog</a></li>
     
   
     
-      <li><a href="https://guangchuangyu.github.io/resume" target="_blank" title="Resume">Resume</a></li>
+      <li><a href="https://guangchuangyu.github.io/resume" title="Resume" >Resume</a></li>
     
   
     
-      <li><a href="https://guangchuangyu.github.io/cn/douban" target="_blank" title="Douban">Douban</a></li>
+      <li><a href="https://guangchuangyu.github.io/cn/douban" title="Douban" >Douban</a></li>
     
   
     
-      <li><a href="https://guangchuangyu.github.io/cn/archive" target="_blank" title="Archive">Archive</a></li>
+      <li><a href="https://guangchuangyu.github.io/cn/archive" title="Archive" >Archive</a></li>
     
   
 </ul>
 
 
 <ul class="subscription">
-  <a href="https://guangchuangyu.github.io/cn/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss-square fa-lg"></i></a>
-
   
+    
+        <a href="https://guangchuangyu.github.io/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss-square fa-lg"></i></a>
+    
   
 
 </ul>
@@ -109,19 +109,26 @@ ga('send', 'pageview');
     
     
     <article>
-      <header>
-        <h1 class="entry-title">
-          <a href="https://guangchuangyu.github.io/cn/2016/12/using-linked-list-to-solve-josephus-problem/">Using Linked List to solve Josephus problem</a>
-        </h1>
-        <p class="meta">Dec 4, 2016 - 1 minute read -  <a href="https://guangchuangyu.github.io/cn/2016/12/using-linked-list-to-solve-josephus-problem/#disqus_thread">Comments</a>
+
+        
+        
+
+<header>
+    <p class="meta">Dec 4, 2016
+         - 1 minute read 
+         - <a href="https://guangchuangyu.github.io/cn/2016/12/using-linked-list-to-solve-josephus-problem/#disqus_thread">Comments</a>
 
         
         
         
-        <a class="label" href="https://guangchuangyu.github.io/cn/categories/data-structure/">data structure</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/c/">C&#43;&#43;</a>
-        </p>
+            - <a class="label" href="https://guangchuangyu.github.io/categories/data-structure/">data structure </a><a class="label" href="https://guangchuangyu.github.io/categories/c&#43;&#43;/">C&#43;&#43; </a>
+        
+    </p>
+    <h1 class="entry-title">
+        <a href="https://guangchuangyu.github.io/cn/2016/12/using-linked-list-to-solve-josephus-problem/">Using Linked List to solve Josephus problem</a>
+    </h1>
+</header>
 
-      </header>
 
         
           <p><blockquote>
@@ -129,7 +136,8 @@ ga('send', 'pageview');
 </blockquote>
 
 <p>这是一个比较简单的问题，n个人围成圆圈，越过k-1个人，杀掉第k个人，如此反复直到只剩下最后一个人。可以用数学推导给出答案，问题本身已经足够简单，用链表可以模拟整个过程。实现起来比较直观。这里在初始化这个链表的时候，需要注意，到了最后一人的时候，他应该指向第一个人，这样才能形成一个环状的链表，然后问题就非常简单了，从第一人开始，后面就无所谓头和尾了，按照规则来，每次杀掉一个人，直到只剩下最后一人，就是结果。从维基的解释可以看出，最后两个人没死，这没节操的事情被拿来说，如果你数学好，你就可以救自己一命（站在合适的位置，让自己是最后一个）。</p>
-</p>
+
+<p></p></p>
 
           
               <footer>
@@ -142,27 +150,34 @@ ga('send', 'pageview');
     </article>
     
     <article>
-      <header>
-        <h1 class="entry-title">
-          <a href="https://guangchuangyu.github.io/cn/2016/12/%E4%B8%AD%E7%A9%BA%E7%9A%84%E7%8E%AF%E5%BD%A2%E6%A0%91/">中空的环形树</a>
-        </h1>
-        <p class="meta">Dec 3, 2016 - 1 minute read -  <a href="https://guangchuangyu.github.io/cn/2016/12/%E4%B8%AD%E7%A9%BA%E7%9A%84%E7%8E%AF%E5%BD%A2%E6%A0%91/#disqus_thread">Comments</a>
+
+        
+        
+
+<header>
+    <p class="meta">Dec 3, 2016
+         - 1 minute read 
+         - <a href="https://guangchuangyu.github.io/cn/2016/12/%E4%B8%AD%E7%A9%BA%E7%9A%84%E7%8E%AF%E5%BD%A2%E6%A0%91/#disqus_thread">Comments</a>
 
         
         
         
-        <a class="label" href="https://guangchuangyu.github.io/cn/categories/visualization/">Visualization</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/r/">R</a>
-        </p>
+            - <a class="label" href="https://guangchuangyu.github.io/categories/visualization/">Visualization </a><a class="label" href="https://guangchuangyu.github.io/categories/r/">R </a>
+        
+    </p>
+    <h1 class="entry-title">
+        <a href="https://guangchuangyu.github.io/cn/2016/12/%E4%B8%AD%E7%A9%BA%E7%9A%84%E7%8E%AF%E5%BD%A2%E6%A0%91/">中空的环形树</a>
+    </h1>
+</header>
 
-      </header>
 
         
           <p><p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/iss95.png" alt="" /></p>
 
 <p>这是<a href="https://github.com/GuangchuangYu/ggtree/issues/95">github</a>上的问题，他想画环形树的时候，加一条长长的root length把tips给顶出去。</p>
 
-<p>这个问题在google forum上我早已解答：</p>
-</p>
+<p>这个问题在google forum上我早已解答：
+</p></p>
 
           
               <footer>
@@ -175,19 +190,26 @@ ga('send', 'pageview');
     </article>
     
     <article>
-      <header>
-        <h1 class="entry-title">
-          <a href="https://guangchuangyu.github.io/cn/2016/11/%E6%97%A0%E4%B8%AD%E7%94%9F%E6%9C%89windows%E7%89%88r%E5%8C%85/">无中生有windows版R包</a>
-        </h1>
-        <p class="meta">Nov 30, 2016 - 1 minute read -  <a href="https://guangchuangyu.github.io/cn/2016/11/%E6%97%A0%E4%B8%AD%E7%94%9F%E6%9C%89windows%E7%89%88r%E5%8C%85/#disqus_thread">Comments</a>
+
+        
+        
+
+<header>
+    <p class="meta">Nov 30, 2016
+         - 1 minute read 
+         - <a href="https://guangchuangyu.github.io/cn/2016/11/%E6%97%A0%E4%B8%AD%E7%94%9F%E6%9C%89windows%E7%89%88r%E5%8C%85/#disqus_thread">Comments</a>
 
         
         
         
-        <a class="label" href="https://guangchuangyu.github.io/cn/categories/r/">R</a>
-        </p>
+            - <a class="label" href="https://guangchuangyu.github.io/categories/r/">R </a>
+        
+    </p>
+    <h1 class="entry-title">
+        <a href="https://guangchuangyu.github.io/cn/2016/11/%E6%97%A0%E4%B8%AD%E7%94%9F%E6%9C%89windows%E7%89%88r%E5%8C%85/">无中生有windows版R包</a>
+    </h1>
+</header>
 
-      </header>
 
         
           <p><p>之前帮助高老师实现比对序列的做图，把代码打包为R包seqcombo，方便安装使用。花两小时的作品，发现还有些用户在使用 -，-</p>
@@ -199,7 +221,8 @@ ga('send', 'pageview');
 <p>但问题是我没有windows！多年来一直是OSX和linux，MacBook Pro跑Arch Linux，一台iMac跑OSX，我自己根本没有跑windows的机器，所以难为无米之炊，借台机器总是有的，但总不能每次一更新，就拷个代码去别人的机器上打包，再拷回来上传到网上，想想也是蛋疼。</p>
 
 <p>所以没有windows，这事干起来还不太容易，！在想怎么来无中生有生出个windows包出来的时候，我想起了rhub，也是因为没有windows，之前就用rhub来进行windows平台的R check，在把代码push到CRAN或Bioconductor之前，我总会测试没问题了，再提交代码过去，而rhub正好可以给我提供windows平台的检测。</p>
-</p>
+
+<p></p></p>
 
           
               <footer>
@@ -212,19 +235,26 @@ ga('send', 'pageview');
     </article>
     
     <article>
-      <header>
-        <h1 class="entry-title">
-          <a href="https://guangchuangyu.github.io/cn/2016/11/vertical-dendrogram-in-ggtree/">vertical dendrogram in ggtree</a>
-        </h1>
-        <p class="meta">Nov 29, 2016 - 1 minute read -  <a href="https://guangchuangyu.github.io/cn/2016/11/vertical-dendrogram-in-ggtree/#disqus_thread">Comments</a>
+
+        
+        
+
+<header>
+    <p class="meta">Nov 29, 2016
+         - 1 minute read 
+         - <a href="https://guangchuangyu.github.io/cn/2016/11/vertical-dendrogram-in-ggtree/#disqus_thread">Comments</a>
 
         
         
         
-        <a class="label" href="https://guangchuangyu.github.io/cn/categories/visualization/">Visualization</a><a class="label" href="https://guangchuangyu.github.io/cn/categories/r/">R</a>
-        </p>
+            - <a class="label" href="https://guangchuangyu.github.io/categories/visualization/">Visualization </a><a class="label" href="https://guangchuangyu.github.io/categories/r/">R </a>
+        
+    </p>
+    <h1 class="entry-title">
+        <a href="https://guangchuangyu.github.io/cn/2016/11/vertical-dendrogram-in-ggtree/">vertical dendrogram in ggtree</a>
+    </h1>
+</header>
 
-      </header>
 
         
           <p><blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/guangchuangyu">@guangchuangyu</a> Is it possible to plot horizontal trees with ggtree? (a la plot.hclust default).</p>&mdash; Diego Diez (@kurai_yousei) <a href="https://twitter.com/kurai_yousei/status/799532564633518080">November 18, 2016</a></blockquote>
@@ -233,7 +263,8 @@ ga('send', 'pageview');
 <p>这个Diego在推特上问的问题，他最近在写一个<a href="https://github.com/ddiez/motiftools">motiftools</a>的R包，里面用了ggtree来画图，我想他应该是要解决他在包里的画树/聚类功能吧。</p>
 
 <p>他问题写的horizontal，但其实plot.hclust默认是vertical，ggtree默认也是horizontal，所以我认为他问的是vertical layout，这个在我的回答中也得到了他的确认。</p>
-</p>
+
+<p></p></p>
 
           
               <footer>
@@ -246,19 +277,26 @@ ga('send', 'pageview');
     </article>
     
     <article>
-      <header>
-        <h1 class="entry-title">
-          <a href="https://guangchuangyu.github.io/cn/2016/11/buildgomap/">buildGOmap</a>
-        </h1>
-        <p class="meta">Nov 28, 2016 - 1 minute read -  <a href="https://guangchuangyu.github.io/cn/2016/11/buildgomap/#disqus_thread">Comments</a>
+
+        
+        
+
+<header>
+    <p class="meta">Nov 28, 2016
+         - 1 minute read 
+         - <a href="https://guangchuangyu.github.io/cn/2016/11/buildgomap/#disqus_thread">Comments</a>
 
         
         
         
-        <a class="label" href="https://guangchuangyu.github.io/cn/categories/r/">R</a>
-        </p>
+            - <a class="label" href="https://guangchuangyu.github.io/categories/r/">R </a>
+        
+    </p>
+    <h1 class="entry-title">
+        <a href="https://guangchuangyu.github.io/cn/2016/11/buildgomap/">buildGOmap</a>
+    </h1>
+</header>
 
-      </header>
 
         
           <p><p><img src="http://guangchuangyu.github.io/blog_images/Bioconductor/clusterProfiler/640.jpg" alt="" /></p>
@@ -266,7 +304,8 @@ ga('send', 'pageview');
 <p>周末Bioconductor上的问题，说的是他用了buildGOmap之后，在终端上输出了一长串，但没有文件产生，今天就来讲讲这个buildGOmap的前世今生。</p>
 
 <p>当年写clusterProfiler的时候在暨大工作，主要也是自己的需求驱动，因为实验室里有做细菌，比如肺炎链球菌D39，在细菌界基本上所谓的GO分析，就是跑个电子注释，然后数一下数目，列个表格画个饼图。很难看到有富集性分析的身影，因为绝大多数的工具是只支持少量模式生物的，还有部分工具比如支持某些细菌，支持某些植物或者某些真菌，比如支持植物的，也只是支持少量的植物物种而已，都是些自己定制给自己用的玩意，放出来只是为了顺道灌水而已。</p>
-</p>
+
+<p></p></p>
 
           
               <footer>
@@ -290,199 +329,162 @@ ga('send', 'pageview');
         
         
         
-        <a href="https://guangchuangyu.github.io/cn/" aria-label="First" class="label-pagination"><i class="fa fa-angle-double-left fa-lg"></i></a>
+        <a href="/cn/" aria-label="First" class="label-pagination"><i class="fa fa-angle-double-left fa-lg"></i></a>
     
 
     
     
-        <a href="https://guangchuangyu.github.io/cn/page/5/" aria-label="Previous" class="label-pagination"><i class="fa fa-angle-left fa-lg"></i></a>
+        <a href="/cn/page/5/" aria-label="Previous" class="label-pagination"><i class="fa fa-angle-left fa-lg"></i></a>
     
 
     
-        <a href="https://guangchuangyu.github.io/cn/" class="label-pagination">1</a>
+        <a href="/cn/" class="label-pagination">1</a>
     
-        <a href="https://guangchuangyu.github.io/cn/page/2/" class="label-pagination">2</a>
+        <a href="/cn/page/2/" class="label-pagination">2</a>
     
-        <a href="https://guangchuangyu.github.io/cn/page/3/" class="label-pagination">3</a>
+        <a href="/cn/page/3/" class="label-pagination">3</a>
     
-        <a href="https://guangchuangyu.github.io/cn/page/4/" class="label-pagination">4</a>
+        <a href="/cn/page/4/" class="label-pagination">4</a>
     
-        <a href="https://guangchuangyu.github.io/cn/page/5/" class="label-pagination">5</a>
+        <a href="/cn/page/5/" class="label-pagination">5</a>
     
-        <a href="https://guangchuangyu.github.io/cn/page/6/" class="label-pagination">6</a>
+        <a href="/cn/page/6/" class="label-pagination">6</a>
     
-        <a href="https://guangchuangyu.github.io/cn/page/7/" class="label-pagination">7</a>
+        <a href="/cn/page/7/" class="label-pagination">7</a>
     
-        <a href="https://guangchuangyu.github.io/cn/page/8/" class="label-pagination">8</a>
+        <a href="/cn/page/8/" class="label-pagination">8</a>
     
-        <a href="https://guangchuangyu.github.io/cn/page/9/" class="label-pagination">9</a>
+        <a href="/cn/page/9/" class="label-pagination">9</a>
     
-        <a href="https://guangchuangyu.github.io/cn/page/10/" class="label-pagination">10</a>
+        <a href="/cn/page/10/" class="label-pagination">10</a>
     
-        <a href="https://guangchuangyu.github.io/cn/page/11/" class="label-pagination">11</a>
+        <a href="/cn/page/11/" class="label-pagination">11</a>
     
-        <a href="https://guangchuangyu.github.io/cn/page/12/" class="label-pagination">12</a>
+        <a href="/cn/page/12/" class="label-pagination">12</a>
     
-        <a href="https://guangchuangyu.github.io/cn/page/13/" class="label-pagination">13</a>
+        <a href="/cn/page/13/" class="label-pagination">13</a>
     
-        <a href="https://guangchuangyu.github.io/cn/page/14/" class="label-pagination">14</a>
+        <a href="/cn/page/14/" class="label-pagination">14</a>
     
-        <a href="https://guangchuangyu.github.io/cn/page/15/" class="label-pagination">15</a>
+        <a href="/cn/page/15/" class="label-pagination">15</a>
     
-        <a href="https://guangchuangyu.github.io/cn/page/16/" class="label-pagination">16</a>
+        <a href="/cn/page/16/" class="label-pagination">16</a>
     
-        <a href="https://guangchuangyu.github.io/cn/page/17/" class="label-pagination">17</a>
-    
-
-    
-    
-        <a href="https://guangchuangyu.github.io/cn/page/7/" aria-label="Next" class="label-pagination"><i class="fa fa-angle-right fa-lg"></i></a>
+        <a href="/cn/page/17/" class="label-pagination">17</a>
     
 
     
     
-        <a href="https://guangchuangyu.github.io/cn/page/17/" aria-label="Last"><i class="fa fa-angle-double-right fa-lg"></i></a>
+        <a href="/cn/page/7/" aria-label="Next" class="label-pagination"><i class="fa fa-angle-right fa-lg"></i></a>
+    
+
+    
+    
+        <a href="/cn/page/17/" aria-label="Last"><i class="fa fa-angle-double-right fa-lg"></i></a>
     
 
 </div>
 
-   
+  
 
   </div>
 
   
 
-
 <aside class="sidebar thirds">
   <section class="first odd">
+
     
 
     <p>
       
-      
-      <script src="//tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
-      关注Y叔微信公众账号biobabble<br>
-      <img src="//guangchuangyu.github.io/blog_images/biobabble.jpg" width="250" height="250" />
-      <wb:follow-button uid="2185528715" type="red_3" width="100%" height="24" ></wb:follow-button>
-
-      
-
-    
+    </p>
+    关注Y叔微信公众账号biobabble<br>
+  <img src="//guangchuangyu.github.io/blog_images/biobabble.jpg" width="250" height="250" />
   </section>
 
 
 
   
-
-
+  <ul class="sidebar-nav">
+    <li class="sidebar-nav-item">
+      <a target="_blank" href="https://github.com/GuangchuangYu" title="https://github.com/GuangchuangYu"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a target="_blank" href="https://twitter.com/guangchuangyu" title="https://twitter.com/guangchuangyu"><i class="fa fa-twitter fa-3x"></i></a>
+       
+      <a target="_blank" href="https://www.linkedin.com/in/guangchuang-yu-86820120" title="https://www.linkedin.com/in/guangchuang-yu-86820120"><i class="fa fa-linkedin fa-3x"></i></a>
+      
+      
+      <a target="_blank" href="https://www.facebook.com/guangchuang.yu" title="https://www.facebook.com/guangchuang.yu"><i class="fa fa-facebook fa-3x"></i></a>
+      
+      
 
     
-     
-  
-  
-  <section class="even">
-    <h1>Recent Posts</h1>
-
     
-    <ul id="recent_posts">
-      
-      
-        
-      
-      
-      <li class="post">
-        <a href="https://guangchuangyu.github.io/cn/2017/05/viziometric/">viziometric</a>
-      </li>
-      
-      <li class="post">
-        <a href="https://guangchuangyu.github.io/cn/2017/05/enrichdavid%E6%94%AF%E6%8C%81%E8%87%AA%E5%AE%9A%E4%B9%89%E8%83%8C%E6%99%AF/">enrichDAVID支持自定义背景</a>
-      </li>
-      
-      <li class="post">
-        <a href="https://guangchuangyu.github.io/cn/2017/05/bootstrap-value%E5%88%86%E6%AE%B5%E6%A0%87%E8%AE%B0/">bootstrap value分段标记</a>
-      </li>
-      
-      <li class="post">
-        <a href="https://guangchuangyu.github.io/cn/2017/04/annotate-tree-with-user-specific-data/">annotate tree with user specific data</a>
-      </li>
-      
-      <li class="post">
-        <a href="https://guangchuangyu.github.io/cn/2017/04/%E5%85%AC%E5%8F%B7%E7%8B%97%E7%9A%84%E7%A6%8F%E9%9F%B3/">公号狗的福音</a>
-      </li>
-      
-    </ul>
-  </section>
+    </li>
+  </ul>
+
+  
+
+  
 
   
   
-  <section class="even">
-    <h1>Book to Read</h1>
-    Analysis of Phylogenetic and Evolution with R<br>
-    Inferring phylogenies<br>
-    Statistical Models: Theory and Practice<br>
-    Algorithms on Strings, Trees, and Sequences
-    <h1>Links</h1>
-    <a href="http://www.biostathandbook.com/">Handbook of Biological Statistics</a><br>
-    <a href="http://r-bloggers.com/">R-bloggers</a>
-    <h1>友邻</h1>
-    <a href="http://azaleasays.com/">azalea</a><br>
-    <a href="http://blog.shenwei.me/">shenwei</a><br>
-    <a href="http://ztpala.com/">ztpala</a>
-
-  </section>
-
-
-
-
+  
+    
+      <section class="even">
+        <h1>Recent Posts</h1>
+        <ul id="recent_posts">
+          
+            <li class="post">
+              <a href="/cn/2017/05/viziometric/">viziometric</a>
+            </li>
+          
+            <li class="post">
+              <a href="/cn/2017/05/enrichdavid%E6%94%AF%E6%8C%81%E8%87%AA%E5%AE%9A%E4%B9%89%E8%83%8C%E6%99%AF/">enrichDAVID支持自定义背景</a>
+            </li>
+          
+            <li class="post">
+              <a href="/cn/2017/05/bootstrap-value%E5%88%86%E6%AE%B5%E6%A0%87%E8%AE%B0/">bootstrap value分段标记</a>
+            </li>
+          
+            <li class="post">
+              <a href="/cn/2017/04/annotate-tree-with-user-specific-data/">annotate tree with user specific data</a>
+            </li>
+          
+            <li class="post">
+              <a href="/cn/2017/04/%E5%85%AC%E5%8F%B7%E7%8B%97%E7%9A%84%E7%A6%8F%E9%9F%B3/">公号狗的福音</a>
+            </li>
+          
+            <li class="post">
+              <a href="/cn/2017/04/%E6%9D%A5%E8%87%AAr%E7%9A%84%E6%A1%8C%E9%9D%A2%E6%8F%90%E9%86%92/">来自R的桌面提醒</a>
+            </li>
+          
+            <li class="post">
+              <a href="/cn/2017/04/ggimageggplot2%E4%B8%AD%E6%84%89%E5%BF%AB%E5%9C%B0%E4%BD%BF%E7%94%A8%E5%9B%BE%E7%89%87/">ggimage：ggplot2中愉快地使用图片</a>
+            </li>
+          
+            <li class="post">
+              <a href="/cn/2017/04/generate-biobabble-banner-using-ggimage/">generate biobabble banner using ggimage</a>
+            </li>
+          
+        </ul>
+      </section>
+    
+  
   <script type="text/javascript" src="//rf.revolvermaps.com/0/0/7.js?i=5qpvv5zz7fp&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;sx=0" async="async"></script>
-
-  <script>
-  ((window.gitter = {}).chat = {}).options = {
-    room: 'GuangchuangYu/Bioinformatics'
-  };
-</script>
-  <script src="//sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
-  
 </aside>
     
  </div>
 </div>
 
-
-
-
 <footer role="contentinfo">
-  <p>Copyright &copy; 2017 Guangchuang Yu - <a href="https://guangchuangyu.github.io/cn/license/">License</a> - 
+  <p>Copyright &copy; 2017 Guangchuang Yu - <a href="https://guangchuangyu.github.io/license/">License</a> -
   <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
 </p>
 
 </footer>
-
-
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/zenburn.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-
-<script type="text/javascript"
-  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']],
-    displayMath: [['$$','$$'], ['\[','\]']],
-    processEscapes: true,
-    processEnvironments: true,
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-    TeX: { equationNumbers: { autoNumber: "AMS" },
-         extensions: ["AMSmath.js", "AMSsymbols.js"] }
-  }
-});
-</script>
-
-<script type="text/javascript" src="//w.sharethis.com/button/buttons.js"></script>
-<script type="text/javascript">stLight.options({publisher: "d135f460-3fc5-4802-8169-bd08e4734a09", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
-
 
 
 </body>

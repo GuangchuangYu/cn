@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 03 Mar 2017 00:10:37 +0800</lastBuildDate>
-    <atom:link href="https://guangchuangyu.github.io/cn/tags/enrichment/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://guangchuangyu.github.io/cn/tags/enrichment/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>unknown annotation in enrichment analysis</title>
@@ -15,72 +17,11 @@
       <pubDate>Fri, 03 Mar 2017 00:10:37 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2017/03/unknown-annotation-in-enrichment-analysis/</guid>
-      <description>
-
-&lt;p&gt;小伙伴说注释不全，比如KEGG只有不到1万个基因有注释，但他一次RNA-seq出来的基因有2万多个，那其它没注释那1万多个岂不是扔了？！就某个通路来说，两种情况，要么属于，要么不属于这个通路。那1万多个应该放在背景里，不要扔。&lt;/p&gt;
+      <description>&lt;p&gt;小伙伴说注释不全，比如KEGG只有不到1万个基因有注释，但他一次RNA-seq出来的基因有2万多个，那其它没注释那1万多个岂不是扔了？！就某个通路来说，两种情况，要么属于，要么不属于这个通路。那1万多个应该放在背景里，不要扔。&lt;/p&gt;
 
 &lt;p&gt;我的解答是三种情况，1属于，2不属于，3不知道。对于缺失信息的，当然是扔。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/685336006.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;然而他觉得影响不大，这必须是有影响的。我们算一下p值就知道了。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;第一种情况-只搞大n:78c05f2a964a410613eebad16c9db2dc&#34;&gt;第一种情况，只搞大N&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt; k
-[1] 10
-&amp;gt; n
-[1] 100
-&amp;gt; M
-[1] 500
-&amp;gt; N1
-[1] 10000
-&amp;gt; phyper(k-1, M, N1-M, n, lower.tail=F)
-[1] 0.02751124
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;比如有这样的情况，算出来&lt;strong&gt;0.0275&lt;/strong&gt;，假如背景现在翻一翻，我们来看一下：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt; N2
-[1] 20000
-&amp;gt; phyper(k-1, M, N2-M, n, lower.tail=F)
-[1] 0.0002018491
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;p值变成正确的100分之一了。影响是如此之大！&lt;/p&gt;
-
-&lt;h2 id=&#34;第二种情况-n和n都搞大:78c05f2a964a410613eebad16c9db2dc&#34;&gt;第二种情况，N和n都搞大&lt;/h2&gt;
-
-&lt;p&gt;第一种情况是最常见的，有些web-server或软件，会有参数说估计一下物种的基因总数，这就是在搞大&lt;strong&gt;N&lt;/strong&gt;啊。&lt;/p&gt;
-
-&lt;p&gt;然后你可能会觉得，N大了，那你的基因列表里没注释的也不能扔啊，N翻倍了，n也应该翻倍？！&lt;/p&gt;
-
-&lt;p&gt;我们就当n也翻倍吧，看一下：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt; phyper(k-1, M, N2-M, n*2, lower.tail=F)
-[1] 0.02930878
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;好像是和正确答案差不多，然而大家有没有想到，这是有前提条件的，建立在完全随机的基因上，也就是说基因有没有注释的概率是一样的，我们在一个基因池子里随机捞一些出来研究，这显然是不成立的，有些通路就是被研究得很透，有些就是基本未知。科学上有些东西，就像个死火山，要靠某个突破之后突然喷发，研究上的东西，从来不是随机在发展。还拿KEGG来说吧，也就是代谢通路比较全。&lt;/p&gt;
-
-&lt;p&gt;所以第一点，N翻倍了，n在事实上不会刚好也翻倍的。假如n是乘1.5吧，我们来看p值:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt; phyper(k-1, M, N2-M, n*1.5, lower.tail=F)
-[1] 0.004529063
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;是正确p值的1/7，差别还有蛮大的。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;即使第二种情况成立，注释是随机的，你拿到的基因列表，也不应该是随机的，你无法对缺失注释的基因的分布做任何的估计，特别是对你的基因列表，不扔是错的。&lt;/p&gt;
-
-&lt;p&gt;三种情况，属于、不属于和不知道，分别可以说是true, false, NA，不过滤的做法，其实是把NA全当成false了，这问题太明显了，不可能全是false，是不是false的比例对于不同的pathway来说也不一样！而具体情况当然NA的东西，它就是NA，鬼知道。&lt;/p&gt;
-
-&lt;p&gt;所以必须要扔，注释信息本身是不全的，是有bias的，但这是现实，你没办法改善现实的情况下，起码不要想当然去把情况弄得更糟。&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

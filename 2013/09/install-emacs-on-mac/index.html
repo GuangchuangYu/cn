@@ -10,24 +10,26 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
 
   
+  
   <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
   <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  
 
   
   <title>Install Emacs on Mac</title>
 
   
   
-  <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/hugo-octopress.css">
+  <link rel="stylesheet" href="https://guangchuangyu.github.io/css/hugo-octopress.css">
 
   
   
 
   
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 
   
-  <link href="https://guangchuangyu.github.io/cn/favicon.png" rel="icon">
+  <link href="https://guangchuangyu.github.io/favicon.png" rel="icon">
 
   
   
@@ -41,19 +43,16 @@
   <meta name="author" content="Guangchuang Yu">
 
   
-  <meta name="generator" content="Hugo 0.15" />
+  <meta name="generator" content="Hugo 0.21" />
 
   
   
 <script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-77901140-1', 'auto');
 ga('send', 'pageview');
 </script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
 
 
 </head>
@@ -62,7 +61,7 @@ ga('send', 'pageview');
 
 <header role="banner"><hgroup>
   
-  <h1><a href="https://guangchuangyu.github.io/cn/">Guangchuang Yu</a></h1>
+  <h1><a href="https://guangchuangyu.github.io/">Guangchuang Yu</a></h1>
     <h2>a senior-in-age-but-not-senior-in-knowledge bioinformatician</h2>
 </hgroup></header>
 
@@ -73,28 +72,29 @@ ga('send', 'pageview');
   
   
     
-      <li><a href="https://guangchuangyu.github.io/cn/" target="_blank" title="Blog">Blog</a></li>
+      <li><a href="https://guangchuangyu.github.io/cn/" title="Blog" >Blog</a></li>
     
   
     
-      <li><a href="https://guangchuangyu.github.io/resume" target="_blank" title="Resume">Resume</a></li>
+      <li><a href="https://guangchuangyu.github.io/resume" title="Resume" >Resume</a></li>
     
   
     
-      <li><a href="https://guangchuangyu.github.io/cn/douban" target="_blank" title="Douban">Douban</a></li>
+      <li><a href="https://guangchuangyu.github.io/cn/douban" title="Douban" >Douban</a></li>
     
   
     
-      <li><a href="https://guangchuangyu.github.io/cn/archive" target="_blank" title="Archive">Archive</a></li>
+      <li><a href="https://guangchuangyu.github.io/cn/archive" title="Archive" >Archive</a></li>
     
   
 </ul>
 
 
 <ul class="subscription">
-  <a href="https://guangchuangyu.github.io/cn/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss-square fa-lg"></i></a>
-
   
+    
+        <a href="https://guangchuangyu.github.io/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss-square fa-lg"></i></a>
+    
   
 
 </ul>
@@ -107,50 +107,40 @@ ga('send', 'pageview');
   <div id="content">
     <div>
       <article class="hentry" role="article">
-        <header>
-          <h1 class="entry-title">
-            Install Emacs on Mac 
-          </h1>
-          <p class="meta">Sep 10, 2013 - 1 minute read -  <a href="https://guangchuangyu.github.io/cn/2013/09/install-emacs-on-mac/#disqus_thread">Comments</a>
 
-          
+        
+        
 
-          
-          
-          <a class="label" href="https://guangchuangyu.github.io/cn/categories/mac-os">Mac OS</a>
-          </p>
-        </header>
+<header>
+    <p class="meta">Sep 10, 2013
+         - 1 minute read 
+         - <a href="https://guangchuangyu.github.io/cn/2013/09/install-emacs-on-mac/#disqus_thread">Comments</a>
+
+        
+        
+        
+            - <a class="label" href="https://guangchuangyu.github.io/categories/mac-os/">Mac OS </a>
+        
+    </p>
+    <h1 class="entry-title">
+         Install Emacs on Mac 
+    </h1>
+</header>
+
+
         <div class="entry-content">
           
           
           
-
-	  
-<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
-<a class="a2a_dd" href="//www.addtoany.com/share"></a>
-<a class="a2a_button_facebook"></a>
-<a class="a2a_button_twitter"></a>
-<a class="a2a_button_google_plus"></a>
-<a class="a2a_button_pinterest"></a>
-<a class="a2a_button_reddit"></a>
-<a class="a2a_button_sina_weibo"></a>
-<a class="a2a_button_wechat"></a>
-<a class="a2a_button_douban"></a>
-</div>
-<script async src="//static.addtoany.com/menu/page.js"></script>
-
-<br>
-
-    
-
-<h2 id="package-manager:a0d2dabbee19e6fccf2cd8eeaa0e67d0">package manager</h2>
+          
+          <h2 id="package-manager">package manager</h2>
 
 <p>之前一直用<a href="http://guangchuangyu.github.io/categories/bsd/">NetBSD</a>的<a href="http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/">pkgsrc</a>做为各种Unix-like系统的包管理系统，pkgsrc在自己内部解决依赖关系，这点对于生产环境来说，是很好的一个优点，我通常会在服务器里装一个pkgsrc，在用户目录下，维护一套UNIX软件。但是用在自己的机器上，内部解决软件依赖，就是个缺点，浪费编译时间和硬盘空间。</p>
 
 <p>Mac上可用的包管理系统很多，Fink移植于<a href="http://guangchuangyu.github.io/categories/linux/">Debian</a>的apt，<a href="http://guangchuangyu.github.io/categories/linux/">Gentoo</a>的portage也支持OS X。OS X是基于BSD的系统，BSD有自己的一套包管理系统，如FreeBSD的ports和<a href="http://guangchuangyu.github.io/categories/bsd/">NetBSD</a>的<a href="http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/">pkgsrc</a>，MacPorts可以看作是这一系列中的一个，不过它并不是OS X原生的，它只是OpenDarwin的子项目，所以和pkgsrc一个样，也是内部解决依赖，真正为OS
-X设计的原生包管理系统非Homebrew莫属，它会尽量依赖系统里已有的软件。</p>
+X设计的原生包管理系统非Homebrew莫属，它会尽量依赖系统里已有的软件。
 
-<p>自从用了Homebrew之后，再也不用为系统里有两套perl和python而crazy了，之前通过<a href="http://guangchuangyu.github.io/2011/06/screen-shot/">pkgsrc装的软件</a>全删掉，改Homebrew来安装和管理。
+自从用了Homebrew之后，再也不用为系统里有两套perl和python而crazy了，之前通过<a href="http://guangchuangyu.github.io/2011/06/screen-shot/">pkgsrc装的软件</a>全删掉，改Homebrew来安装和管理。
 如果软件没有被pkgsrc收录，而想通过pkgsrc来管理的话，那就得自己<a href="http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/">写makefile</a>，而homebrew，则可以自动帮你生成Formula，比如我要安装<a href="http://users.soe.ucsc.edu/~kent/src/">blat</a>：</p>
 
 <pre><code>brew create http://users.soe.ucsc.edu/~kent/src/blatSrc35.zip
@@ -166,7 +156,7 @@ X设计的原生包管理系统非Homebrew莫属，它会尽量依赖系统里�
 <pre><code>brew install blat
 </code></pre>
 
-<h2 id="emacs:a0d2dabbee19e6fccf2cd8eeaa0e67d0">Emacs</h2>
+<h2 id="emacs">Emacs</h2>
 
 <p>虽然Homebrew是为OS
 X设计的，但它毕竟不是苹果的东西，无法管理系统内置的程序，OS
@@ -178,7 +168,7 @@ brew install --cocoa emacs
 ln -s /usr/local/Cellar/emacs/24.3/Emacs.app /Applications/
 </code></pre>
 
-<h2 id="site-lisp:a0d2dabbee19e6fccf2cd8eeaa0e67d0">site-lisp</h2>
+<h2 id="site-lisp">site-lisp</h2>
 
 <p>在.emacs.d目录下新建site-lisp目录，用于放置各种第三方的包，在.emacs里加入：</p>
 
@@ -188,7 +178,7 @@ ln -s /usr/local/Cellar/emacs/24.3/Emacs.app /Applications/
 
 <p>让emacs启动时，加载site-lisp及其子目录。</p>
 
-<h2 id="eshell-path:a0d2dabbee19e6fccf2cd8eeaa0e67d0">eshell PATH</h2>
+<h2 id="eshell-path">eshell PATH</h2>
 
 <p>eshell是个非常美好的存在，在windows下安装Emacs，就拥有了一个小型的<a href="http://guangchuangyu.github.io/categories/shell/">shell</a>，非常方便，当然它并不是bash，如果在windows下使用会缺少很多bash内置程序和许多的unix命令行工具，幸好可以配置emacs调用cygwin的bash。</p>
 
@@ -213,7 +203,7 @@ ln -s /usr/local/Cellar/emacs/24.3/Emacs.app /Applications/
 (setq exec-path (append exec-path '(&quot;/usr/local/bin&quot; &quot;/opt/bin&quot;)))
 </code></pre>
 
-<h2 id="color-theme:a0d2dabbee19e6fccf2cd8eeaa0e67d0">color-theme</h2>
+<h2 id="color-theme">color-theme</h2>
 
 <p>安装<a href="http://www.nongnu.org/color-theme/">color-theme</a>，放在.emacs.d/site-lisp下，在.emacs里加入：</p>
 
@@ -224,7 +214,7 @@ ln -s /usr/local/Cellar/emacs/24.3/Emacs.app /Applications/
 
 <p>启动时加载color-theme，搞代码很伤眼啊 =,=</p>
 
-<h2 id="maxima:a0d2dabbee19e6fccf2cd8eeaa0e67d0">Maxima</h2>
+<h2 id="maxima">Maxima</h2>
 
 <p><a href="http://guangchuangyu.github.io/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/">Maxima</a>是一个计算机代数运算系统，它是由MIT于1968至1982年间开发的Macsyma系统演变而来的。MIT于1982年将Macsyma源代码交与美国能源部（DOE），这部分代码后来被称作DOE
 Macsyma。DOE Macsyma的一个版本从1982年起由德克萨斯大学的William F.
@@ -235,7 +225,7 @@ Macsyma，自此该软件被称作Maxima。</p>
 
 <p>在<a href="http://guangchuangyu.github.io/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/">Emacs调用maxima</a>是非常爽的，公式可以通过<a href="http://guangchuangyu.github.io/categories/latex">LaTeX</a>表示出来，非常漂亮，把buffer保存为txt，公式将被保存为<a href="http://guangchuangyu.github.io/categories/latex">LaTeX</a>代码。</p>
 
-<h2 id="ess:a0d2dabbee19e6fccf2cd8eeaa0e67d0">ESS</h2>
+<h2 id="ess">ESS</h2>
 
 <p>另一个必备是<code>ESS</code>，可以在emacs调用R，解压放在.emacs.d/site-lisp下，在.emacs里加入：</p>
 
@@ -246,7 +236,7 @@ Macsyma，自此该软件被称作Maxima。</p>
 buffer中支持<a href="http://guangchuangyu.github.io/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/">inline
 plot</a>就完美了。</p>
 
-<h2 id="markdown:a0d2dabbee19e6fccf2cd8eeaa0e67d0">Markdown</h2>
+<h2 id="markdown">Markdown</h2>
 
 <p><a href="http://jblevins.org/projects/markdown-mode/">Markdown-mode</a>让emacs支持markdown语法，安装之后，需要在.emacs中加入：</p>
 
@@ -259,9 +249,6 @@ plot</a>就完美了。</p>
 </code></pre>
 
 <p>这样当在emacs中打开.text/.markdown/.md文件时，将自动加载markdown-mode。</p>
-
-
- 
         </div>
         
 
@@ -270,12 +257,12 @@ plot</a>就完美了。</p>
     <span class="byline author vcard">Posted by <span class="fn">Guangchuang Yu</span></span>
     
     <time>Sep 10, 2013</time>
-    <span class="categories">
-      Tags:
+    
+      <span class="categories">
+        Tags:
         
-        
-          <a class="category" href="https://guangchuangyu.github.io/cn/tags/emacs">emacs</a>  
-        
+          <a class="category" href="https://guangchuangyu.github.io/tags/emacs">emacs</a>  
+    
     </span>
   </p>
 
@@ -293,10 +280,6 @@ plot</a>就完美了。</p>
       <a class="basic-alignment right" href="https://guangchuangyu.github.io/cn/2014/01/old-habits-die-hard/" title="old habits die hard">old habits die hard</a>
     
   </p>
-
-
-  
-
   
     
       <div id="disqus_thread"></div>
@@ -306,7 +289,8 @@ plot</a>就完美了。</p>
     
     
     
-    
+    if (window.location.hostname == "localhost")
+        return;
 
     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
     var disqus_shortname = 'gcyu';
@@ -325,137 +309,100 @@ plot</a>就完美了。</p>
     </div>
     
 
-
 <aside class="sidebar thirds">
   <section class="first odd">
+
     
 
     <p>
       
-      
-      <script src="//tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
-      关注Y叔微信公众账号biobabble<br>
-      <img src="//guangchuangyu.github.io/blog_images/biobabble.jpg" width="250" height="250" />
-      <wb:follow-button uid="2185528715" type="red_3" width="100%" height="24" ></wb:follow-button>
-
-      
-
-    
+    </p>
+    关注Y叔微信公众账号biobabble<br>
+  <img src="//guangchuangyu.github.io/blog_images/biobabble.jpg" width="250" height="250" />
   </section>
 
 
 
   
-
-
+  <ul class="sidebar-nav">
+    <li class="sidebar-nav-item">
+      <a target="_blank" href="https://github.com/GuangchuangYu" title="https://github.com/GuangchuangYu"><i class="fa fa-github fa-3x"></i></a>
+      
+      
+      <a target="_blank" href="https://twitter.com/guangchuangyu" title="https://twitter.com/guangchuangyu"><i class="fa fa-twitter fa-3x"></i></a>
+       
+      <a target="_blank" href="https://www.linkedin.com/in/guangchuang-yu-86820120" title="https://www.linkedin.com/in/guangchuang-yu-86820120"><i class="fa fa-linkedin fa-3x"></i></a>
+      
+      
+      <a target="_blank" href="https://www.facebook.com/guangchuang.yu" title="https://www.facebook.com/guangchuang.yu"><i class="fa fa-facebook fa-3x"></i></a>
+      
+      
 
     
-     
-  
-  
-  <section class="even">
-    <h1>Recent Posts</h1>
-
     
-    <ul id="recent_posts">
-      
-      
-        
-      
-      
-      <li class="post">
-        <a href="https://guangchuangyu.github.io/cn/2017/05/viziometric/">viziometric</a>
-      </li>
-      
-      <li class="post">
-        <a href="https://guangchuangyu.github.io/cn/2017/05/enrichdavid%E6%94%AF%E6%8C%81%E8%87%AA%E5%AE%9A%E4%B9%89%E8%83%8C%E6%99%AF/">enrichDAVID支持自定义背景</a>
-      </li>
-      
-      <li class="post">
-        <a href="https://guangchuangyu.github.io/cn/2017/05/bootstrap-value%E5%88%86%E6%AE%B5%E6%A0%87%E8%AE%B0/">bootstrap value分段标记</a>
-      </li>
-      
-      <li class="post">
-        <a href="https://guangchuangyu.github.io/cn/2017/04/annotate-tree-with-user-specific-data/">annotate tree with user specific data</a>
-      </li>
-      
-      <li class="post">
-        <a href="https://guangchuangyu.github.io/cn/2017/04/%E5%85%AC%E5%8F%B7%E7%8B%97%E7%9A%84%E7%A6%8F%E9%9F%B3/">公号狗的福音</a>
-      </li>
-      
-    </ul>
-  </section>
+    </li>
+  </ul>
+
+  
+
+  
 
   
   
-  <section class="even">
-    <h1>Book to Read</h1>
-    Analysis of Phylogenetic and Evolution with R<br>
-    Inferring phylogenies<br>
-    Statistical Models: Theory and Practice<br>
-    Algorithms on Strings, Trees, and Sequences
-    <h1>Links</h1>
-    <a href="http://www.biostathandbook.com/">Handbook of Biological Statistics</a><br>
-    <a href="http://r-bloggers.com/">R-bloggers</a>
-    <h1>友邻</h1>
-    <a href="http://azaleasays.com/">azalea</a><br>
-    <a href="http://blog.shenwei.me/">shenwei</a><br>
-    <a href="http://ztpala.com/">ztpala</a>
-
-  </section>
-
-
-
-
+  
+    
+      <section class="even">
+        <h1>Recent Posts</h1>
+        <ul id="recent_posts">
+          
+            <li class="post">
+              <a href="/cn/2017/05/viziometric/">viziometric</a>
+            </li>
+          
+            <li class="post">
+              <a href="/cn/2017/05/enrichdavid%E6%94%AF%E6%8C%81%E8%87%AA%E5%AE%9A%E4%B9%89%E8%83%8C%E6%99%AF/">enrichDAVID支持自定义背景</a>
+            </li>
+          
+            <li class="post">
+              <a href="/cn/2017/05/bootstrap-value%E5%88%86%E6%AE%B5%E6%A0%87%E8%AE%B0/">bootstrap value分段标记</a>
+            </li>
+          
+            <li class="post">
+              <a href="/cn/2017/04/annotate-tree-with-user-specific-data/">annotate tree with user specific data</a>
+            </li>
+          
+            <li class="post">
+              <a href="/cn/2017/04/%E5%85%AC%E5%8F%B7%E7%8B%97%E7%9A%84%E7%A6%8F%E9%9F%B3/">公号狗的福音</a>
+            </li>
+          
+            <li class="post">
+              <a href="/cn/2017/04/%E6%9D%A5%E8%87%AAr%E7%9A%84%E6%A1%8C%E9%9D%A2%E6%8F%90%E9%86%92/">来自R的桌面提醒</a>
+            </li>
+          
+            <li class="post">
+              <a href="/cn/2017/04/ggimageggplot2%E4%B8%AD%E6%84%89%E5%BF%AB%E5%9C%B0%E4%BD%BF%E7%94%A8%E5%9B%BE%E7%89%87/">ggimage：ggplot2中愉快地使用图片</a>
+            </li>
+          
+            <li class="post">
+              <a href="/cn/2017/04/generate-biobabble-banner-using-ggimage/">generate biobabble banner using ggimage</a>
+            </li>
+          
+        </ul>
+      </section>
+    
+  
   <script type="text/javascript" src="//rf.revolvermaps.com/0/0/7.js?i=5qpvv5zz7fp&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;sx=0" async="async"></script>
-
-  <script>
-  ((window.gitter = {}).chat = {}).options = {
-    room: 'GuangchuangYu/Bioinformatics'
-  };
-</script>
-  <script src="//sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
-  
 </aside>
 
   </div>
 </div>
 
-
-
-
 <footer role="contentinfo">
-  <p>Copyright &copy; 2017 Guangchuang Yu - <a href="https://guangchuangyu.github.io/cn/license/">License</a> - 
+  <p>Copyright &copy; 2017 Guangchuang Yu - <a href="https://guangchuangyu.github.io/license/">License</a> -
   <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
 </p>
 
 </footer>
-
-
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/zenburn.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-
-<script type="text/javascript"
-  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']],
-    displayMath: [['$$','$$'], ['\[','\]']],
-    processEscapes: true,
-    processEnvironments: true,
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-    TeX: { equationNumbers: { autoNumber: "AMS" },
-         extensions: ["AMSmath.js", "AMSsymbols.js"] }
-  }
-});
-</script>
-
-<script type="text/javascript" src="//w.sharethis.com/button/buttons.js"></script>
-<script type="text/javascript">stLight.options({publisher: "d135f460-3fc5-4802-8169-bd08e4734a09", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
-
 
 
 </body>

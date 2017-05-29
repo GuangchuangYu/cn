@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 11 Apr 2017 10:06:59 +0800</lastBuildDate>
-    <atom:link href="https://guangchuangyu.github.io/cn/categories/visualization/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://guangchuangyu.github.io/cn/categories/visualization/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>ggimage：ggplot2中愉快地使用图片</title>
@@ -15,13 +17,11 @@
       <pubDate>Tue, 11 Apr 2017 10:06:59 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2017/04/ggimageggplot2%E4%B8%AD%E6%84%89%E5%BF%AB%E5%9C%B0%E4%BD%BF%E7%94%A8%E5%9B%BE%E7%89%87/</guid>
-      <description>
-
-&lt;h1 id=&#34;导言:da73b643e87724fe5d7ff0bc3037a1b6&#34;&gt;导言&lt;/h1&gt;
+      <description>&lt;h1 id=&#34;导言&#34;&gt;导言&lt;/h1&gt;
 
 &lt;p&gt;本文介绍了&lt;strong&gt;ggimage&lt;/strong&gt;包，允许在&lt;strong&gt;ggplot2&lt;/strong&gt;作图时嵌入图片，并支持&lt;code&gt;aes&lt;/code&gt;映射，可以把离散型变量映射到不同图片。目前有几个包可以使用图片嵌入做图，但都是针对特定的场景，这里使用&lt;strong&gt;ggimage&lt;/strong&gt;来展示在这些特定领域里的应用，&lt;strong&gt;ggimage&lt;/strong&gt;的设计是通用的，并不被特定场景所限定，文末又介绍了用R图标来画出R、用饼图来画气泡图等实例。&lt;/p&gt;
 
-&lt;h1 id=&#34;图上嵌图片:da73b643e87724fe5d7ff0bc3037a1b6&#34;&gt;图上嵌图片&lt;/h1&gt;
+&lt;h1 id=&#34;图上嵌图片&#34;&gt;图上嵌图片&lt;/h1&gt;
 
 &lt;p&gt;R 基础图形库（base graphics）可以在做图的时候嵌入图片，使用的是&lt;code&gt;graphics::rasterImage&lt;/code&gt;：&lt;/p&gt;
 
@@ -34,420 +34,7 @@ rasterImage(x, 2, 2, 6, 4)
 
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/raster.png&#34; alt=&#34;R绘图嵌入图片演示&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;如果我们搜索&amp;rdquo;ggplot2 image&amp;rdquo;，会找到类似于下面这样的帖子/博文：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/9917049/inserting-an-image-to-ggplot2&#34;&gt;r - Inserting an image to ggplot2 - Stack Overflow&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.r-bloggers.com/add-a-background-png-image-to-ggplot2/&#34;&gt;Add a background png image to ggplot2 | R-bloggers&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;也就是说通过程序员秘笈，搜索，我们用&lt;strong&gt;ggplot2&lt;/strong&gt;同样也可以做到。&lt;/p&gt;
-
-&lt;p&gt;这里我们需要用到&lt;code&gt;annotation_custom(rasterGrob)&lt;/code&gt;来把图片加到&lt;strong&gt;ggplot2&lt;/strong&gt;图形中，这和基础图形库是一模一样的。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(grid)
-library(ggplot2)
-
-p &amp;lt;- ggplot(d = data.frame(x = c(0, 8), y = c(0, 8)), aes(x, y)) + geom_blank()
-p + annotation_custom(rasterGrob(x), 2, 6, 2, 4)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;如果要使用图片来打点画一个散点图，我们就需要&lt;code&gt;for&lt;/code&gt;循环，对每一个点进行操作，这显然是底层的操作，而&lt;strong&gt;ggplot2&lt;/strong&gt;是一个高抽象的画图系统，我们希望能够使用&lt;strong&gt;ggplot2&lt;/strong&gt;的语法。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;ggimage&lt;/strong&gt;就是来实现这样一个功能，它只是一个简单的包，允许我们在ggplot2中把离散性变量映射到不同的图片来画图。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/Screenshot1.png&#34; alt=&#34;推特截屏：把图片当字体一样使用&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;实现这个功能的想法已经酝酿很久了，在&lt;strong&gt;ggtree&lt;/strong&gt;的开发中，我实现了&lt;code&gt;phylopic&lt;/code&gt;函数来使用Phylopic数据库的图片注释进化树，也实现了&lt;code&gt;subview&lt;/code&gt;函数在图上嵌入小图。用图片来注释进化树在进化分析上还是很常见的，特别是在一些分类学的研究中，需要把一些分类学特征在进化树上展示出来，而像我们做病毒，也经常会把一些图片放在进化树上来展示病毒的宿主信息。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;ggtree&lt;/strong&gt;和可视化有关的函数分两类，一类是加注释的图层，另一类是可视化操作树（比如像旋转、合并分支）。操作树的都是普通函数，而加注释的都是&lt;code&gt;geom&lt;/code&gt;图层，除了&lt;code&gt;subview&lt;/code&gt;和&lt;code&gt;phylopic&lt;/code&gt;，这种所谓逼死处女座的存在，我早就想改成了&lt;code&gt;geom_subview&lt;/code&gt;和&lt;code&gt;geom_phylopic&lt;/code&gt;了（已实现），这也是为什么我要写&lt;strong&gt;ggimage&lt;/strong&gt;的原因了。&lt;/p&gt;
-
-&lt;h1 id=&#34;安装:da73b643e87724fe5d7ff0bc3037a1b6&#34;&gt;安装&lt;/h1&gt;
-
-&lt;p&gt;&lt;strong&gt;ggimage&lt;/strong&gt;依赖于&lt;strong&gt;EBImage&lt;/strong&gt;来读图片，这是个Bioconductor包，所以我们需要额外的动作来安装它，用&lt;code&gt;setRepositories&lt;/code&gt;把Bioconductor软件仓库加进来，这样&lt;code&gt;install.packages&lt;/code&gt;也可以搜索到它的包。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;setRepositories(ind = 1:2)
-install.packages(&amp;quot;ggimage&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;实例分析:da73b643e87724fe5d7ff0bc3037a1b6&#34;&gt;实例分析&lt;/h1&gt;
-
-&lt;p&gt;据我所知目前支持使用图片的R包有&lt;strong&gt;CatterPlots&lt;/strong&gt;, &lt;strong&gt;rphylopic&lt;/strong&gt;, &lt;strong&gt;emoGG&lt;/strong&gt;,
-&lt;strong&gt;ggflags&lt;/strong&gt;这几个，都是为特定的目的而实现的，都有其特定的应用场景，而&lt;strong&gt;ggimage&lt;/strong&gt;是的
-&lt;code&gt;geom_image&lt;/code&gt;是通用的，通过对它进行简单的包装，同样可以实现这些特殊场景的应用图层。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;CatterPlots&lt;/strong&gt;这个包只可以应用于基础图形库（base graphics）中，通过预设的几个猫图（R对象，随包载入）来画散点图。最近&lt;a href=&#34;http://blog.revolutionanalytics.com/2017/02/catterplots-plots-with-cats.html&#34;&gt;RevolutionAnalytics 有博文&lt;/a&gt;介绍。&lt;strong&gt;ggplot2&lt;/strong&gt;没有相应画猫的包。我们可以使用&lt;strong&gt;ggimage&lt;/strong&gt;来画，而且不用限制于&lt;strong&gt;CatterPlots&lt;/strong&gt;预设的几个图形。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(ggplot2)
-library(ggimage)
-
-mytheme &amp;lt;- theme_minimal() +
-    theme(axis.title = element_blank())
-theme_set(mytheme)
-
-x &amp;lt;- seq(-2 * pi, 2 * pi, length.out = 30)
-d &amp;lt;- data.frame(x = x, y = sin(x))
-
-img &amp;lt;- &amp;quot;http://www.belleamibengals.com/bengal_cat_2.png&amp;quot;
-ggplot(d, aes(x, y)) + geom_image(image = img, size = .1)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/ggimage_CatterPlots.png&#34; alt=&#34;ggimage画猫散点图演示&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;CatterPlots&lt;/strong&gt;实现的方式就是上面谈到的&lt;code&gt;rasterImage&lt;/code&gt;内部使用了循环。&lt;strong&gt;rphylopic&lt;/strong&gt;同时支持基础图形库（base graphics）和&lt;strong&gt;ggplot2&lt;/strong&gt;，也是一样的实现方式，不过&lt;strong&gt;rphylopic&lt;/strong&gt;内部没有使用循环，一次只能加一个图，它使用的图来自于&lt;a href=&#34;http://phylopic.org/&#34;&gt;phylopic&lt;/a&gt;数据库。&lt;/p&gt;
-
-&lt;p&gt;我们用&lt;strong&gt;ggimage&lt;/strong&gt;同样可以使用&lt;code&gt;phylopic&lt;/code&gt;图片：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(d, aes(x, y)) + geom_phylopic(image = &amp;quot;500bd7c6-71c1-4b86-8e54-55f72ad1beca&amp;quot;, size = .1)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/ggimage_rphylopic.png&#34; alt=&#34;ggimage使用phylopic图片演示&#34; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;图中是&lt;code&gt;翼足目&lt;/code&gt;动物。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;emoGG&lt;/strong&gt;是专门来画&lt;code&gt;emoji&lt;/code&gt;的，如果要画&lt;code&gt;emoji&lt;/code&gt;的话，我推荐我写的&lt;strong&gt;emojifont&lt;/strong&gt;包，在轩哥的&lt;a href=&#34;https://cos.name/2014/01/showtext-interesting-fonts-and-graphs/&#34;&gt;&lt;strong&gt;showtext&lt;/strong&gt;基础&lt;/a&gt;上，把&lt;code&gt;emoji&lt;/code&gt;当做普通字体一样操作，更方便。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;emoGG&lt;/strong&gt;这个包提供了&lt;code&gt;geom_emoji&lt;/code&gt;图层，虽然一次可以画出散点，但因为不支持&lt;code&gt;aes&lt;/code&gt;映射，而&lt;strong&gt;ggimage&lt;/strong&gt;所提供的&lt;code&gt;geom_emoji&lt;/code&gt;则支持映射，下面的例子中我们做了一个简单的回归分析，如果残差&lt;code&gt;&amp;lt;0.5&lt;/code&gt;用笑脸表示，&lt;code&gt;&amp;gt;0.5&lt;/code&gt;则用哭脸来表示。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;set.seed(123)
-iris2 &amp;lt;- iris[sample(1:nrow(iris), 30), ]
-model &amp;lt;- lm(Petal.Length ~ Sepal.Length, data = iris2)
-iris2$fitted &amp;lt;- predict(model)
-
-p &amp;lt;- ggplot(iris2, aes(x = Sepal.Length, y = Petal.Length)) +
-  geom_linerange(aes(ymin = fitted, ymax = Petal.Length),
-                 colour = &amp;quot;purple&amp;quot;) +
-  geom_abline(intercept = model$coefficients[1],
-              slope = model$coefficients[2])
-
-p + ggimage::geom_emoji(aes(image = ifelse(abs(Petal.Length-fitted) &amp;gt; 0.5, &#39;1f622&#39;, &#39;1f600&#39;)))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/emoji_residual2.png&#34; alt=&#34;ggimage画emoji演示&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;如果要用&lt;strong&gt;emoGG&lt;/strong&gt;来做的话，则需要自己切数据分两次来进行：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;p + emoGG::geom_emoji(data = subset(iris2, (Petal.Length-fitted) &amp;lt; 0.5), emoji = &amp;quot;1f600&amp;quot;) +
-    emoGG::geom_emoji(data = subset(iris2, (Petal.Length-fitted) &amp;gt; 0.5), emoji = &amp;quot;1f622&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这里我们只分两类(残差是否大于0.5)，所以需要加两次，试想我们的分类变量有多种可能的取值，则我们需要分多次切数据加图层，&lt;strong&gt;CatterPlots&lt;/strong&gt;、&lt;strong&gt;rphylopic&lt;/strong&gt;和&lt;strong&gt;emoGG&lt;/strong&gt;都有这个问题，这也是&lt;code&gt;aes&lt;/code&gt;映射之于&lt;strong&gt;ggplot2&lt;/strong&gt;的重要和强大之处，它让我们可以在更高的抽像水平思考，&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;ggflags&lt;/strong&gt;是支持&lt;code&gt;aes&lt;/code&gt;映射的，只不过它只能用来画国旗而已。同样&lt;strong&gt;ggimage&lt;/strong&gt;也提供
-了相应的&lt;code&gt;geom_flag&lt;/code&gt;来使用国旗用于做图。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(rvest)
-library(dplyr)
-
-url &amp;lt;- &amp;quot;http://www.nbcolympics.com/medals&amp;quot;
-
-medals &amp;lt;- read_html(url) %&amp;gt;%
-    html_nodes(&amp;quot;table&amp;quot;) %&amp;gt;%
-    html_table() %&amp;gt;% .[[1]]
-
-library(countrycode)
-library(tidyr)
-
-medals &amp;lt;- medals %&amp;gt;%
-    mutate(code = countrycode(Country, &amp;quot;country.name&amp;quot;, &amp;quot;iso2c&amp;quot;)) %&amp;gt;%
-    gather(medal, count, Gold:Bronze) %&amp;gt;%
-    filter(Total &amp;gt;= 10)
-
-head(medals)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;Country&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;Total&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;code&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;medal&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;count&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Russia&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;33&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;RU&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Gold&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;13&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;United States&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;28&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;US&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Gold&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;9&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Norway&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;26&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;NO&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Gold&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;11&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Canada&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;25&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;CA&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Gold&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;10&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Netherlands&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;24&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;NL&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Gold&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;8&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Germany&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;19&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;DE&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Gold&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;8&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;首先我们从网站上爬回来2016年各个国家的奥林匹克奖牌数，画出柱状图，并在&lt;code&gt;xlab&lt;/code&gt;国家名边上用&lt;strong&gt;ggimage&lt;/strong&gt;画上国旗：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;p &amp;lt;- ggplot(medals, aes(Country, count)) + geom_col(aes(fill = medal), width = .8)
-
-p + geom_flag(y = -2, aes(image = code)) +
-    coord_flip() + expand_limits(y = -2)  +
-    scale_fill_manual(values = c(&amp;quot;Gold&amp;quot; = &amp;quot;gold&amp;quot;, &amp;quot;Bronze&amp;quot; = &amp;quot;#cd7f32&amp;quot;, &amp;quot;Silver&amp;quot; = &amp;quot;#C0C0C0&amp;quot;))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/olympics_2016.png&#34; alt=&#34;ggimage画国旗演示&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;ggimage:da73b643e87724fe5d7ff0bc3037a1b6&#34;&gt;&lt;strong&gt;ggimage&lt;/strong&gt;&lt;/h2&gt;
-
-&lt;p&gt;前面我们介绍了&lt;strong&gt;ggimage&lt;/strong&gt;在一些场景的应用实例，虽然有专门的包针对这些应用场景，但&lt;strong&gt;ggimage&lt;/strong&gt;在这些领域中的表现要比大多数的包要好（支持aes映射）。但&lt;strong&gt;ggimage&lt;/strong&gt;的使用并不限于这些(&lt;code&gt;geom_phylopic&lt;/code&gt;，&lt;code&gt;geom_emoji&lt;/code&gt;和&lt;code&gt;geom_flag&lt;/code&gt;只是通用图层&lt;code&gt;geom_image&lt;/code&gt;的简单封装)，这里将展示一些有趣的例子。&lt;/p&gt;
-
-&lt;h3 id=&#34;用r图标来画r形状:da73b643e87724fe5d7ff0bc3037a1b6&#34;&gt;用R图标来画R形状&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;x &amp;lt;- c(2, 2, 2, 2, 2, 3, 3, 3.5, 3.5, 4)
-y &amp;lt;- c(2, 3, 4, 5, 6, 4, 6, 3, 5, 2)
-d &amp;lt;- data.frame(x = x, y = y)
-
-img &amp;lt;- system.file(&amp;quot;img&amp;quot;, &amp;quot;Rlogo.png&amp;quot;, package = &amp;quot;png&amp;quot;)
-ggplot(d, aes(x, y)) + geom_image(image = img, size = .1) +
-  xlim(0, 6) + ylim(0, 7)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/R.png&#34; alt=&#34;用R图标画R形状演示&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;嵌套式绘图:da73b643e87724fe5d7ff0bc3037a1b6&#34;&gt;嵌套式绘图&lt;/h3&gt;
-
-&lt;p&gt;这里我要展示的是非常有名的气泡图（Bubble Plot），但气泡不是圆圈，而是使用
-&lt;strong&gt;ggplot2&lt;/strong&gt;画的饼图，我先把饼图保存起来，再用&lt;strong&gt;ggimage&lt;/strong&gt;拿来画，饼图的大小
-与人口总数正相关。这个例子可以应用到很多场景中去，比如一个时间序列的曲线，你要用统计图在某些时间点上展示相关的信息，比如你要在地图上加某些地方的相关统计信息（如果要在地图上画饼图，可以使用我写的&lt;a href=&#34;https://cran.r-project.org/package=scatterpie&#34;&gt;&lt;strong&gt;scatterpie&lt;/strong&gt;&lt;/a&gt;包）。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;crime &amp;lt;- read.csv(&amp;quot;http://datasets.flowingdata.com/crimeRatesByState2005.tsv&amp;quot;,
-                  header = TRUE, sep = &amp;quot;\t&amp;quot;, stringsAsFactors = F)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;state&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;murder&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;Forcible_rate&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;Robbery&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;aggravated_assult&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;burglary&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;larceny_theft&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;motor_vehicle_theft&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;population&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Alabama&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;8.2&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;34.3&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;141.4&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;247.8&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;953.8&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;2650.0&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;288.3&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;4627851&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Alaska&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;4.8&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;81.1&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;80.9&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;465.1&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;622.5&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;2599.1&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;391.0&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;686293&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Arizona&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;7.5&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;33.8&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;144.4&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;327.4&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;948.4&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;2965.2&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;924.4&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;6500180&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Arkansas&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;6.7&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;42.9&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;91.1&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;386.8&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;1084.6&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;2711.2&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;262.1&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;2855390&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;California&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;6.9&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;26.0&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;176.1&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;317.3&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;693.3&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;1916.5&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;712.8&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;36756666&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Colorado&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;3.7&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;43.4&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;84.6&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;264.7&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;744.8&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;2735.2&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;559.5&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;4861515&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(gtable)
-
-plot_pie &amp;lt;- function(i) {
-    df &amp;lt;- gather(crime[i, ], type, value, murder:motor_vehicle_theft)
-    ggplot(df, aes(x = 1, value, fill = type)) +
-        geom_col() + coord_polar(theta = &#39;y&#39;) +
-        ggtitle(crime[i, &amp;quot;state&amp;quot;]) +
-        theme_void() + theme_transparent() +
-        theme(legend.position = &amp;quot;none&amp;quot;,
-              plot.title = element_text(size = rel(6), hjust = 0.5))
-}
-
-pies &amp;lt;- sapply(1:nrow(crime), function(i) {
-    outfile &amp;lt;- paste0(&amp;quot;crime_&amp;quot;, i, &amp;quot;.png&amp;quot;)
-    plot_pie(i) + ggsave(outfile, bg = &amp;quot;transparent&amp;quot;)
-    outfile
-})
-
-radius &amp;lt;- sqrt(crime$population / pi)
-crime$radius &amp;lt;- 0.2 * radius/max(radius)
-crime$pie &amp;lt;- pies
-
-leg1 &amp;lt;- gtable_filter(
-    ggplot_gtable(
-        ggplot_build(plot_pie(1) + theme(legend.position = &amp;quot;right&amp;quot;))
-    ), &amp;quot;guide-box&amp;quot;)
-
-ggplot(crime, aes(murder, Robbery)) +
-  geom_image(aes(image = pie, size = I(radius))) +
-  geom_subview(leg1, x = 8.8, y = 50)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/us_crime.png&#34; alt=&#34;嵌套式绘图演示：用饼图来画气泡图&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;我们还可以每次只画一个州的数据，制作成动图。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;plot_crime &amp;lt;- function(i) {
-    o &amp;lt;- paste0(i, &amp;quot;.png&amp;quot;)
-    ggplot(crime, aes(murder, Robbery)) + geom_blank() +
-        geom_image(data = crime[i, ], aes(image = pie, size = I(radius))) +
-        geom_subview(p, leg1, x = 8.8, y = 50) + ggsave(o)
-    o
-}
-
-library(magick)
-library(purrr)
-order(crime$murder, decreasing = F) %&amp;gt;%
-    map(plot_crime) %&amp;gt;%
-    map(image_read) %&amp;gt;%
-    image_join() %&amp;gt;%
-    image_animate(fps = 2) %&amp;gt;%
-    image_write(&amp;quot;crime.gif&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/us_crime.gif&#34; alt=&#34;嵌套式绘图演示，动图版本&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;geom_subview&lt;/code&gt;可以图上嵌图，并不需要保存为图片，但对于&lt;strong&gt;ggplot2&lt;/strong&gt;来讲，保存图片也是有好处的，因为&lt;strong&gt;ggplot2&lt;/strong&gt;画图，点线是在数据空间上，随着我们保存图片的大小是按比例缩小或放大的，但文字是在像素空间上，和画图空间并不相关。所以当我们嵌图时缩小了画图窗口之后，字体会显得格外大，微调起来也比较繁琐，这时候保存为合适尺寸的图片，再用&lt;code&gt;geom_image&lt;/code&gt;来加上去，显然就轻松得多。&lt;/p&gt;
-
-&lt;h3 id=&#34;其它来自r社区的例子:da73b643e87724fe5d7ff0bc3037a1b6&#34;&gt;其它来自R社区的例子&lt;/h3&gt;
-
-&lt;p&gt;SAS博客对&lt;code&gt;M&amp;amp;M&lt;/code&gt;巧克力的&lt;a href=&#34;http://blogs.sas.com/content/iml/2017/02/20/proportion-of-colors-mandms.html&#34;&gt;颜色分布做了分析&lt;/a&gt;，通过模拟估计不同颜色的置信区间。这个&lt;a href=&#34;http://rpubs.com/hrbrmstr/mms&#34;&gt;分析被翻译成R&lt;/a&gt;，并产生下图：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/mm.png&#34; alt=&#34;M&amp;amp;M例子展示&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;其中垂直片段|是真实值，水平片段当然就是置信空间了，而估计值用了&lt;strong&gt;ggimage&lt;/strong&gt;来画不同颜色的巧克力。&lt;/p&gt;
-
-&lt;p&gt;另一个例子是&lt;a href=&#34;https://rpubs.com/bhaskarvk/disney&#34;&gt;迪斯尼电影主人公名字的流行程度&lt;/a&gt;:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/Screenshot3.png&#34; alt=&#34;迪斯尼例子展示&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;最近我还添加了&lt;code&gt;geom_pokemon&lt;/code&gt;图层，让大家可以用pokemon来画图，比如：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/geom_pokemon.png&#34; alt=&#34;pokemon例子展示&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;ggimage&lt;/strong&gt;是通用的包，所以可以被应用于不同的领域/场景中，起码可以让我们画出更好玩的图出来，后续我有时间的话，会写一个&lt;code&gt;draw_key_image&lt;/code&gt;的函数，实现使用图片来当legend key的功能。&lt;/p&gt;
-
-&lt;p&gt;最后祝大家玩得开心！不要把图画得太有魔性哦:)&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/Screenshot2.png&#34; alt=&#34;推特截屏&#34; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;感谢大为和太云的校稿，特别是大为提出很多修改意见以及给出了用R画R的例子。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&#34;参考资料:da73b643e87724fe5d7ff0bc3037a1b6&#34;&gt;参考资料&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/9917049/inserting-an-image-to-ggplot2&#34;&gt;https://stackoverflow.com/questions/9917049/inserting-an-image-to-ggplot2&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.r-bloggers.com/add-a-background-png-image-to-ggplot2/&#34;&gt;https://www.r-bloggers.com/add-a-background-png-image-to-ggplot2/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/GuangchuangYu/ggimage&#34;&gt;https://github.com/GuangchuangYu/ggimage&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Gibbsdavidl/CatterPlots&#34;&gt;https://github.com/Gibbsdavidl/CatterPlots&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/sckott/rphylopic&#34;&gt;https://github.com/sckott/rphylopic&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/baptiste/ggflags&#34;&gt;https://github.com/baptiste/ggflags&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://blog.revolutionanalytics.com/2017/02/catterplots-plots-with-cats.html&#34;&gt;http://blog.revolutionanalytics.com/2017/02/catterplots-plots-with-cats.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://blogs.sas.com/content/iml/2017/02/20/proportion-of-colors-mandms.html&#34;&gt;http://blogs.sas.com/content/iml/2017/02/20/proportion-of-colors-mandms.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://rpubs.com/hrbrmstr/mms&#34;&gt;http://rpubs.com/hrbrmstr/mms&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://rpubs.com/bhaskarvk/disney&#34;&gt;https://rpubs.com/bhaskarvk/disney&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://cran.r-project.org/package=scatterpie&#34;&gt;https://cran.r-project.org/package=scatterpie&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -456,9 +43,7 @@ order(crime$murder, decreasing = F) %&amp;gt;%
       <pubDate>Wed, 05 Apr 2017 12:23:16 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2017/04/generate-biobabble-banner-using-ggimage/</guid>
-      <description>
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/biobabble_banner.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/biobabble_banner.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;制作了一个banner，用来插入到文后，方便阅读到最后的时候，直接扫描关注。&lt;/p&gt;
 
@@ -466,7 +51,7 @@ order(crime$murder, decreasing = F) %&amp;gt;%
 
 &lt;p&gt;就像有些人不理解data scentist为什么讨厌excel一样，觉得无非是工具，没什么好搞阵营的。试想一下，一个分析流程中间有一步要用到excel，需要人工去点点鼠标，这对于讲究自动化、可重复性的data scientist来说是不可接受的。&lt;/p&gt;
 
-&lt;h2 id=&#34;加载中文字体:b8aeb0db2e33c1cb77f701d0be3ba647&#34;&gt;加载中文字体&lt;/h2&gt;
+&lt;h2 id=&#34;加载中文字体&#34;&gt;加载中文字体&lt;/h2&gt;
 
 &lt;p&gt;为了打几个中文字，需要先加载字体，这里我用showtext。&lt;/p&gt;
 
@@ -475,33 +60,7 @@ font.add(&amp;quot;heiti&amp;quot;, &amp;quot;/Library/Fonts/华文黑体.ttf&am
 showtext.auto()
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;读图:b8aeb0db2e33c1cb77f701d0be3ba647&#34;&gt;读图&lt;/h2&gt;
-
-&lt;p&gt;两个图，一个是logo，一个是二维码，分别用&lt;strong&gt;EBImage&lt;/strong&gt;读入&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;require(EBImage)
-require(grid)
-
-gc &amp;lt;- rasterGrob(image=readImage(&#39;gc.png&#39;))
-page &amp;lt;- rasterGrob(image=readImage(&#39;biobabble_page.png&#39;))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;图上嵌图:b8aeb0db2e33c1cb77f701d0be3ba647&#34;&gt;图上嵌图&lt;/h2&gt;
-
-&lt;p&gt;这里用我自己写的&lt;strong&gt;ggimage&lt;/strong&gt;包的&lt;strong&gt;geom_subview&lt;/strong&gt;来嵌图，然后无非打几个字，设一下字体。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;require(ggimage)
-pg &amp;lt;- ggplot(d=data.frame(x=c(0,10), y=c(0,5)), aes(x, y)) + geom_blank() + coord_fixed()
-pg &amp;lt;- pg+geom_subview(gc, x=2.5, y=2.5, width=5.1, height=5.1) + geom_subview(page, x=7.5, y=2.5, width=4.8, height=4.8)
-
-pg &amp;lt;- pg+theme_void() + labs(title=&amp;quot;长按二维码关注biobabble&amp;quot;, subtitle=&amp;quot;欢迎分享朋友圈&amp;quot;,caption=&#39;guangchuangyu@gmail.com&#39;) + theme(title=element_text(family=&amp;quot;heiti&amp;quot;, size=20))
-ggsave(pg, file=&amp;quot;biobabble_banner.png&amp;quot;, width=8, height=5)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;于是产生下图：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/biobabble_banner.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -512,39 +71,7 @@ ggsave(pg, file=&amp;quot;biobabble_banner.png&amp;quot;, width=8, height=5)
       <guid>https://guangchuangyu.github.io/cn/2017/02/%E6%A0%B9%E6%8D%AEgtf%E7%94%BB%E5%9F%BA%E5%9B%A0%E7%9A%84%E5%A4%9A%E4%B8%AA%E8%BD%AC%E5%BD%95%E6%9C%AC%E7%BB%93%E6%9E%84/</guid>
       <description>&lt;p&gt;这是&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzAxMDkxODM1Ng==&amp;amp;mid=2247484044&amp;amp;idx=2&amp;amp;sn=56b45eaeb4ad344481afa05abeb1c53e&amp;amp;chksm=9b484237ac3fcb219e41d5653fb800f987e7d217bbb3a5a0c0170ffb8e402f4cc5f726212ef7&amp;amp;mpshare=1&amp;amp;scene=1&amp;amp;srcid=0220calgiLgIZmjiiaNXZ0BE&amp;amp;key=df0a0b140e64a33b97880a54ee7cc95794b60a225d5338e88620674bed463405e61c5365394b7830750de8d3a88e122babd535c88c7d74b974b20c509218cf00d106c991a3a3f049c698a8f847aa5e06&amp;amp;ascene=0&amp;amp;uin=MTMxNjc4OTY2Mg%3D%3D&amp;amp;devicetype=iMac14%2C2+OSX+OSX+10.11.6+build&#34;&gt;生物技能树的一道习题&lt;/a&gt;，使用了base plot来画，做为补充，我使用ggplot2来重画一遍。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;url &amp;lt;- &amp;quot;http://www.broadinstitute.org/cancer/cga/sites/default/files/data/tools/rnaseqc/gencode.v7.annotation_goodContig.gtf.gz&amp;quot;
-tmpfile &amp;lt;- tempfile(fileext=&amp;quot;.gtf.gz&amp;quot;)
-download.file(url, tmpfile)
-gtf &amp;lt;- read.table(tmpfile,stringsAsFactors = F,
-                  header = F,comment.char = &amp;quot;#&amp;quot;,sep = &#39;\t&#39;
-                  )
-gtf &amp;lt;- gtf[gtf[,2] ==&#39;HAVANA&#39;,]
-gtf &amp;lt;- gtf[grepl(&#39;protein_coding&#39;,gtf[,9]),]
-gtf$gene &amp;lt;- sapply(as.character(gtf[,9]), function(x) sub(&amp;quot;.*gene_name\\s([^;]+);.*&amp;quot;, &amp;quot;\\1&amp;quot;, x))
-
-draw_gene &amp;lt;- &#39;ANXA1&#39;
-structure &amp;lt;- gtf[gtf$gene==draw_gene,c(1,3:5)]
-names(structure) &amp;lt;- c(&amp;quot;chr&amp;quot;, &amp;quot;record&amp;quot;, &amp;quot;start&amp;quot;, &amp;quot;end&amp;quot;)
-idx &amp;lt;- which(structure$record == &amp;quot;transcript&amp;quot;)
-s &amp;lt;- idx+1
-e &amp;lt;- c(idx[-1]-1, nrow(structure))
-g &amp;lt;- lapply(seq_along(s), function(i) {
-  x &amp;lt;- structure[s[i]:e[i],]
-  x$transcript &amp;lt;- i
-  return(x)
-}) %&amp;gt;% do.call(rbind, .)
-
-g &amp;lt;- g[g$record == &amp;quot;exon&amp;quot;,]
-g$transcript &amp;lt;- factor(g$transcript)
-
-library(ggplot2)
-ggplot(g) + 
-	geom_segment(aes(x=start, xend=end, y=transcript, yend=transcript, color=transcript), size=2) + 
-	theme(legend.position=&amp;quot;none&amp;quot;) + labs(title=&amp;quot;ANXA1&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/gtf.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -557,24 +84,8 @@ ggplot(g) +
 
 &lt;p&gt;这是&lt;a href=&#34;https://github.com/GuangchuangYu/ggtree/issues/95&#34;&gt;github&lt;/a&gt;上的问题，他想画环形树的时候，加一条长长的root length把tips给顶出去。&lt;/p&gt;
 
-&lt;p&gt;这个问题在google forum上我早已解答：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/Screen Shot 2016-11-30 at 9.06.01 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;我在google group上教会的这个人，他的文章发表在&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/27605062&#34;&gt;nature communications&lt;/a&gt;上，下面是pubmed上的截图。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/Screen Shot 2016-11-30 at 9.06.57 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;简直亮瞎了我的狗眼，我看到这图，一口老血差别喷出来，这画的什么玩意，啥都看不清。&lt;/p&gt;
-
-&lt;p&gt;我本来以为他要把中间做空，是为了把legend放进去，结果不是，尼玛也太空了，而且tips根本分不清关系，满篇文章都是这种图，附件上更多，好一朵奇葩。&lt;/p&gt;
-
-&lt;p&gt;但是github上的问题，让我重新认识了这样的图，就像提问者说的，他想把tip给顶出去，这样容易看到tip label，某种程度上，这不失为一个好方法，一种好折中，但像上面那个顶得太厉害了，我依然接受不了。&lt;/p&gt;
-
-&lt;p&gt;实现起来也容易，提问者说figtree可以做，通过搞一条长长的root length来实现，这个在ggtree里，当然也可以这么做，但我做空环形树或者说顶一顶tip label，根本就不需要用额外画条线来顶/撑开圆形，但思路是一样的，无非是要给左边留更多空间，这样在旋转成极坐标的时候，左边的空间就变成了内部的空间，于是中间就空了。&lt;/p&gt;
-
-&lt;p&gt;所以呢，+xlim(负数, NA) 就是这么简单，就可以了。&lt;/p&gt;
-</description>
+&lt;p&gt;这个问题在google forum上我早已解答：
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -590,20 +101,7 @@ ggplot(g) +
 
 &lt;p&gt;他问题写的horizontal，但其实plot.hclust默认是vertical，ggtree默认也是horizontal，所以我认为他问的是vertical layout，这个在我的回答中也得到了他的确认。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;gt; require(ggtree)
-&amp;gt; set.seed(123)
-&amp;gt; tr = rtree(30)
-&amp;gt; ggtree(tr) + scale_x_reverse() + coord_flip()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这个问题很简单，无非是坐标轴翻转而已。于是上面的代码，就得到下面的图：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/Screen Shot 2016-11-21 at 7.53.54 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;ggtree支持多种布局(layout)，rectangular（上面这种就是，父节点到子节点由90度折线连接），slated（父节点到子节点由直线连接）， circular（圆圈型，父节点到子节点的连接方式可以是rectangular也可以是slanted），fan（顾名思义-扇子型，也可以理解为有开口的圆圈，实际上ggtree提供了open_tree函数，可以把circular的树转变为fan layout），unrooted（无根树，连接方式是slanted，但没有根节点，所以可以说有些说圆圈型，但没有中心），还有二维树（把y轴利用起来，可以映射到节点的phenotype或者是统计推断的估值）。&lt;/p&gt;
-
-&lt;p&gt;上面提到的这些布局，都可以有画phylogram或cladogram，差别在于phylogram有branch length而cladogram没有。而在层次聚类中，做的是聚类，而不是进化树，这是不同的概念，所以画出来的图相似，但却是不一样的东西，所以聚类分析的图叫dendrogram，像上面这个图，就是典型的dendrogram画法，显然看着和进化树是没什么差别的，只不过进化树一般从左到右画，而dendrogram画这种从上到下的形状还是比较常见的。虽然是不一样的东西，但从画图的角度来看，dendrogram和rectangular layout的phylogram/cladogram是一样的。所以要问ggtree能不能画dendrogram的形状，当然可以，要问能不能从上到下，当然可以，无非是坐标轴颠过来倒过去而已，就算你要画出从下到上，从右到左，都是没有问题的。&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -617,76 +115,7 @@ ggplot(g) +
 
 &lt;p&gt;无缘无故收到好几条消息，原来是用emoji画图。&lt;/p&gt;
 
-&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/pboesu&#34;&gt;@pboesu&lt;/a&gt; btw do you know the &lt;a href=&#34;https://twitter.com/guangchuangyu&#34;&gt;@guangchuangyu&lt;/a&gt; emojifont pkg? I&amp;#39;ve used it more than &lt;a href=&#34;https://twitter.com/millerdl&#34;&gt;@millerdl&lt;/a&gt; emoGG &lt;a href=&#34;https://t.co/p27fwEmDSD&#34;&gt;https://t.co/p27fwEmDSD&lt;/a&gt; but I like both &lt;a href=&#34;https://t.co/uV49WjOSp3&#34;&gt;https://t.co/uV49WjOSp3&lt;/a&gt;&lt;/p&gt;&amp;mdash; Maëlle Salmon (@ma_salmon) &lt;a href=&#34;https://twitter.com/ma_salmon/status/800009044123586560&#34;&gt;November 19, 2016&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;做为emojifont包的作者，我表示很高兴看到自己的包给大家带来乐趣，在回复中@milerdl说emoGG是他用了两个晚上写的，emojifont刚好也是我用了两个晚上写的，一个晚上支持了emoji字体，另一个晚上加入了fontawesome字体。&lt;/p&gt;
-
-&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Hi &lt;a href=&#34;https://twitter.com/guangchuangyu&#34;&gt;@guangchuangyu&lt;/a&gt; excellent &lt;a href=&#34;https://twitter.com/hashtag/rstats?src=hash&#34;&gt;#rstats&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/emojifont?src=hash&#34;&gt;#emojifont&lt;/a&gt; implementation! &lt;a href=&#34;https://t.co/lTIWDQ1zq0&#34;&gt;https://t.co/lTIWDQ1zq0&lt;/a&gt; very cool! &lt;a href=&#34;https://t.co/sCALpuWW28&#34;&gt;pic.twitter.com/sCALpuWW28&lt;/a&gt;&lt;/p&gt;&amp;mdash; Jo-fai (Joe) Chow (@matlabulous) &lt;a href=&#34;https://twitter.com/matlabulous/status/677205176663588865&#34;&gt;December 16, 2015&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;在写这个包之前，我早就有用emoji在R画图中，写这个包也正是为了回应emoGG，因为我觉得他的实现方式并不理想，而我的更为灵活。&lt;/p&gt;
-
-&lt;p&gt;回到主题上，我将展示使用emojifont来画图。&lt;/p&gt;
-
-&lt;p&gt;下面这个数据是我每年读书、看电影、听专辑的数目：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt; d
-   year category num
-1  2009     book  35
-2  2009    movie  64
-3  2009    music  24
-4  2010     book  34
-5  2010    movie  47
-6  2010    music  13
-7  2011     book  17
-8  2011    movie  18
-9  2011    music   2
-10 2012     book  25
-11 2012    movie  25
-12 2012    music   0
-13 2013     book  15
-14 2013    movie  17
-15 2013    music   0
-16 2014     book   8
-17 2014    movie  11
-18 2014    music   1
-19 2015     book   5
-20 2015    movie  14
-21 2015    music   0
-22 2016     book   4
-23 2016    movie  14
-24 2016    music   0
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;先加载所需的包和emoji字体：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;require(ggplot2)
-require(ggthemes)
-require(emojifont)
-load.emojifont()
-emo &amp;lt;- emoji(c(&amp;quot;book&amp;quot;, &amp;quot;movie_camera&amp;quot;, &amp;quot;musical_note&amp;quot;))
-names(emo) &amp;lt;- c(&#39;book&#39;, &#39;movie&#39;, &#39;music&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;画出趋势图，并在每个点上用相应的emoji字体标注：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;p &amp;lt;- ggplot(d, aes(x=factor(year), y=num, group=category, colour=category))
-p &amp;lt;- p +geom_line() +geom_text(aes(label=emo[category]), family=&#39;OpenSansEmoji&#39;, size=10) +xlab(NULL) + ylab(NULL) 
-
-更改一些背景等主题细节，设置中文字体等：
-p &amp;lt;- p + theme_fivethirtyeight() + scale_color_tableau()
-p &amp;lt;- p+theme(axis.text.x=element_text(face=&amp;quot;bold&amp;quot;, size=16), 
-        axis.text.y=element_text(face=&amp;quot;bold&amp;quot;, size=16))
- p &amp;lt;- p+theme(legend.text=element_text(size=16, family=&amp;quot;OpenSansEmoji&amp;quot;), 
-            legend.title=element_blank(), legend.position=&#39;none&#39;)
-p+ ggtitle(&#39;Y叔的书影音&#39;) + theme(plot.title=element_text(family=&#39;STKaiti&#39;))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;于是产生下图：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/Screen Shot 2016-11-21 at 7.47.34 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -705,31 +134,7 @@ p+ ggtitle(&#39;Y叔的书影音&#39;) + theme(plot.title=element_text(family=&#
 
 &lt;p&gt;这些在R里面，都是可以的，可以的，可以的&amp;hellip;&lt;/p&gt;
 
-&lt;p&gt;下面隆重推荐一个叫rPlotter的R包，&lt;a href=&#34;https://github.com/woobe/rPlotter&#34;&gt;https://github.com/woobe/rPlotter&lt;/a&gt;，可以非常方便地在图片中抽提颜色。其实实现起来也容易，用EBImage把图片读进去，存成一个RGB的三维矩阵，通过kmeans聚类，把中心点颜色报出来就可以了。若干年前我写过用kmeans压缩图片，用的就是把颜色填充成中心点颜色，稍微把之前的代码改一改，也能实现这个颜色抽提的功能。&lt;/p&gt;
-
-&lt;p&gt;实例演示，我google了一张spider的图片，把颜色提出来，拿来画barplot：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2016/Jumping-spider.jpeg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;pal = extract_colours(&amp;quot;http://i1.mirror.co.uk/incoming/article8566552.ece/ALTERNATES/s615b/Jumping-spider.jpg&amp;quot;)
-barplot(1:5, col=pal)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2016/spider_color.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;再来一张homer simpson的图片：
-&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2016/kissing-Homer-Simpson-The-Simpsons-Marge-Simpson-_578180-20_zx1jpk.jpeg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;pal2 = extract_colours(&amp;quot;https://images.complex.com/complex/image/upload/t_article_image/kissing-Homer-Simpson-The-Simpsons-Marge-Simpson-_578180-20_zx1jpk.jpg&amp;quot;, 7)
-barplot(1:7, col=pal2)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2016/homer_color.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;之前说的各种场景，都是可以实现的，最新海报配色，你可以有！你想画图用美队来配色，可以有！拿蜘蛛小鸟来配色，可以有！甚至于拿肌肉男的肉色也可以的。下次发文章在愁配色的时候，何不搜索图片，看看有什么图片顺眼的，就拿来用了。&lt;/p&gt;
-
-&lt;p&gt;即使你不会用R画图，你也可以把这配色方案应该于M$的office中，word/excel/powerpoint都是支持自定义颜色主题的，请自行搜索 &amp;ldquo;office 自定义主题颜色&amp;rdquo;。&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -742,36 +147,7 @@ barplot(1:7, col=pal2)
 
 &lt;p&gt;这是高老师&lt;a href=&#34;http://link.springer.com/article/10.1007/s11540-015-9307-3&#34;&gt;文章&lt;/a&gt;里的图，每一个小图都是通过比较两条比对序列差异而做出来的，从图A和B中可以看出，CF_YL21有可能是Mont和Oz两条序列重组而来。高老师自己做出这图后，深知手工统计序列差异、画图、拼图之困难。问我有没有办法读两条序列，生成一个图。&lt;/p&gt;
 
-&lt;p&gt;很多东西都没有现成的，需要自己造轮子，于是我写了个R包来做这个事情：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;library(seqcombo)
-fas = list.files(system.file(&amp;quot;examples&amp;quot;,&amp;quot;GVariation&amp;quot;, package=&amp;quot;seqcombo&amp;quot;), 
-pattern=&amp;quot;fas&amp;quot;, full.names=TRUE)
-x = seqdiff(fas[1])
-plot(x)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2016/Screen Shot 2016-11-17 at 8.25.26 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;一行代码读文件，然后plot画出来，就是这么简单。&lt;/p&gt;
-
-&lt;p&gt;这里有三个文件，我们可以三个文件一起读，三个图一起画。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;x = lapply(fas, seqdiff)
-plts = lapply(x, plot)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;然后可以很容易把三张图拼在一起&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;plot_grid(plotlist=plts, ncol=1, labels=LETTERS[1:3])
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/GuangchuangYu/seqcombo/master/inst/figures/GVariation.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;简直完美，跟文章中的图一毛一样。&lt;/p&gt;
-
-&lt;p&gt;这个包我取名&lt;a href=&#34;https://github.com/GuangchuangYu/seqcombo&#34;&gt;seqcombo&lt;/a&gt;，90后大概不知道何为combo，如果你知道，没错，说的就是你，你已经暴露年龄了！因为这个图是可以辅助看序列重组的，所以取这个名字，以后有可能的话，再实现一些其它的可视化方法，起码得有三把刷子，才对得起combo这名字。&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -782,20 +158,7 @@ plts = lapply(x, plot)
       <guid>https://guangchuangyu.github.io/cn/2016/11/ggtree-reverse-time-scale/</guid>
       <description>&lt;p&gt;这是最近github上的问题，如何反转time scale，也就是把最近的时间设为0。而内部节点为距今多少年，这个很容易，把x轴的值变成x-max(x)就可以，感觉这个也只会在时间树上使用，所以取名revts（reverse time scale），revts之后，x轴最大值是0，其它为负数，可以使用scale_x_continuous改label为绝对值。&lt;/p&gt;
 
-&lt;p&gt;如下示例：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt; library(ggtree)
-&amp;gt; tr = rtree(30)
-&amp;gt; p =ggtree(tr) + theme_tree2()
-&amp;gt; p1 = revts(p)
-&amp;gt; p2 = p1 + scale_x_continuous(
-              breaks=c(-4:0), 
-              labels=abs(-4:0))
-&amp;gt; multiplot(p, p1, p2, ncol=3)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2016/Screen Shot 2016-11-07 at 11.00.08 AM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -804,9 +167,7 @@ plts = lapply(x, plot)
       <pubDate>Wed, 09 Mar 2016 13:17:48 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2016/03/%E4%BD%BF%E7%94%A8ggtree%E5%AE%9E%E7%8E%B0%E8%BF%9B%E5%8C%96%E6%A0%91%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E5%92%8C%E6%B3%A8%E9%87%8A/</guid>
-      <description>
-
-&lt;blockquote&gt;
+      <description>&lt;blockquote&gt;
 &lt;p&gt;本文受魏太云（&lt;a href=&#34;http://www.weibo.com/taiyun&#34;&gt;@cloud_wei&lt;/a&gt;)的邀请，最初在2015年发表于&lt;a href=&#34;http://cos.name/2015/11/to-achieve-the-visualization-and-annotation-of-evolutionary-tree-using-ggtree/&#34;&gt;统计之都&lt;/a&gt;。&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -814,260 +175,8 @@ plts = lapply(x, plot)
 
 &lt;p&gt;层次聚类的侧重点在于分类，把距离近的聚在一起。而进化树的构建可以说也是一个聚类过程，但侧重点在于推测进化关系和进化距离(evolutionary distance)。&lt;/p&gt;
 
-&lt;p&gt;层次聚类的输入是距离，比如euclidean或manhattan距离。把距离近的聚在一起。而进化树推断是从生物序列（DNA或氨基酸）的比对开始。最简单的方法是计算一下序列中不匹配的数目，称之为hamming distance（通常用序列长度做归一化），使用距离当然也可以应用层次聚类的方法。进化树的构建最简单的方法是非加权配对平均法（Unweighted Pair Group Method with Arithmetic Mean, UPGMA），这其实是使用average linkage的层次聚类。这种方法在进化树推断上现在基本没人用。更为常用的是邻接法（neighbor joining），两个节点距离其它节点都比较远，而这两个节点又比较近，它们就是neighbor，可以看出neighbor不一定是距离最近的两个节点。真正做进化的人，这个方法也基本不用。现在主流的方法是最大似然法(Maximum likelihood, ML)，通过进化模型（evolutionary model)估计拓朴结构和分支长度，估计的结果具有最高的概率能够产生观测数据（多序列比对）。另外还有最大简约法和贝叶斯推断等方法用于构建进化树。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://evolution.genetics.washington.edu/phylip/newicktree.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://evolution.genetics.washington.edu/phylip/newicktree.html&#34;&gt;Newick&lt;/a&gt;是最常用的存储进化树的文件格式，如上面这个树，拓朴结构用newick格式可以表示为：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;(B,(A,C,E),D);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;括号最外层是根节点，它有三个子节点，&lt;code&gt;B&lt;/code&gt;,
-&lt;code&gt;(A,C,E)&lt;/code&gt;和&lt;code&gt;D&lt;/code&gt;，而节点&lt;code&gt;(A,C,E)&lt;/code&gt;也有三个子节点&lt;code&gt;A&lt;/code&gt;，&lt;code&gt;C&lt;/code&gt;和&lt;code&gt;E&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;加上分支长度，使用&lt;code&gt;:&lt;/code&gt;来分隔：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;(B:6.0,(A:5.0,C:3.0,E:4.0):5.0,D:11.0);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;比如&lt;code&gt;A:5.0&lt;/code&gt;代表的是&lt;code&gt;A&lt;/code&gt;与其父节点的距离是&lt;code&gt;5.0&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;内部节点也可以有label，写在相应的括号外面，如下所示：&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;(B:6.0,(A:5.0,C:3.0,E:4.0)Ancestor1:5.0,D:11.0);&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;这是最为广泛支持的文件格式，很多进化树可视软件只支持newick格式。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.bioconductor.org/packages/ggtree&#34;&gt;ggtree&lt;/a&gt;的开发源自于我需要在树上做注释，发现并没有软件可以很容易地实现，通常情况下我们把统计信息加到节点的label上来展示，比如CodeML的dN/dS分析，输出文件里就给用户准备了newick树文本，把dN/dS
-( &lt;em&gt;ω&lt;/em&gt; ) 加于节点label之上:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;codeml_file &amp;lt;- system.file(&amp;quot;extdata/PAML_Codeml/mlc&amp;quot;, package=&amp;quot;ggtree&amp;quot;)
-tree_text &amp;lt;- readLines(codeml_file)[375:376]
-tree_text
-
-## [1] &amp;quot;w ratios as labels for TreeView:&amp;quot;                                                                                                                                                                                                                                                                                         
-## [2] &amp;quot;(K #0.0224 , N #0.0095 , (D #0.0385 , (L #0.0001 , (J #0.0457 , (G #0.1621 , ((C #0.0461 , (E #0.0641 , O #0.0538 ) #0.0001 ) #0.0395 , (H #0.1028 , (I #0.0001 , (B #0.0001 , (A #0.0646 , (F #0.2980 , M #0.0738 ) #0.0453 ) #0.0863 ) #1.5591 ) #0.0001 ) #0.0001 ) #0.0549 ) #0.0419 ) #0.0001 ) #0.0964 ) #0.0129 );&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这种做法只能展示一元信息，而且修改节点label真心是个脏活，满满的都是不爽，我心中理想的方式是树与注释信息分开，注释信息可以方便地通过图层加上去，而且可以自由组合。于是着手开发&lt;a href=&#34;http://www.bioconductor.org/packages/ggtree&#34;&gt;ggtree&lt;/a&gt;。&lt;a href=&#34;http://www.bioconductor.org/packages/ggtree&#34;&gt;ggtree&lt;/a&gt;是个简单易用的R包，一行代码&lt;code&gt;ggtree(read.tree(file))&lt;/code&gt;即可实现树的可视化。而注释通过图层来实现，多个图层可以完成复杂的注释，这得力于&lt;a href=&#34;http://www.bioconductor.org/packages/ggtree&#34;&gt;ggtree&lt;/a&gt;的设计。其中最重要的一点是如何来解析进化树。&lt;/p&gt;
-
-&lt;h2 id=&#34;ggtree的设计:d1d9992be5d6848a0489ec268963cadb&#34;&gt;ggtree的设计&lt;/h2&gt;
-
-&lt;h3 id=&#34;进化树的解析:d1d9992be5d6848a0489ec268963cadb&#34;&gt;进化树的解析&lt;/h3&gt;
-
-&lt;p&gt;除了&lt;a href=&#34;http://www.bioconductor.org/packages/ggtree&#34;&gt;ggtree&lt;/a&gt;之外，我所了解到的其它画树软件在画树的时候都把树当成是线条的集合。很明显画出来的进化树就是在画一堆线条，但是线条表示的是父节点和子节点的关系，除此之外没有任何意义，而节点在进化树上代表物种，叶子节点是我们构建进化树的物种，内部节点是根据叶子节点推断的共同祖先。我们所有的进化分析、推断、实验都是针对节点，节点才是进化树上有意义的实体。这是&lt;a href=&#34;http://www.bioconductor.org/packages/ggtree&#34;&gt;ggtree&lt;/a&gt;设计的基础，&lt;a href=&#34;http://www.bioconductor.org/packages/ggtree&#34;&gt;ggtree&lt;/a&gt;只映射节点到坐标系统中，而线条在&lt;code&gt;geom_tree&lt;/code&gt;图层中计算并画出来。这是与其它软件最根本的不同，也是ggtree能够简单地用图层加注释信息的基础。&lt;/p&gt;
-
-&lt;h3 id=&#34;扩展ggplot2:d1d9992be5d6848a0489ec268963cadb&#34;&gt;扩展ggplot2&lt;/h3&gt;
-
-&lt;p&gt;有很多可视化包基于ggplot2实现，包括各种&lt;code&gt;gg&lt;/code&gt;打头的，号称扩展了ggplot2，支持图形语法(grammar of graphics)，我并不认同。虽然基于&lt;code&gt;ggplot2&lt;/code&gt;产生的图，我们可以用&lt;code&gt;theme&lt;/code&gt;来进一步调整细节，用&lt;code&gt;scale_&lt;/code&gt;系列函数来调整颜色和标尺的映射，但这些不足以称之为&amp;rsquo;支持图形语法&amp;rsquo;，图形语法最关键核心的部分我认为是图层和映射。&lt;/p&gt;
-
-&lt;p&gt;像&lt;code&gt;ggphylo&lt;/code&gt;, &lt;code&gt;OutbreakTools&lt;/code&gt;和&lt;code&gt;phyloseq&lt;/code&gt;这几个包都有基于ggplot2的画树函数，但其实都不支持图形语法，它们所实现的是复杂的函数，画完就完事了，用户并不能使用图层来添加相关的信息。&lt;/p&gt;
-
-&lt;p&gt;如果在&lt;code&gt;OutbreakTools&lt;/code&gt;这个包中：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;if (show.tip.label) {
-    p &amp;lt;- p + geom_text(data = df.tip, aes(x = x, y = y, label = label),
-                       hjust = 0, size = tip.label.size)
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;如果&lt;code&gt;show.tip.label=FALSE&lt;/code&gt;，当函数返回&lt;code&gt;p&lt;/code&gt;时&lt;code&gt;df.tip&lt;/code&gt;就被扔掉，用户想要再加&lt;code&gt;tip.label&lt;/code&gt;就不可能了。&lt;code&gt;ggphylo&lt;/code&gt;和&lt;code&gt;phyloseq&lt;/code&gt;都是类似的实现，这些包把树解析为线条，所以节点相关的信息需要额外的&lt;code&gt;data.frame&lt;/code&gt;来存储，并且只有极少数的预设参数，比如上面例子中的&lt;code&gt;tip.label&lt;/code&gt;。在上面的例子中，用户连更改&lt;code&gt;tip.label&lt;/code&gt;的颜色都不可能，更别说使用额外的注释信息了。&lt;/p&gt;
-
-&lt;p&gt;这几个包所实现的画图函数，都可以很容易地用&lt;code&gt;ggtree&lt;/code&gt;实现，并用经过测试，ggtree运行速度比这几个包都要快。更多信息请参考&lt;a href=&#34;https://github.com/GuangchuangYu/ggtree/wiki/Why-ggtree-is-special%3F&#34;&gt;ggtree的wiki页面&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;ggtree&lt;/code&gt;是真正扩展&lt;code&gt;ggplot2&lt;/code&gt;，支持图形语法的包。我们首先扩展ggplot支持tree object做为输入，并实现&lt;code&gt;geom_tree&lt;/code&gt;图层来画线条。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;library(ggplot2)
-library(ggtree)
-set.seed(2015-11-26)
-tree &amp;lt;- rtree(30)
-ggplot(tree, aes(x, y)) + geom_tree()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/ggtree_cos_files/figure-markdown_strict/unnamed-chunk-2-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;ggtree函数是&lt;code&gt;ggplot() + geom_tree() + xlab(NA) + ylab(NA) + theme_tree()&lt;/code&gt;的简单组合。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ggtree(tree)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/ggtree_cos_files/figure-markdown_strict/unnamed-chunk-3-1.png&#34; alt=&#34;&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
-
-&lt;p&gt;想要加&lt;code&gt;tip.label&lt;/code&gt;，用&lt;code&gt;geom_tiplab&lt;/code&gt;图层，并且ggplot2的图层都可以直接应用于&lt;code&gt;ggtree&lt;/code&gt;。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ggtree(tree) + geom_tiplab() + geom_point(color=&#39;firebrick&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/ggtree_cos_files/figure-markdown_strict/unnamed-chunk-4-1.png&#34; alt=&#34;&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;树的操作与注释:d1d9992be5d6848a0489ec268963cadb&#34;&gt;树的操作与注释&lt;/h2&gt;
-
-&lt;p&gt;ggtree提供了多个函数可以把clade放大缩小(scaleClade)，折叠(collapse)和展开(expand)，位置调换和旋转，以及分类(groupOTU,
-groupClade)。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;nwk &amp;lt;- system.file(&amp;quot;extdata&amp;quot;, &amp;quot;sample.nwk&amp;quot;, package=&amp;quot;ggtree&amp;quot;)
-tree &amp;lt;- read.tree(nwk)
-p &amp;lt;- ggtree(tree)
-cp &amp;lt;- ggtree(tree) %&amp;gt;% collapse(node=21) + ggtitle(&#39;collapse&#39;)
-ep &amp;lt;- cp %&amp;gt;% expand(node=21) + ggtitle(&#39;expand&#39;)
-hp &amp;lt;- p + geom_hilight(node=21) + ggtitle(&#39;hilight&#39;)
-rp &amp;lt;- hp %&amp;gt;% rotate(node=21) + ggtitle(&#39;rotate&#39;)
-library(gridExtra)
-grid.arrange(cp, ep, hp, rp, ncol=2)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/ggtree_cos_files/figure-markdown_strict/unnamed-chunk-5-1.png&#34; alt=&#34;&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;支持多种文件格式:d1d9992be5d6848a0489ec268963cadb&#34;&gt;支持多种文件格式&lt;/h2&gt;
-
-&lt;p&gt;ggtree支持的文件格式包括Newick, Nexus, NHX和jplace。&lt;/p&gt;
-
-&lt;p&gt;上面已经展示了Newick格式，下面的例子是NHX格式：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;nhxfile = system.file(&amp;quot;extdata&amp;quot;, &amp;quot;ADH.nhx&amp;quot;, package=&amp;quot;ggtree&amp;quot;)
-nhx &amp;lt;- read.nhx(nhxfile)
-ggtree(nhx, ladderize=F) + geom_tiplab() + geom_point(aes(color=S), size=8, alpha=.3) + 
-    theme(legend.position=&amp;quot;right&amp;quot;) + 
-        geom_text(aes(label=branch.length, x=branch), vjust=-.5) + 
-           xlim(NA, 0.3)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/ggtree_cos_files/figure-markdown_strict/unnamed-chunk-6-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;支持解析多种软件的输出文件:d1d9992be5d6848a0489ec268963cadb&#34;&gt;支持解析多种软件的输出文件&lt;/h2&gt;
-
-&lt;p&gt;我们知道FigTree是针对&lt;a href=&#34;http://guangchuangyu.github.io/2015/04/an-example-of-drawing-beast-tree-using-ggtree/&#34;&gt;BEAST&lt;/a&gt;的输出设计的，可以把BEAST的统计推断拿来给树做注释，但很多的进化分析软件并没有相应的画树软件支持，用户很难把信息展示出来。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;ggtree&lt;/code&gt;支持&lt;code&gt;ape&lt;/code&gt;, &lt;code&gt;phangorn&lt;/code&gt;, &lt;code&gt;r8s&lt;/code&gt;, &lt;code&gt;RAxML&lt;/code&gt;, &lt;code&gt;PAML&lt;/code&gt;, &lt;code&gt;HYPHY&lt;/code&gt;, &lt;code&gt;EPA&lt;/code&gt;,
-&lt;code&gt;pplacer&lt;/code&gt;和&lt;code&gt;BEAST&lt;/code&gt;的输出。相应的统计分析结果可以应用于树的注释。可以说&lt;code&gt;ggtree&lt;/code&gt;把这些软件分析的结果带给了R用户，通过ggtree的解析，
-这些进化分析结果可以进一点在R里进行处理和统计分析，并不单单是在ggtree中展示而已。&lt;/p&gt;
-
-&lt;h3 id=&#34;raxml-bootstrap分析:d1d9992be5d6848a0489ec268963cadb&#34;&gt;RAxML bootstrap分析&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;raxml_file &amp;lt;- system.file(&amp;quot;extdata/RAxML&amp;quot;, &amp;quot;RAxML_bipartitionsBranchLabels.H3&amp;quot;, package=&amp;quot;ggtree&amp;quot;)
-raxml &amp;lt;- read.raxml(raxml_file)
-ggtree(raxml) + geom_text(aes(label=bootstrap, color=bootstrap)) + 
-    scale_color_gradient(high=&#39;red&#39;, low=&#39;darkgreen&#39;) + 
-       theme(legend.position=&#39;right&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/ggtree_cos_files/figure-markdown_strict/unnamed-chunk-7-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;multiPhylo&lt;/code&gt;也是支持的，所以100颗bootstrap树可以同时用一行代码展示出来。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;btree_file &amp;lt;- system.file(&amp;quot;extdata/RAxML&amp;quot;, &amp;quot;RAxML_bootstrap.H3&amp;quot;, package=&amp;quot;ggtree&amp;quot;)
-btree = read.tree(btree_file)
-ggtree(btree) + facet_wrap(~.id, ncol=10)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/ggtree_cos_files/figure-markdown_strict/unnamed-chunk-8-1.png&#34; alt=&#34;&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
-
-&lt;p&gt;如果不分面，这100颗树会重叠画在一起，这也能很好地展示bootstrap分析的结果，bootstrap值低的clade，线条会比较乱，而bootstrap值高的地方，线条一致性比较好。&lt;/p&gt;
-
-&lt;h3 id=&#34;paml:d1d9992be5d6848a0489ec268963cadb&#34;&gt;PAML&lt;/h3&gt;
-
-&lt;p&gt;使用BaseML预测的祖先序列，ggtree解析结果的同时会把父节点到子节点的subsitution给统计出来，可以直接在树上注释：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;rstfile &amp;lt;- system.file(&amp;quot;extdata/PAML_Baseml&amp;quot;, &amp;quot;rst&amp;quot;, package=&amp;quot;ggtree&amp;quot;)
-rst &amp;lt;- read.paml_rst(rstfile)
-p &amp;lt;- ggtree(rst) + geom_text(aes(label=marginal_AA_subs, x=branch), vjust=-.5)
-print(p)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/ggtree_cos_files/figure-markdown_strict/unnamed-chunk-9-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;不同于BaseML以碱基为单位，CodeML预测祖先序列，以密码子为单位。&lt;code&gt;ggtree&lt;/code&gt;定义了一个操作符&lt;a href=&#34;http://guangchuangyu.github.io/2015/02/ggtree-updating-a-tree-view-using--operator/&#34;&gt;%&amp;lt;%&lt;/a&gt;，如果有相同的注释信息要展示，可以用tree object来更新tree view。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;rstfile &amp;lt;- system.file(&amp;quot;extdata/PAML_Codeml&amp;quot;, &amp;quot;rst&amp;quot;, package=&amp;quot;ggtree&amp;quot;)
-crst &amp;lt;- read.paml_rst(rstfile)
-p %&amp;lt;% crst
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/ggtree_cos_files/figure-markdown_strict/unnamed-chunk-10-1.png&#34; alt=&#34;&#34; /&gt;&lt;!-- --&gt;
-像上面的例子，用&lt;code&gt;crst&lt;/code&gt;来更新&lt;code&gt;p&lt;/code&gt;，就是用&lt;code&gt;crst&lt;/code&gt;画出来的树+注释。对比两图，可以发现BaseML和CodeML推测的祖先序列是稍有不同的。&lt;/p&gt;
-
-&lt;p&gt;CodeML的dN/dS分析，我们可以直接把数据拿来给树上色。同样道理分类数据也可以拿来上色。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;mlc_file &amp;lt;- system.file(&amp;quot;examples/mlc&amp;quot;, package=&amp;quot;ggtree&amp;quot;)
-mlc &amp;lt;- read.codeml_mlc(mlc_file) 
-ggtree(mlc, aes(color=dN_vs_dS)) + 
-   scale_color_continuous(limits=c(0, 1.5), high=&#39;red&#39;, low=&#39;green&#39;, oob=scales::squish, name=&#39;dN/dS&#39;) + 
-      theme(legend.position=&#39;right&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/ggtree_cos_files/figure-markdown_strict/unnamed-chunk-11-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;使用用户定义数据:d1d9992be5d6848a0489ec268963cadb&#34;&gt;使用用户定义数据&lt;/h3&gt;
-
-&lt;p&gt;进化树已经被广泛应用于各种跨学科的研究中，随着实验技术的发展，各种数据也更易于获得，使用用户数据注释进化树，也是ggtree所支持的。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;nwk &amp;lt;- system.file(&amp;quot;extdata&amp;quot;, &amp;quot;sample.nwk&amp;quot;, package=&amp;quot;ggtree&amp;quot;)
-tree &amp;lt;- read.tree(nwk)
-p &amp;lt;- ggtree(tree)
-
-dd &amp;lt;- data.frame(taxa  = LETTERS[1:13], 
-             place = c(rep(&amp;quot;GZ&amp;quot;, 5), rep(&amp;quot;HK&amp;quot;, 3), rep(&amp;quot;CZ&amp;quot;, 4), NA),
-                 value = round(abs(rnorm(13, mean=70, sd=10)), digits=1))
-## you don&#39;t need to order the data
-## data was reshuffled just for demonstration
-dd &amp;lt;- dd[sample(1:13, 13), ]
-row.names(dd) &amp;lt;- NULL
-print(dd)
-
-##    taxa place value
-## 1     A    GZ  68.8
-## 2     J    CZ  56.8
-## 3     L    CZ  74.7
-## 4     C    GZ  53.3
-## 5     F    HK  62.8
-## 6     B    GZ  60.8
-## 7     E    GZ  87.1
-## 8     M  &amp;lt;NA&amp;gt;  70.9
-## 9     H    HK  67.0
-## 10    G    HK  59.8
-## 11    I    CZ  77.7
-## 12    K    CZ  69.8
-## 13    D    GZ  66.3
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;在上面的例子中，使用一个分类数据和一个连续型数据，输入的唯一要求是第一列是taxon
-label。ggtree中定义了操作符&lt;code&gt;%&amp;lt;+%&lt;/code&gt;，来添加数据。添加之后，用户的数据对ggplot是可见的。可以用于树的注释。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;p &amp;lt;- p %&amp;lt;+% dd + geom_text(aes(color=place, label=label), hjust=-0.5) + 
-       geom_tippoint(aes(size=value, shape=place, color=place), alpha=0.25)
-p+theme(legend.position=&amp;quot;right&amp;quot;)       
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/ggtree_cos_files/figure-markdown_strict/unnamed-chunk-13-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;ggtree还支持用户把自己的数据和树保存为jplace格式。&lt;/p&gt;
-
-&lt;p&gt;更多的实例请参考&lt;a href=&#34;http://www.bioconductor.org/packages/release/bioc/vignettes/ggtree/inst/doc/ggtree.html&#34;&gt;vignette&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;ggtree允许把不同软件的分析结果整合在一起，同时在树上展示或者比较结果。在我们提交的论文中，使用了整合BEAST和CodeML的例子，在树上展示dN/dS、时间轴、氨基酸替换、clade support values、物种和基因型 (genotype）等多维信息，6种不同的信息同时展示在一颗进化树上，这是个复杂的例子，我们在附件1中展示了可重复的代码。如果有兴趣，可以留意一下我们的文章。:)&lt;/p&gt;
-
-&lt;h2 id=&#34;其它好玩的功能:d1d9992be5d6848a0489ec268963cadb&#34;&gt;其它好玩的功能&lt;/h2&gt;
-
-&lt;p&gt;我们把树当成节点的集合，而不是线条的集合，这一点回归到了进化树的本质意义上，使这一实现成为可能。而支持图形语法，与ggplot2的无缝衔接又让注释变得更加容易。&lt;code&gt;ggtree&lt;/code&gt;为我们打开了各种注释和操作的可能性。甚至于可以创造出好玩的图，比如使用showtext来&lt;a href=&#34;http://guangchuangyu.github.io/2015/06/ggtree-with-funny-fonts/&#34;&gt;加载图形化的字体&lt;/a&gt;、&lt;a href=&#34;http://guangchuangyu.github.io/2015/12/use-emoji-font-in-r/&#34;&gt;用emoji来画树&lt;/a&gt;、&lt;a href=&#34;http://guangchuangyu.github.io/2015/08/ggtree-annotate-phylogenetic-tree-with-local-images/&#34;&gt;使用图片来注释树&lt;/a&gt;等等。&lt;/p&gt;
-
-&lt;p&gt;一个比较正经又好玩的是使用PhyloPic数据库上的图形。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;pp &amp;lt;- ggtree(tree) + geom_phylopic(image=&amp;quot;79ad5f09-cf21-4c89-8e7d-0c82a00ce728&amp;quot;, color=&amp;quot;steelblue&amp;quot;, alpha = .3, size=Inf)
-pp + geom_tiplab(align=T, linetype=&#39;dashed&#39;, linesize=.5) + geom_tippoint(color=&#39;firebrick&#39;, size=2)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/ggtree_cos_files/figure-markdown_strict/unnamed-chunk-14-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;很多的功能还在开发之中，有问题/建议请及时在&lt;a href=&#34;https://github.com/GuangchuangYu/ggtree/issues&#34;&gt;Github&lt;/a&gt;上报告(中英文都可以)。&lt;/p&gt;
-
-&lt;h2 id=&#34;citation:d1d9992be5d6848a0489ec268963cadb&#34;&gt;Citation&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;G Yu&lt;/strong&gt;, DK Smith, H Zhu, Y Guan, TTY Lam&lt;sup&gt;*&lt;/sup&gt;. &lt;a href=&#34;http://onlinelibrary.wiley.com/doi/10.1111/2041-210X.12628/abstract&#34;&gt;ggtree: an R package for visualization and annotation of phylogenetic trees with their covariates and other associated data&lt;/a&gt;. &lt;strong&gt;&lt;em&gt;Methods in Ecology and Evolution&lt;/em&gt;&lt;/strong&gt;. &lt;a href=&#34;http://dx.doi.org/10.1111/2041-210X.12628&#34;&gt;&lt;code&gt;doi:10.1111/2041-210X.12628&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;script type=&#34;text/javascript&#34; src=&#34;https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js&#34;&gt;&lt;/script&gt;
-&lt;div data-badge-popover=&#34;right&#34; data-badge-type=&#34;donut&#34; data-doi=&#34;10.1111/2041-210X.12628&#34; class=&#34;altmetric-embed&#34;&gt;&lt;/div&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;层次聚类的输入是距离，比如euclidean或manhattan距离。把距离近的聚在一起。而进化树推断是从生物序列（DNA或氨基酸）的比对开始。最简单的方法是计算一下序列中不匹配的数目，称之为hamming distance（通常用序列长度做归一化），使用距离当然也可以应用层次聚类的方法。进化树的构建最简单的方法是非加权配对平均法（Unweighted Pair Group Method with Arithmetic Mean, UPGMA），这其实是使用average linkage的层次聚类。这种方法在进化树推断上现在基本没人用。更为常用的是邻接法（neighbor joining），两个节点距离其它节点都比较远，而这两个节点又比较近，它们就是neighbor，可以看出neighbor不一定是距离最近的两个节点。真正做进化的人，这个方法也基本不用。现在主流的方法是最大似然法(Maximum likelihood, ML)，通过进化模型（evolutionary model)估计拓朴结构和分支长度，估计的结果具有最高的概率能够产生观测数据（多序列比对）。另外还有最大简约法和贝叶斯推断等方法用于构建进化树。
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1080,23 +189,7 @@ pp + geom_tiplab(align=T, linetype=&#39;dashed&#39;, linesize=.5) + geom_tippoin
 
 &lt;p&gt;&lt;a href=&#34;http://meme-suite.org&#34;&gt;MEME&lt;/a&gt;是motif分析的webserver，所谓的注释序列就是一条线条上画一些长方形的box。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2015/Screenshot%202015-05-20%2020.50.54.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;当有人问R是否可以画的时候，你回答说可以，他立马就会问，什么函数！这才是他想要问的。这正好中了我的槽点，很多人都认为R是个magic box，
-有各种各样的magic packages/functions，然后input-&amp;gt;output-&amp;gt;done!&lt;/p&gt;
-
-&lt;p&gt;当magic不存在的时候，那就是crap。顺道吐槽一下，不给个四四方方的数据，很多人都不知道该怎么读了，吐槽归吐槽，还是要告诉他怎么去画：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2015/Screenshot%202015-05-20%2020.51.22.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;事实证明我吐槽的现象是多么普遍，下面继续有人在诠释我的槽点，他们需要的是神奇的函数：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2015/Screenshot%202015-05-20%2020.52.31.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;所谓吐槽吐全套，既然这样，我只能碾压他们：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2015/Screenshot%202015-05-20%2015.17.08.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1105,9 +198,7 @@ pp + geom_tiplab(align=T, linetype=&#39;dashed&#39;, linesize=.5) + geom_tippoin
       <pubDate>Sun, 11 May 2014 06:17:56 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2014/05/use-ggplot2/</guid>
-      <description>
-
-&lt;h3 id=&#34;why-use-ggplot2:c38c63fac86d2290b6bc01da39216614&#34;&gt;Why use ggplot2&lt;/h3&gt;
+      <description>&lt;h3 id=&#34;why-use-ggplot2&#34;&gt;Why use ggplot2&lt;/h3&gt;
 
 &lt;p&gt;ggplot2是我见过最human friendly的画图软件，这得益于Leland Wilkinson在他的著作《&lt;a href=&#34;http://book.douban.com/subject/10123863/&#34;&gt;The Grammar of Graphics&lt;/a&gt;》中提出了一套图形语法，把图形元素抽象成可以自由组合的成分，Hadley
 Wickham把这套想法在R中实现。&lt;/p&gt;
@@ -1116,493 +207,7 @@ Wickham把这套想法在R中实现。&lt;/p&gt;
 
 &lt;p&gt;Hadley Wickham也给出&lt;a href=&#34;https://github.com/hadley/ggplot2/wiki/Why-use-ggplot2&#34;&gt;一堆理由&lt;/a&gt;让我们说服自己，我想再补充一点，Hadley Wickham是学医出身的，做为学生物出身的人有什么理由不支持呢:)&lt;/p&gt;
 
-&lt;p&gt;ggplot2基本要素&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;数据（Data）和映射（Mapping）&lt;/li&gt;
-&lt;li&gt;几何对象（Geometric）&lt;/li&gt;
-&lt;li&gt;标尺（Scale）&lt;/li&gt;
-&lt;li&gt;统计变换（Statistics）&lt;/li&gt;
-&lt;li&gt;坐标系统（Coordinante）&lt;/li&gt;
-&lt;li&gt;图层（Layer）&lt;/li&gt;
-&lt;li&gt;分面（Facet）&lt;/li&gt;
-&lt;li&gt;主题（Theme）&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;这里将从这些基本要素对ggplot2进行介绍。&lt;/p&gt;
-
-&lt;h3 id=&#34;数据-data-和映射-mapping:c38c63fac86d2290b6bc01da39216614&#34;&gt;数据（Data）和映射（Mapping)&lt;/h3&gt;
-
-&lt;p&gt;下面以一份钻石的数据为例，这份数据非常大，随机取一个子集来画图。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;require(ggplot2)
-data(diamonds)
-set.seed(42)
-small &amp;lt;- diamonds[sample(nrow(diamonds), 1000), ]
-head(small)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;##       carat       cut color clarity depth table price    x    y    z
-## 49345  0.71 Very Good     H     SI1  62.5    60  2096 5.68 5.75 3.57
-## 50545  0.79   Premium     H     SI1  61.8    59  2275 5.97 5.91 3.67
-## 15434  1.03     Ideal     F     SI1  62.4    57  6178 6.48 6.44 4.03
-## 44792  0.50     Ideal     E     VS2  62.2    54  1624 5.08 5.11 3.17
-## 34614  0.27     Ideal     E     VS1  61.6    56   470 4.14 4.17 2.56
-## 27998  0.30   Premium     E     VS2  61.7    58   658 4.32 4.34 2.67
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;summary(small)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;##      carat              cut      color      clarity        depth     
-##  Min.   :0.220   Fair     : 28   D:121   SI1    :258   Min.   :55.2  
-##  1st Qu.:0.400   Good     : 88   E:186   VS2    :231   1st Qu.:61.0  
-##  Median :0.710   Very Good:227   F:164   SI2    :175   Median :61.8  
-##  Mean   :0.819   Premium  :257   G:216   VS1    :141   Mean   :61.7  
-##  3rd Qu.:1.070   Ideal    :400   H:154   VVS2   : 91   3rd Qu.:62.5  
-##  Max.   :2.660                   I:106   VVS1   : 67   Max.   :72.2  
-##                                  J: 53   (Other): 37                 
-##      table          price             x              y       
-##  Min.   :50.1   Min.   :  342   Min.   :3.85   Min.   :3.84  
-##  1st Qu.:56.0   1st Qu.:  990   1st Qu.:4.74   1st Qu.:4.76  
-##  Median :57.0   Median : 2595   Median :5.75   Median :5.78  
-##  Mean   :57.4   Mean   : 4111   Mean   :5.79   Mean   :5.79  
-##  3rd Qu.:59.0   3rd Qu.: 5495   3rd Qu.:6.60   3rd Qu.:6.61  
-##  Max.   :65.0   Max.   :18795   Max.   :8.83   Max.   :8.87  
-##                                                              
-##        z       
-##  Min.   :2.33  
-##  1st Qu.:2.92  
-##  Median :3.55  
-##  Mean   :3.57  
-##  3rd Qu.:4.07  
-##  Max.   :5.58  
-## 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;画图实际上是把数据中的变量映射到图形属性上。以克拉(carat)数为X轴变量，价格(price)为Y轴变量。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;p &amp;lt;- ggplot(data = small, mapping = aes(x = carat, y = price))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;上面这行代码把数据映射XY坐标轴上，需要告诉ggplot2，这些数据要映射成什么样的几何对象，下面以散点为例：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;p + geom_point()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;几何对象将在下面的小节介绍，这一节，关注的是数据和图形属性之间的映射。&lt;/p&gt;
-
-&lt;p&gt;如果想将切工（cut）映射到形状属性。只需要：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;p &amp;lt;- ggplot(data=small, mapping=aes(x=carat, y=price, shape=cut))
-p+geom_point()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;再比如我想将钻石的颜色（color）映射颜色属性：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;p &amp;lt;- ggplot(data=small, mapping=aes(x=carat, y=price, shape=cut, colour=color))
-p+geom_point()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;几何对象-geometric:c38c63fac86d2290b6bc01da39216614&#34;&gt;几何对象（Geometric）&lt;/h3&gt;
-
-&lt;p&gt;在上面的例子中，各种属性映射由ggplot函数执行，只需要加一个图层，使用geom_point()告诉ggplot要画散点，于是所有的属性都映射到散点上。&lt;/p&gt;
-
-&lt;p&gt;geom_point()完成的就是几何对象的映射，ggplot2提供了各种几何对象映射，如geom_histogram用于直方图，geom_bar用于画柱状图，geom_boxplot用于画箱式图等等。&lt;/p&gt;
-
-&lt;p&gt;不同的几何对象，要求的属性会有些不同，这些属性也可以在几何对象映射时提供，比如上一图，也可以用以下语法来画：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;p &amp;lt;- ggplot(small)
-p+geom_point(aes(x=carat, y=price, shape=cut, colour=color))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ggplot2支持图层，我通常把不同的图层中共用的映射提供给ggplot函数，而某一几何对象才需要的映射参数提供给geom_xxx函数。&lt;/p&gt;
-
-&lt;p&gt;这一小节我们来看一下各种常用的几何对象。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;直方图&lt;/strong&gt; 直方图最容易，提供一个x变量，画出数据的分布。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_histogram(aes(x=price))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig4.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;同样可以根据另外的变量给它填充颜色，比如按不同的切工：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_histogram(aes(x=price, fill=cut))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig5.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;也可以将其分开，side-by-side地画直方图。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_histogram(aes(x=price, fill=cut), position=&amp;quot;dodge&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig6.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;还可以使用position=&amp;ldquo;fill&amp;rdquo;，按照相对比例来画。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_histogram(aes(x=price, fill=cut), position=&amp;quot;fill&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig7.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;柱状图&lt;/strong&gt;
-柱状图非常适合于画分类变量。在这里以透明度（clarity）变量为例。按照不同透明度的钻石的数目画柱状图。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_bar(aes(x=clarity))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig8.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;柱状图两个要素，一个是分类变量，一个是数目，也就是柱子的高度。数目在这里不用提供，因为ggplot2会通过x变量计算各个分类的数目。&lt;/p&gt;
-
-&lt;p&gt;当然你想提供也是可以的，通过stat参数，可以让geom_bar按指定高度画图，比如以下代码：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ggplot()+geom_bar(aes(x=c(LETTERS[1:3]),y=1:3), stat=&amp;quot;identity&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig24.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;柱状图和直方图是很像的，直方图把连续型的数据按照一个个等长的分区（bin）来切分，然后计数，画柱状图。而柱状图是分类数据，按类别计数。我们可以用前面直方图的参数来画side-by-side的柱状图，填充颜色或者按比例画图，它们是高度一致的。&lt;/p&gt;
-
-&lt;p&gt;柱状图是用来表示计数数据的，但在生物界却被经常拿来表示均值，加上误差来表示数据分布，这可以通常图层来实现，我将在图层一节中给出实例。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;密度函数图&lt;/strong&gt;
-说到直方图，就不得不说密度函数图，数据和映射和直方图是一样的，唯一不同的是几何对象，geom_histogram告诉ggplot要画直方图，而geom_density则说我们要画密度函数图，在我们熟悉前面语法的情况下，很容易画出：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_density(aes(x=price, colour=cut))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig9.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_density(aes(x=price,fill=clarity))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig10.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;colour参数指定的是曲线的颜色，而fill是往曲线下面填充颜色。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;箱式图&lt;/strong&gt;
-数据量比较大的时候，用直方图和密度函数图是表示数据分布的好方法，而在数据量较少的时候，比如很多的生物实验，很多时候大家都是使用柱状图+errorbar的形式来表示，不过这种方法的信息量非常低，被&lt;a href=&#34;http://guangchuangyu.github.io/2014/03/boxplot/&#34;&gt;Nature Methods吐槽&lt;/a&gt;，这种情况推荐使用boxplot。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_boxplot(aes(x=cut, y=price,fill=color))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;geom_boxplot将数据映射到箱式图上，上面的代码，我们应该很熟悉了，按切工(cut)分类，对价格(price)变量画箱式图，再分开按照color变量填充颜色。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig11.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;ggplot2提供了很多的geom_xxx函数，可以满足我们对各种图形绘制的需求。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;geom_abline     geom_area   
-geom_bar        geom_bin2d
-geom_blank      geom_boxplot    
-geom_contour    geom_crossbar
-geom_density    geom_density2d  
-geom_dotplot    geom_errorbar
-geom_errorbarh  geom_freqpoly   
-geom_hex        geom_histogram
-geom_hline      geom_jitter     
-geom_line       geom_linerange
-geom_map        geom_path   
-geom_point      geom_pointrange
-geom_polygon    geom_quantile   
-geom_raster     geom_rect
-geom_ribbon     geom_rug    
-geom_segment    geom_smooth
-geom_step       geom_text   
-geom_tile       geom_violin
-geom_vline
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;标尺-scale:c38c63fac86d2290b6bc01da39216614&#34;&gt;标尺（Scale）&lt;/h3&gt;
-
-&lt;p&gt;前面我们已经看到了，画图就是在做映射，不管是映射到不同的几何对象上，还是映射各种图形属性。这一小节介绍标尺，在对图形属性进行映射之后，使用标尺可以控制这些属性的显示方式，比如坐标刻度，可能通过标尺，将坐标进行对数变换；比如颜色属性，也可以通过标尺，进行改变。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_point(aes(x=carat, y=price, shape=cut, colour=color))+scale_y_log10()+scale_colour_manual(values=rainbow(7))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig12.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;以数据（Data）和映射（Mapping)一节中所画散点图为例，将Y轴坐标进行log10变换，再自己定义颜色为彩虹色。&lt;/p&gt;
-
-&lt;h3 id=&#34;统计变换-statistics:c38c63fac86d2290b6bc01da39216614&#34;&gt;统计变换（Statistics）&lt;/h3&gt;
-
-&lt;p&gt;统计变换对原始数据进行某种计算，然后在图上表示出来，例如对散点图上加一条回归线。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ggplot(small, aes(x=carat, y=price))+geom_point()+scale_y_log10()+stat_smooth()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig13.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这里就不按颜色、切工来分了，不然ggplot会按不同的分类变量分别做回归，图就很乱，如果我们需要这样做，我们可以使用分面，这个将在后面介绍。&lt;/p&gt;
-
-&lt;p&gt;这里，aes所提供的参数，就通过ggplot提供，而不是提供给geom_point，因为ggplot里的参数，相当于全局变量，geom_point()和stat_smooth()都知道x,y的映射，如果只提供给geom_point()，则相当于是局部变量，geom_point知道这种映射，而stat_smooth不知道，当然你再给stat_smooth也提供x,y的映射，不过共用的映射，还是提供给ggplot好。
-ggplot2提供了多种统计变换方式：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;stat_abline       stat_contour      stat_identity     stat_summary
-stat_bin          stat_density      stat_qq           stat_summary2d
-stat_bin2d        stat_density2d    stat_quantile     stat_summary_hex
-stat_bindot       stat_ecdf         stat_smooth       stat_unique
-stat_binhex       stat_function     stat_spoke        stat_vline
-stat_boxplot      stat_hline        stat_sum          stat_ydensity
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;统计变换是非常重要的功能，我们可以自己写函数，基于原始数据做某种计算，并在图上表现出来，也可以通过它改变geom_xxx函数画图的默认统计参数。
-比如我在&lt;a href=&#34;http://www.sciencedirect.com/science/article/pii/S1874391912007567&#34;&gt;Proteomic investigation of the interactome of FMNL1 in hematopoietic cells unveils a role in calcium-dependent membrane plasticity&lt;/a&gt;的图一中，就把boxplot的中位线替换成了平均值来作图。&lt;/p&gt;
-
-&lt;h3 id=&#34;坐标系统-coordinante:c38c63fac86d2290b6bc01da39216614&#34;&gt;坐标系统（Coordinante）&lt;/h3&gt;
-
-&lt;p&gt;坐标系统控制坐标轴，可以进行变换，例如XY轴翻转，笛卡尔坐标和极坐标转换，以满足我们的各种需求。&lt;/p&gt;
-
-&lt;p&gt;坐标轴翻转由coord_flip()实现&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_bar(aes(x=cut, fill=cut))+coord_flip()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig14.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;而转换成极坐标可以由coord_polar()实现：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_bar(aes(x=factor(1), fill=cut))+coord_polar(theta=&amp;quot;y&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2.fig15.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这也是为什么之前介绍常用图形画法时没有提及饼图的原因，饼图实际上就是柱状图，只不过是使用极坐标而已，柱状图的高度，对应于饼图的弧度，饼图并不推荐，因为人类的眼睛比较弧度的能力比不上比较高度（柱状图）&lt;/p&gt;
-
-&lt;p&gt;还可以画靶心图：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_bar(aes(x=factor(1), fill=cut))+coord_polar()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig16.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;以及风玫瑰图(windrose)&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ggplot(small)+geom_bar(aes(x=clarity, fill=cut))+coord_polar()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig17.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;图层-layer:c38c63fac86d2290b6bc01da39216614&#34;&gt;图层（Layer）&lt;/h3&gt;
-
-&lt;p&gt;photoshop流行的原因在于PS
-3.0时引入图层的概念，ggplot的牛B之处在于使用+号来叠加图层，这堪称是泛型编程的典范。
-在前面散点图上，我们已经见识过，加上了一个回归线拟合的图层。&lt;/p&gt;
-
-&lt;p&gt;有了图层的概念，使用ggplot画起图来，就更加得心应手。&lt;/p&gt;
-
-&lt;p&gt;做为图层的一个很好的例子是&lt;a href=&#34;http://guangchuangyu.github.io/2011/08/the-batman-equation/&#34;&gt;蝙蝠侠logo&lt;/a&gt;，batman
-logo由6个函数组成，在下面的例子中，我先画第一个函数，之后再加一个图层画第二个函数，不断重复这一过程，直到六个函数全部画好。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;require(ggplot2)
-f1 &amp;lt;- function(x) {
-    y1 &amp;lt;- 3*sqrt(1-(x/7)^2)
-    y2 &amp;lt;- -3*sqrt(1-(x/7)^2)
-    y &amp;lt;- c(y1,y2)
-    d &amp;lt;- data.frame(x=x,y=y)
-    d &amp;lt;- d[d$y &amp;gt; -3*sqrt(33)/7,]
-    return(d)
-}
- 
-x1 &amp;lt;- c(seq(3, 7, 0.001), seq(-7, -3, 0.001))
-d1 &amp;lt;- f1(x1)
-p1 &amp;lt;- ggplot(d1,aes(x,y)) + geom_point(color=&amp;quot;red&amp;quot;) +xlab(&amp;quot;&amp;quot;) + ylab(&amp;quot;&amp;quot;) + theme_bw()
- 
-x2 &amp;lt;- seq(-4,4, 0.001)
-y2 &amp;lt;- abs(x2/2)-(3*sqrt(33)-7)*x2^2/112-3 + sqrt(1-(abs(abs(x2)-2)-1)^2)
-d2 &amp;lt;- data.frame(x2=x2, y2=y2)
-p2 &amp;lt;- p1 + geom_point(data=d2, aes(x=x2,y=y2), color=&amp;quot;yellow&amp;quot;)
- 
-x3 &amp;lt;- c(seq(0.75,1,0.001), seq(-1,-0.75,0.001))
-y3 &amp;lt;- 9-8*abs(x3)
-d3 &amp;lt;- data.frame(x3=x3, y3=y3)
-p3 &amp;lt;- p2+geom_point(data=d3, aes(x=x3,y=y3), color=&amp;quot;green&amp;quot;)
- 
-x4 &amp;lt;- c(seq(0.5,0.75,0.001), seq(-0.75,-0.5,0.001))
-y4 &amp;lt;- 3*abs(x4)+0.75
-d4 &amp;lt;- data.frame(x4=x4,y4=y4)
-p4 &amp;lt;- p3+geom_point(data=d4, aes(x=x4,y=y4), color=&amp;quot;steelblue&amp;quot;)
-  
-x5 &amp;lt;- seq(-0.5,0.5,0.001)
-y5 &amp;lt;- rep(2.25,length(x5))
-d5 &amp;lt;- data.frame(x5=x5,y5=y5)
-p5 &amp;lt;- p4+geom_point(data=d5, aes(x=x5,y=y5))
- 
-x6 &amp;lt;- c(seq(-3,-1,0.001), seq(1,3,0.001))
-y6 &amp;lt;- 6 * sqrt(10)/7 +
-    (1.5 - 0.5 * abs(x6)) * sqrt(abs(abs(x6)-1)/(abs(x6)-1)) -
-    6 * sqrt(10) * sqrt(4-(abs(x6)-1)^2)/14
-d6 &amp;lt;- data.frame(x6=x6,y6=y6)
-p6 &amp;lt;- p5+geom_point(data=d6,aes(x=x6,y=y6), colour=&amp;quot;blue&amp;quot;)
-
-multiplot &amp;lt;- function (..., plotlist = NULL, cols = 1, layout = NULL) {
-    plots &amp;lt;- c(list(...), plotlist)
-    numPlots = length(plots)
-    if (is.null(layout)) {
-        layout &amp;lt;- matrix(seq(1, cols * ceiling(numPlots/cols)),
-            ncol = cols, nrow = ceiling(numPlots/cols))
-    }
-    if (numPlots == 1) {
-        print(plots[[1]])
-    }
-    else {
-        grid.newpage()
-        pushViewport(viewport(layout = grid.layout(nrow(layout),
-            ncol(layout))))
-        for (i in 1:numPlots) {
-            matchidx &amp;lt;- as.data.frame(which(layout == i, arr.ind = TRUE))
-            print(plots[[i]], vp = viewport(layout.pos.row = matchidx$row,
-                layout.pos.col = matchidx$col))
-        }
-    }
-}
-
-multiplot(p1,p2,p3,p4,p5,p6, cols=2)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_batman.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;分面-facet:c38c63fac86d2290b6bc01da39216614&#34;&gt;分面（Facet）&lt;/h3&gt;
-
-&lt;p&gt;在《&lt;a href=&#34;http://book.douban.com/subject/24527091/&#34;&gt;ggplot2: 数据分析与图形艺术&lt;/a&gt;》一书的翻译中，一开始译者把facet翻译成切片，我在校稿的时候发现了，给他们写信，推荐翻译成分面，如果是slice这个词，翻译成切片倒是很精准，BSD的硬盘分区就叫slice，但facet从词源上看就是小脸的意思，翻译成分面才到位。给他们写信的时候，我还专门查了&lt;a href=&#34;http://dict.cnki.net/&#34;&gt;CNKI翻译助手&lt;/a&gt;，发现这词在信息学中，翻成分面早已是固定的。我感觉这是我对这本书翻译的最大贡献，校稿过程中发现的少量小问题远比不上这个关键词意思的把握上。&lt;/p&gt;
-
-&lt;p&gt;分面可以让我们按照某种给定的条件，对数据进行分组，然后分别画图。
-在统计变换一节中，提到如果按切工分组作回归线，显然图会很乱，有了分面功能，我们可以分别作图。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ggplot(small, aes(x=carat, y=price))+geom_point(aes(colour=cut))+scale_y_log10() +facet_wrap(~cut)+stat_smooth()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig18.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;主题-theme:c38c63fac86d2290b6bc01da39216614&#34;&gt;主题（Theme）&lt;/h3&gt;
-
-&lt;p&gt;通过ggplot画图之后，我们可能还需要对图进行定制，像title, xlab,
-ylab这些高频需要用到的，自不用说，ggplot2提供了ggtitle(),
-xlab()和ylab()来实现。 比如：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;p &amp;lt;- ggplot(small)+geom_boxplot(aes(x=cut, y=price,fill=color))
-p + ggtitle(&amp;quot;Price vs Cut&amp;quot;)+xlab(&amp;quot;Cut&amp;quot;)+ylab(&amp;quot;Price&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2.fig19.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;但是这个远远满足不了需求，我们需要改变字体，字体大小，坐标轴，背景等各种元素，这需要通过theme()函数来完成。&lt;/p&gt;
-
-&lt;p&gt;ggplot2提供一些已经写好的主题，比如&lt;code&gt;theme_grey()&lt;/code&gt;为默认主题，我经常用的&lt;code&gt;theme_bw()&lt;/code&gt;为白色背景的主题，还有&lt;code&gt;theme_classic()&lt;/code&gt;主题，和R的基础画图函数较像。&lt;/p&gt;
-
-&lt;p&gt;别外ggthemes包提供了一些主题可供使用，包括：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;theme_economist theme_economist_white
-theme_wsj       theme_excel
-theme_few       theme_foundation
-theme_igray     theme_solarized
-theme_stata     theme_tufte
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;require(ggthemes)
-p + theme_wsj()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig20.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;在2013年发表的文章&lt;a href=&#34;http://pubs.rsc.org/en/content/articlelanding/2013/mt/c3mt00126a#!divAbstract&#34;&gt;Putative cobalt- and nickel-binding proteins and motifs in Streptococcus pneumoniae&lt;/a&gt;中的图3就是使用&lt;code&gt;theme_stata&lt;/code&gt;来画的。&lt;/p&gt;
-
-&lt;p&gt;至于如何改变这些元素，我觉得我之前&lt;a href=&#34;http://guangchuangyu.github.io/2012/02/draw-chinese-character-jiong-using-ggplot2/&#34;&gt;画囧字的博文&lt;/a&gt;可以做为例子：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;f &amp;lt;- function(x) 1/(x^2-1)
-x &amp;lt;- seq(-3,3, by=0.001)
-y &amp;lt;- f(x)
-d &amp;lt;- data.frame(x=x,y=y)
- 
-p &amp;lt;- ggplot()
-p &amp;lt;- p+geom_rect(fill = &amp;quot;white&amp;quot;,color=&amp;quot;black&amp;quot;,size=3,
-aes(NULL, NULL,xmin=-3, xmax=3,
-ymin=-3,ymax=3, alpha=0.1))
- 
-p &amp;lt;- p + geom_line(data=d, aes(x,y), size=3)+ylim(-3,3)
-theme_null &amp;lt;- function() {
-    theme_bw() %+replace%
-    theme(axis.text.x=element_blank(),
-    axis.text.y=element_blank(),
-    legend.position=&amp;quot;none&amp;quot;,
-    panel.grid.minor=element_blank(),
-    panel.grid.major=element_blank(),
-    panel.background=element_blank(),
-    axis.ticks=element_blank(),
-    panel.border=element_blank())
-}
- 
-p+theme_null()+xlab(&amp;quot;&amp;quot;)+ylab(&amp;quot;&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2012/02/jiong.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;详细的说明，可以参考?theme的帮助文档。&lt;/p&gt;
-
-&lt;h3 id=&#34;二维密度图:c38c63fac86d2290b6bc01da39216614&#34;&gt;二维密度图&lt;/h3&gt;
-
-&lt;p&gt;在这个文档里，为了作图方便，我们使用diamonds数据集的一个子集，如果使用全集，数据量太大，画出来散点就糊了，这种情况可以使用二维密度力来呈现。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ggplot(diamonds, aes(carat, price))+ stat_density2d(aes(fill = ..level..), geom=&amp;quot;polygon&amp;quot;)+ scale_fill_continuous(high=&#39;darkred&#39;,low=&#39;darkgreen&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2.fig22.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;ggplot2实例:c38c63fac86d2290b6bc01da39216614&#34;&gt;ggplot2实例&lt;/h3&gt;
-
-&lt;p&gt;蝴蝶图：详见《Modern Applied Statistics with S-PLUS》第一章。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;theta &amp;lt;- seq(0,24*pi, len=2000)
-radius &amp;lt;- exp(cos(theta)) - 2*cos(4*theta) + sin(theta/12)^5
-dd &amp;lt;- data.frame(x=radius*sin(theta), y=radius*cos(theta))
-ggplot(dd, aes(x, y))+geom_path()+theme_null()+xlab(&amp;quot;&amp;quot;)+ylab(&amp;quot;&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_fig25.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这个图，我想展示的是对细节的修改上，在画囧字的时候，把画布上的元素都给清除了，我把它定义为theme_null主题，在这里，直接应用，我们可以形成自己的画图风格，并写出自己的主题函数固定下来。&lt;/p&gt;
-
-&lt;p&gt;最后以生物界中常用的柱状图+误差图为实例，展示ggplot2非常灵活的图层。以我2011年发表的文章&lt;a href=&#34;http://guangchuangyu.github.io/2010/11/phosphoproteome-profile-of-human-lung-cancer-cell-line-a549/&#34;&gt;Phosphoproteome
-profile of human lung cancer cell line
-A549&lt;/a&gt;中的westernblot数据为例。这个实例展示了图层，标尺，主题，注释和各种细节微调多种元素。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Normal &amp;lt;- c(0.83, 0.79, 0.99, 0.69)
-Cancer &amp;lt;- c(0.56, 0.56, 0.64, 0.52)
-m &amp;lt;- c(mean(Normal), mean(Cancer))
-s &amp;lt;- c(sd(Normal), sd(Cancer))
-d &amp;lt;- data.frame(V=c(&amp;quot;Normal&amp;quot;, &amp;quot;Cancer&amp;quot;), mean=m, sd=s)
-d$V &amp;lt;- factor(d$V, levels=c(&amp;quot;Normal&amp;quot;, &amp;quot;Cancer&amp;quot;))
-
-p &amp;lt;- ggplot(d, aes(V, mean, fill=V, width=.5))
-p &amp;lt;- p+geom_errorbar(aes(ymin=mean, ymax=mean+sd, width=.2), 
-                     position=position_dodge(width=.8))
-p &amp;lt;- p + geom_bar(stat=&amp;quot;identity&amp;quot;, position=position_dodge(width=.8), colour=&amp;quot;black&amp;quot;)
-p &amp;lt;- p + scale_fill_manual(values=c(&amp;quot;grey80&amp;quot;, &amp;quot;white&amp;quot;))
-p &amp;lt;- p + theme_bw() +theme(legend.position=&amp;quot;none&amp;quot;) + xlab(&amp;quot;&amp;quot;) + ylab(&amp;quot;&amp;quot;)
-p &amp;lt;- p + theme(axis.text.x = element_text(face=&amp;quot;bold&amp;quot;, size=12), 
-               axis.text.y = element_text(face=&amp;quot;bold&amp;quot;, size=12))
-p &amp;lt;- p+scale_y_continuous(expand=c(0,0), limits=c(0, 1.2), breaks=seq(0, 1.2, by=.2))
-p &amp;lt;- p+geom_segment(aes(x=1, y=.98, xend=1, yend=1.1))
-p &amp;lt;- p+geom_segment(aes(x=2, y=.65, xend=2, yend=1.1))
-p &amp;lt;- p+geom_segment(aes(x=1, y=1.1, xend=2, yend=1.1))
-p &amp;lt;- p + annotate(&amp;quot;text&amp;quot;, x=1.5, y=1.08, label=&amp;quot;*&amp;quot;)
-print(p)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/ggplot2_26.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;更多实例，可以参考我使用&lt;a href=&#34;http://guangchuangyu.github.io/2011/08/ggplot2-version-of-figures-in-25-recipes-for-getting-started-with-r/&#34;&gt;ggplot2实现&lt;25 Recipes for Getting Started with R&gt;一书中的所有图片&lt;/a&gt;.&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1617,14 +222,8 @@ print(p)
 plot，但直方图比饼图要好，因为人类的眼睛适合于比较高度，而不是弧度。&lt;/p&gt;
 
 &lt;p&gt;多半时候生物学数据并非简单的计数数据，对于测量数据，在展示数据分布时，很多人会使用他们熟悉的barplot，用高度来表示mean，然后再加上errorbar，这样展示数据，信息量是非常低的，使用boxplot能够提供更多的数据分布信息，能更好地展现数据，但可能很多人只会在excel里画barplot，Nature
-Methods 2013年的文章中有100个barplot图，而只有20个boxplot图，从这里就可以看出来，用boxplot的人远远没有barplot多，于是NPG怒了，写了两篇专栏文章&lt;a href=&#34;http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2807.html&#34;&gt;Points of View: Bar charts and box plots&lt;/a&gt;和&lt;a href=&#34;http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2813.html&#34;&gt;Points of Significance: Visualizing samples with box plots&lt;/a&gt;并且发表了一篇&lt;a href=&#34;http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2811.html&#34;&gt;BoxPlotR: a web tool for generation of box plots&lt;/a&gt;方便大家画boxplot，如此简单的web tool能够发Nature Methods，实在是让人羡慕妒忌恨啊。&lt;/p&gt;
-
-&lt;p&gt;Boxplot从1970年由John Tukey提示，到现在已经40多年了，他有很多的变种，比如&lt;a href=&#34;http://guangchuangyu.github.io/2012/02/violin-plot/&#34;&gt;violin plot&lt;/a&gt;和&lt;a href=&#34;http://www.jstatsoft.org/v28/c01/paper&#34;&gt;beanplot&lt;/a&gt;，violin
-plot和beanplot是很像的，都是把box换成density curve，beanplot另外把数据点在中间用线条表示出来，这个很容易加上去，正如我在&lt;a href=&#34;http://guangchuangyu.github.io/2012/02/violin-plot/&#34;&gt;violin plot&lt;/a&gt;中把数据点加进去一样。同样可以把数据点加进boxplot中，还有很多手法来展示boxplot，比如可以用缺口(notch)形式来画boxplot，可以把中间的宽度表示为median值的置信空间。boxplot的宽度可以用样本量来归一化，如果sample
-size足够大的话，$mean\pm errorbar$ 不会超出box，可以很清晰把这个信息也展示在boxplot中。&lt;/p&gt;
-
-&lt;p&gt;如果数据量比较少，可以用scatterplot+errorbar的形式展示数据，正如我在&lt;a href=&#34;http://pubs.rsc.org/en/Content/ArticleLanding/2011/MB/C0MB00055H#!divAbstract&#34;&gt;Phosphoproteome profile of human lung cancer cell line A549&lt;/a&gt;中所画的&lt;a href=&#34;http://www.douban.com/photos/photo/1560368200/&#34;&gt;图7&lt;/a&gt;。&lt;/p&gt;
-</description>
+Methods 2013年的文章中有100个barplot图，而只有20个boxplot图，从这里就可以看出来，用boxplot的人远远没有barplot多，于是NPG怒了，写了两篇专栏文章&lt;a href=&#34;http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2807.html&#34;&gt;Points of View: Bar charts and box plots&lt;/a&gt;和&lt;a href=&#34;http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2813.html&#34;&gt;Points of Significance: Visualizing samples with box plots&lt;/a&gt;并且发表了一篇&lt;a href=&#34;http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2811.html&#34;&gt;BoxPlotR: a web tool for generation of box plots&lt;/a&gt;方便大家画boxplot，如此简单的web tool能够发Nature Methods，实在是让人羡慕妒忌恨啊。
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1633,23 +232,11 @@ size足够大的话，$mean\pm errorbar$ 不会超出box，可以很清晰把这
       <pubDate>Tue, 14 Feb 2012 05:37:55 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2012/02/happy-valentine/</guid>
-      <description>&lt;p&gt;今天看到&lt;a href=&#34;http://cos.name/2012/02/valentines-gift-by-using-r/&#34;&gt;统计之都上的情人节心形图&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;这次画的心形函数是：
-$ x = 16 (sin t)^3$
-$ y = 13 cos t - 5 cos 2t - 2 cos 3t - cos 4t$&lt;/p&gt;
-
-&lt;p&gt;尝试用ggplot2来画，结果如下：
-&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2012/02/heart2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2012/02/heart.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;代码见&lt;a href=&#34;https://gist.github.com/1823931&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://guangchuangyu.github.io/cn/2011/08/love-function-plot/&#34;&gt;类似的心形图以前也是画过的&lt;/a&gt;，当然这样的函数图有很多，详见&lt;a href=&#34;http://www.mathematische-basteleien.de/heart.htm&#34;&gt;http://www.mathematische-basteleien.de/heart.htm&lt;/a&gt;，画起来也很容易。&lt;/p&gt;
-
-&lt;p&gt;倒是以前画过的&lt;a href=&#34;https://guangchuangyu.github.io/2011/08/the-batman-equation/&#34;&gt;蝙蝠侠logo&lt;/a&gt;，更有成就感些。&lt;/p&gt;
-</description>
+      <description>今天看到统计之都上的情人节心形图。
+这次画的心形函数是： $ x = 16 (sin t)^3$ $ y = 13 cos t - 5 cos 2t - 2 cos 3t - cos 4t$
+尝试用ggplot2来画，结果如下： 代码见Github.
+类似的心形图以前也是画过的，当然这样的函数图有很多，详见http://www.mathematische-basteleien.de/heart.htm，画起来也很容易。
+倒是以前画过的蝙蝠侠logo，更有成就感些。</description>
     </item>
     
     <item>
@@ -1667,12 +254,57 @@ list也有诸多讨论，因为它导致了某些包编译出错（估计是NAME
 
 &lt;p&gt;最明显的是现在画图速度变快了，不过我觉得最让人兴奋的是&lt;code&gt;guide_legend()&lt;/code&gt;和&lt;code&gt;guide_colorbar()&lt;/code&gt;两个函数，可以修改legend.&lt;/p&gt;
 
-&lt;p&gt;画图的话，加了四个函数&lt;code&gt;geom_map()&lt;/code&gt;, &lt;code&gt;geom_raster()&lt;/code&gt;,&lt;code&gt;geom_dotplot()&lt;/code&gt;和&lt;code&gt;geom_violin()&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;画图的话，加了四个函数&lt;code&gt;geom_map()&lt;/code&gt;, &lt;code&gt;geom_raster()&lt;/code&gt;,&lt;code&gt;geom_dotplot()&lt;/code&gt;和&lt;code&gt;geom_violin()&lt;/code&gt;.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>love function plot</title>
+      <link>https://guangchuangyu.github.io/cn/2011/08/love-function-plot/</link>
+      <pubDate>Sat, 06 Aug 2011 05:37:55 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2011/08/love-function-plot/</guid>
+      <description>今天在微博上看到这坑爹的方程： $ (x^2+y^2-1)^3 = {x^2} {y^3}$
+画出来如下：
+跟个屁股似的，sigh&amp;hellip;
+翻出azalea的老文：http://azaleasays.com/2008/06/18/fomula-of-love/
+用ggplot2画一下这个爱的方程：$17x^2-16|x|y+17y^2 = 225 $
+x &amp;lt;- seq(-sqrt(17), sqrt(17), 0.001) y1 &amp;lt;- 8*abs(x)/17 + 15* sqrt(17 - x^2)/17 y2 &amp;lt;- 8*abs(x)/17 - 15* sqrt(17 - x^2)/17 d &amp;lt;- data.frame(x=c(x,x),y=c(y1,y2)) require(ggplot2) p &amp;lt;- ggplot(d, aes(x,y)) p + geom_point(color=&amp;quot;red&amp;quot;)  还可以画出红心，适合今天七夕的日子。
+p + geom_line(color=&amp;quot;red&amp;quot;)  画函数图，这种事情，还是用CAS方便点。
+通过maxima来画，一条指令就行，还不用解方程：
+contour_plot(17*x^2-16*abs(x)*y+17*y^2-225, [x,-sqrt(17),sqrt(17)],[y,-15*sqrt(17)/17, sqrt(17)])  </description>
+    </item>
+    
+    <item>
+      <title>scilab三维平面绘图</title>
+      <link>https://guangchuangyu.github.io/cn/2007/05/scilab%E4%B8%89%E7%BB%B4%E5%B9%B3%E9%9D%A2%E7%BB%98%E5%9B%BE/</link>
+      <pubDate>Thu, 03 May 2007 10:27:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2007/05/scilab%E4%B8%89%E7%BB%B4%E5%B9%B3%E9%9D%A2%E7%BB%98%E5%9B%BE/</guid>
+      <description>&lt;p&gt;三维绘图可以分为两大类型：矩阵型和曲面型。&lt;/p&gt;
 
-&lt;p&gt;violin plot结合了box plot和kernel density estimate，有了它，boxplot基本可以扔了。&lt;/p&gt;
+&lt;h2 id=&#34;矩阵型&#34;&gt;矩阵型&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2012/02/violin.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;通常是声明一个矩阵，以矩阵的长宽为x,y范围，以矩阵里面的数值为高z，
+使用&lt;code&gt;plot3d(t1,t2,Z,alpha=a,theta=b)&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;t1:y轴方向的范围&lt;/li&gt;
+&lt;li&gt;t2:x轴方向的范围&lt;/li&gt;
+&lt;li&gt;Z:矩阵&lt;/li&gt;
+&lt;li&gt;alpha&lt;/li&gt;
+&lt;li&gt;theta参数用于指定角度，让图绘出来以某个特定的角度呈现出来。(optional)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;-&amp;gt;clear -&amp;gt;A=[1 2 5 4 3;0 3 2 8 6;2 4 6 7 5;2 3 4 3 1];
+-&amp;gt;t1=1:4; -&amp;gt;t2=1:5;
+//plot3d1与plot3d语法类似，能够嵌入多种颜色
+-&amp;gt;plot3d(t1,t2,A,alpha=45,theta=45);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;mesh不需要边界声明， &lt;code&gt;-&amp;gt;mesh(A);&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

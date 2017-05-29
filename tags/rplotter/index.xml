@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 21 Nov 2016 12:23:16 +0800</lastBuildDate>
-    <atom:link href="https://guangchuangyu.github.io/cn/tags/rplotter/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://guangchuangyu.github.io/cn/tags/rplotter/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>食色性也</title>
@@ -25,31 +27,7 @@
 
 &lt;p&gt;这些在R里面，都是可以的，可以的，可以的&amp;hellip;&lt;/p&gt;
 
-&lt;p&gt;下面隆重推荐一个叫rPlotter的R包，&lt;a href=&#34;https://github.com/woobe/rPlotter&#34;&gt;https://github.com/woobe/rPlotter&lt;/a&gt;，可以非常方便地在图片中抽提颜色。其实实现起来也容易，用EBImage把图片读进去，存成一个RGB的三维矩阵，通过kmeans聚类，把中心点颜色报出来就可以了。若干年前我写过用kmeans压缩图片，用的就是把颜色填充成中心点颜色，稍微把之前的代码改一改，也能实现这个颜色抽提的功能。&lt;/p&gt;
-
-&lt;p&gt;实例演示，我google了一张spider的图片，把颜色提出来，拿来画barplot：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2016/Jumping-spider.jpeg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;pal = extract_colours(&amp;quot;http://i1.mirror.co.uk/incoming/article8566552.ece/ALTERNATES/s615b/Jumping-spider.jpg&amp;quot;)
-barplot(1:5, col=pal)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2016/spider_color.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;再来一张homer simpson的图片：
-&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2016/kissing-Homer-Simpson-The-Simpsons-Marge-Simpson-_578180-20_zx1jpk.jpeg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;pal2 = extract_colours(&amp;quot;https://images.complex.com/complex/image/upload/t_article_image/kissing-Homer-Simpson-The-Simpsons-Marge-Simpson-_578180-20_zx1jpk.jpg&amp;quot;, 7)
-barplot(1:7, col=pal2)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2016/homer_color.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;之前说的各种场景，都是可以实现的，最新海报配色，你可以有！你想画图用美队来配色，可以有！拿蜘蛛小鸟来配色，可以有！甚至于拿肌肉男的肉色也可以的。下次发文章在愁配色的时候，何不搜索图片，看看有什么图片顺眼的，就拿来用了。&lt;/p&gt;
-
-&lt;p&gt;即使你不会用R画图，你也可以把这配色方案应该于M$的office中，word/excel/powerpoint都是支持自定义颜色主题的，请自行搜索 &amp;ldquo;office 自定义主题颜色&amp;rdquo;。&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>
