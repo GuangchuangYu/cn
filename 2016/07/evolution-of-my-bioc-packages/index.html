@@ -1,139 +1,252 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+  
+
+
+  
+
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.21">
+    <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
+    <title>Evolution of my BioC packages</title>
+    <meta name="author" content="Guangchuang Yu">
+    <meta name="keywords" content="">
 
-  
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
+    <link rel="icon" href="https://guangchuangyu.github.io/cn/favicon.png">
+    
 
-  
-  
-  <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-  <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-  
+    
+    <meta name="description" content="发现Youtube上有一个视频叫Evolution of clusterProfiler, 是Landon Wilkins用Gource做的。于是我也来玩一下，看一下自己这几年码代码的过程。
 
-  
-  <title>Evolution of my BioC packages</title>
+">
+    <meta property="og:description" content="发现Youtube上有一个视频叫Evolution of clusterProfiler, 是Landon Wilkins用Gource做的。于是我也来玩一下，看一下自己这几年码代码的过程。
 
-  
-  
-  <link rel="stylesheet" href="https://guangchuangyu.github.io/css/hugo-octopress.css">
+">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Evolution of my BioC packages">
+    <meta property="og:url" content="/2016/07/evolution-of-my-bioc-packages/">
+    <meta property="og:site_name" content="Hugo tranquilpeak theme">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Hugo tranquilpeak theme">
+    <meta name="twitter:description" content="发现Youtube上有一个视频叫Evolution of clusterProfiler, 是Landon Wilkins用Gource做的。于是我也来玩一下，看一下自己这几年码代码的过程。
 
-  
-  
+">
+    
+      <meta name="twitter:creator" content="@guangchuangyu">
+    
+    
 
-  
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    
+    
 
-  
-  <link href="https://guangchuangyu.github.io/favicon.png" rel="icon">
+    
+      <meta property="og:image" content="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
+    
 
-  
-  
-  
+    
+    
+    
 
-  
+    
 
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" />
+    
+    
+    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-u6mk0ojoywresbx8iepslrmmhl4stuhrsxuwhkpwrkrx7mryjcaimasnk4pi.min.css" />
+    
+    
 
-  <meta name="author" content="Guangchuang Yu">
-
-  
-  <meta name="generator" content="Hugo 0.21" />
-
-  
-  
+    
+      
 <script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
 ga('create', 'UA-77901140-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
 
+    
+    
+  </head>
 
-</head>
-<body>
-
-
-<header role="banner"><hgroup>
-  
-  <h1><a href="https://guangchuangyu.github.io/">Guangchuang Yu</a></h1>
-    <h2>a senior-in-age-but-not-senior-in-knowledge bioinformatician</h2>
-</hgroup></header>
-
-
-<nav role="navigation">
-
-<ul class="main-navigation">
-  
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://guangchuangyu.github.io/cn/">Hugo tranquilpeak theme</a>
+  </div>
   
     
-      <li><a href="https://guangchuangyu.github.io/cn/" title="Blog" >Blog</a></li>
+      <a class="header-right-picture "
+         href="https://guangchuangyu.github.io/cn/#about">
     
+    
+    
+      
+        <img class="header-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
   
-    
-      <li><a href="https://guangchuangyu.github.io/resume" title="Resume" >Resume</a></li>
-    
-  
-    
-      <li><a href="https://guangchuangyu.github.io/cn/douban" title="Douban" >Douban</a></li>
-    
-  
-    
-      <li><a href="https://guangchuangyu.github.io/cn/archive" title="Archive" >Archive</a></li>
-    
-  
-</ul>
-
-
-<ul class="subscription">
-  
-    
-        <a href="https://guangchuangyu.github.io/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss-square fa-lg"></i></a>
-    
-  
-
-</ul>
-
-
-</nav>
-
-
-<div id="main">
-  <div id="content">
-    <div>
-      <article class="hentry" role="article">
-
-        
-        
-
-<header>
-    <p class="meta">Jul 13, 2016
-         - 9 minute read 
-         - <a href="https://guangchuangyu.github.io/cn/2016/07/evolution-of-my-bioc-packages/#disqus_thread">Comments</a>
-
-        
-        
-        
-            - <a class="label" href="https://guangchuangyu.github.io/categories/r/">R </a>
-        
-    </p>
-    <h1 class="entry-title">
-         Evolution of my BioC packages 
-    </h1>
 </header>
 
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://guangchuangyu.github.io/cn/#about">
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Guangchuang Yu</h4>
+        
+          <h5 class="sidebar-profile-bio">a senior-in-age-but-not-senior-in-knowledge bioinformatician</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
 
-        <div class="entry-content">
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/GuangchuangYu" target="_blank">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
           
           
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Evolution of my BioC packages
+    </h1>
+  
+  <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2016-07-13T21:06:59&#43;08:00">
+      
+  July 13, 2016
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+
+</div>
+
+</div>
           
-          
-          <p>发现Youtube上有一个视频叫<a href="https://www.youtube.com/watch?v=MYTblx-5Yog">Evolution of clusterProfiler</a>, 是Landon Wilkins用<a href="http://gource.io/">Gource</a>做的。于是我也来玩一下，看一下自己这几年码代码的过程。</p>
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>发现Youtube上有一个视频叫<a href="https://www.youtube.com/watch?v=MYTblx-5Yog">Evolution of clusterProfiler</a>, 是Landon Wilkins用<a href="http://gource.io/">Gource</a>做的。于是我也来玩一下，看一下自己这几年码代码的过程。</p>
 
 <p></p>
 
@@ -1129,160 +1242,633 @@ var chartParams = {
 <p><strong><em>G Yu</em></strong>, QY He<sup>*</sup>. <a href="http://pubs.rsc.org/en/Content/ArticleLanding/2016/MB/C5MB00663E#!divAbstract">ReactomePA: an R/Bioconductor package for reactome pathway analysis and visualization</a>. <strong><em>Molecular BioSystems</em></strong> 2016, 12(2):477-479.</p>
 
 <p><script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script><div class="altmetric-embed" data-badge-popover="right" data-badge-type="donut" data-altmetric-id="4796667"></div></p>
-        </div>
-        
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/bioc/">BioC</a>
 
-<footer>
-  <p class="meta">
-    <span class="byline author vcard">Posted by <span class="fn">Guangchuang Yu</span></span>
-    
-    <time>Jul 13, 2016</time>
-    
-      <span class="categories">
-        Tags:
-        
-          <a class="category" href="https://guangchuangyu.github.io/tags/bioc">BioC</a>  <a class="category" href="https://guangchuangyu.github.io/tags/clusterprofiler">clusterProfiler</a>  <a class="category" href="https://guangchuangyu.github.io/tags/dose">DOSE</a>  <a class="category" href="https://guangchuangyu.github.io/tags/chipseeker">ChIPseeker</a>  <a class="category" href="https://guangchuangyu.github.io/tags/gosemsim">GOSemSim</a>  <a class="category" href="https://guangchuangyu.github.io/tags/reactomepa">ReactomePA</a>  <a class="category" href="https://guangchuangyu.github.io/tags/ggtree">ggtree</a>  
-    
-    </span>
-  </p>
+  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/clusterprofiler/">clusterProfiler</a>
 
-  
-  
+  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/dose/">DOSE</a>
 
-  
+  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/chipseeker/">ChIPseeker</a>
 
-  <p class="meta">
-    
-        <a class="basic-alignment left" href="https://guangchuangyu.github.io/cn/2016/05/%E7%AC%AC%E4%B9%9D%E5%B1%8Achinar%E4%BC%9A%E8%AE%AE%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%88%86%E4%BC%9A/" title="第九届ChinaR会议生物信息学分会">第九届ChinaR会议生物信息学分会</a>
-    
+  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/gosemsim/">GOSemSim</a>
 
-    
-      <a class="basic-alignment right" href="https://guangchuangyu.github.io/cn/2016/10/update-r-packages/" title="Update R packages">Update R packages</a>
-    
-  </p>
-  
-    
-      <div id="disqus_thread"></div>
-<script type="text/javascript">
+  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/reactomepa/">ReactomePA</a>
 
-(function() {
-    
-    
-    
-    if (window.location.hostname == "localhost")
-        return;
+  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/ggtree/">ggtree</a>
 
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    var disqus_shortname = 'gcyu';
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-    
-  
-</footer>
-
-      </article>
-    </div>
-    
-
-<aside class="sidebar thirds">
-  <section class="first odd">
-
-    
-
-    <p>
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  <nav>
+    <ul class="post-actions post-action-nav">
       
-    </p>
-  </section>
-
-
-
-  
-  <ul class="sidebar-nav">
-    <li class="sidebar-nav-item">
-      <a target="_blank" href="https://github.com/GuangchuangYu" title="https://github.com/GuangchuangYu"><i class="fa fa-github fa-3x"></i></a>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2016/10/update-r-packages/" data-tooltip="Update R packages">
+          
+            <i class="fa fa-angle-left"></i>
+            <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+          </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2016/05/%E7%AC%AC%E4%B9%9D%E5%B1%8Achinar%E4%BC%9A%E8%AE%AE%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%88%86%E4%BC%9A/" data-tooltip="第九届ChinaR会议生物信息学分会">
+          
+            <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </li>
       
-      
-      <a target="_blank" href="https://twitter.com/guangchuangyu" title="https://twitter.com/guangchuangyu"><i class="fa fa-twitter fa-3x"></i></a>
-       
-      <a target="_blank" href="https://www.linkedin.com/in/guangchuang-yu-86820120" title="https://www.linkedin.com/in/guangchuang-yu-86820120"><i class="fa fa-linkedin fa-3x"></i></a>
-      
-      
-      <a target="_blank" href="https://www.facebook.com/guangchuang.yu" title="https://www.facebook.com/guangchuang.yu"><i class="fa fa-facebook fa-3x"></i></a>
-      
-      
-
+    </ul>
+  </nav>
+  <ul class="post-actions post-action-share">
+    
+      <li class="post-action hide-lg hide-md hide-sm">
+        <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+          <i class="fa fa-share-alt"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2016%2f07%2fevolution-of-my-bioc-packages%2f">
+          <i class="fa fa-google-plus"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2016%2f07%2fevolution-of-my-bioc-packages%2f">
+          <i class="fa fa-facebook-official"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2016%2f07%2fevolution-of-my-bioc-packages%2f">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
     
     
+      <li class="post-action">
+        <a class="post-action-btn btn btn--default" href="#disqus_thread">
+          <i class="fa fa-comment-o"></i>
+        </a>
+      </li>
+    
+    <li class="post-action">
+      
+        <a class="post-action-btn btn btn--default" href="#">
+      
+        <i class="fa fa-list"></i>
+      </a>
     </li>
   </ul>
+</div>
 
-  
 
-  
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2017 Guangchuang Yu. All Rights Reserved
+  </span>
+</footer>
 
-  
-  
-  
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  <nav>
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2016/10/update-r-packages/" data-tooltip="Update R packages">
+          
+            <i class="fa fa-angle-left"></i>
+            <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+          </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2016/05/%E7%AC%AC%E4%B9%9D%E5%B1%8Achinar%E4%BC%9A%E8%AE%AE%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%88%86%E4%BC%9A/" data-tooltip="第九届ChinaR会议生物信息学分会">
+          
+            <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+  <ul class="post-actions post-action-share">
     
-      <section class="even">
-        <h1>Recent Posts</h1>
-        <ul id="recent_posts">
-          
-            <li class="post">
-              <a href="https://guangchuangyu.github.io/cn/2017/05/viziometric/">viziometric</a>
-            </li>
-          
-            <li class="post">
-              <a href="https://guangchuangyu.github.io/cn/2017/05/enrichdavid%E6%94%AF%E6%8C%81%E8%87%AA%E5%AE%9A%E4%B9%89%E8%83%8C%E6%99%AF/">enrichDAVID支持自定义背景</a>
-            </li>
-          
-            <li class="post">
-              <a href="https://guangchuangyu.github.io/cn/2017/05/bootstrap-value%E5%88%86%E6%AE%B5%E6%A0%87%E8%AE%B0/">bootstrap value分段标记</a>
-            </li>
-          
-            <li class="post">
-              <a href="https://guangchuangyu.github.io/cn/2017/04/annotate-tree-with-user-specific-data/">annotate tree with user specific data</a>
-            </li>
-          
-            <li class="post">
-              <a href="https://guangchuangyu.github.io/cn/2017/04/%E5%85%AC%E5%8F%B7%E7%8B%97%E7%9A%84%E7%A6%8F%E9%9F%B3/">公号狗的福音</a>
-            </li>
-          
-            <li class="post">
-              <a href="https://guangchuangyu.github.io/cn/2017/04/%E6%9D%A5%E8%87%AAr%E7%9A%84%E6%A1%8C%E9%9D%A2%E6%8F%90%E9%86%92/">来自R的桌面提醒</a>
-            </li>
-          
-            <li class="post">
-              <a href="https://guangchuangyu.github.io/cn/2017/04/ggimageggplot2%E4%B8%AD%E6%84%89%E5%BF%AB%E5%9C%B0%E4%BD%BF%E7%94%A8%E5%9B%BE%E7%89%87/">ggimage：ggplot2中愉快地使用图片</a>
-            </li>
-          
-            <li class="post">
-              <a href="https://guangchuangyu.github.io/cn/2017/04/generate-biobabble-banner-using-ggimage/">generate biobabble banner using ggimage</a>
-            </li>
-          
-        </ul>
-      </section>
+      <li class="post-action hide-lg hide-md hide-sm">
+        <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+          <i class="fa fa-share-alt"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2016%2f07%2fevolution-of-my-bioc-packages%2f">
+          <i class="fa fa-google-plus"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2016%2f07%2fevolution-of-my-bioc-packages%2f">
+          <i class="fa fa-facebook-official"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2016%2f07%2fevolution-of-my-bioc-packages%2f">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
     
-  
+    
+      <li class="post-action">
+        <a class="post-action-btn btn btn--default" href="#disqus_thread">
+          <i class="fa fa-comment-o"></i>
+        </a>
+      </li>
+    
+    <li class="post-action">
+      
+        <a class="post-action-btn btn btn--default" href="#">
+      
+        <i class="fa fa-list"></i>
+      </a>
+    </li>
+  </ul>
+</div>
 
-</aside>
 
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <ul class="share-options">
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2016%2f07%2fevolution-of-my-bioc-packages%2f">
+        <i class="fa fa-google-plus"></i><span>Share on Google Plus</span>
+      </a>
+    </li>
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2016%2f07%2fevolution-of-my-bioc-packages%2f">
+        <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+      </a>
+    </li>
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2016%2f07%2fevolution-of-my-bioc-packages%2f">
+        <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Guangchuang Yu</h4>
+    
+      <div id="about-card-bio">a senior-in-age-but-not-senior-in-knowledge bioinformatician</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        PhD student
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Hong Kong
+      </div>
+    
   </div>
 </div>
 
-<footer role="contentinfo">
-  <p>Copyright &copy; 2017 Guangchuang Yu - <a href="https://guangchuangyu.github.io/license/">License</a> -
-  <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
-</p>
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Search" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no post found</div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/05/viziometric/">
+                <h3 class="media-heading">viziometric</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>收到了<a href="http://viziometrics.org">Viziometric</a>的邮件：</p>
 
-</footer>
+<p><img src="https://guangchuangyu.github.io/blog_images/screenshots/VizioMetric/Screenshot 2017-05-19 19.48.20.png" alt="" /></p>
+
+<p>说要我给自己的一篇文章选一张图做为代表，我顺手点开，没想到这是一款神器啊！这是由University of Washington做Computer Vision的研究生做的一个<strong>学术图片</strong>搜索引擎，去年被Economist和MIT Technology报道过。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/05/enrichdavid%E6%94%AF%E6%8C%81%E8%87%AA%E5%AE%9A%E4%B9%89%E8%83%8C%E6%99%AF/">
+                <h3 class="media-heading">enrichDAVID支持自定义背景</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>虽然我不喜欢DAVID，但很多用户喜欢，所以clusterProfiler也支持了，最近github上又有人<a href="https://github.com/GuangchuangYu/clusterProfiler/issues/87">要求支持自定义背景</a>。</p>
+
+<blockquote>
+<p>Dear Guangchuang,</p>
+
+<p>I am using clusterProfiler in Kegg pathway enrichment analysis, it is useful and nice. I am looking for a function which accept background and has ability to deal with Ensembl gene ID.</p>
+
+<p>In a function enrichDAVID it can takes ensembl gene id as an input format, but not allows to enter background.
+<code>enrichDAVID(gene = gene, idType=&quot;ENSEMBL_GENE_ID&quot;, annotation=&quot;KEGG_PATHWAY&quot;, species= &quot;hsa&quot;)</code></p>
+
+<p>Other command enrichKEGG has a background input but only takes entrez gene id,
+<code>enrichKEGG(gene, organism = &quot;hsa&quot;, keyType = &quot;kegg&quot;, universe)</code></p>
+
+<p>I have tried to convert my ensembl gene IDs to entrez gene id, but some ensembl gene IDs represent more than one entrez gene ID.
+I downloaded KEGG pathway dataset to apply fisher exact test. however, genes are in entrez ID and i am still dont know how to convert.</p>
+</blockquote>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/05/bootstrap-value%E5%88%86%E6%AE%B5%E6%A0%87%E8%AE%B0/">
+                <h3 class="media-heading">bootstrap value分段标记</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>想要分段标记bootstrap，比如<code>0-70</code>, <code>70-90</code>, <code>90-100</code>之类的。这个对于ggtree来说，太简单。</p>
+
+<p>首先我们要读树，用<code>treeio</code>的<code>read.newick</code>，它和<code>read.tree</code>的不同之处是，加入了参数<code>node.label</code>，当<code>node.label</code>存的不是<code>label</code>，而是<code>bootstrap</code>等数字型的时候，你可以传入<code>node.label='support'</code>，这样它会把node label解析为support value，另存为树注释数据，而不是和tip label混在一起。label变量只能存为字符型，因为和tip label混了，而字符型会让数字操作稍微复杂点。所以我们要用<code>read.newick</code>。</p>
+
+<pre><code>tree &lt;- read.newick(&quot;RMI.phy_phyml_tree_rooted_labeled.txt&quot;, node.label='support')
+root &lt;- getRoot(tree@phylo)
+
+p &lt;- ggtree(tree, color=&quot;black&quot;, size=1.5, linetype=1,  ladderize=TRUE) + 
+     ggtitle(label=&quot;Figure A&quot;) + 
+    geom_tiplab(size=4.5, hjust = -0.060, fontface=&quot;bold&quot;) +  xlim(0, 0.09)
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/04/annotate-tree-with-user-specific-data/">
+                <h3 class="media-heading">annotate tree with user specific data</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/Screen Shot 2017-04-29 at 1.46.28 PM.png" alt="" /></p>
+
+<p>最新的一个问题，大致讲他有两个trait, A和B，想拿A来给label上色，B来画热图。</p>
+
+<p>加载用户数据我们有<code>%&lt;+%</code>操作符，热图有<code>gheatmap</code>函数。</p>
+
+<p>我给了他一个简单的例子：</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/04/%E5%85%AC%E5%8F%B7%E7%8B%97%E7%9A%84%E7%A6%8F%E9%9F%B3/">
+                <h3 class="media-heading">公号狗的福音</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>苹果和企鹅分赃没谈好，反正林子大了，就不顾小鸟的死活！取消了iOS的赞赏功能，一个个觉得错过了一个亿，我真不知道原来你们的赞赏有这么多！我半年来得到的还不够我的日薪多。虽然少得可怜，但我还是及时地在当天给出方案来吸引眼球，创作了一个绿色的赞赏按纽。</p>
+
+<p>我的文章排版都是<a href="https://guangchuangyu.github.io/cn/2017/01/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E6%96%87markdown%E4%B8%80%E9%94%AE%E6%8E%92%E7%89%88/">markdown</a>，markdown是外部驱动的，要什么效果，CSS话事。这个赞赏按纽无非是个链接，赞赏二字链接到转帐二维码，而要实现按纽的效果，可以专门定义一个style来实现。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/04/%E6%9D%A5%E8%87%AAr%E7%9A%84%E6%A1%8C%E9%9D%A2%E6%8F%90%E9%86%92/">
+                <h3 class="media-heading">来自R的桌面提醒</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><strong>notifier</strong>包实现了跨平台的桌面提醒功能，当然它是调用了外部的命令，比如windows使用了<strong>toaster</strong>，老版本windows使用的是<strong>notifu</strong>，在linux下使用<strong>notify-send</strong>，而在OSX下，则调用了<strong>terminal-notifier</strong>，通过了简单的封装之后，就可以给桌面发布消息提醒了。</p>
+
+<p>比如：</p>
+
+<pre><code class="language-r">library(notifier)
+notify(
+  title = &quot;15 Packages out of date&quot;,
+  msg = c(&quot;You can run update.packages() to update them.&quot;,
+  &quot;Outdated packages: Boom colorspace desc memuse networkD3&quot;,
+  &quot;pbapply revealjs rgl rmdformats timevis and 5 more&quot;)
+)
+</code></pre>
+
+<p>​
+效果如下：</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/04/ggimageggplot2%E4%B8%AD%E6%84%89%E5%BF%AB%E5%9C%B0%E4%BD%BF%E7%94%A8%E5%9B%BE%E7%89%87/">
+                <h3 class="media-heading">ggimage：ggplot2中愉快地使用图片</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><h1 id="导言">导言</h1>
+
+<p>本文介绍了<strong>ggimage</strong>包，允许在<strong>ggplot2</strong>作图时嵌入图片，并支持<code>aes</code>映射，可以把离散型变量映射到不同图片。目前有几个包可以使用图片嵌入做图，但都是针对特定的场景，这里使用<strong>ggimage</strong>来展示在这些特定领域里的应用，<strong>ggimage</strong>的设计是通用的，并不被特定场景所限定，文末又介绍了用R图标来画出R、用饼图来画气泡图等实例。</p>
+
+<h1 id="图上嵌图片">图上嵌图片</h1>
+
+<p>R 基础图形库（base graphics）可以在做图的时候嵌入图片，使用的是<code>graphics::rasterImage</code>：</p>
+
+<pre><code class="language-r">imgurl &lt;- &quot;http://phylopic.org/assets/images/submissions/295cd9f7-eef2-441e-ba7e-40c772ca7611.256.png&quot;
+library(EBImage)
+x &lt;- readImage(imgurl)
+plot(1, type = &quot;n&quot;, xlab = &quot;&quot;, ylab = &quot;&quot;, xlim = c(0, 8), ylim = c(0, 8))
+rasterImage(x, 2, 2, 6, 4)
+</code></pre>
+
+<p><img src="https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/raster.png" alt="R绘图嵌入图片演示" /></p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/04/generate-biobabble-banner-using-ggimage/">
+                <h3 class="media-heading">generate biobabble banner using ggimage</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><img src="https://guangchuangyu.github.io/blog_images/biobabble_banner.png" alt="" /></p>
+
+<p>制作了一个banner，用来插入到文后，方便阅读到最后的时候，直接扫描关注。</p>
+
+<p>这图当然用PS一下就可以得到，无非是拼图和加点文字。但做为天天写代码画图的人来说，必然是要纯代码来产生的，而且做科学的人，讲究自动化、可重复性。</p>
+
+<p>就像有些人不理解data scentist为什么讨厌excel一样，觉得无非是工具，没什么好搞阵营的。试想一下，一个分析流程中间有一步要用到excel，需要人工去点点鼠标，这对于讲究自动化、可重复性的data scientist来说是不可接受的。</p>
+
+<h2 id="加载中文字体">加载中文字体</h2>
+
+<p>为了打几个中文字，需要先加载字体，这里我用showtext。</p>
+
+<pre><code class="language-r">require(showtext)
+font.add(&quot;heiti&quot;, &quot;/Library/Fonts/华文黑体.ttf&quot;)
+showtext.auto()
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/04/ggplot2%E5%AD%97%E4%BD%93%E6%BA%A2%E5%87%BA%E7%9A%84%E9%82%A3%E7%82%B9%E7%A0%B4%E4%BA%8B/">
+                <h3 class="media-heading">ggplot2字体溢出的那点破事</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>比如下面的代码：</p>
+
+<pre><code>require(ggplot2)
+d &lt;- data.frame(x=c(0, 0.002, 0.00575), y = 1:3)
+p &lt;- ggplot(d, aes(x, y)) + geom_point() + xlab(NULL) + ylab(NULL)
+print(p)
+</code></pre>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/geom_text_files/figure-markdown_strict/unnamed-chunk-1-1.png" alt="" /></p>
+
+<p>上面图中x轴的文本<strong>0.006</strong>，这个数字中的<strong>6</strong>几乎看不到，因为一半过界了。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/03/%E5%85%B3%E4%BA%8Echipseq%E6%B3%A8%E9%87%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/">
+                <h3 class="media-heading">关于ChIPseq注释的几个问题</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><h2 id="为什么我要用某个基因组版本">为什么我要用某个基因组版本？</h2>
+
+<p>在上一篇文章中，我用了<code>TxDb.Hsapiens.UCSC.hg19.knownGene</code>。 <strong>hg19</strong>的<strong>TxDb</strong>, 或者有人就要问了，为什么不用<strong>hg38</strong>？</p>
+
+<p>这个问题，不是说要用那一个，不能用那一个。而是你必须得用某一个，这取决于你最初<strong>fastq</strong>用BWA/Bowtie2比对于某个版本的基因组，你最初用了某个版本，后面就得用相应的版本，不能混，因为不同版本的位置信息有所不同。</p>
+
+<p>当然如果要（贵圈喜欢的）强搞，也不是不可以，你得有chain file，先跑个liftOver，实际上就是在两个基因组版本之间做了位置转换。</p>
+
+<h2 id="为什么说-chipseeker-支持所有物种">为什么说<strong>ChIPseeker</strong>支持所有物种？</h2>
+
+<p>背景注释信息用了<strong>TxDb</strong>就能保证所有物种都支持了？我去哪里找我要的<strong>TxDb</strong>?</p>
+
+<p>我写<strong>ChIPseeker</strong>的时候，我做的物种是人，<strong>ChIPseeker</strong>在线一周就有剑桥大学的人写信跟我说在用<strong>ChIPseeker</strong>做果蝇，在<a href="https://guangchuangyu.github.io/cn/2017/03/bed%E6%96%87%E4%BB%B6/">BED文件</a>一文中，也提到了最近有人在Biostars上问用<strong>ChIPseeker</strong>做裂殖酵母。</p>
+
+<p>首先Bioconductor提供了30个TxDb包，可以供我们使用，这当然只能覆盖到一小部分物种，我们的物种基因组信息，多半要从UCSC或者Ensembl获得，我敢说支持所有物种，就是因为UCSC和ensembl上所有的基因组都可以被<strong>ChIPseeker</strong>支持。</p>
+
+<p>因为我们可以使用<strong>GenomicFeatures</strong>包函数来制作TxDb对象：</p>
+
+<ul>
+<li>makeTxDbFromUCSC： 通过UCSC在线制作TxDb</li>
+<li>makeTxDbFromBiomart: 通过ensembl在线制作TxDb</li>
+<li>makeTxDbFromGRanges：通过GRanges对象制作TxDb</li>
+<li>makeTxDbFromGFF：通过解析GFF文件制作TxDb</li>
+</ul>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no post found"
+         data-message-one="1 post found"
+         data-message-other="{n} posts found">
+         83 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('https://guangchuangyu.github.io/cn/images/cover.jpg');"></div>
+  
 
 
-</body>
+    
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.js"></script>
+
+
+<script src="https://guangchuangyu.github.io/cn/js/script-wl33z0n6ocaypepiqrazthtivfrliqijej4rq8ek8gvrv1awftmgjuv8k4zc.min.js"></script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight').each(function(i, block) {
+    var code = "";
+    hljs.highlightAuto(block.innerText).value.split(/\r\n|\r|\n/).forEach(function(line) {
+      code += "<span class=\"line\">" + line + "</span><br>";
+    });
+    if (code.length > 0) {
+      block.innerHTML = code;  
+    }
+  });
+  $('pre > code').each(function(i, block) {
+    $(this).addClass('codeblock');
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/guangchuangyu.github.io\/cn\/2016\/07\/evolution-of-my-bioc-packages\/';
+          
+            this.page.identifier = '\/2016\/07\/evolution-of-my-bioc-packages\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'gcyu';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+
+    
+  </body>
 </html>
 
