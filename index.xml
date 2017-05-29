@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Guangchuang Yu</title>
+    <title>Hugo tranquilpeak theme</title>
     <link>https://guangchuangyu.github.io/cn/</link>
-    <description>Recent content on Guangchuang Yu</description>
+    <description>Recent content on Hugo tranquilpeak theme</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 20 May 2017 10:40:22 +0800</lastBuildDate>
@@ -1662,24 +1662,6 @@ DeviceType=0x0, DeviceId=0x0
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Archive page</title>
-      <link>https://guangchuangyu.github.io/cn/archive/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/archive/</guid>
-      <description>Blog archive</description>
-    </item>
-    
-    <item>
-      <title>douban</title>
-      <link>https://guangchuangyu.github.io/cn/douban/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/douban/</guid>
-      <description></description>
     </item>
     
   </channel>
