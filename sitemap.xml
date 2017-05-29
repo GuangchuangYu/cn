@@ -343,6 +343,16 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2008/11/basic-principle-of-biological-experiment/</loc>
+    <lastmod>2008-11-25T00:53:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/2008/10/blind-approach/</loc>
+    <lastmod>2008-10-17T00:53:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2008/09/%E5%8D%9A%E5%AE%A2%E8%BD%ACwordpress/</loc>
     <lastmod>2008-09-30T16:20:43+08:00</lastmod>
   </url>
@@ -632,6 +642,12 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/experiment/</loc>
+    <lastmod>2008-11-25T00:53:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/tags/figlet/</loc>
     <lastmod>2016-12-13T00:53:00+08:00</lastmod>
     <priority>0</priority>
@@ -808,6 +824,12 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/paper/</loc>
     <lastmod>2012-09-10T14:53:35+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/paradox/</loc>
+    <lastmod>2008-10-17T00:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
