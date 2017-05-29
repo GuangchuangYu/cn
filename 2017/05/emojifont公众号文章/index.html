@@ -1,0 +1,895 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+  
+
+
+  
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.21">
+    <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
+    <title>emojifont公众号文章</title>
+    <meta name="author" content="Guangchuang Yu">
+    <meta name="keywords" content="">
+
+    <link rel="icon" href="https://guangchuangyu.github.io/cn/favicon.png">
+    
+
+    
+    <meta name="description" content="最近看一个画图的公众号，基本上通篇是代码，最后上个图，我觉得作者就只想表达「哇，我好牛逼」，读者看完可能也只是发出一句「好牛逼」，然后就没有然后了。且不说他读的数据是他电脑上的，你拿了代码也不好重复，最主要是代码死长，缺少解释！
+
+我的写作风格则不一样，一篇文章我一般只会讲解一个点，力图讲清楚，让别人看明白。比如bootstrap分段标记这一篇，代码足够短且简单，但我还是分模块来讲，一行画树，一行做bootstrap分段标记，最后一行修图，虽然三行，但按功能分开，再加上文字解释，读懂是必须的。再比如纯代码生成banner​也是分成加载中文字体、读图、图上嵌图三块。即使简单的代码，也要分模块配以文字解析。
+
+我每次只讲解一个点，但有些知识点是关联的，所以有可能会有断片的情况出现，比如之前写phylomoji，就有同学表示没看懂，这个用到了ggtree和emojifont，两个包我都写过很多文介绍，所以在写phylomoji时都没有介绍，如果没看过以前文章的人，可能就不清楚了。所以呢，适当的时候，汇总一下，是很有必要的。
+
+emojifont包我基本上都介绍完了，如果你能通读这几篇文章，那么你必然能够用emoji来作图装逼，能够用emoji来娱乐自己，就像我用emoji给自己快乐一样！
+
+">
+    <meta property="og:description" content="最近看一个画图的公众号，基本上通篇是代码，最后上个图，我觉得作者就只想表达「哇，我好牛逼」，读者看完可能也只是发出一句「好牛逼」，然后就没有然后了。且不说他读的数据是他电脑上的，你拿了代码也不好重复，最主要是代码死长，缺少解释！
+
+我的写作风格则不一样，一篇文章我一般只会讲解一个点，力图讲清楚，让别人看明白。比如bootstrap分段标记这一篇，代码足够短且简单，但我还是分模块来讲，一行画树，一行做bootstrap分段标记，最后一行修图，虽然三行，但按功能分开，再加上文字解释，读懂是必须的。再比如纯代码生成banner​也是分成加载中文字体、读图、图上嵌图三块。即使简单的代码，也要分模块配以文字解析。
+
+我每次只讲解一个点，但有些知识点是关联的，所以有可能会有断片的情况出现，比如之前写phylomoji，就有同学表示没看懂，这个用到了ggtree和emojifont，两个包我都写过很多文介绍，所以在写phylomoji时都没有介绍，如果没看过以前文章的人，可能就不清楚了。所以呢，适当的时候，汇总一下，是很有必要的。
+
+emojifont包我基本上都介绍完了，如果你能通读这几篇文章，那么你必然能够用emoji来作图装逼，能够用emoji来娱乐自己，就像我用emoji给自己快乐一样！
+
+">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="emojifont公众号文章">
+    <meta property="og:url" content="/2017/05/emojifont%E5%85%AC%E4%BC%97%E5%8F%B7%E6%96%87%E7%AB%A0/">
+    <meta property="og:site_name" content="Guangchuang Yu">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Guangchuang Yu">
+    <meta name="twitter:description" content="最近看一个画图的公众号，基本上通篇是代码，最后上个图，我觉得作者就只想表达「哇，我好牛逼」，读者看完可能也只是发出一句「好牛逼」，然后就没有然后了。且不说他读的数据是他电脑上的，你拿了代码也不好重复，最主要是代码死长，缺少解释！
+
+我的写作风格则不一样，一篇文章我一般只会讲解一个点，力图讲清楚，让别人看明白。比如bootstrap分段标记这一篇，代码足够短且简单，但我还是分模块来讲，一行画树，一行做bootstrap分段标记，最后一行修图，虽然三行，但按功能分开，再加上文字解释，读懂是必须的。再比如纯代码生成banner​也是分成加载中文字体、读图、图上嵌图三块。即使简单的代码，也要分模块配以文字解析。
+
+我每次只讲解一个点，但有些知识点是关联的，所以有可能会有断片的情况出现，比如之前写phylomoji，就有同学表示没看懂，这个用到了ggtree和emojifont，两个包我都写过很多文介绍，所以在写phylomoji时都没有介绍，如果没看过以前文章的人，可能就不清楚了。所以呢，适当的时候，汇总一下，是很有必要的。
+
+emojifont包我基本上都介绍完了，如果你能通读这几篇文章，那么你必然能够用emoji来作图装逼，能够用emoji来娱乐自己，就像我用emoji给自己快乐一样！
+
+">
+    
+      <meta name="twitter:creator" content="@guangchuangyu">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
+    
+
+    
+    
+    
+
+    
+
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" />
+    
+    
+    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-u6mk0ojoywresbx8iepslrmmhl4stuhrsxuwhkpwrkrx7mryjcaimasnk4pi.min.css" />
+    
+    
+
+    
+      
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-77901140-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://guangchuangyu.github.io/cn/">Guangchuang Yu</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://guangchuangyu.github.io/cn/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://guangchuangyu.github.io/cn/#about">
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Guangchuang Yu</h4>
+        
+          <h5 class="sidebar-profile-bio">a senior-in-age-but-not-senior-in-knowledge bioinformatician</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/GuangchuangYu" target="_blank">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      emojifont公众号文章
+    </h1>
+  
+  <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-05-28T15:10:00&#43;08:00">
+      
+  May 28, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
+    
+  
+
+
+</div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>最近看一个画图的公众号，基本上通篇是代码，最后上个图，我觉得作者就只想表达「哇，我好牛逼」，读者看完可能也只是发出一句「好牛逼」，然后就没有然后了。且不说他读的数据是他电脑上的，你拿了代码也不好重复，最主要是代码死长，缺少解释！</p>
+
+<p>我的写作风格则不一样，一篇文章我一般只会讲解一个点，力图讲清楚，让别人看明白。比如<a href="http://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484186&amp;idx=1&amp;sn=d41ee81398a8c18d07e3b1ffe680d521&amp;chksm=ec43b25ddb343b4b87254521c6c134513a3b3535d28064d2bf71d37f9183948895056151c8d0&amp;scene=21#wechat_redirect">bootstrap分段标记</a>这一篇，代码足够短且简单，但我还是分模块来讲，一行画树，一行做bootstrap分段标记，最后一行修图，虽然三行，但按功能分开，再加上文字解释，读懂是必须的。再比如<a href="http://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484095&amp;idx=1&amp;sn=e98fb2e95cd7d2775a5611ab076fdeb5&amp;chksm=ec43b3f8db343aee763e85b21b4fcf26b36049f0ea48066d65f86ee9895073d0c8e010f4a7ee&amp;scene=21#wechat_redirect">纯代码生成banner​</a>也是分成加载中文字体、读图、图上嵌图三块。即使简单的代码，也要分模块配以文字解析。</p>
+
+<p>我每次只讲解一个点，但有些知识点是关联的，所以有可能会有断片的情况出现，比如之前写phylomoji，就有同学表示没看懂，这个用到了ggtree和emojifont，两个包我都写过很多文介绍，所以在写phylomoji时都没有介绍，如果没看过以前文章的人，可能就不清楚了。所以呢，适当的时候，汇总一下，是很有必要的。</p>
+
+<p>emojifont包我基本上都介绍完了，如果你能通读这几篇文章，那么你必然能够用emoji来作图装逼，能够用emoji来娱乐自己，就像我用emoji给自己快乐一样！</p>
+
+<p></p>
+
+<p>​<img src="https://guangchuangyu.github.io/blog_images/2017/067b5f31-45ec-467a-bcc0-bab27f1a7450.jpeg" alt="" />
+​
+​</p>
+
+<ul>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247483847&amp;idx=1&amp;sn=f9d4986aa73b9a2c2ae111b5293e4f0e&amp;chksm=ec43b080db3439969a7737fe8f2e4d9d78015070fb9d8536eb243803ae32587c8e561a90c05e&amp;scene=21#wechat_redirect">emojifont包</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247483976&amp;idx=1&amp;sn=61cb87066fd6aea9850b266ccaeca52d&amp;chksm=ec43b30fdb343a191587cf3dd04ba5e8b22ac337abdf3066ec0d563a78359b2e9937cded60b2&amp;scene=21#wechat_redirect">画❤️装geek什么的，都弱爆了！😜</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484047&amp;idx=1&amp;sn=eabe5c8cfe67c4a18ee3104649611f56&amp;chksm=ec43b3c8db343adeb217f72b40eefab93875500c3fff1999e4037cdf7baae741eb582215c9b7&amp;scene=21#wechat_redirect">emojifont新功能（有视频哦）</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484188&amp;idx=1&amp;sn=9367c738c23cd9d09505b7a3172fc601&amp;chksm=ec43b25bdb343b4db0f4f7f4db764a56cdb2df6b16dddfe6659a06c21fbd0c674bed658a34c3&amp;scene=21#wechat_redirect">phylomoji：用emoji画进化树</a></li>
+</ul>
+
+<p>请开启你的脑洞，如果有好的作品，也请与我分享 -,-</p>
+
+<p>​<img src="https://guangchuangyu.github.io/blog_images/R/emojifont/WechatIMG5.jpeg" alt="" />
+​
+​<img src="https://guangchuangyu.github.io/blog_images/R/emojifont/WechatIMG6.jpeg" alt="" /></p>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/emoji/">emoji</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  <nav>
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+            <i class="fa fa-angle-left"></i>
+            <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+          </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2017/05/viziometric/" data-tooltip="viziometric">
+          
+            <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+  <ul class="post-actions post-action-share">
+    
+      <li class="post-action hide-lg hide-md hide-sm">
+        <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+          <i class="fa fa-share-alt"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f05%2femojifont%25E5%2585%25AC%25E4%25BC%2597%25E5%258F%25B7%25E6%2596%2587%25E7%25AB%25A0%2f">
+          <i class="fa fa-google-plus"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f05%2femojifont%25E5%2585%25AC%25E4%25BC%2597%25E5%258F%25B7%25E6%2596%2587%25E7%25AB%25A0%2f">
+          <i class="fa fa-facebook-official"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f05%2femojifont%25E5%2585%25AC%25E4%25BC%2597%25E5%258F%25B7%25E6%2596%2587%25E7%25AB%25A0%2f">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+    
+    
+      <li class="post-action">
+        <a class="post-action-btn btn btn--default" href="#disqus_thread">
+          <i class="fa fa-comment-o"></i>
+        </a>
+      </li>
+    
+    <li class="post-action">
+      
+        <a class="post-action-btn btn btn--default" href="#">
+      
+        <i class="fa fa-list"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2017 Guangchuang Yu. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  <nav>
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+            <i class="fa fa-angle-left"></i>
+            <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+          </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2017/05/viziometric/" data-tooltip="viziometric">
+          
+            <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+  <ul class="post-actions post-action-share">
+    
+      <li class="post-action hide-lg hide-md hide-sm">
+        <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+          <i class="fa fa-share-alt"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f05%2femojifont%25E5%2585%25AC%25E4%25BC%2597%25E5%258F%25B7%25E6%2596%2587%25E7%25AB%25A0%2f">
+          <i class="fa fa-google-plus"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f05%2femojifont%25E5%2585%25AC%25E4%25BC%2597%25E5%258F%25B7%25E6%2596%2587%25E7%25AB%25A0%2f">
+          <i class="fa fa-facebook-official"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f05%2femojifont%25E5%2585%25AC%25E4%25BC%2597%25E5%258F%25B7%25E6%2596%2587%25E7%25AB%25A0%2f">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+    
+    
+      <li class="post-action">
+        <a class="post-action-btn btn btn--default" href="#disqus_thread">
+          <i class="fa fa-comment-o"></i>
+        </a>
+      </li>
+    
+    <li class="post-action">
+      
+        <a class="post-action-btn btn btn--default" href="#">
+      
+        <i class="fa fa-list"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <ul class="share-options">
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f05%2femojifont%25E5%2585%25AC%25E4%25BC%2597%25E5%258F%25B7%25E6%2596%2587%25E7%25AB%25A0%2f">
+        <i class="fa fa-google-plus"></i><span>Share on Google Plus</span>
+      </a>
+    </li>
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f05%2femojifont%25E5%2585%25AC%25E4%25BC%2597%25E5%258F%25B7%25E6%2596%2587%25E7%25AB%25A0%2f">
+        <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+      </a>
+    </li>
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f05%2femojifont%25E5%2585%25AC%25E4%25BC%2597%25E5%258F%25B7%25E6%2596%2587%25E7%25AB%25A0%2f">
+        <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Guangchuang Yu</h4>
+    
+      <div id="about-card-bio">a senior-in-age-but-not-senior-in-knowledge bioinformatician</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        PhD student
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Hong Kong
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Search" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no post found</div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/05/emojifont%E5%85%AC%E4%BC%97%E5%8F%B7%E6%96%87%E7%AB%A0/">
+                <h3 class="media-heading">emojifont公众号文章</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>最近看一个画图的公众号，基本上通篇是代码，最后上个图，我觉得作者就只想表达「哇，我好牛逼」，读者看完可能也只是发出一句「好牛逼」，然后就没有然后了。且不说他读的数据是他电脑上的，你拿了代码也不好重复，最主要是代码死长，缺少解释！</p>
+
+<p>我的写作风格则不一样，一篇文章我一般只会讲解一个点，力图讲清楚，让别人看明白。比如<a href="http://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484186&amp;idx=1&amp;sn=d41ee81398a8c18d07e3b1ffe680d521&amp;chksm=ec43b25ddb343b4b87254521c6c134513a3b3535d28064d2bf71d37f9183948895056151c8d0&amp;scene=21#wechat_redirect">bootstrap分段标记</a>这一篇，代码足够短且简单，但我还是分模块来讲，一行画树，一行做bootstrap分段标记，最后一行修图，虽然三行，但按功能分开，再加上文字解释，读懂是必须的。再比如<a href="http://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484095&amp;idx=1&amp;sn=e98fb2e95cd7d2775a5611ab076fdeb5&amp;chksm=ec43b3f8db343aee763e85b21b4fcf26b36049f0ea48066d65f86ee9895073d0c8e010f4a7ee&amp;scene=21#wechat_redirect">纯代码生成banner​</a>也是分成加载中文字体、读图、图上嵌图三块。即使简单的代码，也要分模块配以文字解析。</p>
+
+<p>我每次只讲解一个点，但有些知识点是关联的，所以有可能会有断片的情况出现，比如之前写phylomoji，就有同学表示没看懂，这个用到了ggtree和emojifont，两个包我都写过很多文介绍，所以在写phylomoji时都没有介绍，如果没看过以前文章的人，可能就不清楚了。所以呢，适当的时候，汇总一下，是很有必要的。</p>
+
+<p>emojifont包我基本上都介绍完了，如果你能通读这几篇文章，那么你必然能够用emoji来作图装逼，能够用emoji来娱乐自己，就像我用emoji给自己快乐一样！</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/05/viziometric/">
+                <h3 class="media-heading">viziometric</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>收到了<a href="http://viziometrics.org">Viziometric</a>的邮件：</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/screenshots/VizioMetric/Screenshot 2017-05-19 19.48.20.png" alt="" /></p>
+
+<p>说要我给自己的一篇文章选一张图做为代表，我顺手点开，没想到这是一款神器啊！这是由University of Washington做Computer Vision的研究生做的一个<strong>学术图片</strong>搜索引擎，去年被Economist和MIT Technology报道过。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/05/enrichdavid%E6%94%AF%E6%8C%81%E8%87%AA%E5%AE%9A%E4%B9%89%E8%83%8C%E6%99%AF/">
+                <h3 class="media-heading">enrichDAVID支持自定义背景</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>虽然我不喜欢DAVID，但很多用户喜欢，所以clusterProfiler也支持了，最近github上又有人<a href="https://github.com/GuangchuangYu/clusterProfiler/issues/87">要求支持自定义背景</a>。</p>
+
+<blockquote>
+<p>Dear Guangchuang,</p>
+
+<p>I am using clusterProfiler in Kegg pathway enrichment analysis, it is useful and nice. I am looking for a function which accept background and has ability to deal with Ensembl gene ID.</p>
+
+<p>In a function enrichDAVID it can takes ensembl gene id as an input format, but not allows to enter background.
+<code>enrichDAVID(gene = gene, idType=&quot;ENSEMBL_GENE_ID&quot;, annotation=&quot;KEGG_PATHWAY&quot;, species= &quot;hsa&quot;)</code></p>
+
+<p>Other command enrichKEGG has a background input but only takes entrez gene id,
+<code>enrichKEGG(gene, organism = &quot;hsa&quot;, keyType = &quot;kegg&quot;, universe)</code></p>
+
+<p>I have tried to convert my ensembl gene IDs to entrez gene id, but some ensembl gene IDs represent more than one entrez gene ID.
+I downloaded KEGG pathway dataset to apply fisher exact test. however, genes are in entrez ID and i am still dont know how to convert.</p>
+</blockquote>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/05/bootstrap-value%E5%88%86%E6%AE%B5%E6%A0%87%E8%AE%B0/">
+                <h3 class="media-heading">bootstrap value分段标记</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>想要分段标记bootstrap，比如<code>0-70</code>, <code>70-90</code>, <code>90-100</code>之类的。这个对于ggtree来说，太简单。</p>
+
+<p>首先我们要读树，用<code>treeio</code>的<code>read.newick</code>，它和<code>read.tree</code>的不同之处是，加入了参数<code>node.label</code>，当<code>node.label</code>存的不是<code>label</code>，而是<code>bootstrap</code>等数字型的时候，你可以传入<code>node.label='support'</code>，这样它会把node label解析为support value，另存为树注释数据，而不是和tip label混在一起。label变量只能存为字符型，因为和tip label混了，而字符型会让数字操作稍微复杂点。所以我们要用<code>read.newick</code>。</p>
+
+<pre><code>tree &lt;- read.newick(&quot;RMI.phy_phyml_tree_rooted_labeled.txt&quot;, node.label='support')
+root &lt;- getRoot(tree@phylo)
+
+p &lt;- ggtree(tree, color=&quot;black&quot;, size=1.5, linetype=1,  ladderize=TRUE) + 
+     ggtitle(label=&quot;Figure A&quot;) + 
+    geom_tiplab(size=4.5, hjust = -0.060, fontface=&quot;bold&quot;) +  xlim(0, 0.09)
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/04/annotate-tree-with-user-specific-data/">
+                <h3 class="media-heading">annotate tree with user specific data</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/Screen Shot 2017-04-29 at 1.46.28 PM.png" alt="" /></p>
+
+<p>最新的一个问题，大致讲他有两个trait, A和B，想拿A来给label上色，B来画热图。</p>
+
+<p>加载用户数据我们有<code>%&lt;+%</code>操作符，热图有<code>gheatmap</code>函数。</p>
+
+<p>我给了他一个简单的例子：</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/04/%E5%85%AC%E5%8F%B7%E7%8B%97%E7%9A%84%E7%A6%8F%E9%9F%B3/">
+                <h3 class="media-heading">公号狗的福音</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>苹果和企鹅分赃没谈好，反正林子大了，就不顾小鸟的死活！取消了iOS的赞赏功能，一个个觉得错过了一个亿，我真不知道原来你们的赞赏有这么多！我半年来得到的还不够我的日薪多。虽然少得可怜，但我还是及时地在当天给出方案来吸引眼球，创作了一个绿色的赞赏按纽。</p>
+
+<p>我的文章排版都是<a href="https://guangchuangyu.github.io/cn/2017/01/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E6%96%87markdown%E4%B8%80%E9%94%AE%E6%8E%92%E7%89%88/">markdown</a>，markdown是外部驱动的，要什么效果，CSS话事。这个赞赏按纽无非是个链接，赞赏二字链接到转帐二维码，而要实现按纽的效果，可以专门定义一个style来实现。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/04/%E6%9D%A5%E8%87%AAr%E7%9A%84%E6%A1%8C%E9%9D%A2%E6%8F%90%E9%86%92/">
+                <h3 class="media-heading">来自R的桌面提醒</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><strong>notifier</strong>包实现了跨平台的桌面提醒功能，当然它是调用了外部的命令，比如windows使用了<strong>toaster</strong>，老版本windows使用的是<strong>notifu</strong>，在linux下使用<strong>notify-send</strong>，而在OSX下，则调用了<strong>terminal-notifier</strong>，通过了简单的封装之后，就可以给桌面发布消息提醒了。</p>
+
+<p>比如：</p>
+
+<pre><code class="language-r">library(notifier)
+notify(
+  title = &quot;15 Packages out of date&quot;,
+  msg = c(&quot;You can run update.packages() to update them.&quot;,
+  &quot;Outdated packages: Boom colorspace desc memuse networkD3&quot;,
+  &quot;pbapply revealjs rgl rmdformats timevis and 5 more&quot;)
+)
+</code></pre>
+
+<p>​
+效果如下：</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/04/ggimageggplot2%E4%B8%AD%E6%84%89%E5%BF%AB%E5%9C%B0%E4%BD%BF%E7%94%A8%E5%9B%BE%E7%89%87/">
+                <h3 class="media-heading">ggimage：ggplot2中愉快地使用图片</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><h1 id="导言">导言</h1>
+
+<p>本文介绍了<strong>ggimage</strong>包，允许在<strong>ggplot2</strong>作图时嵌入图片，并支持<code>aes</code>映射，可以把离散型变量映射到不同图片。目前有几个包可以使用图片嵌入做图，但都是针对特定的场景，这里使用<strong>ggimage</strong>来展示在这些特定领域里的应用，<strong>ggimage</strong>的设计是通用的，并不被特定场景所限定，文末又介绍了用R图标来画出R、用饼图来画气泡图等实例。</p>
+
+<h1 id="图上嵌图片">图上嵌图片</h1>
+
+<p>R 基础图形库（base graphics）可以在做图的时候嵌入图片，使用的是<code>graphics::rasterImage</code>：</p>
+
+<pre><code class="language-r">imgurl &lt;- &quot;http://phylopic.org/assets/images/submissions/295cd9f7-eef2-441e-ba7e-40c772ca7611.256.png&quot;
+library(EBImage)
+x &lt;- readImage(imgurl)
+plot(1, type = &quot;n&quot;, xlab = &quot;&quot;, ylab = &quot;&quot;, xlim = c(0, 8), ylim = c(0, 8))
+rasterImage(x, 2, 2, 6, 4)
+</code></pre>
+
+<p><img src="https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/raster.png" alt="R绘图嵌入图片演示" /></p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/04/generate-biobabble-banner-using-ggimage/">
+                <h3 class="media-heading">generate biobabble banner using ggimage</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><img src="https://guangchuangyu.github.io/blog_images/biobabble_banner.png" alt="" /></p>
+
+<p>制作了一个banner，用来插入到文后，方便阅读到最后的时候，直接扫描关注。</p>
+
+<p>这图当然用PS一下就可以得到，无非是拼图和加点文字。但做为天天写代码画图的人来说，必然是要纯代码来产生的，而且做科学的人，讲究自动化、可重复性。</p>
+
+<p>就像有些人不理解data scentist为什么讨厌excel一样，觉得无非是工具，没什么好搞阵营的。试想一下，一个分析流程中间有一步要用到excel，需要人工去点点鼠标，这对于讲究自动化、可重复性的data scientist来说是不可接受的。</p>
+
+<h2 id="加载中文字体">加载中文字体</h2>
+
+<p>为了打几个中文字，需要先加载字体，这里我用showtext。</p>
+
+<pre><code class="language-r">require(showtext)
+font.add(&quot;heiti&quot;, &quot;/Library/Fonts/华文黑体.ttf&quot;)
+showtext.auto()
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/04/ggplot2%E5%AD%97%E4%BD%93%E6%BA%A2%E5%87%BA%E7%9A%84%E9%82%A3%E7%82%B9%E7%A0%B4%E4%BA%8B/">
+                <h3 class="media-heading">ggplot2字体溢出的那点破事</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>比如下面的代码：</p>
+
+<pre><code>require(ggplot2)
+d &lt;- data.frame(x=c(0, 0.002, 0.00575), y = 1:3)
+p &lt;- ggplot(d, aes(x, y)) + geom_point() + xlab(NULL) + ylab(NULL)
+print(p)
+</code></pre>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/geom_text_files/figure-markdown_strict/unnamed-chunk-1-1.png" alt="" /></p>
+
+<p>上面图中x轴的文本<strong>0.006</strong>，这个数字中的<strong>6</strong>几乎看不到，因为一半过界了。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no post found"
+         data-message-one="1 post found"
+         data-message-other="{n} posts found">
+         84 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('https://guangchuangyu.github.io/cn/images/cover.jpg');"></div>
+  
+
+
+    
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.js"></script>
+
+
+<script src="https://guangchuangyu.github.io/cn/js/script-wl33z0n6ocaypepiqrazthtivfrliqijej4rq8ek8gvrv1awftmgjuv8k4zc.min.js"></script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight').each(function(i, block) {
+    var code = "";
+    hljs.highlightAuto(block.innerText).value.split(/\r\n|\r|\n/).forEach(function(line) {
+      code += "<span class=\"line\">" + line + "</span><br>";
+    });
+    if (code.length > 0) {
+      block.innerHTML = code;  
+    }
+  });
+  $('pre > code').each(function(i, block) {
+    $(this).addClass('codeblock');
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/guangchuangyu.github.io\/cn\/2017\/05\/emojifont%E5%85%AC%E4%BC%97%E5%8F%B7%E6%96%87%E7%AB%A0\/';
+          
+            this.page.identifier = '\/2017\/05\/emojifont%E5%85%AC%E4%BC%97%E5%8F%B7%E6%96%87%E7%AB%A0\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'gcyu';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+
+    
+  </body>
+</html>
+

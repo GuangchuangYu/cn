@@ -225,6 +225,92 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/03/bed%E6%96%87%E4%BB%B6/">
+          BED文件
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-03-09T00:13:57&#43;08:00">
+      
+  March 9, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        BED的全称是Browser Extensible Data，顾名思义是为genome browser设计的，大名鼎鼎的bedtools可不是什么「床上用品」。</p>
+
+<p>BED包含有3个必须的字段和9个可选字段。</p>
+
+<p>三个字段包括：</p>
+
+<ul>
+<li>1 chrom - 染色体名字</li>
+<li>2 chromStart - 染色体起始位点</li>
+<li>3 chromEnd - 染色体终止位点</li>
+</ul>
+
+<blockquote>
+<p>这里必须指出的是<strong>chromStart</strong>是起始于0，而不是1。很多分析软件都忽略
+了这一点，会有一个碱基的位移，据我所知Homer和ChIPseeker没有这个问题，而像peakAnalyzer, ChIPpeakAnno等都有位移的问题。</p>
+</blockquote>
+
+<p>可选的9个字段包括：</p>
+
+<ul>
+<li>4 name - 名字</li>
+<li>5 score - 分值(0-1000), 用于genome browser展示时上色。</li>
+<li>6 strand - 正负链，对于ChIPseq数据来说，<strong>一般</strong>没有正负链信息。</li>
+<li>7 thickStart - 画矩形的起点</li>
+<li>8 thickEnd - 画矩形的终点</li>
+<li>9 itemRgb - RGB值</li>
+<li>10 blockCount - 子元件（比如外显子）的数目</li>
+<li>11 blockSizes - 子元件的大小</li>
+<li>12 blockStarts - 子元件的起始位点</li>
+</ul>
+
+<p>
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2017/03/bed%E6%96%87%E4%BB%B6/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/03/linux%E7%89%88%E8%BF%85%E9%9B%B7/">
           linux版迅雷
         </a>
@@ -588,65 +674,6 @@ ga('send', 'pageview');
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/01/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E6%96%87markdown%E4%B8%80%E9%94%AE%E6%8E%92%E7%89%88/">
-          微信公众文markdown一键排版
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-01-18T00:53:00&#43;08:00">
-      
-  January 18, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/publish">Publish</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        微信公众号的后台排版功能很差，要想让读者阅读起来舒服，写作的人要花很多时间，于是出现了像<code>秀米</code>这样的第三方排版网站，即便如此，要想排出好的版面，仍然是件耗时的事情，而且像在文章里贴代码这种小众需求，是不被支持的，代码就像普通文本，那叫一个乱。</p>
-
-<p>好在微信平台是支持富文本的，我们复制粘贴过来，格式都还会在，像抄我ggplot2那篇文的<code>生信人</code>，就是完全复制粘贴的，还是我博客上的排版，当然它到了公众号上就乱了，我们其实很容易发现很多复制粘贴的，都没自己排一下版面，直接<code>ctrl-C</code>, <code>ctrl-V</code>一点诚意都没有。</p>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/01/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E6%96%87markdown%E4%B8%80%E9%94%AE%E6%8E%92%E7%89%88/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -728,6 +755,31 @@ ga('send', 'pageview');
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/05/emojifont%E5%85%AC%E4%BC%97%E5%8F%B7%E6%96%87%E7%AB%A0/">
+                <h3 class="media-heading">emojifont公众号文章</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>最近看一个画图的公众号，基本上通篇是代码，最后上个图，我觉得作者就只想表达「哇，我好牛逼」，读者看完可能也只是发出一句「好牛逼」，然后就没有然后了。且不说他读的数据是他电脑上的，你拿了代码也不好重复，最主要是代码死长，缺少解释！</p>
+
+<p>我的写作风格则不一样，一篇文章我一般只会讲解一个点，力图讲清楚，让别人看明白。比如<a href="http://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484186&amp;idx=1&amp;sn=d41ee81398a8c18d07e3b1ffe680d521&amp;chksm=ec43b25ddb343b4b87254521c6c134513a3b3535d28064d2bf71d37f9183948895056151c8d0&amp;scene=21#wechat_redirect">bootstrap分段标记</a>这一篇，代码足够短且简单，但我还是分模块来讲，一行画树，一行做bootstrap分段标记，最后一行修图，虽然三行，但按功能分开，再加上文字解释，读懂是必须的。再比如<a href="http://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484095&amp;idx=1&amp;sn=e98fb2e95cd7d2775a5611ab076fdeb5&amp;chksm=ec43b3f8db343aee763e85b21b4fcf26b36049f0ea48066d65f86ee9895073d0c8e010f4a7ee&amp;scene=21#wechat_redirect">纯代码生成banner​</a>也是分成加载中文字体、读图、图上嵌图三块。即使简单的代码，也要分模块配以文字解析。</p>
+
+<p>我每次只讲解一个点，但有些知识点是关联的，所以有可能会有断片的情况出现，比如之前写phylomoji，就有同学表示没看懂，这个用到了ggtree和emojifont，两个包我都写过很多文介绍，所以在写phylomoji时都没有介绍，如果没看过以前文章的人，可能就不清楚了。所以呢，适当的时候，汇总一下，是很有必要的。</p>
+
+<p>emojifont包我基本上都介绍完了，如果你能通读这几篇文章，那么你必然能够用emoji来作图装逼，能够用emoji来娱乐自己，就像我用emoji给自己快乐一样！</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -991,48 +1043,6 @@ print(p)
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/03/%E5%85%B3%E4%BA%8Echipseq%E6%B3%A8%E9%87%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/">
-                <h3 class="media-heading">关于ChIPseq注释的几个问题</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Mar 3, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><h2 id="为什么我要用某个基因组版本">为什么我要用某个基因组版本？</h2>
-
-<p>在上一篇文章中，我用了<code>TxDb.Hsapiens.UCSC.hg19.knownGene</code>。 <strong>hg19</strong>的<strong>TxDb</strong>, 或者有人就要问了，为什么不用<strong>hg38</strong>？</p>
-
-<p>这个问题，不是说要用那一个，不能用那一个。而是你必须得用某一个，这取决于你最初<strong>fastq</strong>用BWA/Bowtie2比对于某个版本的基因组，你最初用了某个版本，后面就得用相应的版本，不能混，因为不同版本的位置信息有所不同。</p>
-
-<p>当然如果要（贵圈喜欢的）强搞，也不是不可以，你得有chain file，先跑个liftOver，实际上就是在两个基因组版本之间做了位置转换。</p>
-
-<h2 id="为什么说-chipseeker-支持所有物种">为什么说<strong>ChIPseeker</strong>支持所有物种？</h2>
-
-<p>背景注释信息用了<strong>TxDb</strong>就能保证所有物种都支持了？我去哪里找我要的<strong>TxDb</strong>?</p>
-
-<p>我写<strong>ChIPseeker</strong>的时候，我做的物种是人，<strong>ChIPseeker</strong>在线一周就有剑桥大学的人写信跟我说在用<strong>ChIPseeker</strong>做果蝇，在<a href="https://guangchuangyu.github.io/cn/2017/03/bed%E6%96%87%E4%BB%B6/">BED文件</a>一文中，也提到了最近有人在Biostars上问用<strong>ChIPseeker</strong>做裂殖酵母。</p>
-
-<p>首先Bioconductor提供了30个TxDb包，可以供我们使用，这当然只能覆盖到一小部分物种，我们的物种基因组信息，多半要从UCSC或者Ensembl获得，我敢说支持所有物种，就是因为UCSC和ensembl上所有的基因组都可以被<strong>ChIPseeker</strong>支持。</p>
-
-<p>因为我们可以使用<strong>GenomicFeatures</strong>包函数来制作TxDb对象：</p>
-
-<ul>
-<li>makeTxDbFromUCSC： 通过UCSC在线制作TxDb</li>
-<li>makeTxDbFromBiomart: 通过ensembl在线制作TxDb</li>
-<li>makeTxDbFromGRanges：通过GRanges对象制作TxDb</li>
-<li>makeTxDbFromGFF：通过解析GFF文件制作TxDb</li>
-</ul>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1040,7 +1050,7 @@ print(p)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         83 posts found
+         84 posts found
       </p>
     </div>
   </div>
