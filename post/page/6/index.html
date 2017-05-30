@@ -225,6 +225,67 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2016/11/dna%E5%BA%8F%E5%88%97%E5%B7%AE%E5%BC%82%E4%BD%9C%E5%9B%BE/">
+          DNA序列差异作图
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2016-11-19T12:23:16&#43;08:00">
+      
+  November 19, 2016
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <img src="https://guangchuangyu.github.io/blog_images/2016/Screen Shot 2016-11-17 at 8.20.21 PM.png" alt="" /></p>
+
+<p>这是高老师<a href="http://link.springer.com/article/10.1007/s11540-015-9307-3">文章</a>里的图，每一个小图都是通过比较两条比对序列差异而做出来的，从图A和B中可以看出，CF_YL21有可能是Mont和Oz两条序列重组而来。高老师自己做出这图后，深知手工统计序列差异、画图、拼图之困难。问我有没有办法读两条序列，生成一个图。</p>
+
+<p>
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2016/11/dna%E5%BA%8F%E5%88%97%E5%B7%AE%E5%BC%82%E4%BD%9C%E5%9B%BE/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2016/11/blast%E4%B8%80%E5%A4%A7%E5%9D%91%E6%97%A0%E6%B3%95%E8%BE%93%E5%87%BAquery-sequence-title/">
           blast一大坑：无法输出query sequence title
         </a>
@@ -566,72 +627,6 @@ ga('send', 'pageview');
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2016/03/%E4%BD%BF%E7%94%A8ggtree%E5%AE%9E%E7%8E%B0%E8%BF%9B%E5%8C%96%E6%A0%91%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E5%92%8C%E6%B3%A8%E9%87%8A/">
-          使用ggtree实现进化树的可视化和注释
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2016-03-09T13:17:48&#43;08:00">
-      
-  March 9, 2016
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/evolution">Evolution</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <blockquote>
-<p>本文受魏太云（<a href="http://www.weibo.com/taiyun">@cloud_wei</a>)的邀请，最初在2015年发表于<a href="http://cos.name/2015/11/to-achieve-the-visualization-and-annotation-of-evolutionary-tree-using-ggtree/">统计之都</a>。</p>
-</blockquote>
-
-<p>进化树看起来和层次聚类很像。有必要解释一下两者的一些区别。</p>
-
-<p>层次聚类的侧重点在于分类，把距离近的聚在一起。而进化树的构建可以说也是一个聚类过程，但侧重点在于推测进化关系和进化距离(evolutionary distance)。</p>
-
-<p>层次聚类的输入是距离，比如euclidean或manhattan距离。把距离近的聚在一起。而进化树推断是从生物序列（DNA或氨基酸）的比对开始。最简单的方法是计算一下序列中不匹配的数目，称之为hamming distance（通常用序列长度做归一化），使用距离当然也可以应用层次聚类的方法。进化树的构建最简单的方法是非加权配对平均法（Unweighted Pair Group Method with Arithmetic Mean, UPGMA），这其实是使用average linkage的层次聚类。这种方法在进化树推断上现在基本没人用。更为常用的是邻接法（neighbor joining），两个节点距离其它节点都比较远，而这两个节点又比较近，它们就是neighbor，可以看出neighbor不一定是距离最近的两个节点。真正做进化的人，这个方法也基本不用。现在主流的方法是最大似然法(Maximum likelihood, ML)，通过进化模型（evolutionary model)估计拓朴结构和分支长度，估计的结果具有最高的概率能够产生观测数据（多序列比对）。另外还有最大简约法和贝叶斯推断等方法用于构建进化树。
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2016/03/%E4%BD%BF%E7%94%A8ggtree%E5%AE%9E%E7%8E%B0%E8%BF%9B%E5%8C%96%E6%A0%91%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E5%92%8C%E6%B3%A8%E9%87%8A/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -713,6 +708,24 @@ ga('send', 'pageview');
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/05/xiaomiquan/">
+                <h3 class="media-heading">怀疑人生！我没欠你们钱，好吗？</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>写了十几年的博客，虽然好早之前就发现一些博客文被《生信人》公众号抄了，但一直不愿意开公众号，去年年底尝试开个公众号，原创保护不给别人抄倒不是主要，而是我感觉到公众号已经绑架了中国人的阅读入口，可以尝试把博客文搬上来，这样大家可以在微信里搜到文章，有利于传播嘛。而我不是单纯为传播知识而来，而主要是推送我自己的东西，这在《为什么要开这个公众号》一文中已经讲了，维护我写的几个软件，花掉大量的时间，现在给我发邮件问问题，我基本都会让他们去biostars或bioconductor论坛上去问，公开交流有利于别的用户参与/学习，有助于减少重复解答，我也不断完善文档，很多问题其实在文档里都有答案，但人的天性就是懒、不愿学习（我在ggtree发布的第一篇文章里也提及了这点，说了%&lt;+%操作符就是给懒人用的）。
+</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -982,40 +995,6 @@ rasterImage(x, 2, 2, 6, 4)
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/04/generate-biobabble-banner-using-ggimage/">
-                <h3 class="media-heading">generate biobabble banner using ggimage</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><img src="https://guangchuangyu.github.io/blog_images/biobabble_banner.png" alt="" /></p>
-
-<p>制作了一个banner，用来插入到文后，方便阅读到最后的时候，直接扫描关注。</p>
-
-<p>这图当然用PS一下就可以得到，无非是拼图和加点文字。但做为天天写代码画图的人来说，必然是要纯代码来产生的，而且做科学的人，讲究自动化、可重复性。</p>
-
-<p>就像有些人不理解data scentist为什么讨厌excel一样，觉得无非是工具，没什么好搞阵营的。试想一下，一个分析流程中间有一步要用到excel，需要人工去点点鼠标，这对于讲究自动化、可重复性的data scientist来说是不可接受的。</p>
-
-<h2 id="加载中文字体">加载中文字体</h2>
-
-<p>为了打几个中文字，需要先加载字体，这里我用showtext。</p>
-
-<pre><code class="language-r">require(showtext)
-font.add(&quot;heiti&quot;, &quot;/Library/Fonts/华文黑体.ttf&quot;)
-showtext.auto()
-</code></pre>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1023,7 +1002,7 @@ showtext.auto()
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         87 posts found
+         88 posts found
       </p>
     </div>
   </div>

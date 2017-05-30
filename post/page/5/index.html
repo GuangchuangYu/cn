@@ -225,6 +225,69 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2016/12/using-linked-list-to-solve-josephus-problem/">
+          Using Linked List to solve Josephus problem
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2016-12-04T00:53:00&#43;08:00">
+      
+  December 4, 2016
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/data-structure">data structure</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/c&#43;&#43;">C&#43;&#43;</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <blockquote>
+<p>这个问题是以弗拉维奥·约瑟夫斯命名的，它是1世纪的一名犹太历史学家。他在自己的日记中写道，他和他的40个战友被罗马军队包围在洞中。他们讨论是自杀还是被俘，最终决定自杀，并以抽签的方式决定谁杀掉谁。约瑟夫斯和另外一个人是最后两个留下的人。约瑟夫斯说服了那个人，他们将向罗马军队投降，不再自杀。约瑟夫斯把他的存活归因于运气或天意，他不知道是哪一个。  &ndash; <a href="https://zh.wikipedia.org/wiki/约瑟夫斯问题">https://zh.wikipedia.org/wiki/约瑟夫斯问题</a></p>
+</blockquote>
+
+<p>这是一个比较简单的问题，n个人围成圆圈，越过k-1个人，杀掉第k个人，如此反复直到只剩下最后一个人。可以用数学推导给出答案，问题本身已经足够简单，用链表可以模拟整个过程。实现起来比较直观。这里在初始化这个链表的时候，需要注意，到了最后一人的时候，他应该指向第一个人，这样才能形成一个环状的链表，然后问题就非常简单了，从第一人开始，后面就无所谓头和尾了，按照规则来，每次杀掉一个人，直到只剩下最后一人，就是结果。从维基的解释可以看出，最后两个人没死，这没节操的事情被拿来说，如果你数学好，你就可以救自己一命（站在合适的位置，让自己是最后一个）。</p>
+
+<p>
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2016/12/using-linked-list-to-solve-josephus-problem/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2016/12/%E4%B8%AD%E7%A9%BA%E7%9A%84%E7%8E%AF%E5%BD%A2%E6%A0%91/">
           中空的环形树
         </a>
@@ -589,67 +652,6 @@ ga('send', 'pageview');
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2016/11/dna%E5%BA%8F%E5%88%97%E5%B7%AE%E5%BC%82%E4%BD%9C%E5%9B%BE/">
-          DNA序列差异作图
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2016-11-19T12:23:16&#43;08:00">
-      
-  November 19, 2016
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <img src="https://guangchuangyu.github.io/blog_images/2016/Screen Shot 2016-11-17 at 8.20.21 PM.png" alt="" /></p>
-
-<p>这是高老师<a href="http://link.springer.com/article/10.1007/s11540-015-9307-3">文章</a>里的图，每一个小图都是通过比较两条比对序列差异而做出来的，从图A和B中可以看出，CF_YL21有可能是Mont和Oz两条序列重组而来。高老师自己做出这图后，深知手工统计序列差异、画图、拼图之困难。问我有没有办法读两条序列，生成一个图。</p>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2016/11/dna%E5%BA%8F%E5%88%97%E5%B7%AE%E5%BC%82%E4%BD%9C%E5%9B%BE/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -731,6 +733,24 @@ ga('send', 'pageview');
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/05/xiaomiquan/">
+                <h3 class="media-heading">怀疑人生！我没欠你们钱，好吗？</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>写了十几年的博客，虽然好早之前就发现一些博客文被《生信人》公众号抄了，但一直不愿意开公众号，去年年底尝试开个公众号，原创保护不给别人抄倒不是主要，而是我感觉到公众号已经绑架了中国人的阅读入口，可以尝试把博客文搬上来，这样大家可以在微信里搜到文章，有利于传播嘛。而我不是单纯为传播知识而来，而主要是推送我自己的东西，这在《为什么要开这个公众号》一文中已经讲了，维护我写的几个软件，花掉大量的时间，现在给我发邮件问问题，我基本都会让他们去biostars或bioconductor论坛上去问，公开交流有利于别的用户参与/学习，有助于减少重复解答，我也不断完善文档，很多问题其实在文档里都有答案，但人的天性就是懒、不愿学习（我在ggtree发布的第一篇文章里也提及了这点，说了%&lt;+%操作符就是给懒人用的）。
+</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1000,40 +1020,6 @@ rasterImage(x, 2, 2, 6, 4)
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/04/generate-biobabble-banner-using-ggimage/">
-                <h3 class="media-heading">generate biobabble banner using ggimage</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><img src="https://guangchuangyu.github.io/blog_images/biobabble_banner.png" alt="" /></p>
-
-<p>制作了一个banner，用来插入到文后，方便阅读到最后的时候，直接扫描关注。</p>
-
-<p>这图当然用PS一下就可以得到，无非是拼图和加点文字。但做为天天写代码画图的人来说，必然是要纯代码来产生的，而且做科学的人，讲究自动化、可重复性。</p>
-
-<p>就像有些人不理解data scentist为什么讨厌excel一样，觉得无非是工具，没什么好搞阵营的。试想一下，一个分析流程中间有一步要用到excel，需要人工去点点鼠标，这对于讲究自动化、可重复性的data scientist来说是不可接受的。</p>
-
-<h2 id="加载中文字体">加载中文字体</h2>
-
-<p>为了打几个中文字，需要先加载字体，这里我用showtext。</p>
-
-<pre><code class="language-r">require(showtext)
-font.add(&quot;heiti&quot;, &quot;/Library/Fonts/华文黑体.ttf&quot;)
-showtext.auto()
-</code></pre>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1041,7 +1027,7 @@ showtext.auto()
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         87 posts found
+         88 posts found
       </p>
     </div>
   </div>
