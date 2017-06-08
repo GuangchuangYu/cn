@@ -345,6 +345,31 @@ ga('send', 'pageview');
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/06/quality_bar_fastq/">
+                <h3 class="media-heading">纯文本可视化FASTQ质量数据</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jun 6, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">一早曾老师就来发github repo，虽然有意思，但在我看来就是乱用emoji，用一个人类不可读（你怎么能够记住表情如何与数值对应上？！）来表示另一个人类不友好（质量编码）的数据，这绝对不是个好主意。
+&lt;!-more&ndash;&gt;
+这只是代码中对应关系中的一部分，你看表情能看出FASTQ数据质量如何？你做得到，我算是服了！
+可视化我们有很多方法，但这其实不是可视化，而是一长串字符，这本身是好想法，我们可以在console里直接看一下，大概了解下数据质量，而不需要真正去画图。
+现在终端上能显示的字体已经非常多样化了，比如：
+所以我们完完全全可以用文本的形式画个柱状图出来，甚至于加上颜色！测序质量怎么样？用柱状图有高低可以看，用emoji根本就不适合， 和#$&amp;@!~这些有甚区别么！
+做为回应，我写点简单的代码，你给个fastq文件，就可以画出来柱状图：
+这图就可以看到，前面质量很好，尾部差一点。
+▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/05/xiaomiquan/">
                 <h3 class="media-heading">怀疑人生！我没欠你们钱，好吗？</h3>
               </a>
@@ -594,40 +619,6 @@ notify(
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/04/ggimageggplot2%E4%B8%AD%E6%84%89%E5%BF%AB%E5%9C%B0%E4%BD%BF%E7%94%A8%E5%9B%BE%E7%89%87/">
-                <h3 class="media-heading">ggimage：ggplot2中愉快地使用图片</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><h1 id="导言">导言</h1>
-
-<p>本文介绍了<strong>ggimage</strong>包，允许在<strong>ggplot2</strong>作图时嵌入图片，并支持<code>aes</code>映射，可以把离散型变量映射到不同图片。目前有几个包可以使用图片嵌入做图，但都是针对特定的场景，这里使用<strong>ggimage</strong>来展示在这些特定领域里的应用，<strong>ggimage</strong>的设计是通用的，并不被特定场景所限定，文末又介绍了用R图标来画出R、用饼图来画气泡图等实例。</p>
-
-<h1 id="图上嵌图片">图上嵌图片</h1>
-
-<p>R 基础图形库（base graphics）可以在做图的时候嵌入图片，使用的是<code>graphics::rasterImage</code>：</p>
-
-<pre><code class="language-r">imgurl &lt;- &quot;http://phylopic.org/assets/images/submissions/295cd9f7-eef2-441e-ba7e-40c772ca7611.256.png&quot;
-library(EBImage)
-x &lt;- readImage(imgurl)
-plot(1, type = &quot;n&quot;, xlab = &quot;&quot;, ylab = &quot;&quot;, xlim = c(0, 8), ylim = c(0, 8))
-rasterImage(x, 2, 2, 6, 4)
-</code></pre>
-
-<p><img src="https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/raster.png" alt="R绘图嵌入图片演示" /></p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -635,7 +626,7 @@ rasterImage(x, 2, 2, 6, 4)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         88 posts found
+         89 posts found
       </p>
     </div>
   </div>

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2017/06/quality_bar_fastq/</loc>
+    <lastmod>2017-06-06T07:57:46+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2017/05/xiaomiquan/</loc>
     <lastmod>2017-05-30T15:10:00+08:00</lastmod>
   </url>
@@ -563,14 +568,14 @@
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/tags/chipseq/</loc>
-    <lastmod>2017-03-09T00:13:57+08:00</lastmod>
+    <loc>https://guangchuangyu.github.io/cn/categories/chipseq/</loc>
+    <lastmod>2017-03-31T12:23:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/categories/chipseq/</loc>
-    <lastmod>2017-03-31T12:23:16+08:00</lastmod>
+    <loc>https://guangchuangyu.github.io/cn/tags/chipseq/</loc>
+    <lastmod>2017-03-09T00:13:57+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -665,6 +670,12 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/fastq/</loc>
+    <lastmod>2017-06-06T07:57:46+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/tags/figlet/</loc>
     <lastmod>2016-12-13T00:53:00+08:00</lastmod>
     <priority>0</priority>
@@ -720,7 +731,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/</loc>
-    <lastmod>2017-05-30T15:10:00+08:00</lastmod>
+    <lastmod>2017-06-06T07:57:46+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -815,6 +826,12 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/categories/ngs/</loc>
+    <lastmod>2017-06-06T07:57:46+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/tags/nonparametric/</loc>
     <lastmod>2011-06-24T06:10:37+08:00</lastmod>
     <priority>0</priority>
@@ -888,7 +905,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/post/</loc>
-    <lastmod>2017-05-30T15:10:00+08:00</lastmod>
+    <lastmod>2017-06-06T07:57:46+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1061,14 +1078,14 @@
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/tags/windows/</loc>
-    <lastmod>2016-11-30T00:53:00+08:00</lastmod>
+    <loc>https://guangchuangyu.github.io/cn/categories/windows/</loc>
+    <lastmod>2015-11-17T16:06:59+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/categories/windows/</loc>
-    <lastmod>2015-11-17T16:06:59+08:00</lastmod>
+    <loc>https://guangchuangyu.github.io/cn/tags/windows/</loc>
+    <lastmod>2016-11-30T00:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
