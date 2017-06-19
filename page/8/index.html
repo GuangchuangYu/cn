@@ -225,6 +225,63 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustworthy/">
+          R binary is untrustworthy
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2014-07-24T04:22:35&#43;08:00">
+      
+  July 24, 2014
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/software">Software</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        去年ubuntu下apt-get了R-3.0.2, 用了没多久就发现了system命令有问题，通常情况下调用系统命令是正常的，但是我调用bowtie的时候，就会报错：
+Warning: Could not open read file &quot;/tmp/8156.inpipe1&quot; for reading; skipping&hellip; Error: Encountered internal Bowtie 2 exception (#1) Command: /usr/bin/bowtie2-align &ndash;wrapper basic-0 -p 12 -x /ssd/genomes/hg19 -S tmp.sam -1 /tmp/8156.inpipe1 -2 /tmp/8156.inpipe2  这很明显是因为fasta.gz文件，bowtie需要调用zcat来读的，在R里调用bowtie就找不到好基友zcat的输出管道。当时没在意，R不干，那就找shell。 去年用NMF包的时候，报出了人类不友好的错误，联系了包作者Gaujoux，在作者的帮助下，找到了是doParallel包的问题：
+&gt; library(doParallel) &gt; Loading required package: foreach foreach: simple, scalable parallel programming from Revolution Analytics Use Revolution R for scalability, fault tolerance and more. <a href="http://www.revolutionanalytics.com">http://www.revolutionanalytics.com</a> Loading required package: iterators Loading required package: parallel &gt; registerDoParallel(11) &gt; &gt; foreach(i = 1:10) %dopar% { getwd() } &gt; *** caught segfault *** address 0x7fbeb6d399d0, cause &lsquo;memory not mapped&rsquo;  其实parallel包中用mclapply也是同样报错。于是又把维护deb包的Dirk拉进来，Dirk是Rcpp的作者，高人就是不一样，看了错误，立刻就指出是BLAS库的问题。
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustworthy/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2014/06/use-linux-desktop-again/">
           use linux desktop again
         </a>
@@ -584,69 +641,6 @@ X设计的原生包管理系统非Homebrew莫属，它会尽量依赖系统里�
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2013/07/permanent-head-damage-to-be/">
-          Permanent Head Damage to be
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2013-07-30T16:18:26&#43;08:00">
-      
-  July 30, 2013
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/personal">Personal</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        看似寻常最奇崛，成如容易却艰辛。在暨大工作了几年，发几篇小文章，觉得要找个地方读PhD，是件手到擒来的事，结果却花了整整一年的时间，事实证明像我这样的科研屌丝男，举步唯艰啊。
-去年7月份就开始在计划这个事情，我几乎想都没想就联系了计算生物所的JD
-Han，紧接着就是面试，第一次尝试用英文去讲slides，从早上10点讲到中午12点。感觉还好吧，因为有听到Han说impressive，而她的学生又说经常看我blog。看上去还是蛮顺利的，然而最终reject了我，而且没有给我任何原因。</p>
-
-<p>我去上海是非常低姿态的，说要面试，我就飞过去，当时想要是面试OK了，可能会让我留下来先了解一下正在进行的project，所以没有听老婆的话买返程票，结果从上海回广州，就变成了人在囧途，买不到火车票，就去南昌转车，结果遇到两趟车都是慢车，无空调，还无座。这个事情教会了我，不能太低姿态。</p>
-
-<p>我一直在想为什么会去上海，为什么会联系Han，或许是心理学上所谓的契可尼效应，俗称偷不如偷不着，当年考上生没中，心中依然有执念？我自认为早已释然，but
-maybe..，至于Han，我在研一的时候，去北大听过她的讲座，被系统生物学这个概念忽悠了，可能因此内心抱有幻想。
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2013/07/permanent-head-damage-to-be/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -732,6 +726,50 @@ maybe..，至于Han，我在研一的时候，去北大听过她的讲座，被�
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/06/lxde-theme/">
+                <h3 class="media-heading">Linux装windows的二逼</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jun 6, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>做为一个上了年纪的人，显然已经离不开微信了，macOS还好，企鹅还有照顾到，但linux难道就只能用web版吗？显然不应该的。</p>
+
+<p>如果你是Arch Linux用户的话，那么aur源里已经有好几个款式可以选了：</p>
+
+<pre><code class="language-shell"> ygc  ~  yaourt -Ss wechat
+aur/electronic-wechat 2.0-2 (8) (1.29)
+    A better WeChat client
+aur/electronic-wechat-bin 2.0-1 [installed] (3) (0.36)
+    A better WeChat on macOS and Linux. Built with Electron by Zhongyi Tong.
+aur/electronic-wechat-git 1.4.0.43.gb18ff6d-1 (6) (0.00)
+    An Electron application for WeChat
+aur/franz-bin 4.0.4-5 (86) (12.73)
+    Franz is a free messaging app / former Emperor of Austria and combines 
+    chat &amp; messaging services into one application. Franz currently supports 
+    Slack, WhatsApp, WeChat, HipChat, Facebook Messenger, Telegram, Google 
+    Hangouts, GroupMe, Skype and many more.
+aur/wechat-web-devtools-git 0.17.171900-1 (1) (0.78)
+    Wechat Web Developer Tools
+aur/wechatircd-git r85.bb8f354-1 (0) (0.00)
+    IRC server capable of controlling Web WeChat
+</code></pre>
+
+<p>这里我要介绍的是electronic-wechat。我比较懒，用下面的代码，安装二进制版：</p>
+
+<pre><code class="language-shell">yaourt -S electronic-wechat-bin
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/06/quality_bar_fastq/">
                 <h3 class="media-heading">纯文本可视化FASTQ质量数据</h3>
               </a>
@@ -779,34 +817,14 @@ maybe..，至于Han，我在研一的时候，去北大听过她的讲座，被�
                   May 5, 2017
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather"><p>做为一个上了年纪的人，显然已经离不开微信了，macOS还好，企鹅还有照顾到，但linux难道就只能用web版吗？显然不应该的。</p>
-
-<p>如果你是Arch Linux用户的话，那么aur源里已经有好几个款式可以选了：</p>
-
-<pre><code class="language-shell"> ygc  ~  yaourt -Ss wechat
-aur/electronic-wechat 2.0-2 (8) (1.29)
-    A better WeChat client
-aur/electronic-wechat-bin 2.0-1 [installed] (3) (0.36)
-    A better WeChat on macOS and Linux. Built with Electron by Zhongyi Tong.
-aur/electronic-wechat-git 1.4.0.43.gb18ff6d-1 (6) (0.00)
-    An Electron application for WeChat
-aur/franz-bin 4.0.4-5 (86) (12.73)
-    Franz is a free messaging app / former Emperor of Austria and combines 
-    chat &amp; messaging services into one application. Franz currently supports 
-    Slack, WhatsApp, WeChat, HipChat, Facebook Messenger, Telegram, Google 
-    Hangouts, GroupMe, Skype and many more.
-aur/wechat-web-devtools-git 0.17.171900-1 (1) (0.78)
-    Wechat Web Developer Tools
-aur/wechatircd-git r85.bb8f354-1 (0) (0.00)
-    IRC server capable of controlling Web WeChat
-</code></pre>
-
-<p>这里我要介绍的是electronic-wechat。我比较懒，用下面的代码，安装二进制版：</p>
-
-<pre><code class="language-shell">yaourt -S electronic-wechat-bin
-</code></pre>
-
-<p></p></div>
+              <div class="media-content hide-xs font-merryweather">在开源的macOS和linux版微信一文中，观众想知道怎么装windows，应你们的需求，来一发。
+见过我2007年以前截屏的话，都会发现gnome和kde没出现过，我喜欢轻量的wm和软件，当年xfce出来的时候，号称轻量，其实也是中级以上，gnome2本身很轻量(gnome3我就不知道了），它给人重量都怪nautilus太慢。后来出现了lxde，才是符合我标准的集易用与轻量一身的桌面，lxde轻量到什么程度？能跑win98的电脑都可以流畅跑lxde！
+LXDE本身就像极了windows经典桌面，而windows界面，大家（起码我是）最爱的还是经典界面，windows 2000是最高水平！虽然土灰土灰的，谁用谁知道，如果长时间盯屏幕，这种土灰土灰的界面，眼睛最不容易累！
+LXDE因为本身菜单和自带的软件，都对windows用户极其友好，所以其实已经很像了。如果你想它再像一点，你可以把图标搞成windows的，比如archlinux的aur源里就有windows 95的图标，这逼就装得有点过了。
+$ yaourt -Ss classic95 aur/classic95-icons 1-1 [installed] (3) (0.09) Classic icon set from Windows 95  再者就是gtk主题，自带的Redmond，就是windows经典的土灰，最后就是开始菜单，你只要找一个windows开始菜单按纽的图片，大功告成。
+就是这么简单!
+要想装win7，win8这样比较现代化的界面，我推荐一个主题包: https://github.com/nhermosilla14/WinAte，自带win7、win8主题，桌面壁纸、鼠标主题、图标等。
+而且这个主题包还附送了各大系统的logo，也就是开始菜单的图标，你可以装成别的系统，请随便装：</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -969,39 +987,6 @@ p &lt;- ggtree(tree, color=&quot;black&quot;, size=1.5, linetype=1,  ladderize=T
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/04/%E6%9D%A5%E8%87%AAr%E7%9A%84%E6%A1%8C%E9%9D%A2%E6%8F%90%E9%86%92/">
-                <h3 class="media-heading">来自R的桌面提醒</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><strong>notifier</strong>包实现了跨平台的桌面提醒功能，当然它是调用了外部的命令，比如windows使用了<strong>toaster</strong>，老版本windows使用的是<strong>notifu</strong>，在linux下使用<strong>notify-send</strong>，而在OSX下，则调用了<strong>terminal-notifier</strong>，通过了简单的封装之后，就可以给桌面发布消息提醒了。</p>
-
-<p>比如：</p>
-
-<pre><code class="language-r">library(notifier)
-notify(
-  title = &quot;15 Packages out of date&quot;,
-  msg = c(&quot;You can run update.packages() to update them.&quot;,
-  &quot;Outdated packages: Boom colorspace desc memuse networkD3&quot;,
-  &quot;pbapply revealjs rgl rmdformats timevis and 5 more&quot;)
-)
-</code></pre>
-
-<p>​
-效果如下：</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1009,7 +994,7 @@ notify(
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         89 posts found
+         90 posts found
       </p>
     </div>
   </div>
