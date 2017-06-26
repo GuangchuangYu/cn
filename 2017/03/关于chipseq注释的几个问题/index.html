@@ -631,6 +631,26 @@ spombe &lt;- makeTxDbFromGFF(&quot;schizosaccharomyces_pombe.chr.gff3&quot;)
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/06/geofacet/">
+                <h3 class="media-heading">按地理位置进行分面</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jun 6, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">CRAN刚上线的新包geofacet，可以让ggplot2分面按指定的地理位置来，比如下面的数据，美国各州各项指标的排名：
+head(state_ranks) state name variable rank 1 AK Alaska education 28 2 AK Alaska employment 50 3 AK Alaska health 25 4 AK Alaska wealth 5 5 AK Alaska sleep 27 6 AK Alaska insured 50  我们正常画图是这样子的：
+ggplot(state_ranks, aes(variable, rank, fill = variable)) + geom_col() + coord_flip() + theme_bw() + facet_wrap(~ state)  这个geofacet包的引入了facet_geo，用法和facet_wrap一模一样，所以如果你会用facet_wrap分面的话，你已然会了：
+ggplot(state_ranks, aes(variable, rank, fill = variable)) + geom_col() + coord_flip() + theme_bw() + facet_geo(~ state)  然后它还可以通过手工指定位置，比如下面这个：</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/06/lxde-theme/">
                 <h3 class="media-heading">Linux装windows的二逼</h3>
               </a>
@@ -871,27 +891,6 @@ p &lt;- ggtree(tree, color=&quot;black&quot;, size=1.5, linetype=1,  ladderize=T
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/04/%E5%85%AC%E5%8F%B7%E7%8B%97%E7%9A%84%E7%A6%8F%E9%9F%B3/">
-                <h3 class="media-heading">公号狗的福音</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>苹果和企鹅分赃没谈好，反正林子大了，就不顾小鸟的死活！取消了iOS的赞赏功能，一个个觉得错过了一个亿，我真不知道原来你们的赞赏有这么多！我半年来得到的还不够我的日薪多。虽然少得可怜，但我还是及时地在当天给出方案来吸引眼球，创作了一个绿色的赞赏按纽。</p>
-
-<p>我的文章排版都是<a href="https://guangchuangyu.github.io/cn/2017/01/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E6%96%87markdown%E4%B8%80%E9%94%AE%E6%8E%92%E7%89%88/">markdown</a>，markdown是外部驱动的，要什么效果，CSS话事。这个赞赏按纽无非是个链接，赞赏二字链接到转帐二维码，而要实现按纽的效果，可以专门定义一个style来实现。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -899,7 +898,7 @@ p &lt;- ggtree(tree, color=&quot;black&quot;, size=1.5, linetype=1,  ladderize=T
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         90 posts found
+         91 posts found
       </p>
     </div>
   </div>

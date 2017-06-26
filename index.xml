@@ -6,10 +6,22 @@
     <description>Recent content on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 19 Jun 2017 07:57:46 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 26 Jun 2017 12:23:16 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>按地理位置进行分面</title>
+      <link>https://guangchuangyu.github.io/cn/2017/06/geofacet/</link>
+      <pubDate>Mon, 26 Jun 2017 12:23:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/06/geofacet/</guid>
+      <description>CRAN刚上线的新包geofacet，可以让ggplot2分面按指定的地理位置来，比如下面的数据，美国各州各项指标的排名：
+head(state_ranks) state name variable rank 1 AK Alaska education 28 2 AK Alaska employment 50 3 AK Alaska health 25 4 AK Alaska wealth 5 5 AK Alaska sleep 27 6 AK Alaska insured 50  我们正常画图是这样子的：
+ggplot(state_ranks, aes(variable, rank, fill = variable)) + geom_col() + coord_flip() + theme_bw() + facet_wrap(~ state)  这个geofacet包的引入了facet_geo，用法和facet_wrap一模一样，所以如果你会用facet_wrap分面的话，你已然会了：
+ggplot(state_ranks, aes(variable, rank, fill = variable)) + geom_col() + coord_flip() + theme_bw() + facet_geo(~ state)  然后它还可以通过手工指定位置，比如下面这个：</description>
+    </item>
     
     <item>
       <title>Linux装windows的二逼</title>
@@ -557,11 +569,11 @@ print(p)
     </item>
     
     <item>
-      <title> R包辣鸡之CorMut</title>
-      <link>https://guangchuangyu.github.io/cn/2017/01/r%E5%8C%85%E8%BE%A3%E9%B8%A1%E4%B9%8Bcormut/</link>
+      <title>R包辣鸡之CorMut</title>
+      <link>https://guangchuangyu.github.io/cn/2017/01/cormut/</link>
       <pubDate>Tue, 17 Jan 2017 12:23:16 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/2017/01/r%E5%8C%85%E8%BE%A3%E9%B8%A1%E4%B9%8Bcormut/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2017/01/cormut/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;曾经QQ上有人叫我帮忙，跑某个R包做个分析，我一看那包，一堆bug，显然不能用，那就不是简单的事了，我可没空帮他写代码，于是他就经常恶心我，有事没事就来说我写ggtree没意义，不是实质科研，不如跟他做点牛逼的，不如再写个R包干他那事。昨天用马甲在进化群里问画树，我还热心贴个代码给他，说看不懂，我在群里说了，我写个文详细介绍一下。然而他的马甲身份暴露啦，所以今日跳票，我写好的文也不发了，你牛逼就不要用马甲来骗代码呀，ggtree没用你不要用呀，叔就是这么任性😎&lt;/p&gt;
 &lt;/blockquote&gt;

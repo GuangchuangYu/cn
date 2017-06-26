@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2017/06/geofacet/</loc>
+    <lastmod>2017-06-26T12:23:16+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2017/06/lxde-theme/</loc>
     <lastmod>2017-06-19T07:57:46+08:00</lastmod>
   </url>
@@ -133,7 +138,7 @@
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/2017/01/r%E5%8C%85%E8%BE%A3%E9%B8%A1%E4%B9%8Bcormut/</loc>
+    <loc>https://guangchuangyu.github.io/cn/2017/01/cormut/</loc>
     <lastmod>2017-01-17T12:23:16+08:00</lastmod>
   </url>
   
@@ -699,6 +704,12 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/geofacet/</loc>
+    <lastmod>2017-06-26T12:23:16+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/tags/ggimage/</loc>
     <lastmod>2017-04-11T10:06:59+08:00</lastmod>
     <priority>0</priority>
@@ -706,7 +717,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/ggplot2/</loc>
-    <lastmod>2017-04-11T10:06:59+08:00</lastmod>
+    <lastmod>2017-06-26T12:23:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -736,7 +747,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/</loc>
-    <lastmod>2017-06-19T07:57:46+08:00</lastmod>
+    <lastmod>2017-06-26T12:23:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -916,7 +927,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/post/</loc>
-    <lastmod>2017-06-19T07:57:46+08:00</lastmod>
+    <lastmod>2017-06-26T12:23:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -964,7 +975,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/r/</loc>
-    <lastmod>2017-05-28T15:10:00+08:00</lastmod>
+    <lastmod>2017-06-26T12:23:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1072,7 +1083,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/visualization/</loc>
-    <lastmod>2017-05-28T15:10:00+08:00</lastmod>
+    <lastmod>2017-06-26T12:23:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
