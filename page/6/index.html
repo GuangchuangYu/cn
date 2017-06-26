@@ -731,10 +731,21 @@ ga('send', 'pageview');
                   Jun 6, 2017
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather">CRAN刚上线的新包geofacet，可以让ggplot2分面按指定的地理位置来，比如下面的数据，美国各州各项指标的排名：
-head(state_ranks) state name variable rank 1 AK Alaska education 28 2 AK Alaska employment 50 3 AK Alaska health 25 4 AK Alaska wealth 5 5 AK Alaska sleep 27 6 AK Alaska insured 50  我们正常画图是这样子的：
-ggplot(state_ranks, aes(variable, rank, fill = variable)) + geom_col() + coord_flip() + theme_bw() + facet_wrap(~ state)  这个geofacet包的引入了facet_geo，用法和facet_wrap一模一样，所以如果你会用facet_wrap分面的话，你已然会了：
-ggplot(state_ranks, aes(variable, rank, fill = variable)) + geom_col() + coord_flip() + theme_bw() + facet_geo(~ state)  然后它还可以通过手工指定位置，比如下面这个：</div>
+              <div class="media-content hide-xs font-merryweather"><p>CRAN刚上线的新包<code>geofacet</code>，可以让ggplot2分面按指定的地理位置来，比如下面的数据，美国各州各项指标的排名：</p>
+
+<pre><code class="language-r">  head(state_ranks)
+    state   name   variable rank
+1    AK Alaska  education   28
+2    AK Alaska employment   50
+3    AK Alaska     health   25
+4    AK Alaska     wealth    5
+5    AK Alaska      sleep   27
+6    AK Alaska    insured   50
+</code></pre>
+
+<p>我们正常画图是这样子的：</p>
+
+<p></p></div>
             </div>
             <div style="clear:both;"></div>
             <hr>
