@@ -225,6 +225,76 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2012/05/%E4%BB%80%E4%B9%88%E6%98%AFt-%E6%A3%80%E9%AA%8C/">
+          什么是T 检验
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2012-05-29T06:17:56&#43;08:00">
+      
+  May 29, 2012
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/statistics">Statistics</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        跟某同学讲了T test之后，整理一下。
+很多的检验和我们的直觉是一致的，前阵子在一个群里，有管理学院的人问说想看两个样本是不是来自于同一个分布，我叫他画两个CDF，一看就知道。对方说不要看图，我就让他用Kolmogorov-Smirnov Tests。我自己搜了一下，发现ks.test检验的就是拿两个CDF的距离做为统计量，虽然计算很复杂，但是和intuition那是相当一致啊。
+最简单也最常用的，莫过于T检验，用我们的直觉就可以理解了，但是我发现不理解还有用错的人也挺多的。
+我们要看一个样本的均值是不是等于0，最naive的办法就是看样本的均值和0差别多大。
+这个比较之所以naive，因为没有考虑到数据的分布，从上图的两个populations来看，它们的均值都是0，从绿色的分布中抽到一个均值为3的样本，概率并不小，但是从红色的分布中得到这样一个样本，那就是小概率事件。所以不能单纯比较均值，而是要看均值的分布，从上面的populations上看，和数据的离散程度有关。 我们随机抽取100个sample，得到以下的均值分布：
+我们需要对均值的离散程度做penalty，那么就可以考虑这样一个统计量mean(x)/SEM, SEM代表standard error of the mean，那么这个统计量比单纯的均值要科学得多。这个统计量，就是学生氏所定义的t。
+如果没有大量的样本，是没办法估计SEM的，但是从上面两个图上看，样本间均值的标准误SEM，和总体数据的标准误是正相关的。而总体的标准误可以用样本的标准误,sd(x),来估计。如果我们考虑最简单的形式呢？定义统计量mean(x)/sd(x)。
+那么，请等一下，我们还需要考虑到样本量的影响，如果sample size没有影响，那么我们就不需要采集大样本了。从我们的直觉上看，肯定是样本量越大，对总体参数的估计越准确了。
+从图上看，还是和直觉很一致。sample size越大，分布越compact，对总体均值的估计也就越准确。那么就需要使用sample size进行加权，把统计量修改为mean(x)/sd(x) * f(n)，其中n为sample size。
+我们可以想像，学生氏当年try了几种形式的f(n)，发现sqrt(n)效果最好。于是他就定义了统计量: t = mean(x)/(sd(x)/sqrt(n))。 sqrt(n)效果好，因为sd(x)/sqrt(n)正好是对样本间均值标准误SEM的估计。
+我们又可以想像，学生氏当年收集了很多个样本，计算了多个t值，发现这些t值的分布是有规律的，有点像正态分布，学生氏把它定义为t分布，利用t分布的probability density function，就可以计算p-value啦。
+上图就是从标准正态分布里抽取100个样本，所计算的t值分布。
+很多人上课学不懂，我觉得是因为一上来告诉你t怎么算，但是没让你理解SEM，SEM是理解t值计算的关键。
+算完t之后，一句话，符合t分布，然后就是查表看p值,或者让计算机算，太抽象，这世界本来没有t分布，是学生氏定义了t统计量，并发现符合某分布，把它定义为t分布，有计算机做simulation，重现这个过程，就不抽象了，也就好理解了。
+至于两样本，如果是paired的话，那就是paired之间相减，用差值做单样本t检验。如果不是成对，那就是t=(mean(x1)-mean(x2))/SEDM.
+其中SEDM代表standard error of difference of means，这里有一个pool与否的问题，SEDM看上去稍微复杂了一点点，但是basic idea是一样的，非常好理解。
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2012/05/%E4%BB%80%E4%B9%88%E6%98%AFt-%E6%A3%80%E9%AA%8C/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2012/04/enrichment-analysis/">
           enrichment analysis
         </a>
@@ -580,78 +650,6 @@ contour_plot(17*x^2-16*abs(x)*y+17*y^2-225, [x,-sqrt(17),sqrt(17)],[y,-15*sqrt(1
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/06/screen-shot/">
-          screen shot
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2011-06-28T12:17:30&#43;08:00">
-      
-  June 28, 2011
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/bsd">BSD</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/mac-os">Mac OS</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        买了苹果机，一直放在家里没用，准备开会带去用，拿过来装几个软件。</p>
-
-<p>校园网用锐捷是个比较讨厌的东西。当年在华农，光这<a href="http://guangchuangyu.github.io/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/">认证</a>就搞了很久。</p>
-
-<p>现在开源的认证客户端多了，搞起来也方便了，现在在linux下用的<a href="http://code.google.com/p/xmuruijie/">xmuruijie</a>，就比当年<a href="http://guangchuangyu.github.io/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/">mystar</a>好用。</p>
-
-<p>估计xmuruijie也是可以在苹果机上用的，依赖python，搞不好还有些modules要装，懒得去弄，搜了一下，找到<a href="http://code.google.com/p/mentohust/">mentohust</a>，当然需要改一下mac address，用万能的ifconfig搞定。</p>
-
-<p>为了编译软件，必要先装xcode，这个大家伙，4G多，中午挂到吃晚饭才下完。
-然后就可以装各种open source的软件。</p>
-
-<p>mac上有fink支持debian一样的apt-get，还有原生的macport，gentoo的portage也支持，我选择使用<a href="http://guangchuangyu.github.io/categories/bsd">netbsd</a>的pkgsrc来安装各种开源软件。</p>
-
-<p>以前用过比较长时间的netbsd，用着比较顺手。</p>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2011/06/screen-shot/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -754,6 +752,29 @@ contour_plot(17*x^2-16*abs(x)*y+17*y^2-225, [x,-sqrt(17),sqrt(17)],[y,-15*sqrt(1
 实例 最后用我DOSE的文章摘要做为实例，copy-paste到搜索框，这里我点击搜期刊：
 我自己的文章就搜出来了，然后还有一些相关的文章，也是发表在Bioinformatics上，第二个相似度高的期刊是BMC Bioinformatics，再没有理由说不知道文章该投哪里了吧？！
 最后的最后，只想问一句，能来个共一吗？</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/06/turkey_facet/">
+                <h3 class="media-heading">ggplot2分面之像素艺术</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jun 6, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">《按地理位置分面》这篇文章中，最后我故意把美国地图拖成心型，我知道你们没看懂，大家用一样的软件，有些人只会照着文档来，有些人却能够超越文档，做出作者都没想到的事情。像这个心型排版的美国各州，诚然是没有什么意义的，可以说是瞎扯蛋了，但这里我其实隐藏了一个我想表达但没说出来的信息，抛开地理信息，这个包可以很好玩，我想这一点，可能连作者也没想到，因为作者说了他的想法来自于statebins包，他一心想要做地理位置分面。
+然而看到这个心型，难道你在感觉瞎搞的时候，心中没闪过一个念头？这玩意可以瞎搞！瞎搞！瞎搞啊！
+不要被作者的文档给限定了它的使用，不要被软件包的名字给限定了它的使用，更不要被你的大脑限定了它的使用！这是一个很有艺术性，可以放开脑洞，很有逼格的作图方式。
+每一个分面panel，都必须是四四方方的格子，分面图形就画在这四四方方的笛卡尔坐标轴上，对于这个分面位置，你能想到什么吗？它难道不是一个像素格子么？
+所以我说可以放开脑洞，做点艺术性的事情，你可以搞像素艺术了，然后用ggplot2画图，分面拼成你的像素画！
+《happy thanks giving》这篇文章在感恩节的时候写的，画了一只火鸡，我们可以试一下，用这只火鸡来做分面。
+Turkey &lt;- read.csv(&quot;http://pages.iu.edu/~cdesante/turkey.csv&quot;) colnames(Turkey)[2:1] = c(&quot;row&quot;, &quot;col&quot;) Turkey$row = max(Turkey$row) - Turkey$row +1 Turkey$name &lt;- Turkey$code &lt;- paste0('turkey', 1:nrow(Turkey)) require(ggplot2) require(geofacet) x &lt;- split(eu_gdp, eu_gdp$code) x &lt;- x[sample.int(length(x), nrow(Turkey), replace=T)] for (i in 1:length(x)) { x[[i]]$code = Turkey$code[i] } y &lt;- do.call(rbind, x) color = Turkey$Turkey.Colors names(color) = Turkey$code y$color = color[y$code] Turkey = Turkey[, -3] p1 &lt;- ggplot(y, aes(gdp_pc, year))+ geom_line() + facet_geo(~code, grid=Turkey, scales='free') print(p1)  p1 + theme_void() + aes(color=color) + theme(strip.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -966,40 +987,6 @@ $ yaourt -Ss classic95 aur/classic95-icons 1-1 [installed] (3) (0.09) Classic ic
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/05/enrichdavid%E6%94%AF%E6%8C%81%E8%87%AA%E5%AE%9A%E4%B9%89%E8%83%8C%E6%99%AF/">
-                <h3 class="media-heading">enrichDAVID支持自定义背景</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  May 5, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>虽然我不喜欢DAVID，但很多用户喜欢，所以clusterProfiler也支持了，最近github上又有人<a href="https://github.com/GuangchuangYu/clusterProfiler/issues/87">要求支持自定义背景</a>。</p>
-
-<blockquote>
-<p>Dear Guangchuang,</p>
-
-<p>I am using clusterProfiler in Kegg pathway enrichment analysis, it is useful and nice. I am looking for a function which accept background and has ability to deal with Ensembl gene ID.</p>
-
-<p>In a function enrichDAVID it can takes ensembl gene id as an input format, but not allows to enter background.
-<code>enrichDAVID(gene = gene, idType=&quot;ENSEMBL_GENE_ID&quot;, annotation=&quot;KEGG_PATHWAY&quot;, species= &quot;hsa&quot;)</code></p>
-
-<p>Other command enrichKEGG has a background input but only takes entrez gene id,
-<code>enrichKEGG(gene, organism = &quot;hsa&quot;, keyType = &quot;kegg&quot;, universe)</code></p>
-
-<p>I have tried to convert my ensembl gene IDs to entrez gene id, but some ensembl gene IDs represent more than one entrez gene ID.
-I downloaded KEGG pathway dataset to apply fisher exact test. however, genes are in entrez ID and i am still dont know how to convert.</p>
-</blockquote>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1007,7 +994,7 @@ I downloaded KEGG pathway dataset to apply fisher exact test. however, genes are
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         93 posts found
+         94 posts found
       </p>
     </div>
   </div>
