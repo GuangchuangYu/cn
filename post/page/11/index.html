@@ -225,6 +225,69 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/08/love-function-plot/">
+          love function plot
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2011-08-06T05:37:55&#43;08:00">
+      
+  August 6, 2011
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        今天在微博上看到这坑爹的方程： $ (x^2+y^2-1)^3 = {x^2} {y^3}$
+画出来如下：
+跟个屁股似的，sigh&hellip;
+翻出azalea的老文：<a href="http://azaleasays.com/2008/06/18/fomula-of-love/">http://azaleasays.com/2008/06/18/fomula-of-love/</a>
+用ggplot2画一下这个爱的方程：$17x^2-16|x|y+17y^2 = 225 $
+x &lt;- seq(-sqrt(17), sqrt(17), 0.001) y1 &lt;- 8<em>abs(x)/17 + 15</em> sqrt(17 - x^2)/17 y2 &lt;- 8<em>abs(x)/17 - 15</em> sqrt(17 - x^2)/17 d &lt;- data.frame(x=c(x,x),y=c(y1,y2)) require(ggplot2) p &lt;- ggplot(d, aes(x,y)) p + geom_point(color=&quot;red&quot;)  还可以画出红心，适合今天七夕的日子。
+p + geom_line(color=&quot;red&quot;)  画函数图，这种事情，还是用CAS方便点。
+通过maxima来画，一条指令就行，还不用解方程：
+contour_plot(17*x^2-16*abs(x)*y+17*y^2-225, [x,-sqrt(17),sqrt(17)],[y,-15*sqrt(17)/17, sqrt(17)])
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2011/08/love-function-plot/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/06/screen-shot/">
           screen shot
         </a>
@@ -631,68 +694,6 @@ DNA重组也使用标记，我们无法直接检测到是否重组了，是否�
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/10/blind-approach/">
-          生物研究=盲人摸象？
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2008-10-17T00:53:00&#43;08:00">
-      
-  October 17, 2008
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/biology">Biology</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        生物研究=盲人摸象？ 今天看了一篇文章Can a biologist fix a radio?, 作者讲了个悖论，越多事实的积累，对于所研究的process理解的越少。
-这确实是现在的现实。许多的科研结果，其实就是便这个本来很混乱的世界更加混乱。文中还讲到了科研的淘金热。昨天我正好看到了science上的文章说impact factor fever。当科研成为一种职业，真正对科学有热情的scientist并不多，更多的人仅仅是为了拿grant，要拿grant，就要发高分的文章，哪里好发文章，那里就有一堆人在抢。顺带一下，大家都说生物是火坑，其实学科在发展的初期，对于科研人员来说还是有利的。如果说工作的话，确实是火坑，其实生物是个暴利行业，如果你身在火海中，那是因为你处于生物链的最底层。
-文中说的科研方法，是带有讽刺口吻的。其实也不可笑，上个世纪初，物理界也是拿一个粒子去撞另一个粒子，然后观察现像。科学发展的最初都是在堆积事实。况且做科研的人也不见得聪明。书读得多不见得是一件值得高兴的事，我们只是知道了被抽象的大千世界中的一个小角落而已。就像《黑天鹅》里说的故事一样，抛99次硬币，都是正面朝上，问一个博士，第100次朝上的概率是多少，他脱口而出，50%，每次试验都是独立，前面的事实并不影响后面，贝努力试验嘛，书上学的。但是99次都朝上，这硬币肯定被做过手脚。所以说读书读到啥的人才会说50%.
-这么多年的研究，生物界已经堆积了足够多的事实了，但是却连一个简单的生化途径都说不清，道不明。对于单个分子的跟踪真的有意义吗？首先真的能完全捕捉到分子的所有行为吗？就像量子力学中的测不准原理，测准了速度，就无法确定位置，确定了位置，就测不准速度。就算测得准，分子是没有生命现像的。至少要以细胞为最低的单位。就算你知道了所有的分子功能。拼在一起，你还是不能了解生命的现象。就像物理学中的布朗运动，所有分子的运动都是杂乱的，测了也没用。但宏观上，却有规律可循。亦或者半衰期，所有的分子在一个半衰期里会有一半的衰变，但那一个衰变了，我们并不能确定，为什么是它衰变，而不是别的分子，也无法确定，但一堆分子，整体上却是按着规律来的。
-作者说从系统的角度来会是一个出路，但是至少从目前来看，我觉得系统生物学也是在制造混乱。paradigm-shift是很痛苦的，很多是打着系统的名义在做更高层次的分解的工作。
-很多东西都属于初期，比如网络中边的连接，都是基于布尔值，要么是1要么是0,而真正的事实不会是开关型的。
-最后最搞笑的是，作者竟然说学BASIC，这种imperative的语言，是不适合于复杂系统的研究的。我所会的编程语言都是imperative的。囧~~~，这种paradigm要求程序员从计算机的角度思考问题，写程序就是告诉计算机第一步做什么，然后第二步做什么，如此反复。不够abstract，做复杂系统的话会吐血的。像lisp这样的functional programming language在AI的研究上的流行是有原因的。编程上这又得来一次paradigm-shift&hellip;.
-不管怎么看，现在的科研就是在盲人摸象。但我们应该有更高的视野，我们需要看到更多的东西。
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2008/10/blind-approach/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -1037,7 +1038,7 @@ $ yaourt -Ss classic95 aur/classic95-icons 1-1 [installed] (3) (0.09) Classic ic
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         94 posts found
+         95 posts found
       </p>
     </div>
   </div>

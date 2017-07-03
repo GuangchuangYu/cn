@@ -308,6 +308,11 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2013/06/compress-tiff/</loc>
+    <lastmod>2013-06-07T15:10:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2013/01/talen%E5%9F%BA%E5%9B%A0%E7%BC%96%E8%BE%91/</loc>
     <lastmod>2013-01-10T08:40:22+08:00</lastmod>
   </url>
@@ -781,6 +786,12 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/hypergeometric/</loc>
     <lastmod>2017-03-03T00:10:37+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/imagemagick/</loc>
+    <lastmod>2013-06-07T15:10:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
