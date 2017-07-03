@@ -523,6 +523,52 @@ p + scale_x_discrete(labels=function(x) str_wrap(x, width=10))
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/jane/">
+                <h3 class="media-heading">什么？听说你有文章却不知道该往那里投！</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jul 7, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">以下这些情况是否在你的科研生活中出现，被给你一定的困扰：
+ 你想投文章，却不知道该投什么杂志？ 你在写文章中，想找一篇相关的文章来引用？ 如果你是Editor，想为文章找审稿人？  这些问题特别是第1点一定给做科研的人带来了困扰，当然首先你得有manuscript（说多了都是泪）。
+这时候我们需要一款神器，JANE：Journal/Author Name Estimator， http://jane.biosemantics.org/。你可以用关键字、标题或摘要来搜索，可以搜索作者、文章和期刊。搜索结果按照相似度给出。
+文章投什么杂志 拿自己的摘要去搜期刊，可以找到相似的工作都发表在什么杂志上，这对于我该投什么杂志有参考和指导意义。
+找相关文章来引用 这时候把要引用的内容拿来搜文章，相关的文章就搜出来了。
+找审稿人 拿别人投稿的摘要来搜作者，轻而易举就找到了相关发表类似工作的作者，联系一下是否愿意审稿，方向性很强，节省了大家的时间，也容易找到专业人士来审。
+实例 最后用我DOSE的文章摘要做为实例，copy-paste到搜索框，这里我点击搜期刊：
+我自己的文章就搜出来了，然后还有一些相关的文章，也是发表在Bioinformatics上，第二个相似度高的期刊是BMC Bioinformatics，再没有理由说不知道文章该投哪里了吧？！
+最后的最后，只想问一句，能来个共一吗？</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/06/ggtree_sticker/">
+                <h3 class="media-heading">一大波ggtree贴纸来袭</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jun 6, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>还记得《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247483679&amp;idx=1&amp;sn=e9038cdaeb776355becba5ccfa01b501&amp;chksm=ec43b058db34394ed7afc20c246e1b664fe3b1d54e07b7c92b26bfcf292a46879926a4697a5a&amp;scene=21#wechat_redirect">ggtree hex sticker</a>》一文吧？画了几个六角贴，纯代码生成。时隔半年，原来的ggtree已经分成了<code>treeio</code>和<code>ggtree</code>两个包，而我也做了这两个包的六角贴，终于我花了289美元印了一大波贴纸+磁贴。</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/R/hexSticker/WechatIMG12.jpeg" alt="" /></p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/06/geofacet/">
                 <h3 class="media-heading">按地理位置进行分面</h3>
               </a>
@@ -740,60 +786,6 @@ I downloaded KEGG pathway dataset to apply fisher exact test. however, genes are
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/05/bootstrap-value%E5%88%86%E6%AE%B5%E6%A0%87%E8%AE%B0/">
-                <h3 class="media-heading">bootstrap value分段标记</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  May 5, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>想要分段标记bootstrap，比如<code>0-70</code>, <code>70-90</code>, <code>90-100</code>之类的。这个对于ggtree来说，太简单。</p>
-
-<p>首先我们要读树，用<code>treeio</code>的<code>read.newick</code>，它和<code>read.tree</code>的不同之处是，加入了参数<code>node.label</code>，当<code>node.label</code>存的不是<code>label</code>，而是<code>bootstrap</code>等数字型的时候，你可以传入<code>node.label='support'</code>，这样它会把node label解析为support value，另存为树注释数据，而不是和tip label混在一起。label变量只能存为字符型，因为和tip label混了，而字符型会让数字操作稍微复杂点。所以我们要用<code>read.newick</code>。</p>
-
-<pre><code>tree &lt;- read.newick(&quot;RMI.phy_phyml_tree_rooted_labeled.txt&quot;, node.label='support')
-root &lt;- getRoot(tree@phylo)
-
-p &lt;- ggtree(tree, color=&quot;black&quot;, size=1.5, linetype=1,  ladderize=TRUE) + 
-     ggtitle(label=&quot;Figure A&quot;) + 
-    geom_tiplab(size=4.5, hjust = -0.060, fontface=&quot;bold&quot;) +  xlim(0, 0.09)
-</code></pre>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/04/annotate-tree-with-user-specific-data/">
-                <h3 class="media-heading">annotate tree with user specific data</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/Screen Shot 2017-04-29 at 1.46.28 PM.png" alt="" /></p>
-
-<p>最新的一个问题，大致讲他有两个trait, A和B，想拿A来给label上色，B来画热图。</p>
-
-<p>加载用户数据我们有<code>%&lt;+%</code>操作符，热图有<code>gheatmap</code>函数。</p>
-
-<p>我给了他一个简单的例子：</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -801,7 +793,7 @@ p &lt;- ggtree(tree, color=&quot;black&quot;, size=1.5, linetype=1,  ladderize=T
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         91 posts found
+         93 posts found
       </p>
     </div>
   </div>
