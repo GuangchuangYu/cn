@@ -225,6 +225,69 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/02/wrapping-labels-in-ggplot2/">
+          wrapping labels in ggplot2
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-02-14T09:50:00&#43;08:00">
+      
+  February 14, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        在公众号biobabble后台有多人同时在问这个问题：</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/2017/2017-02-12-223832_646x667_scrot.png" alt="" /></p>
+
+<p>晒这个截屏主要想说一点，如果是一两句话就能说清楚的问题，可以提问，如果不是，则不要在后台提问，写邮件或者到论坛提问，是更好的方式，像截屏中显示的，图片显示过期，我根本就没看到过图片。在手机上是无法看的，而我正好几天没在电脑前，于是你们发的图片我看不了，而且我如果没有在24小时之内回复，公众平台就不允许我回复了，因为问题已经过期。所以在此强调，不要在后台发图片提问，不要在后台问稍复杂的问题。</p>
+
+<p>这个问题其实很简单，用<code>stringr</code>包的<code>str_wrap</code>来完成文本自动换行就行了。</p>
+
+<p>
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2017/02/wrapping-labels-in-ggplot2/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/01/ggtree%E5%8F%91%E8%A1%A8/">
           ggtree发表
         </a>
@@ -578,69 +641,6 @@ ga('send', 'pageview');
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2016/12/using-linked-list-to-solve-josephus-problem/">
-          Using Linked List to solve Josephus problem
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2016-12-04T00:53:00&#43;08:00">
-      
-  December 4, 2016
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/data-structure">data structure</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/c&#43;&#43;">C&#43;&#43;</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <blockquote>
-<p>这个问题是以弗拉维奥·约瑟夫斯命名的，它是1世纪的一名犹太历史学家。他在自己的日记中写道，他和他的40个战友被罗马军队包围在洞中。他们讨论是自杀还是被俘，最终决定自杀，并以抽签的方式决定谁杀掉谁。约瑟夫斯和另外一个人是最后两个留下的人。约瑟夫斯说服了那个人，他们将向罗马军队投降，不再自杀。约瑟夫斯把他的存活归因于运气或天意，他不知道是哪一个。  &ndash; <a href="https://zh.wikipedia.org/wiki/约瑟夫斯问题">https://zh.wikipedia.org/wiki/约瑟夫斯问题</a></p>
-</blockquote>
-
-<p>这是一个比较简单的问题，n个人围成圆圈，越过k-1个人，杀掉第k个人，如此反复直到只剩下最后一个人。可以用数学推导给出答案，问题本身已经足够简单，用链表可以模拟整个过程。实现起来比较直观。这里在初始化这个链表的时候，需要注意，到了最后一人的时候，他应该指向第一个人，这样才能形成一个环状的链表，然后问题就非常简单了，从第一人开始，后面就无所谓头和尾了，按照规则来，每次杀掉一个人，直到只剩下最后一人，就是结果。从维基的解释可以看出，最后两个人没死，这没节操的事情被拿来说，如果你数学好，你就可以救自己一命（站在合适的位置，让自己是最后一个）。</p>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2016/12/using-linked-list-to-solve-josephus-problem/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -743,6 +743,27 @@ ga('send', 'pageview');
 实例 最后用我DOSE的文章摘要做为实例，copy-paste到搜索框，这里我点击搜期刊：
 我自己的文章就搜出来了，然后还有一些相关的文章，也是发表在Bioinformatics上，第二个相似度高的期刊是BMC Bioinformatics，再没有理由说不知道文章该投哪里了吧？！
 最后的最后，只想问一句，能来个共一吗？</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/r-gui/">
+                <h3 class="media-heading">R的N种打开方式</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jul 7, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>RStudio太成功，以至于有些新手只知有RStudio，不知有R。在<a href="https://guangchuangyu.github.io/2015/11/r-kernel-in-jupyter-notebook-3/">R kernel in Jupyter notebook 3</a>和<a href="https://guangchuangyu.github.io/2014/12/auto-complete-in-ess/">auto-complete in ESS</a>两篇文章中，我介绍了在Jupyter和Emacs里使用R。</p>
+
+<p><img src="http://guangchuangyu.github.io/blog_images/screenshots/Screenshot%202015-11-04%2010.54.29.png" alt="" /></p>
+
+<p></p></div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -955,29 +976,6 @@ $ yaourt -Ss classic95 aur/classic95-icons 1-1 [installed] (3) (0.09) Classic ic
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/05/viziometric/">
-                <h3 class="media-heading">viziometric</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  May 5, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>收到了<a href="http://viziometrics.org">Viziometric</a>的邮件：</p>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/screenshots/VizioMetric/Screenshot 2017-05-19 19.48.20.png" alt="" /></p>
-
-<p>说要我给自己的一篇文章选一张图做为代表，我顺手点开，没想到这是一款神器啊！这是由University of Washington做Computer Vision的研究生做的一个<strong>学术图片</strong>搜索引擎，去年被Economist和MIT Technology报道过。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -985,7 +983,7 @@ $ yaourt -Ss classic95 aur/classic95-icons 1-1 [installed] (3) (0.09) Classic ic
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         95 posts found
+         96 posts found
       </p>
     </div>
   </div>

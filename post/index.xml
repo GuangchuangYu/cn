@@ -29,6 +29,19 @@
     </item>
     
     <item>
+      <title>R的N种打开方式</title>
+      <link>https://guangchuangyu.github.io/cn/2017/07/r-gui/</link>
+      <pubDate>Sat, 01 Jul 2017 00:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/07/r-gui/</guid>
+      <description>&lt;p&gt;RStudio太成功，以至于有些新手只知有RStudio，不知有R。在&lt;a href=&#34;https://guangchuangyu.github.io/2015/11/r-kernel-in-jupyter-notebook-3/&#34;&gt;R kernel in Jupyter notebook 3&lt;/a&gt;和&lt;a href=&#34;https://guangchuangyu.github.io/2014/12/auto-complete-in-ess/&#34;&gt;auto-complete in ESS&lt;/a&gt;两篇文章中，我介绍了在Jupyter和Emacs里使用R。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/screenshots/Screenshot%202015-11-04%2010.54.29.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>ggplot2分面之像素艺术</title>
       <link>https://guangchuangyu.github.io/cn/2017/06/turkey_facet/</link>
       <pubDate>Fri, 30 Jun 2017 09:53:00 +0800</pubDate>

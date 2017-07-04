@@ -228,6 +228,86 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2007/05/scilab%E4%B8%89%E7%BB%B4%E5%B9%B3%E9%9D%A2%E7%BB%98%E5%9B%BE/">
+          scilab三维平面绘图
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2007-05-03T10:27:00&#43;08:00">
+      
+  May 3, 2007
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/software">Software</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        三维绘图可以分为两大类型：矩阵型和曲面型。</p>
+
+<h2 id="矩阵型">矩阵型</h2>
+
+<p>通常是声明一个矩阵，以矩阵的长宽为x,y范围，以矩阵里面的数值为高z，
+使用<code>plot3d(t1,t2,Z,alpha=a,theta=b)</code></p>
+
+<ul>
+<li>t1:y轴方向的范围</li>
+<li>t2:x轴方向的范围</li>
+<li>Z:矩阵</li>
+<li>alpha</li>
+<li>theta参数用于指定角度，让图绘出来以某个特定的角度呈现出来。(optional)</li>
+</ul>
+
+<pre><code>-&gt;clear -&gt;A=[1 2 5 4 3;0 3 2 8 6;2 4 6 7 5;2 3 4 3 1];
+-&gt;t1=1:4; -&gt;t2=1:5;
+//plot3d1与plot3d语法类似，能够嵌入多种颜色
+-&gt;plot3d(t1,t2,A,alpha=45,theta=45);
+</code></pre>
+
+<p>mesh不需要边界声明， <code>-&gt;mesh(A);</code></p>
+
+<p>
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2007/05/scilab%E4%B8%89%E7%BB%B4%E5%B9%B3%E9%9D%A2%E7%BB%98%E5%9B%BE/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+            
+              
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/">
           在emacs里使用maxima
         </a>
@@ -386,6 +466,27 @@ sudo texhash
 实例 最后用我DOSE的文章摘要做为实例，copy-paste到搜索框，这里我点击搜期刊：
 我自己的文章就搜出来了，然后还有一些相关的文章，也是发表在Bioinformatics上，第二个相似度高的期刊是BMC Bioinformatics，再没有理由说不知道文章该投哪里了吧？！
 最后的最后，只想问一句，能来个共一吗？</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/r-gui/">
+                <h3 class="media-heading">R的N种打开方式</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jul 7, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>RStudio太成功，以至于有些新手只知有RStudio，不知有R。在<a href="https://guangchuangyu.github.io/2015/11/r-kernel-in-jupyter-notebook-3/">R kernel in Jupyter notebook 3</a>和<a href="https://guangchuangyu.github.io/2014/12/auto-complete-in-ess/">auto-complete in ESS</a>两篇文章中，我介绍了在Jupyter和Emacs里使用R。</p>
+
+<p><img src="http://guangchuangyu.github.io/blog_images/screenshots/Screenshot%202015-11-04%2010.54.29.png" alt="" /></p>
+
+<p></p></div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -598,29 +699,6 @@ $ yaourt -Ss classic95 aur/classic95-icons 1-1 [installed] (3) (0.09) Classic ic
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/05/viziometric/">
-                <h3 class="media-heading">viziometric</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  May 5, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>收到了<a href="http://viziometrics.org">Viziometric</a>的邮件：</p>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/screenshots/VizioMetric/Screenshot 2017-05-19 19.48.20.png" alt="" /></p>
-
-<p>说要我给自己的一篇文章选一张图做为代表，我顺手点开，没想到这是一款神器啊！这是由University of Washington做Computer Vision的研究生做的一个<strong>学术图片</strong>搜索引擎，去年被Economist和MIT Technology报道过。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -628,7 +706,7 @@ $ yaourt -Ss classic95 aur/classic95-icons 1-1 [installed] (3) (0.09) Classic ic
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         95 posts found
+         96 posts found
       </p>
     </div>
   </div>
