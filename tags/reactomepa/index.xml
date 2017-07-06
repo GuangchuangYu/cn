@@ -6,10 +6,23 @@
     <description>Recent content in Reactomepa on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 13 Jul 2016 21:06:59 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 06 Jul 2017 05:44:27 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/tags/reactomepa/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>SCIENCE文章用了DAVID被吐槽</title>
+      <link>https://guangchuangyu.github.io/cn/2017/07/david-clusterprofiler/</link>
+      <pubDate>Thu, 06 Jul 2017 05:44:27 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/07/david-clusterprofiler/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/clusterProfiler/DAVID/science.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;好端端的一篇文章，因为用了DAVID，在PubPeer上就被吐槽了：&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Evolution of my BioC packages</title>
