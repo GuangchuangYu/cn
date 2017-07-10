@@ -225,6 +225,73 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/04/ggplot2%E5%AD%97%E4%BD%93%E6%BA%A2%E5%87%BA%E7%9A%84%E9%82%A3%E7%82%B9%E7%A0%B4%E4%BA%8B/">
+          ggplot2字体溢出的那点破事
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-04-03T15:10:00&#43;08:00">
+      
+  April 3, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        比如下面的代码：</p>
+
+<pre><code>require(ggplot2)
+d &lt;- data.frame(x=c(0, 0.002, 0.00575), y = 1:3)
+p &lt;- ggplot(d, aes(x, y)) + geom_point() + xlab(NULL) + ylab(NULL)
+print(p)
+</code></pre>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/geom_text_files/figure-markdown_strict/unnamed-chunk-1-1.png" alt="" /></p>
+
+<p>上面图中x轴的文本<strong>0.006</strong>，这个数字中的<strong>6</strong>几乎看不到，因为一半过界了。</p>
+
+<p>
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2017/04/ggplot2%E5%AD%97%E4%BD%93%E6%BA%A2%E5%87%BA%E7%9A%84%E9%82%A3%E7%82%B9%E7%A0%B4%E4%BA%8B/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/03/%E5%85%B3%E4%BA%8Echipseq%E6%B3%A8%E9%87%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/">
           关于ChIPseq注释的几个问题
         </a>
@@ -659,65 +726,6 @@ ga('send', 'pageview');
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/03/unknown-annotation-in-enrichment-analysis/">
-          unknown annotation in enrichment analysis
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-03-03T00:10:37&#43;08:00">
-      
-  March 3, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/statistics">statistics</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        小伙伴说注释不全，比如KEGG只有不到1万个基因有注释，但他一次RNA-seq出来的基因有2万多个，那其它没注释那1万多个岂不是扔了？！就某个通路来说，两种情况，要么属于，要么不属于这个通路。那1万多个应该放在背景里，不要扔。</p>
-
-<p>我的解答是三种情况，1属于，2不属于，3不知道。对于缺失信息的，当然是扔。</p>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/03/unknown-annotation-in-enrichment-analysis/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -799,6 +807,29 @@ ga('send', 'pageview');
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/unpaywall/">
+                <h3 class="media-heading">Sci-hub如果挂了，你还有神器下文献吗？</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jul 7, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><blockquote>
+<p>在《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247483956&amp;idx=1&amp;sn=16df120e86b3e66395ce69c3abf76715&amp;chksm=ec43b373db343a6581301f52c923c7506e0f0789d5f0792fbf59da44f8b29b833cdbc46ddfc2#rd">如何获取文献</a>》一文中，我介绍了获取文献的方方面面，从搜索、文献管理、订阅、个性人推荐到下载。本文再继续说说文献下载神器。</p>
+</blockquote>
+
+<p>Sci-hub无疑现在是很多苦逼科研工作者所依赖的最大神器，然而最近败诉给爱思唯尔出版社，赔1500万美元，这点钱显然是不能够搞垮sci-hub的，但是<strong>败诉</strong>本身给大家带来的信号对sci-hub的影响会更大，必须更大！美国化学学会几天前也发起了对Sci-Hub的诉讼！sci-hub很有可能在败诉的影响下，被群起而攻之，最终被各大出版社给掐死。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1028,24 +1059,6 @@ aur/wechatircd-git r85.bb8f354-1 (0) (0.00)
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/05/xiaomiquan/">
-                <h3 class="media-heading">怀疑人生！我没欠你们钱，好吗？</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  May 5, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>写了十几年的博客，虽然好早之前就发现一些博客文被《生信人》公众号抄了，但一直不愿意开公众号，去年年底尝试开个公众号，原创保护不给别人抄倒不是主要，而是我感觉到公众号已经绑架了中国人的阅读入口，可以尝试把博客文搬上来，这样大家可以在微信里搜到文章，有利于传播嘛。而我不是单纯为传播知识而来，而主要是推送我自己的东西，这在《为什么要开这个公众号》一文中已经讲了，维护我写的几个软件，花掉大量的时间，现在给我发邮件问问题，我基本都会让他们去biostars或bioconductor论坛上去问，公开交流有利于别的用户参与/学习，有助于减少重复解答，我也不断完善文档，很多问题其实在文档里都有答案，但人的天性就是懒、不愿学习（我在ggtree发布的第一篇文章里也提及了这点，说了%&lt;+%操作符就是给懒人用的）。
-</p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1053,7 +1066,7 @@ aur/wechatircd-git r85.bb8f354-1 (0) (0.00)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         98 posts found
+         99 posts found
       </p>
     </div>
   </div>
