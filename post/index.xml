@@ -27,6 +27,19 @@
     </item>
     
     <item>
+      <title>joyplot：一种波涛汹涌，哦不对，是山峰叠峦的可视化方式</title>
+      <link>https://guangchuangyu.github.io/cn/2017/07/ggjoy/</link>
+      <pubDate>Tue, 11 Jul 2017 00:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/07/ggjoy/</guid>
+      <description>&lt;p&gt;最近推特上在讨论的一种叫做joyplot的作图方式，如果我们按照正常的画法，这些分布会重叠在一起，不容易看。而这种joyplot，有一种山峰叠峦的即视感：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/ggjoy/Screenshot 2017-07-11 16.37.22.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Linux中使用QQ</title>
       <link>https://guangchuangyu.github.io/cn/2017/07/wine-qq/</link>
       <pubDate>Sun, 09 Jul 2017 07:57:46 +0800</pubDate>
@@ -712,10 +725,10 @@ print(p)
     
     <item>
       <title>clifun:在R里装装逼</title>
-      <link>https://guangchuangyu.github.io/cn/2016/12/clifun%E5%9C%A8r%E9%87%8C%E8%A3%85%E8%A3%85%E9%80%BC/</link>
+      <link>https://guangchuangyu.github.io/cn/2016/12/clifun/</link>
       <pubDate>Tue, 13 Dec 2016 00:53:00 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/2016/12/clifun%E5%9C%A8r%E9%87%8C%E8%A3%85%E8%A3%85%E9%80%BC/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2016/12/clifun/</guid>
       <description>&lt;p&gt;天天活在命令行下，需要一些有趣的小命令来调节一下枯燥的生活（其实是需要装装逼）。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/clifun/Screen Shot 2016-12-12 at 1.42.00 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;

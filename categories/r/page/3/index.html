@@ -228,6 +228,88 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/03/%E5%85%B3%E4%BA%8Echipseq%E6%B3%A8%E9%87%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/">
+          关于ChIPseq注释的几个问题
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-03-31T12:23:16&#43;08:00">
+      
+  March 31, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/chipseq">ChIPseq</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <h2 id="为什么我要用某个基因组版本">为什么我要用某个基因组版本？</h2>
+
+<p>在上一篇文章中，我用了<code>TxDb.Hsapiens.UCSC.hg19.knownGene</code>。 <strong>hg19</strong>的<strong>TxDb</strong>, 或者有人就要问了，为什么不用<strong>hg38</strong>？</p>
+
+<p>这个问题，不是说要用那一个，不能用那一个。而是你必须得用某一个，这取决于你最初<strong>fastq</strong>用BWA/Bowtie2比对于某个版本的基因组，你最初用了某个版本，后面就得用相应的版本，不能混，因为不同版本的位置信息有所不同。</p>
+
+<p>当然如果要（贵圈喜欢的）强搞，也不是不可以，你得有chain file，先跑个liftOver，实际上就是在两个基因组版本之间做了位置转换。</p>
+
+<h2 id="为什么说-chipseeker-支持所有物种">为什么说<strong>ChIPseeker</strong>支持所有物种？</h2>
+
+<p>背景注释信息用了<strong>TxDb</strong>就能保证所有物种都支持了？我去哪里找我要的<strong>TxDb</strong>?</p>
+
+<p>我写<strong>ChIPseeker</strong>的时候，我做的物种是人，<strong>ChIPseeker</strong>在线一周就有剑桥大学的人写信跟我说在用<strong>ChIPseeker</strong>做果蝇，在<a href="https://guangchuangyu.github.io/cn/2017/03/bed%E6%96%87%E4%BB%B6/">BED文件</a>一文中，也提到了最近有人在Biostars上问用<strong>ChIPseeker</strong>做裂殖酵母。</p>
+
+<p>首先Bioconductor提供了30个TxDb包，可以供我们使用，这当然只能覆盖到一小部分物种，我们的物种基因组信息，多半要从UCSC或者Ensembl获得，我敢说支持所有物种，就是因为UCSC和ensembl上所有的基因组都可以被<strong>ChIPseeker</strong>支持。</p>
+
+<p>因为我们可以使用<strong>GenomicFeatures</strong>包函数来制作TxDb对象：</p>
+
+<ul>
+<li>makeTxDbFromUCSC： 通过UCSC在线制作TxDb</li>
+<li>makeTxDbFromBiomart: 通过ensembl在线制作TxDb</li>
+<li>makeTxDbFromGRanges：通过GRanges对象制作TxDb</li>
+<li>makeTxDbFromGFF：通过解析GFF文件制作TxDb</li>
+</ul>
+
+<p>
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2017/03/%E5%85%B3%E4%BA%8Echipseq%E6%B3%A8%E9%87%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+            
+              
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/03/news-in-emojifont/">
           News in emojifont
         </a>
@@ -643,69 +725,6 @@ ga('send', 'pageview');
 </article>
 
             
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/02/wrapping-labels-in-ggplot2/">
-          wrapping labels in ggplot2
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-02-14T09:50:00&#43;08:00">
-      
-  February 14, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        在公众号biobabble后台有多人同时在问这个问题：</p>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/2017/2017-02-12-223832_646x667_scrot.png" alt="" /></p>
-
-<p>晒这个截屏主要想说一点，如果是一两句话就能说清楚的问题，可以提问，如果不是，则不要在后台提问，写邮件或者到论坛提问，是更好的方式，像截屏中显示的，图片显示过期，我根本就没看到过图片。在手机上是无法看的，而我正好几天没在电脑前，于是你们发的图片我看不了，而且我如果没有在24小时之内回复，公众平台就不允许我回复了，因为问题已经过期。所以在此强调，不要在后台发图片提问，不要在后台问稍复杂的问题。</p>
-
-<p>这个问题其实很简单，用<code>stringr</code>包的<code>str_wrap</code>来完成文本自动换行就行了。</p>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/02/wrapping-labels-in-ggplot2/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
             
   <div class="pagination-bar">
     <ul class="pagination">
@@ -805,6 +824,27 @@ ga('send', 'pageview');
 </blockquote>
 
 <p>Sci-hub无疑现在是很多苦逼科研工作者所依赖的最大神器，然而最近败诉给爱思唯尔出版社，赔1500万美元，这点钱显然是不能够搞垮sci-hub的，但是<strong>败诉</strong>本身给大家带来的信号对sci-hub的影响会更大，必须更大！美国化学学会几天前也发起了对Sci-Hub的诉讼！sci-hub很有可能在败诉的影响下，被群起而攻之，最终被各大出版社给掐死。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/ggjoy/">
+                <h3 class="media-heading">joyplot：一种波涛汹涌，哦不对，是山峰叠峦的可视化方式</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jul 7, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>最近推特上在讨论的一种叫做joyplot的作图方式，如果我们按照正常的画法，这些分布会重叠在一起，不容易看。而这种joyplot，有一种山峰叠峦的即视感：</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/R/ggjoy/Screenshot 2017-07-11 16.37.22.png" alt="" /></p>
 
 <p></p></div>
             </div>
@@ -1019,27 +1059,6 @@ aur/wechatircd-git r85.bb8f354-1 (0) (0.00)
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/06/quality_bar_fastq/">
-                <h3 class="media-heading">纯文本可视化FASTQ质量数据</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jun 6, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><img src="https://guangchuangyu.github.io/blog_images/2017/Screenshot 2017-06-02 14.15.14.png" alt="" /></p>
-
-<p>一早曾老师就来发github repo，虽然有意思，但在我看来就是乱用emoji，用一个人类不可读（你怎么能够记住表情如何与数值对应上？！）来表示另一个人类不友好（质量编码）的数据，这绝对不是个好主意。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1047,7 +1066,7 @@ aur/wechatircd-git r85.bb8f354-1 (0) (0.00)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         99 posts found
+         100 posts found
       </p>
     </div>
   </div>

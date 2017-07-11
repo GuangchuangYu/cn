@@ -228,6 +228,71 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2016/11/%E6%97%A0%E4%B8%AD%E7%94%9F%E6%9C%89windows%E7%89%88r%E5%8C%85/">
+          无中生有windows版R包
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2016-11-30T00:53:00&#43;08:00">
+      
+  November 30, 2016
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        之前帮助高老师实现比对序列的做图，把代码打包为R包seqcombo，方便安装使用。花两小时的作品，发现还有些用户在使用 -，-</p>
+
+<p>之前有人联系我说安装不上，我觉得不应该有这个问题，因为是纯R代码代码，不涉及到编译，源码包安装不应该有问题。但既然有人问，又都是windows用户，我想可以给他们提供编译好的windows包，简化安装过程（这么体贴用户，我都要被自己感动了）。</p>
+
+<p>放在CRAN或Bioconductor上的R包，CRAN和Bioconductor会编译出不同平台的二进制包，但seqcobo放在github上，只有源代码，没有预编译好的包，但没有不是问题，我编译好放上去就行了。</p>
+
+<p>但问题是我没有windows！多年来一直是OSX和linux，MacBook Pro跑Arch Linux，一台iMac跑OSX，我自己根本没有跑windows的机器，所以难为无米之炊，借台机器总是有的，但总不能每次一更新，就拷个代码去别人的机器上打包，再拷回来上传到网上，想想也是蛋疼。</p>
+
+<p>所以没有windows，这事干起来还不太容易，！在想怎么来无中生有生出个windows包出来的时候，我想起了rhub，也是因为没有windows，之前就用rhub来进行windows平台的R check，在把代码push到CRAN或Bioconductor之前，我总会测试没问题了，再提交代码过去，而rhub正好可以给我提供windows平台的检测。</p>
+
+<p>
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2016/11/%E6%97%A0%E4%B8%AD%E7%94%9F%E6%9C%89windows%E7%89%88r%E5%8C%85/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+            
+              
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2016/11/vertical-dendrogram-in-ggtree/">
           vertical dendrogram in ggtree
         </a>
@@ -585,67 +650,6 @@ ga('send', 'pageview');
 </article>
 
             
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2016/10/update-r-packages/">
-          Update R packages
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2016-10-19T09:53:00&#43;08:00">
-      
-  October 19, 2016
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        更新R较为无痛的方法已经在<a href="http://guangchuangyu.github.io/2014/11/hello-yosemite/">hello yosemite</a>一文中提及。今天Bioconductor发布3.4版本，又是更新R包的时候了。</p>
-
-<p>之前为了<a href="https://guangchuangyu.github.io/2016/07/how-to-bug-author/">吐槽</a>很多人问问题都是在使用早已不维护的老版本，写了<a href="https://cran.r-project.org/web/packages/rvcheck/">rvcheck</a>来帮忙检查版本。既然能够帮我们检查版本，自然能够帮忙升级。</p>
-
-<p>使用<code>rvcheck::update_all()</code>可以自动更新CRAN, Bioconductor和Github上的R包。其实可以放到系统任务里，每月自动更新一次，然后就可以完全不用管升级的事情。</p>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2016/10/update-r-packages/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
             
   <div class="pagination-bar">
     <ul class="pagination">
@@ -745,6 +749,27 @@ ga('send', 'pageview');
 </blockquote>
 
 <p>Sci-hub无疑现在是很多苦逼科研工作者所依赖的最大神器，然而最近败诉给爱思唯尔出版社，赔1500万美元，这点钱显然是不能够搞垮sci-hub的，但是<strong>败诉</strong>本身给大家带来的信号对sci-hub的影响会更大，必须更大！美国化学学会几天前也发起了对Sci-Hub的诉讼！sci-hub很有可能在败诉的影响下，被群起而攻之，最终被各大出版社给掐死。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/ggjoy/">
+                <h3 class="media-heading">joyplot：一种波涛汹涌，哦不对，是山峰叠峦的可视化方式</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jul 7, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>最近推特上在讨论的一种叫做joyplot的作图方式，如果我们按照正常的画法，这些分布会重叠在一起，不容易看。而这种joyplot，有一种山峰叠峦的即视感：</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/R/ggjoy/Screenshot 2017-07-11 16.37.22.png" alt="" /></p>
 
 <p></p></div>
             </div>
@@ -959,27 +984,6 @@ aur/wechatircd-git r85.bb8f354-1 (0) (0.00)
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/06/quality_bar_fastq/">
-                <h3 class="media-heading">纯文本可视化FASTQ质量数据</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jun 6, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><img src="https://guangchuangyu.github.io/blog_images/2017/Screenshot 2017-06-02 14.15.14.png" alt="" /></p>
-
-<p>一早曾老师就来发github repo，虽然有意思，但在我看来就是乱用emoji，用一个人类不可读（你怎么能够记住表情如何与数值对应上？！）来表示另一个人类不友好（质量编码）的数据，这绝对不是个好主意。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -987,7 +991,7 @@ aur/wechatircd-git r85.bb8f354-1 (0) (0.00)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         99 posts found
+         100 posts found
       </p>
     </div>
   </div>
