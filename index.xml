@@ -6,10 +6,23 @@
     <description>Recent content on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Jul 2017 10:40:22 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 13 Jul 2017 10:06:59 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>你的专业是那一只Pokémon神兽？</title>
+      <link>https://guangchuangyu.github.io/cn/2017/07/pokemon/</link>
+      <pubDate>Thu, 13 Jul 2017 10:06:59 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/07/pokemon/</guid>
+      <description>&lt;h2 id=&#34;啥都不说-先上图&#34;&gt;啥都不说，先上图&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/ggimage/1131502676.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Sci-hub如果挂了，你还有神器下文献吗？</title>
@@ -357,10 +370,10 @@ notify(
     
     <item>
       <title>ggimage：ggplot2中愉快地使用图片</title>
-      <link>https://guangchuangyu.github.io/cn/2017/04/ggimageggplot2%E4%B8%AD%E6%84%89%E5%BF%AB%E5%9C%B0%E4%BD%BF%E7%94%A8%E5%9B%BE%E7%89%87/</link>
+      <link>https://guangchuangyu.github.io/cn/2017/04/ggimage/</link>
       <pubDate>Tue, 11 Apr 2017 10:06:59 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/2017/04/ggimageggplot2%E4%B8%AD%E6%84%89%E5%BF%AB%E5%9C%B0%E4%BD%BF%E7%94%A8%E5%9B%BE%E7%89%87/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2017/04/ggimage/</guid>
       <description>&lt;h1 id=&#34;导言&#34;&gt;导言&lt;/h1&gt;
 
 &lt;p&gt;本文介绍了&lt;strong&gt;ggimage&lt;/strong&gt;包，允许在&lt;strong&gt;ggplot2&lt;/strong&gt;作图时嵌入图片，并支持&lt;code&gt;aes&lt;/code&gt;映射，可以把离散型变量映射到不同图片。目前有几个包可以使用图片嵌入做图，但都是针对特定的场景，这里使用&lt;strong&gt;ggimage&lt;/strong&gt;来展示在这些特定领域里的应用，&lt;strong&gt;ggimage&lt;/strong&gt;的设计是通用的，并不被特定场景所限定，文末又介绍了用R图标来画出R、用饼图来画气泡图等实例。&lt;/p&gt;

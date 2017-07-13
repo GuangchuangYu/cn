@@ -225,6 +225,80 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/04/ggimage/">
+          ggimage：ggplot2中愉快地使用图片
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-04-11T10:06:59&#43;08:00">
+      
+  April 11, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <h1 id="导言">导言</h1>
+
+<p>本文介绍了<strong>ggimage</strong>包，允许在<strong>ggplot2</strong>作图时嵌入图片，并支持<code>aes</code>映射，可以把离散型变量映射到不同图片。目前有几个包可以使用图片嵌入做图，但都是针对特定的场景，这里使用<strong>ggimage</strong>来展示在这些特定领域里的应用，<strong>ggimage</strong>的设计是通用的，并不被特定场景所限定，文末又介绍了用R图标来画出R、用饼图来画气泡图等实例。</p>
+
+<h1 id="图上嵌图片">图上嵌图片</h1>
+
+<p>R 基础图形库（base graphics）可以在做图的时候嵌入图片，使用的是<code>graphics::rasterImage</code>：</p>
+
+<pre><code class="language-r">imgurl &lt;- &quot;http://phylopic.org/assets/images/submissions/295cd9f7-eef2-441e-ba7e-40c772ca7611.256.png&quot;
+library(EBImage)
+x &lt;- readImage(imgurl)
+plot(1, type = &quot;n&quot;, xlab = &quot;&quot;, ylab = &quot;&quot;, xlim = c(0, 8), ylim = c(0, 8))
+rasterImage(x, 2, 2, 6, 4)
+</code></pre>
+
+<p><img src="https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/raster.png" alt="R绘图嵌入图片演示" /></p>
+
+<p>
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2017/04/ggimage/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/04/generate-biobabble-banner-using-ggimage/">
           generate biobabble banner using ggimage
         </a>
@@ -647,92 +721,6 @@ print(p)
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/03/bed%E6%96%87%E4%BB%B6/">
-          BED文件
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-03-09T00:13:57&#43;08:00">
-      
-  March 9, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        BED的全称是Browser Extensible Data，顾名思义是为genome browser设计的，大名鼎鼎的bedtools可不是什么「床上用品」。</p>
-
-<p>BED包含有3个必须的字段和9个可选字段。</p>
-
-<p>三个字段包括：</p>
-
-<ul>
-<li>1 chrom - 染色体名字</li>
-<li>2 chromStart - 染色体起始位点</li>
-<li>3 chromEnd - 染色体终止位点</li>
-</ul>
-
-<blockquote>
-<p>这里必须指出的是<strong>chromStart</strong>是起始于0，而不是1。很多分析软件都忽略
-了这一点，会有一个碱基的位移，据我所知Homer和ChIPseeker没有这个问题，而像peakAnalyzer, ChIPpeakAnno等都有位移的问题。</p>
-</blockquote>
-
-<p>可选的9个字段包括：</p>
-
-<ul>
-<li>4 name - 名字</li>
-<li>5 score - 分值(0-1000), 用于genome browser展示时上色。</li>
-<li>6 strand - 正负链，对于ChIPseq数据来说，<strong>一般</strong>没有正负链信息。</li>
-<li>7 thickStart - 画矩形的起点</li>
-<li>8 thickEnd - 画矩形的终点</li>
-<li>9 itemRgb - RGB值</li>
-<li>10 blockCount - 子元件（比如外显子）的数目</li>
-<li>11 blockSizes - 子元件的大小</li>
-<li>12 blockStarts - 子元件的起始位点</li>
-</ul>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/03/bed%E6%96%87%E4%BB%B6/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -814,6 +802,27 @@ print(p)
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/pokemon/">
+                <h3 class="media-heading">你的专业是那一只Pokémon神兽？</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jul 7, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><h2 id="啥都不说-先上图">啥都不说，先上图</h2>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/R/ggimage/1131502676.jpg" alt="" /></p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1022,50 +1031,6 @@ print(p)
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/06/lxde-theme/">
-                <h3 class="media-heading">Linux装windows的二逼</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jun 6, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>做为一个上了年纪的人，显然已经离不开微信了，macOS还好，企鹅还有照顾到，但linux难道就只能用web版吗？显然不应该的。</p>
-
-<p>如果你是Arch Linux用户的话，那么aur源里已经有好几个款式可以选了：</p>
-
-<pre><code class="language-shell"> ygc  ~  yaourt -Ss wechat
-aur/electronic-wechat 2.0-2 (8) (1.29)
-    A better WeChat client
-aur/electronic-wechat-bin 2.0-1 [installed] (3) (0.36)
-    A better WeChat on macOS and Linux. Built with Electron by Zhongyi Tong.
-aur/electronic-wechat-git 1.4.0.43.gb18ff6d-1 (6) (0.00)
-    An Electron application for WeChat
-aur/franz-bin 4.0.4-5 (86) (12.73)
-    Franz is a free messaging app / former Emperor of Austria and combines 
-    chat &amp; messaging services into one application. Franz currently supports 
-    Slack, WhatsApp, WeChat, HipChat, Facebook Messenger, Telegram, Google 
-    Hangouts, GroupMe, Skype and many more.
-aur/wechat-web-devtools-git 0.17.171900-1 (1) (0.78)
-    Wechat Web Developer Tools
-aur/wechatircd-git r85.bb8f354-1 (0) (0.00)
-    IRC server capable of controlling Web WeChat
-</code></pre>
-
-<p>这里我要介绍的是electronic-wechat。我比较懒，用下面的代码，安装二进制版：</p>
-
-<pre><code class="language-shell">yaourt -S electronic-wechat-bin
-</code></pre>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1073,7 +1038,7 @@ aur/wechatircd-git r85.bb8f354-1 (0) (0.00)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         101 posts found
+         102 posts found
       </p>
     </div>
   </div>

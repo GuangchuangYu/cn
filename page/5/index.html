@@ -225,6 +225,92 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/03/bed%E6%96%87%E4%BB%B6/">
+          BED文件
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-03-09T00:13:57&#43;08:00">
+      
+  March 9, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        BED的全称是Browser Extensible Data，顾名思义是为genome browser设计的，大名鼎鼎的bedtools可不是什么「床上用品」。</p>
+
+<p>BED包含有3个必须的字段和9个可选字段。</p>
+
+<p>三个字段包括：</p>
+
+<ul>
+<li>1 chrom - 染色体名字</li>
+<li>2 chromStart - 染色体起始位点</li>
+<li>3 chromEnd - 染色体终止位点</li>
+</ul>
+
+<blockquote>
+<p>这里必须指出的是<strong>chromStart</strong>是起始于0，而不是1。很多分析软件都忽略
+了这一点，会有一个碱基的位移，据我所知Homer和ChIPseeker没有这个问题，而像peakAnalyzer, ChIPpeakAnno等都有位移的问题。</p>
+</blockquote>
+
+<p>可选的9个字段包括：</p>
+
+<ul>
+<li>4 name - 名字</li>
+<li>5 score - 分值(0-1000), 用于genome browser展示时上色。</li>
+<li>6 strand - 正负链，对于ChIPseq数据来说，<strong>一般</strong>没有正负链信息。</li>
+<li>7 thickStart - 画矩形的起点</li>
+<li>8 thickEnd - 画矩形的终点</li>
+<li>9 itemRgb - RGB值</li>
+<li>10 blockCount - 子元件（比如外显子）的数目</li>
+<li>11 blockSizes - 子元件的大小</li>
+<li>12 blockStarts - 子元件的起始位点</li>
+</ul>
+
+<p>
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2017/03/bed%E6%96%87%E4%BB%B6/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/03/linux%E7%89%88%E8%BF%85%E9%9B%B7/">
           linux版迅雷
         </a>
@@ -588,65 +674,6 @@ ga('send', 'pageview');
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/01/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E6%96%87markdown%E4%B8%80%E9%94%AE%E6%8E%92%E7%89%88/">
-          微信公众文markdown一键排版
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-01-18T00:53:00&#43;08:00">
-      
-  January 18, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/publish">Publish</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        微信公众号的后台排版功能很差，要想让读者阅读起来舒服，写作的人要花很多时间，于是出现了像<code>秀米</code>这样的第三方排版网站，即便如此，要想排出好的版面，仍然是件耗时的事情，而且像在文章里贴代码这种小众需求，是不被支持的，代码就像普通文本，那叫一个乱。</p>
-
-<p>好在微信平台是支持富文本的，我们复制粘贴过来，格式都还会在，像抄我ggplot2那篇文的<code>生信人</code>，就是完全复制粘贴的，还是我博客上的排版，当然它到了公众号上就乱了，我们其实很容易发现很多复制粘贴的，都没自己排一下版面，直接<code>ctrl-C</code>, <code>ctrl-V</code>一点诚意都没有。</p>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/01/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E6%96%87markdown%E4%B8%80%E9%94%AE%E6%8E%92%E7%89%88/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -728,6 +755,27 @@ ga('send', 'pageview');
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/pokemon/">
+                <h3 class="media-heading">你的专业是那一只Pokémon神兽？</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jul 7, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><h2 id="啥都不说-先上图">啥都不说，先上图</h2>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/R/ggimage/1131502676.jpg" alt="" /></p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -936,50 +984,6 @@ ga('send', 'pageview');
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/06/lxde-theme/">
-                <h3 class="media-heading">Linux装windows的二逼</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jun 6, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>做为一个上了年纪的人，显然已经离不开微信了，macOS还好，企鹅还有照顾到，但linux难道就只能用web版吗？显然不应该的。</p>
-
-<p>如果你是Arch Linux用户的话，那么aur源里已经有好几个款式可以选了：</p>
-
-<pre><code class="language-shell"> ygc  ~  yaourt -Ss wechat
-aur/electronic-wechat 2.0-2 (8) (1.29)
-    A better WeChat client
-aur/electronic-wechat-bin 2.0-1 [installed] (3) (0.36)
-    A better WeChat on macOS and Linux. Built with Electron by Zhongyi Tong.
-aur/electronic-wechat-git 1.4.0.43.gb18ff6d-1 (6) (0.00)
-    An Electron application for WeChat
-aur/franz-bin 4.0.4-5 (86) (12.73)
-    Franz is a free messaging app / former Emperor of Austria and combines 
-    chat &amp; messaging services into one application. Franz currently supports 
-    Slack, WhatsApp, WeChat, HipChat, Facebook Messenger, Telegram, Google 
-    Hangouts, GroupMe, Skype and many more.
-aur/wechat-web-devtools-git 0.17.171900-1 (1) (0.78)
-    Wechat Web Developer Tools
-aur/wechatircd-git r85.bb8f354-1 (0) (0.00)
-    IRC server capable of controlling Web WeChat
-</code></pre>
-
-<p>这里我要介绍的是electronic-wechat。我比较懒，用下面的代码，安装二进制版：</p>
-
-<pre><code class="language-shell">yaourt -S electronic-wechat-bin
-</code></pre>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -987,7 +991,7 @@ aur/wechatircd-git r85.bb8f354-1 (0) (0.00)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         101 posts found
+         102 posts found
       </p>
     </div>
   </div>

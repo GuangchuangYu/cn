@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2017/07/pokemon/</loc>
+    <lastmod>2017-07-13T10:06:59+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2017/07/unpaywall/</loc>
     <lastmod>2017-07-11T10:40:22+08:00</lastmod>
   </url>
@@ -103,7 +108,7 @@
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/2017/04/ggimageggplot2%E4%B8%AD%E6%84%89%E5%BF%AB%E5%9C%B0%E4%BD%BF%E7%94%A8%E5%9B%BE%E7%89%87/</loc>
+    <loc>https://guangchuangyu.github.io/cn/2017/04/ggimage/</loc>
     <lastmod>2017-04-11T10:06:59+08:00</lastmod>
   </url>
   
@@ -767,7 +772,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/ggimage/</loc>
-    <lastmod>2017-04-11T10:06:59+08:00</lastmod>
+    <lastmod>2017-07-13T10:06:59+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -779,7 +784,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/ggplot2/</loc>
-    <lastmod>2017-07-11T00:53:00+08:00</lastmod>
+    <lastmod>2017-07-13T10:06:59+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -809,7 +814,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/</loc>
-    <lastmod>2017-07-11T10:40:22+08:00</lastmod>
+    <lastmod>2017-07-13T10:06:59+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1007,7 +1012,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/post/</loc>
-    <lastmod>2017-07-11T10:40:22+08:00</lastmod>
+    <lastmod>2017-07-13T10:06:59+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1061,7 +1066,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/r/</loc>
-    <lastmod>2017-07-11T00:53:00+08:00</lastmod>
+    <lastmod>2017-07-13T10:06:59+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1187,7 +1192,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/visualization/</loc>
-    <lastmod>2017-06-26T12:23:16+08:00</lastmod>
+    <lastmod>2017-07-13T10:06:59+08:00</lastmod>
     <priority>0</priority>
   </url>
   
