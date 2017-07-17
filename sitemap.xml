@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2017/07/baiduyun/</loc>
+    <lastmod>2017-07-17T13:40:22+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2017/07/pokemon/</loc>
     <lastmod>2017-07-13T10:06:59+08:00</lastmod>
   </url>
@@ -155,6 +160,11 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/2017/03/unknown-annotation-in-enrichment-analysis/</loc>
     <lastmod>2017-03-03T00:10:37+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/2017/02/osx-bioedit/</loc>
+    <lastmod>2017-02-27T13:40:22+08:00</lastmod>
   </url>
   
   <url>
@@ -508,6 +518,18 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/alignment/</loc>
+    <lastmod>2017-02-27T13:40:22+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/arch/</loc>
+    <lastmod>2017-07-17T13:40:22+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/archives/</loc>
     <priority>0</priority>
   </url>
@@ -521,6 +543,12 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/babble/</loc>
     <lastmod>2017-05-30T15:10:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/baidu/</loc>
+    <lastmod>2017-07-17T13:40:22+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -539,6 +567,12 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/bioc/</loc>
     <lastmod>2016-07-13T21:06:59+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/bioedit/</loc>
+    <lastmod>2017-02-27T13:40:22+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -814,7 +848,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/</loc>
-    <lastmod>2017-07-13T10:06:59+08:00</lastmod>
+    <lastmod>2017-07-17T13:40:22+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -958,7 +992,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/osx/</loc>
-    <lastmod>2015-11-17T16:06:59+08:00</lastmod>
+    <lastmod>2017-02-27T13:40:22+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1012,7 +1046,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/post/</loc>
-    <lastmod>2017-07-13T10:06:59+08:00</lastmod>
+    <lastmod>2017-07-17T13:40:22+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1132,7 +1166,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/software/</loc>
-    <lastmod>2017-07-11T10:40:22+08:00</lastmod>
+    <lastmod>2017-07-17T13:40:22+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1150,7 +1184,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/</loc>
-    <lastmod>2017-07-09T07:57:46+08:00</lastmod>
+    <lastmod>2017-02-27T13:40:22+08:00</lastmod>
     <priority>0</priority>
   </url>
   

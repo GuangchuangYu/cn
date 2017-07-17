@@ -59,6 +59,25 @@
     </item>
     
     <item>
+      <title>OSX版BioEdit</title>
+      <link>https://guangchuangyu.github.io/cn/2017/02/osx-bioedit/</link>
+      <pubDate>Mon, 27 Feb 2017 13:40:22 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/02/osx-bioedit/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;BioEdit是一个Windows的程序，但在这里我要说的是苹果版！&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.mbio.ncsu.edu/bioedit/bioedit.html&#34;&gt;&lt;img src=&#34;http://www.mbio.ncsu.edu/bioedit/Banner1.GIF&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;BioEdit有很多的功能，当然基本上我是不会用的，然而其核心的功能，编辑序列比对，是没法回避的！因为根本找不到可以与之匹敌的软件！&lt;/p&gt;
+
+&lt;p&gt;神马！序列比对不都是clustalw, muscle, mafft这些软件生成完事吗？怎么还要编辑？！我只能说，年轻人，拿衣服啊。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>blast一大坑：无法输出query sequence title</title>
       <link>https://guangchuangyu.github.io/cn/2016/11/blast%E4%B8%80%E5%A4%A7%E5%9D%91%E6%97%A0%E6%B3%95%E8%BE%93%E5%87%BAquery-sequence-title/</link>
       <pubDate>Thu, 17 Nov 2016 00:53:00 +0800</pubDate>

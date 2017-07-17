@@ -6,10 +6,28 @@
     <description>Recent content in Tags on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 09 Jul 2017 07:57:46 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 27 Feb 2017 13:40:22 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Alignment</title>
+      <link>https://guangchuangyu.github.io/cn/tags/alignment/</link>
+      <pubDate>Mon, 27 Feb 2017 13:40:22 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/alignment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Arch</title>
+      <link>https://guangchuangyu.github.io/cn/tags/arch/</link>
+      <pubDate>Mon, 17 Jul 2017 13:40:22 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/arch/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Archlinux</title>
@@ -17,6 +35,15 @@
       <pubDate>Sun, 09 Jul 2017 07:57:46 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/tags/archlinux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Baidu</title>
+      <link>https://guangchuangyu.github.io/cn/tags/baidu/</link>
+      <pubDate>Mon, 17 Jul 2017 13:40:22 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/baidu/</guid>
       <description></description>
     </item>
     
@@ -44,6 +71,15 @@
       <pubDate>Wed, 13 Jul 2016 21:06:59 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/tags/bioc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bioedit</title>
+      <link>https://guangchuangyu.github.io/cn/tags/bioedit/</link>
+      <pubDate>Mon, 27 Feb 2017 13:40:22 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/bioedit/</guid>
       <description></description>
     </item>
     
@@ -527,7 +563,7 @@
     <item>
       <title>Osx</title>
       <link>https://guangchuangyu.github.io/cn/tags/osx/</link>
-      <pubDate>Tue, 17 Nov 2015 16:06:59 +0800</pubDate>
+      <pubDate>Mon, 27 Feb 2017 13:40:22 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/tags/osx/</guid>
       <description></description>
