@@ -225,6 +225,66 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2013/06/compress-tiff/">
+          使用ImageMagick压缩TIFF
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2013-06-07T15:10:00&#43;08:00">
+      
+  June 7, 2013
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/software">Software</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        TIFF (Tagged Image File Format)拥有更宽的线性动态范围，所以在专业的图片处理上，一直是一个通用的文件格式。
+最近一篇发表在Metallomics的文章，我本来做的图片都是PDF格式，矢量图最好了，文件特别小，还可以任意放大。不过杂志社要求600DPI的TIFF或EPS。
+我第一反应是拒绝使用TIFF，600DPI的TIFF文件肯定非常大，EPS也是矢量图，我用R重新把图画一遍，存为EPS就OK了。画图的过程，我发现对EPS的支持不太好，老报些某字体不存在的错误。这当然不是什么大不了的事，自己指定字体就好了。问题在于有张图是拼的，我只能借助于软件转换，我用Inkscape处理，导出EPS，出来的图我发现有些细节并不太好。
+无奈之下还是用TIFF吧，Fig1和3都是R画的，直接指定分辨率和压缩算法，存为TIFF文件。Fig1是3000x3000pixel 600dpi的图，只有320k，Fig3是4200x4200pixel的图，也是600dpi，只有558k，用R产生TIFF还是非常靠谱的。
+关键是Fig2，这一张拼的图，存成PDF矢量图，需要用ImageMagick转换成600DPI的TIFF图片，ImageMagick需要安装Xcode才能在Mac下编译成功。
+Yus-Mac-Pro:others ygc$ convert -density 600 fig2.pdf fig2.tif Yus-Mac-Pro:others ygc$ identify -verbose fig2.tif Image: fig2.tif Format: TIFF (Tagged Image File Format) Class: DirectClass Geometry: 6000x4500+0+0 Resolution: 600x600 Print size: 10x7.5 Units: Undefined Type: PaletteMatte Base type: TrueColor Endianess: MSB &hellip; Yus-Mac-Pro:others ygc$ convert -density 600 -compress lzw fig2.pdf fig2_compress.tif Yus-Mac-Pro:others ygc$ ls -l fig2*.tif -rw-r&ndash;r&ndash; 1 ygc admin 216036263 May 23 17:53 fig2.
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2013/06/compress-tiff/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2013/01/talen%E5%9F%BA%E5%9B%A0%E7%BC%96%E8%BE%91/">
           TALEN基因编辑
         </a>
@@ -597,65 +657,6 @@ regression取值是<code>{0,1}</code>，而SVM为了计算距离方便，取值�
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2012/02/happy-valentine/">
-          happy valentine
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2012-02-14T05:37:55&#43;08:00">
-      
-  February 14, 2012
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        今天看到统计之都上的情人节心形图。
-这次画的心形函数是： $ x = 16 (sin t)^3$ $ y = 13 cos t - 5 cos 2t - 2 cos 3t - cos 4t$
-尝试用ggplot2来画，结果如下： 代码见Github.
-类似的心形图以前也是画过的，当然这样的函数图有很多，详见<a href="http://www.mathematische-basteleien.de/heart.htm，画起来也很容易。">http://www.mathematische-basteleien.de/heart.htm，画起来也很容易。</a>
-倒是以前画过的蝙蝠侠logo，更有成就感些。
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2012/02/happy-valentine/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -737,6 +738,47 @@ regression取值是<code>{0,1}</code>，而SVM为了计算距离方便，取值�
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/bmc_plagiarism_1/">
+                <h3 class="media-heading">学术期刊的学术不端，你见过吗？</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jul 7, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><h2 id="编辑部的恶才是最大的恶">编辑部的恶才是最大的恶！</h2>
+
+<p>大家是否还记得2015年BioMed Central高调地撤稿了43篇文章，站在道德制高点对审稿过程进行了指责，吐了学术不端一脸口水？</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/screenshots/Screenshot 2017-07-17 19.34.25.png" alt="" /></p>
+
+<p>就在这个时候，我写信去<strong>BMC Systems Biology</strong>告别人抄袭，编辑部信誓旦旦，他们对这种事情是非常认真对待的，然而接下来的剧情却反转了，在我证据甩他们一脸的时候，他们拖着不处理，拖多久呢，<strong>超过1年！</strong>一直在给抄袭者洗地，最好在没有告知我的情况下，静悄悄地出了个所谓的<strong>erratum</strong>。</p>
+
+<p>erratum是什么？字典里这样写：</p>
+
+<pre><code>erratum |ɛˈrɑːtəm|
+noun (pl.errata |ɛˈrɑːtə| )
+an error in printing or writing.
+</code></pre>
+
+<p>我告的是抄袭，plagiarism:</p>
+
+<pre><code>plagiarism |ˈpleɪdʒərɪz(ə)m|
+noun [ mass noun ]
+the practice of taking someone else's work or ideas and passing them off as one's own. 
+</code></pre>
+
+<h3 id="结果-plagiarism-到了编辑部那里变成了-erratum">结果<strong>plagiarism</strong>到了编辑部那里变成了<strong>erratum</strong>.</h3>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -943,27 +985,6 @@ regression取值是<code>{0,1}</code>，而SVM为了计算距离方便，取值�
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/06/ggtree_sticker/">
-                <h3 class="media-heading">一大波ggtree贴纸来袭</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jun 6, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>还记得《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247483679&amp;idx=1&amp;sn=e9038cdaeb776355becba5ccfa01b501&amp;chksm=ec43b058db34394ed7afc20c246e1b664fe3b1d54e07b7c92b26bfcf292a46879926a4697a5a&amp;scene=21#wechat_redirect">ggtree hex sticker</a>》一文吧？画了几个六角贴，纯代码生成。时隔半年，原来的ggtree已经分成了<code>treeio</code>和<code>ggtree</code>两个包，而我也做了这两个包的六角贴，终于我花了289美元印了一大波贴纸+磁贴。</p>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/R/hexSticker/WechatIMG12.jpeg" alt="" /></p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -971,7 +992,7 @@ regression取值是<code>{0,1}</code>，而SVM为了计算距离方便，取值�
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         104 posts found
+         105 posts found
       </p>
     </div>
   </div>
