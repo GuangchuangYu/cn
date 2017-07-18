@@ -6,10 +6,37 @@
     <description>Recent content in Biology on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 18 Jul 2017 21:51:43 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 19 Jul 2017 21:51:43 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/categories/biology/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Editor你的良心不会痛吗？</title>
+      <link>https://guangchuangyu.github.io/cn/2017/07/bmc_plagiarism_2/</link>
+      <pubDate>Wed, 19 Jul 2017 21:51:43 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/07/bmc_plagiarism_2/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;抄袭的是&lt;strong&gt;西安电子科技大学&lt;/strong&gt;的讲师，靠着两三篇抄袭的文章，已经是副教授了。&lt;/p&gt;
+
+&lt;p&gt;这种抄袭的事情就应该暴光，这个事件中，更可恶的是BMC，BMC这种保护抄袭的行为更应该暴光，大家不要再给BMC送钱了，还不如发PLoS One。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;公众号有人评论说：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/GOSemSim/WechatIMG2.jpeg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这竟然也被捕捉到了，确实他在2012年的时候，就在copy我的代码，然后打R包的时候，还请教了我：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/GOSemSim/ppiPre_dengyue.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;抄了我的代码-之后厚颜无耻地感谢我说学了很多东西-他的良心真的不会痛吗&#34;&gt;抄了我的代码，之后厚颜无耻地感谢我说学了很多东西，他的良心真的不会痛吗？&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://media.giphy.com/media/EvsmQokxE8wi4/giphy.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>学术期刊的学术不端，你见过吗？</title>
