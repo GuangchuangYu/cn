@@ -225,6 +225,131 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2014/01/old-habits-die-hard/">
+          old habits die hard
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2014-01-22T13:27:22&#43;08:00">
+      
+  January 22, 2014
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/biology">Biology</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/research">Research</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        从2011年1月我就在实验室的QQ群里发群邮件说IPI关门，时至今日，已经关门3年了，主页上一直停留在关门大吉的那一刻。
+我不断在邮件里, lab meeting上强调要换成uniprot来搜库，然而时至今日，依然还是有很多的人在使用IPI，想想真可怕，实验室真是100年不更新一下数据啊。 另外一个我非常讨厌的就是GI号，它压根就不是正儿八经的ID号，但他们从来就不愿意尝试改变。
+比如上面这个蛋白质序列的FASTA文件，注释行有很多信息，比如：
+&gt;gi|16128001|ref|NP_414548.1| putative transporter [Escherichia coli str. K-12 substr. MG1655]  显然搜库时可以使用NP_414548.1做为ID，这个问题我说过N多遍，但他们一定会用他们惯用的gi|16128001来做ID。
+问题是很明显的：
+ GI number (sometimes written in lower case, &ldquo;gi&rdquo;) is simply a series of digits that are assigned consecutively to each sequence record processed by NCBI. The GI number bears no resemblance to the Accession number of the sequence record. The GI number has been used for many years by NCBI to track sequence histories in GenBank and the other sequence databases it maintains.
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2014/01/old-habits-die-hard/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2013/09/install-emacs-on-mac/">
+          Install Emacs on Mac
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2013-09-10T18:04:22&#43;08:00">
+      
+  September 10, 2013
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/mac-os">Mac OS</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <h2 id="package-manager">package manager</h2>
+
+<p>之前一直用<a href="http://guangchuangyu.github.io/categories/bsd/">NetBSD</a>的<a href="http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/">pkgsrc</a>做为各种Unix-like系统的包管理系统，pkgsrc在自己内部解决依赖关系，这点对于生产环境来说，是很好的一个优点，我通常会在服务器里装一个pkgsrc，在用户目录下，维护一套UNIX软件。但是用在自己的机器上，内部解决软件依赖，就是个缺点，浪费编译时间和硬盘空间。</p>
+
+<p>Mac上可用的包管理系统很多，Fink移植于<a href="http://guangchuangyu.github.io/categories/linux/">Debian</a>的apt，<a href="http://guangchuangyu.github.io/categories/linux/">Gentoo</a>的portage也支持OS X。OS X是基于BSD的系统，BSD有自己的一套包管理系统，如FreeBSD的ports和<a href="http://guangchuangyu.github.io/categories/bsd/">NetBSD</a>的<a href="http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/">pkgsrc</a>，MacPorts可以看作是这一系列中的一个，不过它并不是OS X原生的，它只是OpenDarwin的子项目，所以和pkgsrc一个样，也是内部解决依赖，真正为OS
+X设计的原生包管理系统非Homebrew莫属，它会尽量依赖系统里已有的软件。
+
+自从用了Homebrew之后，再也不用为系统里有两套perl和python而crazy了，之前通过<a href="http://guangchuangyu.github.io/2011/06/screen-shot/">pkgsrc装的软件</a>全删掉，改Homebrew来安装和管理。
+如果软件没有被pkgsrc收录，而想通过pkgsrc来管理的话，那就得自己<a href="http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/">写makefile</a>，而homebrew，则可以自动帮你生成Formula，比如我要安装<a href="http://users.soe.ucsc.edu/~kent/src/">blat</a>：
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2013/09/install-emacs-on-mac/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2013/07/permanent-head-damage-to-be/">
           Permanent Head Damage to be
         </a>
@@ -535,134 +660,6 @@ pubmed上不去，完全没影响，因为有hubmed,hubmed主页上写着：An a
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2012/04/enrichment-analysis/">
-          enrichment analysis
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2012-04-28T08:06:05&#43;08:00">
-      
-  April 28, 2012
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/statistics">Statistics</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        经常看到一些饼图，描述某些事物的组成，比如说有钱人的学历分布，然后我们可以看到高学历所占比例并不高，根据这个比例下结论通常是错的，这些比例说明不了问题，如果把各种学历在总体人口中的分布做为背景进行考虑的话，你就会发现学历还是有点用的。
-当我们用组学测定了一大堆分子之后，我们希望站在更高的角度去看这些分子和那些生物学过程相关。那么通常各种注释，对这些基因/蛋白进行分类，那么从分类的比例上，是不能草率下结论，正如上面有钱人学历分布的例子一样。我们需要把总体的分布考虑进去。
-和某个注释/分类是否有相关性，把基因分成属于这一类，和不属于这一类两种，这就好比经典统计学中的白球和黑球的抽样问题。也可以列一个２x２的表，进行独立性分析。
-以文章<a href="http://cancerres.aacrjournals.org/content/62/16/4722">Gene Expression in Ovarian Cancer Reflects Both Morphology and Biological Behavior, Distinguishing Clear Cell from Other Poor-Prognosis Ovarian Carcinomas</a>所鉴定的差异基因为例。
-
-73个差异基因的Symbol，我把它转为 entrezgene
-ID得到57个（漏掉的不管它，只是做为一个例子）:
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2012/04/enrichment-analysis/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2012/04/support-vector-machine/">
-          Support Vector Machine
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2012-04-12T05:37:55&#43;08:00">
-      
-  April 12, 2012
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/statistics">statistics</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        支持向量机(Support Vector Machines, SVM)最初由Vladimir
-Vapnik于1997年提出，SVM最简单的形式就是找出一下区分界限（descision
-boundary），也称之为超平面(hyperplane)，使得离它最近的点（称之为support
-vectors）与之间隔最大。
-<img src="http://guangchuangyu.github.io/blog_images/2012/04/linearSVM.png" alt="" /></p>
-
-<p>这和logistic regression有些相似，区别在于logistic
-regression要求所有的点尽可能地远离中间那条线，而SVM是要求最接近中间线的点尽可能地远离中间线。也就是说SVM的主要目标是区分那些最难区分的点。</p>
-
-<p>SVM对于hyperplane的定义，在形式上和logistic regression一样,logistic
-regression的decision boundary由$\theta^TX=0$确定,SVM则用$w^TX+b=0$表示,其中b相当于logistic regression中的$\theta_0$，从形式上看，两者并无区别，当然如前面所说，两者的目标不一样，logistic regression着眼于全局，SVM着眼于support
-vectors。有监督算法都有label变量y，logistic
-regression取值是<code>{0,1}</code>，而SVM为了计算距离方便，取值为<code>{-1,1}</code>。
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2012/04/support-vector-machine/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -682,7 +679,7 @@ regression取值是<code>{0,1}</code>，而SVM为了计算距离方便，取值�
           </a>
         </li>
       
-      <li class="pagination-number">page 11 of 15</li>
+      <li class="pagination-number">page 11 of 16</li>
     </ul>
   </div>
 
@@ -744,6 +741,80 @@ regression取值是<code>{0,1}</code>，而SVM为了计算距离方便，取值�
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/un-fucking-believable/">
+                <h3 class="media-heading">我像是一颗棋子，进退任由你决定</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jul 7, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><blockquote>
+<p>we’re talking about people who already are skating on the ethical edge (as scientists, we should always respond to serious criticism; if we don’t, that’s bordering on ethical violation already) &ndash; <a href="http://www.stat.columbia.edu/~gelman/">Andrew Gelman</a>对此事的评论</p>
+</blockquote>
+
+<p>我原以为邓岳是个学生，我的本意是要给他一个教训，制止这种行为，我不出来给他这个教训，早晚他也会为自己的投机付出代价，而且如果以后出现多次抄袭，直接会导致无法继续在学术界生存。后来我发现他还是个讲师，我觉得更不应该了，编辑部必须要对这件事做出处罚。这就是我的本意，让邓岳认识到错误，并为此付出应有的代价。</p>
+
+<h2 id="搞得我像祥林嫂一样到处找人说">搞得我像祥林嫂一样到处找人说</h2>
+
+<p>然而<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484618&amp;idx=1&amp;sn=bcb696bba156bc433cae638a461bdcdb&amp;chksm=ec43b58ddb343c9b546cf7c4b3d032da610ce89d0b8c1778cb723cf74cdfa11c11bbedf3557a#rd">编辑一直不做为</a>，就逼得我只能借助于舆论，我本无意于去网上传播这件事，我写的博客，都是针对编辑部，最后我对编辑提议的处理方式表达不满之后，编辑就<strong>消失了</strong>，再也不回应邮件。我只能再写博客，再发动舆论，联系之前高调出来说撤稿了43篇文章的那些编辑，推特上也骚扰他们。微博上也AT西电官方微博，求转发之类的。虽然我没有想去闹大事情（尼马我也不想花时间扯这些蛋啊），但BMC就是逼着我跟他斗，而事情闹越大，对抄袭的人来说，越是不利，搞不好学术界就不用混了。谁都不傻，所以终于坐不住给我写信。</p>
+
+<p><img src="http://guangchuangyu.github.io/blog_images/Bioconductor/GOSemSim/2017-07-20-001828_1280x800_scrot.png" alt="" /></p>
+
+<blockquote>
+<p>其中说到“1、2月份和您邮件沟通”，只是说了按照CRAN policy改了代码，并把我列为作者，而后面我回应把我名字从软件包作者中去掉而已。</p>
+</blockquote>
+
+<p>他的邮件大概讲了和编辑并无操作，软件包已经按要求更新，犯错是源自于无知。</p>
+
+<h2 id="这事最后怎么处理">这事最后怎么处理？</h2>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/plagiarism-chain/">
+                <h3 class="media-heading">辣眼睛，一篇抄袭引发的系列血案！</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jul 7, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><blockquote>
+<p>50%的利润,它就铤而走险；</p>
+
+<p>100%的利润,它就敢践踏一切人间法律；</p>
+
+<p>300%的利润,它就敢犯任何罪行,甚至绞首的危险.</p>
+
+<p>&ndash;马克思 《资本论》</p>
+</blockquote>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/R/hposim_dosim/hposim_paper.png" alt="" /></p>
+
+<p>ppiPre抄袭GOSemSim，然后我发现他还发了一个叫HPOSim的R包，又是语义相似性度量，我的第一反应是必须还抄我的，他要是有能力写出来，就不会抄GOSemSim了。然而我看了一下代码，确实不是抄我的！<strong>这他妈就奇了怪了!</strong></p>
+
+<h2 id="必须还是抄的">必须还是抄的！</h2>
+
+<p>做语义相似性度量也就那么几个包，我看了一遍之后，发现<strong>HPOSim</strong>抄了<strong>DOSim</strong>，你妹啊，用心良苦，同样/相似的东西换不同的包来抄！抄袭惯犯了，事实证明，走捷径的人，是不可能好好走路的，一旦尝到了甜头，必然是铤而走险！</p>
+
+<p><strong>以下两个截屏，大家感受一下，左边是HPOSim，右边是DOSim：</strong></p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -957,52 +1028,6 @@ the practice of taking someone else's work or ideas and passing them off as one'
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/jane/">
-                <h3 class="media-heading">什么？听说你有文章却不知道该往那里投！</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jul 7, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">以下这些情况是否在你的科研生活中出现，并给你一定的困扰：
- 你想投文章，却不知道该投什么杂志？ 你在写文章中，想找一篇相关的文章来引用？ 如果你是Editor，想为文章找审稿人？  这些问题特别是第1点一定给做科研的人带来了困扰，当然首先你得有manuscript（说多了都是泪）。
-这时候我们需要一款神器，JANE：Journal/Author Name Estimator， http://jane.biosemantics.org/。你可以用关键字、标题或摘要来搜索，可以搜索作者、文章和期刊。搜索结果按照相似度给出。
-文章投什么杂志 拿自己的摘要去搜期刊，可以找到相似的工作都发表在什么杂志上，这对于我该投什么杂志有参考和指导意义。
-找相关文章来引用 这时候把要引用的内容拿来搜文章，相关的文章就搜出来了。
-找审稿人 拿别人投稿的摘要来搜作者，轻而易举就找到了相关发表类似工作的作者，联系一下是否愿意审稿，方向性很强，节省了大家的时间，也容易找到专业人士来审。
-实例 最后用我DOSE的文章摘要做为实例，copy-paste到搜索框，这里我点击搜期刊：
-我自己的文章就搜出来了，然后还有一些相关的文章，也是发表在Bioinformatics上，第二个相似度高的期刊是BMC Bioinformatics，再没有理由说不知道文章该投哪里了吧？！
-最后的最后，只想问一句，能来个共一吗？</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/r-gui/">
-                <h3 class="media-heading">R的N种打开方式</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jul 7, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>RStudio太成功，以至于有些新手只知有RStudio，不知有R。在<a href="https://guangchuangyu.github.io/2015/11/r-kernel-in-jupyter-notebook-3/">R kernel in Jupyter notebook 3</a>和<a href="https://guangchuangyu.github.io/2014/12/auto-complete-in-ess/">auto-complete in ESS</a>两篇文章中，我介绍了在Jupyter和Emacs里使用R。</p>
-
-<p><img src="http://guangchuangyu.github.io/blog_images/screenshots/Screenshot%202015-11-04%2010.54.29.png" alt="" /></p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1010,7 +1035,7 @@ the practice of taking someone else's work or ideas and passing them off as one'
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         106 posts found
+         108 posts found
       </p>
     </div>
   </div>
