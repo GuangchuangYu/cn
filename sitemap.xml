@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2017/07/clusterprofiler-maize/</loc>
+    <lastmod>2017-07-24T08:53:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/2017/07/swirl/</loc>
+    <lastmod>2017-07-23T00:53:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2017/07/un-fucking-believable/</loc>
     <lastmod>2017-07-21T21:51:43+08:00</lastmod>
   </url>
@@ -712,7 +722,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/clusterprofiler/</loc>
-    <lastmod>2017-07-06T05:44:27+08:00</lastmod>
+    <lastmod>2017-07-24T08:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -868,7 +878,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/</loc>
-    <lastmod>2017-07-21T21:51:43+08:00</lastmod>
+    <lastmod>2017-07-24T08:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -945,6 +955,12 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/maize/</loc>
+    <lastmod>2017-07-24T08:53:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/tags/markdown/</loc>
     <lastmod>2017-04-23T00:53:00+08:00</lastmod>
     <priority>0</priority>
@@ -1001,6 +1017,12 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/notifier/</loc>
     <lastmod>2017-04-11T12:23:16+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/orgdb/</loc>
+    <lastmod>2017-07-24T08:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1066,7 +1088,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/post/</loc>
-    <lastmod>2017-07-21T21:51:43+08:00</lastmod>
+    <lastmod>2017-07-24T08:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1120,7 +1142,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/r/</loc>
-    <lastmod>2017-07-13T10:06:59+08:00</lastmod>
+    <lastmod>2017-07-24T08:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1199,6 +1221,12 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/statistics/</loc>
     <lastmod>2017-03-03T00:10:37+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/swirl/</loc>
+    <lastmod>2017-07-23T00:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
