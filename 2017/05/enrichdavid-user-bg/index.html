@@ -1,5 +1,9 @@
 
 
+  
+    
+  
+
 
   
 
@@ -19,25 +23,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.21">
     <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
-    <title>Posts</title>
+    <title>enrichDAVID支持自定义背景</title>
     <meta name="author" content="Guangchuang Yu">
     <meta name="keywords" content="">
 
     <link rel="icon" href="https://guangchuangyu.github.io/cn/favicon.png">
     
-      <link rel="alternate" type="application/rss+xml" title="RSS" href="https://guangchuangyu.github.io/cn/post/index.xml">
-    
 
     
-    <meta name="description" content="Guangchuang&#39;s Chinese Blog">
-    <meta property="og:description" content="Guangchuang&#39;s Chinese Blog">
+    <meta name="description" content="虽然我不喜欢DAVID，但很多用户喜欢，所以clusterProfiler也支持了，最近github上又有人要求支持自定义背景。
+
+
+Dear Guangchuang,
+
+I am using clusterProfiler in Kegg pathway enrichment analysis, it is useful and nice. I am looking for a function which accept background and has ability to deal with Ensembl gene ID.
+
+In a function enrichDAVID it can takes ensembl gene id as an input format, but not allows to enter background.
+enrichDAVID(gene = gene, idType=&quot;ENSEMBL_GENE_ID&quot;, annotation=&quot;KEGG_PATHWAY&quot;, species= &quot;hsa&quot;)
+
+Other command enrichKEGG has a background input but only takes entrez gene id,
+enrichKEGG(gene, organism = &quot;hsa&quot;, keyType = &quot;kegg&quot;, universe)
+
+I have tried to convert my ensembl gene IDs to entrez gene id, but some ensembl gene IDs represent more than one entrez gene ID.
+I downloaded KEGG pathway dataset to apply fisher exact test. however, genes are in entrez ID and i am still dont know how to convert.
+
+
+">
+    <meta property="og:description" content="虽然我不喜欢DAVID，但很多用户喜欢，所以clusterProfiler也支持了，最近github上又有人要求支持自定义背景。
+
+
+Dear Guangchuang,
+
+I am using clusterProfiler in Kegg pathway enrichment analysis, it is useful and nice. I am looking for a function which accept background and has ability to deal with Ensembl gene ID.
+
+In a function enrichDAVID it can takes ensembl gene id as an input format, but not allows to enter background.
+enrichDAVID(gene = gene, idType=&quot;ENSEMBL_GENE_ID&quot;, annotation=&quot;KEGG_PATHWAY&quot;, species= &quot;hsa&quot;)
+
+Other command enrichKEGG has a background input but only takes entrez gene id,
+enrichKEGG(gene, organism = &quot;hsa&quot;, keyType = &quot;kegg&quot;, universe)
+
+I have tried to convert my ensembl gene IDs to entrez gene id, but some ensembl gene IDs represent more than one entrez gene ID.
+I downloaded KEGG pathway dataset to apply fisher exact test. however, genes are in entrez ID and i am still dont know how to convert.
+
+
+">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Posts">
-    <meta property="og:url" content="/post/">
+    <meta property="og:title" content="enrichDAVID支持自定义背景">
+    <meta property="og:url" content="/2017/05/enrichdavid-user-bg/">
     <meta property="og:site_name" content="Guangchuang Yu">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Guangchuang Yu">
-    <meta name="twitter:description" content="Guangchuang&#39;s Chinese Blog">
+    <meta name="twitter:description" content="虽然我不喜欢DAVID，但很多用户喜欢，所以clusterProfiler也支持了，最近github上又有人要求支持自定义背景。
+
+
+Dear Guangchuang,
+
+I am using clusterProfiler in Kegg pathway enrichment analysis, it is useful and nice. I am looking for a function which accept background and has ability to deal with Ensembl gene ID.
+
+In a function enrichDAVID it can takes ensembl gene id as an input format, but not allows to enter background.
+enrichDAVID(gene = gene, idType=&quot;ENSEMBL_GENE_ID&quot;, annotation=&quot;KEGG_PATHWAY&quot;, species= &quot;hsa&quot;)
+
+Other command enrichKEGG has a background input but only takes entrez gene id,
+enrichKEGG(gene, organism = &quot;hsa&quot;, keyType = &quot;kegg&quot;, universe)
+
+I have tried to convert my ensembl gene IDs to entrez gene id, but some ensembl gene IDs represent more than one entrez gene ID.
+I downloaded KEGG pathway dataset to apply fisher exact test. however, genes are in entrez ID and i am still dont know how to convert.
+
+
+">
     
       <meta name="twitter:creator" content="@guangchuangyu">
     
@@ -84,7 +137,7 @@ ga('send', 'pageview');
 
   <body>
     <div id="blog">
-      <header id="header" data-behavior="1">
+      <header id="header" data-behavior="4">
   <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
   <div class="header-title">
     <a class="header-title-link" href="https://guangchuangyu.github.io/cn/">Guangchuang Yu</a>
@@ -104,7 +157,7 @@ ga('send', 'pageview');
   
 </header>
 
-      <nav id="sidebar" data-behavior="1">
+      <nav id="sidebar" data-behavior="4">
   <div class="sidebar-container">
     
       <div class="sidebar-profile">
@@ -201,340 +254,20 @@ ga('send', 'pageview');
 
       
 
-      <div id="main" data-behavior="1"
+      <div id="main" data-behavior="4"
         class="
                hasCoverMetaIn
                ">
-        <section class="postShorten-group main-content-wrap">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
           
           
-            
+            <div class="post-header main-content-wrap text-left">
   
-    
-      
-        
-      
-    
+    <h1 class="post-title" itemprop="headline">
+      enrichDAVID支持自定义背景
+    </h1>
   
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/06/quality_bar_fastq/">
-          纯文本可视化FASTQ质量数据
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-06-06T07:57:46&#43;08:00">
-      
-  June 6, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/ngs">NGS</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <img src="https://guangchuangyu.github.io/blog_images/2017/Screenshot 2017-06-02 14.15.14.png" alt="" /></p>
-
-<p>一早曾老师就来发github repo，虽然有意思，但在我看来就是乱用emoji，用一个人类不可读（你怎么能够记住表情如何与数值对应上？！）来表示另一个人类不友好（质量编码）的数据，这绝对不是个好主意。</p>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/06/quality_bar_fastq/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/05/xiaomiquan/">
-          怀疑人生！我没欠你们钱，好吗？
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-05-30T15:10:00&#43;08:00">
-      
-  May 30, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/babble">babble</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        写了十几年的博客，虽然好早之前就发现一些博客文被《生信人》公众号抄了，但一直不愿意开公众号，去年年底尝试开个公众号，原创保护不给别人抄倒不是主要，而是我感觉到公众号已经绑架了中国人的阅读入口，可以尝试把博客文搬上来，这样大家可以在微信里搜到文章，有利于传播嘛。而我不是单纯为传播知识而来，而主要是推送我自己的东西，这在《为什么要开这个公众号》一文中已经讲了，维护我写的几个软件，花掉大量的时间，现在给我发邮件问问题，我基本都会让他们去biostars或bioconductor论坛上去问，公开交流有利于别的用户参与/学习，有助于减少重复解答，我也不断完善文档，很多问题其实在文档里都有答案，但人的天性就是懒、不愿学习（我在ggtree发布的第一篇文章里也提及了这点，说了%&lt;+%操作符就是给懒人用的）。
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/05/xiaomiquan/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/05/electronic_wechat/">
-          开源的macOS和linux版微信
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-05-29T07:57:46&#43;08:00">
-      
-  May 29, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/linux">Linux</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        在开源的macOS和linux版微信一文中，观众想知道怎么装windows，应你们的需求，来一发。
-见过我2007年以前截屏的话，都会发现gnome和kde没出现过，我喜欢轻量的wm和软件，当年xfce出来的时候，号称轻量，其实也是中级以上，gnome2本身很轻量(gnome3我就不知道了），它给人重量都怪nautilus太慢。后来出现了lxde，才是符合我标准的集易用与轻量一身的桌面，lxde轻量到什么程度？能跑win98的电脑都可以流畅跑lxde！
-LXDE本身就像极了windows经典桌面，而windows界面，大家（起码我是）最爱的还是经典界面，windows 2000是最高水平！虽然土灰土灰的，谁用谁知道，如果长时间盯屏幕，这种土灰土灰的界面，眼睛最不容易累！
-LXDE因为本身菜单和自带的软件，都对windows用户极其友好，所以其实已经很像了。如果你想它再像一点，你可以把图标搞成windows的，比如archlinux的aur源里就有windows 95的图标，这逼就装得有点过了。
-$ yaourt -Ss classic95 aur/classic95-icons 1-1 <a href="3">installed</a> (0.09) Classic icon set from Windows 95  再者就是gtk主题，自带的Redmond，就是windows经典的土灰，最后就是开始菜单，你只要找一个windows开始菜单按纽的图片，大功告成。
-就是这么简单!
-要想装win7，win8这样比较现代化的界面，我推荐一个主题包: <a href="https://github.com/nhermosilla14/WinAte，自带win7、win8主题，桌面壁纸、鼠标主题、图标等。">https://github.com/nhermosilla14/WinAte，自带win7、win8主题，桌面壁纸、鼠标主题、图标等。</a>
-而且这个主题包还附送了各大系统的logo，也就是开始菜单的图标，你可以装成别的系统，请随便装：
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/05/electronic_wechat/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/05/emojifont%E5%85%AC%E4%BC%97%E5%8F%B7%E6%96%87%E7%AB%A0/">
-          emojifont公众号文章
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-05-28T15:10:00&#43;08:00">
-      
-  May 28, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        最近看一个画图的公众号，基本上通篇是代码，最后上个图，我觉得作者就只想表达「哇，我好牛逼」，读者看完可能也只是发出一句「好牛逼」，然后就没有然后了。且不说他读的数据是他电脑上的，你拿了代码也不好重复，最主要是代码死长，缺少解释！</p>
-
-<p>我的写作风格则不一样，一篇文章我一般只会讲解一个点，力图讲清楚，让别人看明白。比如<a href="http://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484186&amp;idx=1&amp;sn=d41ee81398a8c18d07e3b1ffe680d521&amp;chksm=ec43b25ddb343b4b87254521c6c134513a3b3535d28064d2bf71d37f9183948895056151c8d0&amp;scene=21#wechat_redirect">bootstrap分段标记</a>这一篇，代码足够短且简单，但我还是分模块来讲，一行画树，一行做bootstrap分段标记，最后一行修图，虽然三行，但按功能分开，再加上文字解释，读懂是必须的。再比如<a href="http://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484095&amp;idx=1&amp;sn=e98fb2e95cd7d2775a5611ab076fdeb5&amp;chksm=ec43b3f8db343aee763e85b21b4fcf26b36049f0ea48066d65f86ee9895073d0c8e010f4a7ee&amp;scene=21#wechat_redirect">纯代码生成banner​</a>也是分成加载中文字体、读图、图上嵌图三块。即使简单的代码，也要分模块配以文字解析。</p>
-
-<p>我每次只讲解一个点，但有些知识点是关联的，所以有可能会有断片的情况出现，比如之前写phylomoji，就有同学表示没看懂，这个用到了ggtree和emojifont，两个包我都写过很多文介绍，所以在写phylomoji时都没有介绍，如果没看过以前文章的人，可能就不清楚了。所以呢，适当的时候，汇总一下，是很有必要的。</p>
-
-<p>emojifont包我基本上都介绍完了，如果你能通读这几篇文章，那么你必然能够用emoji来作图装逼，能够用emoji来娱乐自己，就像我用emoji给自己快乐一样！</p>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/05/emojifont%E5%85%AC%E4%BC%97%E5%8F%B7%E6%96%87%E7%AB%A0/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/05/viziometric/">
-          viziometric
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-05-20T10:40:22&#43;08:00">
-      
-  May 20, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/biology">Biology</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/software">Software</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        收到了<a href="http://viziometrics.org">Viziometric</a>的邮件：</p>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/screenshots/VizioMetric/Screenshot 2017-05-19 19.48.20.png" alt="" /></p>
-
-<p>说要我给自己的一篇文章选一张图做为代表，我顺手点开，没想到这是一款神器啊！这是由University of Washington做Computer Vision的研究生做的一个<strong>学术图片</strong>搜索引擎，去年被Economist和MIT Technology报道过。</p>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/05/viziometric/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/05/enrichdavid-user-bg/">
-          enrichDAVID支持自定义背景
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
+  <div class="postShorten-meta post-meta">
   
     <time itemprop="datePublished" datetime="2017-05-16T07:04:22&#43;08:00">
       
@@ -554,10 +287,11 @@ $ yaourt -Ss classic95 aur/classic95-icons 1-1 <a href="3">installed</a> (0.09) 
 
 </div>
 
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        虽然我不喜欢DAVID，但很多用户喜欢，所以clusterProfiler也支持了，最近github上又有人<a href="https://github.com/GuangchuangYu/clusterProfiler/issues/87">要求支持自定义背景</a>。</p>
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>虽然我不喜欢DAVID，但很多用户喜欢，所以clusterProfiler也支持了，最近github上又有人<a href="https://github.com/GuangchuangYu/clusterProfiler/issues/87">要求支持自定义背景</a>。</p>
 
 <blockquote>
 <p>Dear Guangchuang,</p>
@@ -574,109 +308,105 @@ $ yaourt -Ss classic95 aur/classic95-icons 1-1 <a href="3">installed</a> (0.09) 
 I downloaded KEGG pathway dataset to apply fisher exact test. however, genes are in entrez ID and i am still dont know how to convert.</p>
 </blockquote>
 
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/05/enrichdavid-user-bg/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
+<p></p>
 
-          
+<p>他提到<code>enrichKEGG</code>不支持<em>ENSEMBL</em> ID，这个可以通过<code>bitr</code>进行ID转换啊，简单得很，只要是有看文档的人都应该知道。</p>
+
+<p>说到<code>enrichDAVID</code>不支持自定义背景，这倒是真的，但这有何难，我随手就支持了。<code>clusterProfiler version&gt;=3.5.3</code>中<code>enrichDAVID</code>也可以使用<code>universe</code>参数了：</p>
+
+<p><img src="https://cloud.githubusercontent.com/assets/626539/26083728/f7f16552-3a09-11e7-9177-13db9b9a241a.png" alt="" /></p>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
             
-  
-    
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/clusterprofiler/">clusterProfiler</a>
+
+  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/david/">DAVID</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  <nav>
+    <ul class="post-actions post-action-nav">
       
-        
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2017/05/viziometric/" data-tooltip="viziometric">
+          
+            <i class="fa fa-angle-left"></i>
+            <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+          </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2017/05/bootstrap-value%E5%88%86%E6%AE%B5%E6%A0%87%E8%AE%B0/" data-tooltip="bootstrap value分段标记">
+          
+            <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </li>
       
+    </ul>
+  </nav>
+  <ul class="post-actions post-action-share">
     
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/05/bootstrap-value%E5%88%86%E6%AE%B5%E6%A0%87%E8%AE%B0/">
-          bootstrap value分段标记
+      <li class="post-action hide-lg hide-md hide-sm">
+        <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+          <i class="fa fa-share-alt"></i>
         </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-05-10T15:10:00&#43;08:00">
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f05%2fenrichdavid-user-bg%2f">
+          <i class="fa fa-google-plus"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f05%2fenrichdavid-user-bg%2f">
+          <i class="fa fa-facebook-official"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f05%2fenrichdavid-user-bg%2f">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+    
+    
+      <li class="post-action">
+        <a class="post-action-btn btn btn--default" href="#disqus_thread">
+          <i class="fa fa-comment-o"></i>
+        </a>
+      </li>
+    
+    <li class="post-action">
       
-  May 10, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-
+        <a class="post-action-btn btn btn--default" href="#">
+      
+        <i class="fa fa-list"></i>
+      </a>
+    </li>
+  </ul>
 </div>
 
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        想要分段标记bootstrap，比如<code>0-70</code>, <code>70-90</code>, <code>90-100</code>之类的。这个对于ggtree来说，太简单。</p>
 
-<p>首先我们要读树，用<code>treeio</code>的<code>read.newick</code>，它和<code>read.tree</code>的不同之处是，加入了参数<code>node.label</code>，当<code>node.label</code>存的不是<code>label</code>，而是<code>bootstrap</code>等数字型的时候，你可以传入<code>node.label='support'</code>，这样它会把node label解析为support value，另存为树注释数据，而不是和tip label混在一起。label变量只能存为字符型，因为和tip label混了，而字符型会让数字操作稍微复杂点。所以我们要用<code>read.newick</code>。</p>
-
-<pre><code>tree &lt;- read.newick(&quot;RMI.phy_phyml_tree_rooted_labeled.txt&quot;, node.label='support')
-root &lt;- getRoot(tree@phylo)
-
-p &lt;- ggtree(tree, color=&quot;black&quot;, size=1.5, linetype=1,  ladderize=TRUE) + 
-     ggtitle(label=&quot;Figure A&quot;) + 
-    geom_tiplab(size=4.5, hjust = -0.060, fontface=&quot;bold&quot;) +  xlim(0, 0.09)
-</code></pre>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/05/bootstrap-value%E5%88%86%E6%AE%B5%E6%A0%87%E8%AE%B0/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-          
-  <div class="pagination-bar">
-    <ul class="pagination">
-      
-        <li class="pagination-prev">
-          <a class="btn btn--default btn--small" href="https://guangchuangyu.github.io/cn/post/page/3/">
-            <i class="fa fa-angle-left text-base icon-mr"></i>
-            <span>NEWER POSTS</span>
-          </a>
-        </li>
-      
-      
-        <li class="pagination-next">
-          <a class="btn btn--default btn--small" href="https://guangchuangyu.github.io/cn/post/page/5/">
-            <span>OLDER POSTS</span>
-            <i class="fa fa-angle-right text-base icon-ml"></i>
-          </a>
-        </li>
-      
-      <li class="pagination-number">page 4 of 16</li>
-    </ul>
-  </div>
-
-
-        </section>
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
     &copy; 2017 Guangchuang Yu. All Rights Reserved
@@ -684,6 +414,92 @@ p &lt;- ggtree(tree, color=&quot;black&quot;, size=1.5, linetype=1,  ladderize=T
 </footer>
 
       </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  <nav>
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2017/05/viziometric/" data-tooltip="viziometric">
+          
+            <i class="fa fa-angle-left"></i>
+            <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+          </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2017/05/bootstrap-value%E5%88%86%E6%AE%B5%E6%A0%87%E8%AE%B0/" data-tooltip="bootstrap value分段标记">
+          
+            <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+  <ul class="post-actions post-action-share">
+    
+      <li class="post-action hide-lg hide-md hide-sm">
+        <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+          <i class="fa fa-share-alt"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f05%2fenrichdavid-user-bg%2f">
+          <i class="fa fa-google-plus"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f05%2fenrichdavid-user-bg%2f">
+          <i class="fa fa-facebook-official"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f05%2fenrichdavid-user-bg%2f">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+    
+    
+      <li class="post-action">
+        <a class="post-action-btn btn btn--default" href="#disqus_thread">
+          <i class="fa fa-comment-o"></i>
+        </a>
+      </li>
+    
+    <li class="post-action">
+      
+        <a class="post-action-btn btn btn--default" href="#">
+      
+        <i class="fa fa-list"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <ul class="share-options">
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f05%2fenrichdavid-user-bg%2f">
+        <i class="fa fa-google-plus"></i><span>Share on Google Plus</span>
+      </a>
+    </li>
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f05%2fenrichdavid-user-bg%2f">
+        <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+      </a>
+    </li>
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f05%2fenrichdavid-user-bg%2f">
+        <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
     </div>
     
     <div id="about">
@@ -1103,6 +919,32 @@ $(document).ready(function() {
   });
 });
 </script>
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/guangchuangyu.github.io\/cn\/2017\/05\/enrichdavid-user-bg\/';
+          
+            this.page.identifier = '\/2017\/05\/enrichdavid-user-bg\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'gcyu';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
 
 
 

@@ -511,10 +511,10 @@ $ yaourt -Ss classic95 aur/classic95-icons 1-1 [installed] (3) (0.09) Classic ic
     
     <item>
       <title>enrichDAVID支持自定义背景</title>
-      <link>https://guangchuangyu.github.io/cn/2017/05/enrichdavid%E6%94%AF%E6%8C%81%E8%87%AA%E5%AE%9A%E4%B9%89%E8%83%8C%E6%99%AF/</link>
+      <link>https://guangchuangyu.github.io/cn/2017/05/enrichdavid-user-bg/</link>
       <pubDate>Tue, 16 May 2017 07:04:22 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/2017/05/enrichdavid%E6%94%AF%E6%8C%81%E8%87%AA%E5%AE%9A%E4%B9%89%E8%83%8C%E6%99%AF/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2017/05/enrichdavid-user-bg/</guid>
       <description>&lt;p&gt;虽然我不喜欢DAVID，但很多用户喜欢，所以clusterProfiler也支持了，最近github上又有人&lt;a href=&#34;https://github.com/GuangchuangYu/clusterProfiler/issues/87&#34;&gt;要求支持自定义背景&lt;/a&gt;。&lt;/p&gt;
 
 &lt;blockquote&gt;
