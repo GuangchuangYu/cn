@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2017/07/magick-add-gif/</loc>
+    <lastmod>2017-07-28T07:09:22+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2017/07/clusterprofiler-dotplot/</loc>
     <lastmod>2017-07-27T07:05:22+08:00</lastmod>
   </url>
@@ -899,7 +904,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/</loc>
-    <lastmod>2017-07-27T07:05:22+08:00</lastmod>
+    <lastmod>2017-07-28T07:09:22+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -972,6 +977,12 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/machine-learning/</loc>
     <lastmod>2012-04-12T05:37:55+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/magick/</loc>
+    <lastmod>2017-07-28T07:09:22+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1109,7 +1120,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/post/</loc>
-    <lastmod>2017-07-27T07:05:22+08:00</lastmod>
+    <lastmod>2017-07-28T07:09:22+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1163,7 +1174,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/r/</loc>
-    <lastmod>2017-07-27T07:05:22+08:00</lastmod>
+    <lastmod>2017-07-28T07:09:22+08:00</lastmod>
     <priority>0</priority>
   </url>
   
