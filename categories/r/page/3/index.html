@@ -228,6 +228,77 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/04/%E6%9D%A5%E8%87%AAr%E7%9A%84%E6%A1%8C%E9%9D%A2%E6%8F%90%E9%86%92/">
+          来自R的桌面提醒
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-04-11T12:23:16&#43;08:00">
+      
+  April 11, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <strong>notifier</strong>包实现了跨平台的桌面提醒功能，当然它是调用了外部的命令，比如windows使用了<strong>toaster</strong>，老版本windows使用的是<strong>notifu</strong>，在linux下使用<strong>notify-send</strong>，而在OSX下，则调用了<strong>terminal-notifier</strong>，通过了简单的封装之后，就可以给桌面发布消息提醒了。</p>
+
+<p>比如：</p>
+
+<pre><code class="language-r">library(notifier)
+notify(
+  title = &quot;15 Packages out of date&quot;,
+  msg = c(&quot;You can run update.packages() to update them.&quot;,
+  &quot;Outdated packages: Boom colorspace desc memuse networkD3&quot;,
+  &quot;pbapply revealjs rgl rmdformats timevis and 5 more&quot;)
+)
+</code></pre>
+
+<p>​
+效果如下：</p>
+
+<p>
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2017/04/%E6%9D%A5%E8%87%AAr%E7%9A%84%E6%A1%8C%E9%9D%A2%E6%8F%90%E9%86%92/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+            
+              
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/04/ggimage/">
           ggimage：ggplot2中愉快地使用图片
         </a>
@@ -632,98 +703,6 @@ print(p)
 </article>
 
             
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/03/peak%E6%B3%A8%E9%87%8A/">
-          peak注释
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-03-16T12:23:16&#43;08:00">
-      
-  March 16, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/chipseq">ChIPseq</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        这一次讲解非常重要的peak注释，注释在<strong>ChIPseeker</strong>里只需要用到一个函数<strong>annotatePeak</strong>，它可以满足大家各方面的需求。</p>
-
-<h2 id="输入">输入</h2>
-
-<p>当然需要我们上次讲到的BED文件，<strong>ChIPseeker</strong>自带了5个BED文件，用<strong>getSampleFiles()</strong>可以拿到文件的全路径，它返回的是个named list，我这里取第4个文件来演示。<strong>annotatePeak</strong>的输入也可以是<strong>GRanges</strong>对象，你如果用R做peak calling的话,直接就可以衔接上<strong>ChIPseeker</strong>了。</p>
-
-<pre><code>&gt; require(ChIPseeker)
-&gt; f = getSampleFiles()[[4]]
-</code></pre>
-
-<p>巧妇难为无米之炊，就像拿到<strong>fastq</strong>要跑<strong>BWA</strong>，你需要全基因组的序列一样，做注释当然需要注释信息，基因的起始终止，基因有那些内含子，外显子，以及它们的起始终止，非编码区的位置，功能元件的位置等各种信息。</p>
-
-<p>很多软件会针对特定的物种去整理这些信息供软件使用，但这样就限制了软件的物种支持，有些开发者写软件本意也是解决自己的问题，可能对自己的研究无关的物种也没兴趣去支持。</p>
-
-<p>然而<strong>ChIPseeker</strong>支持所有的物种，你没有看错，<strong>ChIPseeker</strong>没有物种限制，当然这是有前提的，物种本身起码是有基因的位置这些注释信息，不然就变无米之炊了。</p>
-
-<p>这里我们需要的是一个<strong>TxDb</strong>对象，这个<strong>TxDb</strong>就包含了我们需要的各种信息，<strong>ChIPseeker</strong>会把信息抽取出来，用于注释时使用。</p>
-
-<pre><code>&gt; require(TxDb.Hsapiens.UCSC.hg19.knownGene)
-&gt; txdb = TxDb.Hsapiens.UCSC.hg19.knownGene
-&gt; x = annotatePeak(f, tssRegion=c(-1000, 1000), TxDb=txdb)
-&gt;&gt; loading peak file...                2017-03-09 11:29:18 PM 
-&gt;&gt; preparing features information...       2017-03-09 11:29:18 PM 
-&gt;&gt; identifying nearest features...         2017-03-09 11:29:19 PM 
-&gt;&gt; calculating distance from peak to TSS...    2017-03-09 11:29:20 PM 
-&gt;&gt; assigning genomic annotation...         2017-03-09 11:29:20 PM 
-&gt;&gt; assigning chromosome lengths            2017-03-09 11:29:42 PM 
-&gt;&gt; done...                     2017-03-09 11:29:42 PM 
-</code></pre>
-
-<blockquote>
-<p>这里需要注意的是，启动子区域是没有明确的定义的，所以你可能需要指定<strong>tssRegion</strong>，把基因起始转录位点的上下游区域来做为启动子区域。</p>
-</blockquote>
-
-<p>有了这两个输入（BED文件和TxDb对象），你就可以跑注释了，然后就可以出结果了。
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/03/peak%E6%B3%A8%E9%87%8A/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
             
   <div class="pagination-bar">
     <ul class="pagination">
@@ -743,7 +722,7 @@ print(p)
           </a>
         </li>
       
-      <li class="pagination-number">page 3 of 6</li>
+      <li class="pagination-number">page 3 of 7</li>
     </ul>
   </div>
 
@@ -806,6 +785,40 @@ print(p)
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/clusterprofiler-dotplot/">
+                <h3 class="media-heading">听说你也在画dotplot，但是我不服!</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jul 7, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"> 陈同的‘生信宝典’公众号出了篇《R语言学习 - 富集分析泡泡图》，搞个shell脚本，一步绘图。讲了这个脚本可以适用于clusterProfiler和其它软件的富集结果。
+浑身都是硬伤，我都不想吐槽，但由于作者邀请我提点，那就吐槽模式全开。
+一个command出图，小白已经哭晕 从出的图看，应该是ggplot2画的（就算猜错，要吐槽的依然正确），小白在web-server上做了分析，存结果为xls文件，拿你这脚本，一跑报错。读xls文件（别告诉我你跟用户说读xls但其实是个tsv）和画图的依赖关系没解决！用户友好在那里？不要告诉我你的脚本0依赖，有个shell就能跑，即使我们的各种命令，很多都是独立程序，不关shell什么事。
+所谓的一步出图 既然讲了clusterProfiler，那么clusterProfiler用户笑而不语了。我们用dotplot不也是一条命令出图，为什么要退出R，去跑你的shell脚本，这过程还得转换数据，存储数据。最后的这一步，是前面+N步为代价的。
+一步出图是邪恶的！ 做为ggplot2画的图，我们用clusterProfiler的dotplot，写文件前，可以先看一下，做点调整。你搞个脚本缺少了用户互动的重要一步。
+生物狗开口闭口都是next generation。画图也是二代了好么！一步出图是第一代产品，因为你只有纸笔模式，画完就完事了，那是死图，你想改，illustrator啊！
+现在这年代，图已经不能简单地称为图，都是数据，只有在需要渲染图片时才是死图，做为数据，你是可以改的，改完再渲染，效果就变了。你用着二代产品，却在干一代产品的活，能不邪恶吗？
+比如下面这个：
+library(clusterProfiler) data(gcSample) x &lt;- compareCluster(gcSample, 'enrichDO') p &lt;- dotplot(x, showCategory=10)  clusterProfiler出的图，我们可以随意改啊，比如改颜色：
+p2 &lt;- p + scale_color_continuous(low='purple', high='green')  再比如改点的形状：
+p2 + aes(shape=GeneRatio &gt; 0.1)  比如字体溢出、长文本截断、设置点的大小等等都可以搞，你还可以改图例，改背景等各种元素等等！
+我所说的硬伤 下面是陈同原文里的图：
+我当时看了说硬伤，告诉他没overlap，他不明白，请我详细讲，于是有本文。
+他上面的图是给人的感觉就是两组实验非常不同，完全没有overlap，但实际并非如此，只是我们没办法把所有富集结果展示出来而已，只展示了最显著的一部分。然而我们在截取最显著的部分时，应该把其它组实验中有overlap的结果也截出来，这个在我讲解showCategory参数中已经有明显明确说明。
+最后来两个硬广， 硬广一 对于富集结果没办法完全展示这个问题，我们会发现最显著的那些，其实都overlap了很多基因，特别是GO的分析结果，GO的冗余太多，clusterProfiler提供了simplify函数，可以去冗余哟，让我们解析结果更容易，这个后面也会介绍。
+硬广二 有些人就喜欢自己用ggplot2画，可能觉得透明吧，自己搞有逼格吧。氮素像上面的槽点，像这个includeAll的参数，在把clusterProfiler的结果转变成data.frame后进行处理的时候，你是否能够考虑到？我见过太多自己画的，都是不同实验组给人一种绝然不同富集结果的错觉。
+然而我写的代码，模块化非常好，数据处理和可视化是分开的，clusterProfiler的输出你不用as.data.frame，就可以直接传给ggplot2，别的富集软件做的，不是data.frame对象的，都不能传给ggplot2，但clusterProfiler可以，如果你想问为什么，原因只有一个，因为那是我写的！clusterProfiler的dotplot所有参数，都可以传给ggplot2，像上面用到的showCategory, includeAll这些都可以，然后数据处理于无形中，你可以加图层自己画图了。这个功能存在了好几年，只不过我第一次公开讲。
+ggplot(x, aes(Cluster, Description), showCategory=8) + geom_point(aes(color=qvalue, size=GeneRatio))  再次重申， clusterProfiler之所以好，因为真的考虑了很多细节！请放开那图，让clusterProfiler来画！ 电梯直达相关阅读  ggplot2字体溢出的那点破事 wrapping labels in ggplot2 dotplot展示富集分析结果 搞大你的点，让我们画真正的气泡图  </div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1095,27 +1108,6 @@ the practice of taking someone else's work or ideas and passing them off as one'
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/ggjoy/">
-                <h3 class="media-heading">joyplot：一种波涛汹涌，哦不对，是山峰叠峦的可视化方式</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jul 7, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>最近推特上在讨论的一种叫做joyplot的作图方式，如果我们按照正常的画法，这些分布会重叠在一起，不容易看。而这种joyplot，有一种山峰叠峦的即视感：</p>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/R/ggjoy/Screenshot 2017-07-11 16.37.22.png" alt="" /></p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1123,7 +1115,7 @@ the practice of taking someone else's work or ideas and passing them off as one'
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         110 posts found
+         111 posts found
       </p>
     </div>
   </div>
