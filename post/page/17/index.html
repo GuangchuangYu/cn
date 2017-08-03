@@ -225,6 +225,157 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2006/06/%E5%AE%89%E8%A3%85os9%E5%92%8Cnetbsd%E5%8F%8C%E7%B3%BB%E7%BB%9F/">
+          安装os9和netbsd双系统
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2006-06-14T04:31:00&#43;08:00">
+      
+  June 14, 2006
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/bsd">BSD</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/mac-os">Mac OS</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/powerbook">Powerbook</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <h2 id="1-分区">1 分区</h2>
+
+<p>用MacOS X 10.2 的光盘启动，运行Disk Utility，选择“Install Mac OS
+9 Disk
+Drivers”不然分区将不能在OS9中使用，我一共分了5个分区，12G,10G,512M,20G,13.4G。其中12Ｇ装OS9系统，10Ｇ装netbsd系统，512Ｍ为swap分区，20Ｇ为home
+分区，最后一个为fat32格式，为两个系统所共享。</p>
+
+<h2 id="2-安装os9">2 安装os9</h2>
+
+<p>开机放入os9安装光盘，按住<code>Ｃ</code>键，由光盘启动进入os9，在光盘根目录下点安装系统。指定第一个分区，选择安装的软件，十来分钟，便装完了。重新启动，将netbsd的启动程序<code>ofwboot.xcf</code>放在os9的根目录下。</p>
+
+<h2 id="3-安装netbsd">3 安装netbsd</h2>
+
+<p>
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2006/06/%E5%AE%89%E8%A3%85os9%E5%92%8Cnetbsd%E5%8F%8C%E7%B3%BB%E7%BB%9F/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/">
+          在emacs里使用maxima
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2005-05-28T08:15:00&#43;08:00">
+      
+  May 28, 2005
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/software">Software</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <h2 id="下载imaxima">下载imaxima   </h2>
+
+<p><a href="http://members3.jcom.home.ne.jp/imaxima/Site/Download%20and%20Install_files/imaxima-imath-0.97a.tar.gz">http://members3.jcom.home.ne.jp/imaxima/Site/Download%20and%20Install_files/imaxima-imath-0.97a.tar.gz</a></p>
+
+<pre><code>./configure
+make
+sudo make install
+</code></pre>
+
+<p>进行安装。
+默认将安装在/usr/local/share/emacs/site-lisp下，在~/.emacs下加入</p>
+
+<pre><code>(load &quot;imaxima&quot;)
+</code></pre>
+
+<p>启动emacs,按M-x,键入imaxima运行maxima 但是进行运算时出错。
+<img src="http://guangchuangyu.github.io/blog_images/2005/05/070902122953.png" alt="" /></p>
+
+<p>需要breqn094包，可从<a href="ftp://ftp.ams.org/pub/tex/breqn.zip">ftp://ftp.ams.org/pub/tex/breqn.zip</a>下载，</p>
+
+<pre><code>cd /usr/share/texmf/tex/latex/
+sudo unzip ~/Downloads/breqn.zip
+sudo texhash
+</code></pre>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/">
           scau校园网认证
         </a>
@@ -806,7 +957,7 @@ the practice of taking someone else's work or ideas and passing them off as one'
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         115 posts found
+         117 posts found
       </p>
     </div>
   </div>
