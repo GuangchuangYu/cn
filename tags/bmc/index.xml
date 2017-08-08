@@ -6,10 +6,39 @@
     <description>Recent content in Bmc on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 21 Jul 2017 21:51:43 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 08 Aug 2017 17:52:00 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/tags/bmc/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>祝你们长长绵绵到天涯</title>
+      <link>https://guangchuangyu.github.io/cn/2017/08/response-to-sciencenet-blog-post/</link>
+      <pubDate>Tue, 08 Aug 2017 17:52:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/08/response-to-sciencenet-blog-post/</guid>
+      <description>&lt;p&gt;薛宇这篇《&lt;a href=&#34;http://blog.sciencenet.cn/home.php?mod=space&amp;amp;uid=404304&amp;amp;do=blog&amp;amp;id=1069933&#34;&gt;BMC Systems Biology没有学术不端&lt;/a&gt;》写作水平还真是高啊，先来个不拉干的小事情，用了软件没引用，来铺垫并以此对抄袭事情进行定位/定性。再来一堆论据和结论不相关的逻辑来论证，好像很有道理的样子，不明真相（没有读我的4篇连载）的群众很容易就掉坑里了。&lt;/p&gt;
+
+&lt;p&gt;首先讲了他和R教授的故事，那只不过是用了工具没引用而已，和抄袭是两码事！试图把抄袭写成与此类似的「忘记引用」！&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;比方说我给R教授写信，就只是问有没有用我的工具。都是聪明人，话不需要说的那么透，点到为止就得了。那您要问，如果人家不回信或者耍赖说没用呢？很简单，三天不回信我会立马写信杂志社，说作者用了我的东西并且刻意没有引用也没有致谢，态度极其恶劣建议撤稿，并且把我三天前发的信抄给编辑作为证据。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;为了把抄袭这种严重的事情与用了工具没引用这种简直太常见且不值一提的小事做类比，薛宇教授是用心良苦啊，把小事给说大了！&lt;/p&gt;
+
+&lt;p&gt;这就是牛逼之处，我不得不服，用小事与大事类比，将大事说小！将小事说大，让大事化小于无形中。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;有德国学者使用了GOSemSim的代码设计了预测蛋白质相互作用的工具IntScore，发表在2012年的核酸研究上，作者专门写了一节来介绍GO的语义学相似性并且标明引用，所以这篇文章符合学术规范，没有问题。我们再看看DOSim，这篇文章里注明了GO注释的分析使用的是GOSim并且加了引用，所以也没有问题。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这段话很有水平，首先是不对等类比，以2012年NAR的符合学术规范的文章来类比一篇抄袭文章，试图化抄袭于无形中。&lt;/p&gt;
+
+&lt;p&gt;我们来看所谓的一节&lt;strong&gt;专门介绍&lt;/strong&gt;和标明引用是怎样的：&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>我像是一颗棋子，进退任由你决定</title>
