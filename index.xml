@@ -6,10 +6,40 @@
     <description>Recent content on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 08 Aug 2017 17:52:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 10 Aug 2017 19:11:00 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>听说你有RNAseq数据却不知道怎么跑GSEA</title>
+      <link>https://guangchuangyu.github.io/cn/2017/08/prepare-genelist/</link>
+      <pubDate>Thu, 10 Aug 2017 19:11:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/08/prepare-genelist/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Dear GuangChuangyu,&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m trying to use the clusterProfiler package for GSE analysis on DGE data obtained from RNAseq.
+While I can run enrichKEGG, I&amp;rsquo;m unable to run gseKEGG basically because I don&amp;rsquo;t know how to obtain an order ranked gene list.&lt;/p&gt;
+
+&lt;p&gt;I work on R. I have a dataframe or matrix with gene names, log2 fold change values, pvalues and adjusted pvalues among others.&lt;/p&gt;
+
+&lt;p&gt;How can I get the order ranked gene list to feed in gseKEGG?&lt;/p&gt;
+
+&lt;p&gt;Moreover what is the more reliable way to obtain functional insight about each sample? enrichKEGG or gseKEGG?&lt;/p&gt;
+
+&lt;p&gt;Thank you in advance for your help.&lt;/p&gt;
+
+&lt;p&gt;best regards&lt;/p&gt;
+
+&lt;p&gt;bruno saubaméa&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;今天收到一封求助信，这个问题我被问过好多次了，显然很多新手都有这问题，根本不知道该怎么跑GSEA，搞不清GSEA的输入是什么。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>祝你们缠缠绵绵到天涯</title>

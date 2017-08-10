@@ -225,6 +225,74 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2009/07/bootstrap-method/">
+          Bootstrap Method
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2009-07-31T09:14:42&#43;08:00">
+      
+  July 31, 2009
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/statistics">statistics</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        [bootstrap](<a href="http://en.wikipedia.org/wiki/Bootstrapping_(statistics))是对观测数据集进行有放回（replacement）的随机抽样，以评估总体的各项统计指标。可以用于假设检验、参数估计。好处是并不要求大样本，也不要求正态数据，并且对于不同的统计指标使用的是同样的计算方法。结果也更为可靠，坏处是计算量大。">http://en.wikipedia.org/wiki/Bootstrapping_(statistics))是对观测数据集进行有放回（replacement）的随机抽样，以评估总体的各项统计指标。可以用于假设检验、参数估计。好处是并不要求大样本，也不要求正态数据，并且对于不同的统计指标使用的是同样的计算方法。结果也更为可靠，坏处是计算量大。</a></p>
+
+<p>统计推断(statistical inference)是基于样本统计值的抽样分布来计算的，抽样分布需要从总体中许多的样本来计算，在只有一个样本的情况下，bootstrap对这一随机样本进行有放回的重复抽样，每一个重抽样本与原始随机样本一样大，每次计算相应的抽样的统计值，重复了N次之后，就可以计算统计值的bootstrap分布。</p>
+
+<p>下面做一个小小的试验：</p>
+
+<pre><code>a &lt;- c(seq(1:10), rnorm(50))  
+</code></pre>
+
+<p>#创建一个样本，60个数据，非正态分布的，如下图</p>
+
+<p><img src="http://guangchuangyu.github.io/blog_images/2009/07/sample_a.png" alt="" title="sample_a" /></p>
+
+<p>
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2009/07/bootstrap-method/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/11/bisect-to-solve-equation/">
           用中值定理求根
         </a>
@@ -624,73 +692,6 @@ server。之前使用rdesktop远程桌面，最近发现配合seamlessrdp可以�
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/08/gosemsim/">
-          GOSemSim
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2008-08-11T14:21:00&#43;08:00">
-      
-  August 11, 2008
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/bioinformatics">Bioinformatics</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        第一次写软件包，计算基因和GO的语义相似性。</p>
-
-<p>实现<a href="http://bioinformatics.oxfordjournals.org/cgi/content/full/23/10/1274">Wang</a>的方法，基于GO的图结构。
-以及四种基于信息含量的计算方法（Resnik, Jiang, Lin, Rel）。</p>
-
-<p>可以从Bioconductor下载到。
-<a href="http://bioconductor.org/packages/release/bioc/html/GOSemSim.html">http://bioconductor.org/packages/release/bioc/html/GOSemSim.html</a>
-<a href="http://bioconductor.org/packages/devel/bioc/html/GOSemSim.html">http://bioconductor.org/packages/devel/bioc/html/GOSemSim.html</a></p>
-
-<p>支持human, rat, mouse, fly, yeast, zebrafish,worm, E coli,
-arabidopsis等物种。</p>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2008/08/gosemsim/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -772,6 +773,44 @@ arabidopsis等物种。</p>
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/08/prepare-genelist/">
+                <h3 class="media-heading">听说你有RNAseq数据却不知道怎么跑GSEA</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Aug 8, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><blockquote>
+<p>Dear GuangChuangyu,</p>
+
+<p>I&rsquo;m trying to use the clusterProfiler package for GSE analysis on DGE data obtained from RNAseq.
+While I can run enrichKEGG, I&rsquo;m unable to run gseKEGG basically because I don&rsquo;t know how to obtain an order ranked gene list.</p>
+
+<p>I work on R. I have a dataframe or matrix with gene names, log2 fold change values, pvalues and adjusted pvalues among others.</p>
+
+<p>How can I get the order ranked gene list to feed in gseKEGG?</p>
+
+<p>Moreover what is the more reliable way to obtain functional insight about each sample? enrichKEGG or gseKEGG?</p>
+
+<p>Thank you in advance for your help.</p>
+
+<p>best regards</p>
+
+<p>bruno saubaméa</p>
+</blockquote>
+
+<p>今天收到一封求助信，这个问题我被问过好多次了，显然很多新手都有这问题，根本不知道该怎么跑GSEA，搞不清GSEA的输入是什么。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1074,41 +1113,6 @@ arabidopsis等物种。</p>
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/bmc_plagiarism_2/">
-                <h3 class="media-heading">Editor你的良心不会痛吗？</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jul 7, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><blockquote>
-<p>抄袭的是<strong>西安电子科技大学</strong>的讲师，靠着两三篇抄袭的文章，已经是副教授了。</p>
-
-<p>这种抄袭的事情就应该暴光，这个事件中，更可恶的是BMC，BMC这种保护抄袭的行为更应该暴光，大家不要再给BMC送钱了，还不如发PLoS One。</p>
-</blockquote>
-
-<p>公众号有人评论说：</p>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/GOSemSim/WechatIMG2.jpeg" alt="" /></p>
-
-<p>这竟然也被捕捉到了，确实他在2012年的时候，就在copy我的代码，然后打R包的时候，还请教了我：</p>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/GOSemSim/ppiPre_dengyue.png" alt="" /></p>
-
-<h2 id="抄了我的代码-之后厚颜无耻地感谢我说学了很多东西-他的良心真的不会痛吗">抄了我的代码，之后厚颜无耻地感谢我说学了很多东西，他的良心真的不会痛吗？</h2>
-
-<p><img src="https://media.giphy.com/media/EvsmQokxE8wi4/giphy.gif" alt="" /></p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1116,7 +1120,7 @@ arabidopsis等物种。</p>
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         118 posts found
+         119 posts found
       </p>
     </div>
   </div>
