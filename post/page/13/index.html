@@ -225,6 +225,66 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2013/06/compress-tiff/">
+          使用ImageMagick压缩TIFF
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2013-06-07T15:10:00&#43;08:00">
+      
+  June 7, 2013
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/software">Software</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        TIFF (Tagged Image File Format)拥有更宽的线性动态范围，所以在专业的图片处理上，一直是一个通用的文件格式。
+最近一篇发表在Metallomics的文章，我本来做的图片都是PDF格式，矢量图最好了，文件特别小，还可以任意放大。不过杂志社要求600DPI的TIFF或EPS。
+我第一反应是拒绝使用TIFF，600DPI的TIFF文件肯定非常大，EPS也是矢量图，我用R重新把图画一遍，存为EPS就OK了。画图的过程，我发现对EPS的支持不太好，老报些某字体不存在的错误。这当然不是什么大不了的事，自己指定字体就好了。问题在于有张图是拼的，我只能借助于软件转换，我用Inkscape处理，导出EPS，出来的图我发现有些细节并不太好。
+无奈之下还是用TIFF吧，Fig1和3都是R画的，直接指定分辨率和压缩算法，存为TIFF文件。Fig1是3000x3000pixel 600dpi的图，只有320k，Fig3是4200x4200pixel的图，也是600dpi，只有558k，用R产生TIFF还是非常靠谱的。
+关键是Fig2，这一张拼的图，存成PDF矢量图，需要用ImageMagick转换成600DPI的TIFF图片，ImageMagick需要安装Xcode才能在Mac下编译成功。
+Yus-Mac-Pro:others ygc$ convert -density 600 fig2.pdf fig2.tif Yus-Mac-Pro:others ygc$ identify -verbose fig2.tif Image: fig2.tif Format: TIFF (Tagged Image File Format) Class: DirectClass Geometry: 6000x4500+0+0 Resolution: 600x600 Print size: 10x7.5 Units: Undefined Type: PaletteMatte Base type: TrueColor Endianess: MSB &hellip; Yus-Mac-Pro:others ygc$ convert -density 600 -compress lzw fig2.pdf fig2_compress.tif Yus-Mac-Pro:others ygc$ ls -l fig2*.tif -rw-r&ndash;r&ndash; 1 ygc admin 216036263 May 23 17:53 fig2.
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2013/06/compress-tiff/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2013/01/talen%E5%9F%BA%E5%9B%A0%E7%BC%96%E8%BE%91/">
           TALEN基因编辑
         </a>
@@ -597,65 +657,6 @@ regression取值是<code>{0,1}</code>，而SVM为了计算距离方便，取值�
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2012/02/happy-valentine/">
-          happy valentine
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2012-02-14T05:37:55&#43;08:00">
-      
-  February 14, 2012
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        今天看到统计之都上的情人节心形图。
-这次画的心形函数是： $ x = 16 (sin t)^3$ $ y = 13 cos t - 5 cos 2t - 2 cos 3t - cos 4t$
-尝试用ggplot2来画，结果如下： 代码见Github.
-类似的心形图以前也是画过的，当然这样的函数图有很多，详见<a href="http://www.mathematische-basteleien.de/heart.htm，画起来也很容易。">http://www.mathematische-basteleien.de/heart.htm，画起来也很容易。</a>
-倒是以前画过的蝙蝠侠logo，更有成就感些。
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2012/02/happy-valentine/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -737,6 +738,27 @@ regression取值是<code>{0,1}</code>，而SVM为了计算距离方便，取值�
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/08/source-code-reuse/">
+                <h3 class="media-heading">关于重用代码与文章抄袭</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Aug 8, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484733&amp;amp;idx=1&amp;amp;sn=b43739e02ef7e7892f196aa51a1c2e59&amp;amp;chksm=ec43b47adb343d6c98b240a0dfed9abe1ab46e230535a44f2b47bf69cc7b45520f7c7fd38231#rd">大学教授力挺抄袭，强行洗地到裤衩都不要了，到底图什么？</a>这篇文章发出来之后，引起一起讨论，有一些小伙伴截了屏给我看。所以我想有必要再讲几句，我这篇文章写<strong>两个方面</strong>，一方面是重用代码，一方面是文章抄袭，这两方面可以是不相关的，这里的文章抄袭并不特指你抄了代码。</p>
+
+<p>X教授《<a href="http://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484733&amp;idx=2&amp;sn=b6c3a81f38c0f60433e8ccd721a7ca3b&amp;chksm=ec43b47adb343d6c0bee4ae222af03353329173b9ae87c588d6bb19f95619dc46b829d0af1b6#rd">如何姿势正确的使用他人代码？</a>》，总结起来两个点，一是开源代码随便用，二是文章有引用/致谢就OK。这两个点都是错误的。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1032,46 +1054,6 @@ While I can run enrichKEGG, I&rsquo;m unable to run gseKEGG basically because I 
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/swirl/">
-                <h3 class="media-heading">听说你想学R</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jul 7, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><h2 id="先来点八卦">先来点八卦</h2>
-
-<p>当年学R的时候，并没有现在这么多的书籍，老用户一般都知道丁国徽，因为他翻译了诸如《R导论》之类的文档，属于最早的中文材料了。跟生物狗有关的中文书有两本，一本是《R语言及Bioconductor在基因组分析中的应用》，这本我在2006年的时候看过，被坑大发了，里面逻辑混乱、错误满篇。</p>
-
-<p>以下这段豆瓣书评可以说很好的总结了这本书 <a href="https://book.douban.com/review/3017404/#comments">https://book.douban.com/review/3017404/#comments</a>:</p>
-
-<blockquote>
-<p>首先，打开前言，读者们会发现“编写本书，参加这些工作的教师和研究生有15人之多”。当然，名字后面带头衔的最后都在出现在封面了。也就是说由12位&rdquo;无名的岳武穆“研究生同学造就了3名”有名的岳武穆“之砖家叫兽。</p>
-
-<p>然后，本书共24章，模12为零，当然，这只是一个巧合，只是暗合天命罢了。</p>
-
-<p>最搞笑的就是这本书的编排和审校，十分差，许多小错误，就好像从没有审过一样。</p>
-
-<p>譬如第13页上，对order()函数的介绍，居然有这么句绕口令“x[order(x)]等效于order(x)&ldquo;,当然其实等效的是 sort(x).</p>
-
-<p>其他的诸如第17页上&gt;=的打印错误，就不一一细表了。</p>
-
-<p>最搞笑的就是只有三页的第4章，在数组、函数的介绍之前，就开始讲“聚集计算”！！！然后再来讲解语言基本的语法。。。。
-这种“由深入浅，化简单为复杂，化复杂为天书”之功力，更让吾辈叹服砖家叫兽吞云吐雾之神功。</p>
-
-<p>作为一本实例讲解的书，根本就没有提供源码和实例样本，也就说，根本就是没头没脑的演示。有点专业精神好么，好歹也是本标价68的书，当然只有400页草纸， 本科生水平的语言文档翻译。</p>
-</blockquote>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1079,7 +1061,7 @@ While I can run enrichKEGG, I&rsquo;m unable to run gseKEGG basically because I 
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         121 posts found
+         122 posts found
       </p>
     </div>
   </div>

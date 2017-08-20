@@ -228,6 +228,73 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/04/ggplot2%E5%AD%97%E4%BD%93%E6%BA%A2%E5%87%BA%E7%9A%84%E9%82%A3%E7%82%B9%E7%A0%B4%E4%BA%8B/">
+          ggplot2字体溢出的那点破事
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-04-03T15:10:00&#43;08:00">
+      
+  April 3, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        比如下面的代码：</p>
+
+<pre><code>require(ggplot2)
+d &lt;- data.frame(x=c(0, 0.002, 0.00575), y = 1:3)
+p &lt;- ggplot(d, aes(x, y)) + geom_point() + xlab(NULL) + ylab(NULL)
+print(p)
+</code></pre>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/geom_text_files/figure-markdown_strict/unnamed-chunk-1-1.png" alt="" /></p>
+
+<p>上面图中x轴的文本<strong>0.006</strong>，这个数字中的<strong>6</strong>几乎看不到，因为一半过界了。</p>
+
+<p>
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2017/04/ggplot2%E5%AD%97%E4%BD%93%E6%BA%A2%E5%87%BA%E7%9A%84%E9%82%A3%E7%82%B9%E7%A0%B4%E4%BA%8B/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+            
+              
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/03/%E5%85%B3%E4%BA%8Echipseq%E6%B3%A8%E9%87%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/">
           关于ChIPseq注释的几个问题
         </a>
@@ -654,77 +721,6 @@ ga('send', 'pageview');
 </article>
 
             
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/02/chipseq%E7%AE%80%E4%BB%8B/">
-          ChIPseq简介
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-02-20T12:23:16&#43;08:00">
-      
-  February 20, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/chipseq">ChIPseq</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        ChIP是指染色质免疫沉淀，它通过特异结合抗体将DNA结合蛋白免疫沉淀，可以用于捕获蛋白质（如转录因子，组蛋白修饰）的DNA靶点。这技术存在非常久了，在二代测序之前，结合microarray，它的名字叫<code>ChIP-on-chip</code>，二代测序出来之后，显而易见的，免疫沉淀拉下来的DNA拿去NGS测序，这必然是下一代的ChIP技术，优点也是显而易见的，不再需要设计探针（往往存在着一定的偏向性）。所以NGS出来以后，不差钱的牛逼实验室显然占据上风，谁先做出来，谁就定义了新技术。这是有钱人的竞赛，没钱的只能等着技术烂大街的时候跟风做。</p>
-
-<p>这是显而易见的下一代技术，外加技术上完全是可行的，所以这是一场单纯的时间竞赛，于是几乎同时出来CNS文章，基本上谁也不比谁差地同时扔出来。</p>
-
-<blockquote>
-<ul>
-<li>Johnson DS, Mortazavi A et al. (2007) Genome-wide mapping of in vivo protein–DNA interactions. Science 316: 1497–1502</li>
-<li>Robertson G et al.(2007) Genome-wide profiles of STAT1 DNA association using chromatin immunoprecipitation and massively parallel sequencing. Nature Methods 4: 651–657</li>
-<li>Schmid et al. (2007) ChIP-Seq Data reveal nucleosome architecture of human promoters. Cell 131: 831–832</li>
-</ul>
-</blockquote>
-
-<p>2007年来自三个不同的实验室，几乎是同时间出来（最长差不了3个月），分别发CNS，一起定义了这个<code>ChIPseq</code>技术。</p>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/02/chipseq%E7%AE%80%E4%BB%8B/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
             
   <div class="pagination-bar">
     <ul class="pagination">
@@ -807,6 +803,27 @@ ga('send', 'pageview');
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/08/source-code-reuse/">
+                <h3 class="media-heading">关于重用代码与文章抄袭</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Aug 8, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484733&amp;amp;idx=1&amp;amp;sn=b43739e02ef7e7892f196aa51a1c2e59&amp;amp;chksm=ec43b47adb343d6c98b240a0dfed9abe1ab46e230535a44f2b47bf69cc7b45520f7c7fd38231#rd">大学教授力挺抄袭，强行洗地到裤衩都不要了，到底图什么？</a>这篇文章发出来之后，引起一起讨论，有一些小伙伴截了屏给我看。所以我想有必要再讲几句，我这篇文章写<strong>两个方面</strong>，一方面是重用代码，一方面是文章抄袭，这两方面可以是不相关的，这里的文章抄袭并不特指你抄了代码。</p>
+
+<p>X教授《<a href="http://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484733&amp;idx=2&amp;sn=b6c3a81f38c0f60433e8ccd721a7ca3b&amp;chksm=ec43b47adb343d6c0bee4ae222af03353329173b9ae87c588d6bb19f95619dc46b829d0af1b6#rd">如何姿势正确的使用他人代码？</a>》，总结起来两个点，一是开源代码随便用，二是文章有引用/致谢就OK。这两个点都是错误的。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1102,46 +1119,6 @@ While I can run enrichKEGG, I&rsquo;m unable to run gseKEGG basically because I 
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/swirl/">
-                <h3 class="media-heading">听说你想学R</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jul 7, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><h2 id="先来点八卦">先来点八卦</h2>
-
-<p>当年学R的时候，并没有现在这么多的书籍，老用户一般都知道丁国徽，因为他翻译了诸如《R导论》之类的文档，属于最早的中文材料了。跟生物狗有关的中文书有两本，一本是《R语言及Bioconductor在基因组分析中的应用》，这本我在2006年的时候看过，被坑大发了，里面逻辑混乱、错误满篇。</p>
-
-<p>以下这段豆瓣书评可以说很好的总结了这本书 <a href="https://book.douban.com/review/3017404/#comments">https://book.douban.com/review/3017404/#comments</a>:</p>
-
-<blockquote>
-<p>首先，打开前言，读者们会发现“编写本书，参加这些工作的教师和研究生有15人之多”。当然，名字后面带头衔的最后都在出现在封面了。也就是说由12位&rdquo;无名的岳武穆“研究生同学造就了3名”有名的岳武穆“之砖家叫兽。</p>
-
-<p>然后，本书共24章，模12为零，当然，这只是一个巧合，只是暗合天命罢了。</p>
-
-<p>最搞笑的就是这本书的编排和审校，十分差，许多小错误，就好像从没有审过一样。</p>
-
-<p>譬如第13页上，对order()函数的介绍，居然有这么句绕口令“x[order(x)]等效于order(x)&ldquo;,当然其实等效的是 sort(x).</p>
-
-<p>其他的诸如第17页上&gt;=的打印错误，就不一一细表了。</p>
-
-<p>最搞笑的就是只有三页的第4章，在数组、函数的介绍之前，就开始讲“聚集计算”！！！然后再来讲解语言基本的语法。。。。
-这种“由深入浅，化简单为复杂，化复杂为天书”之功力，更让吾辈叹服砖家叫兽吞云吐雾之神功。</p>
-
-<p>作为一本实例讲解的书，根本就没有提供源码和实例样本，也就说，根本就是没头没脑的演示。有点专业精神好么，好歹也是本标价68的书，当然只有400页草纸， 本科生水平的语言文档翻译。</p>
-</blockquote>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1149,7 +1126,7 @@ While I can run enrichKEGG, I&rsquo;m unable to run gseKEGG basically because I 
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         121 posts found
+         122 posts found
       </p>
     </div>
   </div>

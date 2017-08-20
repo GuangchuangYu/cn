@@ -6,10 +6,23 @@
     <description>Recent content in R on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Aug 2017 19:11:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 20 Aug 2017 20:27:00 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>关于重用代码与文章抄袭</title>
+      <link>https://guangchuangyu.github.io/cn/2017/08/source-code-reuse/</link>
+      <pubDate>Sun, 20 Aug 2017 20:27:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/08/source-code-reuse/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;amp;mid=2247484733&amp;amp;amp;idx=1&amp;amp;amp;sn=b43739e02ef7e7892f196aa51a1c2e59&amp;amp;amp;chksm=ec43b47adb343d6c98b240a0dfed9abe1ab46e230535a44f2b47bf69cc7b45520f7c7fd38231#rd&#34;&gt;大学教授力挺抄袭，强行洗地到裤衩都不要了，到底图什么？&lt;/a&gt;这篇文章发出来之后，引起一起讨论，有一些小伙伴截了屏给我看。所以我想有必要再讲几句，我这篇文章写&lt;strong&gt;两个方面&lt;/strong&gt;，一方面是重用代码，一方面是文章抄袭，这两方面可以是不相关的，这里的文章抄袭并不特指你抄了代码。&lt;/p&gt;
+
+&lt;p&gt;X教授《&lt;a href=&#34;http://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484733&amp;amp;idx=2&amp;amp;sn=b6c3a81f38c0f60433e8ccd721a7ca3b&amp;amp;chksm=ec43b47adb343d6c0bee4ae222af03353329173b9ae87c588d6bb19f95619dc46b829d0af1b6#rd&#34;&gt;如何姿势正确的使用他人代码？&lt;/a&gt;》，总结起来两个点，一是开源代码随便用，二是文章有引用/致谢就OK。这两个点都是错误的。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>听说你有RNAseq数据却不知道怎么跑GSEA</title>
