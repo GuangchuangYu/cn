@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2017/08/apple-logo-emoji/</loc>
+    <lastmod>2017-08-29T17:53:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2017/08/source-code-reuse/</loc>
     <lastmod>2017-08-20T20:27:00+08:00</lastmod>
   </url>
@@ -313,7 +318,7 @@
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/2016/11/%E4%BD%BF%E7%94%A8emoji%E7%94%BB%E5%9B%BE/</loc>
+    <loc>https://guangchuangyu.github.io/cn/2016/11/use-emoji/</loc>
     <lastmod>2016-11-25T00:53:00+08:00</lastmod>
   </url>
   
@@ -608,10 +613,6 @@
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/1/01/</loc>
-  </url>
-  
-  <url>
     <loc>https://guangchuangyu.github.io/cn/tags/alignment/</loc>
     <lastmod>2017-02-27T13:40:22+08:00</lastmod>
     <priority>0</priority>
@@ -858,7 +859,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/emojifont/</loc>
-    <lastmod>2017-03-23T14:30:00+08:00</lastmod>
+    <lastmod>2017-08-29T17:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -906,7 +907,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/geofacet/</loc>
-    <lastmod>2017-06-30T09:53:00+08:00</lastmod>
+    <lastmod>2017-08-29T17:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -924,7 +925,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/ggplot2/</loc>
-    <lastmod>2017-07-27T07:05:22+08:00</lastmod>
+    <lastmod>2017-08-29T17:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -954,7 +955,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/</loc>
-    <lastmod>2017-08-20T20:27:00+08:00</lastmod>
+    <lastmod>2017-08-29T17:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1163,6 +1164,12 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/phone/</loc>
+    <lastmod>2017-08-29T17:53:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/tags/phosphorylation/</loc>
     <lastmod>2010-11-23T02:22:22+08:00</lastmod>
     <priority>0</priority>
@@ -1182,7 +1189,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/post/</loc>
-    <lastmod>2017-08-20T20:27:00+08:00</lastmod>
+    <lastmod>2017-08-29T17:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1236,7 +1243,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/r/</loc>
-    <lastmod>2017-08-20T20:27:00+08:00</lastmod>
+    <lastmod>2017-08-29T17:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1368,7 +1375,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/visualization/</loc>
-    <lastmod>2017-07-13T10:06:59+08:00</lastmod>
+    <lastmod>2017-08-29T17:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
