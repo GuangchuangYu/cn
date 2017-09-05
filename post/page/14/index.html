@@ -225,6 +225,73 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2012/04/support-vector-machine/">
+          Support Vector Machine
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2012-04-12T05:37:55&#43;08:00">
+      
+  April 12, 2012
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/statistics">statistics</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        支持向量机(Support Vector Machines, SVM)最初由Vladimir
+Vapnik于1997年提出，SVM最简单的形式就是找出一下区分界限（descision
+boundary），也称之为超平面(hyperplane)，使得离它最近的点（称之为support
+vectors）与之间隔最大。
+<img src="http://guangchuangyu.github.io/blog_images/2012/04/linearSVM.png" alt="" /></p>
+
+<p>这和logistic regression有些相似，区别在于logistic
+regression要求所有的点尽可能地远离中间那条线，而SVM是要求最接近中间线的点尽可能地远离中间线。也就是说SVM的主要目标是区分那些最难区分的点。</p>
+
+<p>SVM对于hyperplane的定义，在形式上和logistic regression一样,logistic
+regression的decision boundary由$\theta^TX=0$确定,SVM则用$w^TX+b=0$表示,其中b相当于logistic regression中的$\theta_0$，从形式上看，两者并无区别，当然如前面所说，两者的目标不一样，logistic regression着眼于全局，SVM着眼于support
+vectors。有监督算法都有label变量y，logistic
+regression取值是<code>{0,1}</code>，而SVM为了计算距离方便，取值为<code>{-1,1}</code>。
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2012/04/support-vector-machine/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2012/03/installing-hackintosh/">
           Installing Hackintosh
         </a>
@@ -608,78 +675,6 @@ the likelihood)</p>
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/06/screen-shot/">
-          screen shot
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2011-06-28T12:17:30&#43;08:00">
-      
-  June 28, 2011
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/bsd">BSD</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/mac-os">Mac OS</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        买了苹果机，一直放在家里没用，准备开会带去用，拿过来装几个软件。</p>
-
-<p>校园网用锐捷是个比较讨厌的东西。当年在华农，光这<a href="http://guangchuangyu.github.io/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/">认证</a>就搞了很久。</p>
-
-<p>现在开源的认证客户端多了，搞起来也方便了，现在在linux下用的<a href="http://code.google.com/p/xmuruijie/">xmuruijie</a>，就比当年<a href="http://guangchuangyu.github.io/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/">mystar</a>好用。</p>
-
-<p>估计xmuruijie也是可以在苹果机上用的，依赖python，搞不好还有些modules要装，懒得去弄，搜了一下，找到<a href="http://code.google.com/p/mentohust/">mentohust</a>，当然需要改一下mac address，用万能的ifconfig搞定。</p>
-
-<p>为了编译软件，必要先装xcode，这个大家伙，4G多，中午挂到吃晚饭才下完。
-然后就可以装各种open source的软件。</p>
-
-<p>mac上有fink支持debian一样的apt-get，还有原生的macport，gentoo的portage也支持，我选择使用<a href="http://guangchuangyu.github.io/categories/bsd">netbsd</a>的pkgsrc来安装各种开源软件。</p>
-
-<p>以前用过比较长时间的netbsd，用着比较顺手。</p>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2011/06/screen-shot/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -761,6 +756,27 @@ the likelihood)</p>
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/3d-breast/">
+                <h3 class="media-heading">3D版邪恶的曲线</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Sep 9, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>我的公众号biobabble第一篇原创文章《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247483816&amp;amp;idx=1&amp;amp;sn=cbfbc284f4edb165ac65f7926f7f8fcc&amp;amp;chksm=ec43b0efdb3439f91ec4f570f7be65e442e21e403481b969d69449464ae1986c7983551de04d#rd">邪恶的曲线</a>》，因为太邪恶，当时只推送给男性关注者，由于不是推送给所有人，所以历史记录是翻不到的，之前有再文字推送一下链接，结果评论区全是差评，我也是蛮囧rz的…</p>
+
+<p>无意中我又翻到了一张2012年2月份画的3D版本，尽管你们要差评，还是想分享一下。代码就在截屏之中，想玩的话，可以照着输入，支持鼠标旋转哦，可以慢慢把玩（太邪恶了）。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1060,25 +1076,6 @@ While I can run enrichKEGG, I&rsquo;m unable to run gseKEGG basically because I 
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/scale-size/">
-                <h3 class="media-heading">搞大你的点，让我们画真正的气泡图</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jul 7, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>在《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484089&amp;idx=1&amp;sn=f6e11d54a18e96a94145a2b802c37dc1&amp;chksm=ec43b3fedb343ae89e3630900033f055af4bbe211897076291e351ae18cc89b2ddf7651ee0be#rd">ggplot2字体溢出的那点破事</a>》一文里，我介绍了字体溢出的解决方案。在《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247483972&amp;idx=1&amp;sn=fa1f4b6299f94eeb52baf5bda6a5ff6b&amp;chksm=ec43b303db343a150806b3b1ab22a1df1c90405235bb399b155f7c50de2a0a23faf2f4ad0beb#rd">wrapping labels in ggplot2</a>》一文中介绍了怎么把长文本截断自动换行，这些都是非常常见的问题，最近关于溢出就又有人提问了：</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1086,7 +1083,7 @@ While I can run enrichKEGG, I&rsquo;m unable to run gseKEGG basically because I 
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         123 posts found
+         124 posts found
       </p>
     </div>
   </div>
