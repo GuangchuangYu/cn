@@ -228,6 +228,76 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/ggplot2-set-font/">
+          设置ggplot所有字体
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-09-04T16:14:00&#43;08:00">
+      
+  September 4, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        最近公众号「生信媛」和「生信宝典」的小伙伴在说ggplot2无法一次性设置所有字体，<code>theme</code>只能设置axis text, title这些，而搞不了<code>geom_text</code>，<code>geom_text</code>必须要手工输入<code>family=XXX</code>来设置，因为不能使用<code>theme</code>来更换，也就是说没办法通过后处理来设定，比较麻烦。</p>
+
+<p>这显然是不对的，后处理必须可以的，一次性满足所有愿望也只是因为没人写个神奇的函数而已。于是我就动手写了个<code>set_font</code>的函数。</p>
+
+<p>假设我们有下图：</p>
+
+<pre><code class="language-r">library(ggplot2)
+d &lt;- data.frame(x=rnorm(10), y=rnorm(10), lab=LETTERS[1:10])
+p &lt;- ggplot(d, aes(x, y)) + 
+    geom_text(aes(label=lab, color=lab), size=10) + 
+    geom_text(aes(y, x, label=lab), size=3)
+</code></pre>
+
+<p>
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2017/09/ggplot2-set-font/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+            
+              
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/08/apple-logo-emoji/">
           你所没见过的苹果
         </a>
@@ -623,65 +693,6 @@ showtext.auto()
 </article>
 
             
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/02/%E6%A0%B9%E6%8D%AEgtf%E7%94%BB%E5%9F%BA%E5%9B%A0%E7%9A%84%E5%A4%9A%E4%B8%AA%E8%BD%AC%E5%BD%95%E6%9C%AC%E7%BB%93%E6%9E%84/">
-          根据GTF画基因的多个转录本结构
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-02-21T12:23:16&#43;08:00">
-      
-  February 21, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        这是<a href="https://mp.weixin.qq.com/s?__biz=MzAxMDkxODM1Ng==&amp;mid=2247484044&amp;idx=2&amp;sn=56b45eaeb4ad344481afa05abeb1c53e&amp;chksm=9b484237ac3fcb219e41d5653fb800f987e7d217bbb3a5a0c0170ffb8e402f4cc5f726212ef7&amp;mpshare=1&amp;scene=1&amp;srcid=0220calgiLgIZmjiiaNXZ0BE&amp;key=df0a0b140e64a33b97880a54ee7cc95794b60a225d5338e88620674bed463405e61c5365394b7830750de8d3a88e122babd535c88c7d74b974b20c509218cf00d106c991a3a3f049c698a8f847aa5e06&amp;ascene=0&amp;uin=MTMxNjc4OTY2Mg%3D%3D&amp;devicetype=iMac14%2C2+OSX+OSX+10.11.6+build">生物技能树的一道习题</a>，使用了base plot来画，做为补充，我使用ggplot2来重画一遍。</p>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/02/%E6%A0%B9%E6%8D%AEgtf%E7%94%BB%E5%9F%BA%E5%9B%A0%E7%9A%84%E5%A4%9A%E4%B8%AA%E8%BD%AC%E5%BD%95%E6%9C%AC%E7%BB%93%E6%9E%84/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
             
   <div class="pagination-bar">
     <ul class="pagination">
@@ -694,7 +705,7 @@ showtext.auto()
           </a>
         </li>
       
-      <li class="pagination-number">page 1 of 3</li>
+      <li class="pagination-number">page 1 of 4</li>
     </ul>
   </div>
 
@@ -757,6 +768,36 @@ showtext.auto()
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/ggplot2-set-font/">
+                <h3 class="media-heading">设置ggplot所有字体</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Sep 9, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>最近公众号「生信媛」和「生信宝典」的小伙伴在说ggplot2无法一次性设置所有字体，<code>theme</code>只能设置axis text, title这些，而搞不了<code>geom_text</code>，<code>geom_text</code>必须要手工输入<code>family=XXX</code>来设置，因为不能使用<code>theme</code>来更换，也就是说没办法通过后处理来设定，比较麻烦。</p>
+
+<p>这显然是不对的，后处理必须可以的，一次性满足所有愿望也只是因为没人写个神奇的函数而已。于是我就动手写了个<code>set_font</code>的函数。</p>
+
+<p>假设我们有下图：</p>
+
+<pre><code class="language-r">library(ggplot2)
+d &lt;- data.frame(x=rnorm(10), y=rnorm(10), lab=LETTERS[1:10])
+p &lt;- ggplot(d, aes(x, y)) + 
+    geom_text(aes(label=lab, color=lab), size=10) + 
+	geom_text(aes(y, x, label=lab), size=3)
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1046,37 +1087,6 @@ While I can run enrichKEGG, I&rsquo;m unable to run gseKEGG basically because I 
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/ferret/">
-                <h3 class="media-heading">听说你也在读文献</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jul 7, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><img src="https://guangchuangyu.github.io/blog_images/MISC/noidea.jpg" alt="" /></p>
-
-<p>做为生物狗，我时常不知道自己在干什么，包括读文献，费了老大劲读一篇文献，然后经常也不明白人家在说什么。懒人需要借助神器，本公众号已经介绍了好几个神器，江湖传说收集7大神器，可以召唤出paper，渡自己毕业。</p>
-
-<h2 id="拿到一篇文献-先问一句-牛逼吗-靠谱吗">拿到一篇文献，先问一句，牛逼吗？靠谱吗？</h2>
-
-<p>我拿ARID1A去pubmed搜，第一篇文章《ARID1A-mutated ovarian cancers depend on HDAC6 activity》为例，2017年7月24号才上线的文章，请看下图：</p>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/2017/ferret/Screenshot 2017-07-26 19.31.32.png" alt="" /></p>
-
-<p>IMPACT这里有期刊的影响因子20分，文章在社交网站上传播指数Altmetric 54分，文章在文献管理Mendeley中被收藏2次。这是3天前的文章，所以指数还不高，试想一下，文章传播越广，收藏人数越多，必定也就越重要，这给了我们评估文章的第一印象。这是3天前的文章，所以没有引用，如果有文章引用，这个神器还会列出来呢。</p>
-
-<p>注意到AUTHORS没有？如果作者有ORCID主页的话，直接链接过去，我们可以去看作者们的publication列表、教育背景、工作经历等信息，牛人为自己带盐，牛人的文章我们更愿意相信。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1084,7 +1094,7 @@ While I can run enrichKEGG, I&rsquo;m unable to run gseKEGG basically because I 
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         124 posts found
+         125 posts found
       </p>
     </div>
   </div>

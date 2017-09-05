@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Yyplot on Guangchuang Yu</title>
+    <link>https://guangchuangyu.github.io/cn/tags/yyplot/</link>
+    <description>Recent content in Yyplot on Guangchuang Yu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 04 Sep 2017 16:14:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://guangchuangyu.github.io/cn/tags/yyplot/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>设置ggplot所有字体</title>
+      <link>https://guangchuangyu.github.io/cn/2017/09/ggplot2-set-font/</link>
+      <pubDate>Mon, 04 Sep 2017 16:14:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/09/ggplot2-set-font/</guid>
+      <description>&lt;p&gt;最近公众号「生信媛」和「生信宝典」的小伙伴在说ggplot2无法一次性设置所有字体，&lt;code&gt;theme&lt;/code&gt;只能设置axis text, title这些，而搞不了&lt;code&gt;geom_text&lt;/code&gt;，&lt;code&gt;geom_text&lt;/code&gt;必须要手工输入&lt;code&gt;family=XXX&lt;/code&gt;来设置，因为不能使用&lt;code&gt;theme&lt;/code&gt;来更换，也就是说没办法通过后处理来设定，比较麻烦。&lt;/p&gt;
+
+&lt;p&gt;这显然是不对的，后处理必须可以的，一次性满足所有愿望也只是因为没人写个神奇的函数而已。于是我就动手写了个&lt;code&gt;set_font&lt;/code&gt;的函数。&lt;/p&gt;
+
+&lt;p&gt;假设我们有下图：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(ggplot2)
+d &amp;lt;- data.frame(x=rnorm(10), y=rnorm(10), lab=LETTERS[1:10])
+p &amp;lt;- ggplot(d, aes(x, y)) + 
+    geom_text(aes(label=lab, color=lab), size=10) + 
+	geom_text(aes(y, x, label=lab), size=3)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

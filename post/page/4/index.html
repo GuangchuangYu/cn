@@ -225,6 +225,65 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/ggjoy/">
+          joyplot：一种波涛汹涌，哦不对，是山峰叠峦的可视化方式
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-07-11T00:53:00&#43;08:00">
+      
+  July 11, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        最近推特上在讨论的一种叫做joyplot的作图方式，如果我们按照正常的画法，这些分布会重叠在一起，不容易看。而这种joyplot，有一种山峰叠峦的即视感：</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/R/ggjoy/Screenshot 2017-07-11 16.37.22.png" alt="" /></p>
+
+<p>
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2017/07/ggjoy/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/wine-qq/">
           Linux中使用QQ
         </a>
@@ -570,77 +629,6 @@ ga('send', 'pageview');
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/06/geofacet/">
-          按地理位置进行分面
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-06-26T12:23:16&#43;08:00">
-      
-  June 26, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        CRAN刚上线的新包<code>geofacet</code>，可以让ggplot2分面按指定的地理位置来，比如下面的数据，美国各州各项指标的排名：</p>
-
-<pre><code class="language-r">  head(state_ranks)
-    state   name   variable rank
-1    AK Alaska  education   28
-2    AK Alaska employment   50
-3    AK Alaska     health   25
-4    AK Alaska     wealth    5
-5    AK Alaska      sleep   27
-6    AK Alaska    insured   50
-</code></pre>
-
-<p>我们正常画图是这样子的：</p>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/06/geofacet/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -722,6 +710,36 @@ ga('send', 'pageview');
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/ggplot2-set-font/">
+                <h3 class="media-heading">设置ggplot所有字体</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Sep 9, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>最近公众号「生信媛」和「生信宝典」的小伙伴在说ggplot2无法一次性设置所有字体，<code>theme</code>只能设置axis text, title这些，而搞不了<code>geom_text</code>，<code>geom_text</code>必须要手工输入<code>family=XXX</code>来设置，因为不能使用<code>theme</code>来更换，也就是说没办法通过后处理来设定，比较麻烦。</p>
+
+<p>这显然是不对的，后处理必须可以的，一次性满足所有愿望也只是因为没人写个神奇的函数而已。于是我就动手写了个<code>set_font</code>的函数。</p>
+
+<p>假设我们有下图：</p>
+
+<pre><code class="language-r">library(ggplot2)
+d &lt;- data.frame(x=rnorm(10), y=rnorm(10), lab=LETTERS[1:10])
+p &lt;- ggplot(d, aes(x, y)) + 
+    geom_text(aes(label=lab, color=lab), size=10) + 
+	geom_text(aes(y, x, label=lab), size=3)
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1011,37 +1029,6 @@ While I can run enrichKEGG, I&rsquo;m unable to run gseKEGG basically because I 
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/ferret/">
-                <h3 class="media-heading">听说你也在读文献</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jul 7, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><img src="https://guangchuangyu.github.io/blog_images/MISC/noidea.jpg" alt="" /></p>
-
-<p>做为生物狗，我时常不知道自己在干什么，包括读文献，费了老大劲读一篇文献，然后经常也不明白人家在说什么。懒人需要借助神器，本公众号已经介绍了好几个神器，江湖传说收集7大神器，可以召唤出paper，渡自己毕业。</p>
-
-<h2 id="拿到一篇文献-先问一句-牛逼吗-靠谱吗">拿到一篇文献，先问一句，牛逼吗？靠谱吗？</h2>
-
-<p>我拿ARID1A去pubmed搜，第一篇文章《ARID1A-mutated ovarian cancers depend on HDAC6 activity》为例，2017年7月24号才上线的文章，请看下图：</p>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/2017/ferret/Screenshot 2017-07-26 19.31.32.png" alt="" /></p>
-
-<p>IMPACT这里有期刊的影响因子20分，文章在社交网站上传播指数Altmetric 54分，文章在文献管理Mendeley中被收藏2次。这是3天前的文章，所以指数还不高，试想一下，文章传播越广，收藏人数越多，必定也就越重要，这给了我们评估文章的第一印象。这是3天前的文章，所以没有引用，如果有文章引用，这个神器还会列出来呢。</p>
-
-<p>注意到AUTHORS没有？如果作者有ORCID主页的话，直接链接过去，我们可以去看作者们的publication列表、教育背景、工作经历等信息，牛人为自己带盐，牛人的文章我们更愿意相信。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1049,7 +1036,7 @@ While I can run enrichKEGG, I&rsquo;m unable to run gseKEGG basically because I 
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         124 posts found
+         125 posts found
       </p>
     </div>
   </div>
