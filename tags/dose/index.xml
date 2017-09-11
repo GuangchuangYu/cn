@@ -6,10 +6,21 @@
     <description>Recent content in Dose on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Aug 2017 19:11:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 11 Sep 2017 19:11:00 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/tags/dose/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>gseaplot自定义颜色</title>
+      <link>https://guangchuangyu.github.io/cn/2017/09/color-in-gseaplot/</link>
+      <pubDate>Mon, 11 Sep 2017 19:11:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/09/color-in-gseaplot/</guid>
+      <description>&lt;p&gt;《&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;amp;mid=2247484730&amp;amp;amp;idx=1&amp;amp;amp;sn=48b8c24b6cfb6162f8fb3f3861ddfe1b&amp;amp;amp;chksm=ec43b47ddb343d6b37581fa81b0bf11b5141a446333b1b961ef1ad4f80da4c4732d7bc3432c2#rd&#34;&gt;听说你有RNAseq数据却不知道怎么跑GSEA&lt;/a&gt;》一文有小伙伴问封面的gseaplot能否换颜色，于是我就随手支持了。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>听说你有RNAseq数据却不知道怎么跑GSEA</title>
