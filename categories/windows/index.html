@@ -17,7 +17,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.25.1">
+    <meta name="generator" content="Hugo 0.24.1">
     <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
     <title>Windows</title>
     <meta name="author" content="Guangchuang Yu">
@@ -493,6 +493,29 @@ server。之前使用rdesktop远程桌面，最近发现配合seamlessrdp可以�
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/highlight-clade-of-unrooted-tree/">
+                <h3 class="media-heading">highlight clade of unrooted tree</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Sep 9, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>最初github上用户（<a href="https://github.com/JustGitting">@JustGitting</a>）报告说<code>geom_hilight</code>和<code>geom_cladelabel</code>不能用于unrooted树。详见：<a href="https://github.com/GuangchuangYu/ggtree/issues/118">https://github.com/GuangchuangYu/ggtree/issues/118</a></p>
+
+<p>我表示这确实是不行的，然后这就变成了feature request。我继续表示unrooted tree在ggtree中的实现并不好，我只实现了equal angle algorithm，在写注释图层之前，如果我有时间的话，我希望可以先实现更好的layout algorithm。</p>
+
+<p>然后JustGitting表示，他发现python的ETE和R的ape，在无根树的可视化上好像都不太行。问我有什么unrooted的layout algorithm，有没有什么参考文献，或许他可以帮忙实现，因为他觉得ggtree是最成熟的软件。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/color-in-gseaplot/">
                 <h3 class="media-heading">gseaplot自定义颜色</h3>
               </a>
@@ -752,52 +775,6 @@ While I can run enrichKEGG, I&rsquo;m unable to run gseKEGG basically because I 
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/magick-add-gif/">
-                <h3 class="media-heading">有魔性的图来一发</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jul 7, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>不知不觉中我已经介绍了很多R包，有学术上的<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247483886&amp;idx=1&amp;sn=cb76891dff5787025f6b99cdcc723d86&amp;chksm=ec43b0a9db3439bfcec1c9ac3c0d00e6190cf4d3d02d9d3dc767007e0ff68b4fbd8064bb0f77#rd">ChIPseeker</a>、<a href="http://mp.weixin.qq.com/s/Uhx3l3lKQS88OJ4SHntkNg">treeio</a>、<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247483962&amp;idx=1&amp;sn=7240c1fe0e09a142ef95ac594922b890&amp;chksm=ec43b37ddb343a6bc7c2633597aba751b7f257846d26bc0060b7782ecd3ae20fece8085f0295">ggtree</a>、
-<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484374&amp;idx=1&amp;sn=f946f3539a752b09a94b5e160e87368e&amp;chksm=ec43b291db343b871a1f10ca31d6ef94e9da4485043ed374c9739689d02072be92a34ca4e863#rd">clusterProfiler</a>、
-<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484054&amp;idx=1&amp;sn=c9c45157bfb60d5143e5d467ebfe5a86&amp;chksm=ec43b3d1db343ac74cbc7a4f0bbe8b9a09346c2becbce33e5f8c070b333a2195adb8741e9e82">GOSemSim</a>、<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484018&amp;idx=1&amp;sn=53281ebf18b52518bc14dc83a0709bf9&amp;chksm=ec43b335db343a23465208b47327088d054f8eed64f7d7137b09d01ca414c08fb17804fd19ce">seqcombo</a>和<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484054&amp;idx=2&amp;sn=9a42f1094349a0bd09a5e0b7c44595e0&amp;chksm=ec43b3d1db343ac7e11d92eda3eb1837aab46f79bb109e6cdbba466e4693d041a87fa698ef1b">MSnbase</a>等，当然免不了有<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247483948&amp;idx=1&amp;sn=e57e385ada66c991a5c3cf6eb48f7169&amp;chksm=ec43b36bdb343a7dbd39574bb6b02cf8057a4d068399630e77e0580113a2807bb8c34edafbf0">吐槽</a>还有<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484640&amp;idx=1&amp;sn=478f77b8f03eb9793bafc8f18e126097&amp;chksm=ec43b5a7db343cb11fc9e0c232e0de0db7ec444abf5e8e3bd703f83a3cb31695f10359b47b8f#rd">抄袭</a>。<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484641&amp;idx=1&amp;sn=3ff11eef4cf48ebc6c2d1b06be950834&amp;chksm=ec43b5a6db343cb04355c149b52bbd9bcb11b7983e48ddb5d40b85081003937d5e582b0f69b5">有学R的</a>和<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484173&amp;idx=1&amp;sn=ad1817e4acd1362428b3beaa1cd4fede&amp;chksm=ec43b24adb343b5cad6c7ff528182e9c95f0f292044399e127d7495c77bbe2e1cbccb095179c">更新R包</a>，也有<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484109&amp;idx=1&amp;sn=9988b955cb4a995dfcfbe31f31d929da&amp;chksm=ec43b38adb343a9cc2ce4ab9fabf3e6ff1db82f6627c91a1035ef94279c6d51e72ffea247f1a">桌面小工具</a>，还有画图的<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247483941&amp;idx=1&amp;sn=bb352b5d74797715a9759f64765e49f6&amp;chksm=ec43b362db343a7433d23dd081da263a062e944664ced85d82643eb6e963bccc5d35b43617a8#rd">ggplot2</a>、<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247483955&amp;idx=1&amp;sn=0b753422e337e8dd63056d62af9b9e80&amp;chksm=ec43b374db343a62b102a22bc1ebc288c5c4c0ac27db4228bd5214b54b59fa20a948348cebdd">怎么配色</a>、<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484079&amp;idx=1&amp;sn=2f37b54ad09b966ccb9e8bf93ebd6643&amp;chksm=ec43b3e8db343afed5d55c25aaaba233f3339686e9eba0e65f004a5ca58ac13bba7ba9b5bacc#rd">嵌入图片</a>(比如pokemon)， 以及<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484416&amp;idx=1&amp;sn=c089403a2b8ab03d241b6d99ef138f50&amp;chksm=ec43b547db343c51bdae5f76b399072629720cf646ddc1c0b758c7c76d57e8b1e35b47221cf6">emoji作图</a>，也有好玩的<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484504&amp;idx=1&amp;sn=9ce4f3f59d41a27ec3f14c6e77f29a75&amp;chksm=ec43b51fdb343c097ebdaf29ca1eef27c4ea2405555ea2a685f2815c212e93afa337886e1a23">贴纸</a>和<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247483868&amp;idx=1&amp;sn=412e13481ad636032125a035bf2216b0&amp;chksm=ec43b09bdb34398d060b1898d286b84975e578c1230da0ce2782d56278a6ce0ee95c0965ac5d">装逼利器</a>。</p>
-
-<hr />
-
-<p>今天要介绍另外一个R包，magick，是R里面玩图片的利器，今天要讲的是在静态图片上加动态图片，这样我们平时画一些学术的图，就可以加点搞笑的动态元素上去，有利于在博客和公众号上装逼。</p>
-
-<p>无非是给我一张静态图当背景，再来一张动态图加在上面，为了让代码可以重用，首先打包个小函数：</p>
-
-<pre><code class="language-r">add_gif &lt;- function(bg_file, gif_file, out_file, offset, bg_size=&quot;500&quot;, gif_size=&quot;150&quot;) {
-	library(magick)
-	p &lt;- image_read(bg_file)
-	g &lt;- image_read(gif_file)
-	g &lt;- image_scale(g, gif_size)
-
-	background &lt;- image_background(image_scale(p, bg_size), &quot;white&quot;, flatten = TRUE)
-
-	frames &lt;- lapply(g, function(frame) {
-  		image_composite(background, frame, offset = offset)
-	})
-
-	animation &lt;- image_animate(image_join(frames))
-	image_write(animation, out_file)
-}
-</code></pre>
-
-<p>然后就可以来玩了，首先用上次讲到的dotplot做为底图，再从网上找一个动图，调用函数，bingo:</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -805,7 +782,7 @@ While I can run enrichKEGG, I&rsquo;m unable to run gseKEGG basically because I 
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         126 posts found
+         127 posts found
       </p>
     </div>
   </div>

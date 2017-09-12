@@ -6,10 +6,25 @@
     <description>Recent content in R on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Sep 2017 19:11:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 12 Sep 2017 20:10:00 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>highlight clade of unrooted tree</title>
+      <link>https://guangchuangyu.github.io/cn/2017/09/highlight-clade-of-unrooted-tree/</link>
+      <pubDate>Tue, 12 Sep 2017 20:10:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/09/highlight-clade-of-unrooted-tree/</guid>
+      <description>&lt;p&gt;最初github上用户（&lt;a href=&#34;https://github.com/JustGitting&#34;&gt;@JustGitting&lt;/a&gt;）报告说&lt;code&gt;geom_hilight&lt;/code&gt;和&lt;code&gt;geom_cladelabel&lt;/code&gt;不能用于unrooted树。详见：&lt;a href=&#34;https://github.com/GuangchuangYu/ggtree/issues/118&#34;&gt;https://github.com/GuangchuangYu/ggtree/issues/118&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;我表示这确实是不行的，然后这就变成了feature request。我继续表示unrooted tree在ggtree中的实现并不好，我只实现了equal angle algorithm，在写注释图层之前，如果我有时间的话，我希望可以先实现更好的layout algorithm。&lt;/p&gt;
+
+&lt;p&gt;然后JustGitting表示，他发现python的ETE和R的ape，在无根树的可视化上好像都不太行。问我有什么unrooted的layout algorithm，有没有什么参考文献，或许他可以帮忙实现，因为他觉得ggtree是最成熟的软件。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>gseaplot自定义颜色</title>
