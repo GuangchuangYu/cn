@@ -225,6 +225,68 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2014/06/use-linux-desktop-again/">
+          use linux desktop again
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2014-06-01T07:57:46&#43;08:00">
+      
+  June 1, 2014
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/linux">Linux</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        上个月写了《<a href="http://guangchuangyu.github.io/2014/05/use-ggplot2/">使用ggplot画图</a>》一文，图片太多，一下子把博客的12G流量给用光了，月中博客就被停了，小伙伴们太给力了，blog不能访问，真是件不爽的事情。</p>
+
+<p>言归正传，从2002年使用redhat 7.1开始，就没中止过使用linux，为什么要说again呢，因为在过去几年的工作时间里，使用的是<a href="http://guangchuangyu.github.io/2011/06/screen-shot/">OS X</a>和win7做为桌面的，linux只在服务器端使用。自从用了OS X之后，就不想再用linux当桌面了，OS X绝对是节省生命的系统，本身是unix-like系统，对各种桌面软件支持又好，特别是中华大地，linux还是小众，用来当桌面实在是各种坑。</p>
+
+<p>不过现在又回到学生时代了，所以还得继续学生屌丝的折腾，本科时从redhat,debian到gentoo，硕士时实验室的机器用ubuntu，而笔记本用NetBSD。这么多年的使用，该有的坑都填了，但是时代在发展，新坑还是不断有的，使用<a href="http://guangchuangyu.github.io/2014/05/%E6%9B%B4%E6%94%B9%E7%99%BE%E5%BA%A6%E4%BA%91%E5%90%8C%E6%AD%A5%E7%9B%98%E8%B7%AF%E5%BE%84/">百度云</a>来同步化文献库，就是最近的新坑，装上linux之后，发现度娘没有客户端，首先想到的当然是wine，wine出来的偶尔能行，时常崩溃，跟它死磕我也会崩溃，github上寻找开源实现，各种功能缺失和限制，那就只能虚拟机了，把home目录做为共享盘，挂到虚拟机中，但是度娘一直都是占100%
+CPU，然后数据无法同步，只有两个原因，不是硬盘就是网络，感觉好像我一个分区800G太大了，但在虚拟中对硬盘读写正常，网络因为使用NAT，虚拟成内网，有可能是这个原因，于是换成bridge，把虚拟机当成现实网络中的另一台主机，但度娘依然只占CPU，不干活。那只能还是硬盘问题，最后问题解决了，通过在linux中提供samba服务，然后在虚拟机中通过网上邻居把共享目录映射成网络驱动器，这时候度娘终于肯干活了。都不知道是virtualbox的驱动有问题，还是度娘太挑，这太TM坑了。</p>
+
+<p>
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2014/06/use-linux-desktop-again/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2014/05/use-ggplot2/">
           Use ggplot2
         </a>
@@ -585,66 +647,6 @@ maybe..，至于Han，我在研一的时候，去北大听过她的讲座，被�
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2013/06/compress-tiff/">
-          使用ImageMagick压缩TIFF
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2013-06-07T15:10:00&#43;08:00">
-      
-  June 7, 2013
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/software">Software</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        TIFF (Tagged Image File Format)拥有更宽的线性动态范围，所以在专业的图片处理上，一直是一个通用的文件格式。
-最近一篇发表在Metallomics的文章，我本来做的图片都是PDF格式，矢量图最好了，文件特别小，还可以任意放大。不过杂志社要求600DPI的TIFF或EPS。
-我第一反应是拒绝使用TIFF，600DPI的TIFF文件肯定非常大，EPS也是矢量图，我用R重新把图画一遍，存为EPS就OK了。画图的过程，我发现对EPS的支持不太好，老报些某字体不存在的错误。这当然不是什么大不了的事，自己指定字体就好了。问题在于有张图是拼的，我只能借助于软件转换，我用Inkscape处理，导出EPS，出来的图我发现有些细节并不太好。
-无奈之下还是用TIFF吧，Fig1和3都是R画的，直接指定分辨率和压缩算法，存为TIFF文件。Fig1是3000x3000pixel 600dpi的图，只有320k，Fig3是4200x4200pixel的图，也是600dpi，只有558k，用R产生TIFF还是非常靠谱的。
-关键是Fig2，这一张拼的图，存成PDF矢量图，需要用ImageMagick转换成600DPI的TIFF图片，ImageMagick需要安装Xcode才能在Mac下编译成功。
-Yus-Mac-Pro:others ygc$ convert -density 600 fig2.pdf fig2.tif Yus-Mac-Pro:others ygc$ identify -verbose fig2.tif Image: fig2.tif Format: TIFF (Tagged Image File Format) Class: DirectClass Geometry: 6000x4500+0+0 Resolution: 600x600 Print size: 10x7.5 Units: Undefined Type: PaletteMatte Base type: TrueColor Endianess: MSB &hellip; Yus-Mac-Pro:others ygc$ convert -density 600 -compress lzw fig2.pdf fig2_compress.tif Yus-Mac-Pro:others ygc$ ls -l fig2*.tif -rw-r&ndash;r&ndash; 1 ygc admin 216036263 May 23 17:53 fig2.
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2013/06/compress-tiff/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -726,6 +728,31 @@ Yus-Mac-Pro:others ygc$ convert -density 600 fig2.pdf fig2.tif Yus-Mac-Pro:other
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/goodbye-joyplot/">
+                <h3 class="media-heading">再见joyplot</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Sep 9, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>微信公众号平台大部分人都是抄来抄去的二手资料，像joyplot这种特别新的东西，就很难看到，我试着搜索了一下，发现只有三篇，都是我写的。</p>
+
+<ul>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484586&amp;idx=1&amp;sn=2c4aaca92147d901fb5421cdb99d16de&amp;chksm=ec43b5eddb343cfb34c907ddfdba74e129ee7ef896219a888a56b36738a0f6062bb2cf0ab99f#rd">joyplot：一种波涛汹涌，哦不对，是山峰叠峦的可视化方式</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484682&amp;idx=1&amp;sn=21944039080612bed8bda7b3070015b3&amp;chksm=ec43b44ddb343d5bcba5c22e33b6b26ce8bfee6e7b913115c19e0e14e930699ab602445d0e89#rd">ggjoy facet with ggtree</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484750&amp;amp;idx=1&amp;amp;sn=19aa83580ad91e18d3fe23cc42675628&amp;amp;chksm=ec43b409db343d1f189bf1d1e6499ac8bd034ce52e90454d7e2b568b6901b5d2f5bdf31fa887#rd">joyplot：GSEA的结果也能快乐起来</a></li>
+</ul>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -969,44 +996,6 @@ p &lt;- ggplot(d, aes(x, y)) +
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/08/prepare-genelist/">
-                <h3 class="media-heading">听说你有RNAseq数据却不知道怎么跑GSEA</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Aug 8, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><blockquote>
-<p>Dear GuangChuangyu,</p>
-
-<p>I&rsquo;m trying to use the clusterProfiler package for GSE analysis on DGE data obtained from RNAseq.
-While I can run enrichKEGG, I&rsquo;m unable to run gseKEGG basically because I don&rsquo;t know how to obtain an order ranked gene list.</p>
-
-<p>I work on R. I have a dataframe or matrix with gene names, log2 fold change values, pvalues and adjusted pvalues among others.</p>
-
-<p>How can I get the order ranked gene list to feed in gseKEGG?</p>
-
-<p>Moreover what is the more reliable way to obtain functional insight about each sample? enrichKEGG or gseKEGG?</p>
-
-<p>Thank you in advance for your help.</p>
-
-<p>best regards</p>
-
-<p>bruno saubaméa</p>
-</blockquote>
-
-<p>今天收到一封来自Université Paris Descartes的求助信，这个问题我被问过好多次了，显然很多新手都有这问题，根本不知道该怎么跑GSEA，搞不清GSEA的输入是什么。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1014,7 +1003,7 @@ While I can run enrichKEGG, I&rsquo;m unable to run gseKEGG basically because I 
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         128 posts found
+         129 posts found
       </p>
     </div>
   </div>

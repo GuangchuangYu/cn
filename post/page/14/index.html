@@ -225,6 +225,66 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2013/06/compress-tiff/">
+          使用ImageMagick压缩TIFF
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2013-06-07T15:10:00&#43;08:00">
+      
+  June 7, 2013
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/software">Software</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        TIFF (Tagged Image File Format)拥有更宽的线性动态范围，所以在专业的图片处理上，一直是一个通用的文件格式。
+最近一篇发表在Metallomics的文章，我本来做的图片都是PDF格式，矢量图最好了，文件特别小，还可以任意放大。不过杂志社要求600DPI的TIFF或EPS。
+我第一反应是拒绝使用TIFF，600DPI的TIFF文件肯定非常大，EPS也是矢量图，我用R重新把图画一遍，存为EPS就OK了。画图的过程，我发现对EPS的支持不太好，老报些某字体不存在的错误。这当然不是什么大不了的事，自己指定字体就好了。问题在于有张图是拼的，我只能借助于软件转换，我用Inkscape处理，导出EPS，出来的图我发现有些细节并不太好。
+无奈之下还是用TIFF吧，Fig1和3都是R画的，直接指定分辨率和压缩算法，存为TIFF文件。Fig1是3000x3000pixel 600dpi的图，只有320k，Fig3是4200x4200pixel的图，也是600dpi，只有558k，用R产生TIFF还是非常靠谱的。
+关键是Fig2，这一张拼的图，存成PDF矢量图，需要用ImageMagick转换成600DPI的TIFF图片，ImageMagick需要安装Xcode才能在Mac下编译成功。
+Yus-Mac-Pro:others ygc$ convert -density 600 fig2.pdf fig2.tif Yus-Mac-Pro:others ygc$ identify -verbose fig2.tif Image: fig2.tif Format: TIFF (Tagged Image File Format) Class: DirectClass Geometry: 6000x4500+0+0 Resolution: 600x600 Print size: 10x7.5 Units: Undefined Type: PaletteMatte Base type: TrueColor Endianess: MSB &hellip; Yus-Mac-Pro:others ygc$ convert -density 600 -compress lzw fig2.pdf fig2_compress.tif Yus-Mac-Pro:others ygc$ ls -l fig2*.tif -rw-r&ndash;r&ndash; 1 ygc admin 216036263 May 23 17:53 fig2.
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2013/06/compress-tiff/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2013/01/talen%E5%9F%BA%E5%9B%A0%E7%BC%96%E8%BE%91/">
           TALEN基因编辑
         </a>
@@ -597,65 +657,6 @@ regression取值是<code>{0,1}</code>，而SVM为了计算距离方便，取值�
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2012/02/happy-valentine/">
-          happy valentine
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2012-02-14T05:37:55&#43;08:00">
-      
-  February 14, 2012
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        今天看到统计之都上的情人节心形图。
-这次画的心形函数是： $ x = 16 (sin t)^3$ $ y = 13 cos t - 5 cos 2t - 2 cos 3t - cos 4t$
-尝试用ggplot2来画，结果如下： 代码见Github.
-类似的心形图以前也是画过的，当然这样的函数图有很多，详见<a href="http://www.mathematische-basteleien.de/heart.htm，画起来也很容易。">http://www.mathematische-basteleien.de/heart.htm，画起来也很容易。</a>
-倒是以前画过的蝙蝠侠logo，更有成就感些。
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2012/02/happy-valentine/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -737,6 +738,31 @@ regression取值是<code>{0,1}</code>，而SVM为了计算距离方便，取值�
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/goodbye-joyplot/">
+                <h3 class="media-heading">再见joyplot</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Sep 9, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>微信公众号平台大部分人都是抄来抄去的二手资料，像joyplot这种特别新的东西，就很难看到，我试着搜索了一下，发现只有三篇，都是我写的。</p>
+
+<ul>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484586&amp;idx=1&amp;sn=2c4aaca92147d901fb5421cdb99d16de&amp;chksm=ec43b5eddb343cfb34c907ddfdba74e129ee7ef896219a888a56b36738a0f6062bb2cf0ab99f#rd">joyplot：一种波涛汹涌，哦不对，是山峰叠峦的可视化方式</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484682&amp;idx=1&amp;sn=21944039080612bed8bda7b3070015b3&amp;chksm=ec43b44ddb343d5bcba5c22e33b6b26ce8bfee6e7b913115c19e0e14e930699ab602445d0e89#rd">ggjoy facet with ggtree</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484750&amp;amp;idx=1&amp;amp;sn=19aa83580ad91e18d3fe23cc42675628&amp;amp;chksm=ec43b409db343d1f189bf1d1e6499ac8bd034ce52e90454d7e2b568b6901b5d2f5bdf31fa887#rd">joyplot：GSEA的结果也能快乐起来</a></li>
+</ul>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -980,44 +1006,6 @@ p &lt;- ggplot(d, aes(x, y)) +
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/08/prepare-genelist/">
-                <h3 class="media-heading">听说你有RNAseq数据却不知道怎么跑GSEA</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Aug 8, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><blockquote>
-<p>Dear GuangChuangyu,</p>
-
-<p>I&rsquo;m trying to use the clusterProfiler package for GSE analysis on DGE data obtained from RNAseq.
-While I can run enrichKEGG, I&rsquo;m unable to run gseKEGG basically because I don&rsquo;t know how to obtain an order ranked gene list.</p>
-
-<p>I work on R. I have a dataframe or matrix with gene names, log2 fold change values, pvalues and adjusted pvalues among others.</p>
-
-<p>How can I get the order ranked gene list to feed in gseKEGG?</p>
-
-<p>Moreover what is the more reliable way to obtain functional insight about each sample? enrichKEGG or gseKEGG?</p>
-
-<p>Thank you in advance for your help.</p>
-
-<p>best regards</p>
-
-<p>bruno saubaméa</p>
-</blockquote>
-
-<p>今天收到一封来自Université Paris Descartes的求助信，这个问题我被问过好多次了，显然很多新手都有这问题，根本不知道该怎么跑GSEA，搞不清GSEA的输入是什么。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1025,7 +1013,7 @@ While I can run enrichKEGG, I&rsquo;m unable to run gseKEGG basically because I 
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         128 posts found
+         129 posts found
       </p>
     </div>
   </div>
