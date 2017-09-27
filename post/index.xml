@@ -6,10 +6,48 @@
     <description>Recent content in Posts on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 15 Sep 2017 00:53:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 27 Sep 2017 19:11:00 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ko数据库ID转换</title>
+      <link>https://guangchuangyu.github.io/cn/2017/09/ko-id-conversion/</link>
+      <pubDate>Wed, 27 Sep 2017 19:11:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/09/ko-id-conversion/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Since the clusterProfiler is a very useful tools for GO and Kegg annotation.At present I want to use it to enrich for kegg result while only have the KO number ,So I want to convert the KO number to the pathway function,Is there have any function or methods in the software can convert it?any help will be appreciated&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/GuangchuangYu/clusterProfiler/issues/99&#34;&gt;这个问题&lt;/a&gt;问说他想转KO到通路，首先这是一个常见的错误，很多人分不清&lt;code&gt;K&lt;/code&gt;和&lt;code&gt;ko&lt;/code&gt;，所以在我告诉他可以把&lt;code&gt;K number&lt;/code&gt;转成&lt;code&gt;ko pathway&lt;/code&gt;的时候，我先指出他的错误。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;ko&lt;/code&gt; is actually pathway map. I think you are talking about &lt;code&gt;K&lt;/code&gt; number mapping to &lt;code&gt;ko&lt;/code&gt; pathway.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;&amp;gt; bitr_kegg(&amp;quot;K00844&amp;quot;, &amp;quot;kegg&amp;quot;, &amp;quot;Path&amp;quot;, &amp;quot;ko&amp;quot;)
+     kegg    Path
+1  K00844 ko00010
+2  K00844 ko00051
+3  K00844 ko00052
+4  K00844 ko00500
+5  K00844 ko00520
+6  K00844 ko00521
+7  K00844 ko00524
+8  K00844 ko01100
+9  K00844 ko01110
+10 K00844 ko01120
+11 K00844 ko01130
+12 K00844 ko01200
+13 K00844 ko04066
+14 K00844 ko04910
+15 K00844 ko04930
+16 K00844 ko04973
+17 K00844 ko05230
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>再见joyplot</title>
