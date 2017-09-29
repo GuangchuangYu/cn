@@ -228,6 +228,84 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/swirl/">
+          听说你想学R
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-07-23T00:53:00&#43;08:00">
+      
+  July 23, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <h2 id="先来点八卦">先来点八卦</h2>
+
+<p>当年学R的时候，并没有现在这么多的书籍，老用户一般都知道丁国徽，因为他翻译了诸如《R导论》之类的文档，属于最早的中文材料了。跟生物狗有关的中文书有两本，一本是《R语言及Bioconductor在基因组分析中的应用》，这本我在2006年的时候看过，被坑大发了，里面逻辑混乱、错误满篇。</p>
+
+<p>以下这段豆瓣书评可以说很好的总结了这本书 <a href="https://book.douban.com/review/3017404/#comments">https://book.douban.com/review/3017404/#comments</a>:</p>
+
+<blockquote>
+<p>首先，打开前言，读者们会发现“编写本书，参加这些工作的教师和研究生有15人之多”。当然，名字后面带头衔的最后都在出现在封面了。也就是说由12位&rdquo;无名的岳武穆“研究生同学造就了3名”有名的岳武穆“之砖家叫兽。</p>
+
+<p>然后，本书共24章，模12为零，当然，这只是一个巧合，只是暗合天命罢了。</p>
+
+<p>最搞笑的就是这本书的编排和审校，十分差，许多小错误，就好像从没有审过一样。</p>
+
+<p>譬如第13页上，对order()函数的介绍，居然有这么句绕口令“x[order(x)]等效于order(x)&ldquo;,当然其实等效的是 sort(x).</p>
+
+<p>其他的诸如第17页上&gt;=的打印错误，就不一一细表了。</p>
+
+<p>最搞笑的就是只有三页的第4章，在数组、函数的介绍之前，就开始讲“聚集计算”！！！然后再来讲解语言基本的语法。。。。
+这种“由深入浅，化简单为复杂，化复杂为天书”之功力，更让吾辈叹服砖家叫兽吞云吐雾之神功。</p>
+
+<p>作为一本实例讲解的书，根本就没有提供源码和实例样本，也就说，根本就是没头没脑的演示。有点专业精神好么，好歹也是本标价68的书，当然只有400页草纸， 本科生水平的语言文档翻译。</p>
+</blockquote>
+
+<p>
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2017/07/swirl/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+            
+              
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/pokemon/">
           你的专业是那一只Pokémon神兽？
         </a>
@@ -571,77 +649,6 @@ ga('send', 'pageview');
 </article>
 
             
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/06/geofacet/">
-          按地理位置进行分面
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-06-26T12:23:16&#43;08:00">
-      
-  June 26, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        CRAN刚上线的新包<code>geofacet</code>，可以让ggplot2分面按指定的地理位置来，比如下面的数据，美国各州各项指标的排名：</p>
-
-<pre><code class="language-r">  head(state_ranks)
-    state   name   variable rank
-1    AK Alaska  education   28
-2    AK Alaska employment   50
-3    AK Alaska     health   25
-4    AK Alaska     wealth    5
-5    AK Alaska      sleep   27
-6    AK Alaska    insured   50
-</code></pre>
-
-<p>我们正常画图是这样子的：</p>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/06/geofacet/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
             
   <div class="pagination-bar">
     <ul class="pagination">
@@ -724,6 +731,27 @@ ga('send', 'pageview');
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/dose-simplot/">
+                <h3 class="media-heading">听说你还不会画heatmap</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Sep 9, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/DOSE/simplot/WechatIMG52.png" alt="" /></p>
+
+<p>群众纷纷表示图二是Excel画的，我觉得也是！Excel是生物学家的最爱啊。虽然做生信的人都看不上，最主要是没有记录，不具备可重复性。但现实就是大家都爱Excel。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -969,50 +997,6 @@ p &lt;- ggplot(d, aes(x, y)) +
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/08/plagiarism/">
-                <h3 class="media-heading">大学教授力挺抄袭，强行洗地到裤衩都不要了，到底图什么？</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Aug 8, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><blockquote>
-<p>连遮羞布都不要，难道这是个一被子的故事?</p>
-</blockquote>
-
-<p>事情开始于我整理并曝光了西安电子科技大学一个讲师读在职博士期间抄袭了两篇文章，并顺利拿到学位晋升为副教授的故事。</p>
-
-<h2 id="这个故事很精彩">这个故事很精彩</h2>
-
-<p><strong>亮点1</strong>: 期间发现了一条抄袭链，GOSim被DOSim抄，而DOSim又被HPOSim抄，抄袭者都在文章中把抄来的算法实现当成自己做的东西来介绍。</p>
-
-<p><strong>亮点2</strong>: ppiPre抄袭GOSemSim的文章，我跟BMC Systems Biology反馈了，而编辑部竟然各种包庇，最后抄袭者两面三刀，和编辑部黑箱操作，在未告知我的情况下，出来一个洗地的Erratum，把抄袭说成不好意思，忘记引用了。</p>
-
-<p>整个过程连载于以下四篇文章中：</p>
-
-<ul>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484602&amp;idx=1&amp;sn=d81f54bd2cd04a97d54ae13f4aa44f29&amp;chksm=ec43b5fddb343ceb140b3302e3ad592f82572506cb3d99f0d1c65c9829cf5564948e53d73da8#rd">[连载1]：学术期刊的学术不端，你见过吗？</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484618&amp;idx=1&amp;sn=bcb696bba156bc433cae638a461bdcdb&amp;chksm=ec43b58ddb343c9b546cf7c4b3d032da610ce89d0b8c1778cb723cf74cdfa11c11bbedf3557a#rd">[连载2]：Editor你的心不会痛吗？</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484629&amp;idx=1&amp;sn=f6224e30a6a4fde1461a050b642d80ec&amp;chksm=ec43b592db343c84f70689c39525a29d69f69fe4a62f76e69ecbb18634cd6baef0500a7fe6a6#rd">[连载3]：辣眼睛，一篇抄袭引发的系列血案！</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484637&amp;idx=1&amp;sn=973088de67527548429542d45344c714&amp;chksm=ec43b59adb343c8c2f25bc077695a5f6d6c6b59650102670dbfe7cf9b00a32698775593722c5#rd">[连载4]：我像是一颗棋，进退任由你决定</a></li>
-</ul>
-
-<p>如果想要分享这整个过程，可以分享以下这个汇总的文章：</p>
-
-<ul>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484640&amp;idx=1&amp;sn=478f77b8f03eb9793bafc8f18e126097&amp;chksm=ec43b5a7db343cb11fc9e0c232e0de0db7ec444abf5e8e3bd703f83a3cb31695f10359b47b8f#rd">从业超过10年，未见过如此厚颜无耻之人</a></li>
-</ul>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1020,7 +1004,7 @@ p &lt;- ggplot(d, aes(x, y)) +
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         130 posts found
+         131 posts found
       </p>
     </div>
   </div>

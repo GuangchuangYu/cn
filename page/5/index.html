@@ -225,6 +225,65 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/wine-qq/">
+          Linux中使用QQ
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-07-09T07:57:46&#43;08:00">
+      
+  July 9, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/linux">Linux</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        之前在写《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484423&amp;idx=1&amp;sn=311c627bb70e6fc626bb1f014ec0a976&amp;chksm=ec43b540db343c56fb01f86851c0a4b685351b860d0c9ac2f9709857428b4b76b85bf2bc8b49#rd">开源的macOS和linux版微信</a>》时，有小伙伴问怎么搞QQ，做为一个上了年纪的人，我已经不怎么用QQ了。</p>
+
+<p>QQ跑Linux基本上无解，疼讯说好的Linux版死了好多年，现在只有WebQQ可以用。如果你们早生几年，就会遇到Linux上用QQ的好时代。在《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484265&amp;idx=1&amp;sn=7e184d6bf26d2b91485cab0aec3102b8&amp;chksm=ec43b22edb343b38586fa21db0831df49bfe4e0106b22c5c0d93afe16dda88dc1a1a6e5d5248#rd">十年前截屏</a>》一文中，我就晒过在Gentoo上跑用Java开发的LumaQQ，在NetBSD上跑用C++开发的Eva，这些都极好用，而且像当年QQ上好友纷纷隐身的时候，LumaQQ推出了如来神掌，你可以看到谁是隐身的，以至于有些Windows用户也去用LumaQQ，那是当年最美好的时代，然而这些都死掉了。</p>
+
+<p>
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2017/07/wine-qq/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/david-clusterprofiler/">
           SCIENCE文章用了DAVID被吐槽
         </a>
@@ -582,88 +641,6 @@ ga('send', 'pageview');
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/06/lxde-theme/">
-          Linux装windows的二逼
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-06-19T07:57:46&#43;08:00">
-      
-  June 19, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/linux">Linux</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        做为一个上了年纪的人，显然已经离不开微信了，macOS还好，企鹅还有照顾到，但linux难道就只能用web版吗？显然不应该的。</p>
-
-<p>如果你是Arch Linux用户的话，那么aur源里已经有好几个款式可以选了：</p>
-
-<pre><code class="language-shell"> ygc  ~  yaourt -Ss wechat
-aur/electronic-wechat 2.0-2 (8) (1.29)
-    A better WeChat client
-aur/electronic-wechat-bin 2.0-1 [installed] (3) (0.36)
-    A better WeChat on macOS and Linux. Built with Electron by Zhongyi Tong.
-aur/electronic-wechat-git 1.4.0.43.gb18ff6d-1 (6) (0.00)
-    An Electron application for WeChat
-aur/franz-bin 4.0.4-5 (86) (12.73)
-    Franz is a free messaging app / former Emperor of Austria and combines 
-    chat &amp; messaging services into one application. Franz currently supports 
-    Slack, WhatsApp, WeChat, HipChat, Facebook Messenger, Telegram, Google 
-    Hangouts, GroupMe, Skype and many more.
-aur/wechat-web-devtools-git 0.17.171900-1 (1) (0.78)
-    Wechat Web Developer Tools
-aur/wechatircd-git r85.bb8f354-1 (0) (0.00)
-    IRC server capable of controlling Web WeChat
-</code></pre>
-
-<p>这里我要介绍的是electronic-wechat。我比较懒，用下面的代码，安装二进制版：</p>
-
-<pre><code class="language-shell">yaourt -S electronic-wechat-bin
-</code></pre>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/06/lxde-theme/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -745,6 +722,27 @@ aur/wechatircd-git r85.bb8f354-1 (0) (0.00)
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/dose-simplot/">
+                <h3 class="media-heading">听说你还不会画heatmap</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Sep 9, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/DOSE/simplot/WechatIMG52.png" alt="" /></p>
+
+<p>群众纷纷表示图二是Excel画的，我觉得也是！Excel是生物学家的最爱啊。虽然做生信的人都看不上，最主要是没有记录，不具备可重复性。但现实就是大家都爱Excel。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -990,50 +988,6 @@ p &lt;- ggplot(d, aes(x, y)) +
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/08/plagiarism/">
-                <h3 class="media-heading">大学教授力挺抄袭，强行洗地到裤衩都不要了，到底图什么？</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Aug 8, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><blockquote>
-<p>连遮羞布都不要，难道这是个一被子的故事?</p>
-</blockquote>
-
-<p>事情开始于我整理并曝光了西安电子科技大学一个讲师读在职博士期间抄袭了两篇文章，并顺利拿到学位晋升为副教授的故事。</p>
-
-<h2 id="这个故事很精彩">这个故事很精彩</h2>
-
-<p><strong>亮点1</strong>: 期间发现了一条抄袭链，GOSim被DOSim抄，而DOSim又被HPOSim抄，抄袭者都在文章中把抄来的算法实现当成自己做的东西来介绍。</p>
-
-<p><strong>亮点2</strong>: ppiPre抄袭GOSemSim的文章，我跟BMC Systems Biology反馈了，而编辑部竟然各种包庇，最后抄袭者两面三刀，和编辑部黑箱操作，在未告知我的情况下，出来一个洗地的Erratum，把抄袭说成不好意思，忘记引用了。</p>
-
-<p>整个过程连载于以下四篇文章中：</p>
-
-<ul>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484602&amp;idx=1&amp;sn=d81f54bd2cd04a97d54ae13f4aa44f29&amp;chksm=ec43b5fddb343ceb140b3302e3ad592f82572506cb3d99f0d1c65c9829cf5564948e53d73da8#rd">[连载1]：学术期刊的学术不端，你见过吗？</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484618&amp;idx=1&amp;sn=bcb696bba156bc433cae638a461bdcdb&amp;chksm=ec43b58ddb343c9b546cf7c4b3d032da610ce89d0b8c1778cb723cf74cdfa11c11bbedf3557a#rd">[连载2]：Editor你的心不会痛吗？</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484629&amp;idx=1&amp;sn=f6224e30a6a4fde1461a050b642d80ec&amp;chksm=ec43b592db343c84f70689c39525a29d69f69fe4a62f76e69ecbb18634cd6baef0500a7fe6a6#rd">[连载3]：辣眼睛，一篇抄袭引发的系列血案！</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484637&amp;idx=1&amp;sn=973088de67527548429542d45344c714&amp;chksm=ec43b59adb343c8c2f25bc077695a5f6d6c6b59650102670dbfe7cf9b00a32698775593722c5#rd">[连载4]：我像是一颗棋，进退任由你决定</a></li>
-</ul>
-
-<p>如果想要分享这整个过程，可以分享以下这个汇总的文章：</p>
-
-<ul>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484640&amp;idx=1&amp;sn=478f77b8f03eb9793bafc8f18e126097&amp;chksm=ec43b5a7db343cb11fc9e0c232e0de0db7ec444abf5e8e3bd703f83a3cb31695f10359b47b8f#rd">从业超过10年，未见过如此厚颜无耻之人</a></li>
-</ul>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1041,7 +995,7 @@ p &lt;- ggplot(d, aes(x, y)) +
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         130 posts found
+         131 posts found
       </p>
     </div>
   </div>

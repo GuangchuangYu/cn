@@ -6,10 +6,23 @@
     <description>Recent content in Dose on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Sep 2017 19:11:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 30 Sep 2017 12:23:16 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/tags/dose/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>听说你还不会画heatmap</title>
+      <link>https://guangchuangyu.github.io/cn/2017/09/dose-simplot/</link>
+      <pubDate>Sat, 30 Sep 2017 12:23:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/09/dose-simplot/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/DOSE/simplot/WechatIMG52.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;群众纷纷表示图二是Excel画的，我觉得也是！Excel是生物学家的最爱啊。虽然做生信的人都看不上，最主要是没有记录，不具备可重复性。但现实就是大家都爱Excel。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>gseaplot自定义颜色</title>
