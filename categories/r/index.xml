@@ -184,6 +184,67 @@ p &amp;lt;- ggplot(d, aes(x, y)) +
     </item>
     
     <item>
+      <title>Galaxy-ChIPseq流程</title>
+      <link>https://guangchuangyu.github.io/cn/2017/08/galaxy-chipseeker/</link>
+      <pubDate>Tue, 15 Aug 2017 12:23:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/08/galaxy-chipseeker/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;这篇文章介绍如果把ChIPseeker搬上galaxy，和galaxy上其它软件一起拼成流程，跑一个ChIPseq注释的流程，从fastq文件开始，比对生成bam文件，peak calling生成bed文件，基因组注释，一个完整的流程，这个流程一旦设置好，每次跑都只是点点鼠标就可以了。
+本文额外附送：
+1. 如何把R程序变成命令行程序
+2. 如何把命令行程序搬上galaxy (知名的程序都有人搬好，但自己的程序还是需要学一下怎么配置的）&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Galaxy可以说是低端生信从业者杀手，如果你的能力只是跑跑流程，galaxy完全可以取代你的工作。&lt;/p&gt;
+
+&lt;p&gt;如果你是苦逼的生物研究生，苦于要自己分析数据，不会跑命令行程序，对各种参数表示晕菜，galaxy也是拯救你的神器，如同有个做生信的人在旁边帮助你，参数你点点菜单就可以了，跟程序变运行又可以了，流程自己都可以设计并一键运行。&lt;/p&gt;
+
+&lt;h2 id=&#34;安装galaxy&#34;&gt;安装galaxy&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;requirements: python 2.7 and git&lt;/li&gt;
+&lt;li&gt;only three steps&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;克隆galaxy项目&#34;&gt;克隆galaxy项目&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git clone https://github.com/galaxyproject/galaxy/
+cd galaxy
+## switch to master branch, stable release
+git checkout -b master origin/master
+```   	
+
+
+
+
+### 安装
+
+
+```bash
+cd galaxy/config/
+cp galaxy.ini.sample galaxy.ini
+```   	
+
+编辑_galaxy.ini_文件
+
++ find the line: admin_users
++ remove the # and add an email for your account
+
+
+
+### 运行
+
+```bash
+# go back to galaxy folder
+cd ..
+sh run.sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然后就可以用浏览器打开&lt;a href=&#34;http://localhost:8080&#34;&gt;http://localhost:8080&lt;/a&gt;，使用galaxy，就是这么简单。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>听说你有RNAseq数据却不知道怎么跑GSEA</title>
       <link>https://guangchuangyu.github.io/cn/2017/08/prepare-genelist/</link>
       <pubDate>Thu, 10 Aug 2017 19:11:00 +0800</pubDate>

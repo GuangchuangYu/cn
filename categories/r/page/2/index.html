@@ -354,6 +354,115 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/08/galaxy-chipseeker/">
+          Galaxy-ChIPseq流程
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-08-15T12:23:16&#43;08:00">
+      
+  August 15, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/chipseq">ChIPseq</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <blockquote>
+<p>这篇文章介绍如果把ChIPseeker搬上galaxy，和galaxy上其它软件一起拼成流程，跑一个ChIPseq注释的流程，从fastq文件开始，比对生成bam文件，peak calling生成bed文件，基因组注释，一个完整的流程，这个流程一旦设置好，每次跑都只是点点鼠标就可以了。
+本文额外附送：
+1. 如何把R程序变成命令行程序
+2. 如何把命令行程序搬上galaxy (知名的程序都有人搬好，但自己的程序还是需要学一下怎么配置的）</p>
+</blockquote>
+
+<p>Galaxy可以说是低端生信从业者杀手，如果你的能力只是跑跑流程，galaxy完全可以取代你的工作。</p>
+
+<p>如果你是苦逼的生物研究生，苦于要自己分析数据，不会跑命令行程序，对各种参数表示晕菜，galaxy也是拯救你的神器，如同有个做生信的人在旁边帮助你，参数你点点菜单就可以了，跟程序变运行又可以了，流程自己都可以设计并一键运行。</p>
+
+<h2 id="安装galaxy">安装galaxy</h2>
+
+<ul>
+<li>requirements: python 2.7 and git</li>
+<li>only three steps</li>
+</ul>
+
+<h3 id="克隆galaxy项目">克隆galaxy项目</h3>
+
+<pre><code class="language-bash">git clone https://github.com/galaxyproject/galaxy/
+cd galaxy
+## switch to master branch, stable release
+git checkout -b master origin/master
+```     
+
+
+
+
+### 安装
+
+
+```bash
+cd galaxy/config/
+cp galaxy.ini.sample galaxy.ini
+```     
+
+编辑_galaxy.ini_文件
+
++ find the line: admin_users
++ remove the # and add an email for your account
+
+
+
+### 运行
+
+```bash
+# go back to galaxy folder
+cd ..
+sh run.sh
+</code></pre>
+
+<p>然后就可以用浏览器打开<a href="http://localhost:8080">http://localhost:8080</a>，使用galaxy，就是这么简单。
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2017/08/galaxy-chipseeker/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+            
+              
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/08/prepare-genelist/">
           听说你有RNAseq数据却不知道怎么跑GSEA
         </a>
@@ -621,69 +730,6 @@ While I can run enrichKEGG, I&rsquo;m unable to run gseKEGG basically because I 
 </article>
 
             
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/clusterprofiler-maize/">
-          非模式基因GO富集分析：以玉米为例&#43;使用OrgDb
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-07-24T08:53:00&#43;08:00">
-      
-  July 24, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        模式生物做什么都简单，非模式生物则很多缺少注释，没有注释你就没法做，只能是借助于各种软件比如blastgo，自己跑电子注释。但今天要讲的不是这种情况，很多物种还是有注释的，只是你有时候不知道该去那里下载，或者你有数据，却不知道该怎么用！很多的软件都是针对模式生物的，或者针对某一些类型的非模式生物，能够支持多种非模式生物，能够支持用户自己的注释文件的软件相对来讲，就非常少有了，然而clusterProfiler就是这类少有的软件之一。</p>
-
-<h2 id="获得orgdb">获得OrgDb</h2>
-
-<p>今天要讲的是通过OrgDb来做GO分析，这是clusterProfiler的<strong>enrichGO</strong>函数所支持的背景注释，Bioconductor自带20个OrgDb可供使用，多半是模式生物，难道我们要做的物种不在这20个里面就不行了吗？显然不是的，clusterProfiler能支持的物种我自己都数不过来。</p>
-
-<p>我们可以通过AnnotationHub在线检索并抓取OrgDb，比如这里以玉米为例：</p>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/07/clusterprofiler-maize/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
             
   <div class="pagination-bar">
     <ul class="pagination">
@@ -703,7 +749,7 @@ While I can run enrichKEGG, I&rsquo;m unable to run gseKEGG basically because I 
           </a>
         </li>
       
-      <li class="pagination-number">page 2 of 8</li>
+      <li class="pagination-number">page 2 of 9</li>
     </ul>
   </div>
 
@@ -1039,7 +1085,7 @@ p &lt;- ggplot(d, aes(x, y)) +
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         131 posts found
+         133 posts found
       </p>
     </div>
   </div>

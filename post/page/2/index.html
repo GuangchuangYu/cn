@@ -492,6 +492,115 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/08/galaxy-chipseeker/">
+          Galaxy-ChIPseq流程
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-08-15T12:23:16&#43;08:00">
+      
+  August 15, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/chipseq">ChIPseq</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <blockquote>
+<p>这篇文章介绍如果把ChIPseeker搬上galaxy，和galaxy上其它软件一起拼成流程，跑一个ChIPseq注释的流程，从fastq文件开始，比对生成bam文件，peak calling生成bed文件，基因组注释，一个完整的流程，这个流程一旦设置好，每次跑都只是点点鼠标就可以了。
+本文额外附送：
+1. 如何把R程序变成命令行程序
+2. 如何把命令行程序搬上galaxy (知名的程序都有人搬好，但自己的程序还是需要学一下怎么配置的）</p>
+</blockquote>
+
+<p>Galaxy可以说是低端生信从业者杀手，如果你的能力只是跑跑流程，galaxy完全可以取代你的工作。</p>
+
+<p>如果你是苦逼的生物研究生，苦于要自己分析数据，不会跑命令行程序，对各种参数表示晕菜，galaxy也是拯救你的神器，如同有个做生信的人在旁边帮助你，参数你点点菜单就可以了，跟程序变运行又可以了，流程自己都可以设计并一键运行。</p>
+
+<h2 id="安装galaxy">安装galaxy</h2>
+
+<ul>
+<li>requirements: python 2.7 and git</li>
+<li>only three steps</li>
+</ul>
+
+<h3 id="克隆galaxy项目">克隆galaxy项目</h3>
+
+<pre><code class="language-bash">git clone https://github.com/galaxyproject/galaxy/
+cd galaxy
+## switch to master branch, stable release
+git checkout -b master origin/master
+```     
+
+
+
+
+### 安装
+
+
+```bash
+cd galaxy/config/
+cp galaxy.ini.sample galaxy.ini
+```     
+
+编辑_galaxy.ini_文件
+
++ find the line: admin_users
++ remove the # and add an email for your account
+
+
+
+### 运行
+
+```bash
+# go back to galaxy folder
+cd ..
+sh run.sh
+</code></pre>
+
+<p>然后就可以用浏览器打开<a href="http://localhost:8080">http://localhost:8080</a>，使用galaxy，就是这么简单。
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2017/08/galaxy-chipseeker/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/08/get-phd-degree/">
           博士养成记
         </a>
@@ -606,81 +715,6 @@ While I can run enrichKEGG, I&rsquo;m unable to run gseKEGG basically because I 
 <p>
         <br>
         <a href="https://guangchuangyu.github.io/cn/2017/08/prepare-genelist/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/08/response-to-sciencenet-blog-post/">
-          祝你们缠缠绵绵到天涯
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-08-08T17:52:00&#43;08:00">
-      
-  August 8, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/babble">babble</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        薛宇这篇《<a href="http://blog.sciencenet.cn/home.php?mod=space&amp;uid=404304&amp;do=blog&amp;id=1069933">BMC Systems Biology没有学术不端</a>》写作水平还真是高啊，先来个不拉干的小事情，用了软件没引用，来铺垫并以此对抄袭事情进行定位/定性。再来一堆论据和结论不相关的逻辑来论证，好像很有道理的样子，不明真相（没有读我的4篇连载）的群众很容易就掉坑里了。</p>
-
-<p>首先讲了他和R教授的故事，那只不过是用了工具没引用而已，和抄袭是两码事！试图把抄袭写成与此类似的「忘记引用」！</p>
-
-<blockquote>
-<p>比方说我给R教授写信，就只是问有没有用我的工具。都是聪明人，话不需要说的那么透，点到为止就得了。那您要问，如果人家不回信或者耍赖说没用呢？很简单，三天不回信我会立马写信杂志社，说作者用了我的东西并且刻意没有引用也没有致谢，态度极其恶劣建议撤稿，并且把我三天前发的信抄给编辑作为证据。</p>
-</blockquote>
-
-<p>为了把抄袭这种严重的事情与用了工具没引用这种简直太常见且不值一提的小事做类比，薛宇教授是用心良苦啊，把小事给说大了！</p>
-
-<p>这就是牛逼之处，我不得不服，用小事与大事类比，将大事说小！将小事说大，让大事化小于无形中。</p>
-
-<blockquote>
-<p>有德国学者使用了GOSemSim的代码设计了预测蛋白质相互作用的工具IntScore，发表在2012年的核酸研究上，作者专门写了一节来介绍GO的语义学相似性并且标明引用，所以这篇文章符合学术规范，没有问题。我们再看看DOSim，这篇文章里注明了GO注释的分析使用的是GOSim并且加了引用，所以也没有问题。</p>
-</blockquote>
-
-<p>这段话很有水平，首先是<strong>不对等类比</strong>，以2012年NAR的符合学术规范的文章来类比一篇抄袭文章，试图化抄袭于无形中。</p>
-
-<p>我们来看所谓的一节<strong>专门介绍</strong>和标明引用是怎样的：</p>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/08/response-to-sciencenet-blog-post/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
     </div>
@@ -1043,7 +1077,7 @@ p &lt;- ggplot(d, aes(x, y)) +
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         131 posts found
+         133 posts found
       </p>
     </div>
   </div>
