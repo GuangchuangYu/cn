@@ -300,7 +300,7 @@ plot_grid(x$gtable, p, labels=c('A', 'B'))
 
 <p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/DOSE/simplot/Screenshot 2017-09-29 19.35.08.png" alt="" /></p>
 
-<p>这里我不得不吐槽一下，很多人认为R有四套画图系统: base、grid、ggplot2、lattice。然后认为ggplot2最牛逼，天天ggplot2打遍天下无敌手一样，这就是没见过世面啊！</p>
+<p>这里我不得不吐槽一下，很多人认为R有四套画图系统: base、grid、ggplot2、lattice。然后认为ggplot2最牛逼，天天ggplot2打遍天下无敌手一样，这就是没见过世面啊！（严格说lattice和ggplot2不能算图形系统）</p>
 
 <p>试问ggplot2他爹是谁？ggplot2和lattice都是基于grid。现在我们ggplot2出图后各种高级玩法、以及我们自己写ggplot2图层，都是用grid！很多人认为cowplot是拼ggplot2的，<code>plot_grid</code>这个函数名已经说明了一切，它是拼grid的，一切基于grid的图，比如上面的<code>pheatmap</code>和<code>ggplot2</code>，轻松拼在一起。</p>
 
