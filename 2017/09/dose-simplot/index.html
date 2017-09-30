@@ -271,7 +271,7 @@ is Excel.
       Opening lecture RSS 2002, Plymouth (September 2002)</p>
 </blockquote>
 
-<p>曾经有人问我，用R画热图怎么改颜色，我的回答是无能为力。孔乙己老先生告诉我们回字有四样写法，而R画热图，岂止4种。基于base graphics有<code>stats::heatmap</code>, <code>gplots::heatmap.2</code>，以及多个包实现的<code>heatmap.3</code>。交互式的热图有<code>heatmaply</code>、<code>d3heatmap</code>和<code>iheatmapr</code>等包。</p>
+<p>曾经有人问我，用R画热图怎么改颜色，我的回答是无能为力（没说怎么画，我怎么能够知道怎么改）。孔乙己老先生告诉我们回字有四样写法，而R画热图，岂止4种。基于base graphics有<code>stats::heatmap</code>, <code>gplots::heatmap.2</code>，以及多个包实现的<code>heatmap.3</code>。交互式的热图有<code>heatmaply</code>、<code>d3heatmap</code>和<code>iheatmapr</code>等包。</p>
 
 <p><img src="https://raw.githubusercontent.com/ropensci/iheatmapr/master/vaccine.gif" alt="" /></p>
 
@@ -300,13 +300,13 @@ plot_grid(x$gtable, p, labels=c('A', 'B'))
 
 <p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/DOSE/simplot/Screenshot 2017-09-29 19.35.08.png" alt="" /></p>
 
-<p>这里我不得不吐槽一下，很多人认为R有四套画图系统: base、grid、ggplot2、lattice。然后认为ggplot2最牛逼，天天ggplot2打遍天下无敌手一样，这就是野山猪啊，没见过世面！</p>
+<p>这里我不得不吐槽一下，很多人认为R有四套画图系统: base、grid、ggplot2、lattice。然后认为ggplot2最牛逼，天天ggplot2打遍天下无敌手一样，这就是没见过世面啊！</p>
 
 <p>试问ggplot2他爹是谁？ggplot2和lattice都是基于grid。现在我们ggplot2出图后各种高级玩法、以及我们自己写ggplot2图层，都是用grid！很多人认为cowplot是拼ggplot2的，<code>plot_grid</code>这个函数名已经说明了一切，它是拼grid的，一切基于grid的图，比如上面的<code>pheatmap</code>和<code>ggplot2</code>，轻松拼在一起。</p>
 
 <p>我能写出<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484164&amp;idx=1&amp;sn=030612f5a84120ef407401ff6fad715f&amp;chksm=ec43b243db343b5524c911327bdcbe5f01034095d549d43d530decc5676faecdbd449dfac026#rd">ggimage包</a>和<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247483962&amp;idx=1&amp;sn=7240c1fe0e09a142ef95ac594922b890&amp;chksm=ec43b37ddb343a6bc7c2633597aba751b7f257846d26bc0060b7782ecd3ae20fece8085f0295">ggtree</a>，能够<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484795&amp;idx=1&amp;sn=d2704a9e573e55dc8f6e9170358fb58d&amp;chksm=ec43b43cdb343d2a817a21ee67104de0279052935a9e62c52c3f5d05aca9d30a55cd021de9dd#rd">一次解决ggplot2所有字体</a>，都是因为懂一点grid。如果你对R语言的画图系统蒙圈的话，建议你读一下《<a href="http://mp.weixin.qq.com/s/Uhx3l3lKQS88OJ4SHntkNg">树变图，图变树？</a>》这一篇文章。</p>
 
-<p>这里并没有否定ggplot2的意思，虽然grid更灵活，能做更多的事情，但ggplot2是我们的最爱，因为ggplot2所实现的语法，是人类友好的，让我们站在更高的角度，可以更加抽象地思考画图。但很多人不会用ggplot2画热图，因为ggplot2对tidy data的要求与热图的matrix是相悖的，我们可视化出来和matrix是对应的，但ggplot2要求我们把matrix，转化成长型的data.frame。虽然有很多热图的实现，但很多人还是想用ggplot2来图，因为语法简单，用theme好操作细节。</p>
+<p>这里并没有否定ggplot2的意思，虽然grid更灵活，能做更多的事情，但ggplot2是我们的最爱，因为ggplot2所实现的语法，是人类友好的，让我们站在更高的角度，可以更加抽象地思考画图。但很多人不会用ggplot2画热图，因为ggplot2对tidy data的要求与热图的matrix是相悖的，我们可视化出来和matrix是对应的，但ggplot2要求我们把matrix，转化成长型的data.frame。虽然有很多热图的实现，但很多人还是想用ggplot2来出图，因为语法简单，用theme好操作细节。</p>
 
 <p>这里简单介绍一下我很多年前写的一个简单的函数。在DOSE包里，我写了一个<code>simplot</code>的函数，这个函数是基于ggplot2的，用于可视化DO语义相似性矩阵，像上面的数据，直接用<code>simplot(d)</code>就可以出图：</p>
 
