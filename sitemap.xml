@@ -588,6 +588,11 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2008/10/educational-games/</loc>
+    <lastmod>2008-10-06T15:10:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2008/09/%E5%8D%9A%E5%AE%A2%E8%BD%ACwordpress/</loc>
     <lastmod>2008-09-30T16:20:43+08:00</lastmod>
   </url>
@@ -955,6 +960,12 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/categories/game/</loc>
+    <lastmod>2008-10-06T15:10:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/tags/genome-editing/</loc>
     <lastmod>2013-01-10T08:40:22+08:00</lastmod>
     <priority>0</priority>
@@ -1185,6 +1196,12 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/ngs/</loc>
     <lastmod>2017-06-06T07:57:46+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/nobel/</loc>
+    <lastmod>2008-10-06T15:10:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
