@@ -598,8 +598,18 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2008/09/modify-qq-login-gui/</loc>
+    <lastmod>2008-09-23T08:55:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2008/09/%E9%80%9A%E8%BF%87%E5%B1%80%E5%9F%9F%E7%BD%91%E5%9C%A8linux%E4%B8%8B%E4%BD%BF%E7%94%A8windows%E7%9A%84%E7%A8%8B%E5%BA%8F/</loc>
     <lastmod>2008-09-22T01:26:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/2008/09/gtkballs/</loc>
+    <lastmod>2008-09-21T08:20:00+08:00</lastmod>
   </url>
   
   <url>
@@ -1034,6 +1044,12 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/gtf/</loc>
     <lastmod>2017-02-21T12:23:16+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/gtkballs/</loc>
+    <lastmod>2008-09-21T08:20:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   

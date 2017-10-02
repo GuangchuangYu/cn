@@ -870,8 +870,9 @@ aur/wechatircd-git r85.bb8f354-1 (0) (0.00)
       <pubDate>Tue, 30 May 2017 15:10:00 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2017/05/xiaomiquan/</guid>
-      <description>&lt;p&gt;写了十几年的博客，虽然好早之前就发现一些博客文被《生信人》公众号抄了，但一直不愿意开公众号，去年年底尝试开个公众号，原创保护不给别人抄倒不是主要，而是我感觉到公众号已经绑架了中国人的阅读入口，可以尝试把博客文搬上来，这样大家可以在微信里搜到文章，有利于传播嘛。而我不是单纯为传播知识而来，而主要是推送我自己的东西，这在《为什么要开这个公众号》一文中已经讲了，维护我写的几个软件，花掉大量的时间，现在给我发邮件问问题，我基本都会让他们去biostars或bioconductor论坛上去问，公开交流有利于别的用户参与/学习，有助于减少重复解答，我也不断完善文档，很多问题其实在文档里都有答案，但人的天性就是懒、不愿学习（我在ggtree发布的第一篇文章里也提及了这点，说了%&amp;lt;+%操作符就是给懒人用的）。
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;写了十几年的博客，虽然好早之前就发现一些博客文被《生信人》公众号抄了，但一直不愿意开公众号，去年年底尝试开个公众号，原创保护不给别人抄倒不是主要，而是我感觉到公众号已经绑架了中国人的阅读入口，可以尝试把博客文搬上来，这样大家可以在微信里搜到文章，有利于传播嘛。而我不是单纯为传播知识而来，而主要是推送我自己的东西，这在《为什么要开这个公众号》一文中已经讲了，维护我写的几个软件，花掉大量的时间，现在给我发邮件问问题，我基本都会让他们去biostars或bioconductor论坛上去问，公开交流有利于别的用户参与/学习，有助于减少重复解答，我也不断完善文档，很多问题其实在文档里都有答案，但人的天性就是懒、不愿学习（我在ggtree发布的第一篇文章里也提及了这点，说了%&amp;lt;+%操作符就是给懒人用的）。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -2346,10 +2347,15 @@ DNA重组也使用标记，我们无法直接检测到是否重组了，是否�
       <pubDate>Mon, 06 Oct 2008 15:10:00 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2008/10/educational-games/</guid>
-      <description>You don&amp;rsquo;t have to be a genius to understand the work of the Nobel Laureates. These games and simulations, based on Nobel Prize-awarded achievements, will teach and inspire you while you&amp;rsquo;re having FUN! Students, teachers and non-professionals of all ages will enjoy testing and building their knowledge in physics, chemistry, physiology or medicine, literature, peace and economics. So, go ahead, Explore and Learn!
-上面这段是官方站上的描述。这些小游戏都是根据诺贝尔奖的内容来设计的。不需要你很聪明。。在娱乐中学习。。。
-http://nobelprize.org/educational_games/
-这里有一段DNA双螺旋结构的。。http://nobelprize.org/educational_games/medicine/dna_double_helix/，学生物的我们来感受一下。</description>
+      <description>&lt;p&gt;You don&amp;rsquo;t have to be a genius to understand the work of the Nobel
+Laureates. These games and simulations, based on Nobel Prize-awarded
+achievements, will teach and inspire you while you&amp;rsquo;re having FUN!
+Students, teachers and non-professionals of all ages will enjoy testing
+and building their knowledge in physics, chemistry, physiology or
+medicine, literature, peace and economics. So, go ahead, Explore and
+Learn!&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -2365,6 +2371,22 @@ http://nobelprize.org/educational_games/
 &lt;p&gt;从导出的xml文件里,把&amp;lt;description&amp;gt;&amp;lt;![CDATA[替换成&amp;lt;content:encoded&amp;gt;&amp;lt;![CDATA[&lt;/p&gt;
 
 &lt;p&gt;相应地把]]&amp;gt;&amp;lt;/description&amp;gt;替换成]]&amp;gt;&amp;lt;/content:encoded&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>修改QQ登录界面</title>
+      <link>https://guangchuangyu.github.io/cn/2008/09/modify-qq-login-gui/</link>
+      <pubDate>Tue, 23 Sep 2008 08:55:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2008/09/modify-qq-login-gui/</guid>
+      <description>&lt;p&gt;闲来无聊，改了一下QQ的登录界面。
+下面是下载链接，到QQ目录里替换掉原文件。修改的文件是2008正式版的，没有在别的版本下测试。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://guangchuangyu.github.io/blog_images/uploads/2008/09/qq_ahmu.rar&#34;&gt;安医版&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2008/11/qq_ahmu.jpg&#34; alt=&#34;qq\_ahmu&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -2393,6 +2415,17 @@ server。之前使用rdesktop远程桌面，最近发现配合seamlessrdp可以�
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;就可以在linux下运行服务器端的ie了。windows下所有程序都没问题。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>gtkballs -- 五子连线</title>
+      <link>https://guangchuangyu.github.io/cn/2008/09/gtkballs/</link>
+      <pubDate>Sun, 21 Sep 2008 08:20:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2008/09/gtkballs/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2008/11/gtkballs.png&#34; alt=&#34;gtkballs&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
