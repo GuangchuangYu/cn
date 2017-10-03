@@ -17,7 +17,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.24.1">
+    <meta name="generator" content="Hugo 0.25.1">
     <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
     <title>Guangchuang Yu</title>
     <meta name="author" content="Guangchuang Yu">
@@ -207,6 +207,105 @@ ga('send', 'pageview');
                ">
         <section class="postShorten-group main-content-wrap">
           
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2015/12/%E5%96%9C%E6%96%B0%E5%8E%8C%E6%97%A7%E4%B9%8Bhello-hugo/">
+          喜新厌旧之hello Hugo
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2015-12-04T00:42:26&#43;08:00">
+      
+  December 4, 2015
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/blog">blog</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        最早在China Unix上写博客，后来转战新浪。在<a href="http://azaleasays.com/">azelea</a>的说服下，<a href="http://guangchuangyu.github.io/2008/09/%E5%8D%9A%E5%AE%A2%E8%BD%ACwordpress/">果断换成wordpress</a>，写技术博客贴点代码什么的，新浪必须是太渣。<a href="http://azaleasays.com/">azelea</a>是我开始独立博客的领路人，为我提供了空间和域名。再后来自己买了空间和<code>ygc.name</code>的域名，用了好几年。本来一直有想法要换成github+jekll，恰巧<a href="http://blog.shenwei.me/">Wei Shen</a>强力推荐HUGO。于是再一次换博客。</p>
+
+<p>首先面临着wordpress迁移的问题。</p>
+
+<h1 id="导入wordpress-posts为markdown文件">导入wordpress posts为markdown文件</h1>
+
+<p>试用了多个插件或脚本，都是各种出错。最后发现了神器<a href="https://github.com/jprichardson/potter-wordpress">potter-wordpress</a>，通过npm安装：</p>
+
+<pre><code>npm install -g pottercms-wordpress
+</code></pre>
+
+<p>然后一个语句:</p>
+
+<pre><code>potter-wordpress -h WORDPRESS_SITE_URL -u USER_NAME -p PASSWORD --dir PATH_TO_STORE_MD_FILES
+</code></pre>
+
+<p>自动从线上把posts抓下来，并转化为<code>markdown</code>。在之前各种搞不定之后，看到下面的输出有种莫名的快感。</p>
+
+<p>Fetching articles&hellip;</p>
+
+<pre><code>   Got : [Sun Nov 29 2015] R kernel in Jupyter notebook 3
+   Got : [Mon Nov 09 2015] phylomoji with ggtree
+   Got : [Tue Nov 17 2015] 合体中的操作系统
+   Got : [Mon Nov 02 2015] Comparison of clusterProfiler and GSEA-P
+   Got : [Thu Oct 01 2015] ChIPseq data mining with ChIPseeker
+   Got : [Tue Oct 06 2015] TRIE
+   Got : [Thu Oct 15 2015] [BioC 3.2] NEWS of my BioC packages
+   Got : [Wed Oct 21 2015] use simplify to remove redundancy of enriched GO terms
+
+   ...
+
+   Got : [Mon May 14 2007] Edit partition table in NetBSD/macppc
+   Got : [Mon May 14 2007] 我的emacs配置文件
+   Got : [Mon May 14 2007] pkgsrc tips
+   Got : [Thu May 03 2007] scilab三维平面绘图
+   Got : [Sat Jun 24 2006] qvwm窗口管理器的windows2000主题
+   Got : [Wed Jun 14 2006] 安装os9和netbsd双系统
+   Got : [Sat May 28 2005] 在emacs里使用maxima
+   Got : [Mon Mar 14 2005] scau校园网认证
+   Got : [Fri Jan 14 2005] Powerbook G3上安装gentoo
+</code></pre>
+
+<p>Done.</p>
+
+<p>
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2015/12/%E5%96%9C%E6%96%B0%E5%8E%8C%E6%97%A7%E4%B9%8Bhello-hugo/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
           
             
   
@@ -587,70 +686,6 @@ CPU，然后数据无法同步，只有两个原因，不是硬盘就是网络�
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2014/05/use-ggplot2/">
-          Use ggplot2
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2014-05-11T06:17:56&#43;08:00">
-      
-  May 11, 2014
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <h3 id="why-use-ggplot2">Why use ggplot2</h3>
-
-<p>ggplot2是我见过最human friendly的画图软件，这得益于Leland Wilkinson在他的著作《<a href="http://book.douban.com/subject/10123863/">The Grammar of Graphics</a>》中提出了一套图形语法，把图形元素抽象成可以自由组合的成分，Hadley
-Wickham把这套想法在R中实现。</p>
-
-<p>为什么要学习ggplot2，可以参考<a href="http://book.douban.com/subject/24527091/">ggplot2: 数据分析与图形艺术</a>的<a href="https://github.com/cosname/ggplot2-translation/blob/master/preface.md">序言</a>（btw: 在序言的最后，我被致谢了）。</p>
-
-<p>Hadley Wickham也给出<a href="https://github.com/hadley/ggplot2/wiki/Why-use-ggplot2">一堆理由</a>让我们说服自己，我想再补充一点，Hadley Wickham是学医出身的，做为学生物出身的人有什么理由不支持呢:)</p>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2014/05/use-ggplot2/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -732,6 +767,31 @@ Wickham把这套想法在R中实现。</p>
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/ssh-on-android/">
+                <h3 class="media-heading">如何假装假期还在工作</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><ul>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247483886&amp;idx=1&amp;sn=cb76891dff5787025f6b99cdcc723d86&amp;chksm=ec43b0a9db3439bfcec1c9ac3c0d00e6190cf4d3d02d9d3dc767007e0ff68b4fbd8064bb0f77#rd">CS0: ChIPseq从入门到放弃</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484054&amp;idx=2&amp;sn=9a42f1094349a0bd09a5e0b7c44595e0&amp;chksm=ec43b3d1db343ac7e11d92eda3eb1837aab46f79bb109e6cdbba466e4693d041a87fa698ef1b">我在MSnbase里做了什么？</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484727&amp;amp;idx=1&amp;amp;sn=a70494626e7c329addea51ac6b82c578&amp;amp;chksm=ec43b470db343d6661ba2498e5b03d300f281cb24c82dff0b53fac62b55831ab6207e9a0c20e#rd">博士养成记</a></li>
+</ul>
+
+<p>我在上面三篇文章里，都吐槽了张大砖家，这里穿插个故事，当时有门课是去嘉道理農場，在很偏的山上，而且是封闭式，再者离港大很远。选课是先告诉砖家的，上课前也跟砖家讲，然后第一天上课了，人不在实验室，第二天砖家就来了下面这样的信：</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -975,33 +1035,6 @@ p &lt;- ggplot(d, aes(x, y)) +
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/08/apple-logo-emoji/">
-                <h3 class="media-heading">你所没见过的苹果</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Aug 8, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><img src="https://guangchuangyu.github.io/blog_images/MISC/iphone5s.jpeg" alt="" /></p>
-
-<p>5s无缘无故突然就自带3D效果，可是苹果没送我3D眼镜啊！做为一个果粉，自从乔帮主离去之后，对苹果是越来越无爱了。</p>
-
-<p>anyway，对于这部陪伴许久的手机，还是要纪念一下的。</p>
-
-<p>《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484489&amp;amp;idx=1&amp;amp;sn=36bbdee1da96aee301f217e61cc8e3b5&amp;amp;chksm=ec43b50edb343c186a58494e32ffe7df6ae9d960a37772fb5887a9c3f7461ab906b90d1a34f0#rd">按地理位置分面</a>》一文最后我埋了个伏笔，写到最后的时候，我想到的是可以拿来画个元素周期表，但懒得搞，在《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484506&amp;amp;idx=1&amp;amp;sn=59bc85733a37c4aa8036e43c6d3e7523&amp;amp;chksm=ec43b51ddb343c0b7417b8fe924a86d0d974163b39fe6c8aa72504d1e0ef4c3393aa41659de4#rd">ggplot2分面之像素艺术</a>》一文里用一只火鸡展示了用图来拼像素画的思路，回应了前文的伏笔。今天继续展示一个像素画，为了纪念我的iphone5S，当然我要画个苹果🍎出来。</p>
-
-<p>这里的图，用的是emoji来画，如果你还不会用emoji来画图装逼，赶紧戳《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484416&amp;idx=1&amp;sn=c089403a2b8ab03d241b6d99ef138f50&amp;chksm=ec43b547db343c51bdae5f76b399072629720cf646ddc1c0b758c7c76d57e8b1e35b47221cf6">看完此文, 你也能够大开脑洞, 上升逼格</a>》。然后用<code>geofacet</code>来拼出像素画，这个时候，你应该想到可以拿来拼你的照片，画个某个形状的照片墙了。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1009,7 +1042,7 @@ p &lt;- ggplot(d, aes(x, y)) +
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         143 posts found
+         144 posts found
       </p>
     </div>
   </div>

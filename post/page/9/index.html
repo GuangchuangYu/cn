@@ -17,7 +17,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.24.1">
+    <meta name="generator" content="Hugo 0.25.1">
     <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
     <title>Posts</title>
     <meta name="author" content="Guangchuang Yu">
@@ -207,6 +207,92 @@ ga('send', 'pageview');
                ">
         <section class="postShorten-group main-content-wrap">
           
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/03/bed%E6%96%87%E4%BB%B6/">
+          BED文件
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-03-09T00:13:57&#43;08:00">
+      
+  March 9, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        BED的全称是Browser Extensible Data，顾名思义是为genome browser设计的，大名鼎鼎的bedtools可不是什么「床上用品」。</p>
+
+<p>BED包含有3个必须的字段和9个可选字段。</p>
+
+<p>三个字段包括：</p>
+
+<ul>
+<li>1 chrom - 染色体名字</li>
+<li>2 chromStart - 染色体起始位点</li>
+<li>3 chromEnd - 染色体终止位点</li>
+</ul>
+
+<blockquote>
+<p>这里必须指出的是<strong>chromStart</strong>是起始于0，而不是1。很多分析软件都忽略
+了这一点，会有一个碱基的位移，据我所知Homer和ChIPseeker没有这个问题，而像peakAnalyzer, ChIPpeakAnno等都有位移的问题。</p>
+</blockquote>
+
+<p>可选的9个字段包括：</p>
+
+<ul>
+<li>4 name - 名字</li>
+<li>5 score - 分值(0-1000), 用于genome browser展示时上色。</li>
+<li>6 strand - 正负链，对于ChIPseq数据来说，<strong>一般</strong>没有正负链信息。</li>
+<li>7 thickStart - 画矩形的起点</li>
+<li>8 thickEnd - 画矩形的终点</li>
+<li>9 itemRgb - RGB值</li>
+<li>10 blockCount - 子元件（比如外显子）的数目</li>
+<li>11 blockSizes - 子元件的大小</li>
+<li>12 blockStarts - 子元件的起始位点</li>
+</ul>
+
+<p>
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2017/03/bed%E6%96%87%E4%BB%B6/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
           
             
   
@@ -594,67 +680,6 @@ ga('send', 'pageview');
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/01/ggtree%E5%8F%91%E8%A1%A8/">
-          ggtree发表
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-01-22T15:10:00&#43;08:00">
-      
-  January 22, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        MEE在18号出版了今年（第8卷）第1期，ggtree正好在这一期出版，一经出版就有几条推在传播, 我也是在推特上看到，才发现，哦原来我的文章出版了。然后我又发现2017年新鲜出炉有了一篇PNAS的引用。</p>
-
-<p>我以前没接触过进化，来了现在这个实验室，发现可视化是个大问题，大家都在用AI，慢慢地抠，对于一些和进化树相关的数据，自己一点一点地在AI里面加上去。甚至于genotype table是一个框一个框地在AI里面加的。一方面画一顆树可能用掉你几天的时间，另一方面，太容易出错了，再者你花的时间并不能转化为生产力，每一次你都要这么搞！这简直就是水深火热啊！</p>
-
-<p>我也帮师兄写过一些代码，给定进化树上节点的序列，我比较父节点和子节点，把碱基或氨基酸替换写到newick树的node label，然后就可以用软件展示序列的替换情况。教会了师兄，他再去给他的师弟师妹们演示，说以后咱们可以这么干了，一个个觉得很牛逼，我内心想的是，愚蠢的人类啊，node label只能存一个信息，牛逼的方式应该是可以展示多个维度的信息，通过图层自由组合。这个时候我就产生了要写ggtree的想法。</p>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/01/ggtree%E5%8F%91%E8%A1%A8/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -736,6 +761,31 @@ ga('send', 'pageview');
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/ssh-on-android/">
+                <h3 class="media-heading">如何假装假期还在工作</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><ul>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247483886&amp;idx=1&amp;sn=cb76891dff5787025f6b99cdcc723d86&amp;chksm=ec43b0a9db3439bfcec1c9ac3c0d00e6190cf4d3d02d9d3dc767007e0ff68b4fbd8064bb0f77#rd">CS0: ChIPseq从入门到放弃</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484054&amp;idx=2&amp;sn=9a42f1094349a0bd09a5e0b7c44595e0&amp;chksm=ec43b3d1db343ac7e11d92eda3eb1837aab46f79bb109e6cdbba466e4693d041a87fa698ef1b">我在MSnbase里做了什么？</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484727&amp;amp;idx=1&amp;amp;sn=a70494626e7c329addea51ac6b82c578&amp;amp;chksm=ec43b470db343d6661ba2498e5b03d300f281cb24c82dff0b53fac62b55831ab6207e9a0c20e#rd">博士养成记</a></li>
+</ul>
+
+<p>我在上面三篇文章里，都吐槽了张大砖家，这里穿插个故事，当时有门课是去嘉道理農場，在很偏的山上，而且是封闭式，再者离港大很远。选课是先告诉砖家的，上课前也跟砖家讲，然后第一天上课了，人不在实验室，第二天砖家就来了下面这样的信：</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -979,33 +1029,6 @@ p &lt;- ggplot(d, aes(x, y)) +
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/08/apple-logo-emoji/">
-                <h3 class="media-heading">你所没见过的苹果</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Aug 8, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><img src="https://guangchuangyu.github.io/blog_images/MISC/iphone5s.jpeg" alt="" /></p>
-
-<p>5s无缘无故突然就自带3D效果，可是苹果没送我3D眼镜啊！做为一个果粉，自从乔帮主离去之后，对苹果是越来越无爱了。</p>
-
-<p>anyway，对于这部陪伴许久的手机，还是要纪念一下的。</p>
-
-<p>《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484489&amp;amp;idx=1&amp;amp;sn=36bbdee1da96aee301f217e61cc8e3b5&amp;amp;chksm=ec43b50edb343c186a58494e32ffe7df6ae9d960a37772fb5887a9c3f7461ab906b90d1a34f0#rd">按地理位置分面</a>》一文最后我埋了个伏笔，写到最后的时候，我想到的是可以拿来画个元素周期表，但懒得搞，在《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484506&amp;amp;idx=1&amp;amp;sn=59bc85733a37c4aa8036e43c6d3e7523&amp;amp;chksm=ec43b51ddb343c0b7417b8fe924a86d0d974163b39fe6c8aa72504d1e0ef4c3393aa41659de4#rd">ggplot2分面之像素艺术</a>》一文里用一只火鸡展示了用图来拼像素画的思路，回应了前文的伏笔。今天继续展示一个像素画，为了纪念我的iphone5S，当然我要画个苹果🍎出来。</p>
-
-<p>这里的图，用的是emoji来画，如果你还不会用emoji来画图装逼，赶紧戳《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484416&amp;idx=1&amp;sn=c089403a2b8ab03d241b6d99ef138f50&amp;chksm=ec43b547db343c51bdae5f76b399072629720cf646ddc1c0b758c7c76d57e8b1e35b47221cf6">看完此文, 你也能够大开脑洞, 上升逼格</a>》。然后用<code>geofacet</code>来拼出像素画，这个时候，你应该想到可以拿来拼你的照片，画个某个形状的照片墙了。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1013,7 +1036,7 @@ p &lt;- ggplot(d, aes(x, y)) +
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         143 posts found
+         144 posts found
       </p>
     </div>
   </div>
