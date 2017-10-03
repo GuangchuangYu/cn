@@ -13,10 +13,10 @@
     
     <item>
       <title>Edit partition table in NetBSD/macppc</title>
-      <link>https://guangchuangyu.github.io/cn/2007/05/edit-partition-table-in-netbsd/macppc/</link>
+      <link>https://guangchuangyu.github.io/cn/2007/05/edit-partition-netbsd-macppc/</link>
       <pubDate>Mon, 14 May 2007 04:43:00 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/2007/05/edit-partition-table-in-netbsd/macppc/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2007/05/edit-partition-netbsd-macppc/</guid>
       <description>&lt;pre&gt;&lt;code&gt;#disklabel wd0
 &lt;/code&gt;&lt;/pre&gt;
 
