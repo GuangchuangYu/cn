@@ -98,10 +98,10 @@ vim mystar.conf
     
     <item>
       <title>Powerbook G3上安装gentoo</title>
-      <link>https://guangchuangyu.github.io/cn/2005/01/powerbook-g3%E4%B8%8A%E5%AE%89%E8%A3%85gentoo/</link>
+      <link>https://guangchuangyu.github.io/cn/2005/01/powerbook-gentoo/</link>
       <pubDate>Fri, 14 Jan 2005 04:32:00 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/2005/01/powerbook-g3%E4%B8%8A%E5%AE%89%E8%A3%85gentoo/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2005/01/powerbook-gentoo/</guid>
       <description>&lt;p&gt;下面是我在PowerBook G3上安装Gentoo的全过程。。&lt;/p&gt;
 
 &lt;p&gt;自己做一个备忘录，也给想在Powerbook上装Gentoo的做一个参考。&lt;/p&gt;

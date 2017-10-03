@@ -36,6 +36,19 @@
     </item>
     
     <item>
+      <title>在64位环境下编译32位的应用程序</title>
+      <link>https://guangchuangyu.github.io/cn/2008/09/compile-32bit-applications-in-64bit-linux/</link>
+      <pubDate>Tue, 23 Sep 2008 00:18:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2008/09/compile-32bit-applications-in-64bit-linux/</guid>
+      <description>&lt;p&gt;用PITA算法做靶标预测的时候，要用到ViennaRNA包做结构的折叠，这个包是被修改过的，原来的包在我机子上是可以装的。但是这个修改过的包编译不通过。很奇怪的错误，不知道怎么改。&lt;/p&gt;
+
+&lt;p&gt;好在它有两个版本，64位和32位的。我弄到大型机上去编译32位的，也是出错，不过是命名空间的问题，我改两个头文件就可以通过了。最近又要算。那个大型机最近被搬走了。只能本机上做。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>screenshot</title>
       <link>https://guangchuangyu.github.io/cn/2007/06/screenshot/</link>
       <pubDate>Sat, 16 Jun 2007 00:18:00 +0800</pubDate>

@@ -118,6 +118,19 @@ CPU，然后数据无法同步，只有两个原因，不是硬盘就是网络�
     </item>
     
     <item>
+      <title>在64位环境下编译32位的应用程序</title>
+      <link>https://guangchuangyu.github.io/cn/2008/09/compile-32bit-applications-in-64bit-linux/</link>
+      <pubDate>Tue, 23 Sep 2008 00:18:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2008/09/compile-32bit-applications-in-64bit-linux/</guid>
+      <description>&lt;p&gt;用PITA算法做靶标预测的时候，要用到ViennaRNA包做结构的折叠，这个包是被修改过的，原来的包在我机子上是可以装的。但是这个修改过的包编译不通过。很奇怪的错误，不知道怎么改。&lt;/p&gt;
+
+&lt;p&gt;好在它有两个版本，64位和32位的。我弄到大型机上去编译32位的，也是出错，不过是命名空间的问题，我改两个头文件就可以通过了。最近又要算。那个大型机最近被搬走了。只能本机上做。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>通过局域网在linux下使用windows的程序</title>
       <link>https://guangchuangyu.github.io/cn/2008/09/%E9%80%9A%E8%BF%87%E5%B1%80%E5%9F%9F%E7%BD%91%E5%9C%A8linux%E4%B8%8B%E4%BD%BF%E7%94%A8windows%E7%9A%84%E7%A8%8B%E5%BA%8F/</link>
       <pubDate>Mon, 22 Sep 2008 01:26:00 +0800</pubDate>
@@ -203,10 +216,10 @@ vim mystar.conf
     
     <item>
       <title>Powerbook G3上安装gentoo</title>
-      <link>https://guangchuangyu.github.io/cn/2005/01/powerbook-g3%E4%B8%8A%E5%AE%89%E8%A3%85gentoo/</link>
+      <link>https://guangchuangyu.github.io/cn/2005/01/powerbook-gentoo/</link>
       <pubDate>Fri, 14 Jan 2005 04:32:00 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/2005/01/powerbook-g3%E4%B8%8A%E5%AE%89%E8%A3%85gentoo/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2005/01/powerbook-gentoo/</guid>
       <description>&lt;p&gt;下面是我在PowerBook G3上安装Gentoo的全过程。。&lt;/p&gt;
 
 &lt;p&gt;自己做一个备忘录，也给想在Powerbook上装Gentoo的做一个参考。&lt;/p&gt;

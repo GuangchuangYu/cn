@@ -2291,6 +2291,32 @@ the metric itself.&lt;/p&gt;
     </item>
     
     <item>
+      <title>创建R包</title>
+      <link>https://guangchuangyu.github.io/cn/2008/12/creat-r-package/</link>
+      <pubDate>Sun, 07 Dec 2008 05:23:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2008/12/creat-r-package/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;&amp;gt; source(&amp;quot;code.R&amp;quot;) #载入写好的代码 
+&amp;gt; package.skeleton(name=&amp;quot;pkgname&amp;quot;, list=c(&amp;quot;function_name_list&amp;quot;))
+# 生成R源码包的目录结构 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;到man目录下改*.Rd文档。latex格式。这是包和函数的帮助文档。&lt;/p&gt;
+
+&lt;p&gt;如果需要vignette文档的话。在包目录下，新建inst/doc，在里面写pkgname.Rnw文档。基本上是latex格式，不过允许你插入R代码。make的时候，会先跑代码。再自动转换成latex，再编译成pdf。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ R CMD check pkgname 
+# 检验代码和文档。这个很重要。通常一些小问题都能在这一步发现。 
+$ R CMD build pkgname 
+# 打包，源码包格式 
+$ R CMD build --binary pkgname
+#编译后打包，二进制格式。
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>用中值定理求根</title>
       <link>https://guangchuangyu.github.io/cn/2008/11/bisect-to-solve-equation/</link>
       <pubDate>Tue, 25 Nov 2008 10:40:22 +0800</pubDate>
@@ -2376,6 +2402,24 @@ Learn!&lt;/p&gt;
     </item>
     
     <item>
+      <title>教你如何藏不想被看到的日记</title>
+      <link>https://guangchuangyu.github.io/cn/2008/09/how-to-hide-diary/</link>
+      <pubDate>Tue, 23 Sep 2008 12:10:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2008/09/how-to-hide-diary/</guid>
+      <description>&lt;p&gt;有时候心情不好，就会写一些伤感的日记，然后过两天，再拿出来看一下，然后就删了。很经常这样。
+其实可以藏起来，绝对超乎一般人的想像。不过我只在本科的时候这样藏过，大叔我不喜欢藏东西。呵呵。。。&lt;/p&gt;
+
+&lt;p&gt;拿出来分享一下，不然烂在我肚子里，也是一无用处的。。。&lt;/p&gt;
+
+&lt;p&gt;YMZ的事件，告诉大家一个真理，当个电脑小白是很吃亏滴。。学会藏东西是很必要的能力。。&lt;/p&gt;
+
+&lt;p&gt;不过我不送修电脑，就是笔记本我也自己拆。。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>修改QQ登录界面</title>
       <link>https://guangchuangyu.github.io/cn/2008/09/modify-qq-login-gui/</link>
       <pubDate>Tue, 23 Sep 2008 08:55:00 +0800</pubDate>
@@ -2387,6 +2431,19 @@ Learn!&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://guangchuangyu.github.io/blog_images/uploads/2008/09/qq_ahmu.rar&#34;&gt;安医版&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2008/11/qq_ahmu.jpg&#34; alt=&#34;qq\_ahmu&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>在64位环境下编译32位的应用程序</title>
+      <link>https://guangchuangyu.github.io/cn/2008/09/compile-32bit-applications-in-64bit-linux/</link>
+      <pubDate>Tue, 23 Sep 2008 00:18:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2008/09/compile-32bit-applications-in-64bit-linux/</guid>
+      <description>&lt;p&gt;用PITA算法做靶标预测的时候，要用到ViennaRNA包做结构的折叠，这个包是被修改过的，原来的包在我机子上是可以装的。但是这个修改过的包编译不通过。很奇怪的错误，不知道怎么改。&lt;/p&gt;
+
+&lt;p&gt;好在它有两个版本，64位和32位的。我弄到大型机上去编译32位的，也是出错，不过是命名空间的问题，我改两个头文件就可以通过了。最近又要算。那个大型机最近被搬走了。只能本机上做。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -2751,10 +2808,10 @@ vim mystar.conf
     
     <item>
       <title>Powerbook G3上安装gentoo</title>
-      <link>https://guangchuangyu.github.io/cn/2005/01/powerbook-g3%E4%B8%8A%E5%AE%89%E8%A3%85gentoo/</link>
+      <link>https://guangchuangyu.github.io/cn/2005/01/powerbook-gentoo/</link>
       <pubDate>Fri, 14 Jan 2005 04:32:00 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/2005/01/powerbook-g3%E4%B8%8A%E5%AE%89%E8%A3%85gentoo/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2005/01/powerbook-gentoo/</guid>
       <description>&lt;p&gt;下面是我在PowerBook G3上安装Gentoo的全过程。。&lt;/p&gt;
 
 &lt;p&gt;自己做一个备忘录，也给想在Powerbook上装Gentoo的做一个参考。&lt;/p&gt;
