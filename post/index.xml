@@ -2402,6 +2402,21 @@ Learn!&lt;/p&gt;
     </item>
     
     <item>
+      <title>备份苹果硬盘的数据</title>
+      <link>https://guangchuangyu.github.io/cn/2008/09/data-backup/</link>
+      <pubDate>Mon, 29 Sep 2008 12:32:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2008/09/data-backup/</guid>
+      <description>&lt;p&gt;powerbook笔记本装Mac OSX 10.2，我嫌太慢了，&lt;a href=&#34;https://guangchuangyu.github.io/cn/2005/01/powerbook-gentoo/&#34;&gt;就装了gentoo&lt;/a&gt;，所有的东西都是从软件编译，费了很长的时间，CPU太慢了。原来的硬盘只有10G，后来我又换了60G的硬盘，就是现在要备份数据的硬盘了。换硬盘的时候，没有换系统，我从livecd里进去，把系统打包，并对新硬盘进行分区。然后拆机换硬盘，还是从livecd进去，把新硬盘格式化，把原来的硬盘挂上去，把打包的系统解压到新的分区里，并初始化一些系统的设定，把用户数据拷进去。换硬盘不换系统。这个当时没记录下来。后来有一次手痒，重新编译了glibc，把其它的local都去掉，只留下中文的。可是这一次搞了有问题，系统总有点莫名其妙的问题。&lt;/p&gt;
+
+&lt;p&gt;06年，我就想换个系统算了。找人刻了张os9.2的盘，自己刻了张netbsd的盘。&lt;a href=&#34;https://guangchuangyu.github.io/cn/2006/06/os9-netbsd-dual-boot&#34;&gt;装双系统&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;os9.2可以用微软的office 2001，还有ie5.5，不过都不是很好用。最爽的是可以用很多做图软件，photoshop,coredraw,illustrator等等啊。当年在合肥还帮很多同学处理过照片，因为6级考试要上传的图片要求是10k以下，很多人压到10k都看不清了，我用photoshop压到10k还能看清人.^_^.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>教你如何藏不想被看到的日记</title>
       <link>https://guangchuangyu.github.io/cn/2008/09/how-to-hide-diary/</link>
       <pubDate>Tue, 23 Sep 2008 12:10:00 +0800</pubDate>
@@ -2544,6 +2559,28 @@ server。之前使用rdesktop远程桌面，最近发现配合seamlessrdp可以�
 
 &lt;p&gt;支持human, rat, mouse, fly, yeast, zebrafish,worm, E coli,
 arabidopsis等物种。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>在linux下对NTFS进行读写</title>
+      <link>https://guangchuangyu.github.io/cn/2008/08/ntfs-3g/</link>
+      <pubDate>Sat, 09 Aug 2008 04:32:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2008/08/ntfs-3g/</guid>
+      <description>&lt;p&gt;今天发现了一个软件包叫&lt;strong&gt;&lt;em&gt;ntfs-config&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;This program allow you to easily configure all of your NTFS devices to
+allow write support via a friendly gui. For that use, it will
+configure them to use the open source ntfs-3g driver. You&amp;rsquo;ll also be
+able to easily disable this feature.
+Homepage : &lt;a href=&#34;http://givre.cabspace.com/ntfs-config&#34;&gt;http://givre.cabspace.com/ntfs-config&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Homepage of ntfs-3g :
+&lt;a href=&#34;http://www.ntfs-3g.org/&#34;&gt;http://www.ntfs-3g.org&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

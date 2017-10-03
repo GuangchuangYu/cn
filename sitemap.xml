@@ -603,6 +603,11 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2008/09/data-backup/</loc>
+    <lastmod>2008-09-29T12:32:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2008/09/how-to-hide-diary/</loc>
     <lastmod>2008-09-23T12:10:00+08:00</lastmod>
   </url>
@@ -635,6 +640,11 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/2008/08/gosemsim/</loc>
     <lastmod>2008-08-11T14:21:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/2008/08/ntfs-3g/</loc>
+    <lastmod>2008-08-09T04:32:00+08:00</lastmod>
   </url>
   
   <url>
@@ -823,14 +833,14 @@
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/categories/calculus/</loc>
-    <lastmod>2008-11-25T10:40:22+08:00</lastmod>
+    <loc>https://guangchuangyu.github.io/cn/tags/calculus/</loc>
+    <lastmod>2007-06-02T13:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/tags/calculus/</loc>
-    <lastmod>2007-06-02T13:53:00+08:00</lastmod>
+    <loc>https://guangchuangyu.github.io/cn/categories/calculus/</loc>
+    <lastmod>2008-11-25T10:40:22+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -853,14 +863,14 @@
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/categories/chipseq/</loc>
-    <lastmod>2017-08-15T12:23:16+08:00</lastmod>
+    <loc>https://guangchuangyu.github.io/cn/tags/chipseq/</loc>
+    <lastmod>2017-03-09T00:13:57+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/tags/chipseq/</loc>
-    <lastmod>2017-03-09T00:13:57+08:00</lastmod>
+    <loc>https://guangchuangyu.github.io/cn/categories/chipseq/</loc>
+    <lastmod>2017-08-15T12:23:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -961,14 +971,14 @@
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/categories/experiment/</loc>
-    <lastmod>2014-08-27T11:44:16+08:00</lastmod>
+    <loc>https://guangchuangyu.github.io/cn/tags/experiment/</loc>
+    <lastmod>2008-11-25T00:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/tags/experiment/</loc>
-    <lastmod>2008-11-25T00:53:00+08:00</lastmod>
+    <loc>https://guangchuangyu.github.io/cn/categories/experiment/</loc>
+    <lastmod>2014-08-27T11:44:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1208,7 +1218,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/netbsd/</loc>
-    <lastmod>2007-05-16T04:36:00+08:00</lastmod>
+    <lastmod>2008-09-29T12:32:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1219,14 +1229,14 @@
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/categories/ngs/</loc>
-    <lastmod>2017-06-06T07:57:46+08:00</lastmod>
+    <loc>https://guangchuangyu.github.io/cn/tags/ngs/</loc>
+    <lastmod>2014-08-27T11:44:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/tags/ngs/</loc>
-    <lastmod>2014-08-27T11:44:16+08:00</lastmod>
+    <loc>https://guangchuangyu.github.io/cn/categories/ngs/</loc>
+    <lastmod>2017-06-06T07:57:46+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1245,6 +1255,12 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/notifier/</loc>
     <lastmod>2017-04-11T12:23:16+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/ntfs/</loc>
+    <lastmod>2008-08-09T04:32:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1340,7 +1356,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/powerbook/</loc>
-    <lastmod>2007-05-14T04:43:00+08:00</lastmod>
+    <lastmod>2008-09-29T12:32:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1459,14 +1475,14 @@
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/categories/software/</loc>
-    <lastmod>2017-07-17T13:40:22+08:00</lastmod>
+    <loc>https://guangchuangyu.github.io/cn/tags/software/</loc>
+    <lastmod>2008-09-23T12:10:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/tags/software/</loc>
-    <lastmod>2008-09-23T12:10:00+08:00</lastmod>
+    <loc>https://guangchuangyu.github.io/cn/categories/software/</loc>
+    <lastmod>2017-07-17T13:40:22+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1549,14 +1565,14 @@
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/categories/windows/</loc>
-    <lastmod>2015-11-17T16:06:59+08:00</lastmod>
+    <loc>https://guangchuangyu.github.io/cn/tags/windows/</loc>
+    <lastmod>2016-11-30T00:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/tags/windows/</loc>
-    <lastmod>2016-11-30T00:53:00+08:00</lastmod>
+    <loc>https://guangchuangyu.github.io/cn/categories/windows/</loc>
+    <lastmod>2015-11-17T16:06:59+08:00</lastmod>
     <priority>0</priority>
   </url>
   
