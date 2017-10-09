@@ -375,8 +375,7 @@ ga('send', 'pageview');
   2012, 16(5):284-287
 </code></pre>
 
-<p>这里他还提到了用GOrilla跑的话，有结果出来，而clusterProfiler没结果，这一方面是前面谈到的[10, 500]区间的问题，另一方面，也是《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484414&amp;idx=1&amp;sn=096f758f04f875e25c333c345f530742&amp;chksm=ec43b2b9db343baf4e2a8640f48e7e72b3ef1b057c91c68905debb2bb54e5d2fdda62438628a#rd">why clusterProfiler fails</a>
-》里讲到的，因为clusterProfiler给出更保守、更可靠的结果。</p>
+<p>这里他还提到了用GOrilla跑的话，有结果出来，而clusterProfiler没结果，这一方面是前面谈到的[10, 500]区间的问题，另一方面，也是《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484414&amp;idx=1&amp;sn=096f758f04f875e25c333c345f530742&amp;chksm=ec43b2b9db343baf4e2a8640f48e7e72b3ef1b057c91c68905debb2bb54e5d2fdda62438628a#rd">why clusterProfiler fails</a>》里讲到的，因为clusterProfiler给出更保守、更可靠的结果。</p>
 
 <p>我打开GOrilla主页，看了下文档，<a href="http://cbl-gorilla.cs.technion.ac.il/help.html">http://cbl-gorilla.cs.technion.ac.il/help.html</a>，果然在<code>P-value threshold</code>这一块里写得很清楚：</p>
 
@@ -391,8 +390,6 @@ ga('send', 'pageview');
 <p>GOrilla并没有multiple testing correction, 而clusterProfiler用了p value adjustment和qvalue来控制multiple comparison。所以啊，clusterProfiler报出来的显著性要保守和可靠得多，出来的结果必须要比GOrilla少。</p>
 
 <h2 id="电梯">电梯</h2>
-
-<h2 id="clusterprofiler">clusterProfiler</h2>
 
 <ul>
 <li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484398&amp;idx=1&amp;sn=718137b690949ea8e17ff245afa022a5&amp;chksm=ec43b2a9db343bbfc011f1832556320575733a858f4841f1ab8dec4868ca46f85cca0434f559#rd">富集分析</a></li>
