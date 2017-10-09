@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2017/10/enrichgo-more-conserve/</loc>
+    <lastmod>2017-10-09T13:31:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/2017/10/ssh-on-android/</loc>
+    <lastmod>2017-10-04T00:49:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2017/10/chipseeker-visualization/</loc>
     <lastmod>2017-10-01T11:44:16+08:00</lastmod>
   </url>
@@ -893,7 +903,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/clusterprofiler/</loc>
-    <lastmod>2017-09-27T19:11:00+08:00</lastmod>
+    <lastmod>2017-10-09T13:31:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1085,7 +1095,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/</loc>
-    <lastmod>2017-10-01T11:44:16+08:00</lastmod>
+    <lastmod>2017-10-09T13:31:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1145,7 +1155,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/linux/</loc>
-    <lastmod>2017-07-09T07:57:46+08:00</lastmod>
+    <lastmod>2017-10-04T00:49:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1349,7 +1359,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/post/</loc>
-    <lastmod>2017-10-01T11:44:16+08:00</lastmod>
+    <lastmod>2017-10-09T13:31:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1409,7 +1419,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/r/</loc>
-    <lastmod>2017-10-01T11:44:16+08:00</lastmod>
+    <lastmod>2017-10-09T13:31:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1494,6 +1504,12 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/sofware/</loc>
     <lastmod>2017-03-06T23:53:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/ssh/</loc>
+    <lastmod>2017-10-04T00:49:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
