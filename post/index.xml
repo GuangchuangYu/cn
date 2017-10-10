@@ -6,10 +6,42 @@
     <description>Recent content in Posts on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 04 Oct 2017 00:49:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 09 Oct 2017 13:31:00 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>enrichGO出不来结果？没结果也是正确的结果</title>
+      <link>https://guangchuangyu.github.io/cn/2017/10/enrichgo-more-conserve/</link>
+      <pubDate>Mon, 09 Oct 2017 13:31:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/10/enrichgo-more-conserve/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Dear Dr. Guangchuang Yu, I write to you regarding a doubt concerning the enrichGO function from Clustalprofiler package. I have been used this package before, but now I&amp;rsquo;m using the same R script and I have an error message.&lt;/p&gt;
+
+&lt;p&gt;This is the command I use:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;go.bp &amp;lt;- enrichGO(gene = gene.df$ENSEMBL, universe = universe.ENSEMBLID, keytype = &amp;lsquo;ENSEMBL&amp;rsquo;, OrgDb = org.Ce.eg.db, ont = &amp;lsquo;BP&amp;rsquo;, pAdjustMethod = &amp;lsquo;BH&amp;rsquo;, pvalueCutoff = 0.01, qvalueCutoff = 0.05, readable=T)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;and the error is the following one:&lt;/p&gt;
+
+&lt;p&gt;No gene set have size &amp;gt; 10 &amp;hellip;
+&amp;ndash;&amp;gt; return NULL&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;My input list is attached to this email (101 genes in total). When I use this list in a web resource such as GOrilla it gives to me the proper GO terms.&lt;/p&gt;
+
+&lt;p&gt;Thank you very much in advance. Best regards,&lt;/p&gt;
+
+&lt;p&gt;María&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;最近clusterProfiler用户的问题，这个问题还蛮普遍。这个我在《&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484414&amp;amp;idx=1&amp;amp;sn=096f758f04f875e25c333c345f530742&amp;amp;chksm=ec43b2b9db343baf4e2a8640f48e7e72b3ef1b057c91c68905debb2bb54e5d2fdda62438628a#rd&#34;&gt;why clusterProfiler fails&lt;/a&gt;》中也有谈到，并不是能出结果就是好的。没有结果也是一种结果。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>如何假装假期还在工作</title>
