@@ -225,6 +225,63 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustworthy/">
+          R binary is untrustworthy
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2014-07-24T04:22:35&#43;08:00">
+      
+  July 24, 2014
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/software">Software</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        去年ubuntu下apt-get了R-3.0.2, 用了没多久就发现了system命令有问题，通常情况下调用系统命令是正常的，但是我调用bowtie的时候，就会报错：
+Warning: Could not open read file &quot;/tmp/8156.inpipe1&quot; for reading; skipping&hellip; Error: Encountered internal Bowtie 2 exception (#1) Command: /usr/bin/bowtie2-align &ndash;wrapper basic-0 -p 12 -x /ssd/genomes/hg19 -S tmp.sam -1 /tmp/8156.inpipe1 -2 /tmp/8156.inpipe2  这很明显是因为fasta.gz文件，bowtie需要调用zcat来读的，在R里调用bowtie就找不到好基友zcat的输出管道。当时没在意，R不干，那就找shell。 去年用NMF包的时候，报出了人类不友好的错误，联系了包作者Gaujoux，在作者的帮助下，找到了是doParallel包的问题：
+&gt; library(doParallel) &gt; Loading required package: foreach foreach: simple, scalable parallel programming from Revolution Analytics Use Revolution R for scalability, fault tolerance and more. <a href="http://www.revolutionanalytics.com">http://www.revolutionanalytics.com</a> Loading required package: iterators Loading required package: parallel &gt; registerDoParallel(11) &gt; &gt; foreach(i = 1:10) %dopar% { getwd() } &gt; *** caught segfault *** address 0x7fbeb6d399d0, cause &lsquo;memory not mapped&rsquo;  其实parallel包中用mclapply也是同样报错。于是又把维护deb包的Dirk拉进来，Dirk是Rcpp的作者，高人就是不一样，看了错误，立刻就指出是BLAS库的问题。
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustworthy/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2014/06/use-linux-desktop-again/">
           use linux desktop again
         </a>
@@ -584,69 +641,6 @@ X设计的原生包管理系统非Homebrew莫属，它会尽量依赖系统里�
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2013/07/permanent-head-damage-to-be/">
-          Permanent Head Damage to be
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2013-07-30T16:18:26&#43;08:00">
-      
-  July 30, 2013
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/personal">Personal</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        看似寻常最奇崛，成如容易却艰辛。在暨大工作了几年，发几篇小文章，觉得要找个地方读PhD，是件手到擒来的事，结果却花了整整一年的时间，事实证明像我这样的科研屌丝男，举步唯艰啊。
-去年7月份就开始在计划这个事情，我几乎想都没想就联系了计算生物所的JD
-Han，紧接着就是面试，第一次尝试用英文去讲slides，从早上10点讲到中午12点。感觉还好吧，因为有听到Han说impressive，而她的学生又说经常看我blog。看上去还是蛮顺利的，然而最终reject了我，而且没有给我任何原因。</p>
-
-<p>我去上海是非常低姿态的，说要面试，我就飞过去，当时想要是面试OK了，可能会让我留下来先了解一下正在进行的project，所以没有听老婆的话买返程票，结果从上海回广州，就变成了人在囧途，买不到火车票，就去南昌转车，结果遇到两趟车都是慢车，无空调，还无座。这个事情教会了我，不能太低姿态。</p>
-
-<p>我一直在想为什么会去上海，为什么会联系Han，或许是心理学上所谓的契可尼效应，俗称偷不如偷不着，当年考上生没中，心中依然有执念？我自认为早已释然，but
-maybe..，至于Han，我在研一的时候，去北大听过她的讲座，被系统生物学这个概念忽悠了，可能因此内心抱有幻想。
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2013/07/permanent-head-damage-to-be/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -728,6 +722,45 @@ maybe..，至于Han，我在研一的时候，去北大听过她的讲座，被�
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/set_axis_text_color/">
+                <h3 class="media-heading">映射变量给axis上色</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>小伙伴发来这个文章中的图，想要实现类似的图，用变量给axis text上色，并生成legend：</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/R/ggplot2/Screenshot 2017-07-04 14.10.55.png" alt="" /></p>
+
+<p>这个可以说ggplot2是不支持的，aes映射不会被应用于axis上，而theme也不支持aes映射，你只能自己手动搞个color vector传给theme来上色，但这无法生成legend。</p>
+
+<p>我只能打开脑洞，legend借助于额外的图层来生成，但这个额外的图层又不是我们想要在图形上展示的，这又是个无米之炊，我能想到的就是让图层透明，实际有，但你看不到，当然这样自动生成的legend也会看不到，但legend可以后面再修改，于是这不支持的事情，就通过变通变得可能：</p>
+
+<pre><code class="language-r">require(ggplot2)
+
+set.seed(2017-07-04)
+d &lt;- data.frame(x = letters[1:5], y = rnorm(5), 
+		group = sample(c(&quot;Control&quot;, &quot;Treatment&quot;), 5, replace=TRUE),
+		type = sample(LETTERS[1:2], 5, replace=TRUE)
+)
+
+p &lt;- ggplot(d, aes(x,y)) + 
+	geom_col(aes(fill=group))
+</code></pre>
+
+<p>这个代码很好懂，画一个柱状图，按<code>group</code>上色。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -985,36 +1018,6 @@ maybe..，至于Han，我在研一的时候，去北大听过她的讲座，被�
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/ggplot2-set-font/">
-                <h3 class="media-heading">设置ggplot所有字体</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Sep 9, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>最近公众号「生信媛」和「生信宝典」的小伙伴在说ggplot2无法一次性设置所有字体，<code>theme</code>只能设置axis text, title这些，而搞不了<code>geom_text</code>，<code>geom_text</code>必须要手工输入<code>family=XXX</code>来设置，因为不能使用<code>theme</code>来更换，也就是说没办法通过后处理来设定，比较麻烦。</p>
-
-<p>这显然是不对的，后处理必须可以的，一次性满足所有愿望也只是因为没人写个神奇的函数而已。于是我就动手写了个<code>set_font</code>的函数。</p>
-
-<p>假设我们有下图：</p>
-
-<pre><code class="language-r">library(ggplot2)
-d &lt;- data.frame(x=rnorm(10), y=rnorm(10), lab=LETTERS[1:10])
-p &lt;- ggplot(d, aes(x, y)) + 
-    geom_text(aes(label=lab, color=lab), size=10) + 
-	geom_text(aes(y, x, label=lab), size=3)
-</code></pre>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1022,7 +1025,7 @@ p &lt;- ggplot(d, aes(x, y)) +
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         145 posts found
+         146 posts found
       </p>
     </div>
   </div>

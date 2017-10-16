@@ -1,5 +1,9 @@
 
 
+  
+    
+  
+
 
   
 
@@ -19,25 +23,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.24.1">
     <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
-    <title>Gosemsim</title>
+    <title>映射变量给axis上色</title>
     <meta name="author" content="Guangchuang Yu">
     <meta name="keywords" content="">
 
     <link rel="icon" href="https://guangchuangyu.github.io/cn/favicon.png">
     
-      <link rel="alternate" type="application/rss+xml" title="RSS" href="https://guangchuangyu.github.io/cn/tags/gosemsim/index.xml">
-    
 
     
-    <meta name="description" content="Guangchuang&#39;s Chinese Blog">
-    <meta property="og:description" content="Guangchuang&#39;s Chinese Blog">
+    <meta name="description" content="小伙伴发来这个文章中的图，想要实现类似的图，用变量给axis text上色，并生成legend：
+
+
+
+这个可以说ggplot2是不支持的，aes映射不会被应用于axis上，而theme也不支持aes映射，你只能自己手动搞个color vector传给theme来上色，但这无法生成legend。
+
+我只能打开脑洞，legend借助于额外的图层来生成，但这个额外的图层又不是我们想要在图形上展示的，这又是个无米之炊，我能想到的就是让图层透明，实际有，但你看不到，当然这样自动生成的legend也会看不到，但legend可以后面再修改，于是这不支持的事情，就通过变通变得可能：
+
+require(ggplot2)
+
+set.seed(2017-07-04)
+d &lt;- data.frame(x = letters[1:5], y = rnorm(5), 
+		group = sample(c(&quot;Control&quot;, &quot;Treatment&quot;), 5, replace=TRUE),
+		type = sample(LETTERS[1:2], 5, replace=TRUE)
+)
+
+p &lt;- ggplot(d, aes(x,y)) &#43; 
+	geom_col(aes(fill=group))
+
+
+这个代码很好懂，画一个柱状图，按group上色。
+
+">
+    <meta property="og:description" content="小伙伴发来这个文章中的图，想要实现类似的图，用变量给axis text上色，并生成legend：
+
+
+
+这个可以说ggplot2是不支持的，aes映射不会被应用于axis上，而theme也不支持aes映射，你只能自己手动搞个color vector传给theme来上色，但这无法生成legend。
+
+我只能打开脑洞，legend借助于额外的图层来生成，但这个额外的图层又不是我们想要在图形上展示的，这又是个无米之炊，我能想到的就是让图层透明，实际有，但你看不到，当然这样自动生成的legend也会看不到，但legend可以后面再修改，于是这不支持的事情，就通过变通变得可能：
+
+require(ggplot2)
+
+set.seed(2017-07-04)
+d &lt;- data.frame(x = letters[1:5], y = rnorm(5), 
+		group = sample(c(&quot;Control&quot;, &quot;Treatment&quot;), 5, replace=TRUE),
+		type = sample(LETTERS[1:2], 5, replace=TRUE)
+)
+
+p &lt;- ggplot(d, aes(x,y)) &#43; 
+	geom_col(aes(fill=group))
+
+
+这个代码很好懂，画一个柱状图，按group上色。
+
+">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Gosemsim">
-    <meta property="og:url" content="/tags/gosemsim/">
+    <meta property="og:title" content="映射变量给axis上色">
+    <meta property="og:url" content="/2017/10/set_axis_text_color/">
     <meta property="og:site_name" content="Guangchuang Yu">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Guangchuang Yu">
-    <meta name="twitter:description" content="Guangchuang&#39;s Chinese Blog">
+    <meta name="twitter:description" content="小伙伴发来这个文章中的图，想要实现类似的图，用变量给axis text上色，并生成legend：
+
+
+
+这个可以说ggplot2是不支持的，aes映射不会被应用于axis上，而theme也不支持aes映射，你只能自己手动搞个color vector传给theme来上色，但这无法生成legend。
+
+我只能打开脑洞，legend借助于额外的图层来生成，但这个额外的图层又不是我们想要在图形上展示的，这又是个无米之炊，我能想到的就是让图层透明，实际有，但你看不到，当然这样自动生成的legend也会看不到，但legend可以后面再修改，于是这不支持的事情，就通过变通变得可能：
+
+require(ggplot2)
+
+set.seed(2017-07-04)
+d &lt;- data.frame(x = letters[1:5], y = rnorm(5), 
+		group = sample(c(&quot;Control&quot;, &quot;Treatment&quot;), 5, replace=TRUE),
+		type = sample(LETTERS[1:2], 5, replace=TRUE)
+)
+
+p &lt;- ggplot(d, aes(x,y)) &#43; 
+	geom_col(aes(fill=group))
+
+
+这个代码很好懂，画一个柱状图，按group上色。
+
+">
     
       <meta name="twitter:creator" content="@guangchuangyu">
     
@@ -84,7 +152,7 @@ ga('send', 'pageview');
 
   <body>
     <div id="blog">
-      <header id="header" data-behavior="1">
+      <header id="header" data-behavior="4">
   <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
   <div class="header-title">
     <a class="header-title-link" href="https://guangchuangyu.github.io/cn/">Guangchuang Yu</a>
@@ -104,7 +172,7 @@ ga('send', 'pageview');
   
 </header>
 
-      <nav id="sidebar" data-behavior="1">
+      <nav id="sidebar" data-behavior="4">
   <div class="sidebar-container">
     
       <div class="sidebar-profile">
@@ -200,43 +268,25 @@ ga('send', 'pageview');
 </nav>
 
       
-        
 
-      
-      <div id="main" data-behavior="1"
+      <div id="main" data-behavior="4"
         class="
                hasCoverMetaIn
                ">
-        
-          <section class="postShorten-group main-content-wrap">
-            
-            
-              
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
   
-    
+    <h1 class="post-title" itemprop="headline">
+      映射变量给axis上色
+    </h1>
+  
+  <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-10-16T12:23:16&#43;08:00">
       
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/08/source-code-reuse/">
-          关于重用代码与文章抄袭
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-08-20T20:27:00&#43;08:00">
-      
-  August 20, 2017
+  October 16, 2017
 
     </time>
   
@@ -245,482 +295,171 @@ ga('send', 'pageview');
   
     <span>in</span>
     
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
     
   
 
 
 </div>
 
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484733&amp;amp;idx=1&amp;amp;sn=b43739e02ef7e7892f196aa51a1c2e59&amp;amp;chksm=ec43b47adb343d6c98b240a0dfed9abe1ab46e230535a44f2b47bf69cc7b45520f7c7fd38231#rd">大学教授力挺抄袭，强行洗地到裤衩都不要了，到底图什么？</a>》这篇文章发出来之后，引起大家讨论，有一些小伙伴截了屏给我看。所以我想有必要再讲几句，我这篇文章写<strong>两个方面</strong>，一方面是重用代码，一方面是文章抄袭，这两方面可以是不相关的，这里的文章抄袭并不特指你抄了代码。</p>
-
-<p>X教授《<a href="http://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484733&amp;idx=2&amp;sn=b6c3a81f38c0f60433e8ccd721a7ca3b&amp;chksm=ec43b47adb343d6c0bee4ae222af03353329173b9ae87c588d6bb19f95619dc46b829d0af1b6#rd">如何姿势正确的使用他人代码？</a>》，总结起来两个点，一是开源代码随便用，二是文章有引用/致谢就OK。这两个点都是错误的。</p>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/08/source-code-reuse/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/un-fucking-believable/">
-          我像是一颗棋子，进退任由你决定
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-07-21T21:51:43&#43;08:00">
-      
-  July 21, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/biology">Biology</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/research">Research</a>
-    
-  
-
-
 </div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>小伙伴发来这个文章中的图，想要实现类似的图，用变量给axis text上色，并生成legend：</p>
 
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <blockquote>
-<p>we’re talking about people who already are skating on the ethical edge (as scientists, we should always respond to serious criticism; if we don’t, that’s bordering on ethical violation already) &ndash; <a href="http://www.stat.columbia.edu/~gelman/">Andrew Gelman</a>对此事的评论</p>
-</blockquote>
+<p><img src="https://guangchuangyu.github.io/blog_images/R/ggplot2/Screenshot 2017-07-04 14.10.55.png" alt="" /></p>
 
-<p>我原以为邓岳是个学生，我的本意是要给他一个教训，制止这种行为，我不出来给他这个教训，早晚他也会为自己的投机付出代价，而且如果以后出现多次抄袭，直接会导致无法继续在学术界生存。后来我发现他还是个讲师，我觉得更不应该了，编辑部必须要对这件事做出处罚。这就是我的本意，让邓岳认识到错误，并为此付出应有的代价。</p>
+<p>这个可以说ggplot2是不支持的，aes映射不会被应用于axis上，而theme也不支持aes映射，你只能自己手动搞个color vector传给theme来上色，但这无法生成legend。</p>
 
-<h2 id="搞得我像祥林嫂一样到处找人说">搞得我像祥林嫂一样到处找人说</h2>
+<p>我只能打开脑洞，legend借助于额外的图层来生成，但这个额外的图层又不是我们想要在图形上展示的，这又是个无米之炊，我能想到的就是让图层透明，实际有，但你看不到，当然这样自动生成的legend也会看不到，但legend可以后面再修改，于是这不支持的事情，就通过变通变得可能：</p>
 
-<p>然而<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484618&amp;idx=1&amp;sn=bcb696bba156bc433cae638a461bdcdb&amp;chksm=ec43b58ddb343c9b546cf7c4b3d032da610ce89d0b8c1778cb723cf74cdfa11c11bbedf3557a#rd">编辑一直不做为</a>，就逼得我只能借助于舆论，我本无意于去网上传播这件事，我写的博客，都是针对编辑部，最后我对编辑提议的处理方式表达不满之后，编辑就<strong>消失了</strong>，再也不回应邮件。我只能再写博客，再发动舆论，联系之前高调出来说撤稿了43篇文章的那些编辑，推特上也骚扰他们。微博上也AT西电官方微博，求转发之类的。虽然我没有想去闹大事情（尼马我也不想花时间扯这些蛋啊），但BMC就是逼着我跟他斗，而事情闹越大，对抄袭的人来说，越是不利，搞不好学术界就不用混了。谁都不傻，所以终于坐不住给我写信。</p>
+<pre><code class="language-r">require(ggplot2)
 
-<p><img src="http://guangchuangyu.github.io/blog_images/Bioconductor/GOSemSim/2017-07-20-001828_1280x800_scrot.png" alt="" /></p>
+set.seed(2017-07-04)
+d &lt;- data.frame(x = letters[1:5], y = rnorm(5), 
+		group = sample(c(&quot;Control&quot;, &quot;Treatment&quot;), 5, replace=TRUE),
+		type = sample(LETTERS[1:2], 5, replace=TRUE)
+)
+
+p &lt;- ggplot(d, aes(x,y)) + 
+	geom_col(aes(fill=group))
+</code></pre>
+
+<p>这个代码很好懂，画一个柱状图，按<code>group</code>上色。</p>
+
+<p></p>
 
 <blockquote>
-<p>其中说到“1、2月份和您邮件沟通”，只是说了按照CRAN policy改了代码，并把我列为作者，而后面我回应把我名字从软件包作者中去掉而已。</p>
+<p>devtools::install_github(&ldquo;guangchuangyu/yyplot&rdquo;)  ## to install yyplot</p>
 </blockquote>
 
-<p>他的邮件大概讲了和编辑并无操作，软件包已经按要求更新，犯错是源自于无知。</p>
+<p>为了实现文章开头说的功能，我在<code>yyplot</code>里写了<code>set_axis_text_color</code>函数：</p>
 
-<h2 id="这事最后怎么处理">这事最后怎么处理？</h2>
+<ul>
+<li>p:你画的ggplot图</li>
+<li>colors：上什么色</li>
+<li>mapping：用什么变量来生成legend</li>
+<li>fake_aes: 用什么假aes来生成legend，这个假aes是你传入的p里没用过的</li>
+<li>axis:给哪个axis上色，可以是&rsquo;x&rsquo;,&lsquo;y&rsquo;或&rsquo;xy&rsquo;</li>
+</ul>
 
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/07/un-fucking-believable/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
+<pre><code class="language-r">require(yyplot)
 
-            
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/plagiarism-chain/">
-          辣眼睛，一篇抄袭引发的系列血案！
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-07-20T21:51:43&#43;08:00">
-      
-  July 20, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/biology">Biology</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/research">Research</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <blockquote>
-<p>50%的利润,它就铤而走险；</p>
-
-<p>100%的利润,它就敢践踏一切人间法律；</p>
-
-<p>300%的利润,它就敢犯任何罪行,甚至绞首的危险.</p>
-
-<p>&ndash;马克思 《资本论》</p>
-</blockquote>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/R/hposim_dosim/hposim_paper.png" alt="" /></p>
-
-<p>ppiPre抄袭GOSemSim，然后我发现他还发了一个叫HPOSim的R包，又是语义相似性度量，我的第一反应是必须还抄我的，他要是有能力写出来，就不会抄GOSemSim了。然而我看了一下代码，确实不是抄我的！<strong>这他妈就奇了怪了!</strong></p>
-
-<h2 id="必须还是抄的">必须还是抄的！</h2>
-
-<p>做语义相似性度量也就那么几个包，我看了一遍之后，发现<strong>HPOSim</strong>抄了<strong>DOSim</strong>，你妹啊，用心良苦，同样/相似的东西换不同的包来抄！抄袭惯犯了，事实证明，走捷径的人，是不可能好好走路的，一旦尝到了甜头，必然是铤而走险！</p>
-
-<p><strong>以下两个截屏，大家感受一下，左边是HPOSim，右边是DOSim：</strong></p>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/07/plagiarism-chain/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/bmc_plagiarism_2/">
-          Editor你的良心不会痛吗？
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-07-19T21:51:43&#43;08:00">
-      
-  July 19, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/biology">Biology</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/research">Research</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <blockquote>
-<p>抄袭的是<strong>西安电子科技大学</strong>的讲师，靠着两三篇抄袭的文章，已经是副教授了。</p>
-
-<p>这种抄袭的事情就应该暴光，这个事件中，更可恶的是BMC，BMC这种保护抄袭的行为更应该暴光，大家不要再给BMC送钱了，还不如发PLoS One。</p>
-</blockquote>
-
-<p>公众号有人评论说：</p>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/GOSemSim/WechatIMG2.jpeg" alt="" /></p>
-
-<p>这竟然也被捕捉到了，确实他在2012年的时候，就在copy我的代码，然后打R包的时候，还请教了我：</p>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/GOSemSim/ppiPre_dengyue.png" alt="" /></p>
-
-<h2 id="抄了我的代码-之后厚颜无耻地感谢我说学了很多东西-他的良心真的不会痛吗">抄了我的代码，之后厚颜无耻地感谢我说学了很多东西，他的良心真的不会痛吗？</h2>
-
-<p><img src="https://media.giphy.com/media/EvsmQokxE8wi4/giphy.gif" alt="" /></p>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/07/bmc_plagiarism_2/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/bmc_plagiarism_1/">
-          学术期刊的学术不端，你见过吗？
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-07-18T21:51:43&#43;08:00">
-      
-  July 18, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/biology">Biology</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/research">Research</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <h2 id="编辑部的恶才是最大的恶">编辑部的恶才是最大的恶！</h2>
-
-<p>大家是否还记得2015年BioMed Central高调地撤稿了43篇文章，站在道德制高点对审稿过程进行了指责，吐了学术不端一脸口水？</p>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/screenshots/Screenshot 2017-07-17 19.34.25.png" alt="" /></p>
-
-<p>就在这个时候，我写信去<strong>BMC Systems Biology</strong>告别人抄袭，编辑部信誓旦旦，他们对这种事情是非常认真对待的，然而接下来的剧情却反转了，在我证据甩他们一脸的时候，他们拖着不处理，拖多久呢，<strong>超过1年！</strong>一直在给抄袭者洗地，最好在没有告知我的情况下，静悄悄地出了个所谓的<strong>erratum</strong>。</p>
-
-<p>erratum是什么？字典里这样写：</p>
-
-<pre><code>erratum |ɛˈrɑːtəm|
-noun (pl.errata |ɛˈrɑːtə| )
-an error in printing or writing.
+cols &lt;- c(A = &quot;red&quot;, B = &quot;blue&quot;)
+p2 &lt;- set_axis_text_color(p, colors=cols,
+		mapping=~type, fake_aes='color', axis=&quot;x&quot;)
 </code></pre>
 
-<p>我告的是抄袭，plagiarism:</p>
+<p>最后再把输入的表格也画在图上，用<code>grid::tableGrob</code>来画，用<code>ggimage::geom_subview</code>来嵌图，三张图组合起来：</p>
 
-<pre><code>plagiarism |ˈpleɪdʒərɪz(ə)m|
-noun [ mass noun ]
-the practice of taking someone else's work or ideas and passing them off as one's own. 
+<pre><code class="language-r">require(ggimage)
+require(gridExtra)
+
+p3 &lt;- p2 + 
+	geom_subview(tableGrob(d, rows=NULL), 
+				 x=4, y=0.95)
+
+grid.arrange(grid.arrange(p, p2, ncol=1), 
+	p3, ncol=2)
 </code></pre>
 
-<h3 id="结果-plagiarism-到了编辑部那里变成了-erratum">结果<strong>plagiarism</strong>到了编辑部那里变成了<strong>erratum</strong>.</h3>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/07/bmc_plagiarism_1/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
+<p><img src="https://guangchuangyu.github.io/blog_images/R/ggplot2/Screenshot 2017-07-04 16.48.08.png" alt="" /></p>
+              
+              <center><span class="zaln"><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&mid=2247484170&idx=1&sn=ce5f7eb6df66d79661276a64bf25b4bc&chksm=ec43b24ddb343b5b2877574153aeccd049a6824716063883edb35c2338bd32c067caf3885f53#rd" class="zb">赞赏</a></span></center>
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
             
               
-  
-    
-      
-        
-      
-    
-  
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/yyplot/">yyplot</a>
 
+  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/ggplot2/">ggplot2</a>
 
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2016/12/%E8%B7%A8%E7%89%A9%E7%A7%8D%E8%AE%A1%E7%AE%97%E5%9F%BA%E5%9B%A0%E7%9B%B8%E4%BC%BC%E6%80%A7/">
-          跨物种计算基因相似性
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2016-12-07T00:53:00&#43;08:00">
-      
-  December 7, 2016
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <blockquote>
-<p>Hi,</p>
-
-<p>I know this question has been asked before a long time ago and I don&rsquo;t see an answer of that question in the mailing list or in the vignette of GOsemsim package. So I was wondering what is the easiest possible way of calculating GO semantic similarity value for orthologus gene pairs between two species using the above R package or any other package you know of. I am not doing this for less annotated species I need to calculate that for orthologus genes between Human and Mouse (both of which are well annotated IMHO). So I would much appreciate it if anyone who has already done this before can point me to a resource which already has pre-calculated semantic similarity values for Mouse and Human orthologues or has inbuilt code to do that.</p>
-
-<p>Thanks &amp; regards</p>
-</blockquote>
-
-<p>这是Bioconductor support site上的<a href="https://support.bioconductor.org/p/90063/">问题</a>，问的是他想要计算人类和老鼠的直系同源基因通过GO注释来计算语义相似性，问GOSemSim是否支持，这个答案是yes and no。</p>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2016/12/%E8%B7%A8%E7%89%A9%E7%A7%8D%E8%AE%A1%E7%AE%97%E5%9F%BA%E5%9B%A0%E7%9B%B8%E4%BC%BC%E6%80%A7/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
+                  </div>
+                
               
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2016/07/evolution-of-my-bioc-packages/">
-          Evolution of my BioC packages
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2016-07-13T21:06:59&#43;08:00">
-      
-  July 13, 2016
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        发现Youtube上有一个视频叫<a href="https://www.youtube.com/watch?v=MYTblx-5Yog">Evolution of clusterProfiler</a>, 是Landon Wilkins用<a href="http://gource.io/">Gource</a>做的。于是我也来玩一下，看一下自己这几年码代码的过程。</p>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2016/07/evolution-of-my-bioc-packages/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
             
-            
-  <div class="pagination-bar">
-    <ul class="pagination">
+            <div class="post-actions-wrap">
+  <nav>
+    <ul class="post-actions post-action-nav">
       
-      
-        <li class="pagination-next">
-          <a class="btn btn--default btn--small" href="https://guangchuangyu.github.io/cn/tags/gosemsim/page/2/">
-            <span>OLDER POSTS</span>
-            <i class="fa fa-angle-right text-base icon-ml"></i>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+            <i class="fa fa-angle-left"></i>
+            <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+          </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2017/10/enrichgo-more-conserve/" data-tooltip="enrichGO出不来结果？没结果也是正确的结果">
+          
+            <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+            <i class="fa fa-angle-right"></i>
           </a>
         </li>
       
-      <li class="pagination-number">page 1 of 2</li>
     </ul>
-  </div>
+  </nav>
+  <ul class="post-actions post-action-share">
+    
+      <li class="post-action hide-lg hide-md hide-sm">
+        <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+          <i class="fa fa-share-alt"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f10%2fset_axis_text_color%2f">
+          <i class="fa fa-google-plus"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f10%2fset_axis_text_color%2f">
+          <i class="fa fa-facebook-official"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f10%2fset_axis_text_color%2f">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+    
+    
+      <li class="post-action">
+        <a class="post-action-btn btn btn--default" href="#disqus_thread">
+          <i class="fa fa-comment-o"></i>
+        </a>
+      </li>
+    
+    <li class="post-action">
+      
+        <a class="post-action-btn btn btn--default" href="#">
+      
+        <i class="fa fa-list"></i>
+      </a>
+    </li>
+  </ul>
+</div>
 
 
-          </section>
-        
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
     &copy; 2017 Guangchuang Yu. All Rights Reserved
@@ -728,6 +467,92 @@ the practice of taking someone else's work or ideas and passing them off as one'
 </footer>
 
       </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  <nav>
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+            <i class="fa fa-angle-left"></i>
+            <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+          </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2017/10/enrichgo-more-conserve/" data-tooltip="enrichGO出不来结果？没结果也是正确的结果">
+          
+            <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+  <ul class="post-actions post-action-share">
+    
+      <li class="post-action hide-lg hide-md hide-sm">
+        <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+          <i class="fa fa-share-alt"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f10%2fset_axis_text_color%2f">
+          <i class="fa fa-google-plus"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f10%2fset_axis_text_color%2f">
+          <i class="fa fa-facebook-official"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f10%2fset_axis_text_color%2f">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+    
+    
+      <li class="post-action">
+        <a class="post-action-btn btn btn--default" href="#disqus_thread">
+          <i class="fa fa-comment-o"></i>
+        </a>
+      </li>
+    
+    <li class="post-action">
+      
+        <a class="post-action-btn btn btn--default" href="#">
+      
+        <i class="fa fa-list"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <ul class="share-options">
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f10%2fset_axis_text_color%2f">
+        <i class="fa fa-google-plus"></i><span>Share on Google Plus</span>
+      </a>
+    </li>
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f10%2fset_axis_text_color%2f">
+        <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+      </a>
+    </li>
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f10%2fset_axis_text_color%2f">
+        <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
     </div>
     
     <div id="about">
@@ -1119,6 +944,32 @@ $(document).ready(function() {
   });
 });
 </script>
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/guangchuangyu.github.io\/cn\/2017\/10\/set_axis_text_color\/';
+          
+            this.page.identifier = '\/2017\/10\/set_axis_text_color\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'gcyu';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
 
 
 
