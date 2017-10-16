@@ -23,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.24.1">
     <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
-    <title>GOSemSim</title>
+    <title>QQ plot</title>
     <meta name="author" content="Guangchuang Yu">
     <meta name="keywords" content="">
 
@@ -31,49 +31,25 @@
     
 
     
-    <meta name="description" content="第一次写软件包，计算基因和GO的语义相似性。
+    <meta name="description" content="最近在读＜Modern Applied Statistics With S-PLUS＞，115页讲到Q-Q图时，书中给出了一个Trellis的实现。
 
-实现Wang的方法，基于GO的图结构。
-以及四种基于信息含量的计算方法（Resnik, Jiang, Lin, Rel）。
-
-可以从Bioconductor下载到。
-http://bioconductor.org/packages/release/bioc/html/GOSemSim.html
-http://bioconductor.org/packages/devel/bioc/html/GOSemSim.html
-
-支持human, rat, mouse, fly, yeast, zebrafish,worm, E coli,
-arabidopsis等物种。
+Q-Q图很简单，把样本数据和理论分布算出来的quantiles，画个散点图而已。分别用base graph和ggplot2实现。
 
 ">
-    <meta property="og:description" content="第一次写软件包，计算基因和GO的语义相似性。
+    <meta property="og:description" content="最近在读＜Modern Applied Statistics With S-PLUS＞，115页讲到Q-Q图时，书中给出了一个Trellis的实现。
 
-实现Wang的方法，基于GO的图结构。
-以及四种基于信息含量的计算方法（Resnik, Jiang, Lin, Rel）。
-
-可以从Bioconductor下载到。
-http://bioconductor.org/packages/release/bioc/html/GOSemSim.html
-http://bioconductor.org/packages/devel/bioc/html/GOSemSim.html
-
-支持human, rat, mouse, fly, yeast, zebrafish,worm, E coli,
-arabidopsis等物种。
+Q-Q图很简单，把样本数据和理论分布算出来的quantiles，画个散点图而已。分别用base graph和ggplot2实现。
 
 ">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="GOSemSim">
-    <meta property="og:url" content="/2008/08/gosemsim/">
+    <meta property="og:title" content="QQ plot">
+    <meta property="og:url" content="/2011/08/qq-plot/">
     <meta property="og:site_name" content="Guangchuang Yu">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Guangchuang Yu">
-    <meta name="twitter:description" content="第一次写软件包，计算基因和GO的语义相似性。
+    <meta name="twitter:description" content="最近在读＜Modern Applied Statistics With S-PLUS＞，115页讲到Q-Q图时，书中给出了一个Trellis的实现。
 
-实现Wang的方法，基于GO的图结构。
-以及四种基于信息含量的计算方法（Resnik, Jiang, Lin, Rel）。
-
-可以从Bioconductor下载到。
-http://bioconductor.org/packages/release/bioc/html/GOSemSim.html
-http://bioconductor.org/packages/devel/bioc/html/GOSemSim.html
-
-支持human, rat, mouse, fly, yeast, zebrafish,worm, E coli,
-arabidopsis等物种。
+Q-Q图很简单，把样本数据和理论分布算出来的quantiles，画个散点图而已。分别用base graph和ggplot2实现。
 
 ">
     
@@ -249,14 +225,14 @@ ga('send', 'pageview');
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      GOSemSim
+      QQ plot
     </h1>
   
   <div class="postShorten-meta post-meta">
   
-    <time itemprop="datePublished" datetime="2008-08-11T14:21:00&#43;08:00">
+    <time itemprop="datePublished" datetime="2011-08-02T08:23:16&#43;08:00">
       
-  August 11, 2008
+  August 2, 2011
 
     </time>
   
@@ -265,7 +241,9 @@ ga('send', 'pageview');
   
     <span>in</span>
     
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/bioinformatics">Bioinformatics</a>
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
     
   
 
@@ -276,30 +254,37 @@ ga('send', 'pageview');
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>第一次写软件包，计算基因和GO的语义相似性。</p>
+              <p>最近在读<a href="http://book.douban.com/subject/4237062/">＜Modern Applied Statistics With S-PLUS＞</a>，115页讲到Q-Q图时，书中给出了一个Trellis的实现。</p>
 
-<p>实现<a href="http://bioinformatics.oxfordjournals.org/cgi/content/full/23/10/1274">Wang</a>的方法，基于GO的图结构。
-以及四种基于信息含量的计算方法（Resnik, Jiang, Lin, Rel）。</p>
-
-<p>可以从Bioconductor下载到。
-<a href="http://bioconductor.org/packages/release/bioc/html/GOSemSim.html">http://bioconductor.org/packages/release/bioc/html/GOSemSim.html</a>
-<a href="http://bioconductor.org/packages/devel/bioc/html/GOSemSim.html">http://bioconductor.org/packages/devel/bioc/html/GOSemSim.html</a></p>
-
-<p>支持human, rat, mouse, fly, yeast, zebrafish,worm, E coli,
-arabidopsis等物种。</p>
+<p>Q-Q图很简单，把样本数据和理论分布算出来的quantiles，画个散点图而已。分别用base graph和ggplot2实现。</p>
 
 <p></p>
 
-<p>下载量统计如下：</p>
+<pre><code class="language-r">qqplot &lt;- function(y, distribution=qnorm) {
+  x &lt;- distribution(ppoints(y))
+  plot(x, sort(y),
+       xlab=&quot;Theoretical Quantiles&quot;,
+       ylab=&quot;Sample Quantiles&quot;,
+       main=&quot;Normal Q-Q Plot&quot;
+       )
+  lines(y,y)
+}
 
-<p><img src="https://bioconductor.org/packages/stats/bioc/GOSemSim/GOSemSim_2009_stats.png" alt="" /></p>
+qqplot2 &lt;- function(y, distribution=qnorm) {
+  require(ggplot2)
+  x &lt;- distribution(ppoints(y))
+  d &lt;- data.frame(x=x, y=sort(y))
+  p &lt;- ggplot(d, aes(x=x, y=y)) +
+    geom_point() +
+      geom_line(aes(x=x, y=x)) +
+        ggtitle(title=&quot;Normal Q-Q Plot&quot;) +
+          xlab(&quot;Theoretical Quantiles&quot;) +
+            ylab(&quot;Sample Quantiles&quot;)
+  return(p)
+}
+</code></pre>
 
-<h2 id="citation">Citation</h2>
-
-<p><strong>Yu G</strong><sup>†</sup>, Li F<sup>†</sup>, Qin Y, Bo X<sup>*</sup>, Wu Y and Wang S<sup>*</sup>. <a href="http://bioinformatics.oxfordjournals.org/content/26/7/976">GOSemSim: an R package for measuring semantic similarity among GO terms and gene products</a>. <strong><em>Bioinformatics</em></strong>. 2010, 26(7):976-978.</p>
-
-<p><script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
-<div class="altmetric-embed" data-badge-popover="right" data-badge-type="donut" data-altmetric-id="100979"></div></p>
+<p><img src="http://guangchuangyu.github.io/blog_images//2011/08/qqplot2.png" alt="" /></p>
               
               <center><span class="zaln"><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&mid=2247484170&idx=1&sn=ce5f7eb6df66d79661276a64bf25b4bc&chksm=ec43b24ddb343b5b2877574153aeccd049a6824716063883edb35c2338bd32c067caf3885f53#rd" class="zb">赞赏</a></span></center>
             </div>
@@ -312,9 +297,7 @@ arabidopsis等物种。</p>
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/gosemsim/">GOSemSim</a>
-
-  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/bioc/">BioC</a>
+  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/ggplot2/">ggplot2</a>
 
                   </div>
                 
@@ -326,7 +309,7 @@ arabidopsis等物种。</p>
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2008/08/88-bachelor/" data-tooltip="从概率的角度看 如何告别单身">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2011/08/love-function-plot/" data-tooltip="love function plot">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -334,7 +317,7 @@ arabidopsis等物种。</p>
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2008/08/ntfs-3g/" data-tooltip="在linux下对NTFS进行读写">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2011/07/ibw2011/" data-tooltip="IBW2011">
           
             <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
             <i class="fa fa-angle-right"></i>
@@ -351,17 +334,17 @@ arabidopsis等物种。</p>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2008%2f08%2fgosemsim%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2011%2f08%2fqq-plot%2f">
           <i class="fa fa-google-plus"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2008%2f08%2fgosemsim%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2011%2f08%2fqq-plot%2f">
           <i class="fa fa-facebook-official"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2008%2f08%2fgosemsim%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2011%2f08%2fqq-plot%2f">
           <i class="fa fa-twitter"></i>
         </a>
       </li>
@@ -407,7 +390,7 @@ arabidopsis等物种。</p>
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2008/08/88-bachelor/" data-tooltip="从概率的角度看 如何告别单身">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2011/08/love-function-plot/" data-tooltip="love function plot">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -415,7 +398,7 @@ arabidopsis等物种。</p>
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2008/08/ntfs-3g/" data-tooltip="在linux下对NTFS进行读写">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2011/07/ibw2011/" data-tooltip="IBW2011">
           
             <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
             <i class="fa fa-angle-right"></i>
@@ -432,17 +415,17 @@ arabidopsis等物种。</p>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2008%2f08%2fgosemsim%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2011%2f08%2fqq-plot%2f">
           <i class="fa fa-google-plus"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2008%2f08%2fgosemsim%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2011%2f08%2fqq-plot%2f">
           <i class="fa fa-facebook-official"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2008%2f08%2fgosemsim%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2011%2f08%2fqq-plot%2f">
           <i class="fa fa-twitter"></i>
         </a>
       </li>
@@ -469,17 +452,17 @@ arabidopsis等物种。</p>
       <div id="share-options-bar" class="share-options-bar" data-behavior="4">
   <ul class="share-options">
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2008%2f08%2fgosemsim%2f">
+      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2011%2f08%2fqq-plot%2f">
         <i class="fa fa-google-plus"></i><span>Share on Google Plus</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2008%2f08%2fgosemsim%2f">
+      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2011%2f08%2fqq-plot%2f">
         <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2008%2f08%2fgosemsim%2f">
+      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2011%2f08%2fqq-plot%2f">
         <i class="fa fa-twitter"></i><span>Share on Twitter</span>
       </a>
     </li>
@@ -882,9 +865,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/guangchuangyu.github.io\/cn\/2008\/08\/gosemsim\/';
+          this.page.url = 'https:\/\/guangchuangyu.github.io\/cn\/2011\/08\/qq-plot\/';
           
-            this.page.identifier = '\/2008\/08\/gosemsim\/'
+            this.page.identifier = '\/2011\/08\/qq-plot\/'
           
         };
         (function() {

@@ -2165,6 +2165,19 @@ contour_plot(17*x^2-16*abs(x)*y+17*y^2-225, [x,-sqrt(17),sqrt(17)],[y,-15*sqrt(1
     </item>
     
     <item>
+      <title>QQ plot</title>
+      <link>https://guangchuangyu.github.io/cn/2011/08/qq-plot/</link>
+      <pubDate>Tue, 02 Aug 2011 08:23:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2011/08/qq-plot/</guid>
+      <description>&lt;p&gt;最近在读&lt;a href=&#34;http://book.douban.com/subject/4237062/&#34;&gt;＜Modern Applied Statistics With S-PLUS＞&lt;/a&gt;，115页讲到Q-Q图时，书中给出了一个Trellis的实现。&lt;/p&gt;
+
+&lt;p&gt;Q-Q图很简单，把样本数据和理论分布算出来的quantiles，画个散点图而已。分别用base graph和ggplot2实现。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>IBW2011</title>
       <link>https://guangchuangyu.github.io/cn/2011/07/ibw2011/</link>
       <pubDate>Mon, 18 Jul 2011 04:26:00 +0800</pubDate>
