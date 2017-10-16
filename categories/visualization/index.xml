@@ -6,10 +6,27 @@
     <description>Recent content in Visualization on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 Oct 2017 12:23:16 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 16 Oct 2017 18:06:59 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/categories/visualization/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>我的名字和我的姓氏</title>
+      <link>https://guangchuangyu.github.io/cn/2017/10/ygc/</link>
+      <pubDate>Mon, 16 Oct 2017 18:06:59 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/10/ygc/</guid>
+      <description>&lt;p&gt;大量的生信公众号在各种linux入门、perl入门、python入门、R入门、软件安装、跑跑示例代码、流程。我自己平时根本不会去看这些生信号，在《&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484921&amp;amp;idx=1&amp;amp;sn=b729438c35c7d491ef75fdf8dab5f09f&amp;amp;chksm=ec43b4bedb343da85853e234b5eb86267276e78a6b53dd1360367cca94d764955594ef86e910#rd&#34;&gt;s01 - Counting DNA Nucleotides&lt;/a&gt;》一文发出去后，就被爪哥说不能跟着走低端路线，囧rz&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2017/WechatIMG93.jpeg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;还好我多半写的是自己的东西，目前还没有掉进「低端」的坑里，今天继续画图，唯有赏心悦目的图能抚慰人心。&lt;/p&gt;
+
+&lt;p&gt;我写了一个包叫《&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484164&amp;amp;idx=1&amp;amp;sn=030612f5a84120ef407401ff6fad715f&amp;amp;chksm=ec43b243db343b5524c911327bdcbe5f01034095d549d43d530decc5676faecdbd449dfac026#rd&#34;&gt;ggimage：ggplot2中愉快地使用图片&lt;/a&gt;》，从此图上嵌图（ggplot对象）或图片变得轻而易举。某一天写着玩，写了个《&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484079&amp;amp;idx=1&amp;amp;sn=2f37b54ad09b966ccb9e8bf93ebd6643&amp;amp;chksm=ec43b3e8db343afed5d55c25aaaba233f3339686e9eba0e65f004a5ca58ac13bba7ba9b5bacc#rd&#34;&gt;geom_pokemon: 使用pokemon画图&lt;/a&gt;》的图层，引起了人民群众的尖叫，国外有妹纸用来可视化NBA数据《&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484149&amp;amp;idx=1&amp;amp;sn=0058b64bc269a05937ba97dccd9c0e23&amp;amp;chksm=ec43b3b2db343aa4799e68b1f5c51cde7b4b5452fe69158b93de6f7b368738ecbc2dcf275abc#rd&#34;&gt;大开眼界+多图慎点：Pokémon x NBA and other fun with ggimage&lt;/a&gt;》，国内有汉子用来可视化复旦大学考研的报考专业《&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;amp;mid=2247484594&amp;amp;amp;idx=1&amp;amp;amp;sn=d35474d1ff032b54152935ef55088340&amp;amp;amp;chksm=ec43b5f5db343ce311e0d54e1b936cb4982f952ce38e940ba6c3cf354436c91b1ae22fc17ea1#rd&#34;&gt;你的专业是那一只Pokémon神兽？&lt;/a&gt;》。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>映射变量给axis上色</title>
@@ -475,9 +492,11 @@ contour_plot(17*x^2-16*abs(x)*y+17*y^2-225, [x,-sqrt(17),sqrt(17)],[y,-15*sqrt(1
       <pubDate>Tue, 02 Aug 2011 08:23:16 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2011/08/qq-plot/</guid>
-      <description>&lt;p&gt;最近在读&lt;a href=&#34;http://book.douban.com/subject/4237062/&#34;&gt;＜Modern Applied Statistics With S-PLUS＞&lt;/a&gt;，115页讲到Q-Q图时，书中给出了一个Trellis的实现。&lt;/p&gt;
+      <description>&lt;p&gt;虽然R提供了很多作图函数，但自己实现一下，是非常好的体验，而且能够让我们了解其中的细节。&lt;/p&gt;
 
-&lt;p&gt;Q-Q图很简单，把样本数据和理论分布算出来的quantiles，画个散点图而已。分别用base graph和ggplot2实现。&lt;/p&gt;
+&lt;p&gt;最近在读&lt;a href=&#34;http://book.douban.com/subject/4237062/&#34;&gt;＜Modern Applied Statistics With S-PLUS＞&lt;/a&gt;，115页讲到Q-Q图时，书中给出了一个Trellis的实现。（Trellis是S/S-PLUS的可视化系统，在R里的对等实现是lattice包）。&lt;/p&gt;
+
+&lt;p&gt;我们知道一组数字，可以算4分位数，分别是25%， 50%（中位数）， 75%，它等于该组数字中所有数值由小到大排列后第X%的数字，事实上每个数字都可以对应一个X%，Q-Q图很简单，把样本数据和理论分布算出来的quantiles，画个散点图而已。分别用base graph和ggplot2实现，图中三个图分别由系统函数qqnorm，和这里定义的qqplot, qqplot2画出来。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

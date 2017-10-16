@@ -228,6 +228,71 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2016/11/%E6%97%A0%E4%B8%AD%E7%94%9F%E6%9C%89windows%E7%89%88r%E5%8C%85/">
+          无中生有windows版R包
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2016-11-30T00:53:00&#43;08:00">
+      
+  November 30, 2016
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        之前帮助高老师实现比对序列的做图，把代码打包为R包seqcombo，方便安装使用。花两小时的作品，发现还有些用户在使用 -，-</p>
+
+<p>之前有人联系我说安装不上，我觉得不应该有这个问题，因为是纯R代码代码，不涉及到编译，源码包安装不应该有问题。但既然有人问，又都是windows用户，我想可以给他们提供编译好的windows包，简化安装过程（这么体贴用户，我都要被自己感动了）。</p>
+
+<p>放在CRAN或Bioconductor上的R包，CRAN和Bioconductor会编译出不同平台的二进制包，但seqcobo放在github上，只有源代码，没有预编译好的包，但没有不是问题，我编译好放上去就行了。</p>
+
+<p>但问题是我没有windows！多年来一直是OSX和linux，MacBook Pro跑Arch Linux，一台iMac跑OSX，我自己根本没有跑windows的机器，所以难为无米之炊，借台机器总是有的，但总不能每次一更新，就拷个代码去别人的机器上打包，再拷回来上传到网上，想想也是蛋疼。</p>
+
+<p>所以没有windows，这事干起来还不太容易，！在想怎么来无中生有生出个windows包出来的时候，我想起了rhub，也是因为没有windows，之前就用rhub来进行windows平台的R check，在把代码push到CRAN或Bioconductor之前，我总会测试没问题了，再提交代码过去，而rhub正好可以给我提供windows平台的检测。</p>
+
+<p>
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2016/11/%E6%97%A0%E4%B8%AD%E7%94%9F%E6%9C%89windows%E7%89%88r%E5%8C%85/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+            
+              
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2016/11/vertical-dendrogram-in-ggtree/">
           vertical dendrogram in ggtree
         </a>
@@ -585,67 +650,6 @@ ga('send', 'pageview');
 </article>
 
             
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2016/10/update-r-packages/">
-          Update R packages
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2016-10-19T09:53:00&#43;08:00">
-      
-  October 19, 2016
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        更新R较为无痛的方法已经在<a href="http://guangchuangyu.github.io/2014/11/hello-yosemite/">hello yosemite</a>一文中提及。今天Bioconductor发布3.4版本，又是更新R包的时候了。</p>
-
-<p>之前为了<a href="https://guangchuangyu.github.io/2016/07/how-to-bug-author/">吐槽</a>很多人问问题都是在使用早已不维护的老版本，写了<a href="https://cran.r-project.org/web/packages/rvcheck/">rvcheck</a>来帮忙检查版本。既然能够帮我们检查版本，自然能够帮忙升级。</p>
-
-<p>使用<code>rvcheck::update_all()</code>可以自动更新CRAN, Bioconductor和Github上的R包。其实可以放到系统任务里，每月自动更新一次，然后就可以完全不用管升级的事情。</p>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2016/10/update-r-packages/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
             
   <div class="pagination-bar">
     <ul class="pagination">
@@ -728,6 +732,31 @@ ga('send', 'pageview');
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/ygc/">
+                <h3 class="media-heading">我的名字和我的姓氏</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>大量的生信公众号在各种linux入门、perl入门、python入门、R入门、软件安装、跑跑示例代码、流程。我自己平时根本不会去看这些生信号，在《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484921&amp;idx=1&amp;sn=b729438c35c7d491ef75fdf8dab5f09f&amp;chksm=ec43b4bedb343da85853e234b5eb86267276e78a6b53dd1360367cca94d764955594ef86e910#rd">s01 - Counting DNA Nucleotides</a>》一文发出去后，就被爪哥说不能跟着走低端路线，囧rz&hellip;</p>
+
+<p><img src="http://guangchuangyu.github.io/blog_images/2017/WechatIMG93.jpeg" alt="" /></p>
+
+<p>还好我多半写的是自己的东西，目前还没有掉进「低端」的坑里，今天继续画图，唯有赏心悦目的图能抚慰人心。</p>
+
+<p>我写了一个包叫《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484164&amp;idx=1&amp;sn=030612f5a84120ef407401ff6fad715f&amp;chksm=ec43b243db343b5524c911327bdcbe5f01034095d549d43d530decc5676faecdbd449dfac026#rd">ggimage：ggplot2中愉快地使用图片</a>》，从此图上嵌图（ggplot对象）或图片变得轻而易举。某一天写着玩，写了个《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484079&amp;idx=1&amp;sn=2f37b54ad09b966ccb9e8bf93ebd6643&amp;chksm=ec43b3e8db343afed5d55c25aaaba233f3339686e9eba0e65f004a5ca58ac13bba7ba9b5bacc#rd">geom_pokemon: 使用pokemon画图</a>》的图层，引起了人民群众的尖叫，国外有妹纸用来可视化NBA数据《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484149&amp;idx=1&amp;sn=0058b64bc269a05937ba97dccd9c0e23&amp;chksm=ec43b3b2db343aa4799e68b1f5c51cde7b4b5452fe69158b93de6f7b368738ecbc2dcf275abc#rd">大开眼界+多图慎点：Pokémon x NBA and other fun with ggimage</a>》，国内有汉子用来可视化复旦大学考研的报考专业《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484594&amp;amp;idx=1&amp;amp;sn=d35474d1ff032b54152935ef55088340&amp;amp;chksm=ec43b5f5db343ce311e0d54e1b936cb4982f952ce38e940ba6c3cf354436c91b1ae22fc17ea1#rd">你的专业是那一只Pokémon神兽？</a>》。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1005,25 +1034,6 @@ p &lt;- ggplot(d, aes(x,y)) +
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/color-in-gseaplot/">
-                <h3 class="media-heading">gseaplot自定义颜色</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Sep 9, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484730&amp;amp;idx=1&amp;amp;sn=48b8c24b6cfb6162f8fb3f3861ddfe1b&amp;amp;chksm=ec43b47ddb343d6b37581fa81b0bf11b5141a446333b1b961ef1ad4f80da4c4732d7bc3432c2#rd">听说你有RNAseq数据却不知道怎么跑GSEA</a>》一文有小伙伴问封面的gseaplot能否换颜色，于是我就随手支持了。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1031,7 +1041,7 @@ p &lt;- ggplot(d, aes(x,y)) +
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         147 posts found
+         148 posts found
       </p>
     </div>
   </div>

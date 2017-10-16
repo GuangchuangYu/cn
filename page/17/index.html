@@ -225,6 +225,103 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/07/a-simple-gene-finder/">
+          a simple gene finder
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2011-07-10T09:04:46&#43;08:00">
+      
+  July 10, 2011
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/conference">conference</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        上了几天的课，<a href="http://ibw2011.fmmu.edu.cn/schedule.htm">http://ibw2011.fmmu.edu.cn/schedule.htm</a>
+今天就上完了，只完成了project 1，想写gibbs sampling，但是没搞明白，汗。</p>
+
+<p>这个纯属练习用，没啥实用价值。</p>
+
+<blockquote>
+<p>Course Projects:</p>
+
+<p>Project 1: Implementation of a simple gene finder</p>
+
+<p>GOAL</p>
+
+<p>Build a simple codon-usage based gene finder for finding genes in
+E.coli.</p>
+
+<p>Procedure</p>
+
+<p>Collect 100 gene sequences from the bacterium E. coli in the genbank
+(<a href="http://www.ncbi.nlm.nihh.gov">http://www.ncbi.nlm.nihh.gov</a>). Compute the codon usage table based on
+these genes (and the translated protein sequences from them); Build a
+probabilistic model based on the codon usages; Implement a random
+sequence model in which the nucleotide frequency is computed from the
+100 E. coli genes. For a given DNA sequence (and one selected reading
+frame), compare your model with a random sequence model; Results that
+you should submit:</p>
+
+<p>Two FASTA files for the collected 100 genes and 100 translated protein
+sequences; The printed codon usage table; A program named ECgnfinder,
+running with the syntax as ECgnfinder –i inputfile</p>
+
+<p>Inputfile stands for the name of input file, which should contain one
+DNA sequence in FASTA file format; the program should be able to
+report an error message if the input file is in the wrong format.</p>
+
+<p>The output should be printed to the standard output as (xxx stands for
+the likelihood)</p>
+
+<p>ORF1: xxx ORF2: xxx</p>
+</blockquote>
+
+<p>
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2011/07/a-simple-gene-finder/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/06/screen-shot/">
           screen shot
         </a>
@@ -636,78 +733,6 @@ the metric itself.</p>
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/12/creat-r-package/">
-          创建R包
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2008-12-07T05:23:16&#43;08:00">
-      
-  December 7, 2008
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <pre><code>&gt; source(&quot;code.R&quot;) #载入写好的代码 
-&gt; package.skeleton(name=&quot;pkgname&quot;, list=c(&quot;function_name_list&quot;))
-# 生成R源码包的目录结构 
-</code></pre>
-
-<p>到man目录下改*.Rd文档。latex格式。这是包和函数的帮助文档。</p>
-
-<p>如果需要vignette文档的话。在包目录下，新建inst/doc，在里面写pkgname.Rnw文档。基本上是latex格式，不过允许你插入R代码。make的时候，会先跑代码。再自动转换成latex，再编译成pdf。</p>
-
-<pre><code>$ R CMD check pkgname 
-# 检验代码和文档。这个很重要。通常一些小问题都能在这一步发现。 
-$ R CMD build pkgname 
-# 打包，源码包格式 
-$ R CMD build --binary pkgname
-#编译后打包，二进制格式。
-</code></pre>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2008/12/creat-r-package/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -789,6 +814,31 @@ $ R CMD build --binary pkgname
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/ygc/">
+                <h3 class="media-heading">我的名字和我的姓氏</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>大量的生信公众号在各种linux入门、perl入门、python入门、R入门、软件安装、跑跑示例代码、流程。我自己平时根本不会去看这些生信号，在《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484921&amp;idx=1&amp;sn=b729438c35c7d491ef75fdf8dab5f09f&amp;chksm=ec43b4bedb343da85853e234b5eb86267276e78a6b53dd1360367cca94d764955594ef86e910#rd">s01 - Counting DNA Nucleotides</a>》一文发出去后，就被爪哥说不能跟着走低端路线，囧rz&hellip;</p>
+
+<p><img src="http://guangchuangyu.github.io/blog_images/2017/WechatIMG93.jpeg" alt="" /></p>
+
+<p>还好我多半写的是自己的东西，目前还没有掉进「低端」的坑里，今天继续画图，唯有赏心悦目的图能抚慰人心。</p>
+
+<p>我写了一个包叫《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484164&amp;idx=1&amp;sn=030612f5a84120ef407401ff6fad715f&amp;chksm=ec43b243db343b5524c911327bdcbe5f01034095d549d43d530decc5676faecdbd449dfac026#rd">ggimage：ggplot2中愉快地使用图片</a>》，从此图上嵌图（ggplot对象）或图片变得轻而易举。某一天写着玩，写了个《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484079&amp;idx=1&amp;sn=2f37b54ad09b966ccb9e8bf93ebd6643&amp;chksm=ec43b3e8db343afed5d55c25aaaba233f3339686e9eba0e65f004a5ca58ac13bba7ba9b5bacc#rd">geom_pokemon: 使用pokemon画图</a>》的图层，引起了人民群众的尖叫，国外有妹纸用来可视化NBA数据《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484149&amp;idx=1&amp;sn=0058b64bc269a05937ba97dccd9c0e23&amp;chksm=ec43b3b2db343aa4799e68b1f5c51cde7b4b5452fe69158b93de6f7b368738ecbc2dcf275abc#rd">大开眼界+多图慎点：Pokémon x NBA and other fun with ggimage</a>》，国内有汉子用来可视化复旦大学考研的报考专业《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484594&amp;amp;idx=1&amp;amp;sn=d35474d1ff032b54152935ef55088340&amp;amp;chksm=ec43b5f5db343ce311e0d54e1b936cb4982f952ce38e940ba6c3cf354436c91b1ae22fc17ea1#rd">你的专业是那一只Pokémon神兽？</a>》。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1066,25 +1116,6 @@ p &lt;- ggplot(d, aes(x,y)) +
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/color-in-gseaplot/">
-                <h3 class="media-heading">gseaplot自定义颜色</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Sep 9, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484730&amp;amp;idx=1&amp;amp;sn=48b8c24b6cfb6162f8fb3f3861ddfe1b&amp;amp;chksm=ec43b47ddb343d6b37581fa81b0bf11b5141a446333b1b961ef1ad4f80da4c4732d7bc3432c2#rd">听说你有RNAseq数据却不知道怎么跑GSEA</a>》一文有小伙伴问封面的gseaplot能否换颜色，于是我就随手支持了。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1092,7 +1123,7 @@ p &lt;- ggplot(d, aes(x,y)) +
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         147 posts found
+         148 posts found
       </p>
     </div>
   </div>
