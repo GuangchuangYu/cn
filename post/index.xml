@@ -1056,7 +1056,7 @@ I downloaded KEGG pathway dataset to apply fisher exact test. however, genes are
 
 &lt;p&gt;首先我们要读树，用&lt;code&gt;treeio&lt;/code&gt;的&lt;code&gt;read.newick&lt;/code&gt;，它和&lt;code&gt;read.tree&lt;/code&gt;的不同之处是，加入了参数&lt;code&gt;node.label&lt;/code&gt;，当&lt;code&gt;node.label&lt;/code&gt;存的不是&lt;code&gt;label&lt;/code&gt;，而是&lt;code&gt;bootstrap&lt;/code&gt;等数字型的时候，你可以传入&lt;code&gt;node.label=&#39;support&#39;&lt;/code&gt;，这样它会把node label解析为support value，另存为树注释数据，而不是和tip label混在一起。label变量只能存为字符型，因为和tip label混了，而字符型会让数字操作稍微复杂点。所以我们要用&lt;code&gt;read.newick&lt;/code&gt;。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;tree &amp;lt;- read.newick(&amp;quot;RMI.phy_phyml_tree_rooted_labeled.txt&amp;quot;, node.label=&#39;support&#39;)
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;tree &amp;lt;- read.newick(&amp;quot;RMI.phy_phyml_tree_rooted_labeled.txt&amp;quot;, node.label=&#39;support&#39;)
 root &amp;lt;- getRoot(tree@phylo)
 
 p &amp;lt;- ggtree(tree, color=&amp;quot;black&amp;quot;, size=1.5, linetype=1,  ladderize=TRUE) + 
