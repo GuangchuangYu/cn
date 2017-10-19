@@ -228,6 +228,71 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/invisible-layer/">
+          你的图上有一双看不见的手
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-10-19T12:06:59&#43;08:00">
+      
+  October 19, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        下面这张吐槽LaTeX的图，太深得我心。</p>
+
+<p><img src="http://dirkriehle.com/wp-content/uploads/2016/05/latex.png" alt="" /></p>
+
+<p>而ggplot2这种文本跑出界的事情，也太常见，以至于我在<a href="https://guangchuangyu.github.io/ggtree/faq/">ggtree的FAQ</a>专门指出来，要用<code>xlim</code>给x轴分配多点空间，这是由于数据是数据空间，而文本是像素空间。你画图的画布由数据空间决定，然后文本就从指定的位置（除了坐标，还取决于你align的方式和adjustment微调）开始打出来，一不小心就打出界了。这一点我在FAQ里，除了告诉你用<code>xlim</code>解决之外，我也给出了上面的解释，所以我一直强调，不要以为我在教ggtree，我其实是在教ggplot2。</p>
+
+<p>后面就有人问了ggplot2字体溢出的事情，他所遇到的溢出，似乎更不应该发生，因为是坐标轴上的字体溢出，然而产生的原因是一样的，解决方案也是一样的，请用力猛戳《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484089&amp;idx=1&amp;sn=f6e11d54a18e96a94145a2b802c37dc1&amp;chksm=ec43b3fedb343ae89e3630900033f055af4bbe211897076291e351ae18cc89b2ddf7651ee0be#rd">ggplot2字体溢出的那点破事</a>》。</p>
+
+<p>
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2017/10/invisible-layer/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+            
+              
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/ygc/">
           我的名字和我的姓氏
         </a>
@@ -643,69 +708,6 @@ p &lt;- ggplot(d, aes(x,y)) +
 </article>
 
             
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/goodbye-joyplot/">
-          再见joyplot
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-09-15T00:53:00&#43;08:00">
-      
-  September 15, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        微信公众号平台大部分人都是抄来抄去的二手资料，像joyplot这种特别新的东西，就很难看到，我试着搜索了一下，发现只有三篇，都是我写的。</p>
-
-<ul>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484586&amp;idx=1&amp;sn=2c4aaca92147d901fb5421cdb99d16de&amp;chksm=ec43b5eddb343cfb34c907ddfdba74e129ee7ef896219a888a56b36738a0f6062bb2cf0ab99f#rd">joyplot：一种波涛汹涌，哦不对，是山峰叠峦的可视化方式</a></li>
-<li><a href="http://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484682&amp;idx=1&amp;sn=21944039080612bed8bda7b3070015b3&amp;chksm=ec43b44ddb343d5bcba5c22e33b6b26ce8bfee6e7b913115c19e0e14e930699ab602445d0e89#rd">ggjoy facet with ggtree</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484750&amp;amp;idx=1&amp;amp;sn=19aa83580ad91e18d3fe23cc42675628&amp;amp;chksm=ec43b409db343d1f189bf1d1e6499ac8bd034ce52e90454d7e2b568b6901b5d2f5bdf31fa887#rd">joyplot：GSEA的结果也能快乐起来</a></li>
-</ul>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/09/goodbye-joyplot/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
             
   <div class="pagination-bar">
     <ul class="pagination">
@@ -781,6 +783,31 @@ p &lt;- ggplot(d, aes(x,y)) +
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/invisible-layer/">
+                <h3 class="media-heading">你的图上有一双看不见的手</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>下面这张吐槽LaTeX的图，太深得我心。</p>
+
+<p><img src="http://dirkriehle.com/wp-content/uploads/2016/05/latex.png" alt="" /></p>
+
+<p>而ggplot2这种文本跑出界的事情，也太常见，以至于我在<a href="https://guangchuangyu.github.io/ggtree/faq/">ggtree的FAQ</a>专门指出来，要用<code>xlim</code>给x轴分配多点空间，这是由于数据是数据空间，而文本是像素空间。你画图的画布由数据空间决定，然后文本就从指定的位置（除了坐标，还取决于你align的方式和adjustment微调）开始打出来，一不小心就打出界了。这一点我在FAQ里，除了告诉你用<code>xlim</code>解决之外，我也给出了上面的解释，所以我一直强调，不要以为我在教ggtree，我其实是在教ggplot2。</p>
+
+<p>后面就有人问了ggplot2字体溢出的事情，他所遇到的溢出，似乎更不应该发生，因为是坐标轴上的字体溢出，然而产生的原因是一样的，解决方案也是一样的，请用力猛戳《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484089&amp;idx=1&amp;sn=f6e11d54a18e96a94145a2b802c37dc1&amp;chksm=ec43b3fedb343ae89e3630900033f055af4bbe211897076291e351ae18cc89b2ddf7651ee0be#rd">ggplot2字体溢出的那点破事</a>》。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1060,29 +1087,6 @@ p &lt;- ggplot(d, aes(x,y)) +
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/highlight-clade-of-unrooted-tree/">
-                <h3 class="media-heading">highlight clade of unrooted tree</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Sep 9, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>最初github上用户（<a href="https://github.com/JustGitting">@JustGitting</a>）报告说<code>geom_hilight</code>和<code>geom_cladelabel</code>不能用于unrooted树。详见：<a href="https://github.com/GuangchuangYu/ggtree/issues/118">https://github.com/GuangchuangYu/ggtree/issues/118</a></p>
-
-<p>我表示这确实是不行的，然后这就变成了feature request。我继续表示unrooted tree在ggtree中的实现并不好，我只实现了equal angle algorithm，在写注释图层之前，如果我有时间的话，我希望可以先实现更好的layout algorithm。</p>
-
-<p>然后JustGitting表示，他发现python的ETE和R的ape，在无根树的可视化上好像都不太行。问我有什么unrooted的layout algorithm，有没有什么参考文献，或许他可以帮忙实现，因为他觉得ggtree是最成熟的软件。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1090,7 +1094,7 @@ p &lt;- ggplot(d, aes(x,y)) +
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         149 posts found
+         150 posts found
       </p>
     </div>
   </div>
