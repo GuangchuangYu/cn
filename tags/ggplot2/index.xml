@@ -77,6 +77,21 @@ p &amp;lt;- ggplot(d, aes(x,y)) +
     </item>
     
     <item>
+      <title>正经的图千篇一律，不正经的叔万里挑一</title>
+      <link>https://guangchuangyu.github.io/cn/2017/09/geofacet_index/</link>
+      <pubDate>Wed, 20 Sep 2017 14:13:35 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/09/geofacet_index/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/geofacet/Screenshot 2017-10-17 10.31.23.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这个题目可以放好多不正经的图，我在这个公众号里面已经写过太多，比如
+《&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;amp;mid=2247483816&amp;amp;amp;idx=1&amp;amp;amp;sn=cbfbc284f4edb165ac65f7926f7f8fcc&amp;amp;amp;chksm=ec43b0efdb3439f91ec4f570f7be65e442e21e403481b969d69449464ae1986c7983551de04d#rd&#34;&gt;邪恶的曲线&lt;/a&gt;》和它的3D版本，
+《&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;amp;mid=2247484823&amp;amp;amp;idx=1&amp;amp;amp;sn=4af972da15535c1d7dcf837ace320592&amp;amp;amp;chksm=ec43b4d0db343dc6ec2e622523a5aabb67f25e4b9e4b93a67ab37125570fbab907741351da18#rd&#34;&gt;3D版邪恶的曲线&lt;/a&gt;》，但这里不涉及太多，只有&lt;code&gt;geofacet&lt;/code&gt;这个包为例。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>再见joyplot</title>
       <link>https://guangchuangyu.github.io/cn/2017/09/goodbye-joyplot/</link>
       <pubDate>Fri, 15 Sep 2017 00:53:00 +0800</pubDate>

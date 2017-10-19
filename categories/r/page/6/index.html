@@ -228,6 +228,80 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/04/ggimage/">
+          ggimage：ggplot2中愉快地使用图片
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-04-11T10:06:59&#43;08:00">
+      
+  April 11, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <h1 id="导言">导言</h1>
+
+<p>本文介绍了<strong>ggimage</strong>包，允许在<strong>ggplot2</strong>作图时嵌入图片，并支持<code>aes</code>映射，可以把离散型变量映射到不同图片。目前有几个包可以使用图片嵌入做图，但都是针对特定的场景，这里使用<strong>ggimage</strong>来展示在这些特定领域里的应用，<strong>ggimage</strong>的设计是通用的，并不被特定场景所限定，文末又介绍了用R图标来画出R、用饼图来画气泡图等实例。</p>
+
+<h1 id="图上嵌图片">图上嵌图片</h1>
+
+<p>R 基础图形库（base graphics）可以在做图的时候嵌入图片，使用的是<code>graphics::rasterImage</code>：</p>
+
+<pre><code class="language-r">imgurl &lt;- &quot;http://phylopic.org/assets/images/submissions/295cd9f7-eef2-441e-ba7e-40c772ca7611.256.png&quot;
+library(EBImage)
+x &lt;- readImage(imgurl)
+plot(1, type = &quot;n&quot;, xlab = &quot;&quot;, ylab = &quot;&quot;, xlim = c(0, 8), ylim = c(0, 8))
+rasterImage(x, 2, 2, 6, 4)
+</code></pre>
+
+<p><img src="https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/raster.png" alt="R绘图嵌入图片演示" /></p>
+
+<p>
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2017/04/ggimage/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+            
+              
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/04/generate-biobabble-banner-using-ggimage/">
           generate biobabble banner using ggimage
         </a>
@@ -650,92 +724,6 @@ print(p)
 </article>
 
             
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/03/bed%E6%96%87%E4%BB%B6/">
-          BED文件
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-03-09T00:13:57&#43;08:00">
-      
-  March 9, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        BED的全称是Browser Extensible Data，顾名思义是为genome browser设计的，大名鼎鼎的bedtools可不是什么「床上用品」。</p>
-
-<p>BED包含有3个必须的字段和9个可选字段。</p>
-
-<p>三个字段包括：</p>
-
-<ul>
-<li>1 chrom - 染色体名字</li>
-<li>2 chromStart - 染色体起始位点</li>
-<li>3 chromEnd - 染色体终止位点</li>
-</ul>
-
-<blockquote>
-<p>这里必须指出的是<strong>chromStart</strong>是起始于0，而不是1。很多分析软件都忽略
-了这一点，会有一个碱基的位移，据我所知Homer和ChIPseeker没有这个问题，而像peakAnalyzer, ChIPpeakAnno等都有位移的问题。</p>
-</blockquote>
-
-<p>可选的9个字段包括：</p>
-
-<ul>
-<li>4 name - 名字</li>
-<li>5 score - 分值(0-1000), 用于genome browser展示时上色。</li>
-<li>6 strand - 正负链，对于ChIPseq数据来说，<strong>一般</strong>没有正负链信息。</li>
-<li>7 thickStart - 画矩形的起点</li>
-<li>8 thickEnd - 画矩形的终点</li>
-<li>9 itemRgb - RGB值</li>
-<li>10 blockCount - 子元件（比如外显子）的数目</li>
-<li>11 blockSizes - 子元件的大小</li>
-<li>12 blockStarts - 子元件的起始位点</li>
-</ul>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/03/bed%E6%96%87%E4%BB%B6/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
             
   <div class="pagination-bar">
     <ul class="pagination">
@@ -1068,6 +1056,29 @@ p &lt;- ggplot(d, aes(x,y)) +
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/geofacet_index/">
+                <h3 class="media-heading">正经的图千篇一律，不正经的叔万里挑一</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Sep 9, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><img src="https://guangchuangyu.github.io/blog_images/R/geofacet/Screenshot 2017-10-17 10.31.23.png" alt="" /></p>
+
+<p>这个题目可以放好多不正经的图，我在这个公众号里面已经写过太多，比如
+《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247483816&amp;amp;idx=1&amp;amp;sn=cbfbc284f4edb165ac65f7926f7f8fcc&amp;amp;chksm=ec43b0efdb3439f91ec4f570f7be65e442e21e403481b969d69449464ae1986c7983551de04d#rd">邪恶的曲线</a>》和它的3D版本，
+《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484823&amp;amp;idx=1&amp;amp;sn=4af972da15535c1d7dcf837ace320592&amp;amp;chksm=ec43b4d0db343dc6ec2e622523a5aabb67f25e4b9e4b93a67ab37125570fbab907741351da18#rd">3D版邪恶的曲线</a>》，但这里不涉及太多，只有<code>geofacet</code>这个包为例。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/goodbye-joyplot/">
                 <h3 class="media-heading">再见joyplot</h3>
               </a>
@@ -1090,38 +1101,6 @@ p &lt;- ggplot(d, aes(x,y)) +
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/rice/">
-                <h3 class="media-heading">R, python喊你回家吃饭啦🍚</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Sep 9, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>在《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484507&amp;amp;idx=1&amp;amp;sn=295454a59613bfd977f407958bec787e&amp;amp;chksm=ec43b51cdb343c0acea87661fe5144a5817503a2fdc8f316d56fd28d33291084bc718330c428#rd">你所不知道的，R的N种打开方式</a>》一文中，我介绍了R的N种界面，这里将介绍一个用python写的极其现代化的R命令行界面，rice之于R，就像ipython之于python一样。</p>
-
-<h2 id="特性">特性</h2>
-
-<ul>
-<li>轻量，不需要编译</li>
-<li>多行编辑，这点很重要啊，长长的命令可以换行后，随便回去编辑前面的指令</li>
-<li>语法高亮，这可是R命令行所没有的，看起来舒服多了</li>
-<li>自动补齐，减少输入</li>
-<li>支持bracketed paste mode，也就是说你copy-paste了有换行符的字符串，不会拷进去就自动执行了</li>
-<li>支持Windows, macOS 和 Linux</li>
-<li>支持vi, emacs等编辑模式</li>
-<li>可以多种高亮模式</li>
-</ul>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1129,7 +1108,7 @@ p &lt;- ggplot(d, aes(x,y)) +
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         150 posts found
+         151 posts found
       </p>
     </div>
   </div>

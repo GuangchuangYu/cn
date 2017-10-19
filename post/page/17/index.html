@@ -225,6 +225,69 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/08/love-function-plot/">
+          love function plot
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2011-08-06T05:37:55&#43;08:00">
+      
+  August 6, 2011
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        今天在微博上看到这坑爹的方程： $ (x^2+y^2-1)^3 = {x^2} {y^3}$
+画出来如下：
+跟个屁股似的，sigh&hellip;
+翻出azalea的老文：<a href="http://azaleasays.com/2008/06/18/fomula-of-love/">http://azaleasays.com/2008/06/18/fomula-of-love/</a>
+用ggplot2画一下这个爱的方程：$17x^2-16|x|y+17y^2 = 225 $
+x &lt;- seq(-sqrt(17), sqrt(17), 0.001) y1 &lt;- 8<em>abs(x)/17 + 15</em> sqrt(17 - x^2)/17 y2 &lt;- 8<em>abs(x)/17 - 15</em> sqrt(17 - x^2)/17 d &lt;- data.frame(x=c(x,x),y=c(y1,y2)) require(ggplot2) p &lt;- ggplot(d, aes(x,y)) p + geom_point(color=&quot;red&quot;)  还可以画出红心，适合今天七夕的日子。
+p + geom_line(color=&quot;red&quot;)  画函数图，这种事情，还是用CAS方便点。
+通过maxima来画，一条指令就行，还不用解方程：
+contour_plot(17*x^2-16*abs(x)*y+17*y^2-225, [x,-sqrt(17),sqrt(17)],[y,-15*sqrt(17)/17, sqrt(17)])
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2011/08/love-function-plot/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/08/qq-plot/">
           QQ plot
         </a>
@@ -640,80 +703,6 @@ the metric itself.</p>
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2010/10/the-chinese-complex-of-cross-wall/">
-          中国人民的翻墙情结
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2010-10-11T13:18:00&#43;08:00">
-      
-  October 11, 2010
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/babble">babble</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        不知道空窗期这个词是怎么来的，按照合理的推论应该是来自于西方，泊来之词。</p>
-
-<p>空窗期顾名思义就是没人来爬自己的窗户，引申出来就是没人来找自己约会。这个符合西方的建筑特点，西方的建筑是立体的，体现出来就是窗户多。而爬窗约会也多次出现于西方的文学和影视作品中。《红与黑》中就有于连拿着个梯子，爬窗去偷情的描写。</p>
-
-<p>而我们中国人的建筑是平面型的，体现在墙多，所以说，中国人的单身阶段应该称之为空墙期，意谓没人来翻墙。</p>
-
-<p>苏轼曾做过一首词，名谓《蝶恋花》。词中有云：</p>
-
-<pre><code>花褪残红青杏小。
-燕子飞时，绿水人家绕。
-枝上柳绵吹又少。
-天涯何处无芳草。
-
-墙里秋千墙外道。
-墙外行人，墙里佳人笑。
-笑渐不闻声渐悄。
-多情却被无情恼。
-</code></pre>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2010/10/the-chinese-complex-of-cross-wall/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -1045,6 +1034,29 @@ p &lt;- ggplot(d, aes(x,y)) +
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/geofacet_index/">
+                <h3 class="media-heading">正经的图千篇一律，不正经的叔万里挑一</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Sep 9, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><img src="https://guangchuangyu.github.io/blog_images/R/geofacet/Screenshot 2017-10-17 10.31.23.png" alt="" /></p>
+
+<p>这个题目可以放好多不正经的图，我在这个公众号里面已经写过太多，比如
+《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247483816&amp;amp;idx=1&amp;amp;sn=cbfbc284f4edb165ac65f7926f7f8fcc&amp;amp;chksm=ec43b0efdb3439f91ec4f570f7be65e442e21e403481b969d69449464ae1986c7983551de04d#rd">邪恶的曲线</a>》和它的3D版本，
+《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484823&amp;amp;idx=1&amp;amp;sn=4af972da15535c1d7dcf837ace320592&amp;amp;chksm=ec43b4d0db343dc6ec2e622523a5aabb67f25e4b9e4b93a67ab37125570fbab907741351da18#rd">3D版邪恶的曲线</a>》，但这里不涉及太多，只有<code>geofacet</code>这个包为例。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/goodbye-joyplot/">
                 <h3 class="media-heading">再见joyplot</h3>
               </a>
@@ -1067,38 +1079,6 @@ p &lt;- ggplot(d, aes(x,y)) +
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/rice/">
-                <h3 class="media-heading">R, python喊你回家吃饭啦🍚</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Sep 9, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>在《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484507&amp;amp;idx=1&amp;amp;sn=295454a59613bfd977f407958bec787e&amp;amp;chksm=ec43b51cdb343c0acea87661fe5144a5817503a2fdc8f316d56fd28d33291084bc718330c428#rd">你所不知道的，R的N种打开方式</a>》一文中，我介绍了R的N种界面，这里将介绍一个用python写的极其现代化的R命令行界面，rice之于R，就像ipython之于python一样。</p>
-
-<h2 id="特性">特性</h2>
-
-<ul>
-<li>轻量，不需要编译</li>
-<li>多行编辑，这点很重要啊，长长的命令可以换行后，随便回去编辑前面的指令</li>
-<li>语法高亮，这可是R命令行所没有的，看起来舒服多了</li>
-<li>自动补齐，减少输入</li>
-<li>支持bracketed paste mode，也就是说你copy-paste了有换行符的字符串，不会拷进去就自动执行了</li>
-<li>支持Windows, macOS 和 Linux</li>
-<li>支持vi, emacs等编辑模式</li>
-<li>可以多种高亮模式</li>
-</ul>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1106,7 +1086,7 @@ p &lt;- ggplot(d, aes(x,y)) +
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         150 posts found
+         151 posts found
       </p>
     </div>
   </div>

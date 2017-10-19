@@ -225,6 +225,82 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/09/%E9%80%9A%E8%BF%87%E5%B1%80%E5%9F%9F%E7%BD%91%E5%9C%A8linux%E4%B8%8B%E4%BD%BF%E7%94%A8windows%E7%9A%84%E7%A8%8B%E5%BA%8F/">
+          通过局域网在linux下使用windows的程序
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2008-09-22T01:26:00&#43;08:00">
+      
+  September 22, 2008
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/linux">Linux</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/windows">Windows</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        用了好多年linux，现在用windows越来越少了，但是还是得用。没办法，上taobao买个东西，上网银都得用ie，有时候还得用office等其它一些软件。</p>
+
+<p>实验室里有台机子是做文件服务的，装的是windows 2003
+server。之前使用rdesktop远程桌面，最近发现配合seamlessrdp可以让rdesktop实现更好的效果，运行windows程序，就像linux中原生程序一样。。</p>
+
+<pre><code>&gt; [下载
+&gt; seamlessrdp.zip](http://www.cendio.se/files/thinlinc/seamlessrdp/seamlessrdp.zip)
+&gt; 解压丢在C盘。
+</code></pre>
+
+<p>在linux下运行这样的指令</p>
+
+<pre><code>&gt; rdesktop -A -s &quot;c:\\seamlessrdp/seamlessrdpshell.exe C:\\Program
+&gt; Files\\Internet Explorer\\iexplore.exe&quot; ip:3389 -u administrator -p
+&gt; password
+</code></pre>
+
+<p>就可以在linux下运行服务器端的ie了。windows下所有程序都没问题。</p>
+
+<p>
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2008/09/%E9%80%9A%E8%BF%87%E5%B1%80%E5%9F%9F%E7%BD%91%E5%9C%A8linux%E4%B8%8B%E4%BD%BF%E7%94%A8windows%E7%9A%84%E7%A8%8B%E5%BA%8F/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/09/gtkballs/">
           gtkballs -- 五子连线
         </a>
@@ -607,76 +683,6 @@ Homepage : <a href="http://givre.cabspace.com/ntfs-config">http://givre.cabspace
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2007/06/newton-raphson-method/">
-          Newton-Raphson Method估算函数的根
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2007-06-02T13:53:00&#43;08:00">
-      
-  June 2, 2007
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/math">Math</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/programming">Programming</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/c">C</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <h2 id="newton-raphson-method">Newton-Raphson Method</h2>
-
-<p>曲线<code>f(x)</code>有根c,取曲线上一点$(x_1,f(x_1))$, 过此点的切线交x轴$x_2$,过曲线上$(x_2,f(x_2))$的切线交x轴$x_3$，如此反复得到一个序列 $x_1,x_2,\cdot \cdot \cdot,x_n$ 逼近c值.</p>
-
-<p>过$(x_n,f(x_n))$的切线方程为 $y-f(x_n) = f&rsquo;(x_n)\,(x-x<em>n)$,假设此方程与x轴的交点为$x</em>{n+1}$, 即有: $0 - f(x_n) = f&rsquo;(x_n)(x_n+1 - x<em>n)$， 即$x</em>{n+1} = x_n - \frac{f(x_n)}{f&rsquo;(x_n)}$ <code>&lt;Eq. 1&gt;</code>.</p>
-
-<p>下面利用此法来求一个数的开方。 $f(x) = x^2 - a$ 有根$\sqrt{a}$,
-由$f&rsquo;(x_n) = 2x<em>n$, 代入式<code>&lt;Eq. 1&gt;</code>可得$x</em>{n+1} = (x_n + a/x_n)/2$; 当i -&gt; INF 时, $x_i$ -&gt; $\sqrt{a}$;</p>
-
-<h2 id="c-implementation">C implementation</h2>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2007/06/newton-raphson-method/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -1008,6 +1014,29 @@ p &lt;- ggplot(d, aes(x,y)) +
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/geofacet_index/">
+                <h3 class="media-heading">正经的图千篇一律，不正经的叔万里挑一</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Sep 9, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><img src="https://guangchuangyu.github.io/blog_images/R/geofacet/Screenshot 2017-10-17 10.31.23.png" alt="" /></p>
+
+<p>这个题目可以放好多不正经的图，我在这个公众号里面已经写过太多，比如
+《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247483816&amp;amp;idx=1&amp;amp;sn=cbfbc284f4edb165ac65f7926f7f8fcc&amp;amp;chksm=ec43b0efdb3439f91ec4f570f7be65e442e21e403481b969d69449464ae1986c7983551de04d#rd">邪恶的曲线</a>》和它的3D版本，
+《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484823&amp;amp;idx=1&amp;amp;sn=4af972da15535c1d7dcf837ace320592&amp;amp;chksm=ec43b4d0db343dc6ec2e622523a5aabb67f25e4b9e4b93a67ab37125570fbab907741351da18#rd">3D版邪恶的曲线</a>》，但这里不涉及太多，只有<code>geofacet</code>这个包为例。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/goodbye-joyplot/">
                 <h3 class="media-heading">再见joyplot</h3>
               </a>
@@ -1030,38 +1059,6 @@ p &lt;- ggplot(d, aes(x,y)) +
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/rice/">
-                <h3 class="media-heading">R, python喊你回家吃饭啦🍚</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Sep 9, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>在《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484507&amp;amp;idx=1&amp;amp;sn=295454a59613bfd977f407958bec787e&amp;amp;chksm=ec43b51cdb343c0acea87661fe5144a5817503a2fdc8f316d56fd28d33291084bc718330c428#rd">你所不知道的，R的N种打开方式</a>》一文中，我介绍了R的N种界面，这里将介绍一个用python写的极其现代化的R命令行界面，rice之于R，就像ipython之于python一样。</p>
-
-<h2 id="特性">特性</h2>
-
-<ul>
-<li>轻量，不需要编译</li>
-<li>多行编辑，这点很重要啊，长长的命令可以换行后，随便回去编辑前面的指令</li>
-<li>语法高亮，这可是R命令行所没有的，看起来舒服多了</li>
-<li>自动补齐，减少输入</li>
-<li>支持bracketed paste mode，也就是说你copy-paste了有换行符的字符串，不会拷进去就自动执行了</li>
-<li>支持Windows, macOS 和 Linux</li>
-<li>支持vi, emacs等编辑模式</li>
-<li>可以多种高亮模式</li>
-</ul>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1069,7 +1066,7 @@ p &lt;- ggplot(d, aes(x,y)) +
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         150 posts found
+         151 posts found
       </p>
     </div>
   </div>
