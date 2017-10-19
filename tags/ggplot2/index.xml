@@ -150,6 +150,21 @@ p &amp;lt;- ggplot(d, aes(x, y)) +
     </item>
     
     <item>
+      <title>饼图版气泡图</title>
+      <link>https://guangchuangyu.github.io/cn/2017/07/pie-version-of-bubble-plot/</link>
+      <pubDate>Wed, 19 Jul 2017 12:06:59 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/07/pie-version-of-bubble-plot/</guid>
+      <description>&lt;p&gt;在《&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484164&amp;amp;idx=1&amp;amp;sn=030612f5a84120ef407401ff6fad715f&amp;amp;chksm=ec43b243db343b5524c911327bdcbe5f01034095d549d43d530decc5676faecdbd449dfac026#rd&#34;&gt;ggimage：ggplot2中愉快地使用图片&lt;/a&gt;》一文中，我展示了「嵌套式绘图」，中间生成了多个饼图，再用这些产生的饼图用于做图，绘制出饼图版的气泡图：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/us_crime.png&#34; alt=&#34;嵌套式绘图演示：用饼图来画气泡图&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;当时还通过每次只画一个州的数据，来演示制作动图：&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>你的专业是那一只Pokémon神兽？</title>
       <link>https://guangchuangyu.github.io/cn/2017/07/pokemon/</link>
       <pubDate>Thu, 13 Jul 2017 10:06:59 +0800</pubDate>
