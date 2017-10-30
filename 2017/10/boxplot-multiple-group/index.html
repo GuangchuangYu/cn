@@ -23,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.24.1">
     <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
-    <title>安装os9和netbsd双系统</title>
+    <title>同一数据多变量分组的boxplot?</title>
     <meta name="author" content="Guangchuang Yu">
     <meta name="keywords" content="">
 
@@ -31,52 +31,31 @@
     
 
     
-    <meta name="description" content="1 分区
+    <meta name="description" content="
 
-用MacOS X 10.2 的光盘启动，运行Disk Utility，选择“Install Mac OS
-9 Disk
-Drivers”不然分区将不能在OS9中使用，我一共分了5个分区，12G,10G,512M,20G,13.4G。其中12Ｇ装OS9系统，10Ｇ装netbsd系统，512Ｍ为swap分区，20Ｇ为home
-分区，最后一个为fat32格式，为两个系统所共享。
+小密圈的问题，不是三两句话可以说明白的事情，必须要写文来解答，上一次写文是《听说你还不会画热图》，里面正好吐槽了某知乎大V的「除了ggplot2之外其它都是鸡肋」，这次正好也可以再次呼应一下。
 
-2 安装os9
-
-开机放入os9安装光盘，按住Ｃ键，由光盘启动进入os9，在光盘根目录下点安装系统。指定第一个分区，选择安装的软件，十来分钟，便装完了。重新启动，将netbsd的启动程序ofwboot.xcf放在os9的根目录下。
-
-3 安装netbsd
+这个图明显是R的base graphics做的，图是可圈可点的，能做出这图来，也已经是告别了只会用plot的低级趣味。这其实是4个图拼起来的，第一个图只是多了个y轴而已，它们画起来是一样的，那就是只画boxplot，不画x和y轴，（你可能会说不是有x轴？），x轴是后面再加上去的，而且加x轴的时候，不写labels，只有线条没有文本（你可能又会说明明有文本！），因为axis这个函数只支持labels要么是水平的，要么是垂直的，旋转某个角度是不支持的，所以labels是额外再打上去的。这里一张小小的图，门道还是挺多的。
 
 ">
-    <meta property="og:description" content="1 分区
+    <meta property="og:description" content="
 
-用MacOS X 10.2 的光盘启动，运行Disk Utility，选择“Install Mac OS
-9 Disk
-Drivers”不然分区将不能在OS9中使用，我一共分了5个分区，12G,10G,512M,20G,13.4G。其中12Ｇ装OS9系统，10Ｇ装netbsd系统，512Ｍ为swap分区，20Ｇ为home
-分区，最后一个为fat32格式，为两个系统所共享。
+小密圈的问题，不是三两句话可以说明白的事情，必须要写文来解答，上一次写文是《听说你还不会画热图》，里面正好吐槽了某知乎大V的「除了ggplot2之外其它都是鸡肋」，这次正好也可以再次呼应一下。
 
-2 安装os9
-
-开机放入os9安装光盘，按住Ｃ键，由光盘启动进入os9，在光盘根目录下点安装系统。指定第一个分区，选择安装的软件，十来分钟，便装完了。重新启动，将netbsd的启动程序ofwboot.xcf放在os9的根目录下。
-
-3 安装netbsd
+这个图明显是R的base graphics做的，图是可圈可点的，能做出这图来，也已经是告别了只会用plot的低级趣味。这其实是4个图拼起来的，第一个图只是多了个y轴而已，它们画起来是一样的，那就是只画boxplot，不画x和y轴，（你可能会说不是有x轴？），x轴是后面再加上去的，而且加x轴的时候，不写labels，只有线条没有文本（你可能又会说明明有文本！），因为axis这个函数只支持labels要么是水平的，要么是垂直的，旋转某个角度是不支持的，所以labels是额外再打上去的。这里一张小小的图，门道还是挺多的。
 
 ">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="安装os9和netbsd双系统">
-    <meta property="og:url" content="/2006/06/os9-netbsd-dual-boot/">
+    <meta property="og:title" content="同一数据多变量分组的boxplot?">
+    <meta property="og:url" content="/2017/10/boxplot-multiple-group/">
     <meta property="og:site_name" content="Guangchuang Yu">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Guangchuang Yu">
-    <meta name="twitter:description" content="1 分区
+    <meta name="twitter:description" content="
 
-用MacOS X 10.2 的光盘启动，运行Disk Utility，选择“Install Mac OS
-9 Disk
-Drivers”不然分区将不能在OS9中使用，我一共分了5个分区，12G,10G,512M,20G,13.4G。其中12Ｇ装OS9系统，10Ｇ装netbsd系统，512Ｍ为swap分区，20Ｇ为home
-分区，最后一个为fat32格式，为两个系统所共享。
+小密圈的问题，不是三两句话可以说明白的事情，必须要写文来解答，上一次写文是《听说你还不会画热图》，里面正好吐槽了某知乎大V的「除了ggplot2之外其它都是鸡肋」，这次正好也可以再次呼应一下。
 
-2 安装os9
-
-开机放入os9安装光盘，按住Ｃ键，由光盘启动进入os9，在光盘根目录下点安装系统。指定第一个分区，选择安装的软件，十来分钟，便装完了。重新启动，将netbsd的启动程序ofwboot.xcf放在os9的根目录下。
-
-3 安装netbsd
+这个图明显是R的base graphics做的，图是可圈可点的，能做出这图来，也已经是告别了只会用plot的低级趣味。这其实是4个图拼起来的，第一个图只是多了个y轴而已，它们画起来是一样的，那就是只画boxplot，不画x和y轴，（你可能会说不是有x轴？），x轴是后面再加上去的，而且加x轴的时候，不写labels，只有线条没有文本（你可能又会说明明有文本！），因为axis这个函数只支持labels要么是水平的，要么是垂直的，旋转某个角度是不支持的，所以labels是额外再打上去的。这里一张小小的图，门道还是挺多的。
 
 ">
     
@@ -252,14 +231,14 @@ ga('send', 'pageview');
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      安装os9和netbsd双系统
+      同一数据多变量分组的boxplot?
     </h1>
   
   <div class="postShorten-meta post-meta">
   
-    <time itemprop="datePublished" datetime="2006-06-14T04:31:00&#43;08:00">
+    <time itemprop="datePublished" datetime="2017-10-30T00:53:00&#43;08:00">
       
-  June 14, 2006
+  October 30, 2017
 
     </time>
   
@@ -268,11 +247,7 @@ ga('send', 'pageview');
   
     <span>in</span>
     
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/bsd">BSD</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/mac-os">Mac OS</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/powerbook">Powerbook</a>
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
     
   
 
@@ -283,141 +258,139 @@ ga('send', 'pageview');
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <h2 id="1-分区">1 分区</h2>
+              <p><img src="https://guangchuangyu.github.io/blog_images/R/boxplot_multiple_group_files/WechatIMG111.png" alt="" /></p>
 
-<p>用MacOS X 10.2 的光盘启动，运行Disk Utility，选择“Install Mac OS
-9 Disk
-Drivers”不然分区将不能在OS9中使用，我一共分了5个分区，12G,10G,512M,20G,13.4G。其中12Ｇ装OS9系统，10Ｇ装netbsd系统，512Ｍ为swap分区，20Ｇ为home
-分区，最后一个为fat32格式，为两个系统所共享。</p>
+<p>小密圈的问题，不是三两句话可以说明白的事情，必须要写文来解答，上一次写文是《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484882&amp;amp;idx=1&amp;amp;sn=d7426087ca6c2a9ddd89ee0fa9da59f7&amp;amp;chksm=ec43b495db343d83854be5d6b2271c1b03bfd7409295863f79a9f35b2b4377e01b20432de421#rd">听说你还不会画热图</a>》，里面正好吐槽了某知乎大V的「除了ggplot2之外其它都是鸡肋」，这次正好也可以再次呼应一下。</p>
 
-<h2 id="2-安装os9">2 安装os9</h2>
-
-<p>开机放入os9安装光盘，按住<code>Ｃ</code>键，由光盘启动进入os9，在光盘根目录下点安装系统。指定第一个分区，选择安装的软件，十来分钟，便装完了。重新启动，将netbsd的启动程序<code>ofwboot.xcf</code>放在os9的根目录下。</p>
-
-<h2 id="3-安装netbsd">3 安装netbsd</h2>
+<p>这个图明显是R的base graphics做的，图是可圈可点的，能做出这图来，也已经是告别了只会用plot的低级趣味。这其实是4个图拼起来的，第一个图只是多了个y轴而已，它们画起来是一样的，那就是只画boxplot，不画x和y轴，（你可能会说不是有x轴？），x轴是后面再加上去的，而且加x轴的时候，不写labels，只有线条没有文本（你可能又会说明明有文本！），因为<code>axis</code>这个函数只支持labels要么是水平的，要么是垂直的，旋转某个角度是不支持的，所以labels是额外再打上去的。这里一张小小的图，门道还是挺多的。</p>
 
 <p></p>
 
-<p>开机按住<code>command+option+o+f</code>进入open firmware。<code>open
-firmware</code>启动命令的语法是 <code>boot boot-device [boot-file] [-as]</code></p>
+<pre><code>set.seed(2017-10-30)
+d &lt;- data.frame(riskScore = abs(rnorm(100)),
+                BMI = sample(1:2, 100, replace=T),
+                stage = sample(1:2, 100, replace=T),
+                age = sample(1:2, 100, replace=T),
+                gender = sample(1:2, 100, replace=T))
 
-<p>加-a会问你下个载入的文件，比如引导程序问你内核在那或内核会问你根分区在那。键入命令</p>
+head(d)
 
-<pre><code>boot
-cd:,\\ofwboot.xcf netbsd.macppc
+##     riskScore BMI stage age gender
+## 1 0.008282743   1     2   1      1
+## 2 0.499375414   1     1   2      1
+## 3 0.188257548   1     1   1      1
+## 4 0.330772189   2     1   2      1
+## 5 0.790797457   1     2   1      1
+## 6 1.943465449   1     1   2      1
 </code></pre>
 
-<p>引导netbsd安装光盘， 进入sysinst主菜单。</p>
+<p>先搞一个数据集，都只是随机数，纯粹是为了演示用而已。下面我将定义一个myboxplot，它画boxplot，不带x和y轴，然后加x轴不带labels，再额外打labels，因为提问者的图中还有pvalue，我顺道把pvalue也整合进这个myboxplot里去，可以用pvalue=NULL来关掉这个功能。</p>
 
-<pre><code>.***********************************************.
-* NetBSD-3.0 Install System                     *
-*                                               *
-*&gt;a: Install NetBSD to hard disk                *
-* b: Upgrade NetBSD on a hard disk              *
-* c: Re-install sets or install additional sets *
-* d: Reboot the computer                        *
-* e: Utility menu                               *
-* x: Exit Install System                        *
-.***********************************************.
+<p>关于箱式图，可以参考我之前写的《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247483996&amp;amp;idx=1&amp;amp;sn=b230b29c33ef380e03cd41f92a7f40d6&amp;amp;chksm=ec43b31bdb343a0d744ae9f6088dd9f51b17f36653e3f8104b038de8e78828ef274e8c5097fd#rd">boxplot</a>》，而这里用到T检验，可以参考《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247483943&amp;amp;idx=1&amp;amp;sn=0e23181d7736e70f848858bcbc0cfd1d&amp;amp;chksm=ec43b360db343a76f0cac8204f3f71d77f2b08ef861c900c2e0ba9bea2b01930da0f35bf99c4#rd">什么是T检验</a>》。</p>
+
+<pre><code>myboxplot &lt;- function(x, data, col = NULL, xlab, pvalue=&quot;auto&quot;) {
+    boxplot(x, data, axes = FALSE, col = col)
+    axis(1, at = 1:2, labels =FALSE)
+    text(1:2, y=par()$usr[3]-0.08*(par()$usr[4]-par()$usr[3]),
+         srt=60, xpd=T, adj=1, labels = xlab)
+    if (pvalue == &quot;auto&quot;) {
+        pvalue &lt;- round(t.test(x, data=data)$p.value, 3)
+    }
+
+    if (!is.null(pvalue)) {
+        plab &lt;- paste(&quot;p =&quot;, pvalue)
+        text(1.5, y = par()$usr[4]*1.05, xpd=T, label=plab, col=col)
+    }
+}
 </code></pre>
 
-<p>选择Utility menu运行shell，运行<code>pdisk
-/dev/wd0c</code>修改分区，将第二，三，四个分区的partition 
-type改为<code>Apple_UNIX_SVR2</code>，并分别给标签a,b,g。保存退出。创建文件系统。</p>
+<p>万事具备，有函数，有数据，我们先初始化画4个column，然后你只要调用myboxplot，分4次画4个图，就大功告成了，第一个图的时候，把y轴给加上。</p>
 
-<pre><code>#newfs ffs /dev/wd0a 
-#newfs ffs /dev/wd0g
+<pre><code>layout(t(1:4))
+par(oma=c(2, 4, 4, 0), mar=c(5,2,1,1), cex=1)
+
+myboxplot(riskScore~age, data=d, col='red', xlab=c(&quot;age &lt; 60&quot;, &quot;age &gt; 60&quot;))
+axis(2, las=1)
+myboxplot(riskScore~gender, data=d, col='green', xlab=c(&quot;Male&quot;, &quot;Female&quot;))
+myboxplot(riskScore~stage, data=d, col='blue', xlab=c(&quot;pStage 1-2&quot;, &quot;pStage 1-2&quot;))
+myboxplot(riskScore~BMI, data=d, col='cyan', xlab=c(&quot;BMI &lt; 24&quot;, &quot;BMI &gt; 24&quot;))
 </code></pre>
 
-<p>创建fstab</p>
+<p><img src="https://guangchuangyu.github.io/blog_images/R/boxplot_multiple_group_files/figure-markdown_strict/unnamed-chunk-1-1.png" alt="" /></p>
 
-<pre><code>#mount /dev/wd0a /mnt 
-#mkdir /mnt/etc 
-#cat &gt; /mnt/etc/fstab 
+<p>假如我们想要用ggplot2来画，该怎么搞？首先毫无意外，要把数据整理成ggplot2喜欢的样子，我定义一个convert函数专门来搞这个数据：</p>
 
-/dev/wd0a    /    ffs  rw 1 1 
-/dev/wd0b none swap sw 0 0 
-/dev/wd0g  /home ffs rw 1 2
+<pre><code>convert &lt;- function(d) {
+    lapply(2:ncol(d), function(i) {
+        d2 &lt;- d[, c(1,i)]
+        d2$type = colnames(d2)[2]
+        colnames(d2) = c(&quot;riskScore&quot;, &quot;category&quot;, &quot;type&quot;)
+        return(d2)
+    }) %&gt;% do.call('rbind', .)
+}
+
+dd &lt;- convert(d)
+
+head(dd)
+
+##     riskScore category type
+## 1 0.008282743        1  BMI
+## 2 0.499375414        1  BMI
+## 3 0.188257548        1  BMI
+## 4 0.330772189        2  BMI
+## 5 0.790797457        1  BMI
+## 6 1.943465449        1  BMI
 </code></pre>
 
-<p>按<code>Control+D</code>结束。</p>
+<p>然后就可以直接ggplot来画了，这里蛋疼的是颜色不是我们想要的那种用type来上色，如果你指定用type，那么不好意思，不会用category分组，如果你指定<code>group = factor(category)</code>呢？又不好意思了，不会让type来分组了，也就是说你画出来的是按category分的两个box，而不会有不同type是不同组数据的切分了，这就是ggplot2蛋疼之外，语法太高级，以至于有些情况没办法以它的语法表达的时候，是非常困难的。</p>
 
-<pre><code>#mkdir /home 
-#cd / 
-#umount /mnt 
-#exit
+<pre><code>library(ggplot2)
+ggplot(dd, aes(type, riskScore, fill=factor(category))) + geom_boxplot()
 </code></pre>
 
-<p>回到主菜单,选择重新安装。选择安装组件以及安装介质。安装程序将软件包解压到<code>/dev/wd0a</code>后，回到主菜单，选择Utility
-menu并运行shell，</p>
+<p><img src="https://guangchuangyu.github.io/blog_images/R/boxplot_multiple_group_files/figure-markdown_strict/unnamed-chunk-1-2.png" alt="" /></p>
 
-<pre><code>#mount /dev/wd0a 
-#cd /mnt/dev 
-#sh MAKEDEV all
+<p>当然可以通过分面来补救：</p>
+
+<pre><code>ggplot(dd, aes(type, riskScore, group=factor(category), fill=type)) +
+    geom_boxplot() + facet_grid(.~type, scales = &quot;free_x&quot;)
 </code></pre>
 
-<p>      
-创建设备节点 <code>#cd /mnt/dev</code> 修改rc.conf 确定<code>rc_configured=YES</code></p>
+<p><img src="https://guangchuangyu.github.io/blog_images/R/boxplot_multiple_group_files/boxplot_facet.png" alt="" /></p>
 
-<pre><code>#cd /
-#umount /mnt 
-#exit 
+<p>分面也不好啊，分面的strip text和x axis text重了，当然这个x axis text不是我们想要的。</p>
+
+<p>如果我不想用分面呢？你就得用另外的变量去欺骗它，让它分好组，比如这里我用<code>color=factor(category)</code>，这样会给boxplot的外框加颜色，但这个颜色不是我们想要用的，category分1和2,在不同的type里意义是不一样的。第二点，它的legend也不是我们想要的，所以这里又需要额外的设置了，我们要指定颜色统一，要去掉legend。</p>
+
+<pre><code>ggplot(dd, aes(type, riskScore, color=factor(category), fill=type)) + geom_boxplot() +
+    scale_color_manual(values=rep('black',2), guide=FALSE)
 </code></pre>
 
-<p>重新启动，按住<code>command+option+o+f</code>进入open firmware，
-键入<code>boot hd:9,\\ofwboot hd:10,/netbsd</code> <code>[g]</code>成功实现引导。。<code>[/g]</code></p>
+<p><img src="https://guangchuangyu.github.io/blog_images/R/boxplot_multiple_group_files/figure-markdown_strict/unnamed-chunk-1-3.png" alt="" /></p>
 
-<p><code>[g]0/7/</code>默认是进入os9，因为我用netbsd较多，所以得再修改一下启动，进入open
-firmware`:</p>
+<p>这个图就像模像样了，和上面分面的其实差不多，有一个共同点，x axis text不是我们想要的，怎么改？还是illustrator吧，带着ggplot2的枷锁改起来可费劲了。</p>
 
-<pre><code>0&gt; setenv boot-device hd:9,\\ofwboot.xcf hd:10,/netbsd
-0&gt; reset-all
+<p>当然画图嘛，功夫一半在在画图上，另一半在于对数据的操作，既要用ggplot2，又要用得爽，你得有70岁的觉悟，「七十而从心所欲,不逾矩」，在矩（俗称枷锁）之下，从心所欲，关键还是对数据和作图系统的理解。这数据还得再变一下，我们不分组了，不就画8个boxplot么，把不同category的1和2全部换掉，换成不同的变量，然后画8个box就完事了。</p>
+
+<pre><code>bmi = c(&quot;BMI &lt; 24&quot;, &quot;BMI &gt; 24&quot;)
+stage = c(&quot;pStage 1-2&quot;, &quot;pStage 3-4&quot;)
+age = c(&quot;age &lt; 60&quot;, &quot;age &gt; 60&quot;)
+gender = c(&quot;Male&quot;, &quot;Female&quot;)
+d$BMI = bmi[d$BMI]
+d$stage = stage[d$stage]
+d$age = age[d$age]
+d$gender = gender[d$gender]
+dd = convert(d)
+dd$category = factor(dd$category, levels=c(age, gender, stage, bmi))
+p1 = ggplot(dd, aes(category, riskScore, fill=type)) + geom_boxplot() +
+    theme(axis.text.x = element_text(angle=60, vjust=1, hjust=1))
+p2 = p1 + facet_grid(.~type, scales=&quot;free_x&quot;)
+cowplot::plot_grid(p1, p2, ncol=2)    
 </code></pre>
 
-<p>设置后机子重启，将自动进入netbsd,
-想要进入os9只需在进入open firmware后键入<code>boot hd:9,\\\\:tbxi[/g]</code></p>
+<p><img src="https://guangchuangyu.github.io/blog_images/R/boxplot_multiple_group_files/boxplot_v2.png" alt="" /></p>
 
-<p>拷一些字体到<code>\~/BackUP/fonts</code>下，</p>
-
-<pre><code>$cd \~/BackUP/fonts 
-$mkfontscale &gt; fonts.scale 
-$cp fonts.scale fonts.dir 
-$cd \~ 
-$ln -s ~/Backup/fonts .fonts
-</code></pre>
-
-<p>修改<code>/etc/X11/XF86Config</code>
-添加<code>&lt;dir&gt;/home/ygc/BackUP/fonts&lt;/dir&gt;</code></p>
-
-<pre><code>##create index of font files... 
-$fc-cache -v
-</code></pre>
-
-<p>安装fcitx</p>
-
-<pre><code>#cd /usr/pkgsrc/inputmethod/fcitx 
-#make install
-</code></pre>
-
-<p>安装qvwm</p>
-
-<pre><code>#cd /usr/pkgsrc/wm/qvwm 
-#make install
-</code></pre>
-
-<p>在<code>\~/.xinitrc</code>中加入</p>
-
-<pre><code>export LC\_CTYPE=&quot;zh\_CN.eucCN&quot; 
-export XMODIFIERS=&quot;@im=fcitx&quot; 
-fcitx &amp; 
-exec qvwm
-</code></pre>
-
-<p>OK startx&hellip;</p>
-
-<p><img src="http://guangchuangyu.github.io/blog_images/2006/06/qvwm.png" alt="" /></p>
-
-<p>qvwm是一个模仿win95界面的一个窗口管理器,很土,这个是我修改过的<a href="http://guangchuangyu.github.io/2006/06/qvwm%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E5%99%A8%E7%9A%84windows2000%E4%B8%BB%E9%A2%98/">仿2k的界面</a>&hellip;</p>
+<p>数据使然，我们很容易就想到这有4组，我们要分组，枷锁就来了，后面要改细节，标x axis text，简直是恶梦，除非你放弃治疗用illustrator。如果我们能够放开分组的概念，出王八拳，倒是豁然开朗。这里额外强调一点的是base graphics的作图，容易理解，符合直觉这一块，还是很厉害的，hadley wikham也说ggplot2是试图结合base + lattice的优点。多学一点「外语」对理解和应用「母语」是有帮助的。第二点，放开套路，多试试王八拳，能把对方打趴下的拳，就是好拳！</p>
               
               <center><span class="zaln"><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&mid=2247484170&idx=1&sn=ce5f7eb6df66d79661276a64bf25b4bc&chksm=ec43b24ddb343b5b2877574153aeccd049a6824716063883edb35c2338bd32c067caf3885f53#rd" class="zb">赞赏</a></span></center>
             </div>
@@ -430,9 +403,9 @@ exec qvwm
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/os9/">OS9</a>
+  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/boxplot/">boxplot</a>
 
-  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/netbsd/">netbsd</a>
+  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/ggplot2/">ggplot2</a>
 
                   </div>
                 
@@ -444,7 +417,7 @@ exec qvwm
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2006/06/qvwm%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E5%99%A8%E7%9A%84windows2000%E4%B8%BB%E9%A2%98/" data-tooltip="qvwm窗口管理器的windows2000主题">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -452,7 +425,7 @@ exec qvwm
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/" data-tooltip="在emacs里使用maxima">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2017/10/ggtree-webinar-2017/" data-tooltip="webinar录播：plotting tree &#43; data">
           
             <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
             <i class="fa fa-angle-right"></i>
@@ -469,17 +442,17 @@ exec qvwm
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2006%2f06%2fos9-netbsd-dual-boot%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f10%2fboxplot-multiple-group%2f">
           <i class="fa fa-google-plus"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2006%2f06%2fos9-netbsd-dual-boot%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f10%2fboxplot-multiple-group%2f">
           <i class="fa fa-facebook-official"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2006%2f06%2fos9-netbsd-dual-boot%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f10%2fboxplot-multiple-group%2f">
           <i class="fa fa-twitter"></i>
         </a>
       </li>
@@ -525,7 +498,7 @@ exec qvwm
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2006/06/qvwm%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E5%99%A8%E7%9A%84windows2000%E4%B8%BB%E9%A2%98/" data-tooltip="qvwm窗口管理器的windows2000主题">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -533,7 +506,7 @@ exec qvwm
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/" data-tooltip="在emacs里使用maxima">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2017/10/ggtree-webinar-2017/" data-tooltip="webinar录播：plotting tree &#43; data">
           
             <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
             <i class="fa fa-angle-right"></i>
@@ -550,17 +523,17 @@ exec qvwm
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2006%2f06%2fos9-netbsd-dual-boot%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f10%2fboxplot-multiple-group%2f">
           <i class="fa fa-google-plus"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2006%2f06%2fos9-netbsd-dual-boot%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f10%2fboxplot-multiple-group%2f">
           <i class="fa fa-facebook-official"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2006%2f06%2fos9-netbsd-dual-boot%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f10%2fboxplot-multiple-group%2f">
           <i class="fa fa-twitter"></i>
         </a>
       </li>
@@ -587,17 +560,17 @@ exec qvwm
       <div id="share-options-bar" class="share-options-bar" data-behavior="4">
   <ul class="share-options">
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2006%2f06%2fos9-netbsd-dual-boot%2f">
+      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f10%2fboxplot-multiple-group%2f">
         <i class="fa fa-google-plus"></i><span>Share on Google Plus</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2006%2f06%2fos9-netbsd-dual-boot%2f">
+      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f10%2fboxplot-multiple-group%2f">
         <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2006%2f06%2fos9-netbsd-dual-boot%2f">
+      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f10%2fboxplot-multiple-group%2f">
         <i class="fa fa-twitter"></i><span>Share on Twitter</span>
       </a>
     </li>
@@ -995,9 +968,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/guangchuangyu.github.io\/cn\/2006\/06\/os9-netbsd-dual-boot\/';
+          this.page.url = 'https:\/\/guangchuangyu.github.io\/cn\/2017\/10\/boxplot-multiple-group\/';
           
-            this.page.identifier = '\/2006\/06\/os9-netbsd-dual-boot\/'
+            this.page.identifier = '\/2017\/10\/boxplot-multiple-group\/'
           
         };
         (function() {
