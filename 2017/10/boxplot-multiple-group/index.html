@@ -260,7 +260,7 @@ ga('send', 'pageview');
             <div class="main-content-wrap">
               <p><img src="https://guangchuangyu.github.io/blog_images/R/boxplot_multiple_group_files/WechatIMG111.png" alt="" /></p>
 
-<p>小密圈的问题，不是三两句话可以说明白的事情，必须要写文来解答，上一次写文是《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484882&amp;amp;idx=1&amp;amp;sn=d7426087ca6c2a9ddd89ee0fa9da59f7&amp;amp;chksm=ec43b495db343d83854be5d6b2271c1b03bfd7409295863f79a9f35b2b4377e01b20432de421#rd">听说你还不会画热图</a>》，里面正好吐槽了某知乎大V的「除了ggplot2之外其它都是鸡肋」，这次正好也可以再次呼应一下。</p>
+<p>小密圈的问题，不是三两句话可以说明白的事情，必须要写文来解答，上一次写文是《<a href="http://mp.weixin.qq.com/s/Xhi_ZkrEzUVdnCu7ECBS4w">听说你还不会画热图</a>》，里面正好吐槽了某知乎大V的「除了ggplot2之外其它都是鸡肋」，这次正好也可以再次呼应一下。</p>
 
 <p>这个图明显是R的base graphics做的，图是可圈可点的，能做出这图来，也已经是告别了只会用plot的低级趣味。这其实是4个图拼起来的，第一个图只是多了个y轴而已，它们画起来是一样的，那就是只画boxplot，不画x和y轴，（你可能会说不是有x轴？），x轴是后面再加上去的，而且加x轴的时候，不写labels，只有线条没有文本（你可能又会说明明有文本！），因为<code>axis</code>这个函数只支持labels要么是水平的，要么是垂直的，旋转某个角度是不支持的，所以labels是额外再打上去的。这里一张小小的图，门道还是挺多的。</p>
 
@@ -286,7 +286,7 @@ head(d)
 
 <p>先搞一个数据集，都只是随机数，纯粹是为了演示用而已。下面我将定义一个myboxplot，它画boxplot，不带x和y轴，然后加x轴不带labels，再额外打labels，因为提问者的图中还有pvalue，我顺道把pvalue也整合进这个myboxplot里去，可以用pvalue=NULL来关掉这个功能。</p>
 
-<p>关于箱式图，可以参考我之前写的《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247483996&amp;amp;idx=1&amp;amp;sn=b230b29c33ef380e03cd41f92a7f40d6&amp;amp;chksm=ec43b31bdb343a0d744ae9f6088dd9f51b17f36653e3f8104b038de8e78828ef274e8c5097fd#rd">boxplot</a>》，而这里用到T检验，可以参考《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247483943&amp;amp;idx=1&amp;amp;sn=0e23181d7736e70f848858bcbc0cfd1d&amp;amp;chksm=ec43b360db343a76f0cac8204f3f71d77f2b08ef861c900c2e0ba9bea2b01930da0f35bf99c4#rd">什么是T检验</a>》。</p>
+<p>关于箱式图，可以参考我之前写的《<a href="http://mp.weixin.qq.com/s/kk3M1eoVhCiYmyu92P0zwA">boxplot</a>》，而这里用到T检验，可以参考《<a href="http://mp.weixin.qq.com/s/JAIhe2KAIKkvhw7RJt5OQw">什么是T检验</a>》。</p>
 
 <pre><code>myboxplot &lt;- function(x, data, col = NULL, xlab, pvalue=&quot;auto&quot;) {
     boxplot(x, data, axes = FALSE, col = col)
@@ -640,7 +640,7 @@ cowplot::plot_grid(p1, p2, ncol=2)
               </span>
               <div class="media-content hide-xs font-merryweather"><p><img src="https://guangchuangyu.github.io/blog_images/R/boxplot_multiple_group_files/WechatIMG111.png" alt="" /></p>
 
-<p>小密圈的问题，不是三两句话可以说明白的事情，必须要写文来解答，上一次写文是《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484882&amp;amp;idx=1&amp;amp;sn=d7426087ca6c2a9ddd89ee0fa9da59f7&amp;amp;chksm=ec43b495db343d83854be5d6b2271c1b03bfd7409295863f79a9f35b2b4377e01b20432de421#rd">听说你还不会画热图</a>》，里面正好吐槽了某知乎大V的「除了ggplot2之外其它都是鸡肋」，这次正好也可以再次呼应一下。</p>
+<p>小密圈的问题，不是三两句话可以说明白的事情，必须要写文来解答，上一次写文是《<a href="http://mp.weixin.qq.com/s/Xhi_ZkrEzUVdnCu7ECBS4w">听说你还不会画热图</a>》，里面正好吐槽了某知乎大V的「除了ggplot2之外其它都是鸡肋」，这次正好也可以再次呼应一下。</p>
 
 <p>这个图明显是R的base graphics做的，图是可圈可点的，能做出这图来，也已经是告别了只会用plot的低级趣味。这其实是4个图拼起来的，第一个图只是多了个y轴而已，它们画起来是一样的，那就是只画boxplot，不画x和y轴，（你可能会说不是有x轴？），x轴是后面再加上去的，而且加x轴的时候，不写labels，只有线条没有文本（你可能又会说明明有文本！），因为<code>axis</code>这个函数只支持labels要么是水平的，要么是垂直的，旋转某个角度是不支持的，所以labels是额外再打上去的。这里一张小小的图，门道还是挺多的。</p>
 
