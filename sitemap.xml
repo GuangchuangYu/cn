@@ -623,6 +623,11 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2008/12/opinion-in-programming/</loc>
+    <lastmod>2008-12-14T09:18:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2008/12/creat-r-package/</loc>
     <lastmod>2008-12-07T05:23:16+08:00</lastmod>
   </url>
@@ -653,6 +658,11 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2008/10/restore-thunder-url/</loc>
+    <lastmod>2008-10-05T05:08:02+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2008/09/%E5%8D%9A%E5%AE%A2%E8%BD%ACwordpress/</loc>
     <lastmod>2008-09-30T16:20:43+08:00</lastmod>
   </url>
@@ -663,6 +673,11 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2008/09/ntlmaps/</loc>
+    <lastmod>2008-09-28T10:27:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2008/09/how-to-hide-diary/</loc>
     <lastmod>2008-09-23T12:10:00+08:00</lastmod>
   </url>
@@ -670,6 +685,11 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/2008/09/modify-qq-login-gui/</loc>
     <lastmod>2008-09-23T08:55:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/2008/09/mapping-codelink-id/</loc>
+    <lastmod>2008-09-23T01:18:00+08:00</lastmod>
   </url>
   
   <url>
@@ -690,6 +710,11 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/2008/08/88-bachelor/</loc>
     <lastmod>2008-08-26T15:10:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/2008/08/gperiodic/</loc>
+    <lastmod>2008-08-25T06:56:00+08:00</lastmod>
   </url>
   
   <url>
@@ -834,6 +859,12 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/biomart/</loc>
+    <lastmod>2008-09-23T01:18:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/tags/blast/</loc>
     <lastmod>2016-11-17T00:53:00+08:00</lastmod>
     <priority>0</priority>
@@ -878,6 +909,12 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/c/</loc>
     <lastmod>2007-06-02T13:53:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/c/</loc>
+    <lastmod>2008-12-14T09:18:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -944,6 +981,12 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/clusterprofiler/</loc>
     <lastmod>2017-10-09T13:31:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/codelink/</loc>
+    <lastmod>2008-09-23T01:18:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1164,6 +1207,12 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/hwgcod/</loc>
+    <lastmod>2008-09-23T01:18:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/tags/hypergeometric/</loc>
     <lastmod>2017-03-03T00:10:37+08:00</lastmod>
     <priority>0</priority>
@@ -1196,6 +1245,12 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/linux/</loc>
     <lastmod>2017-10-04T00:49:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/linux/</loc>
+    <lastmod>2008-10-05T05:08:02+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1260,6 +1315,12 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/microarray/</loc>
+    <lastmod>2008-09-23T01:18:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/tags/motif/</loc>
     <lastmod>2015-05-21T14:53:35+08:00</lastmod>
     <priority>0</priority>
@@ -1316,6 +1377,12 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/ntfs/</loc>
     <lastmod>2008-08-09T04:32:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/ntlmaps/</loc>
+    <lastmod>2008-09-28T10:27:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1423,7 +1490,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/programming/</loc>
-    <lastmod>2008-11-25T10:40:22+08:00</lastmod>
+    <lastmod>2008-12-14T09:18:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1448,6 +1515,12 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/python/</loc>
     <lastmod>2017-09-13T13:37:55+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/python/</loc>
+    <lastmod>2008-12-14T09:18:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   

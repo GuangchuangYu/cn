@@ -370,7 +370,7 @@ ggplot(dd, aes(type, riskScore, fill=factor(category))) + geom_boxplot()
 
 <p>这个图就像模像样了，和上面分面的其实差不多，有一个共同点，x axis text不是我们想要的，怎么改？还是illustrator吧，带着ggplot2的枷锁改起来可费劲了。</p>
 
-<p>当然画图嘛，功夫一半在在画图上，另一半在于对数据的操作，既要用ggplot2，又要用得爽，你得有70岁的觉悟，「七十而从心所欲,不逾矩」，在矩（俗称枷锁）之下，从心所欲，关键还是对数据和作图系统的理解。这数据还得再变一下，我们不分组了，不就画8个boxplot么，把不同category的1和2全部换掉，换成不同的变量，然后画8个box就完事了。</p>
+<p>当然画图嘛，功夫一半在画图上，另一半在于对数据的操作，既要用ggplot2，又要用得爽，你得有70岁的觉悟，「七十而从心所欲,不逾矩」，在矩（俗称枷锁）之下，从心所欲，关键还是对数据和作图系统的理解。这数据还得再变一下，我们不分组了，不就画8个boxplot么，把不同category的1和2全部换掉，换成不同的变量，然后画8个box就完事了。</p>
 
 <pre><code>bmi = c(&quot;BMI &lt; 24&quot;, &quot;BMI &gt; 24&quot;)
 stage = c(&quot;pStage 1-2&quot;, &quot;pStage 3-4&quot;)
@@ -390,7 +390,7 @@ cowplot::plot_grid(p1, p2, ncol=2)
 
 <p><img src="https://guangchuangyu.github.io/blog_images/R/boxplot_multiple_group_files/boxplot_v2.png" alt="" /></p>
 
-<p>数据使然，我们很容易就想到这有4组，我们要分组，枷锁就来了，后面要改细节，标x axis text，简直是恶梦，除非你放弃治疗用illustrator。如果我们能够放开分组的概念，出王八拳，倒是豁然开朗。这里额外强调一点的是base graphics的作图，容易理解，符合直觉这一块，还是很厉害的，hadley wikham也说ggplot2是试图结合base + lattice的优点。多学一点「外语」对理解和应用「母语」是有帮助的。第二点，放开套路，多试试王八拳，能把对方打趴下的拳，就是好拳！</p>
+<p>数据使然，我们很容易就想到这有4组，每一组有两类，我们要分组，枷锁就来了，后面要改细节，标x axis text，简直是恶梦，除非你放弃治疗用illustrator。如果我们能够放开分组的概念，出王八拳，倒是豁然开朗。这里额外强调一点的是base graphics的作图，容易理解，符合直觉这一块，还是很厉害的，hadley wikham也说ggplot2是试图结合base + lattice的优点。多学一点「外语」对理解和应用「母语」是有帮助的。第二点，放开套路，多试试王八拳，能把对方打趴下的拳，就是好拳！</p>
               
               <center><span class="zaln"><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&mid=2247484170&idx=1&sn=ce5f7eb6df66d79661276a64bf25b4bc&chksm=ec43b24ddb343b5b2877574153aeccd049a6824716063883edb35c2338bd32c067caf3885f53#rd" class="zb">赞赏</a></span></center>
             </div>
@@ -924,7 +924,7 @@ p &lt;- ggplot(d, aes(x,y)) +
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         153 posts found
+         158 posts found
       </p>
     </div>
   </div>

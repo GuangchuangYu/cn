@@ -2478,6 +2478,27 @@ the metric itself.&lt;/p&gt;
     </item>
     
     <item>
+      <title>关于编程，我的理解</title>
+      <link>https://guangchuangyu.github.io/cn/2008/12/opinion-in-programming/</link>
+      <pubDate>Sun, 14 Dec 2008 09:18:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2008/12/opinion-in-programming/</guid>
+      <description>&lt;p&gt;写给某个小朋友看，希望我的一点看法，能有用。欢迎讨论。。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;为什么会有编程语言？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;计算机史前有过不同的理论，但最后活下来的，只有图灵机一个模型。现在的计算机，都是基于此发展的，跟二战前那个三层楼高的计算机，没啥区别，那个机器一堆开关，人工操作。CPU做的计算也是开关的逻辑计算。所以计算机的语言是01二进制，一开一关，告诉计算机要不要发出电子脉冲。写一个程序全是01数字组成的，对于人来说是mission impossible！所以必须要有编程语言。编程语言就是为了&lt;strong&gt;抽象&lt;/strong&gt;计算机机械原理的一面。&lt;/p&gt;
+
+&lt;p&gt;LOAD A ADD B STORE C&lt;/p&gt;
+
+&lt;p&gt;实现两个数的加和，这是人类可读的语言，而不是一串01所组成的不可读的机器语言。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;抽象&lt;/strong&gt;是最关键的。所有的编程语言都是为了实现抽象。越是高级的语言，抽象度越高，抽象度越高越好！&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>创建R包</title>
       <link>https://guangchuangyu.github.io/cn/2008/12/creat-r-package/</link>
       <pubDate>Sun, 07 Dec 2008 05:23:16 +0800</pubDate>
@@ -2583,6 +2604,17 @@ Learn!&lt;/p&gt;
     </item>
     
     <item>
+      <title>还原迅雷的url</title>
+      <link>https://guangchuangyu.github.io/cn/2008/10/restore-thunder-url/</link>
+      <pubDate>Sun, 05 Oct 2008 05:08:02 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2008/10/restore-thunder-url/</guid>
+      <description>&lt;p&gt;迅雷的url很恶心，硬是把你绑死在它的流氓软件上，今天试了一个用base64解码，果然用这个伎俩来欺骗用户。在原始的url前面和后面各加两个字符，然后用base64编码。写了下面一段script来还原出原始的url，这样随便用那个下载工具都可以用了。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>博客转WordPress</title>
       <link>https://guangchuangyu.github.io/cn/2008/09/%E5%8D%9A%E5%AE%A2%E8%BD%ACwordpress/</link>
       <pubDate>Tue, 30 Sep 2008 16:20:43 +0800</pubDate>
@@ -2610,6 +2642,26 @@ Learn!&lt;/p&gt;
 &lt;p&gt;06年，我就想换个系统算了。找人刻了张os9.2的盘，自己刻了张netbsd的盘。&lt;a href=&#34;https://guangchuangyu.github.io/cn/2006/06/os9-netbsd-dual-boot&#34;&gt;装双系统&lt;/a&gt;。&lt;/p&gt;
 
 &lt;p&gt;os9.2可以用微软的office 2001，还有ie5.5，不过都不是很好用。最爽的是可以用很多做图软件，photoshop,coredraw,illustrator等等啊。当年在合肥还帮很多同学处理过照片，因为6级考试要上传的图片要求是10k以下，很多人压到10k都看不清了，我用photoshop压到10k还能看清人.^_^.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>穿透院内的代理</title>
+      <link>https://guangchuangyu.github.io/cn/2008/09/ntlmaps/</link>
+      <pubDate>Sun, 28 Sep 2008 10:27:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2008/09/ntlmaps/</guid>
+      <description>&lt;p&gt;院里使用Microsoft ISA proxy作代理，我用linux，firefox可以通过代理验证，在终端export代理的环境变量也可以用。虽然很多软件不能支持认证，我也懒得理了。由于要用Cytoscape来分析蛋白相互作用网络，这个软件能支持代理却不支持NTLM认证，为了突破这个限制，只能作二级跳了，在本地设一个代理，软件通过这个代理上，而用本机代理负责去连接院内的代理并进行认证。&lt;/p&gt;
+
+&lt;p&gt;搜了一下，发现ntlmaps这个包可以用来做认证，这个包是用python写的。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; apt-get install ntlmaps # 安装。
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;安装完就是修改配置文件&lt;code&gt;/etc/ntlmaps/server.cfg&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;设定网络监听的端口、父级代理的IP和端口、账号、密码、网域。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -2644,6 +2696,45 @@ Learn!&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://guangchuangyu.github.io/blog_images/uploads/2008/09/qq_ahmu.rar&#34;&gt;安医版&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2008/11/qq_ahmu.jpg&#34; alt=&#34;qq\_ahmu&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>映射codelink芯片ID</title>
+      <link>https://guangchuangyu.github.io/cn/2008/09/mapping-codelink-id/</link>
+      <pubDate>Tue, 23 Sep 2008 01:18:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2008/09/mapping-codelink-id/</guid>
+      <description>&lt;p&gt;GE公司codelink芯片(这个破产品已经停产了)上的探针ID，需要转成别的ID，看了一些在线的转换ID工具，都不支持，探针ID基本上都只支持affy的。&lt;/p&gt;
+
+&lt;p&gt;想起了bioconductor里的biomaRt，这个包可以检索BioMart数据库，这个数据库里有N多种ID。试了一下，果然没问题。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;#加载biomaRt包
+library(biomaRt)
+
+#选取数据库
+ensembl = useMart(&amp;quot;ensembl&amp;quot;, dataset = &amp;quot;hsapiens_gene_ensembl&amp;quot;)
+
+#获取可供检索的attribute
+attributes=listAttributes(mart=ensembl)
+
+#看一下attributes里是否有codelink，得到以下的结果。
+attributes[grep(&amp;quot;codelink&amp;quot;,attributes[,1]), ]
+
+name description
+21 codelink Codelink ID
+#再搜一下其它我想要的ID
+
+#读进含有codelink ID的文件。
+mrna_id &amp;lt;- read.table(&amp;quot;mrna_id.txt&amp;quot;)
+
+#进行ID映射。
+idmap &amp;lt;- getBM(attributes=c(&amp;quot;codelink&amp;quot;,&amp;quot;refseq_dna&amp;quot;,&amp;quot;external_gene_id&amp;quot;,
+                            &amp;quot;embl&amp;quot;,&amp;quot;hgnc_id&amp;quot;,&amp;quot;hgnc_symbol&amp;quot;), 
+               filters =&amp;quot;codelink&amp;quot;, values=mrna_id[,1],
+               mart=ensembl,output=&amp;quot;list&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -2736,6 +2827,19 @@ server。之前使用rdesktop远程桌面，最近发现配合seamlessrdp可以�
 &amp;gt; 1-0.7^7
 [1] 0.9176457
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>gperiodic:元素周期表</title>
+      <link>https://guangchuangyu.github.io/cn/2008/08/gperiodic/</link>
+      <pubDate>Mon, 25 Aug 2008 06:56:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2008/08/gperiodic/</guid>
+      <description>&lt;p&gt;推荐一个小软件，gperiodic，功能很简单，就是个元素周期表而已，可以查到各个元素的详细信息。&lt;/p&gt;
+
+&lt;p&gt;当年初中的时候，这个表也是背过的。。那时候用方言背的，现在用普通话讲，总觉得有点别扭。。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
