@@ -225,6 +225,78 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/06/screen-shot/">
+          screen shot
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2011-06-28T12:17:30&#43;08:00">
+      
+  June 28, 2011
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/bsd">BSD</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/mac-os">Mac OS</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        买了苹果机，一直放在家里没用，准备开会带去用，拿过来装几个软件。</p>
+
+<p>校园网用锐捷是个比较讨厌的东西。当年在华农，光这<a href="http://guangchuangyu.github.io/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/">认证</a>就搞了很久。</p>
+
+<p>现在开源的认证客户端多了，搞起来也方便了，现在在linux下用的<a href="http://code.google.com/p/xmuruijie/">xmuruijie</a>，就比当年<a href="http://guangchuangyu.github.io/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/">mystar</a>好用。</p>
+
+<p>估计xmuruijie也是可以在苹果机上用的，依赖python，搞不好还有些modules要装，懒得去弄，搜了一下，找到<a href="http://code.google.com/p/mentohust/">mentohust</a>，当然需要改一下mac address，用万能的ifconfig搞定。</p>
+
+<p>为了编译软件，必要先装xcode，这个大家伙，4G多，中午挂到吃晚饭才下完。
+然后就可以装各种open source的软件。</p>
+
+<p>mac上有fink支持debian一样的apt-get，还有原生的macport，gentoo的portage也支持，我选择使用<a href="http://guangchuangyu.github.io/categories/bsd">netbsd</a>的pkgsrc来安装各种开源软件。</p>
+
+<p>以前用过比较长时间的netbsd，用着比较顺手。</p>
+
+<p>
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2011/06/screen-shot/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/06/five-things-biologists-should-know-about-statistics/">
           Five things biologists should know about statistics
         </a>
@@ -631,78 +703,6 @@ the metric itself.</p>
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/12/creat-r-package/">
-          创建R包
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2008-12-07T05:23:16&#43;08:00">
-      
-  December 7, 2008
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <pre><code>&gt; source(&quot;code.R&quot;) #载入写好的代码 
-&gt; package.skeleton(name=&quot;pkgname&quot;, list=c(&quot;function_name_list&quot;))
-# 生成R源码包的目录结构 
-</code></pre>
-
-<p>到man目录下改*.Rd文档。latex格式。这是包和函数的帮助文档。</p>
-
-<p>如果需要vignette文档的话。在包目录下，新建inst/doc，在里面写pkgname.Rnw文档。基本上是latex格式，不过允许你插入R代码。make的时候，会先跑代码。再自动转换成latex，再编译成pdf。</p>
-
-<pre><code>$ R CMD check pkgname 
-# 检验代码和文档。这个很重要。通常一些小问题都能在这一步发现。 
-$ R CMD build pkgname 
-# 打包，源码包格式 
-$ R CMD build --binary pkgname
-#编译后打包，二进制格式。
-</code></pre>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2008/12/creat-r-package/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -784,6 +784,44 @@ $ R CMD build --binary pkgname
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/shadowtext/">
+                <h3 class="media-heading">让你画图的文本出现阴影效果</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><blockquote>
+<p>Sercan Kahveci</p>
+
+<p>Greetings Mr. Yu,</p>
+
+<p>I am very happy that this package exists. Thank you for making it! I would like to request a feature, to ensure the package is able to compete with professional meme-creation tools like memegenerator and paint.net. Since memes often use the font Impact, in white and with black outline, I believe the package would be more powerful if it also did that automatically.</p>
+
+<p>Regards,</p>
+
+<p>Sercan Kahveci, MSc</p>
+
+<p>Content creator at Questionable Research Memes on Facebook
+<a href="https://www.facebook.com/QResearchMemes/">https://www.facebook.com/QResearchMemes/</a></p>
+</blockquote>
+
+<p>上次一篇《<a href="http://mp.weixin.qq.com/s/jDXjkrkq_YVhW-Z5Vx2-Fg">用R画meme ;)</a>》把脸书在做MEME的人都给炸出来了，专业人士给出专业建议，要用Impact字体，并且要让字体出现阴影效果，这真是厉害了，感觉有点神奇，但他一句，这样就可以拿专业工具PK了，着实太刺激了，我决定试一试能不能搞个阴影效果。结果还真让我搞成了，文本有一种浮在上面的错觉。</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/R/meme/shadowtext.png" alt="" /></p>
+
+<p>我们知道meme包是grid写的，我的输出是grob对象，当我半夜调试到2点，带着兴奋入睡之后，一点都睡不安稳，早上早早就迷迷糊糊在床上想着，既然我造出了文本阴影效果的grob对象，我应该封装成geom图层，送给ggplot2用户。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1029,52 +1067,6 @@ p &lt;- ggplot(d, aes(x,y)) +
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/ko-id-conversion/">
-                <h3 class="media-heading">ko数据库ID转换</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Sep 9, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><blockquote>
-<p>Since the clusterProfiler is a very useful tools for GO and Kegg annotation.At present I want to use it to enrich for kegg result while only have the KO number ,So I want to convert the KO number to the pathway function,Is there have any function or methods in the software can convert it?any help will be appreciated</p>
-</blockquote>
-
-<p><a href="https://github.com/GuangchuangYu/clusterProfiler/issues/99">这个问题</a>问说他想转KO到通路，首先这是一个常见的错误，很多人分不清<code>K</code>和<code>ko</code>，所以在我告诉他可以把<code>K number</code>转成<code>ko pathway</code>的时候，我先指出他的错误。</p>
-
-<p><code>ko</code> is actually pathway map. I think you are talking about <code>K</code> number mapping to <code>ko</code> pathway.</p>
-
-<pre><code class="language-r">&gt; bitr_kegg(&quot;K00844&quot;, &quot;kegg&quot;, &quot;Path&quot;, &quot;ko&quot;)
-     kegg    Path
-1  K00844 ko00010
-2  K00844 ko00051
-3  K00844 ko00052
-4  K00844 ko00500
-5  K00844 ko00520
-6  K00844 ko00521
-7  K00844 ko00524
-8  K00844 ko01100
-9  K00844 ko01110
-10 K00844 ko01120
-11 K00844 ko01130
-12 K00844 ko01200
-13 K00844 ko04066
-14 K00844 ko04910
-15 K00844 ko04930
-16 K00844 ko04973
-17 K00844 ko05230
-</code></pre>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1082,7 +1074,7 @@ p &lt;- ggplot(d, aes(x,y)) +
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         158 posts found
+         159 posts found
       </p>
     </div>
   </div>

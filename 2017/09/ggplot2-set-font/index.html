@@ -574,6 +574,44 @@ g &lt;- set_font(p, family=&quot;Times&quot;,
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/shadowtext/">
+                <h3 class="media-heading">让你画图的文本出现阴影效果</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><blockquote>
+<p>Sercan Kahveci</p>
+
+<p>Greetings Mr. Yu,</p>
+
+<p>I am very happy that this package exists. Thank you for making it! I would like to request a feature, to ensure the package is able to compete with professional meme-creation tools like memegenerator and paint.net. Since memes often use the font Impact, in white and with black outline, I believe the package would be more powerful if it also did that automatically.</p>
+
+<p>Regards,</p>
+
+<p>Sercan Kahveci, MSc</p>
+
+<p>Content creator at Questionable Research Memes on Facebook
+<a href="https://www.facebook.com/QResearchMemes/">https://www.facebook.com/QResearchMemes/</a></p>
+</blockquote>
+
+<p>上次一篇《<a href="http://mp.weixin.qq.com/s/jDXjkrkq_YVhW-Z5Vx2-Fg">用R画meme ;)</a>》把脸书在做MEME的人都给炸出来了，专业人士给出专业建议，要用Impact字体，并且要让字体出现阴影效果，这真是厉害了，感觉有点神奇，但他一句，这样就可以拿专业工具PK了，着实太刺激了，我决定试一试能不能搞个阴影效果。结果还真让我搞成了，文本有一种浮在上面的错觉。</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/R/meme/shadowtext.png" alt="" /></p>
+
+<p>我们知道meme包是grid写的，我的输出是grob对象，当我半夜调试到2点，带着兴奋入睡之后，一点都睡不安稳，早上早早就迷迷糊糊在床上想着，既然我造出了文本阴影效果的grob对象，我应该封装成geom图层，送给ggplot2用户。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/boxplot-multiple-group/">
                 <h3 class="media-heading">同一数据多变量分组的boxplot?</h3>
               </a>
@@ -815,52 +853,6 @@ p &lt;- ggplot(d, aes(x,y)) +
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/ko-id-conversion/">
-                <h3 class="media-heading">ko数据库ID转换</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Sep 9, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><blockquote>
-<p>Since the clusterProfiler is a very useful tools for GO and Kegg annotation.At present I want to use it to enrich for kegg result while only have the KO number ,So I want to convert the KO number to the pathway function,Is there have any function or methods in the software can convert it?any help will be appreciated</p>
-</blockquote>
-
-<p><a href="https://github.com/GuangchuangYu/clusterProfiler/issues/99">这个问题</a>问说他想转KO到通路，首先这是一个常见的错误，很多人分不清<code>K</code>和<code>ko</code>，所以在我告诉他可以把<code>K number</code>转成<code>ko pathway</code>的时候，我先指出他的错误。</p>
-
-<p><code>ko</code> is actually pathway map. I think you are talking about <code>K</code> number mapping to <code>ko</code> pathway.</p>
-
-<pre><code class="language-r">&gt; bitr_kegg(&quot;K00844&quot;, &quot;kegg&quot;, &quot;Path&quot;, &quot;ko&quot;)
-     kegg    Path
-1  K00844 ko00010
-2  K00844 ko00051
-3  K00844 ko00052
-4  K00844 ko00500
-5  K00844 ko00520
-6  K00844 ko00521
-7  K00844 ko00524
-8  K00844 ko01100
-9  K00844 ko01110
-10 K00844 ko01120
-11 K00844 ko01130
-12 K00844 ko01200
-13 K00844 ko04066
-14 K00844 ko04910
-15 K00844 ko04930
-16 K00844 ko04973
-17 K00844 ko05230
-</code></pre>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -868,7 +860,7 @@ p &lt;- ggplot(d, aes(x,y)) +
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         158 posts found
+         159 posts found
       </p>
     </div>
   </div>
