@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2017/11/go-version-issue/</loc>
+    <lastmod>2017-11-02T20:23:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2017/11/shadowtext/</loc>
     <lastmod>2017-11-01T19:53:00+08:00</lastmod>
   </url>
@@ -834,6 +839,12 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/bgi/</loc>
+    <lastmod>2017-11-02T20:23:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/tags/biobabble/</loc>
     <lastmod>2017-09-20T14:13:35+08:00</lastmod>
     <priority>0</priority>
@@ -859,7 +870,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/biology/</loc>
-    <lastmod>2017-07-26T07:05:22+08:00</lastmod>
+    <lastmod>2017-11-02T20:23:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1152,6 +1163,12 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/go/</loc>
+    <lastmod>2017-11-02T20:23:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/tags/google/</loc>
     <lastmod>2016-03-24T15:40:22+08:00</lastmod>
     <priority>0</priority>
@@ -1183,7 +1200,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/</loc>
-    <lastmod>2017-11-01T19:53:00+08:00</lastmod>
+    <lastmod>2017-11-02T20:23:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1477,7 +1494,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/post/</loc>
-    <lastmod>2017-11-01T19:53:00+08:00</lastmod>
+    <lastmod>2017-11-02T20:23:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   

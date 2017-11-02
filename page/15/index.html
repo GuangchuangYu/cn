@@ -225,6 +225,73 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2014/08/insertion-size/">
+          简简单单讲insertion size
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2014-08-27T11:44:16&#43;08:00">
+      
+  August 27, 2014
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/biology">Biology</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/experiment">Experiment</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        在进行测序的时候，需要将DNA打断，构建library，这些fragment需要接上adaptor，好进行扩增，illumina的测序，可以有single
+end和paired end两种，分别从一端和两端进行测序。</p>
+
+<pre><code>fragment                  ========================================
+fragment + adaptors    ~~~========================================~~~
+SE read                   ---------&gt;
+PE reads                R1---------&gt;                    &lt;---------R2
+unknown gap                         ....................
+</code></pre>
+
+<p>
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2014/08/insertion-size/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustworthy/">
           R binary is untrustworthy
         </a>
@@ -578,69 +645,6 @@ Methods 2013年的文章中有100个barplot图，而只有20个boxplot图，从�
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2013/09/install-emacs-on-mac/">
-          Install Emacs on Mac
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2013-09-10T18:04:22&#43;08:00">
-      
-  September 10, 2013
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/mac-os">Mac OS</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <h2 id="package-manager">package manager</h2>
-
-<p>之前一直用<a href="http://guangchuangyu.github.io/categories/bsd/">NetBSD</a>的<a href="http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/">pkgsrc</a>做为各种Unix-like系统的包管理系统，pkgsrc在自己内部解决依赖关系，这点对于生产环境来说，是很好的一个优点，我通常会在服务器里装一个pkgsrc，在用户目录下，维护一套UNIX软件。但是用在自己的机器上，内部解决软件依赖，就是个缺点，浪费编译时间和硬盘空间。</p>
-
-<p>Mac上可用的包管理系统很多，Fink移植于<a href="http://guangchuangyu.github.io/categories/linux/">Debian</a>的apt，<a href="http://guangchuangyu.github.io/categories/linux/">Gentoo</a>的portage也支持OS X。OS X是基于BSD的系统，BSD有自己的一套包管理系统，如FreeBSD的ports和<a href="http://guangchuangyu.github.io/categories/bsd/">NetBSD</a>的<a href="http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/">pkgsrc</a>，MacPorts可以看作是这一系列中的一个，不过它并不是OS X原生的，它只是OpenDarwin的子项目，所以和pkgsrc一个样，也是内部解决依赖，真正为OS
-X设计的原生包管理系统非Homebrew莫属，它会尽量依赖系统里已有的软件。
-
-自从用了Homebrew之后，再也不用为系统里有两套perl和python而crazy了，之前通过<a href="http://guangchuangyu.github.io/2011/06/screen-shot/">pkgsrc装的软件</a>全删掉，改Homebrew来安装和管理。
-如果软件没有被pkgsrc收录，而想通过pkgsrc来管理的话，那就得自己<a href="http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/">写makefile</a>，而homebrew，则可以自动帮你生成Formula，比如我要安装<a href="http://users.soe.ucsc.edu/~kent/src/">blat</a>：
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2013/09/install-emacs-on-mac/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -722,6 +726,35 @@ X设计的原生包管理系统非Homebrew莫属，它会尽量依赖系统里�
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/go-version-issue/">
+                <h3 class="media-heading">请用事实怼我</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>在《<a href="https://mp.weixin.qq.com/s/miGQs6U1d3aHwcm7vgNCVw">你昨天才做的分析，可能是几年前的结果！</a>》这篇文章的开头，我吐槽了WEGO+华大。</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/2017/bgi/1509620511198.jpg" alt="" /></p>
+
+<p>这只不过是我任性了一番，因为华大的拥护者来骂人了，我真的不理解，如果我说错了，你们可以拿事实啪啪啪地打我脸的，为什么要骂人，所以我任性地再吐一口口水。</p>
+
+<p>这里我必须承认，我说错了，华大用的WEGO不是那在线版的09年以后就不更新的WEGO，09年人的注释不超过7000个，华大给的报告有12929个（BP），当然也不是最新的，目前org.Hs.eg.db中GO的数据源是2017-03-29, BP的注释有16992个，比华大多了1/3，所以《<a href="https://mp.weixin.qq.com/s/miGQs6U1d3aHwcm7vgNCVw">你昨天才做的分析，可能是几年前的结果！</a>》这篇文章要吐槽的依然对，谁知道差这1/3会发生什么呢。</p>
+
+<pre><code>&gt; (16992-12929)/12929
+[1] 0.3142548
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -984,27 +1017,6 @@ p &lt;- ggplot(d, aes(x,y)) +
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/dose-simplot/">
-                <h3 class="media-heading">听说你还不会画heatmap</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Sep 9, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/DOSE/simplot/WechatIMG52.png" alt="" /></p>
-
-<p>群众纷纷表示图二是Excel画的，我觉得也是！Excel是生物学家的最爱啊。虽然做生信的人都看不上，最主要是没有记录，不具备可重复性。但现实就是大家都爱Excel。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1012,7 +1024,7 @@ p &lt;- ggplot(d, aes(x,y)) +
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         159 posts found
+         160 posts found
       </p>
     </div>
   </div>
