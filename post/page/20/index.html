@@ -225,6 +225,69 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/10/educational-games/">
+          Educational Games
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2008-10-06T15:10:00&#43;08:00">
+      
+  October 6, 2008
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/game">game</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        You don&rsquo;t have to be a genius to understand the work of the Nobel
+Laureates. These games and simulations, based on Nobel Prize-awarded
+achievements, will teach and inspire you while you&rsquo;re having FUN!
+Students, teachers and non-professionals of all ages will enjoy testing
+and building their knowledge in physics, chemistry, physiology or
+medicine, literature, peace and economics. So, go ahead, Explore and
+Learn!</p>
+
+<p>
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2008/10/educational-games/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/10/restore-thunder-url/">
           还原迅雷的url
         </a>
@@ -585,91 +648,6 @@ ga('send', 'pageview');
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/09/mapping-codelink-id/">
-          映射codelink芯片ID
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2008-09-23T01:18:00&#43;08:00">
-      
-  September 23, 2008
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/bioinformatics">Bioinformatics</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        GE公司codelink芯片(这个破产品已经停产了)上的探针ID，需要转成别的ID，看了一些在线的转换ID工具，都不支持，探针ID基本上都只支持affy的。</p>
-
-<p>想起了bioconductor里的biomaRt，这个包可以检索BioMart数据库，这个数据库里有N多种ID。试了一下，果然没问题。</p>
-
-<pre><code class="language-r">#加载biomaRt包
-library(biomaRt)
-
-#选取数据库
-ensembl = useMart(&quot;ensembl&quot;, dataset = &quot;hsapiens_gene_ensembl&quot;)
-
-#获取可供检索的attribute
-attributes=listAttributes(mart=ensembl)
-
-#看一下attributes里是否有codelink，得到以下的结果。
-attributes[grep(&quot;codelink&quot;,attributes[,1]), ]
-
-name description
-21 codelink Codelink ID
-#再搜一下其它我想要的ID
-
-#读进含有codelink ID的文件。
-mrna_id &lt;- read.table(&quot;mrna_id.txt&quot;)
-
-#进行ID映射。
-idmap &lt;- getBM(attributes=c(&quot;codelink&quot;,&quot;refseq_dna&quot;,&quot;external_gene_id&quot;,
-                            &quot;embl&quot;,&quot;hgnc_id&quot;,&quot;hgnc_symbol&quot;), 
-               filters =&quot;codelink&quot;, values=mrna_id[,1],
-               mart=ensembl,output=&quot;list&quot;)
-</code></pre>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2008/09/mapping-codelink-id/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -751,6 +729,47 @@ idmap &lt;- getBM(attributes=c(&quot;codelink&quot;,&quot;refseq_dna&quot;,&quot
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/kegg-gene-annotation/">
+                <h3 class="media-heading">听说你的KEGG分析有大量的基因没注释</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><a href="https://github.com/GuangchuangYu/clusterProfiler/issues/115">github上的问题</a>，问了两个问题，这是其中第二个：</p>
+
+<blockquote>
+<p>Meanwhile, when I fed the ENTREZID to enrichKEGG, it show me two unreasonable results:</p>
+
+<pre><code>kegg_enrich &lt;- enrichKEGG(gene = new_ids$ENTREZID,
+                          organism = 'hsa',
+                          keyType = 'ncbi-geneid',
+                          pvalueCutoff = 0.05,
+                          #pAdjustMethod = 'BH',
+                          #qvalueCutoff = 0.2,
+                          use_internal_data = FALSE)
+</code></pre>
+
+<p><code>head(kegg_enrich)</code></p>
+
+<pre><code>              ID                           Description GeneRatio  BgRatio       pvalue   p.adjust     qvalue
+hsa04380 hsa04380            Osteoclast differentiation    14/281 128/7299 0.0003817040 0.04767338 0.04508266
+hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.0003875885 0.04767338 0.04508266
+</code></pre>
+
+<p>I noted that only 281 genes are remained(there are 700+ genes in my list). In case that there is something wrong wtihin my gene list, I also tried my list with DAVID. It gave me reasonable results. So this is my second question, why enrichKEGG cannot recognize my geneids?</p>
+</blockquote>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1017,31 +1036,6 @@ p &lt;- ggplot(d, aes(x,y)) +
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/chipseeker-visualization/">
-                <h3 class="media-heading">CS6: ChIP数据可视化</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Oct 10, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>2017眼看要结束，立下写《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247483886&amp;idx=1&amp;sn=cb76891dff5787025f6b99cdcc723d86&amp;chksm=ec43b0a9db3439bfcec1c9ac3c0d00e6190cf4d3d02d9d3dc767007e0ff68b4fbd8064bb0f77#rd">CS0: ChIPseq从入门到放弃</a>》的flag还没完成，当时ChIPseeker是33个引用，现在已经80了，时间过得好快。</p>
-
-<p>最近放羊的Jimmy给我发来了一个截屏：</p>
-
-<p><img src="http://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/vis/WechatIMG51.jpeg" alt="" /></p>
-
-<p>说了一篇新文章，大段在称赞ChIPseeker：</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1049,7 +1043,7 @@ p &lt;- ggplot(d, aes(x,y)) +
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         160 posts found
+         161 posts found
       </p>
     </div>
   </div>

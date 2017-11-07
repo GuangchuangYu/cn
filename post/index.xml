@@ -6,10 +6,43 @@
     <description>Recent content in Posts on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 02 Nov 2017 20:23:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 07 Nov 2017 00:21:00 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>听说你的KEGG分析有大量的基因没注释</title>
+      <link>https://guangchuangyu.github.io/cn/2017/11/kegg-gene-annotation/</link>
+      <pubDate>Tue, 07 Nov 2017 00:21:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/11/kegg-gene-annotation/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/GuangchuangYu/clusterProfiler/issues/115&#34;&gt;github上的问题&lt;/a&gt;，问了两个问题，这是其中第二个：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Meanwhile, when I fed the ENTREZID to enrichKEGG, it show me two unreasonable results:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;kegg_enrich &amp;lt;- enrichKEGG(gene = new_ids$ENTREZID,
+                          organism = &#39;hsa&#39;,
+                          keyType = &#39;ncbi-geneid&#39;,
+                          pvalueCutoff = 0.05,
+                          #pAdjustMethod = &#39;BH&#39;,
+                          #qvalueCutoff = 0.2,
+                          use_internal_data = FALSE)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;head(kegg_enrich)&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;              ID                           Description GeneRatio  BgRatio       pvalue   p.adjust     qvalue
+hsa04380 hsa04380            Osteoclast differentiation    14/281 128/7299 0.0003817040 0.04767338 0.04508266
+hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.0003875885 0.04767338 0.04508266
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I noted that only 281 genes are remained(there are 700+ genes in my list). In case that there is something wrong wtihin my gene list, I also tried my list with DAVID. It gave me reasonable results. So this is my second question, why enrichKEGG cannot recognize my geneids?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>请用事实怼我</title>

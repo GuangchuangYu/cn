@@ -225,6 +225,88 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/03/%E5%85%B3%E4%BA%8Echipseq%E6%B3%A8%E9%87%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/">
+          关于ChIPseq注释的几个问题
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-03-31T12:23:16&#43;08:00">
+      
+  March 31, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/chipseq">ChIPseq</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <h2 id="为什么我要用某个基因组版本">为什么我要用某个基因组版本？</h2>
+
+<p>在上一篇文章中，我用了<code>TxDb.Hsapiens.UCSC.hg19.knownGene</code>。 <strong>hg19</strong>的<strong>TxDb</strong>, 或者有人就要问了，为什么不用<strong>hg38</strong>？</p>
+
+<p>这个问题，不是说要用那一个，不能用那一个。而是你必须得用某一个，这取决于你最初<strong>fastq</strong>用BWA/Bowtie2比对于某个版本的基因组，你最初用了某个版本，后面就得用相应的版本，不能混，因为不同版本的位置信息有所不同。</p>
+
+<p>当然如果要（贵圈喜欢的）强搞，也不是不可以，你得有chain file，先跑个liftOver，实际上就是在两个基因组版本之间做了位置转换。</p>
+
+<h2 id="为什么说-chipseeker-支持所有物种">为什么说<strong>ChIPseeker</strong>支持所有物种？</h2>
+
+<p>背景注释信息用了<strong>TxDb</strong>就能保证所有物种都支持了？我去哪里找我要的<strong>TxDb</strong>?</p>
+
+<p>我写<strong>ChIPseeker</strong>的时候，我做的物种是人，<strong>ChIPseeker</strong>在线一周就有剑桥大学的人写信跟我说在用<strong>ChIPseeker</strong>做果蝇，在<a href="https://guangchuangyu.github.io/cn/2017/03/bed%E6%96%87%E4%BB%B6/">BED文件</a>一文中，也提到了最近有人在Biostars上问用<strong>ChIPseeker</strong>做裂殖酵母。</p>
+
+<p>首先Bioconductor提供了30个TxDb包，可以供我们使用，这当然只能覆盖到一小部分物种，我们的物种基因组信息，多半要从UCSC或者Ensembl获得，我敢说支持所有物种，就是因为UCSC和ensembl上所有的基因组都可以被<strong>ChIPseeker</strong>支持。</p>
+
+<p>因为我们可以使用<strong>GenomicFeatures</strong>包函数来制作TxDb对象：</p>
+
+<ul>
+<li>makeTxDbFromUCSC： 通过UCSC在线制作TxDb</li>
+<li>makeTxDbFromBiomart: 通过ensembl在线制作TxDb</li>
+<li>makeTxDbFromGRanges：通过GRanges对象制作TxDb</li>
+<li>makeTxDbFromGFF：通过解析GFF文件制作TxDb</li>
+</ul>
+
+<p>
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2017/03/%E5%85%B3%E4%BA%8Echipseq%E6%B3%A8%E9%87%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/03/news-in-emojifont/">
           News in emojifont
         </a>
@@ -636,73 +718,6 @@ ga('send', 'pageview');
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/02/osx-bioedit/">
-          OSX版BioEdit
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-02-27T13:40:22&#43;08:00">
-      
-  February 27, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/biology">Biology</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/software">Software</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <blockquote>
-<p>BioEdit是一个Windows的程序，但在这里我要说的是苹果版！</p>
-</blockquote>
-
-<p><a href="http://www.mbio.ncsu.edu/bioedit/bioedit.html"><img src="http://www.mbio.ncsu.edu/bioedit/Banner1.GIF" alt="" /></a></p>
-
-<p>BioEdit有很多的功能，当然基本上我是不会用的，然而其核心的功能，编辑序列比对，是没法回避的！因为根本找不到可以与之匹敌的软件！</p>
-
-<p>神马！序列比对不都是clustalw, muscle, mafft这些软件生成完事吗？怎么还要编辑？！我只能说，年轻人，拿衣服啊。</p>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/02/osx-bioedit/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -784,6 +799,47 @@ ga('send', 'pageview');
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/kegg-gene-annotation/">
+                <h3 class="media-heading">听说你的KEGG分析有大量的基因没注释</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><a href="https://github.com/GuangchuangYu/clusterProfiler/issues/115">github上的问题</a>，问了两个问题，这是其中第二个：</p>
+
+<blockquote>
+<p>Meanwhile, when I fed the ENTREZID to enrichKEGG, it show me two unreasonable results:</p>
+
+<pre><code>kegg_enrich &lt;- enrichKEGG(gene = new_ids$ENTREZID,
+                          organism = 'hsa',
+                          keyType = 'ncbi-geneid',
+                          pvalueCutoff = 0.05,
+                          #pAdjustMethod = 'BH',
+                          #qvalueCutoff = 0.2,
+                          use_internal_data = FALSE)
+</code></pre>
+
+<p><code>head(kegg_enrich)</code></p>
+
+<pre><code>              ID                           Description GeneRatio  BgRatio       pvalue   p.adjust     qvalue
+hsa04380 hsa04380            Osteoclast differentiation    14/281 128/7299 0.0003817040 0.04767338 0.04508266
+hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.0003875885 0.04767338 0.04508266
+</code></pre>
+
+<p>I noted that only 281 genes are remained(there are 700+ genes in my list). In case that there is something wrong wtihin my gene list, I also tried my list with DAVID. It gave me reasonable results. So this is my second question, why enrichKEGG cannot recognize my geneids?</p>
+</blockquote>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1050,31 +1106,6 @@ p &lt;- ggplot(d, aes(x,y)) +
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/chipseeker-visualization/">
-                <h3 class="media-heading">CS6: ChIP数据可视化</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Oct 10, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>2017眼看要结束，立下写《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247483886&amp;idx=1&amp;sn=cb76891dff5787025f6b99cdcc723d86&amp;chksm=ec43b0a9db3439bfcec1c9ac3c0d00e6190cf4d3d02d9d3dc767007e0ff68b4fbd8064bb0f77#rd">CS0: ChIPseq从入门到放弃</a>》的flag还没完成，当时ChIPseeker是33个引用，现在已经80了，时间过得好快。</p>
-
-<p>最近放羊的Jimmy给我发来了一个截屏：</p>
-
-<p><img src="http://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/vis/WechatIMG51.jpeg" alt="" /></p>
-
-<p>说了一篇新文章，大段在称赞ChIPseeker：</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1082,7 +1113,7 @@ p &lt;- ggplot(d, aes(x,y)) +
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         160 posts found
+         161 posts found
       </p>
     </div>
   </div>

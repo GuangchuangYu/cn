@@ -228,6 +228,69 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/clusterprofiler-maize/">
+          非模式基因GO富集分析：以玉米为例&#43;使用OrgDb
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-07-24T08:53:00&#43;08:00">
+      
+  July 24, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        模式生物做什么都简单，非模式生物则很多缺少注释，没有注释你就没法做，只能是借助于各种软件比如blastgo，自己跑电子注释。但今天要讲的不是这种情况，很多物种还是有注释的，只是你有时候不知道该去那里下载，或者你有数据，却不知道该怎么用！很多的软件都是针对模式生物的，或者针对某一些类型的非模式生物，能够支持多种非模式生物，能够支持用户自己的注释文件的软件相对来讲，就非常少有了，然而clusterProfiler就是这类少有的软件之一。</p>
+
+<h2 id="获得orgdb">获得OrgDb</h2>
+
+<p>今天要讲的是通过OrgDb来做GO分析，这是clusterProfiler的<strong>enrichGO</strong>函数所支持的背景注释，Bioconductor自带20个OrgDb可供使用，多半是模式生物，难道我们要做的物种不在这20个里面就不行了吗？显然不是的，clusterProfiler能支持的物种我自己都数不过来。</p>
+
+<p>我们可以通过AnnotationHub在线检索并抓取OrgDb，比如这里以玉米为例：</p>
+
+<p>
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2017/07/clusterprofiler-maize/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+            
+              
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/david-clusterprofiler/">
           SCIENCE文章用了DAVID被吐槽
         </a>
@@ -602,6 +665,47 @@ I downloaded KEGG pathway dataset to apply fisher exact test. however, genes are
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/kegg-gene-annotation/">
+                <h3 class="media-heading">听说你的KEGG分析有大量的基因没注释</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><a href="https://github.com/GuangchuangYu/clusterProfiler/issues/115">github上的问题</a>，问了两个问题，这是其中第二个：</p>
+
+<blockquote>
+<p>Meanwhile, when I fed the ENTREZID to enrichKEGG, it show me two unreasonable results:</p>
+
+<pre><code>kegg_enrich &lt;- enrichKEGG(gene = new_ids$ENTREZID,
+                          organism = 'hsa',
+                          keyType = 'ncbi-geneid',
+                          pvalueCutoff = 0.05,
+                          #pAdjustMethod = 'BH',
+                          #qvalueCutoff = 0.2,
+                          use_internal_data = FALSE)
+</code></pre>
+
+<p><code>head(kegg_enrich)</code></p>
+
+<pre><code>              ID                           Description GeneRatio  BgRatio       pvalue   p.adjust     qvalue
+hsa04380 hsa04380            Osteoclast differentiation    14/281 128/7299 0.0003817040 0.04767338 0.04508266
+hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.0003875885 0.04767338 0.04508266
+</code></pre>
+
+<p>I noted that only 281 genes are remained(there are 700+ genes in my list). In case that there is something wrong wtihin my gene list, I also tried my list with DAVID. It gave me reasonable results. So this is my second question, why enrichKEGG cannot recognize my geneids?</p>
+</blockquote>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/go-version-issue/">
                 <h3 class="media-heading">请用事实怼我</h3>
               </a>
@@ -864,31 +968,6 @@ p &lt;- ggplot(d, aes(x,y)) +
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/chipseeker-visualization/">
-                <h3 class="media-heading">CS6: ChIP数据可视化</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Oct 10, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>2017眼看要结束，立下写《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247483886&amp;idx=1&amp;sn=cb76891dff5787025f6b99cdcc723d86&amp;chksm=ec43b0a9db3439bfcec1c9ac3c0d00e6190cf4d3d02d9d3dc767007e0ff68b4fbd8064bb0f77#rd">CS0: ChIPseq从入门到放弃</a>》的flag还没完成，当时ChIPseeker是33个引用，现在已经80了，时间过得好快。</p>
-
-<p>最近放羊的Jimmy给我发来了一个截屏：</p>
-
-<p><img src="http://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/vis/WechatIMG51.jpeg" alt="" /></p>
-
-<p>说了一篇新文章，大段在称赞ChIPseeker：</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -896,7 +975,7 @@ p &lt;- ggplot(d, aes(x,y)) +
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         160 posts found
+         161 posts found
       </p>
     </div>
   </div>
