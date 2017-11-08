@@ -1,0 +1,1131 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+  
+
+
+  
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.24.1">
+    <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
+    <title>主成分分析</title>
+    <meta name="author" content="Guangchuang Yu">
+    <meta name="keywords" content="">
+
+    <link rel="icon" href="https://guangchuangyu.github.io/cn/favicon.png">
+    
+
+    
+    <meta name="description" content="使用《Bioinformatics and Molecular Evolution》Table 2.2 (page 24)中的数据:
+
+&gt; aa
+  VOL  BULK POLARITY    PI HYD1  HYD2 SURFACE_AREA FRACT_AREA
+A  67 11.50     0.00  6.00  1.8   1.6          113       0.74
+R 148 14.28    52.00 10.76 -4.5 -12.3          241       0.64
+N  96 12.28     3.38  5.41 -3.5  -4.8          158       0.63
+D  91 11.68    49.70  2.77 -3.5  -9.2          151       0.62
+C  86 13.46     1.48  5.05  2.5   2.0          140       0.91
+Q 114 14.45     3.53  5.65 -3.5  -4.1          189       0.62
+E 109 13.57    49.90  3.22 -3.5  -8.2          183       0.62
+G  48  3.40     0.00  5.97 -0.4   1.0           85       0.72
+H 118 13.69    51.60  7.59 -3.2  -3.0          194       0.78
+I 124 21.40     0.13  6.02  4.5   3.1          182       0.88
+L 124 21.40     0.13  5.98  3.8   2.8          180       0.85
+K 135 15.71    49.50  9.74 -3.9  -8.8          211       0.52
+M 124 16.25     1.43  5.74  1.9   3.4          204       0.85
+F 135 19.80     0.35  5.48  2.8   3.7          218       0.88
+P  90 17.43     1.58  6.30 -1.6  -0.2          143       0.64
+S  73  9.47     1.67  5.68 -0.8   0.6          122       0.66
+T  93 15.77     1.66  5.66 -0.7   1.2          146       0.70
+W 163 21.67     2.10  5.89 -0.9   1.9          259       0.85
+Y 141 18.03     1.61  5.66 -1.3  -0.7          229       0.76
+V 105 21.57     0.13  5.96  4.2   2.6          160       0.85
+&gt; aa.pc=prcomp(aa, center=TRUE, scale.=TRUE)
+&gt; aa.pc
+Standard deviations:
+[1] 1.88954924 1.67729608 0.88574923 0.65278312 0.53130822 0.27233782 0.21394709
+[8] 0.05808934
+
+Rotation:
+                     PC1         PC2           PC3         PC4        PC5
+VOL           0.05790316 -0.58494270  0.1057571970 -0.09311996  0.1684497
+BULK         -0.22089815 -0.48085679  0.1685873871 -0.15647005 -0.6842181
+POLARITY      0.44390146 -0.10372198  0.1432388489  0.73088587 -0.1747201
+PI            0.18580066 -0.25244261 -0.9417631776  0.02722752 -0.0522075
+HYD1         -0.49279466 -0.03284274 -0.1281013177  0.35033569 -0.3534423
+HYD2         -0.50821923  0.03312719 -0.1292531953 -0.12776013  0.1837842
+SURFACE_AREA  0.10045084 -0.56587879  0.1408585179 -0.10640314  0.3652725
+FRACT_AREA   -0.45283231 -0.17244828  0.0009997326  0.53059489  0.4220135
+                     PC6         PC7          PC8
+VOL          -0.11705506  0.21351836 -0.739571539
+BULK          0.25124136 -0.35181704  0.109655303
+POLARITY      0.39252691  0.22974777  0.009653888
+PI            0.04562347 -0.09136074  0.030622127
+HYD1         -0.50083501  0.48686655  0.064292387
+HYD2          0.70974650  0.41191312 -0.019940539
+SURFACE_AREA -0.11107422  0.24097250  0.659316956
+FRACT_AREA   -0.01018472 -0.55201871 -0.027363410
+&gt; summary(aa.pc)
+Importance of components:
+                          PC1    PC2     PC3     PC4     PC5     PC6     PC7
+Standard deviation     1.8895 1.6773 0.88575 0.65278 0.53131 0.27234 0.21395
+Proportion of Variance 0.4463 0.3517 0.09807 0.05327 0.03529 0.00927 0.00572
+Cumulative Proportion  0.4463 0.7980 0.89603 0.94930 0.98459 0.99386 0.99958
+                           PC8
+Standard deviation     0.05809
+Proportion of Variance 0.00042
+Cumulative Proportion  1.00000
+
+
+PC1和PC2能够解释79.8%的variation。
+
+">
+    <meta property="og:description" content="使用《Bioinformatics and Molecular Evolution》Table 2.2 (page 24)中的数据:
+
+&gt; aa
+  VOL  BULK POLARITY    PI HYD1  HYD2 SURFACE_AREA FRACT_AREA
+A  67 11.50     0.00  6.00  1.8   1.6          113       0.74
+R 148 14.28    52.00 10.76 -4.5 -12.3          241       0.64
+N  96 12.28     3.38  5.41 -3.5  -4.8          158       0.63
+D  91 11.68    49.70  2.77 -3.5  -9.2          151       0.62
+C  86 13.46     1.48  5.05  2.5   2.0          140       0.91
+Q 114 14.45     3.53  5.65 -3.5  -4.1          189       0.62
+E 109 13.57    49.90  3.22 -3.5  -8.2          183       0.62
+G  48  3.40     0.00  5.97 -0.4   1.0           85       0.72
+H 118 13.69    51.60  7.59 -3.2  -3.0          194       0.78
+I 124 21.40     0.13  6.02  4.5   3.1          182       0.88
+L 124 21.40     0.13  5.98  3.8   2.8          180       0.85
+K 135 15.71    49.50  9.74 -3.9  -8.8          211       0.52
+M 124 16.25     1.43  5.74  1.9   3.4          204       0.85
+F 135 19.80     0.35  5.48  2.8   3.7          218       0.88
+P  90 17.43     1.58  6.30 -1.6  -0.2          143       0.64
+S  73  9.47     1.67  5.68 -0.8   0.6          122       0.66
+T  93 15.77     1.66  5.66 -0.7   1.2          146       0.70
+W 163 21.67     2.10  5.89 -0.9   1.9          259       0.85
+Y 141 18.03     1.61  5.66 -1.3  -0.7          229       0.76
+V 105 21.57     0.13  5.96  4.2   2.6          160       0.85
+&gt; aa.pc=prcomp(aa, center=TRUE, scale.=TRUE)
+&gt; aa.pc
+Standard deviations:
+[1] 1.88954924 1.67729608 0.88574923 0.65278312 0.53130822 0.27233782 0.21394709
+[8] 0.05808934
+
+Rotation:
+                     PC1         PC2           PC3         PC4        PC5
+VOL           0.05790316 -0.58494270  0.1057571970 -0.09311996  0.1684497
+BULK         -0.22089815 -0.48085679  0.1685873871 -0.15647005 -0.6842181
+POLARITY      0.44390146 -0.10372198  0.1432388489  0.73088587 -0.1747201
+PI            0.18580066 -0.25244261 -0.9417631776  0.02722752 -0.0522075
+HYD1         -0.49279466 -0.03284274 -0.1281013177  0.35033569 -0.3534423
+HYD2         -0.50821923  0.03312719 -0.1292531953 -0.12776013  0.1837842
+SURFACE_AREA  0.10045084 -0.56587879  0.1408585179 -0.10640314  0.3652725
+FRACT_AREA   -0.45283231 -0.17244828  0.0009997326  0.53059489  0.4220135
+                     PC6         PC7          PC8
+VOL          -0.11705506  0.21351836 -0.739571539
+BULK          0.25124136 -0.35181704  0.109655303
+POLARITY      0.39252691  0.22974777  0.009653888
+PI            0.04562347 -0.09136074  0.030622127
+HYD1         -0.50083501  0.48686655  0.064292387
+HYD2          0.70974650  0.41191312 -0.019940539
+SURFACE_AREA -0.11107422  0.24097250  0.659316956
+FRACT_AREA   -0.01018472 -0.55201871 -0.027363410
+&gt; summary(aa.pc)
+Importance of components:
+                          PC1    PC2     PC3     PC4     PC5     PC6     PC7
+Standard deviation     1.8895 1.6773 0.88575 0.65278 0.53131 0.27234 0.21395
+Proportion of Variance 0.4463 0.3517 0.09807 0.05327 0.03529 0.00927 0.00572
+Cumulative Proportion  0.4463 0.7980 0.89603 0.94930 0.98459 0.99386 0.99958
+                           PC8
+Standard deviation     0.05809
+Proportion of Variance 0.00042
+Cumulative Proportion  1.00000
+
+
+PC1和PC2能够解释79.8%的variation。
+
+">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="主成分分析">
+    <meta property="og:url" content="/2014/07/principle_component_analysis/">
+    <meta property="og:site_name" content="Guangchuang Yu">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Guangchuang Yu">
+    <meta name="twitter:description" content="使用《Bioinformatics and Molecular Evolution》Table 2.2 (page 24)中的数据:
+
+&gt; aa
+  VOL  BULK POLARITY    PI HYD1  HYD2 SURFACE_AREA FRACT_AREA
+A  67 11.50     0.00  6.00  1.8   1.6          113       0.74
+R 148 14.28    52.00 10.76 -4.5 -12.3          241       0.64
+N  96 12.28     3.38  5.41 -3.5  -4.8          158       0.63
+D  91 11.68    49.70  2.77 -3.5  -9.2          151       0.62
+C  86 13.46     1.48  5.05  2.5   2.0          140       0.91
+Q 114 14.45     3.53  5.65 -3.5  -4.1          189       0.62
+E 109 13.57    49.90  3.22 -3.5  -8.2          183       0.62
+G  48  3.40     0.00  5.97 -0.4   1.0           85       0.72
+H 118 13.69    51.60  7.59 -3.2  -3.0          194       0.78
+I 124 21.40     0.13  6.02  4.5   3.1          182       0.88
+L 124 21.40     0.13  5.98  3.8   2.8          180       0.85
+K 135 15.71    49.50  9.74 -3.9  -8.8          211       0.52
+M 124 16.25     1.43  5.74  1.9   3.4          204       0.85
+F 135 19.80     0.35  5.48  2.8   3.7          218       0.88
+P  90 17.43     1.58  6.30 -1.6  -0.2          143       0.64
+S  73  9.47     1.67  5.68 -0.8   0.6          122       0.66
+T  93 15.77     1.66  5.66 -0.7   1.2          146       0.70
+W 163 21.67     2.10  5.89 -0.9   1.9          259       0.85
+Y 141 18.03     1.61  5.66 -1.3  -0.7          229       0.76
+V 105 21.57     0.13  5.96  4.2   2.6          160       0.85
+&gt; aa.pc=prcomp(aa, center=TRUE, scale.=TRUE)
+&gt; aa.pc
+Standard deviations:
+[1] 1.88954924 1.67729608 0.88574923 0.65278312 0.53130822 0.27233782 0.21394709
+[8] 0.05808934
+
+Rotation:
+                     PC1         PC2           PC3         PC4        PC5
+VOL           0.05790316 -0.58494270  0.1057571970 -0.09311996  0.1684497
+BULK         -0.22089815 -0.48085679  0.1685873871 -0.15647005 -0.6842181
+POLARITY      0.44390146 -0.10372198  0.1432388489  0.73088587 -0.1747201
+PI            0.18580066 -0.25244261 -0.9417631776  0.02722752 -0.0522075
+HYD1         -0.49279466 -0.03284274 -0.1281013177  0.35033569 -0.3534423
+HYD2         -0.50821923  0.03312719 -0.1292531953 -0.12776013  0.1837842
+SURFACE_AREA  0.10045084 -0.56587879  0.1408585179 -0.10640314  0.3652725
+FRACT_AREA   -0.45283231 -0.17244828  0.0009997326  0.53059489  0.4220135
+                     PC6         PC7          PC8
+VOL          -0.11705506  0.21351836 -0.739571539
+BULK          0.25124136 -0.35181704  0.109655303
+POLARITY      0.39252691  0.22974777  0.009653888
+PI            0.04562347 -0.09136074  0.030622127
+HYD1         -0.50083501  0.48686655  0.064292387
+HYD2          0.70974650  0.41191312 -0.019940539
+SURFACE_AREA -0.11107422  0.24097250  0.659316956
+FRACT_AREA   -0.01018472 -0.55201871 -0.027363410
+&gt; summary(aa.pc)
+Importance of components:
+                          PC1    PC2     PC3     PC4     PC5     PC6     PC7
+Standard deviation     1.8895 1.6773 0.88575 0.65278 0.53131 0.27234 0.21395
+Proportion of Variance 0.4463 0.3517 0.09807 0.05327 0.03529 0.00927 0.00572
+Cumulative Proportion  0.4463 0.7980 0.89603 0.94930 0.98459 0.99386 0.99958
+                           PC8
+Standard deviation     0.05809
+Proportion of Variance 0.00042
+Cumulative Proportion  1.00000
+
+
+PC1和PC2能够解释79.8%的variation。
+
+">
+    
+      <meta name="twitter:creator" content="@guangchuangyu">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
+    
+
+    
+    
+    
+
+    
+
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" />
+    
+    
+    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-u6mk0ojoywresbx8iepslrmmhl4stuhrsxuwhkpwrkrx7mryjcaimasnk4pi.min.css" />
+    
+    
+
+    
+      
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-77901140-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://guangchuangyu.github.io/cn/">Guangchuang Yu</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://guangchuangyu.github.io/cn/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://guangchuangyu.github.io/cn/#about">
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Guangchuang Yu</h4>
+        
+          <h5 class="sidebar-profile-bio">a senior-in-age-but-not-senior-in-knowledge bioinformatician</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/GuangchuangYu" target="_blank">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      主成分分析
+    </h1>
+  
+  <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2014-07-15T11:37:55&#43;08:00">
+      
+  July 15, 2014
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/statistics">statistics</a>
+    
+  
+
+
+</div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>使用《Bioinformatics and Molecular Evolution》Table 2.2 (page 24)中的数据:</p>
+
+<pre><code>&gt; aa
+  VOL  BULK POLARITY    PI HYD1  HYD2 SURFACE_AREA FRACT_AREA
+A  67 11.50     0.00  6.00  1.8   1.6          113       0.74
+R 148 14.28    52.00 10.76 -4.5 -12.3          241       0.64
+N  96 12.28     3.38  5.41 -3.5  -4.8          158       0.63
+D  91 11.68    49.70  2.77 -3.5  -9.2          151       0.62
+C  86 13.46     1.48  5.05  2.5   2.0          140       0.91
+Q 114 14.45     3.53  5.65 -3.5  -4.1          189       0.62
+E 109 13.57    49.90  3.22 -3.5  -8.2          183       0.62
+G  48  3.40     0.00  5.97 -0.4   1.0           85       0.72
+H 118 13.69    51.60  7.59 -3.2  -3.0          194       0.78
+I 124 21.40     0.13  6.02  4.5   3.1          182       0.88
+L 124 21.40     0.13  5.98  3.8   2.8          180       0.85
+K 135 15.71    49.50  9.74 -3.9  -8.8          211       0.52
+M 124 16.25     1.43  5.74  1.9   3.4          204       0.85
+F 135 19.80     0.35  5.48  2.8   3.7          218       0.88
+P  90 17.43     1.58  6.30 -1.6  -0.2          143       0.64
+S  73  9.47     1.67  5.68 -0.8   0.6          122       0.66
+T  93 15.77     1.66  5.66 -0.7   1.2          146       0.70
+W 163 21.67     2.10  5.89 -0.9   1.9          259       0.85
+Y 141 18.03     1.61  5.66 -1.3  -0.7          229       0.76
+V 105 21.57     0.13  5.96  4.2   2.6          160       0.85
+&gt; aa.pc=prcomp(aa, center=TRUE, scale.=TRUE)
+&gt; aa.pc
+Standard deviations:
+[1] 1.88954924 1.67729608 0.88574923 0.65278312 0.53130822 0.27233782 0.21394709
+[8] 0.05808934
+
+Rotation:
+                     PC1         PC2           PC3         PC4        PC5
+VOL           0.05790316 -0.58494270  0.1057571970 -0.09311996  0.1684497
+BULK         -0.22089815 -0.48085679  0.1685873871 -0.15647005 -0.6842181
+POLARITY      0.44390146 -0.10372198  0.1432388489  0.73088587 -0.1747201
+PI            0.18580066 -0.25244261 -0.9417631776  0.02722752 -0.0522075
+HYD1         -0.49279466 -0.03284274 -0.1281013177  0.35033569 -0.3534423
+HYD2         -0.50821923  0.03312719 -0.1292531953 -0.12776013  0.1837842
+SURFACE_AREA  0.10045084 -0.56587879  0.1408585179 -0.10640314  0.3652725
+FRACT_AREA   -0.45283231 -0.17244828  0.0009997326  0.53059489  0.4220135
+                     PC6         PC7          PC8
+VOL          -0.11705506  0.21351836 -0.739571539
+BULK          0.25124136 -0.35181704  0.109655303
+POLARITY      0.39252691  0.22974777  0.009653888
+PI            0.04562347 -0.09136074  0.030622127
+HYD1         -0.50083501  0.48686655  0.064292387
+HYD2          0.70974650  0.41191312 -0.019940539
+SURFACE_AREA -0.11107422  0.24097250  0.659316956
+FRACT_AREA   -0.01018472 -0.55201871 -0.027363410
+&gt; summary(aa.pc)
+Importance of components:
+                          PC1    PC2     PC3     PC4     PC5     PC6     PC7
+Standard deviation     1.8895 1.6773 0.88575 0.65278 0.53131 0.27234 0.21395
+Proportion of Variance 0.4463 0.3517 0.09807 0.05327 0.03529 0.00927 0.00572
+Cumulative Proportion  0.4463 0.7980 0.89603 0.94930 0.98459 0.99386 0.99958
+                           PC8
+Standard deviation     0.05809
+Proportion of Variance 0.00042
+Cumulative Proportion  1.00000
+</code></pre>
+
+<p>PC1和PC2能够解释79.8%的variation。</p>
+
+<p></p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/2014/07/aa_pca.png" alt="" /></p>
+
+<p>PC1主要是疏水性和极性，从图中可以看出I, L, V, M和F这几个中等SIZE的疏水氨基酸聚成一类，D和E这两个酸性氨基酸，Q和N这两个酰胺也比较接近，而碱性氨基酸K和R也很接近，H也算是和K，R较近。</p>
+
+<p>PC2主要是分子体积和bulkiness，最大的氨基酸W和Y中靠得比较近。在这个PCA的图中，很多氨基酸相似的特性还是很好地能够呈现出来。</p>
+
+<h3 id="reference">Reference</h3>
+
+<ol>
+<li><a href="http://cran.r-project.org/web/packages/HSAUR/vignettes/Ch_principal_components_analysis.pdf">HSAUR: A Handbook of Statistical Analyses Using
+R</a></li>
+<li><a href="http://book.douban.com/subject/2044074/">Bioinformatics and Molecular
+Evolution</a></li>
+</ol>
+              
+              <center><span class="zaln"><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&mid=2247484170&idx=1&sn=ce5f7eb6df66d79661276a64bf25b4bc&chksm=ec43b24ddb343b5b2877574153aeccd049a6824716063883edb35c2338bd32c067caf3885f53#rd" class="zb">赞赏</a></span></center>
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/pca/">PCA</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  <nav>
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustworthy/" data-tooltip="R binary is untrustworthy">
+          
+            <i class="fa fa-angle-left"></i>
+            <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+          </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2014/06/use-linux-desktop-again/" data-tooltip="use linux desktop again">
+          
+            <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+  <ul class="post-actions post-action-share">
+    
+      <li class="post-action hide-lg hide-md hide-sm">
+        <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+          <i class="fa fa-share-alt"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2014%2f07%2fprinciple_component_analysis%2f">
+          <i class="fa fa-google-plus"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2014%2f07%2fprinciple_component_analysis%2f">
+          <i class="fa fa-facebook-official"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2014%2f07%2fprinciple_component_analysis%2f">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+    
+    
+      <li class="post-action">
+        <a class="post-action-btn btn btn--default" href="#disqus_thread">
+          <i class="fa fa-comment-o"></i>
+        </a>
+      </li>
+    
+    <li class="post-action">
+      
+        <a class="post-action-btn btn btn--default" href="#">
+      
+        <i class="fa fa-list"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2017 Guangchuang Yu. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  <nav>
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustworthy/" data-tooltip="R binary is untrustworthy">
+          
+            <i class="fa fa-angle-left"></i>
+            <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+          </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2014/06/use-linux-desktop-again/" data-tooltip="use linux desktop again">
+          
+            <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+  <ul class="post-actions post-action-share">
+    
+      <li class="post-action hide-lg hide-md hide-sm">
+        <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+          <i class="fa fa-share-alt"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2014%2f07%2fprinciple_component_analysis%2f">
+          <i class="fa fa-google-plus"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2014%2f07%2fprinciple_component_analysis%2f">
+          <i class="fa fa-facebook-official"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2014%2f07%2fprinciple_component_analysis%2f">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+    
+    
+      <li class="post-action">
+        <a class="post-action-btn btn btn--default" href="#disqus_thread">
+          <i class="fa fa-comment-o"></i>
+        </a>
+      </li>
+    
+    <li class="post-action">
+      
+        <a class="post-action-btn btn btn--default" href="#">
+      
+        <i class="fa fa-list"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <ul class="share-options">
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2014%2f07%2fprinciple_component_analysis%2f">
+        <i class="fa fa-google-plus"></i><span>Share on Google Plus</span>
+      </a>
+    </li>
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2014%2f07%2fprinciple_component_analysis%2f">
+        <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+      </a>
+    </li>
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2014%2f07%2fprinciple_component_analysis%2f">
+        <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Guangchuang Yu</h4>
+    
+      <div id="about-card-bio">a senior-in-age-but-not-senior-in-knowledge bioinformatician</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Postdoc researcher
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Hong Kong
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Search" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no post found</div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/kegg-gene-annotation/">
+                <h3 class="media-heading">听说你的KEGG分析有大量的基因没注释</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><a href="https://github.com/GuangchuangYu/clusterProfiler/issues/115">github上的问题</a>，问了两个问题，这是其中第二个：</p>
+
+<blockquote>
+<p>Meanwhile, when I fed the ENTREZID to enrichKEGG, it show me two unreasonable results:</p>
+
+<pre><code>kegg_enrich &lt;- enrichKEGG(gene = new_ids$ENTREZID,
+                          organism = 'hsa',
+                          keyType = 'ncbi-geneid',
+                          pvalueCutoff = 0.05,
+                          #pAdjustMethod = 'BH',
+                          #qvalueCutoff = 0.2,
+                          use_internal_data = FALSE)
+</code></pre>
+
+<p><code>head(kegg_enrich)</code></p>
+
+<pre><code>              ID                           Description GeneRatio  BgRatio       pvalue   p.adjust     qvalue
+hsa04380 hsa04380            Osteoclast differentiation    14/281 128/7299 0.0003817040 0.04767338 0.04508266
+hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.0003875885 0.04767338 0.04508266
+</code></pre>
+
+<p>I noted that only 281 genes are remained(there are 700+ genes in my list). In case that there is something wrong wtihin my gene list, I also tried my list with DAVID. It gave me reasonable results. So this is my second question, why enrichKEGG cannot recognize my geneids?</p>
+</blockquote>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/go-version-issue/">
+                <h3 class="media-heading">请用事实怼我</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>在《<a href="https://mp.weixin.qq.com/s/miGQs6U1d3aHwcm7vgNCVw">你昨天才做的分析，可能是几年前的结果！</a>》这篇文章的开头，我吐槽了WEGO+华大（虽然文章是转载自《<a href="https://mp.weixin.qq.com/s?__biz=MzAxMjQ3MTU5Mg==&amp;mid=2650655271&amp;idx=1&amp;sn=b1dfadd57937c949ba0e8deeac2fdeb6&amp;scene=21#wechat_redirect">嘉因生物</a>》，但这段是我给自己加的戏码，广告后面才是原帖内容 -，-）。</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/2017/bgi/1509620511198.jpg" alt="" /></p>
+
+<p>这只不过是我任性了一番，因为华大的拥护者来骂人了，我真的不理解，如果我说错了，你们可以拿事实啪啪啪地打我脸的，为什么要骂人，所以我任性地再吐一口口水。</p>
+
+<p>这里我必须承认，我说错了，华大用的WEGO不是那在线版的09年以后就不更新的WEGO，09年人的注释不超过7000个，华大给的报告有12929个（BP），当然也不是最新的，目前org.Hs.eg.db中GO的数据源是2017-03-29, BP的注释有16992个，比华大多了1/3，所以《<a href="https://mp.weixin.qq.com/s/miGQs6U1d3aHwcm7vgNCVw">你昨天才做的分析，可能是几年前的结果！</a>》这篇文章要吐槽的依然对，谁知道差这1/3会发生什么呢。</p>
+
+<pre><code>&gt; (16992-12929)/12929
+[1] 0.3142548
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/shadowtext/">
+                <h3 class="media-heading">让你画图的文本出现阴影效果</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><blockquote>
+<p>Sercan Kahveci</p>
+
+<p>Greetings Mr. Yu,</p>
+
+<p>I am very happy that this package exists. Thank you for making it! I would like to request a feature, to ensure the package is able to compete with professional meme-creation tools like memegenerator and paint.net. Since memes often use the font Impact, in white and with black outline, I believe the package would be more powerful if it also did that automatically.</p>
+
+<p>Regards,</p>
+
+<p>Sercan Kahveci, MSc</p>
+
+<p>Content creator at Questionable Research Memes on Facebook
+<a href="https://www.facebook.com/QResearchMemes/">https://www.facebook.com/QResearchMemes/</a></p>
+</blockquote>
+
+<p>上次一篇《<a href="http://mp.weixin.qq.com/s/jDXjkrkq_YVhW-Z5Vx2-Fg">用R画meme ;)</a>》把脸书在做MEME的人都给炸出来了，专业人士给出专业建议，要用Impact字体，并且要让字体出现阴影效果，这真是厉害了，感觉有点神奇，但他一句，这样就可以和专业工具PK了，着实太刺激了，我决定试一试能不能搞个阴影效果。结果还真让我搞成了，文本有一种浮在上面的错觉。</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/R/meme/shadowtext.png" alt="" /></p>
+
+<p>我们知道meme包是grid写的，我的输出是grob对象，当我半夜调试到2点，带着兴奋入睡之后，一点都睡不安稳，早上早早就迷迷糊糊在床上想着，既然我造出了文本阴影效果的grob对象，我应该封装成geom图层，送给ggplot2用户。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/boxplot-multiple-group/">
+                <h3 class="media-heading">同一数据多变量分组的boxplot?</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><img src="https://guangchuangyu.github.io/blog_images/R/boxplot_multiple_group_files/WechatIMG111.png" alt="" /></p>
+
+<p>小密圈的问题，不是三两句话可以说明白的事情，必须要写文来解答，上一次写文是《<a href="http://mp.weixin.qq.com/s/Xhi_ZkrEzUVdnCu7ECBS4w">听说你还不会画热图</a>》，里面正好吐槽了某知乎大V的「除了ggplot2之外其它都是鸡肋」，这次正好也可以再次呼应一下。</p>
+
+<p>这个图明显是R的base graphics做的，图是可圈可点的，能做出这图来，也已经是告别了只会用plot的低级趣味。这其实是4个图拼起来的，第一个图只是多了个y轴而已，它们画起来是一样的，那就是只画boxplot，不画x和y轴，（你可能会说不是有x轴？），x轴是后面再加上去的，而且加x轴的时候，不写labels，只有线条没有文本（你可能又会说明明有文本！），因为<code>axis</code>这个函数只支持labels要么是水平的，要么是垂直的，旋转某个角度是不支持的，所以labels是额外再打上去的。这里一张小小的图，门道还是挺多的。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/ggtree-webinar-2017/">
+                <h3 class="media-heading">webinar录播：plotting tree &#43; data</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>据说1024是程序员的节日，就在这一天，Y叔开始了第一次的网络讲座，首次在网络上露面。内容就是上一周预告的《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484958&amp;idx=1&amp;sn=d58e3bb5b43899849101c60efd29df53&amp;chksm=ec43b759db343e4fefd48ec618a5a2d42f46256e7f455bf9373d90157be0b47df9bd7fd069a9#rd">线上沙龙</a>》。</p>
+
+<p>很多人想要学ggplot2 + ggtree，但我的定位不是技术性的培训，而是学术讲座，所以一开始把问题摆出来，是有一些问题存在，有knowledge gap，然后我要去解决它。当然考虑到听众的knowledge gap也很大，我在介绍ggtree的之前，也帮大众撸了一篇R的画图，在这简短的时间里，你应该了解了R几个画图系统的关系，base和grid我在slides里写graphic system，但lattice和ggplot2我写的是data visualization system，我对它们是有区别对待的，像lattice和ggplot2自己是不成一体的，但提供了高阶的数据可视化方法/语法。听完讲座你也应该了解ggplot2，知道要怎样去入门，知道重点该学什么。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/invisible-layer/">
+                <h3 class="media-heading">你的图上有一双看不见的手</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>下面这张吐槽LaTeX的图，太深得我心。</p>
+
+<p><img src="http://dirkriehle.com/wp-content/uploads/2016/05/latex.png" alt="" /></p>
+
+<p>而ggplot2这种文本跑出界的事情，也太常见，以至于我在<a href="https://guangchuangyu.github.io/ggtree/faq/">ggtree的FAQ</a>专门指出来，要用<code>xlim</code>给x轴分配多点空间，这是由于数据是数据空间，而文本是像素空间。你画图的画布由数据空间决定，然后文本就从指定的位置（除了坐标，还取决于你align的方式和adjustment微调）开始打出来，一不小心就打出界了。这一点我在FAQ里，除了告诉你用<code>xlim</code>解决之外，我也给出了上面的解释，所以我一直强调，不要以为我在教ggtree，我其实是在教ggplot2。</p>
+
+<p>后面就有人问了ggplot2字体溢出的事情，他所遇到的溢出，似乎更不应该发生，因为是坐标轴上的字体溢出，然而产生的原因是一样的，解决方案也是一样的，请用力猛戳《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484089&amp;idx=1&amp;sn=f6e11d54a18e96a94145a2b802c37dc1&amp;chksm=ec43b3fedb343ae89e3630900033f055af4bbe211897076291e351ae18cc89b2ddf7651ee0be#rd">ggplot2字体溢出的那点破事</a>》。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/ygc/">
+                <h3 class="media-heading">我的名字和我的姓氏</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>大量的生信公众号在各种linux入门、perl入门、python入门、R入门、软件安装、跑跑示例代码、流程。我自己平时根本不会去看这些生信号，在《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484921&amp;idx=1&amp;sn=b729438c35c7d491ef75fdf8dab5f09f&amp;chksm=ec43b4bedb343da85853e234b5eb86267276e78a6b53dd1360367cca94d764955594ef86e910#rd">s01 - Counting DNA Nucleotides</a>》一文发出去后，就被爪哥说不能跟着走低端路线，囧rz&hellip;</p>
+
+<p><img src="http://guangchuangyu.github.io/blog_images/2017/WechatIMG93.jpeg" alt="" /></p>
+
+<p>还好我多半写的是自己的东西，目前还没有掉进「低端」的坑里，今天继续画图，唯有赏心悦目的图能抚慰人心。</p>
+
+<p>我写了一个包叫《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484164&amp;idx=1&amp;sn=030612f5a84120ef407401ff6fad715f&amp;chksm=ec43b243db343b5524c911327bdcbe5f01034095d549d43d530decc5676faecdbd449dfac026#rd">ggimage：ggplot2中愉快地使用图片</a>》，从此图上嵌图（ggplot对象）或图片变得轻而易举。某一天写着玩，写了个《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484079&amp;idx=1&amp;sn=2f37b54ad09b966ccb9e8bf93ebd6643&amp;chksm=ec43b3e8db343afed5d55c25aaaba233f3339686e9eba0e65f004a5ca58ac13bba7ba9b5bacc#rd">geom_pokemon: 使用pokemon画图</a>》的图层，引起了人民群众的尖叫，国外有妹纸用来可视化NBA数据《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484149&amp;idx=1&amp;sn=0058b64bc269a05937ba97dccd9c0e23&amp;chksm=ec43b3b2db343aa4799e68b1f5c51cde7b4b5452fe69158b93de6f7b368738ecbc2dcf275abc#rd">大开眼界+多图慎点：Pokémon x NBA and other fun with ggimage</a>》，国内有汉子用来可视化复旦大学考研的报考专业《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484594&amp;amp;idx=1&amp;amp;sn=d35474d1ff032b54152935ef55088340&amp;amp;chksm=ec43b5f5db343ce311e0d54e1b936cb4982f952ce38e940ba6c3cf354436c91b1ae22fc17ea1#rd">你的专业是那一只Pokémon神兽？</a>》。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/set_axis_text_color/">
+                <h3 class="media-heading">映射变量给axis上色</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>小伙伴发来这个文章中的图，想要实现类似的图，用变量给axis text上色，并生成legend：</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/R/ggplot2/Screenshot 2017-07-04 14.10.55.png" alt="" /></p>
+
+<p>这个可以说ggplot2是不支持的，aes映射不会被应用于axis上，而theme也不支持aes映射，你只能自己手动搞个color vector传给theme来上色，但这无法生成legend。</p>
+
+<p>我只能打开脑洞，legend借助于额外的图层来生成，但这个额外的图层又不是我们想要在图形上展示的，这又是个无米之炊，我能想到的就是让图层透明，实际有，但你看不到，当然这样自动生成的legend也会看不到，但legend可以后面再修改，于是这不支持的事情，就通过变通变得可能：</p>
+
+<pre><code class="language-r">require(ggplot2)
+
+set.seed(2017-07-04)
+d &lt;- data.frame(x = letters[1:5], y = rnorm(5), 
+		group = sample(c(&quot;Control&quot;, &quot;Treatment&quot;), 5, replace=TRUE),
+		type = sample(LETTERS[1:2], 5, replace=TRUE)
+)
+
+p &lt;- ggplot(d, aes(x,y)) + 
+	geom_col(aes(fill=group))
+</code></pre>
+
+<p>这个代码很好懂，画一个柱状图，按<code>group</code>上色。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/enrichgo-more-conserve/">
+                <h3 class="media-heading">enrichGO出不来结果？没结果也是正确的结果</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><blockquote>
+<p>Dear Dr. Guangchuang Yu, I write to you regarding a doubt concerning the enrichGO function from Clustalprofiler package. I have been used this package before, but now I&rsquo;m using the same R script and I have an error message.</p>
+
+<p>This is the command I use:</p>
+
+<blockquote>
+<p>go.bp &lt;- enrichGO(gene = gene.df$ENSEMBL, universe = universe.ENSEMBLID, keytype = &lsquo;ENSEMBL&rsquo;, OrgDb = org.Ce.eg.db, ont = &lsquo;BP&rsquo;, pAdjustMethod = &lsquo;BH&rsquo;, pvalueCutoff = 0.01, qvalueCutoff = 0.05, readable=T)</p>
+</blockquote>
+
+<p>and the error is the following one:</p>
+
+<p>No gene set have size &gt; 10 &hellip;
+&ndash;&gt; return NULL&hellip;</p>
+
+<p>My input list is attached to this email (101 genes in total). When I use this list in a web resource such as GOrilla it gives to me the proper GO terms.</p>
+
+<p>Thank you very much in advance. Best regards,</p>
+
+<p>María</p>
+</blockquote>
+
+<p>最近clusterProfiler用户的问题，这个问题还蛮普遍。这个我在《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484414&amp;idx=1&amp;sn=096f758f04f875e25c333c345f530742&amp;chksm=ec43b2b9db343baf4e2a8640f48e7e72b3ef1b057c91c68905debb2bb54e5d2fdda62438628a#rd">why clusterProfiler fails</a>》中也有谈到，并不是能出结果就是好的。没有结果也是一种结果。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/ssh-on-android/">
+                <h3 class="media-heading">如何假装假期还在工作</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><ul>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247483886&amp;idx=1&amp;sn=cb76891dff5787025f6b99cdcc723d86&amp;chksm=ec43b0a9db3439bfcec1c9ac3c0d00e6190cf4d3d02d9d3dc767007e0ff68b4fbd8064bb0f77#rd">CS0: ChIPseq从入门到放弃</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484054&amp;idx=2&amp;sn=9a42f1094349a0bd09a5e0b7c44595e0&amp;chksm=ec43b3d1db343ac7e11d92eda3eb1837aab46f79bb109e6cdbba466e4693d041a87fa698ef1b">我在MSnbase里做了什么？</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484727&amp;amp;idx=1&amp;amp;sn=a70494626e7c329addea51ac6b82c578&amp;amp;chksm=ec43b470db343d6661ba2498e5b03d300f281cb24c82dff0b53fac62b55831ab6207e9a0c20e#rd">博士养成记</a></li>
+</ul>
+
+<p>我在上面三篇文章里，都吐槽了张大砖家，这里穿插个故事，当时有门课是去嘉道理農場，在很偏的山上，而且是封闭式，再者离港大很远。选课是先告诉砖家的，上课前也跟砖家讲，然后第一天上课了，人不在实验室，第二天砖家就来了下面这样的信：</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no post found"
+         data-message-one="1 post found"
+         data-message-other="{n} posts found">
+         162 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('https://guangchuangyu.github.io/cn/images/cover.jpg');"></div>
+  
+
+
+    
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.js"></script>
+
+
+<script src="https://guangchuangyu.github.io/cn/js/script-wl33z0n6ocaypepiqrazthtivfrliqijej4rq8ek8gvrv1awftmgjuv8k4zc.min.js"></script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight').each(function(i, block) {
+    var code = "";
+    hljs.highlightAuto(block.innerText).value.split(/\r\n|\r|\n/).forEach(function(line) {
+      code += "<span class=\"line\">" + line + "</span><br>";
+    });
+    if (code.length > 0) {
+      block.innerHTML = code;  
+    }
+  });
+  $('pre > code').each(function(i, block) {
+    $(this).addClass('codeblock');
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/guangchuangyu.github.io\/cn\/2014\/07\/principle_component_analysis\/';
+          
+            this.page.identifier = '\/2014\/07\/principle_component_analysis\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'gcyu';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+
+    
+  </body>
+</html>
+

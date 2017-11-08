@@ -508,6 +508,11 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2014/07/principle_component_analysis/</loc>
+    <lastmod>2014-07-15T11:37:55+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2014/06/use-linux-desktop-again/</loc>
     <lastmod>2014-06-01T07:57:46+08:00</lastmod>
   </url>
@@ -1458,6 +1463,12 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/partition/</loc>
     <lastmod>2007-05-14T04:43:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/pca/</loc>
+    <lastmod>2014-07-15T11:37:55+08:00</lastmod>
     <priority>0</priority>
   </url>
   
