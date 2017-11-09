@@ -22,18 +22,19 @@
 &lt;blockquote&gt;
 &lt;p&gt;Meanwhile, when I fed the ENTREZID to enrichKEGG, it show me two unreasonable results:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;kegg_enrich &amp;lt;- enrichKEGG(gene = new_ids$ENTREZID,
-                          organism = &#39;hsa&#39;,
-                          keyType = &#39;ncbi-geneid&#39;,
-                          pvalueCutoff = 0.05,
-                          #pAdjustMethod = &#39;BH&#39;,
-                          #qvalueCutoff = 0.2,
-                          use_internal_data = FALSE)
+&lt;pre&gt;&lt;code&gt;kegg_enrich &amp;lt;- enrichKEGG(
+	gene = new_ids$ENTREZID,
+	organism = &#39;hsa&#39;,
+	keyType = &#39;ncbi-geneid&#39;,
+	pvalueCutoff = 0.05,
+	#pAdjustMethod = &#39;BH&#39;,
+	#qvalueCutoff = 0.2,
+	use_internal_data = FALSE
+)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;code&gt;head(kegg_enrich)&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;              ID                           Description GeneRatio  BgRatio       pvalue   p.adjust     qvalue
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt; head(kegg_enrich)
+              ID                           Description GeneRatio  BgRatio       pvalue   p.adjust     qvalue
 hsa04380 hsa04380            Osteoclast differentiation    14/281 128/7299 0.0003817040 0.04767338 0.04508266
 hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.0003875885 0.04767338 0.04508266
 &lt;/code&gt;&lt;/pre&gt;

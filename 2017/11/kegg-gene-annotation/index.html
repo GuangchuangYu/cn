@@ -36,17 +36,18 @@
 
 Meanwhile, when I fed the ENTREZID to enrichKEGG, it show me two unreasonable results:
 
-kegg_enrich &lt;- enrichKEGG(gene = new_ids$ENTREZID,
-                          organism = &#39;hsa&#39;,
-                          keyType = &#39;ncbi-geneid&#39;,
-                          pvalueCutoff = 0.05,
-                          #pAdjustMethod = &#39;BH&#39;,
-                          #qvalueCutoff = 0.2,
-                          use_internal_data = FALSE)
+kegg_enrich &lt;- enrichKEGG(
+	gene = new_ids$ENTREZID,
+	organism = &#39;hsa&#39;,
+	keyType = &#39;ncbi-geneid&#39;,
+	pvalueCutoff = 0.05,
+	#pAdjustMethod = &#39;BH&#39;,
+	#qvalueCutoff = 0.2,
+	use_internal_data = FALSE
+)
 
 
-head(kegg_enrich)
-
+&gt;&gt; head(kegg_enrich)
               ID                           Description GeneRatio  BgRatio       pvalue   p.adjust     qvalue
 hsa04380 hsa04380            Osteoclast differentiation    14/281 128/7299 0.0003817040 0.04767338 0.04508266
 hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.0003875885 0.04767338 0.04508266
@@ -61,17 +62,18 @@ I noted that only 281 genes are remained(there are 700&#43; genes in my list). I
 
 Meanwhile, when I fed the ENTREZID to enrichKEGG, it show me two unreasonable results:
 
-kegg_enrich &lt;- enrichKEGG(gene = new_ids$ENTREZID,
-                          organism = &#39;hsa&#39;,
-                          keyType = &#39;ncbi-geneid&#39;,
-                          pvalueCutoff = 0.05,
-                          #pAdjustMethod = &#39;BH&#39;,
-                          #qvalueCutoff = 0.2,
-                          use_internal_data = FALSE)
+kegg_enrich &lt;- enrichKEGG(
+	gene = new_ids$ENTREZID,
+	organism = &#39;hsa&#39;,
+	keyType = &#39;ncbi-geneid&#39;,
+	pvalueCutoff = 0.05,
+	#pAdjustMethod = &#39;BH&#39;,
+	#qvalueCutoff = 0.2,
+	use_internal_data = FALSE
+)
 
 
-head(kegg_enrich)
-
+&gt;&gt; head(kegg_enrich)
               ID                           Description GeneRatio  BgRatio       pvalue   p.adjust     qvalue
 hsa04380 hsa04380            Osteoclast differentiation    14/281 128/7299 0.0003817040 0.04767338 0.04508266
 hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.0003875885 0.04767338 0.04508266
@@ -92,17 +94,18 @@ I noted that only 281 genes are remained(there are 700&#43; genes in my list). I
 
 Meanwhile, when I fed the ENTREZID to enrichKEGG, it show me two unreasonable results:
 
-kegg_enrich &lt;- enrichKEGG(gene = new_ids$ENTREZID,
-                          organism = &#39;hsa&#39;,
-                          keyType = &#39;ncbi-geneid&#39;,
-                          pvalueCutoff = 0.05,
-                          #pAdjustMethod = &#39;BH&#39;,
-                          #qvalueCutoff = 0.2,
-                          use_internal_data = FALSE)
+kegg_enrich &lt;- enrichKEGG(
+	gene = new_ids$ENTREZID,
+	organism = &#39;hsa&#39;,
+	keyType = &#39;ncbi-geneid&#39;,
+	pvalueCutoff = 0.05,
+	#pAdjustMethod = &#39;BH&#39;,
+	#qvalueCutoff = 0.2,
+	use_internal_data = FALSE
+)
 
 
-head(kegg_enrich)
-
+&gt;&gt; head(kegg_enrich)
               ID                           Description GeneRatio  BgRatio       pvalue   p.adjust     qvalue
 hsa04380 hsa04380            Osteoclast differentiation    14/281 128/7299 0.0003817040 0.04767338 0.04508266
 hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.0003875885 0.04767338 0.04508266
@@ -317,18 +320,19 @@ ga('send', 'pageview');
 <blockquote>
 <p>Meanwhile, when I fed the ENTREZID to enrichKEGG, it show me two unreasonable results:</p>
 
-<pre><code>kegg_enrich &lt;- enrichKEGG(gene = new_ids$ENTREZID,
-                          organism = 'hsa',
-                          keyType = 'ncbi-geneid',
-                          pvalueCutoff = 0.05,
-                          #pAdjustMethod = 'BH',
-                          #qvalueCutoff = 0.2,
-                          use_internal_data = FALSE)
+<pre><code>kegg_enrich &lt;- enrichKEGG(
+	gene = new_ids$ENTREZID,
+	organism = 'hsa',
+	keyType = 'ncbi-geneid',
+	pvalueCutoff = 0.05,
+	#pAdjustMethod = 'BH',
+	#qvalueCutoff = 0.2,
+	use_internal_data = FALSE
+)
 </code></pre>
 
-<p><code>head(kegg_enrich)</code></p>
-
-<pre><code>              ID                           Description GeneRatio  BgRatio       pvalue   p.adjust     qvalue
+<pre><code>&gt;&gt; head(kegg_enrich)
+              ID                           Description GeneRatio  BgRatio       pvalue   p.adjust     qvalue
 hsa04380 hsa04380            Osteoclast differentiation    14/281 128/7299 0.0003817040 0.04767338 0.04508266
 hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.0003875885 0.04767338 0.04508266
 </code></pre>
@@ -669,18 +673,19 @@ In bitr_kegg(geneID = new_ids$ENTREZID, fromType = &quot;ncbi-geneid&quot;,  :
 <blockquote>
 <p>Meanwhile, when I fed the ENTREZID to enrichKEGG, it show me two unreasonable results:</p>
 
-<pre><code>kegg_enrich &lt;- enrichKEGG(gene = new_ids$ENTREZID,
-                          organism = 'hsa',
-                          keyType = 'ncbi-geneid',
-                          pvalueCutoff = 0.05,
-                          #pAdjustMethod = 'BH',
-                          #qvalueCutoff = 0.2,
-                          use_internal_data = FALSE)
+<pre><code>kegg_enrich &lt;- enrichKEGG(
+	gene = new_ids$ENTREZID,
+	organism = 'hsa',
+	keyType = 'ncbi-geneid',
+	pvalueCutoff = 0.05,
+	#pAdjustMethod = 'BH',
+	#qvalueCutoff = 0.2,
+	use_internal_data = FALSE
+)
 </code></pre>
 
-<p><code>head(kegg_enrich)</code></p>
-
-<pre><code>              ID                           Description GeneRatio  BgRatio       pvalue   p.adjust     qvalue
+<pre><code>&gt;&gt; head(kegg_enrich)
+              ID                           Description GeneRatio  BgRatio       pvalue   p.adjust     qvalue
 hsa04380 hsa04380            Osteoclast differentiation    14/281 128/7299 0.0003817040 0.04767338 0.04508266
 hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.0003875885 0.04767338 0.04508266
 </code></pre>
