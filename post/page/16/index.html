@@ -764,7 +764,7 @@ Yus-Mac-Pro:others ygc$ convert -density 600 fig2.pdf fig2.tif Yus-Mac-Pro:other
 <blockquote>
 <p>Meanwhile, when I fed the ENTREZID to enrichKEGG, it show me two unreasonable results:</p>
 
-<pre><code>kegg_enrich &lt;- enrichKEGG(
+<pre><code>kegg_enrich = enrichKEGG(
 	gene = new_ids$ENTREZID,
 	organism = 'hsa',
 	keyType = 'ncbi-geneid',

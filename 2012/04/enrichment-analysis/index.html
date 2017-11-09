@@ -625,7 +625,7 @@ test的表现最差，binomial做为p值的近似估计还是不错的，因为�
 <blockquote>
 <p>Meanwhile, when I fed the ENTREZID to enrichKEGG, it show me two unreasonable results:</p>
 
-<pre><code>kegg_enrich &lt;- enrichKEGG(
+<pre><code>kegg_enrich = enrichKEGG(
 	gene = new_ids$ENTREZID,
 	organism = 'hsa',
 	keyType = 'ncbi-geneid',

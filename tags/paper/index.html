@@ -448,7 +448,7 @@ pubmed上不去，完全没影响，因为有hubmed,hubmed主页上写着：An a
 <blockquote>
 <p>Meanwhile, when I fed the ENTREZID to enrichKEGG, it show me two unreasonable results:</p>
 
-<pre><code>kegg_enrich &lt;- enrichKEGG(
+<pre><code>kegg_enrich = enrichKEGG(
 	gene = new_ids$ENTREZID,
 	organism = 'hsa',
 	keyType = 'ncbi-geneid',

@@ -540,7 +540,7 @@ $ y = 13 cos t - 5 cos 2t - 2 cos 3t - cos 4t$</p>
 <blockquote>
 <p>Meanwhile, when I fed the ENTREZID to enrichKEGG, it show me two unreasonable results:</p>
 
-<pre><code>kegg_enrich &lt;- enrichKEGG(
+<pre><code>kegg_enrich = enrichKEGG(
 	gene = new_ids$ENTREZID,
 	organism = 'hsa',
 	keyType = 'ncbi-geneid',

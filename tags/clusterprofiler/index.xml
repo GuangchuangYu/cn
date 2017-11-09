@@ -22,7 +22,7 @@
 &lt;blockquote&gt;
 &lt;p&gt;Meanwhile, when I fed the ENTREZID to enrichKEGG, it show me two unreasonable results:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;kegg_enrich &amp;lt;- enrichKEGG(
+&lt;pre&gt;&lt;code&gt;kegg_enrich = enrichKEGG(
 	gene = new_ids$ENTREZID,
 	organism = &#39;hsa&#39;,
 	keyType = &#39;ncbi-geneid&#39;,

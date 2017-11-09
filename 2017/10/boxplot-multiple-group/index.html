@@ -664,7 +664,7 @@ cowplot::plot_grid(p1, p2, ncol=2)
 <blockquote>
 <p>Meanwhile, when I fed the ENTREZID to enrichKEGG, it show me two unreasonable results:</p>
 
-<pre><code>kegg_enrich &lt;- enrichKEGG(
+<pre><code>kegg_enrich = enrichKEGG(
 	gene = new_ids$ENTREZID,
 	organism = 'hsa',
 	keyType = 'ncbi-geneid',
