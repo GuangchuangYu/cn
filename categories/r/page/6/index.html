@@ -228,6 +228,71 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/05/emojifont%E5%85%AC%E4%BC%97%E5%8F%B7%E6%96%87%E7%AB%A0/">
+          emojifont公众号文章
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-05-28T15:10:00&#43;08:00">
+      
+  May 28, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        最近看一个画图的公众号，基本上通篇是代码，最后上个图，我觉得作者就只想表达「哇，我好牛逼」，读者看完可能也只是发出一句「好牛逼」，然后就没有然后了。且不说他读的数据是他电脑上的，你拿了代码也不好重复，最主要是代码死长，缺少解释！</p>
+
+<p>我的写作风格则不一样，一篇文章我一般只会讲解一个点，力图讲清楚，让别人看明白。比如<a href="http://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484186&amp;idx=1&amp;sn=d41ee81398a8c18d07e3b1ffe680d521&amp;chksm=ec43b25ddb343b4b87254521c6c134513a3b3535d28064d2bf71d37f9183948895056151c8d0&amp;scene=21#wechat_redirect">bootstrap分段标记</a>这一篇，代码足够短且简单，但我还是分模块来讲，一行画树，一行做bootstrap分段标记，最后一行修图，虽然三行，但按功能分开，再加上文字解释，读懂是必须的。再比如<a href="http://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484095&amp;idx=1&amp;sn=e98fb2e95cd7d2775a5611ab076fdeb5&amp;chksm=ec43b3f8db343aee763e85b21b4fcf26b36049f0ea48066d65f86ee9895073d0c8e010f4a7ee&amp;scene=21#wechat_redirect">纯代码生成banner​</a>也是分成加载中文字体、读图、图上嵌图三块。即使简单的代码，也要分模块配以文字解析。</p>
+
+<p>我每次只讲解一个点，但有些知识点是关联的，所以有可能会有断片的情况出现，比如之前写phylomoji，就有同学表示没看懂，这个用到了ggtree和emojifont，两个包我都写过很多文介绍，所以在写phylomoji时都没有介绍，如果没看过以前文章的人，可能就不清楚了。所以呢，适当的时候，汇总一下，是很有必要的。</p>
+
+<p>emojifont包我基本上都介绍完了，如果你能通读这几篇文章，那么你必然能够用emoji来作图装逼，能够用emoji来娱乐自己，就像我用emoji给自己快乐一样！</p>
+
+<p>
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2017/05/emojifont%E5%85%AC%E4%BC%97%E5%8F%B7%E6%96%87%E7%AB%A0/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+            
+              
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/05/enrichdavid-user-bg/">
           enrichDAVID支持自定义背景
         </a>
@@ -632,73 +697,6 @@ showtext.auto()
 </article>
 
             
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/04/ggplot2%E5%AD%97%E4%BD%93%E6%BA%A2%E5%87%BA%E7%9A%84%E9%82%A3%E7%82%B9%E7%A0%B4%E4%BA%8B/">
-          ggplot2字体溢出的那点破事
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-04-03T15:10:00&#43;08:00">
-      
-  April 3, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        比如下面的代码：</p>
-
-<pre><code>require(ggplot2)
-d &lt;- data.frame(x=c(0, 0.002, 0.00575), y = 1:3)
-p &lt;- ggplot(d, aes(x, y)) + geom_point() + xlab(NULL) + ylab(NULL)
-print(p)
-</code></pre>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/geom_text_files/figure-markdown_strict/unnamed-chunk-1-1.png" alt="" /></p>
-
-<p>上面图中x轴的文本<strong>0.006</strong>，这个数字中的<strong>6</strong>几乎看不到，因为一半过界了。</p>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/04/ggplot2%E5%AD%97%E4%BD%93%E6%BA%A2%E5%87%BA%E7%9A%84%E9%82%A3%E7%82%B9%E7%A0%B4%E4%BA%8B/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
             
   <div class="pagination-bar">
     <ul class="pagination">
@@ -718,7 +716,7 @@ print(p)
           </a>
         </li>
       
-      <li class="pagination-number">page 6 of 10</li>
+      <li class="pagination-number">page 6 of 11</li>
     </ul>
   </div>
 
@@ -781,6 +779,25 @@ print(p)
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/scholar/">
+                <h3 class="media-heading">一个用不了的R包和一个404的在网站</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">正如我在「知识星球」里说的，scholar这个包现在已经死了，因为作者不维护了，除非出现接盘侠。我自己fork了一个，打了补丁，现在是可用的。这个包应该说我用得蛮多的，你看我简历里的引用数柱状图，我不会无聊到过一段时间就去查，然后重新画图的，太low。都是自动化的，我到简历目录下打make指令，就会自动去爬数据、重新画图并生成简历，而我啥都不用干。
+我在yyplot里放了一个函数plot_citation_trend，就是通过scholar包抓取数据后，用ggplot2画图，所以你看我在github上的包，README上有引用数的历史记录的，没错，也是程序自动生成的。
+library(scholar) library(yyplot) plot_citation_trend('DO5oG40AAAAJ', 'MLfJN-KU85MC')  clusterProfiler已经有300个引用了！半年前在《clusterProfiler for enrichment analysis》一文中说了有200个引用，半年过去了，又实力圈了100个引用。你是否也贡献了一个？</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1063,31 +1080,6 @@ p &lt;- ggplot(d, aes(x,y)) +
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/ssh-on-android/">
-                <h3 class="media-heading">如何假装假期还在工作</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Oct 10, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><ul>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247483886&amp;idx=1&amp;sn=cb76891dff5787025f6b99cdcc723d86&amp;chksm=ec43b0a9db3439bfcec1c9ac3c0d00e6190cf4d3d02d9d3dc767007e0ff68b4fbd8064bb0f77#rd">CS0: ChIPseq从入门到放弃</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484054&amp;idx=2&amp;sn=9a42f1094349a0bd09a5e0b7c44595e0&amp;chksm=ec43b3d1db343ac7e11d92eda3eb1837aab46f79bb109e6cdbba466e4693d041a87fa698ef1b">我在MSnbase里做了什么？</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484727&amp;amp;idx=1&amp;amp;sn=a70494626e7c329addea51ac6b82c578&amp;amp;chksm=ec43b470db343d6661ba2498e5b03d300f281cb24c82dff0b53fac62b55831ab6207e9a0c20e#rd">博士养成记</a></li>
-</ul>
-
-<p>我在上面三篇文章里，都吐槽了张大砖家，这里穿插个故事，当时有门课是去嘉道理農場，在很偏的山上，而且是封闭式，再者离港大很远。选课是先告诉砖家的，上课前也跟砖家讲，然后第一天上课了，人不在实验室，第二天砖家就来了下面这样的信：</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1095,7 +1087,7 @@ p &lt;- ggplot(d, aes(x,y)) +
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         162 posts found
+         163 posts found
       </p>
     </div>
   </div>

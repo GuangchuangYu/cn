@@ -343,6 +343,25 @@ Homepage : <a href="http://givre.cabspace.com/ntfs-config">http://givre.cabspace
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/scholar/">
+                <h3 class="media-heading">一个用不了的R包和一个404的在网站</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">正如我在「知识星球」里说的，scholar这个包现在已经死了，因为作者不维护了，除非出现接盘侠。我自己fork了一个，打了补丁，现在是可用的。这个包应该说我用得蛮多的，你看我简历里的引用数柱状图，我不会无聊到过一段时间就去查，然后重新画图的，太low。都是自动化的，我到简历目录下打make指令，就会自动去爬数据、重新画图并生成简历，而我啥都不用干。
+我在yyplot里放了一个函数plot_citation_trend，就是通过scholar包抓取数据后，用ggplot2画图，所以你看我在github上的包，README上有引用数的历史记录的，没错，也是程序自动生成的。
+library(scholar) library(yyplot) plot_citation_trend('DO5oG40AAAAJ', 'MLfJN-KU85MC')  clusterProfiler已经有300个引用了！半年前在《clusterProfiler for enrichment analysis》一文中说了有200个引用，半年过去了，又实力圈了100个引用。你是否也贡献了一个？</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/kegg-gene-annotation/">
                 <h3 class="media-heading">听说你的KEGG分析有大量的基因没注释</h3>
               </a>
@@ -621,31 +640,6 @@ p &lt;- ggplot(d, aes(x,y)) +
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/ssh-on-android/">
-                <h3 class="media-heading">如何假装假期还在工作</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Oct 10, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><ul>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247483886&amp;idx=1&amp;sn=cb76891dff5787025f6b99cdcc723d86&amp;chksm=ec43b0a9db3439bfcec1c9ac3c0d00e6190cf4d3d02d9d3dc767007e0ff68b4fbd8064bb0f77#rd">CS0: ChIPseq从入门到放弃</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484054&amp;idx=2&amp;sn=9a42f1094349a0bd09a5e0b7c44595e0&amp;chksm=ec43b3d1db343ac7e11d92eda3eb1837aab46f79bb109e6cdbba466e4693d041a87fa698ef1b">我在MSnbase里做了什么？</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484727&amp;amp;idx=1&amp;amp;sn=a70494626e7c329addea51ac6b82c578&amp;amp;chksm=ec43b470db343d6661ba2498e5b03d300f281cb24c82dff0b53fac62b55831ab6207e9a0c20e#rd">博士养成记</a></li>
-</ul>
-
-<p>我在上面三篇文章里，都吐槽了张大砖家，这里穿插个故事，当时有门课是去嘉道理農場，在很偏的山上，而且是封闭式，再者离港大很远。选课是先告诉砖家的，上课前也跟砖家讲，然后第一天上课了，人不在实验室，第二天砖家就来了下面这样的信：</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -653,7 +647,7 @@ p &lt;- ggplot(d, aes(x,y)) +
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         162 posts found
+         163 posts found
       </p>
     </div>
   </div>

@@ -228,6 +228,65 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2016/11/ggtree-reverse-time-scale/">
+          ggtree: reverse time scale
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2016-11-08T12:23:16&#43;08:00">
+      
+  November 8, 2016
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        这是最近github上的问题，如何反转time scale，也就是把最近的时间设为0。而内部节点为距今多少年，这个很容易，把x轴的值变成x-max(x)就可以，感觉这个也只会在时间树上使用，所以取名revts（reverse time scale），revts之后，x轴最大值是0，其它为负数，可以使用scale_x_continuous改label为绝对值。</p>
+
+<p>
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2016/11/ggtree-reverse-time-scale/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+            
+              
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2016/10/update-r-packages/">
           Update R packages
         </a>
@@ -613,78 +672,6 @@ the likelihood)</p>
 </article>
 
             
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/12/creat-r-package/">
-          创建R包
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2008-12-07T05:23:16&#43;08:00">
-      
-  December 7, 2008
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <pre><code>&gt; source(&quot;code.R&quot;) #载入写好的代码 
-&gt; package.skeleton(name=&quot;pkgname&quot;, list=c(&quot;function_name_list&quot;))
-# 生成R源码包的目录结构 
-</code></pre>
-
-<p>到man目录下改*.Rd文档。latex格式。这是包和函数的帮助文档。</p>
-
-<p>如果需要vignette文档的话。在包目录下，新建inst/doc，在里面写pkgname.Rnw文档。基本上是latex格式，不过允许你插入R代码。make的时候，会先跑代码。再自动转换成latex，再编译成pdf。</p>
-
-<pre><code>$ R CMD check pkgname 
-# 检验代码和文档。这个很重要。通常一些小问题都能在这一步发现。 
-$ R CMD build pkgname 
-# 打包，源码包格式 
-$ R CMD build --binary pkgname
-#编译后打包，二进制格式。
-</code></pre>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2008/12/creat-r-package/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
             
   <div class="pagination-bar">
     <ul class="pagination">
@@ -697,7 +684,14 @@ $ R CMD build --binary pkgname
         </li>
       
       
-      <li class="pagination-number">page 10 of 10</li>
+        <li class="pagination-next">
+          <a class="btn btn--default btn--small" href="https://guangchuangyu.github.io/cn/categories/r/page/11/">
+            <span>OLDER POSTS</span>
+            <i class="fa fa-angle-right text-base icon-ml"></i>
+          </a>
+        </li>
+      
+      <li class="pagination-number">page 10 of 11</li>
     </ul>
   </div>
 
@@ -760,6 +754,25 @@ $ R CMD build --binary pkgname
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/scholar/">
+                <h3 class="media-heading">一个用不了的R包和一个404的在网站</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">正如我在「知识星球」里说的，scholar这个包现在已经死了，因为作者不维护了，除非出现接盘侠。我自己fork了一个，打了补丁，现在是可用的。这个包应该说我用得蛮多的，你看我简历里的引用数柱状图，我不会无聊到过一段时间就去查，然后重新画图的，太low。都是自动化的，我到简历目录下打make指令，就会自动去爬数据、重新画图并生成简历，而我啥都不用干。
+我在yyplot里放了一个函数plot_citation_trend，就是通过scholar包抓取数据后，用ggplot2画图，所以你看我在github上的包，README上有引用数的历史记录的，没错，也是程序自动生成的。
+library(scholar) library(yyplot) plot_citation_trend('DO5oG40AAAAJ', 'MLfJN-KU85MC')  clusterProfiler已经有300个引用了！半年前在《clusterProfiler for enrichment analysis》一文中说了有200个引用，半年过去了，又实力圈了100个引用。你是否也贡献了一个？</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1042,31 +1055,6 @@ p &lt;- ggplot(d, aes(x,y)) +
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/ssh-on-android/">
-                <h3 class="media-heading">如何假装假期还在工作</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Oct 10, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><ul>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247483886&amp;idx=1&amp;sn=cb76891dff5787025f6b99cdcc723d86&amp;chksm=ec43b0a9db3439bfcec1c9ac3c0d00e6190cf4d3d02d9d3dc767007e0ff68b4fbd8064bb0f77#rd">CS0: ChIPseq从入门到放弃</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484054&amp;idx=2&amp;sn=9a42f1094349a0bd09a5e0b7c44595e0&amp;chksm=ec43b3d1db343ac7e11d92eda3eb1837aab46f79bb109e6cdbba466e4693d041a87fa698ef1b">我在MSnbase里做了什么？</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484727&amp;amp;idx=1&amp;amp;sn=a70494626e7c329addea51ac6b82c578&amp;amp;chksm=ec43b470db343d6661ba2498e5b03d300f281cb24c82dff0b53fac62b55831ab6207e9a0c20e#rd">博士养成记</a></li>
-</ul>
-
-<p>我在上面三篇文章里，都吐槽了张大砖家，这里穿插个故事，当时有门课是去嘉道理農場，在很偏的山上，而且是封闭式，再者离港大很远。选课是先告诉砖家的，上课前也跟砖家讲，然后第一天上课了，人不在实验室，第二天砖家就来了下面这样的信：</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1074,7 +1062,7 @@ p &lt;- ggplot(d, aes(x,y)) +
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         162 posts found
+         163 posts found
       </p>
     </div>
   </div>
