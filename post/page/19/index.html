@@ -225,6 +225,78 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/06/screen-shot/">
+          screen shot
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2011-06-28T12:17:30&#43;08:00">
+      
+  June 28, 2011
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/bsd">BSD</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/mac-os">Mac OS</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        买了苹果机，一直放在家里没用，准备开会带去用，拿过来装几个软件。</p>
+
+<p>校园网用锐捷是个比较讨厌的东西。当年在华农，光这<a href="http://guangchuangyu.github.io/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/">认证</a>就搞了很久。</p>
+
+<p>现在开源的认证客户端多了，搞起来也方便了，现在在linux下用的<a href="http://code.google.com/p/xmuruijie/">xmuruijie</a>，就比当年<a href="http://guangchuangyu.github.io/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/">mystar</a>好用。</p>
+
+<p>估计xmuruijie也是可以在苹果机上用的，依赖python，搞不好还有些modules要装，懒得去弄，搜了一下，找到<a href="http://code.google.com/p/mentohust/">mentohust</a>，当然需要改一下mac address，用万能的ifconfig搞定。</p>
+
+<p>为了编译软件，必要先装xcode，这个大家伙，4G多，中午挂到吃晚饭才下完。
+然后就可以装各种open source的软件。</p>
+
+<p>mac上有fink支持debian一样的apt-get，还有原生的macport，gentoo的portage也支持，我选择使用<a href="http://guangchuangyu.github.io/categories/bsd">netbsd</a>的pkgsrc来安装各种开源软件。</p>
+
+<p>以前用过比较长时间的netbsd，用着比较顺手。</p>
+
+<p>
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2011/06/screen-shot/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/06/five-things-biologists-should-know-about-statistics/">
           Five things biologists should know about statistics
         </a>
@@ -631,78 +703,6 @@ the metric itself.</p>
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/12/creat-r-package/">
-          创建R包
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2008-12-07T05:23:16&#43;08:00">
-      
-  December 7, 2008
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <pre><code>&gt; source(&quot;code.R&quot;) #载入写好的代码 
-&gt; package.skeleton(name=&quot;pkgname&quot;, list=c(&quot;function_name_list&quot;))
-# 生成R源码包的目录结构 
-</code></pre>
-
-<p>到man目录下改*.Rd文档。latex格式。这是包和函数的帮助文档。</p>
-
-<p>如果需要vignette文档的话。在包目录下，新建inst/doc，在里面写pkgname.Rnw文档。基本上是latex格式，不过允许你插入R代码。make的时候，会先跑代码。再自动转换成latex，再编译成pdf。</p>
-
-<pre><code>$ R CMD check pkgname 
-# 检验代码和文档。这个很重要。通常一些小问题都能在这一步发现。 
-$ R CMD build pkgname 
-# 打包，源码包格式 
-$ R CMD build --binary pkgname
-#编译后打包，二进制格式。
-</code></pre>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2008/12/creat-r-package/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -784,6 +784,29 @@ $ R CMD build --binary pkgname
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/bmc-journal-protects-paper-of-plagiarism/">
+                <h3 class="media-heading">虐狗节来看一下这个裤衩都不要的故事</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><img src="http://guangchuangyu.github.io/blog_images/R/ppipre/Screenshot 2017-11-10 00.10.22.png" alt="" /></p>
+
+<p>Scientific Report上有一篇文章是抄袭的，然而杂志最终决定不撤稿，而被抄的人是Johns Hopkins的，于是jh的人全都要离开Scientific Report的编委。我也被人抄了不撤稿，然而我人微言轻，不单被编辑部欺负，还要被我们国内生信界的网红欺负。</p>
+
+<p>从SR与jh的事情，我和BMC的故事，是相似的，我们可以想像这样的学术界惨剧比想像中的要多。学术圈，真是有时候得呵呵哒。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1038,31 +1061,6 @@ hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.000
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/ygc/">
-                <h3 class="media-heading">我的名字和我的姓氏</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Oct 10, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>大量的生信公众号在各种linux入门、perl入门、python入门、R入门、软件安装、跑跑示例代码、流程。我自己平时根本不会去看这些生信号，在《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484921&amp;idx=1&amp;sn=b729438c35c7d491ef75fdf8dab5f09f&amp;chksm=ec43b4bedb343da85853e234b5eb86267276e78a6b53dd1360367cca94d764955594ef86e910#rd">s01 - Counting DNA Nucleotides</a>》一文发出去后，就被爪哥说不能跟着走低端路线，囧rz&hellip;</p>
-
-<p><img src="http://guangchuangyu.github.io/blog_images/2017/WechatIMG93.jpeg" alt="" /></p>
-
-<p>还好我多半写的是自己的东西，目前还没有掉进「低端」的坑里，今天继续画图，唯有赏心悦目的图能抚慰人心。</p>
-
-<p>我写了一个包叫《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484164&amp;idx=1&amp;sn=030612f5a84120ef407401ff6fad715f&amp;chksm=ec43b243db343b5524c911327bdcbe5f01034095d549d43d530decc5676faecdbd449dfac026#rd">ggimage：ggplot2中愉快地使用图片</a>》，从此图上嵌图（ggplot对象）或图片变得轻而易举。某一天写着玩，写了个《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484079&amp;idx=1&amp;sn=2f37b54ad09b966ccb9e8bf93ebd6643&amp;chksm=ec43b3e8db343afed5d55c25aaaba233f3339686e9eba0e65f004a5ca58ac13bba7ba9b5bacc#rd">geom_pokemon: 使用pokemon画图</a>》的图层，引起了人民群众的尖叫，国外有妹纸用来可视化NBA数据《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484149&amp;idx=1&amp;sn=0058b64bc269a05937ba97dccd9c0e23&amp;chksm=ec43b3b2db343aa4799e68b1f5c51cde7b4b5452fe69158b93de6f7b368738ecbc2dcf275abc#rd">大开眼界+多图慎点：Pokémon x NBA and other fun with ggimage</a>》，国内有汉子用来可视化复旦大学考研的报考专业《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484594&amp;amp;idx=1&amp;amp;sn=d35474d1ff032b54152935ef55088340&amp;amp;chksm=ec43b5f5db343ce311e0d54e1b936cb4982f952ce38e940ba6c3cf354436c91b1ae22fc17ea1#rd">你的专业是那一只Pokémon神兽？</a>》。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1070,7 +1068,7 @@ hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.000
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         165 posts found
+         166 posts found
       </p>
     </div>
   </div>

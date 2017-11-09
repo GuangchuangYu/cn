@@ -225,6 +225,124 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2014/07/principle_component_analysis/">
+          主成分分析
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2014-07-15T11:37:55&#43;08:00">
+      
+  July 15, 2014
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/statistics">statistics</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        使用《Bioinformatics and Molecular Evolution》Table 2.2 (page 24)中的数据:</p>
+
+<pre><code>&gt; aa
+  VOL  BULK POLARITY    PI HYD1  HYD2 SURFACE_AREA FRACT_AREA
+A  67 11.50     0.00  6.00  1.8   1.6          113       0.74
+R 148 14.28    52.00 10.76 -4.5 -12.3          241       0.64
+N  96 12.28     3.38  5.41 -3.5  -4.8          158       0.63
+D  91 11.68    49.70  2.77 -3.5  -9.2          151       0.62
+C  86 13.46     1.48  5.05  2.5   2.0          140       0.91
+Q 114 14.45     3.53  5.65 -3.5  -4.1          189       0.62
+E 109 13.57    49.90  3.22 -3.5  -8.2          183       0.62
+G  48  3.40     0.00  5.97 -0.4   1.0           85       0.72
+H 118 13.69    51.60  7.59 -3.2  -3.0          194       0.78
+I 124 21.40     0.13  6.02  4.5   3.1          182       0.88
+L 124 21.40     0.13  5.98  3.8   2.8          180       0.85
+K 135 15.71    49.50  9.74 -3.9  -8.8          211       0.52
+M 124 16.25     1.43  5.74  1.9   3.4          204       0.85
+F 135 19.80     0.35  5.48  2.8   3.7          218       0.88
+P  90 17.43     1.58  6.30 -1.6  -0.2          143       0.64
+S  73  9.47     1.67  5.68 -0.8   0.6          122       0.66
+T  93 15.77     1.66  5.66 -0.7   1.2          146       0.70
+W 163 21.67     2.10  5.89 -0.9   1.9          259       0.85
+Y 141 18.03     1.61  5.66 -1.3  -0.7          229       0.76
+V 105 21.57     0.13  5.96  4.2   2.6          160       0.85
+&gt; aa.pc=prcomp(aa, center=TRUE, scale.=TRUE)
+&gt; aa.pc
+Standard deviations:
+[1] 1.88954924 1.67729608 0.88574923 0.65278312 0.53130822 0.27233782 0.21394709
+[8] 0.05808934
+
+Rotation:
+                     PC1         PC2           PC3         PC4        PC5
+VOL           0.05790316 -0.58494270  0.1057571970 -0.09311996  0.1684497
+BULK         -0.22089815 -0.48085679  0.1685873871 -0.15647005 -0.6842181
+POLARITY      0.44390146 -0.10372198  0.1432388489  0.73088587 -0.1747201
+PI            0.18580066 -0.25244261 -0.9417631776  0.02722752 -0.0522075
+HYD1         -0.49279466 -0.03284274 -0.1281013177  0.35033569 -0.3534423
+HYD2         -0.50821923  0.03312719 -0.1292531953 -0.12776013  0.1837842
+SURFACE_AREA  0.10045084 -0.56587879  0.1408585179 -0.10640314  0.3652725
+FRACT_AREA   -0.45283231 -0.17244828  0.0009997326  0.53059489  0.4220135
+                     PC6         PC7          PC8
+VOL          -0.11705506  0.21351836 -0.739571539
+BULK          0.25124136 -0.35181704  0.109655303
+POLARITY      0.39252691  0.22974777  0.009653888
+PI            0.04562347 -0.09136074  0.030622127
+HYD1         -0.50083501  0.48686655  0.064292387
+HYD2          0.70974650  0.41191312 -0.019940539
+SURFACE_AREA -0.11107422  0.24097250  0.659316956
+FRACT_AREA   -0.01018472 -0.55201871 -0.027363410
+&gt; summary(aa.pc)
+Importance of components:
+                          PC1    PC2     PC3     PC4     PC5     PC6     PC7
+Standard deviation     1.8895 1.6773 0.88575 0.65278 0.53131 0.27234 0.21395
+Proportion of Variance 0.4463 0.3517 0.09807 0.05327 0.03529 0.00927 0.00572
+Cumulative Proportion  0.4463 0.7980 0.89603 0.94930 0.98459 0.99386 0.99958
+                           PC8
+Standard deviation     0.05809
+Proportion of Variance 0.00042
+Cumulative Proportion  1.00000
+</code></pre>
+
+<p>PC1和PC2能够解释79.8%的variation。</p>
+
+<p>
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2014/07/principle_component_analysis/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2014/06/use-linux-desktop-again/">
           use linux desktop again
         </a>
@@ -584,69 +702,6 @@ X设计的原生包管理系统非Homebrew莫属，它会尽量依赖系统里�
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2013/07/permanent-head-damage-to-be/">
-          Permanent Head Damage to be
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2013-07-30T16:18:26&#43;08:00">
-      
-  July 30, 2013
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/personal">Personal</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        看似寻常最奇崛，成如容易却艰辛。在暨大工作了几年，发几篇小文章，觉得要找个地方读PhD，是件手到擒来的事，结果却花了整整一年的时间，事实证明像我这样的科研屌丝男，举步唯艰啊。
-去年7月份就开始在计划这个事情，我几乎想都没想就联系了计算生物所的JD
-Han，紧接着就是面试，第一次尝试用英文去讲slides，从早上10点讲到中午12点。感觉还好吧，因为有听到Han说impressive，而她的学生又说经常看我blog。看上去还是蛮顺利的，然而最终reject了我，而且没有给我任何原因。</p>
-
-<p>我去上海是非常低姿态的，说要面试，我就飞过去，当时想要是面试OK了，可能会让我留下来先了解一下正在进行的project，所以没有听老婆的话买返程票，结果从上海回广州，就变成了人在囧途，买不到火车票，就去南昌转车，结果遇到两趟车都是慢车，无空调，还无座。这个事情教会了我，不能太低姿态。</p>
-
-<p>我一直在想为什么会去上海，为什么会联系Han，或许是心理学上所谓的契可尼效应，俗称偷不如偷不着，当年考上生没中，心中依然有执念？我自认为早已释然，but
-maybe..，至于Han，我在研一的时候，去北大听过她的讲座，被系统生物学这个概念忽悠了，可能因此内心抱有幻想。
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2013/07/permanent-head-damage-to-be/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -728,6 +783,29 @@ maybe..，至于Han，我在研一的时候，去北大听过她的讲座，被�
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/bmc-journal-protects-paper-of-plagiarism/">
+                <h3 class="media-heading">虐狗节来看一下这个裤衩都不要的故事</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><img src="http://guangchuangyu.github.io/blog_images/R/ppipre/Screenshot 2017-11-10 00.10.22.png" alt="" /></p>
+
+<p>Scientific Report上有一篇文章是抄袭的，然而杂志最终决定不撤稿，而被抄的人是Johns Hopkins的，于是jh的人全都要离开Scientific Report的编委。我也被人抄了不撤稿，然而我人微言轻，不单被编辑部欺负，还要被我们国内生信界的网红欺负。</p>
+
+<p>从SR与jh的事情，我和BMC的故事，是相似的，我们可以想像这样的学术界惨剧比想像中的要多。学术圈，真是有时候得呵呵哒。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -982,31 +1060,6 @@ hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.000
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/ygc/">
-                <h3 class="media-heading">我的名字和我的姓氏</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Oct 10, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>大量的生信公众号在各种linux入门、perl入门、python入门、R入门、软件安装、跑跑示例代码、流程。我自己平时根本不会去看这些生信号，在《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484921&amp;idx=1&amp;sn=b729438c35c7d491ef75fdf8dab5f09f&amp;chksm=ec43b4bedb343da85853e234b5eb86267276e78a6b53dd1360367cca94d764955594ef86e910#rd">s01 - Counting DNA Nucleotides</a>》一文发出去后，就被爪哥说不能跟着走低端路线，囧rz&hellip;</p>
-
-<p><img src="http://guangchuangyu.github.io/blog_images/2017/WechatIMG93.jpeg" alt="" /></p>
-
-<p>还好我多半写的是自己的东西，目前还没有掉进「低端」的坑里，今天继续画图，唯有赏心悦目的图能抚慰人心。</p>
-
-<p>我写了一个包叫《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484164&amp;idx=1&amp;sn=030612f5a84120ef407401ff6fad715f&amp;chksm=ec43b243db343b5524c911327bdcbe5f01034095d549d43d530decc5676faecdbd449dfac026#rd">ggimage：ggplot2中愉快地使用图片</a>》，从此图上嵌图（ggplot对象）或图片变得轻而易举。某一天写着玩，写了个《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484079&amp;idx=1&amp;sn=2f37b54ad09b966ccb9e8bf93ebd6643&amp;chksm=ec43b3e8db343afed5d55c25aaaba233f3339686e9eba0e65f004a5ca58ac13bba7ba9b5bacc#rd">geom_pokemon: 使用pokemon画图</a>》的图层，引起了人民群众的尖叫，国外有妹纸用来可视化NBA数据《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484149&amp;idx=1&amp;sn=0058b64bc269a05937ba97dccd9c0e23&amp;chksm=ec43b3b2db343aa4799e68b1f5c51cde7b4b5452fe69158b93de6f7b368738ecbc2dcf275abc#rd">大开眼界+多图慎点：Pokémon x NBA and other fun with ggimage</a>》，国内有汉子用来可视化复旦大学考研的报考专业《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484594&amp;amp;idx=1&amp;amp;sn=d35474d1ff032b54152935ef55088340&amp;amp;chksm=ec43b5f5db343ce311e0d54e1b936cb4982f952ce38e940ba6c3cf354436c91b1ae22fc17ea1#rd">你的专业是那一只Pokémon神兽？</a>》。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1014,7 +1067,7 @@ hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.000
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         165 posts found
+         166 posts found
       </p>
     </div>
   </div>
