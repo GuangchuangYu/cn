@@ -225,6 +225,82 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/08/prepare-genelist/">
+          听说你有RNAseq数据却不知道怎么跑GSEA
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-08-10T19:11:00&#43;08:00">
+      
+  August 10, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <blockquote>
+<p>Dear GuangChuangyu,</p>
+
+<p>I&rsquo;m trying to use the clusterProfiler package for GSE analysis on DGE data obtained from RNAseq.
+While I can run enrichKEGG, I&rsquo;m unable to run gseKEGG basically because I don&rsquo;t know how to obtain an order ranked gene list.</p>
+
+<p>I work on R. I have a dataframe or matrix with gene names, log2 fold change values, pvalues and adjusted pvalues among others.</p>
+
+<p>How can I get the order ranked gene list to feed in gseKEGG?</p>
+
+<p>Moreover what is the more reliable way to obtain functional insight about each sample? enrichKEGG or gseKEGG?</p>
+
+<p>Thank you in advance for your help.</p>
+
+<p>best regards</p>
+
+<p>bruno saubaméa</p>
+</blockquote>
+
+<p>今天收到一封来自Université Paris Descartes的求助信，这个问题我被问过好多次了，显然很多新手都有这问题，根本不知道该怎么跑GSEA，搞不清GSEA的输入是什么。</p>
+
+<p>
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2017/08/prepare-genelist/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/08/response-to-sciencenet-blog-post/">
           祝你们缠缠绵绵到天涯
         </a>
@@ -623,84 +699,6 @@ ga('send', 'pageview');
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/swirl/">
-          听说你想学R
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-07-23T00:53:00&#43;08:00">
-      
-  July 23, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <h2 id="先来点八卦">先来点八卦</h2>
-
-<p>当年学R的时候，并没有现在这么多的书籍，老用户一般都知道丁国徽，因为他翻译了诸如《R导论》之类的文档，属于最早的中文材料了。跟生物狗有关的中文书有两本，一本是《R语言及Bioconductor在基因组分析中的应用》，这本我在2006年的时候看过，被坑大发了，里面逻辑混乱、错误满篇。</p>
-
-<p>以下这段豆瓣书评可以说很好的总结了这本书 <a href="https://book.douban.com/review/3017404/#comments">https://book.douban.com/review/3017404/#comments</a>:</p>
-
-<blockquote>
-<p>首先，打开前言，读者们会发现“编写本书，参加这些工作的教师和研究生有15人之多”。当然，名字后面带头衔的最后都在出现在封面了。也就是说由12位&rdquo;无名的岳武穆“研究生同学造就了3名”有名的岳武穆“之砖家叫兽。</p>
-
-<p>然后，本书共24章，模12为零，当然，这只是一个巧合，只是暗合天命罢了。</p>
-
-<p>最搞笑的就是这本书的编排和审校，十分差，许多小错误，就好像从没有审过一样。</p>
-
-<p>譬如第13页上，对order()函数的介绍，居然有这么句绕口令“x[order(x)]等效于order(x)&ldquo;,当然其实等效的是 sort(x).</p>
-
-<p>其他的诸如第17页上&gt;=的打印错误，就不一一细表了。</p>
-
-<p>最搞笑的就是只有三页的第4章，在数组、函数的介绍之前，就开始讲“聚集计算”！！！然后再来讲解语言基本的语法。。。。
-这种“由深入浅，化简单为复杂，化复杂为天书”之功力，更让吾辈叹服砖家叫兽吞云吐雾之神功。</p>
-
-<p>作为一本实例讲解的书，根本就没有提供源码和实例样本，也就说，根本就是没头没脑的演示。有点专业精神好么，好歹也是本标价68的书，当然只有400页草纸， 本科生水平的语言文档翻译。</p>
-</blockquote>
-
-<p>
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/07/swirl/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -782,6 +780,37 @@ ga('send', 'pageview');
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/watermark/">
+                <h3 class="media-heading">听说你想打水印？</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><img src="http://guangchuangyu.github.io/blog_images/R/meme/WechatIMG165.png" alt="" /></p>
+
+<p>正如我在《<a href="http://mp.weixin.qq.com/s/jDXjkrkq_YVhW-Z5Vx2-Fg">用R画meme ;)</a>》里说的，meme包就可以拿来画，当然这个包是设计来画meme的，所以文本只会打在中间，如果你想在右下角之类的，不好意思，我没提供选项让你调文本位置，氮素，meme依然是你的好帮手，怎么说呢，meme不单能帮你读图片，还能用grid画出来，这意味着你可以用<code>grid.text</code>随便加个文本就OK了。</p>
+
+<p>实例演示一发：</p>
+
+<pre><code>library(meme)
+u &lt;- system.file(&quot;angry8.jpg&quot;, package=&quot;meme&quot;)
+x &lt;- meme(u)
+print(x)
+grid.text(&quot;biobabble&quot;, x=.9, y=.05, 
+	gp=gpar(col='white', cex=1.2))
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1030,45 +1059,6 @@ hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.000
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/set_axis_text_color/">
-                <h3 class="media-heading">映射变量给axis上色</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Oct 10, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>小伙伴发来这个文章中的图，想要实现类似的图，用变量给axis text上色，并生成legend：</p>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/R/ggplot2/Screenshot 2017-07-04 14.10.55.png" alt="" /></p>
-
-<p>这个可以说ggplot2是不支持的，aes映射不会被应用于axis上，而theme也不支持aes映射，你只能自己手动搞个color vector传给theme来上色，但这无法生成legend。</p>
-
-<p>我只能打开脑洞，legend借助于额外的图层来生成，但这个额外的图层又不是我们想要在图形上展示的，这又是个无米之炊，我能想到的就是让图层透明，实际有，但你看不到，当然这样自动生成的legend也会看不到，但legend可以后面再修改，于是这不支持的事情，就通过变通变得可能：</p>
-
-<pre><code class="language-r">require(ggplot2)
-
-set.seed(2017-07-04)
-d &lt;- data.frame(x = letters[1:5], y = rnorm(5), 
-		group = sample(c(&quot;Control&quot;, &quot;Treatment&quot;), 5, replace=TRUE),
-		type = sample(LETTERS[1:2], 5, replace=TRUE)
-)
-
-p &lt;- ggplot(d, aes(x,y)) + 
-	geom_col(aes(fill=group))
-</code></pre>
-
-<p>这个代码很好懂，画一个柱状图，按<code>group</code>上色。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1076,7 +1066,7 @@ p &lt;- ggplot(d, aes(x,y)) +
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         164 posts found
+         165 posts found
       </p>
     </div>
   </div>

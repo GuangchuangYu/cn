@@ -342,6 +342,37 @@ regression取值是<code>{0,1}</code>，而SVM为了计算距离方便，取值�
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/watermark/">
+                <h3 class="media-heading">听说你想打水印？</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><img src="http://guangchuangyu.github.io/blog_images/R/meme/WechatIMG165.png" alt="" /></p>
+
+<p>正如我在《<a href="http://mp.weixin.qq.com/s/jDXjkrkq_YVhW-Z5Vx2-Fg">用R画meme ;)</a>》里说的，meme包就可以拿来画，当然这个包是设计来画meme的，所以文本只会打在中间，如果你想在右下角之类的，不好意思，我没提供选项让你调文本位置，氮素，meme依然是你的好帮手，怎么说呢，meme不单能帮你读图片，还能用grid画出来，这意味着你可以用<code>grid.text</code>随便加个文本就OK了。</p>
+
+<p>实例演示一发：</p>
+
+<pre><code>library(meme)
+u &lt;- system.file(&quot;angry8.jpg&quot;, package=&quot;meme&quot;)
+x &lt;- meme(u)
+print(x)
+grid.text(&quot;biobabble&quot;, x=.9, y=.05, 
+	gp=gpar(col='white', cex=1.2))
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/scholar/">
                 <h3 class="media-heading">一个用不了的R包和一个404的网站</h3>
               </a>
@@ -586,45 +617,6 @@ hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.000
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/set_axis_text_color/">
-                <h3 class="media-heading">映射变量给axis上色</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Oct 10, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>小伙伴发来这个文章中的图，想要实现类似的图，用变量给axis text上色，并生成legend：</p>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/R/ggplot2/Screenshot 2017-07-04 14.10.55.png" alt="" /></p>
-
-<p>这个可以说ggplot2是不支持的，aes映射不会被应用于axis上，而theme也不支持aes映射，你只能自己手动搞个color vector传给theme来上色，但这无法生成legend。</p>
-
-<p>我只能打开脑洞，legend借助于额外的图层来生成，但这个额外的图层又不是我们想要在图形上展示的，这又是个无米之炊，我能想到的就是让图层透明，实际有，但你看不到，当然这样自动生成的legend也会看不到，但legend可以后面再修改，于是这不支持的事情，就通过变通变得可能：</p>
-
-<pre><code class="language-r">require(ggplot2)
-
-set.seed(2017-07-04)
-d &lt;- data.frame(x = letters[1:5], y = rnorm(5), 
-		group = sample(c(&quot;Control&quot;, &quot;Treatment&quot;), 5, replace=TRUE),
-		type = sample(LETTERS[1:2], 5, replace=TRUE)
-)
-
-p &lt;- ggplot(d, aes(x,y)) + 
-	geom_col(aes(fill=group))
-</code></pre>
-
-<p>这个代码很好懂，画一个柱状图，按<code>group</code>上色。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -632,7 +624,7 @@ p &lt;- ggplot(d, aes(x,y)) +
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         164 posts found
+         165 posts found
       </p>
     </div>
   </div>
