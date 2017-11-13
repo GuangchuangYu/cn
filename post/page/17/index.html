@@ -225,6 +225,69 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2013/09/install-emacs-on-mac/">
+          Install Emacs on Mac
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2013-09-10T18:04:22&#43;08:00">
+      
+  September 10, 2013
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/mac-os">Mac OS</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <h2 id="package-manager">package manager</h2>
+
+<p>之前一直用<a href="http://guangchuangyu.github.io/categories/bsd/">NetBSD</a>的<a href="http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/">pkgsrc</a>做为各种Unix-like系统的包管理系统，pkgsrc在自己内部解决依赖关系，这点对于生产环境来说，是很好的一个优点，我通常会在服务器里装一个pkgsrc，在用户目录下，维护一套UNIX软件。但是用在自己的机器上，内部解决软件依赖，就是个缺点，浪费编译时间和硬盘空间。</p>
+
+<p>Mac上可用的包管理系统很多，Fink移植于<a href="http://guangchuangyu.github.io/categories/linux/">Debian</a>的apt，<a href="http://guangchuangyu.github.io/categories/linux/">Gentoo</a>的portage也支持OS X。OS X是基于BSD的系统，BSD有自己的一套包管理系统，如FreeBSD的ports和<a href="http://guangchuangyu.github.io/categories/bsd/">NetBSD</a>的<a href="http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/">pkgsrc</a>，MacPorts可以看作是这一系列中的一个，不过它并不是OS X原生的，它只是OpenDarwin的子项目，所以和pkgsrc一个样，也是内部解决依赖，真正为OS
+X设计的原生包管理系统非Homebrew莫属，它会尽量依赖系统里已有的软件。
+
+自从用了Homebrew之后，再也不用为系统里有两套perl和python而crazy了，之前通过<a href="http://guangchuangyu.github.io/2011/06/screen-shot/">pkgsrc装的软件</a>全删掉，改Homebrew来安装和管理。
+如果软件没有被pkgsrc收录，而想通过pkgsrc来管理的话，那就得自己<a href="http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/">写makefile</a>，而homebrew，则可以自动帮你生成Formula，比如我要安装<a href="http://users.soe.ucsc.edu/~kent/src/">blat</a>：
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2013/09/install-emacs-on-mac/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2013/07/permanent-head-damage-to-be/">
           Permanent Head Damage to be
         </a>
@@ -596,73 +659,6 @@ ID得到57个（漏掉的不管它，只是做为一个例子）:
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2012/04/support-vector-machine/">
-          Support Vector Machine
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2012-04-12T05:37:55&#43;08:00">
-      
-  April 12, 2012
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/statistics">statistics</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        支持向量机(Support Vector Machines, SVM)最初由Vladimir
-Vapnik于1997年提出，SVM最简单的形式就是找出一下区分界限（descision
-boundary），也称之为超平面(hyperplane)，使得离它最近的点（称之为support
-vectors）与之间隔最大。
-<img src="http://guangchuangyu.github.io/blog_images/2012/04/linearSVM.png" alt="" /></p>
-
-<p>这和logistic regression有些相似，区别在于logistic
-regression要求所有的点尽可能地远离中间那条线，而SVM是要求最接近中间线的点尽可能地远离中间线。也就是说SVM的主要目标是区分那些最难区分的点。</p>
-
-<p>SVM对于hyperplane的定义，在形式上和logistic regression一样,logistic
-regression的decision boundary由$\theta^TX=0$确定,SVM则用$w^TX+b=0$表示,其中b相当于logistic regression中的$\theta_0$，从形式上看，两者并无区别，当然如前面所说，两者的目标不一样，logistic regression着眼于全局，SVM着眼于support
-vectors。有监督算法都有label变量y，logistic
-regression取值是<code>{0,1}</code>，而SVM为了计算距离方便，取值为<code>{-1,1}</code>。
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2012/04/support-vector-machine/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -744,6 +740,38 @@ regression取值是<code>{0,1}</code>，而SVM为了计算距离方便，取值�
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/pheatmap-color-range/">
+                <h3 class="media-heading">不同数据集画出的热图，用同样的颜色区间上色？</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><img src="http://guangchuangyu.github.io/blog_images/R/misc/WechatIMG216.png" alt="" /></p>
+
+<p>这个问题，其实答案就存在于《<a href="http://mp.weixin.qq.com/s/Xhi_ZkrEzUVdnCu7ECBS4w">听说你还不会画热图</a>》，我们先生成一个矩阵：</p>
+
+<pre><code>set.seed(2017-11-12)
+d = data.frame(matrix(rnorm(100), ncol=10))
+colnames(d) = paste0('t', 1:10)
+rownames(d) = paste0('g', 1:10)
+</code></pre>
+
+<p>这个矩阵是<code>rnorm</code>生成的随机数，有正有负，我们再生成一个矩阵，只有正数，并且数值上比第一个矩阵要大：</p>
+
+<pre><code>d2 = abs(d) * 1.2
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -996,31 +1024,6 @@ hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.000
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/invisible-layer/">
-                <h3 class="media-heading">你的图上有一双看不见的手</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Oct 10, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>下面这张吐槽LaTeX的图，太深得我心。</p>
-
-<p><img src="http://dirkriehle.com/wp-content/uploads/2016/05/latex.png" alt="" /></p>
-
-<p>而ggplot2这种文本跑出界的事情，也太常见，以至于我在<a href="https://guangchuangyu.github.io/ggtree/faq/">ggtree的FAQ</a>专门指出来，要用<code>xlim</code>给x轴分配多点空间，这是由于数据是数据空间，而文本是像素空间。你画图的画布由数据空间决定，然后文本就从指定的位置（除了坐标，还取决于你align的方式和adjustment微调）开始打出来，一不小心就打出界了。这一点我在FAQ里，除了告诉你用<code>xlim</code>解决之外，我也给出了上面的解释，所以我一直强调，不要以为我在教ggtree，我其实是在教ggplot2。</p>
-
-<p>后面就有人问了ggplot2字体溢出的事情，他所遇到的溢出，似乎更不应该发生，因为是坐标轴上的字体溢出，然而产生的原因是一样的，解决方案也是一样的，请用力猛戳《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484089&amp;idx=1&amp;sn=f6e11d54a18e96a94145a2b802c37dc1&amp;chksm=ec43b3fedb343ae89e3630900033f055af4bbe211897076291e351ae18cc89b2ddf7651ee0be#rd">ggplot2字体溢出的那点破事</a>》。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1028,7 +1031,7 @@ hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.000
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         166 posts found
+         167 posts found
       </p>
     </div>
   </div>
