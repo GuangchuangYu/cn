@@ -23,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.24.1">
     <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
-    <title>创建R包</title>
+    <title>掐架的额外收获</title>
     <meta name="author" content="Guangchuang Yu">
     <meta name="keywords" content="">
 
@@ -31,64 +31,31 @@
     
 
     
-    <meta name="description" content="&gt; source(&quot;code.R&quot;) #载入写好的代码 
-&gt; package.skeleton(name=&quot;pkgname&quot;, list=c(&quot;function_name_list&quot;))
-# 生成R源码包的目录结构 
+    <meta name="description" content="《你昨天才做的分析，可能是几年前的结果！》这篇文章给大家敲了警钟，各种各样的web-server，要小心看有没有维护更新，有些是五年十年都不更新的，十分可怕。文章虽然讲的是富集分析，但其它分析工具你同样需要小心。
 
+当然并不是说独立的软件/软件包就一定靠谱，如果软件自己打包了数据，同样要注意数据是否有更新，而如果数据不打包在软件里，而是在线获取，你同样也该留一下心。这也是clusterProfiler做富集分析的优势所在，KEGG数据是在线的，永远是最新的，而GO的数据不在软件包里，而依赖于别的数据包，而这些数据包是社区维护的（相对而言，个人的维护比较难以为继），就确保了数据一直在有更新维护的。
 
-到man目录下改*.Rd文档。latex格式。这是包和函数的帮助文档。
-
-如果需要vignette文档的话。在包目录下，新建inst/doc，在里面写pkgname.Rnw文档。基本上是latex格式，不过允许你插入R代码。make的时候，会先跑代码。再自动转换成latex，再编译成pdf。
-
-$ R CMD check pkgname 
-# 检验代码和文档。这个很重要。通常一些小问题都能在这一步发现。 
-$ R CMD build pkgname 
-# 打包，源码包格式 
-$ R CMD build --binary pkgname
-#编译后打包，二进制格式。
-
+Bioconductor每半年发行一次，注释包同样每半年更新一次，所以你用clusterProfiler做GO分析，你用的GO数据库不会说超过半年没更新，而不像有些公司给出的结果，落后于这个世界不是一年两年这么简单。
 
 ">
-    <meta property="og:description" content="&gt; source(&quot;code.R&quot;) #载入写好的代码 
-&gt; package.skeleton(name=&quot;pkgname&quot;, list=c(&quot;function_name_list&quot;))
-# 生成R源码包的目录结构 
+    <meta property="og:description" content="《你昨天才做的分析，可能是几年前的结果！》这篇文章给大家敲了警钟，各种各样的web-server，要小心看有没有维护更新，有些是五年十年都不更新的，十分可怕。文章虽然讲的是富集分析，但其它分析工具你同样需要小心。
 
+当然并不是说独立的软件/软件包就一定靠谱，如果软件自己打包了数据，同样要注意数据是否有更新，而如果数据不打包在软件里，而是在线获取，你同样也该留一下心。这也是clusterProfiler做富集分析的优势所在，KEGG数据是在线的，永远是最新的，而GO的数据不在软件包里，而依赖于别的数据包，而这些数据包是社区维护的（相对而言，个人的维护比较难以为继），就确保了数据一直在有更新维护的。
 
-到man目录下改*.Rd文档。latex格式。这是包和函数的帮助文档。
-
-如果需要vignette文档的话。在包目录下，新建inst/doc，在里面写pkgname.Rnw文档。基本上是latex格式，不过允许你插入R代码。make的时候，会先跑代码。再自动转换成latex，再编译成pdf。
-
-$ R CMD check pkgname 
-# 检验代码和文档。这个很重要。通常一些小问题都能在这一步发现。 
-$ R CMD build pkgname 
-# 打包，源码包格式 
-$ R CMD build --binary pkgname
-#编译后打包，二进制格式。
-
+Bioconductor每半年发行一次，注释包同样每半年更新一次，所以你用clusterProfiler做GO分析，你用的GO数据库不会说超过半年没更新，而不像有些公司给出的结果，落后于这个世界不是一年两年这么简单。
 
 ">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="创建R包">
-    <meta property="og:url" content="/2008/12/creat-r-package/">
+    <meta property="og:title" content="掐架的额外收获">
+    <meta property="og:url" content="/2017/11/bioc-db-update/">
     <meta property="og:site_name" content="Guangchuang Yu">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Guangchuang Yu">
-    <meta name="twitter:description" content="&gt; source(&quot;code.R&quot;) #载入写好的代码 
-&gt; package.skeleton(name=&quot;pkgname&quot;, list=c(&quot;function_name_list&quot;))
-# 生成R源码包的目录结构 
+    <meta name="twitter:description" content="《你昨天才做的分析，可能是几年前的结果！》这篇文章给大家敲了警钟，各种各样的web-server，要小心看有没有维护更新，有些是五年十年都不更新的，十分可怕。文章虽然讲的是富集分析，但其它分析工具你同样需要小心。
 
+当然并不是说独立的软件/软件包就一定靠谱，如果软件自己打包了数据，同样要注意数据是否有更新，而如果数据不打包在软件里，而是在线获取，你同样也该留一下心。这也是clusterProfiler做富集分析的优势所在，KEGG数据是在线的，永远是最新的，而GO的数据不在软件包里，而依赖于别的数据包，而这些数据包是社区维护的（相对而言，个人的维护比较难以为继），就确保了数据一直在有更新维护的。
 
-到man目录下改*.Rd文档。latex格式。这是包和函数的帮助文档。
-
-如果需要vignette文档的话。在包目录下，新建inst/doc，在里面写pkgname.Rnw文档。基本上是latex格式，不过允许你插入R代码。make的时候，会先跑代码。再自动转换成latex，再编译成pdf。
-
-$ R CMD check pkgname 
-# 检验代码和文档。这个很重要。通常一些小问题都能在这一步发现。 
-$ R CMD build pkgname 
-# 打包，源码包格式 
-$ R CMD build --binary pkgname
-#编译后打包，二进制格式。
-
+Bioconductor每半年发行一次，注释包同样每半年更新一次，所以你用clusterProfiler做GO分析，你用的GO数据库不会说超过半年没更新，而不像有些公司给出的结果，落后于这个世界不是一年两年这么简单。
 
 ">
     
@@ -264,14 +231,14 @@ ga('send', 'pageview');
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      创建R包
+      掐架的额外收获
     </h1>
   
   <div class="postShorten-meta post-meta">
   
-    <time itemprop="datePublished" datetime="2008-12-07T05:23:16&#43;08:00">
+    <time itemprop="datePublished" datetime="2017-11-12T00:21:00&#43;08:00">
       
-  December 7, 2008
+  November 12, 2017
 
     </time>
   
@@ -291,28 +258,27 @@ ga('send', 'pageview');
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <pre><code>&gt; source(&quot;code.R&quot;) #载入写好的代码 
-&gt; package.skeleton(name=&quot;pkgname&quot;, list=c(&quot;function_name_list&quot;))
-# 生成R源码包的目录结构 
-</code></pre>
+              <p>《<a href="http://mp.weixin.qq.com/s/miGQs6U1d3aHwcm7vgNCVw">你昨天才做的分析，可能是几年前的结果！</a>》这篇文章给大家敲了警钟，各种各样的web-server，要小心看有没有维护更新，有些是五年十年都不更新的，十分可怕。文章虽然讲的是富集分析，但其它分析工具你同样需要小心。</p>
 
-<p>到man目录下改*.Rd文档。latex格式。这是包和函数的帮助文档。</p>
+<p>当然并不是说独立的软件/软件包就一定靠谱，如果软件自己打包了数据，同样要注意数据是否有更新，而如果数据不打包在软件里，而是在线获取，你同样也该留一下心。这也是clusterProfiler做富集分析的优势所在，KEGG数据是在线的，永远是最新的，而GO的数据不在软件包里，而依赖于别的数据包，而这些数据包是社区维护的（相对而言，个人的维护比较难以为继），就确保了数据一直在有更新维护的。</p>
 
-<p>如果需要vignette文档的话。在包目录下，新建inst/doc，在里面写pkgname.Rnw文档。基本上是latex格式，不过允许你插入R代码。make的时候，会先跑代码。再自动转换成latex，再编译成pdf。</p>
-
-<pre><code>$ R CMD check pkgname 
-# 检验代码和文档。这个很重要。通常一些小问题都能在这一步发现。 
-$ R CMD build pkgname 
-# 打包，源码包格式 
-$ R CMD build --binary pkgname
-#编译后打包，二进制格式。
-</code></pre>
+<p>Bioconductor每半年发行一次，注释包同样每半年更新一次，所以你用clusterProfiler做GO分析，你用的GO数据库不会说超过半年没更新，而不像有些公司给出的结果，落后于这个世界不是一年两年这么简单。</p>
 
 <p></p>
 
-<p>基本的过程就这样，还是比较简单的，在个步骤仅限linux，windows用户，需要搭建编译平台。</p>
+<p>Bioconductor最近一次是10月31号发布的3.6版本，如果你还没更新，是时候看一个《<a href="http://mp.weixin.qq.com/s/brAfMBIwSYXS852K2uNqRg">Update R packages</a>》然后来一发了，如果你更新了，也要再来一发，因为我上次的掐架，《<a href="http://mp.weixin.qq.com/s/M_0kIsE7A-vxMEusBtzJow">请用事实怼我 -,-</a>》，为社区带来了好多注释包的更新。</p>
 
-<p>如果要嵌入编译性的代码的话，请参考<a href="http://cran.r-project.org/doc/manuals/R-exts.html">http://cran.r-project.org/doc/manuals/R-exts.html</a></p>
+<p><img src="http://guangchuangyu.github.io/blog_images/gif/sherlock.gif" alt="" /></p>
+
+<p>用clusterProfiler的好处还在于你是知道GO数据的更新日期的，上一次《<a href="http://mp.weixin.qq.com/s/M_0kIsE7A-vxMEusBtzJow">请用事实怼我 -,-</a>》的时候，我发现GO的数据还是2017年3月份的，证明10月份发布新版本的时候没更新，我就去Bioconductor说他们没更新，所以说是掐架带来的bonus，给社区做了点贡献。这也是我说的社区维护的好处，用户反馈是非常有用的，而且在帮助自己的同时，也帮助了大家。</p>
+
+<p><img src="http://guangchuangyu.github.io/blog_images/R/misc/Bioc_db.png" alt="" /></p>
+
+<p>在我的push之下，数据源终于更新到了2017年11月6号，当然KEGG的数据永远定格在2011年3月15号。</p>
+
+<p>而《<a href="http://mp.weixin.qq.com/s/M_0kIsE7A-vxMEusBtzJow">请用事实怼我 -,-</a>》里某公司的分析，已经是几年都没更新了，肯定之前是有客户发现的，然而就像某公司员工出来掐一样，先是客户无知，他们肯定、必须是最新的。在打脸之后，说什么：可能跑流程的人没有改参数。尼马我还能说什么呢。而且做科学不是用数字说话，不是用事实说话，而是他做为某公司员工，要为「科学共同体」打call，厉害了，听得我一脸蒙逼。</p>
+
+<p><img src="http://guangchuangyu.github.io/blog_images/gif/winona.gif" alt="" /></p>
               
               <center><span class="zaln"><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&mid=2247484170&idx=1&sn=ce5f7eb6df66d79661276a64bf25b4bc&chksm=ec43b24ddb343b5b2877574153aeccd049a6824716063883edb35c2338bd32c067caf3885f53#rd" class="zb">赞赏</a></span></center>
             </div>
@@ -325,7 +291,7 @@ $ R CMD build --binary pkgname
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/package/">package</a>
+  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/clusterprofiler/">clusterProfiler</a>
 
                   </div>
                 
@@ -337,7 +303,7 @@ $ R CMD build --binary pkgname
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2008/12/opinion-in-programming/" data-tooltip="关于编程，我的理解">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2017/11/pheatmap-color-range/" data-tooltip="不同数据集画出的热图，用同样的颜色区间上色？">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -345,7 +311,7 @@ $ R CMD build --binary pkgname
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2008/11/bisect-to-solve-equation/" data-tooltip="用中值定理求根">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2017/11/bmc-journal-protects-paper-of-plagiarism/" data-tooltip="虐狗节来看一下这个裤衩都不要的故事">
           
             <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
             <i class="fa fa-angle-right"></i>
@@ -362,17 +328,17 @@ $ R CMD build --binary pkgname
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2008%2f12%2fcreat-r-package%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f11%2fbioc-db-update%2f">
           <i class="fa fa-google-plus"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2008%2f12%2fcreat-r-package%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f11%2fbioc-db-update%2f">
           <i class="fa fa-facebook-official"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2008%2f12%2fcreat-r-package%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f11%2fbioc-db-update%2f">
           <i class="fa fa-twitter"></i>
         </a>
       </li>
@@ -418,7 +384,7 @@ $ R CMD build --binary pkgname
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2008/12/opinion-in-programming/" data-tooltip="关于编程，我的理解">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2017/11/pheatmap-color-range/" data-tooltip="不同数据集画出的热图，用同样的颜色区间上色？">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -426,7 +392,7 @@ $ R CMD build --binary pkgname
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2008/11/bisect-to-solve-equation/" data-tooltip="用中值定理求根">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2017/11/bmc-journal-protects-paper-of-plagiarism/" data-tooltip="虐狗节来看一下这个裤衩都不要的故事">
           
             <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
             <i class="fa fa-angle-right"></i>
@@ -443,17 +409,17 @@ $ R CMD build --binary pkgname
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2008%2f12%2fcreat-r-package%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f11%2fbioc-db-update%2f">
           <i class="fa fa-google-plus"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2008%2f12%2fcreat-r-package%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f11%2fbioc-db-update%2f">
           <i class="fa fa-facebook-official"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2008%2f12%2fcreat-r-package%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f11%2fbioc-db-update%2f">
           <i class="fa fa-twitter"></i>
         </a>
       </li>
@@ -480,17 +446,17 @@ $ R CMD build --binary pkgname
       <div id="share-options-bar" class="share-options-bar" data-behavior="4">
   <ul class="share-options">
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2008%2f12%2fcreat-r-package%2f">
+      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f11%2fbioc-db-update%2f">
         <i class="fa fa-google-plus"></i><span>Share on Google Plus</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2008%2f12%2fcreat-r-package%2f">
+      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f11%2fbioc-db-update%2f">
         <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2008%2f12%2fcreat-r-package%2f">
+      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f11%2fbioc-db-update%2f">
         <i class="fa fa-twitter"></i><span>Share on Twitter</span>
       </a>
     </li>
@@ -883,9 +849,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/guangchuangyu.github.io\/cn\/2008\/12\/creat-r-package\/';
+          this.page.url = 'https:\/\/guangchuangyu.github.io\/cn\/2017\/11\/bioc-db-update\/';
           
-            this.page.identifier = '\/2008\/12\/creat-r-package\/'
+            this.page.identifier = '\/2017\/11\/bioc-db-update\/'
           
         };
         (function() {
