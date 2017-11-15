@@ -17,7 +17,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.24.1">
+    <meta name="generator" content="Hugo 0.30.2">
     <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
     <title>R</title>
     <meta name="author" content="Guangchuang Yu">
@@ -255,13 +255,14 @@ ga('send', 'pageview');
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
       <p>
-        不记得是什么时候知道统计之都的，但我记得最早知道的是太云，因为我用了他写的<a href="https://cran.r-project.org/package=corrplot">corrplot</a>包。后来统计之都最早接触的也是太云，他给我写邮件问我能不能帮忙校对<a href="https://book.douban.com/subject/24527091/">《ggplot2：数据分析与图形艺术》</a>，从此开始和太云变成了网友。</p>
+        <p>不记得是什么时候知道统计之都的，但我记得最早知道的是太云，因为我用了他写的<a href="https://cran.r-project.org/package=corrplot">corrplot</a>包。后来统计之都最早接触的也是太云，他给我写邮件问我能不能帮忙校对<a href="https://book.douban.com/subject/24527091/">《ggplot2：数据分析与图形艺术》</a>，从此开始和太云变成了网友。</p>
 
 <p>我在暨大的时候，太云曾经邀请我去China-R会议做报告，但我觉得自己没什么好分享的，<a href="http://guangchuangyu.github.io/GOSemSim">GOSemSim</a>这个包是硕士的时候做的，不好去讲之前做的东西。而当时我写的另一个包<a href="http://guangchuangyu.github.io/clusterProfiler">clusterProfiler</a>，纯粹是因为大量做富集分析的工具都是针对模式生物，而我们实验室有做各种细菌；另外有一些工具，背景设置是有问题的。自己实现一个包，不受别人的限制。即便是这个包现在受到了一定的认可，比如BioC 3.3中有个<a href="http://bioconductor.org/packages/release/bioc/html/debrowser.html">debrowser</a>的包使用了clusterProfiler，而在BioC 3.4中又有个新包<a href="http://bioconductor.org/packages/devel/bioc/html/bioCancer.html">bioCancer</a>也使用了clusterProfiler；再比如这次在北京，有好几个参会的人员在茶歇时问了clusterProfiler的问题。但始终觉得这只是个实用性的包而已，算法是别人的，而且已经比较老了，类似的工具简直就是成百上千。所以也是不好意思拿出来讲的。所以我拒绝了太云的邀请，一直也没有参加China-R的会议。</p>
 
 <p>今年是第九届China-R会议，这次会议规模很大，有22个分会场，超过100个演讲嘉宾，参会人数超过4000人。这一次刚好有个Bioconductor的分会场，Matt写信给我，说我写过几个Bioconductor包，他本人喜欢我的<a href="http://guangchuangyu.github.io/ChIPseeker">ChIPseeker</a>包，问我能否在会上分享与Bioconductor包相关的经验。这是Bioconductor在中国的首秀，我欣然接受，当然也是因为这两年我写了<a href="http://guangchuangyu.github.io/ChIPseeker">ChIPseeker</a>和<a href="http://guangchuangyu.github.io/ggtree">ggtree</a>，我自己觉得还拿得出手🙈。</p>
 
-<p>
+<p></p>
+
         <br>
         <a href="https://guangchuangyu.github.io/cn/2016/05/%E7%AC%AC%E4%B9%9D%E5%B1%8Achinar%E4%BC%9A%E8%AE%AE%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%88%86%E4%BC%9A/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -320,11 +321,12 @@ ga('send', 'pageview');
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
       <p>
-        <img src="https://guangchuangyu.github.io/blog_images/2015/Screenshot%202015-05-21%2010.31.46.png" alt="" /></p>
+        <p><img src="https://guangchuangyu.github.io/blog_images/2015/Screenshot%202015-05-21%2010.31.46.png" alt="" /></p>
 
 <p><a href="http://meme-suite.org">MEME</a>是motif分析的webserver，所谓的注释序列就是一条线条上画一些长方形的box。</p>
 
-<p>
+<p></p>
+
         <br>
         <a href="https://guangchuangyu.github.io/cn/2015/05/draw-meme-like-figure/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -381,13 +383,14 @@ ga('send', 'pageview');
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
       <p>
-        虽然R提供了很多作图函数，但自己实现一下，是非常好的体验，而且能够让我们了解其中的细节。</p>
+        <p>虽然R提供了很多作图函数，但自己实现一下，是非常好的体验，而且能够让我们了解其中的细节。</p>
 
 <p>最近在读<a href="http://book.douban.com/subject/4237062/">＜Modern Applied Statistics With S-PLUS＞</a>，115页讲到Q-Q图时，书中给出了一个Trellis的实现。（Trellis是S/S-PLUS的可视化系统，在R里的对等实现是lattice包）。</p>
 
 <p>我们知道一组数字，可以算4分位数，分别是25%， 50%（中位数）， 75%，它等于该组数字中所有数值由小到大排列后第X%的数字，事实上每个数字都可以对应一个X%，Q-Q图很简单，把样本数据和理论分布算出来的quantiles，画个散点图而已。分别用base graph和ggplot2实现，图中三个图分别由系统函数qqnorm，和这里定义的qqplot, qqplot2画出来。</p>
 
-<p>
+<p></p>
+
         <br>
         <a href="https://guangchuangyu.github.io/cn/2011/08/qq-plot/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -444,7 +447,7 @@ ga('send', 'pageview');
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
       <p>
-        上了几天的课，<a href="http://ibw2011.fmmu.edu.cn/schedule.htm">http://ibw2011.fmmu.edu.cn/schedule.htm</a>
+        <p>上了几天的课，<a href="http://ibw2011.fmmu.edu.cn/schedule.htm">http://ibw2011.fmmu.edu.cn/schedule.htm</a>
 今天就上完了，只完成了project 1，想写gibbs sampling，但是没搞明白，汗。</p>
 
 <p>这个纯属练习用，没啥实用价值。</p>
@@ -484,7 +487,8 @@ the likelihood)</p>
 <p>ORF1: xxx ORF2: xxx</p>
 </blockquote>
 
-<p>
+<p></p>
+
         <br>
         <a href="https://guangchuangyu.github.io/cn/2011/07/a-simple-gene-finder/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -556,7 +560,8 @@ $ R CMD build --binary pkgname
 #编译后打包，二进制格式。
 </code></pre>
 
-<p>
+<p></p>
+
         <br>
         <a href="https://guangchuangyu.github.io/cn/2008/12/creat-r-package/" class="postShorten-excerpt_link link">Continue reading</a>
         

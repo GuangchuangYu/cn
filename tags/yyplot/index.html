@@ -17,7 +17,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.24.1">
+    <meta name="generator" content="Hugo 0.30.2">
     <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
     <title>Yyplot</title>
     <meta name="author" content="Guangchuang Yu">
@@ -259,13 +259,14 @@ ga('send', 'pageview');
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
       <p>
-        在很久很久以前，当我还在用perl的时候，有一个TGen-EUtils的perl模块，可以去爬PubMed，我喜欢用它来画所谓的pubmed趋势，比如说我在2012年的时候，就画了各个组学技术的pubmed趋势，通过每一年的文章发表量来看某个技术到底火不火，走势怎么样。</p>
+        <p>在很久很久以前，当我还在用perl的时候，有一个TGen-EUtils的perl模块，可以去爬PubMed，我喜欢用它来画所谓的pubmed趋势，比如说我在2012年的时候，就画了各个组学技术的pubmed趋势，通过每一年的文章发表量来看某个技术到底火不火，走势怎么样。</p>
 
 <p><img src="http://guangchuangyu.github.io/blog_images/2012/10/pubmedtrend.png" alt="" /></p>
 
 <p>当年microarray还特别猛，但显然可以看到二代测序必须要火，也可以看到proteomics在吹了几年牛B之后，有回落的趋势。</p>
 
-<p>
+<p></p>
+
         <br>
         <a href="https://guangchuangyu.github.io/cn/2017/11/pubmed-trend/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -322,7 +323,7 @@ ga('send', 'pageview');
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
       <p>
-        小伙伴发来这个文章中的图，想要实现类似的图，用变量给axis text上色，并生成legend：</p>
+        <p>小伙伴发来这个文章中的图，想要实现类似的图，用变量给axis text上色，并生成legend：</p>
 
 <p><img src="https://guangchuangyu.github.io/blog_images/R/ggplot2/Screenshot 2017-07-04 14.10.55.png" alt="" /></p>
 
@@ -344,7 +345,8 @@ p &lt;- ggplot(d, aes(x,y)) +
 
 <p>这个代码很好懂，画一个柱状图，按<code>group</code>上色。</p>
 
-<p>
+<p></p>
+
         <br>
         <a href="https://guangchuangyu.github.io/cn/2017/10/set_axis_text_color/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -401,7 +403,7 @@ p &lt;- ggplot(d, aes(x,y)) +
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
       <p>
-        最近公众号「生信媛」和「生信宝典」的小伙伴在说ggplot2无法一次性设置所有字体，<code>theme</code>只能设置axis text, title这些，而搞不了<code>geom_text</code>，<code>geom_text</code>必须要手工输入<code>family=XXX</code>来设置，因为不能使用<code>theme</code>来更换，也就是说没办法通过后处理来设定，比较麻烦。</p>
+        <p>最近公众号「生信媛」和「生信宝典」的小伙伴在说ggplot2无法一次性设置所有字体，<code>theme</code>只能设置axis text, title这些，而搞不了<code>geom_text</code>，<code>geom_text</code>必须要手工输入<code>family=XXX</code>来设置，因为不能使用<code>theme</code>来更换，也就是说没办法通过后处理来设定，比较麻烦。</p>
 
 <p>这显然是不对的，后处理必须可以的，一次性满足所有愿望也只是因为没人写个神奇的函数而已。于是我就动手写了个<code>set_font</code>的函数。</p>
 
@@ -414,7 +416,8 @@ p &lt;- ggplot(d, aes(x, y)) +
     geom_text(aes(y, x, label=lab), size=3)
 </code></pre>
 
-<p>
+<p></p>
+
         <br>
         <a href="https://guangchuangyu.github.io/cn/2017/09/ggplot2-set-font/" class="postShorten-excerpt_link link">Continue reading</a>
         

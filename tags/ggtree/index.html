@@ -17,7 +17,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.24.1">
+    <meta name="generator" content="Hugo 0.30.2">
     <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
     <title>Ggtree</title>
     <meta name="author" content="Guangchuang Yu">
@@ -259,11 +259,12 @@ ga('send', 'pageview');
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
       <p>
-        据说1024是程序员的节日，就在这一天，Y叔开始了第一次的网络讲座，首次在网络上露面。内容就是上一周预告的《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484958&amp;idx=1&amp;sn=d58e3bb5b43899849101c60efd29df53&amp;chksm=ec43b759db343e4fefd48ec618a5a2d42f46256e7f455bf9373d90157be0b47df9bd7fd069a9#rd">线上沙龙</a>》。</p>
+        <p>据说1024是程序员的节日，就在这一天，Y叔开始了第一次的网络讲座，首次在网络上露面。内容就是上一周预告的《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484958&amp;idx=1&amp;sn=d58e3bb5b43899849101c60efd29df53&amp;chksm=ec43b759db343e4fefd48ec618a5a2d42f46256e7f455bf9373d90157be0b47df9bd7fd069a9#rd">线上沙龙</a>》。</p>
 
 <p>很多人想要学ggplot2 + ggtree，但我的定位不是技术性的培训，而是学术讲座，所以一开始把问题摆出来，是有一些问题存在，有knowledge gap，然后我要去解决它。当然考虑到听众的knowledge gap也很大，我在介绍ggtree的之前，也帮大众撸了一篇R的画图，在这简短的时间里，你应该了解了R几个画图系统的关系，base和grid我在slides里写graphic system，但lattice和ggplot2我写的是data visualization system，我对它们是有区别对待的，像lattice和ggplot2自己是不成一体的，但提供了高阶的数据可视化方法/语法。听完讲座你也应该了解ggplot2，知道要怎样去入门，知道重点该学什么。</p>
 
-<p>
+<p></p>
+
         <br>
         <a href="https://guangchuangyu.github.io/cn/2017/10/ggtree-webinar-2017/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -320,13 +321,14 @@ ga('send', 'pageview');
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
       <p>
-        最初github上用户（<a href="https://github.com/JustGitting">@JustGitting</a>）报告说<code>geom_hilight</code>和<code>geom_cladelabel</code>不能用于unrooted树。详见：<a href="https://github.com/GuangchuangYu/ggtree/issues/118">https://github.com/GuangchuangYu/ggtree/issues/118</a></p>
+        <p>最初github上用户（<a href="https://github.com/JustGitting">@JustGitting</a>）报告说<code>geom_hilight</code>和<code>geom_cladelabel</code>不能用于unrooted树。详见：<a href="https://github.com/GuangchuangYu/ggtree/issues/118">https://github.com/GuangchuangYu/ggtree/issues/118</a></p>
 
 <p>我表示这确实是不行的，然后这就变成了feature request。我继续表示unrooted tree在ggtree中的实现并不好，我只实现了equal angle algorithm，在写注释图层之前，如果我有时间的话，我希望可以先实现更好的layout algorithm。</p>
 
 <p>然后JustGitting表示，他发现python的ETE和R的ape，在无根树的可视化上好像都不太行。问我有什么unrooted的layout algorithm，有没有什么参考文献，或许他可以帮忙实现，因为他觉得ggtree是最成熟的软件。</p>
 
-<p>
+<p></p>
+
         <br>
         <a href="https://guangchuangyu.github.io/cn/2017/09/highlight-clade-of-unrooted-tree/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -381,11 +383,12 @@ ga('send', 'pageview');
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
       <p>
-        还记得《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247483679&amp;idx=1&amp;sn=e9038cdaeb776355becba5ccfa01b501&amp;chksm=ec43b058db34394ed7afc20c246e1b664fe3b1d54e07b7c92b26bfcf292a46879926a4697a5a&amp;scene=21#wechat_redirect">ggtree hex sticker</a>》一文吧？画了几个六角贴，纯代码生成。时隔半年，原来的ggtree已经分成了<code>treeio</code>和<code>ggtree</code>两个包，而我也做了这两个包的六角贴，终于我花了289美元印了一大波贴纸+磁贴。</p>
+        <p>还记得《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247483679&amp;idx=1&amp;sn=e9038cdaeb776355becba5ccfa01b501&amp;chksm=ec43b058db34394ed7afc20c246e1b664fe3b1d54e07b7c92b26bfcf292a46879926a4697a5a&amp;scene=21#wechat_redirect">ggtree hex sticker</a>》一文吧？画了几个六角贴，纯代码生成。时隔半年，原来的ggtree已经分成了<code>treeio</code>和<code>ggtree</code>两个包，而我也做了这两个包的六角贴，终于我花了289美元印了一大波贴纸+磁贴。</p>
 
 <p><img src="https://guangchuangyu.github.io/blog_images/R/hexSticker/WechatIMG12.jpeg" alt="" /></p>
 
-<p>
+<p></p>
+
         <br>
         <a href="https://guangchuangyu.github.io/cn/2017/06/ggtree_sticker/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -440,7 +443,7 @@ ga('send', 'pageview');
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
       <p>
-        想要分段标记bootstrap，比如<code>0-70</code>, <code>70-90</code>, <code>90-100</code>之类的。这个对于ggtree来说，太简单。</p>
+        <p>想要分段标记bootstrap，比如<code>0-70</code>, <code>70-90</code>, <code>90-100</code>之类的。这个对于ggtree来说，太简单。</p>
 
 <p>首先我们要读树，用<code>treeio</code>的<code>read.newick</code>，它和<code>read.tree</code>的不同之处是，加入了参数<code>node.label</code>，当<code>node.label</code>存的不是<code>label</code>，而是<code>bootstrap</code>等数字型的时候，你可以传入<code>node.label='support'</code>，这样它会把node label解析为support value，另存为树注释数据，而不是和tip label混在一起。label变量只能存为字符型，因为和tip label混了，而字符型会让数字操作稍微复杂点。所以我们要用<code>read.newick</code>。</p>
 
@@ -452,7 +455,8 @@ p &lt;- ggtree(tree, color=&quot;black&quot;, size=1.5, linetype=1,  ladderize=T
     geom_tiplab(size=4.5, hjust = -0.060, fontface=&quot;bold&quot;) +  xlim(0, 0.09)
 </code></pre>
 
-<p>
+<p></p>
+
         <br>
         <a href="https://guangchuangyu.github.io/cn/2017/05/bootstrap-value%E5%88%86%E6%AE%B5%E6%A0%87%E8%AE%B0/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -507,7 +511,7 @@ p &lt;- ggtree(tree, color=&quot;black&quot;, size=1.5, linetype=1,  ladderize=T
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
       <p>
-        <img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/Screen Shot 2017-04-29 at 1.46.28 PM.png" alt="" /></p>
+        <p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/Screen Shot 2017-04-29 at 1.46.28 PM.png" alt="" /></p>
 
 <p>最新的一个问题，大致讲他有两个trait, A和B，想拿A来给label上色，B来画热图。</p>
 
@@ -515,7 +519,8 @@ p &lt;- ggtree(tree, color=&quot;black&quot;, size=1.5, linetype=1,  ladderize=T
 
 <p>我给了他一个简单的例子：</p>
 
-<p>
+<p></p>
+
         <br>
         <a href="https://guangchuangyu.github.io/cn/2017/04/annotate-tree-with-user-specific-data/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -570,7 +575,7 @@ p &lt;- ggtree(tree, color=&quot;black&quot;, size=1.5, linetype=1,  ladderize=T
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
       <p>
-        比如下面的代码：</p>
+        <p>比如下面的代码：</p>
 
 <pre><code>require(ggplot2)
 d &lt;- data.frame(x=c(0, 0.002, 0.00575), y = 1:3)
@@ -582,7 +587,8 @@ print(p)
 
 <p>上面图中x轴的文本<strong>0.006</strong>，这个数字中的<strong>6</strong>几乎看不到，因为一半过界了。</p>
 
-<p>
+<p></p>
+
         <br>
         <a href="https://guangchuangyu.github.io/cn/2017/04/ggplot2%E5%AD%97%E4%BD%93%E6%BA%A2%E5%87%BA%E7%9A%84%E9%82%A3%E7%82%B9%E7%A0%B4%E4%BA%8B/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -637,13 +643,14 @@ print(p)
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
       <p>
-        MEE在18号出版了今年（第8卷）第1期，ggtree正好在这一期出版，一经出版就有几条推在传播, 我也是在推特上看到，才发现，哦原来我的文章出版了。然后我又发现2017年新鲜出炉有了一篇PNAS的引用。</p>
+        <p>MEE在18号出版了今年（第8卷）第1期，ggtree正好在这一期出版，一经出版就有几条推在传播, 我也是在推特上看到，才发现，哦原来我的文章出版了。然后我又发现2017年新鲜出炉有了一篇PNAS的引用。</p>
 
 <p>我以前没接触过进化，来了现在这个实验室，发现可视化是个大问题，大家都在用AI，慢慢地抠，对于一些和进化树相关的数据，自己一点一点地在AI里面加上去。甚至于genotype table是一个框一个框地在AI里面加的。一方面画一顆树可能用掉你几天的时间，另一方面，太容易出错了，再者你花的时间并不能转化为生产力，每一次你都要这么搞！这简直就是水深火热啊！</p>
 
 <p>我也帮师兄写过一些代码，给定进化树上节点的序列，我比较父节点和子节点，把碱基或氨基酸替换写到newick树的node label，然后就可以用软件展示序列的替换情况。教会了师兄，他再去给他的师弟师妹们演示，说以后咱们可以这么干了，一个个觉得很牛逼，我内心想的是，愚蠢的人类啊，node label只能存一个信息，牛逼的方式应该是可以展示多个维度的信息，通过图层自由组合。这个时候我就产生了要写ggtree的想法。</p>
 
-<p>
+<p></p>
+
         <br>
         <a href="https://guangchuangyu.github.io/cn/2017/01/ggtree%E5%8F%91%E8%A1%A8/" class="postShorten-excerpt_link link">Continue reading</a>
         

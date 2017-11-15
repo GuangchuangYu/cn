@@ -17,7 +17,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.24.1">
+    <meta name="generator" content="Hugo 0.30.2">
     <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
     <title>Guangchuang Yu</title>
     <meta name="author" content="Guangchuang Yu">
@@ -256,7 +256,7 @@ ga('send', 'pageview');
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
       <p>
-        在《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484507&amp;amp;idx=1&amp;amp;sn=295454a59613bfd977f407958bec787e&amp;amp;chksm=ec43b51cdb343c0acea87661fe5144a5817503a2fdc8f316d56fd28d33291084bc718330c428#rd">你所不知道的，R的N种打开方式</a>》一文中，我介绍了R的N种界面，这里将介绍一个用python写的极其现代化的R命令行界面，rice之于R，就像ipython之于python一样。</p>
+        <p>在《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484507&amp;amp;idx=1&amp;amp;sn=295454a59613bfd977f407958bec787e&amp;amp;chksm=ec43b51cdb343c0acea87661fe5144a5817503a2fdc8f316d56fd28d33291084bc718330c428#rd">你所不知道的，R的N种打开方式</a>》一文中，我介绍了R的N种界面，这里将介绍一个用python写的极其现代化的R命令行界面，rice之于R，就像ipython之于python一样。</p>
 
 <h2 id="特性">特性</h2>
 
@@ -271,7 +271,8 @@ ga('send', 'pageview');
 <li>可以多种高亮模式</li>
 </ul>
 
-<p>
+<p></p>
+
         <br>
         <a href="https://guangchuangyu.github.io/cn/2017/09/rice/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -328,13 +329,14 @@ ga('send', 'pageview');
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
       <p>
-        最初github上用户（<a href="https://github.com/JustGitting">@JustGitting</a>）报告说<code>geom_hilight</code>和<code>geom_cladelabel</code>不能用于unrooted树。详见：<a href="https://github.com/GuangchuangYu/ggtree/issues/118">https://github.com/GuangchuangYu/ggtree/issues/118</a></p>
+        <p>最初github上用户（<a href="https://github.com/JustGitting">@JustGitting</a>）报告说<code>geom_hilight</code>和<code>geom_cladelabel</code>不能用于unrooted树。详见：<a href="https://github.com/GuangchuangYu/ggtree/issues/118">https://github.com/GuangchuangYu/ggtree/issues/118</a></p>
 
 <p>我表示这确实是不行的，然后这就变成了feature request。我继续表示unrooted tree在ggtree中的实现并不好，我只实现了equal angle algorithm，在写注释图层之前，如果我有时间的话，我希望可以先实现更好的layout algorithm。</p>
 
 <p>然后JustGitting表示，他发现python的ETE和R的ape，在无根树的可视化上好像都不太行。问我有什么unrooted的layout algorithm，有没有什么参考文献，或许他可以帮忙实现，因为他觉得ggtree是最成熟的软件。</p>
 
-<p>
+<p></p>
+
         <br>
         <a href="https://guangchuangyu.github.io/cn/2017/09/highlight-clade-of-unrooted-tree/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -389,9 +391,10 @@ ga('send', 'pageview');
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
       <p>
-        《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484730&amp;amp;idx=1&amp;amp;sn=48b8c24b6cfb6162f8fb3f3861ddfe1b&amp;amp;chksm=ec43b47ddb343d6b37581fa81b0bf11b5141a446333b1b961ef1ad4f80da4c4732d7bc3432c2#rd">听说你有RNAseq数据却不知道怎么跑GSEA</a>》一文有小伙伴问封面的gseaplot能否换颜色，于是我就随手支持了。</p>
+        <p>《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484730&amp;amp;idx=1&amp;amp;sn=48b8c24b6cfb6162f8fb3f3861ddfe1b&amp;amp;chksm=ec43b47ddb343d6b37581fa81b0bf11b5141a446333b1b961ef1ad4f80da4c4732d7bc3432c2#rd">听说你有RNAseq数据却不知道怎么跑GSEA</a>》一文有小伙伴问封面的gseaplot能否换颜色，于是我就随手支持了。</p>
 
-<p>
+<p></p>
+
         <br>
         <a href="https://guangchuangyu.github.io/cn/2017/09/color-in-gseaplot/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -448,7 +451,7 @@ ga('send', 'pageview');
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
       <p>
-        最近公众号「生信媛」和「生信宝典」的小伙伴在说ggplot2无法一次性设置所有字体，<code>theme</code>只能设置axis text, title这些，而搞不了<code>geom_text</code>，<code>geom_text</code>必须要手工输入<code>family=XXX</code>来设置，因为不能使用<code>theme</code>来更换，也就是说没办法通过后处理来设定，比较麻烦。</p>
+        <p>最近公众号「生信媛」和「生信宝典」的小伙伴在说ggplot2无法一次性设置所有字体，<code>theme</code>只能设置axis text, title这些，而搞不了<code>geom_text</code>，<code>geom_text</code>必须要手工输入<code>family=XXX</code>来设置，因为不能使用<code>theme</code>来更换，也就是说没办法通过后处理来设定，比较麻烦。</p>
 
 <p>这显然是不对的，后处理必须可以的，一次性满足所有愿望也只是因为没人写个神奇的函数而已。于是我就动手写了个<code>set_font</code>的函数。</p>
 
@@ -461,7 +464,8 @@ p &lt;- ggplot(d, aes(x, y)) +
     geom_text(aes(y, x, label=lab), size=3)
 </code></pre>
 
-<p>
+<p></p>
+
         <br>
         <a href="https://guangchuangyu.github.io/cn/2017/09/ggplot2-set-font/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -516,11 +520,12 @@ p &lt;- ggplot(d, aes(x, y)) +
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
       <p>
-        我的公众号biobabble第一篇原创文章《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247483816&amp;amp;idx=1&amp;amp;sn=cbfbc284f4edb165ac65f7926f7f8fcc&amp;amp;chksm=ec43b0efdb3439f91ec4f570f7be65e442e21e403481b969d69449464ae1986c7983551de04d#rd">邪恶的曲线</a>》，因为太邪恶，当时只推送给男性关注者，由于不是推送给所有人，所以历史记录是翻不到的，之前有再文字推送一下链接，结果评论区全是差评，我也是蛮囧rz的…</p>
+        <p>我的公众号biobabble第一篇原创文章《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247483816&amp;amp;idx=1&amp;amp;sn=cbfbc284f4edb165ac65f7926f7f8fcc&amp;amp;chksm=ec43b0efdb3439f91ec4f570f7be65e442e21e403481b969d69449464ae1986c7983551de04d#rd">邪恶的曲线</a>》，因为太邪恶，当时只推送给男性关注者，由于不是推送给所有人，所以历史记录是翻不到的，之前有再文字推送一下链接，结果评论区全是差评，我也是蛮囧rz的…</p>
 
 <p>无意中我又翻到了一张2012年2月份画的3D版本，尽管你们要差评，还是想分享一下。代码就在截屏之中，想玩的话，可以照着输入，支持鼠标旋转哦，可以慢慢把玩（太邪恶了）。</p>
 
-<p>
+<p></p>
+
         <br>
         <a href="https://guangchuangyu.github.io/cn/2017/09/3d-breast/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -577,7 +582,7 @@ p &lt;- ggplot(d, aes(x, y)) +
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
       <p>
-        <img src="https://guangchuangyu.github.io/blog_images/MISC/iphone5s.jpeg" alt="" /></p>
+        <p><img src="https://guangchuangyu.github.io/blog_images/MISC/iphone5s.jpeg" alt="" /></p>
 
 <p>5s无缘无故突然就自带3D效果，可是苹果没送我3D眼镜啊！做为一个果粉，自从乔帮主离去之后，对苹果是越来越无爱了。</p>
 
@@ -587,7 +592,8 @@ p &lt;- ggplot(d, aes(x, y)) +
 
 <p>这里的图，用的是emoji来画，如果你还不会用emoji来画图装逼，赶紧戳《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484416&amp;idx=1&amp;sn=c089403a2b8ab03d241b6d99ef138f50&amp;chksm=ec43b547db343c51bdae5f76b399072629720cf646ddc1c0b758c7c76d57e8b1e35b47221cf6">看完此文, 你也能够大开脑洞, 上升逼格</a>》。然后用<code>geofacet</code>来拼出像素画，这个时候，你应该想到可以拿来拼你的照片，画个某个形状的照片墙了。</p>
 
-<p>
+<p></p>
+
         <br>
         <a href="https://guangchuangyu.github.io/cn/2017/08/apple-logo-emoji/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -642,11 +648,12 @@ p &lt;- ggplot(d, aes(x, y)) +
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
       <p>
-        《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484733&amp;amp;idx=1&amp;amp;sn=b43739e02ef7e7892f196aa51a1c2e59&amp;amp;chksm=ec43b47adb343d6c98b240a0dfed9abe1ab46e230535a44f2b47bf69cc7b45520f7c7fd38231#rd">大学教授力挺抄袭，强行洗地到裤衩都不要了，到底图什么？</a>》这篇文章发出来之后，引起大家讨论，有一些小伙伴截了屏给我看。所以我想有必要再讲几句，我这篇文章写<strong>两个方面</strong>，一方面是重用代码，一方面是文章抄袭，这两方面可以是不相关的，这里的文章抄袭并不特指你抄了代码。</p>
+        <p>《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484733&amp;amp;idx=1&amp;amp;sn=b43739e02ef7e7892f196aa51a1c2e59&amp;amp;chksm=ec43b47adb343d6c98b240a0dfed9abe1ab46e230535a44f2b47bf69cc7b45520f7c7fd38231#rd">大学教授力挺抄袭，强行洗地到裤衩都不要了，到底图什么？</a>》这篇文章发出来之后，引起大家讨论，有一些小伙伴截了屏给我看。所以我想有必要再讲几句，我这篇文章写<strong>两个方面</strong>，一方面是重用代码，一方面是文章抄袭，这两方面可以是不相关的，这里的文章抄袭并不特指你抄了代码。</p>
 
 <p>X教授《<a href="http://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484733&amp;idx=2&amp;sn=b6c3a81f38c0f60433e8ccd721a7ca3b&amp;chksm=ec43b47adb343d6c0bee4ae222af03353329173b9ae87c588d6bb19f95619dc46b829d0af1b6#rd">如何姿势正确的使用他人代码？</a>》，总结起来两个点，一是开源代码随便用，二是文章有引用/致谢就OK。这两个点都是错误的。</p>
 
-<p>
+<p></p>
+
         <br>
         <a href="https://guangchuangyu.github.io/cn/2017/08/source-code-reuse/" class="postShorten-excerpt_link link">Continue reading</a>
         

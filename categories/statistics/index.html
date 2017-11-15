@@ -17,7 +17,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.24.1">
+    <meta name="generator" content="Hugo 0.30.2">
     <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
     <title>Statistics</title>
     <meta name="author" content="Guangchuang Yu">
@@ -255,11 +255,12 @@ ga('send', 'pageview');
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
       <p>
-        小伙伴说注释不全，比如KEGG只有不到1万个基因有注释，但他一次RNA-seq出来的基因有2万多个，那其它没注释那1万多个岂不是扔了？！就某个通路来说，两种情况，要么属于，要么不属于这个通路。那1万多个应该放在背景里，不要扔。</p>
+        <p>小伙伴说注释不全，比如KEGG只有不到1万个基因有注释，但他一次RNA-seq出来的基因有2万多个，那其它没注释那1万多个岂不是扔了？！就某个通路来说，两种情况，要么属于，要么不属于这个通路。那1万多个应该放在背景里，不要扔。</p>
 
 <p>我的解答是三种情况，1属于，2不属于，3不知道。对于缺失信息的，当然是扔。</p>
 
-<p>
+<p></p>
+
         <br>
         <a href="https://guangchuangyu.github.io/cn/2017/03/unknown-annotation-in-enrichment-analysis/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -314,7 +315,7 @@ ga('send', 'pageview');
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
       <p>
-        使用《Bioinformatics and Molecular Evolution》Table 2.2 (page 24)中的数据:</p>
+        <p>使用《Bioinformatics and Molecular Evolution》Table 2.2 (page 24)中的数据:</p>
 
 <pre><code>&gt; aa
   VOL  BULK POLARITY    PI HYD1  HYD2 SURFACE_AREA FRACT_AREA
@@ -377,7 +378,8 @@ Cumulative Proportion  1.00000
 
 <p>PC1和PC2能够解释79.8%的variation。</p>
 
-<p>
+<p></p>
+
         <br>
         <a href="https://guangchuangyu.github.io/cn/2014/07/principle_component_analysis/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -563,7 +565,7 @@ ID得到57个（漏掉的不管它，只是做为一个例子）:
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
       <p>
-        支持向量机(Support Vector Machines, SVM)最初由Vladimir
+        <p>支持向量机(Support Vector Machines, SVM)最初由Vladimir
 Vapnik于1997年提出，SVM最简单的形式就是找出一下区分界限（descision
 boundary），也称之为超平面(hyperplane)，使得离它最近的点（称之为support
 vectors）与之间隔最大。
@@ -575,7 +577,8 @@ regression要求所有的点尽可能地远离中间那条线，而SVM是要求�
 <p>SVM对于hyperplane的定义，在形式上和logistic regression一样,logistic
 regression的decision boundary由$\theta^TX=0$确定,SVM则用$w^TX+b=0$表示,其中b相当于logistic regression中的$\theta_0$，从形式上看，两者并无区别，当然如前面所说，两者的目标不一样，logistic regression着眼于全局，SVM着眼于support
 vectors。有监督算法都有label变量y，logistic
-regression取值是<code>{0,1}</code>，而SVM为了计算距离方便，取值为<code>{-1,1}</code>。
+regression取值是<code>{0,1}</code>，而SVM为了计算距离方便，取值为<code>{-1,1}</code>。</p>
+
         <br>
         <a href="https://guangchuangyu.github.io/cn/2012/04/support-vector-machine/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -630,7 +633,7 @@ regression取值是<code>{0,1}</code>，而SVM为了计算距离方便，取值�
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
       <p>
-        <a href="http://www.ebi.ac.uk/~birney/">Ewan Birney</a>最近的一篇博文（<a href="http://genomeinformatician.blogspot.com/2011/06/five-statistical-things-i-wished-i-had.html">Five statistical things I wished I had been taught 20 years ago</a>
+        <p><a href="http://www.ebi.ac.uk/~birney/">Ewan Birney</a>最近的一篇博文（<a href="http://genomeinformatician.blogspot.com/2011/06/five-statistical-things-i-wished-i-had.html">Five statistical things I wished I had been taught 20 years ago</a>
 ）讲述了统计对于生物学的重要性。</p>
 
 <p>一开始从RA Fisher讲起，说生物压根就是统计。Fisher是个农业学家，他所建立的那些统计方法，都是从生物学问题出发。</p>
@@ -657,7 +660,8 @@ level. So - if in doubt, do things on the rank of metric, rather than
 the metric itself.</p>
 </blockquote>
 
-<p>
+<p></p>
+
         <br>
         <a href="https://guangchuangyu.github.io/cn/2011/06/five-things-biologists-should-know-about-statistics/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -712,7 +716,7 @@ the metric itself.</p>
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
       <p>
-        [bootstrap](<a href="http://en.wikipedia.org/wiki/Bootstrapping_(statistics))是对观测数据集进行有放回（replacement）的随机抽样，以评估总体的各项统计指标。可以用于假设检验、参数估计。好处是并不要求大样本，也不要求正态数据，并且对于不同的统计指标使用的是同样的计算方法。结果也更为可靠，坏处是计算量大。">http://en.wikipedia.org/wiki/Bootstrapping_(statistics))是对观测数据集进行有放回（replacement）的随机抽样，以评估总体的各项统计指标。可以用于假设检验、参数估计。好处是并不要求大样本，也不要求正态数据，并且对于不同的统计指标使用的是同样的计算方法。结果也更为可靠，坏处是计算量大。</a></p>
+        <p>[bootstrap](<a href="http://en.wikipedia.org/wiki/Bootstrapping_(statistics))是对观测数据集进行有放回（replacement）的随机抽样，以评估总体的各项统计指标。可以用于假设检验、参数估计。好处是并不要求大样本，也不要求正态数据，并且对于不同的统计指标使用的是同样的计算方法。结果也更为可靠，坏处是计算量大。">http://en.wikipedia.org/wiki/Bootstrapping_(statistics))是对观测数据集进行有放回（replacement）的随机抽样，以评估总体的各项统计指标。可以用于假设检验、参数估计。好处是并不要求大样本，也不要求正态数据，并且对于不同的统计指标使用的是同样的计算方法。结果也更为可靠，坏处是计算量大。</a></p>
 
 <p>统计推断(statistical inference)是基于样本统计值的抽样分布来计算的，抽样分布需要从总体中许多的样本来计算，在只有一个样本的情况下，bootstrap对这一随机样本进行有放回的重复抽样，每一个重抽样本与原始随机样本一样大，每次计算相应的抽样的统计值，重复了N次之后，就可以计算统计值的bootstrap分布。</p>
 
@@ -725,7 +729,8 @@ the metric itself.</p>
 
 <p><img src="http://guangchuangyu.github.io/blog_images/2009/07/sample_a.png" alt="" title="sample_a" /></p>
 
-<p>
+<p></p>
+
         <br>
         <a href="https://guangchuangyu.github.io/cn/2009/07/bootstrap-method/" class="postShorten-excerpt_link link">Continue reading</a>
         
