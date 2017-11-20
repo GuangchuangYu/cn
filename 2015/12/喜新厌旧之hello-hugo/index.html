@@ -724,6 +724,35 @@ MathJax.Hub.Config({
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/background-rect-for-selected-facet/">
+                <h3 class="media-heading">ggplot2给选定的分面加背景</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>我这个公众号不像大多数所谓的生信从入门到精通的各种其实只是搬运点入门教程的群众喜闻乐见的公众号。正如我在《<a href="http://mp.weixin.qq.com/s/f-c5Q63SY166ZGzYCsqthA">为什么要开这个公众号</a>》里说的，这是小众的，有个人色彩的各种原创文。我不可能像其它公众号一样招两小弟当客服，个人精力有限，只能优先解答「知识星球」的问题，上次写的《<a href="http://mp.weixin.qq.com/s/jegI1wWc7DJzrM7mQfz77Q">同一数据多变量分组的boxplot?</a>》，图虽然简单，却穿着好多件马甲，而我把它扒光了给你看🙈</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/zhishixingqiu/ggplot-bg_question.jpg" alt="" /></p>
+
+<p>而上面这个图，你看着高大上吧，我都可以吐它一脸口水。每一个有灰色背景的图，在x轴上violin都够到边界了，其实所有的violin都够到了，这证明什么？一般人是看不出来的，这证明这张图是拼出来的，每个violin之间其实不可比较！而且这拼的，是每一个violin哦，并不是说由几个水平的图拼的。如果是由几个水平的图拼的，或者就是直接画出来的，那么那个画图软件有问题！你能想像几个独立的数据，在统一的bin width情况下，画density curve，竟然最高点都一样高吗？显然可能性几乎为0。</p>
+
+<p>在这图是拼的情况下，那么这个问题，就简单了。在你需要的情况下，加个灰色背景嘛，最后拼图嘛。当然拼图不一定要在illustrator里拼，比如你用grid，先画好坐标轴，然后水平上定义几个一样大的viewport，每一个violin都画在相应的viewport里面，对于画图函数来说，viewport就是整个画布了（虽然只是画布里的一块区域），所以你要么画violin，要么在画之前先画个矩阵，一路画下来，代码可以直接生成这样的图，但这图每一个violin都是独立画的（当然也不是完全独立，每一个水平上的ylim是有统一的），就算代码一步生成，也跟illustrator里拼没两样。</p>
+
+<hr />
+
+<p>这里我要教你用ggplot2自动生成，其实解决思路早已推送过，请看《<a href="http://mp.weixin.qq.com/s/PnbasfW4HKILuZNdrLVX_g">facet_plot：加图层到特定分面，方法二</a>》，也正如我在《<a href="http://mp.weixin.qq.com/s/8bzkJY1zzNc83iBUq4Fy1w">什么！你的图上有一双看不见的手</a>》里说的，你们以为我在教ggtree，其实同时在教ggplot2。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/pheatmap-color-range/">
                 <h3 class="media-heading">不同数据集画出的热图，用同样的颜色区间上色？</h3>
               </a>
@@ -983,29 +1012,6 @@ hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.000
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/boxplot-multiple-group/">
-                <h3 class="media-heading">同一数据多变量分组的boxplot?</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Oct 10, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><img src="https://guangchuangyu.github.io/blog_images/R/boxplot_multiple_group_files/WechatIMG111.png" alt="" /></p>
-
-<p>小密圈的问题，不是三两句话可以说明白的事情，必须要写文来解答，上一次写文是《<a href="http://mp.weixin.qq.com/s/Xhi_ZkrEzUVdnCu7ECBS4w">听说你还不会画热图</a>》，里面正好吐槽了某知乎大V的「除了ggplot2之外其它都是鸡肋」，这次正好也可以再次呼应一下。</p>
-
-<p>这个图明显是R的base graphics做的，图是可圈可点的，能做出这图来，也已经是告别了只会用plot的低级趣味。这其实是4个图拼起来的，第一个图只是多了个y轴而已，它们画起来是一样的，那就是只画boxplot，不画x和y轴，（你可能会说不是有x轴？），x轴是后面再加上去的，而且加x轴的时候，不写labels，只有线条没有文本（你可能又会说明明有文本！），因为<code>axis</code>这个函数只支持labels要么是水平的，要么是垂直的，旋转某个角度是不支持的，所以labels是额外再打上去的。这里一张小小的图，门道还是挺多的。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1013,7 +1019,7 @@ hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.000
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         168 posts found
+         169 posts found
       </p>
     </div>
   </div>

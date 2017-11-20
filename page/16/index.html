@@ -225,6 +225,68 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2015/05/bmc-favor-plagiarism/">
+          BMC Favor Plagiarism
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2015-05-17T21:51:43&#43;08:00">
+      
+  May 17, 2015
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/biology">Biology</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/research">Research</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <p><a href="http://cran.r-project.org/web/packages/ppiPre/index.html">ppiPre</a>抄袭了<a href="https://github.com/GuangchuangYu/GOSemSim">GOSemSim</a>的代码，证据当然非常充分，比对一下代码就知道了，我在<a href="http://guangchuangyu.github.io/2014/11/proper-use-of-gosemsim/">Proper use of GOSemSim</a>一文中，做出了一些比较，另外也可以参考<a href="https://github.com/cran/ppiPre/commit/c267700ca09a599dab77326959a0aa6a2980ceed">github</a>页面，github记录了ppiPre被暴光抄袭之后所做的修改。
+从我给BMC Systems Biology的编辑反馈这件事开始，在这铁板钉钉的事实面前，编辑拖了整整一年，而这一年时间过去了，ppiPre仍没有被编辑部受理。从最早反应这件事情，编辑信誓旦旦说他们很重视这种事情，到后面对我的邮件视而不见，我愿意相信编辑部处理这些事情，需要时间，他们有自己的规则，但一年的时间，不回邮件，冷处理以淡化此事，这绝对不是应该有的规则。 在编辑一直无视我的情况下，我写出了<a href="http://guangchuangyu.github.io/2014/11/proper-use-of-gosemsim/">Proper use of GOSemSim</a>一文，列举了一些一模一样的代码，并告知CRAN，当ppiPre被CRAN移除时，我写信给编辑，这时候，编辑告诉我说他们准备要去联系作者了，这时候已经过去半年了，是的！你没有看错，半年过去了，编辑说他们还没去联系作者！我是不相信的。必然是联系了之后，有某些不为人知的原因，所以编辑态度反常，对抄袭这种打鸡血的事情，不断在打太极。</p>
+
+<p>再过二个月，ppiPre的作者<a href="http://web.xidian.edu.cn/dengyue/">邓岳</a>给我写了信：
+</p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2015/05/bmc-favor-plagiarism/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2014/08/insertion-size/">
           简简单单讲insertion size
         </a>
@@ -644,69 +706,6 @@ Wickham把这套想法在R中实现。</p>
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2014/03/boxplot/">
-          boxplot
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2014-03-04T12:23:16&#43;08:00">
-      
-  March 4, 2014
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>生物坑很多人画图只会直方图，统计只会T检验，在暨大见过太多的学生连T检验都不会，分不清SEM和SD的差别，也不清楚T检验那几个简单参数的含义。我写统计笔记也是因为不想重复性地跟学生讲解T检验。</p>
-
-<p>Barplot和T test一样普遍而流行，barplot适合于表示计数数据和比例，显示比例也可以用pie
-plot，但直方图比饼图要好，因为人类的眼睛适合于比较高度，而不是弧度。</p>
-
-<p>多半时候生物学数据并非简单的计数数据，对于测量数据，在展示数据分布时，很多人会使用他们熟悉的barplot，用高度来表示mean，然后再加上errorbar，这样展示数据，信息量是非常低的，使用boxplot能够提供更多的数据分布信息，能更好地展现数据，但可能很多人只会在excel里画barplot，Nature
-Methods 2013年的文章中有100个barplot图，而只有20个boxplot图，从这里就可以看出来，用boxplot的人远远没有barplot多，于是NPG怒了，写了两篇专栏文章<a href="http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2807.html">Points of View: Bar charts and box plots</a>和<a href="http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2813.html">Points of Significance: Visualizing samples with box plots</a>并且发表了一篇<a href="http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2811.html">BoxPlotR: a web tool for generation of box plots</a>方便大家画boxplot，如此简单的web tool能够发Nature Methods，实在是让人羡慕妒忌恨啊。
-</p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2014/03/boxplot/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -788,6 +787,35 @@ Methods 2013年的文章中有100个barplot图，而只有20个boxplot图，从�
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/background-rect-for-selected-facet/">
+                <h3 class="media-heading">ggplot2给选定的分面加背景</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>我这个公众号不像大多数所谓的生信从入门到精通的各种其实只是搬运点入门教程的群众喜闻乐见的公众号。正如我在《<a href="http://mp.weixin.qq.com/s/f-c5Q63SY166ZGzYCsqthA">为什么要开这个公众号</a>》里说的，这是小众的，有个人色彩的各种原创文。我不可能像其它公众号一样招两小弟当客服，个人精力有限，只能优先解答「知识星球」的问题，上次写的《<a href="http://mp.weixin.qq.com/s/jegI1wWc7DJzrM7mQfz77Q">同一数据多变量分组的boxplot?</a>》，图虽然简单，却穿着好多件马甲，而我把它扒光了给你看🙈</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/zhishixingqiu/ggplot-bg_question.jpg" alt="" /></p>
+
+<p>而上面这个图，你看着高大上吧，我都可以吐它一脸口水。每一个有灰色背景的图，在x轴上violin都够到边界了，其实所有的violin都够到了，这证明什么？一般人是看不出来的，这证明这张图是拼出来的，每个violin之间其实不可比较！而且这拼的，是每一个violin哦，并不是说由几个水平的图拼的。如果是由几个水平的图拼的，或者就是直接画出来的，那么那个画图软件有问题！你能想像几个独立的数据，在统一的bin width情况下，画density curve，竟然最高点都一样高吗？显然可能性几乎为0。</p>
+
+<p>在这图是拼的情况下，那么这个问题，就简单了。在你需要的情况下，加个灰色背景嘛，最后拼图嘛。当然拼图不一定要在illustrator里拼，比如你用grid，先画好坐标轴，然后水平上定义几个一样大的viewport，每一个violin都画在相应的viewport里面，对于画图函数来说，viewport就是整个画布了（虽然只是画布里的一块区域），所以你要么画violin，要么在画之前先画个矩阵，一路画下来，代码可以直接生成这样的图，但这图每一个violin都是独立画的（当然也不是完全独立，每一个水平上的ylim是有统一的），就算代码一步生成，也跟illustrator里拼没两样。</p>
+
+<hr />
+
+<p>这里我要教你用ggplot2自动生成，其实解决思路早已推送过，请看《<a href="http://mp.weixin.qq.com/s/PnbasfW4HKILuZNdrLVX_g">facet_plot：加图层到特定分面，方法二</a>》，也正如我在《<a href="http://mp.weixin.qq.com/s/8bzkJY1zzNc83iBUq4Fy1w">什么！你的图上有一双看不见的手</a>》里说的，你们以为我在教ggtree，其实同时在教ggplot2。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1051,29 +1079,6 @@ hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.000
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/boxplot-multiple-group/">
-                <h3 class="media-heading">同一数据多变量分组的boxplot?</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Oct 10, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><img src="https://guangchuangyu.github.io/blog_images/R/boxplot_multiple_group_files/WechatIMG111.png" alt="" /></p>
-
-<p>小密圈的问题，不是三两句话可以说明白的事情，必须要写文来解答，上一次写文是《<a href="http://mp.weixin.qq.com/s/Xhi_ZkrEzUVdnCu7ECBS4w">听说你还不会画热图</a>》，里面正好吐槽了某知乎大V的「除了ggplot2之外其它都是鸡肋」，这次正好也可以再次呼应一下。</p>
-
-<p>这个图明显是R的base graphics做的，图是可圈可点的，能做出这图来，也已经是告别了只会用plot的低级趣味。这其实是4个图拼起来的，第一个图只是多了个y轴而已，它们画起来是一样的，那就是只画boxplot，不画x和y轴，（你可能会说不是有x轴？），x轴是后面再加上去的，而且加x轴的时候，不写labels，只有线条没有文本（你可能又会说明明有文本！），因为<code>axis</code>这个函数只支持labels要么是水平的，要么是垂直的，旋转某个角度是不支持的，所以labels是额外再打上去的。这里一张小小的图，门道还是挺多的。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1081,7 +1086,7 @@ hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.000
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         168 posts found
+         169 posts found
       </p>
     </div>
   </div>
