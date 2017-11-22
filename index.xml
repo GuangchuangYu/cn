@@ -6,10 +6,23 @@
     <description>Recent content on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Nov 2017 00:21:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 22 Nov 2017 11:01:00 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>再不用担心打不开sci-hub了</title>
+      <link>https://guangchuangyu.github.io/cn/2017/11/sci-hub-tor/</link>
+      <pubDate>Wed, 22 Nov 2017 11:01:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/11/sci-hub-tor/</guid>
+      <description>&lt;p&gt;之前有写过&lt;a href=&#34;https://mp.weixin.qq.com/s/AGQn7Lfn_nHHrtVQyJSTmg&#34;&gt;读文献的文章&lt;/a&gt;，也介绍了&lt;a href=&#34;https://mp.weixin.qq.com/s/TMmsOsEn0wV9yXKOLma3Rw&#34;&gt;如何获取文献&lt;/a&gt;，那是我还在读硕士的时候写的，覆盖了找文献、文献管理、下载文献、订阅期刊等方方面面，说到下文献，最大的神器当然是sci-hub，但是sci-hub的域名sci-hub.cc, sci-hub.bz, sci-hub.io纷纷都沦陷，最近国内有一神器geenmedical，整合了影响因子、引用数等指标，然而这一神器的下文献功能只是提供外链，有一种说法是geenmedical=pubmed+scihub，当然geenmedical的资源还可能来自于百度学术、researchGate等，不都是来自于sci-hub，然而我们必须承认的是最大的文献提供来源必须还得是sci-hub，所以如果sci-hub挂了，基于sci-hub的神器也就神奇不起来了。如果有人跟你说忘记sci-hub吧，用geenmedical，那绝对是标题党！这里并没有说geenmedical不好，它整合了多方面的资源并且本地化得非常好，很适合国内使用。&lt;/p&gt;
+
+&lt;p&gt;比如我在geenmedical里搜clusterProfiler，给出的下载链接第一个就是sci-hub的：&lt;a href=&#34;http://doi.org.sci-hub.cc/10.1089/omi.2011.0118&#34;&gt;http://doi.org.sci-hub.cc/10.1089/omi.2011.0118&lt;/a&gt;，然而这个链接是不可用的！当然它给出了比如百度学术的链接是可以下载到文献的。然而还是那句话，论「海盗精神」我只服sci-hub，虽然我之前也介绍了《&lt;a href=&#34;http://mp.weixin.qq.com/s/aaIby87LSQgxpvCAECFxkw&#34;&gt;sci-hub如果挂了，你还有神器下文献吗？&lt;/a&gt;》，但任何下文献的神器，在sci-hub面前都是渣渣。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>ggplot2给选定的分面加背景</title>

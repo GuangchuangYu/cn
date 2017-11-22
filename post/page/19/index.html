@@ -225,6 +225,69 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/08/love-function-plot/">
+          love function plot
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2011-08-06T05:37:55&#43;08:00">
+      
+  August 6, 2011
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        今天在微博上看到这坑爹的方程： $ (x^2+y^2-1)^3 = {x^2} {y^3}$
+画出来如下：
+跟个屁股似的，sigh&hellip;
+翻出azalea的老文：<a href="http://azaleasays.com/2008/06/18/fomula-of-love/">http://azaleasays.com/2008/06/18/fomula-of-love/</a>
+用ggplot2画一下这个爱的方程：$17x^2-16|x|y+17y^2 = 225 $
+x &lt;- seq(-sqrt(17), sqrt(17), 0.001) y1 &lt;- 8<em>abs(x)/17 + 15</em> sqrt(17 - x^2)/17 y2 &lt;- 8<em>abs(x)/17 - 15</em> sqrt(17 - x^2)/17 d &lt;- data.frame(x=c(x,x),y=c(y1,y2)) require(ggplot2) p &lt;- ggplot(d, aes(x,y)) p + geom_point(color=&quot;red&quot;)  还可以画出红心，适合今天七夕的日子。
+p + geom_line(color=&quot;red&quot;)  画函数图，这种事情，还是用CAS方便点。
+通过maxima来画，一条指令就行，还不用解方程：
+contour_plot(17*x^2-16*abs(x)*y+17*y^2-225, [x,-sqrt(17),sqrt(17)],[y,-15*sqrt(17)/17, sqrt(17)])
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2011/08/love-function-plot/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/08/qq-plot/">
           QQ plot
         </a>
@@ -645,81 +708,6 @@ the metric itself.</p>
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2010/10/the-chinese-complex-of-cross-wall/">
-          中国人民的翻墙情结
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2010-10-11T13:18:00&#43;08:00">
-      
-  October 11, 2010
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/babble">babble</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>不知道空窗期这个词是怎么来的，按照合理的推论应该是来自于西方，泊来之词。</p>
-
-<p>空窗期顾名思义就是没人来爬自己的窗户，引申出来就是没人来找自己约会。这个符合西方的建筑特点，西方的建筑是立体的，体现出来就是窗户多。而爬窗约会也多次出现于西方的文学和影视作品中。《红与黑》中就有于连拿着个梯子，爬窗去偷情的描写。</p>
-
-<p>而我们中国人的建筑是平面型的，体现在墙多，所以说，中国人的单身阶段应该称之为空墙期，意谓没人来翻墙。</p>
-
-<p>苏轼曾做过一首词，名谓《蝶恋花》。词中有云：</p>
-
-<pre><code>花褪残红青杏小。
-燕子飞时，绿水人家绕。
-枝上柳绵吹又少。
-天涯何处无芳草。
-
-墙里秋千墙外道。
-墙外行人，墙里佳人笑。
-笑渐不闻声渐悄。
-多情却被无情恼。
-</code></pre>
-
-<p></p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2010/10/the-chinese-complex-of-cross-wall/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -739,7 +727,7 @@ the metric itself.</p>
           </a>
         </li>
       
-      <li class="pagination-number">page 19 of 24</li>
+      <li class="pagination-number">page 19 of 25</li>
     </ul>
   </div>
 
@@ -801,6 +789,27 @@ the metric itself.</p>
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/sci-hub-tor/">
+                <h3 class="media-heading">再不用担心打不开sci-hub了</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>之前有写过<a href="https://mp.weixin.qq.com/s/AGQn7Lfn_nHHrtVQyJSTmg">读文献的文章</a>，也介绍了<a href="https://mp.weixin.qq.com/s/TMmsOsEn0wV9yXKOLma3Rw">如何获取文献</a>，那是我还在读硕士的时候写的，覆盖了找文献、文献管理、下载文献、订阅期刊等方方面面，说到下文献，最大的神器当然是sci-hub，但是sci-hub的域名sci-hub.cc, sci-hub.bz, sci-hub.io纷纷都沦陷，最近国内有一神器geenmedical，整合了影响因子、引用数等指标，然而这一神器的下文献功能只是提供外链，有一种说法是geenmedical=pubmed+scihub，当然geenmedical的资源还可能来自于百度学术、researchGate等，不都是来自于sci-hub，然而我们必须承认的是最大的文献提供来源必须还得是sci-hub，所以如果sci-hub挂了，基于sci-hub的神器也就神奇不起来了。如果有人跟你说忘记sci-hub吧，用geenmedical，那绝对是标题党！这里并没有说geenmedical不好，它整合了多方面的资源并且本地化得非常好，很适合国内使用。</p>
+
+<p>比如我在geenmedical里搜clusterProfiler，给出的下载链接第一个就是sci-hub的：<a href="http://doi.org.sci-hub.cc/10.1089/omi.2011.0118">http://doi.org.sci-hub.cc/10.1089/omi.2011.0118</a>，然而这个链接是不可用的！当然它给出了比如百度学术的链接是可以下载到文献的。然而还是那句话，论「海盗精神」我只服sci-hub，虽然我之前也介绍了《<a href="http://mp.weixin.qq.com/s/aaIby87LSQgxpvCAECFxkw">sci-hub如果挂了，你还有神器下文献吗？</a>》，但任何下文献的神器，在sci-hub面前都是渣渣。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1055,44 +1064,6 @@ hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.000
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/shadowtext/">
-                <h3 class="media-heading">让你画图的文本出现阴影效果</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Nov 11, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><blockquote>
-<p>Sercan Kahveci</p>
-
-<p>Greetings Mr. Yu,</p>
-
-<p>I am very happy that this package exists. Thank you for making it! I would like to request a feature, to ensure the package is able to compete with professional meme-creation tools like memegenerator and paint.net. Since memes often use the font Impact, in white and with black outline, I believe the package would be more powerful if it also did that automatically.</p>
-
-<p>Regards,</p>
-
-<p>Sercan Kahveci, MSc</p>
-
-<p>Content creator at Questionable Research Memes on Facebook
-<a href="https://www.facebook.com/QResearchMemes/">https://www.facebook.com/QResearchMemes/</a></p>
-</blockquote>
-
-<p>上次一篇《<a href="http://mp.weixin.qq.com/s/jDXjkrkq_YVhW-Z5Vx2-Fg">用R画meme ;)</a>》把脸书在做MEME的人都给炸出来了，专业人士给出专业建议，要用Impact字体，并且要让字体出现阴影效果，这真是厉害了，感觉有点神奇，但他一句，这样就可以和专业工具PK了，着实太刺激了，我决定试一试能不能搞个阴影效果。结果还真让我搞成了，文本有一种浮在上面的错觉。</p>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/R/meme/shadowtext.png" alt="" /></p>
-
-<p>我们知道meme包是grid写的，我的输出是grob对象，当我半夜调试到2点，带着兴奋入睡之后，一点都睡不安稳，早上早早就迷迷糊糊在床上想着，既然我造出了文本阴影效果的grob对象，我应该封装成geom图层，送给ggplot2用户。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1100,7 +1071,7 @@ hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.000
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         169 posts found
+         170 posts found
       </p>
     </div>
   </div>
