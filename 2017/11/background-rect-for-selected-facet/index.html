@@ -302,7 +302,7 @@ f &lt;- factor(unique(d$x))
 d2 &lt;- data.frame(x=letters[1:5], y=LETTERS[1:5])
 d2$xx &lt;- as.numeric(as.factor(d2$x))
 ggplot() + geom_rect(data=d2, aes(xmin=xx-1/2, xmax=xx+1/2, ymin=-Inf, ymax=Inf), fill=&quot;grey&quot;) + 
-    geom_violin(data=d, aes(xx, val, fill=x), scale=&quot;width&quot;) + 
+    geom_violin(data=d, aes(xx, val, fill=x)) + 
     facet_grid(y~., scale='free') + 
     scale_x_continuous(breaks=as.numeric(f), labels=f) + theme_minimal() +
     theme_bw() + theme(axis.text=element_text(size=12, face='bold', color='firebrick')) +
