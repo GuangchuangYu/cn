@@ -640,6 +640,32 @@ ga('send', 'pageview');
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/subsetting-in-ggplot2-ggtree/">
+                <h3 class="media-heading">ggplot2/ggtree取子集画图</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">取子集对于进化树可视化来说是非常常见的，我们要区分内部节点和外部节点，我们也可能想针对某些特点的节点进行注释。
+ggplot2现在所有图层都不支持直接取子集，所以呢ggtree就自己定义了一些修改的图层，包括geom_text2, geom_label2, geom_point2 和 geom_segment2，这些图层和ggplot2的版本唯一差别就是支持取子集。这样对于我们做注释来说，就更方便了。
+比如说我想给内部节点打点，可以用：
+ggtree(tree) + geom_text2(aes(label=label, subset=!isTip), hjust=-.2) + geom_point2(aes(subset=!isTip), color=&quot;red&quot;, size=3)   当然ggtree有提供geom_nodepoint图层，像上面的例子，用户不需要取子集操作，直接用geom_nodepoint即可。
+ ggtree所定义的这些修改版的图层，是为了进化树的注释表达力更强一些，但不单单应用于ggtree，ggplot2的用户照样受益于ggtree的图层，比如下面这个代码，产生一个散点图：
+require(ggtree) data(mpg) p = ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + geom_point(mapping = aes(color = class))  如果我想对其中的某些点加些文字，那么我们就需要取我们的操作的数据点的子集，再拿子集来加图层geom_text(aes_mapping, subset_of_data)，这种图生物狗也常用，比如火山图，只在图上打印差异基因的名字，那么要对数据取子集。
+代码如下，这里我用了subset函数取了子集，然后传给data参数。
+p + geom_text(aes(label=manufacturer), data=subset(mpg, hwy &gt; 40 | disp &gt; 6.5))  然而用ggtree定义的geom_text2图层，我们不需要传data参数，因为我们只是要取原来传给ggplot的data的子集而已，把取子集的条件放在aes映射里就行，geom_text2会去完成取子集的操作，用geom_text你需要自己显性操作数据，而用geom_text2你只需要把条件传进去即可。
+下面的代码，可以产生上面一样的图：
+p + geom_text2(aes(label=manufacturer, subset = hwy &gt; 40 | displ &gt; 6.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/sci-hub-tor/">
                 <h3 class="media-heading">再不用担心打不开sci-hub了</h3>
               </a>
@@ -882,35 +908,6 @@ hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.000
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/go-version-issue/">
-                <h3 class="media-heading">请用事实怼我</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Nov 11, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>在《<a href="https://mp.weixin.qq.com/s/miGQs6U1d3aHwcm7vgNCVw">你昨天才做的分析，可能是几年前的结果！</a>》这篇文章的开头，我吐槽了WEGO+华大（虽然文章是转载自《<a href="https://mp.weixin.qq.com/s?__biz=MzAxMjQ3MTU5Mg==&amp;mid=2650655271&amp;idx=1&amp;sn=b1dfadd57937c949ba0e8deeac2fdeb6&amp;scene=21#wechat_redirect">嘉因生物</a>》，但这段是我给自己加的戏码，广告后面才是原帖内容 -，-）。</p>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/2017/bgi/1509620511198.jpg" alt="" /></p>
-
-<p>这只不过是我任性了一番，因为华大的拥护者来骂人了，我真的不理解，如果我说错了，你们可以拿事实啪啪啪地打我脸的，为什么要骂人，所以我任性地再吐一口口水。</p>
-
-<p>这里我必须承认，我说错了，华大用的WEGO不是那在线版的09年以后就不更新的WEGO，09年人的注释不超过7000个，华大给的报告有12929个（BP），当然也不是最新的，目前org.Hs.eg.db中GO的数据源是2017-03-29, BP的注释有16992个，比华大多了1/3，所以《<a href="https://mp.weixin.qq.com/s/miGQs6U1d3aHwcm7vgNCVw">你昨天才做的分析，可能是几年前的结果！</a>》这篇文章要吐槽的依然对，谁知道差这1/3会发生什么呢。</p>
-
-<pre><code>&gt; (16992-12929)/12929
-[1] 0.3142548
-</code></pre>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -918,7 +915,7 @@ hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.000
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         170 posts found
+         171 posts found
       </p>
     </div>
   </div>

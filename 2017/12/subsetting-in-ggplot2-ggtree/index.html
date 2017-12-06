@@ -1,0 +1,902 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+  
+
+
+  
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.30.2">
+    <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
+    <title>ggplot2/ggtree取子集画图</title>
+    <meta name="author" content="Guangchuang Yu">
+    <meta name="keywords" content="">
+
+    <link rel="icon" href="https://guangchuangyu.github.io/cn/favicon.png">
+    
+
+    
+    <meta name="description" content="取子集对于进化树可视化来说是非常常见的，我们要区分内部节点和外部节点，我们也可能想针对某些特点的节点进行注释。
+ggplot2现在所有图层都不支持直接取子集，所以呢ggtree就自己定义了一些修改的图层，包括geom_text2, geom_label2, geom_point2 和 geom_segment2，这些图层和ggplot2的版本唯一差别就是支持取子集。这样对于我们做注释来说，就更方便了。
+比如说我想给内部节点打点，可以用：
+ggtree(tree) &#43; geom_text2(aes(label=label, subset=!isTip), hjust=-.2) &#43; geom_point2(aes(subset=!isTip), color=&quot;red&quot;, size=3)   当然ggtree有提供geom_nodepoint图层，像上面的例子，用户不需要取子集操作，直接用geom_nodepoint即可。
+ ggtree所定义的这些修改版的图层，是为了进化树的注释表达力更强一些，但不单单应用于ggtree，ggplot2的用户照样受益于ggtree的图层，比如下面这个代码，产生一个散点图：
+require(ggtree) data(mpg) p = ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) &#43; geom_point(mapping = aes(color = class))  如果我想对其中的某些点加些文字，那么我们就需要取我们的操作的数据点的子集，再拿子集来加图层geom_text(aes_mapping, subset_of_data)，这种图生物狗也常用，比如火山图，只在图上打印差异基因的名字，那么要对数据取子集。
+代码如下，这里我用了subset函数取了子集，然后传给data参数。
+p &#43; geom_text(aes(label=manufacturer), data=subset(mpg, hwy &gt; 40 | disp &gt; 6.5))  然而用ggtree定义的geom_text2图层，我们不需要传data参数，因为我们只是要取原来传给ggplot的data的子集而已，把取子集的条件放在aes映射里就行，geom_text2会去完成取子集的操作，用geom_text你需要自己显性操作数据，而用geom_text2你只需要把条件传进去即可。
+下面的代码，可以产生上面一样的图：
+p &#43; geom_text2(aes(label=manufacturer, subset = hwy &gt; 40 | displ &gt; 6.">
+    <meta property="og:description" content="取子集对于进化树可视化来说是非常常见的，我们要区分内部节点和外部节点，我们也可能想针对某些特点的节点进行注释。
+ggplot2现在所有图层都不支持直接取子集，所以呢ggtree就自己定义了一些修改的图层，包括geom_text2, geom_label2, geom_point2 和 geom_segment2，这些图层和ggplot2的版本唯一差别就是支持取子集。这样对于我们做注释来说，就更方便了。
+比如说我想给内部节点打点，可以用：
+ggtree(tree) &#43; geom_text2(aes(label=label, subset=!isTip), hjust=-.2) &#43; geom_point2(aes(subset=!isTip), color=&quot;red&quot;, size=3)   当然ggtree有提供geom_nodepoint图层，像上面的例子，用户不需要取子集操作，直接用geom_nodepoint即可。
+ ggtree所定义的这些修改版的图层，是为了进化树的注释表达力更强一些，但不单单应用于ggtree，ggplot2的用户照样受益于ggtree的图层，比如下面这个代码，产生一个散点图：
+require(ggtree) data(mpg) p = ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) &#43; geom_point(mapping = aes(color = class))  如果我想对其中的某些点加些文字，那么我们就需要取我们的操作的数据点的子集，再拿子集来加图层geom_text(aes_mapping, subset_of_data)，这种图生物狗也常用，比如火山图，只在图上打印差异基因的名字，那么要对数据取子集。
+代码如下，这里我用了subset函数取了子集，然后传给data参数。
+p &#43; geom_text(aes(label=manufacturer), data=subset(mpg, hwy &gt; 40 | disp &gt; 6.5))  然而用ggtree定义的geom_text2图层，我们不需要传data参数，因为我们只是要取原来传给ggplot的data的子集而已，把取子集的条件放在aes映射里就行，geom_text2会去完成取子集的操作，用geom_text你需要自己显性操作数据，而用geom_text2你只需要把条件传进去即可。
+下面的代码，可以产生上面一样的图：
+p &#43; geom_text2(aes(label=manufacturer, subset = hwy &gt; 40 | displ &gt; 6.">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="ggplot2/ggtree取子集画图">
+    <meta property="og:url" content="/2017/12/subsetting-in-ggplot2-ggtree/">
+    <meta property="og:site_name" content="Guangchuang Yu">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Guangchuang Yu">
+    <meta name="twitter:description" content="取子集对于进化树可视化来说是非常常见的，我们要区分内部节点和外部节点，我们也可能想针对某些特点的节点进行注释。
+ggplot2现在所有图层都不支持直接取子集，所以呢ggtree就自己定义了一些修改的图层，包括geom_text2, geom_label2, geom_point2 和 geom_segment2，这些图层和ggplot2的版本唯一差别就是支持取子集。这样对于我们做注释来说，就更方便了。
+比如说我想给内部节点打点，可以用：
+ggtree(tree) &#43; geom_text2(aes(label=label, subset=!isTip), hjust=-.2) &#43; geom_point2(aes(subset=!isTip), color=&quot;red&quot;, size=3)   当然ggtree有提供geom_nodepoint图层，像上面的例子，用户不需要取子集操作，直接用geom_nodepoint即可。
+ ggtree所定义的这些修改版的图层，是为了进化树的注释表达力更强一些，但不单单应用于ggtree，ggplot2的用户照样受益于ggtree的图层，比如下面这个代码，产生一个散点图：
+require(ggtree) data(mpg) p = ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) &#43; geom_point(mapping = aes(color = class))  如果我想对其中的某些点加些文字，那么我们就需要取我们的操作的数据点的子集，再拿子集来加图层geom_text(aes_mapping, subset_of_data)，这种图生物狗也常用，比如火山图，只在图上打印差异基因的名字，那么要对数据取子集。
+代码如下，这里我用了subset函数取了子集，然后传给data参数。
+p &#43; geom_text(aes(label=manufacturer), data=subset(mpg, hwy &gt; 40 | disp &gt; 6.5))  然而用ggtree定义的geom_text2图层，我们不需要传data参数，因为我们只是要取原来传给ggplot的data的子集而已，把取子集的条件放在aes映射里就行，geom_text2会去完成取子集的操作，用geom_text你需要自己显性操作数据，而用geom_text2你只需要把条件传进去即可。
+下面的代码，可以产生上面一样的图：
+p &#43; geom_text2(aes(label=manufacturer, subset = hwy &gt; 40 | displ &gt; 6.">
+    
+      <meta name="twitter:creator" content="@guangchuangyu">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
+    
+
+    
+    
+    
+
+    
+
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" />
+    
+    
+    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-u6mk0ojoywresbx8iepslrmmhl4stuhrsxuwhkpwrkrx7mryjcaimasnk4pi.min.css" />
+    
+    
+
+    
+      
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-77901140-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://guangchuangyu.github.io/cn/">Guangchuang Yu</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://guangchuangyu.github.io/cn/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://guangchuangyu.github.io/cn/#about">
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Guangchuang Yu</h4>
+        
+          <h5 class="sidebar-profile-bio">a senior-in-age-but-not-senior-in-knowledge bioinformatician</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/GuangchuangYu" target="_blank">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      ggplot2/ggtree取子集画图
+    </h1>
+  
+  <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-12-01T08:28:48&#43;08:00">
+      
+  December 1, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+
+</div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>取子集对于进化树可视化来说是非常常见的，我们要区分内部节点和外部节点，我们也可能想针对某些特点的节点进行注释。</p>
+
+<p>ggplot2现在所有图层都不支持直接取子集，所以呢ggtree就自己定义了一些修改的图层，包括<code>geom_text2</code>, <code>geom_label2</code>,  <code>geom_point2</code> 和 <code>geom_segment2</code>，这些图层和ggplot2的版本唯一差别就是支持取子集。这样对于我们做注释来说，就更方便了。</p>
+
+<p>比如说我想给内部节点打点，可以用：</p>
+
+<pre><code class="language-r">ggtree(tree) + geom_text2(aes(label=label, subset=!isTip), hjust=-.2) +
+        geom_point2(aes(subset=!isTip), color=&quot;red&quot;, size=3)
+</code></pre>
+
+<p><img src="http://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/subsetting.png" alt="" /></p>
+
+<blockquote>
+<p>当然ggtree有提供<code>geom_nodepoint</code>图层，像上面的例子，用户不需要取子集操作，直接用<code>geom_nodepoint</code>即可。</p>
+</blockquote>
+
+<hr />
+
+<p>ggtree所定义的这些修改版的图层，是为了进化树的注释表达力更强一些，但不单单应用于ggtree，ggplot2的用户照样受益于ggtree的图层，比如下面这个代码，产生一个散点图：</p>
+
+<pre><code class="language-r">require(ggtree)
+data(mpg)
+p = ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
+   geom_point(mapping = aes(color = class))
+</code></pre>
+
+<p>如果我想对其中的某些点加些文字，那么我们就需要取我们的操作的数据点的子集，再拿子集来加图层<code>geom_text(aes_mapping, subset_of_data)</code>，这种图生物狗也常用，比如火山图，只在图上打印差异基因的名字，那么要对数据取子集。</p>
+
+<p>代码如下，这里我用了subset函数取了子集，然后传给data参数。</p>
+
+<pre><code class="language-r">p + geom_text(aes(label=manufacturer), data=subset(mpg, hwy &gt; 40 | disp &gt; 6.5))   
+</code></pre>
+
+<p><img src="http://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/ggplot2_subsetting.png" alt="" /></p>
+
+<p>然而用ggtree定义的<code>geom_text2</code>图层，我们不需要传data参数，因为我们只是要取原来传给ggplot的data的子集而已，把取子集的<strong>条件</strong>放在aes映射里就行，<code>geom_text2</code>会去完成取子集的操作，用<code>geom_text</code>你需要自己显性操作数据，而用<code>geom_text2</code>你只需要把条件传进去即可。</p>
+
+<p>下面的代码，可以产生上面一样的图：</p>
+
+<pre><code class="language-r">p + geom_text2(aes(label=manufacturer, subset = hwy &gt; 40 | displ &gt; 6.5), nudge_y = 1)
+</code></pre>
+
+              
+                <center><span class="zaln"><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&mid=2247484170&idx=1&sn=ce5f7eb6df66d79661276a64bf25b4bc&chksm=ec43b24ddb343b5b2877574153aeccd049a6824716063883edb35c2338bd32c067caf3885f53#rd" class="zb">赞赏</a></span></center>
+                <center><span class="zaln"><a href="https://guangchuangyu.github.io/cn/2017/11/bmc-journal-protects-paper-of-plagiarism/" class="zb">抵制BMC，匹夫有责</a></span></center>
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/ggtree/">ggtree</a>
+
+  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/ggplot2/">ggplot2</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  <nav>
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+            <i class="fa fa-angle-left"></i>
+            <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+          </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2017/11/sci-hub-tor/" data-tooltip="再不用担心打不开sci-hub了">
+          
+            <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+  <ul class="post-actions post-action-share">
+    
+      <li class="post-action hide-lg hide-md hide-sm">
+        <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+          <i class="fa fa-share-alt"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f12%2fsubsetting-in-ggplot2-ggtree%2f">
+          <i class="fa fa-google-plus"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f12%2fsubsetting-in-ggplot2-ggtree%2f">
+          <i class="fa fa-facebook-official"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f12%2fsubsetting-in-ggplot2-ggtree%2f">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+    
+    
+      <li class="post-action">
+        <a class="post-action-btn btn btn--default" href="#disqus_thread">
+          <i class="fa fa-comment-o"></i>
+        </a>
+      </li>
+    
+    <li class="post-action">
+      
+        <a class="post-action-btn btn btn--default" href="#">
+      
+        <i class="fa fa-list"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2017 Guangchuang Yu. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  <nav>
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+            <i class="fa fa-angle-left"></i>
+            <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+          </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2017/11/sci-hub-tor/" data-tooltip="再不用担心打不开sci-hub了">
+          
+            <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+  <ul class="post-actions post-action-share">
+    
+      <li class="post-action hide-lg hide-md hide-sm">
+        <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+          <i class="fa fa-share-alt"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f12%2fsubsetting-in-ggplot2-ggtree%2f">
+          <i class="fa fa-google-plus"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f12%2fsubsetting-in-ggplot2-ggtree%2f">
+          <i class="fa fa-facebook-official"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f12%2fsubsetting-in-ggplot2-ggtree%2f">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+    
+    
+      <li class="post-action">
+        <a class="post-action-btn btn btn--default" href="#disqus_thread">
+          <i class="fa fa-comment-o"></i>
+        </a>
+      </li>
+    
+    <li class="post-action">
+      
+        <a class="post-action-btn btn btn--default" href="#">
+      
+        <i class="fa fa-list"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <ul class="share-options">
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f12%2fsubsetting-in-ggplot2-ggtree%2f">
+        <i class="fa fa-google-plus"></i><span>Share on Google Plus</span>
+      </a>
+    </li>
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f12%2fsubsetting-in-ggplot2-ggtree%2f">
+        <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+      </a>
+    </li>
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f12%2fsubsetting-in-ggplot2-ggtree%2f">
+        <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Guangchuang Yu</h4>
+    
+      <div id="about-card-bio">a senior-in-age-but-not-senior-in-knowledge bioinformatician</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Postdoc researcher
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Hong Kong
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Search" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no post found</div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/subsetting-in-ggplot2-ggtree/">
+                <h3 class="media-heading">ggplot2/ggtree取子集画图</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">取子集对于进化树可视化来说是非常常见的，我们要区分内部节点和外部节点，我们也可能想针对某些特点的节点进行注释。
+ggplot2现在所有图层都不支持直接取子集，所以呢ggtree就自己定义了一些修改的图层，包括geom_text2, geom_label2, geom_point2 和 geom_segment2，这些图层和ggplot2的版本唯一差别就是支持取子集。这样对于我们做注释来说，就更方便了。
+比如说我想给内部节点打点，可以用：
+ggtree(tree) + geom_text2(aes(label=label, subset=!isTip), hjust=-.2) + geom_point2(aes(subset=!isTip), color=&quot;red&quot;, size=3)   当然ggtree有提供geom_nodepoint图层，像上面的例子，用户不需要取子集操作，直接用geom_nodepoint即可。
+ ggtree所定义的这些修改版的图层，是为了进化树的注释表达力更强一些，但不单单应用于ggtree，ggplot2的用户照样受益于ggtree的图层，比如下面这个代码，产生一个散点图：
+require(ggtree) data(mpg) p = ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + geom_point(mapping = aes(color = class))  如果我想对其中的某些点加些文字，那么我们就需要取我们的操作的数据点的子集，再拿子集来加图层geom_text(aes_mapping, subset_of_data)，这种图生物狗也常用，比如火山图，只在图上打印差异基因的名字，那么要对数据取子集。
+代码如下，这里我用了subset函数取了子集，然后传给data参数。
+p + geom_text(aes(label=manufacturer), data=subset(mpg, hwy &gt; 40 | disp &gt; 6.5))  然而用ggtree定义的geom_text2图层，我们不需要传data参数，因为我们只是要取原来传给ggplot的data的子集而已，把取子集的条件放在aes映射里就行，geom_text2会去完成取子集的操作，用geom_text你需要自己显性操作数据，而用geom_text2你只需要把条件传进去即可。
+下面的代码，可以产生上面一样的图：
+p + geom_text2(aes(label=manufacturer, subset = hwy &gt; 40 | displ &gt; 6.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/sci-hub-tor/">
+                <h3 class="media-heading">再不用担心打不开sci-hub了</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>之前有写过<a href="https://mp.weixin.qq.com/s/AGQn7Lfn_nHHrtVQyJSTmg">读文献的文章</a>，也介绍了<a href="https://mp.weixin.qq.com/s/TMmsOsEn0wV9yXKOLma3Rw">如何获取文献</a>，那是我还在读硕士的时候写的，覆盖了找文献、文献管理、下载文献、订阅期刊等方方面面，说到下文献，最大的神器当然是sci-hub，但是sci-hub的域名sci-hub.cc, sci-hub.bz, sci-hub.io纷纷都沦陷，最近国内有一神器geenmedical，整合了影响因子、引用数等指标，然而这一神器的下文献功能只是提供外链，有一种说法是geenmedical=pubmed+scihub，当然geenmedical的资源还可能来自于百度学术、researchGate等，不都是来自于sci-hub，然而我们必须承认的是最大的文献提供来源必须还得是sci-hub，所以如果sci-hub挂了，基于sci-hub的神器也就神奇不起来了。如果有人跟你说忘记sci-hub吧，用geenmedical，那绝对是标题党！这里并没有说geenmedical不好，它整合了多方面的资源并且本地化得非常好，很适合国内使用。</p>
+
+<p>比如我在geenmedical里搜clusterProfiler，给出的下载链接第一个就是sci-hub的：<a href="http://doi.org.sci-hub.cc/10.1089/omi.2011.0118">http://doi.org.sci-hub.cc/10.1089/omi.2011.0118</a>，然而这个链接是不可用的！当然它给出了比如百度学术的链接是可以下载到文献的。然而还是那句话，论「海盗精神」我只服sci-hub，虽然我之前也介绍了《<a href="http://mp.weixin.qq.com/s/aaIby87LSQgxpvCAECFxkw">sci-hub如果挂了，你还有神器下文献吗？</a>》，但任何下文献的神器，在sci-hub面前都是渣渣。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/background-rect-for-selected-facet/">
+                <h3 class="media-heading">ggplot2给选定的分面加背景</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>我这个公众号不像大多数所谓的生信从入门到精通的各种其实只是搬运点入门教程的群众喜闻乐见的公众号。正如我在《<a href="http://mp.weixin.qq.com/s/f-c5Q63SY166ZGzYCsqthA">为什么要开这个公众号</a>》里说的，这是小众的，有个人色彩的各种原创文。我不可能像其它公众号一样招两小弟当客服，很多人在公众号后台向我扔了许多问题，由于个人精力有限，只能优先解答「知识星球」的问题，上次写的《<a href="http://mp.weixin.qq.com/s/jegI1wWc7DJzrM7mQfz77Q">同一数据多变量分组的boxplot?</a>》，图虽然简单，却穿着好多件马甲，而我把它扒光了给你看🙈</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/zhishixingqiu/ggplot-bg_question.jpg" alt="" /></p>
+
+<p>上面这个图，你看着高大上吧，我都可以吐它一脸口水。每一个有灰色背景的图，在x轴上violin都够到边界了，其实所有的violin都够到了，这证明什么？每个violin之间其实不可比较！你能想像几个独立的数据，在统一的bin width情况下，画density curve，竟然最高点都一样高吗？显然可能性几乎为0。这个如果使用ggplot2的话，可以使用<code>scale='width'</code>强制拉成一样高，但我不推荐，正如我前面说的，不可比较了。默认参数<code>scale='area'</code>，积分面积一样，和density curve一样解析，另外的参数<code>scale=&quot;count&quot;</code>，高度与计数同比例，和histogram一样解析，而<code>scale='width'</code>强制拉成一样高，如果没有在显眼处说明，误导性太强。</p>
+
+<p>画这种图也可以手工拼，这样就简单了。在你需要的情况下，加个灰色背景嘛，最后拼图嘛。当然拼图不一定要在illustrator里拼，比如你用grid，先画好坐标轴，然后水平上定义几个一样大的viewport，每一个violin都画在相应的viewport里面，对于画图函数来说，viewport就是整个画布了（虽然只是画布里的一块区域），所以你要么画violin，要么在画之前先画个矩阵，一路画下来，代码可以直接生成这样的图，但这图每一个violin都是独立画的（当然也不是完全独立，每一个水平上的ylim是有统一的），就算代码一步生成，也跟illustrator里拼没两样。</p>
+
+<hr />
+
+<p>这里我要教你用ggplot2自动生成，其实解决思路早已推送过，请看《<a href="http://mp.weixin.qq.com/s/PnbasfW4HKILuZNdrLVX_g">facet_plot：加图层到特定分面，方法二</a>》，也正如我在《<a href="http://mp.weixin.qq.com/s/8bzkJY1zzNc83iBUq4Fy1w">什么！你的图上有一双看不见的手</a>》里说的，你们以为我在教ggtree，其实同时在教ggplot2。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/pheatmap-color-range/">
+                <h3 class="media-heading">不同数据集画出的热图，用同样的颜色区间上色？</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><img src="http://guangchuangyu.github.io/blog_images/R/misc/WechatIMG216.png" alt="" /></p>
+
+<p>这个问题，其实答案就存在于《<a href="http://mp.weixin.qq.com/s/Xhi_ZkrEzUVdnCu7ECBS4w">听说你还不会画热图</a>》，我们先生成一个矩阵：</p>
+
+<pre><code>set.seed(2017-11-12)
+d = data.frame(matrix(rnorm(100), ncol=10))
+colnames(d) = paste0('t', 1:10)
+rownames(d) = paste0('g', 1:10)
+</code></pre>
+
+<p>这个矩阵是<code>rnorm</code>生成的随机数，有正有负，我们再生成一个矩阵，只有正数，并且数值上比第一个矩阵要大：</p>
+
+<pre><code>d2 = abs(d) * 1.2
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/bioc-db-update/">
+                <h3 class="media-heading">掐架的额外收获</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>《<a href="http://mp.weixin.qq.com/s/miGQs6U1d3aHwcm7vgNCVw">你昨天才做的分析，可能是几年前的结果！</a>》这篇文章给大家敲了警钟，各种各样的web-server，要小心看有没有维护更新，有些是五年十年都不更新的，十分可怕。文章虽然讲的是富集分析，但其它分析工具你同样需要小心。</p>
+
+<p>当然并不是说独立的软件/软件包就一定靠谱，如果软件自己打包了数据，同样要注意数据是否有更新，而如果数据不打包在软件里，而是在线获取，你同样也该留一下心。这也是clusterProfiler做富集分析的优势所在，KEGG数据是在线的，永远是最新的，而GO的数据不在软件包里，而依赖于别的数据包，而这些数据包是社区维护的（相对而言，个人的维护比较难以为继），就确保了数据一直在有更新维护的。</p>
+
+<p>Bioconductor每半年发行一次，注释包同样每半年更新一次，所以你用clusterProfiler做GO分析，你用的GO数据库不会说超过半年没更新，而不像有些公司给出的结果，落后于这个世界不是一年两年这么简单。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/bmc-journal-protects-paper-of-plagiarism/">
+                <h3 class="media-heading">虐狗节来看一下这个裤衩都不要的故事</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><img src="http://guangchuangyu.github.io/blog_images/R/ppipre/Screenshot 2017-11-10 00.10.22.png" alt="" /></p>
+
+<p>Scientific Report上有一篇文章是抄袭的，然而杂志最终决定不撤稿，而被抄的人是Johns Hopkins的，于是jh的人全都要离开Scientific Report的编委。我也被人抄了不撤稿，然而我人微言轻，不单被编辑部欺负，还要被我们国内生信界的网红欺负。</p>
+
+<p>SR与jh的事情，我和BMC的故事，是相似的，我们可以想像这样的学术界惨剧比想像中的要多。学术圈，真是有时候得呵呵哒。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/watermark/">
+                <h3 class="media-heading">听说你想打水印？</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><img src="http://guangchuangyu.github.io/blog_images/R/meme/WechatIMG165.png" alt="" /></p>
+
+<p>正如我在《<a href="http://mp.weixin.qq.com/s/jDXjkrkq_YVhW-Z5Vx2-Fg">用R画meme ;)</a>》里说的，meme包就可以拿来画，当然这个包是设计来画meme的，所以文本只会打在中间，如果你想在右下角之类的，不好意思，我没提供选项让你调文本位置，氮素，meme依然是你的好帮手，怎么说呢，meme不单能帮你读图片，还能用grid画出来，这意味着你可以用<code>grid.text</code>随便加个文本就OK了。</p>
+
+<p>实例演示一发：</p>
+
+<pre><code>library(meme)
+u &lt;- system.file(&quot;angry8.jpg&quot;, package=&quot;meme&quot;)
+x &lt;- meme(u)
+print(x)
+grid.text(&quot;biobabble&quot;, x=.9, y=.05, 
+	gp=gpar(col='white', cex=1.2))
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/scholar/">
+                <h3 class="media-heading">一个用不了的R包和一个404的网站</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><img src="https://guangchuangyu.github.io/blog_images/R/scholar/WechatIMG166.png" alt="" /></p>
+
+<p>正如我在「知识星球」里说的，scholar这个包现在已经死了，因为作者不维护了，除非出现接盘侠。我自己fork了一个，打了补丁，现在是可用的。这个包应该说我用得蛮多的，你看我简历里的引用数柱状图，我不会无聊到过一段时间就去查，然后重新画图的，太low。都是自动化的，我到简历目录下打make指令，就会自动去爬数据、重新画图并生成简历，而我啥都不用干。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/kegg-gene-annotation/">
+                <h3 class="media-heading">听说你的KEGG分析有大量的基因没注释</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><a href="https://github.com/GuangchuangYu/clusterProfiler/issues/115">github上的问题</a>，问了两个问题，这是其中第二个：</p>
+
+<blockquote>
+<p>Meanwhile, when I fed the ENTREZID to enrichKEGG, it show me two unreasonable results:</p>
+
+<pre><code>kegg_enrich = enrichKEGG(
+	gene = new_ids$ENTREZID,
+	organism = 'hsa',
+	keyType = 'ncbi-geneid',
+	pvalueCutoff = 0.05,
+	#pAdjustMethod = 'BH',
+	#qvalueCutoff = 0.2,
+	use_internal_data = FALSE
+)
+</code></pre>
+
+<pre><code>head(kegg_enrich)
+              ID                           Description GeneRatio  BgRatio       pvalue   p.adjust     qvalue
+hsa04380 hsa04380            Osteoclast differentiation    14/281 128/7299 0.0003817040 0.04767338 0.04508266
+hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.0003875885 0.04767338 0.04508266
+</code></pre>
+
+<p>I noted that only 281 genes are remained(there are 700+ genes in my list). In case that there is something wrong wtihin my gene list, I also tried my list with DAVID. It gave me reasonable results. So this is my second question, why enrichKEGG cannot recognize my geneids?</p>
+</blockquote>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/pubmed-trend/">
+                <h3 class="media-heading">Pubmed年度趋势</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>在很久很久以前，当我还在用perl的时候，有一个TGen-EUtils的perl模块，可以去爬PubMed，我喜欢用它来画所谓的pubmed趋势，比如说我在2012年的时候，就画了各个组学技术的pubmed趋势，通过每一年的文章发表量来看某个技术到底火不火，走势怎么样。</p>
+
+<p><img src="http://guangchuangyu.github.io/blog_images/2012/10/pubmedtrend.png" alt="" /></p>
+
+<p>当年microarray还特别猛，但显然可以看到二代测序必须要火，也可以看到proteomics在吹了几年牛B之后，有回落的趋势。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no post found"
+         data-message-one="1 post found"
+         data-message-other="{n} posts found">
+         171 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('https://guangchuangyu.github.io/cn/images/cover.jpg');"></div>
+  
+
+
+    
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.js"></script>
+
+
+<script src="https://guangchuangyu.github.io/cn/js/script-wl33z0n6ocaypepiqrazthtivfrliqijej4rq8ek8gvrv1awftmgjuv8k4zc.min.js"></script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight').each(function(i, block) {
+    var code = "";
+    hljs.highlightAuto(block.innerText).value.split(/\r\n|\r|\n/).forEach(function(line) {
+      code += "<span class=\"line\">" + line + "</span><br>";
+    });
+    if (code.length > 0) {
+      block.innerHTML = code;  
+    }
+  });
+  $('pre > code').each(function(i, block) {
+    $(this).addClass('codeblock');
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/guangchuangyu.github.io\/cn\/2017\/12\/subsetting-in-ggplot2-ggtree\/';
+          
+            this.page.identifier = '\/2017\/12\/subsetting-in-ggplot2-ggtree\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'gcyu';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+
+    
+  </body>
+</html>
+
