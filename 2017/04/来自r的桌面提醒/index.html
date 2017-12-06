@@ -556,6 +556,27 @@ notify(
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/genomic-coordination-enrichment-analysis/">
+                <h3 class="media-heading">Genomic coordination的富集性分析</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>在《<a href="https://mp.weixin.qq.com/s/v61LjQEfyi_CZucHW53ETw">CS7：Genomic coordination的富集性分析（1）</a>》说到了seq2pathway这个包，其实是两部曲，seq2gene-&gt;gene2pathway，无非是把测序片段用临近的基因注释，包括和TSS overlap的基因，宿主基因，上下游的基因等，然后拿这些基因跑ORA，做富集，仅此而已，这个包支持的物种极有限，《<a href="http://mp.weixin.qq.com/s/_OPzvaEAbiMolCA2mqJXLw">CS4：关于ChIPseq注释的几个问题</a>》这一文中讲到ChIPseeker支持所有有基因组注释的物种，而《<a href="http://mp.weixin.qq.com/s/ScwaofLd_ybfECYjL1dGow">clusterProfiler for enrichment analysis</a>》也支持所有物种（即使你自己跑的电子注释，也能支持），那么使用ChIPseeker来做基因注释，然后衔接clusterProfiler就可以支持所有物种的测序片段进行功能富集分析了。</p>
+
+<p>《<a href="http://mp.weixin.qq.com/s/vWTf59KDs1lp_sQXjEhI_g">CS3: peak注释</a>》本身就支持几种注释，另外我写了一个<code>seq2gene</code>的函数，套用<code>seq2pathway</code>的思路，把一个基因位置上所有关联的基因全部返回来，我们可以使用它去把基因位置信息转换成基因列表，然后用于富集分析，还是熟悉的味道，还是熟悉的配方🦄</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/subsetting-in-ggplot2-ggtree/">
                 <h3 class="media-heading">ggplot2/ggtree取子集画图</h3>
               </a>
@@ -564,16 +585,17 @@ notify(
                   Dec 12, 2017
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather">取子集对于进化树可视化来说是非常常见的，我们要区分内部节点和外部节点，我们也可能想针对某些特点的节点进行注释。
-ggplot2现在所有图层都不支持直接取子集，所以呢ggtree就自己定义了一些修改的图层，包括geom_text2, geom_label2, geom_point2 和 geom_segment2，这些图层和ggplot2的版本唯一差别就是支持取子集。这样对于我们做注释来说，就更方便了。
-比如说我想给内部节点打点，可以用：
-ggtree(tree) + geom_text2(aes(label=label, subset=!isTip), hjust=-.2) + geom_point2(aes(subset=!isTip), color=&quot;red&quot;, size=3)   当然ggtree有提供geom_nodepoint图层，像上面的例子，用户不需要取子集操作，直接用geom_nodepoint即可。
- ggtree所定义的这些修改版的图层，是为了进化树的注释表达力更强一些，但不单单应用于ggtree，ggplot2的用户照样受益于ggtree的图层，比如下面这个代码，产生一个散点图：
-require(ggtree) data(mpg) p = ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + geom_point(mapping = aes(color = class))  如果我想对其中的某些点加些文字，那么我们就需要取我们的操作的数据点的子集，再拿子集来加图层geom_text(aes_mapping, subset_of_data)，这种图生物狗也常用，比如火山图，只在图上打印差异基因的名字，那么要对数据取子集。
-代码如下，这里我用了subset函数取了子集，然后传给data参数。
-p + geom_text(aes(label=manufacturer), data=subset(mpg, hwy &gt; 40 | disp &gt; 6.5))  然而用ggtree定义的geom_text2图层，我们不需要传data参数，因为我们只是要取原来传给ggplot的data的子集而已，把取子集的条件放在aes映射里就行，geom_text2会去完成取子集的操作，用geom_text你需要自己显性操作数据，而用geom_text2你只需要把条件传进去即可。
-下面的代码，可以产生上面一样的图：
-p + geom_text2(aes(label=manufacturer, subset = hwy &gt; 40 | displ &gt; 6.</div>
+              <div class="media-content hide-xs font-merryweather"><p>取子集对于进化树可视化来说是非常常见的，我们要区分内部节点和外部节点，我们也可能想针对某些特点的节点进行注释。</p>
+
+<p>ggplot2现在所有图层都不支持直接取子集，所以呢ggtree就自己定义了一些修改的图层，包括<code>geom_text2</code>, <code>geom_label2</code>,  <code>geom_point2</code> 和 <code>geom_segment2</code>，这些图层和ggplot2的版本唯一差别就是支持取子集。这样对于我们做注释来说，就更方便了。</p>
+
+<p>比如说我想给内部节点打点，可以用：</p>
+
+<pre><code class="language-r">ggtree(tree) + geom_text2(aes(label=label, subset=!isTip), hjust=-.2) +
+        geom_point2(aes(subset=!isTip), color=&quot;red&quot;, size=3)
+</code></pre>
+
+<p></p></div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -801,29 +823,6 @@ hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.000
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/pubmed-trend/">
-                <h3 class="media-heading">Pubmed年度趋势</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Nov 11, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>在很久很久以前，当我还在用perl的时候，有一个TGen-EUtils的perl模块，可以去爬PubMed，我喜欢用它来画所谓的pubmed趋势，比如说我在2012年的时候，就画了各个组学技术的pubmed趋势，通过每一年的文章发表量来看某个技术到底火不火，走势怎么样。</p>
-
-<p><img src="http://guangchuangyu.github.io/blog_images/2012/10/pubmedtrend.png" alt="" /></p>
-
-<p>当年microarray还特别猛，但显然可以看到二代测序必须要火，也可以看到proteomics在吹了几年牛B之后，有回落的趋势。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -831,7 +830,7 @@ hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.000
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         171 posts found
+         172 posts found
       </p>
     </div>
   </div>

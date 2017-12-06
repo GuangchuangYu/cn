@@ -6,10 +6,23 @@
     <description>Recent content in Chipseeker on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 01 Oct 2017 11:44:16 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 06 Dec 2017 10:03:16 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/tags/chipseeker/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Genomic coordination的富集性分析</title>
+      <link>https://guangchuangyu.github.io/cn/2017/12/genomic-coordination-enrichment-analysis/</link>
+      <pubDate>Wed, 06 Dec 2017 10:03:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/12/genomic-coordination-enrichment-analysis/</guid>
+      <description>&lt;p&gt;在《&lt;a href=&#34;https://mp.weixin.qq.com/s/v61LjQEfyi_CZucHW53ETw&#34;&gt;CS7：Genomic coordination的富集性分析（1）&lt;/a&gt;》说到了seq2pathway这个包，其实是两部曲，seq2gene-&amp;gt;gene2pathway，无非是把测序片段用临近的基因注释，包括和TSS overlap的基因，宿主基因，上下游的基因等，然后拿这些基因跑ORA，做富集，仅此而已，这个包支持的物种极有限，《&lt;a href=&#34;http://mp.weixin.qq.com/s/_OPzvaEAbiMolCA2mqJXLw&#34;&gt;CS4：关于ChIPseq注释的几个问题&lt;/a&gt;》这一文中讲到ChIPseeker支持所有有基因组注释的物种，而《&lt;a href=&#34;http://mp.weixin.qq.com/s/ScwaofLd_ybfECYjL1dGow&#34;&gt;clusterProfiler for enrichment analysis&lt;/a&gt;》也支持所有物种（即使你自己跑的电子注释，也能支持），那么使用ChIPseeker来做基因注释，然后衔接clusterProfiler就可以支持所有物种的测序片段进行功能富集分析了。&lt;/p&gt;
+
+&lt;p&gt;《&lt;a href=&#34;http://mp.weixin.qq.com/s/vWTf59KDs1lp_sQXjEhI_g&#34;&gt;CS3: peak注释&lt;/a&gt;》本身就支持几种注释，另外我写了一个&lt;code&gt;seq2gene&lt;/code&gt;的函数，套用&lt;code&gt;seq2pathway&lt;/code&gt;的思路，把一个基因位置上所有关联的基因全部返回来，我们可以使用它去把基因位置信息转换成基因列表，然后用于富集分析，还是熟悉的味道，还是熟悉的配方🦄&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>CS6: ChIP数据可视化</title>

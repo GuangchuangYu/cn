@@ -6,10 +6,23 @@
     <description>Recent content in R on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 01 Dec 2017 08:28:48 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 06 Dec 2017 10:03:16 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Genomic coordination的富集性分析</title>
+      <link>https://guangchuangyu.github.io/cn/2017/12/genomic-coordination-enrichment-analysis/</link>
+      <pubDate>Wed, 06 Dec 2017 10:03:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/12/genomic-coordination-enrichment-analysis/</guid>
+      <description>&lt;p&gt;在《&lt;a href=&#34;https://mp.weixin.qq.com/s/v61LjQEfyi_CZucHW53ETw&#34;&gt;CS7：Genomic coordination的富集性分析（1）&lt;/a&gt;》说到了seq2pathway这个包，其实是两部曲，seq2gene-&amp;gt;gene2pathway，无非是把测序片段用临近的基因注释，包括和TSS overlap的基因，宿主基因，上下游的基因等，然后拿这些基因跑ORA，做富集，仅此而已，这个包支持的物种极有限，《&lt;a href=&#34;http://mp.weixin.qq.com/s/_OPzvaEAbiMolCA2mqJXLw&#34;&gt;CS4：关于ChIPseq注释的几个问题&lt;/a&gt;》这一文中讲到ChIPseeker支持所有有基因组注释的物种，而《&lt;a href=&#34;http://mp.weixin.qq.com/s/ScwaofLd_ybfECYjL1dGow&#34;&gt;clusterProfiler for enrichment analysis&lt;/a&gt;》也支持所有物种（即使你自己跑的电子注释，也能支持），那么使用ChIPseeker来做基因注释，然后衔接clusterProfiler就可以支持所有物种的测序片段进行功能富集分析了。&lt;/p&gt;
+
+&lt;p&gt;《&lt;a href=&#34;http://mp.weixin.qq.com/s/vWTf59KDs1lp_sQXjEhI_g&#34;&gt;CS3: peak注释&lt;/a&gt;》本身就支持几种注释，另外我写了一个&lt;code&gt;seq2gene&lt;/code&gt;的函数，套用&lt;code&gt;seq2pathway&lt;/code&gt;的思路，把一个基因位置上所有关联的基因全部返回来，我们可以使用它去把基因位置信息转换成基因列表，然后用于富集分析，还是熟悉的味道，还是熟悉的配方🦄&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>ggplot2/ggtree取子集画图</title>
@@ -17,16 +30,17 @@
       <pubDate>Fri, 01 Dec 2017 08:28:48 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2017/12/subsetting-in-ggplot2-ggtree/</guid>
-      <description>取子集对于进化树可视化来说是非常常见的，我们要区分内部节点和外部节点，我们也可能想针对某些特点的节点进行注释。
-ggplot2现在所有图层都不支持直接取子集，所以呢ggtree就自己定义了一些修改的图层，包括geom_text2, geom_label2, geom_point2 和 geom_segment2，这些图层和ggplot2的版本唯一差别就是支持取子集。这样对于我们做注释来说，就更方便了。
-比如说我想给内部节点打点，可以用：
-ggtree(tree) + geom_text2(aes(label=label, subset=!isTip), hjust=-.2) + geom_point2(aes(subset=!isTip), color=&amp;quot;red&amp;quot;, size=3)   当然ggtree有提供geom_nodepoint图层，像上面的例子，用户不需要取子集操作，直接用geom_nodepoint即可。
- ggtree所定义的这些修改版的图层，是为了进化树的注释表达力更强一些，但不单单应用于ggtree，ggplot2的用户照样受益于ggtree的图层，比如下面这个代码，产生一个散点图：
-require(ggtree) data(mpg) p = ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + geom_point(mapping = aes(color = class))  如果我想对其中的某些点加些文字，那么我们就需要取我们的操作的数据点的子集，再拿子集来加图层geom_text(aes_mapping, subset_of_data)，这种图生物狗也常用，比如火山图，只在图上打印差异基因的名字，那么要对数据取子集。
-代码如下，这里我用了subset函数取了子集，然后传给data参数。
-p + geom_text(aes(label=manufacturer), data=subset(mpg, hwy &amp;gt; 40 | disp &amp;gt; 6.5))  然而用ggtree定义的geom_text2图层，我们不需要传data参数，因为我们只是要取原来传给ggplot的data的子集而已，把取子集的条件放在aes映射里就行，geom_text2会去完成取子集的操作，用geom_text你需要自己显性操作数据，而用geom_text2你只需要把条件传进去即可。
-下面的代码，可以产生上面一样的图：
-p + geom_text2(aes(label=manufacturer, subset = hwy &amp;gt; 40 | displ &amp;gt; 6.</description>
+      <description>&lt;p&gt;取子集对于进化树可视化来说是非常常见的，我们要区分内部节点和外部节点，我们也可能想针对某些特点的节点进行注释。&lt;/p&gt;
+
+&lt;p&gt;ggplot2现在所有图层都不支持直接取子集，所以呢ggtree就自己定义了一些修改的图层，包括&lt;code&gt;geom_text2&lt;/code&gt;, &lt;code&gt;geom_label2&lt;/code&gt;,  &lt;code&gt;geom_point2&lt;/code&gt; 和 &lt;code&gt;geom_segment2&lt;/code&gt;，这些图层和ggplot2的版本唯一差别就是支持取子集。这样对于我们做注释来说，就更方便了。&lt;/p&gt;
+
+&lt;p&gt;比如说我想给内部节点打点，可以用：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggtree(tree) + geom_text2(aes(label=label, subset=!isTip), hjust=-.2) +
+        geom_point2(aes(subset=!isTip), color=&amp;quot;red&amp;quot;, size=3)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
