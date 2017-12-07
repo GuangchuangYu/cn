@@ -225,6 +225,125 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2014/07/principle_component_analysis/">
+          主成分分析
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2014-07-15T11:37:55&#43;08:00">
+      
+  July 15, 2014
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/statistics">statistics</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <p>使用《Bioinformatics and Molecular Evolution》Table 2.2 (page 24)中的数据:</p>
+
+<pre><code>&gt; aa
+  VOL  BULK POLARITY    PI HYD1  HYD2 SURFACE_AREA FRACT_AREA
+A  67 11.50     0.00  6.00  1.8   1.6          113       0.74
+R 148 14.28    52.00 10.76 -4.5 -12.3          241       0.64
+N  96 12.28     3.38  5.41 -3.5  -4.8          158       0.63
+D  91 11.68    49.70  2.77 -3.5  -9.2          151       0.62
+C  86 13.46     1.48  5.05  2.5   2.0          140       0.91
+Q 114 14.45     3.53  5.65 -3.5  -4.1          189       0.62
+E 109 13.57    49.90  3.22 -3.5  -8.2          183       0.62
+G  48  3.40     0.00  5.97 -0.4   1.0           85       0.72
+H 118 13.69    51.60  7.59 -3.2  -3.0          194       0.78
+I 124 21.40     0.13  6.02  4.5   3.1          182       0.88
+L 124 21.40     0.13  5.98  3.8   2.8          180       0.85
+K 135 15.71    49.50  9.74 -3.9  -8.8          211       0.52
+M 124 16.25     1.43  5.74  1.9   3.4          204       0.85
+F 135 19.80     0.35  5.48  2.8   3.7          218       0.88
+P  90 17.43     1.58  6.30 -1.6  -0.2          143       0.64
+S  73  9.47     1.67  5.68 -0.8   0.6          122       0.66
+T  93 15.77     1.66  5.66 -0.7   1.2          146       0.70
+W 163 21.67     2.10  5.89 -0.9   1.9          259       0.85
+Y 141 18.03     1.61  5.66 -1.3  -0.7          229       0.76
+V 105 21.57     0.13  5.96  4.2   2.6          160       0.85
+&gt; aa.pc=prcomp(aa, center=TRUE, scale.=TRUE)
+&gt; aa.pc
+Standard deviations:
+[1] 1.88954924 1.67729608 0.88574923 0.65278312 0.53130822 0.27233782 0.21394709
+[8] 0.05808934
+
+Rotation:
+                     PC1         PC2           PC3         PC4        PC5
+VOL           0.05790316 -0.58494270  0.1057571970 -0.09311996  0.1684497
+BULK         -0.22089815 -0.48085679  0.1685873871 -0.15647005 -0.6842181
+POLARITY      0.44390146 -0.10372198  0.1432388489  0.73088587 -0.1747201
+PI            0.18580066 -0.25244261 -0.9417631776  0.02722752 -0.0522075
+HYD1         -0.49279466 -0.03284274 -0.1281013177  0.35033569 -0.3534423
+HYD2         -0.50821923  0.03312719 -0.1292531953 -0.12776013  0.1837842
+SURFACE_AREA  0.10045084 -0.56587879  0.1408585179 -0.10640314  0.3652725
+FRACT_AREA   -0.45283231 -0.17244828  0.0009997326  0.53059489  0.4220135
+                     PC6         PC7          PC8
+VOL          -0.11705506  0.21351836 -0.739571539
+BULK          0.25124136 -0.35181704  0.109655303
+POLARITY      0.39252691  0.22974777  0.009653888
+PI            0.04562347 -0.09136074  0.030622127
+HYD1         -0.50083501  0.48686655  0.064292387
+HYD2          0.70974650  0.41191312 -0.019940539
+SURFACE_AREA -0.11107422  0.24097250  0.659316956
+FRACT_AREA   -0.01018472 -0.55201871 -0.027363410
+&gt; summary(aa.pc)
+Importance of components:
+                          PC1    PC2     PC3     PC4     PC5     PC6     PC7
+Standard deviation     1.8895 1.6773 0.88575 0.65278 0.53131 0.27234 0.21395
+Proportion of Variance 0.4463 0.3517 0.09807 0.05327 0.03529 0.00927 0.00572
+Cumulative Proportion  0.4463 0.7980 0.89603 0.94930 0.98459 0.99386 0.99958
+                           PC8
+Standard deviation     0.05809
+Proportion of Variance 0.00042
+Cumulative Proportion  1.00000
+</code></pre>
+
+<p>PC1和PC2能够解释79.8%的variation。</p>
+
+<p></p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2014/07/principle_component_analysis/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2014/06/use-linux-desktop-again/">
           use linux desktop again
         </a>
@@ -589,70 +708,6 @@ X设计的原生包管理系统非Homebrew莫属，它会尽量依赖系统里�
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2013/07/permanent-head-damage-to-be/">
-          Permanent Head Damage to be
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2013-07-30T16:18:26&#43;08:00">
-      
-  July 30, 2013
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/personal">Personal</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>看似寻常最奇崛，成如容易却艰辛。在暨大工作了几年，发几篇小文章，觉得要找个地方读PhD，是件手到擒来的事，结果却花了整整一年的时间，事实证明像我这样的科研屌丝男，举步唯艰啊。
-去年7月份就开始在计划这个事情，我几乎想都没想就联系了计算生物所的JD
-Han，紧接着就是面试，第一次尝试用英文去讲slides，从早上10点讲到中午12点。感觉还好吧，因为有听到Han说impressive，而她的学生又说经常看我blog。看上去还是蛮顺利的，然而最终reject了我，而且没有给我任何原因。</p>
-
-<p>我去上海是非常低姿态的，说要面试，我就飞过去，当时想要是面试OK了，可能会让我留下来先了解一下正在进行的project，所以没有听老婆的话买返程票，结果从上海回广州，就变成了人在囧途，买不到火车票，就去南昌转车，结果遇到两趟车都是慢车，无空调，还无座。这个事情教会了我，不能太低姿态。</p>
-
-<p>我一直在想为什么会去上海，为什么会联系Han，或许是心理学上所谓的契可尼效应，俗称偷不如偷不着，当年考上生没中，心中依然有执念？我自认为早已释然，but
-maybe..，至于Han，我在研一的时候，去北大听过她的讲座，被系统生物学这个概念忽悠了，可能因此内心抱有幻想。
-</p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2013/07/permanent-head-damage-to-be/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -734,6 +789,24 @@ maybe..，至于Han，我在研一的时候，去北大听过她的讲座，被�
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/using-external-font-for-meme/">
+                <h3 class="media-heading">使用外部字体画meme</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">font support In addition to the fonts installed on your system, there are many amusing fonts that are funny for meme, e.g. fonts on https://fontmeme.com/fonts/.
+ library(meme) library(ggplot2) ## import pokemon fonts ## downloaded from &lt;https://fontmeme.com/fonts/pokmon-font/&gt; font_pokemon() ## font Pokemon_Hollow, Pokemon_Solid loaded... u &lt;- &#39;https://ravishly.com/sites/default/files/landscape-1456483171-pokemon2.jpg&#39; meme(u, &quot;Pokemon&quot;, &quot;pikachu i choose you!&quot;, font=&#39;Pokemon_Hollow&#39;) meme(u, &quot;Pokemon&quot;, &quot;pikachu i choose you!&quot;, font=&#39;Pokemon_Solid&#39;, color=&#39;#FCCF00&#39;) You can download fonts and pass the folder to font_import() to import the fonts so that they can be used to create meme.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -963,48 +1036,6 @@ grid.text(&quot;biobabble&quot;, x=.9, y=.05,
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/kegg-gene-annotation/">
-                <h3 class="media-heading">听说你的KEGG分析有大量的基因没注释</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Nov 11, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><a href="https://github.com/GuangchuangYu/clusterProfiler/issues/115">github上的问题</a>，问了两个问题，这是其中第二个：</p>
-
-<blockquote>
-<p>Meanwhile, when I fed the ENTREZID to enrichKEGG, it show me two unreasonable results:</p>
-
-<pre><code>kegg_enrich = enrichKEGG(
-	gene = new_ids$ENTREZID,
-	organism = 'hsa',
-	keyType = 'ncbi-geneid',
-	pvalueCutoff = 0.05,
-	#pAdjustMethod = 'BH',
-	#qvalueCutoff = 0.2,
-	use_internal_data = FALSE
-)
-</code></pre>
-
-<pre><code>head(kegg_enrich)
-              ID                           Description GeneRatio  BgRatio       pvalue   p.adjust     qvalue
-hsa04380 hsa04380            Osteoclast differentiation    14/281 128/7299 0.0003817040 0.04767338 0.04508266
-hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.0003875885 0.04767338 0.04508266
-</code></pre>
-
-<p>I noted that only 281 genes are remained(there are 700+ genes in my list). In case that there is something wrong wtihin my gene list, I also tried my list with DAVID. It gave me reasonable results. So this is my second question, why enrichKEGG cannot recognize my geneids?</p>
-</blockquote>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1012,7 +1043,7 @@ hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.000
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         172 posts found
+         173 posts found
       </p>
     </div>
   </div>

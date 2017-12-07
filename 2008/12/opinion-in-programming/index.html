@@ -577,6 +577,24 @@ block，以前是需要自己造的。现在不需要，有现成的，我们只
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/using-external-font-for-meme/">
+                <h3 class="media-heading">使用外部字体画meme</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">font support In addition to the fonts installed on your system, there are many amusing fonts that are funny for meme, e.g. fonts on https://fontmeme.com/fonts/.
+ library(meme) library(ggplot2) ## import pokemon fonts ## downloaded from &lt;https://fontmeme.com/fonts/pokmon-font/&gt; font_pokemon() ## font Pokemon_Hollow, Pokemon_Solid loaded... u &lt;- &#39;https://ravishly.com/sites/default/files/landscape-1456483171-pokemon2.jpg&#39; meme(u, &quot;Pokemon&quot;, &quot;pikachu i choose you!&quot;, font=&#39;Pokemon_Hollow&#39;) meme(u, &quot;Pokemon&quot;, &quot;pikachu i choose you!&quot;, font=&#39;Pokemon_Solid&#39;, color=&#39;#FCCF00&#39;) You can download fonts and pass the folder to font_import() to import the fonts so that they can be used to create meme.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/genomic-coordination-enrichment-analysis/">
                 <h3 class="media-heading">Genomic coordination的富集性分析</h3>
               </a>
@@ -802,48 +820,6 @@ grid.text(&quot;biobabble&quot;, x=.9, y=.05,
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/kegg-gene-annotation/">
-                <h3 class="media-heading">听说你的KEGG分析有大量的基因没注释</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Nov 11, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><a href="https://github.com/GuangchuangYu/clusterProfiler/issues/115">github上的问题</a>，问了两个问题，这是其中第二个：</p>
-
-<blockquote>
-<p>Meanwhile, when I fed the ENTREZID to enrichKEGG, it show me two unreasonable results:</p>
-
-<pre><code>kegg_enrich = enrichKEGG(
-	gene = new_ids$ENTREZID,
-	organism = 'hsa',
-	keyType = 'ncbi-geneid',
-	pvalueCutoff = 0.05,
-	#pAdjustMethod = 'BH',
-	#qvalueCutoff = 0.2,
-	use_internal_data = FALSE
-)
-</code></pre>
-
-<pre><code>head(kegg_enrich)
-              ID                           Description GeneRatio  BgRatio       pvalue   p.adjust     qvalue
-hsa04380 hsa04380            Osteoclast differentiation    14/281 128/7299 0.0003817040 0.04767338 0.04508266
-hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.0003875885 0.04767338 0.04508266
-</code></pre>
-
-<p>I noted that only 281 genes are remained(there are 700+ genes in my list). In case that there is something wrong wtihin my gene list, I also tried my list with DAVID. It gave me reasonable results. So this is my second question, why enrichKEGG cannot recognize my geneids?</p>
-</blockquote>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -851,7 +827,7 @@ hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.000
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         172 posts found
+         173 posts found
       </p>
     </div>
   </div>

@@ -6,10 +6,20 @@
     <description>Recent content in Ggplot2 on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 01 Dec 2017 08:28:48 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 07 Dec 2017 06:31:55 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/tags/ggplot2/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>使用外部字体画meme</title>
+      <link>https://guangchuangyu.github.io/cn/2017/12/using-external-font-for-meme/</link>
+      <pubDate>Thu, 07 Dec 2017 06:31:55 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/12/using-external-font-for-meme/</guid>
+      <description>font support In addition to the fonts installed on your system, there are many amusing fonts that are funny for meme, e.g. fonts on https://fontmeme.com/fonts/.
+ library(meme) library(ggplot2) ## import pokemon fonts ## downloaded from &amp;lt;https://fontmeme.com/fonts/pokmon-font/&amp;gt; font_pokemon() ## font Pokemon_Hollow, Pokemon_Solid loaded... u &amp;lt;- &amp;#39;https://ravishly.com/sites/default/files/landscape-1456483171-pokemon2.jpg&amp;#39; meme(u, &amp;quot;Pokemon&amp;quot;, &amp;quot;pikachu i choose you!&amp;quot;, font=&amp;#39;Pokemon_Hollow&amp;#39;) meme(u, &amp;quot;Pokemon&amp;quot;, &amp;quot;pikachu i choose you!&amp;quot;, font=&amp;#39;Pokemon_Solid&amp;#39;, color=&amp;#39;#FCCF00&amp;#39;) You can download fonts and pass the folder to font_import() to import the fonts so that they can be used to create meme.</description>
+    </item>
     
     <item>
       <title>ggplot2/ggtree取子集画图</title>

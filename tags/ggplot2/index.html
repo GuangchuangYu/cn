@@ -228,6 +228,64 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/using-external-font-for-meme/">
+          使用外部字体画meme
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-12-07T06:31:55&#43;08:00">
+      
+  December 7, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        font support In addition to the fonts installed on your system, there are many amusing fonts that are funny for meme, e.g. fonts on <a href="https://fontmeme.com/fonts/">https://fontmeme.com/fonts/</a>.
+ library(meme) library(ggplot2) ## import pokemon fonts ## downloaded from &lt;<a href="https://fontmeme.com/fonts/pokmon-font/&gt;">https://fontmeme.com/fonts/pokmon-font/&gt;</a> font_pokemon() ## font Pokemon_Hollow, Pokemon_Solid loaded&hellip; u &lt;- &#39;<a href="https://ravishly.com/sites/default/files/landscape-1456483171-pokemon2.jpg&amp;#39">https://ravishly.com/sites/default/files/landscape-1456483171-pokemon2.jpg&amp;#39</a>; meme(u, &quot;Pokemon&quot;, &quot;pikachu i choose you!&quot;, font=&#39;Pokemon_Hollow&#39;) meme(u, &quot;Pokemon&quot;, &quot;pikachu i choose you!&quot;, font=&#39;Pokemon_Solid&#39;, color=&#39;#FCCF00&#39;) You can download fonts and pass the folder to font_import() to import the fonts so that they can be used to create meme.
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2017/12/using-external-font-for-meme/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+            
+              
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/subsetting-in-ggplot2-ggtree/">
           ggplot2/ggtree取子集画图
         </a>
@@ -620,72 +678,6 @@ grid.text(&quot;biobabble&quot;, x=.9, y=.05,
 </article>
 
             
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/invisible-layer/">
-          你的图上有一双看不见的手
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-10-19T12:06:59&#43;08:00">
-      
-  October 19, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>下面这张吐槽LaTeX的图，太深得我心。</p>
-
-<p><img src="http://dirkriehle.com/wp-content/uploads/2016/05/latex.png" alt="" /></p>
-
-<p>而ggplot2这种文本跑出界的事情，也太常见，以至于我在<a href="https://guangchuangyu.github.io/ggtree/faq/">ggtree的FAQ</a>专门指出来，要用<code>xlim</code>给x轴分配多点空间，这是由于数据是数据空间，而文本是像素空间。你画图的画布由数据空间决定，然后文本就从指定的位置（除了坐标，还取决于你align的方式和adjustment微调）开始打出来，一不小心就打出界了。这一点我在FAQ里，除了告诉你用<code>xlim</code>解决之外，我也给出了上面的解释，所以我一直强调，不要以为我在教ggtree，我其实是在教ggplot2。</p>
-
-<p>后面就有人问了ggplot2字体溢出的事情，他所遇到的溢出，似乎更不应该发生，因为是坐标轴上的字体溢出，然而产生的原因是一样的，解决方案也是一样的，请用力猛戳《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484089&amp;idx=1&amp;sn=f6e11d54a18e96a94145a2b802c37dc1&amp;chksm=ec43b3fedb343ae89e3630900033f055af4bbe211897076291e351ae18cc89b2ddf7651ee0be#rd">ggplot2字体溢出的那点破事</a>》。</p>
-
-<p></p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/10/invisible-layer/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
             
   <div class="pagination-bar">
     <ul class="pagination">
@@ -698,7 +690,7 @@ grid.text(&quot;biobabble&quot;, x=.9, y=.05,
           </a>
         </li>
       
-      <li class="pagination-number">page 1 of 4</li>
+      <li class="pagination-number">page 1 of 5</li>
     </ul>
   </div>
 
@@ -761,6 +753,24 @@ grid.text(&quot;biobabble&quot;, x=.9, y=.05,
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/using-external-font-for-meme/">
+                <h3 class="media-heading">使用外部字体画meme</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">font support In addition to the fonts installed on your system, there are many amusing fonts that are funny for meme, e.g. fonts on https://fontmeme.com/fonts/.
+ library(meme) library(ggplot2) ## import pokemon fonts ## downloaded from &lt;https://fontmeme.com/fonts/pokmon-font/&gt; font_pokemon() ## font Pokemon_Hollow, Pokemon_Solid loaded... u &lt;- &#39;https://ravishly.com/sites/default/files/landscape-1456483171-pokemon2.jpg&#39; meme(u, &quot;Pokemon&quot;, &quot;pikachu i choose you!&quot;, font=&#39;Pokemon_Hollow&#39;) meme(u, &quot;Pokemon&quot;, &quot;pikachu i choose you!&quot;, font=&#39;Pokemon_Solid&#39;, color=&#39;#FCCF00&#39;) You can download fonts and pass the folder to font_import() to import the fonts so that they can be used to create meme.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -990,48 +1000,6 @@ grid.text(&quot;biobabble&quot;, x=.9, y=.05,
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/kegg-gene-annotation/">
-                <h3 class="media-heading">听说你的KEGG分析有大量的基因没注释</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Nov 11, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><a href="https://github.com/GuangchuangYu/clusterProfiler/issues/115">github上的问题</a>，问了两个问题，这是其中第二个：</p>
-
-<blockquote>
-<p>Meanwhile, when I fed the ENTREZID to enrichKEGG, it show me two unreasonable results:</p>
-
-<pre><code>kegg_enrich = enrichKEGG(
-	gene = new_ids$ENTREZID,
-	organism = 'hsa',
-	keyType = 'ncbi-geneid',
-	pvalueCutoff = 0.05,
-	#pAdjustMethod = 'BH',
-	#qvalueCutoff = 0.2,
-	use_internal_data = FALSE
-)
-</code></pre>
-
-<pre><code>head(kegg_enrich)
-              ID                           Description GeneRatio  BgRatio       pvalue   p.adjust     qvalue
-hsa04380 hsa04380            Osteoclast differentiation    14/281 128/7299 0.0003817040 0.04767338 0.04508266
-hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.0003875885 0.04767338 0.04508266
-</code></pre>
-
-<p>I noted that only 281 genes are remained(there are 700+ genes in my list). In case that there is something wrong wtihin my gene list, I also tried my list with DAVID. It gave me reasonable results. So this is my second question, why enrichKEGG cannot recognize my geneids?</p>
-</blockquote>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1039,7 +1007,7 @@ hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.000
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         172 posts found
+         173 posts found
       </p>
     </div>
   </div>

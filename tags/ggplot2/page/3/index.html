@@ -228,6 +228,74 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/clusterprofiler-dotplot/">
+          听说你也在画dotplot，但是我不服!
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-07-27T07:05:22&#43;08:00">
+      
+  July 27, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <p>陈同的‘生信宝典’公众号出了篇《<a href="https://mp.weixin.qq.com/s?__biz=MzI5MTcwNjA4NQ==&amp;mid=2247483978&amp;idx=1&amp;sn=e0c158c0e92375553036cc37f4987e40&amp;chksm=ec0dc7c0db7a4ed6ac593493b7d8b52f11f2feb92d24fa00d19527fbb6f95b24f7e313ef9440#rd">R语言学习 - 富集分析泡泡图</a>》，搞个shell脚本，一步绘图。讲了这个脚本可以适用于clusterProfiler和其它软件的富集结果。</p>
+
+<p>浑身都是硬伤，我都不想吐槽，但由于作者邀请我提点，那就吐槽模式全开。</p>
+
+<h2 id="一个command出图-小白已经哭晕">一个command出图，小白已经哭晕</h2>
+
+<p>从出的图看，应该是ggplot2画的（就算猜错，要吐槽的依然正确），小白在web-server上做了分析，存结果为xls文件，拿你这脚本，一跑报错。读xls文件（别告诉我你跟用户说读xls但其实是个tsv）和画图的依赖关系没解决！用户友好在那里？不要告诉我你的脚本0依赖，有个shell就能跑，即使我们熟悉的各种命令，很多都是独立程序，不关shell什么事。</p>
+
+<h2 id="所谓的一步出图">所谓的一步出图</h2>
+
+<p>既然讲了clusterProfiler，那么clusterProfiler用户笑而不语了。我们用dotplot不也是一条命令出图，为什么要退出R，去跑你的shell脚本，这过程还得转换数据，存储数据。最后的这一步，是前面+N步为代价的。</p>
+
+<p></p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2017/07/clusterprofiler-dotplot/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+            
+              
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/scale-size/">
           搞大你的点，让我们画真正的气泡图
         </a>
@@ -602,74 +670,6 @@ rasterImage(x, 2, 2, 6, 4)
 </article>
 
             
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/04/ggplot2%E5%AD%97%E4%BD%93%E6%BA%A2%E5%87%BA%E7%9A%84%E9%82%A3%E7%82%B9%E7%A0%B4%E4%BA%8B/">
-          ggplot2字体溢出的那点破事
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-04-03T15:10:00&#43;08:00">
-      
-  April 3, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>比如下面的代码：</p>
-
-<pre><code>require(ggplot2)
-d &lt;- data.frame(x=c(0, 0.002, 0.00575), y = 1:3)
-p &lt;- ggplot(d, aes(x, y)) + geom_point() + xlab(NULL) + ylab(NULL)
-print(p)
-</code></pre>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/geom_text_files/figure-markdown_strict/unnamed-chunk-1-1.png" alt="" /></p>
-
-<p>上面图中x轴的文本<strong>0.006</strong>，这个数字中的<strong>6</strong>几乎看不到，因为一半过界了。</p>
-
-<p></p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/04/ggplot2%E5%AD%97%E4%BD%93%E6%BA%A2%E5%87%BA%E7%9A%84%E9%82%A3%E7%82%B9%E7%A0%B4%E4%BA%8B/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
             
   <div class="pagination-bar">
     <ul class="pagination">
@@ -689,7 +689,7 @@ print(p)
           </a>
         </li>
       
-      <li class="pagination-number">page 3 of 4</li>
+      <li class="pagination-number">page 3 of 5</li>
     </ul>
   </div>
 
@@ -752,6 +752,24 @@ print(p)
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/using-external-font-for-meme/">
+                <h3 class="media-heading">使用外部字体画meme</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">font support In addition to the fonts installed on your system, there are many amusing fonts that are funny for meme, e.g. fonts on https://fontmeme.com/fonts/.
+ library(meme) library(ggplot2) ## import pokemon fonts ## downloaded from &lt;https://fontmeme.com/fonts/pokmon-font/&gt; font_pokemon() ## font Pokemon_Hollow, Pokemon_Solid loaded... u &lt;- &#39;https://ravishly.com/sites/default/files/landscape-1456483171-pokemon2.jpg&#39; meme(u, &quot;Pokemon&quot;, &quot;pikachu i choose you!&quot;, font=&#39;Pokemon_Hollow&#39;) meme(u, &quot;Pokemon&quot;, &quot;pikachu i choose you!&quot;, font=&#39;Pokemon_Solid&#39;, color=&#39;#FCCF00&#39;) You can download fonts and pass the folder to font_import() to import the fonts so that they can be used to create meme.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -981,48 +999,6 @@ grid.text(&quot;biobabble&quot;, x=.9, y=.05,
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/kegg-gene-annotation/">
-                <h3 class="media-heading">听说你的KEGG分析有大量的基因没注释</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Nov 11, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><a href="https://github.com/GuangchuangYu/clusterProfiler/issues/115">github上的问题</a>，问了两个问题，这是其中第二个：</p>
-
-<blockquote>
-<p>Meanwhile, when I fed the ENTREZID to enrichKEGG, it show me two unreasonable results:</p>
-
-<pre><code>kegg_enrich = enrichKEGG(
-	gene = new_ids$ENTREZID,
-	organism = 'hsa',
-	keyType = 'ncbi-geneid',
-	pvalueCutoff = 0.05,
-	#pAdjustMethod = 'BH',
-	#qvalueCutoff = 0.2,
-	use_internal_data = FALSE
-)
-</code></pre>
-
-<pre><code>head(kegg_enrich)
-              ID                           Description GeneRatio  BgRatio       pvalue   p.adjust     qvalue
-hsa04380 hsa04380            Osteoclast differentiation    14/281 128/7299 0.0003817040 0.04767338 0.04508266
-hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.0003875885 0.04767338 0.04508266
-</code></pre>
-
-<p>I noted that only 281 genes are remained(there are 700+ genes in my list). In case that there is something wrong wtihin my gene list, I also tried my list with DAVID. It gave me reasonable results. So this is my second question, why enrichKEGG cannot recognize my geneids?</p>
-</blockquote>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1030,7 +1006,7 @@ hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.000
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         172 posts found
+         173 posts found
       </p>
     </div>
   </div>
