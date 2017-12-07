@@ -17,8 +17,11 @@
       <pubDate>Thu, 07 Dec 2017 06:31:55 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2017/12/using-external-font-for-meme/</guid>
-      <description>font support In addition to the fonts installed on your system, there are many amusing fonts that are funny for meme, e.g. fonts on https://fontmeme.com/fonts/.
- library(meme) library(ggplot2) ## import pokemon fonts ## downloaded from &amp;lt;https://fontmeme.com/fonts/pokmon-font/&amp;gt; font_pokemon() ## font Pokemon_Hollow, Pokemon_Solid loaded... u &amp;lt;- &amp;#39;https://ravishly.com/sites/default/files/landscape-1456483171-pokemon2.jpg&amp;#39; meme(u, &amp;quot;Pokemon&amp;quot;, &amp;quot;pikachu i choose you!&amp;quot;, font=&amp;#39;Pokemon_Hollow&amp;#39;) meme(u, &amp;quot;Pokemon&amp;quot;, &amp;quot;pikachu i choose you!&amp;quot;, font=&amp;#39;Pokemon_Solid&amp;#39;, color=&amp;#39;#FCCF00&amp;#39;) You can download fonts and pass the folder to font_import() to import the fonts so that they can be used to create meme.</description>
+      <description>&lt;p&gt;meme无非是照片上加两行字，&lt;a href=&#34;https://cran.r-project.org/web/packages/meme/&#34;&gt;meme&lt;/a&gt;这个包本来是练手之作，用来&lt;a href=&#34;https://guangchuangyu.github.io/2017/10/create-meme-in-r/&#34;&gt;模拟ggplot2的api&lt;/a&gt;。结果我后面又实现了&lt;a href=&#34;https://guangchuangyu.github.io/2017/11/shadow-text-effect-in-grid-and-ggplot2-graphics/&#34;&gt;字体阴影效果&lt;/a&gt;，这次我又带来了外部字体支持。&lt;/p&gt;
+
+&lt;p&gt;加载外部字体在R上面主要有extrafont和showtext两个实现，特别是showtext用起来还是非常简单的。我在meme包里写了&lt;code&gt;font_import&lt;/code&gt;函数，内部就是用showtext，只是简单的包装了一下，这样小白用户可以直接下个字体就开撸。有阴影效果，有&lt;a href=&#34;https://fontmeme.com/fonts/&#34;&gt;搞笑字体&lt;/a&gt;，就万事具备了，这俨然是个专业的meme工具了。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>

@@ -347,8 +347,11 @@ maybe..，至于Han，我在研一的时候，去北大听过她的讲座，被�
                   Dec 12, 2017
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather">font support In addition to the fonts installed on your system, there are many amusing fonts that are funny for meme, e.g. fonts on https://fontmeme.com/fonts/.
- library(meme) library(ggplot2) ## import pokemon fonts ## downloaded from &lt;https://fontmeme.com/fonts/pokmon-font/&gt; font_pokemon() ## font Pokemon_Hollow, Pokemon_Solid loaded... u &lt;- &#39;https://ravishly.com/sites/default/files/landscape-1456483171-pokemon2.jpg&#39; meme(u, &quot;Pokemon&quot;, &quot;pikachu i choose you!&quot;, font=&#39;Pokemon_Hollow&#39;) meme(u, &quot;Pokemon&quot;, &quot;pikachu i choose you!&quot;, font=&#39;Pokemon_Solid&#39;, color=&#39;#FCCF00&#39;) You can download fonts and pass the folder to font_import() to import the fonts so that they can be used to create meme.</div>
+              <div class="media-content hide-xs font-merryweather"><p>meme无非是照片上加两行字，<a href="https://cran.r-project.org/web/packages/meme/">meme</a>这个包本来是练手之作，用来<a href="https://guangchuangyu.github.io/2017/10/create-meme-in-r/">模拟ggplot2的api</a>。结果我后面又实现了<a href="https://guangchuangyu.github.io/2017/11/shadow-text-effect-in-grid-and-ggplot2-graphics/">字体阴影效果</a>，这次我又带来了外部字体支持。</p>
+
+<p>加载外部字体在R上面主要有extrafont和showtext两个实现，特别是showtext用起来还是非常简单的。我在meme包里写了<code>font_import</code>函数，内部就是用showtext，只是简单的包装了一下，这样小白用户可以直接下个字体就开撸。有阴影效果，有<a href="https://fontmeme.com/fonts/">搞笑字体</a>，就万事具备了，这俨然是个专业的meme工具了。</p>
+
+<p></p></div>
             </div>
             <div style="clear:both;"></div>
             <hr>
