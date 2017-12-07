@@ -282,7 +282,7 @@ meme(u, &quot;Pokemon&quot;, &quot;pikachu i choose you!&quot;, font='Pokemon_Ho
 
 <p>上面我们先看了搞笑字体的神奇效果，当然正如我前面说的，要让用户可以在网上下载字体，然后开撸，这才是通用的大路。下面的代码给<code>font_import</code>传入<code>dir</code>，它可以是你自己下载字体的目录，这个函数就会干所有事情，然后你直接就可以用了。</p>
 
-<pre><code class="language-r fig.width=7, fig.height=3.5, fig.showtext=TRUE, message=TRUE">## folder that contains bubble1 font
+<pre><code class="language-r">## folder that contains bubble1 font
 ## downloaded from https://fontmeme.com/fonts/bubble-1-font/
 dir &lt;- system.file('fonts/bubble', package='meme')
 font_import(dir)
@@ -292,7 +292,7 @@ meme(u, &quot;the meme package&quot;, &quot;is awesome!&quot;, font=&quot;bubble
 
 <p><img src="https://guangchuangyu.github.io/blog_images/R/meme/2017-meme-font_files/figure-html/unnamed-chunk-2-1.png" alt="" /></p>
 
-<p>当然这个函数虽然在<code>meme</code>包里，为了大家创作meme更尽性，但它不限于做meme，加载了字体之后，你可以用了R的其它画图系统中，比如base, grid等等。</p>
+<p>当然这个函数虽然在<code>meme</code>包里，为了大家创作meme更尽性，但它不限于做meme，加载了字体之后，它可以用于R的其它画图系统中，比如base, grid等等。</p>
 
 <pre><code class="language-r">library(ggplot2)
 qplot(1:10, 1:10) + labs(title=&quot;meme is awesome&quot;) +
