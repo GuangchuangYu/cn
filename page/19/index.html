@@ -225,6 +225,74 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2012/04/support-vector-machine/">
+          Support Vector Machine
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2012-04-12T05:37:55&#43;08:00">
+      
+  April 12, 2012
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/statistics">statistics</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <p>支持向量机(Support Vector Machines, SVM)最初由Vladimir
+Vapnik于1997年提出，SVM最简单的形式就是找出一下区分界限（descision
+boundary），也称之为超平面(hyperplane)，使得离它最近的点（称之为support
+vectors）与之间隔最大。
+<img src="http://guangchuangyu.github.io/blog_images/2012/04/linearSVM.png" alt="" /></p>
+
+<p>这和logistic regression有些相似，区别在于logistic
+regression要求所有的点尽可能地远离中间那条线，而SVM是要求最接近中间线的点尽可能地远离中间线。也就是说SVM的主要目标是区分那些最难区分的点。</p>
+
+<p>SVM对于hyperplane的定义，在形式上和logistic regression一样,logistic
+regression的decision boundary由$\theta^TX=0$确定,SVM则用$w^TX+b=0$表示,其中b相当于logistic regression中的$\theta_0$，从形式上看，两者并无区别，当然如前面所说，两者的目标不一样，logistic regression着眼于全局，SVM着眼于support
+vectors。有监督算法都有label变量y，logistic
+regression取值是<code>{0,1}</code>，而SVM为了计算距离方便，取值为<code>{-1,1}</code>。</p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2012/04/support-vector-machine/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2012/03/installing-hackintosh/">
           Installing Hackintosh
         </a>
@@ -578,104 +646,6 @@ contour_plot(17*x^2-16*abs(x)*y+17*y^2-225, [x,-sqrt(17),sqrt(17)],[y,-15*sqrt(1
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/07/a-simple-gene-finder/">
-          a simple gene finder
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2011-07-10T09:04:46&#43;08:00">
-      
-  July 10, 2011
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/conference">conference</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>上了几天的课，<a href="http://ibw2011.fmmu.edu.cn/schedule.htm">http://ibw2011.fmmu.edu.cn/schedule.htm</a>
-今天就上完了，只完成了project 1，想写gibbs sampling，但是没搞明白，汗。</p>
-
-<p>这个纯属练习用，没啥实用价值。</p>
-
-<blockquote>
-<p>Course Projects:</p>
-
-<p>Project 1: Implementation of a simple gene finder</p>
-
-<p>GOAL</p>
-
-<p>Build a simple codon-usage based gene finder for finding genes in
-E.coli.</p>
-
-<p>Procedure</p>
-
-<p>Collect 100 gene sequences from the bacterium E. coli in the genbank
-(<a href="http://www.ncbi.nlm.nihh.gov">http://www.ncbi.nlm.nihh.gov</a>). Compute the codon usage table based on
-these genes (and the translated protein sequences from them); Build a
-probabilistic model based on the codon usages; Implement a random
-sequence model in which the nucleotide frequency is computed from the
-100 E. coli genes. For a given DNA sequence (and one selected reading
-frame), compare your model with a random sequence model; Results that
-you should submit:</p>
-
-<p>Two FASTA files for the collected 100 genes and 100 translated protein
-sequences; The printed codon usage table; A program named ECgnfinder,
-running with the syntax as ECgnfinder –i inputfile</p>
-
-<p>Inputfile stands for the name of input file, which should contain one
-DNA sequence in FASTA file format; the program should be able to
-report an error message if the input file is in the wrong format.</p>
-
-<p>The output should be printed to the standard output as (xxx stands for
-the likelihood)</p>
-
-<p>ORF1: xxx ORF2: xxx</p>
-</blockquote>
-
-<p></p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2011/07/a-simple-gene-finder/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -757,6 +727,35 @@ the likelihood)</p>
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/geo-data-mining-for-chipseq/">
+                <h3 class="media-heading">ChIPseq-GEO数据挖掘</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>ChIPseeker系列文章已经介绍了很多内容，包括注释的方方面面，也包括强大的可视化功能（《<a href="http://mp.weixin.qq.com/s/MqpfgkMJSFj0pYwcEjV9kQ">CS6: ChIPseeker的可视化方法（中秋节的视觉饕餮）</a>》）。</p>
+
+<p>今天要介绍一下数据挖掘，从大量已有的数据来产生新的hypothesis。正如我在ChIPseeker的文章里写的：</p>
+
+<blockquote>
+<p>There are increasing evidences shown that combinations of TFs are important for regulating gene expression (Perez-Pinera et al., 2013; Zhu et al., 2008). However, systematically identification of TF interactions by ChIP-seq is still not available. Even if a specific TF binding is essential for a particular regulation was known, we do not have prior knowledge of all its co-factors. There are no systematic strategies available to identified un-known co-factors by ChIP- seq.</p>
+</blockquote>
+
+<p>并没有方法可以大规模地预测未知的共同调控因子，而数据挖掘就是要给我们这种预测的能力。</p>
+
+<p>我当年在写ChIPseeker的时候，我有纠结是写篇Bioinformatics的application note呢，还是写篇长文灌水NAR，毕竟NAR影响因子高一点，最后还是发了Bioinformatics，因为我没钱，囧，Bioinformatics不要版面费啊。然后限于篇幅，ChIPseeker有大量可视化的函数，我在文章中一张图都没放！！！如果当时决定发NAR的话，这个数据挖掘这一块我就会写多点。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -986,27 +985,6 @@ grid.text(&quot;biobabble&quot;, x=.9, y=.05,
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/scholar/">
-                <h3 class="media-heading">一个用不了的R包和一个404的网站</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Nov 11, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><img src="https://guangchuangyu.github.io/blog_images/R/scholar/WechatIMG166.png" alt="" /></p>
-
-<p>正如我在「知识星球」里说的，scholar这个包现在已经死了，因为作者不维护了，除非出现接盘侠。我自己fork了一个，打了补丁，现在是可用的。这个包应该说我用得蛮多的，你看我简历里的引用数柱状图，我不会无聊到过一段时间就去查，然后重新画图的，太low。都是自动化的，我到简历目录下打make指令，就会自动去爬数据、重新画图并生成简历，而我啥都不用干。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1014,7 +992,7 @@ grid.text(&quot;biobabble&quot;, x=.9, y=.05,
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         173 posts found
+         174 posts found
       </p>
     </div>
   </div>

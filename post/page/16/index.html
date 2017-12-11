@@ -225,6 +225,68 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2016/03/google-drive--hku/">
+          Google Drive @ HKU
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2016-03-24T15:40:22&#43;08:00">
+      
+  March 24, 2016
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/software">Software</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <p>寻找一个好的网盘一直是个困扰我的问题，Dropbox非常好，但空间有限，大陆的各种网盘都是渣渣，本来试用了一下<a href="http://guangchuangyu.github.io/2014/05/%E6%9B%B4%E6%94%B9%E7%99%BE%E5%BA%A6%E4%BA%91%E5%90%8C%E6%AD%A5%E7%9B%98%E8%B7%AF%E5%BE%84/">百度云</a>，但度娘实在不争气，体验非常差。我后来找到了个比较好的方案，那就是<a href="https://gitlab.com/">gitlab</a>，可以创建无限量的project，每个project有10G的空间，这比<a href="https://github.com/">github</a>出手大方多了。唯一不足是<code>.git</code>文件夹也是非常占空间的。</p>
+
+<p>到HKU两年多，才发现HKU的邮箱自带无限量的google drive网盘。</p>
+
+<p><img src="http://guangchuangyu.github.io/blog_images/2016/google_drive.jpg" alt="" /></p>
+
+<p></p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2016/03/google-drive--hku/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2016/03/%E4%BD%BF%E7%94%A8ggtree%E5%AE%9E%E7%8E%B0%E8%BF%9B%E5%8C%96%E6%A0%91%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E5%92%8C%E6%B3%A8%E9%87%8A/">
           使用ggtree实现进化树的可视化和注释
         </a>
@@ -639,63 +701,6 @@ unknown gap                         ....................
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustworthy/">
-          R binary is untrustworthy
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2014-07-24T04:22:35&#43;08:00">
-      
-  July 24, 2014
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/software">Software</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        去年ubuntu下apt-get了R-3.0.2, 用了没多久就发现了system命令有问题，通常情况下调用系统命令是正常的，但是我调用bowtie的时候，就会报错：
-Warning: Could not open read file &quot;/tmp/8156.inpipe1&quot; for reading; skipping&hellip; Error: Encountered internal Bowtie 2 exception (#1) Command: /usr/bin/bowtie2-align &ndash;wrapper basic-0 -p 12 -x /ssd/genomes/hg19 -S tmp.sam -1 /tmp/8156.inpipe1 -2 /tmp/8156.inpipe2  这很明显是因为fasta.gz文件，bowtie需要调用zcat来读的，在R里调用bowtie就找不到好基友zcat的输出管道。当时没在意，R不干，那就找shell。 去年用NMF包的时候，报出了人类不友好的错误，联系了包作者Gaujoux，在作者的帮助下，找到了是doParallel包的问题：
-&gt; library(doParallel) &gt; Loading required package: foreach foreach: simple, scalable parallel programming from Revolution Analytics Use Revolution R for scalability, fault tolerance and more. <a href="http://www.revolutionanalytics.com">http://www.revolutionanalytics.com</a> Loading required package: iterators Loading required package: parallel &gt; registerDoParallel(11) &gt; &gt; foreach(i = 1:10) %dopar% { getwd() } &gt; *** caught segfault *** address 0x7fbeb6d399d0, cause &lsquo;memory not mapped&rsquo;  其实parallel包中用mclapply也是同样报错。于是又把维护deb包的Dirk拉进来，Dirk是Rcpp的作者，高人就是不一样，看了错误，立刻就指出是BLAS库的问题。
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustworthy/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -777,6 +782,35 @@ Warning: Could not open read file &quot;/tmp/8156.inpipe1&quot; for reading; ski
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/geo-data-mining-for-chipseq/">
+                <h3 class="media-heading">ChIPseq-GEO数据挖掘</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>ChIPseeker系列文章已经介绍了很多内容，包括注释的方方面面，也包括强大的可视化功能（《<a href="http://mp.weixin.qq.com/s/MqpfgkMJSFj0pYwcEjV9kQ">CS6: ChIPseeker的可视化方法（中秋节的视觉饕餮）</a>》）。</p>
+
+<p>今天要介绍一下数据挖掘，从大量已有的数据来产生新的hypothesis。正如我在ChIPseeker的文章里写的：</p>
+
+<blockquote>
+<p>There are increasing evidences shown that combinations of TFs are important for regulating gene expression (Perez-Pinera et al., 2013; Zhu et al., 2008). However, systematically identification of TF interactions by ChIP-seq is still not available. Even if a specific TF binding is essential for a particular regulation was known, we do not have prior knowledge of all its co-factors. There are no systematic strategies available to identified un-known co-factors by ChIP- seq.</p>
+</blockquote>
+
+<p>并没有方法可以大规模地预测未知的共同调控因子，而数据挖掘就是要给我们这种预测的能力。</p>
+
+<p>我当年在写ChIPseeker的时候，我有纠结是写篇Bioinformatics的application note呢，还是写篇长文灌水NAR，毕竟NAR影响因子高一点，最后还是发了Bioinformatics，因为我没钱，囧，Bioinformatics不要版面费啊。然后限于篇幅，ChIPseeker有大量可视化的函数，我在文章中一张图都没放！！！如果当时决定发NAR的话，这个数据挖掘这一块我就会写多点。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1006,27 +1040,6 @@ grid.text(&quot;biobabble&quot;, x=.9, y=.05,
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/scholar/">
-                <h3 class="media-heading">一个用不了的R包和一个404的网站</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Nov 11, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><img src="https://guangchuangyu.github.io/blog_images/R/scholar/WechatIMG166.png" alt="" /></p>
-
-<p>正如我在「知识星球」里说的，scholar这个包现在已经死了，因为作者不维护了，除非出现接盘侠。我自己fork了一个，打了补丁，现在是可用的。这个包应该说我用得蛮多的，你看我简历里的引用数柱状图，我不会无聊到过一段时间就去查，然后重新画图的，太low。都是自动化的，我到简历目录下打make指令，就会自动去爬数据、重新画图并生成简历，而我啥都不用干。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1034,7 +1047,7 @@ grid.text(&quot;biobabble&quot;, x=.9, y=.05,
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         173 posts found
+         174 posts found
       </p>
     </div>
   </div>

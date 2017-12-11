@@ -6,10 +6,31 @@
     <description>Recent content in Posts on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 07 Dec 2017 06:31:55 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 11 Dec 2017 12:53:16 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ChIPseq-GEO数据挖掘</title>
+      <link>https://guangchuangyu.github.io/cn/2017/12/geo-data-mining-for-chipseq/</link>
+      <pubDate>Mon, 11 Dec 2017 12:53:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/12/geo-data-mining-for-chipseq/</guid>
+      <description>&lt;p&gt;ChIPseeker系列文章已经介绍了很多内容，包括注释的方方面面，也包括强大的可视化功能（《&lt;a href=&#34;http://mp.weixin.qq.com/s/MqpfgkMJSFj0pYwcEjV9kQ&#34;&gt;CS6: ChIPseeker的可视化方法（中秋节的视觉饕餮）&lt;/a&gt;》）。&lt;/p&gt;
+
+&lt;p&gt;今天要介绍一下数据挖掘，从大量已有的数据来产生新的hypothesis。正如我在ChIPseeker的文章里写的：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;There are increasing evidences shown that combinations of TFs are important for regulating gene expression (Perez-Pinera et al., 2013; Zhu et al., 2008). However, systematically identification of TF interactions by ChIP-seq is still not available. Even if a specific TF binding is essential for a particular regulation was known, we do not have prior knowledge of all its co-factors. There are no systematic strategies available to identified un-known co-factors by ChIP- seq.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;并没有方法可以大规模地预测未知的共同调控因子，而数据挖掘就是要给我们这种预测的能力。&lt;/p&gt;
+
+&lt;p&gt;我当年在写ChIPseeker的时候，我有纠结是写篇Bioinformatics的application note呢，还是写篇长文灌水NAR，毕竟NAR影响因子高一点，最后还是发了Bioinformatics，因为我没钱，囧，Bioinformatics不要版面费啊。然后限于篇幅，ChIPseeker有大量可视化的函数，我在文章中一张图都没放！！！如果当时决定发NAR的话，这个数据挖掘这一块我就会写多点。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>使用外部字体画meme</title>

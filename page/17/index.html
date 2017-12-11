@@ -225,6 +225,63 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustworthy/">
+          R binary is untrustworthy
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2014-07-24T04:22:35&#43;08:00">
+      
+  July 24, 2014
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/software">Software</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        去年ubuntu下apt-get了R-3.0.2, 用了没多久就发现了system命令有问题，通常情况下调用系统命令是正常的，但是我调用bowtie的时候，就会报错：
+Warning: Could not open read file &quot;/tmp/8156.inpipe1&quot; for reading; skipping&hellip; Error: Encountered internal Bowtie 2 exception (#1) Command: /usr/bin/bowtie2-align &ndash;wrapper basic-0 -p 12 -x /ssd/genomes/hg19 -S tmp.sam -1 /tmp/8156.inpipe1 -2 /tmp/8156.inpipe2  这很明显是因为fasta.gz文件，bowtie需要调用zcat来读的，在R里调用bowtie就找不到好基友zcat的输出管道。当时没在意，R不干，那就找shell。 去年用NMF包的时候，报出了人类不友好的错误，联系了包作者Gaujoux，在作者的帮助下，找到了是doParallel包的问题：
+&gt; library(doParallel) &gt; Loading required package: foreach foreach: simple, scalable parallel programming from Revolution Analytics Use Revolution R for scalability, fault tolerance and more. <a href="http://www.revolutionanalytics.com">http://www.revolutionanalytics.com</a> Loading required package: iterators Loading required package: parallel &gt; registerDoParallel(11) &gt; &gt; foreach(i = 1:10) %dopar% { getwd() } &gt; *** caught segfault *** address 0x7fbeb6d399d0, cause &lsquo;memory not mapped&rsquo;  其实parallel包中用mclapply也是同样报错。于是又把维护deb包的Dirk拉进来，Dirk是Rcpp的作者，高人就是不一样，看了错误，立刻就指出是BLAS库的问题。
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustworthy/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2014/07/principle_component_analysis/">
           主成分分析
         </a>
@@ -644,70 +701,6 @@ Methods 2013年的文章中有100个barplot图，而只有20个boxplot图，从�
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2013/09/install-emacs-on-mac/">
-          Install Emacs on Mac
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2013-09-10T18:04:22&#43;08:00">
-      
-  September 10, 2013
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/mac-os">Mac OS</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <h2 id="package-manager">package manager</h2>
-
-<p>之前一直用<a href="http://guangchuangyu.github.io/categories/bsd/">NetBSD</a>的<a href="http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/">pkgsrc</a>做为各种Unix-like系统的包管理系统，pkgsrc在自己内部解决依赖关系，这点对于生产环境来说，是很好的一个优点，我通常会在服务器里装一个pkgsrc，在用户目录下，维护一套UNIX软件。但是用在自己的机器上，内部解决软件依赖，就是个缺点，浪费编译时间和硬盘空间。</p>
-
-<p>Mac上可用的包管理系统很多，Fink移植于<a href="http://guangchuangyu.github.io/categories/linux/">Debian</a>的apt，<a href="http://guangchuangyu.github.io/categories/linux/">Gentoo</a>的portage也支持OS X。OS X是基于BSD的系统，BSD有自己的一套包管理系统，如FreeBSD的ports和<a href="http://guangchuangyu.github.io/categories/bsd/">NetBSD</a>的<a href="http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/">pkgsrc</a>，MacPorts可以看作是这一系列中的一个，不过它并不是OS X原生的，它只是OpenDarwin的子项目，所以和pkgsrc一个样，也是内部解决依赖，真正为OS
-X设计的原生包管理系统非Homebrew莫属，它会尽量依赖系统里已有的软件。
-
-自从用了Homebrew之后，再也不用为系统里有两套perl和python而crazy了，之前通过<a href="http://guangchuangyu.github.io/2011/06/screen-shot/">pkgsrc装的软件</a>全删掉，改Homebrew来安装和管理。
-如果软件没有被pkgsrc收录，而想通过pkgsrc来管理的话，那就得自己<a href="http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/">写makefile</a>，而homebrew，则可以自动帮你生成Formula，比如我要安装<a href="http://users.soe.ucsc.edu/~kent/src/">blat</a>：</p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2013/09/install-emacs-on-mac/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -789,6 +782,35 @@ X设计的原生包管理系统非Homebrew莫属，它会尽量依赖系统里�
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/geo-data-mining-for-chipseq/">
+                <h3 class="media-heading">ChIPseq-GEO数据挖掘</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>ChIPseeker系列文章已经介绍了很多内容，包括注释的方方面面，也包括强大的可视化功能（《<a href="http://mp.weixin.qq.com/s/MqpfgkMJSFj0pYwcEjV9kQ">CS6: ChIPseeker的可视化方法（中秋节的视觉饕餮）</a>》）。</p>
+
+<p>今天要介绍一下数据挖掘，从大量已有的数据来产生新的hypothesis。正如我在ChIPseeker的文章里写的：</p>
+
+<blockquote>
+<p>There are increasing evidences shown that combinations of TFs are important for regulating gene expression (Perez-Pinera et al., 2013; Zhu et al., 2008). However, systematically identification of TF interactions by ChIP-seq is still not available. Even if a specific TF binding is essential for a particular regulation was known, we do not have prior knowledge of all its co-factors. There are no systematic strategies available to identified un-known co-factors by ChIP- seq.</p>
+</blockquote>
+
+<p>并没有方法可以大规模地预测未知的共同调控因子，而数据挖掘就是要给我们这种预测的能力。</p>
+
+<p>我当年在写ChIPseeker的时候，我有纠结是写篇Bioinformatics的application note呢，还是写篇长文灌水NAR，毕竟NAR影响因子高一点，最后还是发了Bioinformatics，因为我没钱，囧，Bioinformatics不要版面费啊。然后限于篇幅，ChIPseeker有大量可视化的函数，我在文章中一张图都没放！！！如果当时决定发NAR的话，这个数据挖掘这一块我就会写多点。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1018,27 +1040,6 @@ grid.text(&quot;biobabble&quot;, x=.9, y=.05,
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/scholar/">
-                <h3 class="media-heading">一个用不了的R包和一个404的网站</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Nov 11, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><img src="https://guangchuangyu.github.io/blog_images/R/scholar/WechatIMG166.png" alt="" /></p>
-
-<p>正如我在「知识星球」里说的，scholar这个包现在已经死了，因为作者不维护了，除非出现接盘侠。我自己fork了一个，打了补丁，现在是可用的。这个包应该说我用得蛮多的，你看我简历里的引用数柱状图，我不会无聊到过一段时间就去查，然后重新画图的，太low。都是自动化的，我到简历目录下打make指令，就会自动去爬数据、重新画图并生成简历，而我啥都不用干。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1046,7 +1047,7 @@ grid.text(&quot;biobabble&quot;, x=.9, y=.05,
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         173 posts found
+         174 posts found
       </p>
     </div>
   </div>
