@@ -225,6 +225,85 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/enrichgo-more-conserve/">
+          enrichGO出不来结果？没结果也是正确的结果
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-10-09T13:31:00&#43;08:00">
+      
+  October 9, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <blockquote>
+<p>Dear Dr. Guangchuang Yu, I write to you regarding a doubt concerning the enrichGO function from Clustalprofiler package. I have been used this package before, but now I&rsquo;m using the same R script and I have an error message.</p>
+
+<p>This is the command I use:</p>
+
+<blockquote>
+<p>go.bp &lt;- enrichGO(gene = gene.df$ENSEMBL, universe = universe.ENSEMBLID, keytype = &lsquo;ENSEMBL&rsquo;, OrgDb = org.Ce.eg.db, ont = &lsquo;BP&rsquo;, pAdjustMethod = &lsquo;BH&rsquo;, pvalueCutoff = 0.01, qvalueCutoff = 0.05, readable=T)</p>
+</blockquote>
+
+<p>and the error is the following one:</p>
+
+<p>No gene set have size &gt; 10 &hellip;
+&ndash;&gt; return NULL&hellip;</p>
+
+<p>My input list is attached to this email (101 genes in total). When I use this list in a web resource such as GOrilla it gives to me the proper GO terms.</p>
+
+<p>Thank you very much in advance. Best regards,</p>
+
+<p>María</p>
+</blockquote>
+
+<p>最近clusterProfiler用户的问题，这个问题还蛮普遍。这个我在《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484414&amp;idx=1&amp;sn=096f758f04f875e25c333c345f530742&amp;chksm=ec43b2b9db343baf4e2a8640f48e7e72b3ef1b057c91c68905debb2bb54e5d2fdda62438628a#rd">why clusterProfiler fails</a>》中也有谈到，并不是能出结果就是好的。没有结果也是一种结果。</p>
+
+<p></p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2017/10/enrichgo-more-conserve/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/ssh-on-android/">
           如何假装假期还在工作
         </a>
@@ -611,81 +690,6 @@ ga('send', 'pageview');
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/rice/">
-          R, python喊你回家吃饭啦🍚
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-09-13T13:37:55&#43;08:00">
-      
-  September 13, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/python">python</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>在《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484507&amp;amp;idx=1&amp;amp;sn=295454a59613bfd977f407958bec787e&amp;amp;chksm=ec43b51cdb343c0acea87661fe5144a5817503a2fdc8f316d56fd28d33291084bc718330c428#rd">你所不知道的，R的N种打开方式</a>》一文中，我介绍了R的N种界面，这里将介绍一个用python写的极其现代化的R命令行界面，rice之于R，就像ipython之于python一样。</p>
-
-<h2 id="特性">特性</h2>
-
-<ul>
-<li>轻量，不需要编译</li>
-<li>多行编辑，这点很重要啊，长长的命令可以换行后，随便回去编辑前面的指令</li>
-<li>语法高亮，这可是R命令行所没有的，看起来舒服多了</li>
-<li>自动补齐，减少输入</li>
-<li>支持bracketed paste mode，也就是说你copy-paste了有换行符的字符串，不会拷进去就自动执行了</li>
-<li>支持Windows, macOS 和 Linux</li>
-<li>支持vi, emacs等编辑模式</li>
-<li>可以多种高亮模式</li>
-</ul>
-
-<p></p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/09/rice/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -767,6 +771,40 @@ ga('send', 'pageview');
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/chipseeker-8g/">
+                <h3 class="media-heading">最后的八卦</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><h2 id="chipseeker系列传送门">ChIPseeker系列传送门</h2>
+
+<ul>
+<li><a href="https://mp.weixin.qq.com/s/lFi1m7k-9t6nD0SER1r1hw">CS0: ChIPseq从入门到放弃</a></li>
+<li><a href="http://mp.weixin.qq.com/s/vgXrscsUkfYdC5qt_PUNlw">CS1: ChIPseq简介</a></li>
+<li><a href="https://mp.weixin.qq.com/s/D06NEG7blksGugb0srL7KQ">CS2: BED文件</a></li>
+<li><a href="http://mp.weixin.qq.com/s/vWTf59KDs1lp_sQXjEhI_g">CS3: peak注释</a></li>
+<li><a href="http://mp.weixin.qq.com/s/_OPzvaEAbiMolCA2mqJXLw">CS4：关于ChIPseq注释的几个问题</a></li>
+<li><a href="http://mp.weixin.qq.com/s/gDpsdj6cLDtnG1Kla79wLA">CS5: 吃着火锅，唱着歌，还把分析给做了</a></li>
+<li><a href="http://mp.weixin.qq.com/s/MqpfgkMJSFj0pYwcEjV9kQ">CS6: ChIPseeker的可视化方法（中秋节的视觉饕餮）</a></li>
+<li><a href="http://mp.weixin.qq.com/s/v61LjQEfyi_CZucHW53ETw">CS7：Genomic coordination的富集性分析（1）</a></li>
+<li><a href="https://mp.weixin.qq.com/s/vbkZrGwD7dZ-OPOiqkyTnA">CS8：Genomic coordination的富集性分析（2）</a></li>
+<li><a href="https://mp.weixin.qq.com/s/98k_L3CmjH817xMF2VfYtA">CS9: GEO数据挖掘</a></li>
+</ul>
+
+<p>ChIPseeker这个系列，从《<a href="https://mp.weixin.qq.com/s/lFi1m7k-9t6nD0SER1r1hw">CS0: ChIPseq从入门到放弃</a>》到现在CS10，总共11篇，第一篇以八卦开始，我想很有必要以八卦来结束。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -994,37 +1032,6 @@ rownames(d) = paste0('g', 1:10)
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/watermark/">
-                <h3 class="media-heading">听说你想打水印？</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Nov 11, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><img src="http://guangchuangyu.github.io/blog_images/R/meme/WechatIMG165.png" alt="" /></p>
-
-<p>正如我在《<a href="http://mp.weixin.qq.com/s/jDXjkrkq_YVhW-Z5Vx2-Fg">用R画meme ;)</a>》里说的，meme包就可以拿来画，当然这个包是设计来画meme的，所以文本只会打在中间，如果你想在右下角之类的，不好意思，我没提供选项让你调文本位置，氮素，meme依然是你的好帮手，怎么说呢，meme不单能帮你读图片，还能用grid画出来，这意味着你可以用<code>grid.text</code>随便加个文本就OK了。</p>
-
-<p>实例演示一发：</p>
-
-<pre><code>library(meme)
-u &lt;- system.file(&quot;angry8.jpg&quot;, package=&quot;meme&quot;)
-x &lt;- meme(u)
-print(x)
-grid.text(&quot;biobabble&quot;, x=.9, y=.05, 
-	gp=gpar(col='white', cex=1.2))
-</code></pre>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1032,7 +1039,7 @@ grid.text(&quot;biobabble&quot;, x=.9, y=.05,
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         174 posts found
+         175 posts found
       </p>
     </div>
   </div>

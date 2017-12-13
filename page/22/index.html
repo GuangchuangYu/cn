@@ -225,6 +225,70 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/10/educational-games/">
+          Educational Games
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2008-10-06T15:10:00&#43;08:00">
+      
+  October 6, 2008
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/game">game</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <p>You don&rsquo;t have to be a genius to understand the work of the Nobel
+Laureates. These games and simulations, based on Nobel Prize-awarded
+achievements, will teach and inspire you while you&rsquo;re having FUN!
+Students, teachers and non-professionals of all ages will enjoy testing
+and building their knowledge in physics, chemistry, physiology or
+medicine, literature, peace and economics. So, go ahead, Explore and
+Learn!</p>
+
+<p></p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2008/10/educational-games/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/10/restore-thunder-url/">
           还原迅雷的url
         </a>
@@ -591,92 +655,6 @@ ga('send', 'pageview');
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/09/mapping-codelink-id/">
-          映射codelink芯片ID
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2008-09-23T01:18:00&#43;08:00">
-      
-  September 23, 2008
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/bioinformatics">Bioinformatics</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>GE公司codelink芯片(这个破产品已经停产了)上的探针ID，需要转成别的ID，看了一些在线的转换ID工具，都不支持，探针ID基本上都只支持affy的。</p>
-
-<p>想起了bioconductor里的biomaRt，这个包可以检索BioMart数据库，这个数据库里有N多种ID。试了一下，果然没问题。</p>
-
-<pre><code class="language-r">#加载biomaRt包
-library(biomaRt)
-
-#选取数据库
-ensembl = useMart(&quot;ensembl&quot;, dataset = &quot;hsapiens_gene_ensembl&quot;)
-
-#获取可供检索的attribute
-attributes=listAttributes(mart=ensembl)
-
-#看一下attributes里是否有codelink，得到以下的结果。
-attributes[grep(&quot;codelink&quot;,attributes[,1]), ]
-
-name description
-21 codelink Codelink ID
-#再搜一下其它我想要的ID
-
-#读进含有codelink ID的文件。
-mrna_id &lt;- read.table(&quot;mrna_id.txt&quot;)
-
-#进行ID映射。
-idmap &lt;- getBM(attributes=c(&quot;codelink&quot;,&quot;refseq_dna&quot;,&quot;external_gene_id&quot;,
-                            &quot;embl&quot;,&quot;hgnc_id&quot;,&quot;hgnc_symbol&quot;), 
-               filters =&quot;codelink&quot;, values=mrna_id[,1],
-               mart=ensembl,output=&quot;list&quot;)
-</code></pre>
-
-<p></p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2008/09/mapping-codelink-id/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -758,6 +736,40 @@ idmap &lt;- getBM(attributes=c(&quot;codelink&quot;,&quot;refseq_dna&quot;,&quot
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/chipseeker-8g/">
+                <h3 class="media-heading">最后的八卦</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><h2 id="chipseeker系列传送门">ChIPseeker系列传送门</h2>
+
+<ul>
+<li><a href="https://mp.weixin.qq.com/s/lFi1m7k-9t6nD0SER1r1hw">CS0: ChIPseq从入门到放弃</a></li>
+<li><a href="http://mp.weixin.qq.com/s/vgXrscsUkfYdC5qt_PUNlw">CS1: ChIPseq简介</a></li>
+<li><a href="https://mp.weixin.qq.com/s/D06NEG7blksGugb0srL7KQ">CS2: BED文件</a></li>
+<li><a href="http://mp.weixin.qq.com/s/vWTf59KDs1lp_sQXjEhI_g">CS3: peak注释</a></li>
+<li><a href="http://mp.weixin.qq.com/s/_OPzvaEAbiMolCA2mqJXLw">CS4：关于ChIPseq注释的几个问题</a></li>
+<li><a href="http://mp.weixin.qq.com/s/gDpsdj6cLDtnG1Kla79wLA">CS5: 吃着火锅，唱着歌，还把分析给做了</a></li>
+<li><a href="http://mp.weixin.qq.com/s/MqpfgkMJSFj0pYwcEjV9kQ">CS6: ChIPseeker的可视化方法（中秋节的视觉饕餮）</a></li>
+<li><a href="http://mp.weixin.qq.com/s/v61LjQEfyi_CZucHW53ETw">CS7：Genomic coordination的富集性分析（1）</a></li>
+<li><a href="https://mp.weixin.qq.com/s/vbkZrGwD7dZ-OPOiqkyTnA">CS8：Genomic coordination的富集性分析（2）</a></li>
+<li><a href="https://mp.weixin.qq.com/s/98k_L3CmjH817xMF2VfYtA">CS9: GEO数据挖掘</a></li>
+</ul>
+
+<p>ChIPseeker这个系列，从《<a href="https://mp.weixin.qq.com/s/lFi1m7k-9t6nD0SER1r1hw">CS0: ChIPseq从入门到放弃</a>》到现在CS10，总共11篇，第一篇以八卦开始，我想很有必要以八卦来结束。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -985,37 +997,6 @@ rownames(d) = paste0('g', 1:10)
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/watermark/">
-                <h3 class="media-heading">听说你想打水印？</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Nov 11, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><img src="http://guangchuangyu.github.io/blog_images/R/meme/WechatIMG165.png" alt="" /></p>
-
-<p>正如我在《<a href="http://mp.weixin.qq.com/s/jDXjkrkq_YVhW-Z5Vx2-Fg">用R画meme ;)</a>》里说的，meme包就可以拿来画，当然这个包是设计来画meme的，所以文本只会打在中间，如果你想在右下角之类的，不好意思，我没提供选项让你调文本位置，氮素，meme依然是你的好帮手，怎么说呢，meme不单能帮你读图片，还能用grid画出来，这意味着你可以用<code>grid.text</code>随便加个文本就OK了。</p>
-
-<p>实例演示一发：</p>
-
-<pre><code>library(meme)
-u &lt;- system.file(&quot;angry8.jpg&quot;, package=&quot;meme&quot;)
-x &lt;- meme(u)
-print(x)
-grid.text(&quot;biobabble&quot;, x=.9, y=.05, 
-	gp=gpar(col='white', cex=1.2))
-</code></pre>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1023,7 +1004,7 @@ grid.text(&quot;biobabble&quot;, x=.9, y=.05,
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         174 posts found
+         175 posts found
       </p>
     </div>
   </div>

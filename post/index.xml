@@ -6,10 +6,36 @@
     <description>Recent content in Posts on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Dec 2017 12:53:16 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 13 Dec 2017 12:20:16 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>最后的八卦</title>
+      <link>https://guangchuangyu.github.io/cn/2017/12/chipseeker-8g/</link>
+      <pubDate>Wed, 13 Dec 2017 12:20:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/12/chipseeker-8g/</guid>
+      <description>&lt;h2 id=&#34;chipseeker系列传送门&#34;&gt;ChIPseeker系列传送门&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/lFi1m7k-9t6nD0SER1r1hw&#34;&gt;CS0: ChIPseq从入门到放弃&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://mp.weixin.qq.com/s/vgXrscsUkfYdC5qt_PUNlw&#34;&gt;CS1: ChIPseq简介&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/D06NEG7blksGugb0srL7KQ&#34;&gt;CS2: BED文件&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://mp.weixin.qq.com/s/vWTf59KDs1lp_sQXjEhI_g&#34;&gt;CS3: peak注释&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://mp.weixin.qq.com/s/_OPzvaEAbiMolCA2mqJXLw&#34;&gt;CS4：关于ChIPseq注释的几个问题&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://mp.weixin.qq.com/s/gDpsdj6cLDtnG1Kla79wLA&#34;&gt;CS5: 吃着火锅，唱着歌，还把分析给做了&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://mp.weixin.qq.com/s/MqpfgkMJSFj0pYwcEjV9kQ&#34;&gt;CS6: ChIPseeker的可视化方法（中秋节的视觉饕餮）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://mp.weixin.qq.com/s/v61LjQEfyi_CZucHW53ETw&#34;&gt;CS7：Genomic coordination的富集性分析（1）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/vbkZrGwD7dZ-OPOiqkyTnA&#34;&gt;CS8：Genomic coordination的富集性分析（2）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/98k_L3CmjH817xMF2VfYtA&#34;&gt;CS9: GEO数据挖掘&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ChIPseeker这个系列，从《&lt;a href=&#34;https://mp.weixin.qq.com/s/lFi1m7k-9t6nD0SER1r1hw&#34;&gt;CS0: ChIPseq从入门到放弃&lt;/a&gt;》到现在CS10，总共11篇，第一篇以八卦开始，我想很有必要以八卦来结束。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>ChIPseq-GEO数据挖掘</title>
