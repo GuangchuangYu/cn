@@ -6,10 +6,29 @@
     <description>Recent content in Ggtree on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 Oct 2017 10:17:48 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 01 Dec 2017 08:28:48 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/tags/ggtree/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ggplot2/ggtree取子集画图</title>
+      <link>https://guangchuangyu.github.io/cn/2017/12/subsetting-in-ggplot2-ggtree/</link>
+      <pubDate>Fri, 01 Dec 2017 08:28:48 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/12/subsetting-in-ggplot2-ggtree/</guid>
+      <description>&lt;p&gt;取子集对于进化树可视化来说是非常常见的，我们要区分内部节点和外部节点，我们也可能想针对某些特点的节点进行注释。&lt;/p&gt;
+
+&lt;p&gt;ggplot2现在所有图层都不支持直接取子集，所以呢ggtree就自己定义了一些修改的图层，包括&lt;code&gt;geom_text2&lt;/code&gt;, &lt;code&gt;geom_label2&lt;/code&gt;,  &lt;code&gt;geom_point2&lt;/code&gt; 和 &lt;code&gt;geom_segment2&lt;/code&gt;，这些图层和ggplot2的版本唯一差别就是支持取子集。这样对于我们做注释来说，就更方便了。&lt;/p&gt;
+
+&lt;p&gt;比如说我想给内部节点打点，可以用：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggtree(tree) + geom_text2(aes(label=label, subset=!isTip), hjust=-.2) +
+        geom_point2(aes(subset=!isTip), color=&amp;quot;red&amp;quot;, size=3)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>webinar录播：plotting tree &#43; data</title>

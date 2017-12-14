@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pubmed on Guangchuang Yu</title>
+    <link>https://guangchuangyu.github.io/cn/tags/pubmed/</link>
+    <description>Recent content in Pubmed on Guangchuang Yu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 03 Nov 2017 14:53:35 +0800</lastBuildDate>
+    
+	<atom:link href="https://guangchuangyu.github.io/cn/tags/pubmed/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Pubmed年度趋势</title>
+      <link>https://guangchuangyu.github.io/cn/2017/11/pubmed-trend/</link>
+      <pubDate>Fri, 03 Nov 2017 14:53:35 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/11/pubmed-trend/</guid>
+      <description>&lt;p&gt;在很久很久以前，当我还在用perl的时候，有一个TGen-EUtils的perl模块，可以去爬PubMed，我喜欢用它来画所谓的pubmed趋势，比如说我在2012年的时候，就画了各个组学技术的pubmed趋势，通过每一年的文章发表量来看某个技术到底火不火，走势怎么样。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2012/10/pubmedtrend.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;当年microarray还特别猛，但显然可以看到二代测序必须要火，也可以看到proteomics在吹了几年牛B之后，有回落的趋势。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

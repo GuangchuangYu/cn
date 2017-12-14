@@ -6,10 +6,70 @@
     <description>Recent content in Visualization on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 Oct 2017 10:17:48 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 07 Dec 2017 06:31:55 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/categories/visualization/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>使用外部字体画meme</title>
+      <link>https://guangchuangyu.github.io/cn/2017/12/using-external-font-for-meme/</link>
+      <pubDate>Thu, 07 Dec 2017 06:31:55 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/12/using-external-font-for-meme/</guid>
+      <description>&lt;p&gt;meme无非是照片上加两行字，&lt;a href=&#34;https://cran.r-project.org/web/packages/meme/&#34;&gt;meme&lt;/a&gt;这个包本来是练手之作，用来&lt;a href=&#34;https://guangchuangyu.github.io/2017/10/create-meme-in-r/&#34;&gt;模拟ggplot2的api&lt;/a&gt;。结果我后面又实现了&lt;a href=&#34;https://guangchuangyu.github.io/2017/11/shadow-text-effect-in-grid-and-ggplot2-graphics/&#34;&gt;字体阴影效果&lt;/a&gt;，这次我又带来了外部字体支持。&lt;/p&gt;
+
+&lt;p&gt;加载外部字体在R上面主要有extrafont和showtext两个实现，特别是showtext用起来还是非常简单的。我在meme包里写了&lt;code&gt;font_import&lt;/code&gt;函数，内部就是用showtext，只是简单的包装了一下，这样小白用户可以直接下个字体就开撸。有阴影效果，有&lt;a href=&#34;https://fontmeme.com/fonts/&#34;&gt;搞笑字体&lt;/a&gt;，就万事具备了，这俨然是个专业的meme工具了。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ggplot2/ggtree取子集画图</title>
+      <link>https://guangchuangyu.github.io/cn/2017/12/subsetting-in-ggplot2-ggtree/</link>
+      <pubDate>Fri, 01 Dec 2017 08:28:48 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/12/subsetting-in-ggplot2-ggtree/</guid>
+      <description>&lt;p&gt;取子集对于进化树可视化来说是非常常见的，我们要区分内部节点和外部节点，我们也可能想针对某些特点的节点进行注释。&lt;/p&gt;
+
+&lt;p&gt;ggplot2现在所有图层都不支持直接取子集，所以呢ggtree就自己定义了一些修改的图层，包括&lt;code&gt;geom_text2&lt;/code&gt;, &lt;code&gt;geom_label2&lt;/code&gt;,  &lt;code&gt;geom_point2&lt;/code&gt; 和 &lt;code&gt;geom_segment2&lt;/code&gt;，这些图层和ggplot2的版本唯一差别就是支持取子集。这样对于我们做注释来说，就更方便了。&lt;/p&gt;
+
+&lt;p&gt;比如说我想给内部节点打点，可以用：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggtree(tree) + geom_text2(aes(label=label, subset=!isTip), hjust=-.2) +
+        geom_point2(aes(subset=!isTip), color=&amp;quot;red&amp;quot;, size=3)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>一个用不了的R包和一个404的网站</title>
+      <link>https://guangchuangyu.github.io/cn/2017/11/scholar/</link>
+      <pubDate>Thu, 09 Nov 2017 13:23:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/11/scholar/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/scholar/WechatIMG166.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;正如我在「知识星球」里说的，scholar这个包现在已经死了，因为作者不维护了，除非出现接盘侠。我自己fork了一个，打了补丁，现在是可用的。这个包应该说我用得蛮多的，你看我简历里的引用数柱状图，我不会无聊到过一段时间就去查，然后重新画图的，太low。都是自动化的，我到简历目录下打make指令，就会自动去爬数据、重新画图并生成简历，而我啥都不用干。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pubmed年度趋势</title>
+      <link>https://guangchuangyu.github.io/cn/2017/11/pubmed-trend/</link>
+      <pubDate>Fri, 03 Nov 2017 14:53:35 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/11/pubmed-trend/</guid>
+      <description>&lt;p&gt;在很久很久以前，当我还在用perl的时候，有一个TGen-EUtils的perl模块，可以去爬PubMed，我喜欢用它来画所谓的pubmed趋势，比如说我在2012年的时候，就画了各个组学技术的pubmed趋势，通过每一年的文章发表量来看某个技术到底火不火，走势怎么样。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2012/10/pubmedtrend.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;当年microarray还特别猛，但显然可以看到二代测序必须要火，也可以看到proteomics在吹了几年牛B之后，有回落的趋势。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>webinar录播：plotting tree &#43; data</title>
@@ -380,7 +440,7 @@ showtext.auto()
       <pubDate>Fri, 25 Nov 2016 00:53:00 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2016/11/use-emoji/</guid>
-      <description>&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/hashtag/rstats?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#rstats&lt;/a&gt; code for the PhD/cute animals gestation &lt;a href=&#34;https://twitter.com/hashtag/ggplot2?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#ggplot2&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/gganimate?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#gganimate&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/emojifont?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#emojifont&lt;/a&gt; plot &lt;a href=&#34;https://t.co/qWM0bCHoHJ&#34;&gt;https://t.co/qWM0bCHoHJ&lt;/a&gt; 🐭🐶🐱🐺🐯🐷🐏🐻👶🐳🐘📕 &lt;a href=&#34;https://t.co/a4GYl191a8&#34;&gt;https://t.co/a4GYl191a8&lt;/a&gt;&lt;/p&gt;&amp;mdash; Maëlstrom🌊Salmon 🎃 (@ma_salmon) &lt;a href=&#34;https://twitter.com/ma_salmon/status/800007428096094209?ref_src=twsrc%5Etfw&#34;&gt;November 19, 2016&lt;/a&gt;&lt;/blockquote&gt;
+      <description>&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/hashtag/rstats?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#rstats&lt;/a&gt; code for the PhD/cute animals gestation &lt;a href=&#34;https://twitter.com/hashtag/ggplot2?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#ggplot2&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/gganimate?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#gganimate&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/emojifont?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#emojifont&lt;/a&gt; plot &lt;a href=&#34;https://t.co/qWM0bCHoHJ&#34;&gt;https://t.co/qWM0bCHoHJ&lt;/a&gt; 🐭🐶🐱🐺🐯🐷🐏🐻👶🐳🐘📕 &lt;a href=&#34;https://t.co/a4GYl191a8&#34;&gt;https://t.co/a4GYl191a8&lt;/a&gt;&lt;/p&gt;&amp;mdash; Maëlle Salmon 🐟 (@ma_salmon) &lt;a href=&#34;https://twitter.com/ma_salmon/status/800007428096094209?ref_src=twsrc%5Etfw&#34;&gt;November 19, 2016&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
 
 
@@ -452,10 +512,10 @@ showtext.auto()
     
     <item>
       <title>如何画类似MEME的注释序列</title>
-      <link>https://guangchuangyu.github.io/cn/2015/05/%E5%A6%82%E4%BD%95%E7%94%BB%E7%B1%BB%E4%BC%BCmeme%E7%9A%84%E6%B3%A8%E9%87%8A%E5%BA%8F%E5%88%97/</link>
+      <link>https://guangchuangyu.github.io/cn/2015/05/draw-meme-like-figure/</link>
       <pubDate>Thu, 21 May 2015 14:53:35 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/2015/05/%E5%A6%82%E4%BD%95%E7%94%BB%E7%B1%BB%E4%BC%BCmeme%E7%9A%84%E6%B3%A8%E9%87%8A%E5%BA%8F%E5%88%97/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2015/05/draw-meme-like-figure/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2015/Screenshot%202015-05-21%2010.31.46.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://meme-suite.org&#34;&gt;MEME&lt;/a&gt;是motif分析的webserver，所谓的注释序列就是一条线条上画一些长方形的box。&lt;/p&gt;
