@@ -284,43 +284,37 @@ require(yyplot)
 cake1 &lt;- yyplot:::cakeCandleGrob(&quot;#FF3399&quot;)
 cake2 &lt;- yyplot:::cakeCandleGrob(&quot;steelblue&quot;)
 grid.arrange(grobs=gList(cake1, cake2), ncol=2)
-
-![](http://guangchuangyu.github.io/blog_images/R/yyplot/ggcake.jpg)
-
-
-这个cakeCandleGrob对象虽然是打了一组王八拳，用多个对象组合起来的，但它自己就是一个实实在在的对象，我们可以不断提高姿（chou）势（xiang）水平，最后大家看到的却是一套少林长拳。
-
-我们来封装一下，变成一个ggplot2图层，这里我写一个geom_cake的图层。然后我们拿它来画散点图：
-
-
 </code></pre>
 
-<p>require(ggplot2)</p>
+<p><img src="http://guangchuangyu.github.io/blog_images/R/yyplot/ggcake.jpg" alt="" /></p>
 
-<p>t &lt;- seq(0,2*pi, by=0.2)
+<p>这个cakeCandleGrob对象虽然是打了一组王八拳，用多个对象组合起来的，但它自己就是一个实实在在的对象，我们可以不断提高姿（chou）势（xiang）水平，最后大家看到的却是一套少林长拳。</p>
+
+<p>我们来封装一下，变成一个ggplot2图层，这里我写一个geom_cake的图层。然后我们拿它来画散点图：</p>
+
+<pre><code>require(ggplot2)
+
+t &lt;- seq(0,2*pi, by=0.2)
 x &lt;- 16*sin(t)^3
 y &lt;- 13*cos(t) - 5*cos(2*t) - 2*cos(3*t) - cos(4*t)
-d &lt;- data.frame(x=x, y=y)</p>
+d &lt;- data.frame(x=x, y=y)
 
-<p>ggplot(d, aes(x, y)) + geom_cake()</p>
-
-<pre><code>
-![](http://guangchuangyu.github.io/blog_images/R/yyplot/ggcake_ggimage.png)
-
-
-当你分类太多，不够形状来区分的时候，不要怪别人，要怪自己不会造形状，这里蛋糕就是个形状有点奇怪的点，各种形状你都可以自己造。
-
-我们还可以映射不同的颜色，不同的大小。
-
+ggplot(d, aes(x, y)) + geom_cake()
 </code></pre>
 
-<p>d$color.cake = sample(colorspace::rainbow_hcl(5), nrow(d), replace=T)
+<p><img src="http://guangchuangyu.github.io/blog_images/R/yyplot/ggcake_ggimage.png" alt="" /></p>
+
+<p>当你分类太多，不够形状来区分的时候，不要怪别人，要怪自己不会造形状，这里蛋糕就是个形状有点奇怪的点，各种形状你都可以自己造。</p>
+
+<p>我们还可以映射不同的颜色，不同的大小。</p>
+
+<pre><code>d$color.cake = sample(colorspace::rainbow_hcl(5), nrow(d), replace=T)
 d$color.candle = sample(rainbow(5), nrow(d), replace=T)
-ggplot(d, aes(x, y)) +
-    geom_cake(aes(color.cake=color.cake,
-                  color.candle=color.candle),
-              size=.2)
-```</p>
+ggplot(d, aes(x, y)) + 
+	geom_cake(aes(color.cake=color.cake, 
+	              color.candle=color.candle), 
+	          size=.2)
+</code></pre>
 
 <p><img src="http://guangchuangyu.github.io/blog_images/R/yyplot/color_cake.png" alt="" /></p>
               
