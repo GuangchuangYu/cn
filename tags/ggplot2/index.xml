@@ -6,10 +6,23 @@
     <description>Recent content in Ggplot2 on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 07 Dec 2017 06:31:55 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 14 Dec 2017 22:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/tags/ggplot2/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>130岁了，祝你生快</title>
+      <link>https://guangchuangyu.github.io/cn/2017/12/geom-cake/</link>
+      <pubDate>Thu, 14 Dec 2017 22:00:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/12/geom-cake/</guid>
+      <description>&lt;p&gt;周日是港大医学院的198届毕业典礼，Y叔要去参加，今年也正好是医学院130周年，做为画图界的传说，我决定画一个蛋糕。&lt;/p&gt;
+
+&lt;p&gt;要画蛋糕，这有何难，我们有&lt;code&gt;emojifont&lt;/code&gt;啊，还记得《&lt;a href=&#34;http://mp.weixin.qq.com/s/ARxyTRpMs6OeCqOQPp9OwA&#34;&gt;emojifont新功能（有视频哦）&lt;/a&gt;》一文中的&lt;code&gt;geom_emoji&lt;/code&gt;图层吗？&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>使用外部字体画meme</title>

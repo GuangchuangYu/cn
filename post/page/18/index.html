@@ -225,6 +225,69 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2014/03/boxplot/">
+          boxplot
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2014-03-04T12:23:16&#43;08:00">
+      
+  March 4, 2014
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <p>生物坑很多人画图只会直方图，统计只会T检验，在暨大见过太多的学生连T检验都不会，分不清SEM和SD的差别，也不清楚T检验那几个简单参数的含义。我写统计笔记也是因为不想重复性地跟学生讲解T检验。</p>
+
+<p>Barplot和T test一样普遍而流行，barplot适合于表示计数数据和比例，显示比例也可以用pie
+plot，但直方图比饼图要好，因为人类的眼睛适合于比较高度，而不是弧度。</p>
+
+<p>多半时候生物学数据并非简单的计数数据，对于测量数据，在展示数据分布时，很多人会使用他们熟悉的barplot，用高度来表示mean，然后再加上errorbar，这样展示数据，信息量是非常低的，使用boxplot能够提供更多的数据分布信息，能更好地展现数据，但可能很多人只会在excel里画barplot，Nature
+Methods 2013年的文章中有100个barplot图，而只有20个boxplot图，从这里就可以看出来，用boxplot的人远远没有barplot多，于是NPG怒了，写了两篇专栏文章<a href="http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2807.html">Points of View: Bar charts and box plots</a>和<a href="http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2813.html">Points of Significance: Visualizing samples with box plots</a>并且发表了一篇<a href="http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2811.html">BoxPlotR: a web tool for generation of box plots</a>方便大家画boxplot，如此简单的web tool能够发Nature Methods，实在是让人羡慕妒忌恨啊。
+</p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2014/03/boxplot/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2014/01/old-habits-die-hard/">
           old habits die hard
         </a>
@@ -592,76 +655,6 @@ pubmed上不去，完全没影响，因为有hubmed,hubmed主页上写着：An a
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2012/05/%E4%BB%80%E4%B9%88%E6%98%AFt-%E6%A3%80%E9%AA%8C/">
-          什么是T 检验
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2012-05-29T06:17:56&#43;08:00">
-      
-  May 29, 2012
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/statistics">Statistics</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        跟某同学讲了T test之后，整理一下。
-很多的检验和我们的直觉是一致的，前阵子在一个群里，有管理学院的人问说想看两个样本是不是来自于同一个分布，我叫他画两个CDF，一看就知道。对方说不要看图，我就让他用Kolmogorov-Smirnov Tests。我自己搜了一下，发现ks.test检验的就是拿两个CDF的距离做为统计量，虽然计算很复杂，但是和intuition那是相当一致啊。
-最简单也最常用的，莫过于T检验，用我们的直觉就可以理解了，但是我发现不理解还有用错的人也挺多的。
-我们要看一个样本的均值是不是等于0，最naive的办法就是看样本的均值和0差别多大。
-这个比较之所以naive，因为没有考虑到数据的分布，从上图的两个populations来看，它们的均值都是0，从绿色的分布中抽到一个均值为3的样本，概率并不小，但是从红色的分布中得到这样一个样本，那就是小概率事件。所以不能单纯比较均值，而是要看均值的分布，从上面的populations上看，和数据的离散程度有关。 我们随机抽取100个sample，得到以下的均值分布：
-我们需要对均值的离散程度做penalty，那么就可以考虑这样一个统计量mean(x)/SEM, SEM代表standard error of the mean，那么这个统计量比单纯的均值要科学得多。这个统计量，就是学生氏所定义的t。
-如果没有大量的样本，是没办法估计SEM的，但是从上面两个图上看，样本间均值的标准误SEM，和总体数据的标准误是正相关的。而总体的标准误可以用样本的标准误,sd(x),来估计。如果我们考虑最简单的形式呢？定义统计量mean(x)/sd(x)。
-那么，请等一下，我们还需要考虑到样本量的影响，如果sample size没有影响，那么我们就不需要采集大样本了。从我们的直觉上看，肯定是样本量越大，对总体参数的估计越准确了。
-从图上看，还是和直觉很一致。sample size越大，分布越compact，对总体均值的估计也就越准确。那么就需要使用sample size进行加权，把统计量修改为mean(x)/sd(x) * f(n)，其中n为sample size。
-我们可以想像，学生氏当年try了几种形式的f(n)，发现sqrt(n)效果最好。于是他就定义了统计量: t = mean(x)/(sd(x)/sqrt(n))。 sqrt(n)效果好，因为sd(x)/sqrt(n)正好是对样本间均值标准误SEM的估计。
-我们又可以想像，学生氏当年收集了很多个样本，计算了多个t值，发现这些t值的分布是有规律的，有点像正态分布，学生氏把它定义为t分布，利用t分布的probability density function，就可以计算p-value啦。
-上图就是从标准正态分布里抽取100个样本，所计算的t值分布。
-很多人上课学不懂，我觉得是因为一上来告诉你t怎么算，但是没让你理解SEM，SEM是理解t值计算的关键。
-算完t之后，一句话，符合t分布，然后就是查表看p值,或者让计算机算，太抽象，这世界本来没有t分布，是学生氏定义了t统计量，并发现符合某分布，把它定义为t分布，有计算机做simulation，重现这个过程，就不抽象了，也就好理解了。
-至于两样本，如果是paired的话，那就是paired之间相减，用差值做单样本t检验。如果不是成对，那就是t=(mean(x1)-mean(x2))/SEDM.
-其中SEDM代表standard error of difference of means，这里有一个pool与否的问题，SEDM看上去稍微复杂了一点点，但是basic idea是一样的，非常好理解。
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2012/05/%E4%BB%80%E4%B9%88%E6%98%AFt-%E6%A3%80%E9%AA%8C/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -743,6 +736,27 @@ pubmed上不去，完全没影响，因为有hubmed,hubmed主页上写着：An a
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/geom-cake/">
+                <h3 class="media-heading">130岁了，祝你生快</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>周日是港大医学院的198届毕业典礼，Y叔要去参加，今年也正好是医学院130周年，做为画图界的传说，我决定画一个蛋糕。</p>
+
+<p>要画蛋糕，这有何难，我们有<code>emojifont</code>啊，还记得《<a href="http://mp.weixin.qq.com/s/ARxyTRpMs6OeCqOQPp9OwA">emojifont新功能（有视频哦）</a>》一文中的<code>geom_emoji</code>图层吗？</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -981,29 +995,6 @@ rownames(d) = paste0('g', 1:10)
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/bmc-journal-protects-paper-of-plagiarism/">
-                <h3 class="media-heading">虐狗节来看一下这个裤衩都不要的故事</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Nov 11, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><img src="http://guangchuangyu.github.io/blog_images/R/ppipre/Screenshot 2017-11-10 00.10.22.png" alt="" /></p>
-
-<p>Scientific Report上有一篇文章是抄袭的，然而杂志最终决定不撤稿，而被抄的人是Johns Hopkins的，于是jh的人全都要离开Scientific Report的编委。我也被人抄了不撤稿，然而我人微言轻，不单被编辑部欺负，还要被我们国内生信界的网红欺负。</p>
-
-<p>SR与jh的事情，我和BMC的故事，是相似的，我们可以想像这样的学术界惨剧比想像中的要多。学术圈，真是有时候得呵呵哒。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1011,7 +1002,7 @@ rownames(d) = paste0('g', 1:10)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         175 posts found
+         176 posts found
       </p>
     </div>
   </div>
