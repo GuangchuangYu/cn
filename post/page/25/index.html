@@ -225,6 +225,85 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2007/05/edit-partition-netbsd-macppc/">
+          Edit partition table in NetBSD/macppc
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2007-05-14T04:43:00&#43;08:00">
+      
+  May 14, 2007
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/bsd">BSD</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/powerbook">Powerbook</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <pre><code>#disklabel wd0
+</code></pre>
+
+<p>可以看到原始分区如下: 7 partitions:</p>
+
+<pre><code>#        size    offset     fstype [fsize bsize cpg/sgs]
+a:  20971520  25167648     4.2BSD      0     0     0  # (Cyl.  24967*-  45772*)
+b:   1048576  46139168       swap                     # (Cyl.  45772*-  46813*)
+c: 117210240         0     unused      0     0        # (Cyl.      0 - 116279)
+d:  25165824      1824        HFS                     # (Cyl.      1*-  24967*)
+e:  28079456  89130784        HFS                     # (Cyl.  88423*- 116279)
+g:  41943040  47187744     4.2BSD      0     0     0  # (Cyl.  46813*-  88423*)
+</code></pre>
+
+<p>a为netbsd的/分区，b为swap分区,c为整个硬盘，d为mac
+os的系统盘。e为两系统共享分区(在os9下格式化为fat)，g为netbsd下的/home分区。
+原本是两系统，os9.2一直都很少用，所以想删了，腾出空间来放数据。因为wd0d和wd0e不在连续的柱面上，所以无法将它们合并。</p>
+
+<p>新的分区方案如下：wd0d删了，分成两个，一个15M(需要一个HFS类型的分区来放置<code>ofwboot.xcf</code>，因为openfirmwire不支持从netbsd分区里加载loader),剩下的作为<code>/home</code>分区。把原来的<code>/home</code>分区(<code>wd0g</code>)和共享数据的分区(<code>wd0e</code>)合并为一个分区，用于放置数据。
+1. 第一步，也是最关键的一步，先备份好数据。
+
+2. 安装hfsutils。用于操作那个15M的HFS分区（格式化，拷贝文件等工具）。hfsutils是命令行的，xhfs是tk界面的。</p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2007/05/edit-partition-netbsd-macppc/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2007/05/pkgsrc-tips/">
           pkgsrc tips
         </a>
@@ -657,102 +736,6 @@ vim mystar.conf
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2005/01/powerbook-gentoo/">
-          Powerbook G3上安装gentoo
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2005-01-14T04:32:00&#43;08:00">
-      
-  January 14, 2005
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/linux">Linux</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/powerbook">Powerbook</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>下面是我在PowerBook G3上安装Gentoo的全过程。。</p>
-
-<p>自己做一个备忘录，也给想在Powerbook上装Gentoo的做一个参考。</p>
-
-<p>以下为基本的安装过程，详细请参考Gentoo的文档</p>
-
-<p><a href="http://www.gentoo.org/doc/en/handbook/handbook-ppc.xml">http://www.gentoo.org/doc/en/handbook/handbook-ppc.xml</a></p>
-
-<p>基本的安装步骤如下：</p>
-
-<p>用2004.3LiveCD进入。</p>
-
-<h2 id="1-配置网络">1. 配置网络</h2>
-
-<pre><code>＃net-setup eth0
-</code></pre>
-
-<p>回答它几个问题就行了。</p>
-
-<h2 id="2-分区">2.分区</h2>
-
-<pre><code>#mac-fdisk /dev/hda
-</code></pre>
-
-<p>以下是我的分区。</p>
-
-<pre><code>/dev/hda
- # type name length base ( size ) system
-/dev/hda1 Apple_partition_map Apple 63 @ 1 ( 31.5k) Partition map
-/dev/hda2 Apple_Bootstrap bootstrap 1600 @ 64 (800.0k) NewWorld bootblock
-/dev/hda3 Apple_UNIX_SVR2 / 12582912 @ 1664 ( 6.0G) Linux native
-/dev/hda4 Apple_UNIX_SVR2 swap 1048576 @ 12584576 (512.0M) Linux swap
-/dev/hda5 Apple_UNIX_SVR2 /home 6007728 @ 13633152 ( 2.9G) Linux native
-
-Block size=512, Number of Blocks=19640880
-DeviceType=0x0, DeviceId=0x0
-</code></pre>
-
-<p></p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2005/01/powerbook-gentoo/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -765,7 +748,14 @@ DeviceType=0x0, DeviceId=0x0
         </li>
       
       
-      <li class="pagination-number">page 25 of 25</li>
+        <li class="pagination-next">
+          <a class="btn btn--default btn--small" href="https://guangchuangyu.github.io/cn/post/page/26/">
+            <span>OLDER POSTS</span>
+            <i class="fa fa-angle-right text-base icon-ml"></i>
+          </a>
+        </li>
+      
+      <li class="pagination-number">page 25 of 26</li>
     </ul>
   </div>
 
@@ -827,6 +817,27 @@ DeviceType=0x0, DeviceId=0x0
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/biosyntax/">
+                <h3 class="media-heading">bioSyntax - 针对生物数据的语法高亮</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><img src="http://biosyntax.org/images/sam-less-small.gif" alt="" /></p>
+
+<p>对于生信狗，天天黑白命令行，实验室的同事，经常对着我的Emacs说，这么小的字体你看得清吗？我只能无奈地回答，因为我要一个屏幕显示一整个函数。我自己平时写代码也很注意这一点，函数尽量小，太长就要考虑切分成几个函数，我说自己是脑容量不够，写不了长函数。我希望如果有人看我代码，他/她可以看得舒服点，虽然写的不见得好，但起码一个函数，你一个屏幕是装得下的。岁月留给我们的，是越来越厚的镜片！然而最近有一款神器，让我们在命令行里，可以高亮显示生物学常见的数据格式，包括SAM, VCF, GTF, PDB和FASTA。这款神器叫bioSyntax (<a href="http://bioSyntax.org">http://bioSyntax.org</a>) ，看着舒服多了，而且逼格十足，如果大家序列比对看多了，其实都会依赖于看颜色，黑白字体情况下，你很难去区分ATCG，即使有明显的pattern，你也很难看出来。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1063,29 +1074,6 @@ rownames(d) = paste0('g', 1:10)
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/bioc-db-update/">
-                <h3 class="media-heading">掐架的额外收获</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Nov 11, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>《<a href="http://mp.weixin.qq.com/s/miGQs6U1d3aHwcm7vgNCVw">你昨天才做的分析，可能是几年前的结果！</a>》这篇文章给大家敲了警钟，各种各样的web-server，要小心看有没有维护更新，有些是五年十年都不更新的，十分可怕。文章虽然讲的是富集分析，但其它分析工具你同样需要小心。</p>
-
-<p>当然并不是说独立的软件/软件包就一定靠谱，如果软件自己打包了数据，同样要注意数据是否有更新，而如果数据不打包在软件里，而是在线获取，你同样也该留一下心。这也是clusterProfiler做富集分析的优势所在，KEGG数据是在线的，永远是最新的，而GO的数据不在软件包里，而依赖于别的数据包，而这些数据包是社区维护的（相对而言，个人的维护比较难以为继），就确保了数据一直在有更新维护的。</p>
-
-<p>Bioconductor每半年发行一次，注释包同样每半年更新一次，所以你用clusterProfiler做GO分析，你用的GO数据库不会说超过半年没更新，而不像有些公司给出的结果，落后于这个世界不是一年两年这么简单。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1093,7 +1081,7 @@ rownames(d) = paste0('g', 1:10)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         176 posts found
+         177 posts found
       </p>
     </div>
   </div>

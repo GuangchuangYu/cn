@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 Feb 2017 13:40:22 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 22 Dec 2017 13:50:22 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Alignment</title>
       <link>https://guangchuangyu.github.io/cn/tags/alignment/</link>
-      <pubDate>Mon, 27 Feb 2017 13:40:22 +0800</pubDate>
+      <pubDate>Fri, 22 Dec 2017 13:50:22 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/tags/alignment/</guid>
       <description></description>
@@ -98,6 +98,15 @@
       <pubDate>Tue, 23 Sep 2008 01:18:00 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/tags/biomart/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Biosyntax</title>
+      <link>https://guangchuangyu.github.io/cn/tags/biosyntax/</link>
+      <pubDate>Fri, 22 Dec 2017 13:50:22 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/biosyntax/</guid>
       <description></description>
     </item>
     
@@ -455,7 +464,7 @@
     <item>
       <title>Gtf</title>
       <link>https://guangchuangyu.github.io/cn/tags/gtf/</link>
-      <pubDate>Tue, 21 Feb 2017 12:23:16 +0800</pubDate>
+      <pubDate>Fri, 22 Dec 2017 13:50:22 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/tags/gtf/</guid>
       <description></description>
@@ -822,6 +831,15 @@
     </item>
     
     <item>
+      <title>Pdb</title>
+      <link>https://guangchuangyu.github.io/cn/tags/pdb/</link>
+      <pubDate>Fri, 22 Dec 2017 13:50:22 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/pdb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Phd</title>
       <link>https://guangchuangyu.github.io/cn/tags/phd/</link>
       <pubDate>Tue, 30 Jul 2013 16:18:26 +0800</pubDate>
@@ -993,6 +1011,15 @@
     </item>
     
     <item>
+      <title>Sam</title>
+      <link>https://guangchuangyu.github.io/cn/tags/sam/</link>
+      <pubDate>Fri, 22 Dec 2017 13:50:22 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/sam/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Scholar</title>
       <link>https://guangchuangyu.github.io/cn/tags/scholar/</link>
       <pubDate>Thu, 09 Nov 2017 13:23:16 +0800</pubDate>
@@ -1124,6 +1151,15 @@
       <pubDate>Tue, 11 Jul 2017 10:40:22 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/tags/unpaywall/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vcf</title>
+      <link>https://guangchuangyu.github.io/cn/tags/vcf/</link>
+      <pubDate>Fri, 22 Dec 2017 13:50:22 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/vcf/</guid>
       <description></description>
     </item>
     
