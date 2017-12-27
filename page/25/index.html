@@ -225,6 +225,79 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/">
+          我制作的pkgsrc
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2007-05-16T04:36:00&#43;08:00">
+      
+  May 16, 2007
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/bsd">BSD</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <h2 id="xlyrics-unix下的歌词秀软件">xlyrics: unix下的歌词秀软件   </h2>
+
+<p><a href="http://files.getdropbox.com/u/774072/software/pkgsrc/xlyrics-0.4.6.tar.bz2">点此下载</a></p>
+
+<h2 id="eva-kde下的qq客户端">EVA: KDE下的QQ客户端     </h2>
+
+<p><a href="http://files.getdropbox.com/u/774072/software/pkgsrc/eva-20070327.tar.bz2">点此下载</a></p>
+
+<pre><code>#cd /usr/pkgsrc/wip-cn 
+#tar xjvf eva.tar.bz2 
+#cd eva 
+#make install clean
+</code></pre>
+
+<p>就可以啦。在我的机子（NetBSD 3.0.1 macppc）上测试通过。。
+更新到eva-20070327</p>
+
+<p></p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2007/05/edit-partition-netbsd-macppc/">
           Edit partition table in NetBSD/macppc
         </a>
@@ -654,88 +727,6 @@ sudo texhash
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/">
-          scau校园网认证
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2005-03-14T04:30:00&#43;08:00">
-      
-  March 14, 2005
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/linux">Linux</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/powerbook">Powerbook</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>锐捷认证。非标准的802.1认证。 我采用mystar来认证，但是不会重连。。
-我自已写了个shell script来实现断线后重连。。。</p>
-
-<p>华农现在的校园网用锐捷认证，windows下的认证程序还行。linux下的客户端垃圾得不得了啊。。我用苹果笔记本PowerBookG3(fireware)。锐捷没有苹果下的认证客户端，于是我上不了网了，很是郁闷。。。</p>
-
-<p>我装了gentoo。最初尝试用qemu的user-mode来虚拟x86的指令集，再用xrgsu（锐捷linux版认证程序）提供运行所需的libs。最终xrgsu可以运行。但是找不到网卡。后面我就放弃了。</p>
-
-<p>拉了一个月ADSL，在一次偶然的机会我发现了mystar。mystar是用libnet＋libpcap写的，关键的代码不到200行（libnet和libpcap是平台无关的分组构造发送、分组截获C函数库）<code>mystar</code>是网上一个叫netxray的人写的。
-下面是源码<code>http://bbs.whnet.edu.cn/upload/mystarV0.1-src.zip</code>，解压密码是<code>netxray</code> 解压后:</p>
-
-<pre><code>cd mystarV0.1 
-make
-</code></pre>
-
-<p>编译。</p>
-
-<pre><code>#修改我的ID跟password。
-vim mystar.conf 
-</code></pre>
-
-<p>使用<code>./mystar</code>运行，并且认证成功!</p>
-
-<p>随后我发现一个问题，就是不会自动重连，老是会断线。在mystar.conf里面有一段</p>
-
-<p></p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -817,6 +808,33 @@ vim mystar.conf
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/ggimage-hat/">
+                <h3 class="media-heading">给你一顶帽子</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>圣诞节期间，一个个在@微信官方，要加圣诞帽，这让人想起了以前：</p>
+
+<blockquote>
+<p>今天是马化腾的生日，转发5个群，自动开通一个月的QQ会员</p>
+</blockquote>
+
+<p>这班玩QQ长大的孩子，现在变成了玩微信的油腻中年了。</p>
+
+<p>做为biobabble公众号的粉丝，我觉得你们是有能力用两三行R代码来给自己加个帽子的。由于我在过圣诞节，所以这篇文章没有能够及时推送出来，就当马后炮吧，不合时宜地调侃一下大家。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1042,38 +1060,6 @@ vim mystar.conf
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/pheatmap-color-range/">
-                <h3 class="media-heading">不同数据集画出的热图，用同样的颜色区间上色？</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Nov 11, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><img src="http://guangchuangyu.github.io/blog_images/R/misc/WechatIMG216.png" alt="" /></p>
-
-<p>这个问题，其实答案就存在于《<a href="http://mp.weixin.qq.com/s/Xhi_ZkrEzUVdnCu7ECBS4w">听说你还不会画热图</a>》，我们先生成一个矩阵：</p>
-
-<pre><code>set.seed(2017-11-12)
-d = data.frame(matrix(rnorm(100), ncol=10))
-colnames(d) = paste0('t', 1:10)
-rownames(d) = paste0('g', 1:10)
-</code></pre>
-
-<p>这个矩阵是<code>rnorm</code>生成的随机数，有正有负，我们再生成一个矩阵，只有正数，并且数值上比第一个矩阵要大：</p>
-
-<pre><code>d2 = abs(d) * 1.2
-</code></pre>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1081,7 +1067,7 @@ rownames(d) = paste0('g', 1:10)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         177 posts found
+         178 posts found
       </p>
     </div>
   </div>

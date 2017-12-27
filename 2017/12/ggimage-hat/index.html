@@ -23,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.30.2">
     <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
-    <title>TALEN基因编辑</title>
+    <title>给你一顶帽子</title>
     <meta name="author" content="Guangchuang Yu">
     <meta name="keywords" content="">
 
@@ -31,42 +31,45 @@
     
 
     
-    <meta name="description" content="分子生物学的基础和兴起离不开各种酶的发现和抗体的制备。没有抗体，蛋白质就玩不转，没有限制性内切酶和连接酶，就没有基因工程，如果没有耐高温酶的发现，连PCR都是件痛苦的事情，写到这里，我突然觉得做细菌也是蛮好的，因为比较有可能发现一些功能比较奇特的蛋白，而这些蛋白，一经改造，可能就是技术上的革新。
-TALE(transcription activator-like effector)也不例外，最初在植物致病菌黄单胞菌（_Xanthomonas_）中被发现，在致病过程中，能够特异性地结合和调控植物基因。
-TALE的结构中间（红色部分）是重复序列，介导DNA识别，每一个重复片段为33-35个氨基酸，其中12和13位置两个氨基酸决定碱基偏好性，这两个相邻的氨基酸被称之为重复可变双残基（repeat variable di-residue, RVD），RVD所编码的靶标碱基由上图b所示，基本上你看一段TALE的重复序列，就可以预测到它将结合到什么样的DNA序列上，或者你看一段DNA序列，可以很容易地设计结合它的TALE重复序列。
-N端通常是288个残基，其中Δ152做为截断点，去掉前面用于进入植物细胞的功能，而保留TALE蛋白的其它功能。C端通常是278个残基。
-中间重复片段的特性使得TALE很容易被改造，应用于各种定点靶向的场景。 Activator 2011年发表在NBT上的文章《A TALE nuclease architecture for efficient genome editing》将TALE改造成促进特定基因表达。将天然TALE进行PCR扩增，去掉前面152个残基，重复序列改造为结合NTF3的启动子邻近区域(proximal promoter)，C端连上VP16（转录激活结构域），结果诱导超过20倍的表达。NTF3基因编码一个分泌性的生长因子，对神经退行性疾病有一个的治疗功效。作者把C端截断，保留95个残基再接上VP16，同样也是mRNA超过20倍的表达。 Nuclease 位点特异性的核酸酶是基因组工程的有力工具，产生断裂的双链DNA（double strand breaks, DSBs），可以进行同源重组、靶向插入、删除。锌指蛋白（zinc finger protein）连接FokI的水解结构域，构成了锌指核酶(zinc finger nuclease, ZFN)被用来进行基因组编辑，但是ZFN的特异性和效率较差，可重复性不好。
-TALE的单碱基识别能力，显然在特异性上是无可比拟的，有了TALE，TALEN（TALE-nuclease，TALE接上核酸酶）技术应运而生，特异性好，效率高，而且可以应用于各种物种。TALEN通常以同二聚体（homodimer）或异二聚体（hterodimer）对DNA从两端进行切割，两端切割点的距离（spacer length）可以是10-30bp之间，取决于linker的长度，即连接重复结构域和切割结构域的长度，长的linker，需要长的spacer，反之亦然。
-两端切割后，产生DSB，就会引起系统对其进行修复，Miller等使用TALEN对NTF3基因进行切割，产生DSB，随后进行非同源末端连接（non-homologous end joining, NHEJ）修复，NHEJ在没有同源序列做为模版的情况下进行修复，这是一个不精确的修复途径，结果产生了3-30bp的删除。
-NHEJ是容易出错也不好控制的，可喜的是还存在一条精确可控的途径，同源依赖修复（homology dependent repair, HDR），在有供体ssDNA存在的情况下，通过HDR途径，可以对基因进行编辑，插入和缺失处理。
-于是牛B的事情就产生了，2012年Nature的文章报道在斑马鱼活体组织里使用TALEN技术，引入了定制的EcoRV位点和修改的loxP序列。
-Reference 1. Miller, Jeffrey C., Siyuan Tan, Guijuan Qiao, Kyle A. Barlow, Jianbin Wang, Danny F. Xia, Xiangdong Meng, et al. “A TALE Nuclease Architecture for Efficient Genome Editing.">
-    <meta property="og:description" content="分子生物学的基础和兴起离不开各种酶的发现和抗体的制备。没有抗体，蛋白质就玩不转，没有限制性内切酶和连接酶，就没有基因工程，如果没有耐高温酶的发现，连PCR都是件痛苦的事情，写到这里，我突然觉得做细菌也是蛮好的，因为比较有可能发现一些功能比较奇特的蛋白，而这些蛋白，一经改造，可能就是技术上的革新。
-TALE(transcription activator-like effector)也不例外，最初在植物致病菌黄单胞菌（_Xanthomonas_）中被发现，在致病过程中，能够特异性地结合和调控植物基因。
-TALE的结构中间（红色部分）是重复序列，介导DNA识别，每一个重复片段为33-35个氨基酸，其中12和13位置两个氨基酸决定碱基偏好性，这两个相邻的氨基酸被称之为重复可变双残基（repeat variable di-residue, RVD），RVD所编码的靶标碱基由上图b所示，基本上你看一段TALE的重复序列，就可以预测到它将结合到什么样的DNA序列上，或者你看一段DNA序列，可以很容易地设计结合它的TALE重复序列。
-N端通常是288个残基，其中Δ152做为截断点，去掉前面用于进入植物细胞的功能，而保留TALE蛋白的其它功能。C端通常是278个残基。
-中间重复片段的特性使得TALE很容易被改造，应用于各种定点靶向的场景。 Activator 2011年发表在NBT上的文章《A TALE nuclease architecture for efficient genome editing》将TALE改造成促进特定基因表达。将天然TALE进行PCR扩增，去掉前面152个残基，重复序列改造为结合NTF3的启动子邻近区域(proximal promoter)，C端连上VP16（转录激活结构域），结果诱导超过20倍的表达。NTF3基因编码一个分泌性的生长因子，对神经退行性疾病有一个的治疗功效。作者把C端截断，保留95个残基再接上VP16，同样也是mRNA超过20倍的表达。 Nuclease 位点特异性的核酸酶是基因组工程的有力工具，产生断裂的双链DNA（double strand breaks, DSBs），可以进行同源重组、靶向插入、删除。锌指蛋白（zinc finger protein）连接FokI的水解结构域，构成了锌指核酶(zinc finger nuclease, ZFN)被用来进行基因组编辑，但是ZFN的特异性和效率较差，可重复性不好。
-TALE的单碱基识别能力，显然在特异性上是无可比拟的，有了TALE，TALEN（TALE-nuclease，TALE接上核酸酶）技术应运而生，特异性好，效率高，而且可以应用于各种物种。TALEN通常以同二聚体（homodimer）或异二聚体（hterodimer）对DNA从两端进行切割，两端切割点的距离（spacer length）可以是10-30bp之间，取决于linker的长度，即连接重复结构域和切割结构域的长度，长的linker，需要长的spacer，反之亦然。
-两端切割后，产生DSB，就会引起系统对其进行修复，Miller等使用TALEN对NTF3基因进行切割，产生DSB，随后进行非同源末端连接（non-homologous end joining, NHEJ）修复，NHEJ在没有同源序列做为模版的情况下进行修复，这是一个不精确的修复途径，结果产生了3-30bp的删除。
-NHEJ是容易出错也不好控制的，可喜的是还存在一条精确可控的途径，同源依赖修复（homology dependent repair, HDR），在有供体ssDNA存在的情况下，通过HDR途径，可以对基因进行编辑，插入和缺失处理。
-于是牛B的事情就产生了，2012年Nature的文章报道在斑马鱼活体组织里使用TALEN技术，引入了定制的EcoRV位点和修改的loxP序列。
-Reference 1. Miller, Jeffrey C., Siyuan Tan, Guijuan Qiao, Kyle A. Barlow, Jianbin Wang, Danny F. Xia, Xiangdong Meng, et al. “A TALE Nuclease Architecture for Efficient Genome Editing.">
+    <meta name="description" content="圣诞节期间，一个个在@微信官方，要加圣诞帽，这让人想起了以前：
+
+
+今天是马化腾的生日，转发5个群，自动开通一个月的QQ会员
+
+
+这班玩QQ长大的孩子，现在变成了玩微信的油腻中年了。
+
+做为biobabble公众号的粉丝，我觉得你们是有能力用两三行R代码来给自己加个帽子的。由于我在过圣诞节，所以这篇文章没有能够及时推送出来，就当马后炮吧，不合时宜地调侃一下大家。
+
+">
+    <meta property="og:description" content="圣诞节期间，一个个在@微信官方，要加圣诞帽，这让人想起了以前：
+
+
+今天是马化腾的生日，转发5个群，自动开通一个月的QQ会员
+
+
+这班玩QQ长大的孩子，现在变成了玩微信的油腻中年了。
+
+做为biobabble公众号的粉丝，我觉得你们是有能力用两三行R代码来给自己加个帽子的。由于我在过圣诞节，所以这篇文章没有能够及时推送出来，就当马后炮吧，不合时宜地调侃一下大家。
+
+">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="TALEN基因编辑">
-    <meta property="og:url" content="/2013/01/talen%E5%9F%BA%E5%9B%A0%E7%BC%96%E8%BE%91/">
+    <meta property="og:title" content="给你一顶帽子">
+    <meta property="og:url" content="/2017/12/ggimage-hat/">
     <meta property="og:site_name" content="Guangchuang Yu">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Guangchuang Yu">
-    <meta name="twitter:description" content="分子生物学的基础和兴起离不开各种酶的发现和抗体的制备。没有抗体，蛋白质就玩不转，没有限制性内切酶和连接酶，就没有基因工程，如果没有耐高温酶的发现，连PCR都是件痛苦的事情，写到这里，我突然觉得做细菌也是蛮好的，因为比较有可能发现一些功能比较奇特的蛋白，而这些蛋白，一经改造，可能就是技术上的革新。
-TALE(transcription activator-like effector)也不例外，最初在植物致病菌黄单胞菌（_Xanthomonas_）中被发现，在致病过程中，能够特异性地结合和调控植物基因。
-TALE的结构中间（红色部分）是重复序列，介导DNA识别，每一个重复片段为33-35个氨基酸，其中12和13位置两个氨基酸决定碱基偏好性，这两个相邻的氨基酸被称之为重复可变双残基（repeat variable di-residue, RVD），RVD所编码的靶标碱基由上图b所示，基本上你看一段TALE的重复序列，就可以预测到它将结合到什么样的DNA序列上，或者你看一段DNA序列，可以很容易地设计结合它的TALE重复序列。
-N端通常是288个残基，其中Δ152做为截断点，去掉前面用于进入植物细胞的功能，而保留TALE蛋白的其它功能。C端通常是278个残基。
-中间重复片段的特性使得TALE很容易被改造，应用于各种定点靶向的场景。 Activator 2011年发表在NBT上的文章《A TALE nuclease architecture for efficient genome editing》将TALE改造成促进特定基因表达。将天然TALE进行PCR扩增，去掉前面152个残基，重复序列改造为结合NTF3的启动子邻近区域(proximal promoter)，C端连上VP16（转录激活结构域），结果诱导超过20倍的表达。NTF3基因编码一个分泌性的生长因子，对神经退行性疾病有一个的治疗功效。作者把C端截断，保留95个残基再接上VP16，同样也是mRNA超过20倍的表达。 Nuclease 位点特异性的核酸酶是基因组工程的有力工具，产生断裂的双链DNA（double strand breaks, DSBs），可以进行同源重组、靶向插入、删除。锌指蛋白（zinc finger protein）连接FokI的水解结构域，构成了锌指核酶(zinc finger nuclease, ZFN)被用来进行基因组编辑，但是ZFN的特异性和效率较差，可重复性不好。
-TALE的单碱基识别能力，显然在特异性上是无可比拟的，有了TALE，TALEN（TALE-nuclease，TALE接上核酸酶）技术应运而生，特异性好，效率高，而且可以应用于各种物种。TALEN通常以同二聚体（homodimer）或异二聚体（hterodimer）对DNA从两端进行切割，两端切割点的距离（spacer length）可以是10-30bp之间，取决于linker的长度，即连接重复结构域和切割结构域的长度，长的linker，需要长的spacer，反之亦然。
-两端切割后，产生DSB，就会引起系统对其进行修复，Miller等使用TALEN对NTF3基因进行切割，产生DSB，随后进行非同源末端连接（non-homologous end joining, NHEJ）修复，NHEJ在没有同源序列做为模版的情况下进行修复，这是一个不精确的修复途径，结果产生了3-30bp的删除。
-NHEJ是容易出错也不好控制的，可喜的是还存在一条精确可控的途径，同源依赖修复（homology dependent repair, HDR），在有供体ssDNA存在的情况下，通过HDR途径，可以对基因进行编辑，插入和缺失处理。
-于是牛B的事情就产生了，2012年Nature的文章报道在斑马鱼活体组织里使用TALEN技术，引入了定制的EcoRV位点和修改的loxP序列。
-Reference 1. Miller, Jeffrey C., Siyuan Tan, Guijuan Qiao, Kyle A. Barlow, Jianbin Wang, Danny F. Xia, Xiangdong Meng, et al. “A TALE Nuclease Architecture for Efficient Genome Editing.">
+    <meta name="twitter:description" content="圣诞节期间，一个个在@微信官方，要加圣诞帽，这让人想起了以前：
+
+
+今天是马化腾的生日，转发5个群，自动开通一个月的QQ会员
+
+
+这班玩QQ长大的孩子，现在变成了玩微信的油腻中年了。
+
+做为biobabble公众号的粉丝，我觉得你们是有能力用两三行R代码来给自己加个帽子的。由于我在过圣诞节，所以这篇文章没有能够及时推送出来，就当马后炮吧，不合时宜地调侃一下大家。
+
+">
     
       <meta name="twitter:creator" content="@guangchuangyu">
     
@@ -240,14 +243,14 @@ ga('send', 'pageview');
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      TALEN基因编辑
+      给你一顶帽子
     </h1>
   
   <div class="postShorten-meta post-meta">
   
-    <time itemprop="datePublished" datetime="2013-01-10T08:40:22&#43;08:00">
+    <time itemprop="datePublished" datetime="2017-12-27T12:06:59&#43;08:00">
       
-  January 10, 2013
+  December 27, 2017
 
     </time>
   
@@ -256,7 +259,9 @@ ga('send', 'pageview');
   
     <span>in</span>
     
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/biology">Biology</a>
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
     
   
 
@@ -267,52 +272,66 @@ ga('send', 'pageview');
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              
+              <p>圣诞节期间，一个个在@微信官方，要加圣诞帽，这让人想起了以前：</p>
 
-<p>分子生物学的基础和兴起离不开各种酶的发现和抗体的制备。没有抗体，蛋白质就玩不转，没有限制性内切酶和连接酶，就没有基因工程，如果没有耐高温酶的发现，连PCR都是件痛苦的事情，写到这里，我突然觉得做细菌也是蛮好的，因为比较有可能发现一些功能比较奇特的蛋白，而这些蛋白，一经改造，可能就是技术上的革新。</p>
+<blockquote>
+<p>今天是马化腾的生日，转发5个群，自动开通一个月的QQ会员</p>
+</blockquote>
 
-<p>TALE(transcription activator-like effector)也不例外，最初在植物致病菌黄单胞菌（_Xanthomonas_）中被发现，在致病过程中，能够特异性地结合和调控植物基因。</p>
+<p>这班玩QQ长大的孩子，现在变成了玩微信的油腻中年了。</p>
 
-<p><img src="https://guangchuangyu.github.io/blog_images/2013/01/tale.png" alt="tale" /></p>
+<p>做为biobabble公众号的粉丝，我觉得你们是有能力用两三行R代码来给自己加个帽子的。由于我在过圣诞节，所以这篇文章没有能够及时推送出来，就当马后炮吧，不合时宜地调侃一下大家。</p>
 
-<p>TALE的结构中间（红色部分）是重复序列，介导DNA识别，每一个重复片段为33-35个氨基酸，其中12和13位置两个氨基酸决定碱基偏好性，这两个相邻的氨基酸被称之为重复可变双残基（repeat variable di-residue, RVD），RVD所编码的靶标碱基由上图b所示，基本上你看一段TALE的重复序列，就可以预测到它将结合到什么样的DNA序列上，或者你看一段DNA序列，可以很容易地设计结合它的TALE重复序列。</p>
+<p></p>
 
-<p>N端通常是288个残基，其中Δ152做为截断点，去掉前面用于进入植物细胞的功能，而保留TALE蛋白的其它功能。C端通常是278个残基。</p>
+<p>如果你们把历史目录翻到2017年4月16日，那么你们就会看到下面这张图，这是网友用ggimage玩出来的：</p>
 
-<p>中间重复片段的特性使得TALE很容易被改造，应用于各种定点靶向的场景。
-<img src="https://guangchuangyu.github.io/blog_images/2013/01/tale_domain.png" alt="tale\_domain" /></p>
+<p><img src="https://guangchuangyu.github.io/blog_images/R/ggimage/hat_files/WechatIMG444.jpeg" alt="" /></p>
 
-<h3 id="activator">Activator</h3>
+<p>加帽子嘛，so easy，红帽绿帽随便你们自己加，这里我用了steve jobs的照片和red hat的logo来演示一下：</p>
 
-<p>2011年发表在NBT上的文章《A TALE nuclease architecture for efficient genome editing》将TALE改造成促进特定基因表达。将天然TALE进行PCR扩增，去掉前面152个残基，重复序列改造为结合NTF3的启动子邻近区域(proximal promoter)，C端连上VP16（转录激活结构域），结果诱导超过20倍的表达。NTF3基因编码一个分泌性的生长因子，对神经退行性疾病有一个的治疗功效。作者把C端截断，保留95个残基再接上VP16，同样也是mRNA超过20倍的表达。
-<img src="https://guangchuangyu.github.io/blog_images/2013/01/NT_L.png" alt="" /></p>
+<pre><code>jobs &lt;- &quot;https://images-na.ssl-images-amazon.com/images/I/51ec2bHfQmL._SX327_BO1,204,203,200_.jpg&quot;
+hat &lt;- &quot;https://pbs.twimg.com/profile_images/660486650/500px-Red_Fedora.svg.png&quot;
 
-<h3 id="nuclease">Nuclease</h3>
+library(ggimage)
 
-<p>位点特异性的核酸酶是基因组工程的有力工具，产生断裂的双链DNA（double strand breaks, DSBs），可以进行同源重组、靶向插入、删除。锌指蛋白（zinc finger protein）连接FokI的水解结构域，构成了锌指核酶(zinc finger nuclease, ZFN)被用来进行基因组编辑，但是ZFN的特异性和效率较差，可重复性不好。</p>
+d &lt;- data.frame(x = 0:1, y = 0:1)
+p &lt;- ggplot(d, aes(x, y)) + geom_image(image=jobs, size=Inf)
+</code></pre>
 
-<p>TALE的单碱基识别能力，显然在特异性上是无可比拟的，有了TALE，TALEN（TALE-nuclease，TALE接上核酸酶）技术应运而生，特异性好，效率高，而且可以应用于各种物种。TALEN通常以同二聚体（homodimer）或异二聚体（hterodimer）对DNA从两端进行切割，两端切割点的距离（spacer length）可以是10-30bp之间，取决于linker的长度，即连接重复结构域和切割结构域的长度，长的linker，需要长的spacer，反之亦然。</p>
+<p>size = Inf的时候，照片会填充整个画布，也就是把背景照片画出来。如果你不喜欢xy轴这些在此处其实没用的元素的话，+theme_void()解决一切。</p>
 
-<p><img src="https://guangchuangyu.github.io/blog_images/2013/01/zebrafish_talen.png" alt="zebrafish\_talen" /></p>
+<p>然后就是加帽子了：</p>
 
-<p>两端切割后，产生DSB，就会引起系统对其进行修复，Miller等使用TALEN对NTF3基因进行切割，产生DSB，随后进行非同源末端连接（non-homologous end joining, NHEJ）修复，NHEJ在没有同源序列做为模版的情况下进行修复，这是一个不精确的修复途径，结果产生了3-30bp的删除。</p>
+<pre><code>p + geom_image(image=hat, x=.5, y=.85, size=.8)
+</code></pre>
 
-<p>NHEJ是容易出错也不好控制的，可喜的是还存在一条精确可控的途径，同源依赖修复（homology dependent repair, HDR），在有供体ssDNA存在的情况下，通过HDR途径，可以对基因进行编辑，插入和缺失处理。</p>
+<p>x, y指定位置，size指定大小，duang duang duang：</p>
 
-<p>于是牛B的事情就产生了，2012年Nature的文章报道在斑马鱼活体组织里使用TALEN技术，引入了定制的EcoRV位点和修改的loxP序列。</p>
+<p><img src="https://guangchuangyu.github.io/blog_images/R/ggimage/hat_files/figure-markdown_strict/unnamed-chunk-1-1.png" alt="" /></p>
 
-<h3 id="reference">Reference</h3>
+<p>然而在写这个文章的时候，我感觉到还缺少点什么，那就是帽子得可以随意旋转用户指定的角度，于是我在ggimage 0.1.1版本中加入了angle参数，目前CRAN上只有0.1.0版本，你可以通过我的github安装这个最新版本。有了angle参数，帽子就可以歪着戴了。</p>
 
-<p>1. Miller, Jeffrey C., Siyuan Tan, Guijuan Qiao, Kyle A. Barlow, Jianbin
-Wang, Danny F. Xia, Xiangdong Meng, et al. “A TALE Nuclease Architecture
-for Efficient Genome Editing.” Nature Biotechnology 29, no. 2 (2011):
-143–148. doi:10.1038/nbt.1755. 2. Mahfouz, Magdy M, and Lixin Li. “TALE
-Nucleases and Next Generation GM Crops.” GM Crops 2, no. 2 (June 2011):
-99–103. doi:10.4161/gmcr.2.2.17254. 3. Bedell, Victoria M., Ying Wang,
-Jarryd M. Campbell, Tanya L. Poshusta, Colby G. Starker, Randall G. Krug
-Ii, Wenfang Tan, et al. “In Vivo Genome Editing Using a High-efficiency
-TALEN System.” Nature (2012). doi:10.1038/nature11537.</p>
+<pre><code>p + geom_image(image=hat, x=.6, y=.85, size=.8, angle=30)
+</code></pre>
 
+<p><img src="https://guangchuangyu.github.io/blog_images/R/ggimage/hat_files/figure-markdown_strict/unnamed-chunk-1-2.png" alt="" /></p>
+
+<blockquote>
+<p>转发5个群，Y叔送你一顶帽子。</p>
+</blockquote>
+
+<h2 id="ggimage">ggimage</h2>
+
+<ul>
+<li><a href="http://mp.weixin.qq.com/s/eVX3-3zT4p3s0JU_oy7lIQ">ggimage：ggplot2中愉快地使用图片</a></li>
+<li><a href="http://mp.weixin.qq.com/s/H2DgfMflAWgi1ON3V3vwxg">geom_pokemon: 使用pokemon画图</a></li>
+<li><a href="http://mp.weixin.qq.com/s/H3EZFB1UVzEqsIz9DSAsug">大开眼界+多图慎点：Pokémon x NBA and other fun with ggimage</a></li>
+<li><a href="http://mp.weixin.qq.com/s/MMn5TGOuI1ntanbShou_gA">你的专业是那一只Pokémon神兽？</a></li>
+<li><a href="https://mp.weixin.qq.com/s/4F6jvuL4GA5bxNo-z5b9dg">我的名字和我的姓氏</a></li>
+<li><a href="http://mp.weixin.qq.com/s/KFU7dVF0Z-Uj20VhqATKUQ">正经的图千篇一律，不正经的叔万里挑一</a></li>
+<li><a href="https://mp.weixin.qq.com/s/PH3xZKVZC9NUElbVfD7UpA">饼图版气泡图</a></li>
+</ul>
               
                 <center><span class="zaln"><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&mid=2247484170&idx=1&sn=ce5f7eb6df66d79661276a64bf25b4bc&chksm=ec43b24ddb343b5b2877574153aeccd049a6824716063883edb35c2338bd32c067caf3885f53#rd" class="zb">赞赏</a></span></center>
                 <center><span class="zaln"><a href="https://guangchuangyu.github.io/cn/2017/11/bmc-journal-protects-paper-of-plagiarism/" class="zb">抵制BMC，匹夫有责</a></span></center>
@@ -326,7 +345,9 @@ TALEN System.” Nature (2012). doi:10.1038/nature11537.</p>
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/genome-editing/">genome editing</a>
+  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/ggimage/">ggimage</a>
+
+  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/ggplot2/">ggplot2</a>
 
                   </div>
                 
@@ -338,7 +359,7 @@ TALEN System.” Nature (2012). doi:10.1038/nature11537.</p>
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2013/06/compress-tiff/" data-tooltip="使用ImageMagick压缩TIFF">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -346,7 +367,7 @@ TALEN System.” Nature (2012). doi:10.1038/nature11537.</p>
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2012/09/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E6%96%87%E7%8C%AE/" data-tooltip="如何获取文献">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2017/12/biosyntax/" data-tooltip="bioSyntax - 针对生物数据的语法高亮">
           
             <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
             <i class="fa fa-angle-right"></i>
@@ -363,17 +384,17 @@ TALEN System.” Nature (2012). doi:10.1038/nature11537.</p>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2013%2f01%2ftalen%25E5%259F%25BA%25E5%259B%25A0%25E7%25BC%2596%25E8%25BE%2591%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f12%2fggimage-hat%2f">
           <i class="fa fa-google-plus"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2013%2f01%2ftalen%25E5%259F%25BA%25E5%259B%25A0%25E7%25BC%2596%25E8%25BE%2591%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f12%2fggimage-hat%2f">
           <i class="fa fa-facebook-official"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2013%2f01%2ftalen%25E5%259F%25BA%25E5%259B%25A0%25E7%25BC%2596%25E8%25BE%2591%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f12%2fggimage-hat%2f">
           <i class="fa fa-twitter"></i>
         </a>
       </li>
@@ -419,7 +440,7 @@ TALEN System.” Nature (2012). doi:10.1038/nature11537.</p>
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2013/06/compress-tiff/" data-tooltip="使用ImageMagick压缩TIFF">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -427,7 +448,7 @@ TALEN System.” Nature (2012). doi:10.1038/nature11537.</p>
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2012/09/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E6%96%87%E7%8C%AE/" data-tooltip="如何获取文献">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2017/12/biosyntax/" data-tooltip="bioSyntax - 针对生物数据的语法高亮">
           
             <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
             <i class="fa fa-angle-right"></i>
@@ -444,17 +465,17 @@ TALEN System.” Nature (2012). doi:10.1038/nature11537.</p>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2013%2f01%2ftalen%25E5%259F%25BA%25E5%259B%25A0%25E7%25BC%2596%25E8%25BE%2591%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f12%2fggimage-hat%2f">
           <i class="fa fa-google-plus"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2013%2f01%2ftalen%25E5%259F%25BA%25E5%259B%25A0%25E7%25BC%2596%25E8%25BE%2591%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f12%2fggimage-hat%2f">
           <i class="fa fa-facebook-official"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2013%2f01%2ftalen%25E5%259F%25BA%25E5%259B%25A0%25E7%25BC%2596%25E8%25BE%2591%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f12%2fggimage-hat%2f">
           <i class="fa fa-twitter"></i>
         </a>
       </li>
@@ -481,17 +502,17 @@ TALEN System.” Nature (2012). doi:10.1038/nature11537.</p>
       <div id="share-options-bar" class="share-options-bar" data-behavior="4">
   <ul class="share-options">
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2013%2f01%2ftalen%25E5%259F%25BA%25E5%259B%25A0%25E7%25BC%2596%25E8%25BE%2591%2f">
+      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f12%2fggimage-hat%2f">
         <i class="fa fa-google-plus"></i><span>Share on Google Plus</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2013%2f01%2ftalen%25E5%259F%25BA%25E5%259B%25A0%25E7%25BC%2596%25E8%25BE%2591%2f">
+      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f12%2fggimage-hat%2f">
         <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2013%2f01%2ftalen%25E5%259F%25BA%25E5%259B%25A0%25E7%25BC%2596%25E8%25BE%2591%2f">
+      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2017%2f12%2fggimage-hat%2f">
         <i class="fa fa-twitter"></i><span>Share on Twitter</span>
       </a>
     </li>
@@ -850,9 +871,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/guangchuangyu.github.io\/cn\/2013\/01\/talen%E5%9F%BA%E5%9B%A0%E7%BC%96%E8%BE%91\/';
+          this.page.url = 'https:\/\/guangchuangyu.github.io\/cn\/2017\/12\/ggimage-hat\/';
           
-            this.page.identifier = '\/2013\/01\/talen%E5%9F%BA%E5%9B%A0%E7%BC%96%E8%BE%91\/'
+            this.page.identifier = '\/2017\/12\/ggimage-hat\/'
           
         };
         (function() {

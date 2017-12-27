@@ -552,6 +552,33 @@ ID，每一次revision都要有赋予unique的gi号，可以从<a href="http://w
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/ggimage-hat/">
+                <h3 class="media-heading">给你一顶帽子</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>圣诞节期间，一个个在@微信官方，要加圣诞帽，这让人想起了以前：</p>
+
+<blockquote>
+<p>今天是马化腾的生日，转发5个群，自动开通一个月的QQ会员</p>
+</blockquote>
+
+<p>这班玩QQ长大的孩子，现在变成了玩微信的油腻中年了。</p>
+
+<p>做为biobabble公众号的粉丝，我觉得你们是有能力用两三行R代码来给自己加个帽子的。由于我在过圣诞节，所以这篇文章没有能够及时推送出来，就当马后炮吧，不合时宜地调侃一下大家。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/biosyntax/">
                 <h3 class="media-heading">bioSyntax - 针对生物数据的语法高亮</h3>
               </a>
@@ -773,38 +800,6 @@ ID，每一次revision都要有赋予unique的gi号，可以从<a href="http://w
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/pheatmap-color-range/">
-                <h3 class="media-heading">不同数据集画出的热图，用同样的颜色区间上色？</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Nov 11, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><img src="http://guangchuangyu.github.io/blog_images/R/misc/WechatIMG216.png" alt="" /></p>
-
-<p>这个问题，其实答案就存在于《<a href="http://mp.weixin.qq.com/s/Xhi_ZkrEzUVdnCu7ECBS4w">听说你还不会画热图</a>》，我们先生成一个矩阵：</p>
-
-<pre><code>set.seed(2017-11-12)
-d = data.frame(matrix(rnorm(100), ncol=10))
-colnames(d) = paste0('t', 1:10)
-rownames(d) = paste0('g', 1:10)
-</code></pre>
-
-<p>这个矩阵是<code>rnorm</code>生成的随机数，有正有负，我们再生成一个矩阵，只有正数，并且数值上比第一个矩阵要大：</p>
-
-<pre><code>d2 = abs(d) * 1.2
-</code></pre>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -812,7 +807,7 @@ rownames(d) = paste0('g', 1:10)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         177 posts found
+         178 posts found
       </p>
     </div>
   </div>
