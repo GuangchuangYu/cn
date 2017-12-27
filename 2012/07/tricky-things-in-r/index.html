@@ -1,0 +1,1196 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+  
+
+
+  
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.30.2">
+    <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
+    <title>tricky things in R</title>
+    <meta name="author" content="Guangchuang Yu">
+    <meta name="keywords" content="">
+
+    <link rel="icon" href="https://guangchuangyu.github.io/cn/favicon.png">
+    
+
+    
+    <meta name="description" content="
+
+/  ____    _                                                     \
+| |  _ \  (_)___    __ ___      _____  ___  ___  _ __ ___   ___  |
+| | |_) | | / __|  / _` \ \ /\ / / _ \/ __|/ _ \| &#39;_ ` _ \ / _ \ |
+| |  _ &lt;  | \__ \ | (_| |\ V  V /  __/\__ \ (_) | | | | | |  __/ |
+| |_| \_\ |_|___/  \__,_| \_/\_/ \___||___/\___/|_| |_| |_|\___| |
+\                                                                /
+ ----------------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+
+赋值
+
+
+从一开始学R就知道R的赋值符号和别的语言不一样，用的是&lt;-，虽然=也用，很多书会告诉你两者是一样的，完全通用，不过用R的人习惯也推倡用&lt;-。所以我基本上就抛弃用=号了，反正在ESS里用shift&#43;-就会自动输入&lt;-，也是很方便的。直到有一天，我发现在switch里，必须用=号，而不能用&lt;-，才发现坑爹啊，这两符号是不一样的。
+
+">
+    <meta property="og:description" content="
+
+/  ____    _                                                     \
+| |  _ \  (_)___    __ ___      _____  ___  ___  _ __ ___   ___  |
+| | |_) | | / __|  / _` \ \ /\ / / _ \/ __|/ _ \| &#39;_ ` _ \ / _ \ |
+| |  _ &lt;  | \__ \ | (_| |\ V  V /  __/\__ \ (_) | | | | | |  __/ |
+| |_| \_\ |_|___/  \__,_| \_/\_/ \___||___/\___/|_| |_| |_|\___| |
+\                                                                /
+ ----------------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+
+赋值
+
+
+从一开始学R就知道R的赋值符号和别的语言不一样，用的是&lt;-，虽然=也用，很多书会告诉你两者是一样的，完全通用，不过用R的人习惯也推倡用&lt;-。所以我基本上就抛弃用=号了，反正在ESS里用shift&#43;-就会自动输入&lt;-，也是很方便的。直到有一天，我发现在switch里，必须用=号，而不能用&lt;-，才发现坑爹啊，这两符号是不一样的。
+
+">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="tricky things in R">
+    <meta property="og:url" content="/2012/07/tricky-things-in-r/">
+    <meta property="og:site_name" content="Guangchuang Yu">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Guangchuang Yu">
+    <meta name="twitter:description" content="
+
+/  ____    _                                                     \
+| |  _ \  (_)___    __ ___      _____  ___  ___  _ __ ___   ___  |
+| | |_) | | / __|  / _` \ \ /\ / / _ \/ __|/ _ \| &#39;_ ` _ \ / _ \ |
+| |  _ &lt;  | \__ \ | (_| |\ V  V /  __/\__ \ (_) | | | | | |  __/ |
+| |_| \_\ |_|___/  \__,_| \_/\_/ \___||___/\___/|_| |_| |_|\___| |
+\                                                                /
+ ----------------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+
+赋值
+
+
+从一开始学R就知道R的赋值符号和别的语言不一样，用的是&lt;-，虽然=也用，很多书会告诉你两者是一样的，完全通用，不过用R的人习惯也推倡用&lt;-。所以我基本上就抛弃用=号了，反正在ESS里用shift&#43;-就会自动输入&lt;-，也是很方便的。直到有一天，我发现在switch里，必须用=号，而不能用&lt;-，才发现坑爹啊，这两符号是不一样的。
+
+">
+    
+      <meta name="twitter:creator" content="@guangchuangyu">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
+    
+
+    
+    
+    
+
+    
+
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" />
+    
+    
+    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-u6mk0ojoywresbx8iepslrmmhl4stuhrsxuwhkpwrkrx7mryjcaimasnk4pi.min.css" />
+    
+    
+
+    
+      
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-77901140-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://guangchuangyu.github.io/cn/">Guangchuang Yu</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://guangchuangyu.github.io/cn/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://guangchuangyu.github.io/cn/#about">
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Guangchuang Yu</h4>
+        
+          <h5 class="sidebar-profile-bio">a senior-in-age-but-not-senior-in-knowledge bioinformatician</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/GuangchuangYu" target="_blank">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      tricky things in R
+    </h1>
+  
+  <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2012-07-10T07:16:22&#43;08:00">
+      
+  July 10, 2012
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+
+</div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <hr />
+
+<pre><code>/  ____    _                                                     \
+| |  _ \  (_)___    __ ___      _____  ___  ___  _ __ ___   ___  |
+| | |_) | | / __|  / _` \ \ /\ / / _ \/ __|/ _ \| '_ ` _ \ / _ \ |
+| |  _ &lt;  | \__ \ | (_| |\ V  V /  __/\__ \ (_) | | | | | |  __/ |
+| |_| \_\ |_|___/  \__,_| \_/\_/ \___||___/\___/|_| |_| |_|\___| |
+\                                                                /
+ ----------------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+</code></pre>
+
+<ol>
+<li>赋值</li>
+</ol>
+
+<p>从一开始学R就知道R的赋值符号和别的语言不一样，用的是<code>&lt;-</code>，虽然<code>=</code>也用，很多书会告诉你两者是一样的，完全通用，不过用R的人习惯也推倡用<code>&lt;-</code>。所以我基本上就抛弃用<code>=</code>号了，反正在ESS里用shift+-就会自动输入<code>&lt;-</code>，也是很方便的。直到有一天，我发现<a href="https://guangchuangyu.github.io/cn/2009/03/assignment-token-of-r/">在switch里，必须用<code>=</code>号</a>，而不能用<code>&lt;-</code>，才发现坑爹啊，这两符号是不一样的。</p>
+
+<p></p>
+
+<ol>
+<li>函数中给全局变量赋值</li>
+</ol>
+
+<p>R里可以用<code>&lt;&lt;-</code>来进行全局赋值，比如我在解Project Euler 15题时，就用了<code>&lt;&lt;-</code>，这个最好还是不要用，用全局赋值可能会给你surprise，会给出惊喜的代码不是好代码。</p>
+
+<!--more-->
+
+<p>当然所谓的全局和局部，都是相对的，主要看内存管理的实现方式，内存堆栈，在R里通过environment来实现，S中称之为frames。所谓的全局变量就是位于.GlobalEnv中而已。</p>
+
+<p>所以如果要用<code>&lt;&lt;-</code>来进行全局赋值的话，安全的做法是使用局部的全局变量。如果要做个类比的话，这有点像C/C++里的静态变量。</p>
+
+<p>比如下面这段计算fibonacci数的函数：</p>
+
+<pre><code class="language-r">fibonacci &lt;- local({
+    memo &lt;- c(1, 1, rep(NA, 20))
+    f &lt;- function(x) {
+        if(x == 0) return(0)
+        if(x &lt; 0) return(NA)
+        if(x &gt; length(memo))
+            stop(&quot;''x'' too big for implementation&quot;)
+        if(!is.na(memo[x])) return(memo[x])
+        ans &lt;- f(x-2) + f(x-1)
+        memo[x] &lt;&lt;- ans
+        ans
+    }
+})
+</code></pre>
+
+<pre><code>&gt; fibonacci(15)
+[1] 610
+&gt; get(&quot;memo&quot;, envir=environment(fibonacci))
+ [1]   1   1   2   3   5   8  13  21  34  55  89 144 233 377 610
+[16]  NA  NA  NA  NA  NA  NA  NA
+</code></pre>
+
+<p>environment是个好东西，我很惊讶于我看过的书里基本都没讲到。R的面向对象系统R5，就目前来看，是纯R实现的，用的就是S4和environment。</p>
+
+<p>PS:S3面向对象就是加个class属性，通常用list来存储数据。我一直觉得，把数据存在封闭的environment里，再加个class属性，基本上就可以当成是个简易版的S4了，当然S4怎么实现，我并不清楚。</p>
+
+<ol>
+<li>精度</li>
+</ol>
+
+<p>精度的问题，这是所有计算机语言的问题，就像<a href="http://www.ituring.com.cn/article/details/2058">图灵社区里的笑话</a>，0.1 + 0.2 &gt; 0.3 答案是TRUE.</p>
+
+<pre><code>&gt; .1 == .3/3
+[1] FALSE
+&gt; print(.3/3, digits=16)
+[1] 0.09999999999999999
+&gt; as.integer(.3/3)
+[1] 0
+</code></pre>
+
+<ol>
+<li>操作符优先度</li>
+</ol>
+
+<p>这个也是所有语言所共有的问题，加（）才是万能的。这个之所以tricky，是因为有些优先度和我们的直觉不符合，如果不注意，就很有可能出错。</p>
+
+<p>比如下面的例子：</p>
+
+<pre><code>&gt; -1.2^2.3
+[1] -1.52
+&gt; (-1.2)^2.3
+[1] NaN
+&gt; as.complex(-1.2)^2.3
+[1] 0.89+1.23i
+</code></pre>
+
+<p>在R里，可以用<code>?Syntax</code>通过在线文档查看操作符的优先度。</p>
+
+<ol>
+<li>类属性</li>
+</ol>
+
+<p>在R里，所有的东西，都是对象，都有类属性。比如下面的例子，我想看x和y是否是一样的。</p>
+
+<pre><code>&gt; x &lt;- 1:2
+&gt; y &lt;- c(1,2)
+&gt; all(x == y)
+[1] TRUE
+</code></pre>
+
+<p>显然它们应该是一样的，但是如果用identical函数来看，答案却是FALSE。原因是x是整数型数据，而y是浮点型数据，所以它们不一样。这么tricky的事情，原因在于函数c会把数字都存成浮点型。</p>
+
+<pre><code>&gt; print(y, digits=10)
+[1] 1 2
+</code></pre>
+
+<p>其实y就是整数，被认为是浮点数，完全是因为类属性。</p>
+
+<ol>
+<li>缺失值</li>
+</ol>
+
+<p>比如下面的例子，我想取x中的2，因为x含有NA，就出问题了。当然这个还是比较好解决的，用which就可以了。</p>
+
+<pre><code>&gt; x &lt;- c(1:4,NA, 2)
+&gt; x
+[1]  1  2  3  4 NA  2
+&gt; x[x==2]
+[1]  2 NA  2
+&gt; x[which(x==2)]
+[1] 2 2
+</code></pre>
+
+<p>这个不算tricky，但是如果我想把x中大于5的数剔除掉，上面这个x没有数字是大于5的，我们期望它返回x自身。</p>
+
+<pre><code>&gt; x[-which(x&gt;5)]
+numeric(0)
+</code></pre>
+
+<p>结果却是返回空向量。因为which(x&gt;5)是空的，做为index去取x的subset，自然也就取不到。</p>
+
+<p>对于各种membership的处理，万能又安全的还是<code>%in%</code>操作符。</p>
+
+<pre><code>&gt; x[! x %in% 5]
+[1]  1  2  3  4 NA  2
+</code></pre>
+
+<ol>
+<li>空向量</li>
+</ol>
+
+<p>上面例子出现空向量numeric(0),空向量如果出现于计算中，也是很weird的。</p>
+
+<pre><code>&gt; sum(numeric(0))
+[1] 0
+&gt; prod(numeric(0))
+[1] 1
+&gt; any(logical(0))
+[1] FALSE
+&gt; all(logical(0))
+[1] TRUE
+</code></pre>
+
+<ol>
+<li>操作符是函数</li>
+</ol>
+
+<pre><code>&gt; &quot;+&quot;(1,2)
+[1] 3
+&gt; &quot;==&quot;(1,2)
+[1] FALSE
+&gt; &quot;&lt;&quot;(1,2)
+[1] TRUE
+</code></pre>
+
+<ol>
+<li>纯数字的data.frame</li>
+</ol>
+
+<p>如果一个data.frame的内容全是数字，它看起来和matrix长得一模一样，但是它们的实现方式是不一样的，matrix是dimention=2的array，而data.frame是等长的list。</p>
+
+<p>长得像有时候不注意，就会出现confuse，比如你要求一个matrix的均值，很容易，用mean函数就行。但如果你用mean去求一个data.frame的均值，就不work了，给出的结果是每个column的均值所组成的向量，当然你可以对这个column mean再求一次mean就行了，也可以先as.matrix或unlist处理一下，再求mean。</p>
+
+<p>各种函数，包括apply系列，对于data.frame和matrix的行为，很多都是不一样的，需要谨慎。</p>
+
+<ol>
+<li>哈希表</li>
+</ol>
+
+<p>R的数据类型中没有哈希表，通常我们可以用named vector或者list来实现，可以通过name来取得所对应的值。但这并不是真正意义上的哈希，同样我们可以用environment来实现。</p>
+
+<pre><code>&gt; ee &lt;- new.env()
+&gt; assign(&quot;a&quot;, 10, ee)
+&gt; assign(&quot;b&quot;, 22, ee)
+&gt; get(&quot;a&quot;, ee)
+[1] 10
+&gt; keys &lt;- ls(ee)
+&gt; keys
+[1] &quot;a&quot; &quot;b&quot;
+&gt; values &lt;- sapply(keys, get, envir=ee)
+&gt; values
+ a  b 
+10 22 
+</code></pre>
+
+<ol>
+<li>用数字当变量名</li>
+</ol>
+
+<p>几乎所有的编程语言都不允许以_开头或者数字当变量名，但在R里，这却是可能的，请<a href="http://ygc.name/2009/11/23/using-number-as-variable/">猛击此处</a>。</p>
+
+<p>这么tricky的事情，也是通过environment来实现的。</p>
+
+<ol>
+<li>部分匹配</li>
+</ol>
+
+<p>正如第一点提到的<code>&lt;-</code>和=是通用的，取list元素是<code>$</code>和<code>[[</code>也是通用的，然而它们的默认行为也是不一样的，<code>$</code>默认支持部分匹配，而<code>[[</code>则不是。</p>
+
+<pre><code>&gt; ll &lt;- list(aa=1:2, ab=2:4, cc=1:3) 
+&gt; ll$c
+[1] 1 2 3
+&gt; ll[[&quot;c&quot;]]
+NULL
+&gt; ll[[&quot;c&quot;, exact=FALSE]]
+[1] 1 2 3
+</code></pre>
+
+<p>部分匹配不是好东西，比如下面的例子：</p>
+
+<pre><code>&gt; ll$c
+[1] 1 2 3
+&gt; ll$c &lt;- 5:6
+&gt; ll$c
+[1] 5 6
+&gt; ll
+$aa
+[1] 1 2
+$ab
+[1] 2 3 4
+$cc
+[1] 1 2 3
+$c
+[1] 5 6
+</code></pre>
+
+<p>如果你习惯用部分匹配去取元素，在对此元素进行重新赋值的时候，就很可能会犯错。</p>
+
+<p>函数参数也支持部分匹配，比如有个参数trim，而你一直用t去传这个参数，如果以后函数加了参数比如treat，那么你原先的代码就会莫名其妙的不干活了。</p>
+
+<ol>
+<li>factor</li>
+</ol>
+
+<pre><code>&gt; x &lt;- factor(8:12)
+&gt; as.numeric(x)
+[1] 1 2 3 4 5
+&gt; as.numeric(as.character(x))
+[1]  8  9 10 11 12
+&gt; as.numeric(levels(x))
+[1]  8  9 10 11 12
+</code></pre>
+
+<p>factor由于内部是使用自然数去存储的，所以如果想把factor转换成数字，就必须要麻烦点。</p>
+
+<p>这个问题出现于data.frame中，就是个另人upset的玩意了。</p>
+
+<pre><code>&gt; df &lt;- data.frame(a=1:2, b=c(&quot;x&quot;,&quot;y&quot;))
+&gt; df[1,]
+  a b
+1 1 x
+&gt; as.character(df[1,])
+[1] &quot;1&quot; &quot;1&quot;
+&gt; as.character(df)
+[1] &quot;1:2&quot; &quot;1:2&quot;
+</code></pre>
+
+<p>解决的办法是，你先把df转换成matrix。</p>
+
+<ol>
+<li>不存在的subscript</li>
+</ol>
+
+<p>接着使用上面的df。</p>
+
+<pre><code>&gt; rownames(df) &lt;- c(&quot;a&quot;, &quot;b&quot;)
+&gt; colnames(df) &lt;- c(&quot;p&quot;, &quot;q&quot;)
+&gt; df[c(&quot;a&quot;, &quot;e&quot;),]
+    p    q
+a   1    x
+NA NA &lt;NA&gt;
+&gt; df[,c(&quot;p&quot;, &quot;e&quot;)]
+Error in `[.data.frame`(df, , c(&quot;p&quot;, &quot;e&quot;)) : undefined columns selected
+</code></pre>
+
+<p>row和column的行为是不一致的，而对于不同的数据类型，其返回值也会不同。</p>
+
+<p>vector会返回NA,list则是NULL,matrix会报错，subscript out of bouds。</p>
+
+<ol>
+<li>从剪贴板里读数据</li>
+</ol>
+
+<p>在windows和linux下，都可以用<code>read.table(&quot;paste&quot;)</code>来读取剪贴板里的数据，在Mac OS X下，就不行了。你必须要用<code>read.table(pipe(&quot;pbpaste&quot;))</code>，而在Linux下，则是用<code>read.table(&quot;clipboard&quot;)</code>，我其实很纳闷，为什么就不能包装一下，让语法统一。</p>
+
+<p>最后，附送一个tips，从我<a href="https://guangchuangyu.github.io/cn/2007/06/screenshot/">以前的截屏</a>上看，我最喜欢干的事，就是一打开终端，自动运行一次fortune，顺道看看名言嘛-,-</p>
+
+<p>在R里，有个<a href="http://cran.r-project.org/web/packages/fortunes/index.html">fortunes</a>包，收集的是R相关的言论，有事没事看一看，有益身心健康啊！</p>
+
+<pre><code>&gt; require(fortunes)
+Loading required package: fortunes
+&gt; fortune()
+
+[Listing original copyright holders in R packages is] especially useful if
+there are areas of doubt and uncertainty (eg code published on ftp sites before
+people worried about licenses), since it at least gives you rigidly defined
+areas of doubt and uncertainty.[5]
+[5] Adams D, (1978) Hitchhiker's Guide. BBC Radio.
+   -- Thomas Lumley (in a discussion about copyright vs. licenses)
+      R-devel (January 2010)
+</code></pre>
+              
+                <center><span class="zaln"><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&mid=2247484170&idx=1&sn=ce5f7eb6df66d79661276a64bf25b4bc&chksm=ec43b24ddb343b5b2877574153aeccd049a6824716063883edb35c2338bd32c067caf3885f53#rd" class="zb">赞赏</a></span></center>
+                <center><span class="zaln"><a href="https://guangchuangyu.github.io/cn/2017/11/bmc-journal-protects-paper-of-plagiarism/" class="zb">抵制BMC，匹夫有责</a></span></center>
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/syntax/">syntax</a>
+
+  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/semantic/">semantic</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  <nav>
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2012/09/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E6%96%87%E7%8C%AE/" data-tooltip="如何获取文献">
+          
+            <i class="fa fa-angle-left"></i>
+            <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+          </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2012/05/%E4%BB%80%E4%B9%88%E6%98%AFt-%E6%A3%80%E9%AA%8C/" data-tooltip="什么是T 检验">
+          
+            <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+  <ul class="post-actions post-action-share">
+    
+      <li class="post-action hide-lg hide-md hide-sm">
+        <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+          <i class="fa fa-share-alt"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2012%2f07%2ftricky-things-in-r%2f">
+          <i class="fa fa-google-plus"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2012%2f07%2ftricky-things-in-r%2f">
+          <i class="fa fa-facebook-official"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2012%2f07%2ftricky-things-in-r%2f">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+    
+    
+      <li class="post-action">
+        <a class="post-action-btn btn btn--default" href="#disqus_thread">
+          <i class="fa fa-comment-o"></i>
+        </a>
+      </li>
+    
+    <li class="post-action">
+      
+        <a class="post-action-btn btn btn--default" href="#">
+      
+        <i class="fa fa-list"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2017 Guangchuang Yu. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  <nav>
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2012/09/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E6%96%87%E7%8C%AE/" data-tooltip="如何获取文献">
+          
+            <i class="fa fa-angle-left"></i>
+            <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+          </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2012/05/%E4%BB%80%E4%B9%88%E6%98%AFt-%E6%A3%80%E9%AA%8C/" data-tooltip="什么是T 检验">
+          
+            <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+  <ul class="post-actions post-action-share">
+    
+      <li class="post-action hide-lg hide-md hide-sm">
+        <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+          <i class="fa fa-share-alt"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2012%2f07%2ftricky-things-in-r%2f">
+          <i class="fa fa-google-plus"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2012%2f07%2ftricky-things-in-r%2f">
+          <i class="fa fa-facebook-official"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2012%2f07%2ftricky-things-in-r%2f">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+    
+    
+      <li class="post-action">
+        <a class="post-action-btn btn btn--default" href="#disqus_thread">
+          <i class="fa fa-comment-o"></i>
+        </a>
+      </li>
+    
+    <li class="post-action">
+      
+        <a class="post-action-btn btn btn--default" href="#">
+      
+        <i class="fa fa-list"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <ul class="share-options">
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2012%2f07%2ftricky-things-in-r%2f">
+        <i class="fa fa-google-plus"></i><span>Share on Google Plus</span>
+      </a>
+    </li>
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2012%2f07%2ftricky-things-in-r%2f">
+        <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+      </a>
+    </li>
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2012%2f07%2ftricky-things-in-r%2f">
+        <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Guangchuang Yu</h4>
+    
+      <div id="about-card-bio">a senior-in-age-but-not-senior-in-knowledge bioinformatician</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Postdoc researcher
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Hong Kong
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Search" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no post found</div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/ggimage-hat/">
+                <h3 class="media-heading">给你一顶帽子</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>圣诞节期间，一个个在@微信官方，要加圣诞帽，这让人想起了以前：</p>
+
+<blockquote>
+<p>今天是马化腾的生日，转发5个群，自动开通一个月的QQ会员</p>
+</blockquote>
+
+<p>这班玩QQ长大的孩子，现在变成了玩微信的油腻中年了。</p>
+
+<p>做为biobabble公众号的粉丝，我觉得你们是有能力用两三行R代码来给自己加个帽子的。由于我在过圣诞节，所以这篇文章没有能够及时推送出来，就当马后炮吧，不合时宜地调侃一下大家。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/biosyntax/">
+                <h3 class="media-heading">bioSyntax - 针对生物数据的语法高亮</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><img src="http://biosyntax.org/images/sam-less-small.gif" alt="" /></p>
+
+<p>对于生信狗，天天黑白命令行，实验室的同事，经常对着我的Emacs说，这么小的字体你看得清吗？我只能无奈地回答，因为我要一个屏幕显示一整个函数。我自己平时写代码也很注意这一点，函数尽量小，太长就要考虑切分成几个函数，我说自己是脑容量不够，写不了长函数。我希望如果有人看我代码，他/她可以看得舒服点，虽然写的不见得好，但起码一个函数，你一个屏幕是装得下的。岁月留给我们的，是越来越厚的镜片！然而最近有一款神器，让我们在命令行里，可以高亮显示生物学常见的数据格式，包括SAM, VCF, GTF, PDB和FASTA。这款神器叫bioSyntax (<a href="http://bioSyntax.org">http://bioSyntax.org</a>) ，看着舒服多了，而且逼格十足，如果大家序列比对看多了，其实都会依赖于看颜色，黑白字体情况下，你很难去区分ATCG，即使有明显的pattern，你也很难看出来。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/geom-cake/">
+                <h3 class="media-heading">130岁了，祝你生快</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>周日是港大医学院的198届毕业典礼，Y叔要去参加，今年也正好是医学院130周年，做为画图界的传说，我决定画一个蛋糕。</p>
+
+<p>要画蛋糕，这有何难，我们有<code>emojifont</code>啊，还记得《<a href="http://mp.weixin.qq.com/s/ARxyTRpMs6OeCqOQPp9OwA">emojifont新功能（有视频哦）</a>》一文中的<code>geom_emoji</code>图层吗？</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/chipseeker-8g/">
+                <h3 class="media-heading">最后的八卦</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><h2 id="chipseeker系列传送门">ChIPseeker系列传送门</h2>
+
+<ul>
+<li><a href="https://mp.weixin.qq.com/s/lFi1m7k-9t6nD0SER1r1hw">CS0: ChIPseq从入门到放弃</a></li>
+<li><a href="http://mp.weixin.qq.com/s/vgXrscsUkfYdC5qt_PUNlw">CS1: ChIPseq简介</a></li>
+<li><a href="https://mp.weixin.qq.com/s/D06NEG7blksGugb0srL7KQ">CS2: BED文件</a></li>
+<li><a href="http://mp.weixin.qq.com/s/vWTf59KDs1lp_sQXjEhI_g">CS3: peak注释</a></li>
+<li><a href="http://mp.weixin.qq.com/s/_OPzvaEAbiMolCA2mqJXLw">CS4：关于ChIPseq注释的几个问题</a></li>
+<li><a href="http://mp.weixin.qq.com/s/gDpsdj6cLDtnG1Kla79wLA">CS5: 吃着火锅，唱着歌，还把分析给做了</a></li>
+<li><a href="http://mp.weixin.qq.com/s/MqpfgkMJSFj0pYwcEjV9kQ">CS6: ChIPseeker的可视化方法（中秋节的视觉饕餮）</a></li>
+<li><a href="http://mp.weixin.qq.com/s/v61LjQEfyi_CZucHW53ETw">CS7：Genomic coordination的富集性分析（1）</a></li>
+<li><a href="https://mp.weixin.qq.com/s/vbkZrGwD7dZ-OPOiqkyTnA">CS8：Genomic coordination的富集性分析（2）</a></li>
+<li><a href="https://mp.weixin.qq.com/s/98k_L3CmjH817xMF2VfYtA">CS9: GEO数据挖掘</a></li>
+</ul>
+
+<p>ChIPseeker这个系列，从《<a href="https://mp.weixin.qq.com/s/lFi1m7k-9t6nD0SER1r1hw">CS0: ChIPseq从入门到放弃</a>》到现在CS10，总共11篇，第一篇以八卦开始，我想很有必要以八卦来结束。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/geo-data-mining-for-chipseq/">
+                <h3 class="media-heading">ChIPseq-GEO数据挖掘</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>ChIPseeker系列文章已经介绍了很多内容，包括注释的方方面面，也包括强大的可视化功能（《<a href="http://mp.weixin.qq.com/s/MqpfgkMJSFj0pYwcEjV9kQ">CS6: ChIPseeker的可视化方法（中秋节的视觉饕餮）</a>》）。</p>
+
+<p>今天要介绍一下数据挖掘，从大量已有的数据来产生新的hypothesis。正如我在ChIPseeker的文章里写的：</p>
+
+<blockquote>
+<p>There are increasing evidences shown that combinations of TFs are important for regulating gene expression (Perez-Pinera et al., 2013; Zhu et al., 2008). However, systematically identification of TF interactions by ChIP-seq is still not available. Even if a specific TF binding is essential for a particular regulation was known, we do not have prior knowledge of all its co-factors. There are no systematic strategies available to identified un-known co-factors by ChIP- seq.</p>
+</blockquote>
+
+<p>并没有方法可以大规模地预测未知的共同调控因子，而数据挖掘就是要给我们这种预测的能力。</p>
+
+<p>我当年在写ChIPseeker的时候，我有纠结是写篇Bioinformatics的application note呢，还是写篇长文灌水NAR，毕竟NAR影响因子高一点，最后还是发了Bioinformatics，因为我没钱，囧，Bioinformatics不要版面费啊。然后限于篇幅，ChIPseeker有大量可视化的函数，我在文章中一张图都没放！！！如果当时决定发NAR的话，这个数据挖掘这一块我就会写多点。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/using-external-font-for-meme/">
+                <h3 class="media-heading">使用外部字体画meme</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>meme无非是照片上加两行字，<a href="https://cran.r-project.org/web/packages/meme/">meme</a>这个包本来是练手之作，用来<a href="https://guangchuangyu.github.io/2017/10/create-meme-in-r/">模拟ggplot2的api</a>。结果我后面又实现了<a href="https://guangchuangyu.github.io/2017/11/shadow-text-effect-in-grid-and-ggplot2-graphics/">字体阴影效果</a>，这次我又带来了外部字体支持。</p>
+
+<p>加载外部字体在R上面主要有extrafont和showtext两个实现，特别是showtext用起来还是非常简单的。我在meme包里写了<code>font_import</code>函数，内部就是用showtext，只是简单的包装了一下，这样小白用户可以直接下个字体就开撸。有阴影效果，有<a href="https://fontmeme.com/fonts/">搞笑字体</a>，就万事具备了，这俨然是个专业的meme工具了。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/genomic-coordination-enrichment-analysis/">
+                <h3 class="media-heading">Genomic coordination的富集性分析</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>在《<a href="https://mp.weixin.qq.com/s/v61LjQEfyi_CZucHW53ETw">CS7：Genomic coordination的富集性分析（1）</a>》说到了seq2pathway这个包，其实是两部曲，seq2gene-&gt;gene2pathway，无非是把测序片段用临近的基因注释，包括和TSS overlap的基因，宿主基因，上下游的基因等，然后拿这些基因跑ORA，做富集，仅此而已，这个包支持的物种极有限，《<a href="http://mp.weixin.qq.com/s/_OPzvaEAbiMolCA2mqJXLw">CS4：关于ChIPseq注释的几个问题</a>》这一文中讲到ChIPseeker支持所有有基因组注释的物种，而《<a href="http://mp.weixin.qq.com/s/ScwaofLd_ybfECYjL1dGow">clusterProfiler for enrichment analysis</a>》也支持所有物种（即使你自己跑的电子注释，也能支持），那么使用ChIPseeker来做基因注释，然后衔接clusterProfiler就可以支持所有物种的测序片段进行功能富集分析了。</p>
+
+<p>《<a href="http://mp.weixin.qq.com/s/vWTf59KDs1lp_sQXjEhI_g">CS3: peak注释</a>》本身就支持几种注释，另外我写了一个<code>seq2gene</code>的函数，套用<code>seq2pathway</code>的思路，把一个基因位置上所有关联的基因全部返回来，我们可以使用它去把基因位置信息转换成基因列表，然后用于富集分析，还是熟悉的味道，还是熟悉的配方🦄</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/subsetting-in-ggplot2-ggtree/">
+                <h3 class="media-heading">ggplot2/ggtree取子集画图</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>取子集对于进化树可视化来说是非常常见的，我们要区分内部节点和外部节点，我们也可能想针对某些特点的节点进行注释。</p>
+
+<p>ggplot2现在所有图层都不支持直接取子集，所以呢ggtree就自己定义了一些修改的图层，包括<code>geom_text2</code>, <code>geom_label2</code>,  <code>geom_point2</code> 和 <code>geom_segment2</code>，这些图层和ggplot2的版本唯一差别就是支持取子集。这样对于我们做注释来说，就更方便了。</p>
+
+<p>比如说我想给内部节点打点，可以用：</p>
+
+<pre><code class="language-r">ggtree(tree) + geom_text2(aes(label=label, subset=!isTip), hjust=-.2) +
+        geom_point2(aes(subset=!isTip), color=&quot;red&quot;, size=3)
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/sci-hub-tor/">
+                <h3 class="media-heading">再不用担心打不开sci-hub了</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>之前有写过<a href="https://mp.weixin.qq.com/s/AGQn7Lfn_nHHrtVQyJSTmg">读文献的文章</a>，也介绍了<a href="https://mp.weixin.qq.com/s/TMmsOsEn0wV9yXKOLma3Rw">如何获取文献</a>，那是我还在读硕士的时候写的，覆盖了找文献、文献管理、下载文献、订阅期刊等方方面面，说到下文献，最大的神器当然是sci-hub，但是sci-hub的域名sci-hub.cc, sci-hub.bz, sci-hub.io纷纷都沦陷，最近国内有一神器geenmedical，整合了影响因子、引用数等指标，然而这一神器的下文献功能只是提供外链，有一种说法是geenmedical=pubmed+scihub，当然geenmedical的资源还可能来自于百度学术、researchGate等，不都是来自于sci-hub，然而我们必须承认的是最大的文献提供来源必须还得是sci-hub，所以如果sci-hub挂了，基于sci-hub的神器也就神奇不起来了。如果有人跟你说忘记sci-hub吧，用geenmedical，那绝对是标题党！这里并没有说geenmedical不好，它整合了多方面的资源并且本地化得非常好，很适合国内使用。</p>
+
+<p>比如我在geenmedical里搜clusterProfiler，给出的下载链接第一个就是sci-hub的：<a href="http://doi.org.sci-hub.cc/10.1089/omi.2011.0118">http://doi.org.sci-hub.cc/10.1089/omi.2011.0118</a>，然而这个链接是不可用的！当然它给出了比如百度学术的链接是可以下载到文献的。然而还是那句话，论「海盗精神」我只服sci-hub，虽然我之前也介绍了《<a href="http://mp.weixin.qq.com/s/aaIby87LSQgxpvCAECFxkw">sci-hub如果挂了，你还有神器下文献吗？</a>》，但任何下文献的神器，在sci-hub面前都是渣渣。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/background-rect-for-selected-facet/">
+                <h3 class="media-heading">ggplot2给选定的分面加背景</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>我这个公众号不像大多数所谓的生信从入门到精通的各种其实只是搬运点入门教程的群众喜闻乐见的公众号。正如我在《<a href="http://mp.weixin.qq.com/s/f-c5Q63SY166ZGzYCsqthA">为什么要开这个公众号</a>》里说的，这是小众的，有个人色彩的各种原创文。我不可能像其它公众号一样招两小弟当客服，很多人在公众号后台向我扔了许多问题，由于个人精力有限，只能优先解答「知识星球」的问题，上次写的《<a href="http://mp.weixin.qq.com/s/jegI1wWc7DJzrM7mQfz77Q">同一数据多变量分组的boxplot?</a>》，图虽然简单，却穿着好多件马甲，而我把它扒光了给你看🙈</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/zhishixingqiu/ggplot-bg_question.jpg" alt="" /></p>
+
+<p>上面这个图，你看着高大上吧，我都可以吐它一脸口水。每一个有灰色背景的图，在x轴上violin都够到边界了，其实所有的violin都够到了，这证明什么？每个violin之间其实不可比较！你能想像几个独立的数据，在统一的bin width情况下，画density curve，竟然最高点都一样高吗？显然可能性几乎为0。这个如果使用ggplot2的话，可以使用<code>scale='width'</code>强制拉成一样高，但我不推荐，正如我前面说的，不可比较了。默认参数<code>scale='area'</code>，积分面积一样，和density curve一样解析，另外的参数<code>scale=&quot;count&quot;</code>，高度与计数同比例，和histogram一样解析，而<code>scale='width'</code>强制拉成一样高，如果没有在显眼处说明，误导性太强。</p>
+
+<p>画这种图也可以手工拼，这样就简单了。在你需要的情况下，加个灰色背景嘛，最后拼图嘛。当然拼图不一定要在illustrator里拼，比如你用grid，先画好坐标轴，然后水平上定义几个一样大的viewport，每一个violin都画在相应的viewport里面，对于画图函数来说，viewport就是整个画布了（虽然只是画布里的一块区域），所以你要么画violin，要么在画之前先画个矩阵，一路画下来，代码可以直接生成这样的图，但这图每一个violin都是独立画的（当然也不是完全独立，每一个水平上的ylim是有统一的），就算代码一步生成，也跟illustrator里拼没两样。</p>
+
+<hr />
+
+<p>这里我要教你用ggplot2自动生成，其实解决思路早已推送过，请看《<a href="http://mp.weixin.qq.com/s/PnbasfW4HKILuZNdrLVX_g">facet_plot：加图层到特定分面，方法二</a>》，也正如我在《<a href="http://mp.weixin.qq.com/s/8bzkJY1zzNc83iBUq4Fy1w">什么！你的图上有一双看不见的手</a>》里说的，你们以为我在教ggtree，其实同时在教ggplot2。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no post found"
+         data-message-one="1 post found"
+         data-message-other="{n} posts found">
+         180 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('https://guangchuangyu.github.io/cn/images/cover.jpg');"></div>
+  
+
+
+    
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.js"></script>
+
+
+<script src="https://guangchuangyu.github.io/cn/js/script-wl33z0n6ocaypepiqrazthtivfrliqijej4rq8ek8gvrv1awftmgjuv8k4zc.min.js"></script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight').each(function(i, block) {
+    var code = "";
+    hljs.highlightAuto(block.innerText).value.split(/\r\n|\r|\n/).forEach(function(line) {
+      code += "<span class=\"line\">" + line + "</span><br>";
+    });
+    if (code.length > 0) {
+      block.innerHTML = code;  
+    }
+  });
+  $('pre > code').each(function(i, block) {
+    $(this).addClass('codeblock');
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/guangchuangyu.github.io\/cn\/2012\/07\/tricky-things-in-r\/';
+          
+            this.page.identifier = '\/2012\/07\/tricky-things-in-r\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'gcyu';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+
+    
+  </body>
+</html>
+

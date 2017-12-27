@@ -225,6 +225,89 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/06/five-things-biologists-should-know-about-statistics/">
+          Five things biologists should know about statistics
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2011-06-24T06:10:37&#43;08:00">
+      
+  June 24, 2011
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/statistics">statistics</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <p><a href="http://www.ebi.ac.uk/~birney/">Ewan Birney</a>最近的一篇博文（<a href="http://genomeinformatician.blogspot.com/2011/06/five-statistical-things-i-wished-i-had.html">Five statistical things I wished I had been taught 20 years ago</a>
+）讲述了统计对于生物学的重要性。</p>
+
+<p>一开始从RA Fisher讲起，说生物压根就是统计。Fisher是个农业学家，他所建立的那些统计方法，都是从生物学问题出发。</p>
+
+<p>Ewan所谈及的五个方面分别是：</p>
+
+<blockquote>
+<p>1. Non parametric statistics. These are statistical tests which make a
+bare minimum of assumptions of underlying distributions; in biology we
+are rarely confident that we know the underlying distribution, and hand
+waving about central limit theorem can only get you so far. Wherever
+possible you should use a non parameteric test. This is Mann-Whitney (or
+Wilcoxon if you prefer) for testing &ldquo;medians&rdquo; (Medians is in quotes
+because this is not quite true. They test something which is closely
+related to the median) of two distributions, Spearman&rsquo;s Rho (rather
+pearson&rsquo;s r2) for correlation, and the Kruskal test rather than ANOVAs
+(though if I get this right, you can&rsquo;t in Kruskal do the more
+sophisticated nested models you can do with ANOVA). Finally, don&rsquo;t
+forget the rather wonderful Kolmogorov-Smirnov (I always think it sounds
+like really good vodka) test of whether two sets of observations come
+from the same distribution. All of these methods have a basic theme of
+doing things on the rank of items in a distribution, not the actual
+level. So - if in doubt, do things on the rank of metric, rather than
+the metric itself.</p>
+</blockquote>
+
+<p></p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2011/06/five-things-biologists-should-know-about-statistics/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2010/11/phosphoproteome-profile-of-human-lung-cancer-cell-line-a549/">
           Phosphoproteome profile of human lung cancer cell line A549
         </a>
@@ -617,79 +700,6 @@ ga('send', 'pageview');
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/12/creat-r-package/">
-          创建R包
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2008-12-07T05:23:16&#43;08:00">
-      
-  December 7, 2008
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <pre><code>&gt; source(&quot;code.R&quot;) #载入写好的代码 
-&gt; package.skeleton(name=&quot;pkgname&quot;, list=c(&quot;function_name_list&quot;))
-# 生成R源码包的目录结构 
-</code></pre>
-
-<p>到man目录下改*.Rd文档。latex格式。这是包和函数的帮助文档。</p>
-
-<p>如果需要vignette文档的话。在包目录下，新建inst/doc，在里面写pkgname.Rnw文档。基本上是latex格式，不过允许你插入R代码。make的时候，会先跑代码。再自动转换成latex，再编译成pdf。</p>
-
-<pre><code>$ R CMD check pkgname 
-# 检验代码和文档。这个很重要。通常一些小问题都能在这一步发现。 
-$ R CMD build pkgname 
-# 打包，源码包格式 
-$ R CMD build --binary pkgname
-#编译后打包，二进制格式。
-</code></pre>
-
-<p></p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2008/12/creat-r-package/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -1030,7 +1040,7 @@ $ R CMD build --binary pkgname
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         179 posts found
+         180 posts found
       </p>
     </div>
   </div>
