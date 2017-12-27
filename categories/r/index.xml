@@ -1666,6 +1666,21 @@ the likelihood)&lt;/p&gt;
     </item>
     
     <item>
+      <title>Assignment token of R</title>
+      <link>https://guangchuangyu.github.io/cn/2009/03/assignment-token-of-r/</link>
+      <pubDate>Mon, 09 Mar 2009 13:35:24 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2009/03/assignment-token-of-r/</guid>
+      <description>&lt;p&gt;when I recalled the &lt;em&gt;switch&lt;/em&gt; function, it always gave the first element, no matter what the parameter is.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2009/03/r-29-dev.png&#34; alt=&#34;r-29-dev&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;when &lt;em&gt;organism&lt;/em&gt; changed to &amp;ldquo;yeast&amp;rdquo;, and called &lt;em&gt;switch&lt;/em&gt; function, &lt;em&gt;species&lt;/em&gt; supposed to be changed to &amp;ldquo;Sc&amp;rdquo;, but it remains it&amp;rsquo;s original value.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>创建R包</title>
       <link>https://guangchuangyu.github.io/cn/2008/12/creat-r-package/</link>
       <pubDate>Sun, 07 Dec 2008 05:23:16 +0800</pubDate>

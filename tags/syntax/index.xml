@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Syntax on Guangchuang Yu</title>
+    <link>https://guangchuangyu.github.io/cn/tags/syntax/</link>
+    <description>Recent content in Syntax on Guangchuang Yu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 09 Mar 2009 13:35:24 +0800</lastBuildDate>
+    
+	<atom:link href="https://guangchuangyu.github.io/cn/tags/syntax/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Assignment token of R</title>
+      <link>https://guangchuangyu.github.io/cn/2009/03/assignment-token-of-r/</link>
+      <pubDate>Mon, 09 Mar 2009 13:35:24 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2009/03/assignment-token-of-r/</guid>
+      <description>&lt;p&gt;when I recalled the &lt;em&gt;switch&lt;/em&gt; function, it always gave the first element, no matter what the parameter is.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2009/03/r-29-dev.png&#34; alt=&#34;r-29-dev&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;when &lt;em&gt;organism&lt;/em&gt; changed to &amp;ldquo;yeast&amp;rdquo;, and called &lt;em&gt;switch&lt;/em&gt; function, &lt;em&gt;species&lt;/em&gt; supposed to be changed to &amp;ldquo;Sc&amp;rdquo;, but it remains it&amp;rsquo;s original value.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

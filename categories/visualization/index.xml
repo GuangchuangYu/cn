@@ -641,6 +641,21 @@ contour_plot(17*x^2-16*abs(x)*y+17*y^2-225, [x,-sqrt(17),sqrt(17)],[y,-15*sqrt(1
     </item>
     
     <item>
+      <title>Assignment token of R</title>
+      <link>https://guangchuangyu.github.io/cn/2009/03/assignment-token-of-r/</link>
+      <pubDate>Mon, 09 Mar 2009 13:35:24 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2009/03/assignment-token-of-r/</guid>
+      <description>&lt;p&gt;when I recalled the &lt;em&gt;switch&lt;/em&gt; function, it always gave the first element, no matter what the parameter is.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2009/03/r-29-dev.png&#34; alt=&#34;r-29-dev&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;when &lt;em&gt;organism&lt;/em&gt; changed to &amp;ldquo;yeast&amp;rdquo;, and called &lt;em&gt;switch&lt;/em&gt; function, &lt;em&gt;species&lt;/em&gt; supposed to be changed to &amp;ldquo;Sc&amp;rdquo;, but it remains it&amp;rsquo;s original value.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>scilab三维平面绘图</title>
       <link>https://guangchuangyu.github.io/cn/2007/05/scilab%E4%B8%89%E7%BB%B4%E5%B9%B3%E9%9D%A2%E7%BB%98%E5%9B%BE/</link>
       <pubDate>Thu, 03 May 2007 10:27:00 +0800</pubDate>
