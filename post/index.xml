@@ -2301,19 +2301,6 @@ job from Apple . My confidence in Apple has been seriously dented!&lt;/p&gt;
     </item>
     
     <item>
-      <title></title>
-      <link>https://guangchuangyu.github.io/cn/2015/01/</link>
-      <pubDate>Mon, 05 Jan 2015 07:16:22 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2015/01/</guid>
-      <description>&lt;p&gt;I like running &lt;a href=&#34;http://en.wikipedia.org/wiki/Fortune_%28Unix%29&#34;&gt;fortune&lt;/a&gt; every time when the terminal was started. A &lt;a href=&#34;https://guangchuangyu.github.io/cn/2007/06/screenshot/&#34;&gt;screenshot&lt;/a&gt; is shown below:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2007/06/wmaker.png&#34; alt=&#34;wmaker&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>简简单单讲insertion size</title>
       <link>https://guangchuangyu.github.io/cn/2014/08/insertion-size/</link>
       <pubDate>Wed, 27 Aug 2014 11:44:16 +0800</pubDate>
@@ -2608,7 +2595,7 @@ pubmed上不去，完全没影响，因为有hubmed,hubmed主页上写着：An a
 &lt;li&gt;赋值&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;从一开始学R就知道R的赋值符号和别的语言不一样，用的是&lt;code&gt;&amp;lt;-&lt;/code&gt;，虽然&lt;code&gt;=&lt;/code&gt;也用，很多书会告诉你两者是一样的，完全通用，不过用R的人习惯也推倡用&lt;code&gt;&amp;lt;-&lt;/code&gt;。所以我基本上就抛弃用&lt;code&gt;=&lt;/code&gt;号了，反正在ESS里用shift+-就会自动输入&lt;code&gt;&amp;lt;-&lt;/code&gt;，也是很方便的。直到有一天，我发现&lt;a href=&#34;https://guangchuangyu.github.io/cn/2009/03/assignment-token-of-r/&#34;&gt;在switch里，必须用&lt;code&gt;=&lt;/code&gt;号&lt;/a&gt;，而不能用&lt;code&gt;&amp;lt;-&lt;/code&gt;，才发现坑爹啊，这两符号是不一样的。&lt;/p&gt;
+&lt;p&gt;从一开始学R就知道R的赋值符号和别的语言不一样，用的是&lt;code&gt;&amp;lt;-&lt;/code&gt;，虽然&lt;code&gt;=&lt;/code&gt;也用，很多书会告诉你两者是一样的，完全通用，不过用R的人习惯也推倡用&lt;code&gt;&amp;lt;-&lt;/code&gt;。所以我基本上就抛弃用&lt;code&gt;=&lt;/code&gt;号了，反正在ESS里用shift+-就会自动输入&lt;code&gt;&amp;lt;-&lt;/code&gt;，也是很方便的。直到有一天，我发现&lt;a href=&#34;https://guangchuangyu.github.io/2009/03/assignment-token-of-r/&#34;&gt;在switch里，必须用&lt;code&gt;=&lt;/code&gt;号&lt;/a&gt;，而不能用&lt;code&gt;&amp;lt;-&lt;/code&gt;，才发现坑爹啊，这两符号是不一样的。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -2950,21 +2937,6 @@ the metric itself.&lt;/p&gt;
 &lt;p&gt;#创建一个样本，60个数据，非正态分布的，如下图&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2009/07/sample_a.png&#34; alt=&#34;&#34; title=&#34;sample_a&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Assignment token of R</title>
-      <link>https://guangchuangyu.github.io/cn/2009/03/assignment-token-of-r/</link>
-      <pubDate>Mon, 09 Mar 2009 13:35:24 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2009/03/assignment-token-of-r/</guid>
-      <description>&lt;p&gt;when I recalled the &lt;em&gt;switch&lt;/em&gt; function, it always gave the first element, no matter what the parameter is.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2009/03/r-29-dev.png&#34; alt=&#34;r-29-dev&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;when &lt;em&gt;organism&lt;/em&gt; changed to &amp;ldquo;yeast&amp;rdquo;, and called &lt;em&gt;switch&lt;/em&gt; function, &lt;em&gt;species&lt;/em&gt; supposed to be changed to &amp;ldquo;Sc&amp;rdquo;, but it remains it&amp;rsquo;s original value.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
