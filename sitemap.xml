@@ -578,6 +578,11 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2015/01/</loc>
+    <lastmod>2015-01-05T07:16:22+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2014/08/insertion-size/</loc>
     <lastmod>2014-08-27T11:44:16+08:00</lastmod>
   </url>
@@ -898,6 +903,12 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/</loc>
+    <lastmod>2015-01-05T07:16:22+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/tags/alignment/</loc>
     <lastmod>2017-12-22T13:50:22+08:00</lastmod>
     <priority>0</priority>
@@ -1211,6 +1222,12 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/figlet/</loc>
     <lastmod>2016-12-13T00:53:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/fortunes/</loc>
+    <lastmod>2015-01-05T07:16:22+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1840,7 +1857,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/</loc>
-    <lastmod>2017-12-22T13:50:22+08:00</lastmod>
+    <lastmod>2015-01-05T07:16:22+08:00</lastmod>
     <priority>0</priority>
   </url>
   
