@@ -411,7 +411,7 @@ p = ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2017 Guangchuang Yu. All Rights Reserved
+    &copy; 2018 Guangchuang Yu. All Rights Reserved
   </span>
 </footer>
 
@@ -551,6 +551,37 @@ p = ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/01/using-gosemsim-to-rank-proteins/">
+                <h3 class="media-heading">基因或蛋白之间，谁是谁的死党？</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>很多人会有这样一个问题，差异基因一大堆，到底该选那个来做下游的实验验证？这个问题，说白了是个基因「重要性」的打分问题，你做差异基因分析的时候，就可以看做是个打分的过程，p值是你的统计量，p值越小，打分越高，然而所有的打分都是辅助帮我们进一步缩小范围而已，并不是打分越高就越「重要」，如果打分可以说明一切，那么我们就不需要实验验证了。所以像差异基因分析，我们一般是卡p &lt; 0.01或p &lt; 0.05来过滤，把p值小的基因留下来，但我们并不能说p值最小的基因就是最重要的。</p>
+
+<p>回到开头的问题，我们要的是对打分（差异分析）结果再利用别的手段，再一次进行打分，进一步缩小范围。比如你可以通过构建相互作用网络，通过分析betweenness，找hub分子。当然打分不一定是要基于基因/蛋白水平，也可以是通路水平，比如你可以用<a href="http://mp.weixin.qq.com/s/ScwaofLd_ybfECYjL1dGow">clusterProfiler进行富集分析</a>，然后把你的目标限定在某个/些通路上。反正就是各种手段一起上，直到你能够限定到少量几个基因上，对于做实验验证的人来说，再好不过。</p>
+
+<p>上一周发表的《<a href="https://mp.weixin.qq.com/s/FTzgf1JHXAhDta2u-cDksQ">GOSemSim: GO语义相似性度量</a>》，我记录了GOSemSim包被应用于各种各样的场景，它当然也可以拿来给基因/蛋白质打分。比如你用clusterProfiler分析后，就想验证某一通路，但不知道要选这个通路的哪个基因来做为切入点。</p>
+
+<p>首先问一个问题，同一通路上的基因功能相似性高吗？大家可能会潜意识地认为应该比较高，这不一定的，基因/蛋白有直接或间接的相互作用，但这种相互作用可能只是「月上柳梢头，人约黄昏后」而已，可能偶尔才来一发，这种属于约会型。一个基因/蛋白通常会参与到多条不同的通路中，如果两个蛋白在不同的通路中经常一起出现，那么它们的功能相似性才会高，这种属于基友/闺蜜的死党型。今天就来讲一讲到底谁和谁在约会，谁和谁又是死党。</p>
+
+<blockquote>
+<p>Y Han, <strong>G Yu</strong>, H Sarioglu, A Caballero-Martinez, F Schlott, M Ueffing, H Haase, C Peschel, AM Krackhardt. <a href="http://www.sciencedirect.com/science/article/pii/S1874391912007567">Proteomic investigation of the interactome of FMNL1 in hematopoietic cells unveils a role in calcium-dependent membrane plasticity</a>. <strong><em>Journal of Proteomics</em></strong>. 2013, 78:72-82.</p>
+</blockquote>
+
+<p>这篇文章是和慕尼黑工业大学（Technische Universität München）合作的一篇文章，使用了Co-IP去拉蛋白，再用LC-MS/MS进行鉴定，Co-IP是鉴定蛋白相互作用的常用手段，当然拉下来的蛋白不见得就是有真实的相互作用，它甚至于可能只是背景污染而已，所以我们需要对拉下来的蛋白进行打分，找出一些可能性比较高的候选蛋白进一步进行验证。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -774,35 +805,6 @@ p = ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/background-rect-for-selected-facet/">
-                <h3 class="media-heading">ggplot2给选定的分面加背景</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Nov 11, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>我这个公众号不像大多数所谓的生信从入门到精通的各种其实只是搬运点入门教程的群众喜闻乐见的公众号。正如我在《<a href="http://mp.weixin.qq.com/s/f-c5Q63SY166ZGzYCsqthA">为什么要开这个公众号</a>》里说的，这是小众的，有个人色彩的各种原创文。我不可能像其它公众号一样招两小弟当客服，很多人在公众号后台向我扔了许多问题，由于个人精力有限，只能优先解答「知识星球」的问题，上次写的《<a href="http://mp.weixin.qq.com/s/jegI1wWc7DJzrM7mQfz77Q">同一数据多变量分组的boxplot?</a>》，图虽然简单，却穿着好多件马甲，而我把它扒光了给你看🙈</p>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/zhishixingqiu/ggplot-bg_question.jpg" alt="" /></p>
-
-<p>上面这个图，你看着高大上吧，我都可以吐它一脸口水。每一个有灰色背景的图，在x轴上violin都够到边界了，其实所有的violin都够到了，这证明什么？每个violin之间其实不可比较！你能想像几个独立的数据，在统一的bin width情况下，画density curve，竟然最高点都一样高吗？显然可能性几乎为0。这个如果使用ggplot2的话，可以使用<code>scale='width'</code>强制拉成一样高，但我不推荐，正如我前面说的，不可比较了。默认参数<code>scale='area'</code>，积分面积一样，和density curve一样解析，另外的参数<code>scale=&quot;count&quot;</code>，高度与计数同比例，和histogram一样解析，而<code>scale='width'</code>强制拉成一样高，如果没有在显眼处说明，误导性太强。</p>
-
-<p>画这种图也可以手工拼，这样就简单了。在你需要的情况下，加个灰色背景嘛，最后拼图嘛。当然拼图不一定要在illustrator里拼，比如你用grid，先画好坐标轴，然后水平上定义几个一样大的viewport，每一个violin都画在相应的viewport里面，对于画图函数来说，viewport就是整个画布了（虽然只是画布里的一块区域），所以你要么画violin，要么在画之前先画个矩阵，一路画下来，代码可以直接生成这样的图，但这图每一个violin都是独立画的（当然也不是完全独立，每一个水平上的ylim是有统一的），就算代码一步生成，也跟illustrator里拼没两样。</p>
-
-<hr />
-
-<p>这里我要教你用ggplot2自动生成，其实解决思路早已推送过，请看《<a href="http://mp.weixin.qq.com/s/PnbasfW4HKILuZNdrLVX_g">facet_plot：加图层到特定分面，方法二</a>》，也正如我在《<a href="http://mp.weixin.qq.com/s/8bzkJY1zzNc83iBUq4Fy1w">什么！你的图上有一双看不见的手</a>》里说的，你们以为我在教ggtree，其实同时在教ggplot2。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -810,7 +812,7 @@ p = ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         180 posts found
+         181 posts found
       </p>
     </div>
   </div>

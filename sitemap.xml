@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2018/01/using-gosemsim-to-rank-proteins/</loc>
+    <lastmod>2018-01-02T10:57:15+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2017/12/ggimage-hat/</loc>
     <lastmod>2017-12-27T12:06:59+08:00</lastmod>
   </url>
@@ -1288,7 +1293,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/gosemsim/</loc>
-    <lastmod>2017-11-11T20:00:43+08:00</lastmod>
+    <lastmod>2018-01-02T10:57:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1312,7 +1317,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/</loc>
-    <lastmod>2017-12-27T12:06:59+08:00</lastmod>
+    <lastmod>2018-01-02T10:57:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1630,7 +1635,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/post/</loc>
-    <lastmod>2017-12-27T12:06:59+08:00</lastmod>
+    <lastmod>2018-01-02T10:57:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1666,13 +1671,13 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/proteomics/</loc>
-    <lastmod>2010-11-23T02:22:22+08:00</lastmod>
+    <lastmod>2018-01-02T10:57:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/publication/</loc>
-    <lastmod>2010-11-23T02:22:22+08:00</lastmod>
+    <lastmod>2018-01-02T10:57:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1708,7 +1713,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/r/</loc>
-    <lastmod>2017-12-27T12:06:59+08:00</lastmod>
+    <lastmod>2018-01-02T10:57:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
