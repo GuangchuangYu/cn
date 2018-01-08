@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2018/01/geom-ord-ellipse/</loc>
+    <lastmod>2018-01-08T13:13:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2018/01/using-gosemsim-to-rank-proteins/</loc>
     <lastmod>2018-01-02T10:57:15+08:00</lastmod>
   </url>
@@ -1262,8 +1267,14 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/ggord/</loc>
+    <lastmod>2018-01-08T13:13:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/tags/ggplot2/</loc>
-    <lastmod>2017-12-27T12:06:59+08:00</lastmod>
+    <lastmod>2018-01-08T13:13:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1317,7 +1328,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/</loc>
-    <lastmod>2018-01-02T10:57:15+08:00</lastmod>
+    <lastmod>2018-01-08T13:13:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1635,7 +1646,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/post/</loc>
-    <lastmod>2018-01-02T10:57:15+08:00</lastmod>
+    <lastmod>2018-01-08T13:13:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1713,7 +1724,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/r/</loc>
-    <lastmod>2018-01-02T10:57:15+08:00</lastmod>
+    <lastmod>2018-01-08T13:13:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1905,7 +1916,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/visualization/</loc>
-    <lastmod>2017-12-27T12:06:59+08:00</lastmod>
+    <lastmod>2018-01-08T13:13:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1947,7 +1958,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/yyplot/</loc>
-    <lastmod>2017-12-14T22:00:00+08:00</lastmod>
+    <lastmod>2018-01-08T13:13:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
