@@ -6,10 +6,25 @@
     <description>Recent content on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 Jan 2018 13:13:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jan 2018 15:21:00 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>使用新姿势玩KEGG</title>
+      <link>https://guangchuangyu.github.io/cn/2018/01/kegg-pathway-index/</link>
+      <pubDate>Thu, 11 Jan 2018 15:21:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2018/01/kegg-pathway-index/</guid>
+      <description>&lt;p&gt;有小伙伴说他要用gage这个包，因为可以选择sigmet这个index，然后得到的结果只有signaling and metabolic pathways，而不会有他不关心的disease pathways。然而也有各种不爽，他最喜欢的还是clusterProfiler，但没办法只做某些pathways。&lt;/p&gt;
+
+&lt;p&gt;我发现大家对clusterProfiler有各种误解，各种觉得没办法，我也很无语啊，明明我写了大量的文档，你们偏不看。clusterProfiler啥都可以做，你想做COG，domain这些没有内置支持的富集分析都可以的，因为clusterProfiler是通用的分析工具，啥都能做。&lt;/p&gt;
+
+&lt;p&gt;说到gage的pathway index，这其实是他们对pathway有个分类，这个数据就在&lt;a href=&#34;https://pathview.uncc.edu/data/khier.tsv可以下载到，要支持他还不容易，但我不喜欢把别人的东西打包在自己的包里，所谓走别人的路，让别人无路可走，这可不是什么好主意。所以呢，我不会内置支持的，你们自己玩。&#34;&gt;https://pathview.uncc.edu/data/khier.tsv可以下载到，要支持他还不容易，但我不喜欢把别人的东西打包在自己的包里，所谓走别人的路，让别人无路可走，这可不是什么好主意。所以呢，我不会内置支持的，你们自己玩。&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>画个小圈圈</title>

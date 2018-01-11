@@ -225,6 +225,70 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/10/educational-games/">
+          Educational Games
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2008-10-06T15:10:00&#43;08:00">
+      
+  October 6, 2008
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/game">game</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <p>You don&rsquo;t have to be a genius to understand the work of the Nobel
+Laureates. These games and simulations, based on Nobel Prize-awarded
+achievements, will teach and inspire you while you&rsquo;re having FUN!
+Students, teachers and non-professionals of all ages will enjoy testing
+and building their knowledge in physics, chemistry, physiology or
+medicine, literature, peace and economics. So, go ahead, Explore and
+Learn!</p>
+
+<p></p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2008/10/educational-games/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/10/restore-thunder-url/">
           还原迅雷的url
         </a>
@@ -591,92 +655,6 @@ ga('send', 'pageview');
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/09/mapping-codelink-id/">
-          映射codelink芯片ID
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2008-09-23T01:18:00&#43;08:00">
-      
-  September 23, 2008
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/bioinformatics">Bioinformatics</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>GE公司codelink芯片(这个破产品已经停产了)上的探针ID，需要转成别的ID，看了一些在线的转换ID工具，都不支持，探针ID基本上都只支持affy的。</p>
-
-<p>想起了bioconductor里的biomaRt，这个包可以检索BioMart数据库，这个数据库里有N多种ID。试了一下，果然没问题。</p>
-
-<pre><code class="language-r">#加载biomaRt包
-library(biomaRt)
-
-#选取数据库
-ensembl = useMart(&quot;ensembl&quot;, dataset = &quot;hsapiens_gene_ensembl&quot;)
-
-#获取可供检索的attribute
-attributes=listAttributes(mart=ensembl)
-
-#看一下attributes里是否有codelink，得到以下的结果。
-attributes[grep(&quot;codelink&quot;,attributes[,1]), ]
-
-name description
-21 codelink Codelink ID
-#再搜一下其它我想要的ID
-
-#读进含有codelink ID的文件。
-mrna_id &lt;- read.table(&quot;mrna_id.txt&quot;)
-
-#进行ID映射。
-idmap &lt;- getBM(attributes=c(&quot;codelink&quot;,&quot;refseq_dna&quot;,&quot;external_gene_id&quot;,
-                            &quot;embl&quot;,&quot;hgnc_id&quot;,&quot;hgnc_symbol&quot;), 
-               filters =&quot;codelink&quot;, values=mrna_id[,1],
-               mart=ensembl,output=&quot;list&quot;)
-</code></pre>
-
-<p></p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2008/09/mapping-codelink-id/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -758,6 +736,29 @@ idmap &lt;- getBM(attributes=c(&quot;codelink&quot;,&quot;refseq_dna&quot;,&quot
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/01/kegg-pathway-index/">
+                <h3 class="media-heading">使用新姿势玩KEGG</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>有小伙伴说他要用gage这个包，因为可以选择sigmet这个index，然后得到的结果只有signaling and metabolic pathways，而不会有他不关心的disease pathways。然而也有各种不爽，他最喜欢的还是clusterProfiler，但没办法只做某些pathways。</p>
+
+<p>我发现大家对clusterProfiler有各种误解，各种觉得没办法，我也很无语啊，明明我写了大量的文档，你们偏不看。clusterProfiler啥都可以做，你想做COG，domain这些没有内置支持的富集分析都可以的，因为clusterProfiler是通用的分析工具，啥都能做。</p>
+
+<p>说到gage的pathway index，这其实是他们对pathway有个分类，这个数据就在<a href="https://pathview.uncc.edu/data/khier.tsv可以下载到，要支持他还不容易，但我不喜欢把别人的东西打包在自己的包里，所谓走别人的路，让别人无路可走，这可不是什么好主意。所以呢，我不会内置支持的，你们自己玩。">https://pathview.uncc.edu/data/khier.tsv可以下载到，要支持他还不容易，但我不喜欢把别人的东西打包在自己的包里，所谓走别人的路，让别人无路可走，这可不是什么好主意。所以呢，我不会内置支持的，你们自己玩。</a></p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -991,33 +992,6 @@ idmap &lt;- getBM(attributes=c(&quot;codelink&quot;,&quot;refseq_dna&quot;,&quot
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/subsetting-in-ggplot2-ggtree/">
-                <h3 class="media-heading">ggplot2/ggtree取子集画图</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Dec 12, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>取子集对于进化树可视化来说是非常常见的，我们要区分内部节点和外部节点，我们也可能想针对某些特点的节点进行注释。</p>
-
-<p>ggplot2现在所有图层都不支持直接取子集，所以呢ggtree就自己定义了一些修改的图层，包括<code>geom_text2</code>, <code>geom_label2</code>,  <code>geom_point2</code> 和 <code>geom_segment2</code>，这些图层和ggplot2的版本唯一差别就是支持取子集。这样对于我们做注释来说，就更方便了。</p>
-
-<p>比如说我想给内部节点打点，可以用：</p>
-
-<pre><code class="language-r">ggtree(tree) + geom_text2(aes(label=label, subset=!isTip), hjust=-.2) +
-        geom_point2(aes(subset=!isTip), color=&quot;red&quot;, size=3)
-</code></pre>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1025,7 +999,7 @@ idmap &lt;- getBM(attributes=c(&quot;codelink&quot;,&quot;refseq_dna&quot;,&quot
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         182 posts found
+         183 posts found
       </p>
     </div>
   </div>
