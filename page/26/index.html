@@ -225,6 +225,85 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2007/05/edit-partition-netbsd-macppc/">
+          Edit partition table in NetBSD/macppc
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2007-05-14T04:43:00&#43;08:00">
+      
+  May 14, 2007
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/bsd">BSD</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/powerbook">Powerbook</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <pre><code>#disklabel wd0
+</code></pre>
+
+<p>可以看到原始分区如下: 7 partitions:</p>
+
+<pre><code>#        size    offset     fstype [fsize bsize cpg/sgs]
+a:  20971520  25167648     4.2BSD      0     0     0  # (Cyl.  24967*-  45772*)
+b:   1048576  46139168       swap                     # (Cyl.  45772*-  46813*)
+c: 117210240         0     unused      0     0        # (Cyl.      0 - 116279)
+d:  25165824      1824        HFS                     # (Cyl.      1*-  24967*)
+e:  28079456  89130784        HFS                     # (Cyl.  88423*- 116279)
+g:  41943040  47187744     4.2BSD      0     0     0  # (Cyl.  46813*-  88423*)
+</code></pre>
+
+<p>a为netbsd的/分区，b为swap分区,c为整个硬盘，d为mac
+os的系统盘。e为两系统共享分区(在os9下格式化为fat)，g为netbsd下的/home分区。
+原本是两系统，os9.2一直都很少用，所以想删了，腾出空间来放数据。因为wd0d和wd0e不在连续的柱面上，所以无法将它们合并。</p>
+
+<p>新的分区方案如下：wd0d删了，分成两个，一个15M(需要一个HFS类型的分区来放置<code>ofwboot.xcf</code>，因为openfirmwire不支持从netbsd分区里加载loader),剩下的作为<code>/home</code>分区。把原来的<code>/home</code>分区(<code>wd0g</code>)和共享数据的分区(<code>wd0e</code>)合并为一个分区，用于放置数据。
+1. 第一步，也是最关键的一步，先备份好数据。
+
+2. 安装hfsutils。用于操作那个15M的HFS分区（格式化，拷贝文件等工具）。hfsutils是命令行的，xhfs是tk界面的。</p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2007/05/edit-partition-netbsd-macppc/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2007/05/pkgsrc-tips/">
           pkgsrc tips
         </a>
@@ -657,102 +736,6 @@ vim mystar.conf
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2005/01/powerbook-gentoo/">
-          Powerbook G3上安装gentoo
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2005-01-14T04:32:00&#43;08:00">
-      
-  January 14, 2005
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/linux">Linux</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/powerbook">Powerbook</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>下面是我在PowerBook G3上安装Gentoo的全过程。。</p>
-
-<p>自己做一个备忘录，也给想在Powerbook上装Gentoo的做一个参考。</p>
-
-<p>以下为基本的安装过程，详细请参考Gentoo的文档</p>
-
-<p><a href="http://www.gentoo.org/doc/en/handbook/handbook-ppc.xml">http://www.gentoo.org/doc/en/handbook/handbook-ppc.xml</a></p>
-
-<p>基本的安装步骤如下：</p>
-
-<p>用2004.3LiveCD进入。</p>
-
-<h2 id="1-配置网络">1. 配置网络</h2>
-
-<pre><code>＃net-setup eth0
-</code></pre>
-
-<p>回答它几个问题就行了。</p>
-
-<h2 id="2-分区">2.分区</h2>
-
-<pre><code>#mac-fdisk /dev/hda
-</code></pre>
-
-<p>以下是我的分区。</p>
-
-<pre><code>/dev/hda
- # type name length base ( size ) system
-/dev/hda1 Apple_partition_map Apple 63 @ 1 ( 31.5k) Partition map
-/dev/hda2 Apple_Bootstrap bootstrap 1600 @ 64 (800.0k) NewWorld bootblock
-/dev/hda3 Apple_UNIX_SVR2 / 12582912 @ 1664 ( 6.0G) Linux native
-/dev/hda4 Apple_UNIX_SVR2 swap 1048576 @ 12584576 (512.0M) Linux swap
-/dev/hda5 Apple_UNIX_SVR2 /home 6007728 @ 13633152 ( 2.9G) Linux native
-
-Block size=512, Number of Blocks=19640880
-DeviceType=0x0, DeviceId=0x0
-</code></pre>
-
-<p></p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2005/01/powerbook-gentoo/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -765,7 +748,14 @@ DeviceType=0x0, DeviceId=0x0
         </li>
       
       
-      <li class="pagination-number">page 26 of 26</li>
+        <li class="pagination-next">
+          <a class="btn btn--default btn--small" href="https://guangchuangyu.github.io/cn/page/27/">
+            <span>OLDER POSTS</span>
+            <i class="fa fa-angle-right text-base icon-ml"></i>
+          </a>
+        </li>
+      
+      <li class="pagination-number">page 26 of 27</li>
     </ul>
   </div>
 
@@ -827,6 +817,29 @@ DeviceType=0x0, DeviceId=0x0
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/01/oncotarget/">
+                <h3 class="media-heading">我被oncotarget撞了腰</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>最近似乎就oncotarget是否要被SCI踢出来这事情，真真假假的报道挺多。以我的观点来看，它被踢是正常的；它不被踢也迟早要被踢！就像当年它的影响因子还在7点多的时候，我就预言oncotarget药丸一样，结果就直接掉到5点多，然后关于神刊的报道就开始多了起来。</p>
+
+<p>话说我在某高校工作的时候，有一个同事，他跳槽了！跳槽前各种暗渡陈仓，压着文章不发表，蓄谋已久的事情，然后就在跳槽的当年，可能为了掩饰，当年还继续招生，结果当然坑惨了那一届的学生，当然前面两三届也惨，因为数据压着不发表。</p>
+
+<p>虽然离职前和旧单位签了协议，数据是在旧单位做的，发表文章旧单位必须是通讯作者，仅此而已，反正都是他通讯，挂两单位而已嘛，这在学术界再正常不过。此人去了新单位之后，本来该发文章了，原来的学生干了几年，也该给人一个authorship了，然而他把新单位的领导放在了第一作者，自己当了通讯，原来的学生嘛，见鬼去了，其他作者多半是他的新同事/学生。当然通讯也没挂原单位，对于没有社会契约精神的人来说，协议就是一张废纸。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1062,27 +1075,6 @@ DeviceType=0x0, DeviceId=0x0
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/genomic-coordination-enrichment-analysis/">
-                <h3 class="media-heading">Genomic coordination的富集性分析</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Dec 12, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>在《<a href="https://mp.weixin.qq.com/s/v61LjQEfyi_CZucHW53ETw">CS7：Genomic coordination的富集性分析（1）</a>》说到了seq2pathway这个包，其实是两部曲，seq2gene-&gt;gene2pathway，无非是把测序片段用临近的基因注释，包括和TSS overlap的基因，宿主基因，上下游的基因等，然后拿这些基因跑ORA，做富集，仅此而已，这个包支持的物种极有限，《<a href="http://mp.weixin.qq.com/s/_OPzvaEAbiMolCA2mqJXLw">CS4：关于ChIPseq注释的几个问题</a>》这一文中讲到ChIPseeker支持所有有基因组注释的物种，而《<a href="http://mp.weixin.qq.com/s/ScwaofLd_ybfECYjL1dGow">clusterProfiler for enrichment analysis</a>》也支持所有物种（即使你自己跑的电子注释，也能支持），那么使用ChIPseeker来做基因注释，然后衔接clusterProfiler就可以支持所有物种的测序片段进行功能富集分析了。</p>
-
-<p>《<a href="http://mp.weixin.qq.com/s/vWTf59KDs1lp_sQXjEhI_g">CS3: peak注释</a>》本身就支持几种注释，另外我写了一个<code>seq2gene</code>的函数，套用<code>seq2pathway</code>的思路，把一个基因位置上所有关联的基因全部返回来，我们可以使用它去把基因位置信息转换成基因列表，然后用于富集分析，还是熟悉的味道，还是熟悉的配方🦄</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1090,7 +1082,7 @@ DeviceType=0x0, DeviceId=0x0
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         183 posts found
+         184 posts found
       </p>
     </div>
   </div>
