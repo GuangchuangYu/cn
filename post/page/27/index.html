@@ -225,6 +225,85 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/">
+          在emacs里使用maxima
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2005-05-28T08:15:00&#43;08:00">
+      
+  May 28, 2005
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/software">Software</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <h2 id="下载imaxima">下载imaxima   </h2>
+
+<p><a href="http://members3.jcom.home.ne.jp/imaxima/Site/Download%20and%20Install_files/imaxima-imath-0.97a.tar.gz">http://members3.jcom.home.ne.jp/imaxima/Site/Download%20and%20Install_files/imaxima-imath-0.97a.tar.gz</a></p>
+
+<pre><code>./configure
+make
+sudo make install
+</code></pre>
+
+<p>进行安装。
+默认将安装在/usr/local/share/emacs/site-lisp下，在~/.emacs下加入</p>
+
+<pre><code>(load &quot;imaxima&quot;)
+</code></pre>
+
+<p>启动emacs,按M-x,键入imaxima运行maxima 但是进行运算时出错。
+<img src="http://guangchuangyu.github.io/blog_images/2005/05/070902122953.png" alt="" /></p>
+
+<p>需要breqn094包，可从<a href="ftp://ftp.ams.org/pub/tex/breqn.zip">ftp://ftp.ams.org/pub/tex/breqn.zip</a>下载，</p>
+
+<pre><code>cd /usr/share/texmf/tex/latex/
+sudo unzip ~/Downloads/breqn.zip
+sudo texhash
+</code></pre>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/">
           scau校园网认证
         </a>
@@ -460,6 +539,28 @@ DeviceType=0x0, DeviceId=0x0
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/01/scihub/">
+                <h3 class="media-heading">2018最新可用的sci-hub镜像&#43;桌面版程序</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>之前的《<a href="https://mp.weixin.qq.com/s/TMmsOsEn0wV9yXKOLma3Rw">如何获取文献</a>》介绍了方方面面，不单单是下载文献，而对于下载文献，scihub必须是首选，虽然我们有备选方案《<a href="http://mp.weixin.qq.com/s/aaIby87LSQgxpvCAECFxkw">sci-hub如果挂了，你还有神器下文献吗？</a>》，但总是没scihub爽，之前介绍了用洋葱链接，《<a href="https://mp.weixin.qq.com/s/5JGC1bcVZOmdaPxo_uXYYw">再不用担心打不开sci-hub了</a>
+<a href="https://mp.weixin.qq.com/s/AGQn7Lfn_nHHrtVQyJSTmg">听说你也在读文献</a>》，在写这篇文章的时候，我还测试了一下，现在依然可用！</p>
+
+<p>目前挂掉的scihub镜像已经很多，导致很多人认为scihub没法用了，其实还有很多的镜像是可以用的，当然能用的，以后也可能会挂，但新的镜像我相信还是会不断出现的，大家且行且珍惜吧。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -701,35 +802,6 @@ DeviceType=0x0, DeviceId=0x0
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/geo-data-mining-for-chipseq/">
-                <h3 class="media-heading">ChIPseq-GEO数据挖掘</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Dec 12, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>ChIPseeker系列文章已经介绍了很多内容，包括注释的方方面面，也包括强大的可视化功能（《<a href="http://mp.weixin.qq.com/s/MqpfgkMJSFj0pYwcEjV9kQ">CS6: ChIPseeker的可视化方法（中秋节的视觉饕餮）</a>》）。</p>
-
-<p>今天要介绍一下数据挖掘，从大量已有的数据来产生新的hypothesis。正如我在ChIPseeker的文章里写的：</p>
-
-<blockquote>
-<p>There are increasing evidences shown that combinations of TFs are important for regulating gene expression (Perez-Pinera et al., 2013; Zhu et al., 2008). However, systematically identification of TF interactions by ChIP-seq is still not available. Even if a specific TF binding is essential for a particular regulation was known, we do not have prior knowledge of all its co-factors. There are no systematic strategies available to identified un-known co-factors by ChIP- seq.</p>
-</blockquote>
-
-<p>并没有方法可以大规模地预测未知的共同调控因子，而数据挖掘就是要给我们这种预测的能力。</p>
-
-<p>我当年在写ChIPseeker的时候，我有纠结是写篇Bioinformatics的application note呢，还是写篇长文灌水NAR，毕竟NAR影响因子高一点，最后还是发了Bioinformatics，因为我没钱，囧，Bioinformatics不要版面费啊。然后限于篇幅，ChIPseeker有大量可视化的函数，我在文章中一张图都没放！！！如果当时决定发NAR的话，这个数据挖掘这一块我就会写多点。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -737,7 +809,7 @@ DeviceType=0x0, DeviceId=0x0
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         185 posts found
+         186 posts found
       </p>
     </div>
   </div>
