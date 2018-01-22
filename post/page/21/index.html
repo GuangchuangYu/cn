@@ -225,6 +225,74 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2012/04/support-vector-machine/">
+          Support Vector Machine
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2012-04-12T05:37:55&#43;08:00">
+      
+  April 12, 2012
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/statistics">statistics</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <p>支持向量机(Support Vector Machines, SVM)最初由Vladimir
+Vapnik于1997年提出，SVM最简单的形式就是找出一下区分界限（descision
+boundary），也称之为超平面(hyperplane)，使得离它最近的点（称之为support
+vectors）与之间隔最大。
+<img src="http://guangchuangyu.github.io/blog_images/2012/04/linearSVM.png" alt="" /></p>
+
+<p>这和logistic regression有些相似，区别在于logistic
+regression要求所有的点尽可能地远离中间那条线，而SVM是要求最接近中间线的点尽可能地远离中间线。也就是说SVM的主要目标是区分那些最难区分的点。</p>
+
+<p>SVM对于hyperplane的定义，在形式上和logistic regression一样,logistic
+regression的decision boundary由$\theta^TX=0$确定,SVM则用$w^TX+b=0$表示,其中b相当于logistic regression中的$\theta_0$，从形式上看，两者并无区别，当然如前面所说，两者的目标不一样，logistic regression着眼于全局，SVM着眼于support
+vectors。有监督算法都有label变量y，logistic
+regression取值是<code>{0,1}</code>，而SVM为了计算距离方便，取值为<code>{-1,1}</code>。</p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2012/04/support-vector-machine/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2012/03/installing-hackintosh/">
           Installing Hackintosh
         </a>
@@ -578,104 +646,6 @@ contour_plot(17*x^2-16*abs(x)*y+17*y^2-225, [x,-sqrt(17),sqrt(17)],[y,-15*sqrt(1
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/07/a-simple-gene-finder/">
-          a simple gene finder
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2011-07-10T09:04:46&#43;08:00">
-      
-  July 10, 2011
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/conference">conference</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>上了几天的课，<a href="http://ibw2011.fmmu.edu.cn/schedule.htm">http://ibw2011.fmmu.edu.cn/schedule.htm</a>
-今天就上完了，只完成了project 1，想写gibbs sampling，但是没搞明白，汗。</p>
-
-<p>这个纯属练习用，没啥实用价值。</p>
-
-<blockquote>
-<p>Course Projects:</p>
-
-<p>Project 1: Implementation of a simple gene finder</p>
-
-<p>GOAL</p>
-
-<p>Build a simple codon-usage based gene finder for finding genes in
-E.coli.</p>
-
-<p>Procedure</p>
-
-<p>Collect 100 gene sequences from the bacterium E. coli in the genbank
-(<a href="http://www.ncbi.nlm.nihh.gov">http://www.ncbi.nlm.nihh.gov</a>). Compute the codon usage table based on
-these genes (and the translated protein sequences from them); Build a
-probabilistic model based on the codon usages; Implement a random
-sequence model in which the nucleotide frequency is computed from the
-100 E. coli genes. For a given DNA sequence (and one selected reading
-frame), compare your model with a random sequence model; Results that
-you should submit:</p>
-
-<p>Two FASTA files for the collected 100 genes and 100 translated protein
-sequences; The printed codon usage table; A program named ECgnfinder,
-running with the syntax as ECgnfinder –i inputfile</p>
-
-<p>Inputfile stands for the name of input file, which should contain one
-DNA sequence in FASTA file format; the program should be able to
-report an error message if the input file is in the wrong format.</p>
-
-<p>The output should be printed to the standard output as (xxx stands for
-the likelihood)</p>
-
-<p>ORF1: xxx ORF2: xxx</p>
-</blockquote>
-
-<p></p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2011/07/a-simple-gene-finder/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -757,6 +727,35 @@ the likelihood)</p>
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/01/pubmed-still-update/">
+                <h3 class="media-heading">PubMed没有停更</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>在一篇文章《<a href="http://mp.weixin.qq.com/s/VfLmahpFqdmXfwId-d_BWQ">pubmed停更？和你没半毛钱关系！你们是想放假想疯了吧？</a>》我就解读了所谓的停更，根本不碍事，然后又分析了事情只是被自媒体拿来博眼球而已，真正受影响的NCBI数据库没人说，而PubMed停更的可能性不大。</p>
+
+<blockquote>
+<p>Because of a lapse in government funding, the information on this website may not be up to date, transactions submitted via the website may not be processed, and the agency may not be able to respond to inquiries until appropriations are enacted.</p>
+</blockquote>
+
+<p>这个消息，很多人上pubmed看到，就打鸡血了，哟哟哟，号外号外大新闻，真的有过过脑子吗？</p>
+
+<blockquote>
+<p>transactions submitted via the website may not be processed</p>
+</blockquote>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1006,27 +1005,6 @@ Loading required package: ggplot2
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/biosyntax/">
-                <h3 class="media-heading">bioSyntax - 针对生物数据的语法高亮</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Dec 12, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><img src="http://biosyntax.org/images/sam-less-small.gif" alt="" /></p>
-
-<p>对于生信狗，天天黑白命令行，实验室的同事，经常对着我的Emacs说，这么小的字体你看得清吗？我只能无奈地回答，因为我要一个屏幕显示一整个函数。我自己平时写代码也很注意这一点，函数尽量小，太长就要考虑切分成几个函数，我说自己是脑容量不够，写不了长函数。我希望如果有人看我代码，他/她可以看得舒服点，虽然写的不见得好，但起码一个函数，你一个屏幕是装得下的。岁月留给我们的，是越来越厚的镜片！然而最近有一款神器，让我们在命令行里，可以高亮显示生物学常见的数据格式，包括SAM, VCF, GTF, PDB和FASTA。这款神器叫bioSyntax (<a href="http://bioSyntax.org">http://bioSyntax.org</a>) ，看着舒服多了，而且逼格十足，如果大家序列比对看多了，其实都会依赖于看颜色，黑白字体情况下，你很难去区分ATCG，即使有明显的pattern，你也很难看出来。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1034,7 +1012,7 @@ Loading required package: ggplot2
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         188 posts found
+         189 posts found
       </p>
     </div>
   </div>
