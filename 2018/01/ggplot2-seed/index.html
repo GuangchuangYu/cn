@@ -339,7 +339,7 @@ Guangchuang Yu., Li-Gen Wang, Yanyan Han, Qing-Yu He. clusterProfiler: an R pack
 }
 </code></pre>
 
-<p>因为你加载包的时候，hadley用了sample，也就是说你的seed，被加载时候的sample指令给用掉了。这个坑，就在两天前被Jim Hester给修复了，用了withr::with_preserve_seed，这个坑存在了两年多啊！</p>
+<p>因为你加载包的时候，hadley用了sample，也就是说你的seed，被加载时候的sample指令给用掉了。这个坑，就在两天前被Jim Hester给修复了，用了<code>withr::with_preserve_seed</code>，这个坑存在了两年多啊！</p>
 
 <pre><code>.onAttach &lt;- function(...) {
   withr::with_preserve_seed({
