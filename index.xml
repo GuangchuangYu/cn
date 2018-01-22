@@ -6,10 +6,56 @@
     <description>Recent content on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 18 Jan 2018 07:05:22 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 21 Jan 2018 23:23:00 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PubMed停更？</title>
+      <link>https://guangchuangyu.github.io/cn/2018/01/pubmed-stop-update/</link>
+      <pubDate>Sun, 21 Jan 2018 23:23:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2018/01/pubmed-stop-update/</guid>
+      <description>&lt;p&gt;今天学术圈刷屏的是美国政府关门，pubmed停更，有些标题党说成了美国政府破产，又说得好像中国人的科研也要跟着放假似的，还一堆人疯传，似乎暗示着pubmed也关门，而且没有pubmed会死一样。所以我感觉有必要普及一下姿势，毕竟吃瓜的人群基数太大。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Holy shit what a fucking disaster, pubmed is such an amazing resource, unbelievable the US would let it waste away. What an embarrassment of a country.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;气愤归气愤，但标题党甚至于跑偏了就不可取了。无非只是停更，也就是说文章该发的照样发，只是暂时不会被收录进pubmed而已，也就是说pubmed照常用，只不过搜不到最新的文献，如果说这样就可以去放大假了，那么似乎如果不停更，你看多了几篇新文献，就能够发paper，迎娶白富美了？而看少了这最新的文献，就秒变科研屌丝，可以回家睡大觉了？&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The website continues to work. The shutdown will be over in a few days and everything will go back to normal. You can also use Google Scholar, Web of Science, and Scopus.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;事实上，pubmed只是一个搜文献的数据库，它停更，文章照发，而大家可以通过别的途径去获得，如果你只有这一条途径，那么你做科研也确实少了点B数。上面提到的google scholar很多人可能上不去（&lt;a href=&#34;http://mp.weixin.qq.com/s/b6xyVv-HjQQSn0pq7ILQzw&#34;&gt;梯子在这里&lt;/a&gt;），而Scopus是要收费的。然后途径是很多的，&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ggplot2的一个坑</title>
+      <link>https://guangchuangyu.github.io/cn/2018/01/ggplot2-seed/</link>
+      <pubDate>Sun, 21 Jan 2018 23:23:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2018/01/ggplot2-seed/</guid>
+      <description>&lt;p&gt;今天以ggplot2的一个坑来说一下，坑无处不在，防不胜防，你大可以试一下下面的代码：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; set.seed(123)
+&amp;gt; require(ggplot2)
+Loading required package: ggplot2
+&amp;gt; rnorm(3)
+[1]  0.8005543  1.1902066 -1.6895557
+&amp;gt; set.seed(123)
+&amp;gt; rnorm(3)
+[1] -0.5604756 -0.2301775  1.5587083
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在两次set.seed和rnorm之间，第一次因为加载了ggplot2，结果就不一样了！这必须是第二次是正确答案，也就是说加载ggplot2把你的seed给吃了！加载包会改变R环境？这绝对不是好主意，我们来试试加载别的包试试，比如我的clusterProfiler:&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>2018最新可用的sci-hub镜像&#43;桌面版程序</title>
@@ -3773,38 +3819,6 @@ vim mystar.conf
 Block size=512, Number of Blocks=19640880
 DeviceType=0x0, DeviceId=0x0
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://guangchuangyu.github.io/cn/1/01/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/1/01/</guid>
-      <description>&lt;p&gt;今天学术圈刷屏的是美国政府关门，pubmed停更，有些标题党说成了美国政府破产，又说得好像中国人的科研也要跟着放假似的，还一堆人疯传，似乎暗示着pubmed也关门，而且没有pubmed会死一样。所以我感觉有必要普及一下姿势，毕竟吃瓜的人群基数太大。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;h2 id=&#34;holy-shit-what-a-fucking-disaster-pubmed-is-such-an-amazing-resource-unbelievable-the-us-would-let-it-waste-away-what-an-embarrassment-of-a-country&#34;&gt;Holy shit what a fucking disaster, pubmed is such an amazing resource, unbelievable the US would let it waste away. What an embarrassment of a country.&lt;/h2&gt;
-
-&lt;p&gt;categories:
-- Biology
-date: 2018-01-21T23:23:00+08:00
-tags:
-- pubmed
-title: PubMed停更？&lt;/p&gt;
-
-&lt;h2 id=&#34;slug-pubmed-stop-update&#34;&gt;slug: pubmed-stop-update&lt;/h2&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;气愤归气愤，但标题党甚至于跑偏了就不可取了。无非只是停更，也就是说文章该发的照样发，只是暂时不会被收录进pubmed而已，也就是说pubmed照常用，只不过搜不到最新的文献，如果说这样就可以去放大假了，那么似乎如果不停更，你看多了几篇新文献，就能够发paper，迎娶白富美了？而看少了这最新的文献，就秒变科研屌丝，可以回家睡大觉了？&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;The website continues to work. The shutdown will be over in a few days and everything will go back to normal. You can also use Google Scholar, Web of Science, and Scopus.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;事实上，pubmed只是一个搜文献的数据库，它停更，文章照发，而大家可以通过别的途径去获得，如果你只有这一条途径，那么你做科研也确实少了点B数。上面提到的google scholar很多人可能上不去（&lt;a href=&#34;http://mp.weixin.qq.com/s/b6xyVv-HjQQSn0pq7ILQzw&#34;&gt;梯子在这里&lt;/a&gt;），而Scopus是要收费的。然后途径是很多的，&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
