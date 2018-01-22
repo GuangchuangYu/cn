@@ -322,7 +322,7 @@ Guangchuang Yu., Li-Gen Wang, Yanyan Han, Qing-Yu He. clusterProfiler: an R pack
 
 <p><a href="https://github.com/tidyverse/ggplot2/blob/master/R/zzz.r">https://github.com/tidyverse/ggplot2/blob/master/R/zzz.r</a></p>
 
-<pre><code class="language-r">.onAttach &lt;- function(...) {
+<pre><code>.onAttach &lt;- function(...) {
   if (!interactive() || stats::runif(1) &gt; 0.1) return()
 
   tips &lt;- c(
