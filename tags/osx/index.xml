@@ -6,10 +6,27 @@
     <description>Recent content in Osx on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 Feb 2017 13:40:22 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 24 Jan 2018 15:27:00 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/tags/osx/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>苹果版SciHub桌面软件</title>
+      <link>https://guangchuangyu.github.io/cn/2018/01/scihub-osx/</link>
+      <pubDate>Wed, 24 Jan 2018 15:27:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2018/01/scihub-osx/</guid>
+      <description>&lt;p&gt;为了方便苹果用户也能用桌面软件下文献，我把SciHub桌面版打包成可以运行在苹果上的App。&lt;/p&gt;
+
+&lt;p&gt;SciHub桌面版是Windows程序，主页为&lt;a href=&#34;https://zhuanlan.zhihu.com/p/31809890&#34;&gt;https://zhuanlan.zhihu.com/p/31809890&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;首先这是利用wine技术实现的，在苹果上你需要安装&lt;strong&gt;XQuartz&lt;/strong&gt;: &lt;a href=&#34;https://www.xquartz.org/&#34;&gt;https://www.xquartz.org/&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;安装很容易，我已经打包了dmg文件，这个文件有44M，还挺大的，没法，要打包一个windows的运行环境嘛。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>OSX版BioEdit</title>
