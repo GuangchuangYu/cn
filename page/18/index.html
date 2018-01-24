@@ -225,6 +225,68 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2016/03/google-drive--hku/">
+          Google Drive @ HKU
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2016-03-24T15:40:22&#43;08:00">
+      
+  March 24, 2016
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/software">Software</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <p>寻找一个好的网盘一直是个困扰我的问题，Dropbox非常好，但空间有限，大陆的各种网盘都是渣渣，本来试用了一下<a href="http://guangchuangyu.github.io/2014/05/%E6%9B%B4%E6%94%B9%E7%99%BE%E5%BA%A6%E4%BA%91%E5%90%8C%E6%AD%A5%E7%9B%98%E8%B7%AF%E5%BE%84/">百度云</a>，但度娘实在不争气，体验非常差。我后来找到了个比较好的方案，那就是<a href="https://gitlab.com/">gitlab</a>，可以创建无限量的project，每个project有10G的空间，这比<a href="https://github.com/">github</a>出手大方多了。唯一不足是<code>.git</code>文件夹也是非常占空间的。</p>
+
+<p>到HKU两年多，才发现HKU的邮箱自带无限量的google drive网盘。</p>
+
+<p><img src="http://guangchuangyu.github.io/blog_images/2016/google_drive.jpg" alt="" /></p>
+
+<p></p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2016/03/google-drive--hku/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2016/03/%E4%BD%BF%E7%94%A8ggtree%E5%AE%9E%E7%8E%B0%E8%BF%9B%E5%8C%96%E6%A0%91%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E5%92%8C%E6%B3%A8%E9%87%8A/">
           使用ggtree实现进化树的可视化和注释
         </a>
@@ -639,63 +701,6 @@ unknown gap                         ....................
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustworthy/">
-          R binary is untrustworthy
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2014-07-24T04:22:35&#43;08:00">
-      
-  July 24, 2014
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/software">Software</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        去年ubuntu下apt-get了R-3.0.2, 用了没多久就发现了system命令有问题，通常情况下调用系统命令是正常的，但是我调用bowtie的时候，就会报错：
-Warning: Could not open read file &quot;/tmp/8156.inpipe1&quot; for reading; skipping&hellip; Error: Encountered internal Bowtie 2 exception (#1) Command: /usr/bin/bowtie2-align &ndash;wrapper basic-0 -p 12 -x /ssd/genomes/hg19 -S tmp.sam -1 /tmp/8156.inpipe1 -2 /tmp/8156.inpipe2  这很明显是因为fasta.gz文件，bowtie需要调用zcat来读的，在R里调用bowtie就找不到好基友zcat的输出管道。当时没在意，R不干，那就找shell。 去年用NMF包的时候，报出了人类不友好的错误，联系了包作者Gaujoux，在作者的帮助下，找到了是doParallel包的问题：
-&gt; library(doParallel) &gt; Loading required package: foreach foreach: simple, scalable parallel programming from Revolution Analytics Use Revolution R for scalability, fault tolerance and more. <a href="http://www.revolutionanalytics.com">http://www.revolutionanalytics.com</a> Loading required package: iterators Loading required package: parallel &gt; registerDoParallel(11) &gt; &gt; foreach(i = 1:10) %dopar% { getwd() } &gt; *** caught segfault *** address 0x7fbeb6d399d0, cause &lsquo;memory not mapped&rsquo;  其实parallel包中用mclapply也是同样报错。于是又把维护deb包的Dirk拉进来，Dirk是Rcpp的作者，高人就是不一样，看了错误，立刻就指出是BLAS库的问题。
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustworthy/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -777,6 +782,31 @@ Warning: Could not open read file &quot;/tmp/8156.inpipe1&quot; for reading; ski
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/01/%E8%8B%B9%E6%9E%9C%E7%89%88scihub%E6%A1%8C%E9%9D%A2%E8%BD%AF%E4%BB%B6/">
+                <h3 class="media-heading">苹果版SciHub桌面软件</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>为了方便苹果用户也能用桌面软件下文献，我把SciHub桌面版打包成可以运行在苹果上的App。</p>
+
+<p>SciHub桌面版是Windows程序，主页为<a href="https://zhuanlan.zhihu.com/p/31809890">https://zhuanlan.zhihu.com/p/31809890</a>。</p>
+
+<p>首先这是利用wine技术实现的，在苹果上你需要安装<strong>XQuartz</strong>: <a href="https://www.xquartz.org/">https://www.xquartz.org/</a>。</p>
+
+<p>安装很容易，我已经打包了dmg文件，这个文件有44M，还挺大的，没法，要打包一个windows的运行环境嘛。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1028,33 +1058,6 @@ Loading required package: ggplot2
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/ggimage-hat/">
-                <h3 class="media-heading">给你一顶帽子</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Dec 12, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>圣诞节期间，一个个在@微信官方，要加圣诞帽，这让人想起了以前：</p>
-
-<blockquote>
-<p>今天是马化腾的生日，转发5个群，自动开通一个月的QQ会员</p>
-</blockquote>
-
-<p>这班玩QQ长大的孩子，现在变成了玩微信的油腻中年了。</p>
-
-<p>做为biobabble公众号的粉丝，我觉得你们是有能力用两三行R代码来给自己加个帽子的。由于我在过圣诞节，所以这篇文章没有能够及时推送出来，就当马后炮吧，不合时宜地调侃一下大家。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1062,7 +1065,7 @@ Loading required package: ggplot2
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         189 posts found
+         190 posts found
       </p>
     </div>
   </div>
