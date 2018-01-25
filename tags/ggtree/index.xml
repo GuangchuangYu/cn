@@ -6,10 +6,25 @@
     <description>Recent content in Ggtree on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 01 Dec 2017 08:28:48 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 25 Jan 2018 20:03:00 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/tags/ggtree/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Y叔不想养蛙，只想养你！</title>
+      <link>https://guangchuangyu.github.io/cn/2018/01/frog-tree/</link>
+      <pubDate>Thu, 25 Jan 2018 20:03:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2018/01/frog-tree/</guid>
+      <description>&lt;p&gt;话说有一只蛙，它旅游去了广东，游戏结束。&lt;/p&gt;
+
+&lt;p&gt;这篇文章，只想跟大家讲一讲ggtree，你值得拥有的强大的进化树可视化软件，高颜值的图，就在于指尖几行代码中。&lt;/p&gt;
+
+&lt;p&gt;最近养蛙很流行，就以蛙为例，读树用&lt;code&gt;read.tree&lt;/code&gt;，然后一个&lt;code&gt;ggtree&lt;/code&gt;的指令，树就画出来了。而你见证神奇的时刻就在于你不断&lt;code&gt;+geom_xxx&lt;/code&gt;加图层，这里我用了&lt;code&gt;geom_tiplab&lt;/code&gt;来加taxa label，而这个可不仅仅是名字哦，用emoji也可以，这里我用的竟然是&lt;strong&gt;图片&lt;/strong&gt;，你没看错，也可以。只要指定&lt;code&gt;geom=&amp;quot;image&amp;quot;&lt;/code&gt;就OK，那个本来要打的文本，就会被当成是文件名，然后读图片画图片，一切尽在我的ggimage包。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>ggplot2/ggtree取子集画图</title>
@@ -126,21 +141,6 @@ print(p)
 &lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/geom_text_files/figure-markdown_strict/unnamed-chunk-1-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;上面图中x轴的文本&lt;strong&gt;0.006&lt;/strong&gt;，这个数字中的&lt;strong&gt;6&lt;/strong&gt;几乎看不到，因为一半过界了。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Y叔不想养蛙，只想养你！</title>
-      <link>https://guangchuangyu.github.io/cn/2017/01/frog-tree/</link>
-      <pubDate>Wed, 25 Jan 2017 20:03:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2017/01/frog-tree/</guid>
-      <description>&lt;p&gt;话说有一只蛙，它旅游去了广东，游戏结束。&lt;/p&gt;
-
-&lt;p&gt;这篇文章，只想跟大家讲一讲ggtree，你值得拥有的强大的进化树可视化软件，高颜值的图，就在于指尖几行代码中。&lt;/p&gt;
-
-&lt;p&gt;最近养蛙很流行，就以蛙为例，读树用&lt;code&gt;read.tree&lt;/code&gt;，然后一个&lt;code&gt;ggtree&lt;/code&gt;的指令，树就画出来了。而你见证神奇的时刻就在于你不断&lt;code&gt;+geom_xxx&lt;/code&gt;加图层，这里我用了&lt;code&gt;geom_tiplab&lt;/code&gt;来加taxa label，而这个可不仅仅是名字哦，用emoji也可以，这里我用的竟然是&lt;strong&gt;图片&lt;/strong&gt;，你没看错，也可以。只要指定&lt;code&gt;geom=&amp;quot;image&amp;quot;&lt;/code&gt;就OK，那个本来要打的文本，就会被当成是文件名，然后读图片画图片，一切尽在我的ggimage包。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
