@@ -226,6 +226,81 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/04/ggimage/">
+          ggimage：ggplot2中愉快地使用图片
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-04-11T10:06:59&#43;08:00">
+      
+  April 11, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <h1 id="导言">导言</h1>
+
+<p>本文介绍了<strong>ggimage</strong>包，允许在<strong>ggplot2</strong>作图时嵌入图片，并支持<code>aes</code>映射，可以把离散型变量映射到不同图片。目前有几个包可以使用图片嵌入做图，但都是针对特定的场景，这里使用<strong>ggimage</strong>来展示在这些特定领域里的应用，<strong>ggimage</strong>的设计是通用的，并不被特定场景所限定，文末又介绍了用R图标来画出R、用饼图来画气泡图等实例。</p>
+
+<h1 id="图上嵌图片">图上嵌图片</h1>
+
+<p>R 基础图形库（base graphics）可以在做图的时候嵌入图片，使用的是<code>graphics::rasterImage</code>：</p>
+
+<pre><code class="language-r">imgurl &lt;- &quot;http://phylopic.org/assets/images/submissions/295cd9f7-eef2-441e-ba7e-40c772ca7611.256.png&quot;
+library(EBImage)
+x &lt;- readImage(imgurl)
+plot(1, type = &quot;n&quot;, xlab = &quot;&quot;, ylab = &quot;&quot;, xlim = c(0, 8), ylim = c(0, 8))
+rasterImage(x, 2, 2, 6, 4)
+</code></pre>
+
+<p><img src="https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/raster.png" alt="R绘图嵌入图片演示" /></p>
+
+<p></p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2017/04/ggimage/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/04/generate-biobabble-banner-using-ggimage/">
           generate biobabble banner using ggimage
         </a>
@@ -654,93 +729,6 @@ print(p)
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/03/bed%E6%96%87%E4%BB%B6/">
-          BED文件
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-03-09T00:13:57&#43;08:00">
-      
-  March 9, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>BED的全称是Browser Extensible Data，顾名思义是为genome browser设计的，大名鼎鼎的bedtools可不是什么「床上用品」。</p>
-
-<p>BED包含有3个必须的字段和9个可选字段。</p>
-
-<p>三个字段包括：</p>
-
-<ul>
-<li>1 chrom - 染色体名字</li>
-<li>2 chromStart - 染色体起始位点</li>
-<li>3 chromEnd - 染色体终止位点</li>
-</ul>
-
-<blockquote>
-<p>这里必须指出的是<strong>chromStart</strong>是起始于0，而不是1。很多分析软件都忽略
-了这一点，会有一个碱基的位移，据我所知Homer和ChIPseeker没有这个问题，而像peakAnalyzer, ChIPpeakAnno等都有位移的问题。</p>
-</blockquote>
-
-<p>可选的9个字段包括：</p>
-
-<ul>
-<li>4 name - 名字</li>
-<li>5 score - 分值(0-1000), 用于genome browser展示时上色。</li>
-<li>6 strand - 正负链，对于ChIPseq数据来说，<strong>一般</strong>没有正负链信息。</li>
-<li>7 thickStart - 画矩形的起点</li>
-<li>8 thickEnd - 画矩形的终点</li>
-<li>9 itemRgb - RGB值</li>
-<li>10 blockCount - 子元件（比如外显子）的数目</li>
-<li>11 blockSizes - 子元件的大小</li>
-<li>12 blockStarts - 子元件的起始位点</li>
-</ul>
-
-<p></p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/03/bed%E6%96%87%E4%BB%B6/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -822,6 +810,25 @@ print(p)
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/02/broken-heart/">
+                <h3 class="media-heading">一千个伤心的理由</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>眼看着2月14号就要到来了，又是一年一度的画红心装13的时候，这种事情已经被我BS了，请猛击：《<a href="http://mp.weixin.qq.com/s/Y8IHd6X4f49irXvD_M7bNw">画❤️装geek什么的，都弱爆了！😜</a>》。红心已经没什么好画的了，特别是在我画了生日蛋糕，并用蛋糕画红心之后，《<a href="https://mp.weixin.qq.com/s/Iqcqo5YTy1qmXdsuIrlrYQ">130岁了，祝你生快</a>》，是驴子是马，都没法晒肌肉了。当然红心还是会有所谓的理工宅男晒，除此之外还会有各种花招，来给单身狗撒狗粮。想要加入撒狗粮大军的，快点看《<a href="http://mp.weixin.qq.com/s/2j9VRgar5ExSma6B7Yc3dw">如何告别单身</a>》。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1060,39 +1067,6 @@ Loading required package: ggplot2
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/01/datasaurus/">
-                <h3 class="media-heading">画一只恐龙</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jan 1, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>大家是否还记得我的《<a href="http://mp.weixin.qq.com/s/YuUOztQg3nUnhdvyg8asvg">webinar录播 (2017-10-24)：plotting tree + data</a>》，这可以说是R画图最好的课程，PPT也分享给大家《<a href="https://mp.weixin.qq.com/s/3yEN-8oUck2WPmNQ368qYA">ggtree直播PPT第一部分</a>》和《<a href="https://mp.weixin.qq.com/s/7-YhGzzu_tVAwySrYOKGFg">ggtree直播PPT第二部分</a>》。</p>
-
-<p>我在PPT中，用了meme，发现没有R包可以做，于是我写了一个R包来做这个事情。</p>
-
-<ul>
-<li><a href="http://mp.weixin.qq.com/s/jDXjkrkq_YVhW-Z5Vx2-Fg">用R画meme ;)</a></li>
-<li><a href="https://mp.weixin.qq.com/s/4b8enFCd_lLt278Ddxp3rg">使用外部字体画meme</a></li>
-<li><a href="http://mp.weixin.qq.com/s/R5CxcdufLy6_yRPzOG4Baw">花式打水印</a></li>
-</ul>
-
-<p>后来又写一个R包来实现字体的阴影效果：</p>
-
-<ul>
-<li><a href="http://mp.weixin.qq.com/s/eZAmqeKBsbvAj9AvrTZRQQ">带你装逼带你飞，画图的文本打出阴影立体效果 </a></li>
-</ul>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1100,7 +1074,7 @@ Loading required package: ggplot2
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         194 posts found
+         195 posts found
       </p>
     </div>
   </div>

@@ -23,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.30.2">
     <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
-    <title>创建R包</title>
+    <title>一千个伤心的理由</title>
     <meta name="author" content="Guangchuang Yu">
     <meta name="keywords" content="">
 
@@ -31,64 +31,19 @@
     
 
     
-    <meta name="description" content="&gt; source(&quot;code.R&quot;) #载入写好的代码 
-&gt; package.skeleton(name=&quot;pkgname&quot;, list=c(&quot;function_name_list&quot;))
-# 生成R源码包的目录结构 
-
-
-到man目录下改*.Rd文档。latex格式。这是包和函数的帮助文档。
-
-如果需要vignette文档的话。在包目录下，新建inst/doc，在里面写pkgname.Rnw文档。基本上是latex格式，不过允许你插入R代码。make的时候，会先跑代码。再自动转换成latex，再编译成pdf。
-
-$ R CMD check pkgname 
-# 检验代码和文档。这个很重要。通常一些小问题都能在这一步发现。 
-$ R CMD build pkgname 
-# 打包，源码包格式 
-$ R CMD build --binary pkgname
-#编译后打包，二进制格式。
-
+    <meta name="description" content="眼看着2月14号就要到来了，又是一年一度的画红心装13的时候，这种事情已经被我BS了，请猛击：《画❤️装geek什么的，都弱爆了！😜》。红心已经没什么好画的了，特别是在我画了生日蛋糕，并用蛋糕画红心之后，《130岁了，祝你生快》，是驴子是马，都没法晒肌肉了。当然红心还是会有所谓的理工宅男晒，除此之外还会有各种花招，来给单身狗撒狗粮。想要加入撒狗粮大军的，快点看《如何告别单身》。
 
 ">
-    <meta property="og:description" content="&gt; source(&quot;code.R&quot;) #载入写好的代码 
-&gt; package.skeleton(name=&quot;pkgname&quot;, list=c(&quot;function_name_list&quot;))
-# 生成R源码包的目录结构 
-
-
-到man目录下改*.Rd文档。latex格式。这是包和函数的帮助文档。
-
-如果需要vignette文档的话。在包目录下，新建inst/doc，在里面写pkgname.Rnw文档。基本上是latex格式，不过允许你插入R代码。make的时候，会先跑代码。再自动转换成latex，再编译成pdf。
-
-$ R CMD check pkgname 
-# 检验代码和文档。这个很重要。通常一些小问题都能在这一步发现。 
-$ R CMD build pkgname 
-# 打包，源码包格式 
-$ R CMD build --binary pkgname
-#编译后打包，二进制格式。
-
+    <meta property="og:description" content="眼看着2月14号就要到来了，又是一年一度的画红心装13的时候，这种事情已经被我BS了，请猛击：《画❤️装geek什么的，都弱爆了！😜》。红心已经没什么好画的了，特别是在我画了生日蛋糕，并用蛋糕画红心之后，《130岁了，祝你生快》，是驴子是马，都没法晒肌肉了。当然红心还是会有所谓的理工宅男晒，除此之外还会有各种花招，来给单身狗撒狗粮。想要加入撒狗粮大军的，快点看《如何告别单身》。
 
 ">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="创建R包">
-    <meta property="og:url" content="/2008/12/creat-r-package/">
+    <meta property="og:title" content="一千个伤心的理由">
+    <meta property="og:url" content="/2018/02/broken-heart/">
     <meta property="og:site_name" content="Guangchuang Yu">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Guangchuang Yu">
-    <meta name="twitter:description" content="&gt; source(&quot;code.R&quot;) #载入写好的代码 
-&gt; package.skeleton(name=&quot;pkgname&quot;, list=c(&quot;function_name_list&quot;))
-# 生成R源码包的目录结构 
-
-
-到man目录下改*.Rd文档。latex格式。这是包和函数的帮助文档。
-
-如果需要vignette文档的话。在包目录下，新建inst/doc，在里面写pkgname.Rnw文档。基本上是latex格式，不过允许你插入R代码。make的时候，会先跑代码。再自动转换成latex，再编译成pdf。
-
-$ R CMD check pkgname 
-# 检验代码和文档。这个很重要。通常一些小问题都能在这一步发现。 
-$ R CMD build pkgname 
-# 打包，源码包格式 
-$ R CMD build --binary pkgname
-#编译后打包，二进制格式。
-
+    <meta name="twitter:description" content="眼看着2月14号就要到来了，又是一年一度的画红心装13的时候，这种事情已经被我BS了，请猛击：《画❤️装geek什么的，都弱爆了！😜》。红心已经没什么好画的了，特别是在我画了生日蛋糕，并用蛋糕画红心之后，《130岁了，祝你生快》，是驴子是马，都没法晒肌肉了。当然红心还是会有所谓的理工宅男晒，除此之外还会有各种花招，来给单身狗撒狗粮。想要加入撒狗粮大军的，快点看《如何告别单身》。
 
 ">
     
@@ -265,14 +220,14 @@ ga('send', 'pageview');
                 <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      创建R包
+      一千个伤心的理由
     </h1>
   
   <div class="postShorten-meta post-meta">
   
-    <time itemprop="datePublished" datetime="2008-12-07T05:23:16&#43;08:00">
+    <time itemprop="datePublished" datetime="2018-02-08T00:21:00&#43;08:00">
       
-  December 7, 2008
+  February 8, 2018
 
     </time>
   
@@ -292,28 +247,40 @@ ga('send', 'pageview');
                 
                 <div class="post-content markdown" itemprop="articleBody">
                     <div class="main-content-wrap">
-                        <pre><code>&gt; source(&quot;code.R&quot;) #载入写好的代码 
-&gt; package.skeleton(name=&quot;pkgname&quot;, list=c(&quot;function_name_list&quot;))
-# 生成R源码包的目录结构 
-</code></pre>
-
-<p>到man目录下改*.Rd文档。latex格式。这是包和函数的帮助文档。</p>
-
-<p>如果需要vignette文档的话。在包目录下，新建inst/doc，在里面写pkgname.Rnw文档。基本上是latex格式，不过允许你插入R代码。make的时候，会先跑代码。再自动转换成latex，再编译成pdf。</p>
-
-<pre><code>$ R CMD check pkgname 
-# 检验代码和文档。这个很重要。通常一些小问题都能在这一步发现。 
-$ R CMD build pkgname 
-# 打包，源码包格式 
-$ R CMD build --binary pkgname
-#编译后打包，二进制格式。
-</code></pre>
+                        <p>眼看着2月14号就要到来了，又是一年一度的画红心装13的时候，这种事情已经被我BS了，请猛击：《<a href="http://mp.weixin.qq.com/s/Y8IHd6X4f49irXvD_M7bNw">画❤️装geek什么的，都弱爆了！😜</a>》。红心已经没什么好画的了，特别是在我画了生日蛋糕，并用蛋糕画红心之后，《<a href="https://mp.weixin.qq.com/s/Iqcqo5YTy1qmXdsuIrlrYQ">130岁了，祝你生快</a>》，是驴子是马，都没法晒肌肉了。当然红心还是会有所谓的理工宅男晒，除此之外还会有各种花招，来给单身狗撒狗粮。想要加入撒狗粮大军的，快点看《<a href="http://mp.weixin.qq.com/s/2j9VRgar5ExSma6B7Yc3dw">如何告别单身</a>》。</p>
 
 <p></p>
 
-<p>基本的过程就这样，还是比较简单的，在个步骤仅限linux，windows用户，需要搭建编译平台。</p>
+<p>单身狗除了吃朋友圈的精神狗粮，还可以一手画个不正经的图娱乐自己，《<a href="http://mp.weixin.qq.com/s/KFU7dVF0Z-Uj20VhqATKUQ">正经的图千篇一律，不正经的叔万里挑一</a>》，另一手翻翻八卦故事，《<a href="http://mp.weixin.qq.com/s/kXyVYfnBLQ0m4HPF_ugR_w">虐狗节来看一下这个裤衩都不要的故事</a>》，左手右手慢动作，心里空荡荡的，就准秀恩爱晒红心，难道单身狗就不能也晒个心撒精神粮食给秀恩爱的爱狗人士？这道理我竟无言反驳。</p>
 
-<p>如果要嵌入编译性的代码的话，请参考<a href="http://cran.r-project.org/doc/manuals/R-exts.html">http://cran.r-project.org/doc/manuals/R-exts.html</a></p>
+<p>来吧，人家画个怦然心动，我们就画个心碎了。红心容易画，因为是xy二元函数，随便就解了，散点或边线画出来，伤心就不同了，xyz三元，但只有一条不等式，不要试图去解它，contour就先拿出来试一下。</p>
+
+<blockquote>
+<p>A contour plot is a graphical technique for representing a 3-dimensional surface by plotting constant z slices, called contours, on a 2-dimensional format. That is, given a value for z, lines are drawn for connecting the (x,y) coordinates where that z value occurs.</p>
+</blockquote>
+
+<pre><code>f &lt;- function(x, y) 17*x^2 - 16*abs(x)*y + 17*y^2 + 150/abs(5*x + sin(5*y)) - 225
+x = y = seq(-5, 5, length=100)
+z &lt;- outer(x, y, f)
+d &lt;- data.frame(x=x, y=rep(x, each=100), z=as.vector(z))
+library(ggplot2)
+ggplot(d, aes(x, y, z=z)) + geom_contour(breaks=10) + theme_void() + 
+    ggtitle(expression(17*x^2 - 16*abs(x)*y + 17*y^2 + 150/abs(5*x + sin(5*y)) &lt; 225))
+</code></pre>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/2018/broken_heart.png" alt="" /></p>
+
+<h2 id="看完你还想看">看完你还想看</h2>
+
+<ul>
+<li><a href="http://mp.weixin.qq.com/s/EgGfpH_Efr0d6ApxXAkvZA">看完此文, 你也能够大开脑洞, 上升逼格</a></li>
+<li><a href="http://mp.weixin.qq.com/s/Y8IHd6X4f49irXvD_M7bNw">画❤️装geek什么的，都弱爆了！😜</a></li>
+<li><a href="https://mp.weixin.qq.com/s/Iqcqo5YTy1qmXdsuIrlrYQ">130岁了，祝你生快</a></li>
+<li><a href="http://mp.weixin.qq.com/s/2j9VRgar5ExSma6B7Yc3dw">如何告别单身</a></li>
+<li><a href="http://mp.weixin.qq.com/s/kXyVYfnBLQ0m4HPF_ugR_w">虐狗节来看一下这个裤衩都不要的故事</a></li>
+<li><a href="http://mp.weixin.qq.com/s/KFU7dVF0Z-Uj20VhqATKUQ">正经的图千篇一律，不正经的叔万里挑一</a></li>
+<li><a href="https://mp.weixin.qq.com/s/PH3xZKVZC9NUElbVfD7UpA">饼图版气泡图</a></li>
+</ul>
                         
                         <center><span class="zaln"><a href="https://guangchuangyu.github.io/blog_images/pay_qrcode.png" class="zb">赞赏</a></span></center>
                         <center><span class="zaln"><a href="https://guangchuangyu.github.io/cn/2017/11/bmc-journal-protects-paper-of-plagiarism/" class="zb">抵制BMC，匹夫有责</a></span></center>
@@ -327,7 +294,7 @@ $ R CMD build --binary pkgname
                     <div class="post-footer-tags">
                         <span class="text-color-light text-small">TAGGED IN</span><br/>
                         
-  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/package/">package</a>
+  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/ggplot2/">ggplot2</a>
 
                     </div>
                     
@@ -339,7 +306,7 @@ $ R CMD build --binary pkgname
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2008/12/opinion-in-programming/" data-tooltip="关于编程，我的理解">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -347,7 +314,7 @@ $ R CMD build --binary pkgname
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2008/11/bisect-to-solve-equation/" data-tooltip="用中值定理求根">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2018/02/job-wanted/" data-tooltip="Y叔要求职">
           
             <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
             <i class="fa fa-angle-right"></i>
@@ -364,17 +331,17 @@ $ R CMD build --binary pkgname
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2008%2f12%2fcreat-r-package%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f02%2fbroken-heart%2f">
           <i class="fa fa-google-plus"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2008%2f12%2fcreat-r-package%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f02%2fbroken-heart%2f">
           <i class="fa fa-facebook-official"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2008%2f12%2fcreat-r-package%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f02%2fbroken-heart%2f">
           <i class="fa fa-twitter"></i>
         </a>
       </li>
@@ -420,7 +387,7 @@ $ R CMD build --binary pkgname
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2008/12/opinion-in-programming/" data-tooltip="关于编程，我的理解">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -428,7 +395,7 @@ $ R CMD build --binary pkgname
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2008/11/bisect-to-solve-equation/" data-tooltip="用中值定理求根">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2018/02/job-wanted/" data-tooltip="Y叔要求职">
           
             <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
             <i class="fa fa-angle-right"></i>
@@ -445,17 +412,17 @@ $ R CMD build --binary pkgname
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2008%2f12%2fcreat-r-package%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f02%2fbroken-heart%2f">
           <i class="fa fa-google-plus"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2008%2f12%2fcreat-r-package%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f02%2fbroken-heart%2f">
           <i class="fa fa-facebook-official"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2008%2f12%2fcreat-r-package%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f02%2fbroken-heart%2f">
           <i class="fa fa-twitter"></i>
         </a>
       </li>
@@ -482,17 +449,17 @@ $ R CMD build --binary pkgname
         <div id="share-options-bar" class="share-options-bar" data-behavior="4">
   <ul class="share-options">
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2008%2f12%2fcreat-r-package%2f">
+      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f02%2fbroken-heart%2f">
         <i class="fa fa-google-plus"></i><span>Share on Google Plus</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2008%2f12%2fcreat-r-package%2f">
+      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f02%2fbroken-heart%2f">
         <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2008%2f12%2fcreat-r-package%2f">
+      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f02%2fbroken-heart%2f">
         <i class="fa fa-twitter"></i><span>Share on Twitter</span>
       </a>
     </li>
@@ -856,9 +823,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/guangchuangyu.github.io\/cn\/2008\/12\/creat-r-package\/';
+          this.page.url = 'https:\/\/guangchuangyu.github.io\/cn\/2018\/02\/broken-heart\/';
           
-            this.page.identifier = '\/2008\/12\/creat-r-package\/'
+            this.page.identifier = '\/2018\/02\/broken-heart\/'
           
         };
         (function() {
