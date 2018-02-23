@@ -21,7 +21,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.30.2">
+    <meta name="generator" content="Hugo 0.36">
     <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
     <title>穿透院内的代理</title>
     <meta name="author" content="Guangchuang Yu">
@@ -117,9 +117,9 @@ ga('send', 'pageview');
     
   </head>
 
-<body>
+  <body>
     <div id="blog">
-        <header id="header" data-behavior="4">
+      <header id="header" data-behavior="4">
   <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
   <div class="header-title">
     <a class="header-title-link" href="https://guangchuangyu.github.io/cn/">Guangchuang Yu</a>
@@ -139,7 +139,7 @@ ga('send', 'pageview');
   
 </header>
 
-        <nav id="sidebar" data-behavior="4">
+      <nav id="sidebar" data-behavior="4">
   <div class="sidebar-container">
     
       <div class="sidebar-profile">
@@ -148,11 +148,10 @@ ga('send', 'pageview');
         </a>
         <h4 class="sidebar-profile-name">Guangchuang Yu</h4>
         
-        <h5 class="sidebar-profile-bio">a senior-in-age-but-not-senior-in-knowledge bioinformatician</h5>
-        <img alt="微信公众号" src="https://guangchuangyu.github.io/blog_images/biobabble.jpg" width="200" height="200">
+          <h5 class="sidebar-profile-bio">a senior-in-age-but-not-senior-in-knowledge bioinformatician</h5>
         
       </div>
-      
+    
     <ul class="sidebar-buttons">
       
   <li class="sidebar-button">
@@ -235,16 +234,16 @@ ga('send', 'pageview');
   </div>
 </nav>
 
-        
+      
 
-        <div id="main" data-behavior="4"
-             class="
-                 hasCoverMetaIn
-             ">
-            <article class="post" itemscope itemType="http://schema.org/BlogPosting">
-                
-                
-                <div class="post-header main-content-wrap text-left">
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
       穿透院内的代理
@@ -271,10 +270,10 @@ ga('send', 'pageview');
 </div>
 
 </div>
-                
-                <div class="post-content markdown" itemprop="articleBody">
-                    <div class="main-content-wrap">
-                        <p>院里使用Microsoft ISA proxy作代理，我用linux，firefox可以通过代理验证，在终端export代理的环境变量也可以用。虽然很多软件不能支持认证，我也懒得理了。由于要用Cytoscape来分析蛋白相互作用网络，这个软件能支持代理却不支持NTLM认证，为了突破这个限制，只能作二级跳了，在本地设一个代理，软件通过这个代理上，而用本机代理负责去连接院内的代理并进行认证。</p>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>院里使用Microsoft ISA proxy作代理，我用linux，firefox可以通过代理验证，在终端export代理的环境变量也可以用。虽然很多软件不能支持认证，我也懒得理了。由于要用Cytoscape来分析蛋白相互作用网络，这个软件能支持代理却不支持NTLM认证，为了突破这个限制，只能作二级跳了，在本地设一个代理，软件通过这个代理上，而用本机代理负责去连接院内的代理并进行认证。</p>
 
 <p>搜了一下，发现ntlmaps这个包可以用来做认证，这个包是用python写的。</p>
 
@@ -308,108 +307,25 @@ ga('send', 'pageview');
 <p>实验室有台机子作文件服务的，拿它来做代理，大家都通过它去上网。就好像不需要认证一样。</p>
 
 <p>而且，院里上网需要登记，ip与mac address绑定，通过这个二级跳。就不再受院内管理的限制，换网卡或者加了新的机器都不需要再登记了。</p>
-                        
-                        <center><span class="zaln"><a href="https://guangchuangyu.github.io/blog_images/pay_qrcode.png" class="zb">赞赏</a></span></center>
-                        <center><span class="zaln"><a href="https://guangchuangyu.github.io/cn/2017/11/bmc-journal-protects-paper-of-plagiarism/" class="zb">抵制BMC，匹夫有责</a></span></center>
-                    </div>
-                </div>
-                <div id="post-footer" class="post-footer main-content-wrap">
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-                    
-                    
-                    
-                    <div class="post-footer-tags">
-                        <span class="text-color-light text-small">TAGGED IN</span><br/>
-                        
   <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/linux/">linux</a>
 
   <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/ntlmaps/">ntlmaps</a>
 
-                    </div>
-                    
-                    
-                    
-                    <div class="post-actions-wrap">
-  <nav>
-    <ul class="post-actions post-action-nav">
-      
-        <li class="post-action">
-          
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2008/09/data-backup/" data-tooltip="备份苹果硬盘的数据">
-          
-            <i class="fa fa-angle-left"></i>
-            <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
-          </a>
-        </li>
-        <li class="post-action">
-          
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2008/09/how-to-hide-diary/" data-tooltip="教你如何藏不想被看到的日记">
-          
-            <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
-            <i class="fa fa-angle-right"></i>
-          </a>
-        </li>
-      
-    </ul>
-  </nav>
-  <ul class="post-actions post-action-share">
-    
-      <li class="post-action hide-lg hide-md hide-sm">
-        <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
-          <i class="fa fa-share-alt"></i>
-        </a>
-      </li>
-      <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2008%2f09%2fntlmaps%2f">
-          <i class="fa fa-google-plus"></i>
-        </a>
-      </li>
-      <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2008%2f09%2fntlmaps%2f">
-          <i class="fa fa-facebook-official"></i>
-        </a>
-      </li>
-      <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2008%2f09%2fntlmaps%2f">
-          <i class="fa fa-twitter"></i>
-        </a>
-      </li>
-    
-    
-      <li class="post-action">
-        <a class="post-action-btn btn btn--default" href="#disqus_thread">
-          <i class="fa fa-comment-o"></i>
-        </a>
-      </li>
-    
-    <li class="post-action">
-      
-        <a class="post-action-btn btn btn--default" href="#">
-      
-        <i class="fa fa-list"></i>
-      </a>
-    </li>
-  </ul>
-</div>
-
-
-                    
-                    
-                    <div id="disqus_thread">
-  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-                    
-                    
-                </div>
-            </article>
-            <footer id="footer" class="main-content-wrap">
-  <span class="copyrights">
-    &copy; 2018 Guangchuang Yu. All Rights Reserved
-  </span>
-</footer>
-
-        </div>
-        <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                  </div>
+                
+              
+            
             <div class="post-actions-wrap">
   <nav>
     <ul class="post-actions post-action-nav">
@@ -474,8 +390,94 @@ ga('send', 'pageview');
 </div>
 
 
-        </div>
-        <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  <div style="width:350px;margin:auto;">
+<script type="text/javascript" src="//rf.revolvermaps.com/0/0/7.js?i=5qpvv5zz7fp&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;sx=0" async="async"></script>
+</div>
+
+
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2018 Guangchuang Yu. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  <nav>
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2008/09/data-backup/" data-tooltip="备份苹果硬盘的数据">
+          
+            <i class="fa fa-angle-left"></i>
+            <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+          </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2008/09/how-to-hide-diary/" data-tooltip="教你如何藏不想被看到的日记">
+          
+            <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+  <ul class="post-actions post-action-share">
+    
+      <li class="post-action hide-lg hide-md hide-sm">
+        <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+          <i class="fa fa-share-alt"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2008%2f09%2fntlmaps%2f">
+          <i class="fa fa-google-plus"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2008%2f09%2fntlmaps%2f">
+          <i class="fa fa-facebook-official"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2008%2f09%2fntlmaps%2f">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+    
+    
+      <li class="post-action">
+        <a class="post-action-btn btn btn--default" href="#disqus_thread">
+          <i class="fa fa-comment-o"></i>
+        </a>
+      </li>
+    
+    <li class="post-action">
+      
+        <a class="post-action-btn btn btn--default" href="#">
+      
+        <i class="fa fa-list"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
   <ul class="share-options">
     <li class="share-option">
       <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2008%2f09%2fntlmaps%2f">
