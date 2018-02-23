@@ -51,7 +51,7 @@ I would like to keep the out groups in the tree but ignore their branch lengths 
 ">
     <meta property="og:type" content="blog">
     <meta property="og:title" content="改变outgroup的枝长">
-    <meta property="og:url" content="/2018/02/%E6%94%B9%E5%8F%98outgroup%E7%9A%84%E6%9E%9D%E9%95%BF/">
+    <meta property="og:url" content="/2018/02/changing-branch-length-of-outgroup/">
     <meta property="og:site_name" content="Guangchuang Yu">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Guangchuang Yu">
@@ -292,45 +292,40 @@ ga('send', 'pageview');
 
 <p>Cheers
 Ollie</p>
+</blockquote>
 
-<pre><code>&gt;library(ggtree)
-&gt;
-&gt;# read in data
-&gt;x &lt;- read.tree(&quot;long-branch-example.newick&quot;)
-&gt;
-&gt;# create ggtree object
-&gt;tree &lt;- ggtree(x) + geom_tiplab(size = 2)
-&gt;
-&gt;# plot tree
-&gt;tree
+<pre><code>library(ggtree)
 
-&gt;# find node for outgroup
-&gt;MRCA(x, tip =c(&quot;75&quot;, &quot;76&quot;))
+# read in data
+x &lt;- read.tree(&quot;long-branch-example.newick&quot;)
 
-&gt;# collapse outgroup node
-&gt;tree &lt;- collapse(tree, node = 151)
+# create ggtree object
+tree &lt;- ggtree(x) + geom_tiplab(size = 2)
 
-&gt;# plot resulting tree
-&gt;tree
-&gt;```
+# plot tree
+tree
 
+# find node for outgroup
+MRCA(x, tip =c(&quot;75&quot;, &quot;76&quot;))
 
+# collapse outgroup node
+tree &lt;- collapse(tree, node = 151)
 
-这是google group里的问题，要跟进问题，或者是下载提问者的文件做为练习的话，请移步&lt;https://groups.google.com/forum/?utm_medium=email&amp;utm_source=footer#!msg/bioc-ggtree/T2ySvqv351g/MagXaWHBCwAJ&gt;.
-
-这个问题还是挺简单的，他已经读了树`x`，并且知道outgroup是`75`和`76`，以及outgroup的同共祖先节点`151`，那么首先我们可以用`groupClade`把`151`这个clade给标记起来，然后用映射linetype，这样就可以用虚线来表示outgroup，再者可以人为改`75`和`76`的坐标。
-
-
+# plot resulting tree
+tree
 </code></pre>
 
-<p>library(ggtree)
-x &lt;- read.tree(&ldquo;long-branch-example.newick&rdquo;)
+<p>这是google group里的问题，要跟进问题，或者是下载提问者的文件做为练习的话，请移步<a href="https://groups.google.com/forum/?utm_medium=email&amp;utm_source=footer#!msg/bioc-ggtree/T2ySvqv351g/MagXaWHBCwAJ">https://groups.google.com/forum/?utm_medium=email&amp;utm_source=footer#!msg/bioc-ggtree/T2ySvqv351g/MagXaWHBCwAJ</a>.</p>
+
+<p>这个问题还是挺简单的，他已经读了树<code>x</code>，并且知道outgroup是<code>75</code>和<code>76</code>，以及outgroup的同共祖先节点<code>151</code>，那么首先我们可以用<code>groupClade</code>把<code>151</code>这个clade给标记起来，然后用映射linetype，这样就可以用虚线来表示outgroup，再者可以人为改<code>75</code>和<code>76</code>的坐标。</p>
+
+<pre><code>library(ggtree)
+x &lt;- read.tree(&quot;long-branch-example.newick&quot;)
 groupClade(x, 151) -&gt; y
 ggtree(y, aes(linetype=group)) + geom_tiplab(size = 2) -&gt; p
-p$data[tree$data$node %in% c(75, 76), &ldquo;x&rdquo;] = mean(p$data$x)
+p$data[tree$data$node %in% c(75, 76), &quot;x&quot;] = mean(p$data$x)
 print(p)
-```</p>
-</blockquote>
+</code></pre>
 
 <p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/outgroup.png" alt="" /></p>
                         
@@ -383,17 +378,17 @@ print(p)
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f02%2f%25E6%2594%25B9%25E5%258F%2598outgroup%25E7%259A%2584%25E6%259E%259D%25E9%2595%25BF%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f02%2fchanging-branch-length-of-outgroup%2f">
           <i class="fa fa-google-plus"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f02%2f%25E6%2594%25B9%25E5%258F%2598outgroup%25E7%259A%2584%25E6%259E%259D%25E9%2595%25BF%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f02%2fchanging-branch-length-of-outgroup%2f">
           <i class="fa fa-facebook-official"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f02%2f%25E6%2594%25B9%25E5%258F%2598outgroup%25E7%259A%2584%25E6%259E%259D%25E9%2595%25BF%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f02%2fchanging-branch-length-of-outgroup%2f">
           <i class="fa fa-twitter"></i>
         </a>
       </li>
@@ -464,17 +459,17 @@ print(p)
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f02%2f%25E6%2594%25B9%25E5%258F%2598outgroup%25E7%259A%2584%25E6%259E%259D%25E9%2595%25BF%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f02%2fchanging-branch-length-of-outgroup%2f">
           <i class="fa fa-google-plus"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f02%2f%25E6%2594%25B9%25E5%258F%2598outgroup%25E7%259A%2584%25E6%259E%259D%25E9%2595%25BF%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f02%2fchanging-branch-length-of-outgroup%2f">
           <i class="fa fa-facebook-official"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f02%2f%25E6%2594%25B9%25E5%258F%2598outgroup%25E7%259A%2584%25E6%259E%259D%25E9%2595%25BF%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f02%2fchanging-branch-length-of-outgroup%2f">
           <i class="fa fa-twitter"></i>
         </a>
       </li>
@@ -501,17 +496,17 @@ print(p)
         <div id="share-options-bar" class="share-options-bar" data-behavior="4">
   <ul class="share-options">
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f02%2f%25E6%2594%25B9%25E5%258F%2598outgroup%25E7%259A%2584%25E6%259E%259D%25E9%2595%25BF%2f">
+      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f02%2fchanging-branch-length-of-outgroup%2f">
         <i class="fa fa-google-plus"></i><span>Share on Google Plus</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f02%2f%25E6%2594%25B9%25E5%258F%2598outgroup%25E7%259A%2584%25E6%259E%259D%25E9%2595%25BF%2f">
+      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f02%2fchanging-branch-length-of-outgroup%2f">
         <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f02%2f%25E6%2594%25B9%25E5%258F%2598outgroup%25E7%259A%2584%25E6%259E%259D%25E9%2595%25BF%2f">
+      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f02%2fchanging-branch-length-of-outgroup%2f">
         <i class="fa fa-twitter"></i><span>Share on Twitter</span>
       </a>
     </li>
@@ -571,7 +566,7 @@ print(p)
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/02/%E6%94%B9%E5%8F%98outgroup%E7%9A%84%E6%9E%9D%E9%95%BF/">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/02/changing-branch-length-of-outgroup/">
                 <h3 class="media-heading">改变outgroup的枝长</h3>
               </a>
               <span class="media-meta">
@@ -868,9 +863,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/guangchuangyu.github.io\/cn\/2018\/02\/%E6%94%B9%E5%8F%98outgroup%E7%9A%84%E6%9E%9D%E9%95%BF\/';
+          this.page.url = 'https:\/\/guangchuangyu.github.io\/cn\/2018\/02\/changing-branch-length-of-outgroup\/';
           
-            this.page.identifier = '\/2018\/02\/%E6%94%B9%E5%8F%98outgroup%E7%9A%84%E6%9E%9D%E9%95%BF\/'
+            this.page.identifier = '\/2018\/02\/changing-branch-length-of-outgroup\/'
           
         };
         (function() {
