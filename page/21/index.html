@@ -226,6 +226,70 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2013/09/install-emacs-on-mac/">
+          Install Emacs on Mac
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2013-09-10T18:04:22&#43;08:00">
+      
+  September 10, 2013
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/mac-os">Mac OS</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <h2 id="package-manager">package manager</h2>
+
+<p>之前一直用<a href="http://guangchuangyu.github.io/categories/bsd/">NetBSD</a>的<a href="http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/">pkgsrc</a>做为各种Unix-like系统的包管理系统，pkgsrc在自己内部解决依赖关系，这点对于生产环境来说，是很好的一个优点，我通常会在服务器里装一个pkgsrc，在用户目录下，维护一套UNIX软件。但是用在自己的机器上，内部解决软件依赖，就是个缺点，浪费编译时间和硬盘空间。</p>
+
+<p>Mac上可用的包管理系统很多，Fink移植于<a href="http://guangchuangyu.github.io/categories/linux/">Debian</a>的apt，<a href="http://guangchuangyu.github.io/categories/linux/">Gentoo</a>的portage也支持OS X。OS X是基于BSD的系统，BSD有自己的一套包管理系统，如FreeBSD的ports和<a href="http://guangchuangyu.github.io/categories/bsd/">NetBSD</a>的<a href="http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/">pkgsrc</a>，MacPorts可以看作是这一系列中的一个，不过它并不是OS X原生的，它只是OpenDarwin的子项目，所以和pkgsrc一个样，也是内部解决依赖，真正为OS
+X设计的原生包管理系统非Homebrew莫属，它会尽量依赖系统里已有的软件。
+
+自从用了Homebrew之后，再也不用为系统里有两套perl和python而crazy了，之前通过<a href="http://guangchuangyu.github.io/2011/06/screen-shot/">pkgsrc装的软件</a>全删掉，改Homebrew来安装和管理。
+如果软件没有被pkgsrc收录，而想通过pkgsrc来管理的话，那就得自己<a href="http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/">写makefile</a>，而homebrew，则可以自动帮你生成Formula，比如我要安装<a href="http://users.soe.ucsc.edu/~kent/src/">blat</a>：</p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2013/09/install-emacs-on-mac/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2013/07/permanent-head-damage-to-be/">
           Permanent Head Damage to be
         </a>
@@ -615,67 +679,6 @@ pubmed上不去，完全没影响，因为有hubmed,hubmed主页上写着：An a
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2012/04/enrichment-analysis/">
-          enrichment analysis
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2012-04-28T08:06:05&#43;08:00">
-      
-  April 28, 2012
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/statistics">Statistics</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        经常看到一些饼图，描述某些事物的组成，比如说有钱人的学历分布，然后我们可以看到高学历所占比例并不高，根据这个比例下结论通常是错的，这些比例说明不了问题，如果把各种学历在总体人口中的分布做为背景进行考虑的话，你就会发现学历还是有点用的。
-当我们用组学测定了一大堆分子之后，我们希望站在更高的角度去看这些分子和那些生物学过程相关。那么通常各种注释，对这些基因/蛋白进行分类，那么从分类的比例上，是不能草率下结论，正如上面有钱人学历分布的例子一样。我们需要把总体的分布考虑进去。
-和某个注释/分类是否有相关性，把基因分成属于这一类，和不属于这一类两种，这就好比经典统计学中的白球和黑球的抽样问题。也可以列一个２x２的表，进行独立性分析。
-以文章<a href="http://cancerres.aacrjournals.org/content/62/16/4722">Gene Expression in Ovarian Cancer Reflects Both Morphology and Biological Behavior, Distinguishing Clear Cell from Other Poor-Prognosis Ovarian Carcinomas</a>所鉴定的差异基因为例。
-
-73个差异基因的Symbol，我把它转为 entrezgene
-ID得到57个（漏掉的不管它，只是做为一个例子）:
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2012/04/enrichment-analysis/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -757,6 +760,31 @@ ID得到57个（漏掉的不管它，只是做为一个例子）:
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/02/%E6%94%B9%E5%8F%98outgroup%E7%9A%84%E6%9E%9D%E9%95%BF/">
+                <h3 class="media-heading">改变outgroup的枝长</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><blockquote>
+<p>Hello all,</p>
+
+<p>When I plot some data using ggtree, the out groups are on a very long branch length. The out groups are 75 and 76 in the example below.</p>
+
+<p>I would like to keep the out groups in the tree but ignore their branch lengths to make presentation easier.</p>
+</blockquote>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -982,37 +1010,6 @@ Loading required package: ggplot2
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/01/pubmed-stop-update/">
-                <h3 class="media-heading">PubMed停更？</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jan 1, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>今天学术圈刷屏的是美国政府关门，pubmed停更，有些标题党说成了美国政府破产，又说得好像中国人的科研也要跟着放假似的，还一堆人疯传，似乎暗示着pubmed也关门，而且没有pubmed会死一样。所以我感觉有必要普及一下姿势，毕竟吃瓜的人群基数太大。</p>
-
-<blockquote>
-<p>Holy shit what a fucking disaster, pubmed is such an amazing resource, unbelievable the US would let it waste away. What an embarrassment of a country.</p>
-</blockquote>
-
-<p>气愤归气愤，但标题党甚至于跑偏了就不可取了。无非只是停更，也就是说文章该发的照样发，只是暂时不会被收录进pubmed而已，也就是说pubmed照常用，只不过搜不到最新的文献，如果说这样就可以去放大假了，那么似乎如果不停更，你看多了几篇新文献，就能够发paper，迎娶白富美了？而看少了这最新的文献，就秒变科研屌丝，可以回家睡大觉了？</p>
-
-<blockquote>
-<p>The website continues to work. The shutdown will be over in a few days and everything will go back to normal. You can also use Google Scholar, Web of Science, and Scopus.</p>
-</blockquote>
-
-<p>事实上，pubmed只是一个搜文献的数据库，它停更，文章照发，而大家可以通过别的途径去获得，如果你只有这一条途径，那么你做科研也确实少了点B数。上面提到的google scholar很多人可能上不去（<a href="http://mp.weixin.qq.com/s/b6xyVv-HjQQSn0pq7ILQzw">梯子在这里</a>），而Scopus是要收费的。然后途径是很多的，</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1020,7 +1017,7 @@ Loading required package: ggplot2
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         196 posts found
+         197 posts found
       </p>
     </div>
   </div>

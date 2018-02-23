@@ -226,6 +226,92 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/09/mapping-codelink-id/">
+          映射codelink芯片ID
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2008-09-23T01:18:00&#43;08:00">
+      
+  September 23, 2008
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/bioinformatics">Bioinformatics</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <p>GE公司codelink芯片(这个破产品已经停产了)上的探针ID，需要转成别的ID，看了一些在线的转换ID工具，都不支持，探针ID基本上都只支持affy的。</p>
+
+<p>想起了bioconductor里的biomaRt，这个包可以检索BioMart数据库，这个数据库里有N多种ID。试了一下，果然没问题。</p>
+
+<pre><code class="language-r">#加载biomaRt包
+library(biomaRt)
+
+#选取数据库
+ensembl = useMart(&quot;ensembl&quot;, dataset = &quot;hsapiens_gene_ensembl&quot;)
+
+#获取可供检索的attribute
+attributes=listAttributes(mart=ensembl)
+
+#看一下attributes里是否有codelink，得到以下的结果。
+attributes[grep(&quot;codelink&quot;,attributes[,1]), ]
+
+name description
+21 codelink Codelink ID
+#再搜一下其它我想要的ID
+
+#读进含有codelink ID的文件。
+mrna_id &lt;- read.table(&quot;mrna_id.txt&quot;)
+
+#进行ID映射。
+idmap &lt;- getBM(attributes=c(&quot;codelink&quot;,&quot;refseq_dna&quot;,&quot;external_gene_id&quot;,
+                            &quot;embl&quot;,&quot;hgnc_id&quot;,&quot;hgnc_symbol&quot;), 
+               filters =&quot;codelink&quot;, values=mrna_id[,1],
+               mart=ensembl,output=&quot;list&quot;)
+</code></pre>
+
+<p></p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2008/09/mapping-codelink-id/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/09/compile-32bit-applications-in-64bit-linux/">
           在64位环境下编译32位的应用程序
         </a>
@@ -612,74 +698,6 @@ Bio::DB::Fasta可以实现这个，这个模块在没有安装bioperl的情况�
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/08/gosemsim/">
-          GOSemSim
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2008-08-11T14:21:00&#43;08:00">
-      
-  August 11, 2008
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/bioinformatics">Bioinformatics</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>第一次写软件包，计算基因和GO的语义相似性。</p>
-
-<p>实现<a href="http://bioinformatics.oxfordjournals.org/cgi/content/full/23/10/1274">Wang</a>的方法，基于GO的图结构。
-以及四种基于信息含量的计算方法（Resnik, Jiang, Lin, Rel）。</p>
-
-<p>可以从Bioconductor下载到。
-<a href="http://bioconductor.org/packages/release/bioc/html/GOSemSim.html">http://bioconductor.org/packages/release/bioc/html/GOSemSim.html</a>
-<a href="http://bioconductor.org/packages/devel/bioc/html/GOSemSim.html">http://bioconductor.org/packages/devel/bioc/html/GOSemSim.html</a></p>
-
-<p>支持human, rat, mouse, fly, yeast, zebrafish,worm, E coli,
-arabidopsis等物种。</p>
-
-<p></p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2008/08/gosemsim/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -761,6 +779,31 @@ arabidopsis等物种。</p>
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/02/%E6%94%B9%E5%8F%98outgroup%E7%9A%84%E6%9E%9D%E9%95%BF/">
+                <h3 class="media-heading">改变outgroup的枝长</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><blockquote>
+<p>Hello all,</p>
+
+<p>When I plot some data using ggtree, the out groups are on a very long branch length. The out groups are 75 and 76 in the example below.</p>
+
+<p>I would like to keep the out groups in the tree but ignore their branch lengths to make presentation easier.</p>
+</blockquote>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -986,37 +1029,6 @@ Loading required package: ggplot2
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/01/pubmed-stop-update/">
-                <h3 class="media-heading">PubMed停更？</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jan 1, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>今天学术圈刷屏的是美国政府关门，pubmed停更，有些标题党说成了美国政府破产，又说得好像中国人的科研也要跟着放假似的，还一堆人疯传，似乎暗示着pubmed也关门，而且没有pubmed会死一样。所以我感觉有必要普及一下姿势，毕竟吃瓜的人群基数太大。</p>
-
-<blockquote>
-<p>Holy shit what a fucking disaster, pubmed is such an amazing resource, unbelievable the US would let it waste away. What an embarrassment of a country.</p>
-</blockquote>
-
-<p>气愤归气愤，但标题党甚至于跑偏了就不可取了。无非只是停更，也就是说文章该发的照样发，只是暂时不会被收录进pubmed而已，也就是说pubmed照常用，只不过搜不到最新的文献，如果说这样就可以去放大假了，那么似乎如果不停更，你看多了几篇新文献，就能够发paper，迎娶白富美了？而看少了这最新的文献，就秒变科研屌丝，可以回家睡大觉了？</p>
-
-<blockquote>
-<p>The website continues to work. The shutdown will be over in a few days and everything will go back to normal. You can also use Google Scholar, Web of Science, and Scopus.</p>
-</blockquote>
-
-<p>事实上，pubmed只是一个搜文献的数据库，它停更，文章照发，而大家可以通过别的途径去获得，如果你只有这一条途径，那么你做科研也确实少了点B数。上面提到的google scholar很多人可能上不去（<a href="http://mp.weixin.qq.com/s/b6xyVv-HjQQSn0pq7ILQzw">梯子在这里</a>），而Scopus是要收费的。然后途径是很多的，</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1024,7 +1036,7 @@ Loading required package: ggplot2
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         196 posts found
+         197 posts found
       </p>
     </div>
   </div>

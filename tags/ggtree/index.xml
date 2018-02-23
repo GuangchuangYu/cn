@@ -6,10 +6,27 @@
     <description>Recent content in Ggtree on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Jan 2018 20:03:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 23 Feb 2018 18:23:00 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/tags/ggtree/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>改变outgroup的枝长</title>
+      <link>https://guangchuangyu.github.io/cn/2018/02/%E6%94%B9%E5%8F%98outgroup%E7%9A%84%E6%9E%9D%E9%95%BF/</link>
+      <pubDate>Fri, 23 Feb 2018 18:23:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2018/02/%E6%94%B9%E5%8F%98outgroup%E7%9A%84%E6%9E%9D%E9%95%BF/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Hello all,&lt;/p&gt;
+
+&lt;p&gt;When I plot some data using ggtree, the out groups are on a very long branch length. The out groups are 75 and 76 in the example below.&lt;/p&gt;
+
+&lt;p&gt;I would like to keep the out groups in the tree but ignore their branch lengths to make presentation easier.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Y叔不想养蛙，只想养你！</title>
