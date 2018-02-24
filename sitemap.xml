@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2018/02/elementaryos/</loc>
+    <lastmod>2018-02-24T04:33:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2018/02/changing-branch-length-of-outgroup/</loc>
     <lastmod>2018-02-23T18:23:00+08:00</lastmod>
   </url>
@@ -1252,6 +1257,12 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/elementaryos/</loc>
+    <lastmod>2018-02-24T04:33:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/tags/emacs/</loc>
     <lastmod>2013-09-10T18:04:22+08:00</lastmod>
     <priority>0</priority>
@@ -1409,7 +1420,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/</loc>
-    <lastmod>2018-02-23T18:23:00+08:00</lastmod>
+    <lastmod>2018-02-24T04:33:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1493,7 +1504,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/linux/</loc>
-    <lastmod>2017-10-04T00:49:00+08:00</lastmod>
+    <lastmod>2018-02-24T04:33:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1745,7 +1756,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/post/</loc>
-    <lastmod>2018-02-23T18:23:00+08:00</lastmod>
+    <lastmod>2018-02-24T04:33:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
