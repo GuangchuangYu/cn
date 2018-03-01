@@ -1,0 +1,640 @@
+
+
+
+  
+
+
+
+
+  
+
+
+  
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.30.2">
+    <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
+    <title>Ggplot2</title>
+    <meta name="author" content="Guangchuang Yu">
+    <meta name="keywords" content="">
+
+    <link rel="icon" href="https://guangchuangyu.github.io/cn/favicon.png">
+    
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="https://guangchuangyu.github.io/cn/tags/ggplot2/index.xml">
+    
+
+    
+    <meta name="description" content="Guangchuang&#39;s Chinese Blog">
+    <meta property="og:description" content="Guangchuang&#39;s Chinese Blog">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Ggplot2">
+    <meta property="og:url" content="/tags/ggplot2/">
+    <meta property="og:site_name" content="Guangchuang Yu">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Guangchuang Yu">
+    <meta name="twitter:description" content="Guangchuang&#39;s Chinese Blog">
+    
+      <meta name="twitter:creator" content="@guangchuangyu">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
+    
+
+    
+    
+    
+
+    
+
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" />
+    
+    
+    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-u6mk0ojoywresbx8iepslrmmhl4stuhrsxuwhkpwrkrx7mryjcaimasnk4pi.min.css" />
+    
+    
+
+    
+      
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-77901140-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="1">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://guangchuangyu.github.io/cn/">Guangchuang Yu</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://guangchuangyu.github.io/cn/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="1">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://guangchuangyu.github.io/cn/#about">
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Guangchuang Yu</h4>
+        
+        <h5 class="sidebar-profile-bio">a senior-in-age-but-not-senior-in-knowledge bioinformatician</h5>
+        <img alt="微信公众号" src="https://guangchuangyu.github.io/blog_images/biobabble.jpg" width="200" height="200">
+        
+      </div>
+      
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/GuangchuangYu" target="_blank">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+    </ul>
+  </div>
+</nav>
+
+      
+        
+
+      
+      <div id="main" data-behavior="1"
+        class="
+               hasCoverMetaIn
+               ">
+        
+          <section class="postShorten-group main-content-wrap">
+            
+            
+              
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/08/qq-plot/">
+          QQ plot
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2011-08-02T08:23:16&#43;08:00">
+      
+  August 2, 2011
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <p>虽然R提供了很多作图函数，但自己实现一下，是非常好的体验，而且能够让我们了解其中的细节。</p>
+
+<p>最近在读<a href="http://book.douban.com/subject/4237062/">＜Modern Applied Statistics With S-PLUS＞</a>，115页讲到Q-Q图时，书中给出了一个Trellis的实现。（Trellis是S/S-PLUS的可视化系统，在R里的对等实现是lattice包）。</p>
+
+<p>我们知道一组数字，可以算4分位数，分别是25%， 50%（中位数）， 75%，它等于该组数字中所有数值由小到大排列后第X%的数字，事实上每个数字都可以对应一个X%，Q-Q图很简单，把样本数据和理论分布算出来的quantiles，画个散点图而已。分别用base graph和ggplot2实现，图中三个图分别由系统函数qqnorm，和这里定义的qqplot, qqplot2画出来。</p>
+
+<p></p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2011/08/qq-plot/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+            
+            
+  <div class="pagination-bar">
+    <ul class="pagination">
+      
+        <li class="pagination-prev">
+          <a class="btn btn--default btn--small" href="https://guangchuangyu.github.io/cn/tags/ggplot2/page/5/">
+            <i class="fa fa-angle-left text-base icon-mr"></i>
+            <span>NEWER POSTS</span>
+          </a>
+        </li>
+      
+      
+      <li class="pagination-number">page 6 of 6</li>
+    </ul>
+  </div>
+
+
+          </section>
+        
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2018 Guangchuang Yu. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Guangchuang Yu</h4>
+    
+      <div id="about-card-bio">a senior-in-age-but-not-senior-in-knowledge bioinformatician</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Postdoc researcher
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Hong Kong
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Search" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no post found</div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/03/ggpar/">
+                <h3 class="media-heading">用par设置ggplot2参数？这个可以有！</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>有小伙伴在说可以用par(mar)来设置画图的margin，但不能应用于ggplot2，这个可能很多新手都会很困扰，可能需要一段时间的探索之后，才能发现原来是用theme来设定。</p>
+
+<p>这当然你可以归结于说ggplot2和base plot是不同的东西，但从实质画图参数这一点而言，并没有什么同与不同，无非是设置的方式不同而已，而这种方式都是人定义的，我们完全可以人为定义它们兼容。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/02/elementaryos/">
+                <h3 class="media-heading">elementary-美观而易用的Linux发行版</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><img src="http://guangchuangyu.github.io/blog_images/2018/linux_win.jpg" alt="" /></p>
+
+<p>想当年还在读本科那会，debian还是比较阳春的东西，然后就被ubuntu给普及了，ubuntu我实际上是不喜欢的，如果有linux的问题，搜出来是ubuntu的链接，我基本不会点开，ubuntu用的人实在太多，而且是特别多的小白，真正好的发行版是gentoo和arch，文档齐全，小白少。我目前使用的就是arch，因为gentoo实在是笔记本吃不消天天在编译。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/02/changing-branch-length-of-outgroup/">
+                <h3 class="media-heading">改变outgroup的枝长</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><blockquote>
+<p>Hello all,</p>
+
+<p>When I plot some data using ggtree, the out groups are on a very long branch length. The out groups are 75 and 76 in the example below.</p>
+
+<p>I would like to keep the out groups in the tree but ignore their branch lengths to make presentation easier.</p>
+</blockquote>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/02/reactome-icon/">
+                <h3 class="media-heading">秒杀一切手工画通路的素材</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><img src="http://guangchuangyu.github.io/blog_images/2018/reactome-icon/path.gif" alt="" /></p>
+
+<p>像这样的通路图，基本上都是手工画的，也有几个软件可以做这事，但都不流行，毕竟也没啥，无非是素材，所以多半还是素材+熟悉的软件，比如有illustrator、fireworks以及最受欢迎的powerpoint。像illustrator很多人已经很熟，或者powerpoint绝对够傻瓜操作，我们需要的只是素材，自制素材也是可以的，但费时且有时候还不够好看。很多人还在费力收集网上可以下载到的各种素材，很多素材覆盖面不够广，而不同来源的素材混搭有时候会有种画风不对的感觉。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/02/broken-heart/">
+                <h3 class="media-heading">一千个伤心的理由</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>眼看着2月14号就要到来了，又是一年一度的画红心装13的时候，这种事情已经被我BS了，请猛击：《<a href="http://mp.weixin.qq.com/s/Y8IHd6X4f49irXvD_M7bNw">画❤️装geek什么的，都弱爆了！😜</a>》。红心已经没什么好画的了，特别是在我画了生日蛋糕，并用蛋糕画红心之后，《<a href="https://mp.weixin.qq.com/s/Iqcqo5YTy1qmXdsuIrlrYQ">130岁了，祝你生快</a>》，是驴子是马，都没法晒肌肉了。当然红心还是会有所谓的理工宅男晒，除此之外还会有各种花招，来给单身狗撒狗粮。想要加入撒狗粮大军的，快点看《<a href="http://mp.weixin.qq.com/s/2j9VRgar5ExSma6B7Yc3dw">如何告别单身</a>》。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/02/job-wanted/">
+                <h3 class="media-heading">Y叔要求职</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>余光创
+香港大学 生物信息学 博士，目前在港大从事博士后工作
+求职意向：副教授以上
+地点：主要意向是广州和深圳</p>
+
+<p>简历：<a href="https://guangchuangyu.github.io/resume/YGC.pdf">https://guangchuangyu.github.io/resume/YGC.pdf</a></p>
+
+<p>google scholar指标：</p>
+
+<ul>
+<li>引用：1330</li>
+<li>h-index: 14</li>
+<li>i10-index: 17</li>
+</ul>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/02/wechat-addition/">
+                <h3 class="media-heading">网瘾你好，我是80后，请冲我来</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><img src="https://guangchuangyu.github.io/blog_images/2018/wechat_additive/images.png" alt="" /></p>
+
+<p>童鞋们，敲黑板划重点啦，上图请对号入坐，没错，说的就是你！这个网瘾的骚年！</p>
+
+<p>Scientific Report最近发表了<a href="https://www.nature.com/articles/s41598-018-19904-y">一篇神文</a>:</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/01/scihub-bookmark/">
+                <h3 class="media-heading">关于scihub，一文就够了</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>Sci-Hub是居家旅行学术必备的神器，毕竟穷人比较多，而出版社太黑心。但Sci-Hub有一个问题是镜像站经常挂，我之前给出了一个比较可能不会挂的链接，《<a href="https://mp.weixin.qq.com/s/5JGC1bcVZOmdaPxo_uXYYw">再不用担心打不开sci-hub了</a>》，那就是洋葱链接。当然洋葱链接比较慢，我们还是更倾向于使用普通的链接，所以我又收集了《<a href="https://mp.weixin.qq.com/s/RK1CYEboiEDzapdHsiwEGg">2018最新可用的sci-hub镜像+桌面版程序</a>》，当然这些链接随着时间的推移，有些可能也会挂。</p>
+
+<p>任何时候，我们都应该有多手准备，所以我一直都有备选方案，虽然不如sci-hub，虽然现在sci-hub还能用的情况下首先还是sci-hub，但收藏一两个备选工具是必要的，它让你在面前变化的时候可以淡定。《<a href="http://mp.weixin.qq.com/s/aaIby87LSQgxpvCAECFxkw">sci-hub如果挂了，你还有神器下文献吗？</a>》这篇文章介绍的神器即使你现在不用，也该收藏着。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/01/frog-tree/">
+                <h3 class="media-heading">Y叔不想养蛙，只想养你！</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>话说有一只蛙，它旅游去了广东，游戏结束。</p>
+
+<p>这篇文章，只想跟大家讲一讲ggtree，你值得拥有的强大的进化树可视化软件，高颜值的图，就在于指尖几行代码中。</p>
+
+<p>最近养蛙很流行，就以蛙为例，读树用<code>read.tree</code>，然后一个<code>ggtree</code>的指令，树就画出来了。而你见证神奇的时刻就在于你不断<code>+geom_xxx</code>加图层，这里我用了<code>geom_tiplab</code>来加taxa label，而这个可不仅仅是名字哦，用emoji也可以，这里我用的竟然是<strong>图片</strong>，你没看错，也可以。只要指定<code>geom=&quot;image&quot;</code>就OK，那个本来要打的文本，就会被当成是文件名，然后读图片画图片，一切尽在我的ggimage包。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/01/scihub-osx/">
+                <h3 class="media-heading">苹果版SciHub桌面软件</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>为了方便苹果用户也能用桌面软件下文献，我把SciHub桌面版打包成可以运行在苹果上的App。</p>
+
+<p>SciHub桌面版是Windows程序，主页为<a href="https://zhuanlan.zhihu.com/p/31809890">https://zhuanlan.zhihu.com/p/31809890</a>。</p>
+
+<p>首先这是利用wine技术实现的，在苹果上你需要安装<strong>XQuartz</strong>: <a href="https://www.xquartz.org/">https://www.xquartz.org/</a>。</p>
+
+<p>安装很容易，我已经打包了dmg文件，这个文件有44M，还挺大的，没法，要打包一个windows的运行环境嘛。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no post found"
+         data-message-one="1 post found"
+         data-message-other="{n} posts found">
+         199 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('https://guangchuangyu.github.io/cn/images/cover.jpg');"></div>
+  
+
+
+    
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.js"></script>
+
+
+<script src="https://guangchuangyu.github.io/cn/js/script-wl33z0n6ocaypepiqrazthtivfrliqijej4rq8ek8gvrv1awftmgjuv8k4zc.min.js"></script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight').each(function(i, block) {
+    var code = "";
+    hljs.highlightAuto(block.innerText).value.split(/\r\n|\r|\n/).forEach(function(line) {
+      code += "<span class=\"line\">" + line + "</span><br>";
+    });
+    if (code.length > 0) {
+      block.innerHTML = code;  
+    }
+  });
+  $('pre > code').each(function(i, block) {
+    $(this).addClass('codeblock');
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+
+
+
+    
+  </body>
+</html>
+

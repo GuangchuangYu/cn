@@ -226,6 +226,74 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/clusterprofiler-dotplot/">
+          听说你也在画dotplot，但是我不服!
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-07-27T07:05:22&#43;08:00">
+      
+  July 27, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <p>陈同的‘生信宝典’公众号出了篇《<a href="https://mp.weixin.qq.com/s?__biz=MzI5MTcwNjA4NQ==&amp;mid=2247483978&amp;idx=1&amp;sn=e0c158c0e92375553036cc37f4987e40&amp;chksm=ec0dc7c0db7a4ed6ac593493b7d8b52f11f2feb92d24fa00d19527fbb6f95b24f7e313ef9440#rd">R语言学习 - 富集分析泡泡图</a>》，搞个shell脚本，一步绘图。讲了这个脚本可以适用于clusterProfiler和其它软件的富集结果。</p>
+
+<p>浑身都是硬伤，我都不想吐槽，但由于作者邀请我提点，那就吐槽模式全开。</p>
+
+<h2 id="一个command出图-小白已经哭晕">一个command出图，小白已经哭晕</h2>
+
+<p>从出的图看，应该是ggplot2画的（就算猜错，要吐槽的依然正确），小白在web-server上做了分析，存结果为xls文件，拿你这脚本，一跑报错。读xls文件（别告诉我你跟用户说读xls但其实是个tsv）和画图的依赖关系没解决！用户友好在那里？不要告诉我你的脚本0依赖，有个shell就能跑，即使我们熟悉的各种命令，很多都是独立程序，不关shell什么事。</p>
+
+<h2 id="所谓的一步出图">所谓的一步出图</h2>
+
+<p>既然讲了clusterProfiler，那么clusterProfiler用户笑而不语了。我们用dotplot不也是一条命令出图，为什么要退出R，去跑你的shell脚本，这过程还得转换数据，存储数据。最后的这一步，是前面+N步为代价的。</p>
+
+<p></p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2017/07/clusterprofiler-dotplot/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/ferret/">
           听说你也在读文献
         </a>
@@ -636,82 +704,6 @@ ga('send', 'pageview');
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/bmc_plagiarism_2/">
-          Editor你的良心不会痛吗？
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-07-19T21:51:43&#43;08:00">
-      
-  July 19, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/biology">Biology</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/research">Research</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <blockquote>
-<p>抄袭的是<strong>西安电子科技大学</strong>的讲师，靠着两三篇抄袭的文章，已经是副教授了。</p>
-
-<p>这种抄袭的事情就应该暴光，这个事件中，更可恶的是BMC，BMC这种保护抄袭的行为更应该暴光，大家不要再给BMC送钱了，还不如发PLoS One。</p>
-</blockquote>
-
-<p>公众号有人评论说：</p>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/GOSemSim/WechatIMG2.jpeg" alt="" /></p>
-
-<p>这竟然也被捕捉到了，确实他在2012年的时候，就在copy我的代码，然后打R包的时候，还请教了我：</p>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/GOSemSim/ppiPre_dengyue.png" alt="" /></p>
-
-<h2 id="抄了我的代码-之后厚颜无耻地感谢我说学了很多东西-他的良心真的不会痛吗">抄了我的代码，之后厚颜无耻地感谢我说学了很多东西，他的良心真的不会痛吗？</h2>
-
-<p><img src="https://media.giphy.com/media/EvsmQokxE8wi4/giphy.gif" alt="" /></p>
-
-<p></p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/07/bmc_plagiarism_2/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -793,6 +785,27 @@ ga('send', 'pageview');
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/03/ggpar/">
+                <h3 class="media-heading">用par设置ggplot2参数？这个可以有！</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>有小伙伴在说可以用par(mar)来设置画图的margin，但不能应用于ggplot2，这个可能很多新手都会很困扰，可能需要一段时间的探索之后，才能发现原来是用theme来设定。</p>
+
+<p>这当然你可以归结于说ggplot2和base plot是不同的东西，但从实质画图参数这一点而言，并没有什么同与不同，无非是设置的方式不同而已，而这种方式都是人定义的，我们完全可以人为定义它们兼容。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1004,35 +1017,6 @@ ga('send', 'pageview');
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/01/pubmed-still-update/">
-                <h3 class="media-heading">PubMed没有停更</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jan 1, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>在一篇文章《<a href="http://mp.weixin.qq.com/s/VfLmahpFqdmXfwId-d_BWQ">pubmed停更？和你没半毛钱关系！你们是想放假想疯了吧？</a>》我就解读了所谓的停更，根本不碍事，然后又分析了事情只是被自媒体拿来博眼球而已，真正受影响的NCBI数据库没人说，而PubMed停更的可能性不大。</p>
-
-<blockquote>
-<p>Because of a lapse in government funding, the information on this website may not be up to date, transactions submitted via the website may not be processed, and the agency may not be able to respond to inquiries until appropriations are enacted.</p>
-</blockquote>
-
-<p>这个消息，很多人上pubmed看到，就打鸡血了，哟哟哟，号外号外大新闻，真的有过过脑子吗？</p>
-
-<blockquote>
-<p>transactions submitted via the website may not be processed</p>
-</blockquote>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1040,7 +1024,7 @@ ga('send', 'pageview');
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         198 posts found
+         199 posts found
       </p>
     </div>
   </div>

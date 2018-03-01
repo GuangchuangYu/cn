@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2018/03/ggpar/</loc>
+    <lastmod>2018-03-01T10:17:48+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2018/02/elementaryos/</loc>
     <lastmod>2018-02-24T04:33:00+08:00</lastmod>
   </url>
@@ -1119,14 +1124,14 @@
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/categories/c/</loc>
-    <lastmod>2007-06-02T13:53:00+08:00</lastmod>
+    <loc>https://guangchuangyu.github.io/cn/tags/c/</loc>
+    <lastmod>2008-12-14T09:18:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/tags/c/</loc>
-    <lastmod>2008-12-14T09:18:00+08:00</lastmod>
+    <loc>https://guangchuangyu.github.io/cn/categories/c/</loc>
+    <lastmod>2007-06-02T13:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1137,14 +1142,14 @@
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/categories/calculus/</loc>
-    <lastmod>2008-11-25T10:40:22+08:00</lastmod>
+    <loc>https://guangchuangyu.github.io/cn/tags/calculus/</loc>
+    <lastmod>2007-06-02T13:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/tags/calculus/</loc>
-    <lastmod>2007-06-02T13:53:00+08:00</lastmod>
+    <loc>https://guangchuangyu.github.io/cn/categories/calculus/</loc>
+    <lastmod>2008-11-25T10:40:22+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1167,14 +1172,14 @@
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/categories/chipseq/</loc>
-    <lastmod>2017-12-13T12:20:16+08:00</lastmod>
+    <loc>https://guangchuangyu.github.io/cn/tags/chipseq/</loc>
+    <lastmod>2017-03-09T00:13:57+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/tags/chipseq/</loc>
-    <lastmod>2017-03-09T00:13:57+08:00</lastmod>
+    <loc>https://guangchuangyu.github.io/cn/categories/chipseq/</loc>
+    <lastmod>2017-12-13T12:20:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1293,14 +1298,14 @@
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/categories/experiment/</loc>
-    <lastmod>2014-08-27T11:44:16+08:00</lastmod>
+    <loc>https://guangchuangyu.github.io/cn/tags/experiment/</loc>
+    <lastmod>2008-11-25T00:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/tags/experiment/</loc>
-    <lastmod>2008-11-25T00:53:00+08:00</lastmod>
+    <loc>https://guangchuangyu.github.io/cn/categories/experiment/</loc>
+    <lastmod>2014-08-27T11:44:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1366,7 +1371,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/ggplot2/</loc>
-    <lastmod>2018-02-08T00:21:00+08:00</lastmod>
+    <lastmod>2018-03-01T10:17:48+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1420,7 +1425,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/</loc>
-    <lastmod>2018-02-24T04:33:00+08:00</lastmod>
+    <lastmod>2018-03-01T10:17:48+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1497,14 +1502,14 @@
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/categories/linux/</loc>
-    <lastmod>2018-02-24T04:33:00+08:00</lastmod>
+    <loc>https://guangchuangyu.github.io/cn/tags/linux/</loc>
+    <lastmod>2008-10-05T05:08:02+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/tags/linux/</loc>
-    <lastmod>2008-10-05T05:08:02+08:00</lastmod>
+    <loc>https://guangchuangyu.github.io/cn/categories/linux/</loc>
+    <lastmod>2018-02-24T04:33:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1605,14 +1610,14 @@
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/categories/ngs/</loc>
-    <lastmod>2017-06-06T07:57:46+08:00</lastmod>
+    <loc>https://guangchuangyu.github.io/cn/tags/ngs/</loc>
+    <lastmod>2014-08-27T11:44:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/tags/ngs/</loc>
-    <lastmod>2014-08-27T11:44:16+08:00</lastmod>
+    <loc>https://guangchuangyu.github.io/cn/categories/ngs/</loc>
+    <lastmod>2017-06-06T07:57:46+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1756,7 +1761,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/post/</loc>
-    <lastmod>2018-02-24T04:33:00+08:00</lastmod>
+    <lastmod>2018-03-01T10:17:48+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1815,14 +1820,14 @@
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/categories/python/</loc>
-    <lastmod>2017-09-13T13:37:55+08:00</lastmod>
+    <loc>https://guangchuangyu.github.io/cn/tags/python/</loc>
+    <lastmod>2008-12-14T09:18:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/tags/python/</loc>
-    <lastmod>2008-12-14T09:18:00+08:00</lastmod>
+    <loc>https://guangchuangyu.github.io/cn/categories/python/</loc>
+    <lastmod>2017-09-13T13:37:55+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1834,7 +1839,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/r/</loc>
-    <lastmod>2018-02-23T18:23:00+08:00</lastmod>
+    <lastmod>2018-03-01T10:17:48+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1935,14 +1940,14 @@
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/categories/software/</loc>
-    <lastmod>2018-01-24T15:27:00+08:00</lastmod>
+    <loc>https://guangchuangyu.github.io/cn/tags/software/</loc>
+    <lastmod>2008-11-23T04:32:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/tags/software/</loc>
-    <lastmod>2008-11-23T04:32:00+08:00</lastmod>
+    <loc>https://guangchuangyu.github.io/cn/categories/software/</loc>
+    <lastmod>2018-01-24T15:27:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2026,7 +2031,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/visualization/</loc>
-    <lastmod>2018-02-23T18:23:00+08:00</lastmod>
+    <lastmod>2018-03-01T10:17:48+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2043,14 +2048,14 @@
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/categories/windows/</loc>
-    <lastmod>2015-11-17T16:06:59+08:00</lastmod>
+    <loc>https://guangchuangyu.github.io/cn/tags/windows/</loc>
+    <lastmod>2016-11-30T00:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/tags/windows/</loc>
-    <lastmod>2016-11-30T00:53:00+08:00</lastmod>
+    <loc>https://guangchuangyu.github.io/cn/categories/windows/</loc>
+    <lastmod>2015-11-17T16:06:59+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2068,7 +2073,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/yyplot/</loc>
-    <lastmod>2018-01-08T13:13:00+08:00</lastmod>
+    <lastmod>2018-03-01T10:17:48+08:00</lastmod>
     <priority>0</priority>
   </url>
   
