@@ -350,6 +350,29 @@ ga('send', 'pageview');
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/03/treescale_unrooted_tree/">
+                <h3 class="media-heading">add treescale to unrooted tree</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><blockquote>
+<p>I am trying to add a scale to an unrooted tree with <code>geom_treescale</code>, but when I use it, the tree completely collapses and I am not able to set anything that fix it. Anybody has any idea on how to do it ?</p>
+</blockquote>
+
+<p><a href="https://groups.google.com/d/msgid/bioc-ggtree/9d69f444-94cf-42df-8382-bca2962b08c9%40googlegroups.com">google group</a>里的问题，说他加<code>geom_treescale</code>之后，树被压缩了，由于他没有给出可重复性的例子，所以我们并不知道情况到底有多么糟糕，但这种情况是可能发生的，因为加<strong>treescale</strong>这种东西，默认情况下<code>geom_treescale</code>会自己去计算该加多大的scale bar，该放在什么位置上，而这种默认情况是基于rectangular布局来的，在假设的情况下，都不可能尽善尽美，假设不成立的情况下当然有可能搞得很差。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/03/ggpar/">
                 <h3 class="media-heading">用par设置ggplot2参数？这个可以有！</h3>
               </a>
@@ -553,31 +576,6 @@ ga('send', 'pageview');
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/01/scihub-osx/">
-                <h3 class="media-heading">苹果版SciHub桌面软件</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jan 1, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>为了方便苹果用户也能用桌面软件下文献，我把SciHub桌面版打包成可以运行在苹果上的App。</p>
-
-<p>SciHub桌面版是Windows程序，主页为<a href="https://zhuanlan.zhihu.com/p/31809890">https://zhuanlan.zhihu.com/p/31809890</a>。</p>
-
-<p>首先这是利用wine技术实现的，在苹果上你需要安装<strong>XQuartz</strong>: <a href="https://www.xquartz.org/">https://www.xquartz.org/</a>。</p>
-
-<p>安装很容易，我已经打包了dmg文件，这个文件有44M，还挺大的，没法，要打包一个windows的运行环境嘛。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -585,7 +583,7 @@ ga('send', 'pageview');
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         199 posts found
+         200 posts found
       </p>
     </div>
   </div>

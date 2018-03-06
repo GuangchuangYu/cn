@@ -6,10 +6,25 @@
     <description>Recent content in Evolution on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 Oct 2017 10:17:48 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 05 Mar 2018 13:17:48 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/categories/evolution/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>add treescale to unrooted tree</title>
+      <link>https://guangchuangyu.github.io/cn/2018/03/treescale_unrooted_tree/</link>
+      <pubDate>Mon, 05 Mar 2018 13:17:48 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2018/03/treescale_unrooted_tree/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;I am trying to add a scale to an unrooted tree with &lt;code&gt;geom_treescale&lt;/code&gt;, but when I use it, the tree completely collapses and I am not able to set anything that fix it. Anybody has any idea on how to do it ?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://groups.google.com/d/msgid/bioc-ggtree/9d69f444-94cf-42df-8382-bca2962b08c9%40googlegroups.com&#34;&gt;google group&lt;/a&gt;里的问题，说他加&lt;code&gt;geom_treescale&lt;/code&gt;之后，树被压缩了，由于他没有给出可重复性的例子，所以我们并不知道情况到底有多么糟糕，但这种情况是可能发生的，因为加&lt;strong&gt;treescale&lt;/strong&gt;这种东西，默认情况下&lt;code&gt;geom_treescale&lt;/code&gt;会自己去计算该加多大的scale bar，该放在什么位置上，而这种默认情况是基于rectangular布局来的，在假设的情况下，都不可能尽善尽美，假设不成立的情况下当然有可能搞得很差。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>webinar录播：plotting tree &#43; data</title>
