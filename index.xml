@@ -957,12 +957,12 @@ p &amp;lt;- ggplot(d, aes(x,y)) +
     </item>
     
     <item>
-      <title>R, python喊你回家吃饭啦🍚</title>
-      <link>https://guangchuangyu.github.io/cn/2017/09/rice/</link>
+      <title>R, python喊你回家吃饭啦</title>
+      <link>https://guangchuangyu.github.io/cn/2017/09/rtichoke/</link>
       <pubDate>Wed, 13 Sep 2017 13:37:55 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/2017/09/rice/</guid>
-      <description>&lt;p&gt;在《&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;amp;mid=2247484507&amp;amp;amp;idx=1&amp;amp;amp;sn=295454a59613bfd977f407958bec787e&amp;amp;amp;chksm=ec43b51cdb343c0acea87661fe5144a5817503a2fdc8f316d56fd28d33291084bc718330c428#rd&#34;&gt;你所不知道的，R的N种打开方式&lt;/a&gt;》一文中，我介绍了R的N种界面，这里将介绍一个用python写的极其现代化的R命令行界面，rice之于R，就像ipython之于python一样。&lt;/p&gt;
+      <guid>https://guangchuangyu.github.io/cn/2017/09/rtichoke/</guid>
+      <description>&lt;p&gt;在《&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;amp;mid=2247484507&amp;amp;amp;idx=1&amp;amp;amp;sn=295454a59613bfd977f407958bec787e&amp;amp;amp;chksm=ec43b51cdb343c0acea87661fe5144a5817503a2fdc8f316d56fd28d33291084bc718330c428#rd&#34;&gt;你所不知道的，R的N种打开方式&lt;/a&gt;》一文中，我介绍了R的N种界面，这里将介绍一个用python写的极其现代化的R命令行界面，rtichoke（之前叫rice）之于R，就像ipython之于python一样。&lt;/p&gt;
 
 &lt;h2 id=&#34;特性&#34;&gt;特性&lt;/h2&gt;
 

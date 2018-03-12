@@ -258,7 +258,7 @@
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/2017/09/rice/</loc>
+    <loc>https://guangchuangyu.github.io/cn/2017/09/rtichoke/</loc>
     <lastmod>2017-09-13T13:37:55+08:00</lastmod>
   </url>
   
@@ -1873,12 +1873,6 @@
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/tags/rice/</loc>
-    <lastmod>2017-09-13T13:37:55+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://guangchuangyu.github.io/cn/tags/root/</loc>
     <lastmod>2008-11-25T10:40:22+08:00</lastmod>
     <priority>0</priority>
@@ -1887,6 +1881,12 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/rplotter/</loc>
     <lastmod>2016-11-21T12:23:16+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/rtichoke/</loc>
+    <lastmod>2017-09-13T13:37:55+08:00</lastmod>
     <priority>0</priority>
   </url>
   
