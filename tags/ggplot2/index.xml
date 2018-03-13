@@ -13,10 +13,10 @@
     
     <item>
       <title>扪心自问，meme几何？</title>
-      <link>https://guangchuangyu.github.io/cn/2018/03/five-question-of-meme/</link>
+      <link>https://guangchuangyu.github.io/cn/2018/03/five-questions-of-meme/</link>
       <pubDate>Tue, 13 Mar 2018 13:06:59 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/2018/03/five-question-of-meme/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2018/03/five-questions-of-meme/</guid>
       <description>&lt;p&gt;很多人都在学&lt;code&gt;ggplot2&lt;/code&gt;，也有很多「高手」，比如你搜索「精通ggplot2」，你甚至会看到各种「从入门到精通」的课程，然而都是各种照猫画老虎的入门菜谱而已，当然广大群众去上课也可能只是为了求菜谱好在需要的时候，可以copy-paste而已。&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;ggplot2&lt;/code&gt;学习容易，因为无非是图层叠加，而图层的参数一致性非常好，网上也有很全的文档。然而要深入很难，比如你想干点什么是&lt;code&gt;ggplot2&lt;/code&gt;自身没有支持的，你需要自己去hack，需要用到更底层的东西的时候，一般情况下，会无从入手，尝试之后才知道什么叫绝望！因为&lt;code&gt;ggplot2&lt;/code&gt;套路实在是太深。&lt;/p&gt;
