@@ -229,6 +229,70 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/goodbye-joyplot/">
+          再见joyplot
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-09-15T00:53:00&#43;08:00">
+      
+  September 15, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <p>微信公众号平台大部分人都是抄来抄去的二手资料，像joyplot这种特别新的东西，就很难看到，我试着搜索了一下，发现只有三篇，都是我写的。</p>
+
+<ul>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484586&amp;idx=1&amp;sn=2c4aaca92147d901fb5421cdb99d16de&amp;chksm=ec43b5eddb343cfb34c907ddfdba74e129ee7ef896219a888a56b36738a0f6062bb2cf0ab99f#rd">joyplot：一种波涛汹涌，哦不对，是山峰叠峦的可视化方式</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484682&amp;idx=1&amp;sn=21944039080612bed8bda7b3070015b3&amp;chksm=ec43b44ddb343d5bcba5c22e33b6b26ce8bfee6e7b913115c19e0e14e930699ab602445d0e89#rd">ggjoy facet with ggtree</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484750&amp;amp;idx=1&amp;amp;sn=19aa83580ad91e18d3fe23cc42675628&amp;amp;chksm=ec43b409db343d1f189bf1d1e6499ac8bd034ce52e90454d7e2b568b6901b5d2f5bdf31fa887#rd">joyplot：GSEA的结果也能快乐起来</a></li>
+</ul>
+
+<p></p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2017/09/goodbye-joyplot/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+            
+              
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/rtichoke/">
           R, python喊你回家吃饭啦
         </a>
@@ -608,116 +672,6 @@ p &lt;- ggplot(d, aes(x, y)) +
 </article>
 
             
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/08/galaxy-chipseeker/">
-          Galaxy-ChIPseq流程
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-08-15T12:23:16&#43;08:00">
-      
-  August 15, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/chipseq">ChIPseq</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <blockquote>
-<p>这篇文章介绍如果把ChIPseeker搬上galaxy，和galaxy上其它软件一起拼成流程，跑一个ChIPseq注释的流程，从fastq文件开始，比对生成bam文件，peak calling生成bed文件，基因组注释，一个完整的流程，这个流程一旦设置好，每次跑都只是点点鼠标就可以了。
-本文额外附送：
-1. 如何把R程序变成命令行程序
-2. 如何把命令行程序搬上galaxy (知名的程序都有人搬好，但自己的程序还是需要学一下怎么配置的）</p>
-</blockquote>
-
-<p>Galaxy可以说是低端生信从业者杀手，如果你的能力只是跑跑流程，galaxy完全可以取代你的工作。</p>
-
-<p>如果你是苦逼的生物研究生，苦于要自己分析数据，不会跑命令行程序，对各种参数表示晕菜，galaxy也是拯救你的神器，如同有个做生信的人在旁边帮助你，参数你点点菜单就可以了，跟程序变运行又可以了，流程自己都可以设计并一键运行。</p>
-
-<h2 id="安装galaxy">安装galaxy</h2>
-
-<ul>
-<li>requirements: python 2.7 and git</li>
-<li>only three steps</li>
-</ul>
-
-<h3 id="克隆galaxy项目">克隆galaxy项目</h3>
-
-<pre><code class="language-bash">git clone https://github.com/galaxyproject/galaxy/
-cd galaxy
-## switch to master branch, stable release
-git checkout -b master origin/master
-```     
-
-
-
-
-### 安装
-
-
-```bash
-cd galaxy/config/
-cp galaxy.ini.sample galaxy.ini
-```     
-
-编辑_galaxy.ini_文件
-
-+ find the line: admin_users
-+ remove the # and add an email for your account
-
-
-
-### 运行
-
-```bash
-# go back to galaxy folder
-cd ..
-sh run.sh
-</code></pre>
-
-<p>然后就可以用浏览器打开<a href="http://localhost:8080">http://localhost:8080</a>，使用galaxy，就是这么简单。</p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/08/galaxy-chipseeker/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
             
   <div class="pagination-bar">
     <ul class="pagination">
@@ -800,6 +754,34 @@ sh run.sh
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/03/five-question-of-meme/">
+                <h3 class="media-heading">扪心自问，meme几何？</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>很多人都在学<code>ggplot2</code>，也有很多「高手」，比如你搜索「精通ggplot2」，你甚至会看到各种「从入门到精通」的课程，然而都是各种照猫画老虎的入门菜谱而已，当然广大群众去上课也可能只是为了求菜谱好在需要的时候，可以copy-paste而已。</p>
+
+<p><code>ggplot2</code>学习容易，因为无非是图层叠加，而图层的参数一致性非常好，网上也有很全的文档。然而要深入很难，比如你想干点什么是<code>ggplot2</code>自身没有支持的，你需要自己去hack，需要用到更底层的东西的时候，一般情况下，会无从入手，尝试之后才知道什么叫绝望！因为<code>ggplot2</code>套路实在是太深。</p>
+
+<p>正如我在《<a href="http://mp.weixin.qq.com/s/Xhi_ZkrEzUVdnCu7ECBS4w">听说你还不会画热图</a>》吐槽的，有些所谓的「高手」实际上连<code>ggplot2</code>底层是什么都不知道！然后可以把<code>ggplot2</code>吹上天。很多人根本不知道当你打下<code>ggplot</code>这个命令的时候，到底发生了什么？要理解<code>ggplot2</code>并不容易，正如前面所说「套路太深」，没有金钢钻，读不了它的代码，有没有一个简单点的包，能够读懂代码，并且有助于理解<code>ggplot2</code>呢？我想我的<code>meme</code>包就非常好，虽然仿的有点肤浅，然而胜在简单，看过下面这两篇文章的，都知道这个包在做什么。</p>
+
+<ul>
+<li><a href="http://mp.weixin.qq.com/s/jDXjkrkq_YVhW-Z5Vx2-Fg">用R画meme ;)</a></li>
+<li><a href="https://mp.weixin.qq.com/s/4b8enFCd_lLt278Ddxp3rg">使用外部字体画meme</a></li>
+</ul>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1007,29 +989,6 @@ sh run.sh
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/01/frog-tree/">
-                <h3 class="media-heading">Y叔不想养蛙，只想养你！</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jan 1, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>话说有一只蛙，它旅游去了广东，游戏结束。</p>
-
-<p>这篇文章，只想跟大家讲一讲ggtree，你值得拥有的强大的进化树可视化软件，高颜值的图，就在于指尖几行代码中。</p>
-
-<p>最近养蛙很流行，就以蛙为例，读树用<code>read.tree</code>，然后一个<code>ggtree</code>的指令，树就画出来了。而你见证神奇的时刻就在于你不断<code>+geom_xxx</code>加图层，这里我用了<code>geom_tiplab</code>来加taxa label，而这个可不仅仅是名字哦，用emoji也可以，这里我用的竟然是<strong>图片</strong>，你没看错，也可以。只要指定<code>geom=&quot;image&quot;</code>就OK，那个本来要打的文本，就会被当成是文件名，然后读图片画图片，一切尽在我的ggimage包。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1037,7 +996,7 @@ sh run.sh
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         200 posts found
+         201 posts found
       </p>
     </div>
   </div>

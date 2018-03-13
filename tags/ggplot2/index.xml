@@ -6,10 +6,30 @@
     <description>Recent content in Ggplot2 on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Mar 2018 10:17:48 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 13 Mar 2018 13:06:59 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/tags/ggplot2/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>扪心自问，meme几何？</title>
+      <link>https://guangchuangyu.github.io/cn/2018/03/five-question-of-meme/</link>
+      <pubDate>Tue, 13 Mar 2018 13:06:59 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2018/03/five-question-of-meme/</guid>
+      <description>&lt;p&gt;很多人都在学&lt;code&gt;ggplot2&lt;/code&gt;，也有很多「高手」，比如你搜索「精通ggplot2」，你甚至会看到各种「从入门到精通」的课程，然而都是各种照猫画老虎的入门菜谱而已，当然广大群众去上课也可能只是为了求菜谱好在需要的时候，可以copy-paste而已。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;ggplot2&lt;/code&gt;学习容易，因为无非是图层叠加，而图层的参数一致性非常好，网上也有很全的文档。然而要深入很难，比如你想干点什么是&lt;code&gt;ggplot2&lt;/code&gt;自身没有支持的，你需要自己去hack，需要用到更底层的东西的时候，一般情况下，会无从入手，尝试之后才知道什么叫绝望！因为&lt;code&gt;ggplot2&lt;/code&gt;套路实在是太深。&lt;/p&gt;
+
+&lt;p&gt;正如我在《&lt;a href=&#34;http://mp.weixin.qq.com/s/Xhi_ZkrEzUVdnCu7ECBS4w&#34;&gt;听说你还不会画热图&lt;/a&gt;》吐槽的，有些所谓的「高手」实际上连&lt;code&gt;ggplot2&lt;/code&gt;底层是什么都不知道！然后可以把&lt;code&gt;ggplot2&lt;/code&gt;吹上天。很多人根本不知道当你打下&lt;code&gt;ggplot&lt;/code&gt;这个命令的时候，到底发生了什么？要理解&lt;code&gt;ggplot2&lt;/code&gt;并不容易，正如前面所说「套路太深」，没有金钢钻，读不了它的代码，有没有一个简单点的包，能够读懂代码，并且有助于理解&lt;code&gt;ggplot2&lt;/code&gt;呢？我想我的&lt;code&gt;meme&lt;/code&gt;包就非常好，虽然仿的有点肤浅，然而胜在简单，看过下面这两篇文章的，都知道这个包在做什么。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://mp.weixin.qq.com/s/jDXjkrkq_YVhW-Z5Vx2-Fg&#34;&gt;用R画meme ;)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/4b8enFCd_lLt278Ddxp3rg&#34;&gt;使用外部字体画meme&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>用par设置ggplot2参数？这个可以有！</title>
