@@ -17,14 +17,15 @@
       <pubDate>Tue, 20 Mar 2018 12:53:00 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2018/03/group-points/</guid>
-      <description>&lt;p&gt;library(ggplot2)
-    d = subset(diamonds, color %in% c(&amp;ldquo;D&amp;rdquo;, &amp;ldquo;E&amp;rdquo;))
-    ggplot(d, aes(cut, carat, fill=color, color=color)) +
-        geom_violin(alpha=.3) + geom_jitter(width=.05, alpha=.5)&lt;/p&gt;
+      <description>&lt;p&gt;小伙伴提出了上面的问题，点不能够打到violin里面去，即使加了&lt;code&gt;aes(group=color)&lt;/code&gt;强行分组也不行。这个照理第一感觉都会觉得可以，但试一下都会发现不行。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;library(ggplot2)
+d = subset(diamonds, color %in% c(&amp;quot;D&amp;quot;, &amp;quot;E&amp;quot;))
+ggplot(d, aes(cut, carat, fill=color, color=color)) + 
+    geom_violin(alpha=.3) + geom_jitter(width=.05, alpha=.5)
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/R/ggplot2/group_point/unnamed-chunk-1-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;小伙伴提出了上面的问题，点不能够打到violin里面去，即使加了&lt;code&gt;aes(group=color)&lt;/code&gt;强行分组也不行。这个照理第一感觉都会觉得可以，但试一下都会发现不行。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

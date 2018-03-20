@@ -31,24 +31,26 @@
     
 
     
-    <meta name="description" content="library(ggplot2)
-    d = subset(diamonds, color %in% c(&ldquo;D&rdquo;, &ldquo;E&rdquo;))
-    ggplot(d, aes(cut, carat, fill=color, color=color)) &#43;
-        geom_violin(alpha=.3) &#43; geom_jitter(width=.05, alpha=.5)
+    <meta name="description" content="小伙伴提出了上面的问题，点不能够打到violin里面去，即使加了aes(group=color)强行分组也不行。这个照理第一感觉都会觉得可以，但试一下都会发现不行。
+
+library(ggplot2)
+d = subset(diamonds, color %in% c(&quot;D&quot;, &quot;E&quot;))
+ggplot(d, aes(cut, carat, fill=color, color=color)) &#43; 
+    geom_violin(alpha=.3) &#43; geom_jitter(width=.05, alpha=.5)
 
 
 
-小伙伴提出了上面的问题，点不能够打到violin里面去，即使加了aes(group=color)强行分组也不行。这个照理第一感觉都会觉得可以，但试一下都会发现不行。
 
 ">
-    <meta property="og:description" content="library(ggplot2)
-    d = subset(diamonds, color %in% c(&ldquo;D&rdquo;, &ldquo;E&rdquo;))
-    ggplot(d, aes(cut, carat, fill=color, color=color)) &#43;
-        geom_violin(alpha=.3) &#43; geom_jitter(width=.05, alpha=.5)
+    <meta property="og:description" content="小伙伴提出了上面的问题，点不能够打到violin里面去，即使加了aes(group=color)强行分组也不行。这个照理第一感觉都会觉得可以，但试一下都会发现不行。
+
+library(ggplot2)
+d = subset(diamonds, color %in% c(&quot;D&quot;, &quot;E&quot;))
+ggplot(d, aes(cut, carat, fill=color, color=color)) &#43; 
+    geom_violin(alpha=.3) &#43; geom_jitter(width=.05, alpha=.5)
 
 
 
-小伙伴提出了上面的问题，点不能够打到violin里面去，即使加了aes(group=color)强行分组也不行。这个照理第一感觉都会觉得可以，但试一下都会发现不行。
 
 ">
     <meta property="og:type" content="blog">
@@ -57,14 +59,15 @@
     <meta property="og:site_name" content="Guangchuang Yu">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Guangchuang Yu">
-    <meta name="twitter:description" content="library(ggplot2)
-    d = subset(diamonds, color %in% c(&ldquo;D&rdquo;, &ldquo;E&rdquo;))
-    ggplot(d, aes(cut, carat, fill=color, color=color)) &#43;
-        geom_violin(alpha=.3) &#43; geom_jitter(width=.05, alpha=.5)
+    <meta name="twitter:description" content="小伙伴提出了上面的问题，点不能够打到violin里面去，即使加了aes(group=color)强行分组也不行。这个照理第一感觉都会觉得可以，但试一下都会发现不行。
+
+library(ggplot2)
+d = subset(diamonds, color %in% c(&quot;D&quot;, &quot;E&quot;))
+ggplot(d, aes(cut, carat, fill=color, color=color)) &#43; 
+    geom_violin(alpha=.3) &#43; geom_jitter(width=.05, alpha=.5)
 
 
 
-小伙伴提出了上面的问题，点不能够打到violin里面去，即使加了aes(group=color)强行分组也不行。这个照理第一感觉都会觉得可以，但试一下都会发现不行。
 
 ">
     
@@ -270,14 +273,15 @@ ga('send', 'pageview');
                 
                 <div class="post-content markdown" itemprop="articleBody">
                     <div class="main-content-wrap">
-                        <p>library(ggplot2)
-    d = subset(diamonds, color %in% c(&ldquo;D&rdquo;, &ldquo;E&rdquo;))
-    ggplot(d, aes(cut, carat, fill=color, color=color)) +
-        geom_violin(alpha=.3) + geom_jitter(width=.05, alpha=.5)</p>
+                        <p>小伙伴提出了上面的问题，点不能够打到violin里面去，即使加了<code>aes(group=color)</code>强行分组也不行。这个照理第一感觉都会觉得可以，但试一下都会发现不行。</p>
+
+<pre><code>library(ggplot2)
+d = subset(diamonds, color %in% c(&quot;D&quot;, &quot;E&quot;))
+ggplot(d, aes(cut, carat, fill=color, color=color)) + 
+    geom_violin(alpha=.3) + geom_jitter(width=.05, alpha=.5)
+</code></pre>
 
 <p><img src="http://guangchuangyu.github.io/blog_images/R/ggplot2/group_point/unnamed-chunk-1-1.png" alt="" /></p>
-
-<p>小伙伴提出了上面的问题，点不能够打到violin里面去，即使加了<code>aes(group=color)</code>强行分组也不行。这个照理第一感觉都会觉得可以，但试一下都会发现不行。</p>
 
 <p></p>
 
@@ -350,7 +354,6 @@ ggplot(d, aes(cut, carat, fill=color, color=color)) +
 <h2 id="专业解决ggplot2画图疑难杂症">专业解决ggplot2画图疑难杂症</h2>
 
 <ul>
-<li><a href="http://mp.weixin.qq.com/s/vB7mJG9FQYXsYZh9Bcp0_g">怀疑人生！我不欠你们钱，好吗？</a></li>
 <li><a href="http://mp.weixin.qq.com/s/jegI1wWc7DJzrM7mQfz77Q">同一数据多变量分组的boxplot?</a></li>
 <li><a href="http://mp.weixin.qq.com/s/Xhi_ZkrEzUVdnCu7ECBS4w">听说你还不会画热图</a></li>
 <li><a href="https://mp.weixin.qq.com/s/yVLgGQQi0CQ9Q9UfIKl5aA">不同数据集画出的热图，用同样的颜色区间上色?</a></li>
@@ -605,14 +608,15 @@ ggplot(d, aes(cut, carat, fill=color, color=color)) +
                   Mar 3, 2018
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather"><p>library(ggplot2)
-    d = subset(diamonds, color %in% c(&ldquo;D&rdquo;, &ldquo;E&rdquo;))
-    ggplot(d, aes(cut, carat, fill=color, color=color)) +
-        geom_violin(alpha=.3) + geom_jitter(width=.05, alpha=.5)</p>
+              <div class="media-content hide-xs font-merryweather"><p>小伙伴提出了上面的问题，点不能够打到violin里面去，即使加了<code>aes(group=color)</code>强行分组也不行。这个照理第一感觉都会觉得可以，但试一下都会发现不行。</p>
+
+<pre><code>library(ggplot2)
+d = subset(diamonds, color %in% c(&quot;D&quot;, &quot;E&quot;))
+ggplot(d, aes(cut, carat, fill=color, color=color)) + 
+    geom_violin(alpha=.3) + geom_jitter(width=.05, alpha=.5)
+</code></pre>
 
 <p><img src="http://guangchuangyu.github.io/blog_images/R/ggplot2/group_point/unnamed-chunk-1-1.png" alt="" /></p>
-
-<p>小伙伴提出了上面的问题，点不能够打到violin里面去，即使加了<code>aes(group=color)</code>强行分组也不行。这个照理第一感觉都会觉得可以，但试一下都会发现不行。</p>
 
 <p></p></div>
             </div>
