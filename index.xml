@@ -6,10 +6,28 @@
     <description>Recent content on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 16 Mar 2018 09:09:22 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 20 Mar 2018 12:53:00 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>画图给点分组?</title>
+      <link>https://guangchuangyu.github.io/cn/2018/03/group-points/</link>
+      <pubDate>Tue, 20 Mar 2018 12:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2018/03/group-points/</guid>
+      <description>&lt;p&gt;library(ggplot2)
+    d = subset(diamonds, color %in% c(&amp;ldquo;D&amp;rdquo;, &amp;ldquo;E&amp;rdquo;))
+    ggplot(d, aes(cut, carat, fill=color, color=color)) +
+        geom_violin(alpha=.3) + geom_jitter(width=.05, alpha=.5)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/R/ggplot2/group_point/unnamed-chunk-1-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;小伙伴提出了上面的问题，点不能够打到violin里面去，即使加了&lt;code&gt;aes(group=color)&lt;/code&gt;强行分组也不行。这个照理第一感觉都会觉得可以，但试一下都会发现不行。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>一条指令把统计&#43;画图都给做了？似乎太美好！</title>

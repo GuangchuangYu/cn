@@ -226,6 +226,64 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/10/restore-thunder-url/">
+          还原迅雷的url
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2008-10-05T05:08:02&#43;08:00">
+      
+  October 5, 2008
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/software">Software</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <p>迅雷的url很恶心，硬是把你绑死在它的流氓软件上，今天试了一个用base64解码，果然用这个伎俩来欺骗用户。在原始的url前面和后面各加两个字符，然后用base64编码。写了下面一段script来还原出原始的url，这样随便用那个下载工具都可以用了。</p>
+
+<p></p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2008/10/restore-thunder-url/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/09/%E5%8D%9A%E5%AE%A2%E8%BD%ACwordpress/">
           博客转WordPress
         </a>
@@ -620,68 +678,6 @@ idmap &lt;- getBM(attributes=c(&quot;codelink&quot;,&quot;refseq_dna&quot;,&quot
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/09/compile-32bit-applications-in-64bit-linux/">
-          在64位环境下编译32位的应用程序
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2008-09-23T00:18:00&#43;08:00">
-      
-  September 23, 2008
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/bsd">BSD</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/linux">Linux</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>用PITA算法做靶标预测的时候，要用到ViennaRNA包做结构的折叠，这个包是被修改过的，原来的包在我机子上是可以装的。但是这个修改过的包编译不通过。很奇怪的错误，不知道怎么改。</p>
-
-<p>好在它有两个版本，64位和32位的。我弄到大型机上去编译32位的，也是出错，不过是命名空间的问题，我改两个头文件就可以通过了。最近又要算。那个大型机最近被搬走了。只能本机上做。</p>
-
-<p></p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2008/09/compile-32bit-applications-in-64bit-linux/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -763,6 +759,32 @@ idmap &lt;- getBM(attributes=c(&quot;codelink&quot;,&quot;refseq_dna&quot;,&quot
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/03/group-points/">
+                <h3 class="media-heading">画图给点分组?</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>library(ggplot2)
+    d = subset(diamonds, color %in% c(&ldquo;D&rdquo;, &ldquo;E&rdquo;))
+    ggplot(d, aes(cut, carat, fill=color, color=color)) +
+        geom_violin(alpha=.3) + geom_jitter(width=.05, alpha=.5)</p>
+
+<p><img src="http://guangchuangyu.github.io/blog_images/R/ggplot2/group_point/unnamed-chunk-1-1.png" alt="" /></p>
+
+<p>小伙伴提出了上面的问题，点不能够打到violin里面去，即使加了<code>aes(group=color)</code>强行分组也不行。这个照理第一感觉都会觉得可以，但试一下都会发现不行。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -975,29 +997,6 @@ idmap &lt;- getBM(attributes=c(&quot;codelink&quot;,&quot;refseq_dna&quot;,&quot
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/02/wechat-addition/">
-                <h3 class="media-heading">网瘾你好，我是80后，请冲我来</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Feb 2, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><img src="https://guangchuangyu.github.io/blog_images/2018/wechat_additive/images.png" alt="" /></p>
-
-<p>童鞋们，敲黑板划重点啦，上图请对号入坐，没错，说的就是你！这个网瘾的骚年！</p>
-
-<p>Scientific Report最近发表了<a href="https://www.nature.com/articles/s41598-018-19904-y">一篇神文</a>:</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1005,7 +1004,7 @@ idmap &lt;- getBM(attributes=c(&quot;codelink&quot;,&quot;refseq_dna&quot;,&quot
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         202 posts found
+         203 posts found
       </p>
     </div>
   </div>

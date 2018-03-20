@@ -226,6 +226,68 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/05/electronic_wechat/">
+          开源的macOS和linux版微信
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-05-29T07:57:46&#43;08:00">
+      
+  May 29, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/linux">Linux</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        在开源的macOS和linux版微信一文中，观众想知道怎么装windows，应你们的需求，来一发。
+见过我2007年以前截屏的话，都会发现gnome和kde没出现过，我喜欢轻量的wm和软件，当年xfce出来的时候，号称轻量，其实也是中级以上，gnome2本身很轻量(gnome3我就不知道了），它给人重量都怪nautilus太慢。后来出现了lxde，才是符合我标准的集易用与轻量一身的桌面，lxde轻量到什么程度？能跑win98的电脑都可以流畅跑lxde！
+LXDE本身就像极了windows经典桌面，而windows界面，大家（起码我是）最爱的还是经典界面，windows 2000是最高水平！虽然土灰土灰的，谁用谁知道，如果长时间盯屏幕，这种土灰土灰的界面，眼睛最不容易累！
+LXDE因为本身菜单和自带的软件，都对windows用户极其友好，所以其实已经很像了。如果你想它再像一点，你可以把图标搞成windows的，比如archlinux的aur源里就有windows 95的图标，这逼就装得有点过了。
+$ yaourt -Ss classic95 aur/classic95-icons 1-1 <a href="3">installed</a> (0.09) Classic icon set from Windows 95  再者就是gtk主题，自带的Redmond，就是windows经典的土灰，最后就是开始菜单，你只要找一个windows开始菜单按纽的图片，大功告成。
+就是这么简单!
+要想装win7，win8这样比较现代化的界面，我推荐一个主题包: <a href="https://github.com/nhermosilla14/WinAte，自带win7、win8主题，桌面壁纸、鼠标主题、图标等。">https://github.com/nhermosilla14/WinAte，自带win7、win8主题，桌面壁纸、鼠标主题、图标等。</a>
+而且这个主题包还附送了各大系统的logo，也就是开始菜单的图标，你可以装成别的系统，请随便装：
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2017/05/electronic_wechat/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/05/emojifont%E5%85%AC%E4%BC%97%E5%8F%B7%E6%96%87%E7%AB%A0/">
           emojifont公众号文章
         </a>
@@ -604,78 +666,6 @@ p &lt;- ggtree(tree, color=&quot;black&quot;, size=1.5, linetype=1,  ladderize=T
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/04/%E6%9D%A5%E8%87%AAr%E7%9A%84%E6%A1%8C%E9%9D%A2%E6%8F%90%E9%86%92/">
-          来自R的桌面提醒
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-04-11T12:23:16&#43;08:00">
-      
-  April 11, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p><strong>notifier</strong>包实现了跨平台的桌面提醒功能，当然它是调用了外部的命令，比如windows使用了<strong>toaster</strong>，老版本windows使用的是<strong>notifu</strong>，在linux下使用<strong>notify-send</strong>，而在OSX下，则调用了<strong>terminal-notifier</strong>，通过了简单的封装之后，就可以给桌面发布消息提醒了。</p>
-
-<p>比如：</p>
-
-<pre><code class="language-r">library(notifier)
-notify(
-  title = &quot;15 Packages out of date&quot;,
-  msg = c(&quot;You can run update.packages() to update them.&quot;,
-  &quot;Outdated packages: Boom colorspace desc memuse networkD3&quot;,
-  &quot;pbapply revealjs rgl rmdformats timevis and 5 more&quot;)
-)
-</code></pre>
-
-<p>​
-效果如下：</p>
-
-<p></p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/04/%E6%9D%A5%E8%87%AAr%E7%9A%84%E6%A1%8C%E9%9D%A2%E6%8F%90%E9%86%92/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -757,6 +747,32 @@ notify(
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/03/group-points/">
+                <h3 class="media-heading">画图给点分组?</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>library(ggplot2)
+    d = subset(diamonds, color %in% c(&ldquo;D&rdquo;, &ldquo;E&rdquo;))
+    ggplot(d, aes(cut, carat, fill=color, color=color)) +
+        geom_violin(alpha=.3) + geom_jitter(width=.05, alpha=.5)</p>
+
+<p><img src="http://guangchuangyu.github.io/blog_images/R/ggplot2/group_point/unnamed-chunk-1-1.png" alt="" /></p>
+
+<p>小伙伴提出了上面的问题，点不能够打到violin里面去，即使加了<code>aes(group=color)</code>强行分组也不行。这个照理第一感觉都会觉得可以，但试一下都会发现不行。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -969,29 +985,6 @@ notify(
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/02/wechat-addition/">
-                <h3 class="media-heading">网瘾你好，我是80后，请冲我来</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Feb 2, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><img src="https://guangchuangyu.github.io/blog_images/2018/wechat_additive/images.png" alt="" /></p>
-
-<p>童鞋们，敲黑板划重点啦，上图请对号入坐，没错，说的就是你！这个网瘾的骚年！</p>
-
-<p>Scientific Report最近发表了<a href="https://www.nature.com/articles/s41598-018-19904-y">一篇神文</a>:</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -999,7 +992,7 @@ notify(
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         202 posts found
+         203 posts found
       </p>
     </div>
   </div>

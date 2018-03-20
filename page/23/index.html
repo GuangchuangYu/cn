@@ -226,6 +226,74 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2012/04/support-vector-machine/">
+          Support Vector Machine
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2012-04-12T05:37:55&#43;08:00">
+      
+  April 12, 2012
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/statistics">statistics</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <p>支持向量机(Support Vector Machines, SVM)最初由Vladimir
+Vapnik于1997年提出，SVM最简单的形式就是找出一下区分界限（descision
+boundary），也称之为超平面(hyperplane)，使得离它最近的点（称之为support
+vectors）与之间隔最大。
+<img src="http://guangchuangyu.github.io/blog_images/2012/04/linearSVM.png" alt="" /></p>
+
+<p>这和logistic regression有些相似，区别在于logistic
+regression要求所有的点尽可能地远离中间那条线，而SVM是要求最接近中间线的点尽可能地远离中间线。也就是说SVM的主要目标是区分那些最难区分的点。</p>
+
+<p>SVM对于hyperplane的定义，在形式上和logistic regression一样,logistic
+regression的decision boundary由$\theta^TX=0$确定,SVM则用$w^TX+b=0$表示,其中b相当于logistic regression中的$\theta_0$，从形式上看，两者并无区别，当然如前面所说，两者的目标不一样，logistic regression着眼于全局，SVM着眼于support
+vectors。有监督算法都有label变量y，logistic
+regression取值是<code>{0,1}</code>，而SVM为了计算距离方便，取值为<code>{-1,1}</code>。</p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2012/04/support-vector-machine/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2012/03/installing-hackintosh/">
           Installing Hackintosh
         </a>
@@ -579,104 +647,6 @@ contour_plot(17*x^2-16*abs(x)*y+17*y^2-225, [x,-sqrt(17),sqrt(17)],[y,-15*sqrt(1
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/07/a-simple-gene-finder/">
-          a simple gene finder
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2011-07-10T09:04:46&#43;08:00">
-      
-  July 10, 2011
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/conference">conference</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>上了几天的课，<a href="http://ibw2011.fmmu.edu.cn/schedule.htm">http://ibw2011.fmmu.edu.cn/schedule.htm</a>
-今天就上完了，只完成了project 1，想写gibbs sampling，但是没搞明白，汗。</p>
-
-<p>这个纯属练习用，没啥实用价值。</p>
-
-<blockquote>
-<p>Course Projects:</p>
-
-<p>Project 1: Implementation of a simple gene finder</p>
-
-<p>GOAL</p>
-
-<p>Build a simple codon-usage based gene finder for finding genes in
-E.coli.</p>
-
-<p>Procedure</p>
-
-<p>Collect 100 gene sequences from the bacterium E. coli in the genbank
-(<a href="http://www.ncbi.nlm.nihh.gov">http://www.ncbi.nlm.nihh.gov</a>). Compute the codon usage table based on
-these genes (and the translated protein sequences from them); Build a
-probabilistic model based on the codon usages; Implement a random
-sequence model in which the nucleotide frequency is computed from the
-100 E. coli genes. For a given DNA sequence (and one selected reading
-frame), compare your model with a random sequence model; Results that
-you should submit:</p>
-
-<p>Two FASTA files for the collected 100 genes and 100 translated protein
-sequences; The printed codon usage table; A program named ECgnfinder,
-running with the syntax as ECgnfinder –i inputfile</p>
-
-<p>Inputfile stands for the name of input file, which should contain one
-DNA sequence in FASTA file format; the program should be able to
-report an error message if the input file is in the wrong format.</p>
-
-<p>The output should be printed to the standard output as (xxx stands for
-the likelihood)</p>
-
-<p>ORF1: xxx ORF2: xxx</p>
-</blockquote>
-
-<p></p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2011/07/a-simple-gene-finder/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -758,6 +728,32 @@ the likelihood)</p>
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/03/group-points/">
+                <h3 class="media-heading">画图给点分组?</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>library(ggplot2)
+    d = subset(diamonds, color %in% c(&ldquo;D&rdquo;, &ldquo;E&rdquo;))
+    ggplot(d, aes(cut, carat, fill=color, color=color)) +
+        geom_violin(alpha=.3) + geom_jitter(width=.05, alpha=.5)</p>
+
+<p><img src="http://guangchuangyu.github.io/blog_images/R/ggplot2/group_point/unnamed-chunk-1-1.png" alt="" /></p>
+
+<p>小伙伴提出了上面的问题，点不能够打到violin里面去，即使加了<code>aes(group=color)</code>强行分组也不行。这个照理第一感觉都会觉得可以，但试一下都会发现不行。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -970,29 +966,6 @@ the likelihood)</p>
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/02/wechat-addition/">
-                <h3 class="media-heading">网瘾你好，我是80后，请冲我来</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Feb 2, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><img src="https://guangchuangyu.github.io/blog_images/2018/wechat_additive/images.png" alt="" /></p>
-
-<p>童鞋们，敲黑板划重点啦，上图请对号入坐，没错，说的就是你！这个网瘾的骚年！</p>
-
-<p>Scientific Report最近发表了<a href="https://www.nature.com/articles/s41598-018-19904-y">一篇神文</a>:</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1000,7 +973,7 @@ the likelihood)</p>
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         202 posts found
+         203 posts found
       </p>
     </div>
   </div>
