@@ -226,6 +226,80 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2010/07/xming-windows%E4%B8%8B%E8%BF%9C%E7%A8%8Blinux%E6%A1%8C%E9%9D%A2/">
+          Xming-windows下远程linux桌面
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2010-07-05T07:37:09&#43;08:00">
+      
+  July 5, 2010
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/windows">Windows</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/linux">Linux</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <p>机房放着台机架机，闲着也是耗电，平时偶尔用putty登上去，没有图形界面还是有些不方便。</p>
+
+<p>搜了一下，发现好几个软件可做这样的事，Xming是开源的，所以选择使用Xming+putty来远程连linux的桌面。</p>
+
+<p>试用了一下，果然不错。</p>
+
+<p>需要修改/etc/ssh/sshd_config，添加：</p>
+
+<pre><code>X11Forwrding yes
+</code></pre>
+
+<p>需要配置一下PuTTY，<code>Connection-SSh-X11</code>中选中<code>Enable X11forwarding</code>
+其中<code>X display location</code>里填入<code>localhost:0</code>。</p>
+
+<p>运行Xming，再用putty连到服务器上，运行程序，就OK了。就好像windows下的本地程序一般。整合性很好。</p>
+
+<p></p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2010/07/xming-windows%E4%B8%8B%E8%BF%9C%E7%A8%8Blinux%E6%A1%8C%E9%9D%A2/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2009/07/bootstrap-method/">
           Bootstrap Method
         </a>
@@ -607,67 +681,6 @@ DNA重组也使用标记，我们无法直接检测到是否重组了，是否�
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/10/blind-approach/">
-          生物研究=盲人摸象？
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2008-10-17T00:53:00&#43;08:00">
-      
-  October 17, 2008
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/biology">Biology</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>今天看了一篇文章<a href="http://www.ncbi.nlm.nih.gov/sites/entrez?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12242150">Can a biologist fix a radio?</a>, 作者讲了个悖论，越多事实的积累，对于所研究的process理解的越少。</p>
-
-<p>这确实是现在的现实。许多的科研结果，其实就是便这个本来很混乱的世界更加混乱。文中还讲到了科研的淘金热。昨天我正好看到了science上的文章说impact
-factor fever。当科研成为一种职业，真正对科学有热情的scientist并不多，更多的人仅仅是为了拿grant，要拿grant，就要发高分的文章，哪里好发文章，那里就有一堆人在抢。顺带一下，大家都说生物是火坑，其实学科在发展的初期，对于科研人员来说还是有利的。如果说工作的话，确实是火坑，其实生物是个暴利行业，如果你身在火海中，那是因为你处于生物链的最底层。</p>
-
-<p></p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2008/10/blind-approach/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -687,7 +700,7 @@ factor fever。当科研成为一种职业，真正对科学有热情的scientis
           </a>
         </li>
       
-      <li class="pagination-number">page 25 of 29</li>
+      <li class="pagination-number">page 25 of 30</li>
     </ul>
   </div>
 
@@ -749,6 +762,28 @@ factor fever。当科研成为一种职业，真正对科学有热情的scientis
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/03/scatterplot-for-matrix/">
+                <h3 class="media-heading">用散点可视化一个矩阵</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">当然是ggplot2画，才好和ggtree兼容，你首先问自己，抛开树，你能右边吗？本身你有个矩阵，row的顺序要跟着树来，你可以先不管，先随意，这是y轴。那x轴呢？你矩阵里的数字，打点你总该会的，而点连线，同样column的数字打出来的点，就连在一起，你先按这个思路画出来，再来问后续的。
+ 这是我在「知识星球」中的回答，然而小伙伴表示还是不懂。那么我来详细讲解一下：
+首先我们读入一个FASTA数据：
+require(treeio) fasta &lt;- system.file(&quot;examples/FluA_H3_AA.fas&quot;, package=&quot;ggtree&quot;) aa &lt;- read.fasta(fasta)  数据用treeio包里的read.fasta去读这个氨基酸序列，它有个好处是你直接as.character(aa[[i]])就是个字母的向量，方便比较。
+n = length(aa) d = matrix(NA, ncol=n, nrow=n) nm = labels(aa) rownames(d) = colnames(d) = nm for (i in seq_len(n)) { for (j in seq_len(i)) { d[i, j] = mean(as.character(aa[[i]]) != as.character(aa[[j]])) d[j, i] = d[i, j] } }  这段代码生成了pairwise distance矩阵，你可以搞其它的统计量，都OK的。大家可以想一想，一般这种矩阵怎么可视化？用热图！热图用数字来填充颜色，而现在我们把数字当成x轴上的变量，然后打点，仅此而已，我们有没有办法画出来，当然可以。同样row的数值会在同一y轴上，如果是热图，同一column的数值会在同一x轴上，方便横向和纵向比较，而现在同一column的数值不在同一直线一了，因为我们打的点的位置使用了矩阵中的数值，同一column的点被拉扯到不同的位置上去了，所以为了能够比较或者是看清楚同一column上的点的走势，我们把同一column上的点用线条连接在一起。这就是小伙伴提问的图，就是这么画出来的，非常简单。我在「知识星球」里其实已经解答得很清楚了。
+画图实战 require(tibble) dd &lt;- as_data_frame(d) dd$seq1 &lt;- nm require(tidyr) td &lt;- gather(dd,seq2, dist, -seq1)  这里宽变长，这种tidy格式适合于我们用ggplot2可视化。</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -968,25 +1003,6 @@ ggplot(d, aes(cut, carat, fill=color, color=color)) +
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/02/broken-heart/">
-                <h3 class="media-heading">一千个伤心的理由</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Feb 2, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>眼看着2月14号就要到来了，又是一年一度的画红心装13的时候，这种事情已经被我BS了，请猛击：《<a href="http://mp.weixin.qq.com/s/Y8IHd6X4f49irXvD_M7bNw">画❤️装geek什么的，都弱爆了！😜</a>》。红心已经没什么好画的了，特别是在我画了生日蛋糕，并用蛋糕画红心之后，《<a href="https://mp.weixin.qq.com/s/Iqcqo5YTy1qmXdsuIrlrYQ">130岁了，祝你生快</a>》，是驴子是马，都没法晒肌肉了。当然红心还是会有所谓的理工宅男晒，除此之外还会有各种花招，来给单身狗撒狗粮。想要加入撒狗粮大军的，快点看《<a href="http://mp.weixin.qq.com/s/2j9VRgar5ExSma6B7Yc3dw">如何告别单身</a>》。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -994,7 +1010,7 @@ ggplot(d, aes(cut, carat, fill=color, color=color)) +
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         204 posts found
+         205 posts found
       </p>
     </div>
   </div>

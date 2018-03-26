@@ -226,6 +226,85 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/enrichgo-more-conserve/">
+          enrichGO出不来结果？没结果也是正确的结果
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-10-09T13:31:00&#43;08:00">
+      
+  October 9, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <blockquote>
+<p>Dear Dr. Guangchuang Yu, I write to you regarding a doubt concerning the enrichGO function from Clustalprofiler package. I have been used this package before, but now I&rsquo;m using the same R script and I have an error message.</p>
+
+<p>This is the command I use:</p>
+
+<blockquote>
+<p>go.bp &lt;- enrichGO(gene = gene.df$ENSEMBL, universe = universe.ENSEMBLID, keytype = &lsquo;ENSEMBL&rsquo;, OrgDb = org.Ce.eg.db, ont = &lsquo;BP&rsquo;, pAdjustMethod = &lsquo;BH&rsquo;, pvalueCutoff = 0.01, qvalueCutoff = 0.05, readable=T)</p>
+</blockquote>
+
+<p>and the error is the following one:</p>
+
+<p>No gene set have size &gt; 10 &hellip;
+&ndash;&gt; return NULL&hellip;</p>
+
+<p>My input list is attached to this email (101 genes in total). When I use this list in a web resource such as GOrilla it gives to me the proper GO terms.</p>
+
+<p>Thank you very much in advance. Best regards,</p>
+
+<p>María</p>
+</blockquote>
+
+<p>最近clusterProfiler用户的问题，这个问题还蛮普遍。这个我在《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484414&amp;idx=1&amp;sn=096f758f04f875e25c333c345f530742&amp;chksm=ec43b2b9db343baf4e2a8640f48e7e72b3ef1b057c91c68905debb2bb54e5d2fdda62438628a#rd">why clusterProfiler fails</a>》中也有谈到，并不是能出结果就是好的。没有结果也是一种结果。</p>
+
+<p></p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2017/10/enrichgo-more-conserve/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/ssh-on-android/">
           如何假装假期还在工作
         </a>
@@ -612,81 +691,6 @@ ga('send', 'pageview');
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/rtichoke/">
-          R, python喊你回家吃饭啦
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-09-13T13:37:55&#43;08:00">
-      
-  September 13, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/python">python</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>在《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484507&amp;amp;idx=1&amp;amp;sn=295454a59613bfd977f407958bec787e&amp;amp;chksm=ec43b51cdb343c0acea87661fe5144a5817503a2fdc8f316d56fd28d33291084bc718330c428#rd">你所不知道的，R的N种打开方式</a>》一文中，我介绍了R的N种界面，这里将介绍一个用python写的极其现代化的R命令行界面，rtichoke（之前叫rice）之于R，就像ipython之于python一样。</p>
-
-<h2 id="特性">特性</h2>
-
-<ul>
-<li>轻量，不需要编译</li>
-<li>多行编辑，这点很重要啊，长长的命令可以换行后，随便回去编辑前面的指令</li>
-<li>语法高亮，这可是R命令行所没有的，看起来舒服多了</li>
-<li>自动补齐，减少输入</li>
-<li>支持bracketed paste mode，也就是说你copy-paste了有换行符的字符串，不会拷进去就自动执行了</li>
-<li>支持Windows, macOS 和 Linux</li>
-<li>支持vi, emacs等编辑模式</li>
-<li>可以多种高亮模式</li>
-</ul>
-
-<p></p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/09/rtichoke/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -706,7 +710,7 @@ ga('send', 'pageview');
           </a>
         </li>
       
-      <li class="pagination-number">page 8 of 29</li>
+      <li class="pagination-number">page 8 of 30</li>
     </ul>
   </div>
 
@@ -768,6 +772,28 @@ ga('send', 'pageview');
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/03/scatterplot-for-matrix/">
+                <h3 class="media-heading">用散点可视化一个矩阵</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">当然是ggplot2画，才好和ggtree兼容，你首先问自己，抛开树，你能右边吗？本身你有个矩阵，row的顺序要跟着树来，你可以先不管，先随意，这是y轴。那x轴呢？你矩阵里的数字，打点你总该会的，而点连线，同样column的数字打出来的点，就连在一起，你先按这个思路画出来，再来问后续的。
+ 这是我在「知识星球」中的回答，然而小伙伴表示还是不懂。那么我来详细讲解一下：
+首先我们读入一个FASTA数据：
+require(treeio) fasta &lt;- system.file(&quot;examples/FluA_H3_AA.fas&quot;, package=&quot;ggtree&quot;) aa &lt;- read.fasta(fasta)  数据用treeio包里的read.fasta去读这个氨基酸序列，它有个好处是你直接as.character(aa[[i]])就是个字母的向量，方便比较。
+n = length(aa) d = matrix(NA, ncol=n, nrow=n) nm = labels(aa) rownames(d) = colnames(d) = nm for (i in seq_len(n)) { for (j in seq_len(i)) { d[i, j] = mean(as.character(aa[[i]]) != as.character(aa[[j]])) d[j, i] = d[i, j] } }  这段代码生成了pairwise distance矩阵，你可以搞其它的统计量，都OK的。大家可以想一想，一般这种矩阵怎么可视化？用热图！热图用数字来填充颜色，而现在我们把数字当成x轴上的变量，然后打点，仅此而已，我们有没有办法画出来，当然可以。同样row的数值会在同一y轴上，如果是热图，同一column的数值会在同一x轴上，方便横向和纵向比较，而现在同一column的数值不在同一直线一了，因为我们打的点的位置使用了矩阵中的数值，同一column的点被拉扯到不同的位置上去了，所以为了能够比较或者是看清楚同一column上的点的走势，我们把同一column上的点用线条连接在一起。这就是小伙伴提问的图，就是这么画出来的，非常简单。我在「知识星球」里其实已经解答得很清楚了。
+画图实战 require(tibble) dd &lt;- as_data_frame(d) dd$seq1 &lt;- nm require(tidyr) td &lt;- gather(dd,seq2, dist, -seq1)  这里宽变长，这种tidy格式适合于我们用ggplot2可视化。</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -987,25 +1013,6 @@ ggplot(d, aes(cut, carat, fill=color, color=color)) +
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/02/broken-heart/">
-                <h3 class="media-heading">一千个伤心的理由</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Feb 2, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>眼看着2月14号就要到来了，又是一年一度的画红心装13的时候，这种事情已经被我BS了，请猛击：《<a href="http://mp.weixin.qq.com/s/Y8IHd6X4f49irXvD_M7bNw">画❤️装geek什么的，都弱爆了！😜</a>》。红心已经没什么好画的了，特别是在我画了生日蛋糕，并用蛋糕画红心之后，《<a href="https://mp.weixin.qq.com/s/Iqcqo5YTy1qmXdsuIrlrYQ">130岁了，祝你生快</a>》，是驴子是马，都没法晒肌肉了。当然红心还是会有所谓的理工宅男晒，除此之外还会有各种花招，来给单身狗撒狗粮。想要加入撒狗粮大军的，快点看《<a href="http://mp.weixin.qq.com/s/2j9VRgar5ExSma6B7Yc3dw">如何告别单身</a>》。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1013,7 +1020,7 @@ ggplot(d, aes(cut, carat, fill=color, color=color)) +
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         204 posts found
+         205 posts found
       </p>
     </div>
   </div>
