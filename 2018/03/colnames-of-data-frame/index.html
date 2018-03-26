@@ -343,7 +343,7 @@ ga('send', 'pageview');
 
 <h2 id="如何能够避免这个坑">如何能够避免这个坑</h2>
 
-<p>请使用<code>tibble</code>：</p>
+<p>使用<code>data.frame(d, check.names=FALSE)</code>或者使用<code>tibble</code>：</p>
 
 <pre><code>&gt; tibble::as_data_frame(d) %&gt;% write.csv
 &quot;&quot;,&quot;A|B&quot;,&quot;123&quot;
