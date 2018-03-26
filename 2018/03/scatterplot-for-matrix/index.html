@@ -440,7 +440,7 @@ td$seq1 = factor(td$seq1, levels=rev(lv))
 
 <p>好了，最后是拼图，用<code>cowplot</code>，要使用<code>align=&quot;h&quot;</code>参数，好对齐，<code>ggtree</code>画的图，y轴是数字型的，这也是为什么我在生成<code>p2</code>的时候，要使用<code>as.numeric(seq1)</code>把y轴变为数字型，大家都是数字型的，好对齐。</p>
 
-<pre><code>p2 &lt;- p2 + theme(axis.text.y=element_blank(), 
+<pre><code> p2 &lt;- p2 + theme(axis.text.y=element_blank(), 
                 axis.ticks.y=element_blank(), 
                 axis.line.y=element_blank()) + 
           xlab(NULL) + ylab(NULL) 
