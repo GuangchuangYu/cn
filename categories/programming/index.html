@@ -476,6 +476,37 @@ ga('send', 'pageview');
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/03/colnames-of-data-frame/">
+                <h3 class="media-heading">R给你的数据化了妆？</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>小伙伴说他写个CSV文件，名字就变了，无缘无故<code>|</code>就被改了，还有些名字被强加了<code>X</code>。我注意到了他写的对象是<code>data.frame(d)</code>，这锅绝对是<code>data.frame</code>的。</p>
+
+<p>我们可以试一下：</p>
+
+<pre><code>&gt; d = matrix(rnorm(4), ncol=2)
+&gt; colnames(d) = c(&quot;A|B&quot;, &quot;123&quot;)
+&gt; write.csv(data.frame(d))
+&quot;&quot;,&quot;A.B&quot;,&quot;X123&quot;
+&quot;1&quot;,-0.601247669017546,0.802654193340092
+&quot;2&quot;,-0.128752028398414,0.430829592244036
+</code></pre>
+
+<p><strong>没错，自己给变了。</strong></p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/03/group-points/">
                 <h3 class="media-heading">画图给点分组?</h3>
               </a>
@@ -679,38 +710,6 @@ ggplot(d, aes(cut, carat, fill=color, color=color)) +
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/02/job-wanted/">
-                <h3 class="media-heading">Y叔要求职</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Feb 2, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>余光创
-香港大学 生物信息学 博士，目前在港大从事博士后工作
-求职意向：副教授以上
-地点：主要意向是广州和深圳</p>
-
-<p>简历：<a href="https://guangchuangyu.github.io/resume/YGC.pdf">https://guangchuangyu.github.io/resume/YGC.pdf</a></p>
-
-<p>google scholar指标：</p>
-
-<ul>
-<li>引用：1330</li>
-<li>h-index: 14</li>
-<li>i10-index: 17</li>
-</ul>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -718,7 +717,7 @@ ggplot(d, aes(cut, carat, fill=color, color=color)) +
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         203 posts found
+         204 posts found
       </p>
     </div>
   </div>
