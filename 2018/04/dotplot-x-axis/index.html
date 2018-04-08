@@ -1,0 +1,937 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+  
+
+
+  
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.30.2">
+    <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
+    <title>dotplot支持使用formula指定x轴变量</title>
+    <meta name="author" content="Guangchuang Yu">
+    <meta name="keywords" content="">
+
+    <link rel="icon" href="https://guangchuangyu.github.io/cn/favicon.png">
+    
+
+    
+    <meta name="description" content="使用barplot来展示富集分析结果是很常用的，而dotplot比较barplot来说，多了一个点大小的信息，可以比barplot展示多一个信息，所以是比较推荐的，我之前已经写了《dotplot展示富集分析结果》和《dotplot for GSEA》两篇文章，dotplot虽然简单，很多人会觉得会容易用ggplot2画出来，但其实有些细节，比如《为什么画出来的点比指定的数目要多？》，有些技巧，比如《搞大你的点，让我们画真正的气泡图》，是很多新手所不具备的，图虽然简单，但老司机的飚车技能也不可小看哦，所以我在《听说你也在画dotplot，但是我不服！》的文后就说了一句话：
+
+
+clusterProfiler之所以好，因为真的考虑了很多细节！请放开那图，让clusterProfiler来画！
+
+
+">
+    <meta property="og:description" content="使用barplot来展示富集分析结果是很常用的，而dotplot比较barplot来说，多了一个点大小的信息，可以比barplot展示多一个信息，所以是比较推荐的，我之前已经写了《dotplot展示富集分析结果》和《dotplot for GSEA》两篇文章，dotplot虽然简单，很多人会觉得会容易用ggplot2画出来，但其实有些细节，比如《为什么画出来的点比指定的数目要多？》，有些技巧，比如《搞大你的点，让我们画真正的气泡图》，是很多新手所不具备的，图虽然简单，但老司机的飚车技能也不可小看哦，所以我在《听说你也在画dotplot，但是我不服！》的文后就说了一句话：
+
+
+clusterProfiler之所以好，因为真的考虑了很多细节！请放开那图，让clusterProfiler来画！
+
+
+">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="dotplot支持使用formula指定x轴变量">
+    <meta property="og:url" content="/2018/04/dotplot-x-axis/">
+    <meta property="og:site_name" content="Guangchuang Yu">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Guangchuang Yu">
+    <meta name="twitter:description" content="使用barplot来展示富集分析结果是很常用的，而dotplot比较barplot来说，多了一个点大小的信息，可以比barplot展示多一个信息，所以是比较推荐的，我之前已经写了《dotplot展示富集分析结果》和《dotplot for GSEA》两篇文章，dotplot虽然简单，很多人会觉得会容易用ggplot2画出来，但其实有些细节，比如《为什么画出来的点比指定的数目要多？》，有些技巧，比如《搞大你的点，让我们画真正的气泡图》，是很多新手所不具备的，图虽然简单，但老司机的飚车技能也不可小看哦，所以我在《听说你也在画dotplot，但是我不服！》的文后就说了一句话：
+
+
+clusterProfiler之所以好，因为真的考虑了很多细节！请放开那图，让clusterProfiler来画！
+
+
+">
+    
+      <meta name="twitter:creator" content="@guangchuangyu">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
+    
+
+    
+    
+    
+
+    
+
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" />
+    
+    
+    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-u6mk0ojoywresbx8iepslrmmhl4stuhrsxuwhkpwrkrx7mryjcaimasnk4pi.min.css" />
+    
+    
+
+    
+      
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-77901140-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+    
+    
+  </head>
+
+<body>
+    <div id="blog">
+        <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://guangchuangyu.github.io/cn/">Guangchuang Yu</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://guangchuangyu.github.io/cn/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+        <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://guangchuangyu.github.io/cn/#about">
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Guangchuang Yu</h4>
+        
+        <h5 class="sidebar-profile-bio">a senior-in-age-but-not-senior-in-knowledge bioinformatician</h5>
+        <img alt="微信公众号" src="https://guangchuangyu.github.io/blog_images/biobabble.jpg" width="200" height="200">
+        
+      </div>
+      
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/GuangchuangYu" target="_blank">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+    </ul>
+  </div>
+</nav>
+
+        
+
+        <div id="main" data-behavior="4"
+             class="
+                 hasCoverMetaIn
+             ">
+            <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+                
+                
+                <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      dotplot支持使用formula指定x轴变量
+    </h1>
+  
+  <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2018-04-08T19:06:16&#43;08:00">
+      
+  April 8, 2018
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
+    
+  
+
+
+</div>
+
+</div>
+                
+                <div class="post-content markdown" itemprop="articleBody">
+                    <div class="main-content-wrap">
+                        <p>使用<code>barplot</code>来展示富集分析结果是很常用的，而<code>dotplot</code>比较<code>barplot</code>来说，多了一个点大小的信息，可以比<code>barplot</code>展示多一个信息，所以是比较推荐的，我之前已经写了《<a href="https://mp.weixin.qq.com/s/KzcnIH88d4E41Ybvr_76zA">dotplot展示富集分析结果</a>》和《<a href="https://mp.weixin.qq.com/s/JLon7oaddmTpsMzL03OJIA">dotplot for GSEA</a>》两篇文章，<code>dotplot</code>虽然简单，很多人会觉得会容易用<code>ggplot2</code>画出来，但其实有些细节，比如《<a href="https://mp.weixin.qq.com/s/VW4LvtQqXumrs6SMvwGgvQ">为什么画出来的点比指定的数目要多？</a>》，有些技巧，比如《<a href="https://mp.weixin.qq.com/s/JNIncz3W-59yjGk2ibJWUw">搞大你的点，让我们画真正的气泡图</a>》，是很多新手所不具备的，图虽然简单，但老司机的飚车技能也不可小看哦，所以我在《<a href="https://mp.weixin.qq.com/s/bloMPypAkQ3Ovlh406M-FQ">听说你也在画dotplot，但是我不服！</a>》的文后就说了一句话：</p>
+
+<blockquote>
+<p>clusterProfiler之所以好，因为真的考虑了很多细节！请放开那图，让clusterProfiler来画！</p>
+</blockquote>
+
+<p></p>
+
+<p>在对于细节上的追求，是永远没有止境的，下一个版本的<code>dotplot</code>，会使用我的《<a href="https://mp.weixin.qq.com/s/93XIeDF3mUFX0koX6mTRpA">enrichplot: 让你们对clusterProfiler系列包无法自拔</a>》，这一版本也有新功能加入哦，还是那句话，图虽简单，但细节是可以不断打磨的，给用户更好的能力、更大的自由度去呈现结果。</p>
+
+<p>下一个版本的Bioconductor会在5月1号发布，如果想尝鲜，可以参考《<a href="https://mp.weixin.qq.com/s/CyiIJNwAQkyHQ5OVU9oa7w">安装enrichplot及升级clusterProfiler</a>》进行安装。</p>
+
+<hr />
+
+<p>今天要介绍的新功能是对于x轴的变量，你除了指定特定的变量之外，你还可以使用formula，也就是基于（一个或多个）变量衍生的变量。比如说，你不想用<code>GeneRatio</code>或<code>Count</code>这些做为x轴，而是想要<code>GeneRatio/BgRatio</code>，再比如你想要用<code>-log(p.adjust)</code>之类的，都可以。</p>
+
+<pre><code>library(DOSE)
+data(geneList)
+de = names(geneList)[1:100]
+res = enrichDO(de)
+require(enrichplot)
+dotplot(res, x = ~GeneRatio/BgRatio)
+dotplot(res, x = ~ -log(qvalue))
+</code></pre>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/enrichplot/dotplot_xaxis.png" alt="" /></p>
+
+<p>除了上面的实例之外，你还可以试试别的。比如我在华大的报告中看到他们用<code>RichFactor</code>来做为x轴变量，在华大的文档中<code>RichFactor</code>是这样定义的：</p>
+
+<blockquote>
+<p>RichFactor指差异表达的基因中位于该pathway条目的基因数目与所有有注释基因中位于该pathway条目的基因总数的 比值，RichFactor越大，表示富集的程度越大。</p>
+</blockquote>
+
+<p>那么我们怎么来画呢？结果中有<code>Count</code>对应的就是分子，而分母是没有直接对应的变量的，但可以用<code>BgRatio * N</code>来得到，这里<code>N</code>是所有有注释的基因总数，也就是<code>BgRatio</code>这个变量所显示的分母，我们只要<code>BgRatio</code>的分子就可以了。</p>
+
+<p>这里说得似乎有点绕，比如下面这个疾病描述：</p>
+
+<pre><code>                       ID                   Description GeneRatio  BgRatio
+DOID:0060071 DOID:0060071        pre-malignant neoplasm      5/77  22/8007
+                   pvalue     p.adjust       qvalue
+DOID:0060071 1.671524e-06 0.0006401937 0.0004609887
+                                                                        geneID
+DOID:0060071                                          6280/6278/10232/332/4321
+             Count
+DOID:0060071     5
+</code></pre>
+
+<p><code>RichFactor</code>的分子是差异基因中对应的数目<code>5</code>，而分母是对应于这个疾病的所有有注释的基因总数<code>22</code>，也就是<code>BgRatio = 22/8007</code>的分子。</p>
+
+<p>那么我们怎么用<code>RichFactor</code>来画图呢？请试试下面的代码，看到这里，你应该知道你可以用各种各样的衍生变量来做为x轴画图了，<code>dotplot</code>函数给了你更大的自由，提供更多的灵活性。</p>
+
+<pre><code>N &lt;- 8007
+dotplot(res, x = ~Count/(BgRatio * N))
+</code></pre>
+
+<p><strong>富集分析、结果展示，请认准Y叔牌的<code>clusterProfiler</code>系列包！</strong></p>
+
+<h2 id="看完还想看">看完还想看</h2>
+
+<ul>
+<li><a href="http://mp.weixin.qq.com/s/-DHe6rcBEY9gyU_Fo7qh8w">buildGOmap</a></li>
+<li><a href="https://mp.weixin.qq.com/s/lHKZtzpN2k9uPN7e6HjH3w">非模式基因GO富集分析：以玉米为例+使用OrgDb</a></li>
+<li><a href="https://mp.weixin.qq.com/s/6i4HSPT5ac4cr2ol4pLIHw">enrichGO出不来结果？没结果也是正确的结果</a></li>
+<li><a href="http://mp.weixin.qq.com/s/jhEVWW33LBf6VlmfGBkT3g">ko数据库ID转换</a></li>
+<li><a href="https://mp.weixin.qq.com/s/-zahrNFeTvhRTCn7J2YjUQ">听说你的KEGG分析有大量的基因没注释</a></li>
+<li><a href="https://mp.weixin.qq.com/s/UnUPVoaMpfJWCQEpkmdTWA">水稻如何做KEGG富集分析</a></li>
+<li><a href="https://mp.weixin.qq.com/s/17ujVhcrkX1DLsUJBtUGEw">使用新姿势玩KEGG，是种什么体验&hellip;</a></li>
+</ul>
+                        
+                        <center><span class="zaln"><a href="https://guangchuangyu.github.io/blog_images/pay_qrcode.png" class="zb">赞赏</a></span></center>
+                        <center><span class="zaln"><a href="https://guangchuangyu.github.io/cn/2017/11/bmc-journal-protects-paper-of-plagiarism/" class="zb">抵制BMC，匹夫有责</a></span></center>
+                    </div>
+                </div>
+                <div id="post-footer" class="post-footer main-content-wrap">
+                    
+                    
+                    
+                    
+                    <div class="post-footer-tags">
+                        <span class="text-color-light text-small">TAGGED IN</span><br/>
+                        
+  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/dose/">DOSE</a>
+
+  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/enrichplot/">enrichplot</a>
+
+  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/clusterprofiler/">clusterProfiler</a>
+
+  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/meshes/">meshes</a>
+
+  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/reactomepa/">ReactomePA</a>
+
+                    </div>
+                    
+                    
+                    
+                    <div class="post-actions-wrap">
+  <nav>
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+            <i class="fa fa-angle-left"></i>
+            <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+          </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2018/03/dotplot-for-homer-motif/" data-tooltip="怎样用HOMER算出的P-value画出CNS级别的泡泡图？">
+          
+            <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+  <ul class="post-actions post-action-share">
+    
+      <li class="post-action hide-lg hide-md hide-sm">
+        <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+          <i class="fa fa-share-alt"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f04%2fdotplot-x-axis%2f">
+          <i class="fa fa-google-plus"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f04%2fdotplot-x-axis%2f">
+          <i class="fa fa-facebook-official"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f04%2fdotplot-x-axis%2f">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+    
+    
+      <li class="post-action">
+        <a class="post-action-btn btn btn--default" href="#disqus_thread">
+          <i class="fa fa-comment-o"></i>
+        </a>
+      </li>
+    
+    <li class="post-action">
+      
+        <a class="post-action-btn btn btn--default" href="#">
+      
+        <i class="fa fa-list"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+                    
+                    
+                    <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+                    
+                    
+                </div>
+            </article>
+            <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2018 Guangchuang Yu. All Rights Reserved
+  </span>
+</footer>
+
+        </div>
+        <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+            <div class="post-actions-wrap">
+  <nav>
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+            <i class="fa fa-angle-left"></i>
+            <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+          </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2018/03/dotplot-for-homer-motif/" data-tooltip="怎样用HOMER算出的P-value画出CNS级别的泡泡图？">
+          
+            <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+  <ul class="post-actions post-action-share">
+    
+      <li class="post-action hide-lg hide-md hide-sm">
+        <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+          <i class="fa fa-share-alt"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f04%2fdotplot-x-axis%2f">
+          <i class="fa fa-google-plus"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f04%2fdotplot-x-axis%2f">
+          <i class="fa fa-facebook-official"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f04%2fdotplot-x-axis%2f">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+    
+    
+      <li class="post-action">
+        <a class="post-action-btn btn btn--default" href="#disqus_thread">
+          <i class="fa fa-comment-o"></i>
+        </a>
+      </li>
+    
+    <li class="post-action">
+      
+        <a class="post-action-btn btn btn--default" href="#">
+      
+        <i class="fa fa-list"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+        </div>
+        <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <ul class="share-options">
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f04%2fdotplot-x-axis%2f">
+        <i class="fa fa-google-plus"></i><span>Share on Google Plus</span>
+      </a>
+    </li>
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f04%2fdotplot-x-axis%2f">
+        <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+      </a>
+    </li>
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f04%2fdotplot-x-axis%2f">
+        <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Guangchuang Yu</h4>
+    
+      <div id="about-card-bio">a senior-in-age-but-not-senior-in-knowledge bioinformatician</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Postdoc researcher
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Hong Kong
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Search" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no post found</div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/04/dotplot-x-axis/">
+                <h3 class="media-heading">dotplot支持使用formula指定x轴变量</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>使用<code>barplot</code>来展示富集分析结果是很常用的，而<code>dotplot</code>比较<code>barplot</code>来说，多了一个点大小的信息，可以比<code>barplot</code>展示多一个信息，所以是比较推荐的，我之前已经写了《<a href="https://mp.weixin.qq.com/s/KzcnIH88d4E41Ybvr_76zA">dotplot展示富集分析结果</a>》和《<a href="https://mp.weixin.qq.com/s/JLon7oaddmTpsMzL03OJIA">dotplot for GSEA</a>》两篇文章，<code>dotplot</code>虽然简单，很多人会觉得会容易用<code>ggplot2</code>画出来，但其实有些细节，比如《<a href="https://mp.weixin.qq.com/s/VW4LvtQqXumrs6SMvwGgvQ">为什么画出来的点比指定的数目要多？</a>》，有些技巧，比如《<a href="https://mp.weixin.qq.com/s/JNIncz3W-59yjGk2ibJWUw">搞大你的点，让我们画真正的气泡图</a>》，是很多新手所不具备的，图虽然简单，但老司机的飚车技能也不可小看哦，所以我在《<a href="https://mp.weixin.qq.com/s/bloMPypAkQ3Ovlh406M-FQ">听说你也在画dotplot，但是我不服！</a>》的文后就说了一句话：</p>
+
+<blockquote>
+<p>clusterProfiler之所以好，因为真的考虑了很多细节！请放开那图，让clusterProfiler来画！</p>
+</blockquote>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/03/dotplot-for-homer-motif/">
+                <h3 class="media-heading">怎样用HOMER算出的P-value画出CNS级别的泡泡图？</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><ul>
+<li>第一棒：<a href="http://mp.weixin.qq.com/s/pTzvbfk5Ohu45RXb-ePzHw">CNS里的泡泡图</a></li>
+<li>第二棒：<a href="http://mp.weixin.qq.com/s/PVHCiqhzoW3DsvdsVQIKJg">怎样用HOMER找motif？</a></li>
+<li>第三棒：怎样用HOMER算出的P-value画出CNS级别的泡泡图？</li>
+</ul>
+
+<p>这是小伙伴的命题作文，下面这个数据是曾老湿给出来的，其中header行竟然放在了最后一行，我手工把它挪到了第一行，里面还有一个数据缺失的，会导致读了数据后会有NA值，需要去除。</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/MISC/motif_dotplot_data.png" alt="" /></p>
+
+<pre><code>$ file summary_ATAC_seq_motif.xlsx                                                                                     
+summary_ATAC_seq_motif.xlsx: Microsoft Excel 2007+
+</code></pre>
+
+<p>这是一个Excel文件，我们可以用<code>readxl</code>来读：</p>
+
+<pre><code>require(readxl)
+x &lt;- read_xlsx(&quot;summary_ATAC_seq_motif.xlsx&quot;)
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/03/scatterplot-for-matrix/">
+                <h3 class="media-heading">用散点可视化一个矩阵</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/align_tree_pairwise_dist_files/WechatIMG601.jpeg" alt="" /></p>
+
+<blockquote>
+<p>当然是ggplot2画，才好和ggtree兼容，你首先问自己，抛开树，你能右边吗？本身你有个矩阵，row的顺序要跟着树来，你可以先不管，先随意，这是y轴。那x轴呢？你矩阵里的数字，打点你总该会的，而点连线，同样column的数字打出来的点，就连在一起，你先按这个思路画出来，再来问后续的。</p>
+</blockquote>
+
+<p>这是我在「知识星球」中的回答，然而小伙伴表示还是不懂。那么我来详细讲解一下：</p>
+
+<p>首先我们读入一个FASTA数据：</p>
+
+<pre><code>require(treeio)
+
+fasta &lt;- system.file(&quot;examples/FluA_H3_AA.fas&quot;, package=&quot;ggtree&quot;)
+aa &lt;- read.fasta(fasta)
+</code></pre>
+
+<p>数据用<code>treeio</code>包里的<code>read.fasta</code>去读这个氨基酸序列，它有个好处是你直接<code>as.character(aa[[i]])</code>就是个字母的向量，方便比较。</p>
+
+<pre><code>n = length(aa)
+d = matrix(NA, ncol=n, nrow=n)
+nm = labels(aa)
+rownames(d) = colnames(d) = nm
+
+for (i in seq_len(n)) {
+    for (j in seq_len(i)) {
+        d[i, j] = mean(as.character(aa[[i]]) != as.character(aa[[j]]))
+        d[j, i] = d[i, j]
+    }
+} 
+</code></pre>
+
+<p>这段代码生成了pairwise distance矩阵，你可以搞其它的统计量，都OK的。大家可以想一想，一般这种矩阵怎么可视化？用热图！热图用数字来填充颜色，而现在我们把数字当成x轴上的变量，然后打点，仅此而已，我们有没有办法画出来，当然可以。同样row的数值会在同一y轴上，如果是热图，同一column的数值会在同一x轴上，方便横向和纵向比较，而现在同一column的数值不在同一直线一了，因为我们打的点的位置使用了矩阵中的数值，同一column的点被拉扯到不同的位置上去了，所以为了能够比较或者是看清楚同一column上的点的走势，我们把同一column上的点用线条连接在一起。这就是小伙伴提问的图，就是这么画出来的，非常简单。我在「知识星球」里其实已经解答得很清楚了。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/03/colnames-of-data-frame/">
+                <h3 class="media-heading">R给你的数据化了妆？</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>小伙伴说他写个CSV文件，名字就变了，无缘无故<code>|</code>就被改了，还有些名字被强加了<code>X</code>。我注意到了他写的对象是<code>data.frame(d)</code>，这锅绝对是<code>data.frame</code>的。</p>
+
+<p>我们可以试一下：</p>
+
+<pre><code>&gt; d = matrix(rnorm(4), ncol=2)
+&gt; colnames(d) = c(&quot;A|B&quot;, &quot;123&quot;)
+&gt; write.csv(data.frame(d))
+&quot;&quot;,&quot;A.B&quot;,&quot;X123&quot;
+&quot;1&quot;,-0.601247669017546,0.802654193340092
+&quot;2&quot;,-0.128752028398414,0.430829592244036
+</code></pre>
+
+<p><strong>没错，自己给变了。</strong></p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/03/group-points/">
+                <h3 class="media-heading">画图给点分组?</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>小伙伴提出了上面的问题，点不能够打到violin里面去，即使加了<code>aes(group=color)</code>强行分组也不行。这个照理第一感觉都会觉得可以，但试一下都会发现不行。</p>
+
+<pre><code>library(ggplot2)
+d = subset(diamonds, color %in% c(&quot;D&quot;, &quot;E&quot;))
+ggplot(d, aes(cut, carat, fill=color, color=color)) + 
+    geom_violin(alpha=.3) + geom_jitter(width=.05, alpha=.5)
+</code></pre>
+
+<p><img src="http://guangchuangyu.github.io/blog_images/R/ggplot2/group_point/unnamed-chunk-1-1.png" alt="" /></p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/03/ggstatsplot/">
+                <h3 class="media-heading">一条指令把统计&#43;画图都给做了？似乎太美好！</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>大家是否还记得我写的文章《<a href="https://mp.weixin.qq.com/s/8kqTVSDjuHpivGaim6ukNg">画个小圈圈</a>》？里面吐槽了<code>ggpubr</code>这个包的存在是<strong>制造混乱，徒增学习成本</strong>。我们知道<code>ggplot2</code>包里有个<code>qplot</code>函数，而在《ggplot2》的第一版中，hadley先用了一章介绍<code>qplot</code>，再介绍grammar of graphics，然后这个<code>qplot</code>就被吐槽，先入为主，给学习grammar of graphics，学习ggplot2语法制造了不必要的麻烦。然后如果你看《ggplot2》第二版，你就会发现<code>qplot</code>这一章被删掉了。我说<code>ggpubr</code><strong>制造混乱，徒增学习成本</strong>并不是为了吐槽某公众号，而是实事求是。</p>
+
+<p>我并不反对封装，我并没有强迫症说大家一定要用ggplot2图形语法，而不能封装函数，我想我在《<a href="https://mp.weixin.qq.com/s/8kqTVSDjuHpivGaim6ukNg">画个小圈圈</a>》已经说得很清楚了，封装画图的包，按我的观点是要么卖了数据处理的专业知识，要么卖了画图的专业知识。如果一个包做的封装太过于简单，像<code>ggpubr</code>这种，数据必须是用户整理好的data.frame，而画图只是简单的两三个图层的叠加，那么当然可以减少你敲键盘输入，然而影响了初级用户学习<code>ggplot2</code>，复杂的东西，我们当然想要用封装好的函数，等你自己啥都搞懂了，老板都要跟你掀桌子了。简单的东西也可以封装，减少输入嘛，只是特别不适用于ggplot2的图层，简单的设定你写个主题，我都举双手赞成，但两三个图层的简单拼凑我不支持，因为图层是积木，大家学习就是要对积木熟悉，然后才能搭出复杂的东西出来。特别简单的图层叠加正是你熟悉积木的时候，你不多敲点键盘，做为练习，又怎么能做出稍复杂点的东西呢？</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/03/five-questions-of-meme/">
+                <h3 class="media-heading">扪心自问，meme几何？</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>很多人都在学<code>ggplot2</code>，也有很多「高手」，比如你搜索「精通ggplot2」，你甚至会看到各种「从入门到精通」的课程，然而都是各种照猫画老虎的入门菜谱而已，当然广大群众去上课也可能只是为了求菜谱好在需要的时候，可以copy-paste而已。</p>
+
+<p><code>ggplot2</code>学习容易，因为无非是图层叠加，而图层的参数一致性非常好，网上也有很全的文档。然而要深入很难，比如你想干点什么是<code>ggplot2</code>自身没有支持的，你需要自己去hack，需要用到更底层的东西的时候，一般情况下，会无从入手，尝试之后才知道什么叫绝望！因为<code>ggplot2</code>套路实在是太深。</p>
+
+<p>正如我在《<a href="http://mp.weixin.qq.com/s/Xhi_ZkrEzUVdnCu7ECBS4w">听说你还不会画热图</a>》吐槽的，有些所谓的「高手」实际上连<code>ggplot2</code>底层是什么都不知道！然后可以把<code>ggplot2</code>吹上天。很多人根本不知道当你打下<code>ggplot</code>这个命令的时候，到底发生了什么？要理解<code>ggplot2</code>并不容易，正如前面所说「套路太深」，没有金钢钻，读不了它的代码，有没有一个简单点的包，能够读懂代码，并且有助于理解<code>ggplot2</code>呢？我想我的<code>meme</code>包就非常好，虽然仿的有点肤浅，然而胜在简单，看过下面这两篇文章的，都知道这个包在做什么。</p>
+
+<ul>
+<li><a href="http://mp.weixin.qq.com/s/jDXjkrkq_YVhW-Z5Vx2-Fg">用R画meme ;)</a></li>
+<li><a href="https://mp.weixin.qq.com/s/4b8enFCd_lLt278Ddxp3rg">使用外部字体画meme</a></li>
+</ul>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/03/treescale_unrooted_tree/">
+                <h3 class="media-heading">add treescale to unrooted tree</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><blockquote>
+<p>I am trying to add a scale to an unrooted tree with <code>geom_treescale</code>, but when I use it, the tree completely collapses and I am not able to set anything that fix it. Anybody has any idea on how to do it ?</p>
+</blockquote>
+
+<p><a href="https://groups.google.com/d/msgid/bioc-ggtree/9d69f444-94cf-42df-8382-bca2962b08c9%40googlegroups.com">google group</a>里的问题，说他加<code>geom_treescale</code>之后，树被压缩了，由于他没有给出可重复性的例子，所以我们并不知道情况到底有多么糟糕，但这种情况是可能发生的，因为加<strong>treescale</strong>这种东西，默认情况下<code>geom_treescale</code>会自己去计算该加多大的scale bar，该放在什么位置上，而这种默认情况是基于rectangular布局来的，在假设的情况下，都不可能尽善尽美，假设不成立的情况下当然有可能搞得很差。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/03/ggpar/">
+                <h3 class="media-heading">用par设置ggplot2参数？这个可以有！</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>有小伙伴在说可以用par(mar)来设置画图的margin，但不能应用于ggplot2，这个可能很多新手都会很困扰，可能需要一段时间的探索之后，才能发现原来是用theme来设定。</p>
+
+<p>这当然你可以归结于说ggplot2和base plot是不同的东西，但从实质画图参数这一点而言，并没有什么同与不同，无非是设置的方式不同而已，而这种方式都是人定义的，我们完全可以人为定义它们兼容。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/02/elementaryos/">
+                <h3 class="media-heading">elementary-美观而易用的Linux发行版</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><img src="http://guangchuangyu.github.io/blog_images/2018/linux_win.jpg" alt="" /></p>
+
+<p>想当年还在读本科那会，debian还是比较阳春的东西，然后就被ubuntu给普及了，ubuntu我实际上是不喜欢的，如果有linux的问题，搜出来是ubuntu的链接，我基本不会点开，ubuntu用的人实在太多，而且是特别多的小白，真正好的发行版是gentoo和arch，文档齐全，小白少。我目前使用的就是arch，因为gentoo实在是笔记本吃不消天天在编译。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no post found"
+         data-message-one="1 post found"
+         data-message-other="{n} posts found">
+         207 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('https://guangchuangyu.github.io/cn/images/cover.jpg');"></div>
+  
+
+
+    
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.js"></script>
+
+
+<script src="https://guangchuangyu.github.io/cn/js/script-wl33z0n6ocaypepiqrazthtivfrliqijej4rq8ek8gvrv1awftmgjuv8k4zc.min.js"></script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight').each(function(i, block) {
+    var code = "";
+    hljs.highlightAuto(block.innerText).value.split(/\r\n|\r|\n/).forEach(function(line) {
+      code += "<span class=\"line\">" + line + "</span><br>";
+    });
+    if (code.length > 0) {
+      block.innerHTML = code;  
+    }
+  });
+  $('pre > code').each(function(i, block) {
+    $(this).addClass('codeblock');
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/guangchuangyu.github.io\/cn\/2018\/04\/dotplot-x-axis\/';
+          
+            this.page.identifier = '\/2018\/04\/dotplot-x-axis\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'gcyu';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+
+    
+  </body>
+</html>
+
