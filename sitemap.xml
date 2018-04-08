@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2018/04/vscode-r/</loc>
+    <lastmod>2018-04-03T15:10:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2018/03/dotplot-for-homer-motif/</loc>
     <lastmod>2018-03-29T11:23:00+08:00</lastmod>
   </url>
@@ -1302,6 +1307,12 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/editor/</loc>
+    <lastmod>2018-04-03T15:10:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/tags/elementaryos/</loc>
     <lastmod>2018-02-24T04:33:00+08:00</lastmod>
     <priority>0</priority>
@@ -2017,7 +2028,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/software/</loc>
-    <lastmod>2018-01-24T15:27:00+08:00</lastmod>
+    <lastmod>2018-04-03T15:10:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2114,6 +2125,12 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/viziometric/</loc>
     <lastmod>2017-05-20T10:40:22+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/vscode/</loc>
+    <lastmod>2018-04-03T15:10:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
