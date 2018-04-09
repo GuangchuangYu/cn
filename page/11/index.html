@@ -226,6 +226,83 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/08/prepare-genelist/">
+          听说你有RNAseq数据却不知道怎么跑GSEA
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-08-10T19:11:00&#43;08:00">
+      
+  August 10, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <blockquote>
+<p>Dear GuangChuangyu,</p>
+
+<p>I&rsquo;m trying to use the clusterProfiler package for GSE analysis on DGE data obtained from RNAseq.
+While I can run enrichKEGG, I&rsquo;m unable to run gseKEGG basically because I don&rsquo;t know how to obtain an order ranked gene list.</p>
+
+<p>I work on R. I have a dataframe or matrix with gene names, log2 fold change values, pvalues and adjusted pvalues among others.</p>
+
+<p>How can I get the order ranked gene list to feed in gseKEGG?</p>
+
+<p>Moreover what is the more reliable way to obtain functional insight about each sample? enrichKEGG or gseKEGG?</p>
+
+<p>Thank you in advance for your help.</p>
+
+<p>best regards</p>
+
+<p>bruno saubaméa</p>
+</blockquote>
+
+<p>今天收到一封来自Université Paris Descartes的求助信，这个问题我被问过好多次了，显然很多新手都有这问题，根本不知道该怎么跑GSEA，搞不清GSEA的输入是什么。</p>
+
+<p></p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2017/08/prepare-genelist/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/08/response-to-sciencenet-blog-post/">
           祝你们缠缠绵绵到天涯
         </a>
@@ -630,85 +707,6 @@ ga('send', 'pageview');
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/swirl/">
-          听说你想学R
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-07-23T00:53:00&#43;08:00">
-      
-  July 23, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <h2 id="先来点八卦">先来点八卦</h2>
-
-<p>当年学R的时候，并没有现在这么多的书籍，老用户一般都知道丁国徽，因为他翻译了诸如《R导论》之类的文档，属于最早的中文材料了。跟生物狗有关的中文书有两本，一本是《R语言及Bioconductor在基因组分析中的应用》，这本我在2006年的时候看过，被坑大发了，里面逻辑混乱、错误满篇。</p>
-
-<p>以下这段豆瓣书评可以说很好的总结了这本书 <a href="https://book.douban.com/review/3017404/#comments">https://book.douban.com/review/3017404/#comments</a>:</p>
-
-<blockquote>
-<p>首先，打开前言，读者们会发现“编写本书，参加这些工作的教师和研究生有15人之多”。当然，名字后面带头衔的最后都在出现在封面了。也就是说由12位&rdquo;无名的岳武穆“研究生同学造就了3名”有名的岳武穆“之砖家叫兽。</p>
-
-<p>然后，本书共24章，模12为零，当然，这只是一个巧合，只是暗合天命罢了。</p>
-
-<p>最搞笑的就是这本书的编排和审校，十分差，许多小错误，就好像从没有审过一样。</p>
-
-<p>譬如第13页上，对order()函数的介绍，居然有这么句绕口令“x[order(x)]等效于order(x)&ldquo;,当然其实等效的是 sort(x).</p>
-
-<p>其他的诸如第17页上&gt;=的打印错误，就不一一细表了。</p>
-
-<p>最搞笑的就是只有三页的第4章，在数组、函数的介绍之前，就开始讲“聚集计算”！！！然后再来讲解语言基本的语法。。。。
-这种“由深入浅，化简单为复杂，化复杂为天书”之功力，更让吾辈叹服砖家叫兽吞云吐雾之神功。</p>
-
-<p>作为一本实例讲解的书，根本就没有提供源码和实例样本，也就说，根本就是没头没脑的演示。有点专业精神好么，好歹也是本标价68的书，当然只有400页草纸， 本科生水平的语言文档翻译。</p>
-</blockquote>
-
-<p></p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/07/swirl/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -790,6 +788,27 @@ ga('send', 'pageview');
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/04/get-away/">
+                <h3 class="media-heading">滚吧，骚年</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>4月3号发了以下一条文字推送：</p>
+
+<p>遇到辣鸡导师，只有三个字，忍滚狠，我选择滚，考博期间，发现人品不好，我选择滚，《<a href="https://mp.weixin.qq.com/s/LzwSAYT7yyYTMrNnck9KCg">来香港读博其实是被逼的</a>》，读博期间，本着就是退学也要滚的心态，把导师给炒了，《<a href="http://mp.weixin.qq.com/s/iRC_ak53PbN9DJbkPzgBOQ">CS10: 八卦终结版</a>》，忍下来也会消磨掉你所有追求/理想，比狠的话，如果没有压制对方的渠道，对于这种势力严重不均衡的情况似乎不太现实，所以我奉劝大家，滚！一两年的沉没时间，放长远了看，根本不算什么，要勇于放弃，滚的远远的</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1052,27 +1071,6 @@ ggplot(d, aes(cut, carat, fill=color, color=color)) +
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/03/ggpar/">
-                <h3 class="media-heading">用par设置ggplot2参数？这个可以有！</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Mar 3, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>有小伙伴在说可以用par(mar)来设置画图的margin，但不能应用于ggplot2，这个可能很多新手都会很困扰，可能需要一段时间的探索之后，才能发现原来是用theme来设定。</p>
-
-<p>这当然你可以归结于说ggplot2和base plot是不同的东西，但从实质画图参数这一点而言，并没有什么同与不同，无非是设置的方式不同而已，而这种方式都是人定义的，我们完全可以人为定义它们兼容。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1080,7 +1078,7 @@ ggplot(d, aes(cut, carat, fill=color, color=color)) +
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         208 posts found
+         209 posts found
       </p>
     </div>
   </div>

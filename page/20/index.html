@@ -226,6 +226,66 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2016/11/blast%E4%B8%80%E5%A4%A7%E5%9D%91%E6%97%A0%E6%B3%95%E8%BE%93%E5%87%BAquery-sequence-title/">
+          blast一大坑：无法输出query sequence title
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2016-11-17T00:53:00&#43;08:00">
+      
+  November 17, 2016
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/biology">Biology</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <p>通常做blast，我都是输出asn格式，然后用blast_formatter抽出需要的信息写成表格格式。</p>
+
+<p>序列的description行当然不会有重复，但是ID (第一个空白前面的字符）是有重复的，从qseqid来看，就分不清是那个序列，于是准备让blast_formatter把query title（整个description line）给输出来，结果仔细阅读了blastn -help发现不支持呀不支持！然而它支持stitle和salltitle，也就是subject的可以，但query的不行，这绝逼是一个大坑！＿|￣|○</p>
+
+<p></p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2016/11/blast%E4%B8%80%E5%A4%A7%E5%9D%91%E6%97%A0%E6%B3%95%E8%BE%93%E5%87%BAquery-sequence-title/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2016/11/ggtree-reverse-time-scale/">
           ggtree: reverse time scale
         </a>
@@ -580,106 +640,6 @@ ga('send', 'pageview');
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2015/12/%E5%96%9C%E6%96%B0%E5%8E%8C%E6%97%A7%E4%B9%8Bhello-hugo/">
-          喜新厌旧之hello Hugo
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2015-12-04T00:42:26&#43;08:00">
-      
-  December 4, 2015
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/blog">blog</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>最早在China Unix上写博客，后来转战新浪。在<a href="http://azaleasays.com/">azelea</a>的说服下，<a href="http://guangchuangyu.github.io/2008/09/%E5%8D%9A%E5%AE%A2%E8%BD%ACwordpress/">果断换成wordpress</a>，写技术博客贴点代码什么的，新浪必须是太渣。<a href="http://azaleasays.com/">azelea</a>是我开始独立博客的领路人，为我提供了空间和域名。再后来自己买了空间和<code>ygc.name</code>的域名，用了好几年。本来一直有想法要换成github+jekll，恰巧<a href="http://blog.shenwei.me/">Wei Shen</a>强力推荐HUGO。于是再一次换博客。</p>
-
-<p>首先面临着wordpress迁移的问题。</p>
-
-<h1 id="导入wordpress-posts为markdown文件">导入wordpress posts为markdown文件</h1>
-
-<p>试用了多个插件或脚本，都是各种出错。最后发现了神器<a href="https://github.com/jprichardson/potter-wordpress">potter-wordpress</a>，通过npm安装：</p>
-
-<pre><code>npm install -g pottercms-wordpress
-</code></pre>
-
-<p>然后一个语句:</p>
-
-<pre><code>potter-wordpress -h WORDPRESS_SITE_URL -u USER_NAME -p PASSWORD --dir PATH_TO_STORE_MD_FILES
-</code></pre>
-
-<p>自动从线上把posts抓下来，并转化为<code>markdown</code>。在之前各种搞不定之后，看到下面的输出有种莫名的快感。</p>
-
-<p>Fetching articles&hellip;</p>
-
-<pre><code>   Got : [Sun Nov 29 2015] R kernel in Jupyter notebook 3
-   Got : [Mon Nov 09 2015] phylomoji with ggtree
-   Got : [Tue Nov 17 2015] 合体中的操作系统
-   Got : [Mon Nov 02 2015] Comparison of clusterProfiler and GSEA-P
-   Got : [Thu Oct 01 2015] ChIPseq data mining with ChIPseeker
-   Got : [Tue Oct 06 2015] TRIE
-   Got : [Thu Oct 15 2015] [BioC 3.2] NEWS of my BioC packages
-   Got : [Wed Oct 21 2015] use simplify to remove redundancy of enriched GO terms
-
-   ...
-
-   Got : [Mon May 14 2007] Edit partition table in NetBSD/macppc
-   Got : [Mon May 14 2007] 我的emacs配置文件
-   Got : [Mon May 14 2007] pkgsrc tips
-   Got : [Thu May 03 2007] scilab三维平面绘图
-   Got : [Sat Jun 24 2006] qvwm窗口管理器的windows2000主题
-   Got : [Wed Jun 14 2006] 安装os9和netbsd双系统
-   Got : [Sat May 28 2005] 在emacs里使用maxima
-   Got : [Mon Mar 14 2005] scau校园网认证
-   Got : [Fri Jan 14 2005] Powerbook G3上安装gentoo
-</code></pre>
-
-<p>Done.</p>
-
-<p></p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2015/12/%E5%96%9C%E6%96%B0%E5%8E%8C%E6%97%A7%E4%B9%8Bhello-hugo/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -761,6 +721,27 @@ ga('send', 'pageview');
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/04/get-away/">
+                <h3 class="media-heading">滚吧，骚年</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>4月3号发了以下一条文字推送：</p>
+
+<p>遇到辣鸡导师，只有三个字，忍滚狠，我选择滚，考博期间，发现人品不好，我选择滚，《<a href="https://mp.weixin.qq.com/s/LzwSAYT7yyYTMrNnck9KCg">来香港读博其实是被逼的</a>》，读博期间，本着就是退学也要滚的心态，把导师给炒了，《<a href="http://mp.weixin.qq.com/s/iRC_ak53PbN9DJbkPzgBOQ">CS10: 八卦终结版</a>》，忍下来也会消磨掉你所有追求/理想，比狠的话，如果没有压制对方的渠道，对于这种势力严重不均衡的情况似乎不太现实，所以我奉劝大家，滚！一两年的沉没时间，放长远了看，根本不算什么，要勇于放弃，滚的远远的</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1023,27 +1004,6 @@ ggplot(d, aes(cut, carat, fill=color, color=color)) +
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/03/ggpar/">
-                <h3 class="media-heading">用par设置ggplot2参数？这个可以有！</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Mar 3, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>有小伙伴在说可以用par(mar)来设置画图的margin，但不能应用于ggplot2，这个可能很多新手都会很困扰，可能需要一段时间的探索之后，才能发现原来是用theme来设定。</p>
-
-<p>这当然你可以归结于说ggplot2和base plot是不同的东西，但从实质画图参数这一点而言，并没有什么同与不同，无非是设置的方式不同而已，而这种方式都是人定义的，我们完全可以人为定义它们兼容。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1051,7 +1011,7 @@ ggplot(d, aes(cut, carat, fill=color, color=color)) +
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         208 posts found
+         209 posts found
       </p>
     </div>
   </div>
