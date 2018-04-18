@@ -18,7 +18,7 @@
       
       <guid>https://guangchuangyu.github.io/cn/2018/04/ggbackground/</guid>
       <description>&lt;pre&gt;&lt;code&gt;require(ggplot2)
-p &amp;lt;- ggplot(iris) + aes(x = Sepal.Length, y = Sepal.Width, color=Species) + 
+ p &amp;lt;- ggplot(iris) + aes(x = Sepal.Length, y = Sepal.Width, color=Species) + 
     geom_point(size=5) + theme_classic()
 &lt;/code&gt;&lt;/pre&gt;
 
