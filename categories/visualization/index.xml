@@ -6,10 +6,33 @@
     <description>Recent content in Visualization on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 08 Apr 2018 19:06:16 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 18 Apr 2018 21:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/categories/visualization/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>使用ggbackground设置ggplot2的背景</title>
+      <link>https://guangchuangyu.github.io/cn/2018/04/ggbackground/</link>
+      <pubDate>Wed, 18 Apr 2018 21:00:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2018/04/ggbackground/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;require(ggplot2)
+p &amp;lt;- ggplot(iris) + aes(x = Sepal.Length, y = Sepal.Width, color=Species) + 
+    geom_point(size=5) + theme_classic()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;首先我们有一个图，是用&lt;code&gt;ggplot2&lt;/code&gt;画的，上面这图大家太熟悉，不打印出来都知道是什么了。&lt;/p&gt;
+
+&lt;p&gt;我在最新版的&lt;code&gt;ggimage&lt;/code&gt;中加入了一个&lt;code&gt;ggbackground&lt;/code&gt;的函数，我随便从网上找一张&lt;code&gt;iris&lt;/code&gt;的图片，我们把&lt;code&gt;p&lt;/code&gt;和&lt;code&gt;img&lt;/code&gt;同时传给&lt;code&gt;ggbackground&lt;/code&gt;就好了，非常容易，于是图的内容还是一样，但加了一张我们给定的图片做为背景。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;require(ggimage) 
+img = &amp;quot;https://assets.bakker.com/ProductPics/560x676/10028-00-BAKI_20170109094316.jpg&amp;quot;
+ggbackground(p, img)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>dotplot支持使用formula指定x轴变量</title>
