@@ -6,10 +6,25 @@
     <description>Recent content in Yyplot on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Mar 2018 10:17:48 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 23 Apr 2018 19:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/tags/yyplot/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>用ggplot2画维恩图</title>
+      <link>https://guangchuangyu.github.io/cn/2018/04/ggvenn/</link>
+      <pubDate>Mon, 23 Apr 2018 19:00:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2018/04/ggvenn/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/zhishixingqiu/ggvenn_question.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这是去年「知识星球」里的提问，「知识星球」相当于是众筹我一年的时间，向我提问，请谨慎入坑。&lt;/p&gt;
+
+&lt;p&gt;我当时就写了一个函数&lt;code&gt;ggvenn&lt;/code&gt;，这个函数其实包装了&lt;code&gt;venneuler&lt;/code&gt;，但由于&lt;code&gt;venneuler&lt;/code&gt;依赖&lt;code&gt;rJava&lt;/code&gt;，而很多小伙伴不会装&lt;code&gt;rJava&lt;/code&gt;，而因此装不了&lt;code&gt;yyplot&lt;/code&gt;，所以我去掉了这个依赖，但如果你想要用&lt;code&gt;ggvenn&lt;/code&gt;这个函数，请自行安装&lt;code&gt;rJava&lt;/code&gt;和&lt;code&gt;venneuler&lt;/code&gt;。其实还有另外一个包，&lt;code&gt;VennDiagram&lt;/code&gt;，它的输出是&lt;code&gt;gList&lt;/code&gt;，所以可以直接封装为&lt;code&gt;ggplot2&lt;/code&gt;图层，然而对于画venn plot，我并没有太多的兴趣，《&lt;a href=&#34;http://mp.weixin.qq.com/s/MqpfgkMJSFj0pYwcEjV9kQ&#34;&gt;CS6: ChIPseeker的可视化方法（中秋节的视觉饕餮）&lt;/a&gt;》一文中介绍的upset plot，可能更好一些。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>用par设置ggplot2参数？这个可以有！</title>
