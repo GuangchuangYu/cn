@@ -269,7 +269,7 @@ ga('send', 'pageview');
 
 <p></p>
 
-<p>要使用<code>ggvenn</code>是非常简单的，你只要给定一个matrix，这个matrix每一个column是一组实验的基因ID之类的，<code>ggvenn</code>会自动计算overlap了多少，然后画出来。</p>
+<p>要使用<code>ggvenn</code>是非常简单的，你只要给定一个matrix，这个matrix每一个column代表一个分组，数字0代表没有overlap，而非0代表overlap，数字的大小可以当做是overlap的加权。当然还支持别形式的输入，具体可以参考<code>venneuler</code>的文档。</p>
 
 <pre><code>set.seed(2017-11-08)
 x &lt;- matrix(sample(0:4, 40, TRUE, c(.5, .1, .1, .1, .1)), ncol=4)
@@ -281,6 +281,8 @@ yyplot::ggvenn(x)
 
 <p><img src="http://guangchuangyu.github.io/blog_images/zhishixingqiu/ggvenn_solution.png" alt="" /></p>
 
+<p>变成<code>ggplot2</code>出图的好处，我想不用多说，你可以用<code>ggplot2</code>的主题系列做点后戏，还可以用<code>grid</code>做后后戏，比如《<a href="http://mp.weixin.qq.com/s/yVAP09kfE0af79egYENBRA">一次解决ggplot2所有字体</a>》，然后你可以用<code>cowplot</code>拼图，用<code>ggimage</code>图上嵌图，《<a href="http://mp.weixin.qq.com/s/eVX3-3zT4p3s0JU_oy7lIQ">ggimage：ggplot2中愉快地使用图片</a>》，比如此处可以预告一下，我们可以把这个维恩图嵌在UpSet图中，正如我在《<a href="http://mp.weixin.qq.com/s/MqpfgkMJSFj0pYwcEjV9kQ">CS6: ChIPseeker的可视化方法（中秋节的视觉饕餮）</a>》中嵌入一个vennpie一样。现在有<code>ggimage</code>，这些活都只是一句代码的事情。</p>
+
 <h2 id="一点都不yy的yyplot">一点都不YY的yyplot</h2>
 
 <ul>
@@ -291,6 +293,20 @@ yyplot::ggvenn(x)
 <li><a href="https://mp.weixin.qq.com/s/Iqcqo5YTy1qmXdsuIrlrYQ">130岁了，祝你生快</a></li>
 <li><a href="https://mp.weixin.qq.com/s/8kqTVSDjuHpivGaim6ukNg">画个小圈圈</a></li>
 <li><a href="https://mp.weixin.qq.com/s/_XH6u2hPv_JJi_MbGbeoHA">ggplot扩展学习笔记&ndash;逐行解析Y叔的&rdquo;geom_ord_ellipse.R&rdquo;</a></li>
+</ul>
+
+<h2 id="知识星球解答范例">知识星球解答范例</h2>
+
+<ul>
+<li><a href="http://mp.weixin.qq.com/s/vB7mJG9FQYXsYZh9Bcp0_g">怀疑人生！我不欠你们钱，好吗？</a></li>
+<li><a href="http://mp.weixin.qq.com/s/jegI1wWc7DJzrM7mQfz77Q">同一数据多变量分组的boxplot?</a></li>
+<li><a href="http://mp.weixin.qq.com/s/Xhi_ZkrEzUVdnCu7ECBS4w">听说你还不会画热图</a></li>
+<li><a href="https://mp.weixin.qq.com/s/yVLgGQQi0CQ9Q9UfIKl5aA">不同数据集画出的热图，用同样的颜色区间上色?</a></li>
+<li><a href="https://mp.weixin.qq.com/s/tSOR68y7F0CCkAV6pUoV8Q">ggplot2给选定的分面加背景</a></li>
+<li><a href="http://mp.weixin.qq.com/s/zqcJ0VgRbR8oVnY0SFisUg">美化base plot</a></li>
+<li><a href="https://mp.weixin.qq.com/s/iyKsEnY17DsRFWZcDJn-lw">用par设置ggplot2参数？这个可以有！</a></li>
+<li><a href="http://mp.weixin.qq.com/s/R5CxcdufLy6_yRPzOG4Baw">花式打水印</a></li>
+<li><a href="https://mp.weixin.qq.com/s/0Zn6xUbvwLp039EungxX6w">用散点可视化一个矩阵</a></li>
 </ul>
                         
                         <center><span class="zaln"><a href="https://guangchuangyu.github.io/blog_images/pay_qrcode.png" class="zb">赞赏</a></span></center>
