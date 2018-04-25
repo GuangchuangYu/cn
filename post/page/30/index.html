@@ -226,6 +226,85 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2007/05/edit-partition-netbsd-macppc/">
+          Edit partition table in NetBSD/macppc
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2007-05-14T04:43:00&#43;08:00">
+      
+  May 14, 2007
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/bsd">BSD</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/powerbook">Powerbook</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <pre><code>#disklabel wd0
+</code></pre>
+
+<p>可以看到原始分区如下: 7 partitions:</p>
+
+<pre><code>#        size    offset     fstype [fsize bsize cpg/sgs]
+a:  20971520  25167648     4.2BSD      0     0     0  # (Cyl.  24967*-  45772*)
+b:   1048576  46139168       swap                     # (Cyl.  45772*-  46813*)
+c: 117210240         0     unused      0     0        # (Cyl.      0 - 116279)
+d:  25165824      1824        HFS                     # (Cyl.      1*-  24967*)
+e:  28079456  89130784        HFS                     # (Cyl.  88423*- 116279)
+g:  41943040  47187744     4.2BSD      0     0     0  # (Cyl.  46813*-  88423*)
+</code></pre>
+
+<p>a为netbsd的/分区，b为swap分区,c为整个硬盘，d为mac
+os的系统盘。e为两系统共享分区(在os9下格式化为fat)，g为netbsd下的/home分区。
+原本是两系统，os9.2一直都很少用，所以想删了，腾出空间来放数据。因为wd0d和wd0e不在连续的柱面上，所以无法将它们合并。</p>
+
+<p>新的分区方案如下：wd0d删了，分成两个，一个15M(需要一个HFS类型的分区来放置<code>ofwboot.xcf</code>，因为openfirmwire不支持从netbsd分区里加载loader),剩下的作为<code>/home</code>分区。把原来的<code>/home</code>分区(<code>wd0g</code>)和共享数据的分区(<code>wd0e</code>)合并为一个分区，用于放置数据。
+1. 第一步，也是最关键的一步，先备份好数据。
+
+2. 安装hfsutils。用于操作那个15M的HFS分区（格式化，拷贝文件等工具）。hfsutils是命令行的，xhfs是tk界面的。</p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2007/05/edit-partition-netbsd-macppc/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2007/05/pkgsrc-tips/">
           pkgsrc tips
         </a>
@@ -658,102 +737,6 @@ vim mystar.conf
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2005/01/powerbook-gentoo/">
-          Powerbook G3上安装gentoo
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2005-01-14T04:32:00&#43;08:00">
-      
-  January 14, 2005
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/linux">Linux</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/powerbook">Powerbook</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>下面是我在PowerBook G3上安装Gentoo的全过程。。</p>
-
-<p>自己做一个备忘录，也给想在Powerbook上装Gentoo的做一个参考。</p>
-
-<p>以下为基本的安装过程，详细请参考Gentoo的文档</p>
-
-<p><a href="http://www.gentoo.org/doc/en/handbook/handbook-ppc.xml">http://www.gentoo.org/doc/en/handbook/handbook-ppc.xml</a></p>
-
-<p>基本的安装步骤如下：</p>
-
-<p>用2004.3LiveCD进入。</p>
-
-<h2 id="1-配置网络">1. 配置网络</h2>
-
-<pre><code>＃net-setup eth0
-</code></pre>
-
-<p>回答它几个问题就行了。</p>
-
-<h2 id="2-分区">2.分区</h2>
-
-<pre><code>#mac-fdisk /dev/hda
-</code></pre>
-
-<p>以下是我的分区。</p>
-
-<pre><code>/dev/hda
- # type name length base ( size ) system
-/dev/hda1 Apple_partition_map Apple 63 @ 1 ( 31.5k) Partition map
-/dev/hda2 Apple_Bootstrap bootstrap 1600 @ 64 (800.0k) NewWorld bootblock
-/dev/hda3 Apple_UNIX_SVR2 / 12582912 @ 1664 ( 6.0G) Linux native
-/dev/hda4 Apple_UNIX_SVR2 swap 1048576 @ 12584576 (512.0M) Linux swap
-/dev/hda5 Apple_UNIX_SVR2 /home 6007728 @ 13633152 ( 2.9G) Linux native
-
-Block size=512, Number of Blocks=19640880
-DeviceType=0x0, DeviceId=0x0
-</code></pre>
-
-<p></p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2005/01/powerbook-gentoo/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -766,7 +749,14 @@ DeviceType=0x0, DeviceId=0x0
         </li>
       
       
-      <li class="pagination-number">page 30 of 30</li>
+        <li class="pagination-next">
+          <a class="btn btn--default btn--small" href="https://guangchuangyu.github.io/cn/post/page/31/">
+            <span>OLDER POSTS</span>
+            <i class="fa fa-angle-right text-base icon-ml"></i>
+          </a>
+        </li>
+      
+      <li class="pagination-number">page 30 of 31</li>
     </ul>
   </div>
 
@@ -828,6 +818,30 @@ DeviceType=0x0, DeviceId=0x0
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/04/r-35-release/">
+                <h3 class="media-heading">R-3.5.0发布，又该升级了</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>R <code>3.5.0</code>已经发布了，我昨天已经更新了，Bioconductor也将在5月初发布<code>3.7</code>版本，就我个人而言，新版的Bioconductor主要有以下一些新东西：</p>
+
+<h2 id="enrichplot">enrichplot</h2>
+
+<p>新包<code>enrichplot</code>，《<a href="https://mp.weixin.qq.com/s/93XIeDF3mUFX0koX6mTRpA">enrichplot: 让你们对clusterProfiler系列包无法自拔</a>
+》，以后<code>clusterProfiler</code>系列出图更好看了，而且所有图你都可以用<code>cowplot</code>拼图。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1093,27 +1107,6 @@ ggplot(d, aes(cut, carat, fill=color, color=color)) +
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/03/ggstatsplot/">
-                <h3 class="media-heading">一条指令把统计&#43;画图都给做了？似乎太美好！</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Mar 3, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>大家是否还记得我写的文章《<a href="https://mp.weixin.qq.com/s/8kqTVSDjuHpivGaim6ukNg">画个小圈圈</a>》？里面吐槽了<code>ggpubr</code>这个包的存在是<strong>制造混乱，徒增学习成本</strong>。我们知道<code>ggplot2</code>包里有个<code>qplot</code>函数，而在《ggplot2》的第一版中，hadley先用了一章介绍<code>qplot</code>，再介绍grammar of graphics，然后这个<code>qplot</code>就被吐槽，先入为主，给学习grammar of graphics，学习ggplot2语法制造了不必要的麻烦。然后如果你看《ggplot2》第二版，你就会发现<code>qplot</code>这一章被删掉了。我说<code>ggpubr</code><strong>制造混乱，徒增学习成本</strong>并不是为了吐槽某公众号，而是实事求是。</p>
-
-<p>我并不反对封装，我并没有强迫症说大家一定要用ggplot2图形语法，而不能封装函数，我想我在《<a href="https://mp.weixin.qq.com/s/8kqTVSDjuHpivGaim6ukNg">画个小圈圈</a>》已经说得很清楚了，封装画图的包，按我的观点是要么卖了数据处理的专业知识，要么卖了画图的专业知识。如果一个包做的封装太过于简单，像<code>ggpubr</code>这种，数据必须是用户整理好的data.frame，而画图只是简单的两三个图层的叠加，那么当然可以减少你敲键盘输入，然而影响了初级用户学习<code>ggplot2</code>，复杂的东西，我们当然想要用封装好的函数，等你自己啥都搞懂了，老板都要跟你掀桌子了。简单的东西也可以封装，减少输入嘛，只是特别不适用于ggplot2的图层，简单的设定你写个主题，我都举双手赞成，但两三个图层的简单拼凑我不支持，因为图层是积木，大家学习就是要对积木熟悉，然后才能搭出复杂的东西出来。特别简单的图层叠加正是你熟悉积木的时候，你不多敲点键盘，做为练习，又怎么能做出稍复杂点的东西呢？</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1121,7 +1114,7 @@ ggplot(d, aes(cut, carat, fill=color, color=color)) +
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         211 posts found
+         212 posts found
       </p>
     </div>
   </div>
