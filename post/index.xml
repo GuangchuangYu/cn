@@ -6,10 +6,23 @@
     <description>Recent content in Posts on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 Apr 2018 17:53:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 04 May 2018 13:10:00 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ggplot2新参数clip</title>
+      <link>https://guangchuangyu.github.io/cn/2018/05/ggplot2%E6%96%B0%E5%8F%82%E6%95%B0clip/</link>
+      <pubDate>Fri, 04 May 2018 13:10:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2018/05/ggplot2%E6%96%B0%E5%8F%82%E6%95%B0clip/</guid>
+      <description>&lt;p&gt;《&lt;a href=&#34;http://mp.weixin.qq.com/s/BTBP_snTRKrjmRCjF6Cp3A&#34;&gt;ggplot2字体溢出的那点破事&lt;/a&gt;》这是经典老问题了，现在新版本的&lt;code&gt;ggplot2&lt;/code&gt;有新的解决方案了，在&lt;code&gt;coord_cartesian&lt;/code&gt;中新加入了&lt;code&gt;clip&lt;/code&gt;参数，这样可以支持把图层画在画布之外，那么文本打过界也就支持了。这有一个好处，是可以支持direct label，而不需要调整&lt;code&gt;xlim&lt;/code&gt;和&lt;code&gt;ylim&lt;/code&gt;，毕竟你把&lt;code&gt;xlim&lt;/code&gt;和&lt;code&gt;ylim&lt;/code&gt;搞大有时候会给人以误导，认为你的数据取值范围就是图中的&lt;code&gt;xlim&lt;/code&gt;和&lt;code&gt;ylim&lt;/code&gt;，但实际上要小一些。&lt;/p&gt;
+
+&lt;p&gt;我以&lt;code&gt;ggtree&lt;/code&gt;为例，为了让tip label打全，那么&lt;code&gt;p1&lt;/code&gt;把时间给搞到2020，但实际上最近的采样时间是2013年，这样你单看&lt;code&gt;x&lt;/code&gt;轴的标记，总感觉有一点点不对路，或者有一点点别扭。现在好了，我不设置&lt;code&gt;xlim&lt;/code&gt;，而是让label打过界，当然还是需要有足够的空间来放这些文本，这个可以通过把&lt;code&gt;margin&lt;/code&gt;搞大来实现。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>R-3.5.0发布，又该升级了</title>

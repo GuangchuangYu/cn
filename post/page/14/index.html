@@ -226,6 +226,66 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/wine-qq/">
+          Linux中使用QQ
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-07-09T07:57:46&#43;08:00">
+      
+  July 9, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/linux">Linux</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <p>之前在写《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484423&amp;idx=1&amp;sn=311c627bb70e6fc626bb1f014ec0a976&amp;chksm=ec43b540db343c56fb01f86851c0a4b685351b860d0c9ac2f9709857428b4b76b85bf2bc8b49#rd">开源的macOS和linux版微信</a>》时，有小伙伴问怎么搞QQ，做为一个上了年纪的人，我已经不怎么用QQ了。</p>
+
+<p>QQ跑Linux基本上无解，疼讯说好的Linux版死了好多年，现在只有WebQQ可以用。如果你们早生几年，就会遇到Linux上用QQ的好时代。在《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484265&amp;idx=1&amp;sn=7e184d6bf26d2b91485cab0aec3102b8&amp;chksm=ec43b22edb343b38586fa21db0831df49bfe4e0106b22c5c0d93afe16dda88dc1a1a6e5d5248#rd">十年前截屏</a>》一文中，我就晒过在Gentoo上跑用Java开发的LumaQQ，在NetBSD上跑用C++开发的Eva，这些都极好用，而且像当年QQ上好友纷纷隐身的时候，LumaQQ推出了如来神掌，你可以看到谁是隐身的，以至于有些Windows用户也去用LumaQQ，那是当年最美好的时代，然而这些都死掉了。</p>
+
+<p></p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2017/07/wine-qq/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/david-clusterprofiler/">
           SCIENCE文章用了DAVID被吐槽
         </a>
@@ -588,89 +648,6 @@ ga('send', 'pageview');
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/06/lxde-theme/">
-          Linux装windows的二逼
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-06-19T07:57:46&#43;08:00">
-      
-  June 19, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/linux">Linux</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>做为一个上了年纪的人，显然已经离不开微信了，macOS还好，企鹅还有照顾到，但linux难道就只能用web版吗？显然不应该的。</p>
-
-<p>如果你是Arch Linux用户的话，那么aur源里已经有好几个款式可以选了：</p>
-
-<pre><code class="language-shell"> ygc  ~  yaourt -Ss wechat
-aur/electronic-wechat 2.0-2 (8) (1.29)
-    A better WeChat client
-aur/electronic-wechat-bin 2.0-1 [installed] (3) (0.36)
-    A better WeChat on macOS and Linux. Built with Electron by Zhongyi Tong.
-aur/electronic-wechat-git 1.4.0.43.gb18ff6d-1 (6) (0.00)
-    An Electron application for WeChat
-aur/franz-bin 4.0.4-5 (86) (12.73)
-    Franz is a free messaging app / former Emperor of Austria and combines 
-    chat &amp; messaging services into one application. Franz currently supports 
-    Slack, WhatsApp, WeChat, HipChat, Facebook Messenger, Telegram, Google 
-    Hangouts, GroupMe, Skype and many more.
-aur/wechat-web-devtools-git 0.17.171900-1 (1) (0.78)
-    Wechat Web Developer Tools
-aur/wechatircd-git r85.bb8f354-1 (0) (0.00)
-    IRC server capable of controlling Web WeChat
-</code></pre>
-
-<p>这里我要介绍的是electronic-wechat。我比较懒，用下面的代码，安装二进制版：</p>
-
-<pre><code class="language-shell">yaourt -S electronic-wechat-bin
-</code></pre>
-
-<p></p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/06/lxde-theme/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -752,6 +729,27 @@ aur/wechatircd-git r85.bb8f354-1 (0) (0.00)
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/05/ggplot2%E6%96%B0%E5%8F%82%E6%95%B0clip/">
+                <h3 class="media-heading">ggplot2新参数clip</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>《<a href="http://mp.weixin.qq.com/s/BTBP_snTRKrjmRCjF6Cp3A">ggplot2字体溢出的那点破事</a>》这是经典老问题了，现在新版本的<code>ggplot2</code>有新的解决方案了，在<code>coord_cartesian</code>中新加入了<code>clip</code>参数，这样可以支持把图层画在画布之外，那么文本打过界也就支持了。这有一个好处，是可以支持direct label，而不需要调整<code>xlim</code>和<code>ylim</code>，毕竟你把<code>xlim</code>和<code>ylim</code>搞大有时候会给人以误导，认为你的数据取值范围就是图中的<code>xlim</code>和<code>ylim</code>，但实际上要小一些。</p>
+
+<p>我以<code>ggtree</code>为例，为了让tip label打全，那么<code>p1</code>把时间给搞到2020，但实际上最近的采样时间是2013年，这样你单看<code>x</code>轴的标记，总感觉有一点点不对路，或者有一点点别扭。现在好了，我不设置<code>xlim</code>，而是让label打过界，当然还是需要有足够的空间来放这些文本，这个可以通过把<code>margin</code>搞大来实现。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1014,33 +1012,6 @@ for (i in seq_len(n)) {
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/03/group-points/">
-                <h3 class="media-heading">画图给点分组?</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Mar 3, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>小伙伴提出了上面的问题，点不能够打到violin里面去，即使加了<code>aes(group=color)</code>强行分组也不行。这个照理第一感觉都会觉得可以，但试一下都会发现不行。</p>
-
-<pre><code>library(ggplot2)
-d = subset(diamonds, color %in% c(&quot;D&quot;, &quot;E&quot;))
-ggplot(d, aes(cut, carat, fill=color, color=color)) + 
-    geom_violin(alpha=.3) + geom_jitter(width=.05, alpha=.5)
-</code></pre>
-
-<p><img src="http://guangchuangyu.github.io/blog_images/R/ggplot2/group_point/unnamed-chunk-1-1.png" alt="" /></p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1048,7 +1019,7 @@ ggplot(d, aes(cut, carat, fill=color, color=color)) +
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         212 posts found
+         213 posts found
       </p>
     </div>
   </div>
