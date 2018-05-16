@@ -226,6 +226,85 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/">
+          在emacs里使用maxima
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2005-05-28T08:15:00&#43;08:00">
+      
+  May 28, 2005
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/software">Software</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <h2 id="下载imaxima">下载imaxima   </h2>
+
+<p><a href="http://members3.jcom.home.ne.jp/imaxima/Site/Download%20and%20Install_files/imaxima-imath-0.97a.tar.gz">http://members3.jcom.home.ne.jp/imaxima/Site/Download%20and%20Install_files/imaxima-imath-0.97a.tar.gz</a></p>
+
+<pre><code>./configure
+make
+sudo make install
+</code></pre>
+
+<p>进行安装。
+默认将安装在/usr/local/share/emacs/site-lisp下，在~/.emacs下加入</p>
+
+<pre><code>(load &quot;imaxima&quot;)
+</code></pre>
+
+<p>启动emacs,按M-x,键入imaxima运行maxima 但是进行运算时出错。
+<img src="http://guangchuangyu.github.io/blog_images/2005/05/070902122953.png" alt="" /></p>
+
+<p>需要breqn094包，可从<a href="ftp://ftp.ams.org/pub/tex/breqn.zip">ftp://ftp.ams.org/pub/tex/breqn.zip</a>下载，</p>
+
+<pre><code>cd /usr/share/texmf/tex/latex/
+sudo unzip ~/Downloads/breqn.zip
+sudo texhash
+</code></pre>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/">
           scau校园网认证
         </a>
@@ -461,6 +540,27 @@ DeviceType=0x0, DeviceId=0x0
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/05/explode-pieplot/">
+                <h3 class="media-heading">爆炸型的饼图</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><img src="http://guangchuangyu.github.io/blog_images/zhishixingqiu/pie_question.png" alt="" /></p>
+
+<p>这是CJ在我的星球里分享的一个关于饼图的实现方式，代码的排版太差，还有一点是对于普通用户来说，还是有点难度，如果是我，必须是写成函数，直接出图。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -713,37 +813,6 @@ for (i in seq_len(n)) {
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/03/colnames-of-data-frame/">
-                <h3 class="media-heading">R给你的数据化了妆？</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Mar 3, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>小伙伴说他写个CSV文件，名字就变了，无缘无故<code>|</code>就被改了，还有些名字被强加了<code>X</code>。我注意到了他写的对象是<code>data.frame(d)</code>，这锅绝对是<code>data.frame</code>的。</p>
-
-<p>我们可以试一下：</p>
-
-<pre><code>&gt; d = matrix(rnorm(4), ncol=2)
-&gt; colnames(d) = c(&quot;A|B&quot;, &quot;123&quot;)
-&gt; write.csv(data.frame(d))
-&quot;&quot;,&quot;A.B&quot;,&quot;X123&quot;
-&quot;1&quot;,-0.601247669017546,0.802654193340092
-&quot;2&quot;,-0.128752028398414,0.430829592244036
-</code></pre>
-
-<p><strong>没错，自己给变了。</strong></p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -751,7 +820,7 @@ for (i in seq_len(n)) {
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         213 posts found
+         214 posts found
       </p>
     </div>
   </div>

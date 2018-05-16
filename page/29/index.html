@@ -226,6 +226,93 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/08/88-bachelor/">
+          从概率的角度看 如何告别单身
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2008-08-26T15:10:00&#43;08:00">
+      
+  August 26, 2008
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/statistics">Statistics</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <p>国家人口统计男人比女人多了3700万，在大学校园里更是流传着“我很丑，可是我很抢手”（女生版）、“我很帅，可是我很无奈”（男生版）。</p>
+
+<p>鉴于大龄猥琐男越来越盛行，以及小平同志说“让一部分人先恋起来嘛”
+今日从科学的角度，让大家明白如何告别单身。
+授人与鱼不如授人与渔。即使没能让你奔小康，起码也解决温饱~~~</p>
+
+<p><img src="http://guangchuangyu.github.io/blog_images/2008/11/xx0.jpg" alt="" /></p>
+
+<p>告别单身的不二法则，三个字，“厚脸皮”，详见下面分析</p>
+
+<p>如果一个男人追一个女人，成功的概率只有0.2，
+那么连续追6个，至少有一个成功的概率，高达0.74</p>
+
+<pre><code>&gt; 1-0.8^6
+[1] 0.737856
+</code></pre>
+
+<p>如果连续追7个的话，至少一个成功的概率将达到0.79</p>
+
+<pre><code>&gt; 1-0.8^7
+[1] 0.7902848
+</code></pre>
+
+<p>如果你不是特别差，成功的概率假如是0.3，那么连续追几个的成功概率将更高。。</p>
+
+<pre><code>&gt; 1-0.7^6
+[1] 0.882351
+&gt; 1-0.7^7
+[1] 0.9176457
+</code></pre>
+
+<p></p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2008/08/88-bachelor/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/08/gperiodic/">
           gperiodic:元素周期表
         </a>
@@ -587,77 +674,6 @@ Homepage : <a href="http://givre.cabspace.com/ntfs-config">http://givre.cabspace
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2007/06/newton-raphson-method/">
-          Newton-Raphson Method估算函数的根
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2007-06-02T13:53:00&#43;08:00">
-      
-  June 2, 2007
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/math">Math</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/programming">Programming</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/c">C</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <h2 id="newton-raphson-method">Newton-Raphson Method</h2>
-
-<p>曲线<code>f(x)</code>有根c,取曲线上一点$(x_1,f(x_1))$, 过此点的切线交x轴$x_2$,过曲线上$(x_2,f(x_2))$的切线交x轴$x_3$，如此反复得到一个序列 $x_1,x_2,\cdot \cdot \cdot,x_n$ 逼近c值.</p>
-
-<p>过$(x_n,f(x_n))$的切线方程为 $y-f(x_n) = f&rsquo;(x_n)\,(x-x<em>n)$,假设此方程与x轴的交点为$x</em>{n+1}$, 即有: $0 - f(x_n) = f&rsquo;(x_n)(x_n+1 - x<em>n)$， 即$x</em>{n+1} = x_n - \frac{f(x_n)}{f&rsquo;(x_n)}$ <code>&lt;Eq. 1&gt;</code>.</p>
-
-<p>下面利用此法来求一个数的开方。 $f(x) = x^2 - a$ 有根$\sqrt{a}$,
-由$f&rsquo;(x_n) = 2x<em>n$, 代入式<code>&lt;Eq. 1&gt;</code>可得$x</em>{n+1} = (x_n + a/x_n)/2$; 当i -&gt; INF 时, $x_i$ -&gt; $\sqrt{a}$;</p>
-
-<h2 id="c-implementation">C implementation</h2>
-
-<p></p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2007/06/newton-raphson-method/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -739,6 +755,27 @@ Homepage : <a href="http://givre.cabspace.com/ntfs-config">http://givre.cabspace
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/05/explode-pieplot/">
+                <h3 class="media-heading">爆炸型的饼图</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><img src="http://guangchuangyu.github.io/blog_images/zhishixingqiu/pie_question.png" alt="" /></p>
+
+<p>这是CJ在我的星球里分享的一个关于饼图的实现方式，代码的排版太差，还有一点是对于普通用户来说，还是有点难度，如果是我，必须是写成函数，直接出图。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -991,37 +1028,6 @@ for (i in seq_len(n)) {
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/03/colnames-of-data-frame/">
-                <h3 class="media-heading">R给你的数据化了妆？</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Mar 3, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>小伙伴说他写个CSV文件，名字就变了，无缘无故<code>|</code>就被改了，还有些名字被强加了<code>X</code>。我注意到了他写的对象是<code>data.frame(d)</code>，这锅绝对是<code>data.frame</code>的。</p>
-
-<p>我们可以试一下：</p>
-
-<pre><code>&gt; d = matrix(rnorm(4), ncol=2)
-&gt; colnames(d) = c(&quot;A|B&quot;, &quot;123&quot;)
-&gt; write.csv(data.frame(d))
-&quot;&quot;,&quot;A.B&quot;,&quot;X123&quot;
-&quot;1&quot;,-0.601247669017546,0.802654193340092
-&quot;2&quot;,-0.128752028398414,0.430829592244036
-</code></pre>
-
-<p><strong>没错，自己给变了。</strong></p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1029,7 +1035,7 @@ for (i in seq_len(n)) {
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         213 posts found
+         214 posts found
       </p>
     </div>
   </div>
