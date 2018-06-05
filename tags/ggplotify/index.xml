@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ggplotify on Guangchuang Yu</title>
+    <link>https://guangchuangyu.github.io/cn/tags/ggplotify/</link>
+    <description>Recent content in Ggplotify on Guangchuang Yu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 05 Jun 2018 08:53:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://guangchuangyu.github.io/cn/tags/ggplotify/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>github被微软收购</title>
+      <link>https://guangchuangyu.github.io/cn/2018/06/github-ms-meme/</link>
+      <pubDate>Tue, 05 Jun 2018 08:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2018/06/github-ms-meme/</guid>
+      <description>&lt;p&gt;微软以75亿美元收购全球最大的单身交友网站GitHub，应景&lt;a href=&#34;https://mp.weixin.qq.com/s/koM3GU1zr8dE0S0fkdncxA&#34;&gt;分享一张图片&lt;/a&gt;，其实这图大家并不陌生，在《&lt;a href=&#34;http://mp.weixin.qq.com/s/Xhi_ZkrEzUVdnCu7ECBS4w&#34;&gt;听说你还不会画热图&lt;/a&gt;》一文中，大家早已见过。&lt;/p&gt;
+
+&lt;p&gt;这图实在太好玩，被套在各种场景上，今天就要教大家怎么用R，纯代码生成这样的图，简直是吐槽神器。这类图可以归入meme，画meme，当然少不了我写的meme包，这包收录在CRAN中，点击下面链接了解一下：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://mp.weixin.qq.com/s/jDXjkrkq_YVhW-Z5Vx2-Fg&#34;&gt;用R画meme ;)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/4b8enFCd_lLt278Ddxp3rg&#34;&gt;使用外部字体画meme&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://mp.weixin.qq.com/s/BPY4dPFrrNrDKccMvax07w&#34;&gt;扪心自问，meme几何？&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

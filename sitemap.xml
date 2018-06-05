@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2018/06/github-ms-meme/</loc>
+    <lastmod>2018-06-05T08:53:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2018/05/kopernio/</loc>
     <lastmod>2018-05-31T09:27:00+08:00</lastmod>
   </url>
@@ -1485,7 +1490,13 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/ggplot2/</loc>
-    <lastmod>2018-05-15T23:44:55+08:00</lastmod>
+    <lastmod>2018-06-05T08:53:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/ggplotify/</loc>
+    <lastmod>2018-06-05T08:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1545,7 +1556,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/</loc>
-    <lastmod>2018-05-31T09:27:00+08:00</lastmod>
+    <lastmod>2018-06-05T08:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1665,7 +1676,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/magick/</loc>
-    <lastmod>2017-07-28T07:09:22+08:00</lastmod>
+    <lastmod>2018-06-05T08:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1701,7 +1712,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/meme/</loc>
-    <lastmod>2018-03-13T13:06:59+08:00</lastmod>
+    <lastmod>2018-06-05T08:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1911,7 +1922,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/post/</loc>
-    <lastmod>2018-05-31T09:27:00+08:00</lastmod>
+    <lastmod>2018-06-05T08:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1995,7 +2006,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/r/</loc>
-    <lastmod>2018-05-04T13:10:00+08:00</lastmod>
+    <lastmod>2018-06-05T08:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2097,7 +2108,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/shadowtext/</loc>
-    <lastmod>2017-11-01T19:53:00+08:00</lastmod>
+    <lastmod>2018-06-05T08:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
