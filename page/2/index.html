@@ -226,6 +226,78 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/04/ggbackground/">
+          使用ggbackground设置ggplot2的背景
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2018-04-18T21:00:00&#43;08:00">
+      
+  April 18, 2018
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <pre><code>require(ggplot2)
+ p &lt;- ggplot(iris) + aes(x = Sepal.Length, y = Sepal.Width, color=Species) + 
+    geom_point(size=5) + theme_classic()
+</code></pre>
+
+<p>首先我们有一个图，是用<code>ggplot2</code>画的，上面这图大家太熟悉，不打印出来都知道是什么了。</p>
+
+<p>我在最新版的<code>ggimage</code>中加入了一个<code>ggbackground</code>的函数，我随便从网上找一张<code>iris</code>的图片，我们把<code>p</code>和<code>img</code>同时传给<code>ggbackground</code>就好了，非常容易，于是图的内容还是一样，但加了一张我们给定的图片做为背景。</p>
+
+<pre><code>require(ggimage) 
+img = &quot;https://assets.bakker.com/ProductPics/560x676/10028-00-BAKI_20170109094316.jpg&quot;
+ggbackground(p, img)
+</code></pre>
+
+<p></p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2018/04/ggbackground/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/04/get-away/">
           滚吧，骚年
         </a>
@@ -634,74 +706,6 @@ for (i in seq_len(n)) {
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/03/group-points/">
-          画图给点分组?
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2018-03-20T12:53:00&#43;08:00">
-      
-  March 20, 2018
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">visualization</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>小伙伴提出了上面的问题，点不能够打到violin里面去，即使加了<code>aes(group=color)</code>强行分组也不行。这个照理第一感觉都会觉得可以，但试一下都会发现不行。</p>
-
-<pre><code>library(ggplot2)
-d = subset(diamonds, color %in% c(&quot;D&quot;, &quot;E&quot;))
-ggplot(d, aes(cut, carat, fill=color, color=color)) + 
-    geom_violin(alpha=.3) + geom_jitter(width=.05, alpha=.5)
-</code></pre>
-
-<p><img src="http://guangchuangyu.github.io/blog_images/R/ggplot2/group_point/unnamed-chunk-1-1.png" alt="" /></p>
-
-<p></p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2018/03/group-points/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -721,7 +725,7 @@ ggplot(d, aes(cut, carat, fill=color, color=color)) +
           </a>
         </li>
       
-      <li class="pagination-number">page 2 of 31</li>
+      <li class="pagination-number">page 2 of 32</li>
     </ul>
   </div>
 
@@ -783,6 +787,35 @@ ggplot(d, aes(cut, carat, fill=color, color=color)) +
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/06/chocolatey/">
+                <h3 class="media-heading">你是我的巧克力 - Windows包管理器Chocolatey</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jun 6, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>试想一下，每次重装系统，都要安装一堆常用的小软件，7zip, notepad++, filezilla, winrar等等，每次都要搜索下载地址，下载，安装，摆明了是木兰要从军一般，“东市买骏马，西市买鞍鞯，南市买辔头，北市买长鞭”，当然Windows现在也有各种软件管家之类的软件，但很多是流氓软件，要带各种全家桶的，我宁愿自己来一次木兰从军记。</p>
+
+<p>大家都喜欢Linux的包管理，比如<code>apt-get</code>，而OSX也有homebrew，可以brew install一大票Unix-like的软件，而Windows用户只有羡慕的份，上面提到的流氓软件管理，当然也是装不了Unix-like软件的，所以我们羡慕，我们妒忌，外加恨！</p>
+
+<hr />
+
+<p>今天要跟大家介绍一个为windows设计的包管理器，Chocolatey，有了它，你也能<code>choco install wget</code>, <code>choco install docker</code>这样装软件了，不用再羡慕水果用户，不用再木兰从军般装软件了。</p>
+
+<blockquote>
+<p><strong>Chocolatey is a package manager for Windows (like apt-get or yum but for Windows)</strong>. It was designed to be a decentralized framework for quickly installing applications and tools that you need. It is built on the NuGet infrastructure currently using PowerShell as its focus for delivering packages from the distros to your door, err computer.</p>
+</blockquote>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1002,27 +1035,6 @@ ggbackground(p, img)
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/04/vscode-r/">
-                <h3 class="media-heading">在VSCode中愉快地使用R</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>在《<a href="http://mp.weixin.qq.com/s/BsEm76Eq9_tbw3myobD_SA">你所不知道的，R的N种打开方式</a>》我介绍了N多种打开R的方式，甚至于你还能用python写的号称21世纪的R界面：《<a href="https://mp.weixin.qq.com/s/VbMq3ZKMdn0E3wauC4l_hg">R，python喊你回家吃饭啦</a>》。</p>
-
-<p>我自己一直很少用RStudio，而是用Emacs，虽然Emacs比较小众，也不适合这个公众号的粉丝，但文本编辑器之于程序程好比剑客手中的剑，一个用着顺手、长期使用的文本编辑器比什么都好，在《<a href="http://mp.weixin.qq.com/s/BsEm76Eq9_tbw3myobD_SA">你所不知道的，R的N种打开方式</a>》中我介绍了Emacs, Vim, textMate, sublime，今天要介绍另一款，VSCode，这是微软开源的文本编辑器，非常现代化，有很好的扩展生态。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1030,7 +1042,7 @@ ggbackground(p, img)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         218 posts found
+         219 posts found
       </p>
     </div>
   </div>

@@ -226,6 +226,70 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/02/wrapping-labels-in-ggplot2/">
+          wrapping labels in ggplot2
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-02-14T09:50:00&#43;08:00">
+      
+  February 14, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <p>在公众号biobabble后台有多人同时在问这个问题：</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/2017/2017-02-12-223832_646x667_scrot.png" alt="" /></p>
+
+<p>晒这个截屏主要想说一点，如果是一两句话就能说清楚的问题，可以提问，如果不是，则不要在后台提问，写邮件或者到论坛提问，是更好的方式，像截屏中显示的，图片显示过期，我根本就没看到过图片。在手机上是无法看的，而我正好几天没在电脑前，于是你们发的图片我看不了，而且我如果没有在24小时之内回复，公众平台就不允许我回复了，因为问题已经过期。所以在此强调，不要在后台发图片提问，不要在后台问稍复杂的问题。</p>
+
+<p>这个问题其实很简单，用<code>stringr</code>包的<code>str_wrap</code>来完成文本自动换行就行了。</p>
+
+<p></p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2017/02/wrapping-labels-in-ggplot2/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/01/ggtree%E5%8F%91%E8%A1%A8/">
           ggtree发表
         </a>
@@ -585,70 +649,6 @@ ga('send', 'pageview');
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2016/12/using-linked-list-to-solve-josephus-problem/">
-          Using Linked List to solve Josephus problem
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2016-12-04T00:53:00&#43;08:00">
-      
-  December 4, 2016
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/data-structure">data structure</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/c&#43;&#43;">C&#43;&#43;</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <blockquote>
-<p>这个问题是以弗拉维奥·约瑟夫斯命名的，它是1世纪的一名犹太历史学家。他在自己的日记中写道，他和他的40个战友被罗马军队包围在洞中。他们讨论是自杀还是被俘，最终决定自杀，并以抽签的方式决定谁杀掉谁。约瑟夫斯和另外一个人是最后两个留下的人。约瑟夫斯说服了那个人，他们将向罗马军队投降，不再自杀。约瑟夫斯把他的存活归因于运气或天意，他不知道是哪一个。  &ndash; <a href="https://zh.wikipedia.org/wiki/约瑟夫斯问题">https://zh.wikipedia.org/wiki/约瑟夫斯问题</a></p>
-</blockquote>
-
-<p>这是一个比较简单的问题，n个人围成圆圈，越过k-1个人，杀掉第k个人，如此反复直到只剩下最后一个人。可以用数学推导给出答案，问题本身已经足够简单，用链表可以模拟整个过程。实现起来比较直观。这里在初始化这个链表的时候，需要注意，到了最后一人的时候，他应该指向第一个人，这样才能形成一个环状的链表，然后问题就非常简单了，从第一人开始，后面就无所谓头和尾了，按照规则来，每次杀掉一个人，直到只剩下最后一人，就是结果。从维基的解释可以看出，最后两个人没死，这没节操的事情被拿来说，如果你数学好，你就可以救自己一命（站在合适的位置，让自己是最后一个）。</p>
-
-<p></p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2016/12/using-linked-list-to-solve-josephus-problem/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -668,7 +668,7 @@ ga('send', 'pageview');
           </a>
         </li>
       
-      <li class="pagination-number">page 19 of 31</li>
+      <li class="pagination-number">page 19 of 32</li>
     </ul>
   </div>
 
@@ -730,6 +730,35 @@ ga('send', 'pageview');
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/06/chocolatey/">
+                <h3 class="media-heading">你是我的巧克力 - Windows包管理器Chocolatey</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jun 6, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>试想一下，每次重装系统，都要安装一堆常用的小软件，7zip, notepad++, filezilla, winrar等等，每次都要搜索下载地址，下载，安装，摆明了是木兰要从军一般，“东市买骏马，西市买鞍鞯，南市买辔头，北市买长鞭”，当然Windows现在也有各种软件管家之类的软件，但很多是流氓软件，要带各种全家桶的，我宁愿自己来一次木兰从军记。</p>
+
+<p>大家都喜欢Linux的包管理，比如<code>apt-get</code>，而OSX也有homebrew，可以brew install一大票Unix-like的软件，而Windows用户只有羡慕的份，上面提到的流氓软件管理，当然也是装不了Unix-like软件的，所以我们羡慕，我们妒忌，外加恨！</p>
+
+<hr />
+
+<p>今天要跟大家介绍一个为windows设计的包管理器，Chocolatey，有了它，你也能<code>choco install wget</code>, <code>choco install docker</code>这样装软件了，不用再羡慕水果用户，不用再木兰从军般装软件了。</p>
+
+<blockquote>
+<p><strong>Chocolatey is a package manager for Windows (like apt-get or yum but for Windows)</strong>. It was designed to be a decentralized framework for quickly installing applications and tools that you need. It is built on the NuGet infrastructure currently using PowerShell as its focus for delivering packages from the distros to your door, err computer.</p>
+</blockquote>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -949,27 +978,6 @@ ggbackground(p, img)
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/04/vscode-r/">
-                <h3 class="media-heading">在VSCode中愉快地使用R</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>在《<a href="http://mp.weixin.qq.com/s/BsEm76Eq9_tbw3myobD_SA">你所不知道的，R的N种打开方式</a>》我介绍了N多种打开R的方式，甚至于你还能用python写的号称21世纪的R界面：《<a href="https://mp.weixin.qq.com/s/VbMq3ZKMdn0E3wauC4l_hg">R，python喊你回家吃饭啦</a>》。</p>
-
-<p>我自己一直很少用RStudio，而是用Emacs，虽然Emacs比较小众，也不适合这个公众号的粉丝，但文本编辑器之于程序程好比剑客手中的剑，一个用着顺手、长期使用的文本编辑器比什么都好，在《<a href="http://mp.weixin.qq.com/s/BsEm76Eq9_tbw3myobD_SA">你所不知道的，R的N种打开方式</a>》中我介绍了Emacs, Vim, textMate, sublime，今天要介绍另一款，VSCode，这是微软开源的文本编辑器，非常现代化，有很好的扩展生态。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -977,7 +985,7 @@ ggbackground(p, img)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         218 posts found
+         219 posts found
       </p>
     </div>
   </div>

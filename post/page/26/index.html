@@ -226,6 +226,104 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/07/a-simple-gene-finder/">
+          a simple gene finder
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2011-07-10T09:04:46&#43;08:00">
+      
+  July 10, 2011
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/conference">conference</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <p>上了几天的课，<a href="http://ibw2011.fmmu.edu.cn/schedule.htm">http://ibw2011.fmmu.edu.cn/schedule.htm</a>
+今天就上完了，只完成了project 1，想写gibbs sampling，但是没搞明白，汗。</p>
+
+<p>这个纯属练习用，没啥实用价值。</p>
+
+<blockquote>
+<p>Course Projects:</p>
+
+<p>Project 1: Implementation of a simple gene finder</p>
+
+<p>GOAL</p>
+
+<p>Build a simple codon-usage based gene finder for finding genes in
+E.coli.</p>
+
+<p>Procedure</p>
+
+<p>Collect 100 gene sequences from the bacterium E. coli in the genbank
+(<a href="http://www.ncbi.nlm.nihh.gov">http://www.ncbi.nlm.nihh.gov</a>). Compute the codon usage table based on
+these genes (and the translated protein sequences from them); Build a
+probabilistic model based on the codon usages; Implement a random
+sequence model in which the nucleotide frequency is computed from the
+100 E. coli genes. For a given DNA sequence (and one selected reading
+frame), compare your model with a random sequence model; Results that
+you should submit:</p>
+
+<p>Two FASTA files for the collected 100 genes and 100 translated protein
+sequences; The printed codon usage table; A program named ECgnfinder,
+running with the syntax as ECgnfinder –i inputfile</p>
+
+<p>Inputfile stands for the name of input file, which should contain one
+DNA sequence in FASTA file format; the program should be able to
+report an error message if the input file is in the wrong format.</p>
+
+<p>The output should be printed to the standard output as (xxx stands for
+the likelihood)</p>
+
+<p>ORF1: xxx ORF2: xxx</p>
+</blockquote>
+
+<p></p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2011/07/a-simple-gene-finder/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/06/screen-shot/">
           screen shot
         </a>
@@ -626,80 +724,6 @@ Pauling当时是他们最大的竞争对手。第二点是Watson 39岁时，娶�
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2010/07/xming-windows%E4%B8%8B%E8%BF%9C%E7%A8%8Blinux%E6%A1%8C%E9%9D%A2/">
-          Xming-windows下远程linux桌面
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2010-07-05T07:37:09&#43;08:00">
-      
-  July 5, 2010
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/windows">Windows</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/linux">Linux</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>机房放着台机架机，闲着也是耗电，平时偶尔用putty登上去，没有图形界面还是有些不方便。</p>
-
-<p>搜了一下，发现好几个软件可做这样的事，Xming是开源的，所以选择使用Xming+putty来远程连linux的桌面。</p>
-
-<p>试用了一下，果然不错。</p>
-
-<p>需要修改/etc/ssh/sshd_config，添加：</p>
-
-<pre><code>X11Forwrding yes
-</code></pre>
-
-<p>需要配置一下PuTTY，<code>Connection-SSh-X11</code>中选中<code>Enable X11forwarding</code>
-其中<code>X display location</code>里填入<code>localhost:0</code>。</p>
-
-<p>运行Xming，再用putty连到服务器上，运行程序，就OK了。就好像windows下的本地程序一般。整合性很好。</p>
-
-<p></p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2010/07/xming-windows%E4%B8%8B%E8%BF%9C%E7%A8%8Blinux%E6%A1%8C%E9%9D%A2/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -719,7 +743,7 @@ Pauling当时是他们最大的竞争对手。第二点是Watson 39岁时，娶�
           </a>
         </li>
       
-      <li class="pagination-number">page 26 of 31</li>
+      <li class="pagination-number">page 26 of 32</li>
     </ul>
   </div>
 
@@ -781,6 +805,35 @@ Pauling当时是他们最大的竞争对手。第二点是Watson 39岁时，娶�
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/06/chocolatey/">
+                <h3 class="media-heading">你是我的巧克力 - Windows包管理器Chocolatey</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jun 6, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>试想一下，每次重装系统，都要安装一堆常用的小软件，7zip, notepad++, filezilla, winrar等等，每次都要搜索下载地址，下载，安装，摆明了是木兰要从军一般，“东市买骏马，西市买鞍鞯，南市买辔头，北市买长鞭”，当然Windows现在也有各种软件管家之类的软件，但很多是流氓软件，要带各种全家桶的，我宁愿自己来一次木兰从军记。</p>
+
+<p>大家都喜欢Linux的包管理，比如<code>apt-get</code>，而OSX也有homebrew，可以brew install一大票Unix-like的软件，而Windows用户只有羡慕的份，上面提到的流氓软件管理，当然也是装不了Unix-like软件的，所以我们羡慕，我们妒忌，外加恨！</p>
+
+<hr />
+
+<p>今天要跟大家介绍一个为windows设计的包管理器，Chocolatey，有了它，你也能<code>choco install wget</code>, <code>choco install docker</code>这样装软件了，不用再羡慕水果用户，不用再木兰从军般装软件了。</p>
+
+<blockquote>
+<p><strong>Chocolatey is a package manager for Windows (like apt-get or yum but for Windows)</strong>. It was designed to be a decentralized framework for quickly installing applications and tools that you need. It is built on the NuGet infrastructure currently using PowerShell as its focus for delivering packages from the distros to your door, err computer.</p>
+</blockquote>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1000,27 +1053,6 @@ ggbackground(p, img)
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/04/vscode-r/">
-                <h3 class="media-heading">在VSCode中愉快地使用R</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>在《<a href="http://mp.weixin.qq.com/s/BsEm76Eq9_tbw3myobD_SA">你所不知道的，R的N种打开方式</a>》我介绍了N多种打开R的方式，甚至于你还能用python写的号称21世纪的R界面：《<a href="https://mp.weixin.qq.com/s/VbMq3ZKMdn0E3wauC4l_hg">R，python喊你回家吃饭啦</a>》。</p>
-
-<p>我自己一直很少用RStudio，而是用Emacs，虽然Emacs比较小众，也不适合这个公众号的粉丝，但文本编辑器之于程序程好比剑客手中的剑，一个用着顺手、长期使用的文本编辑器比什么都好，在《<a href="http://mp.weixin.qq.com/s/BsEm76Eq9_tbw3myobD_SA">你所不知道的，R的N种打开方式</a>》中我介绍了Emacs, Vim, textMate, sublime，今天要介绍另一款，VSCode，这是微软开源的文本编辑器，非常现代化，有很好的扩展生态。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1028,7 +1060,7 @@ ggbackground(p, img)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         218 posts found
+         219 posts found
       </p>
     </div>
   </div>

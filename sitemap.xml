@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2018/06/chocolatey/</loc>
+    <lastmod>2018-06-12T12:15:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2018/06/github-ms-meme/</loc>
     <lastmod>2018-06-05T08:53:00+08:00</lastmod>
   </url>
@@ -1285,6 +1290,12 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/chocolatey/</loc>
+    <lastmod>2018-06-12T12:15:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/tags/chrome/</loc>
     <lastmod>2017-07-26T07:05:22+08:00</lastmod>
     <priority>0</priority>
@@ -1556,7 +1567,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/</loc>
-    <lastmod>2018-06-05T08:53:00+08:00</lastmod>
+    <lastmod>2018-06-12T12:15:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1820,7 +1831,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/package/</loc>
-    <lastmod>2008-12-07T05:23:16+08:00</lastmod>
+    <lastmod>2018-06-12T12:15:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1922,7 +1933,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/post/</loc>
-    <lastmod>2018-06-05T08:53:00+08:00</lastmod>
+    <lastmod>2018-06-12T12:15:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2120,7 +2131,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/software/</loc>
-    <lastmod>2018-05-31T09:27:00+08:00</lastmod>
+    <lastmod>2018-06-12T12:15:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2234,7 +2245,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/windows/</loc>
-    <lastmod>2016-11-30T00:53:00+08:00</lastmod>
+    <lastmod>2018-06-12T12:15:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   

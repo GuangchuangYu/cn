@@ -229,6 +229,66 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2013/06/compress-tiff/">
+          使用ImageMagick压缩TIFF
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2013-06-07T15:10:00&#43;08:00">
+      
+  June 7, 2013
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/software">Software</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        TIFF (Tagged Image File Format)拥有更宽的线性动态范围，所以在专业的图片处理上，一直是一个通用的文件格式。
+最近一篇发表在Metallomics的文章，我本来做的图片都是PDF格式，矢量图最好了，文件特别小，还可以任意放大。不过杂志社要求600DPI的TIFF或EPS。
+我第一反应是拒绝使用TIFF，600DPI的TIFF文件肯定非常大，EPS也是矢量图，我用R重新把图画一遍，存为EPS就OK了。画图的过程，我发现对EPS的支持不太好，老报些某字体不存在的错误。这当然不是什么大不了的事，自己指定字体就好了。问题在于有张图是拼的，我只能借助于软件转换，我用Inkscape处理，导出EPS，出来的图我发现有些细节并不太好。
+无奈之下还是用TIFF吧，Fig1和3都是R画的，直接指定分辨率和压缩算法，存为TIFF文件。Fig1是3000x3000pixel 600dpi的图，只有320k，Fig3是4200x4200pixel的图，也是600dpi，只有558k，用R产生TIFF还是非常靠谱的。
+关键是Fig2，这一张拼的图，存成PDF矢量图，需要用ImageMagick转换成600DPI的TIFF图片，ImageMagick需要安装Xcode才能在Mac下编译成功。
+Yus-Mac-Pro:others ygc$ convert -density 600 fig2.pdf fig2.tif Yus-Mac-Pro:others ygc$ identify -verbose fig2.tif Image: fig2.tif Format: TIFF (Tagged Image File Format) Class: DirectClass Geometry: 6000x4500+0+0 Resolution: 600x600 Print size: 10x7.5 Units: Undefined Type: PaletteMatte Base type: TrueColor Endianess: MSB &hellip; Yus-Mac-Pro:others ygc$ convert -density 600 -compress lzw fig2.pdf fig2_compress.tif Yus-Mac-Pro:others ygc$ ls -l fig2*.tif -rw-r&ndash;r&ndash; 1 ygc admin 216036263 May 23 17:53 fig2.
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2013/06/compress-tiff/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+            
+              
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/10/restore-thunder-url/">
           还原迅雷的url
         </a>
@@ -599,85 +659,6 @@ ga('send', 'pageview');
 </article>
 
             
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/">
-          在emacs里使用maxima
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2005-05-28T08:15:00&#43;08:00">
-      
-  May 28, 2005
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/software">Software</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <h2 id="下载imaxima">下载imaxima   </h2>
-
-<p><a href="http://members3.jcom.home.ne.jp/imaxima/Site/Download%20and%20Install_files/imaxima-imath-0.97a.tar.gz">http://members3.jcom.home.ne.jp/imaxima/Site/Download%20and%20Install_files/imaxima-imath-0.97a.tar.gz</a></p>
-
-<pre><code>./configure
-make
-sudo make install
-</code></pre>
-
-<p>进行安装。
-默认将安装在/usr/local/share/emacs/site-lisp下，在~/.emacs下加入</p>
-
-<pre><code>(load &quot;imaxima&quot;)
-</code></pre>
-
-<p>启动emacs,按M-x,键入imaxima运行maxima 但是进行运算时出错。
-<img src="http://guangchuangyu.github.io/blog_images/2005/05/070902122953.png" alt="" /></p>
-
-<p>需要breqn094包，可从<a href="ftp://ftp.ams.org/pub/tex/breqn.zip">ftp://ftp.ams.org/pub/tex/breqn.zip</a>下载，</p>
-
-<pre><code>cd /usr/share/texmf/tex/latex/
-sudo unzip ~/Downloads/breqn.zip
-sudo texhash
-</code></pre>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
             
   <div class="pagination-bar">
     <ul class="pagination">
@@ -690,7 +671,14 @@ sudo texhash
         </li>
       
       
-      <li class="pagination-number">page 3 of 3</li>
+        <li class="pagination-next">
+          <a class="btn btn--default btn--small" href="https://guangchuangyu.github.io/cn/categories/software/page/4/">
+            <span>OLDER POSTS</span>
+            <i class="fa fa-angle-right text-base icon-ml"></i>
+          </a>
+        </li>
+      
+      <li class="pagination-number">page 3 of 4</li>
     </ul>
   </div>
 
@@ -753,6 +741,35 @@ sudo texhash
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/06/chocolatey/">
+                <h3 class="media-heading">你是我的巧克力 - Windows包管理器Chocolatey</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jun 6, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>试想一下，每次重装系统，都要安装一堆常用的小软件，7zip, notepad++, filezilla, winrar等等，每次都要搜索下载地址，下载，安装，摆明了是木兰要从军一般，“东市买骏马，西市买鞍鞯，南市买辔头，北市买长鞭”，当然Windows现在也有各种软件管家之类的软件，但很多是流氓软件，要带各种全家桶的，我宁愿自己来一次木兰从军记。</p>
+
+<p>大家都喜欢Linux的包管理，比如<code>apt-get</code>，而OSX也有homebrew，可以brew install一大票Unix-like的软件，而Windows用户只有羡慕的份，上面提到的流氓软件管理，当然也是装不了Unix-like软件的，所以我们羡慕，我们妒忌，外加恨！</p>
+
+<hr />
+
+<p>今天要跟大家介绍一个为windows设计的包管理器，Chocolatey，有了它，你也能<code>choco install wget</code>, <code>choco install docker</code>这样装软件了，不用再羡慕水果用户，不用再木兰从军般装软件了。</p>
+
+<blockquote>
+<p><strong>Chocolatey is a package manager for Windows (like apt-get or yum but for Windows)</strong>. It was designed to be a decentralized framework for quickly installing applications and tools that you need. It is built on the NuGet infrastructure currently using PowerShell as its focus for delivering packages from the distros to your door, err computer.</p>
+</blockquote>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -972,27 +989,6 @@ ggbackground(p, img)
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/04/vscode-r/">
-                <h3 class="media-heading">在VSCode中愉快地使用R</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>在《<a href="http://mp.weixin.qq.com/s/BsEm76Eq9_tbw3myobD_SA">你所不知道的，R的N种打开方式</a>》我介绍了N多种打开R的方式，甚至于你还能用python写的号称21世纪的R界面：《<a href="https://mp.weixin.qq.com/s/VbMq3ZKMdn0E3wauC4l_hg">R，python喊你回家吃饭啦</a>》。</p>
-
-<p>我自己一直很少用RStudio，而是用Emacs，虽然Emacs比较小众，也不适合这个公众号的粉丝，但文本编辑器之于程序程好比剑客手中的剑，一个用着顺手、长期使用的文本编辑器比什么都好，在《<a href="http://mp.weixin.qq.com/s/BsEm76Eq9_tbw3myobD_SA">你所不知道的，R的N种打开方式</a>》中我介绍了Emacs, Vim, textMate, sublime，今天要介绍另一款，VSCode，这是微软开源的文本编辑器，非常现代化，有很好的扩展生态。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1000,7 +996,7 @@ ggbackground(p, img)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         218 posts found
+         219 posts found
       </p>
     </div>
   </div>

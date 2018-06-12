@@ -1,0 +1,907 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+  
+
+
+  
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.30.2">
+    <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
+    <title>你是我的巧克力 - Windows包管理器Chocolatey</title>
+    <meta name="author" content="Guangchuang Yu">
+    <meta name="keywords" content="">
+
+    <link rel="icon" href="https://guangchuangyu.github.io/cn/favicon.png">
+    
+
+    
+    <meta name="description" content="试想一下，每次重装系统，都要安装一堆常用的小软件，7zip, notepad&#43;&#43;, filezilla, winrar等等，每次都要搜索下载地址，下载，安装，摆明了是木兰要从军一般，“东市买骏马，西市买鞍鞯，南市买辔头，北市买长鞭”，当然Windows现在也有各种软件管家之类的软件，但很多是流氓软件，要带各种全家桶的，我宁愿自己来一次木兰从军记。
+
+大家都喜欢Linux的包管理，比如apt-get，而OSX也有homebrew，可以brew install一大票Unix-like的软件，而Windows用户只有羡慕的份，上面提到的流氓软件管理，当然也是装不了Unix-like软件的，所以我们羡慕，我们妒忌，外加恨！
+
+
+
+今天要跟大家介绍一个为windows设计的包管理器，Chocolatey，有了它，你也能choco install wget, choco install docker这样装软件了，不用再羡慕水果用户，不用再木兰从军般装软件了。
+
+
+Chocolatey is a package manager for Windows (like apt-get or yum but for Windows). It was designed to be a decentralized framework for quickly installing applications and tools that you need. It is built on the NuGet infrastructure currently using PowerShell as its focus for delivering packages from the distros to your door, err computer.
+
+
+">
+    <meta property="og:description" content="试想一下，每次重装系统，都要安装一堆常用的小软件，7zip, notepad&#43;&#43;, filezilla, winrar等等，每次都要搜索下载地址，下载，安装，摆明了是木兰要从军一般，“东市买骏马，西市买鞍鞯，南市买辔头，北市买长鞭”，当然Windows现在也有各种软件管家之类的软件，但很多是流氓软件，要带各种全家桶的，我宁愿自己来一次木兰从军记。
+
+大家都喜欢Linux的包管理，比如apt-get，而OSX也有homebrew，可以brew install一大票Unix-like的软件，而Windows用户只有羡慕的份，上面提到的流氓软件管理，当然也是装不了Unix-like软件的，所以我们羡慕，我们妒忌，外加恨！
+
+
+
+今天要跟大家介绍一个为windows设计的包管理器，Chocolatey，有了它，你也能choco install wget, choco install docker这样装软件了，不用再羡慕水果用户，不用再木兰从军般装软件了。
+
+
+Chocolatey is a package manager for Windows (like apt-get or yum but for Windows). It was designed to be a decentralized framework for quickly installing applications and tools that you need. It is built on the NuGet infrastructure currently using PowerShell as its focus for delivering packages from the distros to your door, err computer.
+
+
+">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="你是我的巧克力 - Windows包管理器Chocolatey">
+    <meta property="og:url" content="/2018/06/chocolatey/">
+    <meta property="og:site_name" content="Guangchuang Yu">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Guangchuang Yu">
+    <meta name="twitter:description" content="试想一下，每次重装系统，都要安装一堆常用的小软件，7zip, notepad&#43;&#43;, filezilla, winrar等等，每次都要搜索下载地址，下载，安装，摆明了是木兰要从军一般，“东市买骏马，西市买鞍鞯，南市买辔头，北市买长鞭”，当然Windows现在也有各种软件管家之类的软件，但很多是流氓软件，要带各种全家桶的，我宁愿自己来一次木兰从军记。
+
+大家都喜欢Linux的包管理，比如apt-get，而OSX也有homebrew，可以brew install一大票Unix-like的软件，而Windows用户只有羡慕的份，上面提到的流氓软件管理，当然也是装不了Unix-like软件的，所以我们羡慕，我们妒忌，外加恨！
+
+
+
+今天要跟大家介绍一个为windows设计的包管理器，Chocolatey，有了它，你也能choco install wget, choco install docker这样装软件了，不用再羡慕水果用户，不用再木兰从军般装软件了。
+
+
+Chocolatey is a package manager for Windows (like apt-get or yum but for Windows). It was designed to be a decentralized framework for quickly installing applications and tools that you need. It is built on the NuGet infrastructure currently using PowerShell as its focus for delivering packages from the distros to your door, err computer.
+
+
+">
+    
+      <meta name="twitter:creator" content="@guangchuangyu">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
+    
+
+    
+    
+    
+
+    
+
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" />
+    
+    
+    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-u6mk0ojoywresbx8iepslrmmhl4stuhrsxuwhkpwrkrx7mryjcaimasnk4pi.min.css" />
+    
+    
+
+    
+      
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-77901140-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+    
+    
+  </head>
+
+<body>
+    <div id="blog">
+        <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://guangchuangyu.github.io/cn/">Guangchuang Yu</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://guangchuangyu.github.io/cn/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+        <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://guangchuangyu.github.io/cn/#about">
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Guangchuang Yu</h4>
+        
+        <h5 class="sidebar-profile-bio">a senior-in-age-but-not-senior-in-knowledge bioinformatician</h5>
+        <img alt="微信公众号" src="https://guangchuangyu.github.io/blog_images/biobabble.jpg" width="200" height="200">
+        
+      </div>
+      
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/GuangchuangYu" target="_blank">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+    </ul>
+  </div>
+</nav>
+
+        
+
+        <div id="main" data-behavior="4"
+             class="
+                 hasCoverMetaIn
+             ">
+            <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+                
+                
+                <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      你是我的巧克力 - Windows包管理器Chocolatey
+    </h1>
+  
+  <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2018-06-12T12:15:00&#43;08:00">
+      
+  June 12, 2018
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/software">Software</a>
+    
+  
+
+
+</div>
+
+</div>
+                
+                <div class="post-content markdown" itemprop="articleBody">
+                    <div class="main-content-wrap">
+                        <p>试想一下，每次重装系统，都要安装一堆常用的小软件，7zip, notepad++, filezilla, winrar等等，每次都要搜索下载地址，下载，安装，摆明了是木兰要从军一般，“东市买骏马，西市买鞍鞯，南市买辔头，北市买长鞭”，当然Windows现在也有各种软件管家之类的软件，但很多是流氓软件，要带各种全家桶的，我宁愿自己来一次木兰从军记。</p>
+
+<p>大家都喜欢Linux的包管理，比如<code>apt-get</code>，而OSX也有homebrew，可以brew install一大票Unix-like的软件，而Windows用户只有羡慕的份，上面提到的流氓软件管理，当然也是装不了Unix-like软件的，所以我们羡慕，我们妒忌，外加恨！</p>
+
+<hr />
+
+<p>今天要跟大家介绍一个为windows设计的包管理器，Chocolatey，有了它，你也能<code>choco install wget</code>, <code>choco install docker</code>这样装软件了，不用再羡慕水果用户，不用再木兰从军般装软件了。</p>
+
+<blockquote>
+<p><strong>Chocolatey is a package manager for Windows (like apt-get or yum but for Windows)</strong>. It was designed to be a decentralized framework for quickly installing applications and tools that you need. It is built on the NuGet infrastructure currently using PowerShell as its focus for delivering packages from the distros to your door, err computer.</p>
+</blockquote>
+
+<p></p>
+
+<h2 id="安装">安装</h2>
+
+<ul>
+<li>Windows 7+ / Windows Server 2003+</li>
+<li>PowerShell v2+</li>
+<li>.NET Framework 4+</li>
+</ul>
+
+<p>只要你的系统是Win7以上就可以，右键开始菜单，选择以管理员身份运行PowerShell，然后粘贴以下指令：</p>
+
+<pre><code>Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+</code></pre>
+
+<p><img src="http://cannotdisplay.com/wp-content/uploads/2017/06/chocolatey-install.png" alt="" /></p>
+
+<p>就万事大吉了。下面这个gif演示了安装node.js：</p>
+
+<p><img src="http://cannotdisplay.com/wp-content/uploads/2017/06/choco_install.gif" alt="" /></p>
+
+<p>比如我想装Notepad++，只需要：</p>
+
+<pre><code>choco install notepadplusplus 
+</code></pre>
+
+<p>想装java，只需要：</p>
+
+<pre><code>choco install jdk8 
+</code></pre>
+
+<p>想要装git，只需要：</p>
+
+<pre><code>choco install git 
+</code></pre>
+
+<p>要装python，则</p>
+
+<pre><code>choco install python2
+</code></pre>
+
+<p>或者</p>
+
+<pre><code>choco install python3 
+</code></pre>
+
+<p>有相当多的命令行和图形界面的软件，如果你不是Linux用户，不想用命令行，那么你可以用图形界面的ChocolateyGUI，点点鼠标，软件自动下载安装，目前有&gt;5800个软件可以安装。</p>
+
+<p><img src="https://chocolatey.org/content/images/ChocolateyGUI_main_screen.png" alt="" /></p>
+                        
+                        <center><span class="zaln"><a href="https://guangchuangyu.github.io/blog_images/pay_qrcode.png" class="zb">赞赏</a></span></center>
+                        <center><span class="zaln"><a href="https://guangchuangyu.github.io/cn/2017/11/bmc-journal-protects-paper-of-plagiarism/" class="zb">抵制BMC，匹夫有责</a></span></center>
+                    </div>
+                </div>
+                <div id="post-footer" class="post-footer main-content-wrap">
+                    
+                    
+                    
+                    
+                    <div class="post-footer-tags">
+                        <span class="text-color-light text-small">TAGGED IN</span><br/>
+                        
+  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/chocolatey/">chocolatey</a>
+
+  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/package/">package</a>
+
+  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn//tags/windows/">windows</a>
+
+                    </div>
+                    
+                    
+                    
+                    <div class="post-actions-wrap">
+  <nav>
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+            <i class="fa fa-angle-left"></i>
+            <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+          </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2018/06/github-ms-meme/" data-tooltip="github被微软收购">
+          
+            <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+  <ul class="post-actions post-action-share">
+    
+      <li class="post-action hide-lg hide-md hide-sm">
+        <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+          <i class="fa fa-share-alt"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f06%2fchocolatey%2f">
+          <i class="fa fa-google-plus"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f06%2fchocolatey%2f">
+          <i class="fa fa-facebook-official"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f06%2fchocolatey%2f">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+    
+    
+      <li class="post-action">
+        <a class="post-action-btn btn btn--default" href="#disqus_thread">
+          <i class="fa fa-comment-o"></i>
+        </a>
+      </li>
+    
+    <li class="post-action">
+      
+        <a class="post-action-btn btn btn--default" href="#">
+      
+        <i class="fa fa-list"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+                    
+                    
+                    <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+                    
+                    
+                </div>
+            </article>
+            <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2018 Guangchuang Yu. All Rights Reserved
+  </span>
+</footer>
+
+        </div>
+        <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+            <div class="post-actions-wrap">
+  <nav>
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+            <i class="fa fa-angle-left"></i>
+            <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+          </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2018/06/github-ms-meme/" data-tooltip="github被微软收购">
+          
+            <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+  <ul class="post-actions post-action-share">
+    
+      <li class="post-action hide-lg hide-md hide-sm">
+        <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+          <i class="fa fa-share-alt"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f06%2fchocolatey%2f">
+          <i class="fa fa-google-plus"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f06%2fchocolatey%2f">
+          <i class="fa fa-facebook-official"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f06%2fchocolatey%2f">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+    
+    
+      <li class="post-action">
+        <a class="post-action-btn btn btn--default" href="#disqus_thread">
+          <i class="fa fa-comment-o"></i>
+        </a>
+      </li>
+    
+    <li class="post-action">
+      
+        <a class="post-action-btn btn btn--default" href="#">
+      
+        <i class="fa fa-list"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+        </div>
+        <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <ul class="share-options">
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f06%2fchocolatey%2f">
+        <i class="fa fa-google-plus"></i><span>Share on Google Plus</span>
+      </a>
+    </li>
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f06%2fchocolatey%2f">
+        <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+      </a>
+    </li>
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fguangchuangyu.github.io%2fcn%2f2018%2f06%2fchocolatey%2f">
+        <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Guangchuang Yu</h4>
+    
+      <div id="about-card-bio">a senior-in-age-but-not-senior-in-knowledge bioinformatician</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Postdoc researcher
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Hong Kong
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Search" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no post found</div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/06/chocolatey/">
+                <h3 class="media-heading">你是我的巧克力 - Windows包管理器Chocolatey</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jun 6, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>试想一下，每次重装系统，都要安装一堆常用的小软件，7zip, notepad++, filezilla, winrar等等，每次都要搜索下载地址，下载，安装，摆明了是木兰要从军一般，“东市买骏马，西市买鞍鞯，南市买辔头，北市买长鞭”，当然Windows现在也有各种软件管家之类的软件，但很多是流氓软件，要带各种全家桶的，我宁愿自己来一次木兰从军记。</p>
+
+<p>大家都喜欢Linux的包管理，比如<code>apt-get</code>，而OSX也有homebrew，可以brew install一大票Unix-like的软件，而Windows用户只有羡慕的份，上面提到的流氓软件管理，当然也是装不了Unix-like软件的，所以我们羡慕，我们妒忌，外加恨！</p>
+
+<hr />
+
+<p>今天要跟大家介绍一个为windows设计的包管理器，Chocolatey，有了它，你也能<code>choco install wget</code>, <code>choco install docker</code>这样装软件了，不用再羡慕水果用户，不用再木兰从军般装软件了。</p>
+
+<blockquote>
+<p><strong>Chocolatey is a package manager for Windows (like apt-get or yum but for Windows)</strong>. It was designed to be a decentralized framework for quickly installing applications and tools that you need. It is built on the NuGet infrastructure currently using PowerShell as its focus for delivering packages from the distros to your door, err computer.</p>
+</blockquote>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/06/github-ms-meme/">
+                <h3 class="media-heading">github被微软收购</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jun 6, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>微软以75亿美元收购全球最大的单身交友网站GitHub，应景<a href="https://mp.weixin.qq.com/s/koM3GU1zr8dE0S0fkdncxA">分享一张图片</a>，其实这图大家并不陌生，在《<a href="http://mp.weixin.qq.com/s/Xhi_ZkrEzUVdnCu7ECBS4w">听说你还不会画热图</a>》一文中，大家早已见过。</p>
+
+<p>这图实在太好玩，被套在各种场景上，今天就要教大家怎么用R，纯代码生成这样的图，简直是吐槽神器。这类图可以归入meme，画meme，当然少不了我写的meme包，这包收录在CRAN中，点击下面链接了解一下：</p>
+
+<ul>
+<li><a href="http://mp.weixin.qq.com/s/jDXjkrkq_YVhW-Z5Vx2-Fg">用R画meme ;)</a></li>
+<li><a href="https://mp.weixin.qq.com/s/4b8enFCd_lLt278Ddxp3rg">使用外部字体画meme</a></li>
+<li><a href="http://mp.weixin.qq.com/s/BPY4dPFrrNrDKccMvax07w">扪心自问，meme几何？</a></li>
+</ul>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/05/kopernio/">
+                <h3 class="media-heading">Kopernio: 快速一键下文献</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>kopernio是个浏览器插件，可以通过<a href="http://kopernio.com/">http://kopernio.com/</a>获得，现在这类插件其实挺多，当然多半是结合sci-hub，而sci-hub也是下文献领域绝对的王者，而且很多插件还有额外的一些功能，比如显示影响因子之类的，甚至于还有些给加二维码，微信扫一扫直接把文章分享到朋友圈，反正是啥都有人干。所以虽然我知道这个插件已经很久了，我一直没有介绍它的原因就在于此，它似乎也并不出彩。</p>
+
+<p>但今天我要介绍它，因为当你打开它的主页时，你会发现赫然公布着一个消息：</p>
+
+<blockquote>
+<p>We are excited to announce that Kopernio has joined Clarivate Analytics, the home of Web of Science and the Journal Impact Factor.</p>
+</blockquote>
+
+<p>它被Clarivate Analytics收购了，已经是Clarivate Analytics旗下的产品，这意味着以后可能会与Web of Science有更好的整合，它现在支持PubMed和Google Scholar，以后支持Web of Science肯定不在话下，现在是给你一个按钮，直接点击下PDF，以后可能通过整合Web of Science，比如给你期刊的影响因子、学科排名等Clarivate Analytics的拳头产品。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/05/explode-pieplot/">
+                <h3 class="media-heading">爆炸型的饼图</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><img src="http://guangchuangyu.github.io/blog_images/zhishixingqiu/pie_question.png" alt="" /></p>
+
+<p>这是CJ在我的星球里分享的一个关于饼图的实现方式，代码的排版太差，还有一点是对于普通用户来说，还是有点难度，如果是我，必须是写成函数，直接出图。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/05/ggplot2-clip/">
+                <h3 class="media-heading">ggplot2新参数clip</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>《<a href="http://mp.weixin.qq.com/s/BTBP_snTRKrjmRCjF6Cp3A">ggplot2字体溢出的那点破事</a>》这是经典老问题了，现在新版本的<code>ggplot2</code>有新的解决方案了，在<code>coord_cartesian</code>中新加入了<code>clip</code>参数，这样可以支持把图层画在画布之外，那么文本打过界也就支持了。这有一个好处，是可以支持direct label，而不需要调整<code>xlim</code>和<code>ylim</code>，毕竟你把<code>xlim</code>和<code>ylim</code>搞大有时候会给人以误导，认为你的数据取值范围就是图中的<code>xlim</code>和<code>ylim</code>，但实际上要小一些。</p>
+
+<p>我以<code>ggtree</code>为例，为了让tip label打全，那么<code>p1</code>把时间给搞到2020，但实际上最近的采样时间是2013年，这样你单看<code>x</code>轴的标记，总感觉有一点点不对路，或者有一点点别扭。现在好了，我不设置<code>xlim</code>，而是让label打过界，当然还是需要有足够的空间来放这些文本，这个可以通过把<code>margin</code>搞大来实现。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/04/r-35-release/">
+                <h3 class="media-heading">R-3.5.0发布，又该升级了</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>R <code>3.5.0</code>已经发布了，我昨天已经更新了，Bioconductor也将在5月初发布<code>3.7</code>版本，就我个人而言，新版的Bioconductor主要有以下一些新东西：</p>
+
+<h2 id="enrichplot">enrichplot</h2>
+
+<p>新包<code>enrichplot</code>，《<a href="https://mp.weixin.qq.com/s/93XIeDF3mUFX0koX6mTRpA">enrichplot: 让你们对clusterProfiler系列包无法自拔</a>
+》，以后<code>clusterProfiler</code>系列出图更好看了，而且所有图你都可以用<code>cowplot</code>拼图。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/04/ggvenn/">
+                <h3 class="media-heading">用ggplot2画维恩图</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><img src="http://guangchuangyu.github.io/blog_images/zhishixingqiu/ggvenn_question.png" alt="" /></p>
+
+<p>这是去年「知识星球」里的提问，「知识星球」相当于是众筹我一年的时间，向我提问，请谨慎入坑。</p>
+
+<p>我当时就写了一个函数<code>ggvenn</code>，这个函数其实包装了<code>venneuler</code>，但由于<code>venneuler</code>依赖<code>rJava</code>，而很多小伙伴不会装<code>rJava</code>，而因此装不了<code>yyplot</code>，所以我去掉了这个依赖，但如果你想要用<code>ggvenn</code>这个函数，请自行安装<code>rJava</code>和<code>venneuler</code>。其实还有另外一个包，<code>VennDiagram</code>，它的输出是<code>gList</code>，所以可以直接封装为<code>ggplot2</code>图层，然而对于画venn plot，我并没有太多的兴趣，《<a href="http://mp.weixin.qq.com/s/MqpfgkMJSFj0pYwcEjV9kQ">CS6: ChIPseeker的可视化方法（中秋节的视觉饕餮）</a>》一文中介绍的upset plot，可能更好一些。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/04/ggbackground/">
+                <h3 class="media-heading">使用ggbackground设置ggplot2的背景</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><pre><code>require(ggplot2)
+ p &lt;- ggplot(iris) + aes(x = Sepal.Length, y = Sepal.Width, color=Species) + 
+    geom_point(size=5) + theme_classic()
+</code></pre>
+
+<p>首先我们有一个图，是用<code>ggplot2</code>画的，上面这图大家太熟悉，不打印出来都知道是什么了。</p>
+
+<p>我在最新版的<code>ggimage</code>中加入了一个<code>ggbackground</code>的函数，我随便从网上找一张<code>iris</code>的图片，我们把<code>p</code>和<code>img</code>同时传给<code>ggbackground</code>就好了，非常容易，于是图的内容还是一样，但加了一张我们给定的图片做为背景。</p>
+
+<pre><code>require(ggimage) 
+img = &quot;https://assets.bakker.com/ProductPics/560x676/10028-00-BAKI_20170109094316.jpg&quot;
+ggbackground(p, img)
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/04/get-away/">
+                <h3 class="media-heading">滚吧，骚年</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>4月3号发了以下一条文字推送：</p>
+
+<p>遇到辣鸡导师，只有三个字，忍滚狠，我选择滚，考博期间，发现人品不好，我选择滚，《<a href="https://mp.weixin.qq.com/s/LzwSAYT7yyYTMrNnck9KCg">来香港读博其实是被逼的</a>》，读博期间，本着就是退学也要滚的心态，把导师给炒了，《<a href="http://mp.weixin.qq.com/s/iRC_ak53PbN9DJbkPzgBOQ">CS10: 八卦终结版</a>》，忍下来也会消磨掉你所有追求/理想，比狠的话，如果没有压制对方的渠道，对于这种势力严重不均衡的情况似乎不太现实，所以我奉劝大家，滚！一两年的沉没时间，放长远了看，根本不算什么，要勇于放弃，滚的远远的</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/04/dotplot-x-axis/">
+                <h3 class="media-heading">dotplot支持使用formula指定x轴变量</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>使用<code>barplot</code>来展示富集分析结果是很常用的，而<code>dotplot</code>比较<code>barplot</code>来说，多了一个点大小的信息，可以比<code>barplot</code>展示多一个信息，所以是比较推荐的，我之前已经写了《<a href="https://mp.weixin.qq.com/s/KzcnIH88d4E41Ybvr_76zA">dotplot展示富集分析结果</a>》和《<a href="https://mp.weixin.qq.com/s/JLon7oaddmTpsMzL03OJIA">dotplot for GSEA</a>》两篇文章，<code>dotplot</code>虽然简单，很多人会觉得会容易用<code>ggplot2</code>画出来，但其实有些细节，比如《<a href="https://mp.weixin.qq.com/s/VW4LvtQqXumrs6SMvwGgvQ">为什么画出来的点比指定的数目要多？</a>》，有些技巧，比如《<a href="https://mp.weixin.qq.com/s/JNIncz3W-59yjGk2ibJWUw">搞大你的点，让我们画真正的气泡图</a>》，是很多新手所不具备的，图虽然简单，但老司机的飚车技能也不可小看哦，所以我在《<a href="https://mp.weixin.qq.com/s/bloMPypAkQ3Ovlh406M-FQ">听说你也在画dotplot，但是我不服！</a>》的文后就说了一句话：</p>
+
+<blockquote>
+<p>clusterProfiler之所以好，因为真的考虑了很多细节！请放开那图，让clusterProfiler来画！</p>
+</blockquote>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no post found"
+         data-message-one="1 post found"
+         data-message-other="{n} posts found">
+         219 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('https://guangchuangyu.github.io/cn/images/cover.jpg');"></div>
+  
+
+
+    
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.js"></script>
+
+
+<script src="https://guangchuangyu.github.io/cn/js/script-wl33z0n6ocaypepiqrazthtivfrliqijej4rq8ek8gvrv1awftmgjuv8k4zc.min.js"></script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight').each(function(i, block) {
+    var code = "";
+    hljs.highlightAuto(block.innerText).value.split(/\r\n|\r|\n/).forEach(function(line) {
+      code += "<span class=\"line\">" + line + "</span><br>";
+    });
+    if (code.length > 0) {
+      block.innerHTML = code;  
+    }
+  });
+  $('pre > code').each(function(i, block) {
+    $(this).addClass('codeblock');
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/guangchuangyu.github.io\/cn\/2018\/06\/chocolatey\/';
+          
+            this.page.identifier = '\/2018\/06\/chocolatey\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'gcyu';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+
+    
+  </body>
+</html>
+

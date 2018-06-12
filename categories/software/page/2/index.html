@@ -229,6 +229,70 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/unpaywall/">
+          Sci-hub如果挂了，你还有神器下文献吗？
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-07-11T10:40:22&#43;08:00">
+      
+  July 11, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/biology">Biology</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/software">Software</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <blockquote>
+<p>在《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247483956&amp;idx=1&amp;sn=16df120e86b3e66395ce69c3abf76715&amp;chksm=ec43b373db343a6581301f52c923c7506e0f0789d5f0792fbf59da44f8b29b833cdbc46ddfc2#rd">如何获取文献</a>》一文中，我介绍了获取文献的方方面面，从搜索、文献管理、订阅、个性人推荐到下载。本文再继续说说文献下载神器。</p>
+</blockquote>
+
+<p>Sci-hub无疑现在是很多苦逼科研工作者所依赖的最大神器，然而最近败诉给爱思唯尔出版社，赔1500万美元，这点钱显然是不能够搞垮sci-hub的，但是<strong>败诉</strong>本身给大家带来的信号对sci-hub的影响会更大，必须更大！美国化学学会几天前也发起了对Sci-Hub的诉讼！sci-hub很有可能在败诉的影响下，被群起而攻之，最终被各大出版社给掐死。</p>
+
+<p></p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2017/07/unpaywall/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+            
+              
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/r-gui/">
           R的N种打开方式
         </a>
@@ -589,66 +653,6 @@ Warning: Could not open read file &quot;/tmp/8156.inpipe1&quot; for reading; ski
 </article>
 
             
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2013/06/compress-tiff/">
-          使用ImageMagick压缩TIFF
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2013-06-07T15:10:00&#43;08:00">
-      
-  June 7, 2013
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/software">Software</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        TIFF (Tagged Image File Format)拥有更宽的线性动态范围，所以在专业的图片处理上，一直是一个通用的文件格式。
-最近一篇发表在Metallomics的文章，我本来做的图片都是PDF格式，矢量图最好了，文件特别小，还可以任意放大。不过杂志社要求600DPI的TIFF或EPS。
-我第一反应是拒绝使用TIFF，600DPI的TIFF文件肯定非常大，EPS也是矢量图，我用R重新把图画一遍，存为EPS就OK了。画图的过程，我发现对EPS的支持不太好，老报些某字体不存在的错误。这当然不是什么大不了的事，自己指定字体就好了。问题在于有张图是拼的，我只能借助于软件转换，我用Inkscape处理，导出EPS，出来的图我发现有些细节并不太好。
-无奈之下还是用TIFF吧，Fig1和3都是R画的，直接指定分辨率和压缩算法，存为TIFF文件。Fig1是3000x3000pixel 600dpi的图，只有320k，Fig3是4200x4200pixel的图，也是600dpi，只有558k，用R产生TIFF还是非常靠谱的。
-关键是Fig2，这一张拼的图，存成PDF矢量图，需要用ImageMagick转换成600DPI的TIFF图片，ImageMagick需要安装Xcode才能在Mac下编译成功。
-Yus-Mac-Pro:others ygc$ convert -density 600 fig2.pdf fig2.tif Yus-Mac-Pro:others ygc$ identify -verbose fig2.tif Image: fig2.tif Format: TIFF (Tagged Image File Format) Class: DirectClass Geometry: 6000x4500+0+0 Resolution: 600x600 Print size: 10x7.5 Units: Undefined Type: PaletteMatte Base type: TrueColor Endianess: MSB &hellip; Yus-Mac-Pro:others ygc$ convert -density 600 -compress lzw fig2.pdf fig2_compress.tif Yus-Mac-Pro:others ygc$ ls -l fig2*.tif -rw-r&ndash;r&ndash; 1 ygc admin 216036263 May 23 17:53 fig2.
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2013/06/compress-tiff/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
             
   <div class="pagination-bar">
     <ul class="pagination">
@@ -668,7 +672,7 @@ Yus-Mac-Pro:others ygc$ convert -density 600 fig2.pdf fig2.tif Yus-Mac-Pro:other
           </a>
         </li>
       
-      <li class="pagination-number">page 2 of 3</li>
+      <li class="pagination-number">page 2 of 4</li>
     </ul>
   </div>
 
@@ -731,6 +735,35 @@ Yus-Mac-Pro:others ygc$ convert -density 600 fig2.pdf fig2.tif Yus-Mac-Pro:other
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/06/chocolatey/">
+                <h3 class="media-heading">你是我的巧克力 - Windows包管理器Chocolatey</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jun 6, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>试想一下，每次重装系统，都要安装一堆常用的小软件，7zip, notepad++, filezilla, winrar等等，每次都要搜索下载地址，下载，安装，摆明了是木兰要从军一般，“东市买骏马，西市买鞍鞯，南市买辔头，北市买长鞭”，当然Windows现在也有各种软件管家之类的软件，但很多是流氓软件，要带各种全家桶的，我宁愿自己来一次木兰从军记。</p>
+
+<p>大家都喜欢Linux的包管理，比如<code>apt-get</code>，而OSX也有homebrew，可以brew install一大票Unix-like的软件，而Windows用户只有羡慕的份，上面提到的流氓软件管理，当然也是装不了Unix-like软件的，所以我们羡慕，我们妒忌，外加恨！</p>
+
+<hr />
+
+<p>今天要跟大家介绍一个为windows设计的包管理器，Chocolatey，有了它，你也能<code>choco install wget</code>, <code>choco install docker</code>这样装软件了，不用再羡慕水果用户，不用再木兰从军般装软件了。</p>
+
+<blockquote>
+<p><strong>Chocolatey is a package manager for Windows (like apt-get or yum but for Windows)</strong>. It was designed to be a decentralized framework for quickly installing applications and tools that you need. It is built on the NuGet infrastructure currently using PowerShell as its focus for delivering packages from the distros to your door, err computer.</p>
+</blockquote>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -950,27 +983,6 @@ ggbackground(p, img)
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/04/vscode-r/">
-                <h3 class="media-heading">在VSCode中愉快地使用R</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>在《<a href="http://mp.weixin.qq.com/s/BsEm76Eq9_tbw3myobD_SA">你所不知道的，R的N种打开方式</a>》我介绍了N多种打开R的方式，甚至于你还能用python写的号称21世纪的R界面：《<a href="https://mp.weixin.qq.com/s/VbMq3ZKMdn0E3wauC4l_hg">R，python喊你回家吃饭啦</a>》。</p>
-
-<p>我自己一直很少用RStudio，而是用Emacs，虽然Emacs比较小众，也不适合这个公众号的粉丝，但文本编辑器之于程序程好比剑客手中的剑，一个用着顺手、长期使用的文本编辑器比什么都好，在《<a href="http://mp.weixin.qq.com/s/BsEm76Eq9_tbw3myobD_SA">你所不知道的，R的N种打开方式</a>》中我介绍了Emacs, Vim, textMate, sublime，今天要介绍另一款，VSCode，这是微软开源的文本编辑器，非常现代化，有很好的扩展生态。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -978,7 +990,7 @@ ggbackground(p, img)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         218 posts found
+         219 posts found
       </p>
     </div>
   </div>
