@@ -229,6 +229,68 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/03/ggpar/">
+          用par设置ggplot2参数？这个可以有！
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2018-03-01T10:17:48&#43;08:00">
+      
+  March 1, 2018
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <p>有小伙伴在说可以用par(mar)来设置画图的margin，但不能应用于ggplot2，这个可能很多新手都会很困扰，可能需要一段时间的探索之后，才能发现原来是用theme来设定。</p>
+
+<p>这当然你可以归结于说ggplot2和base plot是不同的东西，但从实质画图参数这一点而言，并没有什么同与不同，无非是设置的方式不同而已，而这种方式都是人定义的，我们完全可以人为定义它们兼容。</p>
+
+<p></p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2018/03/ggpar/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+            
+              
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/02/changing-branch-length-of-outgroup/">
           改变outgroup的枝长
         </a>
@@ -604,74 +666,6 @@ Loading required package: ggplot2
 </article>
 
             
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/01/geom-ord-ellipse/">
-          画个小圈圈
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2018-01-08T13:13:00&#43;08:00">
-      
-  January 8, 2018
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>之前我发表读书笔记《<a href="https://mp.weixin.qq.com/s/hPLlBAoN94TcyM-lP6jKCQ">主成分分析</a>》</p>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/2014/07/aa_pca.png" alt="" /></p>
-
-<p>这可能是你见过最好看的PCA图了，有人在「宏基因组」群里问有没有什么包可以画？像这种提问，我以前是吐槽过的，请猛击《<a href="https://mp.weixin.qq.com/s/4kJXBm7ojaTH6okLOFC7pA">如何画类似MEME的注释序列</a>》，当然说什么都没用，大家就是喜欢凡事问有包吗？因为包治百病嘛，不信你送个包给你女票试试！</p>
-
-<p><a href="https://mp.weixin.qq.com/s/D2cuo5puCb_2GVA4Ae2QEA">jimmy回答说ggbiplot</a>可以画差不多的，于是「宏基因组」公众号立刻就出来一篇《<a href="https://mp.weixin.qq.com/s/GGCPxQEe_DXefdp-veQtag">ggbiplot-最好看的PCA作图：样品PCA散点+分组椭圆+变量贡献与相关</a>》，后面又有人提问，能不能加两个置信区间？@Chenhao童鞋就给出了解决方案，并且写了篇<a href="http://lchblogs.netlify.com/post/2017-12-22-r-addconfellipselda/">博客文介绍</a>.</p>
-
-<p>他的作图是基于<code>ggord</code>包，只能应用于LDA，于是「宏基因组」公众号又跟进发一篇《<a href="https://mp.weixin.qq.com/s/F9c_ISpOpjHyiCNahoYTqQ">比PCA更好用的监督排序—LDA分析、作图及添加置信-ggord</a>》，你会发现他们介绍同一类型的作图，一会这个包，一会那个包，一会某包有A功能，某包又有B功能，我就不说什么了。</p>
-
-<p></p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2018/01/geom-ord-ellipse/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
             
   <div class="pagination-bar">
     <ul class="pagination">
@@ -754,6 +748,27 @@ Loading required package: ggplot2
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/06/root-edge/">
+                <h3 class="media-heading">ggtree画根分支</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jun 6, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><code>ggtree</code>画树是不带root edge的，之前在《<a href="http://mp.weixin.qq.com/s/b0OVm2ZDGbEZ48O1Uyp_WA">中空的环形树</a>》一文中，有用户想要加长长的root edge，这样变成环形树的时候，就可以用这个root edge把树给顶出去，这个我给出的解决方案是留白，大家可以回过去看那篇文章。</p>
+
+<p>然而root edge在某些时候还是需要的，我其实也一直有要写的想法，不过因为不是特别需要的东西，一直也就放着，刚好最近有用户在feature request，想要画root edge，于是我就实现了<code>geom_rootedge</code>图层，当你加这个图层的时候，root edge就自动画上去了。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -979,29 +994,6 @@ ggbackground(p, img)
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/04/dotplot-x-axis/">
-                <h3 class="media-heading">dotplot支持使用formula指定x轴变量</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>使用<code>barplot</code>来展示富集分析结果是很常用的，而<code>dotplot</code>比较<code>barplot</code>来说，多了一个点大小的信息，可以比<code>barplot</code>展示多一个信息，所以是比较推荐的，我之前已经写了《<a href="https://mp.weixin.qq.com/s/KzcnIH88d4E41Ybvr_76zA">dotplot展示富集分析结果</a>》和《<a href="https://mp.weixin.qq.com/s/JLon7oaddmTpsMzL03OJIA">dotplot for GSEA</a>》两篇文章，<code>dotplot</code>虽然简单，很多人会觉得会容易用<code>ggplot2</code>画出来，但其实有些细节，比如《<a href="https://mp.weixin.qq.com/s/VW4LvtQqXumrs6SMvwGgvQ">为什么画出来的点比指定的数目要多？</a>》，有些技巧，比如《<a href="https://mp.weixin.qq.com/s/JNIncz3W-59yjGk2ibJWUw">搞大你的点，让我们画真正的气泡图</a>》，是很多新手所不具备的，图虽然简单，但老司机的飚车技能也不可小看哦，所以我在《<a href="https://mp.weixin.qq.com/s/bloMPypAkQ3Ovlh406M-FQ">听说你也在画dotplot，但是我不服！</a>》的文后就说了一句话：</p>
-
-<blockquote>
-<p>clusterProfiler之所以好，因为真的考虑了很多细节！请放开那图，让clusterProfiler来画！</p>
-</blockquote>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1009,7 +1001,7 @@ ggbackground(p, img)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         219 posts found
+         220 posts found
       </p>
     </div>
   </div>

@@ -229,6 +229,87 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/kegg-gene-annotation/">
+          听说你的KEGG分析有大量的基因没注释
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-11-07T00:21:00&#43;08:00">
+      
+  November 7, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <p><a href="https://github.com/GuangchuangYu/clusterProfiler/issues/115">github上的问题</a>，问了两个问题，这是其中第二个：</p>
+
+<blockquote>
+<p>Meanwhile, when I fed the ENTREZID to enrichKEGG, it show me two unreasonable results:</p>
+
+<pre><code>kegg_enrich = enrichKEGG(
+    gene = new_ids$ENTREZID,
+    organism = 'hsa',
+    keyType = 'ncbi-geneid',
+    pvalueCutoff = 0.05,
+    #pAdjustMethod = 'BH',
+    #qvalueCutoff = 0.2,
+    use_internal_data = FALSE
+)
+</code></pre>
+
+<pre><code>head(kegg_enrich)
+              ID                           Description GeneRatio  BgRatio       pvalue   p.adjust     qvalue
+hsa04380 hsa04380            Osteoclast differentiation    14/281 128/7299 0.0003817040 0.04767338 0.04508266
+hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.0003875885 0.04767338 0.04508266
+</code></pre>
+
+<p>I noted that only 281 genes are remained(there are 700+ genes in my list). In case that there is something wrong wtihin my gene list, I also tried my list with DAVID. It gave me reasonable results. So this is my second question, why enrichKEGG cannot recognize my geneids?</p>
+</blockquote>
+
+<p></p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2017/11/kegg-gene-annotation/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+            
+              
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/pubmed-trend/">
           Pubmed年度趋势
         </a>
@@ -613,86 +694,6 @@ ga('send', 'pageview');
 </article>
 
             
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/set_axis_text_color/">
-          映射变量给axis上色
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-10-16T12:23:16&#43;08:00">
-      
-  October 16, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>小伙伴发来这个文章中的图，想要实现类似的图，用变量给axis text上色，并生成legend：</p>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/R/ggplot2/Screenshot 2017-07-04 14.10.55.png" alt="" /></p>
-
-<p>这个可以说ggplot2是不支持的，aes映射不会被应用于axis上，而theme也不支持aes映射，你只能自己手动搞个color vector传给theme来上色，但这无法生成legend。</p>
-
-<p>我只能打开脑洞，legend借助于额外的图层来生成，但这个额外的图层又不是我们想要在图形上展示的，这又是个无米之炊，我能想到的就是让图层透明，实际有，但你看不到，当然这样自动生成的legend也会看不到，但legend可以后面再修改，于是这不支持的事情，就通过变通变得可能：</p>
-
-<pre><code class="language-r">require(ggplot2)
-
-set.seed(2017-07-04)
-d &lt;- data.frame(x = letters[1:5], y = rnorm(5), 
-        group = sample(c(&quot;Control&quot;, &quot;Treatment&quot;), 5, replace=TRUE),
-        type = sample(LETTERS[1:2], 5, replace=TRUE)
-)
-
-p &lt;- ggplot(d, aes(x,y)) + 
-    geom_col(aes(fill=group))
-</code></pre>
-
-<p>这个代码很好懂，画一个柱状图，按<code>group</code>上色。</p>
-
-<p></p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/10/set_axis_text_color/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
             
   <div class="pagination-bar">
     <ul class="pagination">
@@ -775,6 +776,27 @@ p &lt;- ggplot(d, aes(x,y)) +
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/06/root-edge/">
+                <h3 class="media-heading">ggtree画根分支</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jun 6, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><code>ggtree</code>画树是不带root edge的，之前在《<a href="http://mp.weixin.qq.com/s/b0OVm2ZDGbEZ48O1Uyp_WA">中空的环形树</a>》一文中，有用户想要加长长的root edge，这样变成环形树的时候，就可以用这个root edge把树给顶出去，这个我给出的解决方案是留白，大家可以回过去看那篇文章。</p>
+
+<p>然而root edge在某些时候还是需要的，我其实也一直有要写的想法，不过因为不是特别需要的东西，一直也就放着，刚好最近有用户在feature request，想要画root edge，于是我就实现了<code>geom_rootedge</code>图层，当你加这个图层的时候，root edge就自动画上去了。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1000,29 +1022,6 @@ ggbackground(p, img)
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/04/dotplot-x-axis/">
-                <h3 class="media-heading">dotplot支持使用formula指定x轴变量</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>使用<code>barplot</code>来展示富集分析结果是很常用的，而<code>dotplot</code>比较<code>barplot</code>来说，多了一个点大小的信息，可以比<code>barplot</code>展示多一个信息，所以是比较推荐的，我之前已经写了《<a href="https://mp.weixin.qq.com/s/KzcnIH88d4E41Ybvr_76zA">dotplot展示富集分析结果</a>》和《<a href="https://mp.weixin.qq.com/s/JLon7oaddmTpsMzL03OJIA">dotplot for GSEA</a>》两篇文章，<code>dotplot</code>虽然简单，很多人会觉得会容易用<code>ggplot2</code>画出来，但其实有些细节，比如《<a href="https://mp.weixin.qq.com/s/VW4LvtQqXumrs6SMvwGgvQ">为什么画出来的点比指定的数目要多？</a>》，有些技巧，比如《<a href="https://mp.weixin.qq.com/s/JNIncz3W-59yjGk2ibJWUw">搞大你的点，让我们画真正的气泡图</a>》，是很多新手所不具备的，图虽然简单，但老司机的飚车技能也不可小看哦，所以我在《<a href="https://mp.weixin.qq.com/s/bloMPypAkQ3Ovlh406M-FQ">听说你也在画dotplot，但是我不服！</a>》的文后就说了一句话：</p>
-
-<blockquote>
-<p>clusterProfiler之所以好，因为真的考虑了很多细节！请放开那图，让clusterProfiler来画！</p>
-</blockquote>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1030,7 +1029,7 @@ ggbackground(p, img)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         219 posts found
+         220 posts found
       </p>
     </div>
   </div>

@@ -226,6 +226,70 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/highlight-clade-of-unrooted-tree/">
+          highlight clade of unrooted tree
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-09-12T20:10:00&#43;08:00">
+      
+  September 12, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <p>最初github上用户（<a href="https://github.com/JustGitting">@JustGitting</a>）报告说<code>geom_hilight</code>和<code>geom_cladelabel</code>不能用于unrooted树。详见：<a href="https://github.com/GuangchuangYu/ggtree/issues/118">https://github.com/GuangchuangYu/ggtree/issues/118</a></p>
+
+<p>我表示这确实是不行的，然后这就变成了feature request。我继续表示unrooted tree在ggtree中的实现并不好，我只实现了equal angle algorithm，在写注释图层之前，如果我有时间的话，我希望可以先实现更好的layout algorithm。</p>
+
+<p>然后JustGitting表示，他发现python的ETE和R的ape，在无根树的可视化上好像都不太行。问我有什么unrooted的layout algorithm，有没有什么参考文献，或许他可以帮忙实现，因为他觉得ggtree是最成熟的软件。</p>
+
+<p></p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2017/09/highlight-clade-of-unrooted-tree/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/color-in-gseaplot/">
           gseaplot自定义颜色
         </a>
@@ -609,116 +673,6 @@ p &lt;- ggplot(d, aes(x, y)) +
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/08/galaxy-chipseeker/">
-          Galaxy-ChIPseq流程
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-08-15T12:23:16&#43;08:00">
-      
-  August 15, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/chipseq">ChIPseq</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <blockquote>
-<p>这篇文章介绍如果把ChIPseeker搬上galaxy，和galaxy上其它软件一起拼成流程，跑一个ChIPseq注释的流程，从fastq文件开始，比对生成bam文件，peak calling生成bed文件，基因组注释，一个完整的流程，这个流程一旦设置好，每次跑都只是点点鼠标就可以了。
-本文额外附送：
-1. 如何把R程序变成命令行程序
-2. 如何把命令行程序搬上galaxy (知名的程序都有人搬好，但自己的程序还是需要学一下怎么配置的）</p>
-</blockquote>
-
-<p>Galaxy可以说是低端生信从业者杀手，如果你的能力只是跑跑流程，galaxy完全可以取代你的工作。</p>
-
-<p>如果你是苦逼的生物研究生，苦于要自己分析数据，不会跑命令行程序，对各种参数表示晕菜，galaxy也是拯救你的神器，如同有个做生信的人在旁边帮助你，参数你点点菜单就可以了，跟程序变运行又可以了，流程自己都可以设计并一键运行。</p>
-
-<h2 id="安装galaxy">安装galaxy</h2>
-
-<ul>
-<li>requirements: python 2.7 and git</li>
-<li>only three steps</li>
-</ul>
-
-<h3 id="克隆galaxy项目">克隆galaxy项目</h3>
-
-<pre><code class="language-bash">git clone https://github.com/galaxyproject/galaxy/
-cd galaxy
-## switch to master branch, stable release
-git checkout -b master origin/master
-```     
-
-
-
-
-### 安装
-
-
-```bash
-cd galaxy/config/
-cp galaxy.ini.sample galaxy.ini
-```     
-
-编辑_galaxy.ini_文件
-
-+ find the line: admin_users
-+ remove the # and add an email for your account
-
-
-
-### 运行
-
-```bash
-# go back to galaxy folder
-cd ..
-sh run.sh
-</code></pre>
-
-<p>然后就可以用浏览器打开<a href="http://localhost:8080">http://localhost:8080</a>，使用galaxy，就是这么简单。</p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/08/galaxy-chipseeker/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -800,6 +754,27 @@ sh run.sh
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/06/root-edge/">
+                <h3 class="media-heading">ggtree画根分支</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jun 6, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><code>ggtree</code>画树是不带root edge的，之前在《<a href="http://mp.weixin.qq.com/s/b0OVm2ZDGbEZ48O1Uyp_WA">中空的环形树</a>》一文中，有用户想要加长长的root edge，这样变成环形树的时候，就可以用这个root edge把树给顶出去，这个我给出的解决方案是留白，大家可以回过去看那篇文章。</p>
+
+<p>然而root edge在某些时候还是需要的，我其实也一直有要写的想法，不过因为不是特别需要的东西，一直也就放着，刚好最近有用户在feature request，想要画root edge，于是我就实现了<code>geom_rootedge</code>图层，当你加这个图层的时候，root edge就自动画上去了。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1025,29 +1000,6 @@ ggbackground(p, img)
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/04/dotplot-x-axis/">
-                <h3 class="media-heading">dotplot支持使用formula指定x轴变量</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>使用<code>barplot</code>来展示富集分析结果是很常用的，而<code>dotplot</code>比较<code>barplot</code>来说，多了一个点大小的信息，可以比<code>barplot</code>展示多一个信息，所以是比较推荐的，我之前已经写了《<a href="https://mp.weixin.qq.com/s/KzcnIH88d4E41Ybvr_76zA">dotplot展示富集分析结果</a>》和《<a href="https://mp.weixin.qq.com/s/JLon7oaddmTpsMzL03OJIA">dotplot for GSEA</a>》两篇文章，<code>dotplot</code>虽然简单，很多人会觉得会容易用<code>ggplot2</code>画出来，但其实有些细节，比如《<a href="https://mp.weixin.qq.com/s/VW4LvtQqXumrs6SMvwGgvQ">为什么画出来的点比指定的数目要多？</a>》，有些技巧，比如《<a href="https://mp.weixin.qq.com/s/JNIncz3W-59yjGk2ibJWUw">搞大你的点，让我们画真正的气泡图</a>》，是很多新手所不具备的，图虽然简单，但老司机的飚车技能也不可小看哦，所以我在《<a href="https://mp.weixin.qq.com/s/bloMPypAkQ3Ovlh406M-FQ">听说你也在画dotplot，但是我不服！</a>》的文后就说了一句话：</p>
-
-<blockquote>
-<p>clusterProfiler之所以好，因为真的考虑了很多细节！请放开那图，让clusterProfiler来画！</p>
-</blockquote>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1055,7 +1007,7 @@ ggbackground(p, img)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         219 posts found
+         220 posts found
       </p>
     </div>
   </div>
