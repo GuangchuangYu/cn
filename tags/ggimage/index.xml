@@ -6,10 +6,25 @@
     <description>Recent content in Ggimage on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Apr 2018 21:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 19 Jun 2018 13:06:59 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/tags/ggimage/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2018世界杯专属图层</title>
+      <link>https://guangchuangyu.github.io/cn/2018/06/geom_worldcup2018/</link>
+      <pubDate>Tue, 19 Jun 2018 13:06:59 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2018/06/geom_worldcup2018/</guid>
+      <description>&lt;p&gt;说到世界杯，我是不追的，但1998年法国世界杯我还是有印象的，那时候读初中的我，一直在集邮，那年代没有网购，通讯基本靠吼，当年的我已经是个老司机了，通过邮政汇款，买了好多东西，包括1998年世界杯从法国寄往中国的首日封，当然锁在老家的柜子里，尘封多年，所以我现在也没办法随手拍一张照片给大家分享。&lt;/p&gt;
+
+&lt;p&gt;另一件事，同样是1998年，那年升高一，开学第一天，老师让大家自我介绍一下，有位帅哥在见面第一天，就立了flag，说自己中考没考好，是因为看世界杯了，他高考必定要怎么样怎么样，毕竟世界杯是四年一次。你一个交钱进学校的学渣，牛逼吹大了，我印象深刻，所以我后来留意了一下这家伙高考上了那家高校，结果是「中山大学网络教育学院」，也就是电视大学！真的是情节反转如疾风！&lt;/p&gt;
+
+&lt;p&gt;《&lt;a href=&#34;https://mp.weixin.qq.com/s/EojwBbg0MUWijwGeNIjntg&#34;&gt;转发5个群，Y叔送你一顶帽子&lt;/a&gt;》这一篇文章写的是加圣诞帽子，但你要加个C罗、梅西，有什么差别吗？没有！你要加某球队的队服，有什么差别吗？没有。所以要制作世界杯专属头像，已然可以用ggimage纯代码生成。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>使用ggbackground设置ggplot2的背景</title>
