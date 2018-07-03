@@ -226,6 +226,66 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/wine-qq/">
+          Linux中使用QQ
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-07-09T07:57:46&#43;08:00">
+      
+  July 9, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/linux">Linux</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <p>之前在写《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484423&amp;idx=1&amp;sn=311c627bb70e6fc626bb1f014ec0a976&amp;chksm=ec43b540db343c56fb01f86851c0a4b685351b860d0c9ac2f9709857428b4b76b85bf2bc8b49#rd">开源的macOS和linux版微信</a>》时，有小伙伴问怎么搞QQ，做为一个上了年纪的人，我已经不怎么用QQ了。</p>
+
+<p>QQ跑Linux基本上无解，疼讯说好的Linux版死了好多年，现在只有WebQQ可以用。如果你们早生几年，就会遇到Linux上用QQ的好时代。在《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484265&amp;idx=1&amp;sn=7e184d6bf26d2b91485cab0aec3102b8&amp;chksm=ec43b22edb343b38586fa21db0831df49bfe4e0106b22c5c0d93afe16dda88dc1a1a6e5d5248#rd">十年前截屏</a>》一文中，我就晒过在Gentoo上跑用Java开发的LumaQQ，在NetBSD上跑用C++开发的Eva，这些都极好用，而且像当年QQ上好友纷纷隐身的时候，LumaQQ推出了如来神掌，你可以看到谁是隐身的，以至于有些Windows用户也去用LumaQQ，那是当年最美好的时代，然而这些都死掉了。</p>
+
+<p></p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2017/07/wine-qq/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/david-clusterprofiler/">
           SCIENCE文章用了DAVID被吐槽
         </a>
@@ -588,89 +648,6 @@ ga('send', 'pageview');
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/06/lxde-theme/">
-          Linux装windows的二逼
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-06-19T07:57:46&#43;08:00">
-      
-  June 19, 2017
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/linux">Linux</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>做为一个上了年纪的人，显然已经离不开微信了，macOS还好，企鹅还有照顾到，但linux难道就只能用web版吗？显然不应该的。</p>
-
-<p>如果你是Arch Linux用户的话，那么aur源里已经有好几个款式可以选了：</p>
-
-<pre><code class="language-shell"> ygc  ~  yaourt -Ss wechat
-aur/electronic-wechat 2.0-2 (8) (1.29)
-    A better WeChat client
-aur/electronic-wechat-bin 2.0-1 [installed] (3) (0.36)
-    A better WeChat on macOS and Linux. Built with Electron by Zhongyi Tong.
-aur/electronic-wechat-git 1.4.0.43.gb18ff6d-1 (6) (0.00)
-    An Electron application for WeChat
-aur/franz-bin 4.0.4-5 (86) (12.73)
-    Franz is a free messaging app / former Emperor of Austria and combines 
-    chat &amp; messaging services into one application. Franz currently supports 
-    Slack, WhatsApp, WeChat, HipChat, Facebook Messenger, Telegram, Google 
-    Hangouts, GroupMe, Skype and many more.
-aur/wechat-web-devtools-git 0.17.171900-1 (1) (0.78)
-    Wechat Web Developer Tools
-aur/wechatircd-git r85.bb8f354-1 (0) (0.00)
-    IRC server capable of controlling Web WeChat
-</code></pre>
-
-<p>这里我要介绍的是electronic-wechat。我比较懒，用下面的代码，安装二进制版：</p>
-
-<pre><code class="language-shell">yaourt -S electronic-wechat-bin
-</code></pre>
-
-<p></p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2017/06/lxde-theme/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -752,6 +729,38 @@ aur/wechatircd-git r85.bb8f354-1 (0) (0.00)
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/07/scholar-impact-factor/">
+                <h3 class="media-heading">scholar包检索期刊影响因子（2018年最新版本）</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jul 7, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>在《<a href="https://mp.weixin.qq.com/s/kBnLyNl2anXuMa6sDepRQw">一个要复活的R包和一个404的网站</a>》一文中第一次介绍了scholar包，它可以应用于《<a href="https://mp.weixin.qq.com/s/IBrEOh92r_90DRbGb3XlKg">自动抓取论文的引用数据</a>》，虽然数据源来自于Google Scholar，国内用户可能访问不了，但今天要介绍的这个功能，所有人都是可以用的，它允许我们检索期刊的影响因子，在《<a href="https://mp.weixin.qq.com/s/qnuiepL4-nSiSWJVJH54ug">scholar包支持检索期刊影响因子</a>》一文中第一次介绍了这个功能，当时是2016年的影响因子（2017年发布），现在数据已经更新至2018年6月26号发布的2017年影响因子。</p>
+
+<pre><code>&gt; library(scholar)
+&gt; jn = c(&quot;bioinformatics&quot;, &quot;methods in ecology and evolution&quot;,
++     &quot;molecular biosystems&quot;, &quot;molecular biology and evolution&quot;)
+&gt; get_impactfactor(jn)
+# A tibble: 4 x 4
+  Journal                          Cites ImpactFactor Eigenfactor
+  &lt;chr&gt;                            &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt;
+1 BIOINFORMATICS                   95300         5.48      0.201
+2 Methods in Ecology and Evolution  8866         6.36      0.0370
+3 Molecular BioSystems              7269         2.76      0.0175
+4 MOLECULAR BIOLOGY AND EVOLUTION  44664        10.2       0.102
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -969,37 +978,6 @@ aur/wechatircd-git r85.bb8f354-1 (0) (0.00)
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/04/ggbackground/">
-                <h3 class="media-heading">使用ggbackground设置ggplot2的背景</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><pre><code>require(ggplot2)
- p &lt;- ggplot(iris) + aes(x = Sepal.Length, y = Sepal.Width, color=Species) + 
-    geom_point(size=5) + theme_classic()
-</code></pre>
-
-<p>首先我们有一个图，是用<code>ggplot2</code>画的，上面这图大家太熟悉，不打印出来都知道是什么了。</p>
-
-<p>我在最新版的<code>ggimage</code>中加入了一个<code>ggbackground</code>的函数，我随便从网上找一张<code>iris</code>的图片，我们把<code>p</code>和<code>img</code>同时传给<code>ggbackground</code>就好了，非常容易，于是图的内容还是一样，但加了一张我们给定的图片做为背景。</p>
-
-<pre><code>require(ggimage) 
-img = &quot;https://assets.bakker.com/ProductPics/560x676/10028-00-BAKI_20170109094316.jpg&quot;
-ggbackground(p, img)
-</code></pre>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1007,7 +985,7 @@ ggbackground(p, img)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         221 posts found
+         222 posts found
       </p>
     </div>
   </div>

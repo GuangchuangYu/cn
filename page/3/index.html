@@ -226,6 +226,84 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/03/dotplot-for-homer-motif/">
+          怎样用HOMER算出的P-value画出CNS级别的泡泡图？
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2018-03-29T11:23:00&#43;08:00">
+      
+  March 29, 2018
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <ul>
+<li>第一棒：<a href="http://mp.weixin.qq.com/s/pTzvbfk5Ohu45RXb-ePzHw">CNS里的泡泡图</a></li>
+<li>第二棒：<a href="http://mp.weixin.qq.com/s/PVHCiqhzoW3DsvdsVQIKJg">怎样用HOMER找motif？</a></li>
+<li>第三棒：怎样用HOMER算出的P-value画出CNS级别的泡泡图？</li>
+</ul>
+
+<p>这是小伙伴的命题作文，下面这个数据是曾老湿给出来的，其中header行竟然放在了最后一行，我手工把它挪到了第一行，里面还有一个数据缺失的，会导致读了数据后会有NA值，需要去除。</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/MISC/motif_dotplot_data.png" alt="" /></p>
+
+<pre><code>$ file summary_ATAC_seq_motif.xlsx                                                                                     
+summary_ATAC_seq_motif.xlsx: Microsoft Excel 2007+
+</code></pre>
+
+<p>这是一个Excel文件，我们可以用<code>readxl</code>来读：</p>
+
+<pre><code>require(readxl)
+x &lt;- read_xlsx(&quot;summary_ATAC_seq_motif.xlsx&quot;)
+</code></pre>
+
+<p></p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2018/03/dotplot-for-homer-motif/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/03/scatterplot-for-matrix/">
           用散点可视化一个矩阵
         </a>
@@ -633,68 +711,6 @@ ggplot(d, aes(cut, carat, fill=color, color=color)) +
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/03/ggpar/">
-          用par设置ggplot2参数？这个可以有！
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2018-03-01T10:17:48&#43;08:00">
-      
-  March 1, 2018
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>有小伙伴在说可以用par(mar)来设置画图的margin，但不能应用于ggplot2，这个可能很多新手都会很困扰，可能需要一段时间的探索之后，才能发现原来是用theme来设定。</p>
-
-<p>这当然你可以归结于说ggplot2和base plot是不同的东西，但从实质画图参数这一点而言，并没有什么同与不同，无非是设置的方式不同而已，而这种方式都是人定义的，我们完全可以人为定义它们兼容。</p>
-
-<p></p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2018/03/ggpar/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -776,6 +792,38 @@ ggplot(d, aes(cut, carat, fill=color, color=color)) +
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/07/scholar-impact-factor/">
+                <h3 class="media-heading">scholar包检索期刊影响因子（2018年最新版本）</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jul 7, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>在《<a href="https://mp.weixin.qq.com/s/kBnLyNl2anXuMa6sDepRQw">一个要复活的R包和一个404的网站</a>》一文中第一次介绍了scholar包，它可以应用于《<a href="https://mp.weixin.qq.com/s/IBrEOh92r_90DRbGb3XlKg">自动抓取论文的引用数据</a>》，虽然数据源来自于Google Scholar，国内用户可能访问不了，但今天要介绍的这个功能，所有人都是可以用的，它允许我们检索期刊的影响因子，在《<a href="https://mp.weixin.qq.com/s/qnuiepL4-nSiSWJVJH54ug">scholar包支持检索期刊影响因子</a>》一文中第一次介绍了这个功能，当时是2016年的影响因子（2017年发布），现在数据已经更新至2018年6月26号发布的2017年影响因子。</p>
+
+<pre><code>&gt; library(scholar)
+&gt; jn = c(&quot;bioinformatics&quot;, &quot;methods in ecology and evolution&quot;,
++     &quot;molecular biosystems&quot;, &quot;molecular biology and evolution&quot;)
+&gt; get_impactfactor(jn)
+# A tibble: 4 x 4
+  Journal                          Cites ImpactFactor Eigenfactor
+  &lt;chr&gt;                            &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt;
+1 BIOINFORMATICS                   95300         5.48      0.201
+2 Methods in Ecology and Evolution  8866         6.36      0.0370
+3 Molecular BioSystems              7269         2.76      0.0175
+4 MOLECULAR BIOLOGY AND EVOLUTION  44664        10.2       0.102
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -993,37 +1041,6 @@ ggplot(d, aes(cut, carat, fill=color, color=color)) +
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/04/ggbackground/">
-                <h3 class="media-heading">使用ggbackground设置ggplot2的背景</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><pre><code>require(ggplot2)
- p &lt;- ggplot(iris) + aes(x = Sepal.Length, y = Sepal.Width, color=Species) + 
-    geom_point(size=5) + theme_classic()
-</code></pre>
-
-<p>首先我们有一个图，是用<code>ggplot2</code>画的，上面这图大家太熟悉，不打印出来都知道是什么了。</p>
-
-<p>我在最新版的<code>ggimage</code>中加入了一个<code>ggbackground</code>的函数，我随便从网上找一张<code>iris</code>的图片，我们把<code>p</code>和<code>img</code>同时传给<code>ggbackground</code>就好了，非常容易，于是图的内容还是一样，但加了一张我们给定的图片做为背景。</p>
-
-<pre><code>require(ggimage) 
-img = &quot;https://assets.bakker.com/ProductPics/560x676/10028-00-BAKI_20170109094316.jpg&quot;
-ggbackground(p, img)
-</code></pre>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1031,7 +1048,7 @@ ggbackground(p, img)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         221 posts found
+         222 posts found
       </p>
     </div>
   </div>

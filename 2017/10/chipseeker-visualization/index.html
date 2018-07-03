@@ -706,6 +706,38 @@ vennplot(genes[2:4], by='Vennerable')
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/07/scholar-impact-factor/">
+                <h3 class="media-heading">scholar包检索期刊影响因子（2018年最新版本）</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jul 7, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>在《<a href="https://mp.weixin.qq.com/s/kBnLyNl2anXuMa6sDepRQw">一个要复活的R包和一个404的网站</a>》一文中第一次介绍了scholar包，它可以应用于《<a href="https://mp.weixin.qq.com/s/IBrEOh92r_90DRbGb3XlKg">自动抓取论文的引用数据</a>》，虽然数据源来自于Google Scholar，国内用户可能访问不了，但今天要介绍的这个功能，所有人都是可以用的，它允许我们检索期刊的影响因子，在《<a href="https://mp.weixin.qq.com/s/qnuiepL4-nSiSWJVJH54ug">scholar包支持检索期刊影响因子</a>》一文中第一次介绍了这个功能，当时是2016年的影响因子（2017年发布），现在数据已经更新至2018年6月26号发布的2017年影响因子。</p>
+
+<pre><code>&gt; library(scholar)
+&gt; jn = c(&quot;bioinformatics&quot;, &quot;methods in ecology and evolution&quot;,
++     &quot;molecular biosystems&quot;, &quot;molecular biology and evolution&quot;)
+&gt; get_impactfactor(jn)
+# A tibble: 4 x 4
+  Journal                          Cites ImpactFactor Eigenfactor
+  &lt;chr&gt;                            &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt;
+1 BIOINFORMATICS                   95300         5.48      0.201
+2 Methods in Ecology and Evolution  8866         6.36      0.0370
+3 Molecular BioSystems              7269         2.76      0.0175
+4 MOLECULAR BIOLOGY AND EVOLUTION  44664        10.2       0.102
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/06/geom_worldcup2018/">
                 <h3 class="media-heading">2018世界杯专属图层</h3>
               </a>
@@ -919,37 +951,6 @@ vennplot(genes[2:4], by='Vennerable')
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/04/ggbackground/">
-                <h3 class="media-heading">使用ggbackground设置ggplot2的背景</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><pre><code>require(ggplot2)
- p &lt;- ggplot(iris) + aes(x = Sepal.Length, y = Sepal.Width, color=Species) + 
-    geom_point(size=5) + theme_classic()
-</code></pre>
-
-<p>首先我们有一个图，是用<code>ggplot2</code>画的，上面这图大家太熟悉，不打印出来都知道是什么了。</p>
-
-<p>我在最新版的<code>ggimage</code>中加入了一个<code>ggbackground</code>的函数，我随便从网上找一张<code>iris</code>的图片，我们把<code>p</code>和<code>img</code>同时传给<code>ggbackground</code>就好了，非常容易，于是图的内容还是一样，但加了一张我们给定的图片做为背景。</p>
-
-<pre><code>require(ggimage) 
-img = &quot;https://assets.bakker.com/ProductPics/560x676/10028-00-BAKI_20170109094316.jpg&quot;
-ggbackground(p, img)
-</code></pre>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -957,7 +958,7 @@ ggbackground(p, img)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         221 posts found
+         222 posts found
       </p>
     </div>
   </div>

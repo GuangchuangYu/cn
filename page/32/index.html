@@ -226,6 +226,79 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2006/06/os9-netbsd-dual-boot/">
+          安装os9和netbsd双系统
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2006-06-14T04:31:00&#43;08:00">
+      
+  June 14, 2006
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/bsd">BSD</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/mac-os">Mac OS</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/powerbook">Powerbook</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <h2 id="1-分区">1 分区</h2>
+
+<p>用MacOS X 10.2 的光盘启动，运行Disk Utility，选择“Install Mac OS
+9 Disk
+Drivers”不然分区将不能在OS9中使用，我一共分了5个分区，12G,10G,512M,20G,13.4G。其中12Ｇ装OS9系统，10Ｇ装netbsd系统，512Ｍ为swap分区，20Ｇ为home
+分区，最后一个为fat32格式，为两个系统所共享。</p>
+
+<h2 id="2-安装os9">2 安装os9</h2>
+
+<p>开机放入os9安装光盘，按住<code>Ｃ</code>键，由光盘启动进入os9，在光盘根目录下点安装系统。指定第一个分区，选择安装的软件，十来分钟，便装完了。重新启动，将netbsd的启动程序<code>ofwboot.xcf</code>放在os9的根目录下。</p>
+
+<h2 id="3-安装netbsd">3 安装netbsd</h2>
+
+<p></p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2006/06/os9-netbsd-dual-boot/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/">
           在emacs里使用maxima
         </a>
@@ -544,6 +617,38 @@ DeviceType=0x0, DeviceId=0x0
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/07/scholar-impact-factor/">
+                <h3 class="media-heading">scholar包检索期刊影响因子（2018年最新版本）</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jul 7, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>在《<a href="https://mp.weixin.qq.com/s/kBnLyNl2anXuMa6sDepRQw">一个要复活的R包和一个404的网站</a>》一文中第一次介绍了scholar包，它可以应用于《<a href="https://mp.weixin.qq.com/s/IBrEOh92r_90DRbGb3XlKg">自动抓取论文的引用数据</a>》，虽然数据源来自于Google Scholar，国内用户可能访问不了，但今天要介绍的这个功能，所有人都是可以用的，它允许我们检索期刊的影响因子，在《<a href="https://mp.weixin.qq.com/s/qnuiepL4-nSiSWJVJH54ug">scholar包支持检索期刊影响因子</a>》一文中第一次介绍了这个功能，当时是2016年的影响因子（2017年发布），现在数据已经更新至2018年6月26号发布的2017年影响因子。</p>
+
+<pre><code>&gt; library(scholar)
+&gt; jn = c(&quot;bioinformatics&quot;, &quot;methods in ecology and evolution&quot;,
++     &quot;molecular biosystems&quot;, &quot;molecular biology and evolution&quot;)
+&gt; get_impactfactor(jn)
+# A tibble: 4 x 4
+  Journal                          Cites ImpactFactor Eigenfactor
+  &lt;chr&gt;                            &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt;
+1 BIOINFORMATICS                   95300         5.48      0.201
+2 Methods in Ecology and Evolution  8866         6.36      0.0370
+3 Molecular BioSystems              7269         2.76      0.0175
+4 MOLECULAR BIOLOGY AND EVOLUTION  44664        10.2       0.102
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/06/geom_worldcup2018/">
                 <h3 class="media-heading">2018世界杯专属图层</h3>
               </a>
@@ -757,37 +862,6 @@ DeviceType=0x0, DeviceId=0x0
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/04/ggbackground/">
-                <h3 class="media-heading">使用ggbackground设置ggplot2的背景</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><pre><code>require(ggplot2)
- p &lt;- ggplot(iris) + aes(x = Sepal.Length, y = Sepal.Width, color=Species) + 
-    geom_point(size=5) + theme_classic()
-</code></pre>
-
-<p>首先我们有一个图，是用<code>ggplot2</code>画的，上面这图大家太熟悉，不打印出来都知道是什么了。</p>
-
-<p>我在最新版的<code>ggimage</code>中加入了一个<code>ggbackground</code>的函数，我随便从网上找一张<code>iris</code>的图片，我们把<code>p</code>和<code>img</code>同时传给<code>ggbackground</code>就好了，非常容易，于是图的内容还是一样，但加了一张我们给定的图片做为背景。</p>
-
-<pre><code>require(ggimage) 
-img = &quot;https://assets.bakker.com/ProductPics/560x676/10028-00-BAKI_20170109094316.jpg&quot;
-ggbackground(p, img)
-</code></pre>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -795,7 +869,7 @@ ggbackground(p, img)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         221 posts found
+         222 posts found
       </p>
     </div>
   </div>
