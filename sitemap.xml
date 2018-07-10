@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2018/07/clusterprofiler-ath/</loc>
+    <lastmod>2018-07-10T15:53:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2018/07/scholar-impact-factor/</loc>
     <lastmod>2018-07-03T15:22:35+08:00</lastmod>
   </url>
@@ -1324,7 +1329,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/clusterprofiler/</loc>
-    <lastmod>2018-04-08T19:06:16+08:00</lastmod>
+    <lastmod>2018-07-10T15:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1582,7 +1587,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/</loc>
-    <lastmod>2018-07-03T15:22:35+08:00</lastmod>
+    <lastmod>2018-07-10T15:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1834,7 +1839,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/orgdb/</loc>
-    <lastmod>2017-07-24T08:53:00+08:00</lastmod>
+    <lastmod>2018-07-10T15:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1954,7 +1959,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/post/</loc>
-    <lastmod>2018-07-03T15:22:35+08:00</lastmod>
+    <lastmod>2018-07-10T15:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2038,7 +2043,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/r/</loc>
-    <lastmod>2018-07-03T15:22:35+08:00</lastmod>
+    <lastmod>2018-07-10T15:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2189,6 +2194,12 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/</loc>
     <lastmod>2017-12-22T13:50:22+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/tair/</loc>
+    <lastmod>2018-07-10T15:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   

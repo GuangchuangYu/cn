@@ -401,6 +401,42 @@ Methods 2013年的文章中有100个barplot图，而只有20个boxplot图，从�
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/07/clusterprofiler-ath/">
+                <h3 class="media-heading">拟南芥的富集分析</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jul 7, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>「知识星球」里的问题，<a href="https://t.zsxq.com/aEyneA2">https://t.zsxq.com/aEyneA2</a>，拟南芥的ID怎么搞，这个内置是支持的。</p>
+
+<p>比如我随便搞几个ID来演示一下：</p>
+
+<pre><code>&gt; require(clusterProfiler)
+Loading required package: clusterProfiler
+
+clusterProfiler v3.9.0  For help: https://guangchuangyu.github.io/software/clusterProfiler
+
+If you use clusterProfiler in published research, please cite:
+Guangchuang Yu, Li-Gen Wang, Yanyan Han, Qing-Yu He. clusterProfiler: an R package for 
+comparing biological themes among gene clusters. OMICS: A Journal of Integrative Biology. 2012, 16(5):284-287.
+
+g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &quot;AT1G30310&quot;, &quot;AT3G18560&quot;,
+&quot;AT2G15960&quot;, &quot;AT2G29290&quot;, &quot;AT1G08930&quot;, &quot;AT2G44460&quot;, &quot;AT3G46600&quot;,
+&quot;AT5G24380&quot;, &quot;AT3G59270&quot;, &quot;AT5G55780&quot;, &quot;AT2G45090&quot;, &quot;AT5G38430&quot;,
+&quot;AT2G17040&quot;, &quot;AT4G35770&quot;, &quot;AT5G30341&quot;, &quot;AT1G56320&quot;, &quot;AT2G16367&quot;)
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/07/scholar-impact-factor/">
                 <h3 class="media-heading">scholar包检索期刊影响因子（2018年最新版本）</h3>
               </a>
@@ -623,29 +659,6 @@ Methods 2013年的文章中有100个barplot图，而只有20个boxplot图，从�
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/04/ggvenn/">
-                <h3 class="media-heading">用ggplot2画维恩图</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><img src="http://guangchuangyu.github.io/blog_images/zhishixingqiu/ggvenn_question.png" alt="" /></p>
-
-<p>这是去年「知识星球」里的提问，「知识星球」相当于是众筹我一年的时间，向我提问，请谨慎入坑。</p>
-
-<p>我当时就写了一个函数<code>ggvenn</code>，这个函数其实包装了<code>venneuler</code>，但由于<code>venneuler</code>依赖<code>rJava</code>，而很多小伙伴不会装<code>rJava</code>，而因此装不了<code>yyplot</code>，所以我去掉了这个依赖，但如果你想要用<code>ggvenn</code>这个函数，请自行安装<code>rJava</code>和<code>venneuler</code>。其实还有另外一个包，<code>VennDiagram</code>，它的输出是<code>gList</code>，所以可以直接封装为<code>ggplot2</code>图层，然而对于画venn plot，我并没有太多的兴趣，《<a href="http://mp.weixin.qq.com/s/MqpfgkMJSFj0pYwcEjV9kQ">CS6: ChIPseeker的可视化方法（中秋节的视觉饕餮）</a>》一文中介绍的upset plot，可能更好一些。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -653,7 +666,7 @@ Methods 2013年的文章中有100个barplot图，而只有20个boxplot图，从�
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         222 posts found
+         223 posts found
       </p>
     </div>
   </div>
