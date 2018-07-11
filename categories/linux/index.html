@@ -757,6 +757,32 @@ CPU，然后数据无法同步，只有两个原因，不是硬盘就是网络�
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/07/partial-match-when-subsetting-rowname-of-data-frame/">
+                <h3 class="media-heading">R总给我惊喜</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jul 7, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><blockquote>
+<p>Hello!
+First of all, I would like to thank you for this wonderful and very powerful package!</p>
+
+<p>I have tried to plot a phylogenetic tree with heatmap of associated matrix (with <code>gheatmap</code>).
+I found that the row names of matrix doesn&rsquo;t exactly match to the tip names of tree in case if there is missing data in associated matrix.
+In other words, if we have two species (e.g., Species<strong>198</strong> and Species<strong>1981</strong>), but only one of them is represented in the associated matrix, we will have colored cells for both species in the heatmap.</p>
+</blockquote>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/07/clusterprofiler-ath/">
                 <h3 class="media-heading">拟南芥的富集分析</h3>
               </a>
@@ -984,30 +1010,6 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
               <div class="media-content hide-xs font-merryweather"><p>《<a href="http://mp.weixin.qq.com/s/BTBP_snTRKrjmRCjF6Cp3A">ggplot2字体溢出的那点破事</a>》这是经典老问题了，现在新版本的<code>ggplot2</code>有新的解决方案了，在<code>coord_cartesian</code>中新加入了<code>clip</code>参数，这样可以支持把图层画在画布之外，那么文本打过界也就支持了。这有一个好处，是可以支持direct label，而不需要调整<code>xlim</code>和<code>ylim</code>，毕竟你把<code>xlim</code>和<code>ylim</code>搞大有时候会给人以误导，认为你的数据取值范围就是图中的<code>xlim</code>和<code>ylim</code>，但实际上要小一些。</p>
 
 <p>我以<code>ggtree</code>为例，为了让tip label打全，那么<code>p1</code>把时间给搞到2020，但实际上最近的采样时间是2013年，这样你单看<code>x</code>轴的标记，总感觉有一点点不对路，或者有一点点别扭。现在好了，我不设置<code>xlim</code>，而是让label打过界，当然还是需要有足够的空间来放这些文本，这个可以通过把<code>margin</code>搞大来实现。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/04/r-35-release/">
-                <h3 class="media-heading">R-3.5.0发布，又该升级了</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>R <code>3.5.0</code>已经发布了，我昨天已经更新了，Bioconductor也将在5月初发布<code>3.7</code>版本，就我个人而言，新版的Bioconductor主要有以下一些新东西：</p>
-
-<h2 id="enrichplot">enrichplot</h2>
-
-<p>新包<code>enrichplot</code>，《<a href="https://mp.weixin.qq.com/s/93XIeDF3mUFX0koX6mTRpA">enrichplot: 让你们对clusterProfiler系列包无法自拔</a>
-》，以后<code>clusterProfiler</code>系列出图更好看了，而且所有图你都可以用<code>cowplot</code>拼图。</p>
 
 <p></p></div>
             </div>

@@ -6,10 +6,28 @@
     <description>Recent content in R on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Jul 2018 15:53:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 11 Jul 2018 13:20:00 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>R总给我惊喜</title>
+      <link>https://guangchuangyu.github.io/cn/2018/07/partial-match-when-subsetting-rowname-of-data-frame/</link>
+      <pubDate>Wed, 11 Jul 2018 13:20:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2018/07/partial-match-when-subsetting-rowname-of-data-frame/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Hello!
+First of all, I would like to thank you for this wonderful and very powerful package!&lt;/p&gt;
+
+&lt;p&gt;I have tried to plot a phylogenetic tree with heatmap of associated matrix (with &lt;code&gt;gheatmap&lt;/code&gt;).
+I found that the row names of matrix doesn&amp;rsquo;t exactly match to the tip names of tree in case if there is missing data in associated matrix.
+In other words, if we have two species (e.g., Species&lt;strong&gt;198&lt;/strong&gt; and Species&lt;strong&gt;1981&lt;/strong&gt;), but only one of them is represented in the associated matrix, we will have colored cells for both species in the heatmap.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>拟南芥的富集分析</title>
@@ -1626,10 +1644,10 @@ showtext.auto()
     
     <item>
       <title>ggplot2字体溢出的那点破事</title>
-      <link>https://guangchuangyu.github.io/cn/2017/04/ggplot2%E5%AD%97%E4%BD%93%E6%BA%A2%E5%87%BA%E7%9A%84%E9%82%A3%E7%82%B9%E7%A0%B4%E4%BA%8B/</link>
+      <link>https://guangchuangyu.github.io/cn/2017/04/ggplot2-overflow/</link>
       <pubDate>Mon, 03 Apr 2017 15:10:00 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/2017/04/ggplot2%E5%AD%97%E4%BD%93%E6%BA%A2%E5%87%BA%E7%9A%84%E9%82%A3%E7%82%B9%E7%A0%B4%E4%BA%8B/</guid>
+      <guid>https://guangchuangyu.github.io/cn/2017/04/ggplot2-overflow/</guid>
       <description>&lt;p&gt;比如下面的代码：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;require(ggplot2)
