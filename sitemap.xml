@@ -888,6 +888,11 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2011/09/monte-carlo-estimate-pi/</loc>
+    <lastmod>2011-09-21T10:40:22+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2011/08/love-function-plot/</loc>
     <lastmod>2011-08-06T05:37:55+08:00</lastmod>
   </url>
@@ -1753,6 +1758,12 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/mc/</loc>
+    <lastmod>2011-09-21T10:40:22+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/tags/meme/</loc>
     <lastmod>2018-06-05T08:53:00+08:00</lastmod>
     <priority>0</priority>
@@ -1994,7 +2005,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/programming/</loc>
-    <lastmod>2008-12-14T09:18:00+08:00</lastmod>
+    <lastmod>2011-09-21T10:40:22+08:00</lastmod>
     <priority>0</priority>
   </url>
   
