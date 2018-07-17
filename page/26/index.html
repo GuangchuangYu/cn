@@ -351,6 +351,85 @@ list也有诸多讨论，因为它导致了某些包编译出错（估计是NAME
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/09/mc-integration/">
+          MC积分
+        </a>
+      </h1>
+      <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2011-09-22T06:40:22&#43;08:00">
+      
+  September 22, 2011
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/programming">Programming</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/calculus">Calculus</a>
+    
+  
+
+
+</div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>
+        <p>Monte Carlo方法由冯·诺伊曼于二战时提出，1777年法国人布丰用此思路<a href="http://guangchuangyu.github.io/cn/2011/09/monte-carlo-estimate-pi/">估计pi值</a>被认为是Monte
+Carlo的起源，这个方法简单又快速，通过产生随机数，将数值计算问题变成随机变量的某些特征值（比如期望值）。</p>
+
+<p>积分运算，和<a href="http://guangchuangyu.github.io/cn/2011/09/monte-carlo-estimate-pi/">估计pi值</a>一样，用hit
+and miss法估计。</p>
+
+<pre><code>hit_miss &lt;- function(fun, lower, upper, n=500) {
+    # Monte Carlo integration using the hit and miss method
+    x &lt;- runif(n, lower, upper)
+    f.value &lt;- sapply(seq(lower, upper, 0.001), fun)
+    f.min &lt;- min(f.value)
+    f.max &lt;- max(f.value)
+    y &lt;- runif(n, f.min, f.max)
+    hits &lt;- sum(y &lt;= fun(x))
+    area &lt;- (upper-lower) * f.min + hits/n * (upper-lower) * (f.max-f.min)
+    return(area)
+}
+</code></pre>
+
+<p>hit and miss方法收敛太慢，效率并不高，通常所说的MC积分是指下面这个方法。</p>
+
+<p></p>
+
+        <br>
+        <a href="https://guangchuangyu.github.io/cn/2011/09/mc-integration/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/09/monte-carlo-estimate-pi/">
           Monte Carlo估计pi值
         </a>
@@ -592,104 +671,6 @@ contour_plot(17*x^2-16*abs(x)*y+17*y^2-225, [x,-sqrt(17),sqrt(17)],[y,-15*sqrt(1
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/07/a-simple-gene-finder/">
-          a simple gene finder
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2011-07-10T09:04:46&#43;08:00">
-      
-  July 10, 2011
-
-    </time>
-  
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/conference">conference</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-
-</div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>上了几天的课，<a href="http://ibw2011.fmmu.edu.cn/schedule.htm">http://ibw2011.fmmu.edu.cn/schedule.htm</a>
-今天就上完了，只完成了project 1，想写gibbs sampling，但是没搞明白，汗。</p>
-
-<p>这个纯属练习用，没啥实用价值。</p>
-
-<blockquote>
-<p>Course Projects:</p>
-
-<p>Project 1: Implementation of a simple gene finder</p>
-
-<p>GOAL</p>
-
-<p>Build a simple codon-usage based gene finder for finding genes in
-E.coli.</p>
-
-<p>Procedure</p>
-
-<p>Collect 100 gene sequences from the bacterium E. coli in the genbank
-(<a href="http://www.ncbi.nlm.nihh.gov">http://www.ncbi.nlm.nihh.gov</a>). Compute the codon usage table based on
-these genes (and the translated protein sequences from them); Build a
-probabilistic model based on the codon usages; Implement a random
-sequence model in which the nucleotide frequency is computed from the
-100 E. coli genes. For a given DNA sequence (and one selected reading
-frame), compare your model with a random sequence model; Results that
-you should submit:</p>
-
-<p>Two FASTA files for the collected 100 genes and 100 translated protein
-sequences; The printed codon usage table; A program named ECgnfinder,
-running with the syntax as ECgnfinder –i inputfile</p>
-
-<p>Inputfile stands for the name of input file, which should contain one
-DNA sequence in FASTA file format; the program should be able to
-report an error message if the input file is in the wrong format.</p>
-
-<p>The output should be printed to the standard output as (xxx stands for
-the likelihood)</p>
-
-<p>ORF1: xxx ORF2: xxx</p>
-</blockquote>
-
-<p></p>
-
-        <br>
-        <a href="https://guangchuangyu.github.io/cn/2011/07/a-simple-gene-finder/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -709,7 +690,7 @@ the likelihood)</p>
           </a>
         </li>
       
-      <li class="pagination-number">page 26 of 32</li>
+      <li class="pagination-number">page 26 of 33</li>
     </ul>
   </div>
 
@@ -1042,7 +1023,7 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         225 posts found
+         226 posts found
       </p>
     </div>
   </div>
