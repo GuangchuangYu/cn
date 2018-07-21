@@ -17,8 +17,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.30.2">
-    <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
+    <meta name="generator" content="Hugo 0.44 with theme Tranquilpeak 0.4.3-BETA">
     <title>Boxplot</title>
     <meta name="author" content="Guangchuang Yu">
     <meta name="keywords" content="">
@@ -57,25 +56,28 @@
     
 
     
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.css" />
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-u6mk0ojoywresbx8iepslrmmhl4stuhrsxuwhkpwrkrx7mryjcaimasnk4pi.min.css" />
+    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
     
     
 
     
       
 <script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-77901140-1', 'auto');
-ga('send', 'pageview');
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-77901140-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
     
@@ -113,11 +115,10 @@ ga('send', 'pageview');
         </a>
         <h4 class="sidebar-profile-name">Guangchuang Yu</h4>
         
-        <h5 class="sidebar-profile-bio">a senior-in-age-but-not-senior-in-knowledge bioinformatician</h5>
-        <img alt="微信公众号" src="https://guangchuangyu.github.io/blog_images/biobabble.jpg" width="200" height="200">
+          <h5 class="sidebar-profile-bio">a senior-in-age-but-not-senior-in-knowledge bioinformatician</h5>
         
       </div>
-      
+    
     <ul class="sidebar-buttons">
       
   <li class="sidebar-button">
@@ -170,18 +171,20 @@ ga('send', 'pageview');
     </a>
   </li>
 
+
     </ul>
     <ul class="sidebar-buttons">
       
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://github.com/GuangchuangYu" target="_blank">
+      <a class="sidebar-button-link " href="https://github.com/GuangchuangYu" target="_blank" rel="noopener">
     
       <i class="sidebar-button-icon fa fa-lg fa-github"></i>
       
       <span class="sidebar-button-desc">GitHub</span>
     </a>
   </li>
+
 
     </ul>
     <ul class="sidebar-buttons">
@@ -195,6 +198,7 @@ ga('send', 'pageview');
       <span class="sidebar-button-desc">RSS</span>
     </a>
   </li>
+
 
     </ul>
   </div>
@@ -233,15 +237,16 @@ ga('send', 'pageview');
           同一数据多变量分组的boxplot?
         </a>
       </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-10-30T00:53:00&#43;08:00">
       
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-10-30T00:53:00&#43;08:00">
+        
   October 30, 2017
 
-    </time>
-  
-  
+      </time>
+    
+    
   
   
     <span>in</span>
@@ -250,21 +255,18 @@ ga('send', 'pageview');
     
   
 
-
-</div>
+  </div>
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p><img src="https://guangchuangyu.github.io/blog_images/R/boxplot_multiple_group_files/WechatIMG111.png" alt="" /></p>
+      <p><img src="https://guangchuangyu.github.io/blog_images/R/boxplot_multiple_group_files/WechatIMG111.png" alt="" /></p>
 
 <p>小密圈的问题，不是三两句话可以说明白的事情，必须要写文来解答，上一次写文是《<a href="http://mp.weixin.qq.com/s/Xhi_ZkrEzUVdnCu7ECBS4w">听说你还不会画热图</a>》，里面正好吐槽了某知乎大V的「除了ggplot2之外其它都是鸡肋」，这次正好也可以再次呼应一下。</p>
 
 <p>这个图明显是R的base graphics做的，图是可圈可点的，能做出这图来，也已经是告别了只会用plot的低级趣味。这其实是4个图拼起来的，第一个图只是多了个y轴而已，它们画起来是一样的，那就是只画boxplot，不画x和y轴，（你可能会说不是有x轴？），x轴是后面再加上去的，而且加x轴的时候，不写labels，只有线条没有文本（你可能又会说明明有文本！），因为<code>axis</code>这个函数只支持labels要么是水平的，要么是垂直的，旋转某个角度是不支持的，所以labels是额外再打上去的。这里一张小小的图，门道还是挺多的。</p>
 
 <p></p>
-
-        <br>
+      <p>
         <a href="https://guangchuangyu.github.io/cn/2017/10/boxplot-multiple-group/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
@@ -295,15 +297,16 @@ ga('send', 'pageview');
           boxplot
         </a>
       </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2014-03-04T12:23:16&#43;08:00">
       
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2014-03-04T12:23:16&#43;08:00">
+        
   March 4, 2014
 
-    </time>
-  
-  
+      </time>
+    
+    
   
   
     <span>in</span>
@@ -312,13 +315,11 @@ ga('send', 'pageview');
     
   
 
-
-</div>
+  </div>
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>生物坑很多人画图只会直方图，统计只会T检验，在暨大见过太多的学生连T检验都不会，分不清SEM和SD的差别，也不清楚T检验那几个简单参数的含义。我写统计笔记也是因为不想重复性地跟学生讲解T检验。</p>
+      <p>生物坑很多人画图只会直方图，统计只会T检验，在暨大见过太多的学生连T检验都不会，分不清SEM和SD的差别，也不清楚T检验那几个简单参数的含义。我写统计笔记也是因为不想重复性地跟学生讲解T检验。</p>
 
 <p>Barplot和T test一样普遍而流行，barplot适合于表示计数数据和比例，显示比例也可以用pie
 plot，但直方图比饼图要好，因为人类的眼睛适合于比较高度，而不是弧度。</p>
@@ -326,8 +327,7 @@ plot，但直方图比饼图要好，因为人类的眼睛适合于比较高度�
 <p>多半时候生物学数据并非简单的计数数据，对于测量数据，在展示数据分布时，很多人会使用他们熟悉的barplot，用高度来表示mean，然后再加上errorbar，这样展示数据，信息量是非常低的，使用boxplot能够提供更多的数据分布信息，能更好地展现数据，但可能很多人只会在excel里画barplot，Nature
 Methods 2013年的文章中有100个barplot图，而只有20个boxplot图，从这里就可以看出来，用boxplot的人远远没有barplot多，于是NPG怒了，写了两篇专栏文章<a href="http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2807.html">Points of View: Bar charts and box plots</a>和<a href="http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2813.html">Points of Significance: Visualizing samples with box plots</a>并且发表了一篇<a href="http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2811.html">BoxPlotR: a web tool for generation of box plots</a>方便大家画boxplot，如此简单的web tool能够发Nature Methods，实在是让人羡慕妒忌恨啊。
 </p>
-
-        <br>
+      <p>
         <a href="https://guangchuangyu.github.io/cn/2014/03/boxplot/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
@@ -383,7 +383,7 @@ Methods 2013年的文章中有100个barplot图，而只有20个boxplot图，从�
   <div class="modal">
     <div class="modal-header">
       <span class="close-button"><i class="fa fa-close"></i></span>
-      <a href="https://algolia.com" target="_blank" class="searchby-algolia text-color-light link-unstyled">
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
         <span class="searchby-algolia-text text-color-light text-small">by</span>
         <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
       </a>
@@ -668,7 +668,7 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         226 posts found
+         225 posts found
       </p>
     </div>
   </div>
@@ -681,32 +681,13 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
 
 
     
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
 
 
-<script src="https://guangchuangyu.github.io/cn/js/script-wl33z0n6ocaypepiqrazthtivfrliqijej4rq8ek8gvrv1awftmgjuv8k4zc.min.js"></script>
+<script src="https://guangchuangyu.github.io/cn/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
 
-<script>
-$(document).ready(function() {
-  hljs.configure({ classPrefix: '', useBR: false });
-  $('pre.code-highlight').each(function(i, block) {
-    var code = "";
-    hljs.highlightAuto(block.innerText).value.split(/\r\n|\r|\n/).forEach(function(line) {
-      code += "<span class=\"line\">" + line + "</span><br>";
-    });
-    if (code.length > 0) {
-      block.innerHTML = code;  
-    }
-  });
-  $('pre > code').each(function(i, block) {
-    $(this).addClass('codeblock');
-    hljs.highlightBlock(block);
-  });
-});
-</script>
 
 
 

@@ -17,8 +17,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.30.2">
-    <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
+    <meta name="generator" content="Hugo 0.44 with theme Tranquilpeak 0.4.3-BETA">
     <title>R</title>
     <meta name="author" content="Guangchuang Yu">
     <meta name="keywords" content="">
@@ -57,25 +56,28 @@
     
 
     
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.css" />
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-u6mk0ojoywresbx8iepslrmmhl4stuhrsxuwhkpwrkrx7mryjcaimasnk4pi.min.css" />
+    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
     
     
 
     
       
 <script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-77901140-1', 'auto');
-ga('send', 'pageview');
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-77901140-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
     
@@ -113,11 +115,10 @@ ga('send', 'pageview');
         </a>
         <h4 class="sidebar-profile-name">Guangchuang Yu</h4>
         
-        <h5 class="sidebar-profile-bio">a senior-in-age-but-not-senior-in-knowledge bioinformatician</h5>
-        <img alt="微信公众号" src="https://guangchuangyu.github.io/blog_images/biobabble.jpg" width="200" height="200">
+          <h5 class="sidebar-profile-bio">a senior-in-age-but-not-senior-in-knowledge bioinformatician</h5>
         
       </div>
-      
+    
     <ul class="sidebar-buttons">
       
   <li class="sidebar-button">
@@ -170,18 +171,20 @@ ga('send', 'pageview');
     </a>
   </li>
 
+
     </ul>
     <ul class="sidebar-buttons">
       
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://github.com/GuangchuangYu" target="_blank">
+      <a class="sidebar-button-link " href="https://github.com/GuangchuangYu" target="_blank" rel="noopener">
     
       <i class="sidebar-button-icon fa fa-lg fa-github"></i>
       
       <span class="sidebar-button-desc">GitHub</span>
     </a>
   </li>
+
 
     </ul>
     <ul class="sidebar-buttons">
@@ -195,6 +198,7 @@ ga('send', 'pageview');
       <span class="sidebar-button-desc">RSS</span>
     </a>
   </li>
+
 
     </ul>
   </div>
@@ -233,15 +237,16 @@ ga('send', 'pageview');
           R包辣鸡之CorMut
         </a>
       </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-01-17T12:23:16&#43;08:00">
       
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-01-17T12:23:16&#43;08:00">
+        
   January 17, 2017
 
-    </time>
-  
-  
+      </time>
+    
+    
   
   
     <span>in</span>
@@ -250,21 +255,18 @@ ga('send', 'pageview');
     
   
 
-
-</div>
+  </div>
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <blockquote>
+      <blockquote>
 <p>曾经QQ上有人叫我帮忙，跑某个R包做个分析，我一看那包，一堆bug，显然不能用，那就不是简单的事了，我可没空帮他写代码，于是他就经常恶心我，有事没事就来说我写ggtree没意义，不是实质科研，不如跟他做点牛逼的，不如再写个R包干他那事。昨天用马甲在进化群里问画树，我还热心贴个代码给他，说看不懂，我在群里说了，我写个文详细介绍一下。然而他的马甲身份暴露啦，所以今日跳票，我写好的文也不发了，你牛逼就不要用马甲来骗代码呀，ggtree没用你不要用呀，叔就是这么任性😎</p>
 </blockquote>
 
 <p>之前讲过某个R包我一看一堆bug，直接放弃，今天倒是拿出来晒一下，不为别的，我只想说一句，一知半解是很危险的，盲目相信软件也是很危险的。</p>
 
 <p></p>
-
-        <br>
+      <p>
         <a href="https://guangchuangyu.github.io/cn/2017/01/cormut/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
@@ -295,15 +297,16 @@ ga('send', 'pageview');
           ChIPseq从入门到放弃
         </a>
       </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-01-08T22:53:00&#43;08:00">
       
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-01-08T22:53:00&#43;08:00">
+        
   January 8, 2017
 
-    </time>
-  
-  
+      </time>
+    
+    
   
   
     <span>in</span>
@@ -314,13 +317,11 @@ ga('send', 'pageview');
     
   
 
-
-</div>
+  </div>
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>接下来要出一个ChIPseq系列，讲一讲ChIPseq和我的ChIPseeker包，从入门到放弃是我自己的个人写照。我做ChIPseq总共也就3个月的时间，做的事情并不多，在一知半解的情况下写下了ChIPseeker包。</p>
+      <p>接下来要出一个ChIPseq系列，讲一讲ChIPseq和我的ChIPseeker包，从入门到放弃是我自己的个人写照。我做ChIPseq总共也就3个月的时间，做的事情并不多，在一知半解的情况下写下了ChIPseeker包。</p>
 
 <p>我当时被要求做ChIPseq分析是为他人做嫁衣，而且是完全白干那种，但做为学生，白干也得干。</p>
 
@@ -329,8 +330,7 @@ ga('send', 'pageview');
 <p>当时一开始使用ChIPpeakAnno做注释，但用UCSC genome browser检验结果的时候，发现对不上。在对ChIPpeakAnno包不满意的情况下，开始着手写ChIPseeker，其实在使用ChIPpeakAnno的时候，我就有写代码对结果做一些可视化，所以未有ChIPseeker先有ChIPseeker的部分可视化功能。当时写了篇博客文说ChIPpeakAnno的问题，一个月后就在Bioconductor上发表了ChIPseeker，这包完全是我半夜在宿舍里写出来的。</p>
 
 <p></p>
-
-        <br>
+      <p>
         <a href="https://guangchuangyu.github.io/cn/2017/01/chipseq%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E6%94%BE%E5%BC%83/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
@@ -361,15 +361,16 @@ ga('send', 'pageview');
           clifun:在R里装装逼
         </a>
       </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2016-12-13T00:53:00&#43;08:00">
       
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2016-12-13T00:53:00&#43;08:00">
+        
   December 13, 2016
 
-    </time>
-  
-  
+      </time>
+    
+    
   
   
     <span>in</span>
@@ -378,19 +379,16 @@ ga('send', 'pageview');
     
   
 
-
-</div>
+  </div>
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>天天活在命令行下，需要一些有趣的小命令来调节一下枯燥的生活（其实是需要装装逼）。</p>
+      <p>天天活在命令行下，需要一些有趣的小命令来调节一下枯燥的生活（其实是需要装装逼）。</p>
 
 <p><img src="https://guangchuangyu.github.io/blog_images/R/clifun/Screen Shot 2016-12-12 at 1.42.00 PM.png" alt="" /></p>
 
 <p></p>
-
-        <br>
+      <p>
         <a href="https://guangchuangyu.github.io/cn/2016/12/clifun/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
@@ -421,15 +419,16 @@ ga('send', 'pageview');
           跨物种计算基因相似性
         </a>
       </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2016-12-07T00:53:00&#43;08:00">
       
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2016-12-07T00:53:00&#43;08:00">
+        
   December 7, 2016
 
-    </time>
-  
-  
+      </time>
+    
+    
   
   
     <span>in</span>
@@ -438,13 +437,11 @@ ga('send', 'pageview');
     
   
 
-
-</div>
+  </div>
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <blockquote>
+      <blockquote>
 <p>Hi,</p>
 
 <p>I know this question has been asked before a long time ago and I don&rsquo;t see an answer of that question in the mailing list or in the vignette of GOsemsim package. So I was wondering what is the easiest possible way of calculating GO semantic similarity value for orthologus gene pairs between two species using the above R package or any other package you know of. I am not doing this for less annotated species I need to calculate that for orthologus genes between Human and Mouse (both of which are well annotated IMHO). So I would much appreciate it if anyone who has already done this before can point me to a resource which already has pre-calculated semantic similarity values for Mouse and Human orthologues or has inbuilt code to do that.</p>
@@ -455,8 +452,7 @@ ga('send', 'pageview');
 <p>这是Bioconductor support site上的<a href="https://support.bioconductor.org/p/90063/">问题</a>，问的是他想要计算人类和老鼠的直系同源基因通过GO注释来计算语义相似性，问GOSemSim是否支持，这个答案是yes and no。</p>
 
 <p></p>
-
-        <br>
+      <p>
         <a href="https://guangchuangyu.github.io/cn/2016/12/%E8%B7%A8%E7%89%A9%E7%A7%8D%E8%AE%A1%E7%AE%97%E5%9F%BA%E5%9B%A0%E7%9B%B8%E4%BC%BC%E6%80%A7/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
@@ -487,15 +483,16 @@ ga('send', 'pageview');
           中空的环形树
         </a>
       </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2016-12-03T00:53:00&#43;08:00">
       
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2016-12-03T00:53:00&#43;08:00">
+        
   December 3, 2016
 
-    </time>
-  
-  
+      </time>
+    
+    
   
   
     <span>in</span>
@@ -506,20 +503,17 @@ ga('send', 'pageview');
     
   
 
-
-</div>
+  </div>
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/iss95.png" alt="" /></p>
+      <p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/iss95.png" alt="" /></p>
 
 <p>这是<a href="https://github.com/GuangchuangYu/ggtree/issues/95">github</a>上的问题，他想画环形树的时候，加一条长长的root length把tips给顶出去。</p>
 
 <p>这个问题在google forum上我早已解答：
 </p>
-
-        <br>
+      <p>
         <a href="https://guangchuangyu.github.io/cn/2016/12/%E4%B8%AD%E7%A9%BA%E7%9A%84%E7%8E%AF%E5%BD%A2%E6%A0%91/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
@@ -550,15 +544,16 @@ ga('send', 'pageview');
           无中生有windows版R包
         </a>
       </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2016-11-30T00:53:00&#43;08:00">
       
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2016-11-30T00:53:00&#43;08:00">
+        
   November 30, 2016
 
-    </time>
-  
-  
+      </time>
+    
+    
   
   
     <span>in</span>
@@ -567,13 +562,11 @@ ga('send', 'pageview');
     
   
 
-
-</div>
+  </div>
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>之前帮助高老师实现比对序列的做图，把代码打包为R包seqcombo，方便安装使用。花两小时的作品，发现还有些用户在使用 -，-</p>
+      <p>之前帮助高老师实现比对序列的做图，把代码打包为R包seqcombo，方便安装使用。花两小时的作品，发现还有些用户在使用 -，-</p>
 
 <p>之前有人联系我说安装不上，我觉得不应该有这个问题，因为是纯R代码代码，不涉及到编译，源码包安装不应该有问题。但既然有人问，又都是windows用户，我想可以给他们提供编译好的windows包，简化安装过程（这么体贴用户，我都要被自己感动了）。</p>
 
@@ -584,8 +577,7 @@ ga('send', 'pageview');
 <p>所以没有windows，这事干起来还不太容易，！在想怎么来无中生有生出个windows包出来的时候，我想起了rhub，也是因为没有windows，之前就用rhub来进行windows平台的R check，在把代码push到CRAN或Bioconductor之前，我总会测试没问题了，再提交代码过去，而rhub正好可以给我提供windows平台的检测。</p>
 
 <p></p>
-
-        <br>
+      <p>
         <a href="https://guangchuangyu.github.io/cn/2016/11/%E6%97%A0%E4%B8%AD%E7%94%9F%E6%9C%89windows%E7%89%88r%E5%8C%85/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
@@ -616,15 +608,16 @@ ga('send', 'pageview');
           vertical dendrogram in ggtree
         </a>
       </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2016-11-29T00:53:00&#43;08:00">
       
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2016-11-29T00:53:00&#43;08:00">
+        
   November 29, 2016
 
-    </time>
-  
-  
+      </time>
+    
+    
   
   
     <span>in</span>
@@ -635,22 +628,20 @@ ga('send', 'pageview');
     
   
 
-
-</div>
+  </div>
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p><blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/guangchuangyu?ref_src=twsrc%5Etfw">@guangchuangyu</a> Is it possible to plot horizontal trees with ggtree? (a la plot.hclust default).</p>&mdash; Diego Diez (@kurai_yousei) <a href="https://twitter.com/kurai_yousei/status/799532564633518080?ref_src=twsrc%5Etfw">November 18, 2016</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+      <blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/guangchuangyu?ref_src=twsrc%5Etfw">@guangchuangyu</a> Is it possible to plot horizontal trees with ggtree? (a la plot.hclust default).</p>&mdash; Diego Diez (@kurai_yousei) <a href="https://twitter.com/kurai_yousei/status/799532564633518080?ref_src=twsrc%5Etfw">November 18, 2016</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 
 <p>这个Diego在推特上问的问题，他最近在写一个<a href="https://github.com/ddiez/motiftools">motiftools</a>的R包，里面用了ggtree来画图，我想他应该是要解决他在包里的画树/聚类功能吧。</p>
 
 <p>他问题写的horizontal，但其实plot.hclust默认是vertical，ggtree默认也是horizontal，所以我认为他问的是vertical layout，这个在我的回答中也得到了他的确认。</p>
 
 <p></p>
-
-        <br>
+      <p>
         <a href="https://guangchuangyu.github.io/cn/2016/11/vertical-dendrogram-in-ggtree/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
@@ -664,20 +655,22 @@ ga('send', 'pageview');
   <div class="pagination-bar">
     <ul class="pagination">
       
-        <li class="pagination-prev">
-          <a class="btn btn--default btn--small" href="https://guangchuangyu.github.io/cn/categories/r/page/13/">
-            <i class="fa fa-angle-left text-base icon-mr"></i>
-            <span>NEWER POSTS</span>
-          </a>
-        </li>
-      
-      
-        <li class="pagination-next">
-          <a class="btn btn--default btn--small" href="https://guangchuangyu.github.io/cn/categories/r/page/15/">
-            <span>OLDER POSTS</span>
-            <i class="fa fa-angle-right text-base icon-ml"></i>
-          </a>
-        </li>
+        
+          <li class="pagination-prev">
+            <a class="btn btn--default btn--small" href="https://guangchuangyu.github.io/cn/categories/r/page/13/">
+              <i class="fa fa-angle-left text-base icon-mr"></i>
+              <span>NEWER POSTS</span>
+            </a>
+          </li>
+        
+        
+          <li class="pagination-next">
+            <a class="btn btn--default btn--small" href="https://guangchuangyu.github.io/cn/categories/r/page/15/">
+              <span>OLDER POSTS</span>
+              <i class="fa fa-angle-right text-base icon-ml"></i>
+            </a>
+          </li>
+        
       
       <li class="pagination-number">page 14 of 16</li>
     </ul>
@@ -728,7 +721,7 @@ ga('send', 'pageview');
   <div class="modal">
     <div class="modal-header">
       <span class="close-button"><i class="fa fa-close"></i></span>
-      <a href="https://algolia.com" target="_blank" class="searchby-algolia text-color-light link-unstyled">
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
         <span class="searchby-algolia-text text-color-light text-small">by</span>
         <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
       </a>
@@ -1013,7 +1006,7 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         226 posts found
+         225 posts found
       </p>
     </div>
   </div>
@@ -1026,32 +1019,13 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
 
 
     
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
 
 
-<script src="https://guangchuangyu.github.io/cn/js/script-wl33z0n6ocaypepiqrazthtivfrliqijej4rq8ek8gvrv1awftmgjuv8k4zc.min.js"></script>
+<script src="https://guangchuangyu.github.io/cn/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
 
-<script>
-$(document).ready(function() {
-  hljs.configure({ classPrefix: '', useBR: false });
-  $('pre.code-highlight').each(function(i, block) {
-    var code = "";
-    hljs.highlightAuto(block.innerText).value.split(/\r\n|\r|\n/).forEach(function(line) {
-      code += "<span class=\"line\">" + line + "</span><br>";
-    });
-    if (code.length > 0) {
-      block.innerHTML = code;  
-    }
-  });
-  $('pre > code').each(function(i, block) {
-    $(this).addClass('codeblock');
-    hljs.highlightBlock(block);
-  });
-});
-</script>
 
 
 

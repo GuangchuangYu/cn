@@ -17,8 +17,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.30.2">
-    <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
+    <meta name="generator" content="Hugo 0.44 with theme Tranquilpeak 0.4.3-BETA">
     <title>R</title>
     <meta name="author" content="Guangchuang Yu">
     <meta name="keywords" content="">
@@ -57,25 +56,28 @@
     
 
     
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.css" />
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-u6mk0ojoywresbx8iepslrmmhl4stuhrsxuwhkpwrkrx7mryjcaimasnk4pi.min.css" />
+    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
     
     
 
     
       
 <script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-77901140-1', 'auto');
-ga('send', 'pageview');
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-77901140-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
     
@@ -113,11 +115,10 @@ ga('send', 'pageview');
         </a>
         <h4 class="sidebar-profile-name">Guangchuang Yu</h4>
         
-        <h5 class="sidebar-profile-bio">a senior-in-age-but-not-senior-in-knowledge bioinformatician</h5>
-        <img alt="微信公众号" src="https://guangchuangyu.github.io/blog_images/biobabble.jpg" width="200" height="200">
+          <h5 class="sidebar-profile-bio">a senior-in-age-but-not-senior-in-knowledge bioinformatician</h5>
         
       </div>
-      
+    
     <ul class="sidebar-buttons">
       
   <li class="sidebar-button">
@@ -170,18 +171,20 @@ ga('send', 'pageview');
     </a>
   </li>
 
+
     </ul>
     <ul class="sidebar-buttons">
       
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://github.com/GuangchuangYu" target="_blank">
+      <a class="sidebar-button-link " href="https://github.com/GuangchuangYu" target="_blank" rel="noopener">
     
       <i class="sidebar-button-icon fa fa-lg fa-github"></i>
       
       <span class="sidebar-button-desc">GitHub</span>
     </a>
   </li>
+
 
     </ul>
     <ul class="sidebar-buttons">
@@ -195,6 +198,7 @@ ga('send', 'pageview');
       <span class="sidebar-button-desc">RSS</span>
     </a>
   </li>
+
 
     </ul>
   </div>
@@ -233,15 +237,16 @@ ga('send', 'pageview');
           第九届ChinaR会议生物信息学分会
         </a>
       </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2016-05-31T18:06:59&#43;08:00">
       
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2016-05-31T18:06:59&#43;08:00">
+        
   May 31, 2016
 
-    </time>
-  
-  
+      </time>
+    
+    
   
   
     <span>in</span>
@@ -250,21 +255,18 @@ ga('send', 'pageview');
     
   
 
-
-</div>
+  </div>
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>不记得是什么时候知道统计之都的，但我记得最早知道的是太云，因为我用了他写的<a href="https://cran.r-project.org/package=corrplot">corrplot</a>包。后来统计之都最早接触的也是太云，他给我写邮件问我能不能帮忙校对<a href="https://book.douban.com/subject/24527091/">《ggplot2：数据分析与图形艺术》</a>，从此开始和太云变成了网友。</p>
+      <p>不记得是什么时候知道统计之都的，但我记得最早知道的是太云，因为我用了他写的<a href="https://cran.r-project.org/package=corrplot">corrplot</a>包。后来统计之都最早接触的也是太云，他给我写邮件问我能不能帮忙校对<a href="https://book.douban.com/subject/24527091/">《ggplot2：数据分析与图形艺术》</a>，从此开始和太云变成了网友。</p>
 
 <p>我在暨大的时候，太云曾经邀请我去China-R会议做报告，但我觉得自己没什么好分享的，<a href="http://guangchuangyu.github.io/GOSemSim">GOSemSim</a>这个包是硕士的时候做的，不好去讲之前做的东西。而当时我写的另一个包<a href="http://guangchuangyu.github.io/clusterProfiler">clusterProfiler</a>，纯粹是因为大量做富集分析的工具都是针对模式生物，而我们实验室有做各种细菌；另外有一些工具，背景设置是有问题的。自己实现一个包，不受别人的限制。即便是这个包现在受到了一定的认可，比如BioC 3.3中有个<a href="http://bioconductor.org/packages/release/bioc/html/debrowser.html">debrowser</a>的包使用了clusterProfiler，而在BioC 3.4中又有个新包<a href="http://bioconductor.org/packages/devel/bioc/html/bioCancer.html">bioCancer</a>也使用了clusterProfiler；再比如这次在北京，有好几个参会的人员在茶歇时问了clusterProfiler的问题。但始终觉得这只是个实用性的包而已，算法是别人的，而且已经比较老了，类似的工具简直就是成百上千。所以也是不好意思拿出来讲的。所以我拒绝了太云的邀请，一直也没有参加China-R的会议。</p>
 
 <p>今年是第九届China-R会议，这次会议规模很大，有22个分会场，超过100个演讲嘉宾，参会人数超过4000人。这一次刚好有个Bioconductor的分会场，Matt写信给我，说我写过几个Bioconductor包，他本人喜欢我的<a href="http://guangchuangyu.github.io/ChIPseeker">ChIPseeker</a>包，问我能否在会上分享与Bioconductor包相关的经验。这是Bioconductor在中国的首秀，我欣然接受，当然也是因为这两年我写了<a href="http://guangchuangyu.github.io/ChIPseeker">ChIPseeker</a>和<a href="http://guangchuangyu.github.io/ggtree">ggtree</a>，我自己觉得还拿得出手🙈。</p>
 
 <p></p>
-
-        <br>
+      <p>
         <a href="https://guangchuangyu.github.io/cn/2016/05/%E7%AC%AC%E4%B9%9D%E5%B1%8Achinar%E4%BC%9A%E8%AE%AE%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%88%86%E4%BC%9A/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
@@ -295,15 +297,16 @@ ga('send', 'pageview');
           如何画类似MEME的注释序列
         </a>
       </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2015-05-21T14:53:35&#43;08:00">
       
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2015-05-21T14:53:35&#43;08:00">
+        
   May 21, 2015
 
-    </time>
-  
-  
+      </time>
+    
+    
   
   
     <span>in</span>
@@ -316,19 +319,16 @@ ga('send', 'pageview');
     
   
 
-
-</div>
+  </div>
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p><img src="https://guangchuangyu.github.io/blog_images/2015/Screenshot%202015-05-21%2010.31.46.png" alt="" /></p>
+      <p><img src="https://guangchuangyu.github.io/blog_images/2015/Screenshot%202015-05-21%2010.31.46.png" alt="" /></p>
 
 <p><a href="http://meme-suite.org">MEME</a>是motif分析的webserver，所谓的注释序列就是一条线条上画一些长方形的box。</p>
 
 <p></p>
-
-        <br>
+      <p>
         <a href="https://guangchuangyu.github.io/cn/2015/05/draw-meme-like-figure/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
@@ -359,15 +359,16 @@ ga('send', 'pageview');
           tricky things in R
         </a>
       </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2012-07-10T07:16:22&#43;08:00">
       
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2012-07-10T07:16:22&#43;08:00">
+        
   July 10, 2012
 
-    </time>
-  
-  
+      </time>
+    
+    
   
   
     <span>in</span>
@@ -376,13 +377,11 @@ ga('send', 'pageview');
     
   
 
-
-</div>
+  </div>
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <hr />
+      <hr />
 
 <pre><code>/  ____    _                                                     \
 | |  _ \  (_)___    __ ___      _____  ___  ___  _ __ ___   ___  |
@@ -405,8 +404,7 @@ ga('send', 'pageview');
 <p>从一开始学R就知道R的赋值符号和别的语言不一样，用的是<code>&lt;-</code>，虽然<code>=</code>也用，很多书会告诉你两者是一样的，完全通用，不过用R的人习惯也推倡用<code>&lt;-</code>。所以我基本上就抛弃用<code>=</code>号了，反正在ESS里用shift+-就会自动输入<code>&lt;-</code>，也是很方便的。直到有一天，我发现<a href="https://guangchuangyu.github.io/2009/03/assignment-token-of-r/">在switch里，必须用<code>=</code>号</a>，而不能用<code>&lt;-</code>，才发现坑爹啊，这两符号是不一样的。</p>
 
 <p></p>
-
-        <br>
+      <p>
         <a href="https://guangchuangyu.github.io/cn/2012/07/tricky-things-in-r/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
@@ -437,15 +435,16 @@ ga('send', 'pageview');
           QQ plot
         </a>
       </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2011-08-02T08:23:16&#43;08:00">
       
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2011-08-02T08:23:16&#43;08:00">
+        
   August 2, 2011
 
-    </time>
-  
-  
+      </time>
+    
+    
   
   
     <span>in</span>
@@ -456,21 +455,18 @@ ga('send', 'pageview');
     
   
 
-
-</div>
+  </div>
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>虽然R提供了很多作图函数，但自己实现一下，是非常好的体验，而且能够让我们了解其中的细节。</p>
+      <p>虽然R提供了很多作图函数，但自己实现一下，是非常好的体验，而且能够让我们了解其中的细节。</p>
 
 <p>最近在读<a href="http://book.douban.com/subject/4237062/">＜Modern Applied Statistics With S-PLUS＞</a>，115页讲到Q-Q图时，书中给出了一个Trellis的实现。（Trellis是S/S-PLUS的可视化系统，在R里的对等实现是lattice包）。</p>
 
 <p>我们知道一组数字，可以算4分位数，分别是25%， 50%（中位数）， 75%，它等于该组数字中所有数值由小到大排列后第X%的数字，事实上每个数字都可以对应一个X%，Q-Q图很简单，把样本数据和理论分布算出来的quantiles，画个散点图而已。分别用base graph和ggplot2实现，图中三个图分别由系统函数qqnorm，和这里定义的qqplot, qqplot2画出来。</p>
 
 <p></p>
-
-        <br>
+      <p>
         <a href="https://guangchuangyu.github.io/cn/2011/08/qq-plot/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
@@ -501,15 +497,16 @@ ga('send', 'pageview');
           a simple gene finder
         </a>
       </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2011-07-10T09:04:46&#43;08:00">
       
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2011-07-10T09:04:46&#43;08:00">
+        
   July 10, 2011
 
-    </time>
-  
-  
+      </time>
+    
+    
   
   
     <span>in</span>
@@ -520,13 +517,11 @@ ga('send', 'pageview');
     
   
 
-
-</div>
+  </div>
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>上了几天的课，<a href="http://ibw2011.fmmu.edu.cn/schedule.htm">http://ibw2011.fmmu.edu.cn/schedule.htm</a>
+      <p>上了几天的课，<a href="http://ibw2011.fmmu.edu.cn/schedule.htm">http://ibw2011.fmmu.edu.cn/schedule.htm</a>
 今天就上完了，只完成了project 1，想写gibbs sampling，但是没搞明白，汗。</p>
 
 <p>这个纯属练习用，没啥实用价值。</p>
@@ -567,8 +562,7 @@ the likelihood)</p>
 </blockquote>
 
 <p></p>
-
-        <br>
+      <p>
         <a href="https://guangchuangyu.github.io/cn/2011/07/a-simple-gene-finder/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
@@ -599,15 +593,16 @@ the likelihood)</p>
           创建R包
         </a>
       </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2008-12-07T05:23:16&#43;08:00">
       
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2008-12-07T05:23:16&#43;08:00">
+        
   December 7, 2008
 
-    </time>
-  
-  
+      </time>
+    
+    
   
   
     <span>in</span>
@@ -616,13 +611,11 @@ the likelihood)</p>
     
   
 
-
-</div>
+  </div>
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <pre><code>&gt; source(&quot;code.R&quot;) #载入写好的代码 
+      <pre><code>&gt; source(&quot;code.R&quot;) #载入写好的代码 
 &gt; package.skeleton(name=&quot;pkgname&quot;, list=c(&quot;function_name_list&quot;))
 # 生成R源码包的目录结构 
 </code></pre>
@@ -640,8 +633,7 @@ $ R CMD build --binary pkgname
 </code></pre>
 
 <p></p>
-
-        <br>
+      <p>
         <a href="https://guangchuangyu.github.io/cn/2008/12/creat-r-package/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
@@ -655,13 +647,15 @@ $ R CMD build --binary pkgname
   <div class="pagination-bar">
     <ul class="pagination">
       
-        <li class="pagination-prev">
-          <a class="btn btn--default btn--small" href="https://guangchuangyu.github.io/cn/categories/r/page/15/">
-            <i class="fa fa-angle-left text-base icon-mr"></i>
-            <span>NEWER POSTS</span>
-          </a>
-        </li>
-      
+        
+          <li class="pagination-prev">
+            <a class="btn btn--default btn--small" href="https://guangchuangyu.github.io/cn/categories/r/page/15/">
+              <i class="fa fa-angle-left text-base icon-mr"></i>
+              <span>NEWER POSTS</span>
+            </a>
+          </li>
+        
+        
       
       <li class="pagination-number">page 16 of 16</li>
     </ul>
@@ -712,7 +706,7 @@ $ R CMD build --binary pkgname
   <div class="modal">
     <div class="modal-header">
       <span class="close-button"><i class="fa fa-close"></i></span>
-      <a href="https://algolia.com" target="_blank" class="searchby-algolia text-color-light link-unstyled">
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
         <span class="searchby-algolia-text text-color-light text-small">by</span>
         <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
       </a>
@@ -997,7 +991,7 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         226 posts found
+         225 posts found
       </p>
     </div>
   </div>
@@ -1010,32 +1004,13 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
 
 
     
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
 
 
-<script src="https://guangchuangyu.github.io/cn/js/script-wl33z0n6ocaypepiqrazthtivfrliqijej4rq8ek8gvrv1awftmgjuv8k4zc.min.js"></script>
+<script src="https://guangchuangyu.github.io/cn/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
 
-<script>
-$(document).ready(function() {
-  hljs.configure({ classPrefix: '', useBR: false });
-  $('pre.code-highlight').each(function(i, block) {
-    var code = "";
-    hljs.highlightAuto(block.innerText).value.split(/\r\n|\r|\n/).forEach(function(line) {
-      code += "<span class=\"line\">" + line + "</span><br>";
-    });
-    if (code.length > 0) {
-      block.innerHTML = code;  
-    }
-  });
-  $('pre > code').each(function(i, block) {
-    $(this).addClass('codeblock');
-    hljs.highlightBlock(block);
-  });
-});
-</script>
 
 
 

@@ -17,8 +17,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.30.2">
-    <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
+    <meta name="generator" content="Hugo 0.44 with theme Tranquilpeak 0.4.3-BETA">
     <title>Ggplot2</title>
     <meta name="author" content="Guangchuang Yu">
     <meta name="keywords" content="">
@@ -57,25 +56,28 @@
     
 
     
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.css" />
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-u6mk0ojoywresbx8iepslrmmhl4stuhrsxuwhkpwrkrx7mryjcaimasnk4pi.min.css" />
+    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
     
     
 
     
       
 <script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-77901140-1', 'auto');
-ga('send', 'pageview');
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-77901140-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
     
@@ -113,11 +115,10 @@ ga('send', 'pageview');
         </a>
         <h4 class="sidebar-profile-name">Guangchuang Yu</h4>
         
-        <h5 class="sidebar-profile-bio">a senior-in-age-but-not-senior-in-knowledge bioinformatician</h5>
-        <img alt="微信公众号" src="https://guangchuangyu.github.io/blog_images/biobabble.jpg" width="200" height="200">
+          <h5 class="sidebar-profile-bio">a senior-in-age-but-not-senior-in-knowledge bioinformatician</h5>
         
       </div>
-      
+    
     <ul class="sidebar-buttons">
       
   <li class="sidebar-button">
@@ -170,18 +171,20 @@ ga('send', 'pageview');
     </a>
   </li>
 
+
     </ul>
     <ul class="sidebar-buttons">
       
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://github.com/GuangchuangYu" target="_blank">
+      <a class="sidebar-button-link " href="https://github.com/GuangchuangYu" target="_blank" rel="noopener">
     
       <i class="sidebar-button-icon fa fa-lg fa-github"></i>
       
       <span class="sidebar-button-desc">GitHub</span>
     </a>
   </li>
+
 
     </ul>
     <ul class="sidebar-buttons">
@@ -195,6 +198,7 @@ ga('send', 'pageview');
       <span class="sidebar-button-desc">RSS</span>
     </a>
   </li>
+
 
     </ul>
   </div>
@@ -233,15 +237,16 @@ ga('send', 'pageview');
           用par设置ggplot2参数？这个可以有！
         </a>
       </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2018-03-01T10:17:48&#43;08:00">
       
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-03-01T10:17:48&#43;08:00">
+        
   March 1, 2018
 
-    </time>
-  
-  
+      </time>
+    
+    
   
   
     <span>in</span>
@@ -252,19 +257,16 @@ ga('send', 'pageview');
     
   
 
-
-</div>
+  </div>
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>有小伙伴在说可以用par(mar)来设置画图的margin，但不能应用于ggplot2，这个可能很多新手都会很困扰，可能需要一段时间的探索之后，才能发现原来是用theme来设定。</p>
+      <p>有小伙伴在说可以用par(mar)来设置画图的margin，但不能应用于ggplot2，这个可能很多新手都会很困扰，可能需要一段时间的探索之后，才能发现原来是用theme来设定。</p>
 
 <p>这当然你可以归结于说ggplot2和base plot是不同的东西，但从实质画图参数这一点而言，并没有什么同与不同，无非是设置的方式不同而已，而这种方式都是人定义的，我们完全可以人为定义它们兼容。</p>
 
 <p></p>
-
-        <br>
+      <p>
         <a href="https://guangchuangyu.github.io/cn/2018/03/ggpar/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
@@ -295,15 +297,16 @@ ga('send', 'pageview');
           一千个伤心的理由
         </a>
       </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2018-02-08T00:21:00&#43;08:00">
       
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-02-08T00:21:00&#43;08:00">
+        
   February 8, 2018
 
-    </time>
-  
-  
+      </time>
+    
+    
   
   
     <span>in</span>
@@ -312,17 +315,14 @@ ga('send', 'pageview');
     
   
 
-
-</div>
+  </div>
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>眼看着2月14号就要到来了，又是一年一度的画红心装13的时候，这种事情已经被我BS了，请猛击：《<a href="http://mp.weixin.qq.com/s/Y8IHd6X4f49irXvD_M7bNw">画❤️装geek什么的，都弱爆了！😜</a>》。红心已经没什么好画的了，特别是在我画了生日蛋糕，并用蛋糕画红心之后，《<a href="https://mp.weixin.qq.com/s/Iqcqo5YTy1qmXdsuIrlrYQ">130岁了，祝你生快</a>》，是驴子是马，都没法晒肌肉了。当然红心还是会有所谓的理工宅男晒，除此之外还会有各种花招，来给单身狗撒狗粮。想要加入撒狗粮大军的，快点看《<a href="http://mp.weixin.qq.com/s/2j9VRgar5ExSma6B7Yc3dw">如何告别单身</a>》。</p>
+      <p>眼看着2月14号就要到来了，又是一年一度的画红心装13的时候，这种事情已经被我BS了，请猛击：《<a href="http://mp.weixin.qq.com/s/Y8IHd6X4f49irXvD_M7bNw">画❤️装geek什么的，都弱爆了！😜</a>》。红心已经没什么好画的了，特别是在我画了生日蛋糕，并用蛋糕画红心之后，《<a href="https://mp.weixin.qq.com/s/Iqcqo5YTy1qmXdsuIrlrYQ">130岁了，祝你生快</a>》，是驴子是马，都没法晒肌肉了。当然红心还是会有所谓的理工宅男晒，除此之外还会有各种花招，来给单身狗撒狗粮。想要加入撒狗粮大军的，快点看《<a href="http://mp.weixin.qq.com/s/2j9VRgar5ExSma6B7Yc3dw">如何告别单身</a>》。</p>
 
 <p></p>
-
-        <br>
+      <p>
         <a href="https://guangchuangyu.github.io/cn/2018/02/broken-heart/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
@@ -353,15 +353,16 @@ ga('send', 'pageview');
           ggplot2的一个坑
         </a>
       </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2018-01-22T07:23:00&#43;08:00">
       
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-01-22T07:23:00&#43;08:00">
+        
   January 22, 2018
 
-    </time>
-  
-  
+      </time>
+    
+    
   
   
     <span>in</span>
@@ -370,13 +371,11 @@ ga('send', 'pageview');
     
   
 
-
-</div>
+  </div>
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>今天以ggplot2的一个坑来说一下，坑无处不在，防不胜防，你大可以试一下下面的代码：</p>
+      <p>今天以ggplot2的一个坑来说一下，坑无处不在，防不胜防，你大可以试一下下面的代码：</p>
 
 <pre><code>&gt; set.seed(123)
 &gt; require(ggplot2)
@@ -391,8 +390,7 @@ Loading required package: ggplot2
 <p>在两次set.seed和rnorm之间，第一次因为加载了ggplot2，结果就不一样了！这必须是第二次是正确答案，也就是说加载ggplot2把你的seed给吃了！加载包会改变R环境？这绝对不是好主意，我们来试试加载别的包试试，比如我的clusterProfiler:</p>
 
 <p></p>
-
-        <br>
+      <p>
         <a href="https://guangchuangyu.github.io/cn/2018/01/ggplot2-seed/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
@@ -423,15 +421,16 @@ Loading required package: ggplot2
           画一只恐龙
         </a>
       </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2018-01-16T17:53:00&#43;08:00">
       
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-01-16T17:53:00&#43;08:00">
+        
   January 16, 2018
 
-    </time>
-  
-  
+      </time>
+    
+    
   
   
     <span>in</span>
@@ -440,13 +439,11 @@ Loading required package: ggplot2
     
   
 
-
-</div>
+  </div>
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>大家是否还记得我的《<a href="http://mp.weixin.qq.com/s/YuUOztQg3nUnhdvyg8asvg">webinar录播 (2017-10-24)：plotting tree + data</a>》，这可以说是R画图最好的课程，PPT也分享给大家《<a href="https://mp.weixin.qq.com/s/3yEN-8oUck2WPmNQ368qYA">ggtree直播PPT第一部分</a>》和《<a href="https://mp.weixin.qq.com/s/7-YhGzzu_tVAwySrYOKGFg">ggtree直播PPT第二部分</a>》。</p>
+      <p>大家是否还记得我的《<a href="http://mp.weixin.qq.com/s/YuUOztQg3nUnhdvyg8asvg">webinar录播 (2017-10-24)：plotting tree + data</a>》，这可以说是R画图最好的课程，PPT也分享给大家《<a href="https://mp.weixin.qq.com/s/3yEN-8oUck2WPmNQ368qYA">ggtree直播PPT第一部分</a>》和《<a href="https://mp.weixin.qq.com/s/7-YhGzzu_tVAwySrYOKGFg">ggtree直播PPT第二部分</a>》。</p>
 
 <p>我在PPT中，用了meme，发现没有R包可以做，于是我写了一个R包来做这个事情。</p>
 
@@ -463,8 +460,7 @@ Loading required package: ggplot2
 </ul>
 
 <p></p>
-
-        <br>
+      <p>
         <a href="https://guangchuangyu.github.io/cn/2018/01/datasaurus/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
@@ -495,15 +491,16 @@ Loading required package: ggplot2
           画个小圈圈
         </a>
       </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2018-01-08T13:13:00&#43;08:00">
       
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-01-08T13:13:00&#43;08:00">
+        
   January 8, 2018
 
-    </time>
-  
-  
+      </time>
+    
+    
   
   
     <span>in</span>
@@ -514,13 +511,11 @@ Loading required package: ggplot2
     
   
 
-
-</div>
+  </div>
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>之前我发表读书笔记《<a href="https://mp.weixin.qq.com/s/hPLlBAoN94TcyM-lP6jKCQ">主成分分析</a>》</p>
+      <p>之前我发表读书笔记《<a href="https://mp.weixin.qq.com/s/hPLlBAoN94TcyM-lP6jKCQ">主成分分析</a>》</p>
 
 <p><img src="https://guangchuangyu.github.io/blog_images/2014/07/aa_pca.png" alt="" /></p>
 
@@ -531,8 +526,7 @@ Loading required package: ggplot2
 <p>他的作图是基于<code>ggord</code>包，只能应用于LDA，于是「宏基因组」公众号又跟进发一篇《<a href="https://mp.weixin.qq.com/s/F9c_ISpOpjHyiCNahoYTqQ">比PCA更好用的监督排序—LDA分析、作图及添加置信-ggord</a>》，你会发现他们介绍同一类型的作图，一会这个包，一会那个包，一会某包有A功能，某包又有B功能，我就不说什么了。</p>
 
 <p></p>
-
-        <br>
+      <p>
         <a href="https://guangchuangyu.github.io/cn/2018/01/geom-ord-ellipse/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
@@ -563,15 +557,16 @@ Loading required package: ggplot2
           给你一顶帽子
         </a>
       </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-12-27T12:06:59&#43;08:00">
       
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-12-27T12:06:59&#43;08:00">
+        
   December 27, 2017
 
-    </time>
-  
-  
+      </time>
+    
+    
   
   
     <span>in</span>
@@ -582,13 +577,11 @@ Loading required package: ggplot2
     
   
 
-
-</div>
+  </div>
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>圣诞节期间，一个个在@微信官方，要加圣诞帽，这让人想起了以前：</p>
+      <p>圣诞节期间，一个个在@微信官方，要加圣诞帽，这让人想起了以前：</p>
 
 <blockquote>
 <p>今天是马化腾的生日，转发5个群，自动开通一个月的QQ会员</p>
@@ -599,8 +592,7 @@ Loading required package: ggplot2
 <p>做为biobabble公众号的粉丝，我觉得你们是有能力用两三行R代码来给自己加个帽子的。由于我在过圣诞节，所以这篇文章没有能够及时推送出来，就当马后炮吧，不合时宜地调侃一下大家。</p>
 
 <p></p>
-
-        <br>
+      <p>
         <a href="https://guangchuangyu.github.io/cn/2017/12/ggimage-hat/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
@@ -631,15 +623,16 @@ Loading required package: ggplot2
           130岁了，祝你生快
         </a>
       </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-12-14T22:00:00&#43;08:00">
       
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-12-14T22:00:00&#43;08:00">
+        
   December 14, 2017
 
-    </time>
-  
-  
+      </time>
+    
+    
   
   
     <span>in</span>
@@ -648,19 +641,16 @@ Loading required package: ggplot2
     
   
 
-
-</div>
+  </div>
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>周日是港大医学院的198届毕业典礼，Y叔要去参加，今年也正好是医学院130周年，做为画图界的传说，我决定画一个蛋糕。</p>
+      <p>周日是港大医学院的198届毕业典礼，Y叔要去参加，今年也正好是医学院130周年，做为画图界的传说，我决定画一个蛋糕。</p>
 
 <p>要画蛋糕，这有何难，我们有<code>emojifont</code>啊，还记得《<a href="http://mp.weixin.qq.com/s/ARxyTRpMs6OeCqOQPp9OwA">emojifont新功能（有视频哦）</a>》一文中的<code>geom_emoji</code>图层吗？</p>
 
 <p></p>
-
-        <br>
+      <p>
         <a href="https://guangchuangyu.github.io/cn/2017/12/geom-cake/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
@@ -674,20 +664,22 @@ Loading required package: ggplot2
   <div class="pagination-bar">
     <ul class="pagination">
       
-        <li class="pagination-prev">
-          <a class="btn btn--default btn--small" href="https://guangchuangyu.github.io/cn/tags/ggplot2/">
-            <i class="fa fa-angle-left text-base icon-mr"></i>
-            <span>NEWER POSTS</span>
-          </a>
-        </li>
-      
-      
-        <li class="pagination-next">
-          <a class="btn btn--default btn--small" href="https://guangchuangyu.github.io/cn/tags/ggplot2/page/3/">
-            <span>OLDER POSTS</span>
-            <i class="fa fa-angle-right text-base icon-ml"></i>
-          </a>
-        </li>
+        
+          <li class="pagination-prev">
+            <a class="btn btn--default btn--small" href="https://guangchuangyu.github.io/cn/tags/ggplot2/">
+              <i class="fa fa-angle-left text-base icon-mr"></i>
+              <span>NEWER POSTS</span>
+            </a>
+          </li>
+        
+        
+          <li class="pagination-next">
+            <a class="btn btn--default btn--small" href="https://guangchuangyu.github.io/cn/tags/ggplot2/page/3/">
+              <span>OLDER POSTS</span>
+              <i class="fa fa-angle-right text-base icon-ml"></i>
+            </a>
+          </li>
+        
       
       <li class="pagination-number">page 2 of 7</li>
     </ul>
@@ -738,7 +730,7 @@ Loading required package: ggplot2
   <div class="modal">
     <div class="modal-header">
       <span class="close-button"><i class="fa fa-close"></i></span>
-      <a href="https://algolia.com" target="_blank" class="searchby-algolia text-color-light link-unstyled">
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
         <span class="searchby-algolia-text text-color-light text-small">by</span>
         <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
       </a>
@@ -1023,7 +1015,7 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         226 posts found
+         225 posts found
       </p>
     </div>
   </div>
@@ -1036,32 +1028,13 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
 
 
     
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
 
 
-<script src="https://guangchuangyu.github.io/cn/js/script-wl33z0n6ocaypepiqrazthtivfrliqijej4rq8ek8gvrv1awftmgjuv8k4zc.min.js"></script>
+<script src="https://guangchuangyu.github.io/cn/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
 
-<script>
-$(document).ready(function() {
-  hljs.configure({ classPrefix: '', useBR: false });
-  $('pre.code-highlight').each(function(i, block) {
-    var code = "";
-    hljs.highlightAuto(block.innerText).value.split(/\r\n|\r|\n/).forEach(function(line) {
-      code += "<span class=\"line\">" + line + "</span><br>";
-    });
-    if (code.length > 0) {
-      block.innerHTML = code;  
-    }
-  });
-  $('pre > code').each(function(i, block) {
-    $(this).addClass('codeblock');
-    hljs.highlightBlock(block);
-  });
-});
-</script>
 
 
 

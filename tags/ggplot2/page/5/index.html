@@ -17,8 +17,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.30.2">
-    <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
+    <meta name="generator" content="Hugo 0.44 with theme Tranquilpeak 0.4.3-BETA">
     <title>Ggplot2</title>
     <meta name="author" content="Guangchuang Yu">
     <meta name="keywords" content="">
@@ -57,25 +56,28 @@
     
 
     
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.css" />
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-u6mk0ojoywresbx8iepslrmmhl4stuhrsxuwhkpwrkrx7mryjcaimasnk4pi.min.css" />
+    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
     
     
 
     
       
 <script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-77901140-1', 'auto');
-ga('send', 'pageview');
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-77901140-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
     
@@ -113,11 +115,10 @@ ga('send', 'pageview');
         </a>
         <h4 class="sidebar-profile-name">Guangchuang Yu</h4>
         
-        <h5 class="sidebar-profile-bio">a senior-in-age-but-not-senior-in-knowledge bioinformatician</h5>
-        <img alt="微信公众号" src="https://guangchuangyu.github.io/blog_images/biobabble.jpg" width="200" height="200">
+          <h5 class="sidebar-profile-bio">a senior-in-age-but-not-senior-in-knowledge bioinformatician</h5>
         
       </div>
-      
+    
     <ul class="sidebar-buttons">
       
   <li class="sidebar-button">
@@ -170,18 +171,20 @@ ga('send', 'pageview');
     </a>
   </li>
 
+
     </ul>
     <ul class="sidebar-buttons">
       
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://github.com/GuangchuangYu" target="_blank">
+      <a class="sidebar-button-link " href="https://github.com/GuangchuangYu" target="_blank" rel="noopener">
     
       <i class="sidebar-button-icon fa fa-lg fa-github"></i>
       
       <span class="sidebar-button-desc">GitHub</span>
     </a>
   </li>
+
 
     </ul>
     <ul class="sidebar-buttons">
@@ -195,6 +198,7 @@ ga('send', 'pageview');
       <span class="sidebar-button-desc">RSS</span>
     </a>
   </li>
+
 
     </ul>
   </div>
@@ -233,15 +237,16 @@ ga('send', 'pageview');
           听说你也在画dotplot，但是我不服!
         </a>
       </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-07-27T07:05:22&#43;08:00">
       
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-07-27T07:05:22&#43;08:00">
+        
   July 27, 2017
 
-    </time>
-  
-  
+      </time>
+    
+    
   
   
     <span>in</span>
@@ -250,13 +255,11 @@ ga('send', 'pageview');
     
   
 
-
-</div>
+  </div>
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>陈同的‘生信宝典’公众号出了篇《<a href="https://mp.weixin.qq.com/s?__biz=MzI5MTcwNjA4NQ==&amp;mid=2247483978&amp;idx=1&amp;sn=e0c158c0e92375553036cc37f4987e40&amp;chksm=ec0dc7c0db7a4ed6ac593493b7d8b52f11f2feb92d24fa00d19527fbb6f95b24f7e313ef9440#rd">R语言学习 - 富集分析泡泡图</a>》，搞个shell脚本，一步绘图。讲了这个脚本可以适用于clusterProfiler和其它软件的富集结果。</p>
+      <p>陈同的‘生信宝典’公众号出了篇《<a href="https://mp.weixin.qq.com/s?__biz=MzI5MTcwNjA4NQ==&amp;mid=2247483978&amp;idx=1&amp;sn=e0c158c0e92375553036cc37f4987e40&amp;chksm=ec0dc7c0db7a4ed6ac593493b7d8b52f11f2feb92d24fa00d19527fbb6f95b24f7e313ef9440#rd">R语言学习 - 富集分析泡泡图</a>》，搞个shell脚本，一步绘图。讲了这个脚本可以适用于clusterProfiler和其它软件的富集结果。</p>
 
 <p>浑身都是硬伤，我都不想吐槽，但由于作者邀请我提点，那就吐槽模式全开。</p>
 
@@ -269,8 +272,7 @@ ga('send', 'pageview');
 <p>既然讲了clusterProfiler，那么clusterProfiler用户笑而不语了。我们用dotplot不也是一条命令出图，为什么要退出R，去跑你的shell脚本，这过程还得转换数据，存储数据。最后的这一步，是前面+N步为代价的。</p>
 
 <p></p>
-
-        <br>
+      <p>
         <a href="https://guangchuangyu.github.io/cn/2017/07/clusterprofiler-dotplot/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
@@ -301,15 +303,16 @@ ga('send', 'pageview');
           搞大你的点，让我们画真正的气泡图
         </a>
       </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-07-25T00:53:00&#43;08:00">
       
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-07-25T00:53:00&#43;08:00">
+        
   July 25, 2017
 
-    </time>
-  
-  
+      </time>
+    
+    
   
   
     <span>in</span>
@@ -318,17 +321,14 @@ ga('send', 'pageview');
     
   
 
-
-</div>
+  </div>
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>在《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484089&amp;idx=1&amp;sn=f6e11d54a18e96a94145a2b802c37dc1&amp;chksm=ec43b3fedb343ae89e3630900033f055af4bbe211897076291e351ae18cc89b2ddf7651ee0be#rd">ggplot2字体溢出的那点破事</a>》一文里，我介绍了字体溢出的解决方案。在《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247483972&amp;idx=1&amp;sn=fa1f4b6299f94eeb52baf5bda6a5ff6b&amp;chksm=ec43b303db343a150806b3b1ab22a1df1c90405235bb399b155f7c50de2a0a23faf2f4ad0beb#rd">wrapping labels in ggplot2</a>》一文中介绍了怎么把长文本截断自动换行，这些都是非常常见的问题，最近关于溢出就又有人提问了：</p>
+      <p>在《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484089&amp;idx=1&amp;sn=f6e11d54a18e96a94145a2b802c37dc1&amp;chksm=ec43b3fedb343ae89e3630900033f055af4bbe211897076291e351ae18cc89b2ddf7651ee0be#rd">ggplot2字体溢出的那点破事</a>》一文里，我介绍了字体溢出的解决方案。在《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247483972&amp;idx=1&amp;sn=fa1f4b6299f94eeb52baf5bda6a5ff6b&amp;chksm=ec43b303db343a150806b3b1ab22a1df1c90405235bb399b155f7c50de2a0a23faf2f4ad0beb#rd">wrapping labels in ggplot2</a>》一文中介绍了怎么把长文本截断自动换行，这些都是非常常见的问题，最近关于溢出就又有人提问了：</p>
 
 <p></p>
-
-        <br>
+      <p>
         <a href="https://guangchuangyu.github.io/cn/2017/07/scale-size/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
@@ -359,15 +359,16 @@ ga('send', 'pageview');
           饼图版气泡图
         </a>
       </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-07-19T12:06:59&#43;08:00">
       
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-07-19T12:06:59&#43;08:00">
+        
   July 19, 2017
 
-    </time>
-  
-  
+      </time>
+    
+    
   
   
     <span>in</span>
@@ -378,21 +379,18 @@ ga('send', 'pageview');
     
   
 
-
-</div>
+  </div>
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>在《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484164&amp;idx=1&amp;sn=030612f5a84120ef407401ff6fad715f&amp;chksm=ec43b243db343b5524c911327bdcbe5f01034095d549d43d530decc5676faecdbd449dfac026#rd">ggimage：ggplot2中愉快地使用图片</a>》一文中，我展示了「嵌套式绘图」，中间生成了多个饼图，再用这些产生的饼图用于做图，绘制出饼图版的气泡图：</p>
+      <p>在《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484164&amp;idx=1&amp;sn=030612f5a84120ef407401ff6fad715f&amp;chksm=ec43b243db343b5524c911327bdcbe5f01034095d549d43d530decc5676faecdbd449dfac026#rd">ggimage：ggplot2中愉快地使用图片</a>》一文中，我展示了「嵌套式绘图」，中间生成了多个饼图，再用这些产生的饼图用于做图，绘制出饼图版的气泡图：</p>
 
 <p><img src="https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/us_crime.png" alt="嵌套式绘图演示：用饼图来画气泡图" /></p>
 
 <p>当时还通过每次只画一个州的数据，来演示制作动图：</p>
 
 <p></p>
-
-        <br>
+      <p>
         <a href="https://guangchuangyu.github.io/cn/2017/07/pie-version-of-bubble-plot/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
@@ -423,15 +421,16 @@ ga('send', 'pageview');
           你的专业是那一只Pokémon神兽？
         </a>
       </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-07-13T10:06:59&#43;08:00">
       
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-07-13T10:06:59&#43;08:00">
+        
   July 13, 2017
 
-    </time>
-  
-  
+      </time>
+    
+    
   
   
     <span>in</span>
@@ -442,19 +441,16 @@ ga('send', 'pageview');
     
   
 
-
-</div>
+  </div>
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <h2 id="啥都不说-先上图">啥都不说，先上图</h2>
+      <h2 id="啥都不说-先上图">啥都不说，先上图</h2>
 
 <p><img src="https://guangchuangyu.github.io/blog_images/R/ggimage/1208212267.jpg" alt="" /></p>
 
 <p></p>
-
-        <br>
+      <p>
         <a href="https://guangchuangyu.github.io/cn/2017/07/pokemon/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
@@ -485,15 +481,16 @@ ga('send', 'pageview');
           joyplot：一种波涛汹涌，哦不对，是山峰叠峦的可视化方式
         </a>
       </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-07-11T00:53:00&#43;08:00">
       
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-07-11T00:53:00&#43;08:00">
+        
   July 11, 2017
 
-    </time>
-  
-  
+      </time>
+    
+    
   
   
     <span>in</span>
@@ -502,19 +499,16 @@ ga('send', 'pageview');
     
   
 
-
-</div>
+  </div>
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>最近推特上在讨论的一种叫做joyplot的作图方式，如果我们按照正常的画法，这些分布会重叠在一起，不容易看。而这种joyplot，有一种山峰叠峦的即视感：</p>
+      <p>最近推特上在讨论的一种叫做joyplot的作图方式，如果我们按照正常的画法，这些分布会重叠在一起，不容易看。而这种joyplot，有一种山峰叠峦的即视感：</p>
 
 <p><img src="https://guangchuangyu.github.io/blog_images/R/ggjoy/Screenshot 2017-07-11 16.37.22.png" alt="" /></p>
 
 <p></p>
-
-        <br>
+      <p>
         <a href="https://guangchuangyu.github.io/cn/2017/07/ggjoy/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
@@ -545,15 +539,16 @@ ga('send', 'pageview');
           按地理位置进行分面
         </a>
       </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-06-26T12:23:16&#43;08:00">
       
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-06-26T12:23:16&#43;08:00">
+        
   June 26, 2017
 
-    </time>
-  
-  
+      </time>
+    
+    
   
   
     <span>in</span>
@@ -564,13 +559,11 @@ ga('send', 'pageview');
     
   
 
-
-</div>
+  </div>
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <p>CRAN刚上线的新包<code>geofacet</code>，可以让ggplot2分面按指定的地理位置来，比如下面的数据，美国各州各项指标的排名：</p>
+      <p>CRAN刚上线的新包<code>geofacet</code>，可以让ggplot2分面按指定的地理位置来，比如下面的数据，美国各州各项指标的排名：</p>
 
 <pre><code class="language-r">  head(state_ranks)
     state   name   variable rank
@@ -585,8 +578,7 @@ ga('send', 'pageview');
 <p>我们正常画图是这样子的：</p>
 
 <p></p>
-
-        <br>
+      <p>
         <a href="https://guangchuangyu.github.io/cn/2017/06/geofacet/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
@@ -617,15 +609,16 @@ ga('send', 'pageview');
           ggimage：ggplot2中愉快地使用图片
         </a>
       </h1>
-      <div class="postShorten-meta post-meta">
-  
-    <time itemprop="datePublished" datetime="2017-04-11T10:06:59&#43;08:00">
       
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-04-11T10:06:59&#43;08:00">
+        
   April 11, 2017
 
-    </time>
-  
-  
+      </time>
+    
+    
   
   
     <span>in</span>
@@ -636,13 +629,11 @@ ga('send', 'pageview');
     
   
 
-
-</div>
+  </div>
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        <h1 id="导言">导言</h1>
+      <h1 id="导言">导言</h1>
 
 <p>本文介绍了<strong>ggimage</strong>包，允许在<strong>ggplot2</strong>作图时嵌入图片，并支持<code>aes</code>映射，可以把离散型变量映射到不同图片。目前有几个包可以使用图片嵌入做图，但都是针对特定的场景，这里使用<strong>ggimage</strong>来展示在这些特定领域里的应用，<strong>ggimage</strong>的设计是通用的，并不被特定场景所限定，文末又介绍了用R图标来画出R、用饼图来画气泡图等实例。</p>
 
@@ -660,8 +651,7 @@ rasterImage(x, 2, 2, 6, 4)
 <p><img src="https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/raster.png" alt="R绘图嵌入图片演示" /></p>
 
 <p></p>
-
-        <br>
+      <p>
         <a href="https://guangchuangyu.github.io/cn/2017/04/ggimage/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
@@ -675,20 +665,22 @@ rasterImage(x, 2, 2, 6, 4)
   <div class="pagination-bar">
     <ul class="pagination">
       
-        <li class="pagination-prev">
-          <a class="btn btn--default btn--small" href="https://guangchuangyu.github.io/cn/tags/ggplot2/page/4/">
-            <i class="fa fa-angle-left text-base icon-mr"></i>
-            <span>NEWER POSTS</span>
-          </a>
-        </li>
-      
-      
-        <li class="pagination-next">
-          <a class="btn btn--default btn--small" href="https://guangchuangyu.github.io/cn/tags/ggplot2/page/6/">
-            <span>OLDER POSTS</span>
-            <i class="fa fa-angle-right text-base icon-ml"></i>
-          </a>
-        </li>
+        
+          <li class="pagination-prev">
+            <a class="btn btn--default btn--small" href="https://guangchuangyu.github.io/cn/tags/ggplot2/page/4/">
+              <i class="fa fa-angle-left text-base icon-mr"></i>
+              <span>NEWER POSTS</span>
+            </a>
+          </li>
+        
+        
+          <li class="pagination-next">
+            <a class="btn btn--default btn--small" href="https://guangchuangyu.github.io/cn/tags/ggplot2/page/6/">
+              <span>OLDER POSTS</span>
+              <i class="fa fa-angle-right text-base icon-ml"></i>
+            </a>
+          </li>
+        
       
       <li class="pagination-number">page 5 of 7</li>
     </ul>
@@ -739,7 +731,7 @@ rasterImage(x, 2, 2, 6, 4)
   <div class="modal">
     <div class="modal-header">
       <span class="close-button"><i class="fa fa-close"></i></span>
-      <a href="https://algolia.com" target="_blank" class="searchby-algolia text-color-light link-unstyled">
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
         <span class="searchby-algolia-text text-color-light text-small">by</span>
         <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
       </a>
@@ -1024,7 +1016,7 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         226 posts found
+         225 posts found
       </p>
     </div>
   </div>
@@ -1037,32 +1029,13 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
 
 
     
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
 
 
-<script src="https://guangchuangyu.github.io/cn/js/script-wl33z0n6ocaypepiqrazthtivfrliqijej4rq8ek8gvrv1awftmgjuv8k4zc.min.js"></script>
+<script src="https://guangchuangyu.github.io/cn/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
 
-<script>
-$(document).ready(function() {
-  hljs.configure({ classPrefix: '', useBR: false });
-  $('pre.code-highlight').each(function(i, block) {
-    var code = "";
-    hljs.highlightAuto(block.innerText).value.split(/\r\n|\r|\n/).forEach(function(line) {
-      code += "<span class=\"line\">" + line + "</span><br>";
-    });
-    if (code.length > 0) {
-      block.innerHTML = code;  
-    }
-  });
-  $('pre > code').each(function(i, block) {
-    $(this).addClass('codeblock');
-    hljs.highlightBlock(block);
-  });
-});
-</script>
 
 
 
