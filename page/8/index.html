@@ -230,6 +230,66 @@ if (!doNotTrack) {
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/genomic-coordination-enrichment-analysis/">
+          Genomic coordination的富集性分析
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-12-06T10:03:16&#43;08:00">
+        
+  December 6, 2017
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/chipseq">ChIPseq</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>在《<a href="https://mp.weixin.qq.com/s/v61LjQEfyi_CZucHW53ETw">CS7：Genomic coordination的富集性分析（1）</a>》说到了seq2pathway这个包，其实是两部曲，seq2gene-&gt;gene2pathway，无非是把测序片段用临近的基因注释，包括和TSS overlap的基因，宿主基因，上下游的基因等，然后拿这些基因跑ORA，做富集，仅此而已，这个包支持的物种极有限，《<a href="http://mp.weixin.qq.com/s/_OPzvaEAbiMolCA2mqJXLw">CS4：关于ChIPseq注释的几个问题</a>》这一文中讲到ChIPseeker支持所有有基因组注释的物种，而《<a href="http://mp.weixin.qq.com/s/ScwaofLd_ybfECYjL1dGow">clusterProfiler for enrichment analysis</a>》也支持所有物种（即使你自己跑的电子注释，也能支持），那么使用ChIPseeker来做基因注释，然后衔接clusterProfiler就可以支持所有物种的测序片段进行功能富集分析了。</p>
+
+<p>《<a href="http://mp.weixin.qq.com/s/vWTf59KDs1lp_sQXjEhI_g">CS3: peak注释</a>》本身就支持几种注释，另外我写了一个<code>seq2gene</code>的函数，套用<code>seq2pathway</code>的思路，把一个基因位置上所有关联的基因全部返回来，我们可以使用它去把基因位置信息转换成基因列表，然后用于富集分析，还是熟悉的味道，还是熟悉的配方🦄</p>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2017/12/genomic-coordination-enrichment-analysis/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/subsetting-in-ggplot2-ggtree/">
           ggplot2/ggtree取子集画图
         </a>
@@ -594,74 +654,6 @@ rownames(d) = paste0('g', 1:10)
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/watermark/">
-          听说你想打水印？
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2017-11-10T00:53:00&#43;08:00">
-        
-  November 10, 2017
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p><img src="http://guangchuangyu.github.io/blog_images/R/meme/WechatIMG165.png" alt="" /></p>
-
-<p>正如我在《<a href="http://mp.weixin.qq.com/s/jDXjkrkq_YVhW-Z5Vx2-Fg">用R画meme ;)</a>》里说的，meme包就可以拿来画，当然这个包是设计来画meme的，所以文本只会打在中间，如果你想在右下角之类的，不好意思，我没提供选项让你调文本位置，氮素，meme依然是你的好帮手，怎么说呢，meme不单能帮你读图片，还能用grid画出来，这意味着你可以用<code>grid.text</code>随便加个文本就OK了。</p>
-
-<p>实例演示一发：</p>
-
-<pre><code>library(meme)
-u &lt;- system.file(&quot;angry8.jpg&quot;, package=&quot;meme&quot;)
-x &lt;- meme(u)
-print(x)
-grid.text(&quot;biobabble&quot;, x=.9, y=.05, 
-	gp=gpar(col='white', cex=1.2))
-</code></pre>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2017/11/watermark/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -745,6 +737,39 @@ grid.text(&quot;biobabble&quot;, x=.9, y=.05,
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/07/linux_qq/">
+                <h3 class="media-heading">酗酒的Linux不是好企鹅</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jul 7, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>国内的办公环境，离不开QQ等Windows软件，以前我通过《<a href="http://mp.weixin.qq.com/s/7AdkrX3hZYdKNP4YIhgZLA">安装黑苹果</a>》来解决，如果要用Linux呢？我们不禁想问，<a href="https://solarianprogrammer.com/2017/04/16/windows-susbsystem-for-linux-xfce-4/">连Windows都能跑Linux程序了</a>，Linux到底什么时候能跑Windows程序？</p>
+
+<h2 id="干了这杯酒-不干没鸡鸡">干了这杯酒，不干没鸡鸡！</h2>
+
+<p><img src="https://lh3.googleusercontent.com/-dfDJJYSQ4MM/V-PSb7LmfPI/AAAAAAAAEy8/EXNlBjf7GZI_aAfC-lwQx2bHkppC5ereQCJoC/w530-h530-n-rw/e446d718-5ca4-42ec-8d59-45f4630b211d" alt="" /></p>
+
+<p>Wine虽然是一个解决方案，而且现在也有现成的方案，比如《<a href="http://mp.weixin.qq.com/s/4yWzHxjB9WL33ujagi5BAw">你们想要的：QQ跑在Linux上</a> 》，再比如有打包好的深度QQ等。但我不想在我64位的系统里装一堆32位的兼容包，也不想（多多少少得）折腾Wine。</p>
+
+<h2 id="无需安装-开箱即用">无需安装，开箱即用？</h2>
+
+<p>这显然是最好的方案，比如在苹果系统上，我已经打包了《<a href="http://mp.weixin.qq.com/s/F0TxMk1CrYVNvxWqZgv-Aw">OSX版BioEdit</a>》和《<a href="https://mp.weixin.qq.com/s/P3WhPkTrf2dUkzvOba3hlQ">独家：SciHub苹果桌面版</a>》，你只需要拖到<code>Applications</code>里，双击就能用。</p>
+
+<p>这有什么好处？第一你不用去系统里装Wine以及一堆依赖包，第二你不需要去配置Wine，第三这个运行环境是与你的系统分离的（系统是干净的）。对于用户来说，傻瓜化开箱即用，对于系统来说，干净不影响。这是最好的方案。谁愿意去装一堆没用的兼容<code>libs</code>，谁愿意去折腾老半天还用不上！当然有一点点不好的地方，是打包的软件体积稍大一点，因为你要打包整个运行环境嘛，但现在最不值钱的就是存储空间了。</p>
+
+<p>所以最好的方案是像Mac这样，可以把运行环境分离出来，系统干净不折腾！当然再者还得有像我这样的好心人去打包。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -988,27 +1013,6 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/05/ggplot2-clip/">
-                <h3 class="media-heading">ggplot2新参数clip</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  May 5, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>《<a href="http://mp.weixin.qq.com/s/BTBP_snTRKrjmRCjF6Cp3A">ggplot2字体溢出的那点破事</a>》这是经典老问题了，现在新版本的<code>ggplot2</code>有新的解决方案了，在<code>coord_cartesian</code>中新加入了<code>clip</code>参数，这样可以支持把图层画在画布之外，那么文本打过界也就支持了。这有一个好处，是可以支持direct label，而不需要调整<code>xlim</code>和<code>ylim</code>，毕竟你把<code>xlim</code>和<code>ylim</code>搞大有时候会给人以误导，认为你的数据取值范围就是图中的<code>xlim</code>和<code>ylim</code>，但实际上要小一些。</p>
-
-<p>我以<code>ggtree</code>为例，为了让tip label打全，那么<code>p1</code>把时间给搞到2020，但实际上最近的采样时间是2013年，这样你单看<code>x</code>轴的标记，总感觉有一点点不对路，或者有一点点别扭。现在好了，我不设置<code>xlim</code>，而是让label打过界，当然还是需要有足够的空间来放这些文本，这个可以通过把<code>margin</code>搞大来实现。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1016,7 +1020,7 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         225 posts found
+         226 posts found
       </p>
     </div>
   </div>
