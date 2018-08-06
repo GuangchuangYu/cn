@@ -17,7 +17,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.44 with theme Tranquilpeak 0.4.3-BETA">
+    <meta name="generator" content="Hugo 0.46 with theme Tranquilpeak 0.4.3-BETA">
     <title>Guangchuang Yu</title>
     <meta name="author" content="Guangchuang Yu">
     <meta name="keywords" content="">
@@ -212,6 +212,71 @@ if (!doNotTrack) {
                ">
         <section class="postShorten-group main-content-wrap">
           
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/09/ntlmaps/">
+          穿透院内的代理
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2008-09-28T10:27:00&#43;08:00">
+        
+  September 28, 2008
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/software">software</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>院里使用Microsoft ISA proxy作代理，我用linux，firefox可以通过代理验证，在终端export代理的环境变量也可以用。虽然很多软件不能支持认证，我也懒得理了。由于要用Cytoscape来分析蛋白相互作用网络，这个软件能支持代理却不支持NTLM认证，为了突破这个限制，只能作二级跳了，在本地设一个代理，软件通过这个代理上，而用本机代理负责去连接院内的代理并进行认证。</p>
+
+<p>搜了一下，发现ntlmaps这个包可以用来做认证，这个包是用python写的。</p>
+
+<pre><code>&gt; apt-get install ntlmaps # 安装。
+</code></pre>
+
+<p>安装完就是修改配置文件<code>/etc/ntlmaps/server.cfg</code></p>
+
+<p>设定网络监听的端口、父级代理的IP和端口、账号、密码、网域。</p>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2008/09/ntlmaps/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
           
             
   
@@ -612,91 +677,6 @@ server。之前使用rdesktop远程桌面，最近发现配合seamlessrdp可以�
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/08/88-bachelor/">
-          从概率的角度看 如何告别单身
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2008-08-26T15:10:00&#43;08:00">
-        
-  August 26, 2008
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/statistics">Statistics</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>国家人口统计男人比女人多了3700万，在大学校园里更是流传着“我很丑，可是我很抢手”（女生版）、“我很帅，可是我很无奈”（男生版）。</p>
-
-<p>鉴于大龄猥琐男越来越盛行，以及小平同志说“让一部分人先恋起来嘛”
-今日从科学的角度，让大家明白如何告别单身。
-授人与鱼不如授人与渔。即使没能让你奔小康，起码也解决温饱~~~</p>
-
-<p><img src="http://guangchuangyu.github.io/blog_images/2008/11/xx0.jpg" alt="" /></p>
-
-<p>告别单身的不二法则，三个字，“厚脸皮”，详见下面分析</p>
-
-<p>如果一个男人追一个女人，成功的概率只有0.2，
-那么连续追6个，至少有一个成功的概率，高达0.74</p>
-
-<pre><code>&gt; 1-0.8^6
-[1] 0.737856
-</code></pre>
-
-<p>如果连续追7个的话，至少一个成功的概率将达到0.79</p>
-
-<pre><code>&gt; 1-0.8^7
-[1] 0.7902848
-</code></pre>
-
-<p>如果你不是特别差，成功的概率假如是0.3，那么连续追几个的成功概率将更高。。</p>
-
-<pre><code>&gt; 1-0.7^6
-[1] 0.882351
-&gt; 1-0.7^7
-[1] 0.9176457
-</code></pre>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2008/08/88-bachelor/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -780,6 +760,28 @@ server。之前使用rdesktop远程桌面，最近发现配合seamlessrdp可以�
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/08/pheatmap-class/">
+                <h3 class="media-heading">pheatmap类属性：一个更好用的pheatmap</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Aug 8, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">pheatmap我其实用的次数不多，但在帮别人解决一些问题之后，比如：
+ 听说你还不会画热图 不同数据集画出的热图，用同样的颜色区间上色?  我发现这包的交互能力是比较差的，它就像传统的plot函数一样，命令一打下去，就直接画图，虽然它其实是有输出的，但事实上超出了一般用户的理解能力，它的输出，比如说可以用cowplot来拼图，我在上面链接的那篇文章中皆来演示，然而很多人问我，怎么把pheatmap画的热图和ggplot2的图，用cowplot来拼。这就是因为拼图的方法超出了很多的理解范围，看过演示，也只能照猫画老虎，过后也就忘记了。有没有办法用大家可以理解的方法来拼？这样就不太容易忘记，答案是肯定的，我下次再讲。今天先讲一讲其前提条件。
+pheatmap上一版本是2015年发布的，2018年5月发布了一个新版本：
+ Version 1.0.10  Fixed the blank page issue for RMarkdown notebooks and printing heatmaps to pdf without using filename parameter Can set color of NA now Output now is a pheatmap object with same slots as previously, but it has also print and grid.draw functions (thanks Guangchuang Yu)   主要是由我贡献的，我给pheatmap的输出加了个类属性，这样在画图上，可以好比ggplot2一样。这其实是我写《扪心自问，meme几何？》时，思考的结果。
+比如：
+library(pheatmap) d = matrix(rnorm(100), ncol=10) ## 如果不加silent=T，会有画图窗口出来，但结果一样。 p = pheatmap(d, silent=T)  这样p就存了一个pheatmap对象，这个对象，你在R命令行上打p回车，图就画出来，好像ggplot2一般的体验，这是因为我相应地写的print方法。</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1035,27 +1037,6 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/05/explode-pieplot/">
-                <h3 class="media-heading">爆炸型的饼图</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  May 5, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><img src="http://guangchuangyu.github.io/blog_images/zhishixingqiu/pie_question.png" alt="" /></p>
-
-<p>这是CJ在我的星球里分享的一个关于饼图的实现方式，代码的排版太差，还有一点是对于普通用户来说，还是有点难度，如果是我，必须是写成函数，直接出图。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1063,7 +1044,7 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         226 posts found
+         227 posts found
       </p>
     </div>
   </div>

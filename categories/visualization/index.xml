@@ -6,10 +6,24 @@
     <description>Recent content in Visualization on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 19 Jun 2018 13:06:59 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 06 Aug 2018 12:23:16 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/categories/visualization/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>pheatmap类属性：一个更好用的pheatmap</title>
+      <link>https://guangchuangyu.github.io/cn/2018/08/pheatmap-class/</link>
+      <pubDate>Mon, 06 Aug 2018 12:23:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2018/08/pheatmap-class/</guid>
+      <description>pheatmap我其实用的次数不多，但在帮别人解决一些问题之后，比如：
+ 听说你还不会画热图 不同数据集画出的热图，用同样的颜色区间上色?  我发现这包的交互能力是比较差的，它就像传统的plot函数一样，命令一打下去，就直接画图，虽然它其实是有输出的，但事实上超出了一般用户的理解能力，它的输出，比如说可以用cowplot来拼图，我在上面链接的那篇文章中皆来演示，然而很多人问我，怎么把pheatmap画的热图和ggplot2的图，用cowplot来拼。这就是因为拼图的方法超出了很多的理解范围，看过演示，也只能照猫画老虎，过后也就忘记了。有没有办法用大家可以理解的方法来拼？这样就不太容易忘记，答案是肯定的，我下次再讲。今天先讲一讲其前提条件。
+pheatmap上一版本是2015年发布的，2018年5月发布了一个新版本：
+ Version 1.0.10  Fixed the blank page issue for RMarkdown notebooks and printing heatmaps to pdf without using filename parameter Can set color of NA now Output now is a pheatmap object with same slots as previously, but it has also print and grid.draw functions (thanks Guangchuang Yu)   主要是由我贡献的，我给pheatmap的输出加了个类属性，这样在画图上，可以好比ggplot2一样。这其实是我写《扪心自问，meme几何？》时，思考的结果。
+比如：
+library(pheatmap) d = matrix(rnorm(100), ncol=10) ## 如果不加silent=T，会有画图窗口出来，但结果一样。 p = pheatmap(d, silent=T)  这样p就存了一个pheatmap对象，这个对象，你在R命令行上打p回车，图就画出来，好像ggplot2一般的体验，这是因为我相应地写的print方法。</description>
+    </item>
     
     <item>
       <title>2018世界杯专属图层</title>
