@@ -230,6 +230,66 @@ if (!doNotTrack) {
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/bioc-db-update/">
+          掐架的额外收获
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-11-12T00:21:00&#43;08:00">
+        
+  November 12, 2017
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>《<a href="http://mp.weixin.qq.com/s/miGQs6U1d3aHwcm7vgNCVw">你昨天才做的分析，可能是几年前的结果！</a>》这篇文章给大家敲了警钟，各种各样的web-server，要小心看有没有维护更新，有些是五年十年都不更新的，十分可怕。文章虽然讲的是富集分析，但其它分析工具你同样需要小心。</p>
+
+<p>当然并不是说独立的软件/软件包就一定靠谱，如果软件自己打包了数据，同样要注意数据是否有更新，而如果数据不打包在软件里，而是在线获取，你同样也该留一下心。这也是clusterProfiler做富集分析的优势所在，KEGG数据是在线的，永远是最新的，而GO的数据不在软件包里，而依赖于别的数据包，而这些数据包是社区维护的（相对而言，个人的维护比较难以为继），就确保了数据一直在有更新维护的。</p>
+
+<p>Bioconductor每半年发行一次，注释包同样每半年更新一次，所以你用clusterProfiler做GO分析，你用的GO数据库不会说超过半年没更新，而不像有些公司给出的结果，落后于这个世界不是一年两年这么简单。</p>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2017/11/bioc-db-update/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/bmc-journal-protects-paper-of-plagiarism/">
           虐狗节来看一下这个裤衩都不要的故事
         </a>
@@ -612,81 +672,6 @@ hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.000
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/shadowtext/">
-          让你画图的文本出现阴影效果
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2017-11-01T19:53:00&#43;08:00">
-        
-  November 1, 2017
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <blockquote>
-<p>Sercan Kahveci</p>
-
-<p>Greetings Mr. Yu,</p>
-
-<p>I am very happy that this package exists. Thank you for making it! I would like to request a feature, to ensure the package is able to compete with professional meme-creation tools like memegenerator and paint.net. Since memes often use the font Impact, in white and with black outline, I believe the package would be more powerful if it also did that automatically.</p>
-
-<p>Regards,</p>
-
-<p>Sercan Kahveci, MSc</p>
-
-<p>Content creator at Questionable Research Memes on Facebook
-<a href="https://www.facebook.com/QResearchMemes/">https://www.facebook.com/QResearchMemes/</a></p>
-</blockquote>
-
-<p>上次一篇《<a href="http://mp.weixin.qq.com/s/jDXjkrkq_YVhW-Z5Vx2-Fg">用R画meme ;)</a>》把脸书在做MEME的人都给炸出来了，专业人士给出专业建议，要用Impact字体，并且要让字体出现阴影效果，这真是厉害了，感觉有点神奇，但他一句，这样就可以和专业工具PK了，着实太刺激了，我决定试一试能不能搞个阴影效果。结果还真让我搞成了，文本有一种浮在上面的错觉。</p>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/R/meme/shadowtext.png" alt="" /></p>
-
-<p>我们知道meme包是grid写的，我的输出是grob对象，当我半夜调试到2点，带着兴奋入睡之后，一点都睡不安稳，早上早早就迷迷糊糊在床上想着，既然我造出了文本阴影效果的grob对象，我应该封装成geom图层，送给ggplot2用户。</p>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2017/11/shadowtext/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -774,6 +759,43 @@ hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.000
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/08/arch-downgrade/">
+                <h3 class="media-heading">Arch之软件降级</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Aug 8, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>用Arch Linux就是每天睡觉关机前滚一下，然而有时候有些软件升级滚出问题，比如<code>glibc-2.28</code>就导致了<code>R</code>安装包有问题，会抛出下面的错误：</p>
+
+<pre><code>terminate called after throwing an instance of 'std::runtime_error'
+  what():  Mutex creation failed
+</code></pre>
+
+<p>用<code>blogdown</code>编译博客也同样会抛出这个错误。</p>
+
+<p>然后<code>electron</code>也有问题，《<a href="http://mp.weixin.qq.com/s/L556YNtVSKf84cEFdEZVBQ">开源的macOS和linux版微信</a>》跑着跑着突然CPU就狂飙。</p>
+
+<p>解决办法就是安装回老版本，但<code>pacman</code>永远是最新的，当然可以去git/svn仓库里找老版本的<code>PKGBUILD</code>，然后再<code>makepkg</code>，但经常会在<code>signature checking</code>这步报错，你还得到导入<code>keyring</code>，挺麻烦。</p>
+
+<p>这时候我找到了<code>downgrade</code>脚本:</p>
+
+<blockquote>
+<p>Bash script for downgrading one or more packages to a version in your cache or the A.L.A.</p>
+</blockquote>
+
+<p>AUR有收录，安装非常简单：</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/08/pheatmap-class/">
                 <h3 class="media-heading">pheatmap类属性：一个更好用的pheatmap</h3>
               </a>
@@ -782,12 +804,16 @@ hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.000
                   Aug 8, 2018
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather">pheatmap我其实用的次数不多，但在帮别人解决一些问题之后，比如：
- 听说你还不会画热图 不同数据集画出的热图，用同样的颜色区间上色?  我发现这包的交互能力是比较差的，它就像传统的plot函数一样，命令一打下去，就直接画图，虽然它其实是有输出的，但事实上超出了一般用户的理解能力，它的输出，比如说可以用cowplot来拼图，我在上面链接的那篇文章中皆来演示，然而很多人问我，怎么把pheatmap画的热图和ggplot2的图，用cowplot来拼。这就是因为拼图的方法超出了很多的理解范围，看过演示，也只能照猫画老虎，过后也就忘记了。有没有办法用大家可以理解的方法来拼？这样就不太容易忘记，答案是肯定的，我下次再讲。今天先讲一讲其前提条件。
-pheatmap上一版本是2015年发布的，2018年5月发布了一个新版本：
- Version 1.0.10  Fixed the blank page issue for RMarkdown notebooks and printing heatmaps to pdf without using filename parameter Can set color of NA now Output now is a pheatmap object with same slots as previously, but it has also print and grid.draw functions (thanks Guangchuang Yu)   主要是由我贡献的，我给pheatmap的输出加了个类属性，这样在画图上，可以好比ggplot2一样。这其实是我写《扪心自问，meme几何？》时，思考的结果。
-比如：
-library(pheatmap) d = matrix(rnorm(100), ncol=10) ## 如果不加silent=T，会有画图窗口出来，但结果一样。 p = pheatmap(d, silent=T)  这样p就存了一个pheatmap对象，这个对象，你在R命令行上打p回车，图就画出来，好像ggplot2一般的体验，这是因为我相应地写的print方法。</div>
+              <div class="media-content hide-xs font-merryweather"><p><code>pheatmap</code>我其实用的次数不多，但在帮别人解决一些问题之后，比如：</p>
+
+<ul>
+<li><a href="http://mp.weixin.qq.com/s/Xhi_ZkrEzUVdnCu7ECBS4w">听说你还不会画热图</a></li>
+<li><a href="https://mp.weixin.qq.com/s/yVLgGQQi0CQ9Q9UfIKl5aA">不同数据集画出的热图，用同样的颜色区间上色?</a></li>
+</ul>
+
+<p>我发现这包的交互能力是比较差的，它就像传统的<code>plot</code>函数一样，命令一打下去，就直接画图，虽然它其实是有输出的，但事实上超出了一般用户的理解能力，它的输出，比如说可以用<code>cowplot</code>来拼图，我在上面链接的那篇文章中皆来演示，然而很多人问我，怎么把<code>pheatmap</code>画的热图和<code>ggplot2</code>的图，用<code>cowplot</code>来拼。这就是因为拼图的方法超出了很多的理解范围，看过演示，也只能照猫画老虎，过后也就忘记了。有没有办法用大家可以理解的方法来拼？这样就不太容易忘记，答案是肯定的，我下次再讲。今天先讲一讲其前提条件。</p>
+
+<p></p></div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -1020,33 +1046,6 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/05/kopernio/">
-                <h3 class="media-heading">Kopernio: 快速一键下文献</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  May 5, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>kopernio是个浏览器插件，可以通过<a href="http://kopernio.com/">http://kopernio.com/</a>获得，现在这类插件其实挺多，当然多半是结合sci-hub，而sci-hub也是下文献领域绝对的王者，而且很多插件还有额外的一些功能，比如显示影响因子之类的，甚至于还有些给加二维码，微信扫一扫直接把文章分享到朋友圈，反正是啥都有人干。所以虽然我知道这个插件已经很久了，我一直没有介绍它的原因就在于此，它似乎也并不出彩。</p>
-
-<p>但今天我要介绍它，因为当你打开它的主页时，你会发现赫然公布着一个消息：</p>
-
-<blockquote>
-<p>We are excited to announce that Kopernio has joined Clarivate Analytics, the home of Web of Science and the Journal Impact Factor.</p>
-</blockquote>
-
-<p>它被Clarivate Analytics收购了，已经是Clarivate Analytics旗下的产品，这意味着以后可能会与Web of Science有更好的整合，它现在支持PubMed和Google Scholar，以后支持Web of Science肯定不在话下，现在是给你一个按钮，直接点击下PDF，以后可能通过整合Web of Science，比如给你期刊的影响因子、学科排名等Clarivate Analytics的拳头产品。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1054,7 +1053,7 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         227 posts found
+         228 posts found
       </p>
     </div>
   </div>

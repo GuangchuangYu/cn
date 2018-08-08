@@ -230,6 +230,68 @@ if (!doNotTrack) {
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2013/09/install-emacs-on-mac/">
+          Install Emacs on Mac
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2013-09-10T18:04:22&#43;08:00">
+        
+  September 10, 2013
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/mac-os">Mac OS</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <h2 id="package-manager">package manager</h2>
+
+<p>之前一直用<a href="http://guangchuangyu.github.io/categories/bsd/">NetBSD</a>的<a href="http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/">pkgsrc</a>做为各种Unix-like系统的包管理系统，pkgsrc在自己内部解决依赖关系，这点对于生产环境来说，是很好的一个优点，我通常会在服务器里装一个pkgsrc，在用户目录下，维护一套UNIX软件。但是用在自己的机器上，内部解决软件依赖，就是个缺点，浪费编译时间和硬盘空间。</p>
+
+<p>Mac上可用的包管理系统很多，Fink移植于<a href="http://guangchuangyu.github.io/categories/linux/">Debian</a>的apt，<a href="http://guangchuangyu.github.io/categories/linux/">Gentoo</a>的portage也支持OS X。OS X是基于BSD的系统，BSD有自己的一套包管理系统，如FreeBSD的ports和<a href="http://guangchuangyu.github.io/categories/bsd/">NetBSD</a>的<a href="http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/">pkgsrc</a>，MacPorts可以看作是这一系列中的一个，不过它并不是OS X原生的，它只是OpenDarwin的子项目，所以和pkgsrc一个样，也是内部解决依赖，真正为OS
+X设计的原生包管理系统非Homebrew莫属，它会尽量依赖系统里已有的软件。
+
+自从用了Homebrew之后，再也不用为系统里有两套perl和python而crazy了，之前通过<a href="http://guangchuangyu.github.io/2011/06/screen-shot/">pkgsrc装的软件</a>全删掉，改Homebrew来安装和管理。
+如果软件没有被pkgsrc收录，而想通过pkgsrc来管理的话，那就得自己<a href="http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/">写makefile</a>，而homebrew，则可以自动帮你生成Formula，比如我要安装<a href="http://users.soe.ucsc.edu/~kent/src/">blat</a>：</p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2013/09/install-emacs-on-mac/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2013/07/permanent-head-damage-to-be/">
           Permanent Head Damage to be
         </a>
@@ -611,66 +673,6 @@ pubmed上不去，完全没影响，因为有hubmed,hubmed主页上写着：An a
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2012/04/enrichment-analysis/">
-          enrichment analysis
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2012-04-28T08:06:05&#43;08:00">
-        
-  April 28, 2012
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/statistics">Statistics</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>经常看到一些饼图，描述某些事物的组成，比如说有钱人的学历分布，然后我们可以看到高学历所占比例并不高，根据这个比例下结论通常是错的，这些比例说明不了问题，如果把各种学历在总体人口中的分布做为背景进行考虑的话，你就会发现学历还是有点用的。
-当我们用组学测定了一大堆分子之后，我们希望站在更高的角度去看这些分子和那些生物学过程相关。那么通常各种注释，对这些基因/蛋白进行分类，那么从分类的比例上，是不能草率下结论，正如上面有钱人学历分布的例子一样。我们需要把总体的分布考虑进去。
-和某个注释/分类是否有相关性，把基因分成属于这一类，和不属于这一类两种，这就好比经典统计学中的白球和黑球的抽样问题。也可以列一个２x２的表，进行独立性分析。
-以文章<a href="http://cancerres.aacrjournals.org/content/62/16/4722">Gene Expression in Ovarian Cancer Reflects Both Morphology and Biological Behavior, Distinguishing Clear Cell from Other Poor-Prognosis Ovarian Carcinomas</a>所鉴定的差异基因为例。
-
-73个差异基因的Symbol，我把它转为 entrezgene
-ID得到57个（漏掉的不管它，只是做为一个例子）:</p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2012/04/enrichment-analysis/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -758,6 +760,43 @@ ID得到57个（漏掉的不管它，只是做为一个例子）:</p>
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/08/arch-downgrade/">
+                <h3 class="media-heading">Arch之软件降级</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Aug 8, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>用Arch Linux就是每天睡觉关机前滚一下，然而有时候有些软件升级滚出问题，比如<code>glibc-2.28</code>就导致了<code>R</code>安装包有问题，会抛出下面的错误：</p>
+
+<pre><code>terminate called after throwing an instance of 'std::runtime_error'
+  what():  Mutex creation failed
+</code></pre>
+
+<p>用<code>blogdown</code>编译博客也同样会抛出这个错误。</p>
+
+<p>然后<code>electron</code>也有问题，《<a href="http://mp.weixin.qq.com/s/L556YNtVSKf84cEFdEZVBQ">开源的macOS和linux版微信</a>》跑着跑着突然CPU就狂飙。</p>
+
+<p>解决办法就是安装回老版本，但<code>pacman</code>永远是最新的，当然可以去git/svn仓库里找老版本的<code>PKGBUILD</code>，然后再<code>makepkg</code>，但经常会在<code>signature checking</code>这步报错，你还得到导入<code>keyring</code>，挺麻烦。</p>
+
+<p>这时候我找到了<code>downgrade</code>脚本:</p>
+
+<blockquote>
+<p>Bash script for downgrading one or more packages to a version in your cache or the A.L.A.</p>
+</blockquote>
+
+<p>AUR有收录，安装非常简单：</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/08/pheatmap-class/">
                 <h3 class="media-heading">pheatmap类属性：一个更好用的pheatmap</h3>
               </a>
@@ -766,12 +805,16 @@ ID得到57个（漏掉的不管它，只是做为一个例子）:</p>
                   Aug 8, 2018
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather">pheatmap我其实用的次数不多，但在帮别人解决一些问题之后，比如：
- 听说你还不会画热图 不同数据集画出的热图，用同样的颜色区间上色?  我发现这包的交互能力是比较差的，它就像传统的plot函数一样，命令一打下去，就直接画图，虽然它其实是有输出的，但事实上超出了一般用户的理解能力，它的输出，比如说可以用cowplot来拼图，我在上面链接的那篇文章中皆来演示，然而很多人问我，怎么把pheatmap画的热图和ggplot2的图，用cowplot来拼。这就是因为拼图的方法超出了很多的理解范围，看过演示，也只能照猫画老虎，过后也就忘记了。有没有办法用大家可以理解的方法来拼？这样就不太容易忘记，答案是肯定的，我下次再讲。今天先讲一讲其前提条件。
-pheatmap上一版本是2015年发布的，2018年5月发布了一个新版本：
- Version 1.0.10  Fixed the blank page issue for RMarkdown notebooks and printing heatmaps to pdf without using filename parameter Can set color of NA now Output now is a pheatmap object with same slots as previously, but it has also print and grid.draw functions (thanks Guangchuang Yu)   主要是由我贡献的，我给pheatmap的输出加了个类属性，这样在画图上，可以好比ggplot2一样。这其实是我写《扪心自问，meme几何？》时，思考的结果。
-比如：
-library(pheatmap) d = matrix(rnorm(100), ncol=10) ## 如果不加silent=T，会有画图窗口出来，但结果一样。 p = pheatmap(d, silent=T)  这样p就存了一个pheatmap对象，这个对象，你在R命令行上打p回车，图就画出来，好像ggplot2一般的体验，这是因为我相应地写的print方法。</div>
+              <div class="media-content hide-xs font-merryweather"><p><code>pheatmap</code>我其实用的次数不多，但在帮别人解决一些问题之后，比如：</p>
+
+<ul>
+<li><a href="http://mp.weixin.qq.com/s/Xhi_ZkrEzUVdnCu7ECBS4w">听说你还不会画热图</a></li>
+<li><a href="https://mp.weixin.qq.com/s/yVLgGQQi0CQ9Q9UfIKl5aA">不同数据集画出的热图，用同样的颜色区间上色?</a></li>
+</ul>
+
+<p>我发现这包的交互能力是比较差的，它就像传统的<code>plot</code>函数一样，命令一打下去，就直接画图，虽然它其实是有输出的，但事实上超出了一般用户的理解能力，它的输出，比如说可以用<code>cowplot</code>来拼图，我在上面链接的那篇文章中皆来演示，然而很多人问我，怎么把<code>pheatmap</code>画的热图和<code>ggplot2</code>的图，用<code>cowplot</code>来拼。这就是因为拼图的方法超出了很多的理解范围，看过演示，也只能照猫画老虎，过后也就忘记了。有没有办法用大家可以理解的方法来拼？这样就不太容易忘记，答案是肯定的，我下次再讲。今天先讲一讲其前提条件。</p>
+
+<p></p></div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -1004,33 +1047,6 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/05/kopernio/">
-                <h3 class="media-heading">Kopernio: 快速一键下文献</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  May 5, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>kopernio是个浏览器插件，可以通过<a href="http://kopernio.com/">http://kopernio.com/</a>获得，现在这类插件其实挺多，当然多半是结合sci-hub，而sci-hub也是下文献领域绝对的王者，而且很多插件还有额外的一些功能，比如显示影响因子之类的，甚至于还有些给加二维码，微信扫一扫直接把文章分享到朋友圈，反正是啥都有人干。所以虽然我知道这个插件已经很久了，我一直没有介绍它的原因就在于此，它似乎也并不出彩。</p>
-
-<p>但今天我要介绍它，因为当你打开它的主页时，你会发现赫然公布着一个消息：</p>
-
-<blockquote>
-<p>We are excited to announce that Kopernio has joined Clarivate Analytics, the home of Web of Science and the Journal Impact Factor.</p>
-</blockquote>
-
-<p>它被Clarivate Analytics收购了，已经是Clarivate Analytics旗下的产品，这意味着以后可能会与Web of Science有更好的整合，它现在支持PubMed和Google Scholar，以后支持Web of Science肯定不在话下，现在是给你一个按钮，直接点击下PDF，以后可能通过整合Web of Science，比如给你期刊的影响因子、学科排名等Clarivate Analytics的拳头产品。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1038,7 +1054,7 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         227 posts found
+         228 posts found
       </p>
     </div>
   </div>
