@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Optimization on Guangchuang Yu</title>
+    <link>https://guangchuangyu.github.io/cn/tags/optimization/</link>
+    <description>Recent content in Optimization on Guangchuang Yu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 01 Jan 2011 08:52:48 +0800</lastBuildDate>
+    
+	<atom:link href="https://guangchuangyu.github.io/cn/tags/optimization/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Single variable optimization</title>
+      <link>https://guangchuangyu.github.io/cn/2011/01/single-variable-optimization/</link>
+      <pubDate>Sat, 01 Jan 2011 08:52:48 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2011/01/single-variable-optimization/</guid>
+      <description>Optimization means to seek minima or maxima of a funtion within a given defined domain.
+If a function reach its maxima or minima, the derivative at that point is approaching to 0. If we apply Newton-Raphson method for root finding to f&#39;, we can get the optimized f.
+f2df &amp;lt;- function(fun) { fun.list = as.list(fun) var &amp;lt;- names(fun.list[1]) fun.exp = fun.list[[2]] diff.fun = D(fun.exp, var) df = list(x=0, diff.fun) df = as.</description>
+    </item>
+    
+  </channel>
+</rss>

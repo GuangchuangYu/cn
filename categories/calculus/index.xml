@@ -42,6 +42,17 @@ and miss法估计。&lt;/p&gt;
     </item>
     
     <item>
+      <title>Single variable optimization</title>
+      <link>https://guangchuangyu.github.io/cn/2011/01/single-variable-optimization/</link>
+      <pubDate>Sat, 01 Jan 2011 08:52:48 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2011/01/single-variable-optimization/</guid>
+      <description>Optimization means to seek minima or maxima of a funtion within a given defined domain.
+If a function reach its maxima or minima, the derivative at that point is approaching to 0. If we apply Newton-Raphson method for root finding to f&#39;, we can get the optimized f.
+f2df &amp;lt;- function(fun) { fun.list = as.list(fun) var &amp;lt;- names(fun.list[1]) fun.exp = fun.list[[2]] diff.fun = D(fun.exp, var) df = list(x=0, diff.fun) df = as.</description>
+    </item>
+    
+    <item>
       <title>用中值定理求根</title>
       <link>https://guangchuangyu.github.io/cn/2008/11/bisect-to-solve-equation/</link>
       <pubDate>Tue, 25 Nov 2008 10:40:22 +0800</pubDate>

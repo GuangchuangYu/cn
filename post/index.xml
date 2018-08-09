@@ -3785,6 +3785,17 @@ Pauling当时是他们最大的竞争对手。第二点是Watson 39岁时，娶�
     </item>
     
     <item>
+      <title>Single variable optimization</title>
+      <link>https://guangchuangyu.github.io/cn/2011/01/single-variable-optimization/</link>
+      <pubDate>Sat, 01 Jan 2011 08:52:48 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2011/01/single-variable-optimization/</guid>
+      <description>Optimization means to seek minima or maxima of a funtion within a given defined domain.
+If a function reach its maxima or minima, the derivative at that point is approaching to 0. If we apply Newton-Raphson method for root finding to f&#39;, we can get the optimized f.
+f2df &amp;lt;- function(fun) { fun.list = as.list(fun) var &amp;lt;- names(fun.list[1]) fun.exp = fun.list[[2]] diff.fun = D(fun.exp, var) df = list(x=0, diff.fun) df = as.</description>
+    </item>
+    
+    <item>
       <title>Phosphoproteome profile of human lung cancer cell line A549</title>
       <link>https://guangchuangyu.github.io/cn/2010/11/phosphoproteome-profile-of-human-lung-cancer-cell-line-a549/</link>
       <pubDate>Tue, 23 Nov 2010 02:22:22 +0800</pubDate>
