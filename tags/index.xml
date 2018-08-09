@@ -138,6 +138,15 @@
     </item>
     
     <item>
+      <title>Book</title>
+      <link>https://guangchuangyu.github.io/cn/tags/book/</link>
+      <pubDate>Sat, 24 Sep 2011 08:57:48 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/book/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Bootstrap</title>
       <link>https://guangchuangyu.github.io/cn/tags/bootstrap/</link>
       <pubDate>Fri, 24 Jun 2011 06:10:37 +0800</pubDate>
@@ -930,24 +939,6 @@
     </item>
     
     <item>
-      <title>Oop</title>
-      <link>https://guangchuangyu.github.io/cn/tags/oop/</link>
-      <pubDate>Fri, 15 Oct 2010 07:24:30 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/oop/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Optimization</title>
-      <link>https://guangchuangyu.github.io/cn/tags/optimization/</link>
-      <pubDate>Sat, 01 Jan 2011 08:52:48 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/optimization/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Orgdb</title>
       <link>https://guangchuangyu.github.io/cn/tags/orgdb/</link>
       <pubDate>Tue, 10 Jul 2018 15:53:00 +0800</pubDate>
@@ -1245,15 +1236,6 @@
     </item>
     
     <item>
-      <title>S3</title>
-      <link>https://guangchuangyu.github.io/cn/tags/s3/</link>
-      <pubDate>Fri, 15 Oct 2010 07:24:30 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/s3/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Sam</title>
       <link>https://guangchuangyu.github.io/cn/tags/sam/</link>
       <pubDate>Fri, 22 Dec 2017 13:50:22 +0800</pubDate>
@@ -1349,6 +1331,15 @@
       <pubDate>Wed, 11 Jul 2018 13:20:00 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/tags/subset/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Summary</title>
+      <link>https://guangchuangyu.github.io/cn/tags/summary/</link>
+      <pubDate>Sat, 24 Sep 2011 08:57:48 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/summary/</guid>
       <description></description>
     </item>
     

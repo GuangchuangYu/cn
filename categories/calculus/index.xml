@@ -6,10 +6,24 @@
     <description>Recent content in Calculus on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Sep 2011 06:40:22 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 24 Sep 2011 08:57:48 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/categories/calculus/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>R for scientific programming</title>
+      <link>https://guangchuangyu.github.io/cn/2011/09/r-for-scientific-programming/</link>
+      <pubDate>Sat, 24 Sep 2011 08:57:48 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2011/09/r-for-scientific-programming/</guid>
+      <description>&lt;p&gt;刚看完《&lt;a href=&#34;http://book.douban.com/subject/4324593/&#34;&gt;Introduction to Scientific Programming and Simulation Using R&lt;/a&gt;》这本书，&lt;/p&gt;
+
+&lt;p&gt;第一部分是R编程入门； 第二部分是数值计算，主要是解方程，求积分和优化；第三部分是概率和统计，主要讲概率、随机变量等概念和参数估计；
+第四部分是simulation，主要讲Monte Carlo积分和方差降低。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>MC积分</title>
@@ -39,17 +53,6 @@ and miss法估计。&lt;/p&gt;
 &lt;p&gt;hit and miss方法收敛太慢，效率并不高，通常所说的MC积分是指下面这个方法。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Single variable optimization</title>
-      <link>https://guangchuangyu.github.io/cn/2011/01/single-variable-optimization/</link>
-      <pubDate>Sat, 01 Jan 2011 08:52:48 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2011/01/single-variable-optimization/</guid>
-      <description>Optimization means to seek minima or maxima of a funtion within a given defined domain.
-If a function reach its maxima or minima, the derivative at that point is approaching to 0. If we apply Newton-Raphson method for root finding to f&#39;, we can get the optimized f.
-f2df &amp;lt;- function(fun) { fun.list = as.list(fun) var &amp;lt;- names(fun.list[1]) fun.exp = fun.list[[2]] diff.fun = D(fun.exp, var) df = list(x=0, diff.fun) df = as.</description>
     </item>
     
     <item>

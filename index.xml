@@ -3544,6 +3544,20 @@ list也有诸多讨论，因为它导致了某些包编译出错（估计是NAME
     </item>
     
     <item>
+      <title>R for scientific programming</title>
+      <link>https://guangchuangyu.github.io/cn/2011/09/r-for-scientific-programming/</link>
+      <pubDate>Sat, 24 Sep 2011 08:57:48 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2011/09/r-for-scientific-programming/</guid>
+      <description>&lt;p&gt;刚看完《&lt;a href=&#34;http://book.douban.com/subject/4324593/&#34;&gt;Introduction to Scientific Programming and Simulation Using R&lt;/a&gt;》这本书，&lt;/p&gt;
+
+&lt;p&gt;第一部分是R编程入门； 第二部分是数值计算，主要是解方程，求积分和优化；第三部分是概率和统计，主要讲概率、随机变量等概念和参数估计；
+第四部分是simulation，主要讲Monte Carlo积分和方差降低。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>MC积分</title>
       <link>https://guangchuangyu.github.io/cn/2011/09/mc-integration/</link>
       <pubDate>Thu, 22 Sep 2011 06:40:22 +0800</pubDate>
@@ -3785,39 +3799,12 @@ Pauling当时是他们最大的竞争对手。第二点是Watson 39岁时，娶�
     </item>
     
     <item>
-      <title>Single variable optimization</title>
-      <link>https://guangchuangyu.github.io/cn/2011/01/single-variable-optimization/</link>
-      <pubDate>Sat, 01 Jan 2011 08:52:48 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2011/01/single-variable-optimization/</guid>
-      <description>Optimization means to seek minima or maxima of a funtion within a given defined domain.
-If a function reach its maxima or minima, the derivative at that point is approaching to 0. If we apply Newton-Raphson method for root finding to f&#39;, we can get the optimized f.
-f2df &amp;lt;- function(fun) { fun.list = as.list(fun) var &amp;lt;- names(fun.list[1]) fun.exp = fun.list[[2]] diff.fun = D(fun.exp, var) df = list(x=0, diff.fun) df = as.</description>
-    </item>
-    
-    <item>
       <title>Phosphoproteome profile of human lung cancer cell line A549</title>
       <link>https://guangchuangyu.github.io/cn/2010/11/phosphoproteome-profile-of-human-lung-cancer-cell-line-a549/</link>
       <pubDate>Tue, 23 Nov 2010 02:22:22 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2010/11/phosphoproteome-profile-of-human-lung-cancer-cell-line-a549/</guid>
       <description>As an in vitro model for type II human lung cancer, A549 cells resist cytotoxicity via phosphorylation of proteins as demonstrated by many studies. However, to date, no large-scale phosphoproteome investigation has been conducted on A549. Here, we performed a systematical analysis of the phosphoproteome of A549 by using mass spectrometry (MS)-based strategies. This investigation led to the identification of 337 phosphorylation sites on 181 phosphoproteins. Among them, 67 phosphoproteins and 230 phosphorylation sites identified appeared to be novel with no previous characterization in lung cancer.</description>
-    </item>
-    
-    <item>
-      <title>The S3 OOP system</title>
-      <link>https://guangchuangyu.github.io/cn/2010/10/the-s3-oop-system/</link>
-      <pubDate>Fri, 15 Oct 2010 07:24:30 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2010/10/the-s3-oop-system/</guid>
-      <description>&lt;p&gt;R currently supports two internal OOP systems (S3 and S4), and several
-others as add-on packages, such as
-&lt;a href=&#34;http://cran.r-project.org/web/packages/R.oo/index.html&#34;&gt;R.oo&lt;/a&gt;, and
-&lt;a href=&#34;http://www.omegahat.org/OOP/&#34;&gt;OOP&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;S3 is easy to use but not reliable enough for large software projects. The S3 system emphasize on generic functions and polymorphism. It&amp;rsquo;s a function centric system which is different from class centric system like JAVA.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>

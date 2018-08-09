@@ -903,6 +903,11 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2011/09/r-for-scientific-programming/</loc>
+    <lastmod>2011-09-24T08:57:48+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2011/09/mc-integration/</loc>
     <lastmod>2011-09-22T06:40:22+08:00</lastmod>
   </url>
@@ -953,18 +958,8 @@
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/2011/01/single-variable-optimization/</loc>
-    <lastmod>2011-01-01T08:52:48+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://guangchuangyu.github.io/cn/2010/11/phosphoproteome-profile-of-human-lung-cancer-cell-line-a549/</loc>
     <lastmod>2010-11-23T02:22:22+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://guangchuangyu.github.io/cn/2010/10/the-s3-oop-system/</loc>
-    <lastmod>2010-10-15T07:24:30+08:00</lastmod>
   </url>
   
   <url>
@@ -1266,6 +1261,12 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/book/</loc>
+    <lastmod>2011-09-24T08:57:48+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/tags/bootstrap/</loc>
     <lastmod>2011-06-24T06:10:37+08:00</lastmod>
     <priority>0</priority>
@@ -1315,7 +1316,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/calculus/</loc>
-    <lastmod>2011-09-22T06:40:22+08:00</lastmod>
+    <lastmod>2011-09-24T08:57:48+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1896,18 +1897,6 @@
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/tags/oop/</loc>
-    <lastmod>2010-10-15T07:24:30+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://guangchuangyu.github.io/cn/tags/optimization/</loc>
-    <lastmod>2011-01-01T08:52:48+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://guangchuangyu.github.io/cn/tags/orgdb/</loc>
     <lastmod>2018-07-10T15:53:00+08:00</lastmod>
     <priority>0</priority>
@@ -2178,12 +2167,6 @@
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/tags/s3/</loc>
-    <lastmod>2010-10-15T07:24:30+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://guangchuangyu.github.io/cn/tags/sam/</loc>
     <lastmod>2017-12-22T13:50:22+08:00</lastmod>
     <priority>0</priority>
@@ -2264,6 +2247,12 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/subset/</loc>
     <lastmod>2018-07-11T13:20:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/summary/</loc>
+    <lastmod>2011-09-24T08:57:48+08:00</lastmod>
     <priority>0</priority>
   </url>
   

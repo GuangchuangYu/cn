@@ -2152,6 +2152,20 @@ print(p)
     </item>
     
     <item>
+      <title>R for scientific programming</title>
+      <link>https://guangchuangyu.github.io/cn/2011/09/r-for-scientific-programming/</link>
+      <pubDate>Sat, 24 Sep 2011 08:57:48 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2011/09/r-for-scientific-programming/</guid>
+      <description>&lt;p&gt;刚看完《&lt;a href=&#34;http://book.douban.com/subject/4324593/&#34;&gt;Introduction to Scientific Programming and Simulation Using R&lt;/a&gt;》这本书，&lt;/p&gt;
+
+&lt;p&gt;第一部分是R编程入门； 第二部分是数值计算，主要是解方程，求积分和优化；第三部分是概率和统计，主要讲概率、随机变量等概念和参数估计；
+第四部分是simulation，主要讲Monte Carlo积分和方差降低。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>QQ plot</title>
       <link>https://guangchuangyu.github.io/cn/2011/08/qq-plot/</link>
       <pubDate>Tue, 02 Aug 2011 08:23:16 +0800</pubDate>
@@ -2211,22 +2225,6 @@ the likelihood)&lt;/p&gt;
 
 &lt;p&gt;ORF1: xxx ORF2: xxx&lt;/p&gt;
 &lt;/blockquote&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>The S3 OOP system</title>
-      <link>https://guangchuangyu.github.io/cn/2010/10/the-s3-oop-system/</link>
-      <pubDate>Fri, 15 Oct 2010 07:24:30 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2010/10/the-s3-oop-system/</guid>
-      <description>&lt;p&gt;R currently supports two internal OOP systems (S3 and S4), and several
-others as add-on packages, such as
-&lt;a href=&#34;http://cran.r-project.org/web/packages/R.oo/index.html&#34;&gt;R.oo&lt;/a&gt;, and
-&lt;a href=&#34;http://www.omegahat.org/OOP/&#34;&gt;OOP&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;S3 is easy to use but not reliable enough for large software projects. The S3 system emphasize on generic functions and polymorphism. It&amp;rsquo;s a function centric system which is different from class centric system like JAVA.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
