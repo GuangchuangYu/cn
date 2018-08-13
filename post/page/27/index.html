@@ -230,6 +230,83 @@ if (!doNotTrack) {
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/09/mc-integration/">
+          MC积分
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2011-09-22T06:40:22&#43;08:00">
+        
+  September 22, 2011
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/programming">Programming</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/calculus">Calculus</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>Monte Carlo方法由冯·诺伊曼于二战时提出，1777年法国人布丰用此思路<a href="http://guangchuangyu.github.io/cn/2011/09/monte-carlo-estimate-pi/">估计pi值</a>被认为是Monte
+Carlo的起源，这个方法简单又快速，通过产生随机数，将数值计算问题变成随机变量的某些特征值（比如期望值）。</p>
+
+<p>积分运算，和<a href="http://guangchuangyu.github.io/cn/2011/09/monte-carlo-estimate-pi/">估计pi值</a>一样，用hit
+and miss法估计。</p>
+
+<pre><code>hit_miss &lt;- function(fun, lower, upper, n=500) {
+    # Monte Carlo integration using the hit and miss method
+    x &lt;- runif(n, lower, upper)
+    f.value &lt;- sapply(seq(lower, upper, 0.001), fun)
+    f.min &lt;- min(f.value)
+    f.max &lt;- max(f.value)
+    y &lt;- runif(n, f.min, f.max)
+    hits &lt;- sum(y &lt;= fun(x))
+    area &lt;- (upper-lower) * f.min + hits/n * (upper-lower) * (f.max-f.min)
+    return(area)
+}
+</code></pre>
+
+<p>hit and miss方法收敛太慢，效率并不高，通常所说的MC积分是指下面这个方法。</p>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2011/09/mc-integration/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/09/monte-carlo-estimate-pi/">
           Monte Carlo估计pi值
         </a>
@@ -631,87 +708,6 @@ the likelihood)</p>
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/06/five-things-biologists-should-know-about-statistics/">
-          Five things biologists should know about statistics
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2011-06-24T06:10:37&#43;08:00">
-        
-  June 24, 2011
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/statistics">statistics</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p><a href="http://www.ebi.ac.uk/~birney/">Ewan Birney</a>最近的一篇博文（<a href="http://genomeinformatician.blogspot.com/2011/06/five-statistical-things-i-wished-i-had.html">Five statistical things I wished I had been taught 20 years ago</a>
-）讲述了统计对于生物学的重要性。</p>
-
-<p>一开始从RA Fisher讲起，说生物压根就是统计。Fisher是个农业学家，他所建立的那些统计方法，都是从生物学问题出发。</p>
-
-<p>Ewan所谈及的五个方面分别是：</p>
-
-<blockquote>
-<p>1. Non parametric statistics. These are statistical tests which make a
-bare minimum of assumptions of underlying distributions; in biology we
-are rarely confident that we know the underlying distribution, and hand
-waving about central limit theorem can only get you so far. Wherever
-possible you should use a non parameteric test. This is Mann-Whitney (or
-Wilcoxon if you prefer) for testing &ldquo;medians&rdquo; (Medians is in quotes
-because this is not quite true. They test something which is closely
-related to the median) of two distributions, Spearman&rsquo;s Rho (rather
-pearson&rsquo;s r2) for correlation, and the Kruskal test rather than ANOVAs
-(though if I get this right, you can&rsquo;t in Kruskal do the more
-sophisticated nested models you can do with ANOVA). Finally, don&rsquo;t
-forget the rather wonderful Kolmogorov-Smirnov (I always think it sounds
-like really good vodka) test of whether two sets of observations come
-from the same distribution. All of these methods have a basic theme of
-doing things on the rank of items in a distribution, not the actual
-level. So - if in doubt, do things on the rank of metric, rather than
-the metric itself.</p>
-</blockquote>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2011/06/five-things-biologists-should-know-about-statistics/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -795,6 +791,25 @@ the metric itself.</p>
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/08/ggplot-3d/">
+                <h3 class="media-heading">用ggplot2画3D</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Aug 8, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>在《<a href="http://mp.weixin.qq.com/s/BPY4dPFrrNrDKccMvax07w">扪心自问，meme几何？</a>》一文中，我画了一只兔子，今天给大家演示一下画一只3D版本的兔子，我们知道<code>ggplot2</code>不支持3D，只能画2D的图，但3D其实只是视觉上的，显示在你屏幕上的，同样只是2D。所以我们要做的，就是把3D的坐标转换成2D，然后画出2D的图片来，而这2D看上去有3D的效果。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1059,33 +1074,6 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/06/github-ms-meme/">
-                <h3 class="media-heading">github被微软收购</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jun 6, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>微软以75亿美元收购全球最大的单身交友网站GitHub，应景<a href="https://mp.weixin.qq.com/s/koM3GU1zr8dE0S0fkdncxA">分享一张图片</a>，其实这图大家并不陌生，在《<a href="http://mp.weixin.qq.com/s/Xhi_ZkrEzUVdnCu7ECBS4w">听说你还不会画热图</a>》一文中，大家早已见过。</p>
-
-<p>这图实在太好玩，被套在各种场景上，今天就要教大家怎么用R，纯代码生成这样的图，简直是吐槽神器。这类图可以归入meme，画meme，当然少不了我写的meme包，这包收录在CRAN中，点击下面链接了解一下：</p>
-
-<ul>
-<li><a href="http://mp.weixin.qq.com/s/jDXjkrkq_YVhW-Z5Vx2-Fg">用R画meme ;)</a></li>
-<li><a href="https://mp.weixin.qq.com/s/4b8enFCd_lLt278Ddxp3rg">使用外部字体画meme</a></li>
-<li><a href="http://mp.weixin.qq.com/s/BPY4dPFrrNrDKccMvax07w">扪心自问，meme几何？</a></li>
-</ul>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1093,7 +1081,7 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         229 posts found
+         230 posts found
       </p>
     </div>
   </div>

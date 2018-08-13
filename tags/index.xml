@@ -6,10 +6,19 @@
     <description>Recent content in Tags on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 Dec 2017 13:50:22 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 13 Aug 2018 18:30:00 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>3d</title>
+      <link>https://guangchuangyu.github.io/cn/tags/3d/</link>
+      <pubDate>Mon, 13 Aug 2018 18:30:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/3d/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Alignment</title>
@@ -500,7 +509,7 @@
     <item>
       <title>Ggplot2</title>
       <link>https://guangchuangyu.github.io/cn/tags/ggplot2/</link>
-      <pubDate>Tue, 19 Jun 2018 13:06:59 +0800</pubDate>
+      <pubDate>Mon, 13 Aug 2018 18:30:00 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/tags/ggplot2/</guid>
       <description></description>
