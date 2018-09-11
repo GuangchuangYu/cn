@@ -230,6 +230,64 @@ if (!doNotTrack) {
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/08/source-code-reuse/">
+          关于重用代码与文章抄袭
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-08-20T20:27:00&#43;08:00">
+        
+  August 20, 2017
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484733&amp;amp;idx=1&amp;amp;sn=b43739e02ef7e7892f196aa51a1c2e59&amp;amp;chksm=ec43b47adb343d6c98b240a0dfed9abe1ab46e230535a44f2b47bf69cc7b45520f7c7fd38231#rd">大学教授力挺抄袭，强行洗地到裤衩都不要了，到底图什么？</a>》这篇文章发出来之后，引起大家讨论，有一些小伙伴截了屏给我看。所以我想有必要再讲几句，我这篇文章写<strong>两个方面</strong>，一方面是重用代码，一方面是文章抄袭，这两方面可以是不相关的，这里的文章抄袭并不特指你抄了代码。</p>
+
+<p>X教授《<a href="http://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484733&amp;idx=2&amp;sn=b6c3a81f38c0f60433e8ccd721a7ca3b&amp;chksm=ec43b47adb343d6c0bee4ae222af03353329173b9ae87c588d6bb19f95619dc46b829d0af1b6#rd">如何姿势正确的使用他人代码？</a>》，总结起来两个点，一是开源代码随便用，二是文章有引用/致谢就OK。这两个点都是错误的。</p>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2017/08/source-code-reuse/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/08/plagiarism/">
           大学教授力挺抄袭，强行洗地到裤衩都不要了，到底图什么？
         </a>
@@ -696,72 +754,6 @@ While I can run enrichKEGG, I&rsquo;m unable to run gseKEGG basically because I 
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/clusterprofiler-dotplot/">
-          听说你也在画dotplot，但是我不服!
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2017-07-27T07:05:22&#43;08:00">
-        
-  July 27, 2017
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>陈同的‘生信宝典’公众号出了篇《<a href="https://mp.weixin.qq.com/s?__biz=MzI5MTcwNjA4NQ==&amp;mid=2247483978&amp;idx=1&amp;sn=e0c158c0e92375553036cc37f4987e40&amp;chksm=ec0dc7c0db7a4ed6ac593493b7d8b52f11f2feb92d24fa00d19527fbb6f95b24f7e313ef9440#rd">R语言学习 - 富集分析泡泡图</a>》，搞个shell脚本，一步绘图。讲了这个脚本可以适用于clusterProfiler和其它软件的富集结果。</p>
-
-<p>浑身都是硬伤，我都不想吐槽，但由于作者邀请我提点，那就吐槽模式全开。</p>
-
-<h2 id="一个command出图-小白已经哭晕">一个command出图，小白已经哭晕</h2>
-
-<p>从出的图看，应该是ggplot2画的（就算猜错，要吐槽的依然正确），小白在web-server上做了分析，存结果为xls文件，拿你这脚本，一跑报错。读xls文件（别告诉我你跟用户说读xls但其实是个tsv）和画图的依赖关系没解决！用户友好在那里？不要告诉我你的脚本0依赖，有个shell就能跑，即使我们熟悉的各种命令，很多都是独立程序，不关shell什么事。</p>
-
-<h2 id="所谓的一步出图">所谓的一步出图</h2>
-
-<p>既然讲了clusterProfiler，那么clusterProfiler用户笑而不语了。我们用dotplot不也是一条命令出图，为什么要退出R，去跑你的shell脚本，这过程还得转换数据，存储数据。最后的这一步，是前面+N步为代价的。</p>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2017/07/clusterprofiler-dotplot/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -845,6 +837,23 @@ While I can run enrichKEGG, I&rsquo;m unable to run gseKEGG basically because I 
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/09/facet_labeller/">
+                <h3 class="media-heading">用facet_labeller改facet_plot的panel名</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Sep 9, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">I post this because I am facing the same problem: I want to change the text of the label (not the font, the face, the colour, etc: the text itself) of the leftmost panel which is automatically called “Tree” by ggtree. As far as I understand, and contrary to what is posted below, the “theme” thing of ggplot2 only allows to change the appearance of the panel header, not the text of the panel title itself… So how to go about that?</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1099,35 +1108,6 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/06/chocolatey/">
-                <h3 class="media-heading">你是我的巧克力 - Windows包管理器Chocolatey</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jun 6, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>试想一下，每次重装系统，都要安装一堆常用的小软件，7zip, notepad++, filezilla, winrar等等，每次都要搜索下载地址，下载，安装，摆明了是木兰要从军一般，“东市买骏马，西市买鞍鞯，南市买辔头，北市买长鞭”，当然Windows现在也有各种软件管家之类的软件，但很多是流氓软件，要带各种全家桶的，我宁愿自己来一次木兰从军记。</p>
-
-<p>大家都喜欢Linux的包管理，比如<code>apt-get</code>，而OSX也有homebrew，可以brew install一大票Unix-like的软件，而Windows用户只有羡慕的份，上面提到的流氓软件管理，当然也是装不了Unix-like软件的，所以我们羡慕，我们妒忌，外加恨！</p>
-
-<hr />
-
-<p>今天要跟大家介绍一个为windows设计的包管理器，Chocolatey，有了它，你也能<code>choco install wget</code>, <code>choco install docker</code>这样装软件了，不用再羡慕水果用户，不用再木兰从军般装软件了。</p>
-
-<blockquote>
-<p><strong>Chocolatey is a package manager for Windows (like apt-get or yum but for Windows)</strong>. It was designed to be a decentralized framework for quickly installing applications and tools that you need. It is built on the NuGet infrastructure currently using PowerShell as its focus for delivering packages from the distros to your door, err computer.</p>
-</blockquote>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1135,7 +1115,7 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         230 posts found
+         231 posts found
       </p>
     </div>
   </div>

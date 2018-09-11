@@ -230,6 +230,77 @@ if (!doNotTrack) {
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/06/screen-shot/">
+          screen shot
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2011-06-28T12:17:30&#43;08:00">
+        
+  June 28, 2011
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/bsd">BSD</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/mac-os">Mac OS</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>买了苹果机，一直放在家里没用，准备开会带去用，拿过来装几个软件。</p>
+
+<p>校园网用锐捷是个比较讨厌的东西。当年在华农，光这<a href="http://guangchuangyu.github.io/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/">认证</a>就搞了很久。</p>
+
+<p>现在开源的认证客户端多了，搞起来也方便了，现在在linux下用的<a href="http://code.google.com/p/xmuruijie/">xmuruijie</a>，就比当年<a href="http://guangchuangyu.github.io/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/">mystar</a>好用。</p>
+
+<p>估计xmuruijie也是可以在苹果机上用的，依赖python，搞不好还有些modules要装，懒得去弄，搜了一下，找到<a href="http://code.google.com/p/mentohust/">mentohust</a>，当然需要改一下mac address，用万能的ifconfig搞定。</p>
+
+<p>为了编译软件，必要先装xcode，这个大家伙，4G多，中午挂到吃晚饭才下完。
+然后就可以装各种open source的软件。</p>
+
+<p>mac上有fink支持debian一样的apt-get，还有原生的macport，gentoo的portage也支持，我选择使用<a href="http://guangchuangyu.github.io/categories/bsd">netbsd</a>的pkgsrc来安装各种开源软件。</p>
+
+<p>以前用过比较长时间的netbsd，用着比较顺手。</p>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2011/06/screen-shot/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/06/five-things-biologists-should-know-about-statistics/">
           Five things biologists should know about statistics
         </a>
@@ -620,73 +691,6 @@ Pauling当时是他们最大的竞争对手。第二点是Watson 39岁时，娶�
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2009/07/bootstrap-method/">
-          Bootstrap Method
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2009-07-31T09:14:42&#43;08:00">
-        
-  July 31, 2009
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/statistics">statistics</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>[bootstrap](<a href="http://en.wikipedia.org/wiki/Bootstrapping_(statistics))是对观测数据集进行有放回（replacement）的随机抽样，以评估总体的各项统计指标。可以用于假设检验、参数估计。好处是并不要求大样本，也不要求正态数据，并且对于不同的统计指标使用的是同样的计算方法。结果也更为可靠，坏处是计算量大。">http://en.wikipedia.org/wiki/Bootstrapping_(statistics))是对观测数据集进行有放回（replacement）的随机抽样，以评估总体的各项统计指标。可以用于假设检验、参数估计。好处是并不要求大样本，也不要求正态数据，并且对于不同的统计指标使用的是同样的计算方法。结果也更为可靠，坏处是计算量大。</a></p>
-
-<p>统计推断(statistical inference)是基于样本统计值的抽样分布来计算的，抽样分布需要从总体中许多的样本来计算，在只有一个样本的情况下，bootstrap对这一随机样本进行有放回的重复抽样，每一个重抽样本与原始随机样本一样大，每次计算相应的抽样的统计值，重复了N次之后，就可以计算统计值的bootstrap分布。</p>
-
-<p>下面做一个小小的试验：</p>
-
-<pre><code>a &lt;- c(seq(1:10), rnorm(50))  
-</code></pre>
-
-<p>#创建一个样本，60个数据，非正态分布的，如下图</p>
-
-<p><img src="http://guangchuangyu.github.io/blog_images/2009/07/sample_a.png" alt="" title="sample_a" /></p>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2009/07/bootstrap-method/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -770,6 +774,23 @@ Pauling当时是他们最大的竞争对手。第二点是Watson 39岁时，娶�
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/09/facet_labeller/">
+                <h3 class="media-heading">用facet_labeller改facet_plot的panel名</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Sep 9, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">I post this because I am facing the same problem: I want to change the text of the label (not the font, the face, the colour, etc: the text itself) of the leftmost panel which is automatically called “Tree” by ggtree. As far as I understand, and contrary to what is posted below, the “theme” thing of ggplot2 only allows to change the appearance of the panel header, not the text of the panel title itself… So how to go about that?</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1024,35 +1045,6 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/06/chocolatey/">
-                <h3 class="media-heading">你是我的巧克力 - Windows包管理器Chocolatey</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jun 6, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>试想一下，每次重装系统，都要安装一堆常用的小软件，7zip, notepad++, filezilla, winrar等等，每次都要搜索下载地址，下载，安装，摆明了是木兰要从军一般，“东市买骏马，西市买鞍鞯，南市买辔头，北市买长鞭”，当然Windows现在也有各种软件管家之类的软件，但很多是流氓软件，要带各种全家桶的，我宁愿自己来一次木兰从军记。</p>
-
-<p>大家都喜欢Linux的包管理，比如<code>apt-get</code>，而OSX也有homebrew，可以brew install一大票Unix-like的软件，而Windows用户只有羡慕的份，上面提到的流氓软件管理，当然也是装不了Unix-like软件的，所以我们羡慕，我们妒忌，外加恨！</p>
-
-<hr />
-
-<p>今天要跟大家介绍一个为windows设计的包管理器，Chocolatey，有了它，你也能<code>choco install wget</code>, <code>choco install docker</code>这样装软件了，不用再羡慕水果用户，不用再木兰从军般装软件了。</p>
-
-<blockquote>
-<p><strong>Chocolatey is a package manager for Windows (like apt-get or yum but for Windows)</strong>. It was designed to be a decentralized framework for quickly installing applications and tools that you need. It is built on the NuGet infrastructure currently using PowerShell as its focus for delivering packages from the distros to your door, err computer.</p>
-</blockquote>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1060,7 +1052,7 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         230 posts found
+         231 posts found
       </p>
     </div>
   </div>

@@ -230,6 +230,87 @@ if (!doNotTrack) {
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/06/lxde-theme/">
+          Linux装windows的二逼
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-06-19T07:57:46&#43;08:00">
+        
+  June 19, 2017
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/linux">Linux</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>做为一个上了年纪的人，显然已经离不开微信了，macOS还好，企鹅还有照顾到，但linux难道就只能用web版吗？显然不应该的。</p>
+
+<p>如果你是Arch Linux用户的话，那么aur源里已经有好几个款式可以选了：</p>
+
+<pre><code class="language-shell"> ygc  ~  yaourt -Ss wechat
+aur/electronic-wechat 2.0-2 (8) (1.29)
+    A better WeChat client
+aur/electronic-wechat-bin 2.0-1 [installed] (3) (0.36)
+    A better WeChat on macOS and Linux. Built with Electron by Zhongyi Tong.
+aur/electronic-wechat-git 1.4.0.43.gb18ff6d-1 (6) (0.00)
+    An Electron application for WeChat
+aur/franz-bin 4.0.4-5 (86) (12.73)
+    Franz is a free messaging app / former Emperor of Austria and combines 
+    chat &amp; messaging services into one application. Franz currently supports 
+    Slack, WhatsApp, WeChat, HipChat, Facebook Messenger, Telegram, Google 
+    Hangouts, GroupMe, Skype and many more.
+aur/wechat-web-devtools-git 0.17.171900-1 (1) (0.78)
+    Wechat Web Developer Tools
+aur/wechatircd-git r85.bb8f354-1 (0) (0.00)
+    IRC server capable of controlling Web WeChat
+</code></pre>
+
+<p>这里我要介绍的是electronic-wechat。我比较懒，用下面的代码，安装二进制版：</p>
+
+<pre><code class="language-shell">yaourt -S electronic-wechat-bin
+</code></pre>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2017/06/lxde-theme/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/06/quality_bar_fastq/">
           纯文本可视化FASTQ质量数据
         </a>
@@ -585,72 +666,6 @@ I downloaded KEGG pathway dataset to apply fisher exact test. however, genes are
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/05/bootstrap-value%E5%88%86%E6%AE%B5%E6%A0%87%E8%AE%B0/">
-          bootstrap value分段标记
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2017-05-10T15:10:00&#43;08:00">
-        
-  May 10, 2017
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>想要分段标记bootstrap，比如<code>0-70</code>, <code>70-90</code>, <code>90-100</code>之类的。这个对于ggtree来说，太简单。</p>
-
-<p>首先我们要读树，用<code>treeio</code>的<code>read.newick</code>，它和<code>read.tree</code>的不同之处是，加入了参数<code>node.label</code>，当<code>node.label</code>存的不是<code>label</code>，而是<code>bootstrap</code>等数字型的时候，你可以传入<code>node.label='support'</code>，这样它会把node label解析为support value，另存为树注释数据，而不是和tip label混在一起。label变量只能存为字符型，因为和tip label混了，而字符型会让数字操作稍微复杂点。所以我们要用<code>read.newick</code>。</p>
-
-<pre><code class="language-r">tree &lt;- read.newick(&quot;RMI.phy_phyml_tree_rooted_labeled.txt&quot;, node.label='support')
-root &lt;- getRoot(tree@phylo)
-
-p &lt;- ggtree(tree, color=&quot;black&quot;, size=1.5, linetype=1,  ladderize=TRUE) + 
-     ggtitle(label=&quot;Figure A&quot;) + 
-    geom_tiplab(size=4.5, hjust = -0.060, fontface=&quot;bold&quot;) +  xlim(0, 0.09)
-</code></pre>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2017/05/bootstrap-value%E5%88%86%E6%AE%B5%E6%A0%87%E8%AE%B0/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -734,6 +749,23 @@ p &lt;- ggtree(tree, color=&quot;black&quot;, size=1.5, linetype=1,  ladderize=T
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/09/facet_labeller/">
+                <h3 class="media-heading">用facet_labeller改facet_plot的panel名</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Sep 9, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">I post this because I am facing the same problem: I want to change the text of the label (not the font, the face, the colour, etc: the text itself) of the leftmost panel which is automatically called “Tree” by ggtree. As far as I understand, and contrary to what is posted below, the “theme” thing of ggplot2 only allows to change the appearance of the panel header, not the text of the panel title itself… So how to go about that?</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -988,35 +1020,6 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/06/chocolatey/">
-                <h3 class="media-heading">你是我的巧克力 - Windows包管理器Chocolatey</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jun 6, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>试想一下，每次重装系统，都要安装一堆常用的小软件，7zip, notepad++, filezilla, winrar等等，每次都要搜索下载地址，下载，安装，摆明了是木兰要从军一般，“东市买骏马，西市买鞍鞯，南市买辔头，北市买长鞭”，当然Windows现在也有各种软件管家之类的软件，但很多是流氓软件，要带各种全家桶的，我宁愿自己来一次木兰从军记。</p>
-
-<p>大家都喜欢Linux的包管理，比如<code>apt-get</code>，而OSX也有homebrew，可以brew install一大票Unix-like的软件，而Windows用户只有羡慕的份，上面提到的流氓软件管理，当然也是装不了Unix-like软件的，所以我们羡慕，我们妒忌，外加恨！</p>
-
-<hr />
-
-<p>今天要跟大家介绍一个为windows设计的包管理器，Chocolatey，有了它，你也能<code>choco install wget</code>, <code>choco install docker</code>这样装软件了，不用再羡慕水果用户，不用再木兰从军般装软件了。</p>
-
-<blockquote>
-<p><strong>Chocolatey is a package manager for Windows (like apt-get or yum but for Windows)</strong>. It was designed to be a decentralized framework for quickly installing applications and tools that you need. It is built on the NuGet infrastructure currently using PowerShell as its focus for delivering packages from the distros to your door, err computer.</p>
-</blockquote>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1024,7 +1027,7 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         230 posts found
+         231 posts found
       </p>
     </div>
   </div>

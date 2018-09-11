@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Aug 2018 18:30:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 11 Sep 2018 13:17:48 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>用facet_labeller改facet_plot的panel名</title>
+      <link>https://guangchuangyu.github.io/cn/2018/09/facet_labeller/</link>
+      <pubDate>Tue, 11 Sep 2018 13:17:48 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2018/09/facet_labeller/</guid>
+      <description>I post this because I am facing the same problem: I want to change the text of the label (not the font, the face, the colour, etc: the text itself) of the leftmost panel which is automatically called “Tree” by ggtree. As far as I understand, and contrary to what is posted below, the “theme” thing of ggplot2 only allows to change the appearance of the panel header, not the text of the panel title itself… So how to go about that?</description>
+    </item>
     
     <item>
       <title>用ggplot2画3D</title>
