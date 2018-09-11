@@ -254,7 +254,7 @@ if (!doNotTrack) {
 <!--more-->
 <p>使用起来很简单，比如下面这个<code>p2</code>的图，就是用<code>facet_plot</code>产生，它包含两个panel，一个叫Tree，另一个叫dot。</p>
 <pre class="r"><code>library(ggtree)</code></pre>
-<pre><code>## ggtree v1.13.3  For help: https://guangchuangyu.github.io/software/ggtree
+<pre><code>## ggtree v1.13.4  For help: https://guangchuangyu.github.io/software/ggtree
 ## 
 ## If you use ggtree in published research, please cite:
 ## Guangchuang Yu, David Smith, Huachen Zhu, Yi Guan, Tommy Tsan-Yuk Lam. ggtree: an R package for visualization and annotation of phylogenetic trees with their covariates and other associated data. Methods in Ecology and Evolution 2017, 8(1):28-36, doi:10.1111/2041-210X.12628</code></pre>
@@ -268,41 +268,11 @@ p2 &lt;- facet_plot(p1, panel=&quot;dot&quot;, data=d2, geom=geom_point,
 <p>那么要改panel的名字，很容易，你只需要传入一个named vector，那么对应的名字就会被改变。比如：</p>
 <pre class="r"><code>lbs &lt;- c(Tree = &quot;tree panel&quot;, dot = &quot;dot panel&quot;)
 facet_labeller(p2, lbs)</code></pre>
-<pre><code>## &lt;ggproto object: Class FacetGrid, Facet, gg&gt;
-##     compute_layout: function
-##     draw_back: function
-##     draw_front: function
-##     draw_labels: function
-##     draw_panels: function
-##     finish_data: function
-##     init_scales: function
-##     map_data: function
-##     params: list
-##     setup_data: function
-##     setup_params: function
-##     shrink: TRUE
-##     train_scales: function
-##     vars: function
-##     super:  &lt;ggproto object: Class FacetGrid, Facet, gg&gt;</code></pre>
+<p><img src="https://guangchuangyu.github.io/cn/cn/post/R/ggtree/2018-facet-labeller_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p>当然你可以只改变其中某一个或某一些panel，全靠你自己指定：</p>
 <pre class="r"><code>lbs &lt;- c(Tree = &quot;tree panel&quot;)
 facet_labeller(p2, lbs)</code></pre>
-<pre><code>## &lt;ggproto object: Class FacetGrid, Facet, gg&gt;
-##     compute_layout: function
-##     draw_back: function
-##     draw_front: function
-##     draw_labels: function
-##     draw_panels: function
-##     finish_data: function
-##     init_scales: function
-##     map_data: function
-##     params: list
-##     setup_data: function
-##     setup_params: function
-##     shrink: TRUE
-##     train_scales: function
-##     vars: function
-##     super:  &lt;ggproto object: Class FacetGrid, Facet, gg&gt;</code></pre>
+<p><img src="https://guangchuangyu.github.io/cn/cn/post/R/ggtree/2018-facet-labeller_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 
               
             </div>
