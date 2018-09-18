@@ -230,6 +230,67 @@ if (!doNotTrack) {
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/09/modify-qq-login-gui/">
+          修改QQ登录界面
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2008-09-23T08:55:00&#43;08:00">
+        
+  September 23, 2008
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/software">Software</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>闲来无聊，改了一下QQ的登录界面。
+下面是下载链接，到QQ目录里替换掉原文件。修改的文件是2008正式版的，没有在别的版本下测试。</p>
+
+<p><a href="http://guangchuangyu.github.io/blog_images/uploads/2008/09/qq_ahmu.rar">安医版</a></p>
+
+<p><img src="http://guangchuangyu.github.io/blog_images/2008/11/qq_ahmu.jpg" alt="qq\_ahmu" /></p>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2008/09/modify-qq-login-gui/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/09/mapping-codelink-id/">
           映射codelink芯片ID
         </a>
@@ -631,63 +692,6 @@ server。之前使用rdesktop远程桌面，最近发现配合seamlessrdp可以�
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/08/retrieve-fasta-by-index/">
-          建索引检索fasta文件
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2008-08-23T13:35:00&#43;08:00">
-        
-  August 23, 2008
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/perl">Perl</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>在实际应用中，尤其是sequence数据，应该尽可能避免把整个文件读入内存，文件有可能几个G甚至更大，可能引起内存崩溃。应该放在数据库里，建索引以检索数据。Bioperl有一个module,
-Bio::DB::Fasta可以实现这个，这个模块在没有安装bioperl的情况下也可以单独安装使用。</p>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2008/08/retrieve-fasta-by-index/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -709,7 +713,7 @@ Bio::DB::Fasta可以实现这个，这个模块在没有安装bioperl的情况�
           </li>
         
       
-      <li class="pagination-number">page 31 of 33</li>
+      <li class="pagination-number">page 31 of 34</li>
     </ul>
   </div>
 
@@ -771,6 +775,33 @@ Bio::DB::Fasta可以实现这个，这个模块在没有安装bioperl的情况�
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/09/install-bioconductor-package/">
+                <h3 class="media-heading">不用biocLite安装Bioconductor包</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Sep 9, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>Bioconductor包的标准安装方法是：</p>
+
+<pre><code>source(&quot;https://bioconductor.org/biocLite.R&quot;)
+biocLite(pkg_name)
+</code></pre>
+
+<p>这其实是非常不好的，多年以来，一直没有改进，试想一下，bioconductor的网站如果被人黑了，放一段危险的代码，然后你却傻傻地去<code>source</code>它，真的是画面太美！</p>
+
+<p>Bioconductor终于是想要改变了，往CRAN上扔了一个叫<code>BiocManager</code>的包，以后通过CRAN安装这个包，再通过这个包来安装Bioconductor的包，显得安全多了，也不用大家费辣么多口水说你得先<code>source</code>一段网上的代码，当然这个<code>BiocManager</code>还不成熟，起码还没有在<code>BiocInstaller</code>加载的时候提示大家转而用<code>BiocManager</code>，也没有在Bioconductor的网页上介绍使用它来安装。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1027,27 +1058,6 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/06/root-edge/">
-                <h3 class="media-heading">ggtree画根分支</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jun 6, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><code>ggtree</code>画树是不带root edge的，之前在《<a href="http://mp.weixin.qq.com/s/b0OVm2ZDGbEZ48O1Uyp_WA">中空的环形树</a>》一文中，有用户想要加长长的root edge，这样变成环形树的时候，就可以用这个root edge把树给顶出去，这个我给出的解决方案是留白，大家可以回过去看那篇文章。</p>
-
-<p>然而root edge在某些时候还是需要的，我其实也一直有要写的想法，不过因为不是特别需要的东西，一直也就放着，刚好最近有用户在feature request，想要画root edge，于是我就实现了<code>geom_rootedge</code>图层，当你加这个图层的时候，root edge就自动画上去了。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1055,7 +1065,7 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         231 posts found
+         232 posts found
       </p>
     </div>
   </div>

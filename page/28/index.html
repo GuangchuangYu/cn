@@ -230,6 +230,102 @@ if (!doNotTrack) {
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/07/a-simple-gene-finder/">
+          a simple gene finder
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2011-07-10T09:04:46&#43;08:00">
+        
+  July 10, 2011
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/conference">conference</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>上了几天的课，<a href="http://ibw2011.fmmu.edu.cn/schedule.htm">http://ibw2011.fmmu.edu.cn/schedule.htm</a>
+今天就上完了，只完成了project 1，想写gibbs sampling，但是没搞明白，汗。</p>
+
+<p>这个纯属练习用，没啥实用价值。</p>
+
+<blockquote>
+<p>Course Projects:</p>
+
+<p>Project 1: Implementation of a simple gene finder</p>
+
+<p>GOAL</p>
+
+<p>Build a simple codon-usage based gene finder for finding genes in
+E.coli.</p>
+
+<p>Procedure</p>
+
+<p>Collect 100 gene sequences from the bacterium E. coli in the genbank
+(<a href="http://www.ncbi.nlm.nihh.gov">http://www.ncbi.nlm.nihh.gov</a>). Compute the codon usage table based on
+these genes (and the translated protein sequences from them); Build a
+probabilistic model based on the codon usages; Implement a random
+sequence model in which the nucleotide frequency is computed from the
+100 E. coli genes. For a given DNA sequence (and one selected reading
+frame), compare your model with a random sequence model; Results that
+you should submit:</p>
+
+<p>Two FASTA files for the collected 100 genes and 100 translated protein
+sequences; The printed codon usage table; A program named ECgnfinder,
+running with the syntax as ECgnfinder –i inputfile</p>
+
+<p>Inputfile stands for the name of input file, which should contain one
+DNA sequence in FASTA file format; the program should be able to
+report an error message if the input file is in the wrong format.</p>
+
+<p>The output should be printed to the standard output as (xxx stands for
+the likelihood)</p>
+
+<p>ORF1: xxx ORF2: xxx</p>
+</blockquote>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2011/07/a-simple-gene-finder/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/06/screen-shot/">
           screen shot
         </a>
@@ -619,78 +715,6 @@ Pauling当时是他们最大的竞争对手。第二点是Watson 39岁时，娶�
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2010/07/xming-windows%E4%B8%8B%E8%BF%9C%E7%A8%8Blinux%E6%A1%8C%E9%9D%A2/">
-          Xming-windows下远程linux桌面
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2010-07-05T07:37:09&#43;08:00">
-        
-  July 5, 2010
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/windows">Windows</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/linux">Linux</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>机房放着台机架机，闲着也是耗电，平时偶尔用putty登上去，没有图形界面还是有些不方便。</p>
-
-<p>搜了一下，发现好几个软件可做这样的事，Xming是开源的，所以选择使用Xming+putty来远程连linux的桌面。</p>
-
-<p>试用了一下，果然不错。</p>
-
-<p>需要修改/etc/ssh/sshd_config，添加：</p>
-
-<pre><code>X11Forwrding yes
-</code></pre>
-
-<p>需要配置一下PuTTY，<code>Connection-SSh-X11</code>中选中<code>Enable X11forwarding</code>
-其中<code>X display location</code>里填入<code>localhost:0</code>。</p>
-
-<p>运行Xming，再用putty连到服务器上，运行程序，就OK了。就好像windows下的本地程序一般。整合性很好。</p>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2010/07/xming-windows%E4%B8%8B%E8%BF%9C%E7%A8%8Blinux%E6%A1%8C%E9%9D%A2/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -712,7 +736,7 @@ Pauling当时是他们最大的竞争对手。第二点是Watson 39岁时，娶�
           </li>
         
       
-      <li class="pagination-number">page 28 of 33</li>
+      <li class="pagination-number">page 28 of 34</li>
     </ul>
   </div>
 
@@ -774,6 +798,33 @@ Pauling当时是他们最大的竞争对手。第二点是Watson 39岁时，娶�
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/09/install-bioconductor-package/">
+                <h3 class="media-heading">不用biocLite安装Bioconductor包</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Sep 9, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>Bioconductor包的标准安装方法是：</p>
+
+<pre><code>source(&quot;https://bioconductor.org/biocLite.R&quot;)
+biocLite(pkg_name)
+</code></pre>
+
+<p>这其实是非常不好的，多年以来，一直没有改进，试想一下，bioconductor的网站如果被人黑了，放一段危险的代码，然后你却傻傻地去<code>source</code>它，真的是画面太美！</p>
+
+<p>Bioconductor终于是想要改变了，往CRAN上扔了一个叫<code>BiocManager</code>的包，以后通过CRAN安装这个包，再通过这个包来安装Bioconductor的包，显得安全多了，也不用大家费辣么多口水说你得先<code>source</code>一段网上的代码，当然这个<code>BiocManager</code>还不成熟，起码还没有在<code>BiocInstaller</code>加载的时候提示大家转而用<code>BiocManager</code>，也没有在Bioconductor的网页上介绍使用它来安装。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1030,27 +1081,6 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/06/root-edge/">
-                <h3 class="media-heading">ggtree画根分支</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jun 6, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><code>ggtree</code>画树是不带root edge的，之前在《<a href="http://mp.weixin.qq.com/s/b0OVm2ZDGbEZ48O1Uyp_WA">中空的环形树</a>》一文中，有用户想要加长长的root edge，这样变成环形树的时候，就可以用这个root edge把树给顶出去，这个我给出的解决方案是留白，大家可以回过去看那篇文章。</p>
-
-<p>然而root edge在某些时候还是需要的，我其实也一直有要写的想法，不过因为不是特别需要的东西，一直也就放着，刚好最近有用户在feature request，想要画root edge，于是我就实现了<code>geom_rootedge</code>图层，当你加这个图层的时候，root edge就自动画上去了。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1058,7 +1088,7 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         231 posts found
+         232 posts found
       </p>
     </div>
   </div>

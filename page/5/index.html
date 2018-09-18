@@ -230,6 +230,68 @@ if (!doNotTrack) {
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/03/treescale_unrooted_tree/">
+          add treescale to unrooted tree
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-03-05T13:17:48&#43;08:00">
+        
+  March 5, 2018
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/evolution">Evolution</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <blockquote>
+<p>I am trying to add a scale to an unrooted tree with <code>geom_treescale</code>, but when I use it, the tree completely collapses and I am not able to set anything that fix it. Anybody has any idea on how to do it ?</p>
+</blockquote>
+
+<p><a href="https://groups.google.com/d/msgid/bioc-ggtree/9d69f444-94cf-42df-8382-bca2962b08c9%40googlegroups.com">google group</a>里的问题，说他加<code>geom_treescale</code>之后，树被压缩了，由于他没有给出可重复性的例子，所以我们并不知道情况到底有多么糟糕，但这种情况是可能发生的，因为加<strong>treescale</strong>这种东西，默认情况下<code>geom_treescale</code>会自己去计算该加多大的scale bar，该放在什么位置上，而这种默认情况是基于rectangular布局来的，在假设的情况下，都不可能尽善尽美，假设不成立的情况下当然有可能搞得很差。</p>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2018/03/treescale_unrooted_tree/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/03/ggpar/">
           用par设置ggplot2参数？这个可以有！
         </a>
@@ -578,66 +640,6 @@ if (!doNotTrack) {
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/02/wechat-addition/">
-          网瘾你好，我是80后，请冲我来
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2018-02-05T15:10:00&#43;08:00">
-        
-  February 5, 2018
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/babble">babble</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p><img src="https://guangchuangyu.github.io/blog_images/2018/wechat_additive/images.png" alt="" /></p>
-
-<p>童鞋们，敲黑板划重点啦，上图请对号入坐，没错，说的就是你！这个网瘾的骚年！</p>
-
-<p>Scientific Report最近发表了<a href="https://www.nature.com/articles/s41598-018-19904-y">一篇神文</a>:</p>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2018/02/wechat-addition/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -659,7 +661,7 @@ if (!doNotTrack) {
           </li>
         
       
-      <li class="pagination-number">page 5 of 33</li>
+      <li class="pagination-number">page 5 of 34</li>
     </ul>
   </div>
 
@@ -721,6 +723,33 @@ if (!doNotTrack) {
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/09/install-bioconductor-package/">
+                <h3 class="media-heading">不用biocLite安装Bioconductor包</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Sep 9, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>Bioconductor包的标准安装方法是：</p>
+
+<pre><code>source(&quot;https://bioconductor.org/biocLite.R&quot;)
+biocLite(pkg_name)
+</code></pre>
+
+<p>这其实是非常不好的，多年以来，一直没有改进，试想一下，bioconductor的网站如果被人黑了，放一段危险的代码，然后你却傻傻地去<code>source</code>它，真的是画面太美！</p>
+
+<p>Bioconductor终于是想要改变了，往CRAN上扔了一个叫<code>BiocManager</code>的包，以后通过CRAN安装这个包，再通过这个包来安装Bioconductor的包，显得安全多了，也不用大家费辣么多口水说你得先<code>source</code>一段网上的代码，当然这个<code>BiocManager</code>还不成熟，起码还没有在<code>BiocInstaller</code>加载的时候提示大家转而用<code>BiocManager</code>，也没有在Bioconductor的网页上介绍使用它来安装。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -977,27 +1006,6 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/06/root-edge/">
-                <h3 class="media-heading">ggtree画根分支</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jun 6, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><code>ggtree</code>画树是不带root edge的，之前在《<a href="http://mp.weixin.qq.com/s/b0OVm2ZDGbEZ48O1Uyp_WA">中空的环形树</a>》一文中，有用户想要加长长的root edge，这样变成环形树的时候，就可以用这个root edge把树给顶出去，这个我给出的解决方案是留白，大家可以回过去看那篇文章。</p>
-
-<p>然而root edge在某些时候还是需要的，我其实也一直有要写的想法，不过因为不是特别需要的东西，一直也就放着，刚好最近有用户在feature request，想要画root edge，于是我就实现了<code>geom_rootedge</code>图层，当你加这个图层的时候，root edge就自动画上去了。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1005,7 +1013,7 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         231 posts found
+         232 posts found
       </p>
     </div>
   </div>
