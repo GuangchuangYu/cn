@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2018/09/proxychains/</loc>
+    <lastmod>2018-09-30T10:30:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2018/09/install-bioconductor-package/</loc>
     <lastmod>2018-09-18T13:21:00+08:00</lastmod>
   </url>
@@ -1661,7 +1666,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/</loc>
-    <lastmod>2018-09-18T13:21:00+08:00</lastmod>
+    <lastmod>2018-09-30T10:30:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2051,7 +2056,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/post/</loc>
-    <lastmod>2018-09-18T13:21:00+08:00</lastmod>
+    <lastmod>2018-09-30T10:30:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2088,6 +2093,18 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/proteomics/</loc>
     <lastmod>2018-01-02T10:57:15+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/proxy/</loc>
+    <lastmod>2018-09-30T10:30:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/proxychains/</loc>
+    <lastmod>2018-09-30T10:30:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2249,7 +2266,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/software/</loc>
-    <lastmod>2018-06-12T12:15:00+08:00</lastmod>
+    <lastmod>2018-09-30T10:30:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
