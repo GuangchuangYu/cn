@@ -559,7 +559,27 @@ installed pkg(s)</strong></p>
 
 <p><a href="http://cbl-gorilla.cs.technion.ac.il/GOrilla/5y4n3hn1/GOResults.html">http://cbl-gorilla.cs.technion.ac.il/GOrilla/5y4n3hn1/GOResults.html</a></p>
 
-<p>I am not sure whether this is a bug or not, so I decided to report it here</p></div>
+<p>I am not sure whether this is a bug or not, so I decided to report it here</p>
+
+<p>The dataset is presented below
+&hellip;</p>
+
+<pre><code>&gt; allProtUGO &lt;- enrichGO(gene = upRegProt, OrgDb = org.Hs.eg.db,  keyType = &quot;UNIPROT&quot;,  ont='ALL', pool = TRUE, 
+                       qvalueCutoff = 0.05)
+
+&gt;identifiedProtUGO &lt;- enrichGO(gene = upRegProt, OrgDb = org.Hs.eg.db,  keyType = &quot;UNIPROT&quot;,  ont='ALL', pool = TRUE, 
+                             qvalueCutoff = 0.05,  universe = backgroundProt)
+
+&gt;dim (allProtUGO@result)
+&gt;dim (identifiedProtUGO@result)
+&gt;
+
+</code></pre>
+</blockquote>
+
+<p>要看数据集地请点击<a href="https://github.com/GuangchuangYu/clusterProfiler/issues/122">此处直达github issue</a>。</p>
+
+<p></p></div>
             </div>
             <div style="clear:both;"></div>
             <hr>

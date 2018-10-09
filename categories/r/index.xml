@@ -28,7 +28,27 @@
 
 &lt;p&gt;&lt;a href=&#34;http://cbl-gorilla.cs.technion.ac.il/GOrilla/5y4n3hn1/GOResults.html&#34;&gt;http://cbl-gorilla.cs.technion.ac.il/GOrilla/5y4n3hn1/GOResults.html&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;I am not sure whether this is a bug or not, so I decided to report it here&lt;/p&gt;</description>
+&lt;p&gt;I am not sure whether this is a bug or not, so I decided to report it here&lt;/p&gt;
+
+&lt;p&gt;The dataset is presented below
+&amp;hellip;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; allProtUGO &amp;lt;- enrichGO(gene = upRegProt, OrgDb = org.Hs.eg.db,  keyType = &amp;quot;UNIPROT&amp;quot;,  ont=&#39;ALL&#39;, pool = TRUE, 
+                       qvalueCutoff = 0.05)
+
+&amp;gt;identifiedProtUGO &amp;lt;- enrichGO(gene = upRegProt, OrgDb = org.Hs.eg.db,  keyType = &amp;quot;UNIPROT&amp;quot;,  ont=&#39;ALL&#39;, pool = TRUE, 
+                             qvalueCutoff = 0.05,  universe = backgroundProt)
+
+&amp;gt;dim (allProtUGO@result)
+&amp;gt;dim (identifiedProtUGO@result)
+&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;要看数据集地请点击&lt;a href=&#34;https://github.com/GuangchuangYu/clusterProfiler/issues/122&#34;&gt;此处直达github issue&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
