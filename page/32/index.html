@@ -230,6 +230,91 @@ if (!doNotTrack) {
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/08/88-bachelor/">
+          从概率的角度看 如何告别单身
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2008-08-26T15:10:00&#43;08:00">
+        
+  August 26, 2008
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/statistics">Statistics</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>国家人口统计男人比女人多了3700万，在大学校园里更是流传着“我很丑，可是我很抢手”（女生版）、“我很帅，可是我很无奈”（男生版）。</p>
+
+<p>鉴于大龄猥琐男越来越盛行，以及小平同志说“让一部分人先恋起来嘛”
+今日从科学的角度，让大家明白如何告别单身。
+授人与鱼不如授人与渔。即使没能让你奔小康，起码也解决温饱~~~</p>
+
+<p><img src="http://guangchuangyu.github.io/blog_images/2008/11/xx0.jpg" alt="" /></p>
+
+<p>告别单身的不二法则，三个字，“厚脸皮”，详见下面分析</p>
+
+<p>如果一个男人追一个女人，成功的概率只有0.2，
+那么连续追6个，至少有一个成功的概率，高达0.74</p>
+
+<pre><code>&gt; 1-0.8^6
+[1] 0.737856
+</code></pre>
+
+<p>如果连续追7个的话，至少一个成功的概率将达到0.79</p>
+
+<pre><code>&gt; 1-0.8^7
+[1] 0.7902848
+</code></pre>
+
+<p>如果你不是特别差，成功的概率假如是0.3，那么连续追几个的成功概率将更高。。</p>
+
+<pre><code>&gt; 1-0.7^6
+[1] 0.882351
+&gt; 1-0.7^7
+[1] 0.9176457
+</code></pre>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2008/08/88-bachelor/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/08/gperiodic/">
           gperiodic:元素周期表
         </a>
@@ -580,75 +665,6 @@ Homepage : <a href="http://givre.cabspace.com/ntfs-config">http://givre.cabspace
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2007/06/newton-raphson-method/">
-          Newton-Raphson Method估算函数的根
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2007-06-02T13:53:00&#43;08:00">
-        
-  June 2, 2007
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/math">Math</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/programming">Programming</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/c">C</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <h2 id="newton-raphson-method">Newton-Raphson Method</h2>
-
-<p>曲线<code>f(x)</code>有根c,取曲线上一点$(x_1,f(x_1))$, 过此点的切线交x轴$x_2$,过曲线上$(x_2,f(x_2))$的切线交x轴$x_3$，如此反复得到一个序列 $x_1,x_2,\cdot \cdot \cdot,x_n$ 逼近c值.</p>
-
-<p>过$(x_n,f(x_n))$的切线方程为 $y-f(x_n) = f&rsquo;(x_n)\,(x-x<em>n)$,假设此方程与x轴的交点为$x</em>{n+1}$, 即有: $0 - f(x_n) = f&rsquo;(x_n)(x_n+1 - x<em>n)$， 即$x</em>{n+1} = x_n - \frac{f(x_n)}{f&rsquo;(x_n)}$ <code>&lt;Eq. 1&gt;</code>.</p>
-
-<p>下面利用此法来求一个数的开方。 $f(x) = x^2 - a$ 有根$\sqrt{a}$,
-由$f&rsquo;(x_n) = 2x<em>n$, 代入式<code>&lt;Eq. 1&gt;</code>可得$x</em>{n+1} = (x_n + a/x_n)/2$; 当i -&gt; INF 时, $x_i$ -&gt; $\sqrt{a}$;</p>
-
-<h2 id="c-implementation">C implementation</h2>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2007/06/newton-raphson-method/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -732,6 +748,34 @@ Homepage : <a href="http://givre.cabspace.com/ntfs-config">http://givre.cabspace
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/10/gorilla-vs-clusterprofiler/">
+                <h3 class="media-heading">做学术终究是看脸...</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>做科研我们不爽的是没有结果，比结果更不爽的是结果不符合预期，故事不知道该怎么编，然而戏真的不要太多，学术不是以预期来驱动的，请尊重一下事实，还有你的小鼠。</p>
+
+<blockquote>
+<p>we had a quick email exchange about this and I would like to report this. (I appologise for contacting you directly, rather than following the submission guideline). I have a dataset with 6166 proteins of which 201 proteins are upregulated. The problem is that specifying the background proteins using universe argument in clusterProfiler, decreases the number of significant GO categories (28 significant categories without the universe argument and 5 with this argument). At the same time when I use online GORILLA tool  I get a lot of categories, with the background:</p>
+
+<p><a href="http://cbl-gorilla.cs.technion.ac.il/GOrilla/kwpgie9l/GOResults.html">http://cbl-gorilla.cs.technion.ac.il/GOrilla/kwpgie9l/GOResults.html</a></p>
+
+<p>and not categories without the background:</p>
+
+<p><a href="http://cbl-gorilla.cs.technion.ac.il/GOrilla/5y4n3hn1/GOResults.html">http://cbl-gorilla.cs.technion.ac.il/GOrilla/5y4n3hn1/GOResults.html</a></p>
+
+<p>I am not sure whether this is a bug or not, so I decided to report it here</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -996,38 +1040,6 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/07/scholar-impact-factor/">
-                <h3 class="media-heading">scholar包检索期刊影响因子（2018年最新版本）</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jul 7, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>在《<a href="https://mp.weixin.qq.com/s/kBnLyNl2anXuMa6sDepRQw">一个要复活的R包和一个404的网站</a>》一文中第一次介绍了scholar包，它可以应用于《<a href="https://mp.weixin.qq.com/s/IBrEOh92r_90DRbGb3XlKg">自动抓取论文的引用数据</a>》，虽然数据源来自于Google Scholar，国内用户可能访问不了，但今天要介绍的这个功能，所有人都是可以用的，它允许我们检索期刊的影响因子，在《<a href="https://mp.weixin.qq.com/s/qnuiepL4-nSiSWJVJH54ug">scholar包支持检索期刊影响因子</a>》一文中第一次介绍了这个功能，当时是2016年的影响因子（2017年发布），现在数据已经更新至2018年6月26号发布的2017年影响因子。</p>
-
-<pre><code>&gt; library(scholar)
-&gt; jn = c(&quot;bioinformatics&quot;, &quot;methods in ecology and evolution&quot;,
-+     &quot;molecular biosystems&quot;, &quot;molecular biology and evolution&quot;)
-&gt; get_impactfactor(jn)
-# A tibble: 4 x 4
-  Journal                          Cites ImpactFactor Eigenfactor
-  &lt;chr&gt;                            &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt;
-1 BIOINFORMATICS                   95300         5.48      0.201
-2 Methods in Ecology and Evolution  8866         6.36      0.0370
-3 Molecular BioSystems              7269         2.76      0.0175
-4 MOLECULAR BIOLOGY AND EVOLUTION  44664        10.2       0.102
-</code></pre>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1035,7 +1047,7 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         233 posts found
+         234 posts found
       </p>
     </div>
   </div>

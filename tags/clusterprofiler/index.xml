@@ -6,10 +6,30 @@
     <description>Recent content in Clusterprofiler on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Jul 2018 15:53:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 09 Oct 2018 13:12:00 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/tags/clusterprofiler/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>做学术终究是看脸...</title>
+      <link>https://guangchuangyu.github.io/cn/2018/10/gorilla-vs-clusterprofiler/</link>
+      <pubDate>Tue, 09 Oct 2018 13:12:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2018/10/gorilla-vs-clusterprofiler/</guid>
+      <description>&lt;p&gt;做科研我们不爽的是没有结果，比结果更不爽的是结果不符合预期，故事不知道该怎么编，然而戏真的不要太多，学术不是以预期来驱动的，请尊重一下事实，还有你的小鼠。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;we had a quick email exchange about this and I would like to report this. (I appologise for contacting you directly, rather than following the submission guideline). I have a dataset with 6166 proteins of which 201 proteins are upregulated. The problem is that specifying the background proteins using universe argument in clusterProfiler, decreases the number of significant GO categories (28 significant categories without the universe argument and 5 with this argument). At the same time when I use online GORILLA tool  I get a lot of categories, with the background:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://cbl-gorilla.cs.technion.ac.il/GOrilla/kwpgie9l/GOResults.html&#34;&gt;http://cbl-gorilla.cs.technion.ac.il/GOrilla/kwpgie9l/GOResults.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;and not categories without the background:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://cbl-gorilla.cs.technion.ac.il/GOrilla/5y4n3hn1/GOResults.html&#34;&gt;http://cbl-gorilla.cs.technion.ac.il/GOrilla/5y4n3hn1/GOResults.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I am not sure whether this is a bug or not, so I decided to report it here&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>拟南芥的富集分析</title>

@@ -230,6 +230,64 @@ if (!doNotTrack) {
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2016/11/blast%E4%B8%80%E5%A4%A7%E5%9D%91%E6%97%A0%E6%B3%95%E8%BE%93%E5%87%BAquery-sequence-title/">
+          blast一大坑：无法输出query sequence title
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2016-11-17T00:53:00&#43;08:00">
+        
+  November 17, 2016
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/biology">Biology</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>通常做blast，我都是输出asn格式，然后用blast_formatter抽出需要的信息写成表格格式。</p>
+
+<p>序列的description行当然不会有重复，但是ID (第一个空白前面的字符）是有重复的，从qseqid来看，就分不清是那个序列，于是准备让blast_formatter把query title（整个description line）给输出来，结果仔细阅读了blastn -help发现不支持呀不支持！然而它支持stitle和salltitle，也就是subject的可以，但query的不行，这绝逼是一个大坑！＿|￣|○</p>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2016/11/blast%E4%B8%80%E5%A4%A7%E5%9D%91%E6%97%A0%E6%B3%95%E8%BE%93%E5%87%BAquery-sequence-title/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2016/11/ggtree-reverse-time-scale/">
           ggtree: reverse time scale
         </a>
@@ -572,104 +630,6 @@ if (!doNotTrack) {
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2015/12/%E5%96%9C%E6%96%B0%E5%8E%8C%E6%97%A7%E4%B9%8Bhello-hugo/">
-          喜新厌旧之hello Hugo
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2015-12-04T00:42:26&#43;08:00">
-        
-  December 4, 2015
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/blog">blog</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>最早在China Unix上写博客，后来转战新浪。在<a href="http://azaleasays.com/">azelea</a>的说服下，<a href="http://guangchuangyu.github.io/2008/09/%E5%8D%9A%E5%AE%A2%E8%BD%ACwordpress/">果断换成wordpress</a>，写技术博客贴点代码什么的，新浪必须是太渣。<a href="http://azaleasays.com/">azelea</a>是我开始独立博客的领路人，为我提供了空间和域名。再后来自己买了空间和<code>ygc.name</code>的域名，用了好几年。本来一直有想法要换成github+jekll，恰巧<a href="http://blog.shenwei.me/">Wei Shen</a>强力推荐HUGO。于是再一次换博客。</p>
-
-<p>首先面临着wordpress迁移的问题。</p>
-
-<h1 id="导入wordpress-posts为markdown文件">导入wordpress posts为markdown文件</h1>
-
-<p>试用了多个插件或脚本，都是各种出错。最后发现了神器<a href="https://github.com/jprichardson/potter-wordpress">potter-wordpress</a>，通过npm安装：</p>
-
-<pre><code>npm install -g pottercms-wordpress
-</code></pre>
-
-<p>然后一个语句:</p>
-
-<pre><code>potter-wordpress -h WORDPRESS_SITE_URL -u USER_NAME -p PASSWORD --dir PATH_TO_STORE_MD_FILES
-</code></pre>
-
-<p>自动从线上把posts抓下来，并转化为<code>markdown</code>。在之前各种搞不定之后，看到下面的输出有种莫名的快感。</p>
-
-<p>Fetching articles&hellip;</p>
-
-<pre><code>   Got : [Sun Nov 29 2015] R kernel in Jupyter notebook 3
-   Got : [Mon Nov 09 2015] phylomoji with ggtree
-   Got : [Tue Nov 17 2015] 合体中的操作系统
-   Got : [Mon Nov 02 2015] Comparison of clusterProfiler and GSEA-P
-   Got : [Thu Oct 01 2015] ChIPseq data mining with ChIPseeker
-   Got : [Tue Oct 06 2015] TRIE
-   Got : [Thu Oct 15 2015] [BioC 3.2] NEWS of my BioC packages
-   Got : [Wed Oct 21 2015] use simplify to remove redundancy of enriched GO terms
-
-   ...
-
-   Got : [Mon May 14 2007] Edit partition table in NetBSD/macppc
-   Got : [Mon May 14 2007] 我的emacs配置文件
-   Got : [Mon May 14 2007] pkgsrc tips
-   Got : [Thu May 03 2007] scilab三维平面绘图
-   Got : [Sat Jun 24 2006] qvwm窗口管理器的windows2000主题
-   Got : [Wed Jun 14 2006] 安装os9和netbsd双系统
-   Got : [Sat May 28 2005] 在emacs里使用maxima
-   Got : [Mon Mar 14 2005] scau校园网认证
-   Got : [Fri Jan 14 2005] Powerbook G3上安装gentoo
-</code></pre>
-
-<p>Done.</p>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2015/12/%E5%96%9C%E6%96%B0%E5%8E%8C%E6%97%A7%E4%B9%8Bhello-hugo/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -753,6 +713,34 @@ if (!doNotTrack) {
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/10/gorilla-vs-clusterprofiler/">
+                <h3 class="media-heading">做学术终究是看脸...</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>做科研我们不爽的是没有结果，比结果更不爽的是结果不符合预期，故事不知道该怎么编，然而戏真的不要太多，学术不是以预期来驱动的，请尊重一下事实，还有你的小鼠。</p>
+
+<blockquote>
+<p>we had a quick email exchange about this and I would like to report this. (I appologise for contacting you directly, rather than following the submission guideline). I have a dataset with 6166 proteins of which 201 proteins are upregulated. The problem is that specifying the background proteins using universe argument in clusterProfiler, decreases the number of significant GO categories (28 significant categories without the universe argument and 5 with this argument). At the same time when I use online GORILLA tool  I get a lot of categories, with the background:</p>
+
+<p><a href="http://cbl-gorilla.cs.technion.ac.il/GOrilla/kwpgie9l/GOResults.html">http://cbl-gorilla.cs.technion.ac.il/GOrilla/kwpgie9l/GOResults.html</a></p>
+
+<p>and not categories without the background:</p>
+
+<p><a href="http://cbl-gorilla.cs.technion.ac.il/GOrilla/5y4n3hn1/GOResults.html">http://cbl-gorilla.cs.technion.ac.il/GOrilla/5y4n3hn1/GOResults.html</a></p>
+
+<p>I am not sure whether this is a bug or not, so I decided to report it here</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1017,38 +1005,6 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/07/scholar-impact-factor/">
-                <h3 class="media-heading">scholar包检索期刊影响因子（2018年最新版本）</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jul 7, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>在《<a href="https://mp.weixin.qq.com/s/kBnLyNl2anXuMa6sDepRQw">一个要复活的R包和一个404的网站</a>》一文中第一次介绍了scholar包，它可以应用于《<a href="https://mp.weixin.qq.com/s/IBrEOh92r_90DRbGb3XlKg">自动抓取论文的引用数据</a>》，虽然数据源来自于Google Scholar，国内用户可能访问不了，但今天要介绍的这个功能，所有人都是可以用的，它允许我们检索期刊的影响因子，在《<a href="https://mp.weixin.qq.com/s/qnuiepL4-nSiSWJVJH54ug">scholar包支持检索期刊影响因子</a>》一文中第一次介绍了这个功能，当时是2016年的影响因子（2017年发布），现在数据已经更新至2018年6月26号发布的2017年影响因子。</p>
-
-<pre><code>&gt; library(scholar)
-&gt; jn = c(&quot;bioinformatics&quot;, &quot;methods in ecology and evolution&quot;,
-+     &quot;molecular biosystems&quot;, &quot;molecular biology and evolution&quot;)
-&gt; get_impactfactor(jn)
-# A tibble: 4 x 4
-  Journal                          Cites ImpactFactor Eigenfactor
-  &lt;chr&gt;                            &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt;
-1 BIOINFORMATICS                   95300         5.48      0.201
-2 Methods in Ecology and Evolution  8866         6.36      0.0370
-3 Molecular BioSystems              7269         2.76      0.0175
-4 MOLECULAR BIOLOGY AND EVOLUTION  44664        10.2       0.102
-</code></pre>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1056,7 +1012,7 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         233 posts found
+         234 posts found
       </p>
     </div>
   </div>
