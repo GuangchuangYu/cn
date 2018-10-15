@@ -233,6 +233,74 @@ if (!doNotTrack) {
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/geo-data-mining-for-chipseq/">
+          ChIPseq-GEO数据挖掘
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-12-11T12:53:16&#43;08:00">
+        
+  December 11, 2017
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/chipseq">ChIPseq</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>ChIPseeker系列文章已经介绍了很多内容，包括注释的方方面面，也包括强大的可视化功能（《<a href="http://mp.weixin.qq.com/s/MqpfgkMJSFj0pYwcEjV9kQ">CS6: ChIPseeker的可视化方法（中秋节的视觉饕餮）</a>》）。</p>
+
+<p>今天要介绍一下数据挖掘，从大量已有的数据来产生新的hypothesis。正如我在ChIPseeker的文章里写的：</p>
+
+<blockquote>
+<p>There are increasing evidences shown that combinations of TFs are important for regulating gene expression (Perez-Pinera et al., 2013; Zhu et al., 2008). However, systematically identification of TF interactions by ChIP-seq is still not available. Even if a specific TF binding is essential for a particular regulation was known, we do not have prior knowledge of all its co-factors. There are no systematic strategies available to identified un-known co-factors by ChIP- seq.</p>
+</blockquote>
+
+<p>并没有方法可以大规模地预测未知的共同调控因子，而数据挖掘就是要给我们这种预测的能力。</p>
+
+<p>我当年在写ChIPseeker的时候，我有纠结是写篇Bioinformatics的application note呢，还是写篇长文灌水NAR，毕竟NAR影响因子高一点，最后还是发了Bioinformatics，因为我没钱，囧，Bioinformatics不要版面费啊。然后限于篇幅，ChIPseeker有大量可视化的函数，我在文章中一张图都没放！！！如果当时决定发NAR的话，这个数据挖掘这一块我就会写多点。</p>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2017/12/geo-data-mining-for-chipseq/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+            
+              
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/using-external-font-for-meme/">
           使用外部字体画meme
         </a>
@@ -597,74 +665,6 @@ rownames(d) = paste0('g', 1:10)
 </article>
 
             
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/watermark/">
-          听说你想打水印？
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2017-11-10T00:53:00&#43;08:00">
-        
-  November 10, 2017
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p><img src="http://guangchuangyu.github.io/blog_images/R/meme/WechatIMG165.png" alt="" /></p>
-
-<p>正如我在《<a href="http://mp.weixin.qq.com/s/jDXjkrkq_YVhW-Z5Vx2-Fg">用R画meme ;)</a>》里说的，meme包就可以拿来画，当然这个包是设计来画meme的，所以文本只会打在中间，如果你想在右下角之类的，不好意思，我没提供选项让你调文本位置，氮素，meme依然是你的好帮手，怎么说呢，meme不单能帮你读图片，还能用grid画出来，这意味着你可以用<code>grid.text</code>随便加个文本就OK了。</p>
-
-<p>实例演示一发：</p>
-
-<pre><code>library(meme)
-u &lt;- system.file(&quot;angry8.jpg&quot;, package=&quot;meme&quot;)
-x &lt;- meme(u)
-print(x)
-grid.text(&quot;biobabble&quot;, x=.9, y=.05, 
-	gp=gpar(col='white', cex=1.2))
-</code></pre>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2017/11/watermark/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
             
   <div class="pagination-bar">
     <ul class="pagination">
@@ -749,6 +749,35 @@ grid.text(&quot;biobabble&quot;, x=.9, y=.05,
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/10/ggrough/">
+                <h3 class="media-heading">画图倒不如手绘</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>在《<a href="http://mp.weixin.qq.com/s/P7yUFLwW4OLGBrPw05iQ_A">漫画版的进化树你见过吗？</a>》一文中，我介绍过一个R包，可以把<code>ggplot2</code>转成漫画风格，今天介绍一个新的包，<code>ggrough</code>，它封装了一个叫<code>roughjs</code>的javascript库，可以把<code>ggplot2</code>转成手绘风格：</p>
+
+<pre><code>require(dplyr)
+library(ggplot2)
+count(mtcars, carb) %&gt;%
+  ggplot(aes(carb, n)) +
+  geom_col() + 
+  labs(title=&quot;Number of cars by carburator count&quot;) + 
+  theme_grey(base_size = 16) -&gt; p 
+p
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1025,42 +1054,6 @@ In other words, if we have two species (e.g., Species<strong>198</strong> and Sp
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/07/clusterprofiler-ath/">
-                <h3 class="media-heading">拟南芥的富集分析</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jul 7, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>「知识星球」里的问题，<a href="https://t.zsxq.com/aEyneA2">https://t.zsxq.com/aEyneA2</a>，拟南芥的ID怎么搞，这个内置是支持的。</p>
-
-<p>比如我随便搞几个ID来演示一下：</p>
-
-<pre><code>&gt; require(clusterProfiler)
-Loading required package: clusterProfiler
-
-clusterProfiler v3.9.0  For help: https://guangchuangyu.github.io/software/clusterProfiler
-
-If you use clusterProfiler in published research, please cite:
-Guangchuang Yu, Li-Gen Wang, Yanyan Han, Qing-Yu He. clusterProfiler: an R package for 
-comparing biological themes among gene clusters. OMICS: A Journal of Integrative Biology. 2012, 16(5):284-287.
-
-g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &quot;AT1G30310&quot;, &quot;AT3G18560&quot;,
-&quot;AT2G15960&quot;, &quot;AT2G29290&quot;, &quot;AT1G08930&quot;, &quot;AT2G44460&quot;, &quot;AT3G46600&quot;,
-&quot;AT5G24380&quot;, &quot;AT3G59270&quot;, &quot;AT5G55780&quot;, &quot;AT2G45090&quot;, &quot;AT5G38430&quot;,
-&quot;AT2G17040&quot;, &quot;AT4G35770&quot;, &quot;AT5G30341&quot;, &quot;AT1G56320&quot;, &quot;AT2G16367&quot;)
-</code></pre>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1068,7 +1061,7 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         234 posts found
+         235 posts found
       </p>
     </div>
   </div>

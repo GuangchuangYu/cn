@@ -233,6 +233,72 @@ if (!doNotTrack) {
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/10/ggrough/">
+          画图倒不如手绘
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-10-15T00:21:00&#43;08:00">
+        
+  October 15, 2018
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>在《<a href="http://mp.weixin.qq.com/s/P7yUFLwW4OLGBrPw05iQ_A">漫画版的进化树你见过吗？</a>》一文中，我介绍过一个R包，可以把<code>ggplot2</code>转成漫画风格，今天介绍一个新的包，<code>ggrough</code>，它封装了一个叫<code>roughjs</code>的javascript库，可以把<code>ggplot2</code>转成手绘风格：</p>
+
+<pre><code>require(dplyr)
+library(ggplot2)
+count(mtcars, carb) %&gt;%
+  ggplot(aes(carb, n)) +
+  geom_col() + 
+  labs(title=&quot;Number of cars by carburator count&quot;) + 
+  theme_grey(base_size = 16) -&gt; p 
+p
+</code></pre>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2018/10/ggrough/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+            
+              
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/10/gorilla-vs-clusterprofiler/">
           做学术终究是看脸...
         </a>
@@ -621,75 +687,6 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
 </article>
 
             
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/07/scholar-impact-factor/">
-          scholar包检索期刊影响因子（2018年最新版本）
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2018-07-03T15:22:35&#43;08:00">
-        
-  July 3, 2018
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>在《<a href="https://mp.weixin.qq.com/s/kBnLyNl2anXuMa6sDepRQw">一个要复活的R包和一个404的网站</a>》一文中第一次介绍了scholar包，它可以应用于《<a href="https://mp.weixin.qq.com/s/IBrEOh92r_90DRbGb3XlKg">自动抓取论文的引用数据</a>》，虽然数据源来自于Google Scholar，国内用户可能访问不了，但今天要介绍的这个功能，所有人都是可以用的，它允许我们检索期刊的影响因子，在《<a href="https://mp.weixin.qq.com/s/qnuiepL4-nSiSWJVJH54ug">scholar包支持检索期刊影响因子</a>》一文中第一次介绍了这个功能，当时是2016年的影响因子（2017年发布），现在数据已经更新至2018年6月26号发布的2017年影响因子。</p>
-
-<pre><code>&gt; library(scholar)
-&gt; jn = c(&quot;bioinformatics&quot;, &quot;methods in ecology and evolution&quot;,
-+     &quot;molecular biosystems&quot;, &quot;molecular biology and evolution&quot;)
-&gt; get_impactfactor(jn)
-# A tibble: 4 x 4
-  Journal                          Cites ImpactFactor Eigenfactor
-  &lt;chr&gt;                            &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt;
-1 BIOINFORMATICS                   95300         5.48      0.201
-2 Methods in Ecology and Evolution  8866         6.36      0.0370
-3 Molecular BioSystems              7269         2.76      0.0175
-4 MOLECULAR BIOLOGY AND EVOLUTION  44664        10.2       0.102
-</code></pre>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2018/07/scholar-impact-factor/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
             
   <div class="pagination-bar">
     <ul class="pagination">
@@ -767,6 +764,35 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/10/ggrough/">
+                <h3 class="media-heading">画图倒不如手绘</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>在《<a href="http://mp.weixin.qq.com/s/P7yUFLwW4OLGBrPw05iQ_A">漫画版的进化树你见过吗？</a>》一文中，我介绍过一个R包，可以把<code>ggplot2</code>转成漫画风格，今天介绍一个新的包，<code>ggrough</code>，它封装了一个叫<code>roughjs</code>的javascript库，可以把<code>ggplot2</code>转成手绘风格：</p>
+
+<pre><code>require(dplyr)
+library(ggplot2)
+count(mtcars, carb) %&gt;%
+  ggplot(aes(carb, n)) +
+  geom_col() + 
+  labs(title=&quot;Number of cars by carburator count&quot;) + 
+  theme_grey(base_size = 16) -&gt; p 
+p
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1043,42 +1069,6 @@ In other words, if we have two species (e.g., Species<strong>198</strong> and Sp
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/07/clusterprofiler-ath/">
-                <h3 class="media-heading">拟南芥的富集分析</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jul 7, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>「知识星球」里的问题，<a href="https://t.zsxq.com/aEyneA2">https://t.zsxq.com/aEyneA2</a>，拟南芥的ID怎么搞，这个内置是支持的。</p>
-
-<p>比如我随便搞几个ID来演示一下：</p>
-
-<pre><code>&gt; require(clusterProfiler)
-Loading required package: clusterProfiler
-
-clusterProfiler v3.9.0  For help: https://guangchuangyu.github.io/software/clusterProfiler
-
-If you use clusterProfiler in published research, please cite:
-Guangchuang Yu, Li-Gen Wang, Yanyan Han, Qing-Yu He. clusterProfiler: an R package for 
-comparing biological themes among gene clusters. OMICS: A Journal of Integrative Biology. 2012, 16(5):284-287.
-
-g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &quot;AT1G30310&quot;, &quot;AT3G18560&quot;,
-&quot;AT2G15960&quot;, &quot;AT2G29290&quot;, &quot;AT1G08930&quot;, &quot;AT2G44460&quot;, &quot;AT3G46600&quot;,
-&quot;AT5G24380&quot;, &quot;AT3G59270&quot;, &quot;AT5G55780&quot;, &quot;AT2G45090&quot;, &quot;AT5G38430&quot;,
-&quot;AT2G17040&quot;, &quot;AT4G35770&quot;, &quot;AT5G30341&quot;, &quot;AT1G56320&quot;, &quot;AT2G16367&quot;)
-</code></pre>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1086,7 +1076,7 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         234 posts found
+         235 posts found
       </p>
     </div>
   </div>

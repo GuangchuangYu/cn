@@ -233,6 +233,79 @@ if (!doNotTrack) {
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/04/ggimage/">
+          ggimage：ggplot2中愉快地使用图片
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-04-11T10:06:59&#43;08:00">
+        
+  April 11, 2017
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <h1 id="导言">导言</h1>
+
+<p>本文介绍了<strong>ggimage</strong>包，允许在<strong>ggplot2</strong>作图时嵌入图片，并支持<code>aes</code>映射，可以把离散型变量映射到不同图片。目前有几个包可以使用图片嵌入做图，但都是针对特定的场景，这里使用<strong>ggimage</strong>来展示在这些特定领域里的应用，<strong>ggimage</strong>的设计是通用的，并不被特定场景所限定，文末又介绍了用R图标来画出R、用饼图来画气泡图等实例。</p>
+
+<h1 id="图上嵌图片">图上嵌图片</h1>
+
+<p>R 基础图形库（base graphics）可以在做图的时候嵌入图片，使用的是<code>graphics::rasterImage</code>：</p>
+
+<pre><code class="language-r">imgurl &lt;- &quot;http://phylopic.org/assets/images/submissions/295cd9f7-eef2-441e-ba7e-40c772ca7611.256.png&quot;
+library(EBImage)
+x &lt;- readImage(imgurl)
+plot(1, type = &quot;n&quot;, xlab = &quot;&quot;, ylab = &quot;&quot;, xlim = c(0, 8), ylim = c(0, 8))
+rasterImage(x, 2, 2, 6, 4)
+</code></pre>
+
+<p><img src="https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/raster.png" alt="R绘图嵌入图片演示" /></p>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2017/04/ggimage/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+            
+              
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/04/generate-biobabble-banner-using-ggimage/">
           generate biobabble banner using ggimage
         </a>
@@ -649,91 +722,6 @@ print(p)
 </article>
 
             
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/03/bed%E6%96%87%E4%BB%B6/">
-          BED文件
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2017-03-09T00:13:57&#43;08:00">
-        
-  March 9, 2017
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>BED的全称是Browser Extensible Data，顾名思义是为genome browser设计的，大名鼎鼎的bedtools可不是什么「床上用品」。</p>
-
-<p>BED包含有3个必须的字段和9个可选字段。</p>
-
-<p>三个字段包括：</p>
-
-<ul>
-<li>1 chrom - 染色体名字</li>
-<li>2 chromStart - 染色体起始位点</li>
-<li>3 chromEnd - 染色体终止位点</li>
-</ul>
-
-<blockquote>
-<p>这里必须指出的是<strong>chromStart</strong>是起始于0，而不是1。很多分析软件都忽略
-了这一点，会有一个碱基的位移，据我所知Homer和ChIPseeker没有这个问题，而像peakAnalyzer, ChIPpeakAnno等都有位移的问题。</p>
-</blockquote>
-
-<p>可选的9个字段包括：</p>
-
-<ul>
-<li>4 name - 名字</li>
-<li>5 score - 分值(0-1000), 用于genome browser展示时上色。</li>
-<li>6 strand - 正负链，对于ChIPseq数据来说，<strong>一般</strong>没有正负链信息。</li>
-<li>7 thickStart - 画矩形的起点</li>
-<li>8 thickEnd - 画矩形的终点</li>
-<li>9 itemRgb - RGB值</li>
-<li>10 blockCount - 子元件（比如外显子）的数目</li>
-<li>11 blockSizes - 子元件的大小</li>
-<li>12 blockStarts - 子元件的起始位点</li>
-</ul>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2017/03/bed%E6%96%87%E4%BB%B6/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
             
   <div class="pagination-bar">
     <ul class="pagination">
@@ -818,6 +806,35 @@ print(p)
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/10/ggrough/">
+                <h3 class="media-heading">画图倒不如手绘</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>在《<a href="http://mp.weixin.qq.com/s/P7yUFLwW4OLGBrPw05iQ_A">漫画版的进化树你见过吗？</a>》一文中，我介绍过一个R包，可以把<code>ggplot2</code>转成漫画风格，今天介绍一个新的包，<code>ggrough</code>，它封装了一个叫<code>roughjs</code>的javascript库，可以把<code>ggplot2</code>转成手绘风格：</p>
+
+<pre><code>require(dplyr)
+library(ggplot2)
+count(mtcars, carb) %&gt;%
+  ggplot(aes(carb, n)) +
+  geom_col() + 
+  labs(title=&quot;Number of cars by carburator count&quot;) + 
+  theme_grey(base_size = 16) -&gt; p 
+p
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1094,42 +1111,6 @@ In other words, if we have two species (e.g., Species<strong>198</strong> and Sp
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/07/clusterprofiler-ath/">
-                <h3 class="media-heading">拟南芥的富集分析</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jul 7, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>「知识星球」里的问题，<a href="https://t.zsxq.com/aEyneA2">https://t.zsxq.com/aEyneA2</a>，拟南芥的ID怎么搞，这个内置是支持的。</p>
-
-<p>比如我随便搞几个ID来演示一下：</p>
-
-<pre><code>&gt; require(clusterProfiler)
-Loading required package: clusterProfiler
-
-clusterProfiler v3.9.0  For help: https://guangchuangyu.github.io/software/clusterProfiler
-
-If you use clusterProfiler in published research, please cite:
-Guangchuang Yu, Li-Gen Wang, Yanyan Han, Qing-Yu He. clusterProfiler: an R package for 
-comparing biological themes among gene clusters. OMICS: A Journal of Integrative Biology. 2012, 16(5):284-287.
-
-g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &quot;AT1G30310&quot;, &quot;AT3G18560&quot;,
-&quot;AT2G15960&quot;, &quot;AT2G29290&quot;, &quot;AT1G08930&quot;, &quot;AT2G44460&quot;, &quot;AT3G46600&quot;,
-&quot;AT5G24380&quot;, &quot;AT3G59270&quot;, &quot;AT5G55780&quot;, &quot;AT2G45090&quot;, &quot;AT5G38430&quot;,
-&quot;AT2G17040&quot;, &quot;AT4G35770&quot;, &quot;AT5G30341&quot;, &quot;AT1G56320&quot;, &quot;AT2G16367&quot;)
-</code></pre>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1137,7 +1118,7 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         234 posts found
+         235 posts found
       </p>
     </div>
   </div>

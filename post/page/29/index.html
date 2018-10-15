@@ -230,6 +230,62 @@ if (!doNotTrack) {
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/04/fool-day/">
+          愚人节你好
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2011-04-01T10:48:09&#43;08:00">
+        
+  April 1, 2011
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/personal">Personal</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>去年4月1号，发了<a href="http://www.ncbi.nlm.nih.gov/pubmed/20179076">第一篇SCI</a>，昨天无意中发现，06年我去中科院面试时，不要我的那个实验室，竟然在同一年，<a href="http://www.biomedcentral.com/1471-2164/11/704">引用</a>了我的文章。当年考两次中科院，结果还没考上，这是我以前耿耿于怀了很久的，都是浮云啊。</p>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2011/04/fool-day/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2010/11/phosphoproteome-profile-of-human-lung-cancer-cell-line-a549/">
           Phosphoproteome profile of human lung cancer cell line A549
         </a>
@@ -620,65 +676,6 @@ $ R CMD build --binary pkgname
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/11/bisect-to-solve-equation/">
-          用中值定理求根
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2008-11-25T10:40:22&#43;08:00">
-        
-  November 25, 2008
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/calculus">Calculus</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/programming">Programming</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>翻看了以前写的<a href="https://guangchuangyu.github.io/cn/2007/06/newton-raphson-method/">使用Newton-Raphson Method求一个数的开方</a>，想到其实也可以用中值定理来实现。
-中值定理：f(x)是一个连续性的函数，在[u,v]区间内，当c的值位于f(u)和f(v)之间时，至少存在一个点，满足f(x) = c 当f(u)和f(v)一正一负时，那么在[u,v]之间至少有一个根的存在，这个定理本来就是拿来证明根的存在的，但是其实也可以用来求解根。</p>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2008/11/bisect-to-solve-equation/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -762,6 +759,35 @@ $ R CMD build --binary pkgname
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/10/ggrough/">
+                <h3 class="media-heading">画图倒不如手绘</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>在《<a href="http://mp.weixin.qq.com/s/P7yUFLwW4OLGBrPw05iQ_A">漫画版的进化树你见过吗？</a>》一文中，我介绍过一个R包，可以把<code>ggplot2</code>转成漫画风格，今天介绍一个新的包，<code>ggrough</code>，它封装了一个叫<code>roughjs</code>的javascript库，可以把<code>ggplot2</code>转成手绘风格：</p>
+
+<pre><code>require(dplyr)
+library(ggplot2)
+count(mtcars, carb) %&gt;%
+  ggplot(aes(carb, n)) +
+  geom_col() + 
+  labs(title=&quot;Number of cars by carburator count&quot;) + 
+  theme_grey(base_size = 16) -&gt; p 
+p
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1038,42 +1064,6 @@ In other words, if we have two species (e.g., Species<strong>198</strong> and Sp
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/07/clusterprofiler-ath/">
-                <h3 class="media-heading">拟南芥的富集分析</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jul 7, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>「知识星球」里的问题，<a href="https://t.zsxq.com/aEyneA2">https://t.zsxq.com/aEyneA2</a>，拟南芥的ID怎么搞，这个内置是支持的。</p>
-
-<p>比如我随便搞几个ID来演示一下：</p>
-
-<pre><code>&gt; require(clusterProfiler)
-Loading required package: clusterProfiler
-
-clusterProfiler v3.9.0  For help: https://guangchuangyu.github.io/software/clusterProfiler
-
-If you use clusterProfiler in published research, please cite:
-Guangchuang Yu, Li-Gen Wang, Yanyan Han, Qing-Yu He. clusterProfiler: an R package for 
-comparing biological themes among gene clusters. OMICS: A Journal of Integrative Biology. 2012, 16(5):284-287.
-
-g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &quot;AT1G30310&quot;, &quot;AT3G18560&quot;,
-&quot;AT2G15960&quot;, &quot;AT2G29290&quot;, &quot;AT1G08930&quot;, &quot;AT2G44460&quot;, &quot;AT3G46600&quot;,
-&quot;AT5G24380&quot;, &quot;AT3G59270&quot;, &quot;AT5G55780&quot;, &quot;AT2G45090&quot;, &quot;AT5G38430&quot;,
-&quot;AT2G17040&quot;, &quot;AT4G35770&quot;, &quot;AT5G30341&quot;, &quot;AT1G56320&quot;, &quot;AT2G16367&quot;)
-</code></pre>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1081,7 +1071,7 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         234 posts found
+         235 posts found
       </p>
     </div>
   </div>

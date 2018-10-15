@@ -230,6 +230,66 @@ if (!doNotTrack) {
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2016/11/dna%E5%BA%8F%E5%88%97%E5%B7%AE%E5%BC%82%E4%BD%9C%E5%9B%BE/">
+          DNA序列差异作图
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2016-11-19T12:23:16&#43;08:00">
+        
+  November 19, 2016
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p><img src="https://guangchuangyu.github.io/blog_images/2016/Screen Shot 2016-11-17 at 8.20.21 PM.png" alt="" /></p>
+
+<p>这是高老师<a href="http://link.springer.com/article/10.1007/s11540-015-9307-3">文章</a>里的图，每一个小图都是通过比较两条比对序列差异而做出来的，从图A和B中可以看出，CF_YL21有可能是Mont和Oz两条序列重组而来。高老师自己做出这图后，深知手工统计序列差异、画图、拼图之困难。问我有没有办法读两条序列，生成一个图。</p>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2016/11/dna%E5%BA%8F%E5%88%97%E5%B7%AE%E5%BC%82%E4%BD%9C%E5%9B%BE/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2016/11/blast%E4%B8%80%E5%A4%A7%E5%9D%91%E6%97%A0%E6%B3%95%E8%BE%93%E5%87%BAquery-sequence-title/">
           blast一大坑：无法输出query sequence title
         </a>
@@ -565,71 +625,6 @@ if (!doNotTrack) {
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2016/03/ggtree-for-tree-visualization-annotation/">
-          使用ggtree实现进化树的可视化和注释
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2016-03-09T13:17:48&#43;08:00">
-        
-  March 9, 2016
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/evolution">Evolution</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <blockquote>
-<p>本文受魏太云（<a href="http://www.weibo.com/taiyun">@cloud_wei</a>)的邀请，最初在2015年发表于<a href="http://cos.name/2015/11/to-achieve-the-visualization-and-annotation-of-evolutionary-tree-using-ggtree/">统计之都</a>。</p>
-</blockquote>
-
-<p>进化树看起来和层次聚类很像。有必要解释一下两者的一些区别。</p>
-
-<p>层次聚类的侧重点在于分类，把距离近的聚在一起。而进化树的构建可以说也是一个聚类过程，但侧重点在于推测进化关系和进化距离(evolutionary distance)。</p>
-
-<p>层次聚类的输入是距离，比如euclidean或manhattan距离。把距离近的聚在一起。而进化树推断是从生物序列（DNA或氨基酸）的比对开始。最简单的方法是计算一下序列中不匹配的数目，称之为hamming distance（通常用序列长度做归一化），使用距离当然也可以应用层次聚类的方法。进化树的构建最简单的方法是非加权配对平均法（Unweighted Pair Group Method with Arithmetic Mean, UPGMA），这其实是使用average linkage的层次聚类。这种方法在进化树推断上现在基本没人用。更为常用的是邻接法（neighbor joining），两个节点距离其它节点都比较远，而这两个节点又比较近，它们就是neighbor，可以看出neighbor不一定是距离最近的两个节点。真正做进化的人，这个方法也基本不用。现在主流的方法是最大似然法(Maximum likelihood, ML)，通过进化模型（evolutionary model)估计拓朴结构和分支长度，估计的结果具有最高的概率能够产生观测数据（多序列比对）。另外还有最大简约法和贝叶斯推断等方法用于构建进化树。
-</p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2016/03/ggtree-for-tree-visualization-annotation/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -713,6 +708,35 @@ if (!doNotTrack) {
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/10/ggrough/">
+                <h3 class="media-heading">画图倒不如手绘</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>在《<a href="http://mp.weixin.qq.com/s/P7yUFLwW4OLGBrPw05iQ_A">漫画版的进化树你见过吗？</a>》一文中，我介绍过一个R包，可以把<code>ggplot2</code>转成漫画风格，今天介绍一个新的包，<code>ggrough</code>，它封装了一个叫<code>roughjs</code>的javascript库，可以把<code>ggplot2</code>转成手绘风格：</p>
+
+<pre><code>require(dplyr)
+library(ggplot2)
+count(mtcars, carb) %&gt;%
+  ggplot(aes(carb, n)) +
+  geom_col() + 
+  labs(title=&quot;Number of cars by carburator count&quot;) + 
+  theme_grey(base_size = 16) -&gt; p 
+p
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -989,42 +1013,6 @@ In other words, if we have two species (e.g., Species<strong>198</strong> and Sp
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/07/clusterprofiler-ath/">
-                <h3 class="media-heading">拟南芥的富集分析</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jul 7, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>「知识星球」里的问题，<a href="https://t.zsxq.com/aEyneA2">https://t.zsxq.com/aEyneA2</a>，拟南芥的ID怎么搞，这个内置是支持的。</p>
-
-<p>比如我随便搞几个ID来演示一下：</p>
-
-<pre><code>&gt; require(clusterProfiler)
-Loading required package: clusterProfiler
-
-clusterProfiler v3.9.0  For help: https://guangchuangyu.github.io/software/clusterProfiler
-
-If you use clusterProfiler in published research, please cite:
-Guangchuang Yu, Li-Gen Wang, Yanyan Han, Qing-Yu He. clusterProfiler: an R package for 
-comparing biological themes among gene clusters. OMICS: A Journal of Integrative Biology. 2012, 16(5):284-287.
-
-g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &quot;AT1G30310&quot;, &quot;AT3G18560&quot;,
-&quot;AT2G15960&quot;, &quot;AT2G29290&quot;, &quot;AT1G08930&quot;, &quot;AT2G44460&quot;, &quot;AT3G46600&quot;,
-&quot;AT5G24380&quot;, &quot;AT3G59270&quot;, &quot;AT5G55780&quot;, &quot;AT2G45090&quot;, &quot;AT5G38430&quot;,
-&quot;AT2G17040&quot;, &quot;AT4G35770&quot;, &quot;AT5G30341&quot;, &quot;AT1G56320&quot;, &quot;AT2G16367&quot;)
-</code></pre>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1032,7 +1020,7 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         234 posts found
+         235 posts found
       </p>
     </div>
   </div>

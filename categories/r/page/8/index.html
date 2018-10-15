@@ -233,6 +233,70 @@ if (!doNotTrack) {
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/invisible-layer/">
+          你的图上有一双看不见的手
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-10-19T12:06:59&#43;08:00">
+        
+  October 19, 2017
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>下面这张吐槽LaTeX的图，太深得我心。</p>
+
+<p><img src="http://dirkriehle.com/wp-content/uploads/2016/05/latex.png" alt="" /></p>
+
+<p>而ggplot2这种文本跑出界的事情，也太常见，以至于我在<a href="https://guangchuangyu.github.io/ggtree/faq/">ggtree的FAQ</a>专门指出来，要用<code>xlim</code>给x轴分配多点空间，这是由于数据是数据空间，而文本是像素空间。你画图的画布由数据空间决定，然后文本就从指定的位置（除了坐标，还取决于你align的方式和adjustment微调）开始打出来，一不小心就打出界了。这一点我在FAQ里，除了告诉你用<code>xlim</code>解决之外，我也给出了上面的解释，所以我一直强调，不要以为我在教ggtree，我其实是在教ggplot2。</p>
+
+<p>后面就有人问了ggplot2字体溢出的事情，他所遇到的溢出，似乎更不应该发生，因为是坐标轴上的字体溢出，然而产生的原因是一样的，解决方案也是一样的，请用力猛戳《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484089&amp;idx=1&amp;sn=f6e11d54a18e96a94145a2b802c37dc1&amp;chksm=ec43b3fedb343ae89e3630900033f055af4bbe211897076291e351ae18cc89b2ddf7651ee0be#rd">ggplot2字体溢出的那点破事</a>》。</p>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2017/10/invisible-layer/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+            
+              
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/ygc/">
           我的名字和我的姓氏
         </a>
@@ -642,66 +706,6 @@ p &lt;- ggplot(d, aes(x,y)) +
 </article>
 
             
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/geofacet_index/">
-          正经的图千篇一律，不正经的叔万里挑一
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2017-09-20T14:13:35&#43;08:00">
-        
-  September 20, 2017
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p><img src="https://guangchuangyu.github.io/blog_images/R/geofacet/Screenshot 2017-10-17 10.31.23.png" alt="" /></p>
-
-<p>这个题目可以放好多不正经的图，我在这个公众号里面已经写过太多，比如《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247483816&amp;amp;idx=1&amp;amp;sn=cbfbc284f4edb165ac65f7926f7f8fcc&amp;amp;chksm=ec43b0efdb3439f91ec4f570f7be65e442e21e403481b969d69449464ae1986c7983551de04d#rd">邪恶的曲线</a>》和它的3D版本，《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484823&amp;amp;idx=1&amp;amp;sn=4af972da15535c1d7dcf837ace320592&amp;amp;chksm=ec43b4d0db343dc6ec2e622523a5aabb67f25e4b9e4b93a67ab37125570fbab907741351da18#rd">3D版邪恶的曲线</a>》，但这里不涉及太多，只用<code>geofacet</code>这个包为例。</p>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2017/09/geofacet_index/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
             
   <div class="pagination-bar">
     <ul class="pagination">
@@ -786,6 +790,35 @@ p &lt;- ggplot(d, aes(x,y)) +
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/10/ggrough/">
+                <h3 class="media-heading">画图倒不如手绘</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>在《<a href="http://mp.weixin.qq.com/s/P7yUFLwW4OLGBrPw05iQ_A">漫画版的进化树你见过吗？</a>》一文中，我介绍过一个R包，可以把<code>ggplot2</code>转成漫画风格，今天介绍一个新的包，<code>ggrough</code>，它封装了一个叫<code>roughjs</code>的javascript库，可以把<code>ggplot2</code>转成手绘风格：</p>
+
+<pre><code>require(dplyr)
+library(ggplot2)
+count(mtcars, carb) %&gt;%
+  ggplot(aes(carb, n)) +
+  geom_col() + 
+  labs(title=&quot;Number of cars by carburator count&quot;) + 
+  theme_grey(base_size = 16) -&gt; p 
+p
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1062,42 +1095,6 @@ In other words, if we have two species (e.g., Species<strong>198</strong> and Sp
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/07/clusterprofiler-ath/">
-                <h3 class="media-heading">拟南芥的富集分析</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jul 7, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>「知识星球」里的问题，<a href="https://t.zsxq.com/aEyneA2">https://t.zsxq.com/aEyneA2</a>，拟南芥的ID怎么搞，这个内置是支持的。</p>
-
-<p>比如我随便搞几个ID来演示一下：</p>
-
-<pre><code>&gt; require(clusterProfiler)
-Loading required package: clusterProfiler
-
-clusterProfiler v3.9.0  For help: https://guangchuangyu.github.io/software/clusterProfiler
-
-If you use clusterProfiler in published research, please cite:
-Guangchuang Yu, Li-Gen Wang, Yanyan Han, Qing-Yu He. clusterProfiler: an R package for 
-comparing biological themes among gene clusters. OMICS: A Journal of Integrative Biology. 2012, 16(5):284-287.
-
-g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &quot;AT1G30310&quot;, &quot;AT3G18560&quot;,
-&quot;AT2G15960&quot;, &quot;AT2G29290&quot;, &quot;AT1G08930&quot;, &quot;AT2G44460&quot;, &quot;AT3G46600&quot;,
-&quot;AT5G24380&quot;, &quot;AT3G59270&quot;, &quot;AT5G55780&quot;, &quot;AT2G45090&quot;, &quot;AT5G38430&quot;,
-&quot;AT2G17040&quot;, &quot;AT4G35770&quot;, &quot;AT5G30341&quot;, &quot;AT1G56320&quot;, &quot;AT2G16367&quot;)
-</code></pre>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1105,7 +1102,7 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         234 posts found
+         235 posts found
       </p>
     </div>
   </div>
