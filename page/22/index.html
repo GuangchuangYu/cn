@@ -17,7 +17,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.49 with theme Tranquilpeak 0.4.3-BETA">
+    <meta name="generator" content="Hugo 0.49.2 with theme Tranquilpeak 0.4.3-BETA">
     <title>Guangchuang Yu</title>
     <meta name="author" content="Guangchuang Yu">
     <meta name="keywords" content="">
@@ -212,6 +212,70 @@ if (!doNotTrack) {
                ">
         <section class="postShorten-group main-content-wrap">
           
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2016/12/%E8%B7%A8%E7%89%A9%E7%A7%8D%E8%AE%A1%E7%AE%97%E5%9F%BA%E5%9B%A0%E7%9B%B8%E4%BC%BC%E6%80%A7/">
+          跨物种计算基因相似性
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2016-12-07T00:53:00&#43;08:00">
+        
+  December 7, 2016
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <blockquote>
+<p>Hi,</p>
+
+<p>I know this question has been asked before a long time ago and I don&rsquo;t see an answer of that question in the mailing list or in the vignette of GOsemsim package. So I was wondering what is the easiest possible way of calculating GO semantic similarity value for orthologus gene pairs between two species using the above R package or any other package you know of. I am not doing this for less annotated species I need to calculate that for orthologus genes between Human and Mouse (both of which are well annotated IMHO). So I would much appreciate it if anyone who has already done this before can point me to a resource which already has pre-calculated semantic similarity values for Mouse and Human orthologues or has inbuilt code to do that.</p>
+
+<p>Thanks &amp; regards</p>
+</blockquote>
+
+<p>这是Bioconductor support site上的<a href="https://support.bioconductor.org/p/90063/">问题</a>，问的是他想要计算人类和老鼠的直系同源基因通过GO注释来计算语义相似性，问GOSemSim是否支持，这个答案是yes and no。</p>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2016/12/%E8%B7%A8%E7%89%A9%E7%A7%8D%E8%AE%A1%E7%AE%97%E5%9F%BA%E5%9B%A0%E7%9B%B8%E4%BC%BC%E6%80%A7/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
           
             
   
@@ -445,7 +509,11 @@ if (!doNotTrack) {
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      
+      <p>这个Diego在推特上问的问题，他最近在写一个<a href="https://github.com/ddiez/motiftools">motiftools</a>的R包，里面用了ggtree来画图，我想他应该是要解决他在包里的画树/聚类功能吧。</p>
+
+<p>他问题写的horizontal，但其实plot.hclust默认是vertical，ggtree默认也是horizontal，所以我认为他问的是vertical layout，这个在我的回答中也得到了他的确认。</p>
+
+<p></p>
       <p>
         <a href="https://guangchuangyu.github.io/cn/2016/11/vertical-dendrogram-in-ggtree/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -561,75 +629,11 @@ if (!doNotTrack) {
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2016/11/use-emoji/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2016/11/%E9%A3%9F%E8%89%B2%E6%80%A7%E4%B9%9F/">
-          食色性也
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2016-11-21T12:23:16&#43;08:00">
-        
-  November 21, 2016
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>画图配色并不是一件简单的事情，好的配色让人眼前一亮，虽然R有很多配色方案，做为ggplot2的爱好者，ggthemes也提供了很多主题，内置了很多配色方案，还有一些其它的包，比如ggtech，包含了一些科技公司比如facebook, twitter, google的典型配色方案，甚至于ggsci，提供了nature, lancet的配色方案。</p>
-
-<p>但这些远远不够！
-但这些远远不够！
-但这些远远不够！</p>
-
-<p>看到一张图片让我眼前一亮，我想用它的配色方案呢！我想拿最新电影的海报的配色来装个逼呢！画图时不想用现成的配色，想要另类一些，我想用一些大自然的风格，比如求偶期间各种鸟类的羽毛颜色来画！</p>
-
-<p>这些在R里面，都是可以的，可以的，可以的&hellip;</p>
+      <p>无缘无故收到好几条消息，原来是用emoji画图。</p>
 
 <p></p>
       <p>
-        <a href="https://guangchuangyu.github.io/cn/2016/11/%E9%A3%9F%E8%89%B2%E6%80%A7%E4%B9%9F/" class="postShorten-excerpt_link link">Continue reading</a>
+        <a href="https://guangchuangyu.github.io/cn/2016/11/use-emoji/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
     </div>
@@ -1033,7 +1037,7 @@ In other words, if we have two species (e.g., Species<strong>198</strong> and Sp
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         235 posts found
+         236 posts found
       </p>
     </div>
   </div>

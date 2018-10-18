@@ -17,7 +17,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.49 with theme Tranquilpeak 0.4.3-BETA">
+    <meta name="generator" content="Hugo 0.49.2 with theme Tranquilpeak 0.4.3-BETA">
     <title>Guangchuang Yu</title>
     <meta name="author" content="Guangchuang Yu">
     <meta name="keywords" content="">
@@ -212,6 +212,68 @@ if (!doNotTrack) {
                ">
         <section class="postShorten-group main-content-wrap">
           
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/highlight-clade-of-unrooted-tree/">
+          highlight clade of unrooted tree
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-09-12T20:10:00&#43;08:00">
+        
+  September 12, 2017
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>最初github上用户（<a href="https://github.com/JustGitting">@JustGitting</a>）报告说<code>geom_hilight</code>和<code>geom_cladelabel</code>不能用于unrooted树。详见：<a href="https://github.com/GuangchuangYu/ggtree/issues/118">https://github.com/GuangchuangYu/ggtree/issues/118</a></p>
+
+<p>我表示这确实是不行的，然后这就变成了feature request。我继续表示unrooted tree在ggtree中的实现并不好，我只实现了equal angle algorithm，在写注释图层之前，如果我有时间的话，我希望可以先实现更好的layout algorithm。</p>
+
+<p>然后JustGitting表示，他发现python的ETE和R的ape，在无根树的可视化上好像都不太行。问我有什么unrooted的layout algorithm，有没有什么参考文献，或许他可以帮忙实现，因为他觉得ggtree是最成熟的软件。</p>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2017/09/highlight-clade-of-unrooted-tree/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
           
             
   
@@ -593,114 +655,6 @@ p &lt;- ggplot(d, aes(x, y)) +
 <p></p>
       <p>
         <a href="https://guangchuangyu.github.io/cn/2017/08/plagiarism/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/08/galaxy-chipseeker/">
-          Galaxy-ChIPseq流程
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2017-08-15T12:23:16&#43;08:00">
-        
-  August 15, 2017
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/chipseq">ChIPseq</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <blockquote>
-<p>这篇文章介绍如果把ChIPseeker搬上galaxy，和galaxy上其它软件一起拼成流程，跑一个ChIPseq注释的流程，从fastq文件开始，比对生成bam文件，peak calling生成bed文件，基因组注释，一个完整的流程，这个流程一旦设置好，每次跑都只是点点鼠标就可以了。
-本文额外附送：
-1. 如何把R程序变成命令行程序
-2. 如何把命令行程序搬上galaxy (知名的程序都有人搬好，但自己的程序还是需要学一下怎么配置的）</p>
-</blockquote>
-
-<p>Galaxy可以说是低端生信从业者杀手，如果你的能力只是跑跑流程，galaxy完全可以取代你的工作。</p>
-
-<p>如果你是苦逼的生物研究生，苦于要自己分析数据，不会跑命令行程序，对各种参数表示晕菜，galaxy也是拯救你的神器，如同有个做生信的人在旁边帮助你，参数你点点菜单就可以了，跟程序变运行又可以了，流程自己都可以设计并一键运行。</p>
-
-<h2 id="安装galaxy">安装galaxy</h2>
-
-<ul>
-<li>requirements: python 2.7 and git</li>
-<li>only three steps</li>
-</ul>
-
-<h3 id="克隆galaxy项目">克隆galaxy项目</h3>
-
-<pre><code class="language-bash">git clone https://github.com/galaxyproject/galaxy/
-cd galaxy
-## switch to master branch, stable release
-git checkout -b master origin/master
-```   	
-
-
-
-
-### 安装
-
-
-```bash
-cd galaxy/config/
-cp galaxy.ini.sample galaxy.ini
-```   	
-
-编辑_galaxy.ini_文件
-
-+ find the line: admin_users
-+ remove the # and add an email for your account
-
-
-
-### 运行
-
-```bash
-# go back to galaxy folder
-cd ..
-sh run.sh
-</code></pre>
-
-<p>然后就可以用浏览器打开<a href="http://localhost:8080">http://localhost:8080</a>，使用galaxy，就是这么简单。</p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2017/08/galaxy-chipseeker/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
     </div>
@@ -1104,7 +1058,7 @@ In other words, if we have two species (e.g., Species<strong>198</strong> and Sp
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         235 posts found
+         236 posts found
       </p>
     </div>
   </div>

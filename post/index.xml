@@ -468,6 +468,21 @@ ggbackground(p, img)
     </item>
     
     <item>
+      <title>给硕博考生的一封信</title>
+      <link>https://guangchuangyu.github.io/cn/2018/04/for-postgraduate-student/</link>
+      <pubDate>Mon, 09 Apr 2018 18:30:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2018/04/for-postgraduate-student/</guid>
+      <description>&lt;h3 id=&#34;研究生是考出来的-博士生是联系出来的&#34;&gt;研究生是考出来的，博士生是联系出来的！&lt;/h3&gt;
+
+&lt;p&gt;这句话早在10年前我一个师兄就告诉我。早在2006年我去上生面试的时候，我就发现已经有考生早就在实验室干了。反正我当年是fail了，然后我为何没能调剂到军事医学科学院，因为06年的时候，正是裁军的时候，军医科的名额很少，而导师手下也有一名同学初试过了，而且已经在实验室干了一年，名额必须给他。&lt;/p&gt;
+
+&lt;p&gt;所以在此处，我想跟大家说，十多年前尚且如此，现在行情只会更差，研究生也要联系了！&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>dotplot支持使用formula指定x轴变量</title>
       <link>https://guangchuangyu.github.io/cn/2018/04/dotplot-x-axis/</link>
       <pubDate>Sun, 08 Apr 2018 19:06:16 +0800</pubDate>
@@ -3003,7 +3018,11 @@ print(p)
       <pubDate>Tue, 29 Nov 2016 00:53:00 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2016/11/vertical-dendrogram-in-ggtree/</guid>
-      <description></description>
+      <description>&lt;p&gt;这个Diego在推特上问的问题，他最近在写一个&lt;a href=&#34;https://github.com/ddiez/motiftools&#34;&gt;motiftools&lt;/a&gt;的R包，里面用了ggtree来画图，我想他应该是要解决他在包里的画树/聚类功能吧。&lt;/p&gt;
+
+&lt;p&gt;他问题写的horizontal，但其实plot.hclust默认是vertical，ggtree默认也是horizontal，所以我认为他问的是vertical layout，这个在我的回答中也得到了他的确认。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -3027,7 +3046,9 @@ print(p)
       <pubDate>Fri, 25 Nov 2016 00:53:00 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2016/11/use-emoji/</guid>
-      <description></description>
+      <description>&lt;p&gt;无缘无故收到好几条消息，原来是用emoji画图。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>

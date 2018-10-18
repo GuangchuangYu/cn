@@ -17,7 +17,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.49 with theme Tranquilpeak 0.4.3-BETA">
+    <meta name="generator" content="Hugo 0.49.2 with theme Tranquilpeak 0.4.3-BETA">
     <title>Posts</title>
     <meta name="author" content="Guangchuang Yu">
     <meta name="keywords" content="">
@@ -212,6 +212,66 @@ if (!doNotTrack) {
                ">
         <section class="postShorten-group main-content-wrap">
           
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2012/04/enrichment-analysis/">
+          enrichment analysis
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2012-04-28T08:06:05&#43;08:00">
+        
+  April 28, 2012
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/statistics">Statistics</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>经常看到一些饼图，描述某些事物的组成，比如说有钱人的学历分布，然后我们可以看到高学历所占比例并不高，根据这个比例下结论通常是错的，这些比例说明不了问题，如果把各种学历在总体人口中的分布做为背景进行考虑的话，你就会发现学历还是有点用的。
+当我们用组学测定了一大堆分子之后，我们希望站在更高的角度去看这些分子和那些生物学过程相关。那么通常各种注释，对这些基因/蛋白进行分类，那么从分类的比例上，是不能草率下结论，正如上面有钱人学历分布的例子一样。我们需要把总体的分布考虑进去。
+和某个注释/分类是否有相关性，把基因分成属于这一类，和不属于这一类两种，这就好比经典统计学中的白球和黑球的抽样问题。也可以列一个２x２的表，进行独立性分析。
+以文章<a href="http://cancerres.aacrjournals.org/content/62/16/4722">Gene Expression in Ovarian Cancer Reflects Both Morphology and Biological Behavior, Distinguishing Clear Cell from Other Poor-Prognosis Ovarian Carcinomas</a>所鉴定的差异基因为例。
+
+73个差异基因的Symbol，我把它转为 entrezgene
+ID得到57个（漏掉的不管它，只是做为一个例子）:</p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2012/04/enrichment-analysis/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
           
             
   
@@ -587,75 +647,6 @@ and miss法估计。</p>
 <p></p>
       <p>
         <a href="https://guangchuangyu.github.io/cn/2011/09/mc-integration/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/09/monte-carlo-estimate-pi/">
-          Monte Carlo估计pi值
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2011-09-21T10:40:22&#43;08:00">
-        
-  September 21, 2011
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/programming">Programming</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p><img src="http://mathfaculty.fullerton.edu/mathews/n2003/montecarlopi/MonteCarloPiMod/Images/MonteCarloPiMod_gr_11.gif" alt="" /></p>
-
-<p>圆和外接正方形的面积比，是$ \frac{\pi r^2}{(2r)^2} = \frac{\pi}{4}$.</p>
-
-<p>通过这一比值，可以使用<a href="http://baike.baidu.com/view/7775.htm">蒙特-卡罗方法</a>来估计Pi，这是Monte Carlo方法的最经典的一个例子。</p>
-
-<pre><code>getPI &lt;- function(N) {
-    x &lt;- runif(N)
-    y &lt;- runif(N)
-    hits &lt;- sum(sqrt(x^2+y^2) &lt; 1)
-    pi &lt;- 4*hits/N
-    return(pi)
-}
-</code></pre>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2011/09/monte-carlo-estimate-pi/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
     </div>
@@ -1059,7 +1050,7 @@ In other words, if we have two species (e.g., Species<strong>198</strong> and Sp
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         235 posts found
+         236 posts found
       </p>
     </div>
   </div>
