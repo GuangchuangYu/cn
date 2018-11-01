@@ -6,10 +6,25 @@
     <description>Recent content in Clusterprofiler on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 09 Oct 2018 13:12:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 01 Nov 2018 12:21:00 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/tags/clusterprofiler/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>msigdf &#43; clusterProfiler全方位支持MSigDb</title>
+      <link>https://guangchuangyu.github.io/cn/2018/11/msigdf_clusterprofiler/</link>
+      <pubDate>Thu, 01 Nov 2018 12:21:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2018/11/msigdf_clusterprofiler/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/clusterProfiler/msigdf.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;生信界的网红Stephen Turner在github上有个&lt;code&gt;msigdf&lt;/code&gt;的包，我在他写这个包的时候，就写了个&lt;code&gt;gist&lt;/code&gt;，连接&lt;code&gt;clusterProfiler&lt;/code&gt;，我写&lt;code&gt;gist&lt;/code&gt;的时候是2016年的8月，很高兴网红还惦记着我的&lt;code&gt;gist&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;msigdf&lt;/code&gt;这个包把著名的Broad Institute著名的Molecular Signatures Database (MSigDB)数据以data frame的形式打包成&lt;code&gt;R&lt;/code&gt;包，这样子非常方便使用，当然他后来没有更新，而一个fork的版本，&lt;code&gt;ToledoEM/msigdf&lt;/code&gt;把数据更新为最新版本v6.2，发布于2018年7月。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>做学术终究是看脸...</title>
