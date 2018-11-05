@@ -230,6 +230,72 @@ if (!doNotTrack) {
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/05/bootstrap-value%E5%88%86%E6%AE%B5%E6%A0%87%E8%AE%B0/">
+          bootstrap value分段标记
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-05-10T15:10:00&#43;08:00">
+        
+  May 10, 2017
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>想要分段标记bootstrap，比如<code>0-70</code>, <code>70-90</code>, <code>90-100</code>之类的。这个对于ggtree来说，太简单。</p>
+
+<p>首先我们要读树，用<code>treeio</code>的<code>read.newick</code>，它和<code>read.tree</code>的不同之处是，加入了参数<code>node.label</code>，当<code>node.label</code>存的不是<code>label</code>，而是<code>bootstrap</code>等数字型的时候，你可以传入<code>node.label='support'</code>，这样它会把node label解析为support value，另存为树注释数据，而不是和tip label混在一起。label变量只能存为字符型，因为和tip label混了，而字符型会让数字操作稍微复杂点。所以我们要用<code>read.newick</code>。</p>
+
+<pre><code class="language-r">tree &lt;- read.newick(&quot;RMI.phy_phyml_tree_rooted_labeled.txt&quot;, node.label='support')
+root &lt;- getRoot(tree@phylo)
+
+p &lt;- ggtree(tree, color=&quot;black&quot;, size=1.5, linetype=1,  ladderize=TRUE) + 
+     ggtitle(label=&quot;Figure A&quot;) + 
+    geom_tiplab(size=4.5, hjust = -0.060, fontface=&quot;bold&quot;) +  xlim(0, 0.09)
+</code></pre>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2017/05/bootstrap-value%E5%88%86%E6%AE%B5%E6%A0%87%E8%AE%B0/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/04/annotate-tree-with-user-specific-data/">
           annotate tree with user specific data
         </a>
@@ -615,87 +681,6 @@ print(p)
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/03/%E5%85%B3%E4%BA%8Echipseq%E6%B3%A8%E9%87%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/">
-          关于ChIPseq注释的几个问题
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2017-03-31T12:23:16&#43;08:00">
-        
-  March 31, 2017
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/chipseq">ChIPseq</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <h2 id="为什么我要用某个基因组版本">为什么我要用某个基因组版本？</h2>
-
-<p>在上一篇文章中，我用了<code>TxDb.Hsapiens.UCSC.hg19.knownGene</code>。 <strong>hg19</strong>的<strong>TxDb</strong>, 或者有人就要问了，为什么不用<strong>hg38</strong>？</p>
-
-<p>这个问题，不是说要用那一个，不能用那一个。而是你必须得用某一个，这取决于你最初<strong>fastq</strong>用BWA/Bowtie2比对于某个版本的基因组，你最初用了某个版本，后面就得用相应的版本，不能混，因为不同版本的位置信息有所不同。</p>
-
-<p>当然如果要（贵圈喜欢的）强搞，也不是不可以，你得有chain file，先跑个liftOver，实际上就是在两个基因组版本之间做了位置转换。</p>
-
-<h2 id="为什么说-chipseeker-支持所有物种">为什么说<strong>ChIPseeker</strong>支持所有物种？</h2>
-
-<p>背景注释信息用了<strong>TxDb</strong>就能保证所有物种都支持了？我去哪里找我要的<strong>TxDb</strong>?</p>
-
-<p>我写<strong>ChIPseeker</strong>的时候，我做的物种是人，<strong>ChIPseeker</strong>在线一周就有剑桥大学的人写信跟我说在用<strong>ChIPseeker</strong>做果蝇，在<a href="https://guangchuangyu.github.io/cn/2017/03/bed%E6%96%87%E4%BB%B6/">BED文件</a>一文中，也提到了最近有人在Biostars上问用<strong>ChIPseeker</strong>做裂殖酵母。</p>
-
-<p>首先Bioconductor提供了30个TxDb包，可以供我们使用，这当然只能覆盖到一小部分物种，我们的物种基因组信息，多半要从UCSC或者Ensembl获得，我敢说支持所有物种，就是因为UCSC和ensembl上所有的基因组都可以被<strong>ChIPseeker</strong>支持。</p>
-
-<p>因为我们可以使用<strong>GenomicFeatures</strong>包函数来制作TxDb对象：</p>
-
-<ul>
-<li>makeTxDbFromUCSC： 通过UCSC在线制作TxDb</li>
-<li>makeTxDbFromBiomart: 通过ensembl在线制作TxDb</li>
-<li>makeTxDbFromGRanges：通过GRanges对象制作TxDb</li>
-<li>makeTxDbFromGFF：通过解析GFF文件制作TxDb</li>
-</ul>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2017/03/%E5%85%B3%E4%BA%8Echipseq%E6%B3%A8%E9%87%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -779,6 +764,43 @@ print(p)
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/un-abstract-coding/">
+                <h3 class="media-heading">王八拳编程及其它</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>#</p>
+
+<p><img src="https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D220/sign=3083f8d5d30735fa95f049bbae530f9f/dbb44aed2e738bd42887e8ffa68b87d6267ff95e.jpg" alt="" /></p>
+
+<h3 id="什么是王八拳">什么是王八拳</h3>
+
+<blockquote>
+<p>王八拳是四肢生物，包括人类天生会的一种本能打斗方式，男女都会，老少皆宜。 &ndash; 百度百科</p>
+</blockquote>
+
+<p>显然从定义上来看，这是一套在人类存在以前早已有之的古拳法，当然做为人类我们还是希望找到人类创始的起源，给人类找一点体面。</p>
+
+<p>据(百度百科)说，有三种可疑的起源说法：</p>
+
+<ul>
+<li>起源一：王朔的《看上去很美》中学会的一种中国古拳法。这种拳一般流行于幼儿园中，打这种拳，讲究的是打拳的小朋友眼睛紧闭，双拳握紧，两条胳膊以肩为圆心，向前乱轮圆圈，远里看就象乌龟爬坡爬不上去乱蹬的那个样子。这种拳一般不以击中目标为目的，主要是以一种盲目的抡拳动作在气势上威吓对你有攻击企图的小朋友。而如果打拳者在使出这种拳法的时候拌以大声的哭叫，更可以极大的增加威吓对方的力量。</li>
+<li>起源二：一夫多妻制的中国农村妇女发明的一种古拳法，起源于于公元前5世纪，具有广泛的妇女基础，王八拳吸取了猴、狗、猪诸拳种之长，把形意拳的手法、手型、步型、步法、腿法、平衡、跳跃等动作规格化。它的特点是姿势绝不优美，动作绝不快捷，出手阴，跳得低，蹦得不远。它的内容包括挠、掐、咬三种动作，还有一定数量的击打敌人下三路的跳跃、跌仆、滚翻动作。长拳在技术上有八点要求：①姿势。头正，颈直，沉肩，挺胸，直腰，敛臀，上肢舒展、挺拔，下肢稳定、匀称。②动作。在做踢、打、摔、拿等技击动作时，起止点、路线、力点都要清晰。</li>
+<li>起源三：巴塞罗那奥运会前，著名小品学名朱时茂和陈佩斯的表演的小品中，“陈小二”以一轮凶残猛烈的正反王八拳与当时的“拳王”朱时茂战成平手，并相约巴塞罗那再战。也正是因为这经典的一战，王八拳才被百姓所熟知。</li>
+</ul>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1045,32 +1067,6 @@ biocLite(pkg_name)
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/08/pheatmap-class/">
-                <h3 class="media-heading">pheatmap类属性：一个更好用的pheatmap</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Aug 8, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><code>pheatmap</code>我其实用的次数不多，但在帮别人解决一些问题之后，比如：</p>
-
-<ul>
-<li><a href="http://mp.weixin.qq.com/s/Xhi_ZkrEzUVdnCu7ECBS4w">听说你还不会画热图</a></li>
-<li><a href="https://mp.weixin.qq.com/s/yVLgGQQi0CQ9Q9UfIKl5aA">不同数据集画出的热图，用同样的颜色区间上色?</a></li>
-</ul>
-
-<p>我发现这包的交互能力是比较差的，它就像传统的<code>plot</code>函数一样，命令一打下去，就直接画图，虽然它其实是有输出的，但事实上超出了一般用户的理解能力，它的输出，比如说可以用<code>cowplot</code>来拼图，我在上面链接的那篇文章中皆来演示，然而很多人问我，怎么把<code>pheatmap</code>画的热图和<code>ggplot2</code>的图，用<code>cowplot</code>来拼。这就是因为拼图的方法超出了很多的理解范围，看过演示，也只能照猫画老虎，过后也就忘记了。有没有办法用大家可以理解的方法来拼？这样就不太容易忘记，答案是肯定的，我下次再讲。今天先讲一讲其前提条件。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1078,7 +1074,7 @@ biocLite(pkg_name)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         237 posts found
+         238 posts found
       </p>
     </div>
   </div>

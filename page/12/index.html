@@ -230,6 +230,84 @@ if (!doNotTrack) {
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/set_axis_text_color/">
+          映射变量给axis上色
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-10-16T12:23:16&#43;08:00">
+        
+  October 16, 2017
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>小伙伴发来这个文章中的图，想要实现类似的图，用变量给axis text上色，并生成legend：</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/R/ggplot2/Screenshot 2017-07-04 14.10.55.png" alt="" /></p>
+
+<p>这个可以说ggplot2是不支持的，aes映射不会被应用于axis上，而theme也不支持aes映射，你只能自己手动搞个color vector传给theme来上色，但这无法生成legend。</p>
+
+<p>我只能打开脑洞，legend借助于额外的图层来生成，但这个额外的图层又不是我们想要在图形上展示的，这又是个无米之炊，我能想到的就是让图层透明，实际有，但你看不到，当然这样自动生成的legend也会看不到，但legend可以后面再修改，于是这不支持的事情，就通过变通变得可能：</p>
+
+<pre><code class="language-r">require(ggplot2)
+
+set.seed(2017-07-04)
+d &lt;- data.frame(x = letters[1:5], y = rnorm(5), 
+		group = sample(c(&quot;Control&quot;, &quot;Treatment&quot;), 5, replace=TRUE),
+		type = sample(LETTERS[1:2], 5, replace=TRUE)
+)
+
+p &lt;- ggplot(d, aes(x,y)) + 
+	geom_col(aes(fill=group))
+</code></pre>
+
+<p>这个代码很好懂，画一个柱状图，按<code>group</code>上色。</p>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2017/10/set_axis_text_color/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/enrichgo-more-conserve/">
           enrichGO出不来结果？没结果也是正确的结果
         </a>
@@ -619,68 +697,6 @@ if (!doNotTrack) {
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/goodbye-joyplot/">
-          再见joyplot
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2017-09-15T00:53:00&#43;08:00">
-        
-  September 15, 2017
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>微信公众号平台大部分人都是抄来抄去的二手资料，像joyplot这种特别新的东西，就很难看到，我试着搜索了一下，发现只有三篇，都是我写的。</p>
-
-<ul>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484586&amp;idx=1&amp;sn=2c4aaca92147d901fb5421cdb99d16de&amp;chksm=ec43b5eddb343cfb34c907ddfdba74e129ee7ef896219a888a56b36738a0f6062bb2cf0ab99f#rd">joyplot：一种波涛汹涌，哦不对，是山峰叠峦的可视化方式</a></li>
-<li><a href="http://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484682&amp;idx=1&amp;sn=21944039080612bed8bda7b3070015b3&amp;chksm=ec43b44ddb343d5bcba5c22e33b6b26ce8bfee6e7b913115c19e0e14e930699ab602445d0e89#rd">ggjoy facet with ggtree</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484750&amp;amp;idx=1&amp;amp;sn=19aa83580ad91e18d3fe23cc42675628&amp;amp;chksm=ec43b409db343d1f189bf1d1e6499ac8bd034ce52e90454d7e2b568b6901b5d2f5bdf31fa887#rd">joyplot：GSEA的结果也能快乐起来</a></li>
-</ul>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2017/09/goodbye-joyplot/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -764,6 +780,43 @@ if (!doNotTrack) {
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/un-abstract-coding/">
+                <h3 class="media-heading">王八拳编程及其它</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>#</p>
+
+<p><img src="https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D220/sign=3083f8d5d30735fa95f049bbae530f9f/dbb44aed2e738bd42887e8ffa68b87d6267ff95e.jpg" alt="" /></p>
+
+<h3 id="什么是王八拳">什么是王八拳</h3>
+
+<blockquote>
+<p>王八拳是四肢生物，包括人类天生会的一种本能打斗方式，男女都会，老少皆宜。 &ndash; 百度百科</p>
+</blockquote>
+
+<p>显然从定义上来看，这是一套在人类存在以前早已有之的古拳法，当然做为人类我们还是希望找到人类创始的起源，给人类找一点体面。</p>
+
+<p>据(百度百科)说，有三种可疑的起源说法：</p>
+
+<ul>
+<li>起源一：王朔的《看上去很美》中学会的一种中国古拳法。这种拳一般流行于幼儿园中，打这种拳，讲究的是打拳的小朋友眼睛紧闭，双拳握紧，两条胳膊以肩为圆心，向前乱轮圆圈，远里看就象乌龟爬坡爬不上去乱蹬的那个样子。这种拳一般不以击中目标为目的，主要是以一种盲目的抡拳动作在气势上威吓对你有攻击企图的小朋友。而如果打拳者在使出这种拳法的时候拌以大声的哭叫，更可以极大的增加威吓对方的力量。</li>
+<li>起源二：一夫多妻制的中国农村妇女发明的一种古拳法，起源于于公元前5世纪，具有广泛的妇女基础，王八拳吸取了猴、狗、猪诸拳种之长，把形意拳的手法、手型、步型、步法、腿法、平衡、跳跃等动作规格化。它的特点是姿势绝不优美，动作绝不快捷，出手阴，跳得低，蹦得不远。它的内容包括挠、掐、咬三种动作，还有一定数量的击打敌人下三路的跳跃、跌仆、滚翻动作。长拳在技术上有八点要求：①姿势。头正，颈直，沉肩，挺胸，直腰，敛臀，上肢舒展、挺拔，下肢稳定、匀称。②动作。在做踢、打、摔、拿等技击动作时，起止点、路线、力点都要清晰。</li>
+<li>起源三：巴塞罗那奥运会前，著名小品学名朱时茂和陈佩斯的表演的小品中，“陈小二”以一轮凶残猛烈的正反王八拳与当时的“拳王”朱时茂战成平手，并相约巴塞罗那再战。也正是因为这经典的一战，王八拳才被百姓所熟知。</li>
+</ul>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1030,32 +1083,6 @@ biocLite(pkg_name)
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/08/pheatmap-class/">
-                <h3 class="media-heading">pheatmap类属性：一个更好用的pheatmap</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Aug 8, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><code>pheatmap</code>我其实用的次数不多，但在帮别人解决一些问题之后，比如：</p>
-
-<ul>
-<li><a href="http://mp.weixin.qq.com/s/Xhi_ZkrEzUVdnCu7ECBS4w">听说你还不会画热图</a></li>
-<li><a href="https://mp.weixin.qq.com/s/yVLgGQQi0CQ9Q9UfIKl5aA">不同数据集画出的热图，用同样的颜色区间上色?</a></li>
-</ul>
-
-<p>我发现这包的交互能力是比较差的，它就像传统的<code>plot</code>函数一样，命令一打下去，就直接画图，虽然它其实是有输出的，但事实上超出了一般用户的理解能力，它的输出，比如说可以用<code>cowplot</code>来拼图，我在上面链接的那篇文章中皆来演示，然而很多人问我，怎么把<code>pheatmap</code>画的热图和<code>ggplot2</code>的图，用<code>cowplot</code>来拼。这就是因为拼图的方法超出了很多的理解范围，看过演示，也只能照猫画老虎，过后也就忘记了。有没有办法用大家可以理解的方法来拼？这样就不太容易忘记，答案是肯定的，我下次再讲。今天先讲一讲其前提条件。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1063,7 +1090,7 @@ biocLite(pkg_name)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         237 posts found
+         238 posts found
       </p>
     </div>
   </div>

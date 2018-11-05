@@ -6,10 +6,39 @@
     <description>Recent content on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Nov 2018 12:21:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 05 Nov 2018 10:10:00 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>王八拳编程及其它</title>
+      <link>https://guangchuangyu.github.io/cn/2018/11/un-abstract-coding/</link>
+      <pubDate>Mon, 05 Nov 2018 10:10:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2018/11/un-abstract-coding/</guid>
+      <description>&lt;p&gt;#&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D220/sign=3083f8d5d30735fa95f049bbae530f9f/dbb44aed2e738bd42887e8ffa68b87d6267ff95e.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;什么是王八拳&#34;&gt;什么是王八拳&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;王八拳是四肢生物，包括人类天生会的一种本能打斗方式，男女都会，老少皆宜。 &amp;ndash; 百度百科&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;显然从定义上来看，这是一套在人类存在以前早已有之的古拳法，当然做为人类我们还是希望找到人类创始的起源，给人类找一点体面。&lt;/p&gt;
+
+&lt;p&gt;据(百度百科)说，有三种可疑的起源说法：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;起源一：王朔的《看上去很美》中学会的一种中国古拳法。这种拳一般流行于幼儿园中，打这种拳，讲究的是打拳的小朋友眼睛紧闭，双拳握紧，两条胳膊以肩为圆心，向前乱轮圆圈，远里看就象乌龟爬坡爬不上去乱蹬的那个样子。这种拳一般不以击中目标为目的，主要是以一种盲目的抡拳动作在气势上威吓对你有攻击企图的小朋友。而如果打拳者在使出这种拳法的时候拌以大声的哭叫，更可以极大的增加威吓对方的力量。&lt;/li&gt;
+&lt;li&gt;起源二：一夫多妻制的中国农村妇女发明的一种古拳法，起源于于公元前5世纪，具有广泛的妇女基础，王八拳吸取了猴、狗、猪诸拳种之长，把形意拳的手法、手型、步型、步法、腿法、平衡、跳跃等动作规格化。它的特点是姿势绝不优美，动作绝不快捷，出手阴，跳得低，蹦得不远。它的内容包括挠、掐、咬三种动作，还有一定数量的击打敌人下三路的跳跃、跌仆、滚翻动作。长拳在技术上有八点要求：①姿势。头正，颈直，沉肩，挺胸，直腰，敛臀，上肢舒展、挺拔，下肢稳定、匀称。②动作。在做踢、打、摔、拿等技击动作时，起止点、路线、力点都要清晰。&lt;/li&gt;
+&lt;li&gt;起源三：巴塞罗那奥运会前，著名小品学名朱时茂和陈佩斯的表演的小品中，“陈小二”以一轮凶残猛烈的正反王八拳与当时的“拳王”朱时茂战成平手，并相约巴塞罗那再战。也正是因为这经典的一战，王八拳才被百姓所熟知。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>msigdf &#43; clusterProfiler全方位支持MSigDb</title>
@@ -3033,11 +3062,7 @@ print(p)
       <pubDate>Tue, 29 Nov 2016 00:53:00 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2016/11/vertical-dendrogram-in-ggtree/</guid>
-      <description>&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/guangchuangyu?ref_src=twsrc%5Etfw&#34;&gt;@guangchuangyu&lt;/a&gt; Is it possible to plot horizontal trees with ggtree? (a la plot.hclust default).&lt;/p&gt;&amp;mdash; Diego Diez (@kurai_yousei) &lt;a href=&#34;https://twitter.com/kurai_yousei/status/799532564633518080?ref_src=twsrc%5Etfw&#34;&gt;November 18, 2016&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
-
-
-&lt;p&gt;这个Diego在推特上问的问题，他最近在写一个&lt;a href=&#34;https://github.com/ddiez/motiftools&#34;&gt;motiftools&lt;/a&gt;的R包，里面用了ggtree来画图，我想他应该是要解决他在包里的画树/聚类功能吧。&lt;/p&gt;
+      <description>&lt;p&gt;这个Diego在推特上问的问题，他最近在写一个&lt;a href=&#34;https://github.com/ddiez/motiftools&#34;&gt;motiftools&lt;/a&gt;的R包，里面用了ggtree来画图，我想他应该是要解决他在包里的画树/聚类功能吧。&lt;/p&gt;
 
 &lt;p&gt;他问题写的horizontal，但其实plot.hclust默认是vertical，ggtree默认也是horizontal，所以我认为他问的是vertical layout，这个在我的回答中也得到了他的确认。&lt;/p&gt;
 
@@ -3065,11 +3090,7 @@ print(p)
       <pubDate>Fri, 25 Nov 2016 00:53:00 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2016/11/use-emoji/</guid>
-      <description>&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/hashtag/rstats?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#rstats&lt;/a&gt; code for the PhD/cute animals gestation &lt;a href=&#34;https://twitter.com/hashtag/ggplot2?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#ggplot2&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/gganimate?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#gganimate&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/emojifont?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#emojifont&lt;/a&gt; plot &lt;a href=&#34;https://t.co/qWM0bCHoHJ&#34;&gt;https://t.co/qWM0bCHoHJ&lt;/a&gt; 🐭🐶🐱🐺🐯🐷🐏🐻👶🐳🐘📕 &lt;a href=&#34;https://t.co/a4GYl191a8&#34;&gt;https://t.co/a4GYl191a8&lt;/a&gt;&lt;/p&gt;&amp;mdash; Maëlle Salmon 🐟🗡🍣😱 (@ma_salmon) &lt;a href=&#34;https://twitter.com/ma_salmon/status/800007428096094209?ref_src=twsrc%5Etfw&#34;&gt;November 19, 2016&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
-
-
-&lt;p&gt;无缘无故收到好几条消息，原来是用emoji画图。&lt;/p&gt;
+      <description>&lt;p&gt;无缘无故收到好几条消息，原来是用emoji画图。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

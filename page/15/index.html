@@ -230,6 +230,72 @@ if (!doNotTrack) {
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/clusterprofiler-dotplot/">
+          听说你也在画dotplot，但是我不服!
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-07-27T07:05:22&#43;08:00">
+        
+  July 27, 2017
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>陈同的‘生信宝典’公众号出了篇《<a href="https://mp.weixin.qq.com/s?__biz=MzI5MTcwNjA4NQ==&amp;mid=2247483978&amp;idx=1&amp;sn=e0c158c0e92375553036cc37f4987e40&amp;chksm=ec0dc7c0db7a4ed6ac593493b7d8b52f11f2feb92d24fa00d19527fbb6f95b24f7e313ef9440#rd">R语言学习 - 富集分析泡泡图</a>》，搞个shell脚本，一步绘图。讲了这个脚本可以适用于clusterProfiler和其它软件的富集结果。</p>
+
+<p>浑身都是硬伤，我都不想吐槽，但由于作者邀请我提点，那就吐槽模式全开。</p>
+
+<h2 id="一个command出图-小白已经哭晕">一个command出图，小白已经哭晕</h2>
+
+<p>从出的图看，应该是ggplot2画的（就算猜错，要吐槽的依然正确），小白在web-server上做了分析，存结果为xls文件，拿你这脚本，一跑报错。读xls文件（别告诉我你跟用户说读xls但其实是个tsv）和画图的依赖关系没解决！用户友好在那里？不要告诉我你的脚本0依赖，有个shell就能跑，即使我们熟悉的各种命令，很多都是独立程序，不关shell什么事。</p>
+
+<h2 id="所谓的一步出图">所谓的一步出图</h2>
+
+<p>既然讲了clusterProfiler，那么clusterProfiler用户笑而不语了。我们用dotplot不也是一条命令出图，为什么要退出R，去跑你的shell脚本，这过程还得转换数据，存储数据。最后的这一步，是前面+N步为代价的。</p>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2017/07/clusterprofiler-dotplot/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/ferret/">
           听说你也在读文献
         </a>
@@ -628,80 +694,6 @@ if (!doNotTrack) {
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/bmc_plagiarism_2/">
-          Editor你的良心不会痛吗？
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2017-07-19T21:51:43&#43;08:00">
-        
-  July 19, 2017
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/biology">Biology</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/research">Research</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <blockquote>
-<p>抄袭的是<strong>西安电子科技大学</strong>的讲师，靠着两三篇抄袭的文章，已经是副教授了。</p>
-
-<p>这种抄袭的事情就应该暴光，这个事件中，更可恶的是BMC，BMC这种保护抄袭的行为更应该暴光，大家不要再给BMC送钱了，还不如发PLoS One。</p>
-</blockquote>
-
-<p>公众号有人评论说：</p>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/GOSemSim/WechatIMG2.jpeg" alt="" /></p>
-
-<p>这竟然也被捕捉到了，确实他在2012年的时候，就在copy我的代码，然后打R包的时候，还请教了我：</p>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/GOSemSim/ppiPre_dengyue.png" alt="" /></p>
-
-<h2 id="抄了我的代码-之后厚颜无耻地感谢我说学了很多东西-他的良心真的不会痛吗">抄了我的代码，之后厚颜无耻地感谢我说学了很多东西，他的良心真的不会痛吗？</h2>
-
-<p><img src="https://media.giphy.com/media/EvsmQokxE8wi4/giphy.gif" alt="" /></p>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2017/07/bmc_plagiarism_2/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -785,6 +777,43 @@ if (!doNotTrack) {
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/un-abstract-coding/">
+                <h3 class="media-heading">王八拳编程及其它</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>#</p>
+
+<p><img src="https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D220/sign=3083f8d5d30735fa95f049bbae530f9f/dbb44aed2e738bd42887e8ffa68b87d6267ff95e.jpg" alt="" /></p>
+
+<h3 id="什么是王八拳">什么是王八拳</h3>
+
+<blockquote>
+<p>王八拳是四肢生物，包括人类天生会的一种本能打斗方式，男女都会，老少皆宜。 &ndash; 百度百科</p>
+</blockquote>
+
+<p>显然从定义上来看，这是一套在人类存在以前早已有之的古拳法，当然做为人类我们还是希望找到人类创始的起源，给人类找一点体面。</p>
+
+<p>据(百度百科)说，有三种可疑的起源说法：</p>
+
+<ul>
+<li>起源一：王朔的《看上去很美》中学会的一种中国古拳法。这种拳一般流行于幼儿园中，打这种拳，讲究的是打拳的小朋友眼睛紧闭，双拳握紧，两条胳膊以肩为圆心，向前乱轮圆圈，远里看就象乌龟爬坡爬不上去乱蹬的那个样子。这种拳一般不以击中目标为目的，主要是以一种盲目的抡拳动作在气势上威吓对你有攻击企图的小朋友。而如果打拳者在使出这种拳法的时候拌以大声的哭叫，更可以极大的增加威吓对方的力量。</li>
+<li>起源二：一夫多妻制的中国农村妇女发明的一种古拳法，起源于于公元前5世纪，具有广泛的妇女基础，王八拳吸取了猴、狗、猪诸拳种之长，把形意拳的手法、手型、步型、步法、腿法、平衡、跳跃等动作规格化。它的特点是姿势绝不优美，动作绝不快捷，出手阴，跳得低，蹦得不远。它的内容包括挠、掐、咬三种动作，还有一定数量的击打敌人下三路的跳跃、跌仆、滚翻动作。长拳在技术上有八点要求：①姿势。头正，颈直，沉肩，挺胸，直腰，敛臀，上肢舒展、挺拔，下肢稳定、匀称。②动作。在做踢、打、摔、拿等技击动作时，起止点、路线、力点都要清晰。</li>
+<li>起源三：巴塞罗那奥运会前，著名小品学名朱时茂和陈佩斯的表演的小品中，“陈小二”以一轮凶残猛烈的正反王八拳与当时的“拳王”朱时茂战成平手，并相约巴塞罗那再战。也正是因为这经典的一战，王八拳才被百姓所熟知。</li>
+</ul>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1051,32 +1080,6 @@ biocLite(pkg_name)
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/08/pheatmap-class/">
-                <h3 class="media-heading">pheatmap类属性：一个更好用的pheatmap</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Aug 8, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><code>pheatmap</code>我其实用的次数不多，但在帮别人解决一些问题之后，比如：</p>
-
-<ul>
-<li><a href="http://mp.weixin.qq.com/s/Xhi_ZkrEzUVdnCu7ECBS4w">听说你还不会画热图</a></li>
-<li><a href="https://mp.weixin.qq.com/s/yVLgGQQi0CQ9Q9UfIKl5aA">不同数据集画出的热图，用同样的颜色区间上色?</a></li>
-</ul>
-
-<p>我发现这包的交互能力是比较差的，它就像传统的<code>plot</code>函数一样，命令一打下去，就直接画图，虽然它其实是有输出的，但事实上超出了一般用户的理解能力，它的输出，比如说可以用<code>cowplot</code>来拼图，我在上面链接的那篇文章中皆来演示，然而很多人问我，怎么把<code>pheatmap</code>画的热图和<code>ggplot2</code>的图，用<code>cowplot</code>来拼。这就是因为拼图的方法超出了很多的理解范围，看过演示，也只能照猫画老虎，过后也就忘记了。有没有办法用大家可以理解的方法来拼？这样就不太容易忘记，答案是肯定的，我下次再讲。今天先讲一讲其前提条件。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1084,7 +1087,7 @@ biocLite(pkg_name)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         237 posts found
+         238 posts found
       </p>
     </div>
   </div>
