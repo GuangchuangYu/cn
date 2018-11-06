@@ -6,10 +6,38 @@
     <description>Recent content in Ggtree on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Sep 2018 13:17:48 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 06 Nov 2018 10:23:00 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/tags/ggtree/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>设置可视化窗口</title>
+      <link>https://guangchuangyu.github.io/cn/2018/11/%E8%AE%BE%E7%BD%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AA%97%E5%8F%A3/</link>
+      <pubDate>Tue, 06 Nov 2018 10:23:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2018/11/%E8%AE%BE%E7%BD%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AA%97%E5%8F%A3/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/cartesian/1148940491.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;小伙伴发来这个图，问我是不是&lt;code&gt;bug&lt;/code&gt;，这真是犯了程序员的社交礼仪。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;你如果对一个程序员说，“你的代码有bug。”
+他的第一反应是：
++ 1. 你的环境有问题吧
++ 2. 傻逼你会用吗。&lt;/p&gt;
+
+&lt;p&gt;如果你委婉地说：“你这个程序和预期的有点不一致，你看看是不是我的使用方法有问题。”&lt;/p&gt;
+
+&lt;p&gt;他本能地会想：“操，是不是出bug了！”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这显然不是&lt;code&gt;bug&lt;/code&gt;，这是绝大多数人对&lt;code&gt;ggplot2&lt;/code&gt;的误解，他们认为用&lt;code&gt;xlim&lt;/code&gt;和&lt;code&gt;ylim&lt;/code&gt;是放置一个窗口去看你的图，然而在&lt;code&gt;ggplot2&lt;/code&gt;是限定一个窗口去过滤你的数据，并重新画图！你的数据被过滤了！如果是放置窗口在图上，一条线从A到B，如果B在窗口之外，那么线被截断了，你看到半条线，但如果是过滤数据呢？B不复存在，那么线条A到B也不复存在，没有B，A到B的线画不出来。就是这样，所以这绝逼不是&lt;code&gt;bug&lt;/code&gt;，而是程序员本能反应的第二种情况，你用错了。&lt;/p&gt;
+
+&lt;p&gt;那么怎么样不过滤数据，而只是设置可视化窗口呢？你基本上很少看到有人这么用，因为几乎99%的人都只知道&lt;code&gt;xlim&lt;/code&gt;和&lt;code&gt;ylim&lt;/code&gt;，一般人我也不告诉他，快点拿去小抄把下面的代码记录一下。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>用facet_labeller改facet_plot的panel名</title>
@@ -313,7 +341,11 @@ print(p)
       <pubDate>Tue, 29 Nov 2016 00:53:00 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2016/11/vertical-dendrogram-in-ggtree/</guid>
-      <description>&lt;p&gt;这个Diego在推特上问的问题，他最近在写一个&lt;a href=&#34;https://github.com/ddiez/motiftools&#34;&gt;motiftools&lt;/a&gt;的R包，里面用了ggtree来画图，我想他应该是要解决他在包里的画树/聚类功能吧。&lt;/p&gt;
+      <description>&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/guangchuangyu?ref_src=twsrc%5Etfw&#34;&gt;@guangchuangyu&lt;/a&gt; Is it possible to plot horizontal trees with ggtree? (a la plot.hclust default).&lt;/p&gt;&amp;mdash; Diego Diez (@kurai_yousei) &lt;a href=&#34;https://twitter.com/kurai_yousei/status/799532564633518080?ref_src=twsrc%5Etfw&#34;&gt;November 18, 2016&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;这个Diego在推特上问的问题，他最近在写一个&lt;a href=&#34;https://github.com/ddiez/motiftools&#34;&gt;motiftools&lt;/a&gt;的R包，里面用了ggtree来画图，我想他应该是要解决他在包里的画树/聚类功能吧。&lt;/p&gt;
 
 &lt;p&gt;他问题写的horizontal，但其实plot.hclust默认是vertical，ggtree默认也是horizontal，所以我认为他问的是vertical layout，这个在我的回答中也得到了他的确认。&lt;/p&gt;
 
