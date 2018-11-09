@@ -227,6 +227,77 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/">
+          我制作的pkgsrc
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2007-05-16T04:36:00&#43;08:00">
+        
+  May 16, 2007
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/bsd">BSD</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <h2 id="xlyrics-unix下的歌词秀软件">xlyrics: unix下的歌词秀软件   </h2>
+
+<p><a href="http://files.getdropbox.com/u/774072/software/pkgsrc/xlyrics-0.4.6.tar.bz2">点此下载</a></p>
+
+<h2 id="eva-kde下的qq客户端">EVA: KDE下的QQ客户端     </h2>
+
+<p><a href="http://files.getdropbox.com/u/774072/software/pkgsrc/eva-20070327.tar.bz2">点此下载</a></p>
+
+<pre><code>#cd /usr/pkgsrc/wip-cn 
+#tar xjvf eva.tar.bz2 
+#cd eva 
+#make install clean
+</code></pre>
+
+<p>就可以啦。在我的机子（NetBSD 3.0.1 macppc）上测试通过。。
+更新到eva-20070327</p>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2007/05/edit-partition-netbsd-macppc/">
           Edit partition table in NetBSD/macppc
         </a>
@@ -644,86 +715,6 @@ sudo texhash
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/">
-          scau校园网认证
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2005-03-14T04:30:00&#43;08:00">
-        
-  March 14, 2005
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/linux">Linux</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/powerbook">Powerbook</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>锐捷认证。非标准的802.1认证。 我采用mystar来认证，但是不会重连。。
-我自已写了个shell script来实现断线后重连。。。</p>
-
-<p>华农现在的校园网用锐捷认证，windows下的认证程序还行。linux下的客户端垃圾得不得了啊。。我用苹果笔记本PowerBookG3(fireware)。锐捷没有苹果下的认证客户端，于是我上不了网了，很是郁闷。。。</p>
-
-<p>我装了gentoo。最初尝试用qemu的user-mode来虚拟x86的指令集，再用xrgsu（锐捷linux版认证程序）提供运行所需的libs。最终xrgsu可以运行。但是找不到网卡。后面我就放弃了。</p>
-
-<p>拉了一个月ADSL，在一次偶然的机会我发现了mystar。mystar是用libnet＋libpcap写的，关键的代码不到200行（libnet和libpcap是平台无关的分组构造发送、分组截获C函数库）<code>mystar</code>是网上一个叫netxray的人写的。
-下面是源码<code>http://bbs.whnet.edu.cn/upload/mystarV0.1-src.zip</code>，解压密码是<code>netxray</code> 解压后:</p>
-
-<pre><code>cd mystarV0.1 
-make
-</code></pre>
-
-<p>编译。</p>
-
-<pre><code>#修改我的ID跟password。
-vim mystar.conf 
-</code></pre>
-
-<p>使用<code>./mystar</code>运行，并且认证成功!</p>
-
-<p>随后我发现一个问题，就是不会自动重连，老是会断线。在mystar.conf里面有一段</p>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -807,6 +798,27 @@ vim mystar.conf
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/raincloud/">
+                <h3 class="media-heading">（翻）云（覆）雨图</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>生物狗喜欢画barplot，但毕竟只有均值和标准误差信息量太低，万一有outliers呢？万一不是正态分布呢？所以就吐槽了又吐槽，但大家还是乐此不疲，因为大家都在用，因为很多人只会画barplot，所以产生各种反barplot运动，并呼吁大家使用<a href="http://mp.weixin.qq.com/s/kk3M1eoVhCiYmyu92P0zwA">boxplot</a>，boxplot有四分位数的统计量，可以反应outlier和数据的分布，比barplot高得多了。</p>
+
+<p>然而事情是不断在进化的，我们的手段是要跟上潮流的，现在的潮流就是除了要有统计量，还要有原始数据，甚至于有统计推断，全集中一图中，揭开数据的红盖头，给大家呈现全方位无死角的面貌。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1091,25 +1103,6 @@ biocLite(pkg_name)
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/08/ggplot-3d/">
-                <h3 class="media-heading">用ggplot2画3D</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Aug 8, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>在《<a href="http://mp.weixin.qq.com/s/BPY4dPFrrNrDKccMvax07w">扪心自问，meme几何？</a>》一文中，我画了一只兔子，今天给大家演示一下画一只3D版本的兔子，我们知道<code>ggplot2</code>不支持3D，只能画2D的图，但3D其实只是视觉上的，显示在你屏幕上的，同样只是2D。所以我们要做的，就是把3D的坐标转换成2D，然后画出2D的图片来，而这2D看上去有3D的效果。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1117,7 +1110,7 @@ biocLite(pkg_name)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         239 posts found
+         240 posts found
       </p>
     </div>
   </div>

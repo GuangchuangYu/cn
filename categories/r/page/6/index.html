@@ -230,6 +230,78 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/01/using-gosemsim-to-rank-proteins/">
+          基因或蛋白之间，谁是谁的死党？
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-01-02T10:57:15&#43;08:00">
+        
+  January 2, 2018
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/proteomics">Proteomics</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/publication">Publication</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>很多人会有这样一个问题，差异基因一大堆，到底该选那个来做下游的实验验证？这个问题，说白了是个基因「重要性」的打分问题，你做差异基因分析的时候，就可以看做是个打分的过程，p值是你的统计量，p值越小，打分越高，然而所有的打分都是辅助帮我们进一步缩小范围而已，并不是打分越高就越「重要」，如果打分可以说明一切，那么我们就不需要实验验证了。所以像差异基因分析，我们一般是卡p &lt; 0.01或p &lt; 0.05来过滤，把p值小的基因留下来，但我们并不能说p值最小的基因就是最重要的。</p>
+
+<p>回到开头的问题，我们要的是对打分（差异分析）结果再利用别的手段，再一次进行打分，进一步缩小范围。比如你可以通过构建相互作用网络，通过分析betweenness，找hub分子。当然打分不一定是要基于基因/蛋白水平，也可以是通路水平，比如你可以用<a href="http://mp.weixin.qq.com/s/ScwaofLd_ybfECYjL1dGow">clusterProfiler进行富集分析</a>，然后把你的目标限定在某个/些通路上。反正就是各种手段一起上，直到你能够限定到少量几个基因上，对于做实验验证的人来说，再好不过。</p>
+
+<p>上一周发表的《<a href="https://mp.weixin.qq.com/s/FTzgf1JHXAhDta2u-cDksQ">GOSemSim: GO语义相似性度量</a>》，我记录了GOSemSim包被应用于各种各样的场景，它当然也可以拿来给基因/蛋白质打分。比如你用clusterProfiler分析后，就想验证某一通路，但不知道要选这个通路的哪个基因来做为切入点。</p>
+
+<p>首先问一个问题，同一通路上的基因功能相似性高吗？大家可能会潜意识地认为应该比较高，这不一定的，基因/蛋白有直接或间接的相互作用，但这种相互作用可能只是「月上柳梢头，人约黄昏后」而已，可能偶尔才来一发，这种属于约会型。一个基因/蛋白通常会参与到多条不同的通路中，如果两个蛋白在不同的通路中经常一起出现，那么它们的功能相似性才会高，这种属于基友/闺蜜的死党型。今天就来讲一讲到底谁和谁在约会，谁和谁又是死党。</p>
+
+<blockquote>
+<p>Y Han, <strong>G Yu</strong>, H Sarioglu, A Caballero-Martinez, F Schlott, M Ueffing, H Haase, C Peschel, AM Krackhardt. <a href="http://www.sciencedirect.com/science/article/pii/S1874391912007567">Proteomic investigation of the interactome of FMNL1 in hematopoietic cells unveils a role in calcium-dependent membrane plasticity</a>. <strong><em>Journal of Proteomics</em></strong>. 2013, 78:72-82.</p>
+</blockquote>
+
+<p>这篇文章是和慕尼黑工业大学（Technische Universität München）合作的一篇文章，使用了Co-IP去拉蛋白，再用LC-MS/MS进行鉴定，Co-IP是鉴定蛋白相互作用的常用手段，当然拉下来的蛋白不见得就是有真实的相互作用，它甚至于可能只是背景污染而已，所以我们需要对拉下来的蛋白进行打分，找出一些可能性比较高的候选蛋白进一步进行验证。</p>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2018/01/using-gosemsim-to-rank-proteins/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+            
+              
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/ggimage-hat/">
           给你一顶帽子
         </a>
@@ -598,72 +670,6 @@ ga('send', 'pageview');
 </article>
 
             
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/subsetting-in-ggplot2-ggtree/">
-          ggplot2/ggtree取子集画图
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2017-12-01T08:28:48&#43;08:00">
-        
-  December 1, 2017
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>取子集对于进化树可视化来说是非常常见的，我们要区分内部节点和外部节点，我们也可能想针对某些特点的节点进行注释。</p>
-
-<p>ggplot2现在所有图层都不支持直接取子集，所以呢ggtree就自己定义了一些修改的图层，包括<code>geom_text2</code>, <code>geom_label2</code>,  <code>geom_point2</code> 和 <code>geom_segment2</code>，这些图层和ggplot2的版本唯一差别就是支持取子集。这样对于我们做注释来说，就更方便了。</p>
-
-<p>比如说我想给内部节点打点，可以用：</p>
-
-<pre><code class="language-r">ggtree(tree) + geom_text2(aes(label=label, subset=!isTip), hjust=-.2) +
-        geom_point2(aes(subset=!isTip), color=&quot;red&quot;, size=3)
-</code></pre>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2017/12/subsetting-in-ggplot2-ggtree/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
             
   <div class="pagination-bar">
     <ul class="pagination">
@@ -748,6 +754,27 @@ ga('send', 'pageview');
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/raincloud/">
+                <h3 class="media-heading">（翻）云（覆）雨图</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>生物狗喜欢画barplot，但毕竟只有均值和标准误差信息量太低，万一有outliers呢？万一不是正态分布呢？所以就吐槽了又吐槽，但大家还是乐此不疲，因为大家都在用，因为很多人只会画barplot，所以产生各种反barplot运动，并呼吁大家使用<a href="http://mp.weixin.qq.com/s/kk3M1eoVhCiYmyu92P0zwA">boxplot</a>，boxplot有四分位数的统计量，可以反应outlier和数据的分布，比barplot高得多了。</p>
+
+<p>然而事情是不断在进化的，我们的手段是要跟上潮流的，现在的潮流就是除了要有统计量，还要有原始数据，甚至于有统计推断，全集中一图中，揭开数据的红盖头，给大家呈现全方位无死角的面貌。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1032,25 +1059,6 @@ biocLite(pkg_name)
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/08/ggplot-3d/">
-                <h3 class="media-heading">用ggplot2画3D</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Aug 8, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>在《<a href="http://mp.weixin.qq.com/s/BPY4dPFrrNrDKccMvax07w">扪心自问，meme几何？</a>》一文中，我画了一只兔子，今天给大家演示一下画一只3D版本的兔子，我们知道<code>ggplot2</code>不支持3D，只能画2D的图，但3D其实只是视觉上的，显示在你屏幕上的，同样只是2D。所以我们要做的，就是把3D的坐标转换成2D，然后画出2D的图片来，而这2D看上去有3D的效果。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1058,7 +1066,7 @@ biocLite(pkg_name)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         239 posts found
+         240 posts found
       </p>
     </div>
   </div>

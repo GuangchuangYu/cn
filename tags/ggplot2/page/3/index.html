@@ -230,6 +230,76 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/01/datasaurus/">
+          画一只恐龙
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-01-16T17:53:00&#43;08:00">
+        
+  January 16, 2018
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>大家是否还记得我的《<a href="http://mp.weixin.qq.com/s/YuUOztQg3nUnhdvyg8asvg">webinar录播 (2017-10-24)：plotting tree + data</a>》，这可以说是R画图最好的课程，PPT也分享给大家《<a href="https://mp.weixin.qq.com/s/3yEN-8oUck2WPmNQ368qYA">ggtree直播PPT第一部分</a>》和《<a href="https://mp.weixin.qq.com/s/7-YhGzzu_tVAwySrYOKGFg">ggtree直播PPT第二部分</a>》。</p>
+
+<p>我在PPT中，用了meme，发现没有R包可以做，于是我写了一个R包来做这个事情。</p>
+
+<ul>
+<li><a href="http://mp.weixin.qq.com/s/jDXjkrkq_YVhW-Z5Vx2-Fg">用R画meme ;)</a></li>
+<li><a href="https://mp.weixin.qq.com/s/4b8enFCd_lLt278Ddxp3rg">使用外部字体画meme</a></li>
+<li><a href="http://mp.weixin.qq.com/s/R5CxcdufLy6_yRPzOG4Baw">花式打水印</a></li>
+</ul>
+
+<p>后来又写一个R包来实现字体的阴影效果：</p>
+
+<ul>
+<li><a href="http://mp.weixin.qq.com/s/eZAmqeKBsbvAj9AvrTZRQQ">带你装逼带你飞，画图的文本打出阴影立体效果 </a></li>
+</ul>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2018/01/datasaurus/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+            
+              
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/01/geom-ord-ellipse/">
           画个小圈圈
         </a>
@@ -595,74 +665,6 @@ ga('send', 'pageview');
 </article>
 
             
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/watermark/">
-          听说你想打水印？
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2017-11-10T00:53:00&#43;08:00">
-        
-  November 10, 2017
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p><img src="http://guangchuangyu.github.io/blog_images/R/meme/WechatIMG165.png" alt="" /></p>
-
-<p>正如我在《<a href="http://mp.weixin.qq.com/s/jDXjkrkq_YVhW-Z5Vx2-Fg">用R画meme ;)</a>》里说的，meme包就可以拿来画，当然这个包是设计来画meme的，所以文本只会打在中间，如果你想在右下角之类的，不好意思，我没提供选项让你调文本位置，氮素，meme依然是你的好帮手，怎么说呢，meme不单能帮你读图片，还能用grid画出来，这意味着你可以用<code>grid.text</code>随便加个文本就OK了。</p>
-
-<p>实例演示一发：</p>
-
-<pre><code>library(meme)
-u &lt;- system.file(&quot;angry8.jpg&quot;, package=&quot;meme&quot;)
-x &lt;- meme(u)
-print(x)
-grid.text(&quot;biobabble&quot;, x=.9, y=.05, 
-	gp=gpar(col='white', cex=1.2))
-</code></pre>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2017/11/watermark/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
             
   <div class="pagination-bar">
     <ul class="pagination">
@@ -747,6 +749,27 @@ grid.text(&quot;biobabble&quot;, x=.9, y=.05,
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/raincloud/">
+                <h3 class="media-heading">（翻）云（覆）雨图</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>生物狗喜欢画barplot，但毕竟只有均值和标准误差信息量太低，万一有outliers呢？万一不是正态分布呢？所以就吐槽了又吐槽，但大家还是乐此不疲，因为大家都在用，因为很多人只会画barplot，所以产生各种反barplot运动，并呼吁大家使用<a href="http://mp.weixin.qq.com/s/kk3M1eoVhCiYmyu92P0zwA">boxplot</a>，boxplot有四分位数的统计量，可以反应outlier和数据的分布，比barplot高得多了。</p>
+
+<p>然而事情是不断在进化的，我们的手段是要跟上潮流的，现在的潮流就是除了要有统计量，还要有原始数据，甚至于有统计推断，全集中一图中，揭开数据的红盖头，给大家呈现全方位无死角的面貌。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1031,25 +1054,6 @@ biocLite(pkg_name)
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/08/ggplot-3d/">
-                <h3 class="media-heading">用ggplot2画3D</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Aug 8, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>在《<a href="http://mp.weixin.qq.com/s/BPY4dPFrrNrDKccMvax07w">扪心自问，meme几何？</a>》一文中，我画了一只兔子，今天给大家演示一下画一只3D版本的兔子，我们知道<code>ggplot2</code>不支持3D，只能画2D的图，但3D其实只是视觉上的，显示在你屏幕上的，同样只是2D。所以我们要做的，就是把3D的坐标转换成2D，然后画出2D的图片来，而这2D看上去有3D的效果。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1057,7 +1061,7 @@ biocLite(pkg_name)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         239 posts found
+         240 posts found
       </p>
     </div>
   </div>
