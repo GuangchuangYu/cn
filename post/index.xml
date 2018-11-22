@@ -6,10 +6,39 @@
     <description>Recent content in Posts on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 Nov 2018 12:21:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 22 Nov 2018 12:20:16 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>如何定义基因下游的长度</title>
+      <link>https://guangchuangyu.github.io/cn/2018/11/how-to-define-downstream-range/</link>
+      <pubDate>Thu, 22 Nov 2018 12:20:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2018/11/how-to-define-downstream-range/</guid>
+      <description>&lt;p&gt;首先基因下游是什么？&lt;/p&gt;
+
+&lt;p&gt;我们知道上游很重要啊，因为可能会调控转录，但注释的时候，没有上游这个东西，为什么呢？因为转录起始位点TSS的上下游被定义为promoter，所以啊上游被包括在promoter中，也就没有上游这个category了。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>转换UpSet图为ggplot对象</title>
+      <link>https://guangchuangyu.github.io/cn/2018/11/upset-to-ggplot/</link>
+      <pubDate>Sun, 11 Nov 2018 23:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2018/11/upset-to-ggplot/</guid>
+      <description>&lt;p&gt;我在2018年4月份的一条推特文，&lt;a href=&#34;https://twitter.com/guangchuangyu/status/988672880551518210&#34;&gt;https://twitter.com/guangchuangyu/status/988672880551518210&lt;/a&gt;，可以把&lt;code&gt;UpSetR&lt;/code&gt;变成&lt;code&gt;ggplot&lt;/code&gt;然后可以各种玩，比较我在推特文中所展示的，图上嵌入venn图、使用&lt;code&gt;cowplot&lt;/code&gt;拼图等。然而过了大半年，我的&lt;a href=&#34;https://github.com/hms-dbmi/UpSetR/pull/112&#34;&gt;pull request&lt;/a&gt;并没有被作者接收，也就是说这功能还不存在于官方的版本中。&lt;/p&gt;
+
+&lt;p&gt;如果有兴趣的话，应该安装我fork的版本。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;devtools::install_github(&amp;quot;GuangchuangYu/UpSetR&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>（翻）云（覆）雨图</title>
@@ -1359,13 +1388,13 @@ grid.text(&amp;quot;biobabble&amp;quot;, x=.9, y=.05,
 &lt;p&gt;Meanwhile, when I fed the ENTREZID to enrichKEGG, it show me two unreasonable results:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;kegg_enrich = enrichKEGG(
-	gene = new_ids$ENTREZID,
-	organism = &#39;hsa&#39;,
-	keyType = &#39;ncbi-geneid&#39;,
-	pvalueCutoff = 0.05,
-	#pAdjustMethod = &#39;BH&#39;,
-	#qvalueCutoff = 0.2,
-	use_internal_data = FALSE
+    gene = new_ids$ENTREZID,
+    organism = &#39;hsa&#39;,
+    keyType = &#39;ncbi-geneid&#39;,
+    pvalueCutoff = 0.05,
+    #pAdjustMethod = &#39;BH&#39;,
+    #qvalueCutoff = 0.2,
+    use_internal_data = FALSE
 )
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -1527,12 +1556,12 @@ hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.000
 
 set.seed(2017-07-04)
 d &amp;lt;- data.frame(x = letters[1:5], y = rnorm(5), 
-		group = sample(c(&amp;quot;Control&amp;quot;, &amp;quot;Treatment&amp;quot;), 5, replace=TRUE),
-		type = sample(LETTERS[1:2], 5, replace=TRUE)
+        group = sample(c(&amp;quot;Control&amp;quot;, &amp;quot;Treatment&amp;quot;), 5, replace=TRUE),
+        type = sample(LETTERS[1:2], 5, replace=TRUE)
 )
 
 p &amp;lt;- ggplot(d, aes(x,y)) + 
-	geom_col(aes(fill=group))
+    geom_col(aes(fill=group))
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;这个代码很好懂，画一个柱状图，按&lt;code&gt;group&lt;/code&gt;上色。&lt;/p&gt;
@@ -1753,7 +1782,7 @@ p &amp;lt;- ggplot(d, aes(x,y)) +
 d &amp;lt;- data.frame(x=rnorm(10), y=rnorm(10), lab=LETTERS[1:10])
 p &amp;lt;- ggplot(d, aes(x, y)) + 
     geom_text(aes(label=lab, color=lab), size=10) + 
-	geom_text(aes(y, x, label=lab), size=3)
+    geom_text(aes(y, x, label=lab), size=3)
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -1870,35 +1899,9 @@ p &amp;lt;- ggplot(d, aes(x, y)) +
 cd galaxy
 ## switch to master branch, stable release
 git checkout -b master origin/master
-```   	
-
-
-
-
-### 安装
-
-
-```bash
-cd galaxy/config/
-cp galaxy.ini.sample galaxy.ini
-```   	
-
-编辑_galaxy.ini_文件
-
-+ find the line: admin_users
-+ remove the # and add an email for your account
-
-
-
-### 运行
-
-```bash
-# go back to galaxy folder
-cd ..
-sh run.sh
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;然后就可以用浏览器打开&lt;a href=&#34;http://localhost:8080&#34;&gt;http://localhost:8080&lt;/a&gt;，使用galaxy，就是这么简单。&lt;/p&gt;</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1994,19 +1997,19 @@ While I can run enrichKEGG, I&amp;rsquo;m unable to run gseKEGG basically becaus
 &lt;p&gt;无非是给我一张静态图当背景，再来一张动态图加在上面，为了让代码可以重用，首先打包个小函数：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;add_gif &amp;lt;- function(bg_file, gif_file, out_file, offset, bg_size=&amp;quot;500&amp;quot;, gif_size=&amp;quot;150&amp;quot;) {
-	library(magick)
-	p &amp;lt;- image_read(bg_file)
-	g &amp;lt;- image_read(gif_file)
-	g &amp;lt;- image_scale(g, gif_size)
+    library(magick)
+    p &amp;lt;- image_read(bg_file)
+    g &amp;lt;- image_read(gif_file)
+    g &amp;lt;- image_scale(g, gif_size)
 
-	background &amp;lt;- image_background(image_scale(p, bg_size), &amp;quot;white&amp;quot;, flatten = TRUE)
+    background &amp;lt;- image_background(image_scale(p, bg_size), &amp;quot;white&amp;quot;, flatten = TRUE)
 
-	frames &amp;lt;- lapply(g, function(frame) {
-  		image_composite(background, frame, offset = offset)
-	})
+    frames &amp;lt;- lapply(g, function(frame) {
+        image_composite(background, frame, offset = offset)
+    })
 
-	animation &amp;lt;- image_animate(image_join(frames))
-	image_write(animation, out_file)
+    animation &amp;lt;- image_animate(image_join(frames))
+    image_write(animation, out_file)
 }
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -2797,13 +2800,13 @@ print(p)
 &lt;pre&gt;&lt;code&gt;&amp;gt; require(TxDb.Hsapiens.UCSC.hg19.knownGene)
 &amp;gt; txdb = TxDb.Hsapiens.UCSC.hg19.knownGene
 &amp;gt; x = annotatePeak(f, tssRegion=c(-1000, 1000), TxDb=txdb)
-&amp;gt;&amp;gt; loading peak file...				 2017-03-09 11:29:18 PM 
-&amp;gt;&amp;gt; preparing features information...		 2017-03-09 11:29:18 PM 
-&amp;gt;&amp;gt; identifying nearest features...		 2017-03-09 11:29:19 PM 
-&amp;gt;&amp;gt; calculating distance from peak to TSS...	 2017-03-09 11:29:20 PM 
-&amp;gt;&amp;gt; assigning genomic annotation...		 2017-03-09 11:29:20 PM 
-&amp;gt;&amp;gt; assigning chromosome lengths			 2017-03-09 11:29:42 PM 
-&amp;gt;&amp;gt; done...					 2017-03-09 11:29:42 PM 
+&amp;gt;&amp;gt; loading peak file...              2017-03-09 11:29:18 PM 
+&amp;gt;&amp;gt; preparing features information...         2017-03-09 11:29:18 PM 
+&amp;gt;&amp;gt; identifying nearest features...       2017-03-09 11:29:19 PM 
+&amp;gt;&amp;gt; calculating distance from peak to TSS...  2017-03-09 11:29:20 PM 
+&amp;gt;&amp;gt; assigning genomic annotation...       2017-03-09 11:29:20 PM 
+&amp;gt;&amp;gt; assigning chromosome lengths          2017-03-09 11:29:42 PM 
+&amp;gt;&amp;gt; done...                   2017-03-09 11:29:42 PM 
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;blockquote&gt;

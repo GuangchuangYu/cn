@@ -6,10 +6,23 @@
     <description>Recent content in Chipseeker on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 13 Dec 2017 12:20:16 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 22 Nov 2018 12:20:16 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/tags/chipseeker/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>如何定义基因下游的长度</title>
+      <link>https://guangchuangyu.github.io/cn/2018/11/how-to-define-downstream-range/</link>
+      <pubDate>Thu, 22 Nov 2018 12:20:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2018/11/how-to-define-downstream-range/</guid>
+      <description>&lt;p&gt;首先基因下游是什么？&lt;/p&gt;
+
+&lt;p&gt;我们知道上游很重要啊，因为可能会调控转录，但注释的时候，没有上游这个东西，为什么呢？因为转录起始位点TSS的上下游被定义为promoter，所以啊上游被包括在promoter中，也就没有上游这个category了。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>最后的八卦</title>
@@ -118,35 +131,9 @@
 cd galaxy
 ## switch to master branch, stable release
 git checkout -b master origin/master
-```   	
-
-
-
-
-### 安装
-
-
-```bash
-cd galaxy/config/
-cp galaxy.ini.sample galaxy.ini
-```   	
-
-编辑_galaxy.ini_文件
-
-+ find the line: admin_users
-+ remove the # and add an email for your account
-
-
-
-### 运行
-
-```bash
-# go back to galaxy folder
-cd ..
-sh run.sh
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;然后就可以用浏览器打开&lt;a href=&#34;http://localhost:8080&#34;&gt;http://localhost:8080&lt;/a&gt;，使用galaxy，就是这么简单。&lt;/p&gt;</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -210,13 +197,13 @@ sh run.sh
 &lt;pre&gt;&lt;code&gt;&amp;gt; require(TxDb.Hsapiens.UCSC.hg19.knownGene)
 &amp;gt; txdb = TxDb.Hsapiens.UCSC.hg19.knownGene
 &amp;gt; x = annotatePeak(f, tssRegion=c(-1000, 1000), TxDb=txdb)
-&amp;gt;&amp;gt; loading peak file...				 2017-03-09 11:29:18 PM 
-&amp;gt;&amp;gt; preparing features information...		 2017-03-09 11:29:18 PM 
-&amp;gt;&amp;gt; identifying nearest features...		 2017-03-09 11:29:19 PM 
-&amp;gt;&amp;gt; calculating distance from peak to TSS...	 2017-03-09 11:29:20 PM 
-&amp;gt;&amp;gt; assigning genomic annotation...		 2017-03-09 11:29:20 PM 
-&amp;gt;&amp;gt; assigning chromosome lengths			 2017-03-09 11:29:42 PM 
-&amp;gt;&amp;gt; done...					 2017-03-09 11:29:42 PM 
+&amp;gt;&amp;gt; loading peak file...              2017-03-09 11:29:18 PM 
+&amp;gt;&amp;gt; preparing features information...         2017-03-09 11:29:18 PM 
+&amp;gt;&amp;gt; identifying nearest features...       2017-03-09 11:29:19 PM 
+&amp;gt;&amp;gt; calculating distance from peak to TSS...  2017-03-09 11:29:20 PM 
+&amp;gt;&amp;gt; assigning genomic annotation...       2017-03-09 11:29:20 PM 
+&amp;gt;&amp;gt; assigning chromosome lengths          2017-03-09 11:29:42 PM 
+&amp;gt;&amp;gt; done...                   2017-03-09 11:29:42 PM 
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;blockquote&gt;

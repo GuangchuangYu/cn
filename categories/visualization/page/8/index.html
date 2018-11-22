@@ -1,26 +1,49 @@
-
-
-
-  
-
-
-
-
-  
-
-
-  
-
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
     
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.31.1 with theme Tranquilpeak 0.4.3-BETA">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.32 with theme Tranquilpeak 0.4.3-SNAPSHOT">
+<meta name="author" content="Guangchuang Yu">
+<meta name="keywords" content="">
+<meta name="description" content="Guangchuang&#39;s Chinese Blog">
+
+
+<meta property="og:description" content="Guangchuang&#39;s Chinese Blog">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Visualization">
+<meta name="twitter:title" content="Visualization">
+<meta property="og:url" content="https://guangchuangyu.github.io/cn/categories/visualization/">
+<meta property="twitter:url" content="https://guangchuangyu.github.io/cn/categories/visualization/">
+<meta property="og:site_name" content="Guangchuang Yu">
+<meta property="og:description" content="Guangchuang&#39;s Chinese Blog">
+<meta name="twitter:description" content="Guangchuang&#39;s Chinese Blog">
+<meta property="og:locale" content="en-us">
+
+
+<meta name="twitter:card" content="summary">
+
+  <meta name="twitter:site" content="@guangchuangyu">
+
+
+  <meta name="twitter:creator" content="@guangchuangyu">
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
+
+
     <title>Visualization</title>
-    <meta name="author" content="Guangchuang Yu">
-    <meta name="keywords" content="">
 
     <link rel="icon" href="https://guangchuangyu.github.io/cn/favicon.png">
     
@@ -28,32 +51,8 @@
     
 
     
-    <meta name="description" content="Guangchuang&#39;s Chinese Blog">
-    <meta property="og:description" content="Guangchuang&#39;s Chinese Blog">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="Visualization">
-    <meta property="og:url" content="/categories/visualization/">
-    <meta property="og:site_name" content="Guangchuang Yu">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Guangchuang Yu">
-    <meta name="twitter:description" content="Guangchuang&#39;s Chinese Blog">
-    
-      <meta name="twitter:creator" content="@guangchuangyu">
-    
-    
 
-    
-    
-
-    
-      <meta property="og:image" content="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
-    
-
-    
-    
-    
-
-    
+    <link rel="canonical" href="https://guangchuangyu.github.io/cn/categories/visualization/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -61,7 +60,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
     
     
 
@@ -96,7 +95,7 @@ ga('send', 'pageview');
     
     
       
-        <img class="header-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
+        <img class="header-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
       
     
     </a>
@@ -108,7 +107,7 @@ ga('send', 'pageview');
     
       <div class="sidebar-profile">
         <a href="https://guangchuangyu.github.io/cn/#about">
-          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
         </a>
         <h4 class="sidebar-profile-name">Guangchuang Yu</h4>
         
@@ -258,9 +257,11 @@ ga('send', 'pageview');
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>这是最近github上的问题，如何反转time scale，也就是把最近的时间设为0。而内部节点为距今多少年，这个很容易，把x轴的值变成x-max(x)就可以，感觉这个也只会在时间树上使用，所以取名revts（reverse time scale），revts之后，x轴最大值是0，其它为负数，可以使用scale_x_continuous改label为绝对值。</p>
+      
+        <p>这是最近github上的问题，如何反转time scale，也就是把最近的时间设为0。而内部节点为距今多少年，这个很容易，把x轴的值变成x-max(x)就可以，感觉这个也只会在时间树上使用，所以取名revts（reverse time scale），revts之后，x轴最大值是0，其它为负数，可以使用scale_x_continuous改label为绝对值。</p>
 
 <p></p>
+      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2016/11/ggtree-reverse-time-scale/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -316,7 +317,8 @@ ga('send', 'pageview');
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <blockquote>
+      
+        <blockquote>
 <p>本文受魏太云（<a href="http://www.weibo.com/taiyun">@cloud_wei</a>)的邀请，最初在2015年发表于<a href="http://cos.name/2015/11/to-achieve-the-visualization-and-annotation-of-evolutionary-tree-using-ggtree/">统计之都</a>。</p>
 </blockquote>
 
@@ -326,6 +328,7 @@ ga('send', 'pageview');
 
 <p>层次聚类的输入是距离，比如euclidean或manhattan距离。把距离近的聚在一起。而进化树推断是从生物序列（DNA或氨基酸）的比对开始。最简单的方法是计算一下序列中不匹配的数目，称之为hamming distance（通常用序列长度做归一化），使用距离当然也可以应用层次聚类的方法。进化树的构建最简单的方法是非加权配对平均法（Unweighted Pair Group Method with Arithmetic Mean, UPGMA），这其实是使用average linkage的层次聚类。这种方法在进化树推断上现在基本没人用。更为常用的是邻接法（neighbor joining），两个节点距离其它节点都比较远，而这两个节点又比较近，它们就是neighbor，可以看出neighbor不一定是距离最近的两个节点。真正做进化的人，这个方法也基本不用。现在主流的方法是最大似然法(Maximum likelihood, ML)，通过进化模型（evolutionary model)估计拓朴结构和分支长度，估计的结果具有最高的概率能够产生观测数据（多序列比对）。另外还有最大简约法和贝叶斯推断等方法用于构建进化树。
 </p>
+      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2016/03/ggtree-for-tree-visualization-annotation/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -383,11 +386,13 @@ ga('send', 'pageview');
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p><img src="https://guangchuangyu.github.io/blog_images/2015/Screenshot%202015-05-21%2010.31.46.png" alt="" /></p>
+      
+        <p><img src="https://guangchuangyu.github.io/blog_images/2015/Screenshot%202015-05-21%2010.31.46.png" alt="" /></p>
 
 <p><a href="http://meme-suite.org">MEME</a>是motif分析的webserver，所谓的注释序列就是一条线条上画一些长方形的box。</p>
 
 <p></p>
+      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2015/05/draw-meme-like-figure/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -441,7 +446,8 @@ ga('send', 'pageview');
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <h3 id="why-use-ggplot2">Why use ggplot2</h3>
+      
+        <h3 id="why-use-ggplot2">Why use ggplot2</h3>
 
 <p>ggplot2是我见过最human friendly的画图软件，这得益于Leland Wilkinson在他的著作《<a href="http://book.douban.com/subject/10123863/">The Grammar of Graphics</a>》中提出了一套图形语法，把图形元素抽象成可以自由组合的成分，Hadley
 Wickham把这套想法在R中实现。</p>
@@ -451,6 +457,7 @@ Wickham把这套想法在R中实现。</p>
 <p>Hadley Wickham也给出<a href="https://github.com/hadley/ggplot2/wiki/Why-use-ggplot2">一堆理由</a>让我们说服自己，我想再补充一点，Hadley Wickham是学医出身的，做为学生物出身的人有什么理由不支持呢:)</p>
 
 <p></p>
+      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2014/05/use-ggplot2/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -504,7 +511,8 @@ Wickham把这套想法在R中实现。</p>
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>生物坑很多人画图只会直方图，统计只会T检验，在暨大见过太多的学生连T检验都不会，分不清SEM和SD的差别，也不清楚T检验那几个简单参数的含义。我写统计笔记也是因为不想重复性地跟学生讲解T检验。</p>
+      
+        <p>生物坑很多人画图只会直方图，统计只会T检验，在暨大见过太多的学生连T检验都不会，分不清SEM和SD的差别，也不清楚T检验那几个简单参数的含义。我写统计笔记也是因为不想重复性地跟学生讲解T检验。</p>
 
 <p>Barplot和T test一样普遍而流行，barplot适合于表示计数数据和比例，显示比例也可以用pie
 plot，但直方图比饼图要好，因为人类的眼睛适合于比较高度，而不是弧度。</p>
@@ -512,6 +520,7 @@ plot，但直方图比饼图要好，因为人类的眼睛适合于比较高度�
 <p>多半时候生物学数据并非简单的计数数据，对于测量数据，在展示数据分布时，很多人会使用他们熟悉的barplot，用高度来表示mean，然后再加上errorbar，这样展示数据，信息量是非常低的，使用boxplot能够提供更多的数据分布信息，能更好地展现数据，但可能很多人只会在excel里画barplot，Nature
 Methods 2013年的文章中有100个barplot图，而只有20个boxplot图，从这里就可以看出来，用boxplot的人远远没有barplot多，于是NPG怒了，写了两篇专栏文章<a href="http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2807.html">Points of View: Bar charts and box plots</a>和<a href="http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2813.html">Points of Significance: Visualizing samples with box plots</a>并且发表了一篇<a href="http://www.nature.com/nmeth/journal/v11/n2/full/nmeth.2811.html">BoxPlotR: a web tool for generation of box plots</a>方便大家画boxplot，如此简单的web tool能够发Nature Methods，实在是让人羡慕妒忌恨啊。
 </p>
+      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2014/03/boxplot/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -565,11 +574,13 @@ Methods 2013年的文章中有100个barplot图，而只有20个boxplot图，从�
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      今天看到统计之都上的情人节心形图。
+      
+        今天看到统计之都上的情人节心形图。
 这次画的心形函数是： $ x = 16 (sin t)^3$ $ y = 13 cos t - 5 cos 2t - 2 cos 3t - cos 4t$
 尝试用ggplot2来画，结果如下： 代码见Github.
 类似的心形图以前也是画过的，当然这样的函数图有很多，详见http://www.mathematische-basteleien.de/heart.htm，画起来也很容易。
 倒是以前画过的蝙蝠侠logo，更有成就感些。
+      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2012/02/happy-valentine/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -623,7 +634,8 @@ Methods 2013年的文章中有100个barplot图，而只有20个boxplot图，从�
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>ggplot2 0.9.0版本将在3月1号发布，改动较大，最近bioc mailing
+      
+        <p>ggplot2 0.9.0版本将在3月1号发布，改动较大，最近bioc mailing
 list也有诸多讨论，因为它导致了某些包编译出错（估计是NAMESPACE引起的）。</p>
 
 <p>按照hadley的说法是这是为了把他个人的项目变成一个社区项目。</p>
@@ -634,6 +646,7 @@ list也有诸多讨论，因为它导致了某些包编译出错（估计是NAME
 
 <p>画图的话，加了四个函数<code>geom_map()</code>, <code>geom_raster()</code>,<code>geom_dotplot()</code>和<code>geom_violin()</code>.
 </p>
+      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2012/02/violin-plot/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -687,7 +700,7 @@ list也有诸多讨论，因为它导致了某些包编译出错（估计是NAME
       <i class="fa fa-remove"></i>
     </div>
     
-      <img id="about-card-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
     
     <h4 id="about-card-name">Guangchuang Yu</h4>
     
@@ -728,6 +741,51 @@ list也有诸多讨论，因为它导致了某些包编译出错（估计是NAME
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/how-to-define-downstream-range/">
+                <h3 class="media-heading">如何定义基因下游的长度</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>首先基因下游是什么？</p>
+
+<p>我们知道上游很重要啊，因为可能会调控转录，但注释的时候，没有上游这个东西，为什么呢？因为转录起始位点TSS的上下游被定义为promoter，所以啊上游被包括在promoter中，也就没有上游这个category了。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/upset-to-ggplot/">
+                <h3 class="media-heading">转换UpSet图为ggplot对象</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>我在2018年4月份的一条推特文，<a href="https://twitter.com/guangchuangyu/status/988672880551518210">https://twitter.com/guangchuangyu/status/988672880551518210</a>，可以把<code>UpSetR</code>变成<code>ggplot</code>然后可以各种玩，比较我在推特文中所展示的，图上嵌入venn图、使用<code>cowplot</code>拼图等。然而过了大半年，我的<a href="https://github.com/hms-dbmi/UpSetR/pull/112">pull request</a>并没有被作者接收，也就是说这功能还不存在于官方的版本中。</p>
+
+<p>如果有兴趣的话，应该安装我fork的版本。</p>
+
+<pre><code>devtools::install_github(&quot;GuangchuangYu/UpSetR&quot;)
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -983,56 +1041,6 @@ proxies
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/09/install-bioconductor-package/">
-                <h3 class="media-heading">不用biocLite安装Bioconductor包</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Sep 9, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>Bioconductor包的标准安装方法是：</p>
-
-<pre><code>source(&quot;https://bioconductor.org/biocLite.R&quot;)
-biocLite(pkg_name)
-</code></pre>
-
-<p>这其实是非常不好的，多年以来，一直没有改进，试想一下，bioconductor的网站如果被人黑了，放一段危险的代码，然后你却傻傻地去<code>source</code>它，真的是画面太美！</p>
-
-<p>Bioconductor终于是想要改变了，往CRAN上扔了一个叫<code>BiocManager</code>的包，以后通过CRAN安装这个包，再通过这个包来安装Bioconductor的包，显得安全多了，也不用大家费辣么多口水说你得先<code>source</code>一段网上的代码，当然这个<code>BiocManager</code>还不成熟，起码还没有在<code>BiocInstaller</code>加载的时候提示大家转而用<code>BiocManager</code>，也没有在Bioconductor的网页上介绍使用它来安装。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/09/facet_labeller/">
-                <h3 class="media-heading">用facet_labeller改facet_plot的panel名</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Sep 9, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><blockquote>
-<p>I post this because I am facing the same problem: I want to change the text of the label (not the font, the face, the colour, etc: the text itself) of the leftmost panel which is automatically called &ldquo;Tree&rdquo; by ggtree. As far as I understand, and contrary to what is posted below, the &ldquo;theme&rdquo; thing of ggplot2 only allows to change the appearance of the panel header, not the text of the panel title itself&hellip; So how to go about that?</p>
-</blockquote>
-
-<p>这是<a href="https://groups.google.com/d/msgid/bioc-ggtree/154a6acc-bf78-40d9-ad95-8dc1877a4f97%40googlegroups.com?utm_medium=email&amp;utm_source=footer">google group</a>里的问题，说的是<code>facet_plot</code>会把画树的panel叫做Tree，而他想改名，于是我就写了一个函数，<code>facet_labeller</code>来回应这个问题。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1040,7 +1048,7 @@ biocLite(pkg_name)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         240 posts found
+         242 posts found
       </p>
     </div>
   </div>
@@ -1060,6 +1068,21 @@ biocLite(pkg_name)
 
 <script src="https://guangchuangyu.github.io/cn/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
 
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
 
 
 
