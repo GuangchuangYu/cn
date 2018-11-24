@@ -227,6 +227,68 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/04/ggvenn/">
+          用ggplot2画维恩图
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-04-23T19:00:00&#43;08:00">
+        
+  April 23, 2018
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p><img src="http://guangchuangyu.github.io/blog_images/zhishixingqiu/ggvenn_question.png" alt="" /></p>
+
+<p>这是去年「知识星球」里的提问，「知识星球」相当于是众筹我一年的时间，向我提问，请谨慎入坑。</p>
+
+<p>我当时就写了一个函数<code>ggvenn</code>，这个函数其实包装了<code>venneuler</code>，但由于<code>venneuler</code>依赖<code>rJava</code>，而很多小伙伴不会装<code>rJava</code>，而因此装不了<code>yyplot</code>，所以我去掉了这个依赖，但如果你想要用<code>ggvenn</code>这个函数，请自行安装<code>rJava</code>和<code>venneuler</code>。其实还有另外一个包，<code>VennDiagram</code>，它的输出是<code>gList</code>，所以可以直接封装为<code>ggplot2</code>图层，然而对于画venn plot，我并没有太多的兴趣，《<a href="http://mp.weixin.qq.com/s/MqpfgkMJSFj0pYwcEjV9kQ">CS6: ChIPseeker的可视化方法（中秋节的视觉饕餮）</a>》一文中介绍的upset plot，可能更好一些。</p>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2018/04/ggvenn/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/04/ggbackground/">
           使用ggbackground设置ggplot2的背景
         </a>
@@ -625,74 +687,6 @@ for (i in seq_len(n)) {
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/03/colnames-of-data-frame/">
-          R给你的数据化了妆？
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2018-03-26T09:33:50&#43;08:00">
-        
-  March 26, 2018
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>小伙伴说他写个CSV文件，名字就变了，无缘无故<code>|</code>就被改了，还有些名字被强加了<code>X</code>。我注意到了他写的对象是<code>data.frame(d)</code>，这锅绝对是<code>data.frame</code>的。</p>
-
-<p>我们可以试一下：</p>
-
-<pre><code>&gt; d = matrix(rnorm(4), ncol=2)
-&gt; colnames(d) = c(&quot;A|B&quot;, &quot;123&quot;)
-&gt; write.csv(data.frame(d))
-&quot;&quot;,&quot;A.B&quot;,&quot;X123&quot;
-&quot;1&quot;,-0.601247669017546,0.802654193340092
-&quot;2&quot;,-0.128752028398414,0.430829592244036
-</code></pre>
-
-<p><strong>没错，自己给变了。</strong></p>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2018/03/colnames-of-data-frame/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -776,6 +770,23 @@ for (i in seq_len(n)) {
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/dose-citation-above-100/">
+                <h3 class="media-heading">DOSE包引用过百</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Disease ontology (DO) annotates human genes in the context of disease. DO is important annotation in translating molecular findings from high-throughput data to clinical relevance. DOSE is an R package providing semantic similarity computations among DO terms and genes which allows biologists to explore the similarities of diseases and of gene functions in disease perspective. Enrichment analyses including hypergeometric model and gene set enrichment analysis are also implemented to support discovering disease associations of high-throughput biological data.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1033,42 +1044,6 @@ p
 </blockquote>
 
 <p>要看数据集地请点击<a href="https://github.com/GuangchuangYu/clusterProfiler/issues/122">此处直达github issue</a>。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/09/proxychains/">
-                <h3 class="media-heading">一次解决所有代理问题</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Sep 9, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><blockquote>
-<p>之前公众号上有人说，我回大陆了会有一波科学上网的教程，今天的推文算一个吧。真的是被你们言中了！</p>
-</blockquote>
-
-<p>做为Bioconductor包作者，而<code>git push</code>传代码到Bioconductor上是被封的。这很是恼火，随着10月份将迎来新一版本的Bioconductor发布，不能够push代码是多么惨的一件事。</p>
-
-<p>代理其实也挺恼火的，因为各种协议啊，你要各种设置啊，<code>http/https/ssh/git</code>都是各种配置，其实我只要有一个<code>socks5</code>的代理，然后你们所有需要走代理的程序都通过它就好了。</p>
-
-<p>谁特么有空天天在琢磨怎么配置各种不同协议的代理！只要我们想得到的，一般都有人做了。</p>
-
-<p>于是万能的github上找到了<a href="https://github.com/haad/proxychains">proxychains</a>。</p>
-
-<pre><code>A hook preloader that allows to redirect TCP traffic of existing
-dynamically linked programs through one or more SOCKS or HTTP
-proxies
-</code></pre>
-
-<p>它强制给定程序发起的TCP连接通过事先配置的代理。可以涵盖所有需要代理的情景。就以git为例，没有proxychains的话，就必须为每个协议（<code>https</code>, <code>git</code>, <code>ssh</code>）按照git文档的要求分别设置代理，过程复杂且不稳定。有了<code>proxychains</code>，这些完全可以不用管，当然应用场景不限于<code>git</code>，任何一个需要代理的命令行程序都是一样在运行的指令前面加<code>proxychains</code>完事。</p>
 
 <p></p></div>
             </div>

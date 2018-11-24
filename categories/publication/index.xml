@@ -6,10 +6,19 @@
     <description>Recent content in Publication on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 Jan 2018 10:57:15 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 25 Nov 2018 01:23:16 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/categories/publication/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>DOSE包引用过百</title>
+      <link>https://guangchuangyu.github.io/cn/2018/11/dose-citation-above-100/</link>
+      <pubDate>Sun, 25 Nov 2018 01:23:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2018/11/dose-citation-above-100/</guid>
+      <description>Disease ontology (DO) annotates human genes in the context of disease. DO is important annotation in translating molecular findings from high-throughput data to clinical relevance. DOSE is an R package providing semantic similarity computations among DO terms and genes which allows biologists to explore the similarities of diseases and of gene functions in disease perspective. Enrichment analyses including hypergeometric model and gene set enrichment analysis are also implemented to support discovering disease associations of high-throughput biological data.</description>
+    </item>
     
     <item>
       <title>基因或蛋白之间，谁是谁的死党？</title>
@@ -32,15 +41,6 @@
 &lt;p&gt;这篇文章是和慕尼黑工业大学（Technische Universität München）合作的一篇文章，使用了Co-IP去拉蛋白，再用LC-MS/MS进行鉴定，Co-IP是鉴定蛋白相互作用的常用手段，当然拉下来的蛋白不见得就是有真实的相互作用，它甚至于可能只是背景污染而已，所以我们需要对拉下来的蛋白进行打分，找出一些可能性比较高的候选蛋白进一步进行验证。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>DOSE包引用过百</title>
-      <link>https://guangchuangyu.github.io/cn/2017/09/dose-citation-above-100/</link>
-      <pubDate>Sat, 30 Sep 2017 12:23:16 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2017/09/dose-citation-above-100/</guid>
-      <description>Disease ontology (DO) annotates human genes in the context of disease. DO is important annotation in translating molecular findings from high-throughput data to clinical relevance. DOSE is an R package providing semantic similarity computations among DO terms and genes which allows biologists to explore the similarities of diseases and of gene functions in disease perspective. Enrichment analyses including hypergeometric model and gene set enrichment analysis are also implemented to support discovering disease associations of high-throughput biological data.</description>
     </item>
     
     <item>

@@ -6,10 +6,19 @@
     <description>Recent content in R on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Nov 2018 12:20:16 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 25 Nov 2018 01:23:16 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>DOSE包引用过百</title>
+      <link>https://guangchuangyu.github.io/cn/2018/11/dose-citation-above-100/</link>
+      <pubDate>Sun, 25 Nov 2018 01:23:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2018/11/dose-citation-above-100/</guid>
+      <description>Disease ontology (DO) annotates human genes in the context of disease. DO is important annotation in translating molecular findings from high-throughput data to clinical relevance. DOSE is an R package providing semantic similarity computations among DO terms and genes which allows biologists to explore the similarities of diseases and of gene functions in disease perspective. Enrichment analyses including hypergeometric model and gene set enrichment analysis are also implemented to support discovering disease associations of high-throughput biological data.</description>
+    </item>
     
     <item>
       <title>如何定义基因下游的长度</title>
@@ -1190,15 +1199,6 @@ p &amp;lt;- ggplot(d, aes(x,y)) +
 &lt;p&gt;说了一篇新文章，大段在称赞ChIPseeker：&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>DOSE包引用过百</title>
-      <link>https://guangchuangyu.github.io/cn/2017/09/dose-citation-above-100/</link>
-      <pubDate>Sat, 30 Sep 2017 12:23:16 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/2017/09/dose-citation-above-100/</guid>
-      <description>Disease ontology (DO) annotates human genes in the context of disease. DO is important annotation in translating molecular findings from high-throughput data to clinical relevance. DOSE is an R package providing semantic similarity computations among DO terms and genes which allows biologists to explore the similarities of diseases and of gene functions in disease perspective. Enrichment analyses including hypergeometric model and gene set enrichment analysis are also implemented to support discovering disease associations of high-throughput biological data.</description>
     </item>
     
     <item>

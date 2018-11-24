@@ -457,6 +457,23 @@ maybe..，至于Han，我在研一的时候，去北大听过她的讲座，被�
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/dose-citation-above-100/">
+                <h3 class="media-heading">DOSE包引用过百</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Disease ontology (DO) annotates human genes in the context of disease. DO is important annotation in translating molecular findings from high-throughput data to clinical relevance. DOSE is an R package providing semantic similarity computations among DO terms and genes which allows biologists to explore the similarities of diseases and of gene functions in disease perspective. Enrichment analyses including hypergeometric model and gene set enrichment analysis are also implemented to support discovering disease associations of high-throughput biological data.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/how-to-define-downstream-range/">
                 <h3 class="media-heading">如何定义基因下游的长度</h3>
               </a>
@@ -710,42 +727,6 @@ p
 </blockquote>
 
 <p>要看数据集地请点击<a href="https://github.com/GuangchuangYu/clusterProfiler/issues/122">此处直达github issue</a>。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/09/proxychains/">
-                <h3 class="media-heading">一次解决所有代理问题</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Sep 9, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><blockquote>
-<p>之前公众号上有人说，我回大陆了会有一波科学上网的教程，今天的推文算一个吧。真的是被你们言中了！</p>
-</blockquote>
-
-<p>做为Bioconductor包作者，而<code>git push</code>传代码到Bioconductor上是被封的。这很是恼火，随着10月份将迎来新一版本的Bioconductor发布，不能够push代码是多么惨的一件事。</p>
-
-<p>代理其实也挺恼火的，因为各种协议啊，你要各种设置啊，<code>http/https/ssh/git</code>都是各种配置，其实我只要有一个<code>socks5</code>的代理，然后你们所有需要走代理的程序都通过它就好了。</p>
-
-<p>谁特么有空天天在琢磨怎么配置各种不同协议的代理！只要我们想得到的，一般都有人做了。</p>
-
-<p>于是万能的github上找到了<a href="https://github.com/haad/proxychains">proxychains</a>。</p>
-
-<pre><code>A hook preloader that allows to redirect TCP traffic of existing
-dynamically linked programs through one or more SOCKS or HTTP
-proxies
-</code></pre>
-
-<p>它强制给定程序发起的TCP连接通过事先配置的代理。可以涵盖所有需要代理的情景。就以git为例，没有proxychains的话，就必须为每个协议（<code>https</code>, <code>git</code>, <code>ssh</code>）按照git文档的要求分别设置代理，过程复杂且不稳定。有了<code>proxychains</code>，这些完全可以不用管，当然应用场景不限于<code>git</code>，任何一个需要代理的命令行程序都是一样在运行的指令前面加<code>proxychains</code>完事。</p>
 
 <p></p></div>
             </div>
