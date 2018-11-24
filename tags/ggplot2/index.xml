@@ -542,12 +542,12 @@ grid.text(&amp;quot;biobabble&amp;quot;, x=.9, y=.05,
 
 set.seed(2017-07-04)
 d &amp;lt;- data.frame(x = letters[1:5], y = rnorm(5), 
-        group = sample(c(&amp;quot;Control&amp;quot;, &amp;quot;Treatment&amp;quot;), 5, replace=TRUE),
-        type = sample(LETTERS[1:2], 5, replace=TRUE)
+		group = sample(c(&amp;quot;Control&amp;quot;, &amp;quot;Treatment&amp;quot;), 5, replace=TRUE),
+		type = sample(LETTERS[1:2], 5, replace=TRUE)
 )
 
 p &amp;lt;- ggplot(d, aes(x,y)) + 
-    geom_col(aes(fill=group))
+	geom_col(aes(fill=group))
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;这个代码很好懂，画一个柱状图，按&lt;code&gt;group&lt;/code&gt;上色。&lt;/p&gt;
@@ -601,7 +601,7 @@ p &amp;lt;- ggplot(d, aes(x,y)) +
 d &amp;lt;- data.frame(x=rnorm(10), y=rnorm(10), lab=LETTERS[1:10])
 p &amp;lt;- ggplot(d, aes(x, y)) + 
     geom_text(aes(label=lab, color=lab), size=10) + 
-    geom_text(aes(y, x, label=lab), size=3)
+	geom_text(aes(y, x, label=lab), size=3)
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>

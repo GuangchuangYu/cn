@@ -1,142 +1,112 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+  
+
+
+  
+
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
     
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.32 with theme Tranquilpeak 0.4.3-SNAPSHOT">
-<meta name="author" content="Guangchuang Yu">
-<meta name="keywords" content="">
-<meta name="description" content="&gt; source(&quot;code.R&quot;) #载入写好的代码 
-&gt; package.skeleton(name=&quot;pkgname&quot;, list=c(&quot;function_name_list&quot;))
-# 生成R源码包的目录结构 
-
-
-到man目录下改*.Rd文档。latex格式。这是包和函数的帮助文档。
-
-如果需要vignette文档的话。在包目录下，新建inst/doc，在里面写pkgname.Rnw文档。基本上是latex格式，不过允许你插入R代码。make的时候，会先跑代码。再自动转换成latex，再编译成pdf。
-
-$ R CMD check pkgname 
-# 检验代码和文档。这个很重要。通常一些小问题都能在这一步发现。 
-$ R CMD build pkgname 
-# 打包，源码包格式 
-$ R CMD build --binary pkgname
-#编译后打包，二进制格式。
-
-
-">
-
-
-<meta property="og:description" content="&gt; source(&quot;code.R&quot;) #载入写好的代码 
-&gt; package.skeleton(name=&quot;pkgname&quot;, list=c(&quot;function_name_list&quot;))
-# 生成R源码包的目录结构 
-
-
-到man目录下改*.Rd文档。latex格式。这是包和函数的帮助文档。
-
-如果需要vignette文档的话。在包目录下，新建inst/doc，在里面写pkgname.Rnw文档。基本上是latex格式，不过允许你插入R代码。make的时候，会先跑代码。再自动转换成latex，再编译成pdf。
-
-$ R CMD check pkgname 
-# 检验代码和文档。这个很重要。通常一些小问题都能在这一步发现。 
-$ R CMD build pkgname 
-# 打包，源码包格式 
-$ R CMD build --binary pkgname
-#编译后打包，二进制格式。
-
-
-">
-<meta property="og:type" content="article">
-<meta property="og:title" content="创建R包">
-<meta name="twitter:title" content="创建R包">
-<meta property="og:url" content="https://guangchuangyu.github.io/cn/2008/12/creat-r-package/">
-<meta property="twitter:url" content="https://guangchuangyu.github.io/cn/2008/12/creat-r-package/">
-<meta property="og:site_name" content="Guangchuang Yu">
-<meta property="og:description" content="&gt; source(&quot;code.R&quot;) #载入写好的代码 
-&gt; package.skeleton(name=&quot;pkgname&quot;, list=c(&quot;function_name_list&quot;))
-# 生成R源码包的目录结构 
-
-
-到man目录下改*.Rd文档。latex格式。这是包和函数的帮助文档。
-
-如果需要vignette文档的话。在包目录下，新建inst/doc，在里面写pkgname.Rnw文档。基本上是latex格式，不过允许你插入R代码。make的时候，会先跑代码。再自动转换成latex，再编译成pdf。
-
-$ R CMD check pkgname 
-# 检验代码和文档。这个很重要。通常一些小问题都能在这一步发现。 
-$ R CMD build pkgname 
-# 打包，源码包格式 
-$ R CMD build --binary pkgname
-#编译后打包，二进制格式。
-
-
-">
-<meta name="twitter:description" content="&gt; source(&quot;code.R&quot;) #载入写好的代码 
-&gt; package.skeleton(name=&quot;pkgname&quot;, list=c(&quot;function_name_list&quot;))
-# 生成R源码包的目录结构 
-
-
-到man目录下改*.Rd文档。latex格式。这是包和函数的帮助文档。
-
-如果需要vignette文档的话。在包目录下，新建inst/doc，在里面写pkgname.Rnw文档。基本上是latex格式，不过允许你插入R代码。make的时候，会先跑代码。再自动转换成latex，再编译成pdf。
-
-$ R CMD check pkgname 
-# 检验代码和文档。这个很重要。通常一些小问题都能在这一步发现。 
-$ R CMD build pkgname 
-# 打包，源码包格式 
-$ R CMD build --binary pkgname
-#编译后打包，二进制格式。
-
-
-">
-<meta property="og:locale" content="en-us">
-
-  
-    <meta property="article:published_time" content="2008-12-07T05:23:16">
-  
-  
-    <meta property="article:modified_time" content="2008-12-07T05:23:16">
-  
-  
-  
-    
-      <meta property="article:section" content="R">
-    
-  
-  
-    
-      <meta property="article:tag" content="package">
-    
-  
-
-
-<meta name="twitter:card" content="summary">
-
-  <meta name="twitter:site" content="@guangchuangyu">
-
-
-  <meta name="twitter:creator" content="@guangchuangyu">
-
-
-
-
-
-
-
-
-
-
-  <meta property="og:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
-  <meta property="twitter:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
-
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.31.1 with theme Tranquilpeak 0.4.3-BETA">
     <title>创建R包</title>
+    <meta name="author" content="Guangchuang Yu">
+    <meta name="keywords" content="">
 
     <link rel="icon" href="https://guangchuangyu.github.io/cn/favicon.png">
     
 
     
+    <meta name="description" content="&gt; source(&quot;code.R&quot;) #载入写好的代码 
+&gt; package.skeleton(name=&quot;pkgname&quot;, list=c(&quot;function_name_list&quot;))
+# 生成R源码包的目录结构 
 
-    <link rel="canonical" href="https://guangchuangyu.github.io/cn/2008/12/creat-r-package/">
+
+到man目录下改*.Rd文档。latex格式。这是包和函数的帮助文档。
+
+如果需要vignette文档的话。在包目录下，新建inst/doc，在里面写pkgname.Rnw文档。基本上是latex格式，不过允许你插入R代码。make的时候，会先跑代码。再自动转换成latex，再编译成pdf。
+
+$ R CMD check pkgname 
+# 检验代码和文档。这个很重要。通常一些小问题都能在这一步发现。 
+$ R CMD build pkgname 
+# 打包，源码包格式 
+$ R CMD build --binary pkgname
+#编译后打包，二进制格式。
+
+
+">
+    <meta property="og:description" content="&gt; source(&quot;code.R&quot;) #载入写好的代码 
+&gt; package.skeleton(name=&quot;pkgname&quot;, list=c(&quot;function_name_list&quot;))
+# 生成R源码包的目录结构 
+
+
+到man目录下改*.Rd文档。latex格式。这是包和函数的帮助文档。
+
+如果需要vignette文档的话。在包目录下，新建inst/doc，在里面写pkgname.Rnw文档。基本上是latex格式，不过允许你插入R代码。make的时候，会先跑代码。再自动转换成latex，再编译成pdf。
+
+$ R CMD check pkgname 
+# 检验代码和文档。这个很重要。通常一些小问题都能在这一步发现。 
+$ R CMD build pkgname 
+# 打包，源码包格式 
+$ R CMD build --binary pkgname
+#编译后打包，二进制格式。
+
+
+">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="创建R包">
+    <meta property="og:url" content="/2008/12/creat-r-package/">
+    <meta property="og:site_name" content="Guangchuang Yu">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Guangchuang Yu">
+    <meta name="twitter:description" content="&gt; source(&quot;code.R&quot;) #载入写好的代码 
+&gt; package.skeleton(name=&quot;pkgname&quot;, list=c(&quot;function_name_list&quot;))
+# 生成R源码包的目录结构 
+
+
+到man目录下改*.Rd文档。latex格式。这是包和函数的帮助文档。
+
+如果需要vignette文档的话。在包目录下，新建inst/doc，在里面写pkgname.Rnw文档。基本上是latex格式，不过允许你插入R代码。make的时候，会先跑代码。再自动转换成latex，再编译成pdf。
+
+$ R CMD check pkgname 
+# 检验代码和文档。这个很重要。通常一些小问题都能在这一步发现。 
+$ R CMD build pkgname 
+# 打包，源码包格式 
+$ R CMD build --binary pkgname
+#编译后打包，二进制格式。
+
+
+">
+    
+      <meta name="twitter:creator" content="@guangchuangyu">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
+    
+
+    
+    
+    
+
+    
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -144,7 +114,7 @@ $ R CMD build --binary pkgname
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
+    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
     
     
 
@@ -179,7 +149,7 @@ ga('send', 'pageview');
     
     
       
-        <img class="header-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
+        <img class="header-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
       
     
     </a>
@@ -191,7 +161,7 @@ ga('send', 'pageview');
     
       <div class="sidebar-profile">
         <a href="https://guangchuangyu.github.io/cn/#about">
-          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
         </a>
         <h4 class="sidebar-profile-name">Guangchuang Yu</h4>
         
@@ -362,8 +332,8 @@ $ R CMD build --binary pkgname
                 
               
             
-            <div class="post-actions-wrap">
-  
+            
+  <div class="post-actions-wrap">
       <nav >
         <ul class="post-actions post-action-nav">
           
@@ -410,8 +380,8 @@ $ R CMD build --binary pkgname
         </a>
       </li>
     </ul>
-  
-</div>
+  </div>
+
 
             
               
@@ -430,8 +400,8 @@ $ R CMD build --binary pkgname
 
       </div>
       <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
-        <div class="post-actions-wrap">
-  
+        
+  <div class="post-actions-wrap">
       <nav >
         <ul class="post-actions post-action-nav">
           
@@ -478,8 +448,8 @@ $ R CMD build --binary pkgname
         </a>
       </li>
     </ul>
-  
-</div>
+  </div>
+
 
       </div>
       <div id="share-options-bar" class="share-options-bar" data-behavior="4">
@@ -497,7 +467,7 @@ $ R CMD build --binary pkgname
       <i class="fa fa-remove"></i>
     </div>
     
-      <img id="about-card-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
     
     <h4 id="about-card-name">Guangchuang Yu</h4>
     
@@ -845,7 +815,7 @@ proxies
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         242 posts found
+         243 posts found
       </p>
     </div>
   </div>
@@ -866,20 +836,6 @@ proxies
 <script src="https://guangchuangyu.github.io/cn/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
 
 
-<script lang="javascript">
-window.onload = updateMinWidth;
-window.onresize = updateMinWidth;
-document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
-function updateMinWidth() {
-  var sidebar = document.getElementById("sidebar");
-  var main = document.getElementById("main");
-  main.style.minWidth = "";
-  var w1 = getComputedStyle(main).getPropertyValue("min-width");
-  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
-  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
-  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
-}
-</script>
 
 
   
@@ -907,7 +863,6 @@ function updateMinWidth() {
       </script>
     
   
-
 
 
 

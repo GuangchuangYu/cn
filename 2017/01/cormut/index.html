@@ -1,98 +1,79 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+  
+
+
+  
+
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
     
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.32 with theme Tranquilpeak 0.4.3-SNAPSHOT">
-<meta name="author" content="Guangchuang Yu">
-<meta name="keywords" content="">
-<meta name="description" content="
-曾经QQ上有人叫我帮忙，跑某个R包做个分析，我一看那包，一堆bug，显然不能用，那就不是简单的事了，我可没空帮他写代码，于是他就经常恶心我，有事没事就来说我写ggtree没意义，不是实质科研，不如跟他做点牛逼的，不如再写个R包干他那事。昨天用马甲在进化群里问画树，我还热心贴个代码给他，说看不懂，我在群里说了，我写个文详细介绍一下。然而他的马甲身份暴露啦，所以今日跳票，我写好的文也不发了，你牛逼就不要用马甲来骗代码呀，ggtree没用你不要用呀，叔就是这么任性😎
-
-
-之前讲过某个R包我一看一堆bug，直接放弃，今天倒是拿出来晒一下，不为别的，我只想说一句，一知半解是很危险的，盲目相信软件也是很危险的。
-
-">
-
-
-<meta property="og:description" content="
-曾经QQ上有人叫我帮忙，跑某个R包做个分析，我一看那包，一堆bug，显然不能用，那就不是简单的事了，我可没空帮他写代码，于是他就经常恶心我，有事没事就来说我写ggtree没意义，不是实质科研，不如跟他做点牛逼的，不如再写个R包干他那事。昨天用马甲在进化群里问画树，我还热心贴个代码给他，说看不懂，我在群里说了，我写个文详细介绍一下。然而他的马甲身份暴露啦，所以今日跳票，我写好的文也不发了，你牛逼就不要用马甲来骗代码呀，ggtree没用你不要用呀，叔就是这么任性😎
-
-
-之前讲过某个R包我一看一堆bug，直接放弃，今天倒是拿出来晒一下，不为别的，我只想说一句，一知半解是很危险的，盲目相信软件也是很危险的。
-
-">
-<meta property="og:type" content="article">
-<meta property="og:title" content="R包辣鸡之CorMut">
-<meta name="twitter:title" content="R包辣鸡之CorMut">
-<meta property="og:url" content="https://guangchuangyu.github.io/cn/2017/01/cormut/">
-<meta property="twitter:url" content="https://guangchuangyu.github.io/cn/2017/01/cormut/">
-<meta property="og:site_name" content="Guangchuang Yu">
-<meta property="og:description" content="
-曾经QQ上有人叫我帮忙，跑某个R包做个分析，我一看那包，一堆bug，显然不能用，那就不是简单的事了，我可没空帮他写代码，于是他就经常恶心我，有事没事就来说我写ggtree没意义，不是实质科研，不如跟他做点牛逼的，不如再写个R包干他那事。昨天用马甲在进化群里问画树，我还热心贴个代码给他，说看不懂，我在群里说了，我写个文详细介绍一下。然而他的马甲身份暴露啦，所以今日跳票，我写好的文也不发了，你牛逼就不要用马甲来骗代码呀，ggtree没用你不要用呀，叔就是这么任性😎
-
-
-之前讲过某个R包我一看一堆bug，直接放弃，今天倒是拿出来晒一下，不为别的，我只想说一句，一知半解是很危险的，盲目相信软件也是很危险的。
-
-">
-<meta name="twitter:description" content="
-曾经QQ上有人叫我帮忙，跑某个R包做个分析，我一看那包，一堆bug，显然不能用，那就不是简单的事了，我可没空帮他写代码，于是他就经常恶心我，有事没事就来说我写ggtree没意义，不是实质科研，不如跟他做点牛逼的，不如再写个R包干他那事。昨天用马甲在进化群里问画树，我还热心贴个代码给他，说看不懂，我在群里说了，我写个文详细介绍一下。然而他的马甲身份暴露啦，所以今日跳票，我写好的文也不发了，你牛逼就不要用马甲来骗代码呀，ggtree没用你不要用呀，叔就是这么任性😎
-
-
-之前讲过某个R包我一看一堆bug，直接放弃，今天倒是拿出来晒一下，不为别的，我只想说一句，一知半解是很危险的，盲目相信软件也是很危险的。
-
-">
-<meta property="og:locale" content="en-us">
-
-  
-    <meta property="article:published_time" content="2017-01-17T12:23:16">
-  
-  
-    <meta property="article:modified_time" content="2017-01-17T12:23:16">
-  
-  
-  
-    
-      <meta property="article:section" content="R">
-    
-  
-  
-    
-      <meta property="article:tag" content="CorMut">
-    
-  
-
-
-<meta name="twitter:card" content="summary">
-
-  <meta name="twitter:site" content="@guangchuangyu">
-
-
-  <meta name="twitter:creator" content="@guangchuangyu">
-
-
-
-
-
-
-
-
-
-
-  <meta property="og:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
-  <meta property="twitter:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
-
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.31.1 with theme Tranquilpeak 0.4.3-BETA">
     <title>R包辣鸡之CorMut</title>
+    <meta name="author" content="Guangchuang Yu">
+    <meta name="keywords" content="">
 
     <link rel="icon" href="https://guangchuangyu.github.io/cn/favicon.png">
     
 
     
+    <meta name="description" content="
+曾经QQ上有人叫我帮忙，跑某个R包做个分析，我一看那包，一堆bug，显然不能用，那就不是简单的事了，我可没空帮他写代码，于是他就经常恶心我，有事没事就来说我写ggtree没意义，不是实质科研，不如跟他做点牛逼的，不如再写个R包干他那事。昨天用马甲在进化群里问画树，我还热心贴个代码给他，说看不懂，我在群里说了，我写个文详细介绍一下。然而他的马甲身份暴露啦，所以今日跳票，我写好的文也不发了，你牛逼就不要用马甲来骗代码呀，ggtree没用你不要用呀，叔就是这么任性😎
 
-    <link rel="canonical" href="https://guangchuangyu.github.io/cn/2017/01/cormut/">
+
+之前讲过某个R包我一看一堆bug，直接放弃，今天倒是拿出来晒一下，不为别的，我只想说一句，一知半解是很危险的，盲目相信软件也是很危险的。
+
+">
+    <meta property="og:description" content="
+曾经QQ上有人叫我帮忙，跑某个R包做个分析，我一看那包，一堆bug，显然不能用，那就不是简单的事了，我可没空帮他写代码，于是他就经常恶心我，有事没事就来说我写ggtree没意义，不是实质科研，不如跟他做点牛逼的，不如再写个R包干他那事。昨天用马甲在进化群里问画树，我还热心贴个代码给他，说看不懂，我在群里说了，我写个文详细介绍一下。然而他的马甲身份暴露啦，所以今日跳票，我写好的文也不发了，你牛逼就不要用马甲来骗代码呀，ggtree没用你不要用呀，叔就是这么任性😎
+
+
+之前讲过某个R包我一看一堆bug，直接放弃，今天倒是拿出来晒一下，不为别的，我只想说一句，一知半解是很危险的，盲目相信软件也是很危险的。
+
+">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="R包辣鸡之CorMut">
+    <meta property="og:url" content="/2017/01/cormut/">
+    <meta property="og:site_name" content="Guangchuang Yu">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Guangchuang Yu">
+    <meta name="twitter:description" content="
+曾经QQ上有人叫我帮忙，跑某个R包做个分析，我一看那包，一堆bug，显然不能用，那就不是简单的事了，我可没空帮他写代码，于是他就经常恶心我，有事没事就来说我写ggtree没意义，不是实质科研，不如跟他做点牛逼的，不如再写个R包干他那事。昨天用马甲在进化群里问画树，我还热心贴个代码给他，说看不懂，我在群里说了，我写个文详细介绍一下。然而他的马甲身份暴露啦，所以今日跳票，我写好的文也不发了，你牛逼就不要用马甲来骗代码呀，ggtree没用你不要用呀，叔就是这么任性😎
+
+
+之前讲过某个R包我一看一堆bug，直接放弃，今天倒是拿出来晒一下，不为别的，我只想说一句，一知半解是很危险的，盲目相信软件也是很危险的。
+
+">
+    
+      <meta name="twitter:creator" content="@guangchuangyu">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
+    
+
+    
+    
+    
+
+    
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -100,7 +81,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
+    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
     
     
 
@@ -135,7 +116,7 @@ ga('send', 'pageview');
     
     
       
-        <img class="header-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
+        <img class="header-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
       
     
     </a>
@@ -147,7 +128,7 @@ ga('send', 'pageview');
     
       <div class="sidebar-profile">
         <a href="https://guangchuangyu.github.io/cn/#about">
-          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
         </a>
         <h4 class="sidebar-profile-name">Guangchuang Yu</h4>
         
@@ -303,9 +284,9 @@ ga('send', 'pageview');
 <p><a href="https://github.com/Bioconductor-mirror/CorMut/blob/master/R/CorMut-internal.R#L125-L129">https://github.com/Bioconductor-mirror/CorMut/blob/master/R/CorMut-internal.R#L125-L129</a>:</p>
 
 <pre><code class="language-r">for(j in 1:length(seqf[[i]])){
-    if(j%%3==1){ tris=seqf[[i]][j:(j+2)]
-    }else if(j%%3==2){ tris=seqf[[i]][(j-1):(j+1)]
-    }else if(j%%3==0){ tris=seqf[[i]][(j-2):j]
+	if(j%%3==1){ tris=seqf[[i]][j:(j+2)]
+	}else if(j%%3==2){ tris=seqf[[i]][(j-1):(j+1)]
+	}else if(j%%3==0){ tris=seqf[[i]][(j-2):j]
 }
 </code></pre>
 
@@ -318,12 +299,12 @@ ga('send', 'pageview');
 <pre><code class="language-r">LOD=0
 Nnum=NS+NY
 for(ii in NYs:Nnum){
-    per_item=choose(Nnum,ii)*(q^ii)*((1-q)^(Nnum-ii))
-    #avoid the appear of NaN
-    if(per_item!=&quot;NaN&quot;){
-        LOD=per_item+LOD
-    }
-    #print(choose(dim(mat)[2],i)*(q^i)*((1-q)^(dim(mat)[2]-i)))
+	per_item=choose(Nnum,ii)*(q^ii)*((1-q)^(Nnum-ii))
+	#avoid the appear of NaN
+	if(per_item!=&quot;NaN&quot;){
+		LOD=per_item+LOD
+	}
+	#print(choose(dim(mat)[2],i)*(q^i)*((1-q)^(dim(mat)[2]-i)))
 }
 LOD=-log10(LOD)
 </code></pre>
@@ -368,8 +349,8 @@ LOD=-log10(LOD)
                 
               
             
-            <div class="post-actions-wrap">
-  
+            
+  <div class="post-actions-wrap">
       <nav >
         <ul class="post-actions post-action-nav">
           
@@ -416,8 +397,8 @@ LOD=-log10(LOD)
         </a>
       </li>
     </ul>
-  
-</div>
+  </div>
+
 
             
               
@@ -436,8 +417,8 @@ LOD=-log10(LOD)
 
       </div>
       <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
-        <div class="post-actions-wrap">
-  
+        
+  <div class="post-actions-wrap">
       <nav >
         <ul class="post-actions post-action-nav">
           
@@ -484,8 +465,8 @@ LOD=-log10(LOD)
         </a>
       </li>
     </ul>
-  
-</div>
+  </div>
+
 
       </div>
       <div id="share-options-bar" class="share-options-bar" data-behavior="4">
@@ -503,7 +484,7 @@ LOD=-log10(LOD)
       <i class="fa fa-remove"></i>
     </div>
     
-      <img id="about-card-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
     
     <h4 id="about-card-name">Guangchuang Yu</h4>
     
@@ -851,7 +832,7 @@ proxies
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         242 posts found
+         243 posts found
       </p>
     </div>
   </div>
@@ -872,20 +853,6 @@ proxies
 <script src="https://guangchuangyu.github.io/cn/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
 
 
-<script lang="javascript">
-window.onload = updateMinWidth;
-window.onresize = updateMinWidth;
-document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
-function updateMinWidth() {
-  var sidebar = document.getElementById("sidebar");
-  var main = document.getElementById("main");
-  main.style.minWidth = "";
-  var w1 = getComputedStyle(main).getPropertyValue("min-width");
-  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
-  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
-  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
-}
-</script>
 
 
   
@@ -913,7 +880,6 @@ function updateMinWidth() {
       </script>
     
   
-
 
 
 

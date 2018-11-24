@@ -1,94 +1,73 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+  
+
+
+  
+
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
     
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.32 with theme Tranquilpeak 0.4.3-SNAPSHOT">
-<meta name="author" content="Guangchuang Yu">
-<meta name="keywords" content="">
-<meta name="description" content="meme无非是照片上加两行字，meme这个包本来是练手之作，用来模拟ggplot2的api。结果我后面又实现了字体阴影效果，这次我又带来了外部字体支持。
-
-加载外部字体在R上面主要有extrafont和showtext两个实现，特别是showtext用起来还是非常简单的。我在meme包里写了font_import函数，内部就是用showtext，只是简单的包装了一下，这样小白用户可以直接下个字体就开撸。有阴影效果，有搞笑字体，就万事具备了，这俨然是个专业的meme工具了。
-
-">
-
-
-<meta property="og:description" content="meme无非是照片上加两行字，meme这个包本来是练手之作，用来模拟ggplot2的api。结果我后面又实现了字体阴影效果，这次我又带来了外部字体支持。
-
-加载外部字体在R上面主要有extrafont和showtext两个实现，特别是showtext用起来还是非常简单的。我在meme包里写了font_import函数，内部就是用showtext，只是简单的包装了一下，这样小白用户可以直接下个字体就开撸。有阴影效果，有搞笑字体，就万事具备了，这俨然是个专业的meme工具了。
-
-">
-<meta property="og:type" content="article">
-<meta property="og:title" content="使用外部字体画meme">
-<meta name="twitter:title" content="使用外部字体画meme">
-<meta property="og:url" content="https://guangchuangyu.github.io/cn/2017/12/using-external-font-for-meme/">
-<meta property="twitter:url" content="https://guangchuangyu.github.io/cn/2017/12/using-external-font-for-meme/">
-<meta property="og:site_name" content="Guangchuang Yu">
-<meta property="og:description" content="meme无非是照片上加两行字，meme这个包本来是练手之作，用来模拟ggplot2的api。结果我后面又实现了字体阴影效果，这次我又带来了外部字体支持。
-
-加载外部字体在R上面主要有extrafont和showtext两个实现，特别是showtext用起来还是非常简单的。我在meme包里写了font_import函数，内部就是用showtext，只是简单的包装了一下，这样小白用户可以直接下个字体就开撸。有阴影效果，有搞笑字体，就万事具备了，这俨然是个专业的meme工具了。
-
-">
-<meta name="twitter:description" content="meme无非是照片上加两行字，meme这个包本来是练手之作，用来模拟ggplot2的api。结果我后面又实现了字体阴影效果，这次我又带来了外部字体支持。
-
-加载外部字体在R上面主要有extrafont和showtext两个实现，特别是showtext用起来还是非常简单的。我在meme包里写了font_import函数，内部就是用showtext，只是简单的包装了一下，这样小白用户可以直接下个字体就开撸。有阴影效果，有搞笑字体，就万事具备了，这俨然是个专业的meme工具了。
-
-">
-<meta property="og:locale" content="en-us">
-
-  
-    <meta property="article:published_time" content="2017-12-07T06:31:55">
-  
-  
-    <meta property="article:modified_time" content="2017-12-07T06:31:55">
-  
-  
-  
-    
-      <meta property="article:section" content="Visualization">
-    
-      <meta property="article:section" content="R">
-    
-  
-  
-    
-      <meta property="article:tag" content="ggplot2">
-    
-      <meta property="article:tag" content="meme">
-    
-  
-
-
-<meta name="twitter:card" content="summary">
-
-  <meta name="twitter:site" content="@guangchuangyu">
-
-
-  <meta name="twitter:creator" content="@guangchuangyu">
-
-
-
-
-
-
-
-
-
-
-  <meta property="og:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
-  <meta property="twitter:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
-
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.31.1 with theme Tranquilpeak 0.4.3-BETA">
     <title>使用外部字体画meme</title>
+    <meta name="author" content="Guangchuang Yu">
+    <meta name="keywords" content="">
 
     <link rel="icon" href="https://guangchuangyu.github.io/cn/favicon.png">
     
 
     
+    <meta name="description" content="meme无非是照片上加两行字，meme这个包本来是练手之作，用来模拟ggplot2的api。结果我后面又实现了字体阴影效果，这次我又带来了外部字体支持。
 
-    <link rel="canonical" href="https://guangchuangyu.github.io/cn/2017/12/using-external-font-for-meme/">
+加载外部字体在R上面主要有extrafont和showtext两个实现，特别是showtext用起来还是非常简单的。我在meme包里写了font_import函数，内部就是用showtext，只是简单的包装了一下，这样小白用户可以直接下个字体就开撸。有阴影效果，有搞笑字体，就万事具备了，这俨然是个专业的meme工具了。
+
+">
+    <meta property="og:description" content="meme无非是照片上加两行字，meme这个包本来是练手之作，用来模拟ggplot2的api。结果我后面又实现了字体阴影效果，这次我又带来了外部字体支持。
+
+加载外部字体在R上面主要有extrafont和showtext两个实现，特别是showtext用起来还是非常简单的。我在meme包里写了font_import函数，内部就是用showtext，只是简单的包装了一下，这样小白用户可以直接下个字体就开撸。有阴影效果，有搞笑字体，就万事具备了，这俨然是个专业的meme工具了。
+
+">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="使用外部字体画meme">
+    <meta property="og:url" content="/2017/12/using-external-font-for-meme/">
+    <meta property="og:site_name" content="Guangchuang Yu">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Guangchuang Yu">
+    <meta name="twitter:description" content="meme无非是照片上加两行字，meme这个包本来是练手之作，用来模拟ggplot2的api。结果我后面又实现了字体阴影效果，这次我又带来了外部字体支持。
+
+加载外部字体在R上面主要有extrafont和showtext两个实现，特别是showtext用起来还是非常简单的。我在meme包里写了font_import函数，内部就是用showtext，只是简单的包装了一下，这样小白用户可以直接下个字体就开撸。有阴影效果，有搞笑字体，就万事具备了，这俨然是个专业的meme工具了。
+
+">
+    
+      <meta name="twitter:creator" content="@guangchuangyu">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
+    
+
+    
+    
+    
+
+    
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -96,7 +75,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
+    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
     
     
 
@@ -131,7 +110,7 @@ ga('send', 'pageview');
     
     
       
-        <img class="header-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
+        <img class="header-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
       
     
     </a>
@@ -143,7 +122,7 @@ ga('send', 'pageview');
     
       <div class="sidebar-profile">
         <a href="https://guangchuangyu.github.io/cn/#about">
-          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
         </a>
         <h4 class="sidebar-profile-name">Guangchuang Yu</h4>
         
@@ -342,8 +321,8 @@ qplot(1:10, 1:10) + labs(title=&quot;meme is awesome&quot;) +
                 
               
             
-            <div class="post-actions-wrap">
-  
+            
+  <div class="post-actions-wrap">
       <nav >
         <ul class="post-actions post-action-nav">
           
@@ -390,8 +369,8 @@ qplot(1:10, 1:10) + labs(title=&quot;meme is awesome&quot;) +
         </a>
       </li>
     </ul>
-  
-</div>
+  </div>
+
 
             
               
@@ -410,8 +389,8 @@ qplot(1:10, 1:10) + labs(title=&quot;meme is awesome&quot;) +
 
       </div>
       <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
-        <div class="post-actions-wrap">
-  
+        
+  <div class="post-actions-wrap">
       <nav >
         <ul class="post-actions post-action-nav">
           
@@ -458,8 +437,8 @@ qplot(1:10, 1:10) + labs(title=&quot;meme is awesome&quot;) +
         </a>
       </li>
     </ul>
-  
-</div>
+  </div>
+
 
       </div>
       <div id="share-options-bar" class="share-options-bar" data-behavior="4">
@@ -477,7 +456,7 @@ qplot(1:10, 1:10) + labs(title=&quot;meme is awesome&quot;) +
       <i class="fa fa-remove"></i>
     </div>
     
-      <img id="about-card-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
     
     <h4 id="about-card-name">Guangchuang Yu</h4>
     
@@ -825,7 +804,7 @@ proxies
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         242 posts found
+         243 posts found
       </p>
     </div>
   </div>
@@ -846,20 +825,6 @@ proxies
 <script src="https://guangchuangyu.github.io/cn/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
 
 
-<script lang="javascript">
-window.onload = updateMinWidth;
-window.onresize = updateMinWidth;
-document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
-function updateMinWidth() {
-  var sidebar = document.getElementById("sidebar");
-  var main = document.getElementById("main");
-  main.style.minWidth = "";
-  var w1 = getComputedStyle(main).getPropertyValue("min-width");
-  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
-  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
-  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
-}
-</script>
 
 
   
@@ -887,7 +852,6 @@ function updateMinWidth() {
       </script>
     
   
-
 
 
 

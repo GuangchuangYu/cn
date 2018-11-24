@@ -1,110 +1,85 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+  
+
+
+  
+
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
     
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.32 with theme Tranquilpeak 0.4.3-SNAPSHOT">
-<meta name="author" content="Guangchuang Yu">
-<meta name="keywords" content="">
-<meta name="description" content="模式生物做什么都简单，非模式生物则很多缺少注释，没有注释你就没法做，只能是借助于各种软件比如blastgo，自己跑电子注释。但今天要讲的不是这种情况，很多物种还是有注释的，只是你有时候不知道该去那里下载，或者你有数据，却不知道该怎么用！很多的软件都是针对模式生物的，或者针对某一些类型的非模式生物，能够支持多种非模式生物，能够支持用户自己的注释文件的软件相对来讲，就非常少有了，然而clusterProfiler就是这类少有的软件之一。
-
-获得OrgDb
-
-今天要讲的是通过OrgDb来做GO分析，这是clusterProfiler的enrichGO函数所支持的背景注释，Bioconductor自带20个OrgDb可供使用，多半是模式生物，难道我们要做的物种不在这20个里面就不行了吗？显然不是的，clusterProfiler能支持的物种我自己都数不过来。
-
-我们可以通过AnnotationHub在线检索并抓取OrgDb，比如这里以玉米为例：
-
-">
-
-
-<meta property="og:description" content="模式生物做什么都简单，非模式生物则很多缺少注释，没有注释你就没法做，只能是借助于各种软件比如blastgo，自己跑电子注释。但今天要讲的不是这种情况，很多物种还是有注释的，只是你有时候不知道该去那里下载，或者你有数据，却不知道该怎么用！很多的软件都是针对模式生物的，或者针对某一些类型的非模式生物，能够支持多种非模式生物，能够支持用户自己的注释文件的软件相对来讲，就非常少有了，然而clusterProfiler就是这类少有的软件之一。
-
-获得OrgDb
-
-今天要讲的是通过OrgDb来做GO分析，这是clusterProfiler的enrichGO函数所支持的背景注释，Bioconductor自带20个OrgDb可供使用，多半是模式生物，难道我们要做的物种不在这20个里面就不行了吗？显然不是的，clusterProfiler能支持的物种我自己都数不过来。
-
-我们可以通过AnnotationHub在线检索并抓取OrgDb，比如这里以玉米为例：
-
-">
-<meta property="og:type" content="article">
-<meta property="og:title" content="非模式基因GO富集分析：以玉米为例&#43;使用OrgDb">
-<meta name="twitter:title" content="非模式基因GO富集分析：以玉米为例&#43;使用OrgDb">
-<meta property="og:url" content="https://guangchuangyu.github.io/cn/2017/07/clusterprofiler-maize/">
-<meta property="twitter:url" content="https://guangchuangyu.github.io/cn/2017/07/clusterprofiler-maize/">
-<meta property="og:site_name" content="Guangchuang Yu">
-<meta property="og:description" content="模式生物做什么都简单，非模式生物则很多缺少注释，没有注释你就没法做，只能是借助于各种软件比如blastgo，自己跑电子注释。但今天要讲的不是这种情况，很多物种还是有注释的，只是你有时候不知道该去那里下载，或者你有数据，却不知道该怎么用！很多的软件都是针对模式生物的，或者针对某一些类型的非模式生物，能够支持多种非模式生物，能够支持用户自己的注释文件的软件相对来讲，就非常少有了，然而clusterProfiler就是这类少有的软件之一。
-
-获得OrgDb
-
-今天要讲的是通过OrgDb来做GO分析，这是clusterProfiler的enrichGO函数所支持的背景注释，Bioconductor自带20个OrgDb可供使用，多半是模式生物，难道我们要做的物种不在这20个里面就不行了吗？显然不是的，clusterProfiler能支持的物种我自己都数不过来。
-
-我们可以通过AnnotationHub在线检索并抓取OrgDb，比如这里以玉米为例：
-
-">
-<meta name="twitter:description" content="模式生物做什么都简单，非模式生物则很多缺少注释，没有注释你就没法做，只能是借助于各种软件比如blastgo，自己跑电子注释。但今天要讲的不是这种情况，很多物种还是有注释的，只是你有时候不知道该去那里下载，或者你有数据，却不知道该怎么用！很多的软件都是针对模式生物的，或者针对某一些类型的非模式生物，能够支持多种非模式生物，能够支持用户自己的注释文件的软件相对来讲，就非常少有了，然而clusterProfiler就是这类少有的软件之一。
-
-获得OrgDb
-
-今天要讲的是通过OrgDb来做GO分析，这是clusterProfiler的enrichGO函数所支持的背景注释，Bioconductor自带20个OrgDb可供使用，多半是模式生物，难道我们要做的物种不在这20个里面就不行了吗？显然不是的，clusterProfiler能支持的物种我自己都数不过来。
-
-我们可以通过AnnotationHub在线检索并抓取OrgDb，比如这里以玉米为例：
-
-">
-<meta property="og:locale" content="en-us">
-
-  
-    <meta property="article:published_time" content="2017-07-24T08:53:00">
-  
-  
-    <meta property="article:modified_time" content="2017-07-24T08:53:00">
-  
-  
-  
-    
-      <meta property="article:section" content="R">
-    
-  
-  
-    
-      <meta property="article:tag" content="clusterProfiler">
-    
-      <meta property="article:tag" content="OrgDb">
-    
-      <meta property="article:tag" content="maize">
-    
-  
-
-
-<meta name="twitter:card" content="summary">
-
-  <meta name="twitter:site" content="@guangchuangyu">
-
-
-  <meta name="twitter:creator" content="@guangchuangyu">
-
-
-
-
-
-
-
-
-
-
-  <meta property="og:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
-  <meta property="twitter:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
-
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.31.1 with theme Tranquilpeak 0.4.3-BETA">
     <title>非模式基因GO富集分析：以玉米为例&#43;使用OrgDb</title>
+    <meta name="author" content="Guangchuang Yu">
+    <meta name="keywords" content="">
 
     <link rel="icon" href="https://guangchuangyu.github.io/cn/favicon.png">
     
 
     
+    <meta name="description" content="模式生物做什么都简单，非模式生物则很多缺少注释，没有注释你就没法做，只能是借助于各种软件比如blastgo，自己跑电子注释。但今天要讲的不是这种情况，很多物种还是有注释的，只是你有时候不知道该去那里下载，或者你有数据，却不知道该怎么用！很多的软件都是针对模式生物的，或者针对某一些类型的非模式生物，能够支持多种非模式生物，能够支持用户自己的注释文件的软件相对来讲，就非常少有了，然而clusterProfiler就是这类少有的软件之一。
 
-    <link rel="canonical" href="https://guangchuangyu.github.io/cn/2017/07/clusterprofiler-maize/">
+获得OrgDb
+
+今天要讲的是通过OrgDb来做GO分析，这是clusterProfiler的enrichGO函数所支持的背景注释，Bioconductor自带20个OrgDb可供使用，多半是模式生物，难道我们要做的物种不在这20个里面就不行了吗？显然不是的，clusterProfiler能支持的物种我自己都数不过来。
+
+我们可以通过AnnotationHub在线检索并抓取OrgDb，比如这里以玉米为例：
+
+">
+    <meta property="og:description" content="模式生物做什么都简单，非模式生物则很多缺少注释，没有注释你就没法做，只能是借助于各种软件比如blastgo，自己跑电子注释。但今天要讲的不是这种情况，很多物种还是有注释的，只是你有时候不知道该去那里下载，或者你有数据，却不知道该怎么用！很多的软件都是针对模式生物的，或者针对某一些类型的非模式生物，能够支持多种非模式生物，能够支持用户自己的注释文件的软件相对来讲，就非常少有了，然而clusterProfiler就是这类少有的软件之一。
+
+获得OrgDb
+
+今天要讲的是通过OrgDb来做GO分析，这是clusterProfiler的enrichGO函数所支持的背景注释，Bioconductor自带20个OrgDb可供使用，多半是模式生物，难道我们要做的物种不在这20个里面就不行了吗？显然不是的，clusterProfiler能支持的物种我自己都数不过来。
+
+我们可以通过AnnotationHub在线检索并抓取OrgDb，比如这里以玉米为例：
+
+">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="非模式基因GO富集分析：以玉米为例&#43;使用OrgDb">
+    <meta property="og:url" content="/2017/07/clusterprofiler-maize/">
+    <meta property="og:site_name" content="Guangchuang Yu">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Guangchuang Yu">
+    <meta name="twitter:description" content="模式生物做什么都简单，非模式生物则很多缺少注释，没有注释你就没法做，只能是借助于各种软件比如blastgo，自己跑电子注释。但今天要讲的不是这种情况，很多物种还是有注释的，只是你有时候不知道该去那里下载，或者你有数据，却不知道该怎么用！很多的软件都是针对模式生物的，或者针对某一些类型的非模式生物，能够支持多种非模式生物，能够支持用户自己的注释文件的软件相对来讲，就非常少有了，然而clusterProfiler就是这类少有的软件之一。
+
+获得OrgDb
+
+今天要讲的是通过OrgDb来做GO分析，这是clusterProfiler的enrichGO函数所支持的背景注释，Bioconductor自带20个OrgDb可供使用，多半是模式生物，难道我们要做的物种不在这20个里面就不行了吗？显然不是的，clusterProfiler能支持的物种我自己都数不过来。
+
+我们可以通过AnnotationHub在线检索并抓取OrgDb，比如这里以玉米为例：
+
+">
+    
+      <meta name="twitter:creator" content="@guangchuangyu">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
+    
+
+    
+    
+    
+
+    
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -112,7 +87,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
+    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
     
     
 
@@ -147,7 +122,7 @@ ga('send', 'pageview');
     
     
       
-        <img class="header-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
+        <img class="header-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
       
     
     </a>
@@ -159,7 +134,7 @@ ga('send', 'pageview');
     
       <div class="sidebar-profile">
         <a href="https://guangchuangyu.github.io/cn/#about">
-          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
         </a>
         <h4 class="sidebar-profile-name">Guangchuang Yu</h4>
         
@@ -381,13 +356,13 @@ AnnotationHub with 2 records
 #
 # over-representation test
 #
-#...@organism    Zea mays 
-#...@ontology    MF 
-#...@keytype     ENTREZID 
-#...@gene    chr [1:100] &quot;541612&quot; &quot;541613&quot; &quot;541614&quot; &quot;541615&quot; &quot;541617&quot; &quot;541618&quot; &quot;541619&quot; ...
+#...@organism 	 Zea mays 
+#...@ontology 	 MF 
+#...@keytype 	 ENTREZID 
+#...@gene 	 chr [1:100] &quot;541612&quot; &quot;541613&quot; &quot;541614&quot; &quot;541615&quot; &quot;541617&quot; &quot;541618&quot; &quot;541619&quot; ...
 #...pvalues adjusted by 'BH' with cutoff &lt;1 
 #...114 enriched terms found
-'data.frame':   114 obs. of  9 variables:
+'data.frame':	114 obs. of  9 variables:
  $ ID         : chr  &quot;GO:0004871&quot; &quot;GO:0000155&quot; &quot;GO:0004673&quot; &quot;GO:0016775&quot; ...
  $ Description: chr  &quot;signal transducer activity&quot; &quot;phosphorelay sensor kinase activity&quot; &quot;protein histidine kinase activity&quot; &quot;phosphotransferase activity, nitrogenous group as acceptor&quot; ...
  $ GeneRatio  : chr  &quot;9/80&quot; &quot;5/80&quot; &quot;5/80&quot; &quot;5/80&quot; ...
@@ -441,8 +416,8 @@ AnnotationHub with 2 records
                 
               
             
-            <div class="post-actions-wrap">
-  
+            
+  <div class="post-actions-wrap">
       <nav >
         <ul class="post-actions post-action-nav">
           
@@ -489,8 +464,8 @@ AnnotationHub with 2 records
         </a>
       </li>
     </ul>
-  
-</div>
+  </div>
+
 
             
               
@@ -509,8 +484,8 @@ AnnotationHub with 2 records
 
       </div>
       <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
-        <div class="post-actions-wrap">
-  
+        
+  <div class="post-actions-wrap">
       <nav >
         <ul class="post-actions post-action-nav">
           
@@ -557,8 +532,8 @@ AnnotationHub with 2 records
         </a>
       </li>
     </ul>
-  
-</div>
+  </div>
+
 
       </div>
       <div id="share-options-bar" class="share-options-bar" data-behavior="4">
@@ -576,7 +551,7 @@ AnnotationHub with 2 records
       <i class="fa fa-remove"></i>
     </div>
     
-      <img id="about-card-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
     
     <h4 id="about-card-name">Guangchuang Yu</h4>
     
@@ -924,7 +899,7 @@ proxies
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         242 posts found
+         243 posts found
       </p>
     </div>
   </div>
@@ -945,20 +920,6 @@ proxies
 <script src="https://guangchuangyu.github.io/cn/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
 
 
-<script lang="javascript">
-window.onload = updateMinWidth;
-window.onresize = updateMinWidth;
-document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
-function updateMinWidth() {
-  var sidebar = document.getElementById("sidebar");
-  var main = document.getElementById("main");
-  main.style.minWidth = "";
-  var w1 = getComputedStyle(main).getPropertyValue("min-width");
-  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
-  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
-  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
-}
-</script>
 
 
   
@@ -986,7 +947,6 @@ function updateMinWidth() {
       </script>
     
   
-
 
 
 

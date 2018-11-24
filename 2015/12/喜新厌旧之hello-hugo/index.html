@@ -1,252 +1,193 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+  
+
+
+  
+
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
     
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.32 with theme Tranquilpeak 0.4.3-SNAPSHOT">
-<meta name="author" content="Guangchuang Yu">
-<meta name="keywords" content="">
-<meta name="description" content="最早在China Unix上写博客，后来转战新浪。在azelea的说服下，果断换成wordpress，写技术博客贴点代码什么的，新浪必须是太渣。azelea是我开始独立博客的领路人，为我提供了空间和域名。再后来自己买了空间和ygc.name的域名，用了好几年。本来一直有想法要换成github&#43;jekll，恰巧Wei Shen强力推荐HUGO。于是再一次换博客。
-
-首先面临着wordpress迁移的问题。
-
-导入wordpress posts为markdown文件
-
-试用了多个插件或脚本，都是各种出错。最后发现了神器potter-wordpress，通过npm安装：
-
-npm install -g pottercms-wordpress
-
-
-然后一个语句:
-
-potter-wordpress -h WORDPRESS_SITE_URL -u USER_NAME -p PASSWORD --dir PATH_TO_STORE_MD_FILES
-
-
-自动从线上把posts抓下来，并转化为markdown。在之前各种搞不定之后，看到下面的输出有种莫名的快感。
-
-Fetching articles&hellip;
-
-   Got : [Sun Nov 29 2015] R kernel in Jupyter notebook 3
-   Got : [Mon Nov 09 2015] phylomoji with ggtree
-   Got : [Tue Nov 17 2015] 合体中的操作系统
-   Got : [Mon Nov 02 2015] Comparison of clusterProfiler and GSEA-P
-   Got : [Thu Oct 01 2015] ChIPseq data mining with ChIPseeker
-   Got : [Tue Oct 06 2015] TRIE
-   Got : [Thu Oct 15 2015] [BioC 3.2] NEWS of my BioC packages
-   Got : [Wed Oct 21 2015] use simplify to remove redundancy of enriched GO terms
-
-   ...
-
-   Got : [Mon May 14 2007] Edit partition table in NetBSD/macppc
-   Got : [Mon May 14 2007] 我的emacs配置文件
-   Got : [Mon May 14 2007] pkgsrc tips
-   Got : [Thu May 03 2007] scilab三维平面绘图
-   Got : [Sat Jun 24 2006] qvwm窗口管理器的windows2000主题
-   Got : [Wed Jun 14 2006] 安装os9和netbsd双系统
-   Got : [Sat May 28 2005] 在emacs里使用maxima
-   Got : [Mon Mar 14 2005] scau校园网认证
-   Got : [Fri Jan 14 2005] Powerbook G3上安装gentoo
-
-
-Done.
-
-">
-
-
-<meta property="og:description" content="最早在China Unix上写博客，后来转战新浪。在azelea的说服下，果断换成wordpress，写技术博客贴点代码什么的，新浪必须是太渣。azelea是我开始独立博客的领路人，为我提供了空间和域名。再后来自己买了空间和ygc.name的域名，用了好几年。本来一直有想法要换成github&#43;jekll，恰巧Wei Shen强力推荐HUGO。于是再一次换博客。
-
-首先面临着wordpress迁移的问题。
-
-导入wordpress posts为markdown文件
-
-试用了多个插件或脚本，都是各种出错。最后发现了神器potter-wordpress，通过npm安装：
-
-npm install -g pottercms-wordpress
-
-
-然后一个语句:
-
-potter-wordpress -h WORDPRESS_SITE_URL -u USER_NAME -p PASSWORD --dir PATH_TO_STORE_MD_FILES
-
-
-自动从线上把posts抓下来，并转化为markdown。在之前各种搞不定之后，看到下面的输出有种莫名的快感。
-
-Fetching articles&hellip;
-
-   Got : [Sun Nov 29 2015] R kernel in Jupyter notebook 3
-   Got : [Mon Nov 09 2015] phylomoji with ggtree
-   Got : [Tue Nov 17 2015] 合体中的操作系统
-   Got : [Mon Nov 02 2015] Comparison of clusterProfiler and GSEA-P
-   Got : [Thu Oct 01 2015] ChIPseq data mining with ChIPseeker
-   Got : [Tue Oct 06 2015] TRIE
-   Got : [Thu Oct 15 2015] [BioC 3.2] NEWS of my BioC packages
-   Got : [Wed Oct 21 2015] use simplify to remove redundancy of enriched GO terms
-
-   ...
-
-   Got : [Mon May 14 2007] Edit partition table in NetBSD/macppc
-   Got : [Mon May 14 2007] 我的emacs配置文件
-   Got : [Mon May 14 2007] pkgsrc tips
-   Got : [Thu May 03 2007] scilab三维平面绘图
-   Got : [Sat Jun 24 2006] qvwm窗口管理器的windows2000主题
-   Got : [Wed Jun 14 2006] 安装os9和netbsd双系统
-   Got : [Sat May 28 2005] 在emacs里使用maxima
-   Got : [Mon Mar 14 2005] scau校园网认证
-   Got : [Fri Jan 14 2005] Powerbook G3上安装gentoo
-
-
-Done.
-
-">
-<meta property="og:type" content="article">
-<meta property="og:title" content="喜新厌旧之hello Hugo">
-<meta name="twitter:title" content="喜新厌旧之hello Hugo">
-<meta property="og:url" content="https://guangchuangyu.github.io/cn/2015/12/%E5%96%9C%E6%96%B0%E5%8E%8C%E6%97%A7%E4%B9%8Bhello-hugo/">
-<meta property="twitter:url" content="https://guangchuangyu.github.io/cn/2015/12/%E5%96%9C%E6%96%B0%E5%8E%8C%E6%97%A7%E4%B9%8Bhello-hugo/">
-<meta property="og:site_name" content="Guangchuang Yu">
-<meta property="og:description" content="最早在China Unix上写博客，后来转战新浪。在azelea的说服下，果断换成wordpress，写技术博客贴点代码什么的，新浪必须是太渣。azelea是我开始独立博客的领路人，为我提供了空间和域名。再后来自己买了空间和ygc.name的域名，用了好几年。本来一直有想法要换成github&#43;jekll，恰巧Wei Shen强力推荐HUGO。于是再一次换博客。
-
-首先面临着wordpress迁移的问题。
-
-导入wordpress posts为markdown文件
-
-试用了多个插件或脚本，都是各种出错。最后发现了神器potter-wordpress，通过npm安装：
-
-npm install -g pottercms-wordpress
-
-
-然后一个语句:
-
-potter-wordpress -h WORDPRESS_SITE_URL -u USER_NAME -p PASSWORD --dir PATH_TO_STORE_MD_FILES
-
-
-自动从线上把posts抓下来，并转化为markdown。在之前各种搞不定之后，看到下面的输出有种莫名的快感。
-
-Fetching articles&hellip;
-
-   Got : [Sun Nov 29 2015] R kernel in Jupyter notebook 3
-   Got : [Mon Nov 09 2015] phylomoji with ggtree
-   Got : [Tue Nov 17 2015] 合体中的操作系统
-   Got : [Mon Nov 02 2015] Comparison of clusterProfiler and GSEA-P
-   Got : [Thu Oct 01 2015] ChIPseq data mining with ChIPseeker
-   Got : [Tue Oct 06 2015] TRIE
-   Got : [Thu Oct 15 2015] [BioC 3.2] NEWS of my BioC packages
-   Got : [Wed Oct 21 2015] use simplify to remove redundancy of enriched GO terms
-
-   ...
-
-   Got : [Mon May 14 2007] Edit partition table in NetBSD/macppc
-   Got : [Mon May 14 2007] 我的emacs配置文件
-   Got : [Mon May 14 2007] pkgsrc tips
-   Got : [Thu May 03 2007] scilab三维平面绘图
-   Got : [Sat Jun 24 2006] qvwm窗口管理器的windows2000主题
-   Got : [Wed Jun 14 2006] 安装os9和netbsd双系统
-   Got : [Sat May 28 2005] 在emacs里使用maxima
-   Got : [Mon Mar 14 2005] scau校园网认证
-   Got : [Fri Jan 14 2005] Powerbook G3上安装gentoo
-
-
-Done.
-
-">
-<meta name="twitter:description" content="最早在China Unix上写博客，后来转战新浪。在azelea的说服下，果断换成wordpress，写技术博客贴点代码什么的，新浪必须是太渣。azelea是我开始独立博客的领路人，为我提供了空间和域名。再后来自己买了空间和ygc.name的域名，用了好几年。本来一直有想法要换成github&#43;jekll，恰巧Wei Shen强力推荐HUGO。于是再一次换博客。
-
-首先面临着wordpress迁移的问题。
-
-导入wordpress posts为markdown文件
-
-试用了多个插件或脚本，都是各种出错。最后发现了神器potter-wordpress，通过npm安装：
-
-npm install -g pottercms-wordpress
-
-
-然后一个语句:
-
-potter-wordpress -h WORDPRESS_SITE_URL -u USER_NAME -p PASSWORD --dir PATH_TO_STORE_MD_FILES
-
-
-自动从线上把posts抓下来，并转化为markdown。在之前各种搞不定之后，看到下面的输出有种莫名的快感。
-
-Fetching articles&hellip;
-
-   Got : [Sun Nov 29 2015] R kernel in Jupyter notebook 3
-   Got : [Mon Nov 09 2015] phylomoji with ggtree
-   Got : [Tue Nov 17 2015] 合体中的操作系统
-   Got : [Mon Nov 02 2015] Comparison of clusterProfiler and GSEA-P
-   Got : [Thu Oct 01 2015] ChIPseq data mining with ChIPseeker
-   Got : [Tue Oct 06 2015] TRIE
-   Got : [Thu Oct 15 2015] [BioC 3.2] NEWS of my BioC packages
-   Got : [Wed Oct 21 2015] use simplify to remove redundancy of enriched GO terms
-
-   ...
-
-   Got : [Mon May 14 2007] Edit partition table in NetBSD/macppc
-   Got : [Mon May 14 2007] 我的emacs配置文件
-   Got : [Mon May 14 2007] pkgsrc tips
-   Got : [Thu May 03 2007] scilab三维平面绘图
-   Got : [Sat Jun 24 2006] qvwm窗口管理器的windows2000主题
-   Got : [Wed Jun 14 2006] 安装os9和netbsd双系统
-   Got : [Sat May 28 2005] 在emacs里使用maxima
-   Got : [Mon Mar 14 2005] scau校园网认证
-   Got : [Fri Jan 14 2005] Powerbook G3上安装gentoo
-
-
-Done.
-
-">
-<meta property="og:locale" content="en-us">
-
-  
-    <meta property="article:published_time" content="2015-12-04T00:42:26">
-  
-  
-    <meta property="article:modified_time" content="2015-12-04T00:42:26">
-  
-  
-  
-    
-      <meta property="article:section" content="blog">
-    
-  
-  
-    
-      <meta property="article:tag" content="hugo">
-    
-      <meta property="article:tag" content="wordpress">
-    
-  
-
-
-<meta name="twitter:card" content="summary">
-
-  <meta name="twitter:site" content="@guangchuangyu">
-
-
-  <meta name="twitter:creator" content="@guangchuangyu">
-
-
-
-
-
-
-
-
-
-
-  <meta property="og:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
-  <meta property="twitter:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
-
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.31.1 with theme Tranquilpeak 0.4.3-BETA">
     <title>喜新厌旧之hello Hugo</title>
+    <meta name="author" content="Guangchuang Yu">
+    <meta name="keywords" content="">
 
     <link rel="icon" href="https://guangchuangyu.github.io/cn/favicon.png">
     
 
     
+    <meta name="description" content="最早在China Unix上写博客，后来转战新浪。在azelea的说服下，果断换成wordpress，写技术博客贴点代码什么的，新浪必须是太渣。azelea是我开始独立博客的领路人，为我提供了空间和域名。再后来自己买了空间和ygc.name的域名，用了好几年。本来一直有想法要换成github&#43;jekll，恰巧Wei Shen强力推荐HUGO。于是再一次换博客。
 
-    <link rel="canonical" href="https://guangchuangyu.github.io/cn/2015/12/%E5%96%9C%E6%96%B0%E5%8E%8C%E6%97%A7%E4%B9%8Bhello-hugo/">
+首先面临着wordpress迁移的问题。
+
+导入wordpress posts为markdown文件
+
+试用了多个插件或脚本，都是各种出错。最后发现了神器potter-wordpress，通过npm安装：
+
+npm install -g pottercms-wordpress
+
+
+然后一个语句:
+
+potter-wordpress -h WORDPRESS_SITE_URL -u USER_NAME -p PASSWORD --dir PATH_TO_STORE_MD_FILES
+
+
+自动从线上把posts抓下来，并转化为markdown。在之前各种搞不定之后，看到下面的输出有种莫名的快感。
+
+Fetching articles&hellip;
+
+   Got : [Sun Nov 29 2015] R kernel in Jupyter notebook 3
+   Got : [Mon Nov 09 2015] phylomoji with ggtree
+   Got : [Tue Nov 17 2015] 合体中的操作系统
+   Got : [Mon Nov 02 2015] Comparison of clusterProfiler and GSEA-P
+   Got : [Thu Oct 01 2015] ChIPseq data mining with ChIPseeker
+   Got : [Tue Oct 06 2015] TRIE
+   Got : [Thu Oct 15 2015] [BioC 3.2] NEWS of my BioC packages
+   Got : [Wed Oct 21 2015] use simplify to remove redundancy of enriched GO terms
+
+   ...
+
+   Got : [Mon May 14 2007] Edit partition table in NetBSD/macppc
+   Got : [Mon May 14 2007] 我的emacs配置文件
+   Got : [Mon May 14 2007] pkgsrc tips
+   Got : [Thu May 03 2007] scilab三维平面绘图
+   Got : [Sat Jun 24 2006] qvwm窗口管理器的windows2000主题
+   Got : [Wed Jun 14 2006] 安装os9和netbsd双系统
+   Got : [Sat May 28 2005] 在emacs里使用maxima
+   Got : [Mon Mar 14 2005] scau校园网认证
+   Got : [Fri Jan 14 2005] Powerbook G3上安装gentoo
+
+
+Done.
+
+">
+    <meta property="og:description" content="最早在China Unix上写博客，后来转战新浪。在azelea的说服下，果断换成wordpress，写技术博客贴点代码什么的，新浪必须是太渣。azelea是我开始独立博客的领路人，为我提供了空间和域名。再后来自己买了空间和ygc.name的域名，用了好几年。本来一直有想法要换成github&#43;jekll，恰巧Wei Shen强力推荐HUGO。于是再一次换博客。
+
+首先面临着wordpress迁移的问题。
+
+导入wordpress posts为markdown文件
+
+试用了多个插件或脚本，都是各种出错。最后发现了神器potter-wordpress，通过npm安装：
+
+npm install -g pottercms-wordpress
+
+
+然后一个语句:
+
+potter-wordpress -h WORDPRESS_SITE_URL -u USER_NAME -p PASSWORD --dir PATH_TO_STORE_MD_FILES
+
+
+自动从线上把posts抓下来，并转化为markdown。在之前各种搞不定之后，看到下面的输出有种莫名的快感。
+
+Fetching articles&hellip;
+
+   Got : [Sun Nov 29 2015] R kernel in Jupyter notebook 3
+   Got : [Mon Nov 09 2015] phylomoji with ggtree
+   Got : [Tue Nov 17 2015] 合体中的操作系统
+   Got : [Mon Nov 02 2015] Comparison of clusterProfiler and GSEA-P
+   Got : [Thu Oct 01 2015] ChIPseq data mining with ChIPseeker
+   Got : [Tue Oct 06 2015] TRIE
+   Got : [Thu Oct 15 2015] [BioC 3.2] NEWS of my BioC packages
+   Got : [Wed Oct 21 2015] use simplify to remove redundancy of enriched GO terms
+
+   ...
+
+   Got : [Mon May 14 2007] Edit partition table in NetBSD/macppc
+   Got : [Mon May 14 2007] 我的emacs配置文件
+   Got : [Mon May 14 2007] pkgsrc tips
+   Got : [Thu May 03 2007] scilab三维平面绘图
+   Got : [Sat Jun 24 2006] qvwm窗口管理器的windows2000主题
+   Got : [Wed Jun 14 2006] 安装os9和netbsd双系统
+   Got : [Sat May 28 2005] 在emacs里使用maxima
+   Got : [Mon Mar 14 2005] scau校园网认证
+   Got : [Fri Jan 14 2005] Powerbook G3上安装gentoo
+
+
+Done.
+
+">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="喜新厌旧之hello Hugo">
+    <meta property="og:url" content="/2015/12/%E5%96%9C%E6%96%B0%E5%8E%8C%E6%97%A7%E4%B9%8Bhello-hugo/">
+    <meta property="og:site_name" content="Guangchuang Yu">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Guangchuang Yu">
+    <meta name="twitter:description" content="最早在China Unix上写博客，后来转战新浪。在azelea的说服下，果断换成wordpress，写技术博客贴点代码什么的，新浪必须是太渣。azelea是我开始独立博客的领路人，为我提供了空间和域名。再后来自己买了空间和ygc.name的域名，用了好几年。本来一直有想法要换成github&#43;jekll，恰巧Wei Shen强力推荐HUGO。于是再一次换博客。
+
+首先面临着wordpress迁移的问题。
+
+导入wordpress posts为markdown文件
+
+试用了多个插件或脚本，都是各种出错。最后发现了神器potter-wordpress，通过npm安装：
+
+npm install -g pottercms-wordpress
+
+
+然后一个语句:
+
+potter-wordpress -h WORDPRESS_SITE_URL -u USER_NAME -p PASSWORD --dir PATH_TO_STORE_MD_FILES
+
+
+自动从线上把posts抓下来，并转化为markdown。在之前各种搞不定之后，看到下面的输出有种莫名的快感。
+
+Fetching articles&hellip;
+
+   Got : [Sun Nov 29 2015] R kernel in Jupyter notebook 3
+   Got : [Mon Nov 09 2015] phylomoji with ggtree
+   Got : [Tue Nov 17 2015] 合体中的操作系统
+   Got : [Mon Nov 02 2015] Comparison of clusterProfiler and GSEA-P
+   Got : [Thu Oct 01 2015] ChIPseq data mining with ChIPseeker
+   Got : [Tue Oct 06 2015] TRIE
+   Got : [Thu Oct 15 2015] [BioC 3.2] NEWS of my BioC packages
+   Got : [Wed Oct 21 2015] use simplify to remove redundancy of enriched GO terms
+
+   ...
+
+   Got : [Mon May 14 2007] Edit partition table in NetBSD/macppc
+   Got : [Mon May 14 2007] 我的emacs配置文件
+   Got : [Mon May 14 2007] pkgsrc tips
+   Got : [Thu May 03 2007] scilab三维平面绘图
+   Got : [Sat Jun 24 2006] qvwm窗口管理器的windows2000主题
+   Got : [Wed Jun 14 2006] 安装os9和netbsd双系统
+   Got : [Sat May 28 2005] 在emacs里使用maxima
+   Got : [Mon Mar 14 2005] scau校园网认证
+   Got : [Fri Jan 14 2005] Powerbook G3上安装gentoo
+
+
+Done.
+
+">
+    
+      <meta name="twitter:creator" content="@guangchuangyu">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
+    
+
+    
+    
+    
+
+    
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -254,7 +195,7 @@ Done.
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
+    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
     
     
 
@@ -289,7 +230,7 @@ ga('send', 'pageview');
     
     
       
-        <img class="header-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
+        <img class="header-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
       
     
     </a>
@@ -301,7 +242,7 @@ ga('send', 'pageview');
     
       <div class="sidebar-profile">
         <a href="https://guangchuangyu.github.io/cn/#about">
-          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
         </a>
         <h4 class="sidebar-profile-name">Guangchuang Yu</h4>
         
@@ -564,8 +505,8 @@ MathJax.Hub.Config({
                 
               
             
-            <div class="post-actions-wrap">
-  
+            
+  <div class="post-actions-wrap">
       <nav >
         <ul class="post-actions post-action-nav">
           
@@ -612,8 +553,8 @@ MathJax.Hub.Config({
         </a>
       </li>
     </ul>
-  
-</div>
+  </div>
+
 
             
               
@@ -632,8 +573,8 @@ MathJax.Hub.Config({
 
       </div>
       <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
-        <div class="post-actions-wrap">
-  
+        
+  <div class="post-actions-wrap">
       <nav >
         <ul class="post-actions post-action-nav">
           
@@ -680,8 +621,8 @@ MathJax.Hub.Config({
         </a>
       </li>
     </ul>
-  
-</div>
+  </div>
+
 
       </div>
       <div id="share-options-bar" class="share-options-bar" data-behavior="4">
@@ -699,7 +640,7 @@ MathJax.Hub.Config({
       <i class="fa fa-remove"></i>
     </div>
     
-      <img id="about-card-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
     
     <h4 id="about-card-name">Guangchuang Yu</h4>
     
@@ -1047,7 +988,7 @@ proxies
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         242 posts found
+         243 posts found
       </p>
     </div>
   </div>
@@ -1068,20 +1009,6 @@ proxies
 <script src="https://guangchuangyu.github.io/cn/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
 
 
-<script lang="javascript">
-window.onload = updateMinWidth;
-window.onresize = updateMinWidth;
-document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
-function updateMinWidth() {
-  var sidebar = document.getElementById("sidebar");
-  var main = document.getElementById("main");
-  main.style.minWidth = "";
-  var w1 = getComputedStyle(main).getPropertyValue("min-width");
-  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
-  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
-  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
-}
-</script>
 
 
   
@@ -1109,7 +1036,6 @@ function updateMinWidth() {
       </script>
     
   
-
 
 
 

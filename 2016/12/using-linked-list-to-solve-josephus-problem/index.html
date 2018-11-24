@@ -1,100 +1,79 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+  
+
+
+  
+
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
     
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.32 with theme Tranquilpeak 0.4.3-SNAPSHOT">
-<meta name="author" content="Guangchuang Yu">
-<meta name="keywords" content="">
-<meta name="description" content="
-这个问题是以弗拉维奥·约瑟夫斯命名的，它是1世纪的一名犹太历史学家。他在自己的日记中写道，他和他的40个战友被罗马军队包围在洞中。他们讨论是自杀还是被俘，最终决定自杀，并以抽签的方式决定谁杀掉谁。约瑟夫斯和另外一个人是最后两个留下的人。约瑟夫斯说服了那个人，他们将向罗马军队投降，不再自杀。约瑟夫斯把他的存活归因于运气或天意，他不知道是哪一个。  &ndash; https://zh.wikipedia.org/wiki/约瑟夫斯问题
-
-
-这是一个比较简单的问题，n个人围成圆圈，越过k-1个人，杀掉第k个人，如此反复直到只剩下最后一个人。可以用数学推导给出答案，问题本身已经足够简单，用链表可以模拟整个过程。实现起来比较直观。这里在初始化这个链表的时候，需要注意，到了最后一人的时候，他应该指向第一个人，这样才能形成一个环状的链表，然后问题就非常简单了，从第一人开始，后面就无所谓头和尾了，按照规则来，每次杀掉一个人，直到只剩下最后一人，就是结果。从维基的解释可以看出，最后两个人没死，这没节操的事情被拿来说，如果你数学好，你就可以救自己一命（站在合适的位置，让自己是最后一个）。
-
-">
-
-
-<meta property="og:description" content="
-这个问题是以弗拉维奥·约瑟夫斯命名的，它是1世纪的一名犹太历史学家。他在自己的日记中写道，他和他的40个战友被罗马军队包围在洞中。他们讨论是自杀还是被俘，最终决定自杀，并以抽签的方式决定谁杀掉谁。约瑟夫斯和另外一个人是最后两个留下的人。约瑟夫斯说服了那个人，他们将向罗马军队投降，不再自杀。约瑟夫斯把他的存活归因于运气或天意，他不知道是哪一个。  &ndash; https://zh.wikipedia.org/wiki/约瑟夫斯问题
-
-
-这是一个比较简单的问题，n个人围成圆圈，越过k-1个人，杀掉第k个人，如此反复直到只剩下最后一个人。可以用数学推导给出答案，问题本身已经足够简单，用链表可以模拟整个过程。实现起来比较直观。这里在初始化这个链表的时候，需要注意，到了最后一人的时候，他应该指向第一个人，这样才能形成一个环状的链表，然后问题就非常简单了，从第一人开始，后面就无所谓头和尾了，按照规则来，每次杀掉一个人，直到只剩下最后一人，就是结果。从维基的解释可以看出，最后两个人没死，这没节操的事情被拿来说，如果你数学好，你就可以救自己一命（站在合适的位置，让自己是最后一个）。
-
-">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Using Linked List to solve Josephus problem">
-<meta name="twitter:title" content="Using Linked List to solve Josephus problem">
-<meta property="og:url" content="https://guangchuangyu.github.io/cn/2016/12/using-linked-list-to-solve-josephus-problem/">
-<meta property="twitter:url" content="https://guangchuangyu.github.io/cn/2016/12/using-linked-list-to-solve-josephus-problem/">
-<meta property="og:site_name" content="Guangchuang Yu">
-<meta property="og:description" content="
-这个问题是以弗拉维奥·约瑟夫斯命名的，它是1世纪的一名犹太历史学家。他在自己的日记中写道，他和他的40个战友被罗马军队包围在洞中。他们讨论是自杀还是被俘，最终决定自杀，并以抽签的方式决定谁杀掉谁。约瑟夫斯和另外一个人是最后两个留下的人。约瑟夫斯说服了那个人，他们将向罗马军队投降，不再自杀。约瑟夫斯把他的存活归因于运气或天意，他不知道是哪一个。  &ndash; https://zh.wikipedia.org/wiki/约瑟夫斯问题
-
-
-这是一个比较简单的问题，n个人围成圆圈，越过k-1个人，杀掉第k个人，如此反复直到只剩下最后一个人。可以用数学推导给出答案，问题本身已经足够简单，用链表可以模拟整个过程。实现起来比较直观。这里在初始化这个链表的时候，需要注意，到了最后一人的时候，他应该指向第一个人，这样才能形成一个环状的链表，然后问题就非常简单了，从第一人开始，后面就无所谓头和尾了，按照规则来，每次杀掉一个人，直到只剩下最后一人，就是结果。从维基的解释可以看出，最后两个人没死，这没节操的事情被拿来说，如果你数学好，你就可以救自己一命（站在合适的位置，让自己是最后一个）。
-
-">
-<meta name="twitter:description" content="
-这个问题是以弗拉维奥·约瑟夫斯命名的，它是1世纪的一名犹太历史学家。他在自己的日记中写道，他和他的40个战友被罗马军队包围在洞中。他们讨论是自杀还是被俘，最终决定自杀，并以抽签的方式决定谁杀掉谁。约瑟夫斯和另外一个人是最后两个留下的人。约瑟夫斯说服了那个人，他们将向罗马军队投降，不再自杀。约瑟夫斯把他的存活归因于运气或天意，他不知道是哪一个。  &ndash; https://zh.wikipedia.org/wiki/约瑟夫斯问题
-
-
-这是一个比较简单的问题，n个人围成圆圈，越过k-1个人，杀掉第k个人，如此反复直到只剩下最后一个人。可以用数学推导给出答案，问题本身已经足够简单，用链表可以模拟整个过程。实现起来比较直观。这里在初始化这个链表的时候，需要注意，到了最后一人的时候，他应该指向第一个人，这样才能形成一个环状的链表，然后问题就非常简单了，从第一人开始，后面就无所谓头和尾了，按照规则来，每次杀掉一个人，直到只剩下最后一人，就是结果。从维基的解释可以看出，最后两个人没死，这没节操的事情被拿来说，如果你数学好，你就可以救自己一命（站在合适的位置，让自己是最后一个）。
-
-">
-<meta property="og:locale" content="en-us">
-
-  
-    <meta property="article:published_time" content="2016-12-04T00:53:00">
-  
-  
-    <meta property="article:modified_time" content="2016-12-04T00:53:00">
-  
-  
-  
-    
-      <meta property="article:section" content="data structure">
-    
-      <meta property="article:section" content="C&#43;&#43;">
-    
-  
-  
-    
-      <meta property="article:tag" content="linkedlist">
-    
-  
-
-
-<meta name="twitter:card" content="summary">
-
-  <meta name="twitter:site" content="@guangchuangyu">
-
-
-  <meta name="twitter:creator" content="@guangchuangyu">
-
-
-
-
-
-
-
-
-
-
-  <meta property="og:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
-  <meta property="twitter:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
-
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.31.1 with theme Tranquilpeak 0.4.3-BETA">
     <title>Using Linked List to solve Josephus problem</title>
+    <meta name="author" content="Guangchuang Yu">
+    <meta name="keywords" content="">
 
     <link rel="icon" href="https://guangchuangyu.github.io/cn/favicon.png">
     
 
     
+    <meta name="description" content="
+这个问题是以弗拉维奥·约瑟夫斯命名的，它是1世纪的一名犹太历史学家。他在自己的日记中写道，他和他的40个战友被罗马军队包围在洞中。他们讨论是自杀还是被俘，最终决定自杀，并以抽签的方式决定谁杀掉谁。约瑟夫斯和另外一个人是最后两个留下的人。约瑟夫斯说服了那个人，他们将向罗马军队投降，不再自杀。约瑟夫斯把他的存活归因于运气或天意，他不知道是哪一个。  &ndash; https://zh.wikipedia.org/wiki/约瑟夫斯问题
 
-    <link rel="canonical" href="https://guangchuangyu.github.io/cn/2016/12/using-linked-list-to-solve-josephus-problem/">
+
+这是一个比较简单的问题，n个人围成圆圈，越过k-1个人，杀掉第k个人，如此反复直到只剩下最后一个人。可以用数学推导给出答案，问题本身已经足够简单，用链表可以模拟整个过程。实现起来比较直观。这里在初始化这个链表的时候，需要注意，到了最后一人的时候，他应该指向第一个人，这样才能形成一个环状的链表，然后问题就非常简单了，从第一人开始，后面就无所谓头和尾了，按照规则来，每次杀掉一个人，直到只剩下最后一人，就是结果。从维基的解释可以看出，最后两个人没死，这没节操的事情被拿来说，如果你数学好，你就可以救自己一命（站在合适的位置，让自己是最后一个）。
+
+">
+    <meta property="og:description" content="
+这个问题是以弗拉维奥·约瑟夫斯命名的，它是1世纪的一名犹太历史学家。他在自己的日记中写道，他和他的40个战友被罗马军队包围在洞中。他们讨论是自杀还是被俘，最终决定自杀，并以抽签的方式决定谁杀掉谁。约瑟夫斯和另外一个人是最后两个留下的人。约瑟夫斯说服了那个人，他们将向罗马军队投降，不再自杀。约瑟夫斯把他的存活归因于运气或天意，他不知道是哪一个。  &ndash; https://zh.wikipedia.org/wiki/约瑟夫斯问题
+
+
+这是一个比较简单的问题，n个人围成圆圈，越过k-1个人，杀掉第k个人，如此反复直到只剩下最后一个人。可以用数学推导给出答案，问题本身已经足够简单，用链表可以模拟整个过程。实现起来比较直观。这里在初始化这个链表的时候，需要注意，到了最后一人的时候，他应该指向第一个人，这样才能形成一个环状的链表，然后问题就非常简单了，从第一人开始，后面就无所谓头和尾了，按照规则来，每次杀掉一个人，直到只剩下最后一人，就是结果。从维基的解释可以看出，最后两个人没死，这没节操的事情被拿来说，如果你数学好，你就可以救自己一命（站在合适的位置，让自己是最后一个）。
+
+">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Using Linked List to solve Josephus problem">
+    <meta property="og:url" content="/2016/12/using-linked-list-to-solve-josephus-problem/">
+    <meta property="og:site_name" content="Guangchuang Yu">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Guangchuang Yu">
+    <meta name="twitter:description" content="
+这个问题是以弗拉维奥·约瑟夫斯命名的，它是1世纪的一名犹太历史学家。他在自己的日记中写道，他和他的40个战友被罗马军队包围在洞中。他们讨论是自杀还是被俘，最终决定自杀，并以抽签的方式决定谁杀掉谁。约瑟夫斯和另外一个人是最后两个留下的人。约瑟夫斯说服了那个人，他们将向罗马军队投降，不再自杀。约瑟夫斯把他的存活归因于运气或天意，他不知道是哪一个。  &ndash; https://zh.wikipedia.org/wiki/约瑟夫斯问题
+
+
+这是一个比较简单的问题，n个人围成圆圈，越过k-1个人，杀掉第k个人，如此反复直到只剩下最后一个人。可以用数学推导给出答案，问题本身已经足够简单，用链表可以模拟整个过程。实现起来比较直观。这里在初始化这个链表的时候，需要注意，到了最后一人的时候，他应该指向第一个人，这样才能形成一个环状的链表，然后问题就非常简单了，从第一人开始，后面就无所谓头和尾了，按照规则来，每次杀掉一个人，直到只剩下最后一人，就是结果。从维基的解释可以看出，最后两个人没死，这没节操的事情被拿来说，如果你数学好，你就可以救自己一命（站在合适的位置，让自己是最后一个）。
+
+">
+    
+      <meta name="twitter:creator" content="@guangchuangyu">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
+    
+
+    
+    
+    
+
+    
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -102,7 +81,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
+    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
     
     
 
@@ -137,7 +116,7 @@ ga('send', 'pageview');
     
     
       
-        <img class="header-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
+        <img class="header-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
       
     
     </a>
@@ -149,7 +128,7 @@ ga('send', 'pageview');
     
       <div class="sidebar-profile">
         <a href="https://guangchuangyu.github.io/cn/#about">
-          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
         </a>
         <h4 class="sidebar-profile-name">Guangchuang Yu</h4>
         
@@ -357,8 +336,8 @@ int main() {
                 
               
             
-            <div class="post-actions-wrap">
-  
+            
+  <div class="post-actions-wrap">
       <nav >
         <ul class="post-actions post-action-nav">
           
@@ -405,8 +384,8 @@ int main() {
         </a>
       </li>
     </ul>
-  
-</div>
+  </div>
+
 
             
               
@@ -425,8 +404,8 @@ int main() {
 
       </div>
       <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
-        <div class="post-actions-wrap">
-  
+        
+  <div class="post-actions-wrap">
       <nav >
         <ul class="post-actions post-action-nav">
           
@@ -473,8 +452,8 @@ int main() {
         </a>
       </li>
     </ul>
-  
-</div>
+  </div>
+
 
       </div>
       <div id="share-options-bar" class="share-options-bar" data-behavior="4">
@@ -492,7 +471,7 @@ int main() {
       <i class="fa fa-remove"></i>
     </div>
     
-      <img id="about-card-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
     
     <h4 id="about-card-name">Guangchuang Yu</h4>
     
@@ -840,7 +819,7 @@ proxies
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         242 posts found
+         243 posts found
       </p>
     </div>
   </div>
@@ -861,20 +840,6 @@ proxies
 <script src="https://guangchuangyu.github.io/cn/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
 
 
-<script lang="javascript">
-window.onload = updateMinWidth;
-window.onresize = updateMinWidth;
-document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
-function updateMinWidth() {
-  var sidebar = document.getElementById("sidebar");
-  var main = document.getElementById("main");
-  main.style.minWidth = "";
-  var w1 = getComputedStyle(main).getPropertyValue("min-width");
-  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
-  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
-  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
-}
-</script>
 
 
   
@@ -902,7 +867,6 @@ function updateMinWidth() {
       </script>
     
   
-
 
 
 

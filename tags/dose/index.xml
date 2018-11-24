@@ -27,6 +27,15 @@
     </item>
     
     <item>
+      <title>DOSE包引用过百</title>
+      <link>https://guangchuangyu.github.io/cn/2017/09/dose-citation-above-100/</link>
+      <pubDate>Sat, 30 Sep 2017 12:23:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2017/09/dose-citation-above-100/</guid>
+      <description>Disease ontology (DO) annotates human genes in the context of disease. DO is important annotation in translating molecular findings from high-throughput data to clinical relevance. DOSE is an R package providing semantic similarity computations among DO terms and genes which allows biologists to explore the similarities of diseases and of gene functions in disease perspective. Enrichment analyses including hypergeometric model and gene set enrichment analysis are also implemented to support discovering disease associations of high-throughput biological data.</description>
+    </item>
+    
+    <item>
       <title>听说你还不会画heatmap</title>
       <link>https://guangchuangyu.github.io/cn/2017/09/dose-simplot/</link>
       <pubDate>Sat, 30 Sep 2017 12:23:16 +0800</pubDate>

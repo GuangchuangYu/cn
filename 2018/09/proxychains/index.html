@@ -1,152 +1,118 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+  
+
+
+  
+
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
     
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.32 with theme Tranquilpeak 0.4.3-SNAPSHOT">
-<meta name="author" content="Guangchuang Yu">
-<meta name="keywords" content="">
-<meta name="description" content="
-之前公众号上有人说，我回大陆了会有一波科学上网的教程，今天的推文算一个吧。真的是被你们言中了！
-
-
-做为Bioconductor包作者，而git push传代码到Bioconductor上是被封的。这很是恼火，随着10月份将迎来新一版本的Bioconductor发布，不能够push代码是多么惨的一件事。
-
-代理其实也挺恼火的，因为各种协议啊，你要各种设置啊，http/https/ssh/git都是各种配置，其实我只要有一个socks5的代理，然后你们所有需要走代理的程序都通过它就好了。
-
-谁特么有空天天在琢磨怎么配置各种不同协议的代理！只要我们想得到的，一般都有人做了。
-
-于是万能的github上找到了proxychains。
-
-A hook preloader that allows to redirect TCP traffic of existing
-dynamically linked programs through one or more SOCKS or HTTP
-proxies
-
-
-它强制给定程序发起的TCP连接通过事先配置的代理。可以涵盖所有需要代理的情景。就以git为例，没有proxychains的话，就必须为每个协议（https, git, ssh）按照git文档的要求分别设置代理，过程复杂且不稳定。有了proxychains，这些完全可以不用管，当然应用场景不限于git，任何一个需要代理的命令行程序都是一样在运行的指令前面加proxychains完事。
-
-">
-
-
-<meta property="og:description" content="
-之前公众号上有人说，我回大陆了会有一波科学上网的教程，今天的推文算一个吧。真的是被你们言中了！
-
-
-做为Bioconductor包作者，而git push传代码到Bioconductor上是被封的。这很是恼火，随着10月份将迎来新一版本的Bioconductor发布，不能够push代码是多么惨的一件事。
-
-代理其实也挺恼火的，因为各种协议啊，你要各种设置啊，http/https/ssh/git都是各种配置，其实我只要有一个socks5的代理，然后你们所有需要走代理的程序都通过它就好了。
-
-谁特么有空天天在琢磨怎么配置各种不同协议的代理！只要我们想得到的，一般都有人做了。
-
-于是万能的github上找到了proxychains。
-
-A hook preloader that allows to redirect TCP traffic of existing
-dynamically linked programs through one or more SOCKS or HTTP
-proxies
-
-
-它强制给定程序发起的TCP连接通过事先配置的代理。可以涵盖所有需要代理的情景。就以git为例，没有proxychains的话，就必须为每个协议（https, git, ssh）按照git文档的要求分别设置代理，过程复杂且不稳定。有了proxychains，这些完全可以不用管，当然应用场景不限于git，任何一个需要代理的命令行程序都是一样在运行的指令前面加proxychains完事。
-
-">
-<meta property="og:type" content="article">
-<meta property="og:title" content="一次解决所有代理问题">
-<meta name="twitter:title" content="一次解决所有代理问题">
-<meta property="og:url" content="https://guangchuangyu.github.io/cn/2018/09/proxychains/">
-<meta property="twitter:url" content="https://guangchuangyu.github.io/cn/2018/09/proxychains/">
-<meta property="og:site_name" content="Guangchuang Yu">
-<meta property="og:description" content="
-之前公众号上有人说，我回大陆了会有一波科学上网的教程，今天的推文算一个吧。真的是被你们言中了！
-
-
-做为Bioconductor包作者，而git push传代码到Bioconductor上是被封的。这很是恼火，随着10月份将迎来新一版本的Bioconductor发布，不能够push代码是多么惨的一件事。
-
-代理其实也挺恼火的，因为各种协议啊，你要各种设置啊，http/https/ssh/git都是各种配置，其实我只要有一个socks5的代理，然后你们所有需要走代理的程序都通过它就好了。
-
-谁特么有空天天在琢磨怎么配置各种不同协议的代理！只要我们想得到的，一般都有人做了。
-
-于是万能的github上找到了proxychains。
-
-A hook preloader that allows to redirect TCP traffic of existing
-dynamically linked programs through one or more SOCKS or HTTP
-proxies
-
-
-它强制给定程序发起的TCP连接通过事先配置的代理。可以涵盖所有需要代理的情景。就以git为例，没有proxychains的话，就必须为每个协议（https, git, ssh）按照git文档的要求分别设置代理，过程复杂且不稳定。有了proxychains，这些完全可以不用管，当然应用场景不限于git，任何一个需要代理的命令行程序都是一样在运行的指令前面加proxychains完事。
-
-">
-<meta name="twitter:description" content="
-之前公众号上有人说，我回大陆了会有一波科学上网的教程，今天的推文算一个吧。真的是被你们言中了！
-
-
-做为Bioconductor包作者，而git push传代码到Bioconductor上是被封的。这很是恼火，随着10月份将迎来新一版本的Bioconductor发布，不能够push代码是多么惨的一件事。
-
-代理其实也挺恼火的，因为各种协议啊，你要各种设置啊，http/https/ssh/git都是各种配置，其实我只要有一个socks5的代理，然后你们所有需要走代理的程序都通过它就好了。
-
-谁特么有空天天在琢磨怎么配置各种不同协议的代理！只要我们想得到的，一般都有人做了。
-
-于是万能的github上找到了proxychains。
-
-A hook preloader that allows to redirect TCP traffic of existing
-dynamically linked programs through one or more SOCKS or HTTP
-proxies
-
-
-它强制给定程序发起的TCP连接通过事先配置的代理。可以涵盖所有需要代理的情景。就以git为例，没有proxychains的话，就必须为每个协议（https, git, ssh）按照git文档的要求分别设置代理，过程复杂且不稳定。有了proxychains，这些完全可以不用管，当然应用场景不限于git，任何一个需要代理的命令行程序都是一样在运行的指令前面加proxychains完事。
-
-">
-<meta property="og:locale" content="en-us">
-
-  
-    <meta property="article:published_time" content="2018-09-30T10:30:00">
-  
-  
-    <meta property="article:modified_time" content="2018-09-30T10:30:00">
-  
-  
-  
-    
-      <meta property="article:section" content="Software">
-    
-  
-  
-    
-      <meta property="article:tag" content="proxychains">
-    
-      <meta property="article:tag" content="proxy">
-    
-  
-
-
-<meta name="twitter:card" content="summary">
-
-  <meta name="twitter:site" content="@guangchuangyu">
-
-
-  <meta name="twitter:creator" content="@guangchuangyu">
-
-
-
-
-
-
-
-
-
-
-  <meta property="og:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
-  <meta property="twitter:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
-
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.31.1 with theme Tranquilpeak 0.4.3-BETA">
     <title>一次解决所有代理问题</title>
+    <meta name="author" content="Guangchuang Yu">
+    <meta name="keywords" content="">
 
     <link rel="icon" href="https://guangchuangyu.github.io/cn/favicon.png">
     
 
     
+    <meta name="description" content="
+之前公众号上有人说，我回大陆了会有一波科学上网的教程，今天的推文算一个吧。真的是被你们言中了！
 
-    <link rel="canonical" href="https://guangchuangyu.github.io/cn/2018/09/proxychains/">
+
+做为Bioconductor包作者，而git push传代码到Bioconductor上是被封的。这很是恼火，随着10月份将迎来新一版本的Bioconductor发布，不能够push代码是多么惨的一件事。
+
+代理其实也挺恼火的，因为各种协议啊，你要各种设置啊，http/https/ssh/git都是各种配置，其实我只要有一个socks5的代理，然后你们所有需要走代理的程序都通过它就好了。
+
+谁特么有空天天在琢磨怎么配置各种不同协议的代理！只要我们想得到的，一般都有人做了。
+
+于是万能的github上找到了proxychains。
+
+A hook preloader that allows to redirect TCP traffic of existing
+dynamically linked programs through one or more SOCKS or HTTP
+proxies
+
+
+它强制给定程序发起的TCP连接通过事先配置的代理。可以涵盖所有需要代理的情景。就以git为例，没有proxychains的话，就必须为每个协议（https, git, ssh）按照git文档的要求分别设置代理，过程复杂且不稳定。有了proxychains，这些完全可以不用管，当然应用场景不限于git，任何一个需要代理的命令行程序都是一样在运行的指令前面加proxychains完事。
+
+">
+    <meta property="og:description" content="
+之前公众号上有人说，我回大陆了会有一波科学上网的教程，今天的推文算一个吧。真的是被你们言中了！
+
+
+做为Bioconductor包作者，而git push传代码到Bioconductor上是被封的。这很是恼火，随着10月份将迎来新一版本的Bioconductor发布，不能够push代码是多么惨的一件事。
+
+代理其实也挺恼火的，因为各种协议啊，你要各种设置啊，http/https/ssh/git都是各种配置，其实我只要有一个socks5的代理，然后你们所有需要走代理的程序都通过它就好了。
+
+谁特么有空天天在琢磨怎么配置各种不同协议的代理！只要我们想得到的，一般都有人做了。
+
+于是万能的github上找到了proxychains。
+
+A hook preloader that allows to redirect TCP traffic of existing
+dynamically linked programs through one or more SOCKS or HTTP
+proxies
+
+
+它强制给定程序发起的TCP连接通过事先配置的代理。可以涵盖所有需要代理的情景。就以git为例，没有proxychains的话，就必须为每个协议（https, git, ssh）按照git文档的要求分别设置代理，过程复杂且不稳定。有了proxychains，这些完全可以不用管，当然应用场景不限于git，任何一个需要代理的命令行程序都是一样在运行的指令前面加proxychains完事。
+
+">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="一次解决所有代理问题">
+    <meta property="og:url" content="/2018/09/proxychains/">
+    <meta property="og:site_name" content="Guangchuang Yu">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Guangchuang Yu">
+    <meta name="twitter:description" content="
+之前公众号上有人说，我回大陆了会有一波科学上网的教程，今天的推文算一个吧。真的是被你们言中了！
+
+
+做为Bioconductor包作者，而git push传代码到Bioconductor上是被封的。这很是恼火，随着10月份将迎来新一版本的Bioconductor发布，不能够push代码是多么惨的一件事。
+
+代理其实也挺恼火的，因为各种协议啊，你要各种设置啊，http/https/ssh/git都是各种配置，其实我只要有一个socks5的代理，然后你们所有需要走代理的程序都通过它就好了。
+
+谁特么有空天天在琢磨怎么配置各种不同协议的代理！只要我们想得到的，一般都有人做了。
+
+于是万能的github上找到了proxychains。
+
+A hook preloader that allows to redirect TCP traffic of existing
+dynamically linked programs through one or more SOCKS or HTTP
+proxies
+
+
+它强制给定程序发起的TCP连接通过事先配置的代理。可以涵盖所有需要代理的情景。就以git为例，没有proxychains的话，就必须为每个协议（https, git, ssh）按照git文档的要求分别设置代理，过程复杂且不稳定。有了proxychains，这些完全可以不用管，当然应用场景不限于git，任何一个需要代理的命令行程序都是一样在运行的指令前面加proxychains完事。
+
+">
+    
+      <meta name="twitter:creator" content="@guangchuangyu">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
+    
+
+    
+    
+    
+
+    
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -154,7 +120,7 @@ proxies
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
+    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
     
     
 
@@ -189,7 +155,7 @@ ga('send', 'pageview');
     
     
       
-        <img class="header-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
+        <img class="header-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
       
     
     </a>
@@ -201,7 +167,7 @@ ga('send', 'pageview');
     
       <div class="sidebar-profile">
         <a href="https://guangchuangyu.github.io/cn/#about">
-          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
         </a>
         <h4 class="sidebar-profile-name">Guangchuang Yu</h4>
         
@@ -449,8 +415,8 @@ To github.com:GuangchuangYu/ggtree.git
                 
               
             
-            <div class="post-actions-wrap">
-  
+            
+  <div class="post-actions-wrap">
       <nav >
         <ul class="post-actions post-action-nav">
           
@@ -497,8 +463,8 @@ To github.com:GuangchuangYu/ggtree.git
         </a>
       </li>
     </ul>
-  
-</div>
+  </div>
+
 
             
               
@@ -517,8 +483,8 @@ To github.com:GuangchuangYu/ggtree.git
 
       </div>
       <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
-        <div class="post-actions-wrap">
-  
+        
+  <div class="post-actions-wrap">
       <nav >
         <ul class="post-actions post-action-nav">
           
@@ -565,8 +531,8 @@ To github.com:GuangchuangYu/ggtree.git
         </a>
       </li>
     </ul>
-  
-</div>
+  </div>
+
 
       </div>
       <div id="share-options-bar" class="share-options-bar" data-behavior="4">
@@ -584,7 +550,7 @@ To github.com:GuangchuangYu/ggtree.git
       <i class="fa fa-remove"></i>
     </div>
     
-      <img id="about-card-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
     
     <h4 id="about-card-name">Guangchuang Yu</h4>
     
@@ -932,7 +898,7 @@ proxies
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         242 posts found
+         243 posts found
       </p>
     </div>
   </div>
@@ -953,20 +919,6 @@ proxies
 <script src="https://guangchuangyu.github.io/cn/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
 
 
-<script lang="javascript">
-window.onload = updateMinWidth;
-window.onresize = updateMinWidth;
-document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
-function updateMinWidth() {
-  var sidebar = document.getElementById("sidebar");
-  var main = document.getElementById("main");
-  main.style.minWidth = "";
-  var w1 = getComputedStyle(main).getPropertyValue("min-width");
-  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
-  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
-  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
-}
-</script>
 
 
   
@@ -994,7 +946,6 @@ function updateMinWidth() {
       </script>
     
   
-
 
 
 
