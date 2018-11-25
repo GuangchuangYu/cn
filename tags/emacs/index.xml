@@ -29,6 +29,22 @@ X设计的原生包管理系统非Homebrew莫属，它会尽量依赖系统里�
     </item>
     
     <item>
+      <title>宋词-词频</title>
+      <link>https://guangchuangyu.github.io/cn/2011/12/word-freq/</link>
+      <pubDate>Fri, 09 Dec 2011 11:44:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2011/12/word-freq/</guid>
+      <description>&lt;p&gt;最近老收到那个&lt;a href=&#34;http://www.douban.com/group/topic/23848309/&#34;&gt;“消灭”文科生的词频页面&lt;/a&gt;。好吧，我也来跟风娱乐一下
+=,=&lt;/p&gt;
+
+&lt;p&gt;对着原贴那样的题目，做为理科生，拿着随机数对着看啥的，哪好意思啊。搞几行代码才好装13。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2011/12/random_word.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>在emacs里使用maxima</title>
       <link>https://guangchuangyu.github.io/cn/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/</link>
       <pubDate>Sat, 28 May 2005 08:15:00 +0800</pubDate>

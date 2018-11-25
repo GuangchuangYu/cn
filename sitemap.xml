@@ -993,6 +993,11 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2011/12/word-freq/</loc>
+    <lastmod>2011-12-09T11:44:16+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2011/09/r-for-scientific-programming/</loc>
     <lastmod>2011-09-24T08:57:48+08:00</lastmod>
   </url>
@@ -2523,6 +2528,12 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/windows/</loc>
     <lastmod>2015-11-17T16:06:59+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/wordcloud/</loc>
+    <lastmod>2011-12-09T11:44:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
