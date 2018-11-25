@@ -3670,6 +3670,17 @@ Methods 2013年的文章中有100个barplot图，而只有20个boxplot图，从�
     </item>
     
     <item>
+      <title>Run remote R in Emacs with ESS</title>
+      <link>https://guangchuangyu.github.io/cn/2013/11/run-remote-r-in-emacs-with-ess/</link>
+      <pubDate>Thu, 14 Nov 2013 17:44:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2013/11/run-remote-r-in-emacs-with-ess/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://guangchuangyu.github.io/tags/emacs/&#34;&gt;Emacs&lt;/a&gt; is a great front-end for most of the command line tools. Although R-Studio is pretty good, I think Emacs/&lt;a href=&#34;http://guangchuangyu.github.io/tags/ess/&#34;&gt;ESS&lt;/a&gt; is better. I’ve always used Emacs/ESS to run R, since 2007 on Ubuntu, &lt;a href=&#34;http://guangchuangyu.github.io/cn/2011/12/word-freq/&#34;&gt;Windows&lt;/a&gt;, and my &lt;a href=&#34;https://guangchuangyu.github.io/cn/2011/06/screen-shot/&#34;&gt;MacBook Pro&lt;/a&gt;. It gives me the same experiences across all platforms. I love the way Emacs formatting source codes, and literate programming with &lt;a href=&#34;http://roxygen.org/&#34;&gt;Roxygen&lt;/a&gt; supported. Unfortunately, ESS does not suport displaying plots in Emacs buffer, &lt;a href=&#34;https://guangchuangyu.github.io/cn/2005/05/%E5%9C%A8emacs%E9%87%8C%E4%BD%BF%E7%94%A8maxima/&#34;&gt;which has been supported by imaxima&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Install Emacs on Mac</title>
       <link>https://guangchuangyu.github.io/cn/2013/09/install-emacs-on-mac/</link>
       <pubDate>Tue, 10 Sep 2013 18:04:22 +0800</pubDate>

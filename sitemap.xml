@@ -933,6 +933,11 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2013/11/run-remote-r-in-emacs-with-ess/</loc>
+    <lastmod>2013-11-14T17:44:16+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2013/09/install-emacs-on-mac/</loc>
     <lastmod>2013-09-10T18:04:22+08:00</lastmod>
   </url>
@@ -1573,7 +1578,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/emacs/</loc>
-    <lastmod>2013-09-10T18:04:22+08:00</lastmod>
+    <lastmod>2013-11-14T17:44:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1598,6 +1603,12 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/enrichplot/</loc>
     <lastmod>2018-04-08T19:06:16+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/ess/</loc>
+    <lastmod>2013-11-14T17:44:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
