@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2018/11/macbook-arch-setting/</loc>
+    <lastmod>2018-11-26T00:22:16+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2018/11/arch-lts/</loc>
     <lastmod>2018-11-25T10:44:16+08:00</lastmod>
   </url>
@@ -873,6 +878,11 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2015/09/linux-remote-desktop-via-vnc/</loc>
+    <lastmod>2015-09-15T05:44:16+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2015/07/macbook-dual-boot/</loc>
     <lastmod>2015-07-24T17:44:16+08:00</lastmod>
   </url>
@@ -1267,7 +1277,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/arch/</loc>
-    <lastmod>2018-11-25T10:44:16+08:00</lastmod>
+    <lastmod>2018-11-26T00:22:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1776,7 +1786,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/</loc>
-    <lastmod>2018-11-25T10:44:16+08:00</lastmod>
+    <lastmod>2018-11-26T00:22:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1878,7 +1888,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/linux/</loc>
-    <lastmod>2018-11-25T10:44:16+08:00</lastmod>
+    <lastmod>2018-11-26T00:22:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1896,7 +1906,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/mac/</loc>
-    <lastmod>2015-07-24T17:44:16+08:00</lastmod>
+    <lastmod>2018-11-26T00:22:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1914,7 +1924,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/macos/</loc>
-    <lastmod>2015-07-24T17:44:16+08:00</lastmod>
+    <lastmod>2015-09-15T05:44:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2178,7 +2188,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/post/</loc>
-    <lastmod>2018-11-25T10:44:16+08:00</lastmod>
+    <lastmod>2018-11-26T00:22:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2388,7 +2398,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/software/</loc>
-    <lastmod>2018-11-25T10:44:16+08:00</lastmod>
+    <lastmod>2018-11-26T00:22:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2478,7 +2488,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/ubuntu/</loc>
-    <lastmod>2015-06-23T07:46:16+08:00</lastmod>
+    <lastmod>2015-09-15T05:44:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   

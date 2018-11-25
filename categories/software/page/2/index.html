@@ -230,6 +230,68 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/01/scihub-osx/">
+          苹果版SciHub桌面软件
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-01-24T15:27:00&#43;08:00">
+        
+  January 24, 2018
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/software">Software</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>为了方便苹果用户也能用桌面软件下文献，我把SciHub桌面版打包成可以运行在苹果上的App。</p>
+
+<p>SciHub桌面版是Windows程序，主页为<a href="https://zhuanlan.zhihu.com/p/31809890">https://zhuanlan.zhihu.com/p/31809890</a>。</p>
+
+<p>首先这是利用wine技术实现的，在苹果上你需要安装<strong>XQuartz</strong>: <a href="https://www.xquartz.org/">https://www.xquartz.org/</a>。</p>
+
+<p>安装很容易，我已经打包了dmg文件，这个文件有44M，还挺大的，没法，要打包一个windows的运行环境嘛。</p>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2018/01/scihub-osx/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+            
+              
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/biosyntax/">
           bioSyntax - 针对生物数据的语法高亮
         </a>
@@ -585,72 +647,6 @@ ga('send', 'pageview');
 </article>
 
             
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/02/osx-bioedit/">
-          OSX版BioEdit
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2017-02-27T13:40:22&#43;08:00">
-        
-  February 27, 2017
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/biology">Biology</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/software">Software</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <blockquote>
-<p>BioEdit是一个Windows的程序，但在这里我要说的是苹果版！</p>
-</blockquote>
-
-<p><a href="http://www.mbio.ncsu.edu/bioedit/bioedit.html"><img src="http://www.mbio.ncsu.edu/bioedit/Banner1.GIF" alt="" /></a></p>
-
-<p>BioEdit有很多的功能，当然基本上我是不会用的，然而其核心的功能，编辑序列比对，是没法回避的！因为根本找不到可以与之匹敌的软件！</p>
-
-<p>神马！序列比对不都是clustalw, muscle, mafft这些软件生成完事吗？怎么还要编辑？！我只能说，年轻人，拿衣服啊。</p>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2017/02/osx-bioedit/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
             
   <div class="pagination-bar">
     <ul class="pagination">
@@ -672,7 +668,7 @@ ga('send', 'pageview');
           </li>
         
       
-      <li class="pagination-number">page 2 of 4</li>
+      <li class="pagination-number">page 2 of 5</li>
     </ul>
   </div>
 
@@ -735,6 +731,40 @@ ga('send', 'pageview');
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/macbook-arch-setting/">
+                <h3 class="media-heading">MacBook安装Arch的一些设置</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><h2 id="声音">声音</h2>
+
+<p>没有声音，在<code>/etc/modprobe.d/modprobe.conf</code>里加入：</p>
+
+<pre><code>options snd-hda-intel model=mbp3 position_fix=2
+</code></pre>
+
+<h2 id="网络">网络</h2>
+
+<p>dhcpcd禁止<code>ipv6</code>:</p>
+
+<p>在<code>/etc/dhcpcd.conf</code>中加入:</p>
+
+<pre><code>noipv6rs
+noipv6
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -979,35 +1009,6 @@ ga('send', 'pageview');
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/10/ggrough/">
-                <h3 class="media-heading">画图倒不如手绘</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Oct 10, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>在《<a href="http://mp.weixin.qq.com/s/P7yUFLwW4OLGBrPw05iQ_A">漫画版的进化树你见过吗？</a>》一文中，我介绍过一个R包，可以把<code>ggplot2</code>转成漫画风格，今天介绍一个新的包，<code>ggrough</code>，它封装了一个叫<code>roughjs</code>的javascript库，可以把<code>ggplot2</code>转成手绘风格：</p>
-
-<pre><code>require(dplyr)
-library(ggplot2)
-count(mtcars, carb) %&gt;%
-  ggplot(aes(carb, n)) +
-  geom_col() + 
-  labs(title=&quot;Number of cars by carburator count&quot;) + 
-  theme_grey(base_size = 16) -&gt; p 
-p
-</code></pre>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1015,7 +1016,7 @@ p
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         249 posts found
+         251 posts found
       </p>
     </div>
   </div>

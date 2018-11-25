@@ -6,10 +6,21 @@
     <description>Recent content in Macos on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Jul 2015 17:44:16 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 15 Sep 2015 05:44:16 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/tags/macos/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>通过VNC连接Linux远程桌面</title>
+      <link>https://guangchuangyu.github.io/cn/2015/09/linux-remote-desktop-via-vnc/</link>
+      <pubDate>Tue, 15 Sep 2015 05:44:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2015/09/linux-remote-desktop-via-vnc/</guid>
+      <description>&lt;p&gt;对于Unix-like系统，远程桌面实在太容易，通过ssh隧道，只要加-X参数即可，如果网速较慢，可以加-C参数，对图像进行压缩。&lt;a href=&#34;http://guangchuangyu.github.io/cn/2013/11/run-remote-r-in-emacs-with-ess/&#34;&gt;ESS都支持通过这个方法把R命令发送到服务器端执行&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Macbook Pro 双系统记</title>

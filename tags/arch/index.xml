@@ -6,10 +6,36 @@
     <description>Recent content in Arch on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 25 Nov 2018 10:44:16 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 26 Nov 2018 00:22:16 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/tags/arch/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>MacBook安装Arch的一些设置</title>
+      <link>https://guangchuangyu.github.io/cn/2018/11/macbook-arch-setting/</link>
+      <pubDate>Mon, 26 Nov 2018 00:22:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2018/11/macbook-arch-setting/</guid>
+      <description>&lt;h2 id=&#34;声音&#34;&gt;声音&lt;/h2&gt;
+
+&lt;p&gt;没有声音，在&lt;code&gt;/etc/modprobe.d/modprobe.conf&lt;/code&gt;里加入：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;options snd-hda-intel model=mbp3 position_fix=2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;网络&#34;&gt;网络&lt;/h2&gt;
+
+&lt;p&gt;dhcpcd禁止&lt;code&gt;ipv6&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;在&lt;code&gt;/etc/dhcpcd.conf&lt;/code&gt;中加入:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;noipv6rs
+noipv6
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>记一次搞死又搞活linux的经历</title>

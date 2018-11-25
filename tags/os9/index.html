@@ -348,6 +348,40 @@ Drivers”不然分区将不能在OS9中使用，我一共分了5个分区，12G
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/macbook-arch-setting/">
+                <h3 class="media-heading">MacBook安装Arch的一些设置</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><h2 id="声音">声音</h2>
+
+<p>没有声音，在<code>/etc/modprobe.d/modprobe.conf</code>里加入：</p>
+
+<pre><code>options snd-hda-intel model=mbp3 position_fix=2
+</code></pre>
+
+<h2 id="网络">网络</h2>
+
+<p>dhcpcd禁止<code>ipv6</code>:</p>
+
+<p>在<code>/etc/dhcpcd.conf</code>中加入:</p>
+
+<pre><code>noipv6rs
+noipv6
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/arch-lts/">
                 <h3 class="media-heading">记一次搞死又搞活linux的经历</h3>
               </a>
@@ -588,35 +622,6 @@ Drivers”不然分区将不能在OS9中使用，我一共分了5个分区，12G
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/10/ggrough/">
-                <h3 class="media-heading">画图倒不如手绘</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Oct 10, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>在《<a href="http://mp.weixin.qq.com/s/P7yUFLwW4OLGBrPw05iQ_A">漫画版的进化树你见过吗？</a>》一文中，我介绍过一个R包，可以把<code>ggplot2</code>转成漫画风格，今天介绍一个新的包，<code>ggrough</code>，它封装了一个叫<code>roughjs</code>的javascript库，可以把<code>ggplot2</code>转成手绘风格：</p>
-
-<pre><code>require(dplyr)
-library(ggplot2)
-count(mtcars, carb) %&gt;%
-  ggplot(aes(carb, n)) +
-  geom_col() + 
-  labs(title=&quot;Number of cars by carburator count&quot;) + 
-  theme_grey(base_size = 16) -&gt; p 
-p
-</code></pre>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -624,7 +629,7 @@ p
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         249 posts found
+         251 posts found
       </p>
     </div>
   </div>

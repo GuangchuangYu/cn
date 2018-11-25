@@ -227,6 +227,124 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/10/restore-thunder-url/">
+          还原迅雷的url
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2008-10-05T05:08:02&#43;08:00">
+        
+  October 5, 2008
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/software">Software</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>迅雷的url很恶心，硬是把你绑死在它的流氓软件上，今天试了一个用base64解码，果然用这个伎俩来欺骗用户。在原始的url前面和后面各加两个字符，然后用base64编码。写了下面一段script来还原出原始的url，这样随便用那个下载工具都可以用了。</p>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2008/10/restore-thunder-url/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/09/%E5%8D%9A%E5%AE%A2%E8%BD%ACwordpress/">
+          博客转WordPress
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2008-09-30T16:20:43&#43;08:00">
+        
+  September 30, 2008
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/blog">Blog</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>找了一个叫<strong>博客备份软件</strong>的小工具,备份了新浪和ChinaUnix上的blog,导出为RSS
+2.0, sina的blog导出没问题,但是cu的blog导出后,文不对题.狂汗啊&hellip;
+但是生成的xml文件导入到wordpress里不成功.需要改一下才行.</p>
+
+<p>从导出的xml文件里,把&lt;description&gt;&lt;![CDATA[替换成&lt;content:encoded&gt;&lt;![CDATA[</p>
+
+<p>相应地把]]&gt;&lt;/description&gt;替换成]]&gt;&lt;/content:encoded&gt;</p>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2008/09/%E5%8D%9A%E5%AE%A2%E8%BD%ACwordpress/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/09/data-backup/">
           备份苹果硬盘的数据
         </a>
@@ -547,141 +665,6 @@ idmap &lt;- getBM(attributes=c(&quot;codelink&quot;,&quot;refseq_dna&quot;,&quot
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/09/compile-32bit-applications-in-64bit-linux/">
-          在64位环境下编译32位的应用程序
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2008-09-23T00:18:00&#43;08:00">
-        
-  September 23, 2008
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/bsd">BSD</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/linux">Linux</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>用PITA算法做靶标预测的时候，要用到ViennaRNA包做结构的折叠，这个包是被修改过的，原来的包在我机子上是可以装的。但是这个修改过的包编译不通过。很奇怪的错误，不知道怎么改。</p>
-
-<p>好在它有两个版本，64位和32位的。我弄到大型机上去编译32位的，也是出错，不过是命名空间的问题，我改两个头文件就可以通过了。最近又要算。那个大型机最近被搬走了。只能本机上做。</p>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2008/09/compile-32bit-applications-in-64bit-linux/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/09/%E9%80%9A%E8%BF%87%E5%B1%80%E5%9F%9F%E7%BD%91%E5%9C%A8linux%E4%B8%8B%E4%BD%BF%E7%94%A8windows%E7%9A%84%E7%A8%8B%E5%BA%8F/">
-          通过局域网在linux下使用windows的程序
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2008-09-22T01:26:00&#43;08:00">
-        
-  September 22, 2008
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/linux">Linux</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/windows">Windows</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>用了好多年linux，现在用windows越来越少了，但是还是得用。没办法，上taobao买个东西，上网银都得用ie，有时候还得用office等其它一些软件。</p>
-
-<p>实验室里有台机子是做文件服务的，装的是windows 2003
-server。之前使用rdesktop远程桌面，最近发现配合seamlessrdp可以让rdesktop实现更好的效果，运行windows程序，就像linux中原生程序一样。。</p>
-
-<pre><code>&gt; [下载
-&gt; seamlessrdp.zip](http://www.cendio.se/files/thinlinc/seamlessrdp/seamlessrdp.zip)
-&gt; 解压丢在C盘。
-</code></pre>
-
-<p>在linux下运行这样的指令</p>
-
-<pre><code>&gt; rdesktop -A -s &quot;c:\\seamlessrdp/seamlessrdpshell.exe C:\\Program
-&gt; Files\\Internet Explorer\\iexplore.exe&quot; ip:3389 -u administrator -p
-&gt; password
-</code></pre>
-
-<p>就可以在linux下运行服务器端的ie了。windows下所有程序都没问题。</p>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2008/09/%E9%80%9A%E8%BF%87%E5%B1%80%E5%9F%9F%E7%BD%91%E5%9C%A8linux%E4%B8%8B%E4%BD%BF%E7%94%A8windows%E7%9A%84%E7%A8%8B%E5%BA%8F/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -765,6 +748,40 @@ server。之前使用rdesktop远程桌面，最近发现配合seamlessrdp可以�
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/macbook-arch-setting/">
+                <h3 class="media-heading">MacBook安装Arch的一些设置</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><h2 id="声音">声音</h2>
+
+<p>没有声音，在<code>/etc/modprobe.d/modprobe.conf</code>里加入：</p>
+
+<pre><code>options snd-hda-intel model=mbp3 position_fix=2
+</code></pre>
+
+<h2 id="网络">网络</h2>
+
+<p>dhcpcd禁止<code>ipv6</code>:</p>
+
+<p>在<code>/etc/dhcpcd.conf</code>中加入:</p>
+
+<pre><code>noipv6rs
+noipv6
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1009,35 +1026,6 @@ server。之前使用rdesktop远程桌面，最近发现配合seamlessrdp可以�
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/10/ggrough/">
-                <h3 class="media-heading">画图倒不如手绘</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Oct 10, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>在《<a href="http://mp.weixin.qq.com/s/P7yUFLwW4OLGBrPw05iQ_A">漫画版的进化树你见过吗？</a>》一文中，我介绍过一个R包，可以把<code>ggplot2</code>转成漫画风格，今天介绍一个新的包，<code>ggrough</code>，它封装了一个叫<code>roughjs</code>的javascript库，可以把<code>ggplot2</code>转成手绘风格：</p>
-
-<pre><code>require(dplyr)
-library(ggplot2)
-count(mtcars, carb) %&gt;%
-  ggplot(aes(carb, n)) +
-  geom_col() + 
-  labs(title=&quot;Number of cars by carburator count&quot;) + 
-  theme_grey(base_size = 16) -&gt; p 
-p
-</code></pre>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1045,7 +1033,7 @@ p
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         249 posts found
+         251 posts found
       </p>
     </div>
   </div>
