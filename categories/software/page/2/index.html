@@ -606,16 +606,16 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustworthy/">
-          R binary is untrustworthy
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2015/06/install-amos/">
+          安装Amos
         </a>
       </h1>
       
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2014-07-24T04:22:35&#43;08:00">
+      <time itemprop="datePublished" datetime="2015-06-23T07:46:16&#43;08:00">
         
-  July 24, 2014
+  June 23, 2015
 
       </time>
     
@@ -624,7 +624,9 @@ ga('send', 'pageview');
   
     <span>in</span>
     
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/software">Software</a>
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/software">Software</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/linux">Linux</a>
     
   
 
@@ -632,11 +634,23 @@ ga('send', 'pageview');
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      去年ubuntu下apt-get了R-3.0.2, 用了没多久就发现了system命令有问题，通常情况下调用系统命令是正常的，但是我调用bowtie的时候，就会报错：
-Warning: Could not open read file &quot;/tmp/8156.inpipe1&quot; for reading; skipping... Error: Encountered internal Bowtie 2 exception (#1) Command: /usr/bin/bowtie2-align --wrapper basic-0 -p 12 -x /ssd/genomes/hg19 -S tmp.sam -1 /tmp/8156.inpipe1 -2 /tmp/8156.inpipe2  这很明显是因为fasta.gz文件，bowtie需要调用zcat来读的，在R里调用bowtie就找不到好基友zcat的输出管道。当时没在意，R不干，那就找shell。 去年用NMF包的时候，报出了人类不友好的错误，联系了包作者Gaujoux，在作者的帮助下，找到了是doParallel包的问题：
-&gt; library(doParallel) &gt; Loading required package: foreach foreach: simple, scalable parallel programming from Revolution Analytics Use Revolution R for scalability, fault tolerance and more. http://www.revolutionanalytics.com Loading required package: iterators Loading required package: parallel &gt; registerDoParallel(11) &gt; &gt; foreach(i = 1:10) %dopar% { getwd() } &gt; *** caught segfault *** address 0x7fbeb6d399d0, cause 'memory not mapped'  其实parallel包中用mclapply也是同样报错。于是又把维护deb包的Dirk拉进来，Dirk是Rcpp的作者，高人就是不一样，看了错误，立刻就指出是BLAS库的问题。
+      <p><a href="http://sourceforge.net/projects/amos/?source=navbar">Amos</a>是纯于比较难安装那种，因为依赖关系比较复杂。</p>
+
+<p>首先编译需要<code>qt4-dev</code>和<code>boost graph toolkit</code>：</p>
+
+<pre><code>sudo apt-get install libqt4-dev
+sudo apt-get install libboost-graph-dev
+</code></pre>
+
+<p>再者是<code>perl</code>模块：</p>
+
+<pre><code>sudo cpan -i DBI
+sudo cpan -i Statistics::Descriptive
+</code></pre>
+
+<p></p>
       <p>
-        <a href="https://guangchuangyu.github.io/cn/2014/07/r-binary-is-untrustworthy/" class="postShorten-excerpt_link link">Continue reading</a>
+        <a href="https://guangchuangyu.github.io/cn/2015/06/install-amos/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
     </div>
@@ -1017,7 +1031,7 @@ p
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         243 posts found
+         244 posts found
       </p>
     </div>
   </div>
