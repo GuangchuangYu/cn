@@ -227,6 +227,129 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/08/retrieve-fasta-by-index/">
+          建索引检索fasta文件
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2008-08-23T13:35:00&#43;08:00">
+        
+  August 23, 2008
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/perl">Perl</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>在实际应用中，尤其是sequence数据，应该尽可能避免把整个文件读入内存，文件有可能几个G甚至更大，可能引起内存崩溃。应该放在数据库里，建索引以检索数据。Bioperl有一个module,
+Bio::DB::Fasta可以实现这个，这个模块在没有安装bioperl的情况下也可以单独安装使用。</p>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2008/08/retrieve-fasta-by-index/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/08/gosemsim/">
+          GOSemSim
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2008-08-11T14:21:00&#43;08:00">
+        
+  August 11, 2008
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/bioinformatics">Bioinformatics</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>第一次写软件包，计算基因和GO的语义相似性。</p>
+
+<p>实现<a href="http://bioinformatics.oxfordjournals.org/cgi/content/full/23/10/1274">Wang</a>的方法，基于GO的图结构。
+以及四种基于信息含量的计算方法（Resnik, Jiang, Lin, Rel）。</p>
+
+<p>可以从Bioconductor下载到。
+<a href="http://bioconductor.org/packages/release/bioc/html/GOSemSim.html">http://bioconductor.org/packages/release/bioc/html/GOSemSim.html</a>
+<a href="http://bioconductor.org/packages/devel/bioc/html/GOSemSim.html">http://bioconductor.org/packages/devel/bioc/html/GOSemSim.html</a></p>
+
+<p>支持human, rat, mouse, fly, yeast, zebrafish,worm, E coli,
+arabidopsis等物种。</p>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2008/08/gosemsim/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/08/ntfs-3g/">
           在linux下对NTFS进行读写
         </a>
@@ -536,153 +659,6 @@ Homepage : <a href="http://givre.cabspace.com/ntfs-config">http://givre.cabspace
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2007/05/edit-partition-netbsd-macppc/">
-          Edit partition table in NetBSD/macppc
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2007-05-14T04:43:00&#43;08:00">
-        
-  May 14, 2007
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/bsd">BSD</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/powerbook">Powerbook</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <pre><code>#disklabel wd0
-</code></pre>
-
-<p>可以看到原始分区如下: 7 partitions:</p>
-
-<pre><code>#        size    offset     fstype [fsize bsize cpg/sgs]
-a:  20971520  25167648     4.2BSD      0     0     0  # (Cyl.  24967*-  45772*)
-b:   1048576  46139168       swap                     # (Cyl.  45772*-  46813*)
-c: 117210240         0     unused      0     0        # (Cyl.      0 - 116279)
-d:  25165824      1824        HFS                     # (Cyl.      1*-  24967*)
-e:  28079456  89130784        HFS                     # (Cyl.  88423*- 116279)
-g:  41943040  47187744     4.2BSD      0     0     0  # (Cyl.  46813*-  88423*)
-</code></pre>
-
-<p>a为netbsd的/分区，b为swap分区,c为整个硬盘，d为mac
-os的系统盘。e为两系统共享分区(在os9下格式化为fat)，g为netbsd下的/home分区。
-原本是两系统，os9.2一直都很少用，所以想删了，腾出空间来放数据。因为wd0d和wd0e不在连续的柱面上，所以无法将它们合并。</p>
-
-<p>新的分区方案如下：wd0d删了，分成两个，一个15M(需要一个HFS类型的分区来放置<code>ofwboot.xcf</code>，因为openfirmwire不支持从netbsd分区里加载loader),剩下的作为<code>/home</code>分区。把原来的<code>/home</code>分区(<code>wd0g</code>)和共享数据的分区(<code>wd0e</code>)合并为一个分区，用于放置数据。
-1. 第一步，也是最关键的一步，先备份好数据。
-
-2. 安装hfsutils。用于操作那个15M的HFS分区（格式化，拷贝文件等工具）。hfsutils是命令行的，xhfs是tk界面的。</p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2007/05/edit-partition-netbsd-macppc/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2007/05/pkgsrc-tips/">
-          pkgsrc tips
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2007-05-14T04:37:00&#43;08:00">
-        
-  May 14, 2007
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/bsd">BSD</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <h2 id="1-cpuflags">1.cpuflags</h2>
-
-<p><strong>devel/cpuflags:Determine compiler flags to best target current cpu</strong></p>
-
-<pre><code>#cd /usr/pkgsrc/devel/cpuflags 
-#make install
-</code></pre>
-
-<p>然后在/etc/mk.conf中加入:</p>
-
-<pre><code>.sinclude &quot;/usr/pkg/share/mk/cpuflags.mk&quot;
-.sinclude &quot;/usr/pkg/share/mk/optimize_gcc.mk&quot;
-</code></pre>
-
-<p>这样make时便能够根据cpuflags进行优化编译了。</p>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2007/05/pkgsrc-tips/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -704,7 +680,7 @@ os的系统盘。e为两系统共享分区(在os9下格式化为fat)，g为netbs
           </li>
         
       
-      <li class="pagination-number">page 34 of 35</li>
+      <li class="pagination-number">page 34 of 36</li>
     </ul>
   </div>
 
@@ -766,6 +742,46 @@ os的系统盘。e为两系统共享分区(在os9下格式化为fat)，g为netbs
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/arch-lts/">
+                <h3 class="media-heading">记一次搞死又搞活linux的经历</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>看到一个帖子, <a href="https://www.maketecheasier.com/make-arch-linux-more-stable/">https://www.maketecheasier.com/make-arch-linux-more-stable/</a>， 说避免老升级内核，用lts版，装完可以把原先内核干掉：</p>
+
+<blockquote>
+<pre><code>&gt;sudo pacman -S linux-lts
+&gt;```
+&gt;
+&gt;When you’ve installed the LTS kernel, it’s a good idea to remove the bleeding edge kernel from your system.
+&gt;
+&gt;```
+&gt;sudo pacman -R linux 
+&gt;```
+
+我内心闪过一个想法，难道不用配置启动么？也没去确认，照做后重启，你妹啊，太坑了，直接就找不到内核死掉！
+
+
+
+----
+
+因为这个贴子太不负责，换了kernel之后，应该再run:
+
+</code></pre>
+
+<p>grub-mkconfig -o /boot/grub/grub.cfg
+```</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -999,54 +1015,6 @@ p
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/10/gorilla-vs-clusterprofiler/">
-                <h3 class="media-heading">做学术终究是看脸...</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Oct 10, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>做科研我们不爽的是没有结果，比结果更不爽的是结果不符合预期，故事不知道该怎么编，然而戏真的不要太多，学术不是以预期来驱动的，请尊重一下事实，还有你的小鼠。</p>
-
-<blockquote>
-<p>we had a quick email exchange about this and I would like to report this. (I appologise for contacting you directly, rather than following the submission guideline). I have a dataset with 6166 proteins of which 201 proteins are upregulated. The problem is that specifying the background proteins using universe argument in clusterProfiler, decreases the number of significant GO categories (28 significant categories without the universe argument and 5 with this argument). At the same time when I use online GORILLA tool  I get a lot of categories, with the background:</p>
-
-<p><a href="http://cbl-gorilla.cs.technion.ac.il/GOrilla/kwpgie9l/GOResults.html">http://cbl-gorilla.cs.technion.ac.il/GOrilla/kwpgie9l/GOResults.html</a></p>
-
-<p>and not categories without the background:</p>
-
-<p><a href="http://cbl-gorilla.cs.technion.ac.il/GOrilla/5y4n3hn1/GOResults.html">http://cbl-gorilla.cs.technion.ac.il/GOrilla/5y4n3hn1/GOResults.html</a></p>
-
-<p>I am not sure whether this is a bug or not, so I decided to report it here</p>
-
-<p>The dataset is presented below
-&hellip;</p>
-
-<pre><code>&gt; allProtUGO &lt;- enrichGO(gene = upRegProt, OrgDb = org.Hs.eg.db,  keyType = &quot;UNIPROT&quot;,  ont='ALL', pool = TRUE, 
-                       qvalueCutoff = 0.05)
-
-&gt;identifiedProtUGO &lt;- enrichGO(gene = upRegProt, OrgDb = org.Hs.eg.db,  keyType = &quot;UNIPROT&quot;,  ont='ALL', pool = TRUE, 
-                             qvalueCutoff = 0.05,  universe = backgroundProt)
-
-&gt;dim (allProtUGO@result)
-&gt;dim (identifiedProtUGO@result)
-&gt;
-
-</code></pre>
-</blockquote>
-
-<p>要看数据集地请点击<a href="https://github.com/GuangchuangYu/clusterProfiler/issues/122">此处直达github issue</a>。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1054,7 +1022,7 @@ p
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         244 posts found
+         246 posts found
       </p>
     </div>
   </div>

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2018/11/arch-lts/</loc>
+    <lastmod>2018-11-25T10:44:16+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2018/11/dose-citation-above-100/</loc>
     <lastmod>2018-11-25T01:23:16+08:00</lastmod>
   </url>
@@ -673,6 +678,11 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2017/04/realvnc/</loc>
+    <lastmod>2017-04-14T13:44:16+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2017/04/%E6%9D%A5%E8%87%AAr%E7%9A%84%E6%A1%8C%E9%9D%A2%E6%8F%90%E9%86%92/</loc>
     <lastmod>2017-04-11T12:23:16+08:00</lastmod>
   </url>
@@ -1242,7 +1252,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/arch/</loc>
-    <lastmod>2017-07-17T13:40:22+08:00</lastmod>
+    <lastmod>2018-11-25T10:44:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1745,7 +1755,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/</loc>
-    <lastmod>2018-11-25T01:23:16+08:00</lastmod>
+    <lastmod>2018-11-25T10:44:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1847,7 +1857,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/linux/</loc>
-    <lastmod>2018-08-08T20:10:35+08:00</lastmod>
+    <lastmod>2018-11-25T10:44:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2135,7 +2145,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/post/</loc>
-    <lastmod>2018-11-25T01:23:16+08:00</lastmod>
+    <lastmod>2018-11-25T10:44:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2345,7 +2355,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/software/</loc>
-    <lastmod>2018-09-30T10:30:00+08:00</lastmod>
+    <lastmod>2018-11-25T10:44:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2466,6 +2476,12 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/viziometric/</loc>
     <lastmod>2017-05-20T10:40:22+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/vnc/</loc>
+    <lastmod>2017-04-14T13:44:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
