@@ -435,6 +435,73 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/08/sqrt_2/">
+          根号2的几何作图
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2011-08-12T12:20:16&#43;08:00">
+        
+  August 12, 2011
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/math">Math</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        <p>读研时买了很多书，大部分都没时间看，<a href="http://book.douban.com/subject/1320282/">《什么是数学》</a>就是其中的一本。
+这两天翻看了一点。</p>
+
+<p>《第二章：数学中的数系》讲到了当年的伟大发现，一个正方形的对角线与它的边是不可公度的。而由不可公度线段，引入的无理数概念，引入负数，在17世纪都是个另人不安的事情，无理数是个巨大的飞跃，</p>
+
+<p>73页中的图10,给出了 $$\sqrt{2}$$的几何作图。</p>
+
+<p>我用R尝试把它画出来：</p>
+
+<p></p>
+      
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2011/08/sqrt_2/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+            
+              
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/08/qq-plot/">
           QQ plot
         </a>
@@ -662,79 +729,6 @@ the likelihood)</p>
 </article>
 
             
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/12/creat-r-package/">
-          创建R包
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2008-12-07T05:23:16&#43;08:00">
-        
-  December 7, 2008
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <pre><code>&gt; source(&quot;code.R&quot;) #载入写好的代码 
-&gt; package.skeleton(name=&quot;pkgname&quot;, list=c(&quot;function_name_list&quot;))
-# 生成R源码包的目录结构 
-</code></pre>
-
-<p>到man目录下改*.Rd文档。latex格式。这是包和函数的帮助文档。</p>
-
-<p>如果需要vignette文档的话。在包目录下，新建inst/doc，在里面写pkgname.Rnw文档。基本上是latex格式，不过允许你插入R代码。make的时候，会先跑代码。再自动转换成latex，再编译成pdf。</p>
-
-<pre><code>$ R CMD check pkgname 
-# 检验代码和文档。这个很重要。通常一些小问题都能在这一步发现。 
-$ R CMD build pkgname 
-# 打包，源码包格式 
-$ R CMD build --binary pkgname
-#编译后打包，二进制格式。
-</code></pre>
-
-<p></p>
-      
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2008/12/creat-r-package/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
             
   <div class="pagination-bar">
     <ul class="pagination">
@@ -748,8 +742,15 @@ $ R CMD build --binary pkgname
           </li>
         
         
+          <li class="pagination-next">
+            <a class="btn btn--default btn--small" href="https://guangchuangyu.github.io/cn/categories/r/page/19/">
+              <span>OLDER POSTS</span>
+              <i class="fa fa-angle-right text-base icon-ml"></i>
+            </a>
+          </li>
+        
       
-      <li class="pagination-number">page 18 of 18</li>
+      <li class="pagination-number">page 18 of 19</li>
     </ul>
   </div>
 
@@ -1097,7 +1098,7 @@ noipv6
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         252 posts found
+         253 posts found
       </p>
     </div>
   </div>

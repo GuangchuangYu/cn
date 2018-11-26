@@ -2386,6 +2386,24 @@ print(p)
     </item>
     
     <item>
+      <title>根号2的几何作图</title>
+      <link>https://guangchuangyu.github.io/cn/2011/08/sqrt_2/</link>
+      <pubDate>Fri, 12 Aug 2011 12:20:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2011/08/sqrt_2/</guid>
+      <description>&lt;p&gt;读研时买了很多书，大部分都没时间看，&lt;a href=&#34;http://book.douban.com/subject/1320282/&#34;&gt;《什么是数学》&lt;/a&gt;就是其中的一本。
+这两天翻看了一点。&lt;/p&gt;
+
+&lt;p&gt;《第二章：数学中的数系》讲到了当年的伟大发现，一个正方形的对角线与它的边是不可公度的。而由不可公度线段，引入的无理数概念，引入负数，在17世纪都是个另人不安的事情，无理数是个巨大的飞跃，&lt;/p&gt;
+
+&lt;p&gt;73页中的图10,给出了 $$\sqrt{2}$$的几何作图。&lt;/p&gt;
+
+&lt;p&gt;我用R尝试把它画出来：&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>QQ plot</title>
       <link>https://guangchuangyu.github.io/cn/2011/08/qq-plot/</link>
       <pubDate>Tue, 02 Aug 2011 08:23:16 +0800</pubDate>
