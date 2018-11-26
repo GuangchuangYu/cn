@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>如何定义基因下游的长度</title>
+      <title>如何定义基因下游的区间</title>
       <link>https://guangchuangyu.github.io/cn/2018/11/how-to-define-downstream-range/</link>
       <pubDate>Thu, 22 Nov 2018 12:20:16 +0800</pubDate>
       
@@ -131,35 +131,9 @@
 cd galaxy
 ## switch to master branch, stable release
 git checkout -b master origin/master
-```   	
-
-
-
-
-### 安装
-
-
-```bash
-cd galaxy/config/
-cp galaxy.ini.sample galaxy.ini
-```   	
-
-编辑_galaxy.ini_文件
-
-+ find the line: admin_users
-+ remove the # and add an email for your account
-
-
-
-### 运行
-
-```bash
-# go back to galaxy folder
-cd ..
-sh run.sh
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;然后就可以用浏览器打开&lt;a href=&#34;http://localhost:8080&#34;&gt;http://localhost:8080&lt;/a&gt;，使用galaxy，就是这么简单。&lt;/p&gt;</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -223,13 +197,13 @@ sh run.sh
 &lt;pre&gt;&lt;code&gt;&amp;gt; require(TxDb.Hsapiens.UCSC.hg19.knownGene)
 &amp;gt; txdb = TxDb.Hsapiens.UCSC.hg19.knownGene
 &amp;gt; x = annotatePeak(f, tssRegion=c(-1000, 1000), TxDb=txdb)
-&amp;gt;&amp;gt; loading peak file...				 2017-03-09 11:29:18 PM 
-&amp;gt;&amp;gt; preparing features information...		 2017-03-09 11:29:18 PM 
-&amp;gt;&amp;gt; identifying nearest features...		 2017-03-09 11:29:19 PM 
-&amp;gt;&amp;gt; calculating distance from peak to TSS...	 2017-03-09 11:29:20 PM 
-&amp;gt;&amp;gt; assigning genomic annotation...		 2017-03-09 11:29:20 PM 
-&amp;gt;&amp;gt; assigning chromosome lengths			 2017-03-09 11:29:42 PM 
-&amp;gt;&amp;gt; done...					 2017-03-09 11:29:42 PM 
+&amp;gt;&amp;gt; loading peak file...              2017-03-09 11:29:18 PM 
+&amp;gt;&amp;gt; preparing features information...         2017-03-09 11:29:18 PM 
+&amp;gt;&amp;gt; identifying nearest features...       2017-03-09 11:29:19 PM 
+&amp;gt;&amp;gt; calculating distance from peak to TSS...  2017-03-09 11:29:20 PM 
+&amp;gt;&amp;gt; assigning genomic annotation...       2017-03-09 11:29:20 PM 
+&amp;gt;&amp;gt; assigning chromosome lengths          2017-03-09 11:29:42 PM 
+&amp;gt;&amp;gt; done...                   2017-03-09 11:29:42 PM 
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;blockquote&gt;

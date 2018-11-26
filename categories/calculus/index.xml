@@ -56,6 +56,39 @@ and miss法估计。&lt;/p&gt;
     </item>
     
     <item>
+      <title>用Taylor公式估计函数值</title>
+      <link>https://guangchuangyu.github.io/cn/2009/03/estimate-function-value-by-taylor-theorem/</link>
+      <pubDate>Tue, 17 Mar 2009 05:23:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2009/03/estimate-function-value-by-taylor-theorem/</guid>
+      <description>&lt;p&gt;泰勒公式学过微积分都应该知道，可以翻wiki复习一下，&lt;a href=&#34;https://zh.wikipedia.org/wiki/泰勒公式&#34;&gt;https://zh.wikipedia.org/wiki/泰勒公式&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;用R简单实现一下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; efv &amp;lt;- function(f, value, variable=&amp;quot;x&amp;quot;, a=0, esp=0.001) {
+     #estimate function value using Taylor theorem
+     assign(eval(variable), a)
+     fv.old &amp;lt;- eval(f)
+     k &amp;lt;- 1     
+     repeat {
+         df &amp;lt;- D(f, variable)
+         if (df == 0)
+             break
+         fv.new &amp;lt;- fv.old + eval(df)*(value-a)^k/factorial(k)
+         if (fv.new - fv.old &amp;lt; esp)
+             break
+         fv.old &amp;lt;- fv.new
+         f &amp;lt;- df
+         k &amp;lt;- k+1
+     }
+     return (fv.new)
+ }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>用中值定理求根</title>
       <link>https://guangchuangyu.github.io/cn/2008/11/bisect-to-solve-equation/</link>
       <pubDate>Tue, 25 Nov 2008 10:40:22 +0800</pubDate>

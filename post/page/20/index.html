@@ -1,26 +1,49 @@
-
-
-
-  
-
-
-
-
-  
-
-
-  
-
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
     
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.31.1 with theme Tranquilpeak 0.4.3-BETA">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.32 with theme Tranquilpeak 0.4.3-SNAPSHOT">
+<meta name="author" content="Guangchuang Yu">
+<meta name="keywords" content="">
+<meta name="description" content="Guangchuang&#39;s Chinese Blog">
+
+
+<meta property="og:description" content="Guangchuang&#39;s Chinese Blog">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Posts">
+<meta name="twitter:title" content="Posts">
+<meta property="og:url" content="https://guangchuangyu.github.io/cn/post/">
+<meta property="twitter:url" content="https://guangchuangyu.github.io/cn/post/">
+<meta property="og:site_name" content="Guangchuang Yu">
+<meta property="og:description" content="Guangchuang&#39;s Chinese Blog">
+<meta name="twitter:description" content="Guangchuang&#39;s Chinese Blog">
+<meta property="og:locale" content="en-us">
+
+
+<meta name="twitter:card" content="summary">
+
+  <meta name="twitter:site" content="@guangchuangyu">
+
+
+  <meta name="twitter:creator" content="@guangchuangyu">
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
+
+
     <title>Posts</title>
-    <meta name="author" content="Guangchuang Yu">
-    <meta name="keywords" content="">
 
     <link rel="icon" href="https://guangchuangyu.github.io/cn/favicon.png">
     
@@ -28,32 +51,8 @@
     
 
     
-    <meta name="description" content="Guangchuang&#39;s Chinese Blog">
-    <meta property="og:description" content="Guangchuang&#39;s Chinese Blog">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="Posts">
-    <meta property="og:url" content="/post/">
-    <meta property="og:site_name" content="Guangchuang Yu">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Guangchuang Yu">
-    <meta name="twitter:description" content="Guangchuang&#39;s Chinese Blog">
-    
-      <meta name="twitter:creator" content="@guangchuangyu">
-    
-    
 
-    
-    
-
-    
-      <meta property="og:image" content="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
-    
-
-    
-    
-    
-
-    
+    <link rel="canonical" href="https://guangchuangyu.github.io/cn/post/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -61,7 +60,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
     
     
 
@@ -96,7 +95,7 @@ ga('send', 'pageview');
     
     
       
-        <img class="header-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
+        <img class="header-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
       
     
     </a>
@@ -108,7 +107,7 @@ ga('send', 'pageview');
     
       <div class="sidebar-profile">
         <a href="https://guangchuangyu.github.io/cn/#about">
-          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
         </a>
         <h4 class="sidebar-profile-name">Guangchuang Yu</h4>
         
@@ -253,7 +252,8 @@ ga('send', 'pageview');
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>想要分段标记bootstrap，比如<code>0-70</code>, <code>70-90</code>, <code>90-100</code>之类的。这个对于ggtree来说，太简单。</p>
+      
+        <p>想要分段标记bootstrap，比如<code>0-70</code>, <code>70-90</code>, <code>90-100</code>之类的。这个对于ggtree来说，太简单。</p>
 
 <p>首先我们要读树，用<code>treeio</code>的<code>read.newick</code>，它和<code>read.tree</code>的不同之处是，加入了参数<code>node.label</code>，当<code>node.label</code>存的不是<code>label</code>，而是<code>bootstrap</code>等数字型的时候，你可以传入<code>node.label='support'</code>，这样它会把node label解析为support value，另存为树注释数据，而不是和tip label混在一起。label变量只能存为字符型，因为和tip label混了，而字符型会让数字操作稍微复杂点。所以我们要用<code>read.newick</code>。</p>
 
@@ -266,6 +266,7 @@ p &lt;- ggtree(tree, color=&quot;black&quot;, size=1.5, linetype=1,  ladderize=T
 </code></pre>
 
 <p></p>
+      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2017/05/bootstrap-value%E5%88%86%E6%AE%B5%E6%A0%87%E8%AE%B0/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -319,7 +320,8 @@ p &lt;- ggtree(tree, color=&quot;black&quot;, size=1.5, linetype=1,  ladderize=T
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/Screen Shot 2017-04-29 at 1.46.28 PM.png" alt="" /></p>
+      
+        <p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/Screen Shot 2017-04-29 at 1.46.28 PM.png" alt="" /></p>
 
 <p>最新的一个问题，大致讲他有两个trait, A和B，想拿A来给label上色，B来画热图。</p>
 
@@ -328,6 +330,7 @@ p &lt;- ggtree(tree, color=&quot;black&quot;, size=1.5, linetype=1,  ladderize=T
 <p>我给了他一个简单的例子：</p>
 
 <p></p>
+      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2017/04/annotate-tree-with-user-specific-data/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -381,11 +384,13 @@ p &lt;- ggtree(tree, color=&quot;black&quot;, size=1.5, linetype=1,  ladderize=T
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>苹果和企鹅分赃没谈好，反正林子大了，就不顾小鸟的死活！取消了iOS的赞赏功能，一个个觉得错过了一个亿，我真不知道原来你们的赞赏有这么多！我半年来得到的还不够我的日薪多。虽然少得可怜，但我还是及时地在当天给出方案来吸引眼球，创作了一个绿色的赞赏按纽。</p>
+      
+        <p>苹果和企鹅分赃没谈好，反正林子大了，就不顾小鸟的死活！取消了iOS的赞赏功能，一个个觉得错过了一个亿，我真不知道原来你们的赞赏有这么多！我半年来得到的还不够我的日薪多。虽然少得可怜，但我还是及时地在当天给出方案来吸引眼球，创作了一个绿色的赞赏按纽。</p>
 
 <p>我的文章排版都是<a href="https://guangchuangyu.github.io/cn/2017/01/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E6%96%87markdown%E4%B8%80%E9%94%AE%E6%8E%92%E7%89%88/">markdown</a>，markdown是外部驱动的，要什么效果，CSS话事。这个赞赏按纽无非是个链接，赞赏二字链接到转帐二维码，而要实现按纽的效果，可以专门定义一个style来实现。</p>
 
 <p></p>
+      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2017/04/%E5%85%AC%E5%8F%B7%E7%8B%97%E7%9A%84%E7%A6%8F%E9%9F%B3/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -441,13 +446,15 @@ p &lt;- ggtree(tree, color=&quot;black&quot;, size=1.5, linetype=1,  ladderize=T
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <blockquote>
+      
+        <blockquote>
 <p>Virtual Network Computing (VNC) is a special way to remotely control a computer. Like Secure Shell (SSH), a computer user can login to a remote machine on the network and execute commands and access files on the system. However, VNC displays the remote system&rsquo;s desktop while SSH displays a terminal shell. It may be beneficial to learn more about VNC and similar technologies.</p>
 </blockquote>
 
 <p><img src="https://guangchuangyu.github.io/blog_images/2017/2017-04-13-011729_1280x800_scrot.png" alt="" /></p>
 
 <p></p>
+      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2017/04/realvnc/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -501,7 +508,8 @@ p &lt;- ggtree(tree, color=&quot;black&quot;, size=1.5, linetype=1,  ladderize=T
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p><strong>notifier</strong>包实现了跨平台的桌面提醒功能，当然它是调用了外部的命令，比如windows使用了<strong>toaster</strong>，老版本windows使用的是<strong>notifu</strong>，在linux下使用<strong>notify-send</strong>，而在OSX下，则调用了<strong>terminal-notifier</strong>，通过了简单的封装之后，就可以给桌面发布消息提醒了。</p>
+      
+        <p><strong>notifier</strong>包实现了跨平台的桌面提醒功能，当然它是调用了外部的命令，比如windows使用了<strong>toaster</strong>，老版本windows使用的是<strong>notifu</strong>，在linux下使用<strong>notify-send</strong>，而在OSX下，则调用了<strong>terminal-notifier</strong>，通过了简单的封装之后，就可以给桌面发布消息提醒了。</p>
 
 <p>比如：</p>
 
@@ -518,6 +526,7 @@ notify(
 效果如下：</p>
 
 <p></p>
+      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2017/04/%E6%9D%A5%E8%87%AAr%E7%9A%84%E6%A1%8C%E9%9D%A2%E6%8F%90%E9%86%92/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -573,7 +582,8 @@ notify(
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <h1 id="导言">导言</h1>
+      
+        <h1 id="导言">导言</h1>
 
 <p>本文介绍了<strong>ggimage</strong>包，允许在<strong>ggplot2</strong>作图时嵌入图片，并支持<code>aes</code>映射，可以把离散型变量映射到不同图片。目前有几个包可以使用图片嵌入做图，但都是针对特定的场景，这里使用<strong>ggimage</strong>来展示在这些特定领域里的应用，<strong>ggimage</strong>的设计是通用的，并不被特定场景所限定，文末又介绍了用R图标来画出R、用饼图来画气泡图等实例。</p>
 
@@ -591,6 +601,7 @@ rasterImage(x, 2, 2, 6, 4)
 <p><img src="https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/raster.png" alt="R绘图嵌入图片演示" /></p>
 
 <p></p>
+      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2017/04/ggimage/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -646,7 +657,8 @@ rasterImage(x, 2, 2, 6, 4)
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p><img src="https://guangchuangyu.github.io/blog_images/biobabble_banner.png" alt="" /></p>
+      
+        <p><img src="https://guangchuangyu.github.io/blog_images/biobabble_banner.png" alt="" /></p>
 
 <p>制作了一个banner，用来插入到文后，方便阅读到最后的时候，直接扫描关注。</p>
 
@@ -664,6 +676,7 @@ showtext.auto()
 </code></pre>
 
 <p></p>
+      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2017/04/generate-biobabble-banner-using-ggimage/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -716,7 +729,7 @@ showtext.auto()
       <i class="fa fa-remove"></i>
     </div>
     
-      <img id="about-card-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
     
     <h4 id="about-card-name">Guangchuang Yu</h4>
     
@@ -853,7 +866,7 @@ noipv6
             
             <div class="media-body">
               <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/how-to-define-downstream-range/">
-                <h3 class="media-heading">如何定义基因下游的长度</h3>
+                <h3 class="media-heading">如何定义基因下游的区间</h3>
               </a>
               <span class="media-meta">
                 <span class="media-date text-small">
@@ -1042,7 +1055,7 @@ noipv6
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         251 posts found
+         252 posts found
       </p>
     </div>
   </div>
@@ -1062,6 +1075,21 @@ noipv6
 
 <script src="https://guangchuangyu.github.io/cn/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
 
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
 
 
 

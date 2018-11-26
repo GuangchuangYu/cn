@@ -1,79 +1,98 @@
-
-
-  
-    
-  
-
-
-  
-
-
-
-
-  
-
-
-  
-
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
     
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.31.1 with theme Tranquilpeak 0.4.3-BETA">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.32 with theme Tranquilpeak 0.4.3-SNAPSHOT">
+<meta name="author" content="Guangchuang Yu">
+<meta name="keywords" content="">
+<meta name="description" content="MEE在18号出版了今年（第8卷）第1期，ggtree正好在这一期出版，一经出版就有几条推在传播, 我也是在推特上看到，才发现，哦原来我的文章出版了。然后我又发现2017年新鲜出炉有了一篇PNAS的引用。
+
+我以前没接触过进化，来了现在这个实验室，发现可视化是个大问题，大家都在用AI，慢慢地抠，对于一些和进化树相关的数据，自己一点一点地在AI里面加上去。甚至于genotype table是一个框一个框地在AI里面加的。一方面画一顆树可能用掉你几天的时间，另一方面，太容易出错了，再者你花的时间并不能转化为生产力，每一次你都要这么搞！这简直就是水深火热啊！
+
+我也帮师兄写过一些代码，给定进化树上节点的序列，我比较父节点和子节点，把碱基或氨基酸替换写到newick树的node label，然后就可以用软件展示序列的替换情况。教会了师兄，他再去给他的师弟师妹们演示，说以后咱们可以这么干了，一个个觉得很牛逼，我内心想的是，愚蠢的人类啊，node label只能存一个信息，牛逼的方式应该是可以展示多个维度的信息，通过图层自由组合。这个时候我就产生了要写ggtree的想法。
+
+">
+
+
+<meta property="og:description" content="MEE在18号出版了今年（第8卷）第1期，ggtree正好在这一期出版，一经出版就有几条推在传播, 我也是在推特上看到，才发现，哦原来我的文章出版了。然后我又发现2017年新鲜出炉有了一篇PNAS的引用。
+
+我以前没接触过进化，来了现在这个实验室，发现可视化是个大问题，大家都在用AI，慢慢地抠，对于一些和进化树相关的数据，自己一点一点地在AI里面加上去。甚至于genotype table是一个框一个框地在AI里面加的。一方面画一顆树可能用掉你几天的时间，另一方面，太容易出错了，再者你花的时间并不能转化为生产力，每一次你都要这么搞！这简直就是水深火热啊！
+
+我也帮师兄写过一些代码，给定进化树上节点的序列，我比较父节点和子节点，把碱基或氨基酸替换写到newick树的node label，然后就可以用软件展示序列的替换情况。教会了师兄，他再去给他的师弟师妹们演示，说以后咱们可以这么干了，一个个觉得很牛逼，我内心想的是，愚蠢的人类啊，node label只能存一个信息，牛逼的方式应该是可以展示多个维度的信息，通过图层自由组合。这个时候我就产生了要写ggtree的想法。
+
+">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ggtree发表">
+<meta name="twitter:title" content="ggtree发表">
+<meta property="og:url" content="https://guangchuangyu.github.io/cn/2017/01/ggtree%E5%8F%91%E8%A1%A8/">
+<meta property="twitter:url" content="https://guangchuangyu.github.io/cn/2017/01/ggtree%E5%8F%91%E8%A1%A8/">
+<meta property="og:site_name" content="Guangchuang Yu">
+<meta property="og:description" content="MEE在18号出版了今年（第8卷）第1期，ggtree正好在这一期出版，一经出版就有几条推在传播, 我也是在推特上看到，才发现，哦原来我的文章出版了。然后我又发现2017年新鲜出炉有了一篇PNAS的引用。
+
+我以前没接触过进化，来了现在这个实验室，发现可视化是个大问题，大家都在用AI，慢慢地抠，对于一些和进化树相关的数据，自己一点一点地在AI里面加上去。甚至于genotype table是一个框一个框地在AI里面加的。一方面画一顆树可能用掉你几天的时间，另一方面，太容易出错了，再者你花的时间并不能转化为生产力，每一次你都要这么搞！这简直就是水深火热啊！
+
+我也帮师兄写过一些代码，给定进化树上节点的序列，我比较父节点和子节点，把碱基或氨基酸替换写到newick树的node label，然后就可以用软件展示序列的替换情况。教会了师兄，他再去给他的师弟师妹们演示，说以后咱们可以这么干了，一个个觉得很牛逼，我内心想的是，愚蠢的人类啊，node label只能存一个信息，牛逼的方式应该是可以展示多个维度的信息，通过图层自由组合。这个时候我就产生了要写ggtree的想法。
+
+">
+<meta name="twitter:description" content="MEE在18号出版了今年（第8卷）第1期，ggtree正好在这一期出版，一经出版就有几条推在传播, 我也是在推特上看到，才发现，哦原来我的文章出版了。然后我又发现2017年新鲜出炉有了一篇PNAS的引用。
+
+我以前没接触过进化，来了现在这个实验室，发现可视化是个大问题，大家都在用AI，慢慢地抠，对于一些和进化树相关的数据，自己一点一点地在AI里面加上去。甚至于genotype table是一个框一个框地在AI里面加的。一方面画一顆树可能用掉你几天的时间，另一方面，太容易出错了，再者你花的时间并不能转化为生产力，每一次你都要这么搞！这简直就是水深火热啊！
+
+我也帮师兄写过一些代码，给定进化树上节点的序列，我比较父节点和子节点，把碱基或氨基酸替换写到newick树的node label，然后就可以用软件展示序列的替换情况。教会了师兄，他再去给他的师弟师妹们演示，说以后咱们可以这么干了，一个个觉得很牛逼，我内心想的是，愚蠢的人类啊，node label只能存一个信息，牛逼的方式应该是可以展示多个维度的信息，通过图层自由组合。这个时候我就产生了要写ggtree的想法。
+
+">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2017-01-22T15:10:00">
+  
+  
+    <meta property="article:modified_time" content="2017-01-22T15:10:00">
+  
+  
+  
+    
+      <meta property="article:section" content="R">
+    
+  
+  
+    
+      <meta property="article:tag" content="ggtree">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+  <meta name="twitter:site" content="@guangchuangyu">
+
+
+  <meta name="twitter:creator" content="@guangchuangyu">
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
+
+
     <title>ggtree发表</title>
-    <meta name="author" content="Guangchuang Yu">
-    <meta name="keywords" content="">
 
     <link rel="icon" href="https://guangchuangyu.github.io/cn/favicon.png">
     
 
     
-    <meta name="description" content="MEE在18号出版了今年（第8卷）第1期，ggtree正好在这一期出版，一经出版就有几条推在传播, 我也是在推特上看到，才发现，哦原来我的文章出版了。然后我又发现2017年新鲜出炉有了一篇PNAS的引用。
 
-我以前没接触过进化，来了现在这个实验室，发现可视化是个大问题，大家都在用AI，慢慢地抠，对于一些和进化树相关的数据，自己一点一点地在AI里面加上去。甚至于genotype table是一个框一个框地在AI里面加的。一方面画一顆树可能用掉你几天的时间，另一方面，太容易出错了，再者你花的时间并不能转化为生产力，每一次你都要这么搞！这简直就是水深火热啊！
-
-我也帮师兄写过一些代码，给定进化树上节点的序列，我比较父节点和子节点，把碱基或氨基酸替换写到newick树的node label，然后就可以用软件展示序列的替换情况。教会了师兄，他再去给他的师弟师妹们演示，说以后咱们可以这么干了，一个个觉得很牛逼，我内心想的是，愚蠢的人类啊，node label只能存一个信息，牛逼的方式应该是可以展示多个维度的信息，通过图层自由组合。这个时候我就产生了要写ggtree的想法。
-
-">
-    <meta property="og:description" content="MEE在18号出版了今年（第8卷）第1期，ggtree正好在这一期出版，一经出版就有几条推在传播, 我也是在推特上看到，才发现，哦原来我的文章出版了。然后我又发现2017年新鲜出炉有了一篇PNAS的引用。
-
-我以前没接触过进化，来了现在这个实验室，发现可视化是个大问题，大家都在用AI，慢慢地抠，对于一些和进化树相关的数据，自己一点一点地在AI里面加上去。甚至于genotype table是一个框一个框地在AI里面加的。一方面画一顆树可能用掉你几天的时间，另一方面，太容易出错了，再者你花的时间并不能转化为生产力，每一次你都要这么搞！这简直就是水深火热啊！
-
-我也帮师兄写过一些代码，给定进化树上节点的序列，我比较父节点和子节点，把碱基或氨基酸替换写到newick树的node label，然后就可以用软件展示序列的替换情况。教会了师兄，他再去给他的师弟师妹们演示，说以后咱们可以这么干了，一个个觉得很牛逼，我内心想的是，愚蠢的人类啊，node label只能存一个信息，牛逼的方式应该是可以展示多个维度的信息，通过图层自由组合。这个时候我就产生了要写ggtree的想法。
-
-">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="ggtree发表">
-    <meta property="og:url" content="/2017/01/ggtree%E5%8F%91%E8%A1%A8/">
-    <meta property="og:site_name" content="Guangchuang Yu">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Guangchuang Yu">
-    <meta name="twitter:description" content="MEE在18号出版了今年（第8卷）第1期，ggtree正好在这一期出版，一经出版就有几条推在传播, 我也是在推特上看到，才发现，哦原来我的文章出版了。然后我又发现2017年新鲜出炉有了一篇PNAS的引用。
-
-我以前没接触过进化，来了现在这个实验室，发现可视化是个大问题，大家都在用AI，慢慢地抠，对于一些和进化树相关的数据，自己一点一点地在AI里面加上去。甚至于genotype table是一个框一个框地在AI里面加的。一方面画一顆树可能用掉你几天的时间，另一方面，太容易出错了，再者你花的时间并不能转化为生产力，每一次你都要这么搞！这简直就是水深火热啊！
-
-我也帮师兄写过一些代码，给定进化树上节点的序列，我比较父节点和子节点，把碱基或氨基酸替换写到newick树的node label，然后就可以用软件展示序列的替换情况。教会了师兄，他再去给他的师弟师妹们演示，说以后咱们可以这么干了，一个个觉得很牛逼，我内心想的是，愚蠢的人类啊，node label只能存一个信息，牛逼的方式应该是可以展示多个维度的信息，通过图层自由组合。这个时候我就产生了要写ggtree的想法。
-
-">
-    
-      <meta name="twitter:creator" content="@guangchuangyu">
-    
-    
-
-    
-    
-
-    
-      <meta property="og:image" content="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
-    
-
-    
-    
-    
-
-    
+    <link rel="canonical" href="https://guangchuangyu.github.io/cn/2017/01/ggtree%E5%8F%91%E8%A1%A8/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -81,7 +100,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
     
     
 
@@ -116,7 +135,7 @@ ga('send', 'pageview');
     
     
       
-        <img class="header-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
+        <img class="header-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
       
     
     </a>
@@ -128,7 +147,7 @@ ga('send', 'pageview');
     
       <div class="sidebar-profile">
         <a href="https://guangchuangyu.github.io/cn/#about">
-          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
         </a>
         <h4 class="sidebar-profile-name">Guangchuang Yu</h4>
         
@@ -301,8 +320,8 @@ ga('send', 'pageview');
                 
               
             
-            
-  <div class="post-actions-wrap">
+            <div class="post-actions-wrap">
+  
       <nav >
         <ul class="post-actions post-action-nav">
           
@@ -349,8 +368,8 @@ ga('send', 'pageview');
         </a>
       </li>
     </ul>
-  </div>
-
+  
+</div>
 
             
               
@@ -369,8 +388,8 @@ ga('send', 'pageview');
 
       </div>
       <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
-        
-  <div class="post-actions-wrap">
+        <div class="post-actions-wrap">
+  
       <nav >
         <ul class="post-actions post-action-nav">
           
@@ -417,8 +436,8 @@ ga('send', 'pageview');
         </a>
       </li>
     </ul>
-  </div>
-
+  
+</div>
 
       </div>
       <div id="share-options-bar" class="share-options-bar" data-behavior="4">
@@ -436,7 +455,7 @@ ga('send', 'pageview');
       <i class="fa fa-remove"></i>
     </div>
     
-      <img id="about-card-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
     
     <h4 id="about-card-name">Guangchuang Yu</h4>
     
@@ -573,7 +592,7 @@ noipv6
             
             <div class="media-body">
               <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/how-to-define-downstream-range/">
-                <h3 class="media-heading">如何定义基因下游的长度</h3>
+                <h3 class="media-heading">如何定义基因下游的区间</h3>
               </a>
               <span class="media-meta">
                 <span class="media-date text-small">
@@ -762,7 +781,7 @@ noipv6
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         251 posts found
+         252 posts found
       </p>
     </div>
   </div>
@@ -783,6 +802,20 @@ noipv6
 <script src="https://guangchuangyu.github.io/cn/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
 
 
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
 
 
   
@@ -810,6 +843,7 @@ noipv6
       </script>
     
   
+
 
 
 

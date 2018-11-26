@@ -1088,6 +1088,11 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2009/03/estimate-function-value-by-taylor-theorem/</loc>
+    <lastmod>2009-03-17T05:23:16+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2008/12/opinion-in-programming/</loc>
     <lastmod>2008-12-14T09:18:00+08:00</lastmod>
   </url>
@@ -1655,6 +1660,12 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/figlet/</loc>
     <lastmod>2016-12-13T00:53:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/function/</loc>
+    <lastmod>2009-03-17T05:23:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2453,6 +2464,12 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/tair/</loc>
     <lastmod>2018-07-10T15:53:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/taylor/</loc>
+    <lastmod>2009-03-17T05:23:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   

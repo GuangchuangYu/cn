@@ -1,136 +1,174 @@
-
-
-  
-    
-  
-
-
-  
-
-
-
-
-  
-
-
-  
-
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
     
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.31.1 with theme Tranquilpeak 0.4.3-BETA">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.32 with theme Tranquilpeak 0.4.3-SNAPSHOT">
+<meta name="author" content="Guangchuang Yu">
+<meta name="keywords" content="">
+<meta name="description" content="github上的问题，问了两个问题，这是其中第二个：
+
+
+Meanwhile, when I fed the ENTREZID to enrichKEGG, it show me two unreasonable results:
+
+kegg_enrich = enrichKEGG(
+    gene = new_ids$ENTREZID,
+    organism = &#39;hsa&#39;,
+    keyType = &#39;ncbi-geneid&#39;,
+    pvalueCutoff = 0.05,
+    #pAdjustMethod = &#39;BH&#39;,
+    #qvalueCutoff = 0.2,
+    use_internal_data = FALSE
+)
+
+
+head(kegg_enrich)
+              ID                           Description GeneRatio  BgRatio       pvalue   p.adjust     qvalue
+hsa04380 hsa04380            Osteoclast differentiation    14/281 128/7299 0.0003817040 0.04767338 0.04508266
+hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.0003875885 0.04767338 0.04508266
+
+
+I noted that only 281 genes are remained(there are 700&#43; genes in my list). In case that there is something wrong wtihin my gene list, I also tried my list with DAVID. It gave me reasonable results. So this is my second question, why enrichKEGG cannot recognize my geneids?
+
+
+">
+
+
+<meta property="og:description" content="github上的问题，问了两个问题，这是其中第二个：
+
+
+Meanwhile, when I fed the ENTREZID to enrichKEGG, it show me two unreasonable results:
+
+kegg_enrich = enrichKEGG(
+    gene = new_ids$ENTREZID,
+    organism = &#39;hsa&#39;,
+    keyType = &#39;ncbi-geneid&#39;,
+    pvalueCutoff = 0.05,
+    #pAdjustMethod = &#39;BH&#39;,
+    #qvalueCutoff = 0.2,
+    use_internal_data = FALSE
+)
+
+
+head(kegg_enrich)
+              ID                           Description GeneRatio  BgRatio       pvalue   p.adjust     qvalue
+hsa04380 hsa04380            Osteoclast differentiation    14/281 128/7299 0.0003817040 0.04767338 0.04508266
+hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.0003875885 0.04767338 0.04508266
+
+
+I noted that only 281 genes are remained(there are 700&#43; genes in my list). In case that there is something wrong wtihin my gene list, I also tried my list with DAVID. It gave me reasonable results. So this is my second question, why enrichKEGG cannot recognize my geneids?
+
+
+">
+<meta property="og:type" content="article">
+<meta property="og:title" content="听说你的KEGG分析有大量的基因没注释">
+<meta name="twitter:title" content="听说你的KEGG分析有大量的基因没注释">
+<meta property="og:url" content="https://guangchuangyu.github.io/cn/2017/11/kegg-gene-annotation/">
+<meta property="twitter:url" content="https://guangchuangyu.github.io/cn/2017/11/kegg-gene-annotation/">
+<meta property="og:site_name" content="Guangchuang Yu">
+<meta property="og:description" content="github上的问题，问了两个问题，这是其中第二个：
+
+
+Meanwhile, when I fed the ENTREZID to enrichKEGG, it show me two unreasonable results:
+
+kegg_enrich = enrichKEGG(
+    gene = new_ids$ENTREZID,
+    organism = &#39;hsa&#39;,
+    keyType = &#39;ncbi-geneid&#39;,
+    pvalueCutoff = 0.05,
+    #pAdjustMethod = &#39;BH&#39;,
+    #qvalueCutoff = 0.2,
+    use_internal_data = FALSE
+)
+
+
+head(kegg_enrich)
+              ID                           Description GeneRatio  BgRatio       pvalue   p.adjust     qvalue
+hsa04380 hsa04380            Osteoclast differentiation    14/281 128/7299 0.0003817040 0.04767338 0.04508266
+hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.0003875885 0.04767338 0.04508266
+
+
+I noted that only 281 genes are remained(there are 700&#43; genes in my list). In case that there is something wrong wtihin my gene list, I also tried my list with DAVID. It gave me reasonable results. So this is my second question, why enrichKEGG cannot recognize my geneids?
+
+
+">
+<meta name="twitter:description" content="github上的问题，问了两个问题，这是其中第二个：
+
+
+Meanwhile, when I fed the ENTREZID to enrichKEGG, it show me two unreasonable results:
+
+kegg_enrich = enrichKEGG(
+    gene = new_ids$ENTREZID,
+    organism = &#39;hsa&#39;,
+    keyType = &#39;ncbi-geneid&#39;,
+    pvalueCutoff = 0.05,
+    #pAdjustMethod = &#39;BH&#39;,
+    #qvalueCutoff = 0.2,
+    use_internal_data = FALSE
+)
+
+
+head(kegg_enrich)
+              ID                           Description GeneRatio  BgRatio       pvalue   p.adjust     qvalue
+hsa04380 hsa04380            Osteoclast differentiation    14/281 128/7299 0.0003817040 0.04767338 0.04508266
+hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.0003875885 0.04767338 0.04508266
+
+
+I noted that only 281 genes are remained(there are 700&#43; genes in my list). In case that there is something wrong wtihin my gene list, I also tried my list with DAVID. It gave me reasonable results. So this is my second question, why enrichKEGG cannot recognize my geneids?
+
+
+">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2017-11-07T00:21:00">
+  
+  
+    <meta property="article:modified_time" content="2017-11-07T00:21:00">
+  
+  
+  
+    
+      <meta property="article:section" content="R">
+    
+  
+  
+    
+      <meta property="article:tag" content="clusterProfiler">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+  <meta name="twitter:site" content="@guangchuangyu">
+
+
+  <meta name="twitter:creator" content="@guangchuangyu">
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
+
+
     <title>听说你的KEGG分析有大量的基因没注释</title>
-    <meta name="author" content="Guangchuang Yu">
-    <meta name="keywords" content="">
 
     <link rel="icon" href="https://guangchuangyu.github.io/cn/favicon.png">
     
 
     
-    <meta name="description" content="github上的问题，问了两个问题，这是其中第二个：
 
-
-Meanwhile, when I fed the ENTREZID to enrichKEGG, it show me two unreasonable results:
-
-kegg_enrich = enrichKEGG(
-	gene = new_ids$ENTREZID,
-	organism = &#39;hsa&#39;,
-	keyType = &#39;ncbi-geneid&#39;,
-	pvalueCutoff = 0.05,
-	#pAdjustMethod = &#39;BH&#39;,
-	#qvalueCutoff = 0.2,
-	use_internal_data = FALSE
-)
-
-
-head(kegg_enrich)
-              ID                           Description GeneRatio  BgRatio       pvalue   p.adjust     qvalue
-hsa04380 hsa04380            Osteoclast differentiation    14/281 128/7299 0.0003817040 0.04767338 0.04508266
-hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.0003875885 0.04767338 0.04508266
-
-
-I noted that only 281 genes are remained(there are 700&#43; genes in my list). In case that there is something wrong wtihin my gene list, I also tried my list with DAVID. It gave me reasonable results. So this is my second question, why enrichKEGG cannot recognize my geneids?
-
-
-">
-    <meta property="og:description" content="github上的问题，问了两个问题，这是其中第二个：
-
-
-Meanwhile, when I fed the ENTREZID to enrichKEGG, it show me two unreasonable results:
-
-kegg_enrich = enrichKEGG(
-	gene = new_ids$ENTREZID,
-	organism = &#39;hsa&#39;,
-	keyType = &#39;ncbi-geneid&#39;,
-	pvalueCutoff = 0.05,
-	#pAdjustMethod = &#39;BH&#39;,
-	#qvalueCutoff = 0.2,
-	use_internal_data = FALSE
-)
-
-
-head(kegg_enrich)
-              ID                           Description GeneRatio  BgRatio       pvalue   p.adjust     qvalue
-hsa04380 hsa04380            Osteoclast differentiation    14/281 128/7299 0.0003817040 0.04767338 0.04508266
-hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.0003875885 0.04767338 0.04508266
-
-
-I noted that only 281 genes are remained(there are 700&#43; genes in my list). In case that there is something wrong wtihin my gene list, I also tried my list with DAVID. It gave me reasonable results. So this is my second question, why enrichKEGG cannot recognize my geneids?
-
-
-">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="听说你的KEGG分析有大量的基因没注释">
-    <meta property="og:url" content="/2017/11/kegg-gene-annotation/">
-    <meta property="og:site_name" content="Guangchuang Yu">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Guangchuang Yu">
-    <meta name="twitter:description" content="github上的问题，问了两个问题，这是其中第二个：
-
-
-Meanwhile, when I fed the ENTREZID to enrichKEGG, it show me two unreasonable results:
-
-kegg_enrich = enrichKEGG(
-	gene = new_ids$ENTREZID,
-	organism = &#39;hsa&#39;,
-	keyType = &#39;ncbi-geneid&#39;,
-	pvalueCutoff = 0.05,
-	#pAdjustMethod = &#39;BH&#39;,
-	#qvalueCutoff = 0.2,
-	use_internal_data = FALSE
-)
-
-
-head(kegg_enrich)
-              ID                           Description GeneRatio  BgRatio       pvalue   p.adjust     qvalue
-hsa04380 hsa04380            Osteoclast differentiation    14/281 128/7299 0.0003817040 0.04767338 0.04508266
-hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.0003875885 0.04767338 0.04508266
-
-
-I noted that only 281 genes are remained(there are 700&#43; genes in my list). In case that there is something wrong wtihin my gene list, I also tried my list with DAVID. It gave me reasonable results. So this is my second question, why enrichKEGG cannot recognize my geneids?
-
-
-">
-    
-      <meta name="twitter:creator" content="@guangchuangyu">
-    
-    
-
-    
-    
-
-    
-      <meta property="og:image" content="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
-    
-
-    
-    
-    
-
-    
+    <link rel="canonical" href="https://guangchuangyu.github.io/cn/2017/11/kegg-gene-annotation/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -138,7 +176,7 @@ I noted that only 281 genes are remained(there are 700&#43; genes in my list). I
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
     
     
 
@@ -173,7 +211,7 @@ ga('send', 'pageview');
     
     
       
-        <img class="header-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
+        <img class="header-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
       
     
     </a>
@@ -185,7 +223,7 @@ ga('send', 'pageview');
     
       <div class="sidebar-profile">
         <a href="https://guangchuangyu.github.io/cn/#about">
-          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
         </a>
         <h4 class="sidebar-profile-name">Guangchuang Yu</h4>
         
@@ -323,13 +361,13 @@ ga('send', 'pageview');
 <p>Meanwhile, when I fed the ENTREZID to enrichKEGG, it show me two unreasonable results:</p>
 
 <pre><code>kegg_enrich = enrichKEGG(
-	gene = new_ids$ENTREZID,
-	organism = 'hsa',
-	keyType = 'ncbi-geneid',
-	pvalueCutoff = 0.05,
-	#pAdjustMethod = 'BH',
-	#qvalueCutoff = 0.2,
-	use_internal_data = FALSE
+    gene = new_ids$ENTREZID,
+    organism = 'hsa',
+    keyType = 'ncbi-geneid',
+    pvalueCutoff = 0.05,
+    #pAdjustMethod = 'BH',
+    #qvalueCutoff = 0.2,
+    use_internal_data = FALSE
 )
 </code></pre>
 
@@ -421,8 +459,8 @@ In bitr_kegg(geneID = new_ids$ENTREZID, fromType = &quot;ncbi-geneid&quot;,  :
                 
               
             
-            
-  <div class="post-actions-wrap">
+            <div class="post-actions-wrap">
+  
       <nav >
         <ul class="post-actions post-action-nav">
           
@@ -469,8 +507,8 @@ In bitr_kegg(geneID = new_ids$ENTREZID, fromType = &quot;ncbi-geneid&quot;,  :
         </a>
       </li>
     </ul>
-  </div>
-
+  
+</div>
 
             
               
@@ -489,8 +527,8 @@ In bitr_kegg(geneID = new_ids$ENTREZID, fromType = &quot;ncbi-geneid&quot;,  :
 
       </div>
       <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
-        
-  <div class="post-actions-wrap">
+        <div class="post-actions-wrap">
+  
       <nav >
         <ul class="post-actions post-action-nav">
           
@@ -537,8 +575,8 @@ In bitr_kegg(geneID = new_ids$ENTREZID, fromType = &quot;ncbi-geneid&quot;,  :
         </a>
       </li>
     </ul>
-  </div>
-
+  
+</div>
 
       </div>
       <div id="share-options-bar" class="share-options-bar" data-behavior="4">
@@ -556,7 +594,7 @@ In bitr_kegg(geneID = new_ids$ENTREZID, fromType = &quot;ncbi-geneid&quot;,  :
       <i class="fa fa-remove"></i>
     </div>
     
-      <img id="about-card-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
     
     <h4 id="about-card-name">Guangchuang Yu</h4>
     
@@ -693,7 +731,7 @@ noipv6
             
             <div class="media-body">
               <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/how-to-define-downstream-range/">
-                <h3 class="media-heading">如何定义基因下游的长度</h3>
+                <h3 class="media-heading">如何定义基因下游的区间</h3>
               </a>
               <span class="media-meta">
                 <span class="media-date text-small">
@@ -882,7 +920,7 @@ noipv6
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         251 posts found
+         252 posts found
       </p>
     </div>
   </div>
@@ -903,6 +941,20 @@ noipv6
 <script src="https://guangchuangyu.github.io/cn/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
 
 
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
 
 
   
@@ -930,6 +982,7 @@ noipv6
       </script>
     
   
+
 
 
 

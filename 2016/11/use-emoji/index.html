@@ -1,67 +1,100 @@
-
-
-  
-    
-  
-
-
-  
-
-
-
-
-  
-
-
-  
-
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
     
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.31.1 with theme Tranquilpeak 0.4.3-BETA">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.32 with theme Tranquilpeak 0.4.3-SNAPSHOT">
+<meta name="author" content="Guangchuang Yu">
+<meta name="keywords" content="">
+<meta name="description" content="#rstats code for the PhD/cute animals gestation #ggplot2 #gganimate #emojifont plot https://t.co/qWM0bCHoHJ 🐭🐶🐱🐺🐯🐷🐏🐻👶🐳🐘📕 https://t.co/a4GYl191a8&mdash; Maëlle Salmon 🐟 (@ma_salmon) November 19, 2016
+
+
+
+无缘无故收到好几条消息，原来是用emoji画图。
+
+">
+
+
+<meta property="og:description" content="#rstats code for the PhD/cute animals gestation #ggplot2 #gganimate #emojifont plot https://t.co/qWM0bCHoHJ 🐭🐶🐱🐺🐯🐷🐏🐻👶🐳🐘📕 https://t.co/a4GYl191a8&mdash; Maëlle Salmon 🐟 (@ma_salmon) November 19, 2016
+
+
+
+无缘无故收到好几条消息，原来是用emoji画图。
+
+">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用emoji画图">
+<meta name="twitter:title" content="使用emoji画图">
+<meta property="og:url" content="https://guangchuangyu.github.io/cn/2016/11/use-emoji/">
+<meta property="twitter:url" content="https://guangchuangyu.github.io/cn/2016/11/use-emoji/">
+<meta property="og:site_name" content="Guangchuang Yu">
+<meta property="og:description" content="#rstats code for the PhD/cute animals gestation #ggplot2 #gganimate #emojifont plot https://t.co/qWM0bCHoHJ 🐭🐶🐱🐺🐯🐷🐏🐻👶🐳🐘📕 https://t.co/a4GYl191a8&mdash; Maëlle Salmon 🐟 (@ma_salmon) November 19, 2016
+
+
+
+无缘无故收到好几条消息，原来是用emoji画图。
+
+">
+<meta name="twitter:description" content="#rstats code for the PhD/cute animals gestation #ggplot2 #gganimate #emojifont plot https://t.co/qWM0bCHoHJ 🐭🐶🐱🐺🐯🐷🐏🐻👶🐳🐘📕 https://t.co/a4GYl191a8&mdash; Maëlle Salmon 🐟 (@ma_salmon) November 19, 2016
+
+
+
+无缘无故收到好几条消息，原来是用emoji画图。
+
+">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2016-11-25T00:53:00">
+  
+  
+    <meta property="article:modified_time" content="2016-11-25T00:53:00">
+  
+  
+  
+    
+      <meta property="article:section" content="Visualization">
+    
+      <meta property="article:section" content="R">
+    
+  
+  
+    
+      <meta property="article:tag" content="emojifont">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+  <meta name="twitter:site" content="@guangchuangyu">
+
+
+  <meta name="twitter:creator" content="@guangchuangyu">
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
+
+
     <title>使用emoji画图</title>
-    <meta name="author" content="Guangchuang Yu">
-    <meta name="keywords" content="">
 
     <link rel="icon" href="https://guangchuangyu.github.io/cn/favicon.png">
     
 
     
-    <meta name="description" content="无缘无故收到好几条消息，原来是用emoji画图。
 
-">
-    <meta property="og:description" content="无缘无故收到好几条消息，原来是用emoji画图。
-
-">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="使用emoji画图">
-    <meta property="og:url" content="/2016/11/use-emoji/">
-    <meta property="og:site_name" content="Guangchuang Yu">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Guangchuang Yu">
-    <meta name="twitter:description" content="无缘无故收到好几条消息，原来是用emoji画图。
-
-">
-    
-      <meta name="twitter:creator" content="@guangchuangyu">
-    
-    
-
-    
-    
-
-    
-      <meta property="og:image" content="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
-    
-
-    
-    
-    
-
-    
+    <link rel="canonical" href="https://guangchuangyu.github.io/cn/2016/11/use-emoji/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -69,7 +102,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
     
     
 
@@ -104,7 +137,7 @@ ga('send', 'pageview');
     
     
       
-        <img class="header-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
+        <img class="header-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
       
     
     </a>
@@ -116,7 +149,7 @@ ga('send', 'pageview');
     
       <div class="sidebar-profile">
         <a href="https://guangchuangyu.github.io/cn/#about">
-          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
         </a>
         <h4 class="sidebar-profile-name">Guangchuang Yu</h4>
         
@@ -250,14 +283,22 @@ ga('send', 'pageview');
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>无缘无故收到好几条消息，原来是用emoji画图。</p>
+              <blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> code for the PhD/cute animals gestation <a href="https://twitter.com/hashtag/ggplot2?src=hash&amp;ref_src=twsrc%5Etfw">#ggplot2</a> <a href="https://twitter.com/hashtag/gganimate?src=hash&amp;ref_src=twsrc%5Etfw">#gganimate</a> <a href="https://twitter.com/hashtag/emojifont?src=hash&amp;ref_src=twsrc%5Etfw">#emojifont</a> plot <a href="https://t.co/qWM0bCHoHJ">https://t.co/qWM0bCHoHJ</a> 🐭🐶🐱🐺🐯🐷🐏🐻👶🐳🐘📕 <a href="https://t.co/a4GYl191a8">https://t.co/a4GYl191a8</a></p>&mdash; Maëlle Salmon 🐟 (@ma_salmon) <a href="https://twitter.com/ma_salmon/status/800007428096094209?ref_src=twsrc%5Etfw">November 19, 2016</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>无缘无故收到好几条消息，原来是用emoji画图。</p>
 
 <p></p>
 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/pboesu?ref_src=twsrc%5Etfw">@pboesu</a> btw do you know the <a href="https://twitter.com/guangchuangyu?ref_src=twsrc%5Etfw">@guangchuangyu</a> emojifont pkg? I&#39;ve used it more than <a href="https://twitter.com/millerdl?ref_src=twsrc%5Etfw">@millerdl</a> emoGG <a href="https://t.co/p27fwEmDSD">https://t.co/p27fwEmDSD</a> but I like both <a href="https://t.co/uV49WjOSp3">https://t.co/uV49WjOSp3</a></p>&mdash; Maëlle Salmon 🐟 (@ma_salmon) <a href="https://twitter.com/ma_salmon/status/800009044123586560?ref_src=twsrc%5Etfw">November 19, 2016</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 <p>做为emojifont包的作者，我表示很高兴看到自己的包给大家带来乐趣，在回复中@milerdl说emoGG是他用了两个晚上写的，emojifont刚好也是我用了两个晚上写的，一个晚上支持了emoji字体，另一个晚上加入了fontawesome字体。</p>
 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Hi <a href="https://twitter.com/guangchuangyu?ref_src=twsrc%5Etfw">@guangchuangyu</a> excellent <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://twitter.com/hashtag/emojifont?src=hash&amp;ref_src=twsrc%5Etfw">#emojifont</a> implementation! <a href="https://t.co/lTIWDQ1zq0">https://t.co/lTIWDQ1zq0</a> very cool! <a href="https://t.co/sCALpuWW28">pic.twitter.com/sCALpuWW28</a></p>&mdash; Jo-fai (Joe) Chow (@matlabulous) <a href="https://twitter.com/matlabulous/status/677205176663588865?ref_src=twsrc%5Etfw">December 16, 2015</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 <p>在写这个包之前，我早就有用emoji在R画图中，写这个包也正是为了回应emoGG，因为我觉得他的实现方式并不理想，而我的更为灵活。</p>
@@ -338,8 +379,8 @@ p+ ggtitle('Y叔的书影音') + theme(plot.title=element_text(family='STKaiti')
                 
               
             
-            
-  <div class="post-actions-wrap">
+            <div class="post-actions-wrap">
+  
       <nav >
         <ul class="post-actions post-action-nav">
           
@@ -386,8 +427,8 @@ p+ ggtitle('Y叔的书影音') + theme(plot.title=element_text(family='STKaiti')
         </a>
       </li>
     </ul>
-  </div>
-
+  
+</div>
 
             
               
@@ -406,8 +447,8 @@ p+ ggtitle('Y叔的书影音') + theme(plot.title=element_text(family='STKaiti')
 
       </div>
       <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
-        
-  <div class="post-actions-wrap">
+        <div class="post-actions-wrap">
+  
       <nav >
         <ul class="post-actions post-action-nav">
           
@@ -454,8 +495,8 @@ p+ ggtitle('Y叔的书影音') + theme(plot.title=element_text(family='STKaiti')
         </a>
       </li>
     </ul>
-  </div>
-
+  
+</div>
 
       </div>
       <div id="share-options-bar" class="share-options-bar" data-behavior="4">
@@ -473,7 +514,7 @@ p+ ggtitle('Y叔的书影音') + theme(plot.title=element_text(family='STKaiti')
       <i class="fa fa-remove"></i>
     </div>
     
-      <img id="about-card-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
     
     <h4 id="about-card-name">Guangchuang Yu</h4>
     
@@ -610,7 +651,7 @@ noipv6
             
             <div class="media-body">
               <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/how-to-define-downstream-range/">
-                <h3 class="media-heading">如何定义基因下游的长度</h3>
+                <h3 class="media-heading">如何定义基因下游的区间</h3>
               </a>
               <span class="media-meta">
                 <span class="media-date text-small">
@@ -799,7 +840,7 @@ noipv6
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         251 posts found
+         252 posts found
       </p>
     </div>
   </div>
@@ -820,6 +861,20 @@ noipv6
 <script src="https://guangchuangyu.github.io/cn/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
 
 
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
 
 
   
@@ -847,6 +902,7 @@ noipv6
       </script>
     
   
+
 
 
 
