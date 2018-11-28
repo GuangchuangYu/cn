@@ -21,6 +21,8 @@
 &lt;p&gt;抛出一个话题，R是不是有个大坑，在自动化脚本中(或者在循环中)，某些脚本执行会不出结果，特别是作图脚本。ps:分步执行可以出图&lt;/p&gt;
 &lt;/blockquote&gt;
 
+&lt;p&gt;其实看我公众号的各位读者们，你们不应该有这个问题，如果有，那么证明我的文章没有好好看！&lt;/p&gt;
+
 &lt;p&gt;有两篇很重要的文章《&lt;a href=&#34;http://mp.weixin.qq.com/s/BPY4dPFrrNrDKccMvax07w&#34;&gt;扪心自问，meme几何？&lt;/a&gt;》和《&lt;a href=&#34;http://mp.weixin.qq.com/s/Uhx3l3lKQS88OJ4SHntkNg&#34;&gt;树变图，图变树？&lt;/a&gt;》，特别是第二篇，和这个问题息息相关。&lt;/p&gt;
 
 &lt;p&gt;首先假设我们有一个图：&lt;/p&gt;
