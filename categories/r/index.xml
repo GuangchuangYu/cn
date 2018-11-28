@@ -6,10 +6,39 @@
     <description>Recent content in R on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 25 Nov 2018 01:23:16 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 28 Nov 2018 11:08:00 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>R的交互与脚本模式</title>
+      <link>https://guangchuangyu.github.io/cn/2018/11/r-interactive/</link>
+      <pubDate>Wed, 28 Nov 2018 11:08:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2018/11/r-interactive/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;抛出一个话题，R是不是有个大坑，在自动化脚本中(或者在循环中)，某些脚本执行会不出结果，特别是作图脚本。ps:分步执行可以出图&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;有两篇很重要的文章《&lt;a href=&#34;http://mp.weixin.qq.com/s/BPY4dPFrrNrDKccMvax07w&#34;&gt;扪心自问，meme几何？&lt;/a&gt;》和《&lt;a href=&#34;http://mp.weixin.qq.com/s/Uhx3l3lKQS88OJ4SHntkNg&#34;&gt;树变图，图变树？&lt;/a&gt;》，特别是第二篇，和这个问题息息相关。&lt;/p&gt;
+
+&lt;p&gt;首先假设我们有一个图：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;require(ggplot2)
+p = qplot(1:10)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;为什么在终端打p可以出图&#34;&gt;为什么在终端打p可以出图？&lt;/h3&gt;
+
+&lt;p&gt;因为在R里，所有都是&lt;code&gt;对象&lt;/code&gt;，而在终端里你输入一个对象回车，R会去找相应的&lt;code&gt;方法&lt;/code&gt;去打印出来，如果是&lt;code&gt;S3&lt;/code&gt;对象，会去寻找&lt;code&gt;print&lt;/code&gt;方法，而如果是&lt;code&gt;S4&lt;/code&gt;会去找&lt;code&gt;show&lt;/code&gt;方法。&lt;/p&gt;
+
+&lt;p&gt;所以你在终端里打&lt;code&gt;p&lt;/code&gt;，其实等同于你打&lt;code&gt;print(p)&lt;/code&gt;，它其实调用了&lt;code&gt;ggplot2:::print.ggplot&lt;/code&gt;，&lt;/p&gt;
+
+&lt;p&gt;你打&lt;code&gt;plot(p)&lt;/code&gt;也可以，如果你看过代码的话，画图这个动作是定义在&lt;code&gt;plot.ggplot&lt;/code&gt;方法里的，而&lt;code&gt;print.ggplot &amp;lt;- plot.ggplot&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>DOSE包引用过百</title>
@@ -2396,7 +2425,7 @@ print(p)
 
 &lt;p&gt;《第二章：数学中的数系》讲到了当年的伟大发现，一个正方形的对角线与它的边是不可公度的。而由不可公度线段，引入的无理数概念，引入负数，在17世纪都是个另人不安的事情，无理数是个巨大的飞跃，&lt;/p&gt;
 
-&lt;p&gt;73页中的图10,给出了 $$\sqrt{2}$$的几何作图。&lt;/p&gt;
+&lt;p&gt;73页中的图10,给出了 $\sqrt{2}$的几何作图。&lt;/p&gt;
 
 &lt;p&gt;我用R尝试把它画出来：&lt;/p&gt;
 
@@ -2477,7 +2506,7 @@ the likelihood)&lt;/p&gt;
 
 &lt;p&gt;用R简单实现一下：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt; efv &amp;lt;- function(f, value, variable=&amp;quot;x&amp;quot;, a=0, esp=0.001) {
+&lt;pre&gt;&lt;code&gt; efv &amp;lt;- function(f, value, variable=&amp;quot;x&amp;quot;, a=0, eps=0.001) {
      #estimate function value using Taylor theorem
      assign(eval(variable), a)
      fv.old &amp;lt;- eval(f)
@@ -2487,7 +2516,7 @@ the likelihood)&lt;/p&gt;
          if (df == 0)
              break
          fv.new &amp;lt;- fv.old + eval(df)*(value-a)^k/factorial(k)
-         if (fv.new - fv.old &amp;lt; esp)
+         if (fv.new - fv.old &amp;lt; eps)
              break
          fv.old &amp;lt;- fv.new
          f &amp;lt;- df

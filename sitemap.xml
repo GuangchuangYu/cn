@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2018/11/r-interactive/</loc>
+    <lastmod>2018-11-28T11:08:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2018/11/macbook-arch-setting/</loc>
     <lastmod>2018-11-26T00:22:16+08:00</lastmod>
   </url>
@@ -1802,7 +1807,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/</loc>
-    <lastmod>2018-11-26T00:22:16+08:00</lastmod>
+    <lastmod>2018-11-28T11:08:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1863,6 +1868,12 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/integrals/</loc>
     <lastmod>2011-09-22T06:40:22+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/interactive/</loc>
+    <lastmod>2018-11-28T11:08:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2204,7 +2215,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/post/</loc>
-    <lastmod>2018-11-26T00:22:16+08:00</lastmod>
+    <lastmod>2018-11-28T11:08:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2300,7 +2311,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/r/</loc>
-    <lastmod>2018-11-25T01:23:16+08:00</lastmod>
+    <lastmod>2018-11-28T11:08:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   

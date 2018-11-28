@@ -21,7 +21,7 @@
 
 &lt;p&gt;用R简单实现一下：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt; efv &amp;lt;- function(f, value, variable=&amp;quot;x&amp;quot;, a=0, esp=0.001) {
+&lt;pre&gt;&lt;code&gt; efv &amp;lt;- function(f, value, variable=&amp;quot;x&amp;quot;, a=0, eps=0.001) {
      #estimate function value using Taylor theorem
      assign(eval(variable), a)
      fv.old &amp;lt;- eval(f)
@@ -31,7 +31,7 @@
          if (df == 0)
              break
          fv.new &amp;lt;- fv.old + eval(df)*(value-a)^k/factorial(k)
-         if (fv.new - fv.old &amp;lt; esp)
+         if (fv.new - fv.old &amp;lt; eps)
              break
          fv.old &amp;lt;- fv.new
          f &amp;lt;- df
