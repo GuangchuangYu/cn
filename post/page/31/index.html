@@ -226,6 +226,70 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/08/love-function-plot/">
+          love function plot
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2011-08-06T05:37:55&#43;08:00">
+        
+  August 6, 2011
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        今天在微博上看到这坑爹的方程： $ (x^2+y^2-1)^3 = {x^2} {y^3}$
+画出来如下：
+跟个屁股似的，sigh&hellip;
+翻出azalea的老文：http://azaleasays.com/2008/06/18/fomula-of-love/
+用ggplot2画一下这个爱的方程：$17x^2-16|x|y+17y^2 = 225 $
+x &lt;- seq(-sqrt(17), sqrt(17), 0.001) y1 &lt;- 8*abs(x)/17 + 15* sqrt(17 - x^2)/17 y2 &lt;- 8*abs(x)/17 - 15* sqrt(17 - x^2)/17 d &lt;- data.frame(x=c(x,x),y=c(y1,y2)) require(ggplot2) p &lt;- ggplot(d, aes(x,y)) p + geom_point(color=&quot;red&quot;)  还可以画出红心，适合今天七夕的日子。
+p + geom_line(color=&quot;red&quot;)  画函数图，这种事情，还是用CAS方便点。
+通过maxima来画，一条指令就行，还不用解方程：
+contour_plot(17*x^2-16*abs(x)*y+17*y^2-225, [x,-sqrt(17),sqrt(17)],[y,-15*sqrt(17)/17, sqrt(17)])  
+      
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2011/08/love-function-plot/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/08/qq-plot/">
           QQ plot
         </a>
@@ -656,64 +720,6 @@ Pauling当时是他们最大的竞争对手。第二点是Watson 39岁时，娶�
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/04/fool-day/">
-          愚人节你好
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2011-04-01T10:48:09&#43;08:00">
-        
-  April 1, 2011
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/personal">Personal</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <p>去年4月1号，发了<a href="http://www.ncbi.nlm.nih.gov/pubmed/20179076">第一篇SCI</a>，昨天无意中发现，06年我去中科院面试时，不要我的那个实验室，竟然在同一年，<a href="http://www.biomedcentral.com/1471-2164/11/704">引用</a>了我的文章。当年考两次中科院，结果还没考上，这是我以前耿耿于怀了很久的，都是浮云啊。</p>
-
-<p></p>
-      
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2011/04/fool-day/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -1086,7 +1092,7 @@ noipv6
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         256 posts found
+         257 posts found
       </p>
     </div>
   </div>

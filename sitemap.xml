@@ -983,6 +983,11 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2012/12/2012-douban/</loc>
+    <lastmod>2012-12-24T16:20:43+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2012/09/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E6%96%87%E7%8C%AE/</loc>
     <lastmod>2012-09-10T14:53:35+08:00</lastmod>
   </url>
@@ -1153,7 +1158,7 @@
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/2008/09/%E5%8D%9A%E5%AE%A2%E8%BD%ACwordpress/</loc>
+    <loc>https://guangchuangyu.github.io/cn/2008/09/wordpress/</loc>
     <lastmod>2008-09-30T16:20:43+08:00</lastmod>
   </url>
   
@@ -1420,6 +1425,12 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/categories/book/</loc>
+    <lastmod>2012-12-24T16:20:43+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/tags/bootstrap/</loc>
     <lastmod>2011-06-24T06:10:37+08:00</lastmod>
     <priority>0</priority>
@@ -1584,6 +1595,12 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/dose/</loc>
     <lastmod>2018-11-25T01:23:16+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/douban/</loc>
+    <lastmod>2012-12-24T16:20:43+08:00</lastmod>
     <priority>0</priority>
   </url>
   
