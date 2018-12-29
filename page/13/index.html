@@ -226,6 +226,72 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/invisible-layer/">
+          你的图上有一双看不见的手
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-10-19T12:06:59&#43;08:00">
+        
+  October 19, 2017
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        <p>下面这张吐槽LaTeX的图，太深得我心。</p>
+
+<p><img src="http://dirkriehle.com/wp-content/uploads/2016/05/latex.png" alt="" /></p>
+
+<p>而ggplot2这种文本跑出界的事情，也太常见，以至于我在<a href="https://guangchuangyu.github.io/ggtree/faq/">ggtree的FAQ</a>专门指出来，要用<code>xlim</code>给x轴分配多点空间，这是由于数据是数据空间，而文本是像素空间。你画图的画布由数据空间决定，然后文本就从指定的位置（除了坐标，还取决于你align的方式和adjustment微调）开始打出来，一不小心就打出界了。这一点我在FAQ里，除了告诉你用<code>xlim</code>解决之外，我也给出了上面的解释，所以我一直强调，不要以为我在教ggtree，我其实是在教ggplot2。</p>
+
+<p>后面就有人问了ggplot2字体溢出的事情，他所遇到的溢出，似乎更不应该发生，因为是坐标轴上的字体溢出，然而产生的原因是一样的，解决方案也是一样的，请用力猛戳《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484089&amp;idx=1&amp;sn=f6e11d54a18e96a94145a2b802c37dc1&amp;chksm=ec43b3fedb343ae89e3630900033f055af4bbe211897076291e351ae18cc89b2ddf7651ee0be#rd">ggplot2字体溢出的那点破事</a>》。</p>
+
+<p></p>
+      
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2017/10/invisible-layer/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/ygc/">
           我的名字和我的姓氏
         </a>
@@ -626,91 +692,6 @@ p &lt;- ggplot(d, aes(x,y)) +
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/ko-id-conversion/">
-          ko数据库ID转换
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2017-09-27T19:11:00&#43;08:00">
-        
-  September 27, 2017
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <blockquote>
-<p>Since the clusterProfiler is a very useful tools for GO and Kegg annotation.At present I want to use it to enrich for kegg result while only have the KO number ,So I want to convert the KO number to the pathway function,Is there have any function or methods in the software can convert it?any help will be appreciated</p>
-</blockquote>
-
-<p><a href="https://github.com/GuangchuangYu/clusterProfiler/issues/99">这个问题</a>问说他想转KO到通路，首先这是一个常见的错误，很多人分不清<code>K</code>和<code>ko</code>，所以在我告诉他可以把<code>K number</code>转成<code>ko pathway</code>的时候，我先指出他的错误。</p>
-
-<p><code>ko</code> is actually pathway map. I think you are talking about <code>K</code> number mapping to <code>ko</code> pathway.</p>
-
-<pre><code class="language-r">&gt; bitr_kegg(&quot;K00844&quot;, &quot;kegg&quot;, &quot;Path&quot;, &quot;ko&quot;)
-     kegg    Path
-1  K00844 ko00010
-2  K00844 ko00051
-3  K00844 ko00052
-4  K00844 ko00500
-5  K00844 ko00520
-6  K00844 ko00521
-7  K00844 ko00524
-8  K00844 ko01100
-9  K00844 ko01110
-10 K00844 ko01120
-11 K00844 ko01130
-12 K00844 ko01200
-13 K00844 ko04066
-14 K00844 ko04910
-15 K00844 ko04930
-16 K00844 ko04973
-17 K00844 ko05230
-</code></pre>
-
-<p></p>
-      
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2017/09/ko-id-conversion/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -794,6 +775,29 @@ p &lt;- ggplot(d, aes(x,y)) +
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/12/2018-biobabble/">
+                <h3 class="media-heading">2018每月阅读量最高文章盘点</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>正如我在《<a href="https://mp.weixin.qq.com/s/yJ1QLnsVqLrOY4GTsXEnrA">我想学习</a>》一文中对朋友圈和公众号的吐槽一样。我翻看了2018年一整年中每个月最高阅读量的文章，我发现八卦和追热点的文章，通常阅读量不会太差，反而是我用心去写的技术类文章，反倒是阅读量很惨，不管怎样，我还是会继续写技术类文章，特别是关于我的R包的文章，大家在学会的同时，也可以触类旁通学会R和其它的R包。写R包就是希望大家做分析更方便一点，而写文档就是希望可以减少大家使用R包的障碍，当然也希望大家可以多多分享这样的努力！</p>
+
+<p><strong>1. 《<a href="https://mp.weixin.qq.com/s/RK1CYEboiEDzapdHsiwEGg">2018最新可用的sci-hub镜像+桌面版程序</a>》</strong></p>
+
+<p>sci-hub经常换域名，1月份的时候，收集了一些，同时为苹果系统打包了windows程序，可以一键下文献。当然现在我们不用发这样的文章了，因为域名随时可以查，《<a href="https://mp.weixin.qq.com/s/puPvCOQcOf7aG5ghY82XrQ">Sci-Hub可用域名实时追踪</a>》，又因为比桌面版程序更好用的浏览器按钮，《<a href="https://mp.weixin.qq.com/s/6qmI0MI9vlwvxoXJuVl0sQ">关于scihub，一文就够了</a>》。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1065,29 +1069,6 @@ noipv6
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/msigdf_clusterprofiler/">
-                <h3 class="media-heading">msigdf &#43; clusterProfiler全方位支持MSigDb</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Nov 11, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/clusterProfiler/msigdf.png" alt="" /></p>
-
-<p>生信界的网红Stephen Turner在github上有个<code>msigdf</code>的包，我在他写这个包的时候，就写了个<code>gist</code>，连接<code>clusterProfiler</code>，我写<code>gist</code>的时候是2016年的8月，很高兴网红还惦记着我的<code>gist</code>。</p>
-
-<p><code>msigdf</code>这个包把著名的Broad Institute著名的Molecular Signatures Database (MSigDB)数据以data frame的形式打包成<code>R</code>包，这样子非常方便使用，当然他后来没有更新，而一个fork的版本，<code>ToledoEM/msigdf</code>把数据更新为最新版本v6.2，发布于2018年7月。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1095,7 +1076,7 @@ noipv6
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         254 posts found
+         255 posts found
       </p>
     </div>
   </div>
