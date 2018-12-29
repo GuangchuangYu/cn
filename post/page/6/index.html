@@ -226,6 +226,66 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/04/get-away/">
+          滚吧，骚年
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-04-09T18:30:00&#43;08:00">
+        
+  April 9, 2018
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/life">life</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        <p>4月3号发了以下一条文字推送：</p>
+
+<p>遇到辣鸡导师，只有三个字，忍滚狠，我选择滚，考博期间，发现人品不好，我选择滚，《<a href="https://mp.weixin.qq.com/s/LzwSAYT7yyYTMrNnck9KCg">来香港读博其实是被逼的</a>》，读博期间，本着就是退学也要滚的心态，把导师给炒了，《<a href="http://mp.weixin.qq.com/s/iRC_ak53PbN9DJbkPzgBOQ">CS10: 八卦终结版</a>》，忍下来也会消磨掉你所有追求/理想，比狠的话，如果没有压制对方的渠道，对于这种势力严重不均衡的情况似乎不太现实，所以我奉劝大家，滚！一两年的沉没时间，放长远了看，根本不算什么，要勇于放弃，滚的远远的</p>
+
+<p></p>
+      
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2018/04/get-away/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/04/dotplot-x-axis/">
           dotplot支持使用formula指定x轴变量
         </a>
@@ -642,68 +702,6 @@ ggplot(d, aes(cut, carat, fill=color, color=color)) +
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/03/ggstatsplot/">
-          一条指令把统计&#43;画图都给做了？似乎太美好！
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2018-03-16T09:09:22&#43;08:00">
-        
-  March 16, 2018
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <p>大家是否还记得我写的文章《<a href="https://mp.weixin.qq.com/s/8kqTVSDjuHpivGaim6ukNg">画个小圈圈</a>》？里面吐槽了<code>ggpubr</code>这个包的存在是<strong>制造混乱，徒增学习成本</strong>。我们知道<code>ggplot2</code>包里有个<code>qplot</code>函数，而在《ggplot2》的第一版中，hadley先用了一章介绍<code>qplot</code>，再介绍grammar of graphics，然后这个<code>qplot</code>就被吐槽，先入为主，给学习grammar of graphics，学习ggplot2语法制造了不必要的麻烦。然后如果你看《ggplot2》第二版，你就会发现<code>qplot</code>这一章被删掉了。我说<code>ggpubr</code><strong>制造混乱，徒增学习成本</strong>并不是为了吐槽某公众号，而是实事求是。</p>
-
-<p>我并不反对封装，我并没有强迫症说大家一定要用ggplot2图形语法，而不能封装函数，我想我在《<a href="https://mp.weixin.qq.com/s/8kqTVSDjuHpivGaim6ukNg">画个小圈圈</a>》已经说得很清楚了，封装画图的包，按我的观点是要么卖了数据处理的专业知识，要么卖了画图的专业知识。如果一个包做的封装太过于简单，像<code>ggpubr</code>这种，数据必须是用户整理好的data.frame，而画图只是简单的两三个图层的叠加，那么当然可以减少你敲键盘输入，然而影响了初级用户学习<code>ggplot2</code>，复杂的东西，我们当然想要用封装好的函数，等你自己啥都搞懂了，老板都要跟你掀桌子了。简单的东西也可以封装，减少输入嘛，只是特别不适用于ggplot2的图层，简单的设定你写个主题，我都举双手赞成，但两三个图层的简单拼凑我不支持，因为图层是积木，大家学习就是要对积木熟悉，然后才能搭出复杂的东西出来。特别简单的图层叠加正是你熟悉积木的时候，你不多敲点键盘，做为练习，又怎么能做出稍复杂点的东西呢？</p>
-
-<p></p>
-      
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2018/03/ggstatsplot/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -787,6 +785,29 @@ ggplot(d, aes(cut, carat, fill=color, color=color)) +
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/12/2017-biobabble/">
+                <h3 class="media-heading">2017每月阅读量最高文章盘点</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>这个公众号开始于2016年11月，2016年基本上阅读量都在一两百之间而已，就直接无视了吧。2018年写了每月最高阅读量的文章，2017年顺道也总结一下吧。好文总是值得再次阅读。</p>
+
+<p><strong>1. 《<a href="https://mp.weixin.qq.com/s/IzSC1GnNPUwKdehhz-U8fQ">Ask me anything about ggtree</a>》</strong></p>
+
+<p>1月份，得知<code>ggtree</code>的文章发表了，写了这篇，欢迎大家向我提问，我有问必答。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1046,41 +1067,6 @@ noipv6
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/un-abstract-coding/">
-                <h3 class="media-heading">王八拳编程及其它</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Nov 11, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><img src="https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D220/sign=3083f8d5d30735fa95f049bbae530f9f/dbb44aed2e738bd42887e8ffa68b87d6267ff95e.jpg" alt="" /></p>
-
-<h3 id="什么是王八拳">什么是王八拳</h3>
-
-<blockquote>
-<p>王八拳是四肢生物，包括人类天生会的一种本能打斗方式，男女都会，老少皆宜。 &ndash; 百度百科</p>
-</blockquote>
-
-<p>显然从定义上来看，这是一套在人类存在以前早已有之的古拳法，当然做为人类我们还是希望找到人类创始的起源，给人类找一点体面。</p>
-
-<p>据(百度百科)说，有三种可疑的起源说法：</p>
-
-<ul>
-<li>起源一：王朔的《看上去很美》中学会的一种中国古拳法。这种拳一般流行于幼儿园中，打这种拳，讲究的是打拳的小朋友眼睛紧闭，双拳握紧，两条胳膊以肩为圆心，向前乱轮圆圈，远里看就象乌龟爬坡爬不上去乱蹬的那个样子。这种拳一般不以击中目标为目的，主要是以一种盲目的抡拳动作在气势上威吓对你有攻击企图的小朋友。而如果打拳者在使出这种拳法的时候拌以大声的哭叫，更可以极大的增加威吓对方的力量。</li>
-<li>起源二：一夫多妻制的中国农村妇女发明的一种古拳法，起源于于公元前5世纪，具有广泛的妇女基础，王八拳吸取了猴、狗、猪诸拳种之长，把形意拳的手法、手型、步型、步法、腿法、平衡、跳跃等动作规格化。它的特点是姿势绝不优美，动作绝不快捷，出手阴，跳得低，蹦得不远。它的内容包括挠、掐、咬三种动作，还有一定数量的击打敌人下三路的跳跃、跌仆、滚翻动作。长拳在技术上有八点要求：①姿势。头正，颈直，沉肩，挺胸，直腰，敛臀，上肢舒展、挺拔，下肢稳定、匀称。②动作。在做踢、打、摔、拿等技击动作时，起止点、路线、力点都要清晰。</li>
-<li>起源三：巴塞罗那奥运会前，朱时茂和陈佩斯的表演的著名小品中，“陈小二”以一轮凶残猛烈的正反王八拳与当时的“拳王”朱时茂战成平手，并相约巴塞罗那再战。也正是因为这经典的一战，王八拳才被百姓所熟知。</li>
-</ul>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1088,7 +1074,7 @@ noipv6
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         255 posts found
+         256 posts found
       </p>
     </div>
   </div>
