@@ -226,6 +226,78 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/04/ggbackground/">
+          使用ggbackground设置ggplot2的背景
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-04-18T21:00:00&#43;08:00">
+        
+  April 18, 2018
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        <pre><code>require(ggplot2)
+ p &lt;- ggplot(iris) + aes(x = Sepal.Length, y = Sepal.Width, color=Species) + 
+    geom_point(size=5) + theme_classic()
+</code></pre>
+
+<p>首先我们有一个图，是用<code>ggplot2</code>画的，上面这图大家太熟悉，不打印出来都知道是什么了。</p>
+
+<p>我在最新版的<code>ggimage</code>中加入了一个<code>ggbackground</code>的函数，我随便从网上找一张<code>iris</code>的图片，我们把<code>p</code>和<code>img</code>同时传给<code>ggbackground</code>就好了，非常容易，于是图的内容还是一样，但加了一张我们给定的图片做为背景。</p>
+
+<pre><code>require(ggimage) 
+img = &quot;https://assets.bakker.com/ProductPics/560x676/10028-00-BAKI_20170109094316.jpg&quot;
+ggbackground(p, img)
+</code></pre>
+
+<p></p>
+      
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2018/04/ggbackground/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/04/get-away/">
           滚吧，骚年
         </a>
@@ -634,74 +706,6 @@ for (i in seq_len(n)) {
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/03/group-points/">
-          画图给点分组?
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2018-03-20T12:53:00&#43;08:00">
-        
-  March 20, 2018
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">visualization</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <p>小伙伴提出了上面的问题，点不能够打到violin里面去，即使加了<code>aes(group=color)</code>强行分组也不行。这个照理第一感觉都会觉得可以，但试一下都会发现不行。</p>
-
-<pre><code>library(ggplot2)
-d = subset(diamonds, color %in% c(&quot;D&quot;, &quot;E&quot;))
-ggplot(d, aes(cut, carat, fill=color, color=color)) + 
-    geom_violin(alpha=.3) + geom_jitter(width=.05, alpha=.5)
-</code></pre>
-
-<p><img src="http://guangchuangyu.github.io/blog_images/R/ggplot2/group_point/unnamed-chunk-1-1.png" alt="" /></p>
-
-<p></p>
-      
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2018/03/group-points/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -731,7 +735,7 @@ ggplot(d, aes(cut, carat, fill=color, color=color)) +
         </section>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2018 Guangchuang Yu. All Rights Reserved
+    &copy; 2019 Guangchuang Yu. All Rights Reserved
   </span>
 </footer>
 
@@ -785,6 +789,35 @@ ggplot(d, aes(cut, carat, fill=color, color=color)) +
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/01/custom-annotation-in-annotatepeak/">
+                <h3 class="media-heading">自定义注释分类</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><blockquote>
+<p>Hi Guangchuang,</p>
+
+<p>Is there a way to control annotations in the the annotatePeak function?  For instance I would like to ignore &ldquo;downstream&rdquo; and consider those peaks &ldquo;intergenic&rdquo;.  Or for instance combine &ldquo;1st exon&rdquo; with &ldquo;other exon&rdquo; so there is one category of &ldquo;exon&rdquo;.</p>
+
+<p>Any help would be great, thanks for doing this!</p>
+
+<p>-Andrew</p>
+</blockquote>
+
+<p><a href="https://support.bioconductor.org/p/104676/">https://support.bioconductor.org/p/104676/</a></p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1028,45 +1061,6 @@ noipv6
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/%E8%AE%BE%E7%BD%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AA%97%E5%8F%A3/">
-                <h3 class="media-heading">设置可视化窗口</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Nov 11, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/cartesian/1148940491.jpg" alt="" /></p>
-
-<p>小伙伴发来这个图，问我是不是<code>bug</code>，这真是犯了程序员的社交礼仪。</p>
-
-<blockquote>
-<p>你如果对一个程序员说，“你的代码有bug。”
-他的第一反应是：</p>
-
-<ul>
-<li>1. 你的环境有问题吧</li>
-<li>2. 傻逼你会用吗。</li>
-</ul>
-
-<p>如果你委婉地说：“你这个程序和预期的有点不一致，你看看是不是我的使用方法有问题。”</p>
-
-<p>他本能地会想：“操，是不是出bug了！”</p>
-</blockquote>
-
-<p>这显然不是<code>bug</code>，这是绝大多数人对<code>ggplot2</code>的误解，他们认为用<code>xlim</code>和<code>ylim</code>是放置一个窗口去看你的图，然而在<code>ggplot2</code>是限定一个窗口去过滤你的数据，并重新画图！你的数据被过滤了！如果是放置窗口在图上，一条线从A到B，如果B在窗口之外，那么线被截断了，你看到半条线，但如果是过滤数据呢？B不复存在，那么线条A到B也不复存在，没有B，A到B的线画不出来。就是这样，所以这绝逼不是<code>bug</code>，而是程序员本能反应的第二种情况，你用错了。</p>
-
-<p>那么怎么样不过滤数据，而只是设置可视化窗口呢？你基本上很少看到有人这么用，因为几乎99%的人都只知道<code>xlim</code>和<code>ylim</code>，一般人我也不告诉他，快点拿去小抄把下面的代码记录一下。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1074,7 +1068,7 @@ noipv6
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         257 posts found
+         258 posts found
       </p>
     </div>
   </div>

@@ -6,10 +6,31 @@
     <description>Recent content in Chipseeker on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Nov 2018 12:20:16 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 10 Jan 2019 12:20:16 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/tags/chipseeker/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>自定义注释分类</title>
+      <link>https://guangchuangyu.github.io/cn/2019/01/custom-annotation-in-annotatepeak/</link>
+      <pubDate>Thu, 10 Jan 2019 12:20:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2019/01/custom-annotation-in-annotatepeak/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Hi Guangchuang,&lt;/p&gt;
+
+&lt;p&gt;Is there a way to control annotations in the the annotatePeak function?  For instance I would like to ignore &amp;ldquo;downstream&amp;rdquo; and consider those peaks &amp;ldquo;intergenic&amp;rdquo;.  Or for instance combine &amp;ldquo;1st exon&amp;rdquo; with &amp;ldquo;other exon&amp;rdquo; so there is one category of &amp;ldquo;exon&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;Any help would be great, thanks for doing this!&lt;/p&gt;
+
+&lt;p&gt;-Andrew&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://support.bioconductor.org/p/104676/&#34;&gt;https://support.bioconductor.org/p/104676/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>如何定义基因下游的区间</title>
