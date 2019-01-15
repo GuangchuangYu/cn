@@ -226,77 +226,6 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/pheatmap-color-range/">
-          不同数据集画出的热图，用同样的颜色区间上色？
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2017-11-13T00:21:00&#43;08:00">
-        
-  November 13, 2017
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <p><img src="http://guangchuangyu.github.io/blog_images/R/misc/WechatIMG216.png" alt="" /></p>
-
-<p>这个问题，其实答案就存在于《<a href="http://mp.weixin.qq.com/s/Xhi_ZkrEzUVdnCu7ECBS4w">听说你还不会画热图</a>》，我们先生成一个矩阵：</p>
-
-<pre><code>set.seed(2017-11-12)
-d = data.frame(matrix(rnorm(100), ncol=10))
-colnames(d) = paste0('t', 1:10)
-rownames(d) = paste0('g', 1:10)
-</code></pre>
-
-<p>这个矩阵是<code>rnorm</code>生成的随机数，有正有负，我们再生成一个矩阵，只有正数，并且数值上比第一个矩阵要大：</p>
-
-<pre><code>d2 = abs(d) * 1.2
-</code></pre>
-
-<p></p>
-      
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2017/11/pheatmap-color-range/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/bioc-db-update/">
           掐架的额外收获
         </a>
@@ -685,6 +614,74 @@ hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.000
 </article>
 
           
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/go-version-issue/">
+          请用事实怼我
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-11-02T20:23:00&#43;08:00">
+        
+  November 2, 2017
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/biology">Biology</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        <p>在《<a href="https://mp.weixin.qq.com/s/miGQs6U1d3aHwcm7vgNCVw">你昨天才做的分析，可能是几年前的结果！</a>》这篇文章的开头，我吐槽了WEGO+华大（虽然文章是转载自《<a href="https://mp.weixin.qq.com/s?__biz=MzAxMjQ3MTU5Mg==&amp;mid=2650655271&amp;idx=1&amp;sn=b1dfadd57937c949ba0e8deeac2fdeb6&amp;scene=21#wechat_redirect">嘉因生物</a>》，但这段是我给自己加的戏码，广告后面才是原帖内容 -，-）。</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/2017/bgi/1509620511198.jpg" alt="" /></p>
+
+<p>这只不过是我任性了一番，因为华大的拥护者来骂人了，我真的不理解，如果我说错了，你们可以拿事实啪啪啪地打我脸的，为什么要骂人，所以我任性地再吐一口口水。</p>
+
+<p>这里我必须承认，我说错了，华大用的WEGO不是那在线版的09年以后就不更新的WEGO，09年人的注释不超过7000个，华大给的报告有12929个（BP），当然也不是最新的，目前org.Hs.eg.db中GO的数据源是2017-03-29, BP的注释有16992个，比华大多了1/3，所以《<a href="https://mp.weixin.qq.com/s/miGQs6U1d3aHwcm7vgNCVw">你昨天才做的分析，可能是几年前的结果！</a>》这篇文章要吐槽的依然对，谁知道差这1/3会发生什么呢。</p>
+
+<pre><code>&gt; (16992-12929)/12929
+[1] 0.3142548
+</code></pre>
+
+<p></p>
+      
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2017/11/go-version-issue/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -706,7 +703,7 @@ hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.000
           </li>
         
       
-      <li class="pagination-number">page 12 of 38</li>
+      <li class="pagination-number">page 12 of 37</li>
     </ul>
   </div>
 
@@ -785,33 +782,6 @@ hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.000
 <p>首先GO为什么有？因为<code>enrichGO</code>和<code>gseGO</code>都是使用<code>OrgDb</code>，而<code>OrgDb</code>本身带有ID转换的注释，而KEGG是在线去检索KEGG数据库的，KEGG并没有提供这些信息，当然对于少量大家比较熟悉的模式生物，要支持还是很容易的，然而有些物种支持，有些不支持，大家又会问了，凭什么我做的物种被BS了。所以啊，大家都不支持，挺公平。其实KEGG数据库里那么多的生物，很多物种是没有基因名的，有很多生物的注释还停留在基因座，你让我帮你转ID，臣妾做不到啊。</p>
 
 <p>但起码对能支持的物种支持一下呗，以我一贯的作风，能帮小白解决的小问题，我都会去解决。于是我们有<code>setReadable</code>函数。但凡你能找到一个OrgDb，你就能用来转ID，就这样。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/01/lmgtfy/">
-                <h3 class="media-heading">请问，你是要我帮你google吗？</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jan 1, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><h3 id="怎么提问-是需要学习的">怎么提问，是需要学习的</h3>
-
-<ul>
-<li><a href="http://mp.weixin.qq.com/s/fvCsdNVl87PtKuGXmcikDw">how to bug author</a></li>
-<li><a href="https://mp.weixin.qq.com/s/8ZwlWmJqGJ3Sl0v-4MduQA">为什么你的提问被无情地无视了！</a></li>
-</ul>
-
-<p>我写过不少文章，都有提及提问的礼仪，会提问的人，比较容易得到帮助，而不会提问的人，理你才怪，比如说明明出错信息很明显，还给了你解决的提示而你却不看。举个例子现在需要编译的R包，如果缺少库文件，报错的话，一般会提示你Debian/Ubuntu系列apt安装什么包，Redhat系列yum安装什么，MacOS的话，brew安装什么，你按照提示装上再说，你不懂的话，你还不会把出错信息贴出来google一下吗？一般都有人解决了。
-一个错误的示范</p>
 
 <p></p></div>
             </div>
@@ -1045,6 +1015,30 @@ noipv6
             <hr>
           </div>
         
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/upset-to-ggplot/">
+                <h3 class="media-heading">转换UpSet图为ggplot对象</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>我在2018年4月份的一条推特文，<a href="https://twitter.com/guangchuangyu/status/988672880551518210">https://twitter.com/guangchuangyu/status/988672880551518210</a>，可以把<code>UpSetR</code>变成<code>ggplot</code>然后可以各种玩，比较我在推特文中所展示的，图上嵌入venn图、使用<code>cowplot</code>拼图等。然而过了大半年，我的<a href="https://github.com/hms-dbmi/UpSetR/pull/112">pull request</a>并没有被作者接收，也就是说这功能还不存在于官方的版本中。</p>
+
+<p>如果有兴趣的话，应该安装我fork的版本。</p>
+
+<pre><code>devtools::install_github(&quot;GuangchuangYu/UpSetR&quot;)
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
       </div>
     </div>
     <div class="modal-footer">
@@ -1052,7 +1046,7 @@ noipv6
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         260 posts found
+         259 posts found
       </p>
     </div>
   </div>
