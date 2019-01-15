@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.32 with theme Tranquilpeak 0.4.3-SNAPSHOT">
+<meta name="author" content="Guangchuang Yu">
+<meta name="keywords" content="">
+<meta name="description" content="怎么提问，是需要学习的
+
+
+how to bug author
+为什么你的提问被无情地无视了！
+
+
+我写过不少文章，都有提及提问的礼仪，会提问的人，比较容易得到帮助，而不会提问的人，理你才怪，比如说明明出错信息很明显，还给了你解决的提示而你却不看。举个例子现在需要编译的R包，如果缺少库文件，报错的话，一般会提示你Debian/Ubuntu系列apt安装什么包，Redhat系列yum安装什么，MacOS的话，brew安装什么，你按照提示装上再说，你不懂的话，你还不会把出错信息贴出来google一下吗？一般都有人解决了。
+一个错误的示范
+
+">
+
+
+<meta property="og:description" content="怎么提问，是需要学习的
+
+
+how to bug author
+为什么你的提问被无情地无视了！
+
+
+我写过不少文章，都有提及提问的礼仪，会提问的人，比较容易得到帮助，而不会提问的人，理你才怪，比如说明明出错信息很明显，还给了你解决的提示而你却不看。举个例子现在需要编译的R包，如果缺少库文件，报错的话，一般会提示你Debian/Ubuntu系列apt安装什么包，Redhat系列yum安装什么，MacOS的话，brew安装什么，你按照提示装上再说，你不懂的话，你还不会把出错信息贴出来google一下吗？一般都有人解决了。
+一个错误的示范
+
+">
+<meta property="og:type" content="article">
+<meta property="og:title" content="请问，你是要我帮你google吗？">
+<meta name="twitter:title" content="请问，你是要我帮你google吗？">
+<meta property="og:url" content="https://guangchuangyu.github.io/cn/2019/01/lmgtfy/">
+<meta property="twitter:url" content="https://guangchuangyu.github.io/cn/2019/01/lmgtfy/">
+<meta property="og:site_name" content="Guangchuang Yu">
+<meta property="og:description" content="怎么提问，是需要学习的
+
+
+how to bug author
+为什么你的提问被无情地无视了！
+
+
+我写过不少文章，都有提及提问的礼仪，会提问的人，比较容易得到帮助，而不会提问的人，理你才怪，比如说明明出错信息很明显，还给了你解决的提示而你却不看。举个例子现在需要编译的R包，如果缺少库文件，报错的话，一般会提示你Debian/Ubuntu系列apt安装什么包，Redhat系列yum安装什么，MacOS的话，brew安装什么，你按照提示装上再说，你不懂的话，你还不会把出错信息贴出来google一下吗？一般都有人解决了。
+一个错误的示范
+
+">
+<meta name="twitter:description" content="怎么提问，是需要学习的
+
+
+how to bug author
+为什么你的提问被无情地无视了！
+
+
+我写过不少文章，都有提及提问的礼仪，会提问的人，比较容易得到帮助，而不会提问的人，理你才怪，比如说明明出错信息很明显，还给了你解决的提示而你却不看。举个例子现在需要编译的R包，如果缺少库文件，报错的话，一般会提示你Debian/Ubuntu系列apt安装什么包，Redhat系列yum安装什么，MacOS的话，brew安装什么，你按照提示装上再说，你不懂的话，你还不会把出错信息贴出来google一下吗？一般都有人解决了。
+一个错误的示范
+
+">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2019-01-14T15:10:00">
+  
+  
+    <meta property="article:modified_time" content="2019-01-14T15:10:00">
+  
+  
+  
+    
+      <meta property="article:section" content="R">
+    
+  
+  
+    
+      <meta property="article:tag" content="google">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+  <meta name="twitter:site" content="@guangchuangyu">
+
+
+  <meta name="twitter:creator" content="@guangchuangyu">
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
+
+
+    <title>请问，你是要我帮你google吗？</title>
+
+    <link rel="icon" href="https://guangchuangyu.github.io/cn/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://guangchuangyu.github.io/cn/2019/01/lmgtfy/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
+    
+    
+
+    
+      
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-77901140-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://guangchuangyu.github.io/cn/">Guangchuang Yu</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://guangchuangyu.github.io/cn/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://guangchuangyu.github.io/cn/#about">
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Guangchuang Yu</h4>
+        
+          <h5 class="sidebar-profile-bio">a senior-in-age-but-not-senior-in-knowledge bioinformatician</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/GuangchuangYu" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://guangchuangyu.github.io/cn/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      请问，你是要我帮你google吗？
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-01-14T15:10:00&#43;08:00">
+        
+  January 14, 2019
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <h3 id="怎么提问-是需要学习的">怎么提问，是需要学习的</h3>
+
+<ul>
+<li><a href="http://mp.weixin.qq.com/s/fvCsdNVl87PtKuGXmcikDw">how to bug author</a></li>
+<li><a href="https://mp.weixin.qq.com/s/8ZwlWmJqGJ3Sl0v-4MduQA">为什么你的提问被无情地无视了！</a></li>
+</ul>
+
+<p>我写过不少文章，都有提及提问的礼仪，会提问的人，比较容易得到帮助，而不会提问的人，理你才怪，比如说明明出错信息很明显，还给了你解决的提示而你却不看。举个例子现在需要编译的R包，如果缺少库文件，报错的话，一般会提示你Debian/Ubuntu系列apt安装什么包，Redhat系列yum安装什么，MacOS的话，brew安装什么，你按照提示装上再说，你不懂的话，你还不会把出错信息贴出来google一下吗？一般都有人解决了。
+一个错误的示范</p>
+
+<p></p>
+
+<p>有人用clusterProfiler说找不到bitr，那么我问，你装了吗？你加载了吗？我对小白还是挺nice的。回答是装好了，就是不能用。然后贴出来的却是安装不成功的信息，真的是看都不看一眼就睁眼说瞎话。</p>
+
+<p>我告诉他说没安装成功，因为他并没有贴出出错信息，我并不能给出更多的建议。然而他竟然跟我说：</p>
+
+<pre><code>So then how do I install it successfully? According to your guide I tried two ways of installing (see original email).
+
+
+Otherwise I will have to stop using my time this way and try something
+else. :/
+</code></pre>
+
+<p>翻译一下就是：<strong>你不告诉我怎么装，我就弃坑了，浪费我时间。</strong></p>
+
+<p>后面自己又改了，改成贴了session_info。我一看session info知道他用debian，其实我也猜到是Linux，一般Linux才会有编译问题，但正如我前面说的，要安装什么包，出错信息是有提示的，然而他始终是没有贴出来的。所以我也不能帮他指出到底是apt-get install 什么。我终究还是回答了，出错信息你不看，我又不能帮你看。</p>
+
+<p>最后我觉得不爽，回去翻邮件，回复了那个<strong>不告诉我怎么装，我就不用了的评论</strong>。真TMD太拽了。</p>
+
+<p><strong><a href="https://github.com/GuangchuangYu/bitr/issues/1">猛击此处围观</a></strong></p>
+
+<hr />
+
+<p>这里写这些，并不是不爽初学者，而是真心想讲一句，做科研，天天在看文献的人，用软件不看文档的吗？出错不看出错信息的吗？有出错信息，不会贴google查一下的吗？这种是基本的礼仪，你只有自己花时间了，别人才可能花时间帮你。这是科研的基本素养，这是做人的基本素养。</p>
+
+<p>如果你连这样的素养都没有，直接就“我艹，那谁谁谁，你这软件怎么回事，你怎么搞的，你是作者你就得帮我搞”。那么你洗洗睡吧，就当我是不负责任的作者，就当我也不懂好了，我也洗洗睡了，谁有空陪你玩。来，让我们来回顾一下这篇文章：《<a href="http://mp.weixin.qq.com/s/vB7mJG9FQYXsYZh9Bcp0_g">怀疑人生！我不欠你们钱，好吗？</a>》</p>
+
+<p>###　帮你谷歌</p>
+
+<p>对于上面提到的这种情况，有一个<a href="http://lmgtfy.com/">web server</a>，把问题输入给它，它会生成一张动图，告诉你123个步骤，完事。</p>
+
+<h3 id="程序员专用命令行程序">程序员专用命令行程序</h3>
+
+<p>然后就有人<a href="https://github.com/Knappek/lmgtfy">写了个程序</a>：</p>
+
+<pre><code>lmgtfy -g &quot;What is Let me google that for you?&quot;
+</code></pre>
+
+<p>像上面这样的指令，你把问题给它，它就生成lmgtfy的链接，而且自动复制到剪贴板，所以呢，当有人问我们问题，其实只要问谷歌就可以的话，我们就可以敲一下指令，然后贴个链接给对方，让他去看那个教他谷歌的动图，这效果肯定如同RTFM一般，要脸的人应该觉得ridiculous和humiliated。</p>
+
+<p><strong>客官请自重，不要给人羞辱你的机会！</strong></p>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://guangchuangyu.github.io/cn/tags/google/">google</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2019/01/clusterprofiler-setreadable/" data-tooltip="clusterProfiler事后丸: 转换ID为SYMBOL">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2019/01/custom-annotation-in-annotatepeak/" data-tooltip="自定义注释分类">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2019 Guangchuang Yu. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2019/01/clusterprofiler-setreadable/" data-tooltip="clusterProfiler事后丸: 转换ID为SYMBOL">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://guangchuangyu.github.io/cn/2019/01/custom-annotation-in-annotatepeak/" data-tooltip="自定义注释分类">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Guangchuang Yu</h4>
+    
+      <div id="about-card-bio">a senior-in-age-but-not-senior-in-knowledge bioinformatician</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Postdoc researcher
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Hong Kong
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Search" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no post found</div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/01/clusterprofiler-setreadable/">
+                <h3 class="media-heading">clusterProfiler事后丸: 转换ID为SYMBOL</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>有一些软件做了检验之后，是不告诉你那些基因在某个富集的通路中，显然做为生物学家，是对此有兴趣的。<code>clusterProfiler</code>系列，全部函数都会输出，但看基因ID，比如ENTREZID或ENSEMBLE，这些都对人类不友好，看了你也不知道是什么，为了让大家看结果的时候，还能有点感觉，我们需要把基因翻译成symbol，有那么一批函数比如DO、GO、Reactome的分析都是有<code>readable</code>参数的，但有一些是没有这个参数的，我被问得最多的是KEGG的分析为什么没有！</p>
+
+<p>首先GO为什么有？因为<code>enrichGO</code>和<code>gseGO</code>都是使用<code>OrgDb</code>，而<code>OrgDb</code>本身带有ID转换的注释，而KEGG是在线去检索KEGG数据库的，KEGG并没有提供这些信息，当然对于少量大家比较熟悉的模式生物，要支持还是很容易的，然而有些物种支持，有些不支持，大家又会问了，凭什么我做的物种被BS了。所以啊，大家都不支持，挺公平。其实KEGG数据库里那么多的生物，很多物种是没有基因名的，有很多生物的注释还停留在基因座，你让我帮你转ID，臣妾做不到啊。</p>
+
+<p>但起码对能支持的物种支持一下呗，以我一贯的作风，能帮小白解决的小问题，我都会去解决。于是我们有<code>setReadable</code>函数。但凡你能找到一个OrgDb，你就能用来转ID，就这样。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/01/lmgtfy/">
+                <h3 class="media-heading">请问，你是要我帮你google吗？</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><h3 id="怎么提问-是需要学习的">怎么提问，是需要学习的</h3>
+
+<ul>
+<li><a href="http://mp.weixin.qq.com/s/fvCsdNVl87PtKuGXmcikDw">how to bug author</a></li>
+<li><a href="https://mp.weixin.qq.com/s/8ZwlWmJqGJ3Sl0v-4MduQA">为什么你的提问被无情地无视了！</a></li>
+</ul>
+
+<p>我写过不少文章，都有提及提问的礼仪，会提问的人，比较容易得到帮助，而不会提问的人，理你才怪，比如说明明出错信息很明显，还给了你解决的提示而你却不看。举个例子现在需要编译的R包，如果缺少库文件，报错的话，一般会提示你Debian/Ubuntu系列apt安装什么包，Redhat系列yum安装什么，MacOS的话，brew安装什么，你按照提示装上再说，你不懂的话，你还不会把出错信息贴出来google一下吗？一般都有人解决了。
+一个错误的示范</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/01/custom-annotation-in-annotatepeak/">
+                <h3 class="media-heading">自定义注释分类</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><blockquote>
+<p>Hi Guangchuang,</p>
+
+<p>Is there a way to control annotations in the the annotatePeak function?  For instance I would like to ignore &ldquo;downstream&rdquo; and consider those peaks &ldquo;intergenic&rdquo;.  Or for instance combine &ldquo;1st exon&rdquo; with &ldquo;other exon&rdquo; so there is one category of &ldquo;exon&rdquo;.</p>
+
+<p>Any help would be great, thanks for doing this!</p>
+
+<p>-Andrew</p>
+</blockquote>
+
+<p><a href="https://support.bioconductor.org/p/104676/">https://support.bioconductor.org/p/104676/</a></p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/12/2017-biobabble/">
+                <h3 class="media-heading">2017每月阅读量最高文章盘点</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>这个公众号开始于2016年11月，2016年基本上阅读量都在一两百之间而已，就直接无视了吧。2018年写了每月最高阅读量的文章，2017年顺道也总结一下吧。好文总是值得再次阅读。</p>
+
+<p><strong>1. 《<a href="https://mp.weixin.qq.com/s/IzSC1GnNPUwKdehhz-U8fQ">Ask me anything about ggtree</a>》</strong></p>
+
+<p>1月份，得知<code>ggtree</code>的文章发表了，写了这篇，欢迎大家向我提问，我有问必答。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/12/2018-biobabble/">
+                <h3 class="media-heading">2018每月阅读量最高文章盘点</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>正如我在《<a href="https://mp.weixin.qq.com/s/yJ1QLnsVqLrOY4GTsXEnrA">我想学习</a>》一文中对朋友圈和公众号的吐槽一样。我翻看了2018年一整年中每个月最高阅读量的文章，我发现八卦和追热点的文章，通常阅读量不会太差，反而是我用心去写的技术类文章，反倒是阅读量很惨，不管怎样，我还是会继续写技术类文章，特别是关于我的R包的文章，大家在学会的同时，也可以触类旁通学会R和其它的R包。写R包就是希望大家做分析更方便一点，而写文档就是希望可以减少大家使用R包的障碍，当然也希望大家可以多多分享这样的努力！</p>
+
+<p><strong>1. 《<a href="https://mp.weixin.qq.com/s/RK1CYEboiEDzapdHsiwEGg">2018最新可用的sci-hub镜像+桌面版程序</a>》</strong></p>
+
+<p>sci-hub经常换域名，1月份的时候，收集了一些，同时为苹果系统打包了windows程序，可以一键下文献。当然现在我们不用发这样的文章了，因为域名随时可以查，《<a href="https://mp.weixin.qq.com/s/puPvCOQcOf7aG5ghY82XrQ">Sci-Hub可用域名实时追踪</a>》，又因为比桌面版程序更好用的浏览器按钮，《<a href="https://mp.weixin.qq.com/s/6qmI0MI9vlwvxoXJuVl0sQ">关于scihub，一文就够了</a>》。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/r-interactive/">
+                <h3 class="media-heading">R的交互与脚本模式</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><blockquote>
+<p>抛出一个话题，R是不是有个大坑，在自动化脚本中(或者在循环中)，某些脚本执行会不出结果，特别是作图脚本。ps:分步执行可以出图</p>
+</blockquote>
+
+<p>其实看我公众号的各位读者们，你们不应该有这个问题，如果有，那么证明我的文章没有好好看！</p>
+
+<p>有两篇很重要的文章《<a href="http://mp.weixin.qq.com/s/BPY4dPFrrNrDKccMvax07w">扪心自问，meme几何？</a>》和《<a href="http://mp.weixin.qq.com/s/Uhx3l3lKQS88OJ4SHntkNg">树变图，图变树？</a>》，特别是第二篇，和这个问题息息相关。</p>
+
+<p>首先假设我们有一个图：</p>
+
+<pre><code>require(ggplot2)
+p = qplot(1:10)
+</code></pre>
+
+<h3 id="为什么在终端打p可以出图">为什么在终端打p可以出图？</h3>
+
+<p>因为在R里，所有都是<code>对象</code>，而在终端里你输入一个对象回车，R会去找相应的<code>方法</code>去打印出来，如果是<code>S3</code>对象，会去寻找<code>print</code>方法，而如果是<code>S4</code>会去找<code>show</code>方法。</p>
+
+<p>所以你在终端里打<code>p</code>，其实等同于你打<code>print(p)</code>，它其实调用了<code>ggplot2:::print.ggplot</code>，</p>
+
+<p>你打<code>plot(p)</code>也可以，如果你看过代码的话，画图这个动作是定义在<code>plot.ggplot</code>方法里的，而<code>print.ggplot &lt;- plot.ggplot</code>。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/macbook-arch-setting/">
+                <h3 class="media-heading">MacBook安装Arch的一些设置</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><h2 id="声音">声音</h2>
+
+<p>没有声音，在<code>/etc/modprobe.d/modprobe.conf</code>里加入：</p>
+
+<pre><code>options snd-hda-intel model=mbp3 position_fix=2
+</code></pre>
+
+<h2 id="网络">网络</h2>
+
+<p>dhcpcd禁止<code>ipv6</code>:</p>
+
+<p>在<code>/etc/dhcpcd.conf</code>中加入:</p>
+
+<pre><code>noipv6rs
+noipv6
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/arch-lts/">
+                <h3 class="media-heading">记一次搞死又搞活linux的经历</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>看到一个帖子, <a href="https://www.maketecheasier.com/make-arch-linux-more-stable/">https://www.maketecheasier.com/make-arch-linux-more-stable/</a>， 说避免老升级内核，用lts版，装完可以把原先内核干掉：</p>
+
+<blockquote>
+<pre><code>&gt;sudo pacman -S linux-lts
+&gt;```
+&gt;
+&gt;When you’ve installed the LTS kernel, it’s a good idea to remove the bleeding edge kernel from your system.
+&gt;
+&gt;```
+&gt;sudo pacman -R linux 
+&gt;```
+
+我内心闪过一个想法，难道不用配置启动么？也没去确认，照做后重启，你妹啊，太坑了，直接就找不到内核死掉！
+
+
+
+----
+
+因为这个贴子太不负责，换了kernel之后，应该再run:
+
+</code></pre>
+
+<p>grub-mkconfig -o /boot/grub/grub.cfg
+```</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/dose-citation-above-100/">
+                <h3 class="media-heading">DOSE包引用过百</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Disease ontology (DO) annotates human genes in the context of disease. DO is important annotation in translating molecular findings from high-throughput data to clinical relevance. DOSE is an R package providing semantic similarity computations among DO terms and genes which allows biologists to explore the similarities of diseases and of gene functions in disease perspective. Enrichment analyses including hypergeometric model and gene set enrichment analysis are also implemented to support discovering disease associations of high-throughput biological data.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/how-to-define-downstream-range/">
+                <h3 class="media-heading">如何定义基因下游的区间</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>首先基因下游是什么？</p>
+
+<p>我们知道上游很重要啊，因为可能会调控转录，但注释的时候，没有上游这个东西，为什么呢？因为转录起始位点TSS的上下游被定义为promoter，所以啊上游被包括在promoter中，也就没有上游这个category了。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no post found"
+         data-message-one="1 post found"
+         data-message-other="{n} posts found">
+         260 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('https://guangchuangyu.github.io/cn/images/cover.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://guangchuangyu.github.io/cn/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/guangchuangyu.github.io\/cn\/2019\/01\/lmgtfy\/';
+          
+            this.page.identifier = '\/2019\/01\/lmgtfy\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'gcyu';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

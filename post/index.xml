@@ -27,6 +27,25 @@
     </item>
     
     <item>
+      <title>请问，你是要我帮你google吗？</title>
+      <link>https://guangchuangyu.github.io/cn/2019/01/lmgtfy/</link>
+      <pubDate>Mon, 14 Jan 2019 15:10:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2019/01/lmgtfy/</guid>
+      <description>&lt;h3 id=&#34;怎么提问-是需要学习的&#34;&gt;怎么提问，是需要学习的&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://mp.weixin.qq.com/s/fvCsdNVl87PtKuGXmcikDw&#34;&gt;how to bug author&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/8ZwlWmJqGJ3Sl0v-4MduQA&#34;&gt;为什么你的提问被无情地无视了！&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;我写过不少文章，都有提及提问的礼仪，会提问的人，比较容易得到帮助，而不会提问的人，理你才怪，比如说明明出错信息很明显，还给了你解决的提示而你却不看。举个例子现在需要编译的R包，如果缺少库文件，报错的话，一般会提示你Debian/Ubuntu系列apt安装什么包，Redhat系列yum安装什么，MacOS的话，brew安装什么，你按照提示装上再说，你不懂的话，你还不会把出错信息贴出来google一下吗？一般都有人解决了。
+一个错误的示范&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>自定义注释分类</title>
       <link>https://guangchuangyu.github.io/cn/2019/01/custom-annotation-in-annotatepeak/</link>
       <pubDate>Thu, 10 Jan 2019 12:20:16 +0800</pubDate>
