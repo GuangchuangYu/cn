@@ -47,19 +47,19 @@
 &lt;p&gt;无非是给我一张静态图当背景，再来一张动态图加在上面，为了让代码可以重用，首先打包个小函数：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;add_gif &amp;lt;- function(bg_file, gif_file, out_file, offset, bg_size=&amp;quot;500&amp;quot;, gif_size=&amp;quot;150&amp;quot;) {
-    library(magick)
-    p &amp;lt;- image_read(bg_file)
-    g &amp;lt;- image_read(gif_file)
-    g &amp;lt;- image_scale(g, gif_size)
+	library(magick)
+	p &amp;lt;- image_read(bg_file)
+	g &amp;lt;- image_read(gif_file)
+	g &amp;lt;- image_scale(g, gif_size)
 
-    background &amp;lt;- image_background(image_scale(p, bg_size), &amp;quot;white&amp;quot;, flatten = TRUE)
+	background &amp;lt;- image_background(image_scale(p, bg_size), &amp;quot;white&amp;quot;, flatten = TRUE)
 
-    frames &amp;lt;- lapply(g, function(frame) {
-        image_composite(background, frame, offset = offset)
-    })
+	frames &amp;lt;- lapply(g, function(frame) {
+  		image_composite(background, frame, offset = offset)
+	})
 
-    animation &amp;lt;- image_animate(image_join(frames))
-    image_write(animation, out_file)
+	animation &amp;lt;- image_animate(image_join(frames))
+	image_write(animation, out_file)
 }
 &lt;/code&gt;&lt;/pre&gt;
 
