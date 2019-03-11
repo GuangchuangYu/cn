@@ -1,217 +1,180 @@
-
-
-  
-    
-  
-
-
-  
-
-
-
-
-  
-
-
-  
-
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
     
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.31.1 with theme Tranquilpeak 0.4.3-BETA">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.32 with theme Tranquilpeak 0.4.3-SNAPSHOT">
+<meta name="author" content="Guangchuang Yu">
+<meta name="keywords" content="">
+<meta name="description" content="
+这篇文章介绍如果把ChIPseeker搬上galaxy，和galaxy上其它软件一起拼成流程，跑一个ChIPseq注释的流程，从fastq文件开始，比对生成bam文件，peak calling生成bed文件，基因组注释，一个完整的流程，这个流程一旦设置好，每次跑都只是点点鼠标就可以了。
+本文额外附送：
+1. 如何把R程序变成命令行程序
+2. 如何把命令行程序搬上galaxy (知名的程序都有人搬好，但自己的程序还是需要学一下怎么配置的）
+
+
+Galaxy可以说是低端生信从业者杀手，如果你的能力只是跑跑流程，galaxy完全可以取代你的工作。
+
+如果你是苦逼的生物研究生，苦于要自己分析数据，不会跑命令行程序，对各种参数表示晕菜，galaxy也是拯救你的神器，如同有个做生信的人在旁边帮助你，参数你点点菜单就可以了，跟程序变运行又可以了，流程自己都可以设计并一键运行。
+
+安装galaxy
+
+
+requirements: python 2.7 and git
+only three steps
+
+
+克隆galaxy项目
+
+git clone https://github.com/galaxyproject/galaxy/
+cd galaxy
+## switch to master branch, stable release
+git checkout -b master origin/master
+
+
+">
+
+
+<meta property="og:description" content="
+这篇文章介绍如果把ChIPseeker搬上galaxy，和galaxy上其它软件一起拼成流程，跑一个ChIPseq注释的流程，从fastq文件开始，比对生成bam文件，peak calling生成bed文件，基因组注释，一个完整的流程，这个流程一旦设置好，每次跑都只是点点鼠标就可以了。
+本文额外附送：
+1. 如何把R程序变成命令行程序
+2. 如何把命令行程序搬上galaxy (知名的程序都有人搬好，但自己的程序还是需要学一下怎么配置的）
+
+
+Galaxy可以说是低端生信从业者杀手，如果你的能力只是跑跑流程，galaxy完全可以取代你的工作。
+
+如果你是苦逼的生物研究生，苦于要自己分析数据，不会跑命令行程序，对各种参数表示晕菜，galaxy也是拯救你的神器，如同有个做生信的人在旁边帮助你，参数你点点菜单就可以了，跟程序变运行又可以了，流程自己都可以设计并一键运行。
+
+安装galaxy
+
+
+requirements: python 2.7 and git
+only three steps
+
+
+克隆galaxy项目
+
+git clone https://github.com/galaxyproject/galaxy/
+cd galaxy
+## switch to master branch, stable release
+git checkout -b master origin/master
+
+
+">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Galaxy-ChIPseq流程">
+<meta name="twitter:title" content="Galaxy-ChIPseq流程">
+<meta property="og:url" content="https://guangchuangyu.github.io/cn/2017/08/galaxy-chipseeker/">
+<meta property="twitter:url" content="https://guangchuangyu.github.io/cn/2017/08/galaxy-chipseeker/">
+<meta property="og:site_name" content="Guangchuang Yu">
+<meta property="og:description" content="
+这篇文章介绍如果把ChIPseeker搬上galaxy，和galaxy上其它软件一起拼成流程，跑一个ChIPseq注释的流程，从fastq文件开始，比对生成bam文件，peak calling生成bed文件，基因组注释，一个完整的流程，这个流程一旦设置好，每次跑都只是点点鼠标就可以了。
+本文额外附送：
+1. 如何把R程序变成命令行程序
+2. 如何把命令行程序搬上galaxy (知名的程序都有人搬好，但自己的程序还是需要学一下怎么配置的）
+
+
+Galaxy可以说是低端生信从业者杀手，如果你的能力只是跑跑流程，galaxy完全可以取代你的工作。
+
+如果你是苦逼的生物研究生，苦于要自己分析数据，不会跑命令行程序，对各种参数表示晕菜，galaxy也是拯救你的神器，如同有个做生信的人在旁边帮助你，参数你点点菜单就可以了，跟程序变运行又可以了，流程自己都可以设计并一键运行。
+
+安装galaxy
+
+
+requirements: python 2.7 and git
+only three steps
+
+
+克隆galaxy项目
+
+git clone https://github.com/galaxyproject/galaxy/
+cd galaxy
+## switch to master branch, stable release
+git checkout -b master origin/master
+
+
+">
+<meta name="twitter:description" content="
+这篇文章介绍如果把ChIPseeker搬上galaxy，和galaxy上其它软件一起拼成流程，跑一个ChIPseq注释的流程，从fastq文件开始，比对生成bam文件，peak calling生成bed文件，基因组注释，一个完整的流程，这个流程一旦设置好，每次跑都只是点点鼠标就可以了。
+本文额外附送：
+1. 如何把R程序变成命令行程序
+2. 如何把命令行程序搬上galaxy (知名的程序都有人搬好，但自己的程序还是需要学一下怎么配置的）
+
+
+Galaxy可以说是低端生信从业者杀手，如果你的能力只是跑跑流程，galaxy完全可以取代你的工作。
+
+如果你是苦逼的生物研究生，苦于要自己分析数据，不会跑命令行程序，对各种参数表示晕菜，galaxy也是拯救你的神器，如同有个做生信的人在旁边帮助你，参数你点点菜单就可以了，跟程序变运行又可以了，流程自己都可以设计并一键运行。
+
+安装galaxy
+
+
+requirements: python 2.7 and git
+only three steps
+
+
+克隆galaxy项目
+
+git clone https://github.com/galaxyproject/galaxy/
+cd galaxy
+## switch to master branch, stable release
+git checkout -b master origin/master
+
+
+">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2017-08-15T12:23:16">
+  
+  
+    <meta property="article:modified_time" content="2017-08-15T12:23:16">
+  
+  
+  
+    
+      <meta property="article:section" content="R">
+    
+      <meta property="article:section" content="ChIPseq">
+    
+  
+  
+    
+      <meta property="article:tag" content="ChIPseeker">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+  <meta name="twitter:site" content="@guangchuangyu">
+
+
+  <meta name="twitter:creator" content="@guangchuangyu">
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
+
+
     <title>Galaxy-ChIPseq流程</title>
-    <meta name="author" content="Guangchuang Yu">
-    <meta name="keywords" content="">
 
     <link rel="icon" href="https://guangchuangyu.github.io/cn/favicon.png">
     
 
     
-    <meta name="description" content="
-这篇文章介绍如果把ChIPseeker搬上galaxy，和galaxy上其它软件一起拼成流程，跑一个ChIPseq注释的流程，从fastq文件开始，比对生成bam文件，peak calling生成bed文件，基因组注释，一个完整的流程，这个流程一旦设置好，每次跑都只是点点鼠标就可以了。
-本文额外附送：
-1. 如何把R程序变成命令行程序
-2. 如何把命令行程序搬上galaxy (知名的程序都有人搬好，但自己的程序还是需要学一下怎么配置的）
 
-
-Galaxy可以说是低端生信从业者杀手，如果你的能力只是跑跑流程，galaxy完全可以取代你的工作。
-
-如果你是苦逼的生物研究生，苦于要自己分析数据，不会跑命令行程序，对各种参数表示晕菜，galaxy也是拯救你的神器，如同有个做生信的人在旁边帮助你，参数你点点菜单就可以了，跟程序变运行又可以了，流程自己都可以设计并一键运行。
-
-安装galaxy
-
-
-requirements: python 2.7 and git
-only three steps
-
-
-克隆galaxy项目
-
-git clone https://github.com/galaxyproject/galaxy/
-cd galaxy
-## switch to master branch, stable release
-git checkout -b master origin/master
-```   	
-
-
-
-
-### 安装
-
-
-```bash
-cd galaxy/config/
-cp galaxy.ini.sample galaxy.ini
-```   	
-
-编辑_galaxy.ini_文件
-
-&#43; find the line: admin_users
-&#43; remove the # and add an email for your account
-
-
-
-### 运行
-
-```bash
-# go back to galaxy folder
-cd ..
-sh run.sh
-
-
-然后就可以用浏览器打开http://localhost:8080，使用galaxy，就是这么简单。">
-    <meta property="og:description" content="
-这篇文章介绍如果把ChIPseeker搬上galaxy，和galaxy上其它软件一起拼成流程，跑一个ChIPseq注释的流程，从fastq文件开始，比对生成bam文件，peak calling生成bed文件，基因组注释，一个完整的流程，这个流程一旦设置好，每次跑都只是点点鼠标就可以了。
-本文额外附送：
-1. 如何把R程序变成命令行程序
-2. 如何把命令行程序搬上galaxy (知名的程序都有人搬好，但自己的程序还是需要学一下怎么配置的）
-
-
-Galaxy可以说是低端生信从业者杀手，如果你的能力只是跑跑流程，galaxy完全可以取代你的工作。
-
-如果你是苦逼的生物研究生，苦于要自己分析数据，不会跑命令行程序，对各种参数表示晕菜，galaxy也是拯救你的神器，如同有个做生信的人在旁边帮助你，参数你点点菜单就可以了，跟程序变运行又可以了，流程自己都可以设计并一键运行。
-
-安装galaxy
-
-
-requirements: python 2.7 and git
-only three steps
-
-
-克隆galaxy项目
-
-git clone https://github.com/galaxyproject/galaxy/
-cd galaxy
-## switch to master branch, stable release
-git checkout -b master origin/master
-```   	
-
-
-
-
-### 安装
-
-
-```bash
-cd galaxy/config/
-cp galaxy.ini.sample galaxy.ini
-```   	
-
-编辑_galaxy.ini_文件
-
-&#43; find the line: admin_users
-&#43; remove the # and add an email for your account
-
-
-
-### 运行
-
-```bash
-# go back to galaxy folder
-cd ..
-sh run.sh
-
-
-然后就可以用浏览器打开http://localhost:8080，使用galaxy，就是这么简单。">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="Galaxy-ChIPseq流程">
-    <meta property="og:url" content="/2017/08/galaxy-chipseeker/">
-    <meta property="og:site_name" content="Guangchuang Yu">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Guangchuang Yu">
-    <meta name="twitter:description" content="
-这篇文章介绍如果把ChIPseeker搬上galaxy，和galaxy上其它软件一起拼成流程，跑一个ChIPseq注释的流程，从fastq文件开始，比对生成bam文件，peak calling生成bed文件，基因组注释，一个完整的流程，这个流程一旦设置好，每次跑都只是点点鼠标就可以了。
-本文额外附送：
-1. 如何把R程序变成命令行程序
-2. 如何把命令行程序搬上galaxy (知名的程序都有人搬好，但自己的程序还是需要学一下怎么配置的）
-
-
-Galaxy可以说是低端生信从业者杀手，如果你的能力只是跑跑流程，galaxy完全可以取代你的工作。
-
-如果你是苦逼的生物研究生，苦于要自己分析数据，不会跑命令行程序，对各种参数表示晕菜，galaxy也是拯救你的神器，如同有个做生信的人在旁边帮助你，参数你点点菜单就可以了，跟程序变运行又可以了，流程自己都可以设计并一键运行。
-
-安装galaxy
-
-
-requirements: python 2.7 and git
-only three steps
-
-
-克隆galaxy项目
-
-git clone https://github.com/galaxyproject/galaxy/
-cd galaxy
-## switch to master branch, stable release
-git checkout -b master origin/master
-```   	
-
-
-
-
-### 安装
-
-
-```bash
-cd galaxy/config/
-cp galaxy.ini.sample galaxy.ini
-```   	
-
-编辑_galaxy.ini_文件
-
-&#43; find the line: admin_users
-&#43; remove the # and add an email for your account
-
-
-
-### 运行
-
-```bash
-# go back to galaxy folder
-cd ..
-sh run.sh
-
-
-然后就可以用浏览器打开http://localhost:8080，使用galaxy，就是这么简单。">
-    
-      <meta name="twitter:creator" content="@guangchuangyu">
-    
-    
-
-    
-    
-
-    
-      <meta property="og:image" content="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
-    
-
-    
-    
-    
-
-    
+    <link rel="canonical" href="https://guangchuangyu.github.io/cn/2017/08/galaxy-chipseeker/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -219,7 +182,7 @@ sh run.sh
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
     
     
 
@@ -254,7 +217,7 @@ ga('send', 'pageview');
     
     
       
-        <img class="header-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
+        <img class="header-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
       
     
     </a>
@@ -266,7 +229,7 @@ ga('send', 'pageview');
     
       <div class="sidebar-profile">
         <a href="https://guangchuangyu.github.io/cn/#about">
-          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
         </a>
         <h4 class="sidebar-profile-name">Guangchuang Yu</h4>
         
@@ -424,30 +387,26 @@ ga('send', 'pageview');
 cd galaxy
 ## switch to master branch, stable release
 git checkout -b master origin/master
-```   	
+</code></pre>
 
+<p></p>
 
+<h3 id="安装">安装</h3>
 
-
-### 安装
-
-
-```bash
-cd galaxy/config/
+<pre><code class="language-bash">cd galaxy/config/
 cp galaxy.ini.sample galaxy.ini
-```   	
+</code></pre>
 
-编辑_galaxy.ini_文件
+<p>编辑_galaxy.ini_文件</p>
 
-+ find the line: admin_users
-+ remove the # and add an email for your account
+<ul>
+<li>find the line: admin_users</li>
+<li>remove the # and add an email for your account</li>
+</ul>
 
+<h3 id="运行">运行</h3>
 
-
-### 运行
-
-```bash
-# go back to galaxy folder
+<pre><code class="language-bash"># go back to galaxy folder
 cd ..
 sh run.sh
 </code></pre>
@@ -551,13 +510,13 @@ write.table(as.data.frame(res), file=opt$output_file, sep=&quot;\t&quot;)
 
 <pre><code class="language-r">$ ./annotatePeak -i GSM1295076_CBX6_BF_ChipSeq_mergedReps_peaks.bed.gz \
   -o annotatePeak_test.txt
-&gt;&gt; loading peak file...				         2015-11-13 12:22:24
-&gt;&gt; preparing features information...		 2015-11-13 12:22:24
-&gt;&gt; identifying nearest features...		     2015-11-13 12:22:25
-&gt;&gt; calculating distance from peak to TSS...	 2015-11-13 12:22:25
-&gt;&gt; assigning genomic annotation...		     2015-11-13 12:22:25
-&gt;&gt; assigning chromosome lengths			     2015-11-13 12:22:39
-&gt;&gt; done...    					             2015-11-13 12:22:39
+&gt;&gt; loading peak file...                      2015-11-13 12:22:24
+&gt;&gt; preparing features information...         2015-11-13 12:22:24
+&gt;&gt; identifying nearest features...           2015-11-13 12:22:25
+&gt;&gt; calculating distance from peak to TSS...  2015-11-13 12:22:25
+&gt;&gt; assigning genomic annotation...           2015-11-13 12:22:25
+&gt;&gt; assigning chromosome lengths              2015-11-13 12:22:39
+&gt;&gt; done...                                   2015-11-13 12:22:39
 Warning message:
 In loadTxDb(TxDb) :
 &gt;&gt; TxDb is not specified, use 'TxDb.Hsapiens.UCSC.hg19.knownGene' by default...
@@ -575,21 +534,21 @@ vim annotatePeak.xml
 <p>我们编辑annotatePeak.xml文件，内容如下：</p>
 
 <pre><code class="language-xml">&lt;tool id=&quot;annotatePeak&quot; name=&quot;annotatePeak&quot; version=&quot;1.0&quot;&gt;
-	&lt;description&gt;annotate ChIP seq data (BED file)&lt;/description&gt;
-	&lt;command&gt; annotatePeak -i $input -o $output &gt; $output_log &lt;/command&gt;
-	&lt;inputs&gt;
-	  &lt;param name=&quot;input&quot; type=&quot;data&quot; format=&quot;bed&quot;
-		 label=&quot;BED file of ChIP peaks&quot;/&gt;
-	&lt;/inputs&gt;
-	&lt;outputs&gt;
-		&lt;data name=&quot;output&quot; format=&quot;bed&quot;/&gt;
-		&lt;data name=&quot;output_log&quot; format=&quot;txt&quot;/&gt;
-	&lt;/outputs&gt;
-	&lt;stdio&gt;
-		&lt;exit_code range=&quot;1:&quot; level=&quot;fatal&quot; /&gt;
-	&lt;/stdio&gt;
-	&lt;help&gt;see http://www.bioconductor.org/packages/ChIPseeker
-	      for details and examples&lt;/help&gt;
+    &lt;description&gt;annotate ChIP seq data (BED file)&lt;/description&gt;
+    &lt;command&gt; annotatePeak -i $input -o $output &gt; $output_log &lt;/command&gt;
+    &lt;inputs&gt;
+      &lt;param name=&quot;input&quot; type=&quot;data&quot; format=&quot;bed&quot;
+         label=&quot;BED file of ChIP peaks&quot;/&gt;
+    &lt;/inputs&gt;
+    &lt;outputs&gt;
+        &lt;data name=&quot;output&quot; format=&quot;bed&quot;/&gt;
+        &lt;data name=&quot;output_log&quot; format=&quot;txt&quot;/&gt;
+    &lt;/outputs&gt;
+    &lt;stdio&gt;
+        &lt;exit_code range=&quot;1:&quot; level=&quot;fatal&quot; /&gt;
+    &lt;/stdio&gt;
+    &lt;help&gt;see http://www.bioconductor.org/packages/ChIPseeker
+          for details and examples&lt;/help&gt;
 &lt;/tool&gt;
 </code></pre>
 
@@ -678,8 +637,8 @@ vim config/tool_conf.xml
                 
               
             
-            
-  <div class="post-actions-wrap">
+            <div class="post-actions-wrap">
+  
       <nav >
         <ul class="post-actions post-action-nav">
           
@@ -726,8 +685,8 @@ vim config/tool_conf.xml
         </a>
       </li>
     </ul>
-  </div>
-
+  
+</div>
 
             
               
@@ -746,8 +705,8 @@ vim config/tool_conf.xml
 
       </div>
       <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
-        
-  <div class="post-actions-wrap">
+        <div class="post-actions-wrap">
+  
       <nav >
         <ul class="post-actions post-action-nav">
           
@@ -794,8 +753,8 @@ vim config/tool_conf.xml
         </a>
       </li>
     </ul>
-  </div>
-
+  
+</div>
 
       </div>
       <div id="share-options-bar" class="share-options-bar" data-behavior="4">
@@ -813,7 +772,7 @@ vim config/tool_conf.xml
       <i class="fa fa-remove"></i>
     </div>
     
-      <img id="about-card-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
     
     <h4 id="about-card-name">Guangchuang Yu</h4>
     
@@ -854,6 +813,40 @@ vim config/tool_conf.xml
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/03/ggupset/">
+                <h3 class="media-heading">ggupset -- ggplot2版本的upset plot</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>在《<a href="https://mp.weixin.qq.com/s/PPtYmZdCbAzFdvTI1Tb6gQ">一图告诉你venn plot和upset plot的关系</a>》一文中，我们应该很清楚这两者的关系，upset plot是更清晰的呈现方式，而且能够支持无数多个分类，在《<a href="https://mp.weixin.qq.com/s/g6rRGhtKQd_mdRMKxteNVw">转UpSet图为ggplot?</a>》一文中，又介绍了一个转化UpSetR输出为ggplot2便于嵌图和拼图的方法，但这个需要一个补丁，然后我提交的这个补丁，一直没有被作者接收。而且毕竟UpSetR是用grid写的，像grid这种高级货，玩起来还是有点难度，我一直在想应该有一个<code>ggplot2</code>版本的upset plot，最近就让我在gayhub上发现了。</p>
+
+<p>这包已经在CRAN上，所以可以用最简单的方式安装：</p>
+
+<pre><code>install.packages(&quot;ggupset&quot;)
+</code></pre>
+
+<pre><code>library(tidyverse)
+library(ggupset)
+
+tidy_movies %&gt;%
+  distinct(title, year, length, .keep_all=TRUE) %&gt;%
+  ggplot(aes(x=Genres)) +
+    geom_bar() +
+    scale_x_upset(n_intersections = 20)
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1118,23 +1111,6 @@ noipv6
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/dose-citation-above-100/">
-                <h3 class="media-heading">DOSE包引用过百</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Nov 11, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">Disease ontology (DO) annotates human genes in the context of disease. DO is important annotation in translating molecular findings from high-throughput data to clinical relevance. DOSE is an R package providing semantic similarity computations among DO terms and genes which allows biologists to explore the similarities of diseases and of gene functions in disease perspective. Enrichment analyses including hypergeometric model and gene set enrichment analysis are also implemented to support discovering disease associations of high-throughput biological data.</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1142,7 +1118,7 @@ noipv6
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         261 posts found
+         262 posts found
       </p>
     </div>
   </div>
@@ -1163,6 +1139,20 @@ noipv6
 <script src="https://guangchuangyu.github.io/cn/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
 
 
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
 
 
   
@@ -1190,6 +1180,7 @@ noipv6
       </script>
     
   
+
 
 
 

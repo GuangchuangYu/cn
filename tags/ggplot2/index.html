@@ -1,26 +1,49 @@
-
-
-
-  
-
-
-
-
-  
-
-
-  
-
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
     
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.31.1 with theme Tranquilpeak 0.4.3-BETA">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.32 with theme Tranquilpeak 0.4.3-SNAPSHOT">
+<meta name="author" content="Guangchuang Yu">
+<meta name="keywords" content="">
+<meta name="description" content="Guangchuang&#39;s Chinese Blog">
+
+
+<meta property="og:description" content="Guangchuang&#39;s Chinese Blog">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ggplot2">
+<meta name="twitter:title" content="Ggplot2">
+<meta property="og:url" content="https://guangchuangyu.github.io/cn/tags/ggplot2/">
+<meta property="twitter:url" content="https://guangchuangyu.github.io/cn/tags/ggplot2/">
+<meta property="og:site_name" content="Guangchuang Yu">
+<meta property="og:description" content="Guangchuang&#39;s Chinese Blog">
+<meta name="twitter:description" content="Guangchuang&#39;s Chinese Blog">
+<meta property="og:locale" content="en-us">
+
+
+<meta name="twitter:card" content="summary">
+
+  <meta name="twitter:site" content="@guangchuangyu">
+
+
+  <meta name="twitter:creator" content="@guangchuangyu">
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
+
+
     <title>Ggplot2</title>
-    <meta name="author" content="Guangchuang Yu">
-    <meta name="keywords" content="">
 
     <link rel="icon" href="https://guangchuangyu.github.io/cn/favicon.png">
     
@@ -28,32 +51,8 @@
     
 
     
-    <meta name="description" content="Guangchuang&#39;s Chinese Blog">
-    <meta property="og:description" content="Guangchuang&#39;s Chinese Blog">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="Ggplot2">
-    <meta property="og:url" content="/tags/ggplot2/">
-    <meta property="og:site_name" content="Guangchuang Yu">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Guangchuang Yu">
-    <meta name="twitter:description" content="Guangchuang&#39;s Chinese Blog">
-    
-      <meta name="twitter:creator" content="@guangchuangyu">
-    
-    
 
-    
-    
-
-    
-      <meta property="og:image" content="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
-    
-
-    
-    
-    
-
-    
+    <link rel="canonical" href="https://guangchuangyu.github.io/cn/tags/ggplot2/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -61,7 +60,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
     
     
 
@@ -96,7 +95,7 @@ ga('send', 'pageview');
     
     
       
-        <img class="header-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
+        <img class="header-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
       
     
     </a>
@@ -108,7 +107,7 @@ ga('send', 'pageview');
     
       <div class="sidebar-profile">
         <a href="https://guangchuangyu.github.io/cn/#about">
-          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
         </a>
         <h4 class="sidebar-profile-name">Guangchuang Yu</h4>
         
@@ -256,7 +255,8 @@ ga('send', 'pageview');
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>我在2018年4月份的一条推特文，<a href="https://twitter.com/guangchuangyu/status/988672880551518210">https://twitter.com/guangchuangyu/status/988672880551518210</a>，可以把<code>UpSetR</code>变成<code>ggplot</code>然后可以各种玩，比较我在推特文中所展示的，图上嵌入venn图、使用<code>cowplot</code>拼图等。然而过了大半年，我的<a href="https://github.com/hms-dbmi/UpSetR/pull/112">pull request</a>并没有被作者接收，也就是说这功能还不存在于官方的版本中。</p>
+      
+        <p>我在2018年4月份的一条推特文，<a href="https://twitter.com/guangchuangyu/status/988672880551518210">https://twitter.com/guangchuangyu/status/988672880551518210</a>，可以把<code>UpSetR</code>变成<code>ggplot</code>然后可以各种玩，比较我在推特文中所展示的，图上嵌入venn图、使用<code>cowplot</code>拼图等。然而过了大半年，我的<a href="https://github.com/hms-dbmi/UpSetR/pull/112">pull request</a>并没有被作者接收，也就是说这功能还不存在于官方的版本中。</p>
 
 <p>如果有兴趣的话，应该安装我fork的版本。</p>
 
@@ -264,6 +264,7 @@ ga('send', 'pageview');
 </code></pre>
 
 <p></p>
+      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2018/11/upset-to-ggplot/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -317,11 +318,13 @@ ga('send', 'pageview');
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>生物狗喜欢画barplot，但毕竟只有均值和标准误差信息量太低，万一有outliers呢？万一不是正态分布呢？所以就吐槽了又吐槽，但大家还是乐此不疲，因为大家都在用，因为很多人只会画barplot，所以产生各种反barplot运动，并呼吁大家使用<a href="http://mp.weixin.qq.com/s/kk3M1eoVhCiYmyu92P0zwA">boxplot</a>，boxplot有四分位数的统计量，可以反应outlier和数据的分布，比barplot高得多了。</p>
+      
+        <p>生物狗喜欢画barplot，但毕竟只有均值和标准误差信息量太低，万一有outliers呢？万一不是正态分布呢？所以就吐槽了又吐槽，但大家还是乐此不疲，因为大家都在用，因为很多人只会画barplot，所以产生各种反barplot运动，并呼吁大家使用<a href="http://mp.weixin.qq.com/s/kk3M1eoVhCiYmyu92P0zwA">boxplot</a>，boxplot有四分位数的统计量，可以反应outlier和数据的分布，比barplot高得多了。</p>
 
 <p>然而事情是不断在进化的，我们的手段是要跟上潮流的，现在的潮流就是除了要有统计量，还要有原始数据，甚至于有统计推断，全集中一图中，揭开数据的红盖头，给大家呈现全方位无死角的面貌。</p>
 
 <p></p>
+      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2018/11/raincloud/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -377,7 +380,8 @@ ga('send', 'pageview');
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/cartesian/1148940491.jpg" alt="" /></p>
+      
+        <p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/ggtree/cartesian/1148940491.jpg" alt="" /></p>
 
 <p>小伙伴发来这个图，问我是不是<code>bug</code>，这真是犯了程序员的社交礼仪。</p>
 
@@ -400,6 +404,7 @@ ga('send', 'pageview');
 <p>那么怎么样不过滤数据，而只是设置可视化窗口呢？你基本上很少看到有人这么用，因为几乎99%的人都只知道<code>xlim</code>和<code>ylim</code>，一般人我也不告诉他，快点拿去小抄把下面的代码记录一下。</p>
 
 <p></p>
+      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2018/11/%E8%AE%BE%E7%BD%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AA%97%E5%8F%A3/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -453,7 +458,8 @@ ga('send', 'pageview');
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>在《<a href="http://mp.weixin.qq.com/s/P7yUFLwW4OLGBrPw05iQ_A">漫画版的进化树你见过吗？</a>》一文中，我介绍过一个R包，可以把<code>ggplot2</code>转成漫画风格，今天介绍一个新的包，<code>ggrough</code>，它封装了一个叫<code>roughjs</code>的javascript库，可以把<code>ggplot2</code>转成手绘风格：</p>
+      
+        <p>在《<a href="http://mp.weixin.qq.com/s/P7yUFLwW4OLGBrPw05iQ_A">漫画版的进化树你见过吗？</a>》一文中，我介绍过一个R包，可以把<code>ggplot2</code>转成漫画风格，今天介绍一个新的包，<code>ggrough</code>，它封装了一个叫<code>roughjs</code>的javascript库，可以把<code>ggplot2</code>转成手绘风格：</p>
 
 <pre><code>require(dplyr)
 library(ggplot2)
@@ -466,6 +472,7 @@ p
 </code></pre>
 
 <p></p>
+      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2018/10/ggrough/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -521,9 +528,11 @@ p
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>在《<a href="http://mp.weixin.qq.com/s/BPY4dPFrrNrDKccMvax07w">扪心自问，meme几何？</a>》一文中，我画了一只兔子，今天给大家演示一下画一只3D版本的兔子，我们知道<code>ggplot2</code>不支持3D，只能画2D的图，但3D其实只是视觉上的，显示在你屏幕上的，同样只是2D。所以我们要做的，就是把3D的坐标转换成2D，然后画出2D的图片来，而这2D看上去有3D的效果。</p>
+      
+        <p>在《<a href="http://mp.weixin.qq.com/s/BPY4dPFrrNrDKccMvax07w">扪心自问，meme几何？</a>》一文中，我画了一只兔子，今天给大家演示一下画一只3D版本的兔子，我们知道<code>ggplot2</code>不支持3D，只能画2D的图，但3D其实只是视觉上的，显示在你屏幕上的，同样只是2D。所以我们要做的，就是把3D的坐标转换成2D，然后画出2D的图片来，而这2D看上去有3D的效果。</p>
 
 <p></p>
+      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2018/08/ggplot-3d/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -579,13 +588,15 @@ p
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>说到世界杯，我是不追的，但1998年法国世界杯我还是有印象的，那时候读初中的我，一直在集邮，那年代没有网购，通讯基本靠吼，当年的我已经是个老司机了，通过邮政汇款，买了好多东西，包括1998年世界杯从法国寄往中国的首日封，当然锁在老家的柜子里，尘封多年，所以我现在也没办法随手拍一张照片给大家分享。</p>
+      
+        <p>说到世界杯，我是不追的，但1998年法国世界杯我还是有印象的，那时候读初中的我，一直在集邮，那年代没有网购，通讯基本靠吼，当年的我已经是个老司机了，通过邮政汇款，买了好多东西，包括1998年世界杯从法国寄往中国的首日封，当然锁在老家的柜子里，尘封多年，所以我现在也没办法随手拍一张照片给大家分享。</p>
 
 <p>另一件事，同样是1998年，那年升高一，开学第一天，老师让大家自我介绍一下，有位帅哥在见面第一天，就立了flag，说自己中考没考好，是因为看世界杯了，他高考必定要怎么样怎么样，毕竟世界杯是四年一次。你一个交钱进学校的学渣，牛逼吹大了，我印象深刻，所以我后来留意了一下这家伙高考上了那家高校，结果是「中山大学网络教育学院」，也就是电视大学！真的是情节反转如疾风！</p>
 
 <p>《<a href="https://mp.weixin.qq.com/s/EojwBbg0MUWijwGeNIjntg">转发5个群，Y叔送你一顶帽子</a>》这一篇文章写的是加圣诞帽子，但你要加个C罗、梅西，有什么差别吗？没有！你要加某球队的队服，有什么差别吗？没有。所以要制作世界杯专属头像，已然可以用ggimage纯代码生成。</p>
 
 <p></p>
+      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2018/06/geom_worldcup2018/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -639,7 +650,8 @@ p
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>微软以75亿美元收购全球最大的单身交友网站GitHub，应景<a href="https://mp.weixin.qq.com/s/koM3GU1zr8dE0S0fkdncxA">分享一张图片</a>，其实这图大家并不陌生，在《<a href="http://mp.weixin.qq.com/s/Xhi_ZkrEzUVdnCu7ECBS4w">听说你还不会画热图</a>》一文中，大家早已见过。</p>
+      
+        <p>微软以75亿美元收购全球最大的单身交友网站GitHub，应景<a href="https://mp.weixin.qq.com/s/koM3GU1zr8dE0S0fkdncxA">分享一张图片</a>，其实这图大家并不陌生，在《<a href="http://mp.weixin.qq.com/s/Xhi_ZkrEzUVdnCu7ECBS4w">听说你还不会画热图</a>》一文中，大家早已见过。</p>
 
 <p>这图实在太好玩，被套在各种场景上，今天就要教大家怎么用R，纯代码生成这样的图，简直是吐槽神器。这类图可以归入meme，画meme，当然少不了我写的meme包，这包收录在CRAN中，点击下面链接了解一下：</p>
 
@@ -650,6 +662,7 @@ p
 </ul>
 
 <p></p>
+      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2018/06/github-ms-meme/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -696,7 +709,7 @@ p
       <i class="fa fa-remove"></i>
     </div>
     
-      <img id="about-card-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
     
     <h4 id="about-card-name">Guangchuang Yu</h4>
     
@@ -737,6 +750,40 @@ p
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/03/ggupset/">
+                <h3 class="media-heading">ggupset -- ggplot2版本的upset plot</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>在《<a href="https://mp.weixin.qq.com/s/PPtYmZdCbAzFdvTI1Tb6gQ">一图告诉你venn plot和upset plot的关系</a>》一文中，我们应该很清楚这两者的关系，upset plot是更清晰的呈现方式，而且能够支持无数多个分类，在《<a href="https://mp.weixin.qq.com/s/g6rRGhtKQd_mdRMKxteNVw">转UpSet图为ggplot?</a>》一文中，又介绍了一个转化UpSetR输出为ggplot2便于嵌图和拼图的方法，但这个需要一个补丁，然后我提交的这个补丁，一直没有被作者接收。而且毕竟UpSetR是用grid写的，像grid这种高级货，玩起来还是有点难度，我一直在想应该有一个<code>ggplot2</code>版本的upset plot，最近就让我在gayhub上发现了。</p>
+
+<p>这包已经在CRAN上，所以可以用最简单的方式安装：</p>
+
+<pre><code>install.packages(&quot;ggupset&quot;)
+</code></pre>
+
+<pre><code>library(tidyverse)
+library(ggupset)
+
+tidy_movies %&gt;%
+  distinct(title, year, length, .keep_all=TRUE) %&gt;%
+  ggplot(aes(x=Genres)) +
+    geom_bar() +
+    scale_x_upset(n_intersections = 20)
+</code></pre>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1001,23 +1048,6 @@ noipv6
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/dose-citation-above-100/">
-                <h3 class="media-heading">DOSE包引用过百</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Nov 11, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">Disease ontology (DO) annotates human genes in the context of disease. DO is important annotation in translating molecular findings from high-throughput data to clinical relevance. DOSE is an R package providing semantic similarity computations among DO terms and genes which allows biologists to explore the similarities of diseases and of gene functions in disease perspective. Enrichment analyses including hypergeometric model and gene set enrichment analysis are also implemented to support discovering disease associations of high-throughput biological data.</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1025,7 +1055,7 @@ noipv6
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         261 posts found
+         262 posts found
       </p>
     </div>
   </div>
@@ -1045,6 +1075,21 @@ noipv6
 
 <script src="https://guangchuangyu.github.io/cn/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
 
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
 
 
 

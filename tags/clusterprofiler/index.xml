@@ -166,13 +166,13 @@ g &amp;lt;- c(&amp;quot;AT5G61600&amp;quot;, &amp;quot;AT2G44230&amp;quot;, &amp
 &lt;p&gt;Meanwhile, when I fed the ENTREZID to enrichKEGG, it show me two unreasonable results:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;kegg_enrich = enrichKEGG(
-	gene = new_ids$ENTREZID,
-	organism = &#39;hsa&#39;,
-	keyType = &#39;ncbi-geneid&#39;,
-	pvalueCutoff = 0.05,
-	#pAdjustMethod = &#39;BH&#39;,
-	#qvalueCutoff = 0.2,
-	use_internal_data = FALSE
+    gene = new_ids$ENTREZID,
+    organism = &#39;hsa&#39;,
+    keyType = &#39;ncbi-geneid&#39;,
+    pvalueCutoff = 0.05,
+    #pAdjustMethod = &#39;BH&#39;,
+    #qvalueCutoff = 0.2,
+    use_internal_data = FALSE
 )
 &lt;/code&gt;&lt;/pre&gt;
 

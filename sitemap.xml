@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2019/03/ggupset/</loc>
+    <lastmod>2019-03-11T09:33:50+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2019/03/hku-application/</loc>
     <lastmod>2019-03-05T00:30:00+08:00</lastmod>
   </url>
@@ -1817,6 +1822,12 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/ggupset/</loc>
+    <lastmod>2019-03-11T09:33:50+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/tags/go/</loc>
     <lastmod>2017-11-02T20:23:00+08:00</lastmod>
     <priority>0</priority>
@@ -1854,7 +1865,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/</loc>
-    <lastmod>2019-03-05T00:30:00+08:00</lastmod>
+    <lastmod>2019-03-11T09:33:50+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2268,7 +2279,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/post/</loc>
-    <lastmod>2019-03-05T00:30:00+08:00</lastmod>
+    <lastmod>2019-03-11T09:33:50+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2364,7 +2375,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/r/</loc>
-    <lastmod>2019-01-16T15:10:00+08:00</lastmod>
+    <lastmod>2019-03-11T09:33:50+08:00</lastmod>
     <priority>0</priority>
   </url>
   
