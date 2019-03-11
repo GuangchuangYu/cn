@@ -226,6 +226,202 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/bmc-journal-protects-paper-of-plagiarism/">
+          虐狗节来看一下这个裤衩都不要的故事
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-11-11T20:00:43&#43;08:00">
+        
+  November 11, 2017
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/biology">Biology</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/research">Research</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        <p><img src="http://guangchuangyu.github.io/blog_images/R/ppipre/Screenshot 2017-11-10 00.10.22.png" alt="" /></p>
+
+<p>Scientific Report上有一篇文章是抄袭的，然而杂志最终决定不撤稿，而被抄的人是Johns Hopkins的，于是jh的人全都要离开Scientific Report的编委。我也被人抄了不撤稿，然而我人微言轻，不单被编辑部欺负，还要被我们国内生信界的网红欺负。</p>
+
+<p>SR与jh的事情，我和BMC的故事，是相似的，我们可以想像这样的学术界惨剧比想像中的要多。学术圈，真是有时候得呵呵哒。</p>
+
+<p></p>
+      
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2017/11/bmc-journal-protects-paper-of-plagiarism/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/watermark/">
+          听说你想打水印？
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-11-10T00:53:00&#43;08:00">
+        
+  November 10, 2017
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        <p><img src="http://guangchuangyu.github.io/blog_images/R/meme/WechatIMG165.png" alt="" /></p>
+
+<p>正如我在《<a href="http://mp.weixin.qq.com/s/jDXjkrkq_YVhW-Z5Vx2-Fg">用R画meme ;)</a>》里说的，meme包就可以拿来画，当然这个包是设计来画meme的，所以文本只会打在中间，如果你想在右下角之类的，不好意思，我没提供选项让你调文本位置，氮素，meme依然是你的好帮手，怎么说呢，meme不单能帮你读图片，还能用grid画出来，这意味着你可以用<code>grid.text</code>随便加个文本就OK了。</p>
+
+<p>实例演示一发：</p>
+
+<pre><code>library(meme)
+u &lt;- system.file(&quot;angry8.jpg&quot;, package=&quot;meme&quot;)
+x &lt;- meme(u)
+print(x)
+grid.text(&quot;biobabble&quot;, x=.9, y=.05, 
+	gp=gpar(col='white', cex=1.2))
+</code></pre>
+
+<p></p>
+      
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2017/11/watermark/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/scholar/">
+          一个用不了的R包和一个404的网站
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-11-09T13:23:16&#43;08:00">
+        
+  November 9, 2017
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        <p><img src="https://guangchuangyu.github.io/blog_images/R/scholar/WechatIMG166.png" alt="" /></p>
+
+<p>正如我在「知识星球」里说的，scholar这个包现在已经死了，因为作者不维护了，除非出现接盘侠。我自己fork了一个，打了补丁，现在是可用的。这个包应该说我用得蛮多的，你看我简历里的引用数柱状图，我不会无聊到过一段时间就去查，然后重新画图的，太low。都是自动化的，我到简历目录下打make指令，就会自动去爬数据、重新画图并生成简历，而我啥都不用干。</p>
+
+<p></p>
+      
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2017/11/scholar/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/kegg-gene-annotation/">
           听说你的KEGG分析有大量的基因没注释
         </a>
@@ -501,198 +697,6 @@ hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.000
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/boxplot-multiple-group/">
-          同一数据多变量分组的boxplot?
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2017-10-30T00:53:00&#43;08:00">
-        
-  October 30, 2017
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <p><img src="https://guangchuangyu.github.io/blog_images/R/boxplot_multiple_group_files/WechatIMG111.png" alt="" /></p>
-
-<p>小密圈的问题，不是三两句话可以说明白的事情，必须要写文来解答，上一次写文是《<a href="http://mp.weixin.qq.com/s/Xhi_ZkrEzUVdnCu7ECBS4w">听说你还不会画热图</a>》，里面正好吐槽了某知乎大V的「除了ggplot2之外其它都是鸡肋」，这次正好也可以再次呼应一下。</p>
-
-<p>这个图明显是R的base graphics做的，图是可圈可点的，能做出这图来，也已经是告别了只会用plot的低级趣味。这其实是4个图拼起来的，第一个图只是多了个y轴而已，它们画起来是一样的，那就是只画boxplot，不画x和y轴，（你可能会说不是有x轴？），x轴是后面再加上去的，而且加x轴的时候，不写labels，只有线条没有文本（你可能又会说明明有文本！），因为<code>axis</code>这个函数只支持labels要么是水平的，要么是垂直的，旋转某个角度是不支持的，所以labels是额外再打上去的。这里一张小小的图，门道还是挺多的。</p>
-
-<p></p>
-      
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2017/10/boxplot-multiple-group/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/ggtree-webinar-2017/">
-          webinar录播：plotting tree &#43; data
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2017-10-25T10:17:48&#43;08:00">
-        
-  October 25, 2017
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/evolution">Evolution</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <p>据说1024是程序员的节日，就在这一天，Y叔开始了第一次的网络讲座，首次在网络上露面。内容就是上一周预告的《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484958&amp;idx=1&amp;sn=d58e3bb5b43899849101c60efd29df53&amp;chksm=ec43b759db343e4fefd48ec618a5a2d42f46256e7f455bf9373d90157be0b47df9bd7fd069a9#rd">线上沙龙</a>》。</p>
-
-<p>很多人想要学ggplot2 + ggtree，但我的定位不是技术性的培训，而是学术讲座，所以一开始把问题摆出来，是有一些问题存在，有knowledge gap，然后我要去解决它。当然考虑到听众的knowledge gap也很大，我在介绍ggtree的之前，也帮大众撸了一篇R的画图，在这简短的时间里，你应该了解了R几个画图系统的关系，base和grid我在slides里写graphic system，但lattice和ggplot2我写的是data visualization system，我对它们是有区别对待的，像lattice和ggplot2自己是不成一体的，但提供了高阶的数据可视化方法/语法。听完讲座你也应该了解ggplot2，知道要怎样去入门，知道重点该学什么。</p>
-
-<p></p>
-      
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2017/10/ggtree-webinar-2017/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/invisible-layer/">
-          你的图上有一双看不见的手
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2017-10-19T12:06:59&#43;08:00">
-        
-  October 19, 2017
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <p>下面这张吐槽LaTeX的图，太深得我心。</p>
-
-<p><img src="http://dirkriehle.com/wp-content/uploads/2016/05/latex.png" alt="" /></p>
-
-<p>而ggplot2这种文本跑出界的事情，也太常见，以至于我在<a href="https://guangchuangyu.github.io/ggtree/faq/">ggtree的FAQ</a>专门指出来，要用<code>xlim</code>给x轴分配多点空间，这是由于数据是数据空间，而文本是像素空间。你画图的画布由数据空间决定，然后文本就从指定的位置（除了坐标，还取决于你align的方式和adjustment微调）开始打出来，一不小心就打出界了。这一点我在FAQ里，除了告诉你用<code>xlim</code>解决之外，我也给出了上面的解释，所以我一直强调，不要以为我在教ggtree，我其实是在教ggplot2。</p>
-
-<p>后面就有人问了ggplot2字体溢出的事情，他所遇到的溢出，似乎更不应该发生，因为是坐标轴上的字体溢出，然而产生的原因是一样的，解决方案也是一样的，请用力猛戳《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484089&amp;idx=1&amp;sn=f6e11d54a18e96a94145a2b802c37dc1&amp;chksm=ec43b3fedb343ae89e3630900033f055af4bbe211897076291e351ae18cc89b2ddf7651ee0be#rd">ggplot2字体溢出的那点破事</a>》。</p>
-
-<p></p>
-      
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2017/10/invisible-layer/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -814,6 +818,33 @@ tidy_movies %&gt;%
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/03/gogadget/">
+                <h3 class="media-heading">你还在愁毕业？隔壁实验室的小哥从网上抄了几十行代码打了个R包，发了SCI，毕业了！</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>你是否对《<a href="https://mp.weixin.qq.com/s/JODhkZ5-qPMDx1zrWHyW_w">R包辣鸡之CorMut</a>》之篇还有印象？没有的话，快点打开阅读一下，这文章让作者毕业了，毕竟发表的是一篇Bioinformatics。</p>
+
+<p>《<a href="http://mp.weixin.qq.com/s/AsRxsRw-0N5HOSqN0d_IIw">[连载3]：辣眼睛，一篇抄袭引发的系列血案！</a>》，而这一篇文章中揭露了某讲师抄袭了两个R包，晋升副教授了！文章中还稍带了另外一个学生也是抄袭，当然也发表了SCI，也毕业了。</p>
+
+<p>今天讲另外一个R包，它做下面的事情：</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/R/gogadget/workflow.jpg" alt="" /></p>
+
+<p>当然前面的事情是goseq干的，它的功能就是衔接了goseq的输出，让我们还看看它每一步都在做什么。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/03/hku-application/">
                 <h3 class="media-heading">港校申请指北：考研考博失利之后的另一选择</h3>
               </a>
@@ -829,6 +860,32 @@ tidy_movies %&gt;%
 <p>美帝的话，基本上可以说已经没机会了。要的话，再过一年，请赶早。欧洲还是有些机会的，因为欧洲读博就跟工作似的，有时候有funding了，打了广告，就招人了。只不过你要时刻去留意，而且不一定能让你撞上。</p>
 
 <p>而港大（其它香港学校我不了解），每年招3轮学生，分别在12月、4月、8月，刚好如果你考研或考博之后，不管考得好不好，都可以试一下，给自己多一个选择，因为4月31号截止，时间不冲突，完全赶得上。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/03/pheatmap-ggplotify/">
+                <h3 class="media-heading">听说你想把pheatmap和ggplot2拼在一起</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>在《<a href="https://mp.weixin.qq.com/s/NaUQ5KhRRN8cx4v798w9Qg">一个更好用的pheatmap</a>》一文中介绍了pheatmap的新功能，它输出为一个pheatmap的对象，这个对象在终端上打出来，会出来图，你可以用ggplot2::ggsave()来保存图片，文章的结尾处卖了一个关子，就是用cowplot来拼，这个有许多人问过我，因为大家一般都认为cowplot只能用于ggplot2的输出，pheatmap感觉好像不太行，而且在很多人的感觉中，画图代码不是ggplot2写的，就是base写的，而pheatmap看上去就像是base一般，其实它是grid写的，我在下面两篇文章中都有示例代码，用于拼pheatmap，不过一般人看过了，也只是留下一点印象，终究还是记不住，因为涉及到grid的知识。</p>
+
+<ul>
+<li><a href="http://mp.weixin.qq.com/s/Xhi_ZkrEzUVdnCu7ECBS4w">听说你还不会画热图</a></li>
+<li><a href="https://mp.weixin.qq.com/s/yVLgGQQi0CQ9Q9UfIKl5aA">不同数据集画出的热图，用同样的颜色区间上色?</a></li>
+</ul>
+
+<p>现在我们有一种你一定能记得住的方法了，以后再也不用问pheatmap怎么拼图了，首先pheatmap产生的是一个对象，然后这个对象我们可以用ggplot2给画出来，然后自然而然你能够用cowplot去拼，再熟悉不过了，如果这都不能理解记住，那我也没办法了。</p>
 
 <p></p></div>
             </div>
@@ -879,6 +936,40 @@ tidy_movies %&gt;%
 <p>首先GO为什么有？因为<code>enrichGO</code>和<code>gseGO</code>都是使用<code>OrgDb</code>，而<code>OrgDb</code>本身带有ID转换的注释，而KEGG是在线去检索KEGG数据库的，KEGG并没有提供这些信息，当然对于少量大家比较熟悉的模式生物，要支持还是很容易的，然而有些物种支持，有些不支持，大家又会问了，凭什么我做的物种被BS了。所以啊，大家都不支持，挺公平。其实KEGG数据库里那么多的生物，很多物种是没有基因名的，有很多生物的注释还停留在基因座，你让我帮你转ID，臣妾做不到啊。</p>
 
 <p>但起码对能支持的物种支持一下呗，以我一贯的作风，能帮小白解决的小问题，我都会去解决。于是我们有<code>setReadable</code>函数。但凡你能找到一个OrgDb，你就能用来转ID，就这样。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/01/print-data/">
+                <h3 class="media-heading">听说你R脚本中的数据丢了，图出不来！</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><blockquote>
+<p>有小伙伴问为什么R里循环出不来图？</p>
+</blockquote>
+
+<p>其实看我公众号的各位读者们，你们不应该有这个问题，如果有，那么证明我的文章没有好好看！有两篇很重要的文章《<a href="http://mp.weixin.qq.com/s/BPY4dPFrrNrDKccMvax07w">扪心自问，meme几何？</a>》和《<a href="http://mp.weixin.qq.com/s/Uhx3l3lKQS88OJ4SHntkNg">树变图，图变树？</a>
+？》，特别是第二篇，和这个问题息息相关。</p>
+
+<p>首先假设我们有一个图：</p>
+
+<pre><code class="language-r">require(ggplot2)
+p = qplot(1:10)
+</code></pre>
+
+<h3 id="为什么在终端打p可以出图">为什么在终端打p可以出图？</h3>
+
+<p>因为在R里，所有都是对象，而在终端里你输入一个对象回车，R会去找相应的方法去打印出来，如果是S3对象，会去寻找print方法，而如果是S4会去找show方法。</p>
 
 <p></p></div>
             </div>
@@ -961,119 +1052,6 @@ tidy_movies %&gt;%
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/r-interactive/">
-                <h3 class="media-heading">R的交互与脚本模式</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Nov 11, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><blockquote>
-<p>抛出一个话题，R是不是有个大坑，在自动化脚本中(或者在循环中)，某些脚本执行会不出结果，特别是作图脚本。ps:分步执行可以出图</p>
-</blockquote>
-
-<p>其实看我公众号的各位读者们，你们不应该有这个问题，如果有，那么证明我的文章没有好好看！</p>
-
-<p>有两篇很重要的文章《<a href="http://mp.weixin.qq.com/s/BPY4dPFrrNrDKccMvax07w">扪心自问，meme几何？</a>》和《<a href="http://mp.weixin.qq.com/s/Uhx3l3lKQS88OJ4SHntkNg">树变图，图变树？</a>》，特别是第二篇，和这个问题息息相关。</p>
-
-<p>首先假设我们有一个图：</p>
-
-<pre><code>require(ggplot2)
-p = qplot(1:10)
-</code></pre>
-
-<h3 id="为什么在终端打p可以出图">为什么在终端打p可以出图？</h3>
-
-<p>因为在R里，所有都是<code>对象</code>，而在终端里你输入一个对象回车，R会去找相应的<code>方法</code>去打印出来，如果是<code>S3</code>对象，会去寻找<code>print</code>方法，而如果是<code>S4</code>会去找<code>show</code>方法。</p>
-
-<p>所以你在终端里打<code>p</code>，其实等同于你打<code>print(p)</code>，它其实调用了<code>ggplot2:::print.ggplot</code>，</p>
-
-<p>你打<code>plot(p)</code>也可以，如果你看过代码的话，画图这个动作是定义在<code>plot.ggplot</code>方法里的，而<code>print.ggplot &lt;- plot.ggplot</code>。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/macbook-arch-setting/">
-                <h3 class="media-heading">MacBook安装Arch的一些设置</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Nov 11, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><h2 id="声音">声音</h2>
-
-<p>没有声音，在<code>/etc/modprobe.d/modprobe.conf</code>里加入：</p>
-
-<pre><code>options snd-hda-intel model=mbp3 position_fix=2
-</code></pre>
-
-<h2 id="网络">网络</h2>
-
-<p>dhcpcd禁止<code>ipv6</code>:</p>
-
-<p>在<code>/etc/dhcpcd.conf</code>中加入:</p>
-
-<pre><code>noipv6rs
-noipv6
-</code></pre>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/arch-lts/">
-                <h3 class="media-heading">记一次搞死又搞活linux的经历</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Nov 11, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>看到一个帖子, <a href="https://www.maketecheasier.com/make-arch-linux-more-stable/">https://www.maketecheasier.com/make-arch-linux-more-stable/</a>， 说避免老升级内核，用lts版，装完可以把原先内核干掉：</p>
-
-<blockquote>
-<pre><code>&gt;sudo pacman -S linux-lts
-&gt;```
-&gt;
-&gt;When you’ve installed the LTS kernel, it’s a good idea to remove the bleeding edge kernel from your system.
-&gt;
-&gt;```
-&gt;sudo pacman -R linux 
-&gt;```
-
-我内心闪过一个想法，难道不用配置启动么？也没去确认，照做后重启，你妹啊，太坑了，直接就找不到内核死掉！
-
-
-
-----
-
-因为这个贴子太不负责，换了kernel之后，应该再run:
-
-</code></pre>
-
-<p>grub-mkconfig -o /boot/grub/grub.cfg
-```</p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1081,7 +1059,7 @@ noipv6
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         262 posts found
+         265 posts found
       </p>
     </div>
   </div>

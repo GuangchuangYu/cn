@@ -8,8 +8,18 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2019/03/gogadget/</loc>
+    <lastmod>2019-03-08T12:23:16+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2019/03/hku-application/</loc>
     <lastmod>2019-03-05T00:30:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/2019/03/pheatmap-ggplotify/</loc>
+    <lastmod>2019-03-03T12:23:16+08:00</lastmod>
   </url>
   
   <url>
@@ -20,6 +30,11 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/2019/01/clusterprofiler-setreadable/</loc>
     <lastmod>2019-01-14T15:53:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/2019/01/print-data/</loc>
+    <lastmod>2019-01-11T12:23:16+08:00</lastmod>
   </url>
   
   <url>
@@ -1787,13 +1802,13 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/ggplot2/</loc>
-    <lastmod>2018-11-11T23:53:00+08:00</lastmod>
+    <lastmod>2019-01-11T12:23:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/ggplotify/</loc>
-    <lastmod>2018-11-11T23:53:00+08:00</lastmod>
+    <lastmod>2019-03-03T12:23:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1830,6 +1845,12 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/go/</loc>
     <lastmod>2017-11-02T20:23:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/gogadget/</loc>
+    <lastmod>2019-03-08T12:23:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   

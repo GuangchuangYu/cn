@@ -38,6 +38,25 @@ tidy_movies %&amp;gt;%
     </item>
     
     <item>
+      <title>你还在愁毕业？隔壁实验室的小哥从网上抄了几十行代码打了个R包，发了SCI，毕业了！</title>
+      <link>https://guangchuangyu.github.io/cn/2019/03/gogadget/</link>
+      <pubDate>Fri, 08 Mar 2019 12:23:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2019/03/gogadget/</guid>
+      <description>&lt;p&gt;你是否对《&lt;a href=&#34;https://mp.weixin.qq.com/s/JODhkZ5-qPMDx1zrWHyW_w&#34;&gt;R包辣鸡之CorMut&lt;/a&gt;》之篇还有印象？没有的话，快点打开阅读一下，这文章让作者毕业了，毕竟发表的是一篇Bioinformatics。&lt;/p&gt;
+
+&lt;p&gt;《&lt;a href=&#34;http://mp.weixin.qq.com/s/AsRxsRw-0N5HOSqN0d_IIw&#34;&gt;[连载3]：辣眼睛，一篇抄袭引发的系列血案！&lt;/a&gt;》，而这一篇文章中揭露了某讲师抄袭了两个R包，晋升副教授了！文章中还稍带了另外一个学生也是抄袭，当然也发表了SCI，也毕业了。&lt;/p&gt;
+
+&lt;p&gt;今天讲另外一个R包，它做下面的事情：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/gogadget/workflow.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;当然前面的事情是goseq干的，它的功能就是衔接了goseq的输出，让我们还看看它每一步都在做什么。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>港校申请指北：考研考博失利之后的另一选择</title>
       <link>https://guangchuangyu.github.io/cn/2019/03/hku-application/</link>
       <pubDate>Tue, 05 Mar 2019 00:30:00 +0800</pubDate>
@@ -50,6 +69,24 @@ tidy_movies %&amp;gt;%
 &lt;p&gt;美帝的话，基本上可以说已经没机会了。要的话，再过一年，请赶早。欧洲还是有些机会的，因为欧洲读博就跟工作似的，有时候有funding了，打了广告，就招人了。只不过你要时刻去留意，而且不一定能让你撞上。&lt;/p&gt;
 
 &lt;p&gt;而港大（其它香港学校我不了解），每年招3轮学生，分别在12月、4月、8月，刚好如果你考研或考博之后，不管考得好不好，都可以试一下，给自己多一个选择，因为4月31号截止，时间不冲突，完全赶得上。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>听说你想把pheatmap和ggplot2拼在一起</title>
+      <link>https://guangchuangyu.github.io/cn/2019/03/pheatmap-ggplotify/</link>
+      <pubDate>Sun, 03 Mar 2019 12:23:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2019/03/pheatmap-ggplotify/</guid>
+      <description>&lt;p&gt;在《&lt;a href=&#34;https://mp.weixin.qq.com/s/NaUQ5KhRRN8cx4v798w9Qg&#34;&gt;一个更好用的pheatmap&lt;/a&gt;》一文中介绍了pheatmap的新功能，它输出为一个pheatmap的对象，这个对象在终端上打出来，会出来图，你可以用ggplot2::ggsave()来保存图片，文章的结尾处卖了一个关子，就是用cowplot来拼，这个有许多人问过我，因为大家一般都认为cowplot只能用于ggplot2的输出，pheatmap感觉好像不太行，而且在很多人的感觉中，画图代码不是ggplot2写的，就是base写的，而pheatmap看上去就像是base一般，其实它是grid写的，我在下面两篇文章中都有示例代码，用于拼pheatmap，不过一般人看过了，也只是留下一点印象，终究还是记不住，因为涉及到grid的知识。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://mp.weixin.qq.com/s/Xhi_ZkrEzUVdnCu7ECBS4w&#34;&gt;听说你还不会画热图&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/yVLgGQQi0CQ9Q9UfIKl5aA&#34;&gt;不同数据集画出的热图，用同样的颜色区间上色?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;现在我们有一种你一定能记得住的方法了，以后再也不用问pheatmap怎么拼图了，首先pheatmap产生的是一个对象，然后这个对象我们可以用ggplot2给画出来，然后自然而然你能够用cowplot去拼，再熟悉不过了，如果这都不能理解记住，那我也没办法了。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -84,6 +121,32 @@ tidy_movies %&amp;gt;%
 &lt;p&gt;首先GO为什么有？因为&lt;code&gt;enrichGO&lt;/code&gt;和&lt;code&gt;gseGO&lt;/code&gt;都是使用&lt;code&gt;OrgDb&lt;/code&gt;，而&lt;code&gt;OrgDb&lt;/code&gt;本身带有ID转换的注释，而KEGG是在线去检索KEGG数据库的，KEGG并没有提供这些信息，当然对于少量大家比较熟悉的模式生物，要支持还是很容易的，然而有些物种支持，有些不支持，大家又会问了，凭什么我做的物种被BS了。所以啊，大家都不支持，挺公平。其实KEGG数据库里那么多的生物，很多物种是没有基因名的，有很多生物的注释还停留在基因座，你让我帮你转ID，臣妾做不到啊。&lt;/p&gt;
 
 &lt;p&gt;但起码对能支持的物种支持一下呗，以我一贯的作风，能帮小白解决的小问题，我都会去解决。于是我们有&lt;code&gt;setReadable&lt;/code&gt;函数。但凡你能找到一个OrgDb，你就能用来转ID，就这样。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>听说你R脚本中的数据丢了，图出不来！</title>
+      <link>https://guangchuangyu.github.io/cn/2019/01/print-data/</link>
+      <pubDate>Fri, 11 Jan 2019 12:23:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2019/01/print-data/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;有小伙伴问为什么R里循环出不来图？&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;其实看我公众号的各位读者们，你们不应该有这个问题，如果有，那么证明我的文章没有好好看！有两篇很重要的文章《&lt;a href=&#34;http://mp.weixin.qq.com/s/BPY4dPFrrNrDKccMvax07w&#34;&gt;扪心自问，meme几何？&lt;/a&gt;》和《&lt;a href=&#34;http://mp.weixin.qq.com/s/Uhx3l3lKQS88OJ4SHntkNg&#34;&gt;树变图，图变树？&lt;/a&gt;
+？》，特别是第二篇，和这个问题息息相关。&lt;/p&gt;
+
+&lt;p&gt;首先假设我们有一个图：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;require(ggplot2)
+p = qplot(1:10)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;为什么在终端打p可以出图&#34;&gt;为什么在终端打p可以出图？&lt;/h3&gt;
+
+&lt;p&gt;因为在R里，所有都是对象，而在终端里你输入一个对象回车，R会去找相应的方法去打印出来，如果是S3对象，会去寻找print方法，而如果是S4会去找show方法。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

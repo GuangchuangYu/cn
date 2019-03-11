@@ -226,6 +226,219 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/10/chipseeker-visualization/">
+          CS6: ChIP数据可视化
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-10-01T11:44:16&#43;08:00">
+        
+  October 1, 2017
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        <p>2017眼看要结束，立下写《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247483886&amp;idx=1&amp;sn=cb76891dff5787025f6b99cdcc723d86&amp;chksm=ec43b0a9db3439bfcec1c9ac3c0d00e6190cf4d3d02d9d3dc767007e0ff68b4fbd8064bb0f77#rd">CS0: ChIPseq从入门到放弃</a>》的flag还没完成，当时ChIPseeker是33个引用，现在已经80了，时间过得好快。</p>
+
+<p>最近放羊的Jimmy给我发来了一个截屏：</p>
+
+<p><img src="http://guangchuangyu.github.io/blog_images/Bioconductor/ChIPseeker/vis/WechatIMG51.jpeg" alt="" /></p>
+
+<p>说了一篇新文章，大段在称赞ChIPseeker：</p>
+
+<p></p>
+      
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2017/10/chipseeker-visualization/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/dose-simplot/">
+          听说你还不会画heatmap
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-09-30T12:23:16&#43;08:00">
+        
+  September 30, 2017
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        <p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/DOSE/simplot/WechatIMG52.png" alt="" /></p>
+
+<p>群众纷纷表示图二是Excel画的，我觉得也是！Excel是生物学家的最爱啊。虽然做生信的人都看不上，最主要是没有记录，不具备可重复性。但现实就是大家都爱Excel。</p>
+
+<p></p>
+      
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2017/09/dose-simplot/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/ko-id-conversion/">
+          ko数据库ID转换
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-09-27T19:11:00&#43;08:00">
+        
+  September 27, 2017
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        <blockquote>
+<p>Since the clusterProfiler is a very useful tools for GO and Kegg annotation.At present I want to use it to enrich for kegg result while only have the KO number ,So I want to convert the KO number to the pathway function,Is there have any function or methods in the software can convert it?any help will be appreciated</p>
+</blockquote>
+
+<p><a href="https://github.com/GuangchuangYu/clusterProfiler/issues/99">这个问题</a>问说他想转KO到通路，首先这是一个常见的错误，很多人分不清<code>K</code>和<code>ko</code>，所以在我告诉他可以把<code>K number</code>转成<code>ko pathway</code>的时候，我先指出他的错误。</p>
+
+<p><code>ko</code> is actually pathway map. I think you are talking about <code>K</code> number mapping to <code>ko</code> pathway.</p>
+
+<pre><code class="language-r">&gt; bitr_kegg(&quot;K00844&quot;, &quot;kegg&quot;, &quot;Path&quot;, &quot;ko&quot;)
+     kegg    Path
+1  K00844 ko00010
+2  K00844 ko00051
+3  K00844 ko00052
+4  K00844 ko00500
+5  K00844 ko00520
+6  K00844 ko00521
+7  K00844 ko00524
+8  K00844 ko01100
+9  K00844 ko01110
+10 K00844 ko01120
+11 K00844 ko01130
+12 K00844 ko01200
+13 K00844 ko04066
+14 K00844 ko04910
+15 K00844 ko04930
+16 K00844 ko04973
+17 K00844 ko05230
+</code></pre>
+
+<p></p>
+      
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2017/09/ko-id-conversion/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/geofacet_index/">
           正经的图千篇一律，不正经的叔万里挑一
         </a>
@@ -474,195 +687,6 @@ ga('send', 'pageview');
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/color-in-gseaplot/">
-          gseaplot自定义颜色
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2017-09-11T19:11:00&#43;08:00">
-        
-  September 11, 2017
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <p>《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484730&amp;amp;idx=1&amp;amp;sn=48b8c24b6cfb6162f8fb3f3861ddfe1b&amp;amp;chksm=ec43b47ddb343d6b37581fa81b0bf11b5141a446333b1b961ef1ad4f80da4c4732d7bc3432c2#rd">听说你有RNAseq数据却不知道怎么跑GSEA</a>》一文有小伙伴问封面的gseaplot能否换颜色，于是我就随手支持了。</p>
-
-<p></p>
-      
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2017/09/color-in-gseaplot/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/ggplot2-set-font/">
-          设置ggplot所有字体
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2017-09-04T16:14:00&#43;08:00">
-        
-  September 4, 2017
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <p>最近公众号「生信媛」和「生信宝典」的小伙伴在说ggplot2无法一次性设置所有字体，<code>theme</code>只能设置axis text, title这些，而搞不了<code>geom_text</code>，<code>geom_text</code>必须要手工输入<code>family=XXX</code>来设置，因为不能使用<code>theme</code>来更换，也就是说没办法通过后处理来设定，比较麻烦。</p>
-
-<p>这显然是不对的，后处理必须可以的，一次性满足所有愿望也只是因为没人写个神奇的函数而已。于是我就动手写了个<code>set_font</code>的函数。</p>
-
-<p>假设我们有下图：</p>
-
-<pre><code class="language-r">library(ggplot2)
-d &lt;- data.frame(x=rnorm(10), y=rnorm(10), lab=LETTERS[1:10])
-p &lt;- ggplot(d, aes(x, y)) + 
-    geom_text(aes(label=lab, color=lab), size=10) + 
-    geom_text(aes(y, x, label=lab), size=3)
-</code></pre>
-
-<p></p>
-      
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2017/09/ggplot2-set-font/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/09/3d-breast/">
-          3D版邪恶的曲线
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2017-09-04T14:13:35&#43;08:00">
-        
-  September 4, 2017
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/babble">babble</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <p>我的公众号biobabble第一篇原创文章《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247483816&amp;amp;idx=1&amp;amp;sn=cbfbc284f4edb165ac65f7926f7f8fcc&amp;amp;chksm=ec43b0efdb3439f91ec4f570f7be65e442e21e403481b969d69449464ae1986c7983551de04d#rd">邪恶的曲线</a>》，因为太邪恶，当时只推送给男性关注者，由于不是推送给所有人，所以历史记录是翻不到的，之前有再文字推送一下链接，结果评论区全是差评，我也是蛮囧rz的…</p>
-
-<p>无意中我又翻到了一张2012年2月份画的3D版本，尽管你们要差评，还是想分享一下。代码就在截屏之中，想玩的话，可以照着输入，支持鼠标旋转哦，可以慢慢把玩（太邪恶了）。</p>
-
-<p></p>
-      
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2017/09/3d-breast/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -784,6 +808,33 @@ tidy_movies %&gt;%
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/03/gogadget/">
+                <h3 class="media-heading">你还在愁毕业？隔壁实验室的小哥从网上抄了几十行代码打了个R包，发了SCI，毕业了！</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>你是否对《<a href="https://mp.weixin.qq.com/s/JODhkZ5-qPMDx1zrWHyW_w">R包辣鸡之CorMut</a>》之篇还有印象？没有的话，快点打开阅读一下，这文章让作者毕业了，毕竟发表的是一篇Bioinformatics。</p>
+
+<p>《<a href="http://mp.weixin.qq.com/s/AsRxsRw-0N5HOSqN0d_IIw">[连载3]：辣眼睛，一篇抄袭引发的系列血案！</a>》，而这一篇文章中揭露了某讲师抄袭了两个R包，晋升副教授了！文章中还稍带了另外一个学生也是抄袭，当然也发表了SCI，也毕业了。</p>
+
+<p>今天讲另外一个R包，它做下面的事情：</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/R/gogadget/workflow.jpg" alt="" /></p>
+
+<p>当然前面的事情是goseq干的，它的功能就是衔接了goseq的输出，让我们还看看它每一步都在做什么。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/03/hku-application/">
                 <h3 class="media-heading">港校申请指北：考研考博失利之后的另一选择</h3>
               </a>
@@ -799,6 +850,32 @@ tidy_movies %&gt;%
 <p>美帝的话，基本上可以说已经没机会了。要的话，再过一年，请赶早。欧洲还是有些机会的，因为欧洲读博就跟工作似的，有时候有funding了，打了广告，就招人了。只不过你要时刻去留意，而且不一定能让你撞上。</p>
 
 <p>而港大（其它香港学校我不了解），每年招3轮学生，分别在12月、4月、8月，刚好如果你考研或考博之后，不管考得好不好，都可以试一下，给自己多一个选择，因为4月31号截止，时间不冲突，完全赶得上。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/03/pheatmap-ggplotify/">
+                <h3 class="media-heading">听说你想把pheatmap和ggplot2拼在一起</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>在《<a href="https://mp.weixin.qq.com/s/NaUQ5KhRRN8cx4v798w9Qg">一个更好用的pheatmap</a>》一文中介绍了pheatmap的新功能，它输出为一个pheatmap的对象，这个对象在终端上打出来，会出来图，你可以用ggplot2::ggsave()来保存图片，文章的结尾处卖了一个关子，就是用cowplot来拼，这个有许多人问过我，因为大家一般都认为cowplot只能用于ggplot2的输出，pheatmap感觉好像不太行，而且在很多人的感觉中，画图代码不是ggplot2写的，就是base写的，而pheatmap看上去就像是base一般，其实它是grid写的，我在下面两篇文章中都有示例代码，用于拼pheatmap，不过一般人看过了，也只是留下一点印象，终究还是记不住，因为涉及到grid的知识。</p>
+
+<ul>
+<li><a href="http://mp.weixin.qq.com/s/Xhi_ZkrEzUVdnCu7ECBS4w">听说你还不会画热图</a></li>
+<li><a href="https://mp.weixin.qq.com/s/yVLgGQQi0CQ9Q9UfIKl5aA">不同数据集画出的热图，用同样的颜色区间上色?</a></li>
+</ul>
+
+<p>现在我们有一种你一定能记得住的方法了，以后再也不用问pheatmap怎么拼图了，首先pheatmap产生的是一个对象，然后这个对象我们可以用ggplot2给画出来，然后自然而然你能够用cowplot去拼，再熟悉不过了，如果这都不能理解记住，那我也没办法了。</p>
 
 <p></p></div>
             </div>
@@ -849,6 +926,40 @@ tidy_movies %&gt;%
 <p>首先GO为什么有？因为<code>enrichGO</code>和<code>gseGO</code>都是使用<code>OrgDb</code>，而<code>OrgDb</code>本身带有ID转换的注释，而KEGG是在线去检索KEGG数据库的，KEGG并没有提供这些信息，当然对于少量大家比较熟悉的模式生物，要支持还是很容易的，然而有些物种支持，有些不支持，大家又会问了，凭什么我做的物种被BS了。所以啊，大家都不支持，挺公平。其实KEGG数据库里那么多的生物，很多物种是没有基因名的，有很多生物的注释还停留在基因座，你让我帮你转ID，臣妾做不到啊。</p>
 
 <p>但起码对能支持的物种支持一下呗，以我一贯的作风，能帮小白解决的小问题，我都会去解决。于是我们有<code>setReadable</code>函数。但凡你能找到一个OrgDb，你就能用来转ID，就这样。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/01/print-data/">
+                <h3 class="media-heading">听说你R脚本中的数据丢了，图出不来！</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><blockquote>
+<p>有小伙伴问为什么R里循环出不来图？</p>
+</blockquote>
+
+<p>其实看我公众号的各位读者们，你们不应该有这个问题，如果有，那么证明我的文章没有好好看！有两篇很重要的文章《<a href="http://mp.weixin.qq.com/s/BPY4dPFrrNrDKccMvax07w">扪心自问，meme几何？</a>》和《<a href="http://mp.weixin.qq.com/s/Uhx3l3lKQS88OJ4SHntkNg">树变图，图变树？</a>
+？》，特别是第二篇，和这个问题息息相关。</p>
+
+<p>首先假设我们有一个图：</p>
+
+<pre><code class="language-r">require(ggplot2)
+p = qplot(1:10)
+</code></pre>
+
+<h3 id="为什么在终端打p可以出图">为什么在终端打p可以出图？</h3>
+
+<p>因为在R里，所有都是对象，而在终端里你输入一个对象回车，R会去找相应的方法去打印出来，如果是S3对象，会去寻找print方法，而如果是S4会去找show方法。</p>
 
 <p></p></div>
             </div>
@@ -931,119 +1042,6 @@ tidy_movies %&gt;%
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/r-interactive/">
-                <h3 class="media-heading">R的交互与脚本模式</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Nov 11, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><blockquote>
-<p>抛出一个话题，R是不是有个大坑，在自动化脚本中(或者在循环中)，某些脚本执行会不出结果，特别是作图脚本。ps:分步执行可以出图</p>
-</blockquote>
-
-<p>其实看我公众号的各位读者们，你们不应该有这个问题，如果有，那么证明我的文章没有好好看！</p>
-
-<p>有两篇很重要的文章《<a href="http://mp.weixin.qq.com/s/BPY4dPFrrNrDKccMvax07w">扪心自问，meme几何？</a>》和《<a href="http://mp.weixin.qq.com/s/Uhx3l3lKQS88OJ4SHntkNg">树变图，图变树？</a>》，特别是第二篇，和这个问题息息相关。</p>
-
-<p>首先假设我们有一个图：</p>
-
-<pre><code>require(ggplot2)
-p = qplot(1:10)
-</code></pre>
-
-<h3 id="为什么在终端打p可以出图">为什么在终端打p可以出图？</h3>
-
-<p>因为在R里，所有都是<code>对象</code>，而在终端里你输入一个对象回车，R会去找相应的<code>方法</code>去打印出来，如果是<code>S3</code>对象，会去寻找<code>print</code>方法，而如果是<code>S4</code>会去找<code>show</code>方法。</p>
-
-<p>所以你在终端里打<code>p</code>，其实等同于你打<code>print(p)</code>，它其实调用了<code>ggplot2:::print.ggplot</code>，</p>
-
-<p>你打<code>plot(p)</code>也可以，如果你看过代码的话，画图这个动作是定义在<code>plot.ggplot</code>方法里的，而<code>print.ggplot &lt;- plot.ggplot</code>。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/macbook-arch-setting/">
-                <h3 class="media-heading">MacBook安装Arch的一些设置</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Nov 11, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><h2 id="声音">声音</h2>
-
-<p>没有声音，在<code>/etc/modprobe.d/modprobe.conf</code>里加入：</p>
-
-<pre><code>options snd-hda-intel model=mbp3 position_fix=2
-</code></pre>
-
-<h2 id="网络">网络</h2>
-
-<p>dhcpcd禁止<code>ipv6</code>:</p>
-
-<p>在<code>/etc/dhcpcd.conf</code>中加入:</p>
-
-<pre><code>noipv6rs
-noipv6
-</code></pre>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/arch-lts/">
-                <h3 class="media-heading">记一次搞死又搞活linux的经历</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Nov 11, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>看到一个帖子, <a href="https://www.maketecheasier.com/make-arch-linux-more-stable/">https://www.maketecheasier.com/make-arch-linux-more-stable/</a>， 说避免老升级内核，用lts版，装完可以把原先内核干掉：</p>
-
-<blockquote>
-<pre><code>&gt;sudo pacman -S linux-lts
-&gt;```
-&gt;
-&gt;When you’ve installed the LTS kernel, it’s a good idea to remove the bleeding edge kernel from your system.
-&gt;
-&gt;```
-&gt;sudo pacman -R linux 
-&gt;```
-
-我内心闪过一个想法，难道不用配置启动么？也没去确认，照做后重启，你妹啊，太坑了，直接就找不到内核死掉！
-
-
-
-----
-
-因为这个贴子太不负责，换了kernel之后，应该再run:
-
-</code></pre>
-
-<p>grub-mkconfig -o /boot/grub/grub.cfg
-```</p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1051,7 +1049,7 @@ noipv6
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         262 posts found
+         265 posts found
       </p>
     </div>
   </div>

@@ -229,6 +229,246 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/03/peak%E6%B3%A8%E9%87%8A/">
+          peak注释
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-03-16T12:23:16&#43;08:00">
+        
+  March 16, 2017
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/chipseq">ChIPseq</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        <p>这一次讲解非常重要的peak注释，注释在<strong>ChIPseeker</strong>里只需要用到一个函数<strong>annotatePeak</strong>，它可以满足大家各方面的需求。</p>
+
+<h2 id="输入">输入</h2>
+
+<p>当然需要我们上次讲到的BED文件，<strong>ChIPseeker</strong>自带了5个BED文件，用<strong>getSampleFiles()</strong>可以拿到文件的全路径，它返回的是个named list，我这里取第4个文件来演示。<strong>annotatePeak</strong>的输入也可以是<strong>GRanges</strong>对象，你如果用R做peak calling的话,直接就可以衔接上<strong>ChIPseeker</strong>了。</p>
+
+<pre><code>&gt; require(ChIPseeker)
+&gt; f = getSampleFiles()[[4]]
+</code></pre>
+
+<p>巧妇难为无米之炊，就像拿到<strong>fastq</strong>要跑<strong>BWA</strong>，你需要全基因组的序列一样，做注释当然需要注释信息，基因的起始终止，基因有那些内含子，外显子，以及它们的起始终止，非编码区的位置，功能元件的位置等各种信息。</p>
+
+<p>很多软件会针对特定的物种去整理这些信息供软件使用，但这样就限制了软件的物种支持，有些开发者写软件本意也是解决自己的问题，可能对自己的研究无关的物种也没兴趣去支持。</p>
+
+<p>然而<strong>ChIPseeker</strong>支持所有的物种，你没有看错，<strong>ChIPseeker</strong>没有物种限制，当然这是有前提的，物种本身起码是有基因的位置这些注释信息，不然就变无米之炊了。</p>
+
+<p>这里我们需要的是一个<strong>TxDb</strong>对象，这个<strong>TxDb</strong>就包含了我们需要的各种信息，<strong>ChIPseeker</strong>会把信息抽取出来，用于注释时使用。</p>
+
+<pre><code>&gt; require(TxDb.Hsapiens.UCSC.hg19.knownGene)
+&gt; txdb = TxDb.Hsapiens.UCSC.hg19.knownGene
+&gt; x = annotatePeak(f, tssRegion=c(-1000, 1000), TxDb=txdb)
+&gt;&gt; loading peak file...              2017-03-09 11:29:18 PM 
+&gt;&gt; preparing features information...         2017-03-09 11:29:18 PM 
+&gt;&gt; identifying nearest features...       2017-03-09 11:29:19 PM 
+&gt;&gt; calculating distance from peak to TSS...  2017-03-09 11:29:20 PM 
+&gt;&gt; assigning genomic annotation...       2017-03-09 11:29:20 PM 
+&gt;&gt; assigning chromosome lengths          2017-03-09 11:29:42 PM 
+&gt;&gt; done...                   2017-03-09 11:29:42 PM 
+</code></pre>
+
+<blockquote>
+<p>这里需要注意的是，启动子区域是没有明确的定义的，所以你可能需要指定<strong>tssRegion</strong>，把基因起始转录位点的上下游区域来做为启动子区域。</p>
+</blockquote>
+
+<p>有了这两个输入（BED文件和TxDb对象），你就可以跑注释了，然后就可以出结果了。
+</p>
+      
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2017/03/peak%E6%B3%A8%E9%87%8A/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+            
+              
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/03/bed%E6%96%87%E4%BB%B6/">
+          BED文件
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-03-09T00:13:57&#43;08:00">
+        
+  March 9, 2017
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        <p>BED的全称是Browser Extensible Data，顾名思义是为genome browser设计的，大名鼎鼎的bedtools可不是什么「床上用品」。</p>
+
+<p>BED包含有3个必须的字段和9个可选字段。</p>
+
+<p>三个字段包括：</p>
+
+<ul>
+<li>1 chrom - 染色体名字</li>
+<li>2 chromStart - 染色体起始位点</li>
+<li>3 chromEnd - 染色体终止位点</li>
+</ul>
+
+<blockquote>
+<p>这里必须指出的是<strong>chromStart</strong>是起始于0，而不是1。很多分析软件都忽略
+了这一点，会有一个碱基的位移，据我所知Homer和ChIPseeker没有这个问题，而像peakAnalyzer, ChIPpeakAnno等都有位移的问题。</p>
+</blockquote>
+
+<p>可选的9个字段包括：</p>
+
+<ul>
+<li>4 name - 名字</li>
+<li>5 score - 分值(0-1000), 用于genome browser展示时上色。</li>
+<li>6 strand - 正负链，对于ChIPseq数据来说，<strong>一般</strong>没有正负链信息。</li>
+<li>7 thickStart - 画矩形的起点</li>
+<li>8 thickEnd - 画矩形的终点</li>
+<li>9 itemRgb - RGB值</li>
+<li>10 blockCount - 子元件（比如外显子）的数目</li>
+<li>11 blockSizes - 子元件的大小</li>
+<li>12 blockStarts - 子元件的起始位点</li>
+</ul>
+
+<p></p>
+      
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2017/03/bed%E6%96%87%E4%BB%B6/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+            
+              
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/02/%E6%A0%B9%E6%8D%AEgtf%E7%94%BB%E5%9F%BA%E5%9B%A0%E7%9A%84%E5%A4%9A%E4%B8%AA%E8%BD%AC%E5%BD%95%E6%9C%AC%E7%BB%93%E6%9E%84/">
+          根据GTF画基因的多个转录本结构
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-02-21T12:23:16&#43;08:00">
+        
+  February 21, 2017
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        <p>这是<a href="https://mp.weixin.qq.com/s?__biz=MzAxMDkxODM1Ng==&amp;mid=2247484044&amp;idx=2&amp;sn=56b45eaeb4ad344481afa05abeb1c53e&amp;chksm=9b484237ac3fcb219e41d5653fb800f987e7d217bbb3a5a0c0170ffb8e402f4cc5f726212ef7&amp;mpshare=1&amp;scene=1&amp;srcid=0220calgiLgIZmjiiaNXZ0BE&amp;key=df0a0b140e64a33b97880a54ee7cc95794b60a225d5338e88620674bed463405e61c5365394b7830750de8d3a88e122babd535c88c7d74b974b20c509218cf00d106c991a3a3f049c698a8f847aa5e06&amp;ascene=0&amp;uin=MTMxNjc4OTY2Mg%3D%3D&amp;devicetype=iMac14%2C2+OSX+OSX+10.11.6+build">生物技能树的一道习题</a>，使用了base plot来画，做为补充，我使用ggplot2来重画一遍。</p>
+
+<p></p>
+      
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2017/02/%E6%A0%B9%E6%8D%AEgtf%E7%94%BB%E5%9F%BA%E5%9B%A0%E7%9A%84%E5%A4%9A%E4%B8%AA%E8%BD%AC%E5%BD%95%E6%9C%AC%E7%BB%93%E6%9E%84/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+            
+              
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/02/chipseq%E7%AE%80%E4%BB%8B/">
           ChIPseq简介
         </a>
@@ -472,198 +712,6 @@ ga('send', 'pageview');
 </article>
 
             
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/01/chipseq%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E6%94%BE%E5%BC%83/">
-          ChIPseq从入门到放弃
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2017-01-08T22:53:00&#43;08:00">
-        
-  January 8, 2017
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/chipseq">ChIPseq</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <p>接下来要出一个ChIPseq系列，讲一讲ChIPseq和我的ChIPseeker包，从入门到放弃是我自己的个人写照。我做ChIPseq总共也就3个月的时间，做的事情并不多，在一知半解的情况下写下了ChIPseeker包。</p>
-
-<p>我当时被要求做ChIPseq分析是为他人做嫁衣，而且是完全白干那种，但做为学生，白干也得干。</p>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/2017/1487166664.jpg" alt="" /></p>
-
-<p>当时一开始使用ChIPpeakAnno做注释，但用UCSC genome browser检验结果的时候，发现对不上。在对ChIPpeakAnno包不满意的情况下，开始着手写ChIPseeker，其实在使用ChIPpeakAnno的时候，我就有写代码对结果做一些可视化，所以未有ChIPseeker先有ChIPseeker的部分可视化功能。当时写了篇博客文说ChIPpeakAnno的问题，一个月后就在Bioconductor上发表了ChIPseeker，这包完全是我半夜在宿舍里写出来的。</p>
-
-<p></p>
-      
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2017/01/chipseq%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E6%94%BE%E5%BC%83/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2016/12/clifun/">
-          clifun:在R里装装逼
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2016-12-13T00:53:00&#43;08:00">
-        
-  December 13, 2016
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <p>天天活在命令行下，需要一些有趣的小命令来调节一下枯燥的生活（其实是需要装装逼）。</p>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/R/clifun/Screen Shot 2016-12-12 at 1.42.00 PM.png" alt="" /></p>
-
-<p></p>
-      
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2016/12/clifun/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2016/12/%E8%B7%A8%E7%89%A9%E7%A7%8D%E8%AE%A1%E7%AE%97%E5%9F%BA%E5%9B%A0%E7%9B%B8%E4%BC%BC%E6%80%A7/">
-          跨物种计算基因相似性
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2016-12-07T00:53:00&#43;08:00">
-        
-  December 7, 2016
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <blockquote>
-<p>Hi,</p>
-
-<p>I know this question has been asked before a long time ago and I don&rsquo;t see an answer of that question in the mailing list or in the vignette of GOsemsim package. So I was wondering what is the easiest possible way of calculating GO semantic similarity value for orthologus gene pairs between two species using the above R package or any other package you know of. I am not doing this for less annotated species I need to calculate that for orthologus genes between Human and Mouse (both of which are well annotated IMHO). So I would much appreciate it if anyone who has already done this before can point me to a resource which already has pre-calculated semantic similarity values for Mouse and Human orthologues or has inbuilt code to do that.</p>
-
-<p>Thanks &amp; regards</p>
-</blockquote>
-
-<p>这是Bioconductor support site上的<a href="https://support.bioconductor.org/p/90063/">问题</a>，问的是他想要计算人类和老鼠的直系同源基因通过GO注释来计算语义相似性，问GOSemSim是否支持，这个答案是yes and no。</p>
-
-<p></p>
-      
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2016/12/%E8%B7%A8%E7%89%A9%E7%A7%8D%E8%AE%A1%E7%AE%97%E5%9F%BA%E5%9B%A0%E7%9B%B8%E4%BC%BC%E6%80%A7/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
             
   <div class="pagination-bar">
     <ul class="pagination">
@@ -685,7 +733,7 @@ ga('send', 'pageview');
           </li>
         
       
-      <li class="pagination-number">page 16 of 19</li>
+      <li class="pagination-number">page 16 of 20</li>
     </ul>
   </div>
 
@@ -786,6 +834,33 @@ tidy_movies %&gt;%
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/03/gogadget/">
+                <h3 class="media-heading">你还在愁毕业？隔壁实验室的小哥从网上抄了几十行代码打了个R包，发了SCI，毕业了！</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>你是否对《<a href="https://mp.weixin.qq.com/s/JODhkZ5-qPMDx1zrWHyW_w">R包辣鸡之CorMut</a>》之篇还有印象？没有的话，快点打开阅读一下，这文章让作者毕业了，毕竟发表的是一篇Bioinformatics。</p>
+
+<p>《<a href="http://mp.weixin.qq.com/s/AsRxsRw-0N5HOSqN0d_IIw">[连载3]：辣眼睛，一篇抄袭引发的系列血案！</a>》，而这一篇文章中揭露了某讲师抄袭了两个R包，晋升副教授了！文章中还稍带了另外一个学生也是抄袭，当然也发表了SCI，也毕业了。</p>
+
+<p>今天讲另外一个R包，它做下面的事情：</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/R/gogadget/workflow.jpg" alt="" /></p>
+
+<p>当然前面的事情是goseq干的，它的功能就是衔接了goseq的输出，让我们还看看它每一步都在做什么。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/03/hku-application/">
                 <h3 class="media-heading">港校申请指北：考研考博失利之后的另一选择</h3>
               </a>
@@ -801,6 +876,32 @@ tidy_movies %&gt;%
 <p>美帝的话，基本上可以说已经没机会了。要的话，再过一年，请赶早。欧洲还是有些机会的，因为欧洲读博就跟工作似的，有时候有funding了，打了广告，就招人了。只不过你要时刻去留意，而且不一定能让你撞上。</p>
 
 <p>而港大（其它香港学校我不了解），每年招3轮学生，分别在12月、4月、8月，刚好如果你考研或考博之后，不管考得好不好，都可以试一下，给自己多一个选择，因为4月31号截止，时间不冲突，完全赶得上。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/03/pheatmap-ggplotify/">
+                <h3 class="media-heading">听说你想把pheatmap和ggplot2拼在一起</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>在《<a href="https://mp.weixin.qq.com/s/NaUQ5KhRRN8cx4v798w9Qg">一个更好用的pheatmap</a>》一文中介绍了pheatmap的新功能，它输出为一个pheatmap的对象，这个对象在终端上打出来，会出来图，你可以用ggplot2::ggsave()来保存图片，文章的结尾处卖了一个关子，就是用cowplot来拼，这个有许多人问过我，因为大家一般都认为cowplot只能用于ggplot2的输出，pheatmap感觉好像不太行，而且在很多人的感觉中，画图代码不是ggplot2写的，就是base写的，而pheatmap看上去就像是base一般，其实它是grid写的，我在下面两篇文章中都有示例代码，用于拼pheatmap，不过一般人看过了，也只是留下一点印象，终究还是记不住，因为涉及到grid的知识。</p>
+
+<ul>
+<li><a href="http://mp.weixin.qq.com/s/Xhi_ZkrEzUVdnCu7ECBS4w">听说你还不会画热图</a></li>
+<li><a href="https://mp.weixin.qq.com/s/yVLgGQQi0CQ9Q9UfIKl5aA">不同数据集画出的热图，用同样的颜色区间上色?</a></li>
+</ul>
+
+<p>现在我们有一种你一定能记得住的方法了，以后再也不用问pheatmap怎么拼图了，首先pheatmap产生的是一个对象，然后这个对象我们可以用ggplot2给画出来，然后自然而然你能够用cowplot去拼，再熟悉不过了，如果这都不能理解记住，那我也没办法了。</p>
 
 <p></p></div>
             </div>
@@ -851,6 +952,40 @@ tidy_movies %&gt;%
 <p>首先GO为什么有？因为<code>enrichGO</code>和<code>gseGO</code>都是使用<code>OrgDb</code>，而<code>OrgDb</code>本身带有ID转换的注释，而KEGG是在线去检索KEGG数据库的，KEGG并没有提供这些信息，当然对于少量大家比较熟悉的模式生物，要支持还是很容易的，然而有些物种支持，有些不支持，大家又会问了，凭什么我做的物种被BS了。所以啊，大家都不支持，挺公平。其实KEGG数据库里那么多的生物，很多物种是没有基因名的，有很多生物的注释还停留在基因座，你让我帮你转ID，臣妾做不到啊。</p>
 
 <p>但起码对能支持的物种支持一下呗，以我一贯的作风，能帮小白解决的小问题，我都会去解决。于是我们有<code>setReadable</code>函数。但凡你能找到一个OrgDb，你就能用来转ID，就这样。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/01/print-data/">
+                <h3 class="media-heading">听说你R脚本中的数据丢了，图出不来！</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><blockquote>
+<p>有小伙伴问为什么R里循环出不来图？</p>
+</blockquote>
+
+<p>其实看我公众号的各位读者们，你们不应该有这个问题，如果有，那么证明我的文章没有好好看！有两篇很重要的文章《<a href="http://mp.weixin.qq.com/s/BPY4dPFrrNrDKccMvax07w">扪心自问，meme几何？</a>》和《<a href="http://mp.weixin.qq.com/s/Uhx3l3lKQS88OJ4SHntkNg">树变图，图变树？</a>
+？》，特别是第二篇，和这个问题息息相关。</p>
+
+<p>首先假设我们有一个图：</p>
+
+<pre><code class="language-r">require(ggplot2)
+p = qplot(1:10)
+</code></pre>
+
+<h3 id="为什么在终端打p可以出图">为什么在终端打p可以出图？</h3>
+
+<p>因为在R里，所有都是对象，而在终端里你输入一个对象回车，R会去找相应的方法去打印出来，如果是S3对象，会去寻找print方法，而如果是S4会去找show方法。</p>
 
 <p></p></div>
             </div>
@@ -933,119 +1068,6 @@ tidy_movies %&gt;%
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/r-interactive/">
-                <h3 class="media-heading">R的交互与脚本模式</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Nov 11, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><blockquote>
-<p>抛出一个话题，R是不是有个大坑，在自动化脚本中(或者在循环中)，某些脚本执行会不出结果，特别是作图脚本。ps:分步执行可以出图</p>
-</blockquote>
-
-<p>其实看我公众号的各位读者们，你们不应该有这个问题，如果有，那么证明我的文章没有好好看！</p>
-
-<p>有两篇很重要的文章《<a href="http://mp.weixin.qq.com/s/BPY4dPFrrNrDKccMvax07w">扪心自问，meme几何？</a>》和《<a href="http://mp.weixin.qq.com/s/Uhx3l3lKQS88OJ4SHntkNg">树变图，图变树？</a>》，特别是第二篇，和这个问题息息相关。</p>
-
-<p>首先假设我们有一个图：</p>
-
-<pre><code>require(ggplot2)
-p = qplot(1:10)
-</code></pre>
-
-<h3 id="为什么在终端打p可以出图">为什么在终端打p可以出图？</h3>
-
-<p>因为在R里，所有都是<code>对象</code>，而在终端里你输入一个对象回车，R会去找相应的<code>方法</code>去打印出来，如果是<code>S3</code>对象，会去寻找<code>print</code>方法，而如果是<code>S4</code>会去找<code>show</code>方法。</p>
-
-<p>所以你在终端里打<code>p</code>，其实等同于你打<code>print(p)</code>，它其实调用了<code>ggplot2:::print.ggplot</code>，</p>
-
-<p>你打<code>plot(p)</code>也可以，如果你看过代码的话，画图这个动作是定义在<code>plot.ggplot</code>方法里的，而<code>print.ggplot &lt;- plot.ggplot</code>。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/macbook-arch-setting/">
-                <h3 class="media-heading">MacBook安装Arch的一些设置</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Nov 11, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><h2 id="声音">声音</h2>
-
-<p>没有声音，在<code>/etc/modprobe.d/modprobe.conf</code>里加入：</p>
-
-<pre><code>options snd-hda-intel model=mbp3 position_fix=2
-</code></pre>
-
-<h2 id="网络">网络</h2>
-
-<p>dhcpcd禁止<code>ipv6</code>:</p>
-
-<p>在<code>/etc/dhcpcd.conf</code>中加入:</p>
-
-<pre><code>noipv6rs
-noipv6
-</code></pre>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/arch-lts/">
-                <h3 class="media-heading">记一次搞死又搞活linux的经历</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Nov 11, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>看到一个帖子, <a href="https://www.maketecheasier.com/make-arch-linux-more-stable/">https://www.maketecheasier.com/make-arch-linux-more-stable/</a>， 说避免老升级内核，用lts版，装完可以把原先内核干掉：</p>
-
-<blockquote>
-<pre><code>&gt;sudo pacman -S linux-lts
-&gt;```
-&gt;
-&gt;When you’ve installed the LTS kernel, it’s a good idea to remove the bleeding edge kernel from your system.
-&gt;
-&gt;```
-&gt;sudo pacman -R linux 
-&gt;```
-
-我内心闪过一个想法，难道不用配置启动么？也没去确认，照做后重启，你妹啊，太坑了，直接就找不到内核死掉！
-
-
-
-----
-
-因为这个贴子太不负责，换了kernel之后，应该再run:
-
-</code></pre>
-
-<p>grub-mkconfig -o /boot/grub/grub.cfg
-```</p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1053,7 +1075,7 @@ noipv6
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         262 posts found
+         265 posts found
       </p>
     </div>
   </div>
