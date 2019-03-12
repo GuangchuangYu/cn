@@ -400,7 +400,7 @@ tidy_movies %&gt;%
 
 <p><img src="https://raw.githubusercontent.com/const-ae/ggupset/master/man/figures/README-unnamed-chunk-10-1.png" alt="" /></p>
 
-<pre><code>avg_rating &lt;- tidy_movies %&gt;%
+<pre><code>tidy_movies %&gt;%
   mutate(Genres_collapsed = sapply(Genres, function(x) paste0(sort(x), collapse=&quot;-&quot;))) %&gt;%
   mutate(Genres_collapsed = fct_lump(fct_infreq(as.factor(Genres_collapsed)), n=12)) %&gt;%
   group_by(stars, Genres_collapsed) %&gt;%
@@ -408,7 +408,7 @@ tidy_movies %&gt;%
   group_by(Genres_collapsed) %&gt;%
   mutate(percent_rating = percent_rating / sum(percent_rating)) %&gt;%
   arrange(Genres_collapsed) %&gt;%
-  ggplot(avg_rating, aes(x=Genres_collapsed, y=stars, fill=percent_rating)) +
+  ggplot(aes(x=Genres_collapsed, y=stars, fill=percent_rating)) +
     geom_tile() +
     stat_summary_bin(aes(y=percent_rating * stars), fun.y = sum,  geom=&quot;point&quot;, 
                      shape=&quot;—&quot;, color=&quot;red&quot;, size=6) +
