@@ -6,10 +6,47 @@
     <description>Recent content in Posts on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Mar 2019 09:33:50 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 14 Mar 2019 12:37:55 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>欧式距离如何应对缺失值</title>
+      <link>https://guangchuangyu.github.io/cn/2019/03/euclidean-distance-with-na-values/</link>
+      <pubDate>Thu, 14 Mar 2019 12:37:55 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2019/03/euclidean-distance-with-na-values/</guid>
+      <description>&lt;p&gt;biobabble作者群有一个小伙伴提出来的问题。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;没错，凡是给biobabble投稿的小伙伴都会被拉入作者群。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;话说有一个矩阵，我们让它某个值缺失，算出来的距离和原来的竟然是一样的：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;&amp;gt; dat = matrix(1:10, 2)
+&amp;gt; dist(dat)
+         1
+2 2.236068
+&amp;gt; dat[1,1] = NA
+&amp;gt; dist(dat)
+         1
+2 2.236068
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这有点反直觉，实际上你再搞个缺失值，它算出来还是一样的：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; dat[1,3] = NA
+&amp;gt; dist(dat)
+         1
+2 2.236068
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;但以我的经验，我通常不敢轻易说人家有bug，我们得确认一下。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>ggupset -- ggplot2版本的upset plot</title>
@@ -3411,7 +3448,11 @@ print(p)
       <pubDate>Tue, 29 Nov 2016 00:53:00 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2016/11/vertical-dendrogram-in-ggtree/</guid>
-      <description>&lt;p&gt;这个Diego在推特上问的问题，他最近在写一个&lt;a href=&#34;https://github.com/ddiez/motiftools&#34;&gt;motiftools&lt;/a&gt;的R包，里面用了ggtree来画图，我想他应该是要解决他在包里的画树/聚类功能吧。&lt;/p&gt;
+      <description>&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/guangchuangyu?ref_src=twsrc%5Etfw&#34;&gt;@guangchuangyu&lt;/a&gt; Is it possible to plot horizontal trees with ggtree? (a la plot.hclust default).&lt;/p&gt;&amp;mdash; Diego Diez (@kurai_yousei) &lt;a href=&#34;https://twitter.com/kurai_yousei/status/799532564633518080?ref_src=twsrc%5Etfw&#34;&gt;November 18, 2016&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;这个Diego在推特上问的问题，他最近在写一个&lt;a href=&#34;https://github.com/ddiez/motiftools&#34;&gt;motiftools&lt;/a&gt;的R包，里面用了ggtree来画图，我想他应该是要解决他在包里的画树/聚类功能吧。&lt;/p&gt;
 
 &lt;p&gt;他问题写的horizontal，但其实plot.hclust默认是vertical，ggtree默认也是horizontal，所以我认为他问的是vertical layout，这个在我的回答中也得到了他的确认。&lt;/p&gt;
 
@@ -3439,7 +3480,11 @@ print(p)
       <pubDate>Fri, 25 Nov 2016 00:53:00 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2016/11/use-emoji/</guid>
-      <description>&lt;p&gt;无缘无故收到好几条消息，原来是用emoji画图。&lt;/p&gt;
+      <description>&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/hashtag/rstats?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#rstats&lt;/a&gt; code for the PhD/cute animals gestation &lt;a href=&#34;https://twitter.com/hashtag/ggplot2?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#ggplot2&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/gganimate?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#gganimate&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/emojifont?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#emojifont&lt;/a&gt; plot &lt;a href=&#34;https://t.co/qWM0bCHoHJ&#34;&gt;https://t.co/qWM0bCHoHJ&lt;/a&gt; 🐭🐶🐱🐺🐯🐷🐏🐻👶🐳🐘📕 &lt;a href=&#34;https://t.co/a4GYl191a8&#34;&gt;https://t.co/a4GYl191a8&lt;/a&gt;&lt;/p&gt;&amp;mdash; Maëlle Salmon 🐟 (@ma_salmon) &lt;a href=&#34;https://twitter.com/ma_salmon/status/800007428096094209?ref_src=twsrc%5Etfw&#34;&gt;November 19, 2016&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;无缘无故收到好几条消息，原来是用emoji画图。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

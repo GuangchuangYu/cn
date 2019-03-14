@@ -226,6 +226,77 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/09/monte-carlo-estimate-pi/">
+          Monte Carlo估计pi值
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2011-09-21T10:40:22&#43;08:00">
+        
+  September 21, 2011
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/programming">Programming</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        <p><img src="http://mathfaculty.fullerton.edu/mathews/n2003/montecarlopi/MonteCarloPiMod/Images/MonteCarloPiMod_gr_11.gif" alt="" /></p>
+
+<p>圆和外接正方形的面积比，是$ \frac{\pi r^2}{(2r)^2} = \frac{\pi}{4}$.</p>
+
+<p>通过这一比值，可以使用<a href="http://baike.baidu.com/view/7775.htm">蒙特-卡罗方法</a>来估计Pi，这是Monte Carlo方法的最经典的一个例子。</p>
+
+<pre><code>getPI &lt;- function(N) {
+    x &lt;- runif(N)
+    y &lt;- runif(N)
+    hits &lt;- sum(sqrt(x^2+y^2) &lt; 1)
+    pi &lt;- 4*hits/N
+    return(pi)
+}
+</code></pre>
+
+<p></p>
+      
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2011/09/monte-carlo-estimate-pi/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/08/sqrt_2/">
           根号2的几何作图
         </a>
@@ -635,89 +706,6 @@ the likelihood)</p>
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2011/06/five-things-biologists-should-know-about-statistics/">
-          Five things biologists should know about statistics
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2011-06-24T06:10:37&#43;08:00">
-        
-  June 24, 2011
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/statistics">statistics</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <p><a href="http://www.ebi.ac.uk/~birney/">Ewan Birney</a>最近的一篇博文（<a href="http://genomeinformatician.blogspot.com/2011/06/five-statistical-things-i-wished-i-had.html">Five statistical things I wished I had been taught 20 years ago</a>
-）讲述了统计对于生物学的重要性。</p>
-
-<p>一开始从RA Fisher讲起，说生物压根就是统计。Fisher是个农业学家，他所建立的那些统计方法，都是从生物学问题出发。</p>
-
-<p>Ewan所谈及的五个方面分别是：</p>
-
-<blockquote>
-<p>1. Non parametric statistics. These are statistical tests which make a
-bare minimum of assumptions of underlying distributions; in biology we
-are rarely confident that we know the underlying distribution, and hand
-waving about central limit theorem can only get you so far. Wherever
-possible you should use a non parameteric test. This is Mann-Whitney (or
-Wilcoxon if you prefer) for testing &ldquo;medians&rdquo; (Medians is in quotes
-because this is not quite true. They test something which is closely
-related to the median) of two distributions, Spearman&rsquo;s Rho (rather
-pearson&rsquo;s r2) for correlation, and the Kruskal test rather than ANOVAs
-(though if I get this right, you can&rsquo;t in Kruskal do the more
-sophisticated nested models you can do with ANOVA). Finally, don&rsquo;t
-forget the rather wonderful Kolmogorov-Smirnov (I always think it sounds
-like really good vodka) test of whether two sets of observations come
-from the same distribution. All of these methods have a basic theme of
-doing things on the rank of items in a distribution, not the actual
-level. So - if in doubt, do things on the rank of metric, rather than
-the metric itself.</p>
-</blockquote>
-
-<p></p>
-      
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2011/06/five-things-biologists-should-know-about-statistics/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -801,6 +789,51 @@ the metric itself.</p>
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/03/euclidean-distance-with-na-values/">
+                <h3 class="media-heading">欧式距离如何应对缺失值</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>biobabble作者群有一个小伙伴提出来的问题。</p>
+
+<blockquote>
+<p>没错，凡是给biobabble投稿的小伙伴都会被拉入作者群。</p>
+</blockquote>
+
+<p>话说有一个矩阵，我们让它某个值缺失，算出来的距离和原来的竟然是一样的：</p>
+
+<pre><code class="language-r">&gt; dat = matrix(1:10, 2)
+&gt; dist(dat)
+         1
+2 2.236068
+&gt; dat[1,1] = NA
+&gt; dist(dat)
+         1
+2 2.236068
+</code></pre>
+
+<p>这有点反直觉，实际上你再搞个缺失值，它算出来还是一样的：</p>
+
+<pre><code>&gt; dat[1,3] = NA
+&gt; dist(dat)
+         1
+2 2.236068
+</code></pre>
+
+<p>但以我的经验，我通常不敢轻易说人家有bug，我们得确认一下。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1050,29 +1083,6 @@ p = qplot(1:10)
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/12/2018-biobabble/">
-                <h3 class="media-heading">2018每月阅读量最高文章盘点</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Dec 12, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>正如我在《<a href="https://mp.weixin.qq.com/s/yJ1QLnsVqLrOY4GTsXEnrA">我想学习</a>》一文中对朋友圈和公众号的吐槽一样。我翻看了2018年一整年中每个月最高阅读量的文章，我发现八卦和追热点的文章，通常阅读量不会太差，反而是我用心去写的技术类文章，反倒是阅读量很惨，不管怎样，我还是会继续写技术类文章，特别是关于我的R包的文章，大家在学会的同时，也可以触类旁通学会R和其它的R包。写R包就是希望大家做分析更方便一点，而写文档就是希望可以减少大家使用R包的障碍，当然也希望大家可以多多分享这样的努力！</p>
-
-<p><strong>1. 《<a href="https://mp.weixin.qq.com/s/RK1CYEboiEDzapdHsiwEGg">2018最新可用的sci-hub镜像+桌面版程序</a>》</strong></p>
-
-<p>sci-hub经常换域名，1月份的时候，收集了一些，同时为苹果系统打包了windows程序，可以一键下文献。当然现在我们不用发这样的文章了，因为域名随时可以查，《<a href="https://mp.weixin.qq.com/s/puPvCOQcOf7aG5ghY82XrQ">Sci-Hub可用域名实时追踪</a>》，又因为比桌面版程序更好用的浏览器按钮，《<a href="https://mp.weixin.qq.com/s/6qmI0MI9vlwvxoXJuVl0sQ">关于scihub，一文就够了</a>》。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1080,7 +1090,7 @@ p = qplot(1:10)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         265 posts found
+         266 posts found
       </p>
     </div>
   </div>

@@ -226,6 +226,76 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/geo-data-mining-for-chipseq/">
+          ChIPseq-GEO数据挖掘
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-12-11T12:53:16&#43;08:00">
+        
+  December 11, 2017
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/chipseq">ChIPseq</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        <p>ChIPseeker系列文章已经介绍了很多内容，包括注释的方方面面，也包括强大的可视化功能（《<a href="http://mp.weixin.qq.com/s/MqpfgkMJSFj0pYwcEjV9kQ">CS6: ChIPseeker的可视化方法（中秋节的视觉饕餮）</a>》）。</p>
+
+<p>今天要介绍一下数据挖掘，从大量已有的数据来产生新的hypothesis。正如我在ChIPseeker的文章里写的：</p>
+
+<blockquote>
+<p>There are increasing evidences shown that combinations of TFs are important for regulating gene expression (Perez-Pinera et al., 2013; Zhu et al., 2008). However, systematically identification of TF interactions by ChIP-seq is still not available. Even if a specific TF binding is essential for a particular regulation was known, we do not have prior knowledge of all its co-factors. There are no systematic strategies available to identified un-known co-factors by ChIP- seq.</p>
+</blockquote>
+
+<p>并没有方法可以大规模地预测未知的共同调控因子，而数据挖掘就是要给我们这种预测的能力。</p>
+
+<p>我当年在写ChIPseeker的时候，我有纠结是写篇Bioinformatics的application note呢，还是写篇长文灌水NAR，毕竟NAR影响因子高一点，最后还是发了Bioinformatics，因为我没钱，囧，Bioinformatics不要版面费啊。然后限于篇幅，ChIPseeker有大量可视化的函数，我在文章中一张图都没放！！！如果当时决定发NAR的话，这个数据挖掘这一块我就会写多点。</p>
+
+<p></p>
+      
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2017/12/geo-data-mining-for-chipseq/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/12/using-external-font-for-meme/">
           使用外部字体画meme
         </a>
@@ -600,68 +670,6 @@ rownames(d) = paste0('g', 1:10)
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/bioc-db-update/">
-          掐架的额外收获
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2017-11-12T00:21:00&#43;08:00">
-        
-  November 12, 2017
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <p>《<a href="http://mp.weixin.qq.com/s/miGQs6U1d3aHwcm7vgNCVw">你昨天才做的分析，可能是几年前的结果！</a>》这篇文章给大家敲了警钟，各种各样的web-server，要小心看有没有维护更新，有些是五年十年都不更新的，十分可怕。文章虽然讲的是富集分析，但其它分析工具你同样需要小心。</p>
-
-<p>当然并不是说独立的软件/软件包就一定靠谱，如果软件自己打包了数据，同样要注意数据是否有更新，而如果数据不打包在软件里，而是在线获取，你同样也该留一下心。这也是clusterProfiler做富集分析的优势所在，KEGG数据是在线的，永远是最新的，而GO的数据不在软件包里，而依赖于别的数据包，而这些数据包是社区维护的（相对而言，个人的维护比较难以为继），就确保了数据一直在有更新维护的。</p>
-
-<p>Bioconductor每半年发行一次，注释包同样每半年更新一次，所以你用clusterProfiler做GO分析，你用的GO数据库不会说超过半年没更新，而不像有些公司给出的结果，落后于这个世界不是一年两年这么简单。</p>
-
-<p></p>
-      
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2017/11/bioc-db-update/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -745,6 +753,51 @@ rownames(d) = paste0('g', 1:10)
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/03/euclidean-distance-with-na-values/">
+                <h3 class="media-heading">欧式距离如何应对缺失值</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>biobabble作者群有一个小伙伴提出来的问题。</p>
+
+<blockquote>
+<p>没错，凡是给biobabble投稿的小伙伴都会被拉入作者群。</p>
+</blockquote>
+
+<p>话说有一个矩阵，我们让它某个值缺失，算出来的距离和原来的竟然是一样的：</p>
+
+<pre><code class="language-r">&gt; dat = matrix(1:10, 2)
+&gt; dist(dat)
+         1
+2 2.236068
+&gt; dat[1,1] = NA
+&gt; dist(dat)
+         1
+2 2.236068
+</code></pre>
+
+<p>这有点反直觉，实际上你再搞个缺失值，它算出来还是一样的：</p>
+
+<pre><code>&gt; dat[1,3] = NA
+&gt; dist(dat)
+         1
+2 2.236068
+</code></pre>
+
+<p>但以我的经验，我通常不敢轻易说人家有bug，我们得确认一下。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -994,29 +1047,6 @@ p = qplot(1:10)
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/12/2018-biobabble/">
-                <h3 class="media-heading">2018每月阅读量最高文章盘点</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Dec 12, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>正如我在《<a href="https://mp.weixin.qq.com/s/yJ1QLnsVqLrOY4GTsXEnrA">我想学习</a>》一文中对朋友圈和公众号的吐槽一样。我翻看了2018年一整年中每个月最高阅读量的文章，我发现八卦和追热点的文章，通常阅读量不会太差，反而是我用心去写的技术类文章，反倒是阅读量很惨，不管怎样，我还是会继续写技术类文章，特别是关于我的R包的文章，大家在学会的同时，也可以触类旁通学会R和其它的R包。写R包就是希望大家做分析更方便一点，而写文档就是希望可以减少大家使用R包的障碍，当然也希望大家可以多多分享这样的努力！</p>
-
-<p><strong>1. 《<a href="https://mp.weixin.qq.com/s/RK1CYEboiEDzapdHsiwEGg">2018最新可用的sci-hub镜像+桌面版程序</a>》</strong></p>
-
-<p>sci-hub经常换域名，1月份的时候，收集了一些，同时为苹果系统打包了windows程序，可以一键下文献。当然现在我们不用发这样的文章了，因为域名随时可以查，《<a href="https://mp.weixin.qq.com/s/puPvCOQcOf7aG5ghY82XrQ">Sci-Hub可用域名实时追踪</a>》，又因为比桌面版程序更好用的浏览器按钮，《<a href="https://mp.weixin.qq.com/s/6qmI0MI9vlwvxoXJuVl0sQ">关于scihub，一文就够了</a>》。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1024,7 +1054,7 @@ p = qplot(1:10)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         265 posts found
+         266 posts found
       </p>
     </div>
   </div>

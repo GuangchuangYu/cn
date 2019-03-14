@@ -226,6 +226,64 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/dose-citation-above-100/">
+          DOSE包引用过百
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-11-25T01:23:16&#43;08:00">
+        
+  November 25, 2018
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/publication">Publication</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        Disease ontology (DO) annotates human genes in the context of disease. DO is important annotation in translating molecular findings from high-throughput data to clinical relevance. DOSE is an R package providing semantic similarity computations among DO terms and genes which allows biologists to explore the similarities of diseases and of gene functions in disease perspective. Enrichment analyses including hypergeometric model and gene set enrichment analysis are also implemented to support discovering disease associations of high-throughput biological data.
+      
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2018/11/dose-citation-above-100/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/11/how-to-define-downstream-range/">
           如何定义基因下游的区间
         </a>
@@ -610,68 +668,6 @@ ga('send', 'pageview');
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/10/for-postgraduate-student/">
-          给硕博考生的一封信
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2018-10-18T16:30:00&#43;08:00">
-        
-  October 18, 2018
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/life">life</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <h3 id="研究生是考出来的-博士生是联系出来的">研究生是考出来的，博士生是联系出来的！</h3>
-
-<p>这句话早在10年前我一个师兄就告诉我。早在2006年我去上生面试的时候，我就发现已经有考生早就在实验室干了。反正我当年是fail了，然后我为何没能调剂到军事医学科学院，因为06年的时候，正是裁军的时候，军医科的名额很少，而导师手下也有一名同学初试过了，而且已经在实验室干了一年，名额必须给他。</p>
-
-<p>所以在此处，我想跟大家说，十多年前尚且如此，现在行情只会更差，研究生也要联系了！</p>
-
-<p></p>
-      
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2018/10/for-postgraduate-student/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -755,6 +751,51 @@ ga('send', 'pageview');
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/03/euclidean-distance-with-na-values/">
+                <h3 class="media-heading">欧式距离如何应对缺失值</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>biobabble作者群有一个小伙伴提出来的问题。</p>
+
+<blockquote>
+<p>没错，凡是给biobabble投稿的小伙伴都会被拉入作者群。</p>
+</blockquote>
+
+<p>话说有一个矩阵，我们让它某个值缺失，算出来的距离和原来的竟然是一样的：</p>
+
+<pre><code class="language-r">&gt; dat = matrix(1:10, 2)
+&gt; dist(dat)
+         1
+2 2.236068
+&gt; dat[1,1] = NA
+&gt; dist(dat)
+         1
+2 2.236068
+</code></pre>
+
+<p>这有点反直觉，实际上你再搞个缺失值，它算出来还是一样的：</p>
+
+<pre><code>&gt; dat[1,3] = NA
+&gt; dist(dat)
+         1
+2 2.236068
+</code></pre>
+
+<p>但以我的经验，我通常不敢轻易说人家有bug，我们得确认一下。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1004,29 +1045,6 @@ p = qplot(1:10)
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/12/2018-biobabble/">
-                <h3 class="media-heading">2018每月阅读量最高文章盘点</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Dec 12, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>正如我在《<a href="https://mp.weixin.qq.com/s/yJ1QLnsVqLrOY4GTsXEnrA">我想学习</a>》一文中对朋友圈和公众号的吐槽一样。我翻看了2018年一整年中每个月最高阅读量的文章，我发现八卦和追热点的文章，通常阅读量不会太差，反而是我用心去写的技术类文章，反倒是阅读量很惨，不管怎样，我还是会继续写技术类文章，特别是关于我的R包的文章，大家在学会的同时，也可以触类旁通学会R和其它的R包。写R包就是希望大家做分析更方便一点，而写文档就是希望可以减少大家使用R包的障碍，当然也希望大家可以多多分享这样的努力！</p>
-
-<p><strong>1. 《<a href="https://mp.weixin.qq.com/s/RK1CYEboiEDzapdHsiwEGg">2018最新可用的sci-hub镜像+桌面版程序</a>》</strong></p>
-
-<p>sci-hub经常换域名，1月份的时候，收集了一些，同时为苹果系统打包了windows程序，可以一键下文献。当然现在我们不用发这样的文章了，因为域名随时可以查，《<a href="https://mp.weixin.qq.com/s/puPvCOQcOf7aG5ghY82XrQ">Sci-Hub可用域名实时追踪</a>》，又因为比桌面版程序更好用的浏览器按钮，《<a href="https://mp.weixin.qq.com/s/6qmI0MI9vlwvxoXJuVl0sQ">关于scihub，一文就够了</a>》。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1034,7 +1052,7 @@ p = qplot(1:10)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         265 posts found
+         266 posts found
       </p>
     </div>
   </div>

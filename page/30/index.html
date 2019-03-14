@@ -226,6 +226,67 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2013/06/compress-tiff/">
+          使用ImageMagick压缩TIFF
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2013-06-07T15:10:00&#43;08:00">
+        
+  June 7, 2013
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/software">Software</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        TIFF (Tagged Image File Format)拥有更宽的线性动态范围，所以在专业的图片处理上，一直是一个通用的文件格式。
+最近一篇发表在Metallomics的文章，我本来做的图片都是PDF格式，矢量图最好了，文件特别小，还可以任意放大。不过杂志社要求600DPI的TIFF或EPS。
+我第一反应是拒绝使用TIFF，600DPI的TIFF文件肯定非常大，EPS也是矢量图，我用R重新把图画一遍，存为EPS就OK了。画图的过程，我发现对EPS的支持不太好，老报些某字体不存在的错误。这当然不是什么大不了的事，自己指定字体就好了。问题在于有张图是拼的，我只能借助于软件转换，我用Inkscape处理，导出EPS，出来的图我发现有些细节并不太好。
+无奈之下还是用TIFF吧，Fig1和3都是R画的，直接指定分辨率和压缩算法，存为TIFF文件。Fig1是3000x3000pixel 600dpi的图，只有320k，Fig3是4200x4200pixel的图，也是600dpi，只有558k，用R产生TIFF还是非常靠谱的。
+关键是Fig2，这一张拼的图，存成PDF矢量图，需要用ImageMagick转换成600DPI的TIFF图片，ImageMagick需要安装Xcode才能在Mac下编译成功。
+Yus-Mac-Pro:others ygc$ convert -density 600 fig2.pdf fig2.tif Yus-Mac-Pro:others ygc$ identify -verbose fig2.tif Image: fig2.tif Format: TIFF (Tagged Image File Format) Class: DirectClass Geometry: 6000x4500+0+0 Resolution: 600x600 Print size: 10x7.5 Units: Undefined Type: PaletteMatte Base type: TrueColor Endianess: MSB ... Yus-Mac-Pro:others ygc$ convert -density 600 -compress lzw fig2.pdf fig2_compress.tif Yus-Mac-Pro:others ygc$ ls -l fig2*.tif -rw-r--r-- 1 ygc admin 216036263 May 23 17:53 fig2.
+      
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2013/06/compress-tiff/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2013/01/talen%E5%9F%BA%E5%9B%A0%E7%BC%96%E8%BE%91/">
           TALEN基因编辑
         </a>
@@ -621,74 +682,6 @@ ID得到57个（漏掉的不管它，只是做为一个例子）:</p>
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2012/04/support-vector-machine/">
-          Support Vector Machine
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2012-04-12T05:37:55&#43;08:00">
-        
-  April 12, 2012
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/statistics">statistics</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <p>支持向量机(Support Vector Machines, SVM)最初由Vladimir
-Vapnik于1997年提出，SVM最简单的形式就是找出一下区分界限（descision
-boundary），也称之为超平面(hyperplane)，使得离它最近的点（称之为support
-vectors）与之间隔最大。
-<img src="http://guangchuangyu.github.io/blog_images/2012/04/linearSVM.png" alt="" /></p>
-
-<p>这和logistic regression有些相似，区别在于logistic
-regression要求所有的点尽可能地远离中间那条线，而SVM是要求最接近中间线的点尽可能地远离中间线。也就是说SVM的主要目标是区分那些最难区分的点。</p>
-
-<p>SVM对于hyperplane的定义，在形式上和logistic regression一样,logistic
-regression的decision boundary由$\theta^TX=0$确定,SVM则用$w^TX+b=0$表示,其中b相当于logistic regression中的$\theta_0$，从形式上看，两者并无区别，当然如前面所说，两者的目标不一样，logistic regression着眼于全局，SVM着眼于support
-vectors。有监督算法都有label变量y，logistic
-regression取值是<code>{0,1}</code>，而SVM为了计算距离方便，取值为<code>{-1,1}</code>。</p>
-      
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2012/04/support-vector-machine/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -772,6 +765,51 @@ regression取值是<code>{0,1}</code>，而SVM为了计算距离方便，取值�
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/03/euclidean-distance-with-na-values/">
+                <h3 class="media-heading">欧式距离如何应对缺失值</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>biobabble作者群有一个小伙伴提出来的问题。</p>
+
+<blockquote>
+<p>没错，凡是给biobabble投稿的小伙伴都会被拉入作者群。</p>
+</blockquote>
+
+<p>话说有一个矩阵，我们让它某个值缺失，算出来的距离和原来的竟然是一样的：</p>
+
+<pre><code class="language-r">&gt; dat = matrix(1:10, 2)
+&gt; dist(dat)
+         1
+2 2.236068
+&gt; dat[1,1] = NA
+&gt; dist(dat)
+         1
+2 2.236068
+</code></pre>
+
+<p>这有点反直觉，实际上你再搞个缺失值，它算出来还是一样的：</p>
+
+<pre><code>&gt; dat[1,3] = NA
+&gt; dist(dat)
+         1
+2 2.236068
+</code></pre>
+
+<p>但以我的经验，我通常不敢轻易说人家有bug，我们得确认一下。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1021,29 +1059,6 @@ p = qplot(1:10)
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/12/2018-biobabble/">
-                <h3 class="media-heading">2018每月阅读量最高文章盘点</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Dec 12, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>正如我在《<a href="https://mp.weixin.qq.com/s/yJ1QLnsVqLrOY4GTsXEnrA">我想学习</a>》一文中对朋友圈和公众号的吐槽一样。我翻看了2018年一整年中每个月最高阅读量的文章，我发现八卦和追热点的文章，通常阅读量不会太差，反而是我用心去写的技术类文章，反倒是阅读量很惨，不管怎样，我还是会继续写技术类文章，特别是关于我的R包的文章，大家在学会的同时，也可以触类旁通学会R和其它的R包。写R包就是希望大家做分析更方便一点，而写文档就是希望可以减少大家使用R包的障碍，当然也希望大家可以多多分享这样的努力！</p>
-
-<p><strong>1. 《<a href="https://mp.weixin.qq.com/s/RK1CYEboiEDzapdHsiwEGg">2018最新可用的sci-hub镜像+桌面版程序</a>》</strong></p>
-
-<p>sci-hub经常换域名，1月份的时候，收集了一些，同时为苹果系统打包了windows程序，可以一键下文献。当然现在我们不用发这样的文章了，因为域名随时可以查，《<a href="https://mp.weixin.qq.com/s/puPvCOQcOf7aG5ghY82XrQ">Sci-Hub可用域名实时追踪</a>》，又因为比桌面版程序更好用的浏览器按钮，《<a href="https://mp.weixin.qq.com/s/6qmI0MI9vlwvxoXJuVl0sQ">关于scihub，一文就够了</a>》。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1051,7 +1066,7 @@ p = qplot(1:10)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         265 posts found
+         266 posts found
       </p>
     </div>
   </div>

@@ -226,6 +226,88 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2009/03/estimate-function-value-by-taylor-theorem/">
+          用Taylor公式估计函数值
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2009-03-17T05:23:16&#43;08:00">
+        
+  March 17, 2009
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/calculus">Calculus</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        <p>泰勒公式学过微积分都应该知道，可以翻wiki复习一下，<a href="https://zh.wikipedia.org/wiki/泰勒公式">https://zh.wikipedia.org/wiki/泰勒公式</a>.</p>
+
+<p>用R简单实现一下：</p>
+
+<pre><code> efv &lt;- function(f, value, variable=&quot;x&quot;, a=0, eps=0.001) {
+     #estimate function value using Taylor theorem
+     assign(eval(variable), a)
+     fv.old &lt;- eval(f)
+     k &lt;- 1     
+     repeat {
+         df &lt;- D(f, variable)
+         if (df == 0)
+             break
+         fv.new &lt;- fv.old + eval(df)*(value-a)^k/factorial(k)
+         if (fv.new - fv.old &lt; eps)
+             break
+         fv.old &lt;- fv.new
+         f &lt;- df
+         k &lt;- k+1
+     }
+     return (fv.new)
+ }
+</code></pre>
+
+<p></p>
+      
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2009/03/estimate-function-value-by-taylor-theorem/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/12/opinion-in-programming/">
           关于编程，我的理解
         </a>
@@ -600,70 +682,6 @@ factor fever。当科研成为一种职业，真正对科学有热情的scientis
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/10/educational-games/">
-          Educational Games
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2008-10-06T15:10:00&#43;08:00">
-        
-  October 6, 2008
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/game">game</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <p>You don&rsquo;t have to be a genius to understand the work of the Nobel
-Laureates. These games and simulations, based on Nobel Prize-awarded
-achievements, will teach and inspire you while you&rsquo;re having FUN!
-Students, teachers and non-professionals of all ages will enjoy testing
-and building their knowledge in physics, chemistry, physiology or
-medicine, literature, peace and economics. So, go ahead, Explore and
-Learn!</p>
-
-<p></p>
-      
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2008/10/educational-games/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -747,6 +765,51 @@ Learn!</p>
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/03/euclidean-distance-with-na-values/">
+                <h3 class="media-heading">欧式距离如何应对缺失值</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>biobabble作者群有一个小伙伴提出来的问题。</p>
+
+<blockquote>
+<p>没错，凡是给biobabble投稿的小伙伴都会被拉入作者群。</p>
+</blockquote>
+
+<p>话说有一个矩阵，我们让它某个值缺失，算出来的距离和原来的竟然是一样的：</p>
+
+<pre><code class="language-r">&gt; dat = matrix(1:10, 2)
+&gt; dist(dat)
+         1
+2 2.236068
+&gt; dat[1,1] = NA
+&gt; dist(dat)
+         1
+2 2.236068
+</code></pre>
+
+<p>这有点反直觉，实际上你再搞个缺失值，它算出来还是一样的：</p>
+
+<pre><code>&gt; dat[1,3] = NA
+&gt; dist(dat)
+         1
+2 2.236068
+</code></pre>
+
+<p>但以我的经验，我通常不敢轻易说人家有bug，我们得确认一下。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -996,29 +1059,6 @@ p = qplot(1:10)
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/12/2018-biobabble/">
-                <h3 class="media-heading">2018每月阅读量最高文章盘点</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Dec 12, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>正如我在《<a href="https://mp.weixin.qq.com/s/yJ1QLnsVqLrOY4GTsXEnrA">我想学习</a>》一文中对朋友圈和公众号的吐槽一样。我翻看了2018年一整年中每个月最高阅读量的文章，我发现八卦和追热点的文章，通常阅读量不会太差，反而是我用心去写的技术类文章，反倒是阅读量很惨，不管怎样，我还是会继续写技术类文章，特别是关于我的R包的文章，大家在学会的同时，也可以触类旁通学会R和其它的R包。写R包就是希望大家做分析更方便一点，而写文档就是希望可以减少大家使用R包的障碍，当然也希望大家可以多多分享这样的努力！</p>
-
-<p><strong>1. 《<a href="https://mp.weixin.qq.com/s/RK1CYEboiEDzapdHsiwEGg">2018最新可用的sci-hub镜像+桌面版程序</a>》</strong></p>
-
-<p>sci-hub经常换域名，1月份的时候，收集了一些，同时为苹果系统打包了windows程序，可以一键下文献。当然现在我们不用发这样的文章了，因为域名随时可以查，《<a href="https://mp.weixin.qq.com/s/puPvCOQcOf7aG5ghY82XrQ">Sci-Hub可用域名实时追踪</a>》，又因为比桌面版程序更好用的浏览器按钮，《<a href="https://mp.weixin.qq.com/s/6qmI0MI9vlwvxoXJuVl0sQ">关于scihub，一文就够了</a>》。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1026,7 +1066,7 @@ p = qplot(1:10)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         265 posts found
+         266 posts found
       </p>
     </div>
   </div>
