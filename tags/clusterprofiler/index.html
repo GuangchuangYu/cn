@@ -1,49 +1,26 @@
+
+
+
+  
+
+
+
+
+  
+
+
+  
+
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
     
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.32 with theme Tranquilpeak 0.4.3-SNAPSHOT">
-<meta name="author" content="Guangchuang Yu">
-<meta name="keywords" content="">
-<meta name="description" content="Guangchuang&#39;s Chinese Blog">
-
-
-<meta property="og:description" content="Guangchuang&#39;s Chinese Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Clusterprofiler">
-<meta name="twitter:title" content="Clusterprofiler">
-<meta property="og:url" content="https://guangchuangyu.github.io/cn/tags/clusterprofiler/">
-<meta property="twitter:url" content="https://guangchuangyu.github.io/cn/tags/clusterprofiler/">
-<meta property="og:site_name" content="Guangchuang Yu">
-<meta property="og:description" content="Guangchuang&#39;s Chinese Blog">
-<meta name="twitter:description" content="Guangchuang&#39;s Chinese Blog">
-<meta property="og:locale" content="en-us">
-
-
-<meta name="twitter:card" content="summary">
-
-  <meta name="twitter:site" content="@guangchuangyu">
-
-
-  <meta name="twitter:creator" content="@guangchuangyu">
-
-
-
-
-
-
-
-
-
-
-  <meta property="og:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
-  <meta property="twitter:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
-
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.31.1 with theme Tranquilpeak 0.4.3-BETA">
     <title>Clusterprofiler</title>
+    <meta name="author" content="Guangchuang Yu">
+    <meta name="keywords" content="">
 
     <link rel="icon" href="https://guangchuangyu.github.io/cn/favicon.png">
     
@@ -51,8 +28,32 @@
     
 
     
+    <meta name="description" content="Guangchuang&#39;s Chinese Blog">
+    <meta property="og:description" content="Guangchuang&#39;s Chinese Blog">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Clusterprofiler">
+    <meta property="og:url" content="/tags/clusterprofiler/">
+    <meta property="og:site_name" content="Guangchuang Yu">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Guangchuang Yu">
+    <meta name="twitter:description" content="Guangchuang&#39;s Chinese Blog">
+    
+      <meta name="twitter:creator" content="@guangchuangyu">
+    
+    
 
-    <link rel="canonical" href="https://guangchuangyu.github.io/cn/tags/clusterprofiler/">
+    
+    
+
+    
+      <meta property="og:image" content="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
+    
+
+    
+    
+    
+
+    
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -60,7 +61,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
+    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
     
     
 
@@ -95,7 +96,7 @@ ga('send', 'pageview');
     
     
       
-        <img class="header-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
+        <img class="header-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
       
     
     </a>
@@ -107,7 +108,7 @@ ga('send', 'pageview');
     
       <div class="sidebar-profile">
         <a href="https://guangchuangyu.github.io/cn/#about">
-          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
         </a>
         <h4 class="sidebar-profile-name">Guangchuang Yu</h4>
         
@@ -255,15 +256,13 @@ ga('send', 'pageview');
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <p>有一些软件做了检验之后，是不告诉你那些基因在某个富集的通路中，显然做为生物学家，是对此有兴趣的。<code>clusterProfiler</code>系列，全部函数都会输出，但看基因ID，比如ENTREZID或ENSEMBLE，这些都对人类不友好，看了你也不知道是什么，为了让大家看结果的时候，还能有点感觉，我们需要把基因翻译成symbol，有那么一批函数比如DO、GO、Reactome的分析都是有<code>readable</code>参数的，但有一些是没有这个参数的，我被问得最多的是KEGG的分析为什么没有！</p>
+      <p>有一些软件做了检验之后，是不告诉你那些基因在某个富集的通路中，显然做为生物学家，是对此有兴趣的。<code>clusterProfiler</code>系列，全部函数都会输出，但看基因ID，比如ENTREZID或ENSEMBLE，这些都对人类不友好，看了你也不知道是什么，为了让大家看结果的时候，还能有点感觉，我们需要把基因翻译成symbol，有那么一批函数比如DO、GO、Reactome的分析都是有<code>readable</code>参数的，但有一些是没有这个参数的，我被问得最多的是KEGG的分析为什么没有！</p>
 
 <p>首先GO为什么有？因为<code>enrichGO</code>和<code>gseGO</code>都是使用<code>OrgDb</code>，而<code>OrgDb</code>本身带有ID转换的注释，而KEGG是在线去检索KEGG数据库的，KEGG并没有提供这些信息，当然对于少量大家比较熟悉的模式生物，要支持还是很容易的，然而有些物种支持，有些不支持，大家又会问了，凭什么我做的物种被BS了。所以啊，大家都不支持，挺公平。其实KEGG数据库里那么多的生物，很多物种是没有基因名的，有很多生物的注释还停留在基因座，你让我帮你转ID，臣妾做不到啊。</p>
 
 <p>但起码对能支持的物种支持一下呗，以我一贯的作风，能帮小白解决的小问题，我都会去解决。于是我们有<code>setReadable</code>函数。但凡你能找到一个OrgDb，你就能用来转ID，就这样。</p>
 
 <p></p>
-      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2019/01/clusterprofiler-setreadable/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -317,15 +316,13 @@ ga('send', 'pageview');
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/clusterProfiler/msigdf.png" alt="" /></p>
+      <p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/clusterProfiler/msigdf.png" alt="" /></p>
 
 <p>生信界的网红Stephen Turner在github上有个<code>msigdf</code>的包，我在他写这个包的时候，就写了个<code>gist</code>，连接<code>clusterProfiler</code>，我写<code>gist</code>的时候是2016年的8月，很高兴网红还惦记着我的<code>gist</code>。</p>
 
 <p><code>msigdf</code>这个包把著名的Broad Institute著名的Molecular Signatures Database (MSigDB)数据以data frame的形式打包成<code>R</code>包，这样子非常方便使用，当然他后来没有更新，而一个fork的版本，<code>ToledoEM/msigdf</code>把数据更新为最新版本v6.2，发布于2018年7月。</p>
 
 <p></p>
-      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2018/11/msigdf_clusterprofiler/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -379,8 +376,7 @@ ga('send', 'pageview');
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <p>做科研我们不爽的是没有结果，比结果更不爽的是结果不符合预期，故事不知道该怎么编，然而戏真的不要太多，学术不是以预期来驱动的，请尊重一下事实，还有你的小鼠。</p>
+      <p>做科研我们不爽的是没有结果，比结果更不爽的是结果不符合预期，故事不知道该怎么编，然而戏真的不要太多，学术不是以预期来驱动的，请尊重一下事实，还有你的小鼠。</p>
 
 <blockquote>
 <p>we had a quick email exchange about this and I would like to report this. (I appologise for contacting you directly, rather than following the submission guideline). I have a dataset with 6166 proteins of which 201 proteins are upregulated. The problem is that specifying the background proteins using universe argument in clusterProfiler, decreases the number of significant GO categories (28 significant categories without the universe argument and 5 with this argument). At the same time when I use online GORILLA tool  I get a lot of categories, with the background:</p>
@@ -412,7 +408,6 @@ ga('send', 'pageview');
 <p>要看数据集地请点击<a href="https://github.com/GuangchuangYu/clusterProfiler/issues/122">此处直达github issue</a>。</p>
 
 <p></p>
-      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2018/10/gorilla-vs-clusterprofiler/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -466,8 +461,7 @@ ga('send', 'pageview');
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <p>「知识星球」里的问题，<a href="https://t.zsxq.com/aEyneA2">https://t.zsxq.com/aEyneA2</a>，拟南芥的ID怎么搞，这个内置是支持的。</p>
+      <p>「知识星球」里的问题，<a href="https://t.zsxq.com/aEyneA2">https://t.zsxq.com/aEyneA2</a>，拟南芥的ID怎么搞，这个内置是支持的。</p>
 
 <p>比如我随便搞几个ID来演示一下：</p>
 
@@ -487,7 +481,6 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
 </code></pre>
 
 <p></p>
-      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2018/07/clusterprofiler-ath/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -543,15 +536,13 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <p>使用<code>barplot</code>来展示富集分析结果是很常用的，而<code>dotplot</code>比较<code>barplot</code>来说，多了一个点大小的信息，可以比<code>barplot</code>展示多一个信息，所以是比较推荐的，我之前已经写了《<a href="https://mp.weixin.qq.com/s/KzcnIH88d4E41Ybvr_76zA">dotplot展示富集分析结果</a>》和《<a href="https://mp.weixin.qq.com/s/JLon7oaddmTpsMzL03OJIA">dotplot for GSEA</a>》两篇文章，<code>dotplot</code>虽然简单，很多人会觉得会容易用<code>ggplot2</code>画出来，但其实有些细节，比如《<a href="https://mp.weixin.qq.com/s/VW4LvtQqXumrs6SMvwGgvQ">为什么画出来的点比指定的数目要多？</a>》，有些技巧，比如《<a href="https://mp.weixin.qq.com/s/JNIncz3W-59yjGk2ibJWUw">搞大你的点，让我们画真正的气泡图</a>》，是很多新手所不具备的，图虽然简单，但老司机的飚车技能也不可小看哦，所以我在《<a href="https://mp.weixin.qq.com/s/bloMPypAkQ3Ovlh406M-FQ">听说你也在画dotplot，但是我不服！</a>》的文后就说了一句话：</p>
+      <p>使用<code>barplot</code>来展示富集分析结果是很常用的，而<code>dotplot</code>比较<code>barplot</code>来说，多了一个点大小的信息，可以比<code>barplot</code>展示多一个信息，所以是比较推荐的，我之前已经写了《<a href="https://mp.weixin.qq.com/s/KzcnIH88d4E41Ybvr_76zA">dotplot展示富集分析结果</a>》和《<a href="https://mp.weixin.qq.com/s/JLon7oaddmTpsMzL03OJIA">dotplot for GSEA</a>》两篇文章，<code>dotplot</code>虽然简单，很多人会觉得会容易用<code>ggplot2</code>画出来，但其实有些细节，比如《<a href="https://mp.weixin.qq.com/s/VW4LvtQqXumrs6SMvwGgvQ">为什么画出来的点比指定的数目要多？</a>》，有些技巧，比如《<a href="https://mp.weixin.qq.com/s/JNIncz3W-59yjGk2ibJWUw">搞大你的点，让我们画真正的气泡图</a>》，是很多新手所不具备的，图虽然简单，但老司机的飚车技能也不可小看哦，所以我在《<a href="https://mp.weixin.qq.com/s/bloMPypAkQ3Ovlh406M-FQ">听说你也在画dotplot，但是我不服！</a>》的文后就说了一句话：</p>
 
 <blockquote>
 <p>clusterProfiler之所以好，因为真的考虑了很多细节！请放开那图，让clusterProfiler来画！</p>
 </blockquote>
 
 <p></p>
-      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2018/04/dotplot-x-axis/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -605,15 +596,13 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <p>有小伙伴说他要用gage这个包，因为可以选择sigmet这个index，然后得到的结果只有signaling and metabolic pathways，而不会有他不关心的disease pathways。然而也有各种不爽，他最喜欢的还是clusterProfiler，但没办法只做某些pathways。</p>
+      <p>有小伙伴说他要用gage这个包，因为可以选择sigmet这个index，然后得到的结果只有signaling and metabolic pathways，而不会有他不关心的disease pathways。然而也有各种不爽，他最喜欢的还是clusterProfiler，但没办法只做某些pathways。</p>
 
 <p>我发现大家对clusterProfiler有各种误解，各种觉得没办法，我也很无语啊，明明我写了大量的文档，你们偏不看。clusterProfiler啥都可以做，你想做COG，domain这些没有内置支持的富集分析都可以的，因为clusterProfiler是通用的分析工具，啥都能做。</p>
 
 <p>说到gage的pathway index，这其实是他们对pathway有个分类，这个数据就在<a href="https://pathview.uncc.edu/data/khier.tsv">https://pathview.uncc.edu/data/khier.tsv</a>可以下载到，要支持他还不容易，但我不喜欢把别人的东西打包在自己的包里，所谓走别人的路，让别人无路可走，这可不是什么好主意。所以呢，我不会内置支持的，你们自己玩。</p>
 
 <p></p>
-      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2018/01/kegg-pathway-index/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -667,15 +656,13 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <p>《<a href="http://mp.weixin.qq.com/s/miGQs6U1d3aHwcm7vgNCVw">你昨天才做的分析，可能是几年前的结果！</a>》这篇文章给大家敲了警钟，各种各样的web-server，要小心看有没有维护更新，有些是五年十年都不更新的，十分可怕。文章虽然讲的是富集分析，但其它分析工具你同样需要小心。</p>
+      <p>《<a href="http://mp.weixin.qq.com/s/miGQs6U1d3aHwcm7vgNCVw">你昨天才做的分析，可能是几年前的结果！</a>》这篇文章给大家敲了警钟，各种各样的web-server，要小心看有没有维护更新，有些是五年十年都不更新的，十分可怕。文章虽然讲的是富集分析，但其它分析工具你同样需要小心。</p>
 
 <p>当然并不是说独立的软件/软件包就一定靠谱，如果软件自己打包了数据，同样要注意数据是否有更新，而如果数据不打包在软件里，而是在线获取，你同样也该留一下心。这也是clusterProfiler做富集分析的优势所在，KEGG数据是在线的，永远是最新的，而GO的数据不在软件包里，而依赖于别的数据包，而这些数据包是社区维护的（相对而言，个人的维护比较难以为继），就确保了数据一直在有更新维护的。</p>
 
 <p>Bioconductor每半年发行一次，注释包同样每半年更新一次，所以你用clusterProfiler做GO分析，你用的GO数据库不会说超过半年没更新，而不像有些公司给出的结果，落后于这个世界不是一年两年这么简单。</p>
 
 <p></p>
-      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2017/11/bioc-db-update/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -722,7 +709,7 @@ g &lt;- c(&quot;AT5G61600&quot;, &quot;AT2G44230&quot;, &quot;AT1G49130&quot;, &
       <i class="fa fa-remove"></i>
     </div>
     
-      <img id="about-card-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
     
     <h4 id="about-card-name">Guangchuang Yu</h4>
     
@@ -1064,7 +1051,7 @@ p = qplot(1:10)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         266 posts found
+         267 posts found
       </p>
     </div>
   </div>
@@ -1084,21 +1071,6 @@ p = qplot(1:10)
 
 <script src="https://guangchuangyu.github.io/cn/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
 
-
-<script lang="javascript">
-window.onload = updateMinWidth;
-window.onresize = updateMinWidth;
-document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
-function updateMinWidth() {
-  var sidebar = document.getElementById("sidebar");
-  var main = document.getElementById("main");
-  main.style.minWidth = "";
-  var w1 = getComputedStyle(main).getPropertyValue("min-width");
-  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
-  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
-  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
-}
-</script>
 
 
 

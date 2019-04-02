@@ -1,122 +1,94 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+  
+
+
+  
+
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
     
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.32 with theme Tranquilpeak 0.4.3-SNAPSHOT">
-<meta name="author" content="Guangchuang Yu">
-<meta name="keywords" content="">
-<meta name="description" content="很多人都在学ggplot2，也有很多「高手」，比如你搜索「精通ggplot2」，你甚至会看到各种「从入门到精通」的课程，然而都是各种照猫画老虎的入门菜谱而已，当然广大群众去上课也可能只是为了求菜谱好在需要的时候，可以copy-paste而已。
-
-ggplot2学习容易，因为无非是图层叠加，而图层的参数一致性非常好，网上也有很全的文档。然而要深入很难，比如你想干点什么是ggplot2自身没有支持的，你需要自己去hack，需要用到更底层的东西的时候，一般情况下，会无从入手，尝试之后才知道什么叫绝望！因为ggplot2套路实在是太深。
-
-正如我在《听说你还不会画热图》吐槽的，有些所谓的「高手」实际上连ggplot2底层是什么都不知道！然后可以把ggplot2吹上天。很多人根本不知道当你打下ggplot这个命令的时候，到底发生了什么？要理解ggplot2并不容易，正如前面所说「套路太深」，没有金钢钻，读不了它的代码，有没有一个简单点的包，能够读懂代码，并且有助于理解ggplot2呢？我想我的meme包就非常好，虽然仿的有点肤浅，然而胜在简单，看过下面这两篇文章的，都知道这个包在做什么。
-
-
-用R画meme ;)
-使用外部字体画meme
-
-
-">
-
-
-<meta property="og:description" content="很多人都在学ggplot2，也有很多「高手」，比如你搜索「精通ggplot2」，你甚至会看到各种「从入门到精通」的课程，然而都是各种照猫画老虎的入门菜谱而已，当然广大群众去上课也可能只是为了求菜谱好在需要的时候，可以copy-paste而已。
-
-ggplot2学习容易，因为无非是图层叠加，而图层的参数一致性非常好，网上也有很全的文档。然而要深入很难，比如你想干点什么是ggplot2自身没有支持的，你需要自己去hack，需要用到更底层的东西的时候，一般情况下，会无从入手，尝试之后才知道什么叫绝望！因为ggplot2套路实在是太深。
-
-正如我在《听说你还不会画热图》吐槽的，有些所谓的「高手」实际上连ggplot2底层是什么都不知道！然后可以把ggplot2吹上天。很多人根本不知道当你打下ggplot这个命令的时候，到底发生了什么？要理解ggplot2并不容易，正如前面所说「套路太深」，没有金钢钻，读不了它的代码，有没有一个简单点的包，能够读懂代码，并且有助于理解ggplot2呢？我想我的meme包就非常好，虽然仿的有点肤浅，然而胜在简单，看过下面这两篇文章的，都知道这个包在做什么。
-
-
-用R画meme ;)
-使用外部字体画meme
-
-
-">
-<meta property="og:type" content="article">
-<meta property="og:title" content="扪心自问，meme几何？">
-<meta name="twitter:title" content="扪心自问，meme几何？">
-<meta property="og:url" content="https://guangchuangyu.github.io/cn/2018/03/five-questions-of-meme/">
-<meta property="twitter:url" content="https://guangchuangyu.github.io/cn/2018/03/five-questions-of-meme/">
-<meta property="og:site_name" content="Guangchuang Yu">
-<meta property="og:description" content="很多人都在学ggplot2，也有很多「高手」，比如你搜索「精通ggplot2」，你甚至会看到各种「从入门到精通」的课程，然而都是各种照猫画老虎的入门菜谱而已，当然广大群众去上课也可能只是为了求菜谱好在需要的时候，可以copy-paste而已。
-
-ggplot2学习容易，因为无非是图层叠加，而图层的参数一致性非常好，网上也有很全的文档。然而要深入很难，比如你想干点什么是ggplot2自身没有支持的，你需要自己去hack，需要用到更底层的东西的时候，一般情况下，会无从入手，尝试之后才知道什么叫绝望！因为ggplot2套路实在是太深。
-
-正如我在《听说你还不会画热图》吐槽的，有些所谓的「高手」实际上连ggplot2底层是什么都不知道！然后可以把ggplot2吹上天。很多人根本不知道当你打下ggplot这个命令的时候，到底发生了什么？要理解ggplot2并不容易，正如前面所说「套路太深」，没有金钢钻，读不了它的代码，有没有一个简单点的包，能够读懂代码，并且有助于理解ggplot2呢？我想我的meme包就非常好，虽然仿的有点肤浅，然而胜在简单，看过下面这两篇文章的，都知道这个包在做什么。
-
-
-用R画meme ;)
-使用外部字体画meme
-
-
-">
-<meta name="twitter:description" content="很多人都在学ggplot2，也有很多「高手」，比如你搜索「精通ggplot2」，你甚至会看到各种「从入门到精通」的课程，然而都是各种照猫画老虎的入门菜谱而已，当然广大群众去上课也可能只是为了求菜谱好在需要的时候，可以copy-paste而已。
-
-ggplot2学习容易，因为无非是图层叠加，而图层的参数一致性非常好，网上也有很全的文档。然而要深入很难，比如你想干点什么是ggplot2自身没有支持的，你需要自己去hack，需要用到更底层的东西的时候，一般情况下，会无从入手，尝试之后才知道什么叫绝望！因为ggplot2套路实在是太深。
-
-正如我在《听说你还不会画热图》吐槽的，有些所谓的「高手」实际上连ggplot2底层是什么都不知道！然后可以把ggplot2吹上天。很多人根本不知道当你打下ggplot这个命令的时候，到底发生了什么？要理解ggplot2并不容易，正如前面所说「套路太深」，没有金钢钻，读不了它的代码，有没有一个简单点的包，能够读懂代码，并且有助于理解ggplot2呢？我想我的meme包就非常好，虽然仿的有点肤浅，然而胜在简单，看过下面这两篇文章的，都知道这个包在做什么。
-
-
-用R画meme ;)
-使用外部字体画meme
-
-
-">
-<meta property="og:locale" content="en-us">
-
-  
-    <meta property="article:published_time" content="2018-03-13T13:06:59">
-  
-  
-    <meta property="article:modified_time" content="2018-03-13T13:06:59">
-  
-  
-  
-    
-      <meta property="article:section" content="R">
-    
-      <meta property="article:section" content="Visualization">
-    
-  
-  
-    
-      <meta property="article:tag" content="ggplot2">
-    
-      <meta property="article:tag" content="meme">
-    
-  
-
-
-<meta name="twitter:card" content="summary">
-
-  <meta name="twitter:site" content="@guangchuangyu">
-
-
-  <meta name="twitter:creator" content="@guangchuangyu">
-
-
-
-
-
-
-
-
-
-
-  <meta property="og:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
-  <meta property="twitter:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
-
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.31.1 with theme Tranquilpeak 0.4.3-BETA">
     <title>扪心自问，meme几何？</title>
+    <meta name="author" content="Guangchuang Yu">
+    <meta name="keywords" content="">
 
     <link rel="icon" href="https://guangchuangyu.github.io/cn/favicon.png">
     
 
     
+    <meta name="description" content="很多人都在学ggplot2，也有很多「高手」，比如你搜索「精通ggplot2」，你甚至会看到各种「从入门到精通」的课程，然而都是各种照猫画老虎的入门菜谱而已，当然广大群众去上课也可能只是为了求菜谱好在需要的时候，可以copy-paste而已。
 
-    <link rel="canonical" href="https://guangchuangyu.github.io/cn/2018/03/five-questions-of-meme/">
+ggplot2学习容易，因为无非是图层叠加，而图层的参数一致性非常好，网上也有很全的文档。然而要深入很难，比如你想干点什么是ggplot2自身没有支持的，你需要自己去hack，需要用到更底层的东西的时候，一般情况下，会无从入手，尝试之后才知道什么叫绝望！因为ggplot2套路实在是太深。
+
+正如我在《听说你还不会画热图》吐槽的，有些所谓的「高手」实际上连ggplot2底层是什么都不知道！然后可以把ggplot2吹上天。很多人根本不知道当你打下ggplot这个命令的时候，到底发生了什么？要理解ggplot2并不容易，正如前面所说「套路太深」，没有金钢钻，读不了它的代码，有没有一个简单点的包，能够读懂代码，并且有助于理解ggplot2呢？我想我的meme包就非常好，虽然仿的有点肤浅，然而胜在简单，看过下面这两篇文章的，都知道这个包在做什么。
+
+
+用R画meme ;)
+使用外部字体画meme
+
+
+">
+    <meta property="og:description" content="很多人都在学ggplot2，也有很多「高手」，比如你搜索「精通ggplot2」，你甚至会看到各种「从入门到精通」的课程，然而都是各种照猫画老虎的入门菜谱而已，当然广大群众去上课也可能只是为了求菜谱好在需要的时候，可以copy-paste而已。
+
+ggplot2学习容易，因为无非是图层叠加，而图层的参数一致性非常好，网上也有很全的文档。然而要深入很难，比如你想干点什么是ggplot2自身没有支持的，你需要自己去hack，需要用到更底层的东西的时候，一般情况下，会无从入手，尝试之后才知道什么叫绝望！因为ggplot2套路实在是太深。
+
+正如我在《听说你还不会画热图》吐槽的，有些所谓的「高手」实际上连ggplot2底层是什么都不知道！然后可以把ggplot2吹上天。很多人根本不知道当你打下ggplot这个命令的时候，到底发生了什么？要理解ggplot2并不容易，正如前面所说「套路太深」，没有金钢钻，读不了它的代码，有没有一个简单点的包，能够读懂代码，并且有助于理解ggplot2呢？我想我的meme包就非常好，虽然仿的有点肤浅，然而胜在简单，看过下面这两篇文章的，都知道这个包在做什么。
+
+
+用R画meme ;)
+使用外部字体画meme
+
+
+">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="扪心自问，meme几何？">
+    <meta property="og:url" content="/2018/03/five-questions-of-meme/">
+    <meta property="og:site_name" content="Guangchuang Yu">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Guangchuang Yu">
+    <meta name="twitter:description" content="很多人都在学ggplot2，也有很多「高手」，比如你搜索「精通ggplot2」，你甚至会看到各种「从入门到精通」的课程，然而都是各种照猫画老虎的入门菜谱而已，当然广大群众去上课也可能只是为了求菜谱好在需要的时候，可以copy-paste而已。
+
+ggplot2学习容易，因为无非是图层叠加，而图层的参数一致性非常好，网上也有很全的文档。然而要深入很难，比如你想干点什么是ggplot2自身没有支持的，你需要自己去hack，需要用到更底层的东西的时候，一般情况下，会无从入手，尝试之后才知道什么叫绝望！因为ggplot2套路实在是太深。
+
+正如我在《听说你还不会画热图》吐槽的，有些所谓的「高手」实际上连ggplot2底层是什么都不知道！然后可以把ggplot2吹上天。很多人根本不知道当你打下ggplot这个命令的时候，到底发生了什么？要理解ggplot2并不容易，正如前面所说「套路太深」，没有金钢钻，读不了它的代码，有没有一个简单点的包，能够读懂代码，并且有助于理解ggplot2呢？我想我的meme包就非常好，虽然仿的有点肤浅，然而胜在简单，看过下面这两篇文章的，都知道这个包在做什么。
+
+
+用R画meme ;)
+使用外部字体画meme
+
+
+">
+    
+      <meta name="twitter:creator" content="@guangchuangyu">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
+    
+
+    
+    
+    
+
+    
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -124,7 +96,7 @@ ggplot2学习容易，因为无非是图层叠加，而图层的参数一致性�
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
+    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
     
     
 
@@ -159,7 +131,7 @@ ga('send', 'pageview');
     
     
       
-        <img class="header-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
+        <img class="header-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
       
     
     </a>
@@ -171,7 +143,7 @@ ga('send', 'pageview');
     
       <div class="sidebar-profile">
         <a href="https://guangchuangyu.github.io/cn/#about">
-          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
         </a>
         <h4 class="sidebar-profile-name">Guangchuang Yu</h4>
         
@@ -414,8 +386,8 @@ ga('send', 'pageview');
                 
               
             
-            <div class="post-actions-wrap">
-  
+            
+  <div class="post-actions-wrap">
       <nav >
         <ul class="post-actions post-action-nav">
           
@@ -462,8 +434,8 @@ ga('send', 'pageview');
         </a>
       </li>
     </ul>
-  
-</div>
+  </div>
+
 
             
               
@@ -482,8 +454,8 @@ ga('send', 'pageview');
 
       </div>
       <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
-        <div class="post-actions-wrap">
-  
+        
+  <div class="post-actions-wrap">
       <nav >
         <ul class="post-actions post-action-nav">
           
@@ -530,8 +502,8 @@ ga('send', 'pageview');
         </a>
       </li>
     </ul>
-  
-</div>
+  </div>
+
 
       </div>
       <div id="share-options-bar" class="share-options-bar" data-behavior="4">
@@ -549,7 +521,7 @@ ga('send', 'pageview');
       <i class="fa fa-remove"></i>
     </div>
     
-      <img id="about-card-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
     
     <h4 id="about-card-name">Guangchuang Yu</h4>
     
@@ -891,7 +863,7 @@ p = qplot(1:10)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         266 posts found
+         267 posts found
       </p>
     </div>
   </div>
@@ -912,20 +884,6 @@ p = qplot(1:10)
 <script src="https://guangchuangyu.github.io/cn/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
 
 
-<script lang="javascript">
-window.onload = updateMinWidth;
-window.onresize = updateMinWidth;
-document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
-function updateMinWidth() {
-  var sidebar = document.getElementById("sidebar");
-  var main = document.getElementById("main");
-  main.style.minWidth = "";
-  var w1 = getComputedStyle(main).getPropertyValue("min-width");
-  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
-  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
-  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
-}
-</script>
 
 
   
@@ -953,7 +911,6 @@ function updateMinWidth() {
       </script>
     
   
-
 
 
 

@@ -1,108 +1,85 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+  
+
+
+  
+
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
     
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.32 with theme Tranquilpeak 0.4.3-SNAPSHOT">
-<meta name="author" content="Guangchuang Yu">
-<meta name="keywords" content="">
-<meta name="description" content="下面这张吐槽LaTeX的图，太深得我心。
-
-
-
-而ggplot2这种文本跑出界的事情，也太常见，以至于我在ggtree的FAQ专门指出来，要用xlim给x轴分配多点空间，这是由于数据是数据空间，而文本是像素空间。你画图的画布由数据空间决定，然后文本就从指定的位置（除了坐标，还取决于你align的方式和adjustment微调）开始打出来，一不小心就打出界了。这一点我在FAQ里，除了告诉你用xlim解决之外，我也给出了上面的解释，所以我一直强调，不要以为我在教ggtree，我其实是在教ggplot2。
-
-后面就有人问了ggplot2字体溢出的事情，他所遇到的溢出，似乎更不应该发生，因为是坐标轴上的字体溢出，然而产生的原因是一样的，解决方案也是一样的，请用力猛戳《ggplot2字体溢出的那点破事》。
-
-">
-
-
-<meta property="og:description" content="下面这张吐槽LaTeX的图，太深得我心。
-
-
-
-而ggplot2这种文本跑出界的事情，也太常见，以至于我在ggtree的FAQ专门指出来，要用xlim给x轴分配多点空间，这是由于数据是数据空间，而文本是像素空间。你画图的画布由数据空间决定，然后文本就从指定的位置（除了坐标，还取决于你align的方式和adjustment微调）开始打出来，一不小心就打出界了。这一点我在FAQ里，除了告诉你用xlim解决之外，我也给出了上面的解释，所以我一直强调，不要以为我在教ggtree，我其实是在教ggplot2。
-
-后面就有人问了ggplot2字体溢出的事情，他所遇到的溢出，似乎更不应该发生，因为是坐标轴上的字体溢出，然而产生的原因是一样的，解决方案也是一样的，请用力猛戳《ggplot2字体溢出的那点破事》。
-
-">
-<meta property="og:type" content="article">
-<meta property="og:title" content="你的图上有一双看不见的手">
-<meta name="twitter:title" content="你的图上有一双看不见的手">
-<meta property="og:url" content="https://guangchuangyu.github.io/cn/2017/10/invisible-layer/">
-<meta property="twitter:url" content="https://guangchuangyu.github.io/cn/2017/10/invisible-layer/">
-<meta property="og:site_name" content="Guangchuang Yu">
-<meta property="og:description" content="下面这张吐槽LaTeX的图，太深得我心。
-
-
-
-而ggplot2这种文本跑出界的事情，也太常见，以至于我在ggtree的FAQ专门指出来，要用xlim给x轴分配多点空间，这是由于数据是数据空间，而文本是像素空间。你画图的画布由数据空间决定，然后文本就从指定的位置（除了坐标，还取决于你align的方式和adjustment微调）开始打出来，一不小心就打出界了。这一点我在FAQ里，除了告诉你用xlim解决之外，我也给出了上面的解释，所以我一直强调，不要以为我在教ggtree，我其实是在教ggplot2。
-
-后面就有人问了ggplot2字体溢出的事情，他所遇到的溢出，似乎更不应该发生，因为是坐标轴上的字体溢出，然而产生的原因是一样的，解决方案也是一样的，请用力猛戳《ggplot2字体溢出的那点破事》。
-
-">
-<meta name="twitter:description" content="下面这张吐槽LaTeX的图，太深得我心。
-
-
-
-而ggplot2这种文本跑出界的事情，也太常见，以至于我在ggtree的FAQ专门指出来，要用xlim给x轴分配多点空间，这是由于数据是数据空间，而文本是像素空间。你画图的画布由数据空间决定，然后文本就从指定的位置（除了坐标，还取决于你align的方式和adjustment微调）开始打出来，一不小心就打出界了。这一点我在FAQ里，除了告诉你用xlim解决之外，我也给出了上面的解释，所以我一直强调，不要以为我在教ggtree，我其实是在教ggplot2。
-
-后面就有人问了ggplot2字体溢出的事情，他所遇到的溢出，似乎更不应该发生，因为是坐标轴上的字体溢出，然而产生的原因是一样的，解决方案也是一样的，请用力猛戳《ggplot2字体溢出的那点破事》。
-
-">
-<meta property="og:locale" content="en-us">
-
-  
-    <meta property="article:published_time" content="2017-10-19T12:06:59">
-  
-  
-    <meta property="article:modified_time" content="2017-10-19T12:06:59">
-  
-  
-  
-    
-      <meta property="article:section" content="R">
-    
-      <meta property="article:section" content="Visualization">
-    
-  
-  
-    
-      <meta property="article:tag" content="ggplot2">
-    
-  
-
-
-<meta name="twitter:card" content="summary">
-
-  <meta name="twitter:site" content="@guangchuangyu">
-
-
-  <meta name="twitter:creator" content="@guangchuangyu">
-
-
-
-
-
-
-
-
-
-
-  <meta property="og:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
-  <meta property="twitter:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
-
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.31.1 with theme Tranquilpeak 0.4.3-BETA">
     <title>你的图上有一双看不见的手</title>
+    <meta name="author" content="Guangchuang Yu">
+    <meta name="keywords" content="">
 
     <link rel="icon" href="https://guangchuangyu.github.io/cn/favicon.png">
     
 
     
+    <meta name="description" content="下面这张吐槽LaTeX的图，太深得我心。
 
-    <link rel="canonical" href="https://guangchuangyu.github.io/cn/2017/10/invisible-layer/">
+
+
+而ggplot2这种文本跑出界的事情，也太常见，以至于我在ggtree的FAQ专门指出来，要用xlim给x轴分配多点空间，这是由于数据是数据空间，而文本是像素空间。你画图的画布由数据空间决定，然后文本就从指定的位置（除了坐标，还取决于你align的方式和adjustment微调）开始打出来，一不小心就打出界了。这一点我在FAQ里，除了告诉你用xlim解决之外，我也给出了上面的解释，所以我一直强调，不要以为我在教ggtree，我其实是在教ggplot2。
+
+后面就有人问了ggplot2字体溢出的事情，他所遇到的溢出，似乎更不应该发生，因为是坐标轴上的字体溢出，然而产生的原因是一样的，解决方案也是一样的，请用力猛戳《ggplot2字体溢出的那点破事》。
+
+">
+    <meta property="og:description" content="下面这张吐槽LaTeX的图，太深得我心。
+
+
+
+而ggplot2这种文本跑出界的事情，也太常见，以至于我在ggtree的FAQ专门指出来，要用xlim给x轴分配多点空间，这是由于数据是数据空间，而文本是像素空间。你画图的画布由数据空间决定，然后文本就从指定的位置（除了坐标，还取决于你align的方式和adjustment微调）开始打出来，一不小心就打出界了。这一点我在FAQ里，除了告诉你用xlim解决之外，我也给出了上面的解释，所以我一直强调，不要以为我在教ggtree，我其实是在教ggplot2。
+
+后面就有人问了ggplot2字体溢出的事情，他所遇到的溢出，似乎更不应该发生，因为是坐标轴上的字体溢出，然而产生的原因是一样的，解决方案也是一样的，请用力猛戳《ggplot2字体溢出的那点破事》。
+
+">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="你的图上有一双看不见的手">
+    <meta property="og:url" content="/2017/10/invisible-layer/">
+    <meta property="og:site_name" content="Guangchuang Yu">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Guangchuang Yu">
+    <meta name="twitter:description" content="下面这张吐槽LaTeX的图，太深得我心。
+
+
+
+而ggplot2这种文本跑出界的事情，也太常见，以至于我在ggtree的FAQ专门指出来，要用xlim给x轴分配多点空间，这是由于数据是数据空间，而文本是像素空间。你画图的画布由数据空间决定，然后文本就从指定的位置（除了坐标，还取决于你align的方式和adjustment微调）开始打出来，一不小心就打出界了。这一点我在FAQ里，除了告诉你用xlim解决之外，我也给出了上面的解释，所以我一直强调，不要以为我在教ggtree，我其实是在教ggplot2。
+
+后面就有人问了ggplot2字体溢出的事情，他所遇到的溢出，似乎更不应该发生，因为是坐标轴上的字体溢出，然而产生的原因是一样的，解决方案也是一样的，请用力猛戳《ggplot2字体溢出的那点破事》。
+
+">
+    
+      <meta name="twitter:creator" content="@guangchuangyu">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
+    
+
+    
+    
+    
+
+    
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -110,7 +87,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
+    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
     
     
 
@@ -145,7 +122,7 @@ ga('send', 'pageview');
     
     
       
-        <img class="header-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
+        <img class="header-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
       
     
     </a>
@@ -157,7 +134,7 @@ ga('send', 'pageview');
     
       <div class="sidebar-profile">
         <a href="https://guangchuangyu.github.io/cn/#about">
-          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
         </a>
         <h4 class="sidebar-profile-name">Guangchuang Yu</h4>
         
@@ -338,8 +315,8 @@ ga('send', 'pageview');
                 
               
             
-            <div class="post-actions-wrap">
-  
+            
+  <div class="post-actions-wrap">
       <nav >
         <ul class="post-actions post-action-nav">
           
@@ -386,8 +363,8 @@ ga('send', 'pageview');
         </a>
       </li>
     </ul>
-  
-</div>
+  </div>
+
 
             
               
@@ -406,8 +383,8 @@ ga('send', 'pageview');
 
       </div>
       <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
-        <div class="post-actions-wrap">
-  
+        
+  <div class="post-actions-wrap">
       <nav >
         <ul class="post-actions post-action-nav">
           
@@ -454,8 +431,8 @@ ga('send', 'pageview');
         </a>
       </li>
     </ul>
-  
-</div>
+  </div>
+
 
       </div>
       <div id="share-options-bar" class="share-options-bar" data-behavior="4">
@@ -473,7 +450,7 @@ ga('send', 'pageview');
       <i class="fa fa-remove"></i>
     </div>
     
-      <img id="about-card-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
     
     <h4 id="about-card-name">Guangchuang Yu</h4>
     
@@ -815,7 +792,7 @@ p = qplot(1:10)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         266 posts found
+         267 posts found
       </p>
     </div>
   </div>
@@ -836,20 +813,6 @@ p = qplot(1:10)
 <script src="https://guangchuangyu.github.io/cn/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
 
 
-<script lang="javascript">
-window.onload = updateMinWidth;
-window.onresize = updateMinWidth;
-document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
-function updateMinWidth() {
-  var sidebar = document.getElementById("sidebar");
-  var main = document.getElementById("main");
-  main.style.minWidth = "";
-  var w1 = getComputedStyle(main).getPropertyValue("min-width");
-  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
-  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
-  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
-}
-</script>
 
 
   
@@ -877,7 +840,6 @@ function updateMinWidth() {
       </script>
     
   
-
 
 
 

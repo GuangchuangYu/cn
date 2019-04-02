@@ -1,49 +1,26 @@
+
+
+
+  
+
+
+
+
+  
+
+
+  
+
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
     
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.32 with theme Tranquilpeak 0.4.3-SNAPSHOT">
-<meta name="author" content="Guangchuang Yu">
-<meta name="keywords" content="">
-<meta name="description" content="Guangchuang&#39;s Chinese Blog">
-
-
-<meta property="og:description" content="Guangchuang&#39;s Chinese Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ggplotify">
-<meta name="twitter:title" content="Ggplotify">
-<meta property="og:url" content="https://guangchuangyu.github.io/cn/tags/ggplotify/">
-<meta property="twitter:url" content="https://guangchuangyu.github.io/cn/tags/ggplotify/">
-<meta property="og:site_name" content="Guangchuang Yu">
-<meta property="og:description" content="Guangchuang&#39;s Chinese Blog">
-<meta name="twitter:description" content="Guangchuang&#39;s Chinese Blog">
-<meta property="og:locale" content="en-us">
-
-
-<meta name="twitter:card" content="summary">
-
-  <meta name="twitter:site" content="@guangchuangyu">
-
-
-  <meta name="twitter:creator" content="@guangchuangyu">
-
-
-
-
-
-
-
-
-
-
-  <meta property="og:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
-  <meta property="twitter:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
-
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.31.1 with theme Tranquilpeak 0.4.3-BETA">
     <title>Ggplotify</title>
+    <meta name="author" content="Guangchuang Yu">
+    <meta name="keywords" content="">
 
     <link rel="icon" href="https://guangchuangyu.github.io/cn/favicon.png">
     
@@ -51,8 +28,32 @@
     
 
     
+    <meta name="description" content="Guangchuang&#39;s Chinese Blog">
+    <meta property="og:description" content="Guangchuang&#39;s Chinese Blog">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Ggplotify">
+    <meta property="og:url" content="/tags/ggplotify/">
+    <meta property="og:site_name" content="Guangchuang Yu">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Guangchuang Yu">
+    <meta name="twitter:description" content="Guangchuang&#39;s Chinese Blog">
+    
+      <meta name="twitter:creator" content="@guangchuangyu">
+    
+    
 
-    <link rel="canonical" href="https://guangchuangyu.github.io/cn/tags/ggplotify/">
+    
+    
+
+    
+      <meta property="og:image" content="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
+    
+
+    
+    
+    
+
+    
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -60,7 +61,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
+    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
     
     
 
@@ -95,7 +96,7 @@ ga('send', 'pageview');
     
     
       
-        <img class="header-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
+        <img class="header-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
       
     
     </a>
@@ -107,7 +108,7 @@ ga('send', 'pageview');
     
       <div class="sidebar-profile">
         <a href="https://guangchuangyu.github.io/cn/#about">
-          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
         </a>
         <h4 class="sidebar-profile-name">Guangchuang Yu</h4>
         
@@ -255,8 +256,7 @@ ga('send', 'pageview');
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <p>在《<a href="https://mp.weixin.qq.com/s/NaUQ5KhRRN8cx4v798w9Qg">一个更好用的pheatmap</a>》一文中介绍了pheatmap的新功能，它输出为一个pheatmap的对象，这个对象在终端上打出来，会出来图，你可以用ggplot2::ggsave()来保存图片，文章的结尾处卖了一个关子，就是用cowplot来拼，这个有许多人问过我，因为大家一般都认为cowplot只能用于ggplot2的输出，pheatmap感觉好像不太行，而且在很多人的感觉中，画图代码不是ggplot2写的，就是base写的，而pheatmap看上去就像是base一般，其实它是grid写的，我在下面两篇文章中都有示例代码，用于拼pheatmap，不过一般人看过了，也只是留下一点印象，终究还是记不住，因为涉及到grid的知识。</p>
+      <p>在《<a href="https://mp.weixin.qq.com/s/NaUQ5KhRRN8cx4v798w9Qg">一个更好用的pheatmap</a>》一文中介绍了pheatmap的新功能，它输出为一个pheatmap的对象，这个对象在终端上打出来，会出来图，你可以用ggplot2::ggsave()来保存图片，文章的结尾处卖了一个关子，就是用cowplot来拼，这个有许多人问过我，因为大家一般都认为cowplot只能用于ggplot2的输出，pheatmap感觉好像不太行，而且在很多人的感觉中，画图代码不是ggplot2写的，就是base写的，而pheatmap看上去就像是base一般，其实它是grid写的，我在下面两篇文章中都有示例代码，用于拼pheatmap，不过一般人看过了，也只是留下一点印象，终究还是记不住，因为涉及到grid的知识。</p>
 
 <ul>
 <li><a href="http://mp.weixin.qq.com/s/Xhi_ZkrEzUVdnCu7ECBS4w">听说你还不会画热图</a></li>
@@ -266,7 +266,6 @@ ga('send', 'pageview');
 <p>现在我们有一种你一定能记得住的方法了，以后再也不用问pheatmap怎么拼图了，首先pheatmap产生的是一个对象，然后这个对象我们可以用ggplot2给画出来，然后自然而然你能够用cowplot去拼，再熟悉不过了，如果这都不能理解记住，那我也没办法了。</p>
 
 <p></p>
-      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2019/03/pheatmap-ggplotify/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -320,8 +319,7 @@ ga('send', 'pageview');
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <p>我在2018年4月份的一条推特文，<a href="https://twitter.com/guangchuangyu/status/988672880551518210">https://twitter.com/guangchuangyu/status/988672880551518210</a>，可以把<code>UpSetR</code>变成<code>ggplot</code>然后可以各种玩，比较我在推特文中所展示的，图上嵌入venn图、使用<code>cowplot</code>拼图等。然而过了大半年，我的<a href="https://github.com/hms-dbmi/UpSetR/pull/112">pull request</a>并没有被作者接收，也就是说这功能还不存在于官方的版本中。</p>
+      <p>我在2018年4月份的一条推特文，<a href="https://twitter.com/guangchuangyu/status/988672880551518210">https://twitter.com/guangchuangyu/status/988672880551518210</a>，可以把<code>UpSetR</code>变成<code>ggplot</code>然后可以各种玩，比较我在推特文中所展示的，图上嵌入venn图、使用<code>cowplot</code>拼图等。然而过了大半年，我的<a href="https://github.com/hms-dbmi/UpSetR/pull/112">pull request</a>并没有被作者接收，也就是说这功能还不存在于官方的版本中。</p>
 
 <p>如果有兴趣的话，应该安装我fork的版本。</p>
 
@@ -329,7 +327,6 @@ ga('send', 'pageview');
 </code></pre>
 
 <p></p>
-      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2018/11/upset-to-ggplot/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -383,8 +380,7 @@ ga('send', 'pageview');
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <p>微软以75亿美元收购全球最大的单身交友网站GitHub，应景<a href="https://mp.weixin.qq.com/s/koM3GU1zr8dE0S0fkdncxA">分享一张图片</a>，其实这图大家并不陌生，在《<a href="http://mp.weixin.qq.com/s/Xhi_ZkrEzUVdnCu7ECBS4w">听说你还不会画热图</a>》一文中，大家早已见过。</p>
+      <p>微软以75亿美元收购全球最大的单身交友网站GitHub，应景<a href="https://mp.weixin.qq.com/s/koM3GU1zr8dE0S0fkdncxA">分享一张图片</a>，其实这图大家并不陌生，在《<a href="http://mp.weixin.qq.com/s/Xhi_ZkrEzUVdnCu7ECBS4w">听说你还不会画热图</a>》一文中，大家早已见过。</p>
 
 <p>这图实在太好玩，被套在各种场景上，今天就要教大家怎么用R，纯代码生成这样的图，简直是吐槽神器。这类图可以归入meme，画meme，当然少不了我写的meme包，这包收录在CRAN中，点击下面链接了解一下：</p>
 
@@ -395,7 +391,6 @@ ga('send', 'pageview');
 </ul>
 
 <p></p>
-      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2018/06/github-ms-meme/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -425,7 +420,7 @@ ga('send', 'pageview');
       <i class="fa fa-remove"></i>
     </div>
     
-      <img id="about-card-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
     
     <h4 id="about-card-name">Guangchuang Yu</h4>
     
@@ -767,7 +762,7 @@ p = qplot(1:10)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         266 posts found
+         267 posts found
       </p>
     </div>
   </div>
@@ -787,21 +782,6 @@ p = qplot(1:10)
 
 <script src="https://guangchuangyu.github.io/cn/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
 
-
-<script lang="javascript">
-window.onload = updateMinWidth;
-window.onresize = updateMinWidth;
-document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
-function updateMinWidth() {
-  var sidebar = document.getElementById("sidebar");
-  var main = document.getElementById("main");
-  main.style.minWidth = "";
-  var w1 = getComputedStyle(main).getPropertyValue("min-width");
-  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
-  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
-  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
-}
-</script>
 
 
 

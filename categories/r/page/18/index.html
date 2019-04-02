@@ -1,49 +1,26 @@
+
+
+
+  
+
+
+
+
+  
+
+
+  
+
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
     
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.32 with theme Tranquilpeak 0.4.3-SNAPSHOT">
-<meta name="author" content="Guangchuang Yu">
-<meta name="keywords" content="">
-<meta name="description" content="Guangchuang&#39;s Chinese Blog">
-
-
-<meta property="og:description" content="Guangchuang&#39;s Chinese Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="R">
-<meta name="twitter:title" content="R">
-<meta property="og:url" content="https://guangchuangyu.github.io/cn/categories/r/">
-<meta property="twitter:url" content="https://guangchuangyu.github.io/cn/categories/r/">
-<meta property="og:site_name" content="Guangchuang Yu">
-<meta property="og:description" content="Guangchuang&#39;s Chinese Blog">
-<meta name="twitter:description" content="Guangchuang&#39;s Chinese Blog">
-<meta property="og:locale" content="en-us">
-
-
-<meta name="twitter:card" content="summary">
-
-  <meta name="twitter:site" content="@guangchuangyu">
-
-
-  <meta name="twitter:creator" content="@guangchuangyu">
-
-
-
-
-
-
-
-
-
-
-  <meta property="og:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
-  <meta property="twitter:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
-
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.31.1 with theme Tranquilpeak 0.4.3-BETA">
     <title>R</title>
+    <meta name="author" content="Guangchuang Yu">
+    <meta name="keywords" content="">
 
     <link rel="icon" href="https://guangchuangyu.github.io/cn/favicon.png">
     
@@ -51,8 +28,32 @@
     
 
     
+    <meta name="description" content="Guangchuang&#39;s Chinese Blog">
+    <meta property="og:description" content="Guangchuang&#39;s Chinese Blog">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="R">
+    <meta property="og:url" content="/categories/r/">
+    <meta property="og:site_name" content="Guangchuang Yu">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Guangchuang Yu">
+    <meta name="twitter:description" content="Guangchuang&#39;s Chinese Blog">
+    
+      <meta name="twitter:creator" content="@guangchuangyu">
+    
+    
 
-    <link rel="canonical" href="https://guangchuangyu.github.io/cn/categories/r/">
+    
+    
+
+    
+      <meta property="og:image" content="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
+    
+
+    
+    
+    
+
+    
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -60,7 +61,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
+    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
     
     
 
@@ -95,7 +96,7 @@ ga('send', 'pageview');
     
     
       
-        <img class="header-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
+        <img class="header-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
       
     
     </a>
@@ -107,7 +108,7 @@ ga('send', 'pageview');
     
       <div class="sidebar-profile">
         <a href="https://guangchuangyu.github.io/cn/#about">
-          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
         </a>
         <h4 class="sidebar-profile-name">Guangchuang Yu</h4>
         
@@ -255,15 +256,13 @@ ga('send', 'pageview');
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <p><img src="http://guangchuangyu.github.io/blog_images/Bioconductor/clusterProfiler/640.jpg" alt="" /></p>
+      <p><img src="http://guangchuangyu.github.io/blog_images/Bioconductor/clusterProfiler/640.jpg" alt="" /></p>
 
 <p>周末Bioconductor上的问题，说的是他用了buildGOmap之后，在终端上输出了一长串，但没有文件产生，今天就来讲讲这个buildGOmap的前世今生。</p>
 
 <p>当年写clusterProfiler的时候在暨大工作，主要也是自己的需求驱动，因为实验室里有做细菌，比如肺炎链球菌D39，在细菌界基本上所谓的GO分析，就是跑个电子注释，然后数一下数目，列个表格画个饼图。很难看到有富集性分析的身影，因为绝大多数的工具是只支持少量模式生物的，还有部分工具比如支持某些细菌，支持某些植物或者某些真菌，比如支持植物的，也只是支持少量的植物物种而已，都是些自己定制给自己用的玩意，放出来只是为了顺道灌水而已。</p>
 
 <p></p>
-      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2016/11/buildgomap/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -319,15 +318,9 @@ ga('send', 'pageview');
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> code for the PhD/cute animals gestation <a href="https://twitter.com/hashtag/ggplot2?src=hash&amp;ref_src=twsrc%5Etfw">#ggplot2</a> <a href="https://twitter.com/hashtag/gganimate?src=hash&amp;ref_src=twsrc%5Etfw">#gganimate</a> <a href="https://twitter.com/hashtag/emojifont?src=hash&amp;ref_src=twsrc%5Etfw">#emojifont</a> plot <a href="https://t.co/qWM0bCHoHJ">https://t.co/qWM0bCHoHJ</a> 🐭🐶🐱🐺🐯🐷🐏🐻👶🐳🐘📕 <a href="https://t.co/a4GYl191a8">https://t.co/a4GYl191a8</a></p>&mdash; Maëlle Salmon 🐟 (@ma_salmon) <a href="https://twitter.com/ma_salmon/status/800007428096094209?ref_src=twsrc%5Etfw">November 19, 2016</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-
-<p>无缘无故收到好几条消息，原来是用emoji画图。</p>
+      <p>无缘无故收到好几条消息，原来是用emoji画图。</p>
 
 <p></p>
-      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2016/11/use-emoji/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -383,8 +376,7 @@ ga('send', 'pageview');
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <p>画图配色并不是一件简单的事情，好的配色让人眼前一亮，虽然R有很多配色方案，做为ggplot2的爱好者，ggthemes也提供了很多主题，内置了很多配色方案，还有一些其它的包，比如ggtech，包含了一些科技公司比如facebook, twitter, google的典型配色方案，甚至于ggsci，提供了nature, lancet的配色方案。</p>
+      <p>画图配色并不是一件简单的事情，好的配色让人眼前一亮，虽然R有很多配色方案，做为ggplot2的爱好者，ggthemes也提供了很多主题，内置了很多配色方案，还有一些其它的包，比如ggtech，包含了一些科技公司比如facebook, twitter, google的典型配色方案，甚至于ggsci，提供了nature, lancet的配色方案。</p>
 
 <p>但这些远远不够！
 但这些远远不够！
@@ -395,7 +387,6 @@ ga('send', 'pageview');
 <p>这些在R里面，都是可以的，可以的，可以的&hellip;</p>
 
 <p></p>
-      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2016/11/%E9%A3%9F%E8%89%B2%E6%80%A7%E4%B9%9F/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -451,13 +442,11 @@ ga('send', 'pageview');
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <p><img src="https://guangchuangyu.github.io/blog_images/2016/Screen Shot 2016-11-17 at 8.20.21 PM.png" alt="" /></p>
+      <p><img src="https://guangchuangyu.github.io/blog_images/2016/Screen Shot 2016-11-17 at 8.20.21 PM.png" alt="" /></p>
 
 <p>这是高老师<a href="http://link.springer.com/article/10.1007/s11540-015-9307-3">文章</a>里的图，每一个小图都是通过比较两条比对序列差异而做出来的，从图A和B中可以看出，CF_YL21有可能是Mont和Oz两条序列重组而来。高老师自己做出这图后，深知手工统计序列差异、画图、拼图之困难。问我有没有办法读两条序列，生成一个图。</p>
 
 <p></p>
-      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2016/11/dna%E5%BA%8F%E5%88%97%E5%B7%AE%E5%BC%82%E4%BD%9C%E5%9B%BE/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -513,11 +502,9 @@ ga('send', 'pageview');
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <p>这是最近github上的问题，如何反转time scale，也就是把最近的时间设为0。而内部节点为距今多少年，这个很容易，把x轴的值变成x-max(x)就可以，感觉这个也只会在时间树上使用，所以取名revts（reverse time scale），revts之后，x轴最大值是0，其它为负数，可以使用scale_x_continuous改label为绝对值。</p>
+      <p>这是最近github上的问题，如何反转time scale，也就是把最近的时间设为0。而内部节点为距今多少年，这个很容易，把x轴的值变成x-max(x)就可以，感觉这个也只会在时间树上使用，所以取名revts（reverse time scale），revts之后，x轴最大值是0，其它为负数，可以使用scale_x_continuous改label为绝对值。</p>
 
 <p></p>
-      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2016/11/ggtree-reverse-time-scale/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -571,15 +558,13 @@ ga('send', 'pageview');
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <p>更新R较为无痛的方法已经在<a href="http://guangchuangyu.github.io/2014/11/hello-yosemite/">hello yosemite</a>一文中提及。今天Bioconductor发布3.4版本，又是更新R包的时候了。</p>
+      <p>更新R较为无痛的方法已经在<a href="http://guangchuangyu.github.io/2014/11/hello-yosemite/">hello yosemite</a>一文中提及。今天Bioconductor发布3.4版本，又是更新R包的时候了。</p>
 
 <p>之前为了<a href="https://guangchuangyu.github.io/2016/07/how-to-bug-author/">吐槽</a>很多人问问题都是在使用早已不维护的老版本，写了<a href="https://cran.r-project.org/web/packages/rvcheck/">rvcheck</a>来帮忙检查版本。既然能够帮我们检查版本，自然能够帮忙升级。</p>
 
 <p>使用<code>rvcheck::update_all()</code>可以自动更新CRAN, Bioconductor和Github上的R包。其实可以放到系统任务里，每月自动更新一次，然后就可以完全不用管升级的事情。</p>
 
 <p></p>
-      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2016/10/update-r-packages/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -633,11 +618,9 @@ ga('send', 'pageview');
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <p>发现Youtube上有一个视频叫<a href="https://www.youtube.com/watch?v=MYTblx-5Yog">Evolution of clusterProfiler</a>, 是Landon Wilkins用<a href="http://gource.io/">Gource</a>做的。于是我也来玩一下，看一下自己这几年码代码的过程。</p>
+      <p>发现Youtube上有一个视频叫<a href="https://www.youtube.com/watch?v=MYTblx-5Yog">Evolution of clusterProfiler</a>, 是Landon Wilkins用<a href="http://gource.io/">Gource</a>做的。于是我也来玩一下，看一下自己这几年码代码的过程。</p>
 
 <p></p>
-      
       <p>
         <a href="https://guangchuangyu.github.io/cn/2016/07/evolution-of-my-bioc-packages/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -691,7 +674,7 @@ ga('send', 'pageview');
       <i class="fa fa-remove"></i>
     </div>
     
-      <img id="about-card-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
     
     <h4 id="about-card-name">Guangchuang Yu</h4>
     
@@ -1033,7 +1016,7 @@ p = qplot(1:10)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         266 posts found
+         267 posts found
       </p>
     </div>
   </div>
@@ -1053,21 +1036,6 @@ p = qplot(1:10)
 
 <script src="https://guangchuangyu.github.io/cn/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
 
-
-<script lang="javascript">
-window.onload = updateMinWidth;
-window.onresize = updateMinWidth;
-document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
-function updateMinWidth() {
-  var sidebar = document.getElementById("sidebar");
-  var main = document.getElementById("main");
-  main.style.minWidth = "";
-  var w1 = getComputedStyle(main).getPropertyValue("min-width");
-  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
-  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
-  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
-}
-</script>
 
 
 

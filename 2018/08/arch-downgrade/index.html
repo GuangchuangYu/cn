@@ -1,156 +1,121 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+  
+
+
+  
+
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
     
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.32 with theme Tranquilpeak 0.4.3-SNAPSHOT">
-<meta name="author" content="Guangchuang Yu">
-<meta name="keywords" content="">
-<meta name="description" content="用Arch Linux就是每天睡觉关机前滚一下，然而有时候有些软件升级滚出问题，比如glibc-2.28就导致了R安装包有问题，会抛出下面的错误：
-
-terminate called after throwing an instance of &#39;std::runtime_error&#39;
-  what():  Mutex creation failed
-
-
-用blogdown编译博客也同样会抛出这个错误。
-
-然后electron也有问题，《开源的macOS和linux版微信》跑着跑着突然CPU就狂飙。
-
-解决办法就是安装回老版本，但pacman永远是最新的，当然可以去git/svn仓库里找老版本的PKGBUILD，然后再makepkg，但经常会在signature checking这步报错，你还得到导入keyring，挺麻烦。
-
-这时候我找到了downgrade脚本:
-
-
-Bash script for downgrading one or more packages to a version in your cache or the A.L.A.
-
-
-AUR有收录，安装非常简单：
-
-">
-
-
-<meta property="og:description" content="用Arch Linux就是每天睡觉关机前滚一下，然而有时候有些软件升级滚出问题，比如glibc-2.28就导致了R安装包有问题，会抛出下面的错误：
-
-terminate called after throwing an instance of &#39;std::runtime_error&#39;
-  what():  Mutex creation failed
-
-
-用blogdown编译博客也同样会抛出这个错误。
-
-然后electron也有问题，《开源的macOS和linux版微信》跑着跑着突然CPU就狂飙。
-
-解决办法就是安装回老版本，但pacman永远是最新的，当然可以去git/svn仓库里找老版本的PKGBUILD，然后再makepkg，但经常会在signature checking这步报错，你还得到导入keyring，挺麻烦。
-
-这时候我找到了downgrade脚本:
-
-
-Bash script for downgrading one or more packages to a version in your cache or the A.L.A.
-
-
-AUR有收录，安装非常简单：
-
-">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Arch之软件降级">
-<meta name="twitter:title" content="Arch之软件降级">
-<meta property="og:url" content="https://guangchuangyu.github.io/cn/2018/08/arch-downgrade/">
-<meta property="twitter:url" content="https://guangchuangyu.github.io/cn/2018/08/arch-downgrade/">
-<meta property="og:site_name" content="Guangchuang Yu">
-<meta property="og:description" content="用Arch Linux就是每天睡觉关机前滚一下，然而有时候有些软件升级滚出问题，比如glibc-2.28就导致了R安装包有问题，会抛出下面的错误：
-
-terminate called after throwing an instance of &#39;std::runtime_error&#39;
-  what():  Mutex creation failed
-
-
-用blogdown编译博客也同样会抛出这个错误。
-
-然后electron也有问题，《开源的macOS和linux版微信》跑着跑着突然CPU就狂飙。
-
-解决办法就是安装回老版本，但pacman永远是最新的，当然可以去git/svn仓库里找老版本的PKGBUILD，然后再makepkg，但经常会在signature checking这步报错，你还得到导入keyring，挺麻烦。
-
-这时候我找到了downgrade脚本:
-
-
-Bash script for downgrading one or more packages to a version in your cache or the A.L.A.
-
-
-AUR有收录，安装非常简单：
-
-">
-<meta name="twitter:description" content="用Arch Linux就是每天睡觉关机前滚一下，然而有时候有些软件升级滚出问题，比如glibc-2.28就导致了R安装包有问题，会抛出下面的错误：
-
-terminate called after throwing an instance of &#39;std::runtime_error&#39;
-  what():  Mutex creation failed
-
-
-用blogdown编译博客也同样会抛出这个错误。
-
-然后electron也有问题，《开源的macOS和linux版微信》跑着跑着突然CPU就狂飙。
-
-解决办法就是安装回老版本，但pacman永远是最新的，当然可以去git/svn仓库里找老版本的PKGBUILD，然后再makepkg，但经常会在signature checking这步报错，你还得到导入keyring，挺麻烦。
-
-这时候我找到了downgrade脚本:
-
-
-Bash script for downgrading one or more packages to a version in your cache or the A.L.A.
-
-
-AUR有收录，安装非常简单：
-
-">
-<meta property="og:locale" content="en-us">
-
-  
-    <meta property="article:published_time" content="2018-08-08T20:10:35">
-  
-  
-    <meta property="article:modified_time" content="2018-08-08T20:10:35">
-  
-  
-  
-    
-      <meta property="article:section" content="Linux">
-    
-  
-  
-    
-      <meta property="article:tag" content="downgrade">
-    
-      <meta property="article:tag" content="pacman">
-    
-  
-
-
-<meta name="twitter:card" content="summary">
-
-  <meta name="twitter:site" content="@guangchuangyu">
-
-
-  <meta name="twitter:creator" content="@guangchuangyu">
-
-
-
-
-
-
-
-
-
-
-  <meta property="og:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
-  <meta property="twitter:image" content="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
-
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.31.1 with theme Tranquilpeak 0.4.3-BETA">
     <title>Arch之软件降级</title>
+    <meta name="author" content="Guangchuang Yu">
+    <meta name="keywords" content="">
 
     <link rel="icon" href="https://guangchuangyu.github.io/cn/favicon.png">
     
 
     
+    <meta name="description" content="用Arch Linux就是每天睡觉关机前滚一下，然而有时候有些软件升级滚出问题，比如glibc-2.28就导致了R安装包有问题，会抛出下面的错误：
 
-    <link rel="canonical" href="https://guangchuangyu.github.io/cn/2018/08/arch-downgrade/">
+terminate called after throwing an instance of &#39;std::runtime_error&#39;
+  what():  Mutex creation failed
+
+
+用blogdown编译博客也同样会抛出这个错误。
+
+然后electron也有问题，《开源的macOS和linux版微信》跑着跑着突然CPU就狂飙。
+
+解决办法就是安装回老版本，但pacman永远是最新的，当然可以去git/svn仓库里找老版本的PKGBUILD，然后再makepkg，但经常会在signature checking这步报错，你还得到导入keyring，挺麻烦。
+
+这时候我找到了downgrade脚本:
+
+
+Bash script for downgrading one or more packages to a version in your cache or the A.L.A.
+
+
+AUR有收录，安装非常简单：
+
+">
+    <meta property="og:description" content="用Arch Linux就是每天睡觉关机前滚一下，然而有时候有些软件升级滚出问题，比如glibc-2.28就导致了R安装包有问题，会抛出下面的错误：
+
+terminate called after throwing an instance of &#39;std::runtime_error&#39;
+  what():  Mutex creation failed
+
+
+用blogdown编译博客也同样会抛出这个错误。
+
+然后electron也有问题，《开源的macOS和linux版微信》跑着跑着突然CPU就狂飙。
+
+解决办法就是安装回老版本，但pacman永远是最新的，当然可以去git/svn仓库里找老版本的PKGBUILD，然后再makepkg，但经常会在signature checking这步报错，你还得到导入keyring，挺麻烦。
+
+这时候我找到了downgrade脚本:
+
+
+Bash script for downgrading one or more packages to a version in your cache or the A.L.A.
+
+
+AUR有收录，安装非常简单：
+
+">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Arch之软件降级">
+    <meta property="og:url" content="/2018/08/arch-downgrade/">
+    <meta property="og:site_name" content="Guangchuang Yu">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Guangchuang Yu">
+    <meta name="twitter:description" content="用Arch Linux就是每天睡觉关机前滚一下，然而有时候有些软件升级滚出问题，比如glibc-2.28就导致了R安装包有问题，会抛出下面的错误：
+
+terminate called after throwing an instance of &#39;std::runtime_error&#39;
+  what():  Mutex creation failed
+
+
+用blogdown编译博客也同样会抛出这个错误。
+
+然后electron也有问题，《开源的macOS和linux版微信》跑着跑着突然CPU就狂飙。
+
+解决办法就是安装回老版本，但pacman永远是最新的，当然可以去git/svn仓库里找老版本的PKGBUILD，然后再makepkg，但经常会在signature checking这步报错，你还得到导入keyring，挺麻烦。
+
+这时候我找到了downgrade脚本:
+
+
+Bash script for downgrading one or more packages to a version in your cache or the A.L.A.
+
+
+AUR有收录，安装非常简单：
+
+">
+    
+      <meta name="twitter:creator" content="@guangchuangyu">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=640">
+    
+
+    
+    
+    
+
+    
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -158,7 +123,7 @@ AUR有收录，安装非常简单：
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
+    <link rel="stylesheet" href="https://guangchuangyu.github.io/cn/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
     
     
 
@@ -193,7 +158,7 @@ ga('send', 'pageview');
     
     
       
-        <img class="header-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
+        <img class="header-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=90" alt="Author&#39;s picture" />
       
     
     </a>
@@ -205,7 +170,7 @@ ga('send', 'pageview');
     
       <div class="sidebar-profile">
         <a href="https://guangchuangyu.github.io/cn/#about">
-          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
         </a>
         <h4 class="sidebar-profile-name">Guangchuang Yu</h4>
         
@@ -491,8 +456,8 @@ add glibc to IgnorePkg? [y/n] n
                 
               
             
-            <div class="post-actions-wrap">
-  
+            
+  <div class="post-actions-wrap">
       <nav >
         <ul class="post-actions post-action-nav">
           
@@ -539,8 +504,8 @@ add glibc to IgnorePkg? [y/n] n
         </a>
       </li>
     </ul>
-  
-</div>
+  </div>
+
 
             
               
@@ -559,8 +524,8 @@ add glibc to IgnorePkg? [y/n] n
 
       </div>
       <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
-        <div class="post-actions-wrap">
-  
+        
+  <div class="post-actions-wrap">
       <nav >
         <ul class="post-actions post-action-nav">
           
@@ -607,8 +572,8 @@ add glibc to IgnorePkg? [y/n] n
         </a>
       </li>
     </ul>
-  
-</div>
+  </div>
+
 
       </div>
       <div id="share-options-bar" class="share-options-bar" data-behavior="4">
@@ -626,7 +591,7 @@ add glibc to IgnorePkg? [y/n] n
       <i class="fa fa-remove"></i>
     </div>
     
-      <img id="about-card-picture" src="https://www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/7466436733e8691a63a9f7af4651e014?s=110" alt="Author&#39;s picture" />
     
     <h4 id="about-card-name">Guangchuang Yu</h4>
     
@@ -968,7 +933,7 @@ p = qplot(1:10)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         266 posts found
+         267 posts found
       </p>
     </div>
   </div>
@@ -989,20 +954,6 @@ p = qplot(1:10)
 <script src="https://guangchuangyu.github.io/cn/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
 
 
-<script lang="javascript">
-window.onload = updateMinWidth;
-window.onresize = updateMinWidth;
-document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
-function updateMinWidth() {
-  var sidebar = document.getElementById("sidebar");
-  var main = document.getElementById("main");
-  main.style.minWidth = "";
-  var w1 = getComputedStyle(main).getPropertyValue("min-width");
-  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
-  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
-  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
-}
-</script>
 
 
   
@@ -1030,7 +981,6 @@ function updateMinWidth() {
       </script>
     
   
-
 
 
 
