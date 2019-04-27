@@ -6,10 +6,44 @@
     <description>Recent content on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 14 Mar 2019 12:37:55 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 01 Apr 2019 12:20:16 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>我不会用illustrator，只会用ppt！</title>
+      <link>https://guangchuangyu.github.io/cn/2019/04/export-office/</link>
+      <pubDate>Mon, 01 Apr 2019 12:20:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2019/04/export-office/</guid>
+      <description>&lt;p&gt;当年我准备考博的时候，健康院某PI（本来的意向导师）找我帮他在iMac上安装盗版的&lt;code&gt;Papers&lt;/code&gt;（文献管理器）和&lt;code&gt;Illustrator&lt;/code&gt;（PS的兄弟），安装后，跟我说：“我们做科研的，最重要的软件就是Papers和Illustrator。”，当然后来感觉挺坑我，就放弃了。&lt;/p&gt;
+
+&lt;p&gt;这么多年过去了，至今这两个软件我都没用过！我画图，追求的是全部由代码产生，至今还没有修图的需求，也就没有试过&lt;code&gt;Illustrator&lt;/code&gt;了。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Illustrator&lt;/code&gt;必须有些门槛，而且关键是&lt;code&gt;Adobe&lt;/code&gt;绑死在PDF上，实际上如果80%的问题都可以用&lt;code&gt;PowerPoint&lt;/code&gt;解决，剩下那20%，反正也不常用。而&lt;code&gt;PowerPoint&lt;/code&gt;的优点是没有门槛，傻瓜式操作，像我这种怀疑自己智商的人，都会用啊！&lt;/p&gt;
+
+&lt;p&gt;要是&lt;code&gt;R&lt;/code&gt;画的图，能够在&lt;code&gt;PowerPoint&lt;/code&gt;里面编辑就好了！&lt;/p&gt;
+
+&lt;p&gt;要是&lt;code&gt;R&lt;/code&gt;画的图，能够在&lt;code&gt;PowerPoint&lt;/code&gt;里面编辑就好了！&lt;/p&gt;
+
+&lt;p&gt;要是&lt;code&gt;R&lt;/code&gt;画的图，能够在&lt;code&gt;PowerPoint&lt;/code&gt;里面编辑就好了！&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>biobabble的作者们</title>
+      <link>https://guangchuangyu.github.io/cn/2019/03/biobabble-author/</link>
+      <pubDate>Thu, 28 Mar 2019 15:10:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/2019/03/biobabble-author/</guid>
+      <description>&lt;p&gt;在《&lt;a href=&#34;https://mp.weixin.qq.com/s/kmezZTCSa_F_Lx7f4a8ZTA&#34;&gt;R-3.6 &amp;ndash; set.seed&lt;/a&gt;》和《&lt;a href=&#34;https://mp.weixin.qq.com/s/NZSfAVlWuJkuFsNDo_NMiw&#34;&gt;欧式距离如何应对缺失值？&lt;/a&gt;》中暴露了&lt;code&gt;biobabble&lt;/code&gt;作者群，今天就来揭秘一下。&lt;/p&gt;
+
+&lt;p&gt;凡是给本公众号投过稿，或者是被我约过稿的，都会被我拉入群，目前在群里有8个小伙伴，分别是有原创文章发表在&lt;code&gt;biobabble&lt;/code&gt;公众号的，其中有介绍自己的软件工具的，包括&lt;code&gt;scihub_ck&lt;/code&gt;，&lt;code&gt;csvtk&lt;/code&gt;，&lt;code&gt;bioView&lt;/code&gt;, &lt;code&gt;basicTrendline&lt;/code&gt;等优秀作品，首次在公众号平台上介绍。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>欧式距离如何应对缺失值</title>
@@ -5345,17 +5379,6 @@ DeviceType=0x0, DeviceId=0x0
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://guangchuangyu.github.io/cn/1/01/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/1/01/</guid>
-      <description>在《R-3.6 &amp;ndash; set.seed》和xx中暴露了biobabble作者群，今天就来揭秘一下。
-凡是给本公众号投过稿，或者是被我约过稿的，都会被我拉入群，目前在群里有8个小伙伴，分别是有原创文章发表在biobabble公众号的，其中有介绍自己的软件工具的，包括scihub_ck，csvtk，bioView, basicTrendline等优秀作品，首次在公众号平台上介绍。
-爪哥  csvtk - 跨平台、高效、实用的CSV/TSV命令行工具  每天学点Perl语言  Sci-Hub可用域名实时追踪  碱基们的时间  bioView - 一个生信常用文件格式的可读性增强工具  李陈浩  ggplot扩展学习笔记&amp;ndash;逐行解析Y叔的&amp;rdquo;geom_ord_ellipse.R&amp;rdquo;  徐洲更  靠树树会倒，不要太相信你的注释文件！  梅卫平  basicTrendline：CRAN最新发布的线性非线性拟合的R函数包介绍  高春辉  ggplot label placement  曾健明  曾老湿最新私已：GATK4实战教程  小丫虽然有文章被我转载，比如《你昨天才做的分析，可能是几年前的结果！》，但没有被我拉入作者群，因为转载的不算，必须是原创文才会被拉进群，投稿是没有稿费的，所以在此也要向上面的八位小伙伴表示感谢！非常感谢大家的捧场和支持！也欢迎更多的人加入作者群。</description>
     </item>
     
   </channel>

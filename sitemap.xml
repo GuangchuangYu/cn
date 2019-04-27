@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/2019/04/export-office/</loc>
+    <lastmod>2019-04-01T12:20:16+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/2019/03/biobabble-author/</loc>
+    <lastmod>2019-03-28T15:10:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/2019/03/euclidean-distance-with-na-values/</loc>
     <lastmod>2019-03-14T12:37:55+08:00</lastmod>
   </url>
@@ -1333,10 +1343,6 @@
   </url>
   
   <url>
-    <loc>https://guangchuangyu.github.io/cn/1/01/</loc>
-  </url>
-  
-  <url>
     <loc>https://guangchuangyu.github.io/cn/tags/3d/</loc>
     <lastmod>2018-08-13T18:30:00+08:00</lastmod>
     <priority>0</priority>
@@ -1368,6 +1374,12 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/archlinux/</loc>
     <lastmod>2017-07-09T07:57:46+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/author/</loc>
+    <lastmod>2019-03-28T15:10:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1404,6 +1416,12 @@
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/biobabble/</loc>
     <lastmod>2019-03-05T00:30:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangchuangyu.github.io/cn/categories/biobabble/</loc>
+    <lastmod>2019-03-28T15:10:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1738,6 +1756,12 @@
   </url>
   
   <url>
+    <loc>https://guangchuangyu.github.io/cn/tags/export/</loc>
+    <lastmod>2019-04-01T12:20:16+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://guangchuangyu.github.io/cn/tags/fasta/</loc>
     <lastmod>2008-08-23T13:35:00+08:00</lastmod>
     <priority>0</priority>
@@ -1817,7 +1841,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/tags/ggplot2/</loc>
-    <lastmod>2019-01-11T12:23:16+08:00</lastmod>
+    <lastmod>2019-04-01T12:20:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1901,7 +1925,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/</loc>
-    <lastmod>2019-03-14T12:37:55+08:00</lastmod>
+    <lastmod>2019-04-01T12:20:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2315,7 +2339,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/post/</loc>
-    <lastmod>2019-03-14T12:37:55+08:00</lastmod>
+    <lastmod>2019-04-01T12:20:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2411,7 +2435,7 @@
   
   <url>
     <loc>https://guangchuangyu.github.io/cn/categories/r/</loc>
-    <lastmod>2019-03-14T12:37:55+08:00</lastmod>
+    <lastmod>2019-04-01T12:20:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   

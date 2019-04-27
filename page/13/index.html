@@ -227,6 +227,141 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/background-rect-for-selected-facet/">
+          ggplot2给选定的分面加背景
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-11-20T00:21:00&#43;08:00">
+        
+  November 20, 2017
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>我这个公众号不像大多数所谓的生信从入门到精通的各种其实只是搬运点入门教程的群众喜闻乐见的公众号。正如我在《<a href="http://mp.weixin.qq.com/s/f-c5Q63SY166ZGzYCsqthA">为什么要开这个公众号</a>》里说的，这是小众的，有个人色彩的各种原创文。我不可能像其它公众号一样招两小弟当客服，很多人在公众号后台向我扔了许多问题，由于个人精力有限，只能优先解答「知识星球」的问题，上次写的《<a href="http://mp.weixin.qq.com/s/jegI1wWc7DJzrM7mQfz77Q">同一数据多变量分组的boxplot?</a>》，图虽然简单，却穿着好多件马甲，而我把它扒光了给你看🙈</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/zhishixingqiu/ggplot-bg_question.jpg" alt="" /></p>
+
+<p>上面这个图，你看着高大上吧，我都可以吐它一脸口水。每一个有灰色背景的图，在x轴上violin都够到边界了，其实所有的violin都够到了，这证明什么？每个violin之间其实不可比较！你能想像几个独立的数据，在统一的bin width情况下，画density curve，竟然最高点都一样高吗？显然可能性几乎为0。这个如果使用ggplot2的话，可以使用<code>scale='width'</code>强制拉成一样高，但我不推荐，正如我前面说的，不可比较了。默认参数<code>scale='area'</code>，积分面积一样，和density curve一样解析，另外的参数<code>scale=&quot;count&quot;</code>，高度与计数同比例，和histogram一样解析，而<code>scale='width'</code>强制拉成一样高，如果没有在显眼处说明，误导性太强。</p>
+
+<p>画这种图也可以手工拼，这样就简单了。在你需要的情况下，加个灰色背景嘛，最后拼图嘛。当然拼图不一定要在illustrator里拼，比如你用grid，先画好坐标轴，然后水平上定义几个一样大的viewport，每一个violin都画在相应的viewport里面，对于画图函数来说，viewport就是整个画布了（虽然只是画布里的一块区域），所以你要么画violin，要么在画之前先画个矩阵，一路画下来，代码可以直接生成这样的图，但这图每一个violin都是独立画的（当然也不是完全独立，每一个水平上的ylim是有统一的），就算代码一步生成，也跟illustrator里拼没两样。</p>
+
+<hr />
+
+<p>这里我要教你用ggplot2自动生成，其实解决思路早已推送过，请看《<a href="http://mp.weixin.qq.com/s/PnbasfW4HKILuZNdrLVX_g">facet_plot：加图层到特定分面，方法二</a>》，也正如我在《<a href="http://mp.weixin.qq.com/s/8bzkJY1zzNc83iBUq4Fy1w">什么！你的图上有一双看不见的手</a>》里说的，你们以为我在教ggtree，其实同时在教ggplot2。</p>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2017/11/background-rect-for-selected-facet/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/pheatmap-color-range/">
+          不同数据集画出的热图，用同样的颜色区间上色？
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-11-13T00:21:00&#43;08:00">
+        
+  November 13, 2017
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p><img src="http://guangchuangyu.github.io/blog_images/R/misc/WechatIMG216.png" alt="" /></p>
+
+<p>这个问题，其实答案就存在于《<a href="http://mp.weixin.qq.com/s/Xhi_ZkrEzUVdnCu7ECBS4w">听说你还不会画热图</a>》，我们先生成一个矩阵：</p>
+
+<pre><code>set.seed(2017-11-12)
+d = data.frame(matrix(rnorm(100), ncol=10))
+colnames(d) = paste0('t', 1:10)
+rownames(d) = paste0('g', 1:10)
+</code></pre>
+
+<p>这个矩阵是<code>rnorm</code>生成的随机数，有正有负，我们再生成一个矩阵，只有正数，并且数值上比第一个矩阵要大：</p>
+
+<pre><code>d2 = abs(d) * 1.2
+</code></pre>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2017/11/pheatmap-color-range/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/bioc-db-update/">
           掐架的额外收获
         </a>
@@ -539,136 +674,6 @@ hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.000
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/pubmed-trend/">
-          Pubmed年度趋势
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2017-11-03T14:53:35&#43;08:00">
-        
-  November 3, 2017
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/biology">Biology</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>在很久很久以前，当我还在用perl的时候，有一个TGen-EUtils的perl模块，可以去爬PubMed，我喜欢用它来画所谓的pubmed趋势，比如说我在2012年的时候，就画了各个组学技术的pubmed趋势，通过每一年的文章发表量来看某个技术到底火不火，走势怎么样。</p>
-
-<p><img src="http://guangchuangyu.github.io/blog_images/2012/10/pubmedtrend.png" alt="" /></p>
-
-<p>当年microarray还特别猛，但显然可以看到二代测序必须要火，也可以看到proteomics在吹了几年牛B之后，有回落的趋势。</p>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2017/11/pubmed-trend/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/11/go-version-issue/">
-          请用事实怼我
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2017-11-02T20:23:00&#43;08:00">
-        
-  November 2, 2017
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/biology">Biology</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>在《<a href="https://mp.weixin.qq.com/s/miGQs6U1d3aHwcm7vgNCVw">你昨天才做的分析，可能是几年前的结果！</a>》这篇文章的开头，我吐槽了WEGO+华大（虽然文章是转载自《<a href="https://mp.weixin.qq.com/s?__biz=MzAxMjQ3MTU5Mg==&amp;mid=2650655271&amp;idx=1&amp;sn=b1dfadd57937c949ba0e8deeac2fdeb6&amp;scene=21#wechat_redirect">嘉因生物</a>》，但这段是我给自己加的戏码，广告后面才是原帖内容 -，-）。</p>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/2017/bgi/1509620511198.jpg" alt="" /></p>
-
-<p>这只不过是我任性了一番，因为华大的拥护者来骂人了，我真的不理解，如果我说错了，你们可以拿事实啪啪啪地打我脸的，为什么要骂人，所以我任性地再吐一口口水。</p>
-
-<p>这里我必须承认，我说错了，华大用的WEGO不是那在线版的09年以后就不更新的WEGO，09年人的注释不超过7000个，华大给的报告有12929个（BP），当然也不是最新的，目前org.Hs.eg.db中GO的数据源是2017-03-29, BP的注释有16992个，比华大多了1/3，所以《<a href="https://mp.weixin.qq.com/s/miGQs6U1d3aHwcm7vgNCVw">你昨天才做的分析，可能是几年前的结果！</a>》这篇文章要吐槽的依然对，谁知道差这1/3会发生什么呢。</p>
-
-<pre><code>&gt; (16992-12929)/12929
-[1] 0.3142548
-</code></pre>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2017/11/go-version-issue/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -752,6 +757,56 @@ hsa04070 hsa04070 Phosphatidylinositol signaling system    12/281  99/7299 0.000
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/04/export-office/">
+                <h3 class="media-heading">我不会用illustrator，只会用ppt！</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>当年我准备考博的时候，健康院某PI（本来的意向导师）找我帮他在iMac上安装盗版的<code>Papers</code>（文献管理器）和<code>Illustrator</code>（PS的兄弟），安装后，跟我说：“我们做科研的，最重要的软件就是Papers和Illustrator。”，当然后来感觉挺坑我，就放弃了。</p>
+
+<p>这么多年过去了，至今这两个软件我都没用过！我画图，追求的是全部由代码产生，至今还没有修图的需求，也就没有试过<code>Illustrator</code>了。</p>
+
+<p><code>Illustrator</code>必须有些门槛，而且关键是<code>Adobe</code>绑死在PDF上，实际上如果80%的问题都可以用<code>PowerPoint</code>解决，剩下那20%，反正也不常用。而<code>PowerPoint</code>的优点是没有门槛，傻瓜式操作，像我这种怀疑自己智商的人，都会用啊！</p>
+
+<p>要是<code>R</code>画的图，能够在<code>PowerPoint</code>里面编辑就好了！</p>
+
+<p>要是<code>R</code>画的图，能够在<code>PowerPoint</code>里面编辑就好了！</p>
+
+<p>要是<code>R</code>画的图，能够在<code>PowerPoint</code>里面编辑就好了！</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/03/biobabble-author/">
+                <h3 class="media-heading">biobabble的作者们</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>在《<a href="https://mp.weixin.qq.com/s/kmezZTCSa_F_Lx7f4a8ZTA">R-3.6 &ndash; set.seed</a>》和《<a href="https://mp.weixin.qq.com/s/NZSfAVlWuJkuFsNDo_NMiw">欧式距离如何应对缺失值？</a>》中暴露了<code>biobabble</code>作者群，今天就来揭秘一下。</p>
+
+<p>凡是给本公众号投过稿，或者是被我约过稿的，都会被我拉入群，目前在群里有8个小伙伴，分别是有原创文章发表在<code>biobabble</code>公众号的，其中有介绍自己的软件工具的，包括<code>scihub_ck</code>，<code>csvtk</code>，<code>bioView</code>, <code>basicTrendline</code>等优秀作品，首次在公众号平台上介绍。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -994,58 +1049,6 @@ p = qplot(1:10)
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/01/custom-annotation-in-annotatepeak/">
-                <h3 class="media-heading">自定义注释分类</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jan 1, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><blockquote>
-<p>Hi Guangchuang,</p>
-
-<p>Is there a way to control annotations in the the annotatePeak function?  For instance I would like to ignore &ldquo;downstream&rdquo; and consider those peaks &ldquo;intergenic&rdquo;.  Or for instance combine &ldquo;1st exon&rdquo; with &ldquo;other exon&rdquo; so there is one category of &ldquo;exon&rdquo;.</p>
-
-<p>Any help would be great, thanks for doing this!</p>
-
-<p>-Andrew</p>
-</blockquote>
-
-<p><a href="https://support.bioconductor.org/p/104676/">https://support.bioconductor.org/p/104676/</a></p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/12/2017-biobabble/">
-                <h3 class="media-heading">2017每月阅读量最高文章盘点</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Dec 12, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>这个公众号开始于2016年11月，2016年基本上阅读量都在一两百之间而已，就直接无视了吧。2018年写了每月最高阅读量的文章，2017年顺道也总结一下吧。好文总是值得再次阅读。</p>
-
-<p><strong>1. 《<a href="https://mp.weixin.qq.com/s/IzSC1GnNPUwKdehhz-U8fQ">Ask me anything about ggtree</a>》</strong></p>
-
-<p>1月份，得知<code>ggtree</code>的文章发表了，写了这篇，欢迎大家向我提问，我有问必答。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1053,7 +1056,7 @@ p = qplot(1:10)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         267 posts found
+         268 posts found
       </p>
     </div>
   </div>

@@ -227,6 +227,140 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/clusterprofiler-dotplot/">
+          听说你也在画dotplot，但是我不服!
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-07-27T07:05:22&#43;08:00">
+        
+  July 27, 2017
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>陈同的‘生信宝典’公众号出了篇《<a href="https://mp.weixin.qq.com/s?__biz=MzI5MTcwNjA4NQ==&amp;mid=2247483978&amp;idx=1&amp;sn=e0c158c0e92375553036cc37f4987e40&amp;chksm=ec0dc7c0db7a4ed6ac593493b7d8b52f11f2feb92d24fa00d19527fbb6f95b24f7e313ef9440#rd">R语言学习 - 富集分析泡泡图</a>》，搞个shell脚本，一步绘图。讲了这个脚本可以适用于clusterProfiler和其它软件的富集结果。</p>
+
+<p>浑身都是硬伤，我都不想吐槽，但由于作者邀请我提点，那就吐槽模式全开。</p>
+
+<h2 id="一个command出图-小白已经哭晕">一个command出图，小白已经哭晕</h2>
+
+<p>从出的图看，应该是ggplot2画的（就算猜错，要吐槽的依然正确），小白在web-server上做了分析，存结果为xls文件，拿你这脚本，一跑报错。读xls文件（别告诉我你跟用户说读xls但其实是个tsv）和画图的依赖关系没解决！用户友好在那里？不要告诉我你的脚本0依赖，有个shell就能跑，即使我们熟悉的各种命令，很多都是独立程序，不关shell什么事。</p>
+
+<h2 id="所谓的一步出图">所谓的一步出图</h2>
+
+<p>既然讲了clusterProfiler，那么clusterProfiler用户笑而不语了。我们用dotplot不也是一条命令出图，为什么要退出R，去跑你的shell脚本，这过程还得转换数据，存储数据。最后的这一步，是前面+N步为代价的。</p>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2017/07/clusterprofiler-dotplot/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/ferret/">
+          听说你也在读文献
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-07-26T07:05:22&#43;08:00">
+        
+  July 26, 2017
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/biology">Biology</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p><img src="https://guangchuangyu.github.io/blog_images/MISC/noidea.jpg" alt="" /></p>
+
+<p>做为生物狗，我时常不知道自己在干什么，包括读文献，费了老大劲读一篇文献，然后经常也不明白人家在说什么。懒人需要借助神器，本公众号已经介绍了好几个神器，江湖传说收集7大神器，可以召唤出paper，渡自己毕业。</p>
+
+<h2 id="拿到一篇文献-先问一句-牛逼吗-靠谱吗">拿到一篇文献，先问一句，牛逼吗？靠谱吗？</h2>
+
+<p>我拿ARID1A去pubmed搜，第一篇文章《ARID1A-mutated ovarian cancers depend on HDAC6 activity》为例，2017年7月24号才上线的文章，请看下图：</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/2017/ferret/Screenshot 2017-07-26 19.31.32.png" alt="" /></p>
+
+<p>IMPACT这里有期刊的影响因子20分，文章在社交网站上传播指数Altmetric 54分，文章在文献管理Mendeley中被收藏2次。这是3天前的文章，所以指数还不高，试想一下，文章传播越广，收藏人数越多，必定也就越重要，这给了我们评估文章的第一印象。这是3天前的文章，所以没有引用，如果有文章引用，这个神器还会列出来呢。</p>
+
+<p>注意到AUTHORS没有？如果作者有ORCID主页的话，直接链接过去，我们可以去看作者们的publication列表、教育背景、工作经历等信息，牛人为自己带盐，牛人的文章我们更愿意相信。</p>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2017/07/ferret/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/scale-size/">
           搞大你的点，让我们画真正的气泡图
         </a>
@@ -557,142 +691,6 @@ ga('send', 'pageview');
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/bmc_plagiarism_2/">
-          Editor你的良心不会痛吗？
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2017-07-19T21:51:43&#43;08:00">
-        
-  July 19, 2017
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/biology">Biology</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/research">Research</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <blockquote>
-<p>抄袭的是<strong>西安电子科技大学</strong>的讲师，靠着两三篇抄袭的文章，已经是副教授了。</p>
-
-<p>这种抄袭的事情就应该暴光，这个事件中，更可恶的是BMC，BMC这种保护抄袭的行为更应该暴光，大家不要再给BMC送钱了，还不如发PLoS One。</p>
-</blockquote>
-
-<p>公众号有人评论说：</p>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/GOSemSim/WechatIMG2.jpeg" alt="" /></p>
-
-<p>这竟然也被捕捉到了，确实他在2012年的时候，就在copy我的代码，然后打R包的时候，还请教了我：</p>
-
-<p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/GOSemSim/ppiPre_dengyue.png" alt="" /></p>
-
-<h2 id="抄了我的代码-之后厚颜无耻地感谢我说学了很多东西-他的良心真的不会痛吗">抄了我的代码，之后厚颜无耻地感谢我说学了很多东西，他的良心真的不会痛吗？</h2>
-
-<p><img src="https://media.giphy.com/media/EvsmQokxE8wi4/giphy.gif" alt="" /></p>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2017/07/bmc_plagiarism_2/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/07/pie-version-of-bubble-plot/">
-          饼图版气泡图
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2017-07-19T12:06:59&#43;08:00">
-        
-  July 19, 2017
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>在《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;mid=2247484164&amp;idx=1&amp;sn=030612f5a84120ef407401ff6fad715f&amp;chksm=ec43b243db343b5524c911327bdcbe5f01034095d549d43d530decc5676faecdbd449dfac026#rd">ggimage：ggplot2中愉快地使用图片</a>》一文中，我展示了「嵌套式绘图」，中间生成了多个饼图，再用这些产生的饼图用于做图，绘制出饼图版的气泡图：</p>
-
-<p><img src="https://raw.githubusercontent.com/Lchiffon/ggimage-md-for-COS/master/figures/us_crime.png" alt="嵌套式绘图演示：用饼图来画气泡图" /></p>
-
-<p>当时还通过每次只画一个州的数据，来演示制作动图：</p>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2017/07/pie-version-of-bubble-plot/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -776,6 +774,56 @@ ga('send', 'pageview');
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/04/export-office/">
+                <h3 class="media-heading">我不会用illustrator，只会用ppt！</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>当年我准备考博的时候，健康院某PI（本来的意向导师）找我帮他在iMac上安装盗版的<code>Papers</code>（文献管理器）和<code>Illustrator</code>（PS的兄弟），安装后，跟我说：“我们做科研的，最重要的软件就是Papers和Illustrator。”，当然后来感觉挺坑我，就放弃了。</p>
+
+<p>这么多年过去了，至今这两个软件我都没用过！我画图，追求的是全部由代码产生，至今还没有修图的需求，也就没有试过<code>Illustrator</code>了。</p>
+
+<p><code>Illustrator</code>必须有些门槛，而且关键是<code>Adobe</code>绑死在PDF上，实际上如果80%的问题都可以用<code>PowerPoint</code>解决，剩下那20%，反正也不常用。而<code>PowerPoint</code>的优点是没有门槛，傻瓜式操作，像我这种怀疑自己智商的人，都会用啊！</p>
+
+<p>要是<code>R</code>画的图，能够在<code>PowerPoint</code>里面编辑就好了！</p>
+
+<p>要是<code>R</code>画的图，能够在<code>PowerPoint</code>里面编辑就好了！</p>
+
+<p>要是<code>R</code>画的图，能够在<code>PowerPoint</code>里面编辑就好了！</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/03/biobabble-author/">
+                <h3 class="media-heading">biobabble的作者们</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>在《<a href="https://mp.weixin.qq.com/s/kmezZTCSa_F_Lx7f4a8ZTA">R-3.6 &ndash; set.seed</a>》和《<a href="https://mp.weixin.qq.com/s/NZSfAVlWuJkuFsNDo_NMiw">欧式距离如何应对缺失值？</a>》中暴露了<code>biobabble</code>作者群，今天就来揭秘一下。</p>
+
+<p>凡是给本公众号投过稿，或者是被我约过稿的，都会被我拉入群，目前在群里有8个小伙伴，分别是有原创文章发表在<code>biobabble</code>公众号的，其中有介绍自己的软件工具的，包括<code>scihub_ck</code>，<code>csvtk</code>，<code>bioView</code>, <code>basicTrendline</code>等优秀作品，首次在公众号平台上介绍。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1018,58 +1066,6 @@ p = qplot(1:10)
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/01/custom-annotation-in-annotatepeak/">
-                <h3 class="media-heading">自定义注释分类</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jan 1, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><blockquote>
-<p>Hi Guangchuang,</p>
-
-<p>Is there a way to control annotations in the the annotatePeak function?  For instance I would like to ignore &ldquo;downstream&rdquo; and consider those peaks &ldquo;intergenic&rdquo;.  Or for instance combine &ldquo;1st exon&rdquo; with &ldquo;other exon&rdquo; so there is one category of &ldquo;exon&rdquo;.</p>
-
-<p>Any help would be great, thanks for doing this!</p>
-
-<p>-Andrew</p>
-</blockquote>
-
-<p><a href="https://support.bioconductor.org/p/104676/">https://support.bioconductor.org/p/104676/</a></p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/12/2017-biobabble/">
-                <h3 class="media-heading">2017每月阅读量最高文章盘点</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Dec 12, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>这个公众号开始于2016年11月，2016年基本上阅读量都在一两百之间而已，就直接无视了吧。2018年写了每月最高阅读量的文章，2017年顺道也总结一下吧。好文总是值得再次阅读。</p>
-
-<p><strong>1. 《<a href="https://mp.weixin.qq.com/s/IzSC1GnNPUwKdehhz-U8fQ">Ask me anything about ggtree</a>》</strong></p>
-
-<p>1月份，得知<code>ggtree</code>的文章发表了，写了这篇，欢迎大家向我提问，我有问必答。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1077,7 +1073,7 @@ p = qplot(1:10)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         267 posts found
+         268 posts found
       </p>
     </div>
   </div>

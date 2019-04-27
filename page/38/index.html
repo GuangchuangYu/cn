@@ -227,6 +227,154 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/">
+          我制作的pkgsrc
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2007-05-16T04:36:00&#43;08:00">
+        
+  May 16, 2007
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/bsd">BSD</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <h2 id="xlyrics-unix下的歌词秀软件">xlyrics: unix下的歌词秀软件   </h2>
+
+<p><a href="http://files.getdropbox.com/u/774072/software/pkgsrc/xlyrics-0.4.6.tar.bz2">点此下载</a></p>
+
+<h2 id="eva-kde下的qq客户端">EVA: KDE下的QQ客户端     </h2>
+
+<p><a href="http://files.getdropbox.com/u/774072/software/pkgsrc/eva-20070327.tar.bz2">点此下载</a></p>
+
+<pre><code>#cd /usr/pkgsrc/wip-cn 
+#tar xjvf eva.tar.bz2 
+#cd eva 
+#make install clean
+</code></pre>
+
+<p>就可以啦。在我的机子（NetBSD 3.0.1 macppc）上测试通过。。
+更新到eva-20070327</p>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2007/05/edit-partition-netbsd-macppc/">
+          Edit partition table in NetBSD/macppc
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2007-05-14T04:43:00&#43;08:00">
+        
+  May 14, 2007
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/bsd">BSD</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/powerbook">Powerbook</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <pre><code>#disklabel wd0
+</code></pre>
+
+<p>可以看到原始分区如下: 7 partitions:</p>
+
+<pre><code>#        size    offset     fstype [fsize bsize cpg/sgs]
+a:  20971520  25167648     4.2BSD      0     0     0  # (Cyl.  24967*-  45772*)
+b:   1048576  46139168       swap                     # (Cyl.  45772*-  46813*)
+c: 117210240         0     unused      0     0        # (Cyl.      0 - 116279)
+d:  25165824      1824        HFS                     # (Cyl.      1*-  24967*)
+e:  28079456  89130784        HFS                     # (Cyl.  88423*- 116279)
+g:  41943040  47187744     4.2BSD      0     0     0  # (Cyl.  46813*-  88423*)
+</code></pre>
+
+<p>a为netbsd的/分区，b为swap分区,c为整个硬盘，d为mac
+os的系统盘。e为两系统共享分区(在os9下格式化为fat)，g为netbsd下的/home分区。
+原本是两系统，os9.2一直都很少用，所以想删了，腾出空间来放数据。因为wd0d和wd0e不在连续的柱面上，所以无法将它们合并。</p>
+
+<p>新的分区方案如下：wd0d删了，分成两个，一个15M(需要一个HFS类型的分区来放置<code>ofwboot.xcf</code>，因为openfirmwire不支持从netbsd分区里加载loader),剩下的作为<code>/home</code>分区。把原来的<code>/home</code>分区(<code>wd0g</code>)和共享数据的分区(<code>wd0e</code>)合并为一个分区，用于放置数据。
+1. 第一步，也是最关键的一步，先备份好数据。
+
+2. 安装hfsutils。用于操作那个15M的HFS分区（格式化，拷贝文件等工具）。hfsutils是命令行的，xhfs是tk界面的。</p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2007/05/edit-partition-netbsd-macppc/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2007/05/pkgsrc-tips/">
           pkgsrc tips
         </a>
@@ -567,180 +715,6 @@ sudo texhash
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/">
-          scau校园网认证
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2005-03-14T04:30:00&#43;08:00">
-        
-  March 14, 2005
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/linux">Linux</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/powerbook">Powerbook</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>锐捷认证。非标准的802.1认证。 我采用mystar来认证，但是不会重连。。
-我自已写了个shell script来实现断线后重连。。。</p>
-
-<p>华农现在的校园网用锐捷认证，windows下的认证程序还行。linux下的客户端垃圾得不得了啊。。我用苹果笔记本PowerBookG3(fireware)。锐捷没有苹果下的认证客户端，于是我上不了网了，很是郁闷。。。</p>
-
-<p>我装了gentoo。最初尝试用qemu的user-mode来虚拟x86的指令集，再用xrgsu（锐捷linux版认证程序）提供运行所需的libs。最终xrgsu可以运行。但是找不到网卡。后面我就放弃了。</p>
-
-<p>拉了一个月ADSL，在一次偶然的机会我发现了mystar。mystar是用libnet＋libpcap写的，关键的代码不到200行（libnet和libpcap是平台无关的分组构造发送、分组截获C函数库）<code>mystar</code>是网上一个叫netxray的人写的。
-下面是源码<code>http://bbs.whnet.edu.cn/upload/mystarV0.1-src.zip</code>，解压密码是<code>netxray</code> 解压后:</p>
-
-<pre><code>cd mystarV0.1 
-make
-</code></pre>
-
-<p>编译。</p>
-
-<pre><code>#修改我的ID跟password。
-vim mystar.conf 
-</code></pre>
-
-<p>使用<code>./mystar</code>运行，并且认证成功!</p>
-
-<p>随后我发现一个问题，就是不会自动重连，老是会断线。在mystar.conf里面有一段</p>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2005/03/scau%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2005/01/powerbook-gentoo/">
-          Powerbook G3上安装gentoo
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2005-01-14T04:32:00&#43;08:00">
-        
-  January 14, 2005
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/linux">Linux</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/powerbook">Powerbook</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>下面是我在PowerBook G3上安装Gentoo的全过程。。</p>
-
-<p>自己做一个备忘录，也给想在Powerbook上装Gentoo的做一个参考。</p>
-
-<p>以下为基本的安装过程，详细请参考Gentoo的文档</p>
-
-<p><a href="http://www.gentoo.org/doc/en/handbook/handbook-ppc.xml">http://www.gentoo.org/doc/en/handbook/handbook-ppc.xml</a></p>
-
-<p>基本的安装步骤如下：</p>
-
-<p>用2004.3LiveCD进入。</p>
-
-<h2 id="1-配置网络">1. 配置网络</h2>
-
-<pre><code>＃net-setup eth0
-</code></pre>
-
-<p>回答它几个问题就行了。</p>
-
-<h2 id="2-分区">2.分区</h2>
-
-<pre><code>#mac-fdisk /dev/hda
-</code></pre>
-
-<p>以下是我的分区。</p>
-
-<pre><code>/dev/hda
- # type name length base ( size ) system
-/dev/hda1 Apple_partition_map Apple 63 @ 1 ( 31.5k) Partition map
-/dev/hda2 Apple_Bootstrap bootstrap 1600 @ 64 (800.0k) NewWorld bootblock
-/dev/hda3 Apple_UNIX_SVR2 / 12582912 @ 1664 ( 6.0G) Linux native
-/dev/hda4 Apple_UNIX_SVR2 swap 1048576 @ 12584576 (512.0M) Linux swap
-/dev/hda5 Apple_UNIX_SVR2 /home 6007728 @ 13633152 ( 2.9G) Linux native
-
-Block size=512, Number of Blocks=19640880
-DeviceType=0x0, DeviceId=0x0
-</code></pre>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2005/01/powerbook-gentoo/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -824,6 +798,56 @@ DeviceType=0x0, DeviceId=0x0
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/04/export-office/">
+                <h3 class="media-heading">我不会用illustrator，只会用ppt！</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>当年我准备考博的时候，健康院某PI（本来的意向导师）找我帮他在iMac上安装盗版的<code>Papers</code>（文献管理器）和<code>Illustrator</code>（PS的兄弟），安装后，跟我说：“我们做科研的，最重要的软件就是Papers和Illustrator。”，当然后来感觉挺坑我，就放弃了。</p>
+
+<p>这么多年过去了，至今这两个软件我都没用过！我画图，追求的是全部由代码产生，至今还没有修图的需求，也就没有试过<code>Illustrator</code>了。</p>
+
+<p><code>Illustrator</code>必须有些门槛，而且关键是<code>Adobe</code>绑死在PDF上，实际上如果80%的问题都可以用<code>PowerPoint</code>解决，剩下那20%，反正也不常用。而<code>PowerPoint</code>的优点是没有门槛，傻瓜式操作，像我这种怀疑自己智商的人，都会用啊！</p>
+
+<p>要是<code>R</code>画的图，能够在<code>PowerPoint</code>里面编辑就好了！</p>
+
+<p>要是<code>R</code>画的图，能够在<code>PowerPoint</code>里面编辑就好了！</p>
+
+<p>要是<code>R</code>画的图，能够在<code>PowerPoint</code>里面编辑就好了！</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/03/biobabble-author/">
+                <h3 class="media-heading">biobabble的作者们</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>在《<a href="https://mp.weixin.qq.com/s/kmezZTCSa_F_Lx7f4a8ZTA">R-3.6 &ndash; set.seed</a>》和《<a href="https://mp.weixin.qq.com/s/NZSfAVlWuJkuFsNDo_NMiw">欧式距离如何应对缺失值？</a>》中暴露了<code>biobabble</code>作者群，今天就来揭秘一下。</p>
+
+<p>凡是给本公众号投过稿，或者是被我约过稿的，都会被我拉入群，目前在群里有8个小伙伴，分别是有原创文章发表在<code>biobabble</code>公众号的，其中有介绍自己的软件工具的，包括<code>scihub_ck</code>，<code>csvtk</code>，<code>bioView</code>, <code>basicTrendline</code>等优秀作品，首次在公众号平台上介绍。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1066,58 +1090,6 @@ p = qplot(1:10)
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/01/custom-annotation-in-annotatepeak/">
-                <h3 class="media-heading">自定义注释分类</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jan 1, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><blockquote>
-<p>Hi Guangchuang,</p>
-
-<p>Is there a way to control annotations in the the annotatePeak function?  For instance I would like to ignore &ldquo;downstream&rdquo; and consider those peaks &ldquo;intergenic&rdquo;.  Or for instance combine &ldquo;1st exon&rdquo; with &ldquo;other exon&rdquo; so there is one category of &ldquo;exon&rdquo;.</p>
-
-<p>Any help would be great, thanks for doing this!</p>
-
-<p>-Andrew</p>
-</blockquote>
-
-<p><a href="https://support.bioconductor.org/p/104676/">https://support.bioconductor.org/p/104676/</a></p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/12/2017-biobabble/">
-                <h3 class="media-heading">2017每月阅读量最高文章盘点</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Dec 12, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>这个公众号开始于2016年11月，2016年基本上阅读量都在一两百之间而已，就直接无视了吧。2018年写了每月最高阅读量的文章，2017年顺道也总结一下吧。好文总是值得再次阅读。</p>
-
-<p><strong>1. 《<a href="https://mp.weixin.qq.com/s/IzSC1GnNPUwKdehhz-U8fQ">Ask me anything about ggtree</a>》</strong></p>
-
-<p>1月份，得知<code>ggtree</code>的文章发表了，写了这篇，欢迎大家向我提问，我有问必答。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1125,7 +1097,7 @@ p = qplot(1:10)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         267 posts found
+         268 posts found
       </p>
     </div>
   </div>
