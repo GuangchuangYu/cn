@@ -230,6 +230,68 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/03/treescale_unrooted_tree/">
+          add treescale to unrooted tree
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-03-05T13:17:48&#43;08:00">
+        
+  March 5, 2018
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>, 
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/evolution">Evolution</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <blockquote>
+<p>I am trying to add a scale to an unrooted tree with <code>geom_treescale</code>, but when I use it, the tree completely collapses and I am not able to set anything that fix it. Anybody has any idea on how to do it ?</p>
+</blockquote>
+
+<p><a href="https://groups.google.com/d/msgid/bioc-ggtree/9d69f444-94cf-42df-8382-bca2962b08c9%40googlegroups.com">google group</a>里的问题，说他加<code>geom_treescale</code>之后，树被压缩了，由于他没有给出可重复性的例子，所以我们并不知道情况到底有多么糟糕，但这种情况是可能发生的，因为加<strong>treescale</strong>这种东西，默认情况下<code>geom_treescale</code>会自己去计算该加多大的scale bar，该放在什么位置上，而这种默认情况是基于rectangular布局来的，在假设的情况下，都不可能尽善尽美，假设不成立的情况下当然有可能搞得很差。</p>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2018/03/treescale_unrooted_tree/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+            
+              
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2018/02/changing-branch-length-of-outgroup/">
           改变outgroup的枝长
         </a>
@@ -587,72 +649,6 @@ ga('send', 'pageview');
 </article>
 
             
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/05/bootstrap-value%E5%88%86%E6%AE%B5%E6%A0%87%E8%AE%B0/">
-          bootstrap value分段标记
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2017-05-10T15:10:00&#43;08:00">
-        
-  May 10, 2017
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>想要分段标记bootstrap，比如<code>0-70</code>, <code>70-90</code>, <code>90-100</code>之类的。这个对于ggtree来说，太简单。</p>
-
-<p>首先我们要读树，用<code>treeio</code>的<code>read.newick</code>，它和<code>read.tree</code>的不同之处是，加入了参数<code>node.label</code>，当<code>node.label</code>存的不是<code>label</code>，而是<code>bootstrap</code>等数字型的时候，你可以传入<code>node.label='support'</code>，这样它会把node label解析为support value，另存为树注释数据，而不是和tip label混在一起。label变量只能存为字符型，因为和tip label混了，而字符型会让数字操作稍微复杂点。所以我们要用<code>read.newick</code>。</p>
-
-<pre><code class="language-r">tree &lt;- read.newick(&quot;RMI.phy_phyml_tree_rooted_labeled.txt&quot;, node.label='support')
-root &lt;- getRoot(tree@phylo)
-
-p &lt;- ggtree(tree, color=&quot;black&quot;, size=1.5, linetype=1,  ladderize=TRUE) + 
-     ggtitle(label=&quot;Figure A&quot;) + 
-    geom_tiplab(size=4.5, hjust = -0.060, fontface=&quot;bold&quot;) +  xlim(0, 0.09)
-</code></pre>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2017/05/bootstrap-value%E5%88%86%E6%AE%B5%E6%A0%87%E8%AE%B0/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
             
   <div class="pagination-bar">
     <ul class="pagination">
@@ -737,6 +733,31 @@ p &lt;- ggtree(tree, color=&quot;black&quot;, size=1.5, linetype=1,  ladderize=T
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/04/oral-presentation/">
+                <h3 class="media-heading">那些我讲过的oral</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><h3 id="2016潮博沙龙">2016潮博沙龙</h3>
+
+<p>《<a href="https://mp.weixin.qq.com/s/K7yojzsGx2-x6bTOz9MHtw">潮博沙龙</a>》系受到潮博群里大家的邀请，应邀去普及一下生信以及介绍自己的一些经历。</p>
+
+<h3 id="2016中国r语言大会">2016中国R语言大会</h3>
+
+<p>中国R语言大会，我到目前为止，只参加过2016年那一次，也就是第9届，那也是首次有Bioconductor分会，并且还邀请了bioconductor的老大martin morgan，我当时也是受邀请去参会的，虽然会议在人民大学举行，虽然主会场和其它分会场都是讲中文，但bioconductor分会场是要求讲英文的。因为主讲人一半是歪果仁，一半是中国人，而3个中国人之中又有两个是美帝来的，只有我一土鳖。本来邀请人跟我提了一下<code>ChIPseeker</code>，暗示可以讲这个包，但我强行去讲<code>ggtree</code>，然后会后，很多听众问我<code>clusterProfiler</code>的问题，也是挺尬聊的。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -995,40 +1016,6 @@ tidy_movies %&gt;%
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/01/print-data/">
-                <h3 class="media-heading">听说你R脚本中的数据丢了，图出不来！</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jan 1, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><blockquote>
-<p>有小伙伴问为什么R里循环出不来图？</p>
-</blockquote>
-
-<p>其实看我公众号的各位读者们，你们不应该有这个问题，如果有，那么证明我的文章没有好好看！有两篇很重要的文章《<a href="http://mp.weixin.qq.com/s/BPY4dPFrrNrDKccMvax07w">扪心自问，meme几何？</a>》和《<a href="http://mp.weixin.qq.com/s/Uhx3l3lKQS88OJ4SHntkNg">树变图，图变树？</a>
-？》，特别是第二篇，和这个问题息息相关。</p>
-
-<p>首先假设我们有一个图：</p>
-
-<pre><code class="language-r">require(ggplot2)
-p = qplot(1:10)
-</code></pre>
-
-<h3 id="为什么在终端打p可以出图">为什么在终端打p可以出图？</h3>
-
-<p>因为在R里，所有都是对象，而在终端里你输入一个对象回车，R会去找相应的方法去打印出来，如果是S3对象，会去寻找print方法，而如果是S4会去找show方法。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1036,7 +1023,7 @@ p = qplot(1:10)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         268 posts found
+         269 posts found
       </p>
     </div>
   </div>

@@ -227,6 +227,91 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/08/88-bachelor/">
+          从概率的角度看 如何告别单身
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2008-08-26T15:10:00&#43;08:00">
+        
+  August 26, 2008
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/statistics">Statistics</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>国家人口统计男人比女人多了3700万，在大学校园里更是流传着“我很丑，可是我很抢手”（女生版）、“我很帅，可是我很无奈”（男生版）。</p>
+
+<p>鉴于大龄猥琐男越来越盛行，以及小平同志说“让一部分人先恋起来嘛”
+今日从科学的角度，让大家明白如何告别单身。
+授人与鱼不如授人与渔。即使没能让你奔小康，起码也解决温饱~~~</p>
+
+<p><img src="http://guangchuangyu.github.io/blog_images/2008/11/xx0.jpg" alt="" /></p>
+
+<p>告别单身的不二法则，三个字，“厚脸皮”，详见下面分析</p>
+
+<p>如果一个男人追一个女人，成功的概率只有0.2，
+那么连续追6个，至少有一个成功的概率，高达0.74</p>
+
+<pre><code>&gt; 1-0.8^6
+[1] 0.737856
+</code></pre>
+
+<p>如果连续追7个的话，至少一个成功的概率将达到0.79</p>
+
+<pre><code>&gt; 1-0.8^7
+[1] 0.7902848
+</code></pre>
+
+<p>如果你不是特别差，成功的概率假如是0.3，那么连续追几个的成功概率将更高。。</p>
+
+<pre><code>&gt; 1-0.7^6
+[1] 0.882351
+&gt; 1-0.7^7
+[1] 0.9176457
+</code></pre>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2008/08/88-bachelor/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2008/08/gperiodic/">
           gperiodic:元素周期表
         </a>
@@ -577,75 +662,6 @@ Homepage : <a href="http://givre.cabspace.com/ntfs-config">http://givre.cabspace
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2007/06/newton-raphson-method/">
-          Newton-Raphson Method估算函数的根
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2007-06-02T13:53:00&#43;08:00">
-        
-  June 2, 2007
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/math">Math</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/programming">Programming</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/c">C</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <h2 id="newton-raphson-method">Newton-Raphson Method</h2>
-
-<p>曲线<code>f(x)</code>有根c,取曲线上一点$(x_1,f(x_1))$, 过此点的切线交x轴$x_2$,过曲线上$(x_2,f(x_2))$的切线交x轴$x_3$，如此反复得到一个序列 $x_1,x_2,\cdot \cdot \cdot,x_n$ 逼近c值.</p>
-
-<p>过$(x_n,f(x_n))$的切线方程为 $y-f(x_n) = f&rsquo;(x_n)\,(x-x<em>n)$,假设此方程与x轴的交点为$x</em>{n+1}$, 即有: $0 - f(x_n) = f&rsquo;(x_n)(x_n+1 - x<em>n)$， 即$x</em>{n+1} = x_n - \frac{f(x_n)}{f&rsquo;(x_n)}$ <code>&lt;Eq. 1&gt;</code>.</p>
-
-<p>下面利用此法来求一个数的开方。 $f(x) = x^2 - a$ 有根$\sqrt{a}$,
-由$f&rsquo;(x_n) = 2x<em>n$, 代入式<code>&lt;Eq. 1&gt;</code>可得$x</em>{n+1} = (x_n + a/x_n)/2$; 当i -&gt; INF 时, $x_i$ -&gt; $\sqrt{a}$;</p>
-
-<h2 id="c-implementation">C implementation</h2>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2007/06/newton-raphson-method/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -729,6 +745,31 @@ Homepage : <a href="http://givre.cabspace.com/ntfs-config">http://givre.cabspace
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/04/oral-presentation/">
+                <h3 class="media-heading">那些我讲过的oral</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><h3 id="2016潮博沙龙">2016潮博沙龙</h3>
+
+<p>《<a href="https://mp.weixin.qq.com/s/K7yojzsGx2-x6bTOz9MHtw">潮博沙龙</a>》系受到潮博群里大家的邀请，应邀去普及一下生信以及介绍自己的一些经历。</p>
+
+<h3 id="2016中国r语言大会">2016中国R语言大会</h3>
+
+<p>中国R语言大会，我到目前为止，只参加过2016年那一次，也就是第9届，那也是首次有Bioconductor分会，并且还邀请了bioconductor的老大martin morgan，我当时也是受邀请去参会的，虽然会议在人民大学举行，虽然主会场和其它分会场都是讲中文，但bioconductor分会场是要求讲英文的。因为主讲人一半是歪果仁，一半是中国人，而3个中国人之中又有两个是美帝来的，只有我一土鳖。本来邀请人跟我提了一下<code>ChIPseeker</code>，暗示可以讲这个包，但我强行去讲<code>ggtree</code>，然后会后，很多听众问我<code>clusterProfiler</code>的问题，也是挺尬聊的。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -987,40 +1028,6 @@ tidy_movies %&gt;%
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/01/print-data/">
-                <h3 class="media-heading">听说你R脚本中的数据丢了，图出不来！</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jan 1, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><blockquote>
-<p>有小伙伴问为什么R里循环出不来图？</p>
-</blockquote>
-
-<p>其实看我公众号的各位读者们，你们不应该有这个问题，如果有，那么证明我的文章没有好好看！有两篇很重要的文章《<a href="http://mp.weixin.qq.com/s/BPY4dPFrrNrDKccMvax07w">扪心自问，meme几何？</a>》和《<a href="http://mp.weixin.qq.com/s/Uhx3l3lKQS88OJ4SHntkNg">树变图，图变树？</a>
-？》，特别是第二篇，和这个问题息息相关。</p>
-
-<p>首先假设我们有一个图：</p>
-
-<pre><code class="language-r">require(ggplot2)
-p = qplot(1:10)
-</code></pre>
-
-<h3 id="为什么在终端打p可以出图">为什么在终端打p可以出图？</h3>
-
-<p>因为在R里，所有都是对象，而在终端里你输入一个对象回车，R会去找相应的方法去打印出来，如果是S3对象，会去寻找print方法，而如果是S4会去找show方法。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1028,7 +1035,7 @@ p = qplot(1:10)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         268 posts found
+         269 posts found
       </p>
     </div>
   </div>

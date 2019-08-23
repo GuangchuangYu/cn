@@ -227,6 +227,70 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2016/11/%E6%97%A0%E4%B8%AD%E7%94%9F%E6%9C%89windows%E7%89%88r%E5%8C%85/">
+          无中生有windows版R包
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2016-11-30T00:53:00&#43;08:00">
+        
+  November 30, 2016
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>之前帮助高老师实现比对序列的做图，把代码打包为R包seqcombo，方便安装使用。花两小时的作品，发现还有些用户在使用 -，-</p>
+
+<p>之前有人联系我说安装不上，我觉得不应该有这个问题，因为是纯R代码代码，不涉及到编译，源码包安装不应该有问题。但既然有人问，又都是windows用户，我想可以给他们提供编译好的windows包，简化安装过程（这么体贴用户，我都要被自己感动了）。</p>
+
+<p>放在CRAN或Bioconductor上的R包，CRAN和Bioconductor会编译出不同平台的二进制包，但seqcobo放在github上，只有源代码，没有预编译好的包，但没有不是问题，我编译好放上去就行了。</p>
+
+<p>但问题是我没有windows！多年来一直是OSX和linux，MacBook Pro跑Arch Linux，一台iMac跑OSX，我自己根本没有跑windows的机器，所以难为无米之炊，借台机器总是有的，但总不能每次一更新，就拷个代码去别人的机器上打包，再拷回来上传到网上，想想也是蛋疼。</p>
+
+<p>所以没有windows，这事干起来还不太容易，！在想怎么来无中生有生出个windows包出来的时候，我想起了rhub，也是因为没有windows，之前就用rhub来进行windows平台的R check，在把代码push到CRAN或Bioconductor之前，我总会测试没问题了，再提交代码过去，而rhub正好可以给我提供windows平台的检测。</p>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2016/11/%E6%97%A0%E4%B8%AD%E7%94%9F%E6%9C%89windows%E7%89%88r%E5%8C%85/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2016/11/vertical-dendrogram-in-ggtree/">
           vertical dendrogram in ggtree
         </a>
@@ -572,64 +636,6 @@ ga('send', 'pageview');
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2016/11/ggtree-reverse-time-scale/">
-          ggtree: reverse time scale
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2016-11-08T12:23:16&#43;08:00">
-        
-  November 8, 2016
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>这是最近github上的问题，如何反转time scale，也就是把最近的时间设为0。而内部节点为距今多少年，这个很容易，把x轴的值变成x-max(x)就可以，感觉这个也只会在时间树上使用，所以取名revts（reverse time scale），revts之后，x轴最大值是0，其它为负数，可以使用scale_x_continuous改label为绝对值。</p>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2016/11/ggtree-reverse-time-scale/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -713,6 +719,31 @@ ga('send', 'pageview');
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/04/oral-presentation/">
+                <h3 class="media-heading">那些我讲过的oral</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><h3 id="2016潮博沙龙">2016潮博沙龙</h3>
+
+<p>《<a href="https://mp.weixin.qq.com/s/K7yojzsGx2-x6bTOz9MHtw">潮博沙龙</a>》系受到潮博群里大家的邀请，应邀去普及一下生信以及介绍自己的一些经历。</p>
+
+<h3 id="2016中国r语言大会">2016中国R语言大会</h3>
+
+<p>中国R语言大会，我到目前为止，只参加过2016年那一次，也就是第9届，那也是首次有Bioconductor分会，并且还邀请了bioconductor的老大martin morgan，我当时也是受邀请去参会的，虽然会议在人民大学举行，虽然主会场和其它分会场都是讲中文，但bioconductor分会场是要求讲英文的。因为主讲人一半是歪果仁，一半是中国人，而3个中国人之中又有两个是美帝来的，只有我一土鳖。本来邀请人跟我提了一下<code>ChIPseeker</code>，暗示可以讲这个包，但我强行去讲<code>ggtree</code>，然后会后，很多听众问我<code>clusterProfiler</code>的问题，也是挺尬聊的。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -971,40 +1002,6 @@ tidy_movies %&gt;%
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/01/print-data/">
-                <h3 class="media-heading">听说你R脚本中的数据丢了，图出不来！</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jan 1, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><blockquote>
-<p>有小伙伴问为什么R里循环出不来图？</p>
-</blockquote>
-
-<p>其实看我公众号的各位读者们，你们不应该有这个问题，如果有，那么证明我的文章没有好好看！有两篇很重要的文章《<a href="http://mp.weixin.qq.com/s/BPY4dPFrrNrDKccMvax07w">扪心自问，meme几何？</a>》和《<a href="http://mp.weixin.qq.com/s/Uhx3l3lKQS88OJ4SHntkNg">树变图，图变树？</a>
-？》，特别是第二篇，和这个问题息息相关。</p>
-
-<p>首先假设我们有一个图：</p>
-
-<pre><code class="language-r">require(ggplot2)
-p = qplot(1:10)
-</code></pre>
-
-<h3 id="为什么在终端打p可以出图">为什么在终端打p可以出图？</h3>
-
-<p>因为在R里，所有都是对象，而在终端里你输入一个对象回车，R会去找相应的方法去打印出来，如果是S3对象，会去寻找print方法，而如果是S4会去找show方法。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1012,7 +1009,7 @@ p = qplot(1:10)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         268 posts found
+         269 posts found
       </p>
     </div>
   </div>

@@ -54,35 +54,9 @@ git clone https://github.com/galaxyproject/galaxy/
 cd galaxy
 ## switch to master branch, stable release
 git checkout -b master origin/master
-```   	
 
 
-
-
-### 安装
-
-
-```bash
-cd galaxy/config/
-cp galaxy.ini.sample galaxy.ini
-```   	
-
-编辑_galaxy.ini_文件
-
-&#43; find the line: admin_users
-&#43; remove the # and add an email for your account
-
-
-
-### 运行
-
-```bash
-# go back to galaxy folder
-cd ..
-sh run.sh
-
-
-然后就可以用浏览器打开http://localhost:8080，使用galaxy，就是这么简单。">
+">
     <meta property="og:description" content="
 这篇文章介绍如果把ChIPseeker搬上galaxy，和galaxy上其它软件一起拼成流程，跑一个ChIPseq注释的流程，从fastq文件开始，比对生成bam文件，peak calling生成bed文件，基因组注释，一个完整的流程，这个流程一旦设置好，每次跑都只是点点鼠标就可以了。
 本文额外附送：
@@ -107,35 +81,9 @@ git clone https://github.com/galaxyproject/galaxy/
 cd galaxy
 ## switch to master branch, stable release
 git checkout -b master origin/master
-```   	
 
 
-
-
-### 安装
-
-
-```bash
-cd galaxy/config/
-cp galaxy.ini.sample galaxy.ini
-```   	
-
-编辑_galaxy.ini_文件
-
-&#43; find the line: admin_users
-&#43; remove the # and add an email for your account
-
-
-
-### 运行
-
-```bash
-# go back to galaxy folder
-cd ..
-sh run.sh
-
-
-然后就可以用浏览器打开http://localhost:8080，使用galaxy，就是这么简单。">
+">
     <meta property="og:type" content="blog">
     <meta property="og:title" content="Galaxy-ChIPseq流程">
     <meta property="og:url" content="/2017/08/galaxy-chipseeker/">
@@ -166,35 +114,9 @@ git clone https://github.com/galaxyproject/galaxy/
 cd galaxy
 ## switch to master branch, stable release
 git checkout -b master origin/master
-```   	
 
 
-
-
-### 安装
-
-
-```bash
-cd galaxy/config/
-cp galaxy.ini.sample galaxy.ini
-```   	
-
-编辑_galaxy.ini_文件
-
-&#43; find the line: admin_users
-&#43; remove the # and add an email for your account
-
-
-
-### 运行
-
-```bash
-# go back to galaxy folder
-cd ..
-sh run.sh
-
-
-然后就可以用浏览器打开http://localhost:8080，使用galaxy，就是这么简单。">
+">
     
       <meta name="twitter:creator" content="@guangchuangyu">
     
@@ -424,30 +346,26 @@ ga('send', 'pageview');
 cd galaxy
 ## switch to master branch, stable release
 git checkout -b master origin/master
-```   	
+</code></pre>
 
+<p></p>
 
+<h3 id="安装">安装</h3>
 
-
-### 安装
-
-
-```bash
-cd galaxy/config/
+<pre><code class="language-bash">cd galaxy/config/
 cp galaxy.ini.sample galaxy.ini
-```   	
+</code></pre>
 
-编辑_galaxy.ini_文件
+<p>编辑_galaxy.ini_文件</p>
 
-+ find the line: admin_users
-+ remove the # and add an email for your account
+<ul>
+<li>find the line: admin_users</li>
+<li>remove the # and add an email for your account</li>
+</ul>
 
+<h3 id="运行">运行</h3>
 
-
-### 运行
-
-```bash
-# go back to galaxy folder
+<pre><code class="language-bash"># go back to galaxy folder
 cd ..
 sh run.sh
 </code></pre>
@@ -551,13 +469,13 @@ write.table(as.data.frame(res), file=opt$output_file, sep=&quot;\t&quot;)
 
 <pre><code class="language-r">$ ./annotatePeak -i GSM1295076_CBX6_BF_ChipSeq_mergedReps_peaks.bed.gz \
   -o annotatePeak_test.txt
-&gt;&gt; loading peak file...				         2015-11-13 12:22:24
-&gt;&gt; preparing features information...		 2015-11-13 12:22:24
-&gt;&gt; identifying nearest features...		     2015-11-13 12:22:25
-&gt;&gt; calculating distance from peak to TSS...	 2015-11-13 12:22:25
-&gt;&gt; assigning genomic annotation...		     2015-11-13 12:22:25
-&gt;&gt; assigning chromosome lengths			     2015-11-13 12:22:39
-&gt;&gt; done...    					             2015-11-13 12:22:39
+&gt;&gt; loading peak file...                      2015-11-13 12:22:24
+&gt;&gt; preparing features information...         2015-11-13 12:22:24
+&gt;&gt; identifying nearest features...           2015-11-13 12:22:25
+&gt;&gt; calculating distance from peak to TSS...  2015-11-13 12:22:25
+&gt;&gt; assigning genomic annotation...           2015-11-13 12:22:25
+&gt;&gt; assigning chromosome lengths              2015-11-13 12:22:39
+&gt;&gt; done...                                   2015-11-13 12:22:39
 Warning message:
 In loadTxDb(TxDb) :
 &gt;&gt; TxDb is not specified, use 'TxDb.Hsapiens.UCSC.hg19.knownGene' by default...
@@ -575,21 +493,21 @@ vim annotatePeak.xml
 <p>我们编辑annotatePeak.xml文件，内容如下：</p>
 
 <pre><code class="language-xml">&lt;tool id=&quot;annotatePeak&quot; name=&quot;annotatePeak&quot; version=&quot;1.0&quot;&gt;
-	&lt;description&gt;annotate ChIP seq data (BED file)&lt;/description&gt;
-	&lt;command&gt; annotatePeak -i $input -o $output &gt; $output_log &lt;/command&gt;
-	&lt;inputs&gt;
-	  &lt;param name=&quot;input&quot; type=&quot;data&quot; format=&quot;bed&quot;
-		 label=&quot;BED file of ChIP peaks&quot;/&gt;
-	&lt;/inputs&gt;
-	&lt;outputs&gt;
-		&lt;data name=&quot;output&quot; format=&quot;bed&quot;/&gt;
-		&lt;data name=&quot;output_log&quot; format=&quot;txt&quot;/&gt;
-	&lt;/outputs&gt;
-	&lt;stdio&gt;
-		&lt;exit_code range=&quot;1:&quot; level=&quot;fatal&quot; /&gt;
-	&lt;/stdio&gt;
-	&lt;help&gt;see http://www.bioconductor.org/packages/ChIPseeker
-	      for details and examples&lt;/help&gt;
+    &lt;description&gt;annotate ChIP seq data (BED file)&lt;/description&gt;
+    &lt;command&gt; annotatePeak -i $input -o $output &gt; $output_log &lt;/command&gt;
+    &lt;inputs&gt;
+      &lt;param name=&quot;input&quot; type=&quot;data&quot; format=&quot;bed&quot;
+         label=&quot;BED file of ChIP peaks&quot;/&gt;
+    &lt;/inputs&gt;
+    &lt;outputs&gt;
+        &lt;data name=&quot;output&quot; format=&quot;bed&quot;/&gt;
+        &lt;data name=&quot;output_log&quot; format=&quot;txt&quot;/&gt;
+    &lt;/outputs&gt;
+    &lt;stdio&gt;
+        &lt;exit_code range=&quot;1:&quot; level=&quot;fatal&quot; /&gt;
+    &lt;/stdio&gt;
+    &lt;help&gt;see http://www.bioconductor.org/packages/ChIPseeker
+          for details and examples&lt;/help&gt;
 &lt;/tool&gt;
 </code></pre>
 
@@ -858,6 +776,31 @@ vim config/tool_conf.xml
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/04/oral-presentation/">
+                <h3 class="media-heading">那些我讲过的oral</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><h3 id="2016潮博沙龙">2016潮博沙龙</h3>
+
+<p>《<a href="https://mp.weixin.qq.com/s/K7yojzsGx2-x6bTOz9MHtw">潮博沙龙</a>》系受到潮博群里大家的邀请，应邀去普及一下生信以及介绍自己的一些经历。</p>
+
+<h3 id="2016中国r语言大会">2016中国R语言大会</h3>
+
+<p>中国R语言大会，我到目前为止，只参加过2016年那一次，也就是第9届，那也是首次有Bioconductor分会，并且还邀请了bioconductor的老大martin morgan，我当时也是受邀请去参会的，虽然会议在人民大学举行，虽然主会场和其它分会场都是讲中文，但bioconductor分会场是要求讲英文的。因为主讲人一半是歪果仁，一半是中国人，而3个中国人之中又有两个是美帝来的，只有我一土鳖。本来邀请人跟我提了一下<code>ChIPseeker</code>，暗示可以讲这个包，但我强行去讲<code>ggtree</code>，然后会后，很多听众问我<code>clusterProfiler</code>的问题，也是挺尬聊的。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/04/export-office/">
                 <h3 class="media-heading">我不会用illustrator，只会用ppt！</h3>
               </a>
@@ -1112,40 +1055,6 @@ tidy_movies %&gt;%
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/01/print-data/">
-                <h3 class="media-heading">听说你R脚本中的数据丢了，图出不来！</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jan 1, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><blockquote>
-<p>有小伙伴问为什么R里循环出不来图？</p>
-</blockquote>
-
-<p>其实看我公众号的各位读者们，你们不应该有这个问题，如果有，那么证明我的文章没有好好看！有两篇很重要的文章《<a href="http://mp.weixin.qq.com/s/BPY4dPFrrNrDKccMvax07w">扪心自问，meme几何？</a>》和《<a href="http://mp.weixin.qq.com/s/Uhx3l3lKQS88OJ4SHntkNg">树变图，图变树？</a>
-？》，特别是第二篇，和这个问题息息相关。</p>
-
-<p>首先假设我们有一个图：</p>
-
-<pre><code class="language-r">require(ggplot2)
-p = qplot(1:10)
-</code></pre>
-
-<h3 id="为什么在终端打p可以出图">为什么在终端打p可以出图？</h3>
-
-<p>因为在R里，所有都是对象，而在终端里你输入一个对象回车，R会去找相应的方法去打印出来，如果是S3对象，会去寻找print方法，而如果是S4会去找show方法。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1153,7 +1062,7 @@ p = qplot(1:10)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         268 posts found
+         269 posts found
       </p>
     </div>
   </div>

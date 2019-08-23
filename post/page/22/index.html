@@ -227,6 +227,77 @@ ga('send', 'pageview');
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/05/enrichdavid-user-bg/">
+          enrichDAVID支持自定义背景
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-05-16T07:04:22&#43;08:00">
+        
+  May 16, 2017
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      <p>虽然我不喜欢DAVID，但很多用户喜欢，所以clusterProfiler也支持了，最近github上又有人<a href="https://github.com/GuangchuangYu/clusterProfiler/issues/87">要求支持自定义背景</a>。</p>
+
+<blockquote>
+<p>Dear Guangchuang,</p>
+
+<p>I am using clusterProfiler in Kegg pathway enrichment analysis, it is useful and nice. I am looking for a function which accept background and has ability to deal with Ensembl gene ID.</p>
+
+<p>In a function enrichDAVID it can takes ensembl gene id as an input format, but not allows to enter background.
+<code>enrichDAVID(gene = gene, idType=&quot;ENSEMBL_GENE_ID&quot;, annotation=&quot;KEGG_PATHWAY&quot;, species= &quot;hsa&quot;)</code></p>
+
+<p>Other command enrichKEGG has a background input but only takes entrez gene id,
+<code>enrichKEGG(gene, organism = &quot;hsa&quot;, keyType = &quot;kegg&quot;, universe)</code></p>
+
+<p>I have tried to convert my ensembl gene IDs to entrez gene id, but some ensembl gene IDs represent more than one entrez gene ID.
+I downloaded KEGG pathway dataset to apply fisher exact test. however, genes are in entrez ID and i am still dont know how to convert.</p>
+</blockquote>
+
+<p></p>
+      <p>
+        <a href="https://guangchuangyu.github.io/cn/2017/05/enrichdavid-user-bg/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/05/bootstrap-value%E5%88%86%E6%AE%B5%E6%A0%87%E8%AE%B0/">
           bootstrap value分段标记
         </a>
@@ -601,79 +672,6 @@ rasterImage(x, 2, 2, 6, 4)
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2017/04/generate-biobabble-banner-using-ggimage/">
-          generate biobabble banner using ggimage
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2017-04-05T12:23:16&#43;08:00">
-        
-  April 5, 2017
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/r">R</a>, 
-    
-      <a class="category-link" href="https://guangchuangyu.github.io/cn/categories/visualization">Visualization</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p><img src="https://guangchuangyu.github.io/blog_images/biobabble_banner.png" alt="" /></p>
-
-<p>制作了一个banner，用来插入到文后，方便阅读到最后的时候，直接扫描关注。</p>
-
-<p>这图当然用PS一下就可以得到，无非是拼图和加点文字。但做为天天写代码画图的人来说，必然是要纯代码来产生的，而且做科学的人，讲究自动化、可重复性。</p>
-
-<p>就像有些人不理解data scentist为什么讨厌excel一样，觉得无非是工具，没什么好搞阵营的。试想一下，一个分析流程中间有一步要用到excel，需要人工去点点鼠标，这对于讲究自动化、可重复性的data scientist来说是不可接受的。</p>
-
-<h2 id="加载中文字体">加载中文字体</h2>
-
-<p>为了打几个中文字，需要先加载字体，这里我用showtext。</p>
-
-<pre><code class="language-r">require(showtext)
-font.add(&quot;heiti&quot;, &quot;/Library/Fonts/华文黑体.ttf&quot;)
-showtext.auto()
-</code></pre>
-
-<p></p>
-      <p>
-        <a href="https://guangchuangyu.github.io/cn/2017/04/generate-biobabble-banner-using-ggimage/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -757,6 +755,31 @@ showtext.auto()
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/04/oral-presentation/">
+                <h3 class="media-heading">那些我讲过的oral</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><h3 id="2016潮博沙龙">2016潮博沙龙</h3>
+
+<p>《<a href="https://mp.weixin.qq.com/s/K7yojzsGx2-x6bTOz9MHtw">潮博沙龙</a>》系受到潮博群里大家的邀请，应邀去普及一下生信以及介绍自己的一些经历。</p>
+
+<h3 id="2016中国r语言大会">2016中国R语言大会</h3>
+
+<p>中国R语言大会，我到目前为止，只参加过2016年那一次，也就是第9届，那也是首次有Bioconductor分会，并且还邀请了bioconductor的老大martin morgan，我当时也是受邀请去参会的，虽然会议在人民大学举行，虽然主会场和其它分会场都是讲中文，但bioconductor分会场是要求讲英文的。因为主讲人一半是歪果仁，一半是中国人，而3个中国人之中又有两个是美帝来的，只有我一土鳖。本来邀请人跟我提了一下<code>ChIPseeker</code>，暗示可以讲这个包，但我强行去讲<code>ggtree</code>，然后会后，很多听众问我<code>clusterProfiler</code>的问题，也是挺尬聊的。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1015,40 +1038,6 @@ tidy_movies %&gt;%
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://guangchuangyu.github.io/cn/2019/01/print-data/">
-                <h3 class="media-heading">听说你R脚本中的数据丢了，图出不来！</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jan 1, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><blockquote>
-<p>有小伙伴问为什么R里循环出不来图？</p>
-</blockquote>
-
-<p>其实看我公众号的各位读者们，你们不应该有这个问题，如果有，那么证明我的文章没有好好看！有两篇很重要的文章《<a href="http://mp.weixin.qq.com/s/BPY4dPFrrNrDKccMvax07w">扪心自问，meme几何？</a>》和《<a href="http://mp.weixin.qq.com/s/Uhx3l3lKQS88OJ4SHntkNg">树变图，图变树？</a>
-？》，特别是第二篇，和这个问题息息相关。</p>
-
-<p>首先假设我们有一个图：</p>
-
-<pre><code class="language-r">require(ggplot2)
-p = qplot(1:10)
-</code></pre>
-
-<h3 id="为什么在终端打p可以出图">为什么在终端打p可以出图？</h3>
-
-<p>因为在R里，所有都是对象，而在终端里你输入一个对象回车，R会去找相应的方法去打印出来，如果是S3对象，会去寻找print方法，而如果是S4会去找show方法。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1056,7 +1045,7 @@ p = qplot(1:10)
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         268 posts found
+         269 posts found
       </p>
     </div>
   </div>
