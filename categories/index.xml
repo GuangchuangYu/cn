@@ -6,13 +6,49 @@
     <description>Recent content in Categories on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 Mar 2019 00:30:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 25 Apr 2019 05:54:16 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Babble</title>
+      <title>Presentation</title>
+      <link>https://guangchuangyu.github.io/cn/categories/presentation/</link>
+      <pubDate>Thu, 25 Apr 2019 05:54:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/categories/presentation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>https://guangchuangyu.github.io/cn/categories/r/</link>
+      <pubDate>Mon, 01 Apr 2019 12:20:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/categories/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>biobabble</title>
+      <link>https://guangchuangyu.github.io/cn/categories/biobabble/</link>
+      <pubDate>Thu, 28 Mar 2019 15:10:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/categories/biobabble/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Statistics</title>
+      <link>https://guangchuangyu.github.io/cn/categories/statistics/</link>
+      <pubDate>Thu, 14 Mar 2019 12:37:55 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/categories/statistics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>babble</title>
       <link>https://guangchuangyu.github.io/cn/categories/babble/</link>
       <pubDate>Tue, 05 Mar 2019 00:30:00 +0800</pubDate>
       
@@ -21,20 +57,11 @@
     </item>
     
     <item>
-      <title>Bioinformatics</title>
-      <link>https://guangchuangyu.github.io/cn/categories/bioinformatics/</link>
-      <pubDate>Tue, 23 Nov 2010 02:22:22 +0800</pubDate>
+      <title>ChIPseq</title>
+      <link>https://guangchuangyu.github.io/cn/categories/chipseq/</link>
+      <pubDate>Thu, 10 Jan 2019 12:20:16 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/categories/bioinformatics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Biology</title>
-      <link>https://guangchuangyu.github.io/cn/categories/biology/</link>
-      <pubDate>Sun, 11 Feb 2018 02:22:22 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/categories/biology/</guid>
+      <guid>https://guangchuangyu.github.io/cn/categories/chipseq/</guid>
       <description></description>
     </item>
     
@@ -44,114 +71,6 @@
       <pubDate>Sat, 29 Dec 2018 16:20:43 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/categories/blog/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Book</title>
-      <link>https://guangchuangyu.github.io/cn/categories/book/</link>
-      <pubDate>Mon, 24 Dec 2012 16:20:43 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/categories/book/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bsd</title>
-      <link>https://guangchuangyu.github.io/cn/categories/bsd/</link>
-      <pubDate>Tue, 28 Jun 2011 12:17:30 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/categories/bsd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>C</title>
-      <link>https://guangchuangyu.github.io/cn/categories/c/</link>
-      <pubDate>Sat, 02 Jun 2007 13:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/categories/c/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>C&#43;&#43;</title>
-      <link>https://guangchuangyu.github.io/cn/categories/c&#43;&#43;/</link>
-      <pubDate>Sun, 04 Dec 2016 00:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/categories/c&#43;&#43;/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Calculus</title>
-      <link>https://guangchuangyu.github.io/cn/categories/calculus/</link>
-      <pubDate>Sat, 24 Sep 2011 08:57:48 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/categories/calculus/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Chipseq</title>
-      <link>https://guangchuangyu.github.io/cn/categories/chipseq/</link>
-      <pubDate>Thu, 10 Jan 2019 12:20:16 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/categories/chipseq/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Conference</title>
-      <link>https://guangchuangyu.github.io/cn/categories/conference/</link>
-      <pubDate>Mon, 18 Jul 2011 04:26:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/categories/conference/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Data Structure</title>
-      <link>https://guangchuangyu.github.io/cn/categories/data-structure/</link>
-      <pubDate>Sun, 04 Dec 2016 00:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/categories/data-structure/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Evolution</title>
-      <link>https://guangchuangyu.github.io/cn/categories/evolution/</link>
-      <pubDate>Mon, 05 Mar 2018 13:17:48 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/categories/evolution/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Experiment</title>
-      <link>https://guangchuangyu.github.io/cn/categories/experiment/</link>
-      <pubDate>Wed, 27 Aug 2014 11:44:16 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/categories/experiment/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Game</title>
-      <link>https://guangchuangyu.github.io/cn/categories/game/</link>
-      <pubDate>Mon, 06 Oct 2008 15:10:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/categories/game/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Life</title>
-      <link>https://guangchuangyu.github.io/cn/categories/life/</link>
-      <pubDate>Thu, 18 Oct 2018 16:30:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/categories/life/</guid>
       <description></description>
     </item>
     
@@ -174,83 +93,11 @@
     </item>
     
     <item>
-      <title>Mac Os</title>
-      <link>https://guangchuangyu.github.io/cn/categories/mac-os/</link>
-      <pubDate>Tue, 17 Nov 2015 16:06:59 +0800</pubDate>
+      <title>Software</title>
+      <link>https://guangchuangyu.github.io/cn/categories/software/</link>
+      <pubDate>Mon, 26 Nov 2018 00:22:16 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/categories/mac-os/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Math</title>
-      <link>https://guangchuangyu.github.io/cn/categories/math/</link>
-      <pubDate>Fri, 12 Aug 2011 12:20:16 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/categories/math/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ngs</title>
-      <link>https://guangchuangyu.github.io/cn/categories/ngs/</link>
-      <pubDate>Tue, 06 Jun 2017 07:57:46 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/categories/ngs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Paper</title>
-      <link>https://guangchuangyu.github.io/cn/categories/paper/</link>
-      <pubDate>Thu, 05 May 2011 05:54:16 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/categories/paper/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Perl</title>
-      <link>https://guangchuangyu.github.io/cn/categories/perl/</link>
-      <pubDate>Sat, 23 Aug 2008 13:35:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/categories/perl/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Personal</title>
-      <link>https://guangchuangyu.github.io/cn/categories/personal/</link>
-      <pubDate>Tue, 30 Jul 2013 16:18:26 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/categories/personal/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Powerbook</title>
-      <link>https://guangchuangyu.github.io/cn/categories/powerbook/</link>
-      <pubDate>Mon, 29 Sep 2008 12:32:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/categories/powerbook/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Programming</title>
-      <link>https://guangchuangyu.github.io/cn/categories/programming/</link>
-      <pubDate>Thu, 22 Sep 2011 06:40:22 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/categories/programming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Proteomics</title>
-      <link>https://guangchuangyu.github.io/cn/categories/proteomics/</link>
-      <pubDate>Tue, 02 Jan 2018 10:57:15 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/categories/proteomics/</guid>
+      <guid>https://guangchuangyu.github.io/cn/categories/software/</guid>
       <description></description>
     </item>
     
@@ -264,29 +111,47 @@
     </item>
     
     <item>
-      <title>Publish</title>
-      <link>https://guangchuangyu.github.io/cn/categories/publish/</link>
-      <pubDate>Sun, 23 Apr 2017 00:53:00 +0800</pubDate>
+      <title>Visualization</title>
+      <link>https://guangchuangyu.github.io/cn/categories/visualization/</link>
+      <pubDate>Tue, 06 Nov 2018 10:23:00 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/categories/publish/</guid>
+      <guid>https://guangchuangyu.github.io/cn/categories/visualization/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Python</title>
-      <link>https://guangchuangyu.github.io/cn/categories/python/</link>
-      <pubDate>Wed, 13 Sep 2017 13:37:55 +0800</pubDate>
+      <title>life</title>
+      <link>https://guangchuangyu.github.io/cn/categories/life/</link>
+      <pubDate>Thu, 18 Oct 2018 16:30:00 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/categories/python/</guid>
+      <guid>https://guangchuangyu.github.io/cn/categories/life/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>R</title>
-      <link>https://guangchuangyu.github.io/cn/categories/r/</link>
-      <pubDate>Thu, 14 Mar 2019 12:37:55 +0800</pubDate>
+      <title>Evolution</title>
+      <link>https://guangchuangyu.github.io/cn/categories/evolution/</link>
+      <pubDate>Mon, 05 Mar 2018 13:17:48 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/categories/r/</guid>
+      <guid>https://guangchuangyu.github.io/cn/categories/evolution/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Biology</title>
+      <link>https://guangchuangyu.github.io/cn/categories/biology/</link>
+      <pubDate>Sun, 11 Feb 2018 02:22:22 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/categories/biology/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Proteomics</title>
+      <link>https://guangchuangyu.github.io/cn/categories/proteomics/</link>
+      <pubDate>Tue, 02 Jan 2018 10:57:15 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/categories/proteomics/</guid>
       <description></description>
     </item>
     
@@ -300,16 +165,34 @@
     </item>
     
     <item>
-      <title>Software</title>
-      <link>https://guangchuangyu.github.io/cn/categories/software/</link>
-      <pubDate>Mon, 26 Nov 2018 00:22:16 +0800</pubDate>
+      <title>python</title>
+      <link>https://guangchuangyu.github.io/cn/categories/python/</link>
+      <pubDate>Wed, 13 Sep 2017 13:37:55 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/categories/software/</guid>
+      <guid>https://guangchuangyu.github.io/cn/categories/python/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Sofware</title>
+      <title>NGS</title>
+      <link>https://guangchuangyu.github.io/cn/categories/ngs/</link>
+      <pubDate>Tue, 06 Jun 2017 07:57:46 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/categories/ngs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Publish</title>
+      <link>https://guangchuangyu.github.io/cn/categories/publish/</link>
+      <pubDate>Sun, 23 Apr 2017 00:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/categories/publish/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sofware</title>
       <link>https://guangchuangyu.github.io/cn/categories/sofware/</link>
       <pubDate>Mon, 06 Mar 2017 23:53:00 +0800</pubDate>
       
@@ -318,20 +201,29 @@
     </item>
     
     <item>
-      <title>Statistics</title>
-      <link>https://guangchuangyu.github.io/cn/categories/statistics/</link>
-      <pubDate>Thu, 14 Mar 2019 12:37:55 +0800</pubDate>
+      <title>C&#43;&#43;</title>
+      <link>https://guangchuangyu.github.io/cn/categories/c&#43;&#43;/</link>
+      <pubDate>Sun, 04 Dec 2016 00:53:00 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/categories/statistics/</guid>
+      <guid>https://guangchuangyu.github.io/cn/categories/c&#43;&#43;/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Visualization</title>
-      <link>https://guangchuangyu.github.io/cn/categories/visualization/</link>
-      <pubDate>Tue, 06 Nov 2018 10:23:00 +0800</pubDate>
+      <title>data structure</title>
+      <link>https://guangchuangyu.github.io/cn/categories/data-structure/</link>
+      <pubDate>Sun, 04 Dec 2016 00:53:00 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/categories/visualization/</guid>
+      <guid>https://guangchuangyu.github.io/cn/categories/data-structure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mac OS</title>
+      <link>https://guangchuangyu.github.io/cn/categories/mac-os/</link>
+      <pubDate>Tue, 17 Nov 2015 16:06:59 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/categories/mac-os/</guid>
       <description></description>
     </item>
     
@@ -341,6 +233,132 @@
       <pubDate>Tue, 17 Nov 2015 16:06:59 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/categories/windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Experiment</title>
+      <link>https://guangchuangyu.github.io/cn/categories/experiment/</link>
+      <pubDate>Wed, 27 Aug 2014 11:44:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/categories/experiment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Personal</title>
+      <link>https://guangchuangyu.github.io/cn/categories/personal/</link>
+      <pubDate>Tue, 30 Jul 2013 16:18:26 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/categories/personal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>book</title>
+      <link>https://guangchuangyu.github.io/cn/categories/book/</link>
+      <pubDate>Mon, 24 Dec 2012 16:20:43 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/categories/book/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Calculus</title>
+      <link>https://guangchuangyu.github.io/cn/categories/calculus/</link>
+      <pubDate>Sat, 24 Sep 2011 08:57:48 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/categories/calculus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programming</title>
+      <link>https://guangchuangyu.github.io/cn/categories/programming/</link>
+      <pubDate>Thu, 22 Sep 2011 06:40:22 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/categories/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Math</title>
+      <link>https://guangchuangyu.github.io/cn/categories/math/</link>
+      <pubDate>Fri, 12 Aug 2011 12:20:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/categories/math/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>conference</title>
+      <link>https://guangchuangyu.github.io/cn/categories/conference/</link>
+      <pubDate>Mon, 18 Jul 2011 04:26:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/categories/conference/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>BSD</title>
+      <link>https://guangchuangyu.github.io/cn/categories/bsd/</link>
+      <pubDate>Tue, 28 Jun 2011 12:17:30 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/categories/bsd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Paper</title>
+      <link>https://guangchuangyu.github.io/cn/categories/paper/</link>
+      <pubDate>Thu, 05 May 2011 05:54:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/categories/paper/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bioinformatics</title>
+      <link>https://guangchuangyu.github.io/cn/categories/bioinformatics/</link>
+      <pubDate>Tue, 23 Nov 2010 02:22:22 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/categories/bioinformatics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>game</title>
+      <link>https://guangchuangyu.github.io/cn/categories/game/</link>
+      <pubDate>Mon, 06 Oct 2008 15:10:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/categories/game/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Powerbook</title>
+      <link>https://guangchuangyu.github.io/cn/categories/powerbook/</link>
+      <pubDate>Mon, 29 Sep 2008 12:32:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/categories/powerbook/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Perl</title>
+      <link>https://guangchuangyu.github.io/cn/categories/perl/</link>
+      <pubDate>Sat, 23 Aug 2008 13:35:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/categories/perl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C</title>
+      <link>https://guangchuangyu.github.io/cn/categories/c/</link>
+      <pubDate>Sat, 02 Jun 2007 13:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/categories/c/</guid>
       <description></description>
     </item>
     

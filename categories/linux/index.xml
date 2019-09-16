@@ -32,9 +32,7 @@
 
 &lt;pre&gt;&lt;code&gt;noipv6rs
 noipv6
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
@@ -45,28 +43,7 @@ noipv6
       <guid>https://guangchuangyu.github.io/cn/2018/11/arch-lts/</guid>
       <description>&lt;p&gt;看到一个帖子, &lt;a href=&#34;https://www.maketecheasier.com/make-arch-linux-more-stable/&#34;&gt;https://www.maketecheasier.com/make-arch-linux-more-stable/&lt;/a&gt;， 说避免老升级内核，用lts版，装完可以把原先内核干掉：&lt;/p&gt;
 
-&lt;blockquote&gt;
-&lt;pre&gt;&lt;code&gt;&amp;gt;sudo pacman -S linux-lts
-&amp;gt;```
-&amp;gt;
-&amp;gt;When you’ve installed the LTS kernel, it’s a good idea to remove the bleeding edge kernel from your system.
-&amp;gt;
-&amp;gt;```
-&amp;gt;sudo pacman -R linux 
-&amp;gt;```
-
-我内心闪过一个想法，难道不用配置启动么？也没去确认，照做后重启，你妹啊，太坑了，直接就找不到内核死掉！
-
-
-
-----
-
-因为这个贴子太不负责，换了kernel之后，应该再run:
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;grub-mkconfig -o /boot/grub/grub.cfg
-```&lt;/p&gt;</description>
+&lt;blockquote&gt;</description>
     </item>
     
     <item>
@@ -93,9 +70,7 @@ noipv6
 &lt;p&gt;Bash script for downgrading one or more packages to a version in your cache or the A.L.A.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;AUR有收录，安装非常简单：&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;AUR有收录，安装非常简单：&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -118,9 +93,7 @@ noipv6
 
 &lt;p&gt;这有什么好处？第一你不用去系统里装Wine以及一堆依赖包，第二你不需要去配置Wine，第三这个运行环境是与你的系统分离的（系统是干净的）。对于用户来说，傻瓜化开箱即用，对于系统来说，干净不影响。这是最好的方案。谁愿意去装一堆没用的兼容&lt;code&gt;libs&lt;/code&gt;，谁愿意去折腾老半天还用不上！当然有一点点不好的地方，是打包的软件体积稍大一点，因为你要打包整个运行环境嘛，但现在最不值钱的就是存储空间了。&lt;/p&gt;
 
-&lt;p&gt;所以最好的方案是像Mac这样，可以把运行环境分离出来，系统干净不折腾！当然再者还得有像我这样的好心人去打包。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;所以最好的方案是像Mac这样，可以把运行环境分离出来，系统干净不折腾！当然再者还得有像我这样的好心人去打包。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -131,9 +104,7 @@ noipv6
       <guid>https://guangchuangyu.github.io/cn/2018/02/elementaryos/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2018/linux_win.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;想当年还在读本科那会，debian还是比较阳春的东西，然后就被ubuntu给普及了，ubuntu我实际上是不喜欢的，如果有linux的问题，搜出来是ubuntu的链接，我基本不会点开，ubuntu用的人实在太多，而且是特别多的小白，真正好的发行版是gentoo和arch，文档齐全，小白少。我目前使用的就是arch，因为gentoo实在是笔记本吃不消天天在编译。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;想当年还在读本科那会，debian还是比较阳春的东西，然后就被ubuntu给普及了，ubuntu我实际上是不喜欢的，如果有linux的问题，搜出来是ubuntu的链接，我基本不会点开，ubuntu用的人实在太多，而且是特别多的小白，真正好的发行版是gentoo和arch，文档齐全，小白少。我目前使用的就是arch，因为gentoo实在是笔记本吃不消天天在编译。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -148,9 +119,7 @@ noipv6
 &lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;amp;mid=2247484727&amp;amp;amp;idx=1&amp;amp;amp;sn=a70494626e7c329addea51ac6b82c578&amp;amp;amp;chksm=ec43b470db343d6661ba2498e5b03d300f281cb24c82dff0b53fac62b55831ab6207e9a0c20e#rd&#34;&gt;博士养成记&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;我在上面三篇文章里，都吐槽了张大砖家，这里穿插个故事，当时有门课是去嘉道理農場，在很偏的山上，而且是封闭式，再者离港大很远。选课是先告诉砖家的，上课前也跟砖家讲，然后第一天上课了，人不在实验室，第二天砖家就来了下面这样的信：&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;我在上面三篇文章里，都吐槽了张大砖家，这里穿插个故事，当时有门课是去嘉道理農場，在很偏的山上，而且是封闭式，再者离港大很远。选课是先告诉砖家的，上课前也跟砖家讲，然后第一天上课了，人不在实验室，第二天砖家就来了下面这样的信：&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -161,9 +130,7 @@ noipv6
       <guid>https://guangchuangyu.github.io/cn/2017/07/wine-qq/</guid>
       <description>&lt;p&gt;之前在写《&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484423&amp;amp;idx=1&amp;amp;sn=311c627bb70e6fc626bb1f014ec0a976&amp;amp;chksm=ec43b540db343c56fb01f86851c0a4b685351b860d0c9ac2f9709857428b4b76b85bf2bc8b49#rd&#34;&gt;开源的macOS和linux版微信&lt;/a&gt;》时，有小伙伴问怎么搞QQ，做为一个上了年纪的人，我已经不怎么用QQ了。&lt;/p&gt;
 
-&lt;p&gt;QQ跑Linux基本上无解，疼讯说好的Linux版死了好多年，现在只有WebQQ可以用。如果你们早生几年，就会遇到Linux上用QQ的好时代。在《&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484265&amp;amp;idx=1&amp;amp;sn=7e184d6bf26d2b91485cab0aec3102b8&amp;amp;chksm=ec43b22edb343b38586fa21db0831df49bfe4e0106b22c5c0d93afe16dda88dc1a1a6e5d5248#rd&#34;&gt;十年前截屏&lt;/a&gt;》一文中，我就晒过在Gentoo上跑用Java开发的LumaQQ，在NetBSD上跑用C++开发的Eva，这些都极好用，而且像当年QQ上好友纷纷隐身的时候，LumaQQ推出了如来神掌，你可以看到谁是隐身的，以至于有些Windows用户也去用LumaQQ，那是当年最美好的时代，然而这些都死掉了。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;QQ跑Linux基本上无解，疼讯说好的Linux版死了好多年，现在只有WebQQ可以用。如果你们早生几年，就会遇到Linux上用QQ的好时代。在《&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484265&amp;amp;idx=1&amp;amp;sn=7e184d6bf26d2b91485cab0aec3102b8&amp;amp;chksm=ec43b22edb343b38586fa21db0831df49bfe4e0106b22c5c0d93afe16dda88dc1a1a6e5d5248#rd&#34;&gt;十年前截屏&lt;/a&gt;》一文中，我就晒过在Gentoo上跑用Java开发的LumaQQ，在NetBSD上跑用C++开发的Eva，这些都极好用，而且像当年QQ上好友纷纷隐身的时候，LumaQQ推出了如来神掌，你可以看到谁是隐身的，以至于有些Windows用户也去用LumaQQ，那是当年最美好的时代，然而这些都死掉了。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -197,9 +164,7 @@ aur/wechatircd-git r85.bb8f354-1 (0) (0.00)
 &lt;p&gt;这里我要介绍的是electronic-wechat。我比较懒，用下面的代码，安装二进制版：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;yaourt -S electronic-wechat-bin
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
@@ -228,9 +193,7 @@ $ yaourt -Ss classic95 aur/classic95-icons 1-1 [installed] (3) (0.09) Classic ic
 &lt;p&gt;Virtual Network Computing (VNC) is a special way to remotely control a computer. Like Secure Shell (SSH), a computer user can login to a remote machine on the network and execute commands and access files on the system. However, VNC displays the remote system&amp;rsquo;s desktop while SSH displays a terminal shell. It may be beneficial to learn more about VNC and similar technologies.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/2017-04-13-011729_1280x800_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/2017-04-13-011729_1280x800_scrot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -239,9 +202,7 @@ $ yaourt -Ss classic95 aur/classic95-icons 1-1 [installed] (3) (0.09) Classic ic
       <pubDate>Tue, 15 Sep 2015 05:44:16 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2015/09/linux-remote-desktop-via-vnc/</guid>
-      <description>&lt;p&gt;对于Unix-like系统，远程桌面实在太容易，通过ssh隧道，只要加-X参数即可，如果网速较慢，可以加-C参数，对图像进行压缩。&lt;a href=&#34;http://guangchuangyu.github.io/cn/2013/11/run-remote-r-in-emacs-with-ess/&#34;&gt;ESS都支持通过这个方法把R命令发送到服务器端执行&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;对于Unix-like系统，远程桌面实在太容易，通过ssh隧道，只要加-X参数即可，如果网速较慢，可以加-C参数，对图像进行压缩。&lt;a href=&#34;http://guangchuangyu.github.io/cn/2013/11/run-remote-r-in-emacs-with-ess/&#34;&gt;ESS都支持通过这个方法把R命令发送到服务器端执行&lt;/a&gt;。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -252,9 +213,7 @@ $ yaourt -Ss classic95 aur/classic95-icons 1-1 [installed] (3) (0.09) Classic ic
       <guid>https://guangchuangyu.github.io/cn/2015/07/macbook-dual-boot/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://guangchuangyu.github.io/cn/2011/06/screen-shot/&#34;&gt;11年的老机器&lt;/a&gt;，闲置了两年，终于在我来HKU的时候发挥了作用，我第一次遇到做生物信息学要自己背电脑去干活。于是每天学校宿舍两头背，当时&lt;/p&gt;
 
-&lt;p&gt;唯一的问题是headphone亮着红光，这个本身不难解决，用alsamixer把S/PDIF给mute了就OK了，但坑爹的是每次启动都是亮着红光，这让我很是纠结，我只能通过rc.local，让它每次开机都把alsamixer的状态都给恢复一下：&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;唯一的问题是headphone亮着红光，这个本身不难解决，用alsamixer把S/PDIF给mute了就OK了，但坑爹的是每次启动都是亮着红光，这让我很是纠结，我只能通过rc.local，让它每次开机都把alsamixer的状态都给恢复一下：&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -275,9 +234,7 @@ sudo apt-get install libboost-graph-dev
 
 &lt;pre&gt;&lt;code&gt;sudo cpan -i DBI
 sudo cpan -i Statistics::Descriptive
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
@@ -291,9 +248,7 @@ sudo cpan -i Statistics::Descriptive
 &lt;p&gt;言归正传，从2002年使用redhat 7.1开始，就没中止过使用linux，为什么要说again呢，因为在过去几年的工作时间里，使用的是&lt;a href=&#34;http://guangchuangyu.github.io/2011/06/screen-shot/&#34;&gt;OS X&lt;/a&gt;和win7做为桌面的，linux只在服务器端使用。自从用了OS X之后，就不想再用linux当桌面了，OS X绝对是节省生命的系统，本身是unix-like系统，对各种桌面软件支持又好，特别是中华大地，linux还是小众，用来当桌面实在是各种坑。&lt;/p&gt;
 
 &lt;p&gt;不过现在又回到学生时代了，所以还得继续学生屌丝的折腾，本科时从redhat,debian到gentoo，硕士时实验室的机器用ubuntu，而笔记本用NetBSD。这么多年的使用，该有的坑都填了，但是时代在发展，新坑还是不断有的，使用&lt;a href=&#34;http://guangchuangyu.github.io/2014/05/%E6%9B%B4%E6%94%B9%E7%99%BE%E5%BA%A6%E4%BA%91%E5%90%8C%E6%AD%A5%E7%9B%98%E8%B7%AF%E5%BE%84/&#34;&gt;百度云&lt;/a&gt;来同步化文献库，就是最近的新坑，装上linux之后，发现度娘没有客户端，首先想到的当然是wine，wine出来的偶尔能行，时常崩溃，跟它死磕我也会崩溃，github上寻找开源实现，各种功能缺失和限制，那就只能虚拟机了，把home目录做为共享盘，挂到虚拟机中，但是度娘一直都是占100%
-CPU，然后数据无法同步，只有两个原因，不是硬盘就是网络，感觉好像我一个分区800G太大了，但在虚拟中对硬盘读写正常，网络因为使用NAT，虚拟成内网，有可能是这个原因，于是换成bridge，把虚拟机当成现实网络中的另一台主机，但度娘依然只占CPU，不干活。那只能还是硬盘问题，最后问题解决了，通过在linux中提供samba服务，然后在虚拟机中通过网上邻居把共享目录映射成网络驱动器，这时候度娘终于肯干活了。都不知道是virtualbox的驱动有问题，还是度娘太挑，这太TM坑了。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+CPU，然后数据无法同步，只有两个原因，不是硬盘就是网络，感觉好像我一个分区800G太大了，但在虚拟中对硬盘读写正常，网络因为使用NAT，虚拟成内网，有可能是这个原因，于是换成bridge，把虚拟机当成现实网络中的另一台主机，但度娘依然只占CPU，不干活。那只能还是硬盘问题，最后问题解决了，通过在linux中提供samba服务，然后在虚拟机中通过网上邻居把共享目录映射成网络驱动器，这时候度娘终于肯干活了。都不知道是virtualbox的驱动有问题，还是度娘太挑，这太TM坑了。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -316,9 +271,7 @@ CPU，然后数据无法同步，只有两个原因，不是硬盘就是网络�
 &lt;p&gt;需要配置一下PuTTY，&lt;code&gt;Connection-SSh-X11&lt;/code&gt;中选中&lt;code&gt;Enable X11forwarding&lt;/code&gt;
 其中&lt;code&gt;X display location&lt;/code&gt;里填入&lt;code&gt;localhost:0&lt;/code&gt;。&lt;/p&gt;
 
-&lt;p&gt;运行Xming，再用putty连到服务器上，运行程序，就OK了。就好像windows下的本地程序一般。整合性很好。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;运行Xming，再用putty连到服务器上，运行程序，就OK了。就好像windows下的本地程序一般。整合性很好。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -331,9 +284,7 @@ CPU，然后数据无法同步，只有两个原因，不是硬盘就是网络�
 
 &lt;p&gt;06年，我就想换个系统算了。找人刻了张os9.2的盘，自己刻了张netbsd的盘。&lt;a href=&#34;https://guangchuangyu.github.io/cn/2006/06/os9-netbsd-dual-boot&#34;&gt;装双系统&lt;/a&gt;。&lt;/p&gt;
 
-&lt;p&gt;os9.2可以用微软的office 2001，还有ie5.5，不过都不是很好用。最爽的是可以用很多做图软件，photoshop,coredraw,illustrator等等啊。当年在合肥还帮很多同学处理过照片，因为6级考试要上传的图片要求是10k以下，很多人压到10k都看不清了，我用photoshop压到10k还能看清人.^_^.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;os9.2可以用微软的office 2001，还有ie5.5，不过都不是很好用。最爽的是可以用很多做图软件，photoshop,coredraw,illustrator等等啊。当年在合肥还帮很多同学处理过照片，因为6级考试要上传的图片要求是10k以下，很多人压到10k都看不清了，我用photoshop压到10k还能看清人.^_^.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -344,9 +295,7 @@ CPU，然后数据无法同步，只有两个原因，不是硬盘就是网络�
       <guid>https://guangchuangyu.github.io/cn/2008/09/compile-32bit-applications-in-64bit-linux/</guid>
       <description>&lt;p&gt;用PITA算法做靶标预测的时候，要用到ViennaRNA包做结构的折叠，这个包是被修改过的，原来的包在我机子上是可以装的。但是这个修改过的包编译不通过。很奇怪的错误，不知道怎么改。&lt;/p&gt;
 
-&lt;p&gt;好在它有两个版本，64位和32位的。我弄到大型机上去编译32位的，也是出错，不过是命名空间的问题，我改两个头文件就可以通过了。最近又要算。那个大型机最近被搬走了。只能本机上做。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;好在它有两个版本，64位和32位的。我弄到大型机上去编译32位的，也是出错，不过是命名空间的问题，我改两个头文件就可以通过了。最近又要算。那个大型机最近被搬走了。只能本机上做。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -372,9 +321,7 @@ server。之前使用rdesktop远程桌面，最近发现配合seamlessrdp可以�
 &amp;gt; password
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;就可以在linux下运行服务器端的ie了。windows下所有程序都没问题。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;就可以在linux下运行服务器端的ie了。windows下所有程序都没问题。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -394,9 +341,7 @@ Homepage : &lt;a href=&#34;http://givre.cabspace.com/ntfs-config&#34;&gt;http://
 
 &lt;p&gt;Homepage of ntfs-3g :
 &lt;a href=&#34;http://www.ntfs-3g.org/&#34;&gt;http://www.ntfs-3g.org&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -417,9 +362,7 @@ Homepage : &lt;a href=&#34;http://givre.cabspace.com/ntfs-config&#34;&gt;http://
       <guid>https://guangchuangyu.github.io/cn/2007/06/screenshot/</guid>
       <description>&lt;h2 id=&#34;os-9-2&#34;&gt;OS 9.2&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2007/06/os9.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2007/06/os9.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -450,9 +393,7 @@ vim mystar.conf
 
 &lt;p&gt;使用&lt;code&gt;./mystar&lt;/code&gt;运行，并且认证成功!&lt;/p&gt;
 
-&lt;p&gt;随后我发现一个问题，就是不会自动重连，老是会断线。在mystar.conf里面有一段&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;随后我发现一个问题，就是不会自动重连，老是会断线。在mystar.conf里面有一段&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -497,9 +438,7 @@ vim mystar.conf
 
 Block size=512, Number of Blocks=19640880
 DeviceType=0x0, DeviceId=0x0
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
   </channel>

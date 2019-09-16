@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Gogadget on Guangchuang Yu</title>
+    <title>gogadget on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/gogadget/</link>
-    <description>Recent content in Gogadget on Guangchuang Yu</description>
+    <description>Recent content in gogadget on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 08 Mar 2019 12:23:16 +0800</lastBuildDate>
@@ -25,9 +25,7 @@
 
 &lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/gogadget/workflow.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;当然前面的事情是goseq干的，它的功能就是衔接了goseq的输出，让我们还看看它每一步都在做什么。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;当然前面的事情是goseq干的，它的功能就是衔接了goseq的输出，让我们还看看它每一步都在做什么。&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Os9 on Guangchuang Yu</title>
+    <title>OS9 on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/os9/</link>
-    <description>Recent content in Os9 on Guangchuang Yu</description>
+    <description>Recent content in OS9 on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 14 Jun 2006 04:31:00 +0800</lastBuildDate>
@@ -28,9 +28,7 @@ Drivers”不然分区将不能在OS9中使用，我一共分了5个分区，12G
 
 &lt;p&gt;开机放入os9安装光盘，按住&lt;code&gt;Ｃ&lt;/code&gt;键，由光盘启动进入os9，在光盘根目录下点安装系统。指定第一个分区，选择安装的软件，十来分钟，便装完了。重新启动，将netbsd的启动程序&lt;code&gt;ofwboot.xcf&lt;/code&gt;放在os9的根目录下。&lt;/p&gt;
 
-&lt;h2 id=&#34;3-安装netbsd&#34;&gt;3 安装netbsd&lt;/h2&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;h2 id=&#34;3-安装netbsd&#34;&gt;3 安装netbsd&lt;/h2&gt;</description>
     </item>
     
   </channel>

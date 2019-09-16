@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Purrr on Guangchuang Yu</title>
+    <title>purrr on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/purrr/</link>
-    <description>Recent content in Purrr on Guangchuang Yu</description>
+    <description>Recent content in purrr on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 29 Mar 2018 11:23:00 +0800</lastBuildDate>
@@ -35,9 +35,7 @@ summary_ATAC_seq_motif.xlsx: Microsoft Excel 2007+
 
 &lt;pre&gt;&lt;code&gt;require(readxl)
 x &amp;lt;- read_xlsx(&amp;quot;summary_ATAC_seq_motif.xlsx&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
   </channel>

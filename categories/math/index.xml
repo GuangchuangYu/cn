@@ -24,9 +24,7 @@
 
 &lt;p&gt;73页中的图10,给出了 $\sqrt{2}$的几何作图。&lt;/p&gt;
 
-&lt;p&gt;我用R尝试把它画出来：&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;我用R尝试把它画出来：&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -44,9 +42,7 @@
 &lt;p&gt;下面利用此法来求一个数的开方。 $f(x) = x^2 - a$ 有根$\sqrt{a}$,
 由$f&amp;rsquo;(x_n) = 2x&lt;em&gt;n$, 代入式&lt;code&gt;&amp;lt;Eq. 1&amp;gt;&lt;/code&gt;可得$x&lt;/em&gt;{n+1} = (x_n + a/x_n)/2$; 当i -&amp;gt; INF 时, $x_i$ -&amp;gt; $\sqrt{a}$;&lt;/p&gt;
 
-&lt;h2 id=&#34;c-implementation&#34;&gt;C implementation&lt;/h2&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;h2 id=&#34;c-implementation&#34;&gt;C implementation&lt;/h2&gt;</description>
     </item>
     
   </channel>

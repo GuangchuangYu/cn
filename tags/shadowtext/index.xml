@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Shadowtext on Guangchuang Yu</title>
+    <title>shadowtext on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/shadowtext/</link>
-    <description>Recent content in Shadowtext on Guangchuang Yu</description>
+    <description>Recent content in shadowtext on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 05 Jun 2018 08:53:00 +0800</lastBuildDate>
@@ -25,9 +25,7 @@
 &lt;li&gt;&lt;a href=&#34;http://mp.weixin.qq.com/s/jDXjkrkq_YVhW-Z5Vx2-Fg&#34;&gt;用R画meme ;)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/4b8enFCd_lLt278Ddxp3rg&#34;&gt;使用外部字体画meme&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://mp.weixin.qq.com/s/BPY4dPFrrNrDKccMvax07w&#34;&gt;扪心自问，meme几何？&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -55,9 +53,7 @@
 
 &lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/meme/shadowtext.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;我们知道meme包是grid写的，我的输出是grob对象，当我半夜调试到2点，带着兴奋入睡之后，一点都睡不安稳，早上早早就迷迷糊糊在床上想着，既然我造出了文本阴影效果的grob对象，我应该封装成geom图层，送给ggplot2用户。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;我们知道meme包是grid写的，我的输出是grob对象，当我半夜调试到2点，带着兴奋入睡之后，一点都睡不安稳，早上早早就迷迷糊糊在床上想着，既然我造出了文本阴影效果的grob对象，我应该封装成geom图层，送给ggplot2用户。&lt;/p&gt;</description>
     </item>
     
   </channel>

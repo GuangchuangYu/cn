@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Maize on Guangchuang Yu</title>
+    <title>maize on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/maize/</link>
-    <description>Recent content in Maize on Guangchuang Yu</description>
+    <description>Recent content in maize on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 24 Jul 2017 08:53:00 +0800</lastBuildDate>
@@ -23,9 +23,7 @@
 
 &lt;p&gt;今天要讲的是通过OrgDb来做GO分析，这是clusterProfiler的&lt;strong&gt;enrichGO&lt;/strong&gt;函数所支持的背景注释，Bioconductor自带20个OrgDb可供使用，多半是模式生物，难道我们要做的物种不在这20个里面就不行了吗？显然不是的，clusterProfiler能支持的物种我自己都数不过来。&lt;/p&gt;
 
-&lt;p&gt;我们可以通过AnnotationHub在线检索并抓取OrgDb，比如这里以玉米为例：&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;我们可以通过AnnotationHub在线检索并抓取OrgDb，比如这里以玉米为例：&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Gentoo on Guangchuang Yu</title>
+    <title>gentoo on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/gentoo/</link>
-    <description>Recent content in Gentoo on Guangchuang Yu</description>
+    <description>Recent content in gentoo on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 14 Jan 2005 04:32:00 +0800</lastBuildDate>
@@ -53,9 +53,7 @@
 
 Block size=512, Number of Blocks=19640880
 DeviceType=0x0, DeviceId=0x0
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
   </channel>

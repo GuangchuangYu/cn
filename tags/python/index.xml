@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Python on Guangchuang Yu</title>
+    <title>python on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/python/</link>
-    <description>Recent content in Python on Guangchuang Yu</description>
+    <description>Recent content in python on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 14 Dec 2008 09:18:00 +0800</lastBuildDate>
@@ -27,9 +27,7 @@
 
 &lt;p&gt;实现两个数的加和，这是人类可读的语言，而不是一串01所组成的不可读的机器语言。&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;抽象&lt;/strong&gt;是最关键的。所有的编程语言都是为了实现抽象。越是高级的语言，抽象度越高，抽象度越高越好！&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;strong&gt;抽象&lt;/strong&gt;是最关键的。所有的编程语言都是为了实现抽象。越是高级的语言，抽象度越高，抽象度越高越好！&lt;/p&gt;</description>
     </item>
     
   </channel>

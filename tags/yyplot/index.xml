@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Yyplot on Guangchuang Yu</title>
+    <title>yyplot on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/yyplot/</link>
-    <description>Recent content in Yyplot on Guangchuang Yu</description>
+    <description>Recent content in yyplot on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 23 Apr 2018 19:00:00 +0800</lastBuildDate>
@@ -21,9 +21,7 @@
 
 &lt;p&gt;这是去年「知识星球」里的提问，「知识星球」相当于是众筹我一年的时间，向我提问，请谨慎入坑。&lt;/p&gt;
 
-&lt;p&gt;我当时就写了一个函数&lt;code&gt;ggvenn&lt;/code&gt;，这个函数其实包装了&lt;code&gt;venneuler&lt;/code&gt;，但由于&lt;code&gt;venneuler&lt;/code&gt;依赖&lt;code&gt;rJava&lt;/code&gt;，而很多小伙伴不会装&lt;code&gt;rJava&lt;/code&gt;，而因此装不了&lt;code&gt;yyplot&lt;/code&gt;，所以我去掉了这个依赖，但如果你想要用&lt;code&gt;ggvenn&lt;/code&gt;这个函数，请自行安装&lt;code&gt;rJava&lt;/code&gt;和&lt;code&gt;venneuler&lt;/code&gt;。其实还有另外一个包，&lt;code&gt;VennDiagram&lt;/code&gt;，它的输出是&lt;code&gt;gList&lt;/code&gt;，所以可以直接封装为&lt;code&gt;ggplot2&lt;/code&gt;图层，然而对于画venn plot，我并没有太多的兴趣，《&lt;a href=&#34;http://mp.weixin.qq.com/s/MqpfgkMJSFj0pYwcEjV9kQ&#34;&gt;CS6: ChIPseeker的可视化方法（中秋节的视觉饕餮）&lt;/a&gt;》一文中介绍的upset plot，可能更好一些。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;我当时就写了一个函数&lt;code&gt;ggvenn&lt;/code&gt;，这个函数其实包装了&lt;code&gt;venneuler&lt;/code&gt;，但由于&lt;code&gt;venneuler&lt;/code&gt;依赖&lt;code&gt;rJava&lt;/code&gt;，而很多小伙伴不会装&lt;code&gt;rJava&lt;/code&gt;，而因此装不了&lt;code&gt;yyplot&lt;/code&gt;，所以我去掉了这个依赖，但如果你想要用&lt;code&gt;ggvenn&lt;/code&gt;这个函数，请自行安装&lt;code&gt;rJava&lt;/code&gt;和&lt;code&gt;venneuler&lt;/code&gt;。其实还有另外一个包，&lt;code&gt;VennDiagram&lt;/code&gt;，它的输出是&lt;code&gt;gList&lt;/code&gt;，所以可以直接封装为&lt;code&gt;ggplot2&lt;/code&gt;图层，然而对于画venn plot，我并没有太多的兴趣，《&lt;a href=&#34;http://mp.weixin.qq.com/s/MqpfgkMJSFj0pYwcEjV9kQ&#34;&gt;CS6: ChIPseeker的可视化方法（中秋节的视觉饕餮）&lt;/a&gt;》一文中介绍的upset plot，可能更好一些。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -34,9 +32,7 @@
       <guid>https://guangchuangyu.github.io/cn/2018/03/ggpar/</guid>
       <description>&lt;p&gt;有小伙伴在说可以用par(mar)来设置画图的margin，但不能应用于ggplot2，这个可能很多新手都会很困扰，可能需要一段时间的探索之后，才能发现原来是用theme来设定。&lt;/p&gt;
 
-&lt;p&gt;这当然你可以归结于说ggplot2和base plot是不同的东西，但从实质画图参数这一点而言，并没有什么同与不同，无非是设置的方式不同而已，而这种方式都是人定义的，我们完全可以人为定义它们兼容。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;这当然你可以归结于说ggplot2和base plot是不同的东西，但从实质画图参数这一点而言，并没有什么同与不同，无非是设置的方式不同而已，而这种方式都是人定义的，我们完全可以人为定义它们兼容。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -53,9 +49,7 @@
 
 &lt;p&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/D2cuo5puCb_2GVA4Ae2QEA&#34;&gt;jimmy回答说ggbiplot&lt;/a&gt;可以画差不多的，于是「宏基因组」公众号立刻就出来一篇《&lt;a href=&#34;https://mp.weixin.qq.com/s/GGCPxQEe_DXefdp-veQtag&#34;&gt;ggbiplot-最好看的PCA作图：样品PCA散点+分组椭圆+变量贡献与相关&lt;/a&gt;》，后面又有人提问，能不能加两个置信区间？@Chenhao童鞋就给出了解决方案，并且写了篇&lt;a href=&#34;http://lchblogs.netlify.com/post/2017-12-22-r-addconfellipselda/&#34;&gt;博客文介绍&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;他的作图是基于&lt;code&gt;ggord&lt;/code&gt;包，只能应用于LDA，于是「宏基因组」公众号又跟进发一篇《&lt;a href=&#34;https://mp.weixin.qq.com/s/F9c_ISpOpjHyiCNahoYTqQ&#34;&gt;比PCA更好用的监督排序—LDA分析、作图及添加置信-ggord&lt;/a&gt;》，你会发现他们介绍同一类型的作图，一会这个包，一会那个包，一会某包有A功能，某包又有B功能，我就不说什么了。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;他的作图是基于&lt;code&gt;ggord&lt;/code&gt;包，只能应用于LDA，于是「宏基因组」公众号又跟进发一篇《&lt;a href=&#34;https://mp.weixin.qq.com/s/F9c_ISpOpjHyiCNahoYTqQ&#34;&gt;比PCA更好用的监督排序—LDA分析、作图及添加置信-ggord&lt;/a&gt;》，你会发现他们介绍同一类型的作图，一会这个包，一会那个包，一会某包有A功能，某包又有B功能，我就不说什么了。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -66,9 +60,7 @@
       <guid>https://guangchuangyu.github.io/cn/2017/12/geom-cake/</guid>
       <description>&lt;p&gt;周日是港大医学院的198届毕业典礼，Y叔要去参加，今年也正好是医学院130周年，做为画图界的传说，我决定画一个蛋糕。&lt;/p&gt;
 
-&lt;p&gt;要画蛋糕，这有何难，我们有&lt;code&gt;emojifont&lt;/code&gt;啊，还记得《&lt;a href=&#34;http://mp.weixin.qq.com/s/ARxyTRpMs6OeCqOQPp9OwA&#34;&gt;emojifont新功能（有视频哦）&lt;/a&gt;》一文中的&lt;code&gt;geom_emoji&lt;/code&gt;图层吗？&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;要画蛋糕，这有何难，我们有&lt;code&gt;emojifont&lt;/code&gt;啊，还记得《&lt;a href=&#34;http://mp.weixin.qq.com/s/ARxyTRpMs6OeCqOQPp9OwA&#34;&gt;emojifont新功能（有视频哦）&lt;/a&gt;》一文中的&lt;code&gt;geom_emoji&lt;/code&gt;图层吗？&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -81,9 +73,7 @@
 
 &lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2012/10/pubmedtrend.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;当年microarray还特别猛，但显然可以看到二代测序必须要火，也可以看到proteomics在吹了几年牛B之后，有回落的趋势。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;当年microarray还特别猛，但显然可以看到二代测序必须要火，也可以看到proteomics在吹了几年牛B之后，有回落的趋势。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -112,9 +102,7 @@ p &amp;lt;- ggplot(d, aes(x,y)) +
 	geom_col(aes(fill=group))
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;这个代码很好懂，画一个柱状图，按&lt;code&gt;group&lt;/code&gt;上色。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;这个代码很好懂，画一个柱状图，按&lt;code&gt;group&lt;/code&gt;上色。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -134,9 +122,7 @@ d &amp;lt;- data.frame(x=rnorm(10), y=rnorm(10), lab=LETTERS[1:10])
 p &amp;lt;- ggplot(d, aes(x, y)) + 
     geom_text(aes(label=lab, color=lab), size=10) + 
 	geom_text(aes(y, x, label=lab), size=3)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
   </channel>

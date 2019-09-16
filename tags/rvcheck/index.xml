@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Rvcheck on Guangchuang Yu</title>
+    <title>rvcheck on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/rvcheck/</link>
-    <description>Recent content in Rvcheck on Guangchuang Yu</description>
+    <description>Recent content in rvcheck on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 25 Apr 2018 17:53:00 +0800</lastBuildDate>
@@ -22,9 +22,7 @@
 &lt;h2 id=&#34;enrichplot&#34;&gt;enrichplot&lt;/h2&gt;
 
 &lt;p&gt;新包&lt;code&gt;enrichplot&lt;/code&gt;，《&lt;a href=&#34;https://mp.weixin.qq.com/s/93XIeDF3mUFX0koX6mTRpA&#34;&gt;enrichplot: 让你们对clusterProfiler系列包无法自拔&lt;/a&gt;
-》，以后&lt;code&gt;clusterProfiler&lt;/code&gt;系列出图更好看了，而且所有图你都可以用&lt;code&gt;cowplot&lt;/code&gt;拼图。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+》，以后&lt;code&gt;clusterProfiler&lt;/code&gt;系列出图更好看了，而且所有图你都可以用&lt;code&gt;cowplot&lt;/code&gt;拼图。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -37,9 +35,7 @@
 
 &lt;p&gt;之前为了&lt;a href=&#34;https://guangchuangyu.github.io/2016/07/how-to-bug-author/&#34;&gt;吐槽&lt;/a&gt;很多人问问题都是在使用早已不维护的老版本，写了&lt;a href=&#34;https://cran.r-project.org/web/packages/rvcheck/&#34;&gt;rvcheck&lt;/a&gt;来帮忙检查版本。既然能够帮我们检查版本，自然能够帮忙升级。&lt;/p&gt;
 
-&lt;p&gt;使用&lt;code&gt;rvcheck::update_all()&lt;/code&gt;可以自动更新CRAN, Bioconductor和Github上的R包。其实可以放到系统任务里，每月自动更新一次，然后就可以完全不用管升级的事情。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;使用&lt;code&gt;rvcheck::update_all()&lt;/code&gt;可以自动更新CRAN, Bioconductor和Github上的R包。其实可以放到系统任务里，每月自动更新一次，然后就可以完全不用管升级的事情。&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ggforce on Guangchuang Yu</title>
+    <title>ggforce on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/ggforce/</link>
-    <description>Recent content in Ggforce on Guangchuang Yu</description>
+    <description>Recent content in ggforce on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 15 May 2018 23:44:55 +0800</lastBuildDate>
@@ -19,9 +19,7 @@
       <guid>https://guangchuangyu.github.io/cn/2018/05/explode-pieplot/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/zhishixingqiu/pie_question.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;这是CJ在我的星球里分享的一个关于饼图的实现方式，代码的排版太差，还有一点是对于普通用户来说，还是有点难度，如果是我，必须是写成函数，直接出图。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;这是CJ在我的星球里分享的一个关于饼图的实现方式，代码的排版太差，还有一点是对于普通用户来说，还是有点难度，如果是我，必须是写成函数，直接出图。&lt;/p&gt;</description>
     </item>
     
   </channel>

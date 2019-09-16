@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>David on Guangchuang Yu</title>
+    <title>DAVID on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/david/</link>
-    <description>Recent content in David on Guangchuang Yu</description>
+    <description>Recent content in DAVID on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 16 May 2017 07:04:22 +0800</lastBuildDate>
@@ -32,9 +32,7 @@
 
 &lt;p&gt;I have tried to convert my ensembl gene IDs to entrez gene id, but some ensembl gene IDs represent more than one entrez gene ID.
 I downloaded KEGG pathway dataset to apply fisher exact test. however, genes are in entrez ID and i am still dont know how to convert.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/blockquote&gt;</description>
     </item>
     
   </channel>

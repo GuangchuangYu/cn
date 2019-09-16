@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cowplot on Guangchuang Yu</title>
+    <title>cowplot on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/cowplot/</link>
-    <description>Recent content in Cowplot on Guangchuang Yu</description>
+    <description>Recent content in cowplot on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 11 Nov 2018 23:53:00 +0800</lastBuildDate>
@@ -22,9 +22,7 @@
 &lt;p&gt;如果有兴趣的话，应该安装我fork的版本。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;devtools::install_github(&amp;quot;GuangchuangYu/UpSetR&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
   </channel>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Remote on Guangchuang Yu</title>
+    <title>remote on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/remote/</link>
-    <description>Recent content in Remote on Guangchuang Yu</description>
+    <description>Recent content in remote on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 05 Jul 2010 07:37:09 +0800</lastBuildDate>
@@ -31,9 +31,7 @@
 &lt;p&gt;需要配置一下PuTTY，&lt;code&gt;Connection-SSh-X11&lt;/code&gt;中选中&lt;code&gt;Enable X11forwarding&lt;/code&gt;
 其中&lt;code&gt;X display location&lt;/code&gt;里填入&lt;code&gt;localhost:0&lt;/code&gt;。&lt;/p&gt;
 
-&lt;p&gt;运行Xming，再用putty连到服务器上，运行程序，就OK了。就好像windows下的本地程序一般。整合性很好。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;运行Xming，再用putty连到服务器上，运行程序，就OK了。就好像windows下的本地程序一般。整合性很好。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -59,9 +57,7 @@ server。之前使用rdesktop远程桌面，最近发现配合seamlessrdp可以�
 &amp;gt; password
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;就可以在linux下运行服务器端的ie了。windows下所有程序都没问题。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;就可以在linux下运行服务器端的ie了。windows下所有程序都没问题。&lt;/p&gt;</description>
     </item>
     
     <item>

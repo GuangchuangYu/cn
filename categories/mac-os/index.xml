@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mac Os on Guangchuang Yu</title>
+    <title>Mac OS on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/categories/mac-os/</link>
-    <description>Recent content in Mac Os on Guangchuang Yu</description>
+    <description>Recent content in Mac OS on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 17 Nov 2015 16:06:59 +0800</lastBuildDate>
@@ -27,9 +27,7 @@ MS office程序可以打开，但打开文档直接闪退。升级安装总会�
 &lt;p&gt;haha nice review ! did you tried the update ?? slow connection safari
 freezes on launch outlook crash printer does not work anymore great
 job from Apple . My confidence in Apple has been seriously dented!&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -42,9 +40,7 @@ job from Apple . My confidence in Apple has been seriously dented!&lt;/p&gt;
 
 &lt;p&gt;度娘出手还是很大方的，我现在的网盘已经有3T，包括之前在推广阶段用1元买的1T。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/Screenshot-2014-05-05-21.31.57.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2014/05/Screenshot-2014-05-05-21.31.57.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -58,10 +54,7 @@ job from Apple . My confidence in Apple has been seriously dented!&lt;/p&gt;
 &lt;p&gt;之前一直用&lt;a href=&#34;http://guangchuangyu.github.io/categories/bsd/&#34;&gt;NetBSD&lt;/a&gt;的&lt;a href=&#34;http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/&#34;&gt;pkgsrc&lt;/a&gt;做为各种Unix-like系统的包管理系统，pkgsrc在自己内部解决依赖关系，这点对于生产环境来说，是很好的一个优点，我通常会在服务器里装一个pkgsrc，在用户目录下，维护一套UNIX软件。但是用在自己的机器上，内部解决软件依赖，就是个缺点，浪费编译时间和硬盘空间。&lt;/p&gt;
 
 &lt;p&gt;Mac上可用的包管理系统很多，Fink移植于&lt;a href=&#34;http://guangchuangyu.github.io/categories/linux/&#34;&gt;Debian&lt;/a&gt;的apt，&lt;a href=&#34;http://guangchuangyu.github.io/categories/linux/&#34;&gt;Gentoo&lt;/a&gt;的portage也支持OS X。OS X是基于BSD的系统，BSD有自己的一套包管理系统，如FreeBSD的ports和&lt;a href=&#34;http://guangchuangyu.github.io/categories/bsd/&#34;&gt;NetBSD&lt;/a&gt;的&lt;a href=&#34;http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/&#34;&gt;pkgsrc&lt;/a&gt;，MacPorts可以看作是这一系列中的一个，不过它并不是OS X原生的，它只是OpenDarwin的子项目，所以和pkgsrc一个样，也是内部解决依赖，真正为OS
-X设计的原生包管理系统非Homebrew莫属，它会尽量依赖系统里已有的软件。
-
-自从用了Homebrew之后，再也不用为系统里有两套perl和python而crazy了，之前通过&lt;a href=&#34;http://guangchuangyu.github.io/2011/06/screen-shot/&#34;&gt;pkgsrc装的软件&lt;/a&gt;全删掉，改Homebrew来安装和管理。
-如果软件没有被pkgsrc收录，而想通过pkgsrc来管理的话，那就得自己&lt;a href=&#34;http://guangchuangyu.github.io/2007/05/%E6%88%91%E5%88%B6%E4%BD%9C%E7%9A%84pkgsrc/&#34;&gt;写makefile&lt;/a&gt;，而homebrew，则可以自动帮你生成Formula，比如我要安装&lt;a href=&#34;http://users.soe.ucsc.edu/~kent/src/&#34;&gt;blat&lt;/a&gt;：&lt;/p&gt;</description>
+X设计的原生包管理系统非Homebrew莫属，它会尽量依赖系统里已有的软件。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -72,7 +65,9 @@ X设计的原生包管理系统非Homebrew莫属，它会尽量依赖系统里�
       <guid>https://guangchuangyu.github.io/cn/2012/03/installing-hackintosh/</guid>
       <description>&lt;p&gt;初中时在杂志上看到苹果的彩壳机，从此叔就开始成为了苹果的脑残粉，还在K6-2和win98那会，就在玩macintosh主题。&lt;/p&gt;
 
-&lt;p&gt;本科时，通过&lt;a href=&#34;http://pearpc.sourceforge.net/&#34;&gt;PearPC&lt;/a&gt;来虚拟PowerPC，硬是在ATHLON XP 1700+这个破CPU上破了OS X Jaguar，那个慢啊，是无法忍受的。&lt;/p&gt;</description>
+&lt;p&gt;本科时，通过&lt;a href=&#34;http://pearpc.sourceforge.net/&#34;&gt;PearPC&lt;/a&gt;来虚拟PowerPC，硬是在ATHLON XP 1700+这个破CPU上破了OS X Jaguar，那个慢啊，是无法忍受的。&lt;/p&gt;
+
+&lt;p&gt;后来，有了一台&lt;a href=&#34;http://guangchuangyu.github.io/categories/powerbook&#34;&gt;powerbook&lt;/a&gt;，却拿它来装&lt;a href=&#34;http://guangchuangyu.github.io/2005/01/powerbook-g3%E4%B8%8A%E5%AE%89%E8%A3%85gentoo/&#34;&gt;gentoo&lt;/a&gt;和&lt;a href=&#34;http://guangchuangyu.github.io/2006/06/%E5%AE%89%E8%A3%85os9%E5%92%8Cnetbsd%E5%8F%8C%E7%B3%BB%E7%BB%9F/&#34;&gt;netbsd&lt;/a&gt;。从那里候开始，基本上就只用Linux/BSD。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -94,9 +89,7 @@ X设计的原生包管理系统非Homebrew莫属，它会尽量依赖系统里�
 
 &lt;p&gt;mac上有fink支持debian一样的apt-get，还有原生的macport，gentoo的portage也支持，我选择使用&lt;a href=&#34;http://guangchuangyu.github.io/categories/bsd&#34;&gt;netbsd&lt;/a&gt;的pkgsrc来安装各种开源软件。&lt;/p&gt;
 
-&lt;p&gt;以前用过比较长时间的netbsd，用着比较顺手。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;以前用过比较长时间的netbsd，用着比较顺手。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -107,9 +100,7 @@ X设计的原生包管理系统非Homebrew莫属，它会尽量依赖系统里�
       <guid>https://guangchuangyu.github.io/cn/2007/06/screenshot/</guid>
       <description>&lt;h2 id=&#34;os-9-2&#34;&gt;OS 9.2&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2007/06/os9.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2007/06/os9.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -129,9 +120,7 @@ Drivers”不然分区将不能在OS9中使用，我一共分了5个分区，12G
 
 &lt;p&gt;开机放入os9安装光盘，按住&lt;code&gt;Ｃ&lt;/code&gt;键，由光盘启动进入os9，在光盘根目录下点安装系统。指定第一个分区，选择安装的软件，十来分钟，便装完了。重新启动，将netbsd的启动程序&lt;code&gt;ofwboot.xcf&lt;/code&gt;放在os9的根目录下。&lt;/p&gt;
 
-&lt;h2 id=&#34;3-安装netbsd&#34;&gt;3 安装netbsd&lt;/h2&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;h2 id=&#34;3-安装netbsd&#34;&gt;3 安装netbsd&lt;/h2&gt;</description>
     </item>
     
   </channel>

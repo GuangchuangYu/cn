@@ -43,9 +43,7 @@
 2 2.236068
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;但以我的经验，我通常不敢轻易说人家有bug，我们得确认一下。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;但以我的经验，我通常不敢轻易说人家有bug，我们得确认一下。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -56,9 +54,7 @@
       <guid>https://guangchuangyu.github.io/cn/2017/03/unknown-annotation-in-enrichment-analysis/</guid>
       <description>&lt;p&gt;小伙伴说注释不全，比如KEGG只有不到1万个基因有注释，但他一次RNA-seq出来的基因有2万多个，那其它没注释那1万多个岂不是扔了？！就某个通路来说，两种情况，要么属于，要么不属于这个通路。那1万多个应该放在背景里，不要扔。&lt;/p&gt;
 
-&lt;p&gt;我的解答是三种情况，1属于，2不属于，3不知道。对于缺失信息的，当然是扔。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;我的解答是三种情况，1属于，2不属于，3不知道。对于缺失信息的，当然是扔。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -128,9 +124,7 @@ Proportion of Variance 0.00042
 Cumulative Proportion  1.00000
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;PC1和PC2能够解释79.8%的variation。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;PC1和PC2能够解释79.8%的variation。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -166,10 +160,7 @@ Cumulative Proportion  1.00000
       <description>&lt;p&gt;经常看到一些饼图，描述某些事物的组成，比如说有钱人的学历分布，然后我们可以看到高学历所占比例并不高，根据这个比例下结论通常是错的，这些比例说明不了问题，如果把各种学历在总体人口中的分布做为背景进行考虑的话，你就会发现学历还是有点用的。
 当我们用组学测定了一大堆分子之后，我们希望站在更高的角度去看这些分子和那些生物学过程相关。那么通常各种注释，对这些基因/蛋白进行分类，那么从分类的比例上，是不能草率下结论，正如上面有钱人学历分布的例子一样。我们需要把总体的分布考虑进去。
 和某个注释/分类是否有相关性，把基因分成属于这一类，和不属于这一类两种，这就好比经典统计学中的白球和黑球的抽样问题。也可以列一个２x２的表，进行独立性分析。
-以文章&lt;a href=&#34;http://cancerres.aacrjournals.org/content/62/16/4722&#34;&gt;Gene Expression in Ovarian Cancer Reflects Both Morphology and Biological Behavior, Distinguishing Clear Cell from Other Poor-Prognosis Ovarian Carcinomas&lt;/a&gt;所鉴定的差异基因为例。
-
-73个差异基因的Symbol，我把它转为 entrezgene
-ID得到57个（漏掉的不管它，只是做为一个例子）:&lt;/p&gt;</description>
+以文章&lt;a href=&#34;http://cancerres.aacrjournals.org/content/62/16/4722&#34;&gt;Gene Expression in Ovarian Cancer Reflects Both Morphology and Biological Behavior, Distinguishing Clear Cell from Other Poor-Prognosis Ovarian Carcinomas&lt;/a&gt;所鉴定的差异基因为例。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -224,9 +215,7 @@ from the same distribution. All of these methods have a basic theme of
 doing things on the rank of items in a distribution, not the actual
 level. So - if in doubt, do things on the rank of metric, rather than
 the metric itself.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -246,9 +235,7 @@ the metric itself.&lt;/p&gt;
 
 &lt;p&gt;#创建一个样本，60个数据，非正态分布的，如下图&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2009/07/sample_a.png&#34; alt=&#34;&#34; title=&#34;sample_a&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2009/07/sample_a.png&#34; alt=&#34;&#34; title=&#34;sample_a&#34; /&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -286,9 +273,7 @@ the metric itself.&lt;/p&gt;
 [1] 0.882351
 &amp;gt; 1-0.7^7
 [1] 0.9176457
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
   </channel>

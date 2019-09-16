@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugo on Guangchuang Yu</title>
+    <title>hugo on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/hugo/</link>
-    <description>Recent content in Hugo on Guangchuang Yu</description>
+    <description>Recent content in hugo on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 04 Dec 2015 00:42:26 +0800</lastBuildDate>
@@ -59,9 +59,7 @@
    Got : [Fri Jan 14 2005] Powerbook G3上安装gentoo
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Done.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Done.&lt;/p&gt;</description>
     </item>
     
   </channel>

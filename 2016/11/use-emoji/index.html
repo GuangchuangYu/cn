@@ -8,18 +8,18 @@
 <meta name="generator" content="Hugo 0.57.2 with theme Tranquilpeak 0.4.3-SNAPSHOT">
 <meta name="author" content="Guangchuang Yu">
 <meta name="keywords" content="">
-<meta name="description" content="">
+<meta name="description" content="无缘无故收到好几条消息，原来是用emoji画图。">
 
 
-<meta property="og:description" content="">
+<meta property="og:description" content="无缘无故收到好几条消息，原来是用emoji画图。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用emoji画图">
 <meta name="twitter:title" content="使用emoji画图">
 <meta property="og:url" content="https://guangchuangyu.github.io/cn/2016/11/use-emoji/">
 <meta property="twitter:url" content="https://guangchuangyu.github.io/cn/2016/11/use-emoji/">
 <meta property="og:site_name" content="Guangchuang Yu">
-<meta property="og:description" content="">
-<meta name="twitter:description" content="">
+<meta property="og:description" content="无缘无故收到好几条消息，原来是用emoji画图。">
+<meta name="twitter:description" content="无缘无故收到好几条消息，原来是用emoji画图。">
 <meta property="og:locale" content="en-us">
 
   
@@ -262,7 +262,73 @@ if (!doNotTrack) {
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              
+              <p>无缘无故收到好几条消息，原来是用emoji画图。</p>
+
+<p>做为emojifont包的作者，我表示很高兴看到自己的包给大家带来乐趣，在回复中@milerdl说emoGG是他用了两个晚上写的，emojifont刚好也是我用了两个晚上写的，一个晚上支持了emoji字体，另一个晚上加入了fontawesome字体。</p>
+
+
+
+<p>在写这个包之前，我早就有用emoji在R画图中，写这个包也正是为了回应emoGG，因为我觉得他的实现方式并不理想，而我的更为灵活。</p>
+
+<p>回到主题上，我将展示使用emojifont来画图。</p>
+
+<p>下面这个数据是我每年读书、看电影、听专辑的数目：</p>
+
+<pre><code>&gt; d
+   year category num
+1  2009     book  35
+2  2009    movie  64
+3  2009    music  24
+4  2010     book  34
+5  2010    movie  47
+6  2010    music  13
+7  2011     book  17
+8  2011    movie  18
+9  2011    music   2
+10 2012     book  25
+11 2012    movie  25
+12 2012    music   0
+13 2013     book  15
+14 2013    movie  17
+15 2013    music   0
+16 2014     book   8
+17 2014    movie  11
+18 2014    music   1
+19 2015     book   5
+20 2015    movie  14
+21 2015    music   0
+22 2016     book   4
+23 2016    movie  14
+24 2016    music   0
+</code></pre>
+
+<p>先加载所需的包和emoji字体：</p>
+
+<pre><code>require(ggplot2)
+require(ggthemes)
+require(emojifont)
+load.emojifont()
+emo &lt;- emoji(c(&quot;book&quot;, &quot;movie_camera&quot;, &quot;musical_note&quot;))
+names(emo) &lt;- c('book', 'movie', 'music')
+</code></pre>
+
+<p>画出趋势图，并在每个点上用相应的emoji字体标注：</p>
+
+<pre><code>p &lt;- ggplot(d, aes(x=factor(year), y=num, group=category, colour=category))
+p &lt;- p +geom_line() +geom_text(aes(label=emo[category]), family='OpenSansEmoji', size=10) +xlab(NULL) + ylab(NULL) 
+
+更改一些背景等主题细节，设置中文字体等：
+p &lt;- p + theme_fivethirtyeight() + scale_color_tableau()
+p &lt;- p+theme(axis.text.x=element_text(face=&quot;bold&quot;, size=16), 
+        axis.text.y=element_text(face=&quot;bold&quot;, size=16))
+ p &lt;- p+theme(legend.text=element_text(size=16, family=&quot;OpenSansEmoji&quot;), 
+            legend.title=element_blank(), legend.position='none')
+p+ ggtitle('Y叔的书影音') + theme(plot.title=element_text(family='STKaiti'))
+</code></pre>
+
+<p>于是产生下图：</p>
+
+<p><img src="https://guangchuangyu.github.io/blog_images/Bioconductor/Screen Shot 2016-11-21 at 7.47.34 PM.png" alt="" /></p>
               
             </div>
           </div>

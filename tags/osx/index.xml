@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Osx on Guangchuang Yu</title>
+    <title>OSX on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/osx/</link>
-    <description>Recent content in Osx on Guangchuang Yu</description>
+    <description>Recent content in OSX on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 24 Jan 2018 15:27:00 +0800</lastBuildDate>
@@ -23,9 +23,7 @@
 
 &lt;p&gt;首先这是利用wine技术实现的，在苹果上你需要安装&lt;strong&gt;XQuartz&lt;/strong&gt;: &lt;a href=&#34;https://www.xquartz.org/&#34;&gt;https://www.xquartz.org/&lt;/a&gt;。&lt;/p&gt;
 
-&lt;p&gt;安装很容易，我已经打包了dmg文件，这个文件有44M，还挺大的，没法，要打包一个windows的运行环境嘛。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;安装很容易，我已经打包了dmg文件，这个文件有44M，还挺大的，没法，要打包一个windows的运行环境嘛。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -42,9 +40,7 @@
 
 &lt;p&gt;BioEdit有很多的功能，当然基本上我是不会用的，然而其核心的功能，编辑序列比对，是没法回避的！因为根本找不到可以与之匹敌的软件！&lt;/p&gt;
 
-&lt;p&gt;神马！序列比对不都是clustalw, muscle, mafft这些软件生成完事吗？怎么还要编辑？！我只能说，年轻人，拿衣服啊。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;神马！序列比对不都是clustalw, muscle, mafft这些软件生成完事吗？怎么还要编辑？！我只能说，年轻人，拿衣服啊。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -63,9 +59,7 @@ MS office程序可以打开，但打开文档直接闪退。升级安装总会�
 &lt;p&gt;haha nice review ! did you tried the update ?? slow connection safari
 freezes on launch outlook crash printer does not work anymore great
 job from Apple . My confidence in Apple has been seriously dented!&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -76,7 +70,9 @@ job from Apple . My confidence in Apple has been seriously dented!&lt;/p&gt;
       <guid>https://guangchuangyu.github.io/cn/2012/03/installing-hackintosh/</guid>
       <description>&lt;p&gt;初中时在杂志上看到苹果的彩壳机，从此叔就开始成为了苹果的脑残粉，还在K6-2和win98那会，就在玩macintosh主题。&lt;/p&gt;
 
-&lt;p&gt;本科时，通过&lt;a href=&#34;http://pearpc.sourceforge.net/&#34;&gt;PearPC&lt;/a&gt;来虚拟PowerPC，硬是在ATHLON XP 1700+这个破CPU上破了OS X Jaguar，那个慢啊，是无法忍受的。&lt;/p&gt;</description>
+&lt;p&gt;本科时，通过&lt;a href=&#34;http://pearpc.sourceforge.net/&#34;&gt;PearPC&lt;/a&gt;来虚拟PowerPC，硬是在ATHLON XP 1700+这个破CPU上破了OS X Jaguar，那个慢啊，是无法忍受的。&lt;/p&gt;
+
+&lt;p&gt;后来，有了一台&lt;a href=&#34;http://guangchuangyu.github.io/categories/powerbook&#34;&gt;powerbook&lt;/a&gt;，却拿它来装&lt;a href=&#34;http://guangchuangyu.github.io/2005/01/powerbook-g3%E4%B8%8A%E5%AE%89%E8%A3%85gentoo/&#34;&gt;gentoo&lt;/a&gt;和&lt;a href=&#34;http://guangchuangyu.github.io/2006/06/%E5%AE%89%E8%A3%85os9%E5%92%8Cnetbsd%E5%8F%8C%E7%B3%BB%E7%BB%9F/&#34;&gt;netbsd&lt;/a&gt;。从那里候开始，基本上就只用Linux/BSD。&lt;/p&gt;</description>
     </item>
     
   </channel>

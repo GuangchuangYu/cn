@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ggrough on Guangchuang Yu</title>
+    <title>ggrough on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/ggrough/</link>
-    <description>Recent content in Ggrough on Guangchuang Yu</description>
+    <description>Recent content in ggrough on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 15 Oct 2018 00:21:00 +0800</lastBuildDate>
@@ -27,9 +27,7 @@ count(mtcars, carb) %&amp;gt;%
   labs(title=&amp;quot;Number of cars by carburator count&amp;quot;) + 
   theme_grey(base_size = 16) -&amp;gt; p 
 p
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
   </channel>

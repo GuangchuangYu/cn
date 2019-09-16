@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ggupset on Guangchuang Yu</title>
+    <title>ggupset on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/ggupset/</link>
-    <description>Recent content in Ggupset on Guangchuang Yu</description>
+    <description>Recent content in ggupset on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 11 Mar 2019 09:33:50 +0800</lastBuildDate>
@@ -32,9 +32,7 @@ tidy_movies %&amp;gt;%
   ggplot(aes(x=Genres)) +
     geom_bar() +
     scale_x_upset(n_intersections = 20)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
   </channel>

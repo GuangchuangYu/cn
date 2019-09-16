@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Scholar on Guangchuang Yu</title>
+    <title>scholar on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/scholar/</link>
-    <description>Recent content in Scholar on Guangchuang Yu</description>
+    <description>Recent content in scholar on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 03 Jul 2018 15:22:35 +0800</lastBuildDate>
@@ -30,9 +30,7 @@
 2 Methods in Ecology and Evolution  8866         6.36      0.0370
 3 Molecular BioSystems              7269         2.76      0.0175
 4 MOLECULAR BIOLOGY AND EVOLUTION  44664        10.2       0.102
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
@@ -43,9 +41,7 @@
       <guid>https://guangchuangyu.github.io/cn/2017/11/scholar/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/scholar/WechatIMG166.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;正如我在「知识星球」里说的，scholar这个包现在已经死了，因为作者不维护了，除非出现接盘侠。我自己fork了一个，打了补丁，现在是可用的。这个包应该说我用得蛮多的，你看我简历里的引用数柱状图，我不会无聊到过一段时间就去查，然后重新画图的，太low。都是自动化的，我到简历目录下打make指令，就会自动去爬数据、重新画图并生成简历，而我啥都不用干。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;正如我在「知识星球」里说的，scholar这个包现在已经死了，因为作者不维护了，除非出现接盘侠。我自己fork了一个，打了补丁，现在是可用的。这个包应该说我用得蛮多的，你看我简历里的引用数柱状图，我不会无聊到过一段时间就去查，然后重新画图的，太low。都是自动化的，我到简历目录下打make指令，就会自动去爬数据、重新画图并生成简历，而我啥都不用干。&lt;/p&gt;</description>
     </item>
     
   </channel>

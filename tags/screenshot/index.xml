@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Screenshot on Guangchuang Yu</title>
+    <title>screenshot on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/screenshot/</link>
-    <description>Recent content in Screenshot on Guangchuang Yu</description>
+    <description>Recent content in screenshot on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 19 Jun 2017 07:57:46 +0800</lastBuildDate>
@@ -42,9 +42,7 @@ aur/wechatircd-git r85.bb8f354-1 (0) (0.00)
 &lt;p&gt;这里我要介绍的是electronic-wechat。我比较懒，用下面的代码，安装二进制版：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;yaourt -S electronic-wechat-bin
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
@@ -74,9 +72,7 @@ $ yaourt -Ss classic95 aur/classic95-icons 1-1 [installed] (3) (0.09) Classic ic
 &lt;p&gt;言归正传，从2002年使用redhat 7.1开始，就没中止过使用linux，为什么要说again呢，因为在过去几年的工作时间里，使用的是&lt;a href=&#34;http://guangchuangyu.github.io/2011/06/screen-shot/&#34;&gt;OS X&lt;/a&gt;和win7做为桌面的，linux只在服务器端使用。自从用了OS X之后，就不想再用linux当桌面了，OS X绝对是节省生命的系统，本身是unix-like系统，对各种桌面软件支持又好，特别是中华大地，linux还是小众，用来当桌面实在是各种坑。&lt;/p&gt;
 
 &lt;p&gt;不过现在又回到学生时代了，所以还得继续学生屌丝的折腾，本科时从redhat,debian到gentoo，硕士时实验室的机器用ubuntu，而笔记本用NetBSD。这么多年的使用，该有的坑都填了，但是时代在发展，新坑还是不断有的，使用&lt;a href=&#34;http://guangchuangyu.github.io/2014/05/%E6%9B%B4%E6%94%B9%E7%99%BE%E5%BA%A6%E4%BA%91%E5%90%8C%E6%AD%A5%E7%9B%98%E8%B7%AF%E5%BE%84/&#34;&gt;百度云&lt;/a&gt;来同步化文献库，就是最近的新坑，装上linux之后，发现度娘没有客户端，首先想到的当然是wine，wine出来的偶尔能行，时常崩溃，跟它死磕我也会崩溃，github上寻找开源实现，各种功能缺失和限制，那就只能虚拟机了，把home目录做为共享盘，挂到虚拟机中，但是度娘一直都是占100%
-CPU，然后数据无法同步，只有两个原因，不是硬盘就是网络，感觉好像我一个分区800G太大了，但在虚拟中对硬盘读写正常，网络因为使用NAT，虚拟成内网，有可能是这个原因，于是换成bridge，把虚拟机当成现实网络中的另一台主机，但度娘依然只占CPU，不干活。那只能还是硬盘问题，最后问题解决了，通过在linux中提供samba服务，然后在虚拟机中通过网上邻居把共享目录映射成网络驱动器，这时候度娘终于肯干活了。都不知道是virtualbox的驱动有问题，还是度娘太挑，这太TM坑了。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+CPU，然后数据无法同步，只有两个原因，不是硬盘就是网络，感觉好像我一个分区800G太大了，但在虚拟中对硬盘读写正常，网络因为使用NAT，虚拟成内网，有可能是这个原因，于是换成bridge，把虚拟机当成现实网络中的另一台主机，但度娘依然只占CPU，不干活。那只能还是硬盘问题，最后问题解决了，通过在linux中提供samba服务，然后在虚拟机中通过网上邻居把共享目录映射成网络驱动器，这时候度娘终于肯干活了。都不知道是virtualbox的驱动有问题，还是度娘太挑，这太TM坑了。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -98,9 +94,7 @@ CPU，然后数据无法同步，只有两个原因，不是硬盘就是网络�
 
 &lt;p&gt;mac上有fink支持debian一样的apt-get，还有原生的macport，gentoo的portage也支持，我选择使用&lt;a href=&#34;http://guangchuangyu.github.io/categories/bsd&#34;&gt;netbsd&lt;/a&gt;的pkgsrc来安装各种开源软件。&lt;/p&gt;
 
-&lt;p&gt;以前用过比较长时间的netbsd，用着比较顺手。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;以前用过比较长时间的netbsd，用着比较顺手。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -111,9 +105,7 @@ CPU，然后数据无法同步，只有两个原因，不是硬盘就是网络�
       <guid>https://guangchuangyu.github.io/cn/2007/06/screenshot/</guid>
       <description>&lt;h2 id=&#34;os-9-2&#34;&gt;OS 9.2&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2007/06/os9.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2007/06/os9.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

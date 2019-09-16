@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Meshes on Guangchuang Yu</title>
+    <title>meshes on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/meshes/</link>
-    <description>Recent content in Meshes on Guangchuang Yu</description>
+    <description>Recent content in meshes on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 08 Apr 2018 19:06:16 +0800</lastBuildDate>
@@ -21,9 +21,7 @@
 
 &lt;blockquote&gt;
 &lt;p&gt;clusterProfiler之所以好，因为真的考虑了很多细节！请放开那图，让clusterProfiler来画！&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -32,9 +30,7 @@
       <pubDate>Mon, 11 Sep 2017 19:11:00 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2017/09/color-in-gseaplot/</guid>
-      <description>&lt;p&gt;《&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;amp;mid=2247484730&amp;amp;amp;idx=1&amp;amp;amp;sn=48b8c24b6cfb6162f8fb3f3861ddfe1b&amp;amp;amp;chksm=ec43b47ddb343d6b37581fa81b0bf11b5141a446333b1b961ef1ad4f80da4c4732d7bc3432c2#rd&#34;&gt;听说你有RNAseq数据却不知道怎么跑GSEA&lt;/a&gt;》一文有小伙伴问封面的gseaplot能否换颜色，于是我就随手支持了。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;《&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;amp;mid=2247484730&amp;amp;amp;idx=1&amp;amp;amp;sn=48b8c24b6cfb6162f8fb3f3861ddfe1b&amp;amp;amp;chksm=ec43b47ddb343d6b37581fa81b0bf11b5141a446333b1b961ef1ad4f80da4c4732d7bc3432c2#rd&#34;&gt;听说你有RNAseq数据却不知道怎么跑GSEA&lt;/a&gt;》一文有小伙伴问封面的gseaplot能否换颜色，于是我就随手支持了。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -62,9 +58,7 @@ While I can run enrichKEGG, I&amp;rsquo;m unable to run gseKEGG basically becaus
 &lt;p&gt;bruno saubaméa&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;今天收到一封来自Université Paris Descartes的求助信，这个问题我被问过好多次了，显然很多新手都有这问题，根本不知道该怎么跑GSEA，搞不清GSEA的输入是什么。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;今天收到一封来自Université Paris Descartes的求助信，这个问题我被问过好多次了，显然很多新手都有这问题，根本不知道该怎么跑GSEA，搞不清GSEA的输入是什么。&lt;/p&gt;</description>
     </item>
     
   </channel>

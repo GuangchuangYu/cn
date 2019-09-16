@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Bioedit on Guangchuang Yu</title>
+    <title>BioEdit on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/bioedit/</link>
-    <description>Recent content in Bioedit on Guangchuang Yu</description>
+    <description>Recent content in BioEdit on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 27 Feb 2017 13:40:22 +0800</lastBuildDate>
@@ -25,9 +25,7 @@
 
 &lt;p&gt;BioEdit有很多的功能，当然基本上我是不会用的，然而其核心的功能，编辑序列比对，是没法回避的！因为根本找不到可以与之匹敌的软件！&lt;/p&gt;
 
-&lt;p&gt;神马！序列比对不都是clustalw, muscle, mafft这些软件生成完事吗？怎么还要编辑？！我只能说，年轻人，拿衣服啊。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;神马！序列比对不都是clustalw, muscle, mafft这些软件生成完事吗？怎么还要编辑？！我只能说，年轻人，拿衣服啊。&lt;/p&gt;</description>
     </item>
     
   </channel>

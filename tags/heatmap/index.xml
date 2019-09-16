@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Heatmap on Guangchuang Yu</title>
+    <title>heatmap on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/heatmap/</link>
-    <description>Recent content in Heatmap on Guangchuang Yu</description>
+    <description>Recent content in heatmap on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 13 Nov 2017 00:21:00 +0800</lastBuildDate>
@@ -30,9 +30,7 @@ rownames(d) = paste0(&#39;g&#39;, 1:10)
 &lt;p&gt;这个矩阵是&lt;code&gt;rnorm&lt;/code&gt;生成的随机数，有正有负，我们再生成一个矩阵，只有正数，并且数值上比第一个矩阵要大：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;d2 = abs(d) * 1.2
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
@@ -43,9 +41,7 @@ rownames(d) = paste0(&#39;g&#39;, 1:10)
       <guid>https://guangchuangyu.github.io/cn/2017/09/dose-simplot/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/Bioconductor/DOSE/simplot/WechatIMG52.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;群众纷纷表示图二是Excel画的，我觉得也是！Excel是生物学家的最爱啊。虽然做生信的人都看不上，最主要是没有记录，不具备可重复性。但现实就是大家都爱Excel。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;群众纷纷表示图二是Excel画的，我觉得也是！Excel是生物学家的最爱啊。虽然做生信的人都看不上，最主要是没有记录，不具备可重复性。但现实就是大家都爱Excel。&lt;/p&gt;</description>
     </item>
     
   </channel>

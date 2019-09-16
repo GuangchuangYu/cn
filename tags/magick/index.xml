@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Magick on Guangchuang Yu</title>
+    <title>magick on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/magick/</link>
-    <description>Recent content in Magick on Guangchuang Yu</description>
+    <description>Recent content in magick on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 05 Jun 2018 08:53:00 +0800</lastBuildDate>
@@ -25,9 +25,7 @@
 &lt;li&gt;&lt;a href=&#34;http://mp.weixin.qq.com/s/jDXjkrkq_YVhW-Z5Vx2-Fg&#34;&gt;用R画meme ;)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/4b8enFCd_lLt278Ddxp3rg&#34;&gt;使用外部字体画meme&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://mp.weixin.qq.com/s/BPY4dPFrrNrDKccMvax07w&#34;&gt;扪心自问，meme几何？&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -63,9 +61,7 @@
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;然后就可以来玩了，首先用上次讲到的dotplot做为底图，再从网上找一个动图，调用函数，bingo:&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;然后就可以来玩了，首先用上次讲到的dotplot做为底图，再从网上找一个动图，调用函数，bingo:&lt;/p&gt;</description>
     </item>
     
   </channel>

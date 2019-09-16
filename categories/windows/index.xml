@@ -27,9 +27,7 @@ MS office程序可以打开，但打开文档直接闪退。升级安装总会�
 &lt;p&gt;haha nice review ! did you tried the update ?? slow connection safari
 freezes on launch outlook crash printer does not work anymore great
 job from Apple . My confidence in Apple has been seriously dented!&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -52,9 +50,7 @@ job from Apple . My confidence in Apple has been seriously dented!&lt;/p&gt;
 &lt;p&gt;需要配置一下PuTTY，&lt;code&gt;Connection-SSh-X11&lt;/code&gt;中选中&lt;code&gt;Enable X11forwarding&lt;/code&gt;
 其中&lt;code&gt;X display location&lt;/code&gt;里填入&lt;code&gt;localhost:0&lt;/code&gt;。&lt;/p&gt;
 
-&lt;p&gt;运行Xming，再用putty连到服务器上，运行程序，就OK了。就好像windows下的本地程序一般。整合性很好。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;运行Xming，再用putty连到服务器上，运行程序，就OK了。就好像windows下的本地程序一般。整合性很好。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -70,9 +66,7 @@ job from Apple . My confidence in Apple has been seriously dented!&lt;/p&gt;
 
 &lt;p&gt;YMZ的事件，告诉大家一个真理，当个电脑小白是很吃亏滴。。学会藏东西是很必要的能力。。&lt;/p&gt;
 
-&lt;p&gt;不过我不送修电脑，就是笔记本我也自己拆。。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;不过我不送修电脑，就是笔记本我也自己拆。。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -98,9 +92,7 @@ server。之前使用rdesktop远程桌面，最近发现配合seamlessrdp可以�
 &amp;gt; password
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;就可以在linux下运行服务器端的ie了。windows下所有程序都没问题。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;就可以在linux下运行服务器端的ie了。windows下所有程序都没问题。&lt;/p&gt;</description>
     </item>
     
   </channel>

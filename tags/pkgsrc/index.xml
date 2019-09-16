@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Pkgsrc on Guangchuang Yu</title>
+    <title>pkgsrc on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/pkgsrc/</link>
-    <description>Recent content in Pkgsrc on Guangchuang Yu</description>
+    <description>Recent content in pkgsrc on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 16 May 2007 04:36:00 +0800</lastBuildDate>
@@ -32,9 +32,7 @@
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;就可以啦。在我的机子（NetBSD 3.0.1 macppc）上测试通过。。
-更新到eva-20070327&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+更新到eva-20070327&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -57,9 +55,7 @@
 .sinclude &amp;quot;/usr/pkg/share/mk/optimize_gcc.mk&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;这样make时便能够根据cpuflags进行优化编译了。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;这样make时便能够根据cpuflags进行优化编译了。&lt;/p&gt;</description>
     </item>
     
   </channel>

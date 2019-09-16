@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Rtichoke on Guangchuang Yu</title>
+    <title>rtichoke on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/rtichoke/</link>
-    <description>Recent content in Rtichoke on Guangchuang Yu</description>
+    <description>Recent content in rtichoke on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 13 Sep 2017 13:37:55 +0800</lastBuildDate>
@@ -30,9 +30,7 @@
 &lt;li&gt;支持Windows, macOS 和 Linux&lt;/li&gt;
 &lt;li&gt;支持vi, emacs等编辑模式&lt;/li&gt;
 &lt;li&gt;可以多种高亮模式&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/ul&gt;</description>
     </item>
     
   </channel>

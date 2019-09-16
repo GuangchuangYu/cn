@@ -21,9 +21,7 @@
 
 &lt;p&gt;06年，我就想换个系统算了。找人刻了张os9.2的盘，自己刻了张netbsd的盘。&lt;a href=&#34;https://guangchuangyu.github.io/cn/2006/06/os9-netbsd-dual-boot&#34;&gt;装双系统&lt;/a&gt;。&lt;/p&gt;
 
-&lt;p&gt;os9.2可以用微软的office 2001，还有ie5.5，不过都不是很好用。最爽的是可以用很多做图软件，photoshop,coredraw,illustrator等等啊。当年在合肥还帮很多同学处理过照片，因为6级考试要上传的图片要求是10k以下，很多人压到10k都看不清了，我用photoshop压到10k还能看清人.^_^.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;os9.2可以用微软的office 2001，还有ie5.5，不过都不是很好用。最爽的是可以用很多做图软件，photoshop,coredraw,illustrator等等啊。当年在合肥还帮很多同学处理过照片，因为6级考试要上传的图片要求是10k以下，很多人压到10k都看不清了，我用photoshop压到10k还能看清人.^_^.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -51,9 +49,7 @@ os的系统盘。e为两系统共享分区(在os9下格式化为fat)，g为netbs
 原本是两系统，os9.2一直都很少用，所以想删了，腾出空间来放数据。因为wd0d和wd0e不在连续的柱面上，所以无法将它们合并。&lt;/p&gt;
 
 &lt;p&gt;新的分区方案如下：wd0d删了，分成两个，一个15M(需要一个HFS类型的分区来放置&lt;code&gt;ofwboot.xcf&lt;/code&gt;，因为openfirmwire不支持从netbsd分区里加载loader),剩下的作为&lt;code&gt;/home&lt;/code&gt;分区。把原来的&lt;code&gt;/home&lt;/code&gt;分区(&lt;code&gt;wd0g&lt;/code&gt;)和共享数据的分区(&lt;code&gt;wd0e&lt;/code&gt;)合并为一个分区，用于放置数据。
-1. 第一步，也是最关键的一步，先备份好数据。
-
-2. 安装hfsutils。用于操作那个15M的HFS分区（格式化，拷贝文件等工具）。hfsutils是命令行的，xhfs是tk界面的。&lt;/p&gt;</description>
+1. 第一步，也是最关键的一步，先备份好数据。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -73,9 +69,7 @@ Drivers”不然分区将不能在OS9中使用，我一共分了5个分区，12G
 
 &lt;p&gt;开机放入os9安装光盘，按住&lt;code&gt;Ｃ&lt;/code&gt;键，由光盘启动进入os9，在光盘根目录下点安装系统。指定第一个分区，选择安装的软件，十来分钟，便装完了。重新启动，将netbsd的启动程序&lt;code&gt;ofwboot.xcf&lt;/code&gt;放在os9的根目录下。&lt;/p&gt;
 
-&lt;h2 id=&#34;3-安装netbsd&#34;&gt;3 安装netbsd&lt;/h2&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;h2 id=&#34;3-安装netbsd&#34;&gt;3 安装netbsd&lt;/h2&gt;</description>
     </item>
     
     <item>
@@ -106,9 +100,7 @@ vim mystar.conf
 
 &lt;p&gt;使用&lt;code&gt;./mystar&lt;/code&gt;运行，并且认证成功!&lt;/p&gt;
 
-&lt;p&gt;随后我发现一个问题，就是不会自动重连，老是会断线。在mystar.conf里面有一段&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;随后我发现一个问题，就是不会自动重连，老是会断线。在mystar.conf里面有一段&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -153,9 +145,7 @@ vim mystar.conf
 
 Block size=512, Number of Blocks=19640880
 DeviceType=0x0, DeviceId=0x0
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
   </channel>

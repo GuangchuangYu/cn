@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Pheatmap on Guangchuang Yu</title>
+    <title>pheatmap on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/pheatmap/</link>
-    <description>Recent content in Pheatmap on Guangchuang Yu</description>
+    <description>Recent content in pheatmap on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 06 Aug 2018 12:23:16 +0800</lastBuildDate>
@@ -24,9 +24,7 @@
 &lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/yVLgGQQi0CQ9Q9UfIKl5aA&#34;&gt;不同数据集画出的热图，用同样的颜色区间上色?&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;我发现这包的交互能力是比较差的，它就像传统的&lt;code&gt;plot&lt;/code&gt;函数一样，命令一打下去，就直接画图，虽然它其实是有输出的，但事实上超出了一般用户的理解能力，它的输出，比如说可以用&lt;code&gt;cowplot&lt;/code&gt;来拼图，我在上面链接的那篇文章中皆来演示，然而很多人问我，怎么把&lt;code&gt;pheatmap&lt;/code&gt;画的热图和&lt;code&gt;ggplot2&lt;/code&gt;的图，用&lt;code&gt;cowplot&lt;/code&gt;来拼。这就是因为拼图的方法超出了很多的理解范围，看过演示，也只能照猫画老虎，过后也就忘记了。有没有办法用大家可以理解的方法来拼？这样就不太容易忘记，答案是肯定的，我下次再讲。今天先讲一讲其前提条件。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;我发现这包的交互能力是比较差的，它就像传统的&lt;code&gt;plot&lt;/code&gt;函数一样，命令一打下去，就直接画图，虽然它其实是有输出的，但事实上超出了一般用户的理解能力，它的输出，比如说可以用&lt;code&gt;cowplot&lt;/code&gt;来拼图，我在上面链接的那篇文章中皆来演示，然而很多人问我，怎么把&lt;code&gt;pheatmap&lt;/code&gt;画的热图和&lt;code&gt;ggplot2&lt;/code&gt;的图，用&lt;code&gt;cowplot&lt;/code&gt;来拼。这就是因为拼图的方法超出了很多的理解范围，看过演示，也只能照猫画老虎，过后也就忘记了。有没有办法用大家可以理解的方法来拼？这样就不太容易忘记，答案是肯定的，我下次再讲。今天先讲一讲其前提条件。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -48,9 +46,7 @@ rownames(d) = paste0(&#39;g&#39;, 1:10)
 &lt;p&gt;这个矩阵是&lt;code&gt;rnorm&lt;/code&gt;生成的随机数，有正有负，我们再生成一个矩阵，只有正数，并且数值上比第一个矩阵要大：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;d2 = abs(d) * 1.2
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
   </channel>

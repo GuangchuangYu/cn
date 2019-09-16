@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Bioc on Guangchuang Yu</title>
+    <title>BioC on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/bioc/</link>
-    <description>Recent content in Bioc on Guangchuang Yu</description>
+    <description>Recent content in BioC on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 13 Jul 2016 21:06:59 +0800</lastBuildDate>
@@ -17,9 +17,7 @@
       <pubDate>Wed, 13 Jul 2016 21:06:59 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2016/07/evolution-of-my-bioc-packages/</guid>
-      <description>&lt;p&gt;发现Youtube上有一个视频叫&lt;a href=&#34;https://www.youtube.com/watch?v=MYTblx-5Yog&#34;&gt;Evolution of clusterProfiler&lt;/a&gt;, 是Landon Wilkins用&lt;a href=&#34;http://gource.io/&#34;&gt;Gource&lt;/a&gt;做的。于是我也来玩一下，看一下自己这几年码代码的过程。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;发现Youtube上有一个视频叫&lt;a href=&#34;https://www.youtube.com/watch?v=MYTblx-5Yog&#34;&gt;Evolution of clusterProfiler&lt;/a&gt;, 是Landon Wilkins用&lt;a href=&#34;http://gource.io/&#34;&gt;Gource&lt;/a&gt;做的。于是我也来玩一下，看一下自己这几年码代码的过程。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -38,9 +36,7 @@
 &lt;a href=&#34;http://bioconductor.org/packages/devel/bioc/html/GOSemSim.html&#34;&gt;http://bioconductor.org/packages/devel/bioc/html/GOSemSim.html&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;支持human, rat, mouse, fly, yeast, zebrafish,worm, E coli,
-arabidopsis等物种。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+arabidopsis等物种。&lt;/p&gt;</description>
     </item>
     
   </channel>

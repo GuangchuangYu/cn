@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tair on Guangchuang Yu</title>
+    <title>TAIR on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/tair/</link>
-    <description>Recent content in Tair on Guangchuang Yu</description>
+    <description>Recent content in TAIR on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 10 Jul 2018 15:53:00 +0800</lastBuildDate>
@@ -34,9 +34,7 @@ g &amp;lt;- c(&amp;quot;AT5G61600&amp;quot;, &amp;quot;AT2G44230&amp;quot;, &amp
 &amp;quot;AT2G15960&amp;quot;, &amp;quot;AT2G29290&amp;quot;, &amp;quot;AT1G08930&amp;quot;, &amp;quot;AT2G44460&amp;quot;, &amp;quot;AT3G46600&amp;quot;,
 &amp;quot;AT5G24380&amp;quot;, &amp;quot;AT3G59270&amp;quot;, &amp;quot;AT5G55780&amp;quot;, &amp;quot;AT2G45090&amp;quot;, &amp;quot;AT5G38430&amp;quot;,
 &amp;quot;AT2G17040&amp;quot;, &amp;quot;AT4G35770&amp;quot;, &amp;quot;AT5G30341&amp;quot;, &amp;quot;AT1G56320&amp;quot;, &amp;quot;AT2G16367&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
   </channel>

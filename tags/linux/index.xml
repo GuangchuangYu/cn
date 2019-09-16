@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Linux on Guangchuang Yu</title>
+    <title>linux on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/linux/</link>
-    <description>Recent content in Linux on Guangchuang Yu</description>
+    <description>Recent content in linux on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 05 Oct 2008 05:08:02 +0800</lastBuildDate>
@@ -17,9 +17,7 @@
       <pubDate>Sun, 05 Oct 2008 05:08:02 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2008/10/restore-thunder-url/</guid>
-      <description>&lt;p&gt;迅雷的url很恶心，硬是把你绑死在它的流氓软件上，今天试了一个用base64解码，果然用这个伎俩来欺骗用户。在原始的url前面和后面各加两个字符，然后用base64编码。写了下面一段script来还原出原始的url，这样随便用那个下载工具都可以用了。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;迅雷的url很恶心，硬是把你绑死在它的流氓软件上，今天试了一个用base64解码，果然用这个伎俩来欺骗用户。在原始的url前面和后面各加两个字符，然后用base64编码。写了下面一段script来还原出原始的url，这样随便用那个下载工具都可以用了。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -37,9 +35,7 @@
 
 &lt;p&gt;安装完就是修改配置文件&lt;code&gt;/etc/ntlmaps/server.cfg&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;设定网络监听的端口、父级代理的IP和端口、账号、密码、网域。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;设定网络监听的端口、父级代理的IP和端口、账号、密码、网域。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -50,9 +46,7 @@
       <guid>https://guangchuangyu.github.io/cn/2008/08/gperiodic/</guid>
       <description>&lt;p&gt;推荐一个小软件，gperiodic，功能很简单，就是个元素周期表而已，可以查到各个元素的详细信息。&lt;/p&gt;
 
-&lt;p&gt;当年初中的时候，这个表也是背过的。。那时候用方言背的，现在用普通话讲，总觉得有点别扭。。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;当年初中的时候，这个表也是背过的。。那时候用方言背的，现在用普通话讲，总觉得有点别扭。。&lt;/p&gt;</description>
     </item>
     
   </channel>

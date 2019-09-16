@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Software on Guangchuang Yu</title>
+    <title>software on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/software/</link>
-    <description>Recent content in Software on Guangchuang Yu</description>
+    <description>Recent content in software on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 23 Nov 2008 04:32:00 +0800</lastBuildDate>
@@ -17,9 +17,7 @@
       <pubDate>Sun, 23 Nov 2008 04:32:00 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2008/11/my-google-reader/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2008/11/rss.png&#34; alt=&#34;rss&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;img src=&#34;http://guangchuangyu.github.io/blog_images/2008/11/rss.png&#34; alt=&#34;rss&#34; /&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -35,9 +33,7 @@
 
 &lt;p&gt;YMZ的事件，告诉大家一个真理，当个电脑小白是很吃亏滴。。学会藏东西是很必要的能力。。&lt;/p&gt;
 
-&lt;p&gt;不过我不送修电脑，就是笔记本我也自己拆。。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;不过我不送修电脑，就是笔记本我也自己拆。。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -48,9 +44,7 @@
       <guid>https://guangchuangyu.github.io/cn/2008/09/compile-32bit-applications-in-64bit-linux/</guid>
       <description>&lt;p&gt;用PITA算法做靶标预测的时候，要用到ViennaRNA包做结构的折叠，这个包是被修改过的，原来的包在我机子上是可以装的。但是这个修改过的包编译不通过。很奇怪的错误，不知道怎么改。&lt;/p&gt;
 
-&lt;p&gt;好在它有两个版本，64位和32位的。我弄到大型机上去编译32位的，也是出错，不过是命名空间的问题，我改两个头文件就可以通过了。最近又要算。那个大型机最近被搬走了。只能本机上做。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;好在它有两个版本，64位和32位的。我弄到大型机上去编译32位的，也是出错，不过是命名空间的问题，我改两个头文件就可以通过了。最近又要算。那个大型机最近被搬走了。只能本机上做。&lt;/p&gt;</description>
     </item>
     
   </channel>

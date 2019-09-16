@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Package on Guangchuang Yu</title>
+    <title>package on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/package/</link>
-    <description>Recent content in Package on Guangchuang Yu</description>
+    <description>Recent content in package on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 12 Jun 2018 12:15:00 +0800</lastBuildDate>
@@ -27,9 +27,7 @@
 
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Chocolatey is a package manager for Windows (like apt-get or yum but for Windows)&lt;/strong&gt;. It was designed to be a decentralized framework for quickly installing applications and tools that you need. It is built on the NuGet infrastructure currently using PowerShell as its focus for delivering packages from the distros to your door, err computer.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -53,9 +51,7 @@ $ R CMD build pkgname
 # 打包，源码包格式 
 $ R CMD build --binary pkgname
 #编译后打包，二进制格式。
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
   </channel>

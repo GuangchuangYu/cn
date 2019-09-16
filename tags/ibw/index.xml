@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ibw on Guangchuang Yu</title>
+    <title>IBW on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/ibw/</link>
-    <description>Recent content in Ibw on Guangchuang Yu</description>
+    <description>Recent content in IBW on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 18 Jul 2011 04:26:00 +0800</lastBuildDate>
@@ -19,9 +19,7 @@
       <guid>https://guangchuangyu.github.io/cn/2011/07/ibw2011/</guid>
       <description>&lt;p&gt;开完了IBW这个会，感觉比较面向学生，会议前的龙星课程，倒是不错，我就冲着它的题目过去的，我想听的是概率图模型和系统生物学，结果只有最后一天，早上讲了点bayesian network，下午讲了会GSEA，BN讲的只是基本的概念，GSEA讲的内容还不到位，只讲到fisher&amp;rsquo;s test做enrichment analysis，并没有讲如何把表达量通过某些方法把它转化为统计量，再进行enrichment analysis，没有考虑表达量，是不叫GSEA的，提出GSEA的那篇PNAS文章，讲的就是expression+prior knowledge (gene set)。&lt;/p&gt;
 
-&lt;p&gt;几天的时间，基本上是讲Hidden Markov Model用于序列比对，Prof Tang以前是在Waterman那里做post-doc，估计也是搞了很长时间的序列。我对这块兴趣不大。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;几天的时间，基本上是讲Hidden Markov Model用于序列比对，Prof Tang以前是在Waterman那里做post-doc，估计也是搞了很长时间的序列。我对这块兴趣不大。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -68,9 +66,7 @@ report an error message if the input file is in the wrong format.&lt;/p&gt;
 the likelihood)&lt;/p&gt;
 
 &lt;p&gt;ORF1: xxx ORF2: xxx&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/blockquote&gt;</description>
     </item>
     
   </channel>

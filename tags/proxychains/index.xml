@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Proxychains on Guangchuang Yu</title>
+    <title>proxychains on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/proxychains/</link>
-    <description>Recent content in Proxychains on Guangchuang Yu</description>
+    <description>Recent content in proxychains on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 30 Sep 2018 10:30:00 +0800</lastBuildDate>
@@ -34,9 +34,7 @@ dynamically linked programs through one or more SOCKS or HTTP
 proxies
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;它强制给定程序发起的TCP连接通过事先配置的代理。可以涵盖所有需要代理的情景。就以git为例，没有proxychains的话，就必须为每个协议（&lt;code&gt;https&lt;/code&gt;, &lt;code&gt;git&lt;/code&gt;, &lt;code&gt;ssh&lt;/code&gt;）按照git文档的要求分别设置代理，过程复杂且不稳定。有了&lt;code&gt;proxychains&lt;/code&gt;，这些完全可以不用管，当然应用场景不限于&lt;code&gt;git&lt;/code&gt;，任何一个需要代理的命令行程序都是一样在运行的指令前面加&lt;code&gt;proxychains&lt;/code&gt;完事。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;它强制给定程序发起的TCP连接通过事先配置的代理。可以涵盖所有需要代理的情景。就以git为例，没有proxychains的话，就必须为每个协议（&lt;code&gt;https&lt;/code&gt;, &lt;code&gt;git&lt;/code&gt;, &lt;code&gt;ssh&lt;/code&gt;）按照git文档的要求分别设置代理，过程复杂且不稳定。有了&lt;code&gt;proxychains&lt;/code&gt;，这些完全可以不用管，当然应用场景不限于&lt;code&gt;git&lt;/code&gt;，任何一个需要代理的命令行程序都是一样在运行的指令前面加&lt;code&gt;proxychains&lt;/code&gt;完事。&lt;/p&gt;</description>
     </item>
     
   </channel>

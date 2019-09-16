@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Semantic on Guangchuang Yu</title>
+    <title>semantic on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/semantic/</link>
-    <description>Recent content in Semantic on Guangchuang Yu</description>
+    <description>Recent content in semantic on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 10 Jul 2012 07:16:22 +0800</lastBuildDate>
@@ -17,9 +17,8 @@
       <pubDate>Tue, 10 Jul 2012 07:16:22 +0800</pubDate>
       
       <guid>https://guangchuangyu.github.io/cn/2012/07/tricky-things-in-r/</guid>
-      <description>&lt;hr /&gt;
-
-&lt;pre&gt;&lt;code&gt;/  ____    _                                                     \
+      <description>&lt;pre&gt;&lt;code&gt; ________________________________________________________________
+/  ____    _                                                     \
 | |  _ \  (_)___    __ ___      _____  ___  ___  _ __ ___   ___  |
 | | |_) | | / __|  / _` \ \ /\ / / _ \/ __|/ _ \| &#39;_ ` _ \ / _ \ |
 | |  _ &amp;lt;  | \__ \ | (_| |\ V  V /  __/\__ \ (_) | | | | | |  __/ |
@@ -37,9 +36,7 @@
 &lt;li&gt;赋值&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;从一开始学R就知道R的赋值符号和别的语言不一样，用的是&lt;code&gt;&amp;lt;-&lt;/code&gt;，虽然&lt;code&gt;=&lt;/code&gt;也用，很多书会告诉你两者是一样的，完全通用，不过用R的人习惯也推倡用&lt;code&gt;&amp;lt;-&lt;/code&gt;。所以我基本上就抛弃用&lt;code&gt;=&lt;/code&gt;号了，反正在ESS里用shift+-就会自动输入&lt;code&gt;&amp;lt;-&lt;/code&gt;，也是很方便的。直到有一天，我发现&lt;a href=&#34;https://guangchuangyu.github.io/2009/03/assignment-token-of-r/&#34;&gt;在switch里，必须用&lt;code&gt;=&lt;/code&gt;号&lt;/a&gt;，而不能用&lt;code&gt;&amp;lt;-&lt;/code&gt;，才发现坑爹啊，这两符号是不一样的。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;从一开始学R就知道R的赋值符号和别的语言不一样，用的是&lt;code&gt;&amp;lt;-&lt;/code&gt;，虽然&lt;code&gt;=&lt;/code&gt;也用，很多书会告诉你两者是一样的，完全通用，不过用R的人习惯也推倡用&lt;code&gt;&amp;lt;-&lt;/code&gt;。所以我基本上就抛弃用&lt;code&gt;=&lt;/code&gt;号了，反正在ESS里用shift+-就会自动输入&lt;code&gt;&amp;lt;-&lt;/code&gt;，也是很方便的。直到有一天，我发现&lt;a href=&#34;https://guangchuangyu.github.io/2009/03/assignment-token-of-r/&#34;&gt;在switch里，必须用&lt;code&gt;=&lt;/code&gt;号&lt;/a&gt;，而不能用&lt;code&gt;&amp;lt;-&lt;/code&gt;，才发现坑爹啊，这两符号是不一样的。&lt;/p&gt;</description>
     </item>
     
   </channel>

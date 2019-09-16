@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Geofacet on Guangchuang Yu</title>
+    <title>geofacet on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/geofacet/</link>
-    <description>Recent content in Geofacet on Guangchuang Yu</description>
+    <description>Recent content in geofacet on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 20 Sep 2017 14:13:35 +0800</lastBuildDate>
@@ -19,9 +19,7 @@
       <guid>https://guangchuangyu.github.io/cn/2017/09/geofacet_index/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/geofacet/Screenshot 2017-10-17 10.31.23.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;这个题目可以放好多不正经的图，我在这个公众号里面已经写过太多，比如《&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;amp;mid=2247483816&amp;amp;amp;idx=1&amp;amp;amp;sn=cbfbc284f4edb165ac65f7926f7f8fcc&amp;amp;amp;chksm=ec43b0efdb3439f91ec4f570f7be65e442e21e403481b969d69449464ae1986c7983551de04d#rd&#34;&gt;邪恶的曲线&lt;/a&gt;》和它的3D版本，《&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;amp;mid=2247484823&amp;amp;amp;idx=1&amp;amp;amp;sn=4af972da15535c1d7dcf837ace320592&amp;amp;amp;chksm=ec43b4d0db343dc6ec2e622523a5aabb67f25e4b9e4b93a67ab37125570fbab907741351da18#rd&#34;&gt;3D版邪恶的曲线&lt;/a&gt;》，但这里不涉及太多，只用&lt;code&gt;geofacet&lt;/code&gt;这个包为例。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;这个题目可以放好多不正经的图，我在这个公众号里面已经写过太多，比如《&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;amp;mid=2247483816&amp;amp;amp;idx=1&amp;amp;amp;sn=cbfbc284f4edb165ac65f7926f7f8fcc&amp;amp;amp;chksm=ec43b0efdb3439f91ec4f570f7be65e442e21e403481b969d69449464ae1986c7983551de04d#rd&#34;&gt;邪恶的曲线&lt;/a&gt;》和它的3D版本，《&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;amp;mid=2247484823&amp;amp;amp;idx=1&amp;amp;amp;sn=4af972da15535c1d7dcf837ace320592&amp;amp;amp;chksm=ec43b4d0db343dc6ec2e622523a5aabb67f25e4b9e4b93a67ab37125570fbab907741351da18#rd&#34;&gt;3D版邪恶的曲线&lt;/a&gt;》，但这里不涉及太多，只用&lt;code&gt;geofacet&lt;/code&gt;这个包为例。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -38,9 +36,7 @@
 
 &lt;p&gt;《&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;amp;mid=2247484489&amp;amp;amp;idx=1&amp;amp;amp;sn=36bbdee1da96aee301f217e61cc8e3b5&amp;amp;amp;chksm=ec43b50edb343c186a58494e32ffe7df6ae9d960a37772fb5887a9c3f7461ab906b90d1a34f0#rd&#34;&gt;按地理位置分面&lt;/a&gt;》一文最后我埋了个伏笔，写到最后的时候，我想到的是可以拿来画个元素周期表，但懒得搞，在《&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;amp;mid=2247484506&amp;amp;amp;idx=1&amp;amp;amp;sn=59bc85733a37c4aa8036e43c6d3e7523&amp;amp;amp;chksm=ec43b51ddb343c0b7417b8fe924a86d0d974163b39fe6c8aa72504d1e0ef4c3393aa41659de4#rd&#34;&gt;ggplot2分面之像素艺术&lt;/a&gt;》一文里用一只火鸡展示了用图来拼像素画的思路，回应了前文的伏笔。今天继续展示一个像素画，为了纪念我的iphone5S，当然我要画个苹果🍎出来。&lt;/p&gt;
 
-&lt;p&gt;这里的图，用的是emoji来画，如果你还不会用emoji来画图装逼，赶紧戳《&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484416&amp;amp;idx=1&amp;amp;sn=c089403a2b8ab03d241b6d99ef138f50&amp;amp;chksm=ec43b547db343c51bdae5f76b399072629720cf646ddc1c0b758c7c76d57e8b1e35b47221cf6&#34;&gt;看完此文, 你也能够大开脑洞, 上升逼格&lt;/a&gt;》。然后用&lt;code&gt;geofacet&lt;/code&gt;来拼出像素画，这个时候，你应该想到可以拿来拼你的照片，画个某个形状的照片墙了。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;这里的图，用的是emoji来画，如果你还不会用emoji来画图装逼，赶紧戳《&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484416&amp;amp;idx=1&amp;amp;sn=c089403a2b8ab03d241b6d99ef138f50&amp;amp;chksm=ec43b547db343c51bdae5f76b399072629720cf646ddc1c0b758c7c76d57e8b1e35b47221cf6&#34;&gt;看完此文, 你也能够大开脑洞, 上升逼格&lt;/a&gt;》。然后用&lt;code&gt;geofacet&lt;/code&gt;来拼出像素画，这个时候，你应该想到可以拿来拼你的照片，画个某个形状的照片墙了。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -53,9 +49,7 @@
 
 &lt;hr /&gt;
 
-&lt;p&gt;然而看到这个心型，难道你在感觉瞎搞的时候，心中没闪过一个念头？这玩意可以瞎搞！瞎搞！瞎搞啊！&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;然而看到这个心型，难道你在感觉瞎搞的时候，心中没闪过一个念头？这玩意可以瞎搞！瞎搞！瞎搞啊！&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -76,9 +70,7 @@
 6    AK Alaska    insured   50
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;我们正常画图是这样子的：&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;我们正常画图是这样子的：&lt;/p&gt;</description>
     </item>
     
   </channel>

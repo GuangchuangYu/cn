@@ -54,9 +54,7 @@ idmap &amp;lt;- getBM(attributes=c(&amp;quot;codelink&amp;quot;,&amp;quot;refseq
                             &amp;quot;embl&amp;quot;,&amp;quot;hgnc_id&amp;quot;,&amp;quot;hgnc_symbol&amp;quot;), 
                filters =&amp;quot;codelink&amp;quot;, values=mrna_id[,1],
                mart=ensembl,output=&amp;quot;list&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
@@ -75,9 +73,7 @@ idmap &amp;lt;- getBM(attributes=c(&amp;quot;codelink&amp;quot;,&amp;quot;refseq
 &lt;a href=&#34;http://bioconductor.org/packages/devel/bioc/html/GOSemSim.html&#34;&gt;http://bioconductor.org/packages/devel/bioc/html/GOSemSim.html&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;支持human, rat, mouse, fly, yeast, zebrafish,worm, E coli,
-arabidopsis等物种。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+arabidopsis等物种。&lt;/p&gt;</description>
     </item>
     
   </channel>

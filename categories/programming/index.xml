@@ -36,9 +36,7 @@ and miss法估计。&lt;/p&gt;
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;hit and miss方法收敛太慢，效率并不高，通常所说的MC积分是指下面这个方法。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;hit and miss方法收敛太慢，效率并不高，通常所说的MC积分是指下面这个方法。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -60,9 +58,7 @@ and miss法估计。&lt;/p&gt;
     pi &amp;lt;- 4*hits/N
     return(pi)
 }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
@@ -81,9 +77,7 @@ and miss法估计。&lt;/p&gt;
 
 &lt;p&gt;实现两个数的加和，这是人类可读的语言，而不是一串01所组成的不可读的机器语言。&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;抽象&lt;/strong&gt;是最关键的。所有的编程语言都是为了实现抽象。越是高级的语言，抽象度越高，抽象度越高越好！&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;strong&gt;抽象&lt;/strong&gt;是最关键的。所有的编程语言都是为了实现抽象。越是高级的语言，抽象度越高，抽象度越高越好！&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -93,9 +87,7 @@ and miss法估计。&lt;/p&gt;
       
       <guid>https://guangchuangyu.github.io/cn/2008/11/bisect-to-solve-equation/</guid>
       <description>&lt;p&gt;翻看了以前写的&lt;a href=&#34;https://guangchuangyu.github.io/cn/2007/06/newton-raphson-method/&#34;&gt;使用Newton-Raphson Method求一个数的开方&lt;/a&gt;，想到其实也可以用中值定理来实现。
-中值定理：f(x)是一个连续性的函数，在[u,v]区间内，当c的值位于f(u)和f(v)之间时，至少存在一个点，满足f(x) = c 当f(u)和f(v)一正一负时，那么在[u,v]之间至少有一个根的存在，这个定理本来就是拿来证明根的存在的，但是其实也可以用来求解根。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+中值定理：f(x)是一个连续性的函数，在[u,v]区间内，当c的值位于f(u)和f(v)之间时，至少存在一个点，满足f(x) = c 当f(u)和f(v)一正一负时，那么在[u,v]之间至少有一个根的存在，这个定理本来就是拿来证明根的存在的，但是其实也可以用来求解根。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -113,9 +105,7 @@ and miss法估计。&lt;/p&gt;
 &lt;p&gt;下面利用此法来求一个数的开方。 $f(x) = x^2 - a$ 有根$\sqrt{a}$,
 由$f&amp;rsquo;(x_n) = 2x&lt;em&gt;n$, 代入式&lt;code&gt;&amp;lt;Eq. 1&amp;gt;&lt;/code&gt;可得$x&lt;/em&gt;{n+1} = (x_n + a/x_n)/2$; 当i -&amp;gt; INF 时, $x_i$ -&amp;gt; $\sqrt{a}$;&lt;/p&gt;
 
-&lt;h2 id=&#34;c-implementation&#34;&gt;C implementation&lt;/h2&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;h2 id=&#34;c-implementation&#34;&gt;C implementation&lt;/h2&gt;</description>
     </item>
     
   </channel>

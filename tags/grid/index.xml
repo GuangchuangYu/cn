@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Grid on Guangchuang Yu</title>
+    <title>grid on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/grid/</link>
-    <description>Recent content in Grid on Guangchuang Yu</description>
+    <description>Recent content in grid on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 11 Nov 2018 23:53:00 +0800</lastBuildDate>
@@ -22,9 +22,7 @@
 &lt;p&gt;如果有兴趣的话，应该安装我fork的版本。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;devtools::install_github(&amp;quot;GuangchuangYu/UpSetR&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
@@ -45,9 +43,7 @@ x &amp;lt;- meme(u)
 print(x)
 grid.text(&amp;quot;biobabble&amp;quot;, x=.9, y=.05, 
 	gp=gpar(col=&#39;white&#39;, cex=1.2))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
@@ -75,9 +71,7 @@ grid.text(&amp;quot;biobabble&amp;quot;, x=.9, y=.05,
 
 &lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/meme/shadowtext.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;我们知道meme包是grid写的，我的输出是grob对象，当我半夜调试到2点，带着兴奋入睡之后，一点都睡不安稳，早上早早就迷迷糊糊在床上想着，既然我造出了文本阴影效果的grob对象，我应该封装成geom图层，送给ggplot2用户。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;我们知道meme包是grid写的，我的输出是grob对象，当我半夜调试到2点，带着兴奋入睡之后，一点都睡不安稳，早上早早就迷迷糊糊在床上想着，既然我造出了文本阴影效果的grob对象，我应该封装成geom图层，送给ggplot2用户。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -97,9 +91,7 @@ d &amp;lt;- data.frame(x=rnorm(10), y=rnorm(10), lab=LETTERS[1:10])
 p &amp;lt;- ggplot(d, aes(x, y)) + 
     geom_text(aes(label=lab, color=lab), size=10) + 
 	geom_text(aes(y, x, label=lab), size=3)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
   </channel>

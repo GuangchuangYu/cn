@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Pca on Guangchuang Yu</title>
+    <title>PCA on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/pca/</link>
-    <description>Recent content in Pca on Guangchuang Yu</description>
+    <description>Recent content in PCA on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 15 Jul 2014 11:37:55 +0800</lastBuildDate>
@@ -78,9 +78,7 @@ Proportion of Variance 0.00042
 Cumulative Proportion  1.00000
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;PC1和PC2能够解释79.8%的variation。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;PC1和PC2能够解释79.8%的variation。&lt;/p&gt;</description>
     </item>
     
   </channel>

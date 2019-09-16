@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Chipseq on Guangchuang Yu</title>
+    <title>ChIPseq on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/categories/chipseq/</link>
-    <description>Recent content in Chipseq on Guangchuang Yu</description>
+    <description>Recent content in ChIPseq on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 10 Jan 2019 12:20:16 +0800</lastBuildDate>
@@ -27,9 +27,7 @@
 &lt;p&gt;-Andrew&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://support.bioconductor.org/p/104676/&#34;&gt;https://support.bioconductor.org/p/104676/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://support.bioconductor.org/p/104676/&#34;&gt;https://support.bioconductor.org/p/104676/&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -40,9 +38,7 @@
       <guid>https://guangchuangyu.github.io/cn/2018/11/how-to-define-downstream-range/</guid>
       <description>&lt;p&gt;首先基因下游是什么？&lt;/p&gt;
 
-&lt;p&gt;我们知道上游很重要啊，因为可能会调控转录，但注释的时候，没有上游这个东西，为什么呢？因为转录起始位点TSS的上下游被定义为promoter，所以啊上游被包括在promoter中，也就没有上游这个category了。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;我们知道上游很重要啊，因为可能会调控转录，但注释的时候，没有上游这个东西，为什么呢？因为转录起始位点TSS的上下游被定义为promoter，所以啊上游被包括在promoter中，也就没有上游这个category了。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -66,9 +62,7 @@
 &lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/98k_L3CmjH817xMF2VfYtA&#34;&gt;CS9: GEO数据挖掘&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;ChIPseeker这个系列，从《&lt;a href=&#34;https://mp.weixin.qq.com/s/lFi1m7k-9t6nD0SER1r1hw&#34;&gt;CS0: ChIPseq从入门到放弃&lt;/a&gt;》到现在CS10，总共11篇，第一篇以八卦开始，我想很有必要以八卦来结束。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;ChIPseeker这个系列，从《&lt;a href=&#34;https://mp.weixin.qq.com/s/lFi1m7k-9t6nD0SER1r1hw&#34;&gt;CS0: ChIPseq从入门到放弃&lt;/a&gt;》到现在CS10，总共11篇，第一篇以八卦开始，我想很有必要以八卦来结束。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -87,9 +81,7 @@
 
 &lt;p&gt;并没有方法可以大规模地预测未知的共同调控因子，而数据挖掘就是要给我们这种预测的能力。&lt;/p&gt;
 
-&lt;p&gt;我当年在写ChIPseeker的时候，我有纠结是写篇Bioinformatics的application note呢，还是写篇长文灌水NAR，毕竟NAR影响因子高一点，最后还是发了Bioinformatics，因为我没钱，囧，Bioinformatics不要版面费啊。然后限于篇幅，ChIPseeker有大量可视化的函数，我在文章中一张图都没放！！！如果当时决定发NAR的话，这个数据挖掘这一块我就会写多点。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;我当年在写ChIPseeker的时候，我有纠结是写篇Bioinformatics的application note呢，还是写篇长文灌水NAR，毕竟NAR影响因子高一点，最后还是发了Bioinformatics，因为我没钱，囧，Bioinformatics不要版面费啊。然后限于篇幅，ChIPseeker有大量可视化的函数，我在文章中一张图都没放！！！如果当时决定发NAR的话，这个数据挖掘这一块我就会写多点。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -100,9 +92,7 @@
       <guid>https://guangchuangyu.github.io/cn/2017/12/genomic-coordination-enrichment-analysis/</guid>
       <description>&lt;p&gt;在《&lt;a href=&#34;https://mp.weixin.qq.com/s/v61LjQEfyi_CZucHW53ETw&#34;&gt;CS7：Genomic coordination的富集性分析（1）&lt;/a&gt;》说到了seq2pathway这个包，其实是两部曲，seq2gene-&amp;gt;gene2pathway，无非是把测序片段用临近的基因注释，包括和TSS overlap的基因，宿主基因，上下游的基因等，然后拿这些基因跑ORA，做富集，仅此而已，这个包支持的物种极有限，《&lt;a href=&#34;http://mp.weixin.qq.com/s/_OPzvaEAbiMolCA2mqJXLw&#34;&gt;CS4：关于ChIPseq注释的几个问题&lt;/a&gt;》这一文中讲到ChIPseeker支持所有有基因组注释的物种，而《&lt;a href=&#34;http://mp.weixin.qq.com/s/ScwaofLd_ybfECYjL1dGow&#34;&gt;clusterProfiler for enrichment analysis&lt;/a&gt;》也支持所有物种（即使你自己跑的电子注释，也能支持），那么使用ChIPseeker来做基因注释，然后衔接clusterProfiler就可以支持所有物种的测序片段进行功能富集分析了。&lt;/p&gt;
 
-&lt;p&gt;《&lt;a href=&#34;http://mp.weixin.qq.com/s/vWTf59KDs1lp_sQXjEhI_g&#34;&gt;CS3: peak注释&lt;/a&gt;》本身就支持几种注释，另外我写了一个&lt;code&gt;seq2gene&lt;/code&gt;的函数，套用&lt;code&gt;seq2pathway&lt;/code&gt;的思路，把一个基因位置上所有关联的基因全部返回来，我们可以使用它去把基因位置信息转换成基因列表，然后用于富集分析，还是熟悉的味道，还是熟悉的配方🦄&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;《&lt;a href=&#34;http://mp.weixin.qq.com/s/vWTf59KDs1lp_sQXjEhI_g&#34;&gt;CS3: peak注释&lt;/a&gt;》本身就支持几种注释，另外我写了一个&lt;code&gt;seq2gene&lt;/code&gt;的函数，套用&lt;code&gt;seq2pathway&lt;/code&gt;的思路，把一个基因位置上所有关联的基因全部返回来，我们可以使用它去把基因位置信息转换成基因列表，然后用于富集分析，还是熟悉的味道，还是熟悉的配方🦄&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -135,35 +125,7 @@
 cd galaxy
 ## switch to master branch, stable release
 git checkout -b master origin/master
-```   	
-
-
-
-
-### 安装
-
-
-```bash
-cd galaxy/config/
-cp galaxy.ini.sample galaxy.ini
-```   	
-
-编辑_galaxy.ini_文件
-
-+ find the line: admin_users
-+ remove the # and add an email for your account
-
-
-
-### 运行
-
-```bash
-# go back to galaxy folder
-cd ..
-sh run.sh
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;然后就可以用浏览器打开&lt;a href=&#34;http://localhost:8080&#34;&gt;http://localhost:8080&lt;/a&gt;，使用galaxy，就是这么简单。&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
@@ -195,9 +157,7 @@ sh run.sh
 &lt;li&gt;makeTxDbFromBiomart: 通过ensembl在线制作TxDb&lt;/li&gt;
 &lt;li&gt;makeTxDbFromGRanges：通过GRanges对象制作TxDb&lt;/li&gt;
 &lt;li&gt;makeTxDbFromGFF：通过解析GFF文件制作TxDb&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -240,8 +200,7 @@ sh run.sh
 &lt;p&gt;这里需要注意的是，启动子区域是没有明确的定义的，所以你可能需要指定&lt;strong&gt;tssRegion&lt;/strong&gt;，把基因起始转录位点的上下游区域来做为启动子区域。&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;有了这两个输入（BED文件和TxDb对象），你就可以跑注释了，然后就可以出结果了。
-&lt;/p&gt;</description>
+&lt;p&gt;有了这两个输入（BED文件和TxDb对象），你就可以跑注释了，然后就可以出结果了。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -262,9 +221,7 @@ sh run.sh
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;2007年来自三个不同的实验室，几乎是同时间出来（最长差不了3个月），分别发CNS，一起定义了这个&lt;code&gt;ChIPseq&lt;/code&gt;技术。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;2007年来自三个不同的实验室，几乎是同时间出来（最长差不了3个月），分别发CNS，一起定义了这个&lt;code&gt;ChIPseq&lt;/code&gt;技术。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -279,9 +236,7 @@ sh run.sh
 
 &lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/2017/1487166664.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;当时一开始使用ChIPpeakAnno做注释，但用UCSC genome browser检验结果的时候，发现对不上。在对ChIPpeakAnno包不满意的情况下，开始着手写ChIPseeker，其实在使用ChIPpeakAnno的时候，我就有写代码对结果做一些可视化，所以未有ChIPseeker先有ChIPseeker的部分可视化功能。当时写了篇博客文说ChIPpeakAnno的问题，一个月后就在Bioconductor上发表了ChIPseeker，这包完全是我半夜在宿舍里写出来的。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;当时一开始使用ChIPpeakAnno做注释，但用UCSC genome browser检验结果的时候，发现对不上。在对ChIPpeakAnno包不满意的情况下，开始着手写ChIPseeker，其实在使用ChIPpeakAnno的时候，我就有写代码对结果做一些可视化，所以未有ChIPseeker先有ChIPseeker的部分可视化功能。当时写了篇博客文说ChIPpeakAnno的问题，一个月后就在Bioconductor上发表了ChIPseeker，这包完全是我半夜在宿舍里写出来的。&lt;/p&gt;</description>
     </item>
     
   </channel>

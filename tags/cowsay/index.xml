@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cowsay on Guangchuang Yu</title>
+    <title>cowsay on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/cowsay/</link>
-    <description>Recent content in Cowsay on Guangchuang Yu</description>
+    <description>Recent content in cowsay on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 13 Dec 2016 00:53:00 +0800</lastBuildDate>
@@ -19,9 +19,7 @@
       <guid>https://guangchuangyu.github.io/cn/2016/12/clifun/</guid>
       <description>&lt;p&gt;天天活在命令行下，需要一些有趣的小命令来调节一下枯燥的生活（其实是需要装装逼）。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/clifun/Screen Shot 2016-12-12 at 1.42.00 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;https://guangchuangyu.github.io/blog_images/R/clifun/Screen Shot 2016-12-12 at 1.42.00 PM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

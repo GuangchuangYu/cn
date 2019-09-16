@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Bmc on Guangchuang Yu</title>
+    <title>BMC on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/bmc/</link>
-    <description>Recent content in Bmc on Guangchuang Yu</description>
+    <description>Recent content in BMC on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 11 Nov 2017 20:00:43 +0800</lastBuildDate>
@@ -21,9 +21,7 @@
 
 &lt;p&gt;Scientific Report上有一篇文章是抄袭的，然而杂志最终决定不撤稿，而被抄的人是Johns Hopkins的，于是jh的人全都要离开Scientific Report的编委。我也被人抄了不撤稿，然而我人微言轻，不单被编辑部欺负，还要被我们国内生信界的网红欺负。&lt;/p&gt;
 
-&lt;p&gt;SR与jh的事情，我和BMC的故事，是相似的，我们可以想像这样的学术界惨剧比想像中的要多。学术圈，真是有时候得呵呵哒。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;SR与jh的事情，我和BMC的故事，是相似的，我们可以想像这样的学术界惨剧比想像中的要多。学术圈，真是有时候得呵呵哒。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -57,9 +55,7 @@
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzI5NjUyNzkxMg==&amp;amp;mid=2247484640&amp;amp;idx=1&amp;amp;sn=478f77b8f03eb9793bafc8f18e126097&amp;amp;chksm=ec43b5a7db343cb11fc9e0c232e0de0db7ec444abf5e8e3bd703f83a3cb31695f10359b47b8f#rd&#34;&gt;从业超过10年，未见过如此厚颜无耻之人&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -86,9 +82,7 @@
 
 &lt;p&gt;这段话很有水平，首先是&lt;strong&gt;不对等类比&lt;/strong&gt;，以2012年NAR的符合学术规范的文章来类比一篇抄袭文章，试图化抄袭于无形中。&lt;/p&gt;
 
-&lt;p&gt;我们来看所谓的一节&lt;strong&gt;专门介绍&lt;/strong&gt;和标明引用是怎样的：&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;我们来看所谓的一节&lt;strong&gt;专门介绍&lt;/strong&gt;和标明引用是怎样的：&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -115,9 +109,7 @@
 
 &lt;p&gt;他的邮件大概讲了和编辑并无操作，软件包已经按要求更新，犯错是源自于无知。&lt;/p&gt;
 
-&lt;h2 id=&#34;这事最后怎么处理&#34;&gt;这事最后怎么处理？&lt;/h2&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;h2 id=&#34;这事最后怎么处理&#34;&gt;这事最后怎么处理？&lt;/h2&gt;</description>
     </item>
     
     <item>
@@ -144,9 +136,7 @@
 
 &lt;p&gt;做语义相似性度量也就那么几个包，我看了一遍之后，发现&lt;strong&gt;HPOSim&lt;/strong&gt;抄了&lt;strong&gt;DOSim&lt;/strong&gt;，你妹啊，用心良苦，同样/相似的东西换不同的包来抄！抄袭惯犯了，事实证明，走捷径的人，是不可能好好走路的，一旦尝到了甜头，必然是铤而走险！&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;以下两个截屏，大家感受一下，左边是HPOSim，右边是DOSim：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;strong&gt;以下两个截屏，大家感受一下，左边是HPOSim，右边是DOSim：&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -171,9 +161,7 @@
 
 &lt;h2 id=&#34;抄了我的代码-之后厚颜无耻地感谢我说学了很多东西-他的良心真的不会痛吗&#34;&gt;抄了我的代码，之后厚颜无耻地感谢我说学了很多东西，他的良心真的不会痛吗？&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://media.giphy.com/media/EvsmQokxE8wi4/giphy.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;https://media.giphy.com/media/EvsmQokxE8wi4/giphy.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -204,9 +192,7 @@ noun [ mass noun ]
 the practice of taking someone else&#39;s work or ideas and passing them off as one&#39;s own. 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;结果-plagiarism-到了编辑部那里变成了-erratum&#34;&gt;结果&lt;strong&gt;plagiarism&lt;/strong&gt;到了编辑部那里变成了&lt;strong&gt;erratum&lt;/strong&gt;.&lt;/h3&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;h3 id=&#34;结果-plagiarism-到了编辑部那里变成了-erratum&#34;&gt;结果&lt;strong&gt;plagiarism&lt;/strong&gt;到了编辑部那里变成了&lt;strong&gt;erratum&lt;/strong&gt;.&lt;/h3&gt;</description>
     </item>
     
     <item>
@@ -218,8 +204,7 @@ the practice of taking someone else&#39;s work or ideas and passing them off as 
       <description>&lt;p&gt;&lt;a href=&#34;http://cran.r-project.org/web/packages/ppiPre/index.html&#34;&gt;ppiPre&lt;/a&gt;抄袭了&lt;a href=&#34;https://github.com/GuangchuangYu/GOSemSim&#34;&gt;GOSemSim&lt;/a&gt;的代码，证据当然非常充分，比对一下代码就知道了，我在&lt;a href=&#34;http://guangchuangyu.github.io/2014/11/proper-use-of-gosemsim/&#34;&gt;Proper use of GOSemSim&lt;/a&gt;一文中，做出了一些比较，另外也可以参考&lt;a href=&#34;https://github.com/cran/ppiPre/commit/c267700ca09a599dab77326959a0aa6a2980ceed&#34;&gt;github&lt;/a&gt;页面，github记录了ppiPre被暴光抄袭之后所做的修改。
 从我给BMC Systems Biology的编辑反馈这件事开始，在这铁板钉钉的事实面前，编辑拖了整整一年，而这一年时间过去了，ppiPre仍没有被编辑部受理。从最早反应这件事情，编辑信誓旦旦说他们很重视这种事情，到后面对我的邮件视而不见，我愿意相信编辑部处理这些事情，需要时间，他们有自己的规则，但一年的时间，不回邮件，冷处理以淡化此事，这绝对不是应该有的规则。 在编辑一直无视我的情况下，我写出了&lt;a href=&#34;http://guangchuangyu.github.io/2014/11/proper-use-of-gosemsim/&#34;&gt;Proper use of GOSemSim&lt;/a&gt;一文，列举了一些一模一样的代码，并告知CRAN，当ppiPre被CRAN移除时，我写信给编辑，这时候，编辑告诉我说他们准备要去联系作者了，这时候已经过去半年了，是的！你没有看错，半年过去了，编辑说他们还没去联系作者！我是不相信的。必然是联系了之后，有某些不为人知的原因，所以编辑态度反常，对抄袭这种打鸡血的事情，不断在打太极。&lt;/p&gt;
 
-&lt;p&gt;再过二个月，ppiPre的作者&lt;a href=&#34;http://web.xidian.edu.cn/dengyue/&#34;&gt;邓岳&lt;/a&gt;给我写了信：
-&lt;/p&gt;</description>
+&lt;p&gt;再过二个月，ppiPre的作者&lt;a href=&#34;http://web.xidian.edu.cn/dengyue/&#34;&gt;邓岳&lt;/a&gt;给我写了信：&lt;/p&gt;</description>
     </item>
     
   </channel>

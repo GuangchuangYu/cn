@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Power on Guangchuang Yu</title>
+    <title>power on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/power/</link>
-    <description>Recent content in Power on Guangchuang Yu</description>
+    <description>Recent content in power on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 24 Jun 2011 06:10:37 +0800</lastBuildDate>
@@ -42,9 +42,7 @@ from the same distribution. All of these methods have a basic theme of
 doing things on the rank of items in a distribution, not the actual
 level. So - if in doubt, do things on the rank of metric, rather than
 the metric itself.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/blockquote&gt;</description>
     </item>
     
   </channel>

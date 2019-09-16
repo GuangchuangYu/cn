@@ -6,10 +6,280 @@
     <description>Recent content in Tags on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Aug 2018 18:30:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 25 Apr 2019 05:54:16 +0800</lastBuildDate>
     
 	<atom:link href="https://guangchuangyu.github.io/cn/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>bioinformatics</title>
+      <link>https://guangchuangyu.github.io/cn/tags/bioinformatics/</link>
+      <pubDate>Thu, 25 Apr 2019 05:54:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/bioinformatics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ggtree</title>
+      <link>https://guangchuangyu.github.io/cn/tags/ggtree/</link>
+      <pubDate>Thu, 25 Apr 2019 05:54:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/ggtree/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>summary</title>
+      <link>https://guangchuangyu.github.io/cn/tags/summary/</link>
+      <pubDate>Thu, 25 Apr 2019 05:54:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/summary/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>export</title>
+      <link>https://guangchuangyu.github.io/cn/tags/export/</link>
+      <pubDate>Mon, 01 Apr 2019 12:20:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/export/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ggplot2</title>
+      <link>https://guangchuangyu.github.io/cn/tags/ggplot2/</link>
+      <pubDate>Mon, 01 Apr 2019 12:20:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/ggplot2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>author</title>
+      <link>https://guangchuangyu.github.io/cn/tags/author/</link>
+      <pubDate>Thu, 28 Mar 2019 15:10:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/author/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>distance</title>
+      <link>https://guangchuangyu.github.io/cn/tags/distance/</link>
+      <pubDate>Thu, 14 Mar 2019 12:37:55 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/distance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ggupset</title>
+      <link>https://guangchuangyu.github.io/cn/tags/ggupset/</link>
+      <pubDate>Mon, 11 Mar 2019 09:33:50 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/ggupset/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gogadget</title>
+      <link>https://guangchuangyu.github.io/cn/tags/gogadget/</link>
+      <pubDate>Fri, 08 Mar 2019 12:23:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/gogadget/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>biobabble</title>
+      <link>https://guangchuangyu.github.io/cn/tags/biobabble/</link>
+      <pubDate>Tue, 05 Mar 2019 00:30:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/biobabble/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hku</title>
+      <link>https://guangchuangyu.github.io/cn/tags/hku/</link>
+      <pubDate>Tue, 05 Mar 2019 00:30:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/hku/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ggplotify</title>
+      <link>https://guangchuangyu.github.io/cn/tags/ggplotify/</link>
+      <pubDate>Sun, 03 Mar 2019 12:23:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/ggplotify/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>google</title>
+      <link>https://guangchuangyu.github.io/cn/tags/google/</link>
+      <pubDate>Wed, 16 Jan 2019 15:10:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/google/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>clusterProfiler</title>
+      <link>https://guangchuangyu.github.io/cn/tags/clusterprofiler/</link>
+      <pubDate>Mon, 14 Jan 2019 15:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/clusterprofiler/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OrgDb</title>
+      <link>https://guangchuangyu.github.io/cn/tags/orgdb/</link>
+      <pubDate>Mon, 14 Jan 2019 15:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/orgdb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>setReadable</title>
+      <link>https://guangchuangyu.github.io/cn/tags/setreadable/</link>
+      <pubDate>Mon, 14 Jan 2019 15:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/setreadable/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ChIPseeker</title>
+      <link>https://guangchuangyu.github.io/cn/tags/chipseeker/</link>
+      <pubDate>Thu, 10 Jan 2019 12:20:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/chipseeker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>interactive</title>
+      <link>https://guangchuangyu.github.io/cn/tags/interactive/</link>
+      <pubDate>Wed, 28 Nov 2018 11:08:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/interactive/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>arch</title>
+      <link>https://guangchuangyu.github.io/cn/tags/arch/</link>
+      <pubDate>Mon, 26 Nov 2018 00:22:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/arch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DOSE</title>
+      <link>https://guangchuangyu.github.io/cn/tags/dose/</link>
+      <pubDate>Sun, 25 Nov 2018 01:23:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/dose/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cowplot</title>
+      <link>https://guangchuangyu.github.io/cn/tags/cowplot/</link>
+      <pubDate>Sun, 11 Nov 2018 23:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/cowplot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>grid</title>
+      <link>https://guangchuangyu.github.io/cn/tags/grid/</link>
+      <pubDate>Sun, 11 Nov 2018 23:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/grid/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UpSetR</title>
+      <link>https://guangchuangyu.github.io/cn/tags/upsetr/</link>
+      <pubDate>Sun, 11 Nov 2018 23:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/upsetr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gglayer</title>
+      <link>https://guangchuangyu.github.io/cn/tags/gglayer/</link>
+      <pubDate>Fri, 09 Nov 2018 12:21:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/gglayer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bug</title>
+      <link>https://guangchuangyu.github.io/cn/tags/bug/</link>
+      <pubDate>Mon, 05 Nov 2018 10:10:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/bug/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PhD</title>
+      <link>https://guangchuangyu.github.io/cn/tags/phd/</link>
+      <pubDate>Thu, 18 Oct 2018 16:30:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/phd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ggrough</title>
+      <link>https://guangchuangyu.github.io/cn/tags/ggrough/</link>
+      <pubDate>Mon, 15 Oct 2018 00:21:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/ggrough/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>proxy</title>
+      <link>https://guangchuangyu.github.io/cn/tags/proxy/</link>
+      <pubDate>Sun, 30 Sep 2018 10:30:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/proxy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>proxychains</title>
+      <link>https://guangchuangyu.github.io/cn/tags/proxychains/</link>
+      <pubDate>Sun, 30 Sep 2018 10:30:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/proxychains/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bioconductor</title>
+      <link>https://guangchuangyu.github.io/cn/tags/bioconductor/</link>
+      <pubDate>Tue, 18 Sep 2018 13:21:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/bioconductor/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>3d</title>
@@ -21,358 +291,7 @@
     </item>
     
     <item>
-      <title>Alignment</title>
-      <link>https://guangchuangyu.github.io/cn/tags/alignment/</link>
-      <pubDate>Fri, 22 Dec 2017 13:50:22 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/alignment/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Amos</title>
-      <link>https://guangchuangyu.github.io/cn/tags/amos/</link>
-      <pubDate>Tue, 23 Jun 2015 07:46:16 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/amos/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Arch</title>
-      <link>https://guangchuangyu.github.io/cn/tags/arch/</link>
-      <pubDate>Mon, 26 Nov 2018 00:22:16 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/arch/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Archlinux</title>
-      <link>https://guangchuangyu.github.io/cn/tags/archlinux/</link>
-      <pubDate>Sun, 09 Jul 2017 07:57:46 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/archlinux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Babble</title>
-      <link>https://guangchuangyu.github.io/cn/tags/babble/</link>
-      <pubDate>Fri, 01 Apr 2011 10:48:09 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/babble/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Baidu</title>
-      <link>https://guangchuangyu.github.io/cn/tags/baidu/</link>
-      <pubDate>Mon, 17 Jul 2017 13:40:22 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/baidu/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bash</title>
-      <link>https://guangchuangyu.github.io/cn/tags/bash/</link>
-      <pubDate>Sun, 22 Jul 2018 04:30:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/bash/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bgi</title>
-      <link>https://guangchuangyu.github.io/cn/tags/bgi/</link>
-      <pubDate>Thu, 02 Nov 2017 20:23:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/bgi/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Biobabble</title>
-      <link>https://guangchuangyu.github.io/cn/tags/biobabble/</link>
-      <pubDate>Tue, 05 Mar 2019 00:30:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/biobabble/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bioc</title>
-      <link>https://guangchuangyu.github.io/cn/tags/bioc/</link>
-      <pubDate>Wed, 13 Jul 2016 21:06:59 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/bioc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bioconductor</title>
-      <link>https://guangchuangyu.github.io/cn/tags/bioconductor/</link>
-      <pubDate>Tue, 18 Sep 2018 13:21:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/bioconductor/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bioedit</title>
-      <link>https://guangchuangyu.github.io/cn/tags/bioedit/</link>
-      <pubDate>Mon, 27 Feb 2017 13:40:22 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/bioedit/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Biomart</title>
-      <link>https://guangchuangyu.github.io/cn/tags/biomart/</link>
-      <pubDate>Tue, 23 Sep 2008 01:18:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/biomart/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Biosyntax</title>
-      <link>https://guangchuangyu.github.io/cn/tags/biosyntax/</link>
-      <pubDate>Fri, 22 Dec 2017 13:50:22 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/biosyntax/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Blast</title>
-      <link>https://guangchuangyu.github.io/cn/tags/blast/</link>
-      <pubDate>Thu, 17 Nov 2016 00:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/blast/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bmc</title>
-      <link>https://guangchuangyu.github.io/cn/tags/bmc/</link>
-      <pubDate>Sat, 11 Nov 2017 20:00:43 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/bmc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Book</title>
-      <link>https://guangchuangyu.github.io/cn/tags/book/</link>
-      <pubDate>Sat, 24 Sep 2011 08:57:48 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/book/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bootstrap</title>
-      <link>https://guangchuangyu.github.io/cn/tags/bootstrap/</link>
-      <pubDate>Fri, 24 Jun 2011 06:10:37 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/bootstrap/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Boxplot</title>
-      <link>https://guangchuangyu.github.io/cn/tags/boxplot/</link>
-      <pubDate>Mon, 30 Oct 2017 00:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/boxplot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bug</title>
-      <link>https://guangchuangyu.github.io/cn/tags/bug/</link>
-      <pubDate>Mon, 05 Nov 2018 10:10:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/bug/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>C</title>
-      <link>https://guangchuangyu.github.io/cn/tags/c/</link>
-      <pubDate>Sun, 14 Dec 2008 09:18:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/c/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Calculus</title>
-      <link>https://guangchuangyu.github.io/cn/tags/calculus/</link>
-      <pubDate>Sat, 02 Jun 2007 13:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/calculus/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cancer</title>
-      <link>https://guangchuangyu.github.io/cn/tags/cancer/</link>
-      <pubDate>Tue, 23 Nov 2010 02:22:22 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/cancer/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Chipseeker</title>
-      <link>https://guangchuangyu.github.io/cn/tags/chipseeker/</link>
-      <pubDate>Thu, 10 Jan 2019 12:20:16 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/chipseeker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Chipseq</title>
-      <link>https://guangchuangyu.github.io/cn/tags/chipseq/</link>
-      <pubDate>Thu, 09 Mar 2017 00:13:57 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/chipseq/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Chocolatey</title>
-      <link>https://guangchuangyu.github.io/cn/tags/chocolatey/</link>
-      <pubDate>Tue, 12 Jun 2018 12:15:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/chocolatey/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Chrome</title>
-      <link>https://guangchuangyu.github.io/cn/tags/chrome/</link>
-      <pubDate>Wed, 26 Jul 2017 07:05:22 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/chrome/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Clifun</title>
-      <link>https://guangchuangyu.github.io/cn/tags/clifun/</link>
-      <pubDate>Tue, 13 Dec 2016 00:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/clifun/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Clusterprofiler</title>
-      <link>https://guangchuangyu.github.io/cn/tags/clusterprofiler/</link>
-      <pubDate>Mon, 14 Jan 2019 15:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/clusterprofiler/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Codelink</title>
-      <link>https://guangchuangyu.github.io/cn/tags/codelink/</link>
-      <pubDate>Tue, 23 Sep 2008 01:18:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/codelink/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Compilation</title>
-      <link>https://guangchuangyu.github.io/cn/tags/compilation/</link>
-      <pubDate>Thu, 24 Jul 2014 04:22:35 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/compilation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cormut</title>
-      <link>https://guangchuangyu.github.io/cn/tags/cormut/</link>
-      <pubDate>Tue, 17 Jan 2017 12:23:16 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/cormut/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cowplot</title>
-      <link>https://guangchuangyu.github.io/cn/tags/cowplot/</link>
-      <pubDate>Sun, 11 Nov 2018 23:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/cowplot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cowsay</title>
-      <link>https://guangchuangyu.github.io/cn/tags/cowsay/</link>
-      <pubDate>Tue, 13 Dec 2016 00:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/cowsay/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Datasaurus</title>
-      <link>https://guangchuangyu.github.io/cn/tags/datasaurus/</link>
-      <pubDate>Tue, 16 Jan 2018 17:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/datasaurus/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>David</title>
-      <link>https://guangchuangyu.github.io/cn/tags/david/</link>
-      <pubDate>Tue, 16 May 2017 07:04:22 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/david/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Distance</title>
-      <link>https://guangchuangyu.github.io/cn/tags/distance/</link>
-      <pubDate>Thu, 14 Mar 2019 12:37:55 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/distance/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Dose</title>
-      <link>https://guangchuangyu.github.io/cn/tags/dose/</link>
-      <pubDate>Sun, 25 Nov 2018 01:23:16 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/dose/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Douban</title>
-      <link>https://guangchuangyu.github.io/cn/tags/douban/</link>
-      <pubDate>Mon, 24 Dec 2012 16:20:43 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/douban/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Downgrade</title>
+      <title>downgrade</title>
       <link>https://guangchuangyu.github.io/cn/tags/downgrade/</link>
       <pubDate>Wed, 08 Aug 2018 20:10:35 +0800</pubDate>
       
@@ -381,736 +300,7 @@
     </item>
     
     <item>
-      <title>Downloader</title>
-      <link>https://guangchuangyu.github.io/cn/tags/downloader/</link>
-      <pubDate>Mon, 06 Mar 2017 23:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/downloader/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Editor</title>
-      <link>https://guangchuangyu.github.io/cn/tags/editor/</link>
-      <pubDate>Tue, 03 Apr 2018 15:10:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/editor/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Elementaryos</title>
-      <link>https://guangchuangyu.github.io/cn/tags/elementaryos/</link>
-      <pubDate>Sat, 24 Feb 2018 04:33:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/elementaryos/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Emacs</title>
-      <link>https://guangchuangyu.github.io/cn/tags/emacs/</link>
-      <pubDate>Thu, 14 Nov 2013 17:44:16 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/emacs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Emoji</title>
-      <link>https://guangchuangyu.github.io/cn/tags/emoji/</link>
-      <pubDate>Sun, 28 May 2017 15:10:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/emoji/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Emojifont</title>
-      <link>https://guangchuangyu.github.io/cn/tags/emojifont/</link>
-      <pubDate>Wed, 20 Sep 2017 14:13:35 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/emojifont/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Enrichment</title>
-      <link>https://guangchuangyu.github.io/cn/tags/enrichment/</link>
-      <pubDate>Fri, 03 Mar 2017 00:10:37 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/enrichment/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Enrichplot</title>
-      <link>https://guangchuangyu.github.io/cn/tags/enrichplot/</link>
-      <pubDate>Sun, 08 Apr 2018 19:06:16 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/enrichplot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ess</title>
-      <link>https://guangchuangyu.github.io/cn/tags/ess/</link>
-      <pubDate>Thu, 14 Nov 2013 17:44:16 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/ess/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Experiment</title>
-      <link>https://guangchuangyu.github.io/cn/tags/experiment/</link>
-      <pubDate>Tue, 25 Nov 2008 00:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/experiment/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Fasta</title>
-      <link>https://guangchuangyu.github.io/cn/tags/fasta/</link>
-      <pubDate>Sat, 23 Aug 2008 13:35:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/fasta/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Fastq</title>
-      <link>https://guangchuangyu.github.io/cn/tags/fastq/</link>
-      <pubDate>Tue, 06 Jun 2017 07:57:46 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/fastq/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Figlet</title>
-      <link>https://guangchuangyu.github.io/cn/tags/figlet/</link>
-      <pubDate>Tue, 13 Dec 2016 00:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/figlet/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Function</title>
-      <link>https://guangchuangyu.github.io/cn/tags/function/</link>
-      <pubDate>Tue, 17 Mar 2009 05:23:16 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/function/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Genome Editing</title>
-      <link>https://guangchuangyu.github.io/cn/tags/genome-editing/</link>
-      <pubDate>Thu, 10 Jan 2013 08:40:22 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/genome-editing/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gentoo</title>
-      <link>https://guangchuangyu.github.io/cn/tags/gentoo/</link>
-      <pubDate>Fri, 14 Jan 2005 04:32:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/gentoo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Geofacet</title>
-      <link>https://guangchuangyu.github.io/cn/tags/geofacet/</link>
-      <pubDate>Wed, 20 Sep 2017 14:13:35 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/geofacet/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ggforce</title>
-      <link>https://guangchuangyu.github.io/cn/tags/ggforce/</link>
-      <pubDate>Tue, 15 May 2018 23:44:55 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/ggforce/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ggimage</title>
-      <link>https://guangchuangyu.github.io/cn/tags/ggimage/</link>
-      <pubDate>Tue, 19 Jun 2018 13:06:59 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/ggimage/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ggjoy</title>
-      <link>https://guangchuangyu.github.io/cn/tags/ggjoy/</link>
-      <pubDate>Tue, 11 Jul 2017 00:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/ggjoy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gglayer</title>
-      <link>https://guangchuangyu.github.io/cn/tags/gglayer/</link>
-      <pubDate>Fri, 09 Nov 2018 12:21:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/gglayer/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ggord</title>
-      <link>https://guangchuangyu.github.io/cn/tags/ggord/</link>
-      <pubDate>Mon, 08 Jan 2018 13:13:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/ggord/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ggplot2</title>
-      <link>https://guangchuangyu.github.io/cn/tags/ggplot2/</link>
-      <pubDate>Fri, 11 Jan 2019 12:23:16 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/ggplot2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ggplotify</title>
-      <link>https://guangchuangyu.github.io/cn/tags/ggplotify/</link>
-      <pubDate>Sun, 03 Mar 2019 12:23:16 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/ggplotify/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ggridges</title>
-      <link>https://guangchuangyu.github.io/cn/tags/ggridges/</link>
-      <pubDate>Fri, 15 Sep 2017 00:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/ggridges/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ggrough</title>
-      <link>https://guangchuangyu.github.io/cn/tags/ggrough/</link>
-      <pubDate>Mon, 15 Oct 2018 00:21:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/ggrough/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ggstatsplot</title>
-      <link>https://guangchuangyu.github.io/cn/tags/ggstatsplot/</link>
-      <pubDate>Fri, 16 Mar 2018 09:09:22 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/ggstatsplot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ggtree</title>
-      <link>https://guangchuangyu.github.io/cn/tags/ggtree/</link>
-      <pubDate>Tue, 06 Nov 2018 10:23:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/ggtree/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ggupset</title>
-      <link>https://guangchuangyu.github.io/cn/tags/ggupset/</link>
-      <pubDate>Mon, 11 Mar 2019 09:33:50 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/ggupset/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Go</title>
-      <link>https://guangchuangyu.github.io/cn/tags/go/</link>
-      <pubDate>Thu, 02 Nov 2017 20:23:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/go/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gogadget</title>
-      <link>https://guangchuangyu.github.io/cn/tags/gogadget/</link>
-      <pubDate>Fri, 08 Mar 2019 12:23:16 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/gogadget/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Google</title>
-      <link>https://guangchuangyu.github.io/cn/tags/google/</link>
-      <pubDate>Wed, 16 Jan 2019 15:10:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/google/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gosemsim</title>
-      <link>https://guangchuangyu.github.io/cn/tags/gosemsim/</link>
-      <pubDate>Tue, 02 Jan 2018 10:57:15 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/gosemsim/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Grid</title>
-      <link>https://guangchuangyu.github.io/cn/tags/grid/</link>
-      <pubDate>Sun, 11 Nov 2018 23:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/grid/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gtf</title>
-      <link>https://guangchuangyu.github.io/cn/tags/gtf/</link>
-      <pubDate>Fri, 22 Dec 2017 13:50:22 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/gtf/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gtkballs</title>
-      <link>https://guangchuangyu.github.io/cn/tags/gtkballs/</link>
-      <pubDate>Sun, 21 Sep 2008 08:20:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/gtkballs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gui</title>
-      <link>https://guangchuangyu.github.io/cn/tags/gui/</link>
-      <pubDate>Sat, 01 Jul 2017 00:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/gui/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hackintosh</title>
-      <link>https://guangchuangyu.github.io/cn/tags/hackintosh/</link>
-      <pubDate>Thu, 15 Mar 2012 04:47:26 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/hackintosh/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Heatmap</title>
-      <link>https://guangchuangyu.github.io/cn/tags/heatmap/</link>
-      <pubDate>Mon, 13 Nov 2017 00:21:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/heatmap/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hku</title>
-      <link>https://guangchuangyu.github.io/cn/tags/hku/</link>
-      <pubDate>Tue, 05 Mar 2019 00:30:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/hku/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hugo</title>
-      <link>https://guangchuangyu.github.io/cn/tags/hugo/</link>
-      <pubDate>Fri, 04 Dec 2015 00:42:26 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hwgcod</title>
-      <link>https://guangchuangyu.github.io/cn/tags/hwgcod/</link>
-      <pubDate>Tue, 23 Sep 2008 01:18:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/hwgcod/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hypergeometric</title>
-      <link>https://guangchuangyu.github.io/cn/tags/hypergeometric/</link>
-      <pubDate>Fri, 03 Mar 2017 00:10:37 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/hypergeometric/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ibw</title>
-      <link>https://guangchuangyu.github.io/cn/tags/ibw/</link>
-      <pubDate>Mon, 18 Jul 2011 04:26:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/ibw/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Imagemagick</title>
-      <link>https://guangchuangyu.github.io/cn/tags/imagemagick/</link>
-      <pubDate>Fri, 07 Jun 2013 15:10:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/imagemagick/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Impactfactor</title>
-      <link>https://guangchuangyu.github.io/cn/tags/impactfactor/</link>
-      <pubDate>Tue, 03 Jul 2018 15:22:35 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/impactfactor/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Integrals</title>
-      <link>https://guangchuangyu.github.io/cn/tags/integrals/</link>
-      <pubDate>Thu, 22 Sep 2011 06:40:22 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/integrals/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Interactive</title>
-      <link>https://guangchuangyu.github.io/cn/tags/interactive/</link>
-      <pubDate>Wed, 28 Nov 2018 11:08:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/interactive/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Job</title>
-      <link>https://guangchuangyu.github.io/cn/tags/job/</link>
-      <pubDate>Wed, 07 Feb 2018 13:30:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/job/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Journal</title>
-      <link>https://guangchuangyu.github.io/cn/tags/journal/</link>
-      <pubDate>Sun, 14 Jan 2018 23:11:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/journal/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Knoperio</title>
-      <link>https://guangchuangyu.github.io/cn/tags/knoperio/</link>
-      <pubDate>Thu, 31 May 2018 09:27:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/knoperio/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linkedlist</title>
-      <link>https://guangchuangyu.github.io/cn/tags/linkedlist/</link>
-      <pubDate>Sun, 04 Dec 2016 00:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/linkedlist/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://guangchuangyu.github.io/cn/tags/linux/</link>
-      <pubDate>Sun, 05 Oct 2008 05:08:02 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Lolcat</title>
-      <link>https://guangchuangyu.github.io/cn/tags/lolcat/</link>
-      <pubDate>Tue, 13 Dec 2016 00:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/lolcat/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Lxde</title>
-      <link>https://guangchuangyu.github.io/cn/tags/lxde/</link>
-      <pubDate>Mon, 19 Jun 2017 07:57:46 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/lxde/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Machine Learning</title>
-      <link>https://guangchuangyu.github.io/cn/tags/machine-learning/</link>
-      <pubDate>Thu, 12 Apr 2012 05:37:55 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/machine-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Macos</title>
-      <link>https://guangchuangyu.github.io/cn/tags/macos/</link>
-      <pubDate>Tue, 15 Sep 2015 05:44:16 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/macos/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Magick</title>
-      <link>https://guangchuangyu.github.io/cn/tags/magick/</link>
-      <pubDate>Tue, 05 Jun 2018 08:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/magick/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Maize</title>
-      <link>https://guangchuangyu.github.io/cn/tags/maize/</link>
-      <pubDate>Mon, 24 Jul 2017 08:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/maize/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Markdown</title>
-      <link>https://guangchuangyu.github.io/cn/tags/markdown/</link>
-      <pubDate>Sun, 23 Apr 2017 00:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/markdown/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Matrix</title>
-      <link>https://guangchuangyu.github.io/cn/tags/matrix/</link>
-      <pubDate>Mon, 26 Mar 2018 14:33:50 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/matrix/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Maxima</title>
-      <link>https://guangchuangyu.github.io/cn/tags/maxima/</link>
-      <pubDate>Mon, 04 Sep 2017 14:13:35 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/maxima/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mc</title>
-      <link>https://guangchuangyu.github.io/cn/tags/mc/</link>
-      <pubDate>Thu, 22 Sep 2011 06:40:22 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/mc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Meme</title>
-      <link>https://guangchuangyu.github.io/cn/tags/meme/</link>
-      <pubDate>Tue, 05 Jun 2018 08:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/meme/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Meshes</title>
-      <link>https://guangchuangyu.github.io/cn/tags/meshes/</link>
-      <pubDate>Sun, 08 Apr 2018 19:06:16 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/meshes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Microarray</title>
-      <link>https://guangchuangyu.github.io/cn/tags/microarray/</link>
-      <pubDate>Tue, 23 Sep 2008 01:18:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/microarray/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mirna</title>
-      <link>https://guangchuangyu.github.io/cn/tags/mirna/</link>
-      <pubDate>Thu, 05 May 2011 05:54:16 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/mirna/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Motif</title>
-      <link>https://guangchuangyu.github.io/cn/tags/motif/</link>
-      <pubDate>Thu, 21 May 2015 14:53:35 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/motif/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ncbi</title>
-      <link>https://guangchuangyu.github.io/cn/tags/ncbi/</link>
-      <pubDate>Wed, 22 Jan 2014 13:27:22 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/ncbi/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Netbsd</title>
-      <link>https://guangchuangyu.github.io/cn/tags/netbsd/</link>
-      <pubDate>Mon, 29 Sep 2008 12:32:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/netbsd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Netdisk</title>
-      <link>https://guangchuangyu.github.io/cn/tags/netdisk/</link>
-      <pubDate>Mon, 05 May 2014 10:45:25 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/netdisk/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ngs</title>
-      <link>https://guangchuangyu.github.io/cn/tags/ngs/</link>
-      <pubDate>Wed, 27 Aug 2014 11:44:16 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/ngs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nobel</title>
-      <link>https://guangchuangyu.github.io/cn/tags/nobel/</link>
-      <pubDate>Mon, 06 Oct 2008 15:10:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/nobel/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nonparametric</title>
-      <link>https://guangchuangyu.github.io/cn/tags/nonparametric/</link>
-      <pubDate>Fri, 24 Jun 2011 06:10:37 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/nonparametric/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Notifier</title>
-      <link>https://guangchuangyu.github.io/cn/tags/notifier/</link>
-      <pubDate>Tue, 11 Apr 2017 12:23:16 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/notifier/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ntfs</title>
-      <link>https://guangchuangyu.github.io/cn/tags/ntfs/</link>
-      <pubDate>Sat, 09 Aug 2008 04:32:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/ntfs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ntlmaps</title>
-      <link>https://guangchuangyu.github.io/cn/tags/ntlmaps/</link>
-      <pubDate>Sun, 28 Sep 2008 10:27:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/ntlmaps/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Orgdb</title>
-      <link>https://guangchuangyu.github.io/cn/tags/orgdb/</link>
-      <pubDate>Mon, 14 Jan 2019 15:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/orgdb/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Os9</title>
-      <link>https://guangchuangyu.github.io/cn/tags/os9/</link>
-      <pubDate>Wed, 14 Jun 2006 04:31:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/os9/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Osx</title>
-      <link>https://guangchuangyu.github.io/cn/tags/osx/</link>
-      <pubDate>Wed, 24 Jan 2018 15:27:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/osx/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Package</title>
-      <link>https://guangchuangyu.github.io/cn/tags/package/</link>
-      <pubDate>Tue, 12 Jun 2018 12:15:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/package/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pacman</title>
+      <title>pacman</title>
       <link>https://guangchuangyu.github.io/cn/tags/pacman/</link>
       <pubDate>Wed, 08 Aug 2018 20:10:35 +0800</pubDate>
       
@@ -1119,70 +309,7 @@
     </item>
     
     <item>
-      <title>Paper</title>
-      <link>https://guangchuangyu.github.io/cn/tags/paper/</link>
-      <pubDate>Mon, 29 Jan 2018 07:05:22 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/paper/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Paradox</title>
-      <link>https://guangchuangyu.github.io/cn/tags/paradox/</link>
-      <pubDate>Fri, 17 Oct 2008 00:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/paradox/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Partition</title>
-      <link>https://guangchuangyu.github.io/cn/tags/partition/</link>
-      <pubDate>Mon, 14 May 2007 04:43:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/partition/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pathway</title>
-      <link>https://guangchuangyu.github.io/cn/tags/pathway/</link>
-      <pubDate>Sun, 11 Feb 2018 02:22:22 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/pathway/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pca</title>
-      <link>https://guangchuangyu.github.io/cn/tags/pca/</link>
-      <pubDate>Tue, 15 Jul 2014 11:37:55 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/pca/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pdb</title>
-      <link>https://guangchuangyu.github.io/cn/tags/pdb/</link>
-      <pubDate>Fri, 22 Dec 2017 13:50:22 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/pdb/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Phd</title>
-      <link>https://guangchuangyu.github.io/cn/tags/phd/</link>
-      <pubDate>Thu, 18 Oct 2018 16:30:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/phd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pheatmap</title>
+      <title>pheatmap</title>
       <link>https://guangchuangyu.github.io/cn/tags/pheatmap/</link>
       <pubDate>Mon, 06 Aug 2018 12:23:16 +0800</pubDate>
       
@@ -1191,304 +318,16 @@
     </item>
     
     <item>
-      <title>Phone</title>
-      <link>https://guangchuangyu.github.io/cn/tags/phone/</link>
-      <pubDate>Tue, 29 Aug 2017 17:53:00 +0800</pubDate>
+      <title>bash</title>
+      <link>https://guangchuangyu.github.io/cn/tags/bash/</link>
+      <pubDate>Sun, 22 Jul 2018 04:30:00 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/tags/phone/</guid>
+      <guid>https://guangchuangyu.github.io/cn/tags/bash/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Phosphorylation</title>
-      <link>https://guangchuangyu.github.io/cn/tags/phosphorylation/</link>
-      <pubDate>Tue, 23 Nov 2010 02:22:22 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/phosphorylation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pkgsrc</title>
-      <link>https://guangchuangyu.github.io/cn/tags/pkgsrc/</link>
-      <pubDate>Wed, 16 May 2007 04:36:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/pkgsrc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Plagiarism</title>
-      <link>https://guangchuangyu.github.io/cn/tags/plagiarism/</link>
-      <pubDate>Sat, 11 Nov 2017 20:00:43 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/plagiarism/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Plugin</title>
-      <link>https://guangchuangyu.github.io/cn/tags/plugin/</link>
-      <pubDate>Thu, 31 May 2018 09:27:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/plugin/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Power</title>
-      <link>https://guangchuangyu.github.io/cn/tags/power/</link>
-      <pubDate>Fri, 24 Jun 2011 06:10:37 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/power/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ppipre</title>
-      <link>https://guangchuangyu.github.io/cn/tags/ppipre/</link>
-      <pubDate>Sat, 11 Nov 2017 20:00:43 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/ppipre/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Profile</title>
-      <link>https://guangchuangyu.github.io/cn/tags/profile/</link>
-      <pubDate>Tue, 23 Nov 2010 02:22:22 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/profile/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Proxy</title>
-      <link>https://guangchuangyu.github.io/cn/tags/proxy/</link>
-      <pubDate>Sun, 30 Sep 2018 10:30:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/proxy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Proxychains</title>
-      <link>https://guangchuangyu.github.io/cn/tags/proxychains/</link>
-      <pubDate>Sun, 30 Sep 2018 10:30:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/proxychains/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pubmed</title>
-      <link>https://guangchuangyu.github.io/cn/tags/pubmed/</link>
-      <pubDate>Mon, 22 Jan 2018 14:33:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/pubmed/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Purrr</title>
-      <link>https://guangchuangyu.github.io/cn/tags/purrr/</link>
-      <pubDate>Thu, 29 Mar 2018 11:23:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/purrr/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://guangchuangyu.github.io/cn/tags/python/</link>
-      <pubDate>Sun, 14 Dec 2008 09:18:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Qq</title>
-      <link>https://guangchuangyu.github.io/cn/tags/qq/</link>
-      <pubDate>Sun, 09 Jul 2017 07:57:46 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/qq/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Reactomepa</title>
-      <link>https://guangchuangyu.github.io/cn/tags/reactomepa/</link>
-      <pubDate>Sun, 08 Apr 2018 19:06:16 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/reactomepa/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Readxl</title>
-      <link>https://guangchuangyu.github.io/cn/tags/readxl/</link>
-      <pubDate>Thu, 29 Mar 2018 11:23:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/readxl/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Regression</title>
-      <link>https://guangchuangyu.github.io/cn/tags/regression/</link>
-      <pubDate>Tue, 26 Aug 2008 15:10:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/regression/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Remote</title>
-      <link>https://guangchuangyu.github.io/cn/tags/remote/</link>
-      <pubDate>Mon, 05 Jul 2010 07:37:09 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/remote/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Root</title>
-      <link>https://guangchuangyu.github.io/cn/tags/root/</link>
-      <pubDate>Tue, 25 Nov 2008 10:40:22 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/root/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Rplotter</title>
-      <link>https://guangchuangyu.github.io/cn/tags/rplotter/</link>
-      <pubDate>Mon, 21 Nov 2016 12:23:16 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/rplotter/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Rtichoke</title>
-      <link>https://guangchuangyu.github.io/cn/tags/rtichoke/</link>
-      <pubDate>Wed, 13 Sep 2017 13:37:55 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/rtichoke/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Rvcheck</title>
-      <link>https://guangchuangyu.github.io/cn/tags/rvcheck/</link>
-      <pubDate>Wed, 25 Apr 2018 17:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/rvcheck/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Sam</title>
-      <link>https://guangchuangyu.github.io/cn/tags/sam/</link>
-      <pubDate>Fri, 22 Dec 2017 13:50:22 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/sam/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Scholar</title>
-      <link>https://guangchuangyu.github.io/cn/tags/scholar/</link>
-      <pubDate>Tue, 03 Jul 2018 15:22:35 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/scholar/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Scihub</title>
-      <link>https://guangchuangyu.github.io/cn/tags/scihub/</link>
-      <pubDate>Mon, 29 Jan 2018 07:05:22 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/scihub/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Scilab</title>
-      <link>https://guangchuangyu.github.io/cn/tags/scilab/</link>
-      <pubDate>Thu, 03 May 2007 10:27:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/scilab/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Screenshot</title>
-      <link>https://guangchuangyu.github.io/cn/tags/screenshot/</link>
-      <pubDate>Mon, 19 Jun 2017 07:57:46 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/screenshot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Semantic</title>
-      <link>https://guangchuangyu.github.io/cn/tags/semantic/</link>
-      <pubDate>Tue, 10 Jul 2012 07:16:22 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/semantic/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Seqcombo</title>
-      <link>https://guangchuangyu.github.io/cn/tags/seqcombo/</link>
-      <pubDate>Sat, 19 Nov 2016 12:23:16 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/seqcombo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Setreadable</title>
-      <link>https://guangchuangyu.github.io/cn/tags/setreadable/</link>
-      <pubDate>Mon, 14 Jan 2019 15:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/setreadable/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Shadowtext</title>
-      <link>https://guangchuangyu.github.io/cn/tags/shadowtext/</link>
-      <pubDate>Tue, 05 Jun 2018 08:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/shadowtext/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Software</title>
-      <link>https://guangchuangyu.github.io/cn/tags/software/</link>
-      <pubDate>Sun, 23 Nov 2008 04:32:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/software/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ssh</title>
-      <link>https://guangchuangyu.github.io/cn/tags/ssh/</link>
-      <pubDate>Wed, 04 Oct 2017 00:49:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/ssh/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Subset</title>
+      <title>subset</title>
       <link>https://guangchuangyu.github.io/cn/tags/subset/</link>
       <pubDate>Wed, 11 Jul 2018 13:20:00 +0800</pubDate>
       
@@ -1497,34 +336,7 @@
     </item>
     
     <item>
-      <title>Summary</title>
-      <link>https://guangchuangyu.github.io/cn/tags/summary/</link>
-      <pubDate>Sat, 24 Sep 2011 08:57:48 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/summary/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Swirl</title>
-      <link>https://guangchuangyu.github.io/cn/tags/swirl/</link>
-      <pubDate>Sun, 23 Jul 2017 00:53:00 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/swirl/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Syntax</title>
-      <link>https://guangchuangyu.github.io/cn/tags/syntax/</link>
-      <pubDate>Tue, 10 Jul 2012 07:16:22 +0800</pubDate>
-      
-      <guid>https://guangchuangyu.github.io/cn/tags/syntax/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tair</title>
+      <title>TAIR</title>
       <link>https://guangchuangyu.github.io/cn/tags/tair/</link>
       <pubDate>Tue, 10 Jul 2018 15:53:00 +0800</pubDate>
       
@@ -1533,34 +345,205 @@
     </item>
     
     <item>
-      <title>Taylor</title>
-      <link>https://guangchuangyu.github.io/cn/tags/taylor/</link>
-      <pubDate>Tue, 17 Mar 2009 05:23:16 +0800</pubDate>
+      <title>impactfactor</title>
+      <link>https://guangchuangyu.github.io/cn/tags/impactfactor/</link>
+      <pubDate>Tue, 03 Jul 2018 15:22:35 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/tags/taylor/</guid>
+      <guid>https://guangchuangyu.github.io/cn/tags/impactfactor/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Test</title>
-      <link>https://guangchuangyu.github.io/cn/tags/test/</link>
-      <pubDate>Tue, 29 May 2012 06:17:56 +0800</pubDate>
+      <title>scholar</title>
+      <link>https://guangchuangyu.github.io/cn/tags/scholar/</link>
+      <pubDate>Tue, 03 Jul 2018 15:22:35 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/tags/test/</guid>
+      <guid>https://guangchuangyu.github.io/cn/tags/scholar/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Theme</title>
-      <link>https://guangchuangyu.github.io/cn/tags/theme/</link>
-      <pubDate>Sat, 24 Jun 2006 04:33:00 +0800</pubDate>
+      <title>ggimage</title>
+      <link>https://guangchuangyu.github.io/cn/tags/ggimage/</link>
+      <pubDate>Tue, 19 Jun 2018 13:06:59 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/tags/theme/</guid>
+      <guid>https://guangchuangyu.github.io/cn/tags/ggimage/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Tibble</title>
+      <title>chocolatey</title>
+      <link>https://guangchuangyu.github.io/cn/tags/chocolatey/</link>
+      <pubDate>Tue, 12 Jun 2018 12:15:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/chocolatey/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>package</title>
+      <link>https://guangchuangyu.github.io/cn/tags/package/</link>
+      <pubDate>Tue, 12 Jun 2018 12:15:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/package/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>windows</title>
+      <link>https://guangchuangyu.github.io/cn/tags/windows/</link>
+      <pubDate>Tue, 12 Jun 2018 12:15:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>magick</title>
+      <link>https://guangchuangyu.github.io/cn/tags/magick/</link>
+      <pubDate>Tue, 05 Jun 2018 08:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/magick/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>meme</title>
+      <link>https://guangchuangyu.github.io/cn/tags/meme/</link>
+      <pubDate>Tue, 05 Jun 2018 08:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/meme/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shadowtext</title>
+      <link>https://guangchuangyu.github.io/cn/tags/shadowtext/</link>
+      <pubDate>Tue, 05 Jun 2018 08:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/shadowtext/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>knoperio</title>
+      <link>https://guangchuangyu.github.io/cn/tags/knoperio/</link>
+      <pubDate>Thu, 31 May 2018 09:27:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/knoperio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>plugin</title>
+      <link>https://guangchuangyu.github.io/cn/tags/plugin/</link>
+      <pubDate>Thu, 31 May 2018 09:27:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/plugin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ggforce</title>
+      <link>https://guangchuangyu.github.io/cn/tags/ggforce/</link>
+      <pubDate>Tue, 15 May 2018 23:44:55 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/ggforce/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rvcheck</title>
+      <link>https://guangchuangyu.github.io/cn/tags/rvcheck/</link>
+      <pubDate>Wed, 25 Apr 2018 17:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/rvcheck/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>yyplot</title>
+      <link>https://guangchuangyu.github.io/cn/tags/yyplot/</link>
+      <pubDate>Mon, 23 Apr 2018 19:00:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/yyplot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>enrichplot</title>
+      <link>https://guangchuangyu.github.io/cn/tags/enrichplot/</link>
+      <pubDate>Sun, 08 Apr 2018 19:06:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/enrichplot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>meshes</title>
+      <link>https://guangchuangyu.github.io/cn/tags/meshes/</link>
+      <pubDate>Sun, 08 Apr 2018 19:06:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/meshes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ReactomePA</title>
+      <link>https://guangchuangyu.github.io/cn/tags/reactomepa/</link>
+      <pubDate>Sun, 08 Apr 2018 19:06:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/reactomepa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>editor</title>
+      <link>https://guangchuangyu.github.io/cn/tags/editor/</link>
+      <pubDate>Tue, 03 Apr 2018 15:10:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/editor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vscode</title>
+      <link>https://guangchuangyu.github.io/cn/tags/vscode/</link>
+      <pubDate>Tue, 03 Apr 2018 15:10:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/vscode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>purrr</title>
+      <link>https://guangchuangyu.github.io/cn/tags/purrr/</link>
+      <pubDate>Thu, 29 Mar 2018 11:23:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/purrr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>readxl</title>
+      <link>https://guangchuangyu.github.io/cn/tags/readxl/</link>
+      <pubDate>Thu, 29 Mar 2018 11:23:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/readxl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>matrix</title>
+      <link>https://guangchuangyu.github.io/cn/tags/matrix/</link>
+      <pubDate>Mon, 26 Mar 2018 14:33:50 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/matrix/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tibble</title>
       <link>https://guangchuangyu.github.io/cn/tags/tibble/</link>
       <pubDate>Mon, 26 Mar 2018 09:33:50 +0800</pubDate>
       
@@ -1569,7 +552,520 @@
     </item>
     
     <item>
-      <title>Transcript</title>
+      <title>ggstatsplot</title>
+      <link>https://guangchuangyu.github.io/cn/tags/ggstatsplot/</link>
+      <pubDate>Fri, 16 Mar 2018 09:09:22 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/ggstatsplot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>elementaryOS</title>
+      <link>https://guangchuangyu.github.io/cn/tags/elementaryos/</link>
+      <pubDate>Sat, 24 Feb 2018 04:33:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/elementaryos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pathway</title>
+      <link>https://guangchuangyu.github.io/cn/tags/pathway/</link>
+      <pubDate>Sun, 11 Feb 2018 02:22:22 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/pathway/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>job</title>
+      <link>https://guangchuangyu.github.io/cn/tags/job/</link>
+      <pubDate>Wed, 07 Feb 2018 13:30:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/job/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wechat</title>
+      <link>https://guangchuangyu.github.io/cn/tags/wechat/</link>
+      <pubDate>Mon, 05 Feb 2018 15:10:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/wechat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>paper</title>
+      <link>https://guangchuangyu.github.io/cn/tags/paper/</link>
+      <pubDate>Mon, 29 Jan 2018 07:05:22 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/paper/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>scihub</title>
+      <link>https://guangchuangyu.github.io/cn/tags/scihub/</link>
+      <pubDate>Mon, 29 Jan 2018 07:05:22 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/scihub/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OSX</title>
+      <link>https://guangchuangyu.github.io/cn/tags/osx/</link>
+      <pubDate>Wed, 24 Jan 2018 15:27:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/osx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pubmed</title>
+      <link>https://guangchuangyu.github.io/cn/tags/pubmed/</link>
+      <pubDate>Mon, 22 Jan 2018 14:33:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/pubmed/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>datasauRus</title>
+      <link>https://guangchuangyu.github.io/cn/tags/datasaurus/</link>
+      <pubDate>Tue, 16 Jan 2018 17:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/datasaurus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>journal</title>
+      <link>https://guangchuangyu.github.io/cn/tags/journal/</link>
+      <pubDate>Sun, 14 Jan 2018 23:11:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/journal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ggord</title>
+      <link>https://guangchuangyu.github.io/cn/tags/ggord/</link>
+      <pubDate>Mon, 08 Jan 2018 13:13:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/ggord/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GOSemSim</title>
+      <link>https://guangchuangyu.github.io/cn/tags/gosemsim/</link>
+      <pubDate>Tue, 02 Jan 2018 10:57:15 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/gosemsim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>alignment</title>
+      <link>https://guangchuangyu.github.io/cn/tags/alignment/</link>
+      <pubDate>Fri, 22 Dec 2017 13:50:22 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/alignment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bioSyntax</title>
+      <link>https://guangchuangyu.github.io/cn/tags/biosyntax/</link>
+      <pubDate>Fri, 22 Dec 2017 13:50:22 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/biosyntax/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GTF</title>
+      <link>https://guangchuangyu.github.io/cn/tags/gtf/</link>
+      <pubDate>Fri, 22 Dec 2017 13:50:22 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/gtf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PDB</title>
+      <link>https://guangchuangyu.github.io/cn/tags/pdb/</link>
+      <pubDate>Fri, 22 Dec 2017 13:50:22 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/pdb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SAM</title>
+      <link>https://guangchuangyu.github.io/cn/tags/sam/</link>
+      <pubDate>Fri, 22 Dec 2017 13:50:22 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/sam/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VCF</title>
+      <link>https://guangchuangyu.github.io/cn/tags/vcf/</link>
+      <pubDate>Fri, 22 Dec 2017 13:50:22 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/vcf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>heatmap</title>
+      <link>https://guangchuangyu.github.io/cn/tags/heatmap/</link>
+      <pubDate>Mon, 13 Nov 2017 00:21:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/heatmap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>BMC</title>
+      <link>https://guangchuangyu.github.io/cn/tags/bmc/</link>
+      <pubDate>Sat, 11 Nov 2017 20:00:43 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/bmc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>plagiarism</title>
+      <link>https://guangchuangyu.github.io/cn/tags/plagiarism/</link>
+      <pubDate>Sat, 11 Nov 2017 20:00:43 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/plagiarism/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ppiPre</title>
+      <link>https://guangchuangyu.github.io/cn/tags/ppipre/</link>
+      <pubDate>Sat, 11 Nov 2017 20:00:43 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/ppipre/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bgi</title>
+      <link>https://guangchuangyu.github.io/cn/tags/bgi/</link>
+      <pubDate>Thu, 02 Nov 2017 20:23:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/bgi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>go</title>
+      <link>https://guangchuangyu.github.io/cn/tags/go/</link>
+      <pubDate>Thu, 02 Nov 2017 20:23:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>boxplot</title>
+      <link>https://guangchuangyu.github.io/cn/tags/boxplot/</link>
+      <pubDate>Mon, 30 Oct 2017 00:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/boxplot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ssh</title>
+      <link>https://guangchuangyu.github.io/cn/tags/ssh/</link>
+      <pubDate>Wed, 04 Oct 2017 00:49:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/ssh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>emojifont</title>
+      <link>https://guangchuangyu.github.io/cn/tags/emojifont/</link>
+      <pubDate>Wed, 20 Sep 2017 14:13:35 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/emojifont/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>geofacet</title>
+      <link>https://guangchuangyu.github.io/cn/tags/geofacet/</link>
+      <pubDate>Wed, 20 Sep 2017 14:13:35 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/geofacet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ggridges</title>
+      <link>https://guangchuangyu.github.io/cn/tags/ggridges/</link>
+      <pubDate>Fri, 15 Sep 2017 00:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/ggridges/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rtichoke</title>
+      <link>https://guangchuangyu.github.io/cn/tags/rtichoke/</link>
+      <pubDate>Wed, 13 Sep 2017 13:37:55 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/rtichoke/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>maxima</title>
+      <link>https://guangchuangyu.github.io/cn/tags/maxima/</link>
+      <pubDate>Mon, 04 Sep 2017 14:13:35 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/maxima/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>phone</title>
+      <link>https://guangchuangyu.github.io/cn/tags/phone/</link>
+      <pubDate>Tue, 29 Aug 2017 17:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/phone/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>chrome</title>
+      <link>https://guangchuangyu.github.io/cn/tags/chrome/</link>
+      <pubDate>Wed, 26 Jul 2017 07:05:22 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/chrome/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>maize</title>
+      <link>https://guangchuangyu.github.io/cn/tags/maize/</link>
+      <pubDate>Mon, 24 Jul 2017 08:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/maize/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>swirl</title>
+      <link>https://guangchuangyu.github.io/cn/tags/swirl/</link>
+      <pubDate>Sun, 23 Jul 2017 00:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/swirl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>baidu</title>
+      <link>https://guangchuangyu.github.io/cn/tags/baidu/</link>
+      <pubDate>Mon, 17 Jul 2017 13:40:22 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/baidu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>unpaywall</title>
+      <link>https://guangchuangyu.github.io/cn/tags/unpaywall/</link>
+      <pubDate>Tue, 11 Jul 2017 10:40:22 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/unpaywall/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ggjoy</title>
+      <link>https://guangchuangyu.github.io/cn/tags/ggjoy/</link>
+      <pubDate>Tue, 11 Jul 2017 00:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/ggjoy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>archlinux</title>
+      <link>https://guangchuangyu.github.io/cn/tags/archlinux/</link>
+      <pubDate>Sun, 09 Jul 2017 07:57:46 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/archlinux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>qq</title>
+      <link>https://guangchuangyu.github.io/cn/tags/qq/</link>
+      <pubDate>Sun, 09 Jul 2017 07:57:46 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/qq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GUI</title>
+      <link>https://guangchuangyu.github.io/cn/tags/gui/</link>
+      <pubDate>Sat, 01 Jul 2017 00:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/gui/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>treeio</title>
+      <link>https://guangchuangyu.github.io/cn/tags/treeio/</link>
+      <pubDate>Wed, 28 Jun 2017 15:10:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/treeio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lxde</title>
+      <link>https://guangchuangyu.github.io/cn/tags/lxde/</link>
+      <pubDate>Mon, 19 Jun 2017 07:57:46 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/lxde/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>screenshot</title>
+      <link>https://guangchuangyu.github.io/cn/tags/screenshot/</link>
+      <pubDate>Mon, 19 Jun 2017 07:57:46 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/screenshot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fastq</title>
+      <link>https://guangchuangyu.github.io/cn/tags/fastq/</link>
+      <pubDate>Tue, 06 Jun 2017 07:57:46 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/fastq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>emoji</title>
+      <link>https://guangchuangyu.github.io/cn/tags/emoji/</link>
+      <pubDate>Sun, 28 May 2017 15:10:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/emoji/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>viziometric</title>
+      <link>https://guangchuangyu.github.io/cn/tags/viziometric/</link>
+      <pubDate>Sat, 20 May 2017 10:40:22 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/viziometric/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DAVID</title>
+      <link>https://guangchuangyu.github.io/cn/tags/david/</link>
+      <pubDate>Tue, 16 May 2017 07:04:22 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/david/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>markdown</title>
+      <link>https://guangchuangyu.github.io/cn/tags/markdown/</link>
+      <pubDate>Sun, 23 Apr 2017 00:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vnc</title>
+      <link>https://guangchuangyu.github.io/cn/tags/vnc/</link>
+      <pubDate>Fri, 14 Apr 2017 13:44:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/vnc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>notifier</title>
+      <link>https://guangchuangyu.github.io/cn/tags/notifier/</link>
+      <pubDate>Tue, 11 Apr 2017 12:23:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/notifier/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ChIPseq</title>
+      <link>https://guangchuangyu.github.io/cn/tags/chipseq/</link>
+      <pubDate>Thu, 09 Mar 2017 00:13:57 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/chipseq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>downloader</title>
+      <link>https://guangchuangyu.github.io/cn/tags/downloader/</link>
+      <pubDate>Mon, 06 Mar 2017 23:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/downloader/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>enrichment</title>
+      <link>https://guangchuangyu.github.io/cn/tags/enrichment/</link>
+      <pubDate>Fri, 03 Mar 2017 00:10:37 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/enrichment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hypergeometric</title>
+      <link>https://guangchuangyu.github.io/cn/tags/hypergeometric/</link>
+      <pubDate>Fri, 03 Mar 2017 00:10:37 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/hypergeometric/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>BioEdit</title>
+      <link>https://guangchuangyu.github.io/cn/tags/bioedit/</link>
+      <pubDate>Mon, 27 Feb 2017 13:40:22 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/bioedit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>transcript</title>
       <link>https://guangchuangyu.github.io/cn/tags/transcript/</link>
       <pubDate>Tue, 21 Feb 2017 12:23:16 +0800</pubDate>
       
@@ -1578,11 +1074,119 @@
     </item>
     
     <item>
-      <title>Treeio</title>
-      <link>https://guangchuangyu.github.io/cn/tags/treeio/</link>
-      <pubDate>Wed, 28 Jun 2017 15:10:00 +0800</pubDate>
+      <title>CorMut</title>
+      <link>https://guangchuangyu.github.io/cn/tags/cormut/</link>
+      <pubDate>Tue, 17 Jan 2017 12:23:16 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/tags/treeio/</guid>
+      <guid>https://guangchuangyu.github.io/cn/tags/cormut/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>clifun</title>
+      <link>https://guangchuangyu.github.io/cn/tags/clifun/</link>
+      <pubDate>Tue, 13 Dec 2016 00:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/clifun/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cowsay</title>
+      <link>https://guangchuangyu.github.io/cn/tags/cowsay/</link>
+      <pubDate>Tue, 13 Dec 2016 00:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/cowsay/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>figlet</title>
+      <link>https://guangchuangyu.github.io/cn/tags/figlet/</link>
+      <pubDate>Tue, 13 Dec 2016 00:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/figlet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lolcat</title>
+      <link>https://guangchuangyu.github.io/cn/tags/lolcat/</link>
+      <pubDate>Tue, 13 Dec 2016 00:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/lolcat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linkedlist</title>
+      <link>https://guangchuangyu.github.io/cn/tags/linkedlist/</link>
+      <pubDate>Sun, 04 Dec 2016 00:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/linkedlist/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rPlotter</title>
+      <link>https://guangchuangyu.github.io/cn/tags/rplotter/</link>
+      <pubDate>Mon, 21 Nov 2016 12:23:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/rplotter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>seqcombo</title>
+      <link>https://guangchuangyu.github.io/cn/tags/seqcombo/</link>
+      <pubDate>Sat, 19 Nov 2016 12:23:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/seqcombo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>blast</title>
+      <link>https://guangchuangyu.github.io/cn/tags/blast/</link>
+      <pubDate>Thu, 17 Nov 2016 00:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/blast/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>BioC</title>
+      <link>https://guangchuangyu.github.io/cn/tags/bioc/</link>
+      <pubDate>Wed, 13 Jul 2016 21:06:59 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/bioc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://guangchuangyu.github.io/cn/tags/hugo/</link>
+      <pubDate>Fri, 04 Dec 2015 00:42:26 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wordpress</title>
+      <link>https://guangchuangyu.github.io/cn/tags/wordpress/</link>
+      <pubDate>Fri, 04 Dec 2015 00:42:26 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/wordpress/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>macos</title>
+      <link>https://guangchuangyu.github.io/cn/tags/macos/</link>
+      <pubDate>Tue, 15 Sep 2015 05:44:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/macos/</guid>
       <description></description>
     </item>
     
@@ -1596,79 +1200,160 @@
     </item>
     
     <item>
-      <title>Unpaywall</title>
-      <link>https://guangchuangyu.github.io/cn/tags/unpaywall/</link>
-      <pubDate>Tue, 11 Jul 2017 10:40:22 +0800</pubDate>
+      <title>amos</title>
+      <link>https://guangchuangyu.github.io/cn/tags/amos/</link>
+      <pubDate>Tue, 23 Jun 2015 07:46:16 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/tags/unpaywall/</guid>
+      <guid>https://guangchuangyu.github.io/cn/tags/amos/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Upsetr</title>
-      <link>https://guangchuangyu.github.io/cn/tags/upsetr/</link>
-      <pubDate>Sun, 11 Nov 2018 23:53:00 +0800</pubDate>
+      <title>motif</title>
+      <link>https://guangchuangyu.github.io/cn/tags/motif/</link>
+      <pubDate>Thu, 21 May 2015 14:53:35 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/tags/upsetr/</guid>
+      <guid>https://guangchuangyu.github.io/cn/tags/motif/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Vcf</title>
-      <link>https://guangchuangyu.github.io/cn/tags/vcf/</link>
-      <pubDate>Fri, 22 Dec 2017 13:50:22 +0800</pubDate>
+      <title>NGS</title>
+      <link>https://guangchuangyu.github.io/cn/tags/ngs/</link>
+      <pubDate>Wed, 27 Aug 2014 11:44:16 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/tags/vcf/</guid>
+      <guid>https://guangchuangyu.github.io/cn/tags/ngs/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Viziometric</title>
-      <link>https://guangchuangyu.github.io/cn/tags/viziometric/</link>
-      <pubDate>Sat, 20 May 2017 10:40:22 +0800</pubDate>
+      <title>compilation</title>
+      <link>https://guangchuangyu.github.io/cn/tags/compilation/</link>
+      <pubDate>Thu, 24 Jul 2014 04:22:35 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/tags/viziometric/</guid>
+      <guid>https://guangchuangyu.github.io/cn/tags/compilation/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Vnc</title>
-      <link>https://guangchuangyu.github.io/cn/tags/vnc/</link>
-      <pubDate>Fri, 14 Apr 2017 13:44:16 +0800</pubDate>
+      <title>PCA</title>
+      <link>https://guangchuangyu.github.io/cn/tags/pca/</link>
+      <pubDate>Tue, 15 Jul 2014 11:37:55 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/tags/vnc/</guid>
+      <guid>https://guangchuangyu.github.io/cn/tags/pca/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Vscode</title>
-      <link>https://guangchuangyu.github.io/cn/tags/vscode/</link>
-      <pubDate>Tue, 03 Apr 2018 15:10:00 +0800</pubDate>
+      <title>netdisk</title>
+      <link>https://guangchuangyu.github.io/cn/tags/netdisk/</link>
+      <pubDate>Mon, 05 May 2014 10:45:25 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/tags/vscode/</guid>
+      <guid>https://guangchuangyu.github.io/cn/tags/netdisk/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Wechat</title>
-      <link>https://guangchuangyu.github.io/cn/tags/wechat/</link>
-      <pubDate>Mon, 05 Feb 2018 15:10:00 +0800</pubDate>
+      <title>NCBI</title>
+      <link>https://guangchuangyu.github.io/cn/tags/ncbi/</link>
+      <pubDate>Wed, 22 Jan 2014 13:27:22 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/tags/wechat/</guid>
+      <guid>https://guangchuangyu.github.io/cn/tags/ncbi/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Windows</title>
-      <link>https://guangchuangyu.github.io/cn/tags/windows/</link>
-      <pubDate>Tue, 12 Jun 2018 12:15:00 +0800</pubDate>
+      <title>emacs</title>
+      <link>https://guangchuangyu.github.io/cn/tags/emacs/</link>
+      <pubDate>Thu, 14 Nov 2013 17:44:16 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/tags/windows/</guid>
+      <guid>https://guangchuangyu.github.io/cn/tags/emacs/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Wordcloud</title>
+      <title>ess</title>
+      <link>https://guangchuangyu.github.io/cn/tags/ess/</link>
+      <pubDate>Thu, 14 Nov 2013 17:44:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/ess/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ImageMagick</title>
+      <link>https://guangchuangyu.github.io/cn/tags/imagemagick/</link>
+      <pubDate>Fri, 07 Jun 2013 15:10:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/imagemagick/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>genome editing</title>
+      <link>https://guangchuangyu.github.io/cn/tags/genome-editing/</link>
+      <pubDate>Thu, 10 Jan 2013 08:40:22 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/genome-editing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>douban</title>
+      <link>https://guangchuangyu.github.io/cn/tags/douban/</link>
+      <pubDate>Mon, 24 Dec 2012 16:20:43 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/douban/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>semantic</title>
+      <link>https://guangchuangyu.github.io/cn/tags/semantic/</link>
+      <pubDate>Tue, 10 Jul 2012 07:16:22 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/semantic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>syntax</title>
+      <link>https://guangchuangyu.github.io/cn/tags/syntax/</link>
+      <pubDate>Tue, 10 Jul 2012 07:16:22 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/syntax/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>test</title>
+      <link>https://guangchuangyu.github.io/cn/tags/test/</link>
+      <pubDate>Tue, 29 May 2012 06:17:56 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine Learning</title>
+      <link>https://guangchuangyu.github.io/cn/tags/machine-learning/</link>
+      <pubDate>Thu, 12 Apr 2012 05:37:55 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hackintosh</title>
+      <link>https://guangchuangyu.github.io/cn/tags/hackintosh/</link>
+      <pubDate>Thu, 15 Mar 2012 04:47:26 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/hackintosh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wordcloud</title>
       <link>https://guangchuangyu.github.io/cn/tags/wordcloud/</link>
       <pubDate>Fri, 09 Dec 2011 11:44:16 +0800</pubDate>
       
@@ -1677,11 +1362,119 @@
     </item>
     
     <item>
-      <title>Wordpress</title>
-      <link>https://guangchuangyu.github.io/cn/tags/wordpress/</link>
-      <pubDate>Fri, 04 Dec 2015 00:42:26 +0800</pubDate>
+      <title>book</title>
+      <link>https://guangchuangyu.github.io/cn/tags/book/</link>
+      <pubDate>Sat, 24 Sep 2011 08:57:48 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/tags/wordpress/</guid>
+      <guid>https://guangchuangyu.github.io/cn/tags/book/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>integrals</title>
+      <link>https://guangchuangyu.github.io/cn/tags/integrals/</link>
+      <pubDate>Thu, 22 Sep 2011 06:40:22 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/integrals/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mc</title>
+      <link>https://guangchuangyu.github.io/cn/tags/mc/</link>
+      <pubDate>Thu, 22 Sep 2011 06:40:22 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/mc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IBW</title>
+      <link>https://guangchuangyu.github.io/cn/tags/ibw/</link>
+      <pubDate>Mon, 18 Jul 2011 04:26:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/ibw/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bootstrap</title>
+      <link>https://guangchuangyu.github.io/cn/tags/bootstrap/</link>
+      <pubDate>Fri, 24 Jun 2011 06:10:37 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/bootstrap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nonparametric</title>
+      <link>https://guangchuangyu.github.io/cn/tags/nonparametric/</link>
+      <pubDate>Fri, 24 Jun 2011 06:10:37 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/nonparametric/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>power</title>
+      <link>https://guangchuangyu.github.io/cn/tags/power/</link>
+      <pubDate>Fri, 24 Jun 2011 06:10:37 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/power/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>miRNA</title>
+      <link>https://guangchuangyu.github.io/cn/tags/mirna/</link>
+      <pubDate>Thu, 05 May 2011 05:54:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/mirna/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>babble</title>
+      <link>https://guangchuangyu.github.io/cn/tags/babble/</link>
+      <pubDate>Fri, 01 Apr 2011 10:48:09 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/babble/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cancer</title>
+      <link>https://guangchuangyu.github.io/cn/tags/cancer/</link>
+      <pubDate>Tue, 23 Nov 2010 02:22:22 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/cancer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>phosphorylation</title>
+      <link>https://guangchuangyu.github.io/cn/tags/phosphorylation/</link>
+      <pubDate>Tue, 23 Nov 2010 02:22:22 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/phosphorylation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>profile</title>
+      <link>https://guangchuangyu.github.io/cn/tags/profile/</link>
+      <pubDate>Tue, 23 Nov 2010 02:22:22 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/profile/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>remote</title>
+      <link>https://guangchuangyu.github.io/cn/tags/remote/</link>
+      <pubDate>Mon, 05 Jul 2010 07:37:09 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/remote/</guid>
       <description></description>
     </item>
     
@@ -1695,11 +1488,245 @@
     </item>
     
     <item>
-      <title>Yyplot</title>
-      <link>https://guangchuangyu.github.io/cn/tags/yyplot/</link>
-      <pubDate>Mon, 23 Apr 2018 19:00:00 +0800</pubDate>
+      <title>function</title>
+      <link>https://guangchuangyu.github.io/cn/tags/function/</link>
+      <pubDate>Tue, 17 Mar 2009 05:23:16 +0800</pubDate>
       
-      <guid>https://guangchuangyu.github.io/cn/tags/yyplot/</guid>
+      <guid>https://guangchuangyu.github.io/cn/tags/function/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>taylor</title>
+      <link>https://guangchuangyu.github.io/cn/tags/taylor/</link>
+      <pubDate>Tue, 17 Mar 2009 05:23:16 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/taylor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>c</title>
+      <link>https://guangchuangyu.github.io/cn/tags/c/</link>
+      <pubDate>Sun, 14 Dec 2008 09:18:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://guangchuangyu.github.io/cn/tags/python/</link>
+      <pubDate>Sun, 14 Dec 2008 09:18:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>root</title>
+      <link>https://guangchuangyu.github.io/cn/tags/root/</link>
+      <pubDate>Tue, 25 Nov 2008 10:40:22 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/root/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>experiment</title>
+      <link>https://guangchuangyu.github.io/cn/tags/experiment/</link>
+      <pubDate>Tue, 25 Nov 2008 00:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/experiment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>software</title>
+      <link>https://guangchuangyu.github.io/cn/tags/software/</link>
+      <pubDate>Sun, 23 Nov 2008 04:32:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/software/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>paradox</title>
+      <link>https://guangchuangyu.github.io/cn/tags/paradox/</link>
+      <pubDate>Fri, 17 Oct 2008 00:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/paradox/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nobel</title>
+      <link>https://guangchuangyu.github.io/cn/tags/nobel/</link>
+      <pubDate>Mon, 06 Oct 2008 15:10:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/nobel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://guangchuangyu.github.io/cn/tags/linux/</link>
+      <pubDate>Sun, 05 Oct 2008 05:08:02 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>netbsd</title>
+      <link>https://guangchuangyu.github.io/cn/tags/netbsd/</link>
+      <pubDate>Mon, 29 Sep 2008 12:32:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/netbsd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ntlmaps</title>
+      <link>https://guangchuangyu.github.io/cn/tags/ntlmaps/</link>
+      <pubDate>Sun, 28 Sep 2008 10:27:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/ntlmaps/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>biomaRt</title>
+      <link>https://guangchuangyu.github.io/cn/tags/biomart/</link>
+      <pubDate>Tue, 23 Sep 2008 01:18:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/biomart/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>codelink</title>
+      <link>https://guangchuangyu.github.io/cn/tags/codelink/</link>
+      <pubDate>Tue, 23 Sep 2008 01:18:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/codelink/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hwgcod</title>
+      <link>https://guangchuangyu.github.io/cn/tags/hwgcod/</link>
+      <pubDate>Tue, 23 Sep 2008 01:18:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/hwgcod/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>microarray</title>
+      <link>https://guangchuangyu.github.io/cn/tags/microarray/</link>
+      <pubDate>Tue, 23 Sep 2008 01:18:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/microarray/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gtkballs</title>
+      <link>https://guangchuangyu.github.io/cn/tags/gtkballs/</link>
+      <pubDate>Sun, 21 Sep 2008 08:20:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/gtkballs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>regression</title>
+      <link>https://guangchuangyu.github.io/cn/tags/regression/</link>
+      <pubDate>Tue, 26 Aug 2008 15:10:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/regression/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fasta</title>
+      <link>https://guangchuangyu.github.io/cn/tags/fasta/</link>
+      <pubDate>Sat, 23 Aug 2008 13:35:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/fasta/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ntfs</title>
+      <link>https://guangchuangyu.github.io/cn/tags/ntfs/</link>
+      <pubDate>Sat, 09 Aug 2008 04:32:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/ntfs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>calculus</title>
+      <link>https://guangchuangyu.github.io/cn/tags/calculus/</link>
+      <pubDate>Sat, 02 Jun 2007 13:53:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/calculus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pkgsrc</title>
+      <link>https://guangchuangyu.github.io/cn/tags/pkgsrc/</link>
+      <pubDate>Wed, 16 May 2007 04:36:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/pkgsrc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>partition</title>
+      <link>https://guangchuangyu.github.io/cn/tags/partition/</link>
+      <pubDate>Mon, 14 May 2007 04:43:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/partition/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>scilab</title>
+      <link>https://guangchuangyu.github.io/cn/tags/scilab/</link>
+      <pubDate>Thu, 03 May 2007 10:27:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/scilab/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>theme</title>
+      <link>https://guangchuangyu.github.io/cn/tags/theme/</link>
+      <pubDate>Sat, 24 Jun 2006 04:33:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/theme/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OS9</title>
+      <link>https://guangchuangyu.github.io/cn/tags/os9/</link>
+      <pubDate>Wed, 14 Jun 2006 04:31:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/os9/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gentoo</title>
+      <link>https://guangchuangyu.github.io/cn/tags/gentoo/</link>
+      <pubDate>Fri, 14 Jan 2005 04:32:00 +0800</pubDate>
+      
+      <guid>https://guangchuangyu.github.io/cn/tags/gentoo/</guid>
       <description></description>
     </item>
     

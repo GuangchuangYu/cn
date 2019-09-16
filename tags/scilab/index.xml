@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Scilab on Guangchuang Yu</title>
+    <title>scilab on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/scilab/</link>
-    <description>Recent content in Scilab on Guangchuang Yu</description>
+    <description>Recent content in scilab on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 03 May 2007 10:27:00 +0800</lastBuildDate>
@@ -29,18 +29,17 @@
 &lt;li&gt;t2:x轴方向的范围&lt;/li&gt;
 &lt;li&gt;Z:矩阵&lt;/li&gt;
 &lt;li&gt;alpha&lt;/li&gt;
-&lt;li&gt;theta参数用于指定角度，让图绘出来以某个特定的角度呈现出来。(optional)&lt;/li&gt;
-&lt;/ul&gt;
+
+&lt;li&gt;&lt;p&gt;theta参数用于指定角度，让图绘出来以某个特定的角度呈现出来。(optional)&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;-&amp;gt;clear -&amp;gt;A=[1 2 5 4 3;0 3 2 8 6;2 4 6 7 5;2 3 4 3 1];
 -&amp;gt;t1=1:4; -&amp;gt;t2=1:5;
 //plot3d1与plot3d语法类似，能够嵌入多种颜色
 -&amp;gt;plot3d(t1,t2,A,alpha=45,theta=45);
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;mesh不需要边界声明， &lt;code&gt;-&amp;gt;mesh(A);&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;mesh不需要边界声明， &lt;code&gt;-&amp;gt;mesh(A);&lt;/code&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

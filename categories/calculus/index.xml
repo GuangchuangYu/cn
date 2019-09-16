@@ -20,9 +20,7 @@
       <description>&lt;p&gt;刚看完《&lt;a href=&#34;http://book.douban.com/subject/4324593/&#34;&gt;Introduction to Scientific Programming and Simulation Using R&lt;/a&gt;》这本书，&lt;/p&gt;
 
 &lt;p&gt;第一部分是R编程入门； 第二部分是数值计算，主要是解方程，求积分和优化；第三部分是概率和统计，主要讲概率、随机变量等概念和参数估计；
-第四部分是simulation，主要讲Monte Carlo积分和方差降低。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+第四部分是simulation，主要讲Monte Carlo积分和方差降低。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -50,9 +48,7 @@ and miss法估计。&lt;/p&gt;
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;hit and miss方法收敛太慢，效率并不高，通常所说的MC积分是指下面这个方法。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;hit and miss方法收敛太慢，效率并不高，通常所说的MC积分是指下面这个方法。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -83,9 +79,7 @@ and miss法估计。&lt;/p&gt;
      }
      return (fv.new)
  }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
@@ -95,9 +89,7 @@ and miss法估计。&lt;/p&gt;
       
       <guid>https://guangchuangyu.github.io/cn/2008/11/bisect-to-solve-equation/</guid>
       <description>&lt;p&gt;翻看了以前写的&lt;a href=&#34;https://guangchuangyu.github.io/cn/2007/06/newton-raphson-method/&#34;&gt;使用Newton-Raphson Method求一个数的开方&lt;/a&gt;，想到其实也可以用中值定理来实现。
-中值定理：f(x)是一个连续性的函数，在[u,v]区间内，当c的值位于f(u)和f(v)之间时，至少存在一个点，满足f(x) = c 当f(u)和f(v)一正一负时，那么在[u,v]之间至少有一个根的存在，这个定理本来就是拿来证明根的存在的，但是其实也可以用来求解根。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+中值定理：f(x)是一个连续性的函数，在[u,v]区间内，当c的值位于f(u)和f(v)之间时，至少存在一个点，满足f(x) = c 当f(u)和f(v)一正一负时，那么在[u,v]之间至少有一个根的存在，这个定理本来就是拿来证明根的存在的，但是其实也可以用来求解根。&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Interactive on Guangchuang Yu</title>
+    <title>interactive on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/interactive/</link>
-    <description>Recent content in Interactive on Guangchuang Yu</description>
+    <description>Recent content in interactive on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 28 Nov 2018 11:08:00 +0800</lastBuildDate>
@@ -37,9 +37,7 @@ p = qplot(1:10)
 
 &lt;p&gt;所以你在终端里打&lt;code&gt;p&lt;/code&gt;，其实等同于你打&lt;code&gt;print(p)&lt;/code&gt;，它其实调用了&lt;code&gt;ggplot2:::print.ggplot&lt;/code&gt;，&lt;/p&gt;
 
-&lt;p&gt;你打&lt;code&gt;plot(p)&lt;/code&gt;也可以，如果你看过代码的话，画图这个动作是定义在&lt;code&gt;plot.ggplot&lt;/code&gt;方法里的，而&lt;code&gt;print.ggplot &amp;lt;- plot.ggplot&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;你打&lt;code&gt;plot(p)&lt;/code&gt;也可以，如果你看过代码的话，画图这个动作是定义在&lt;code&gt;plot.ggplot&lt;/code&gt;方法里的，而&lt;code&gt;print.ggplot &amp;lt;- plot.ggplot&lt;/code&gt;。&lt;/p&gt;</description>
     </item>
     
   </channel>

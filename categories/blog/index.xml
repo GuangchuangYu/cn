@@ -21,9 +21,7 @@
 
 &lt;p&gt;&lt;strong&gt;1. 《&lt;a href=&#34;https://mp.weixin.qq.com/s/IzSC1GnNPUwKdehhz-U8fQ&#34;&gt;Ask me anything about ggtree&lt;/a&gt;》&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;1月份，得知&lt;code&gt;ggtree&lt;/code&gt;的文章发表了，写了这篇，欢迎大家向我提问，我有问必答。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;1月份，得知&lt;code&gt;ggtree&lt;/code&gt;的文章发表了，写了这篇，欢迎大家向我提问，我有问必答。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -36,9 +34,7 @@
 
 &lt;p&gt;&lt;strong&gt;1. 《&lt;a href=&#34;https://mp.weixin.qq.com/s/RK1CYEboiEDzapdHsiwEGg&#34;&gt;2018最新可用的sci-hub镜像+桌面版程序&lt;/a&gt;》&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;sci-hub经常换域名，1月份的时候，收集了一些，同时为苹果系统打包了windows程序，可以一键下文献。当然现在我们不用发这样的文章了，因为域名随时可以查，《&lt;a href=&#34;https://mp.weixin.qq.com/s/puPvCOQcOf7aG5ghY82XrQ&#34;&gt;Sci-Hub可用域名实时追踪&lt;/a&gt;》，又因为比桌面版程序更好用的浏览器按钮，《&lt;a href=&#34;https://mp.weixin.qq.com/s/6qmI0MI9vlwvxoXJuVl0sQ&#34;&gt;关于scihub，一文就够了&lt;/a&gt;》。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;sci-hub经常换域名，1月份的时候，收集了一些，同时为苹果系统打包了windows程序，可以一键下文献。当然现在我们不用发这样的文章了，因为域名随时可以查，《&lt;a href=&#34;https://mp.weixin.qq.com/s/puPvCOQcOf7aG5ghY82XrQ&#34;&gt;Sci-Hub可用域名实时追踪&lt;/a&gt;》，又因为比桌面版程序更好用的浏览器按钮，《&lt;a href=&#34;https://mp.weixin.qq.com/s/6qmI0MI9vlwvxoXJuVl0sQ&#34;&gt;关于scihub，一文就够了&lt;/a&gt;》。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -89,9 +85,7 @@
    Got : [Fri Jan 14 2005] Powerbook G3上安装gentoo
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Done.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Done.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -106,9 +100,7 @@
 
 &lt;p&gt;从导出的xml文件里,把&amp;lt;description&amp;gt;&amp;lt;![CDATA[替换成&amp;lt;content:encoded&amp;gt;&amp;lt;![CDATA[&lt;/p&gt;
 
-&lt;p&gt;相应地把]]&amp;gt;&amp;lt;/description&amp;gt;替换成]]&amp;gt;&amp;lt;/content:encoded&amp;gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;相应地把]]&amp;gt;&amp;lt;/description&amp;gt;替换成]]&amp;gt;&amp;lt;/content:encoded&amp;gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Douban on Guangchuang Yu</title>
+    <title>douban on Guangchuang Yu</title>
     <link>https://guangchuangyu.github.io/cn/tags/douban/</link>
-    <description>Recent content in Douban on Guangchuang Yu</description>
+    <description>Recent content in douban on Guangchuang Yu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 24 Dec 2012 16:20:43 +0800</lastBuildDate>
@@ -24,9 +24,7 @@
 Programming and Simulation Using
 R&lt;/a&gt;我觉得和&lt;a href=&#34;http://book.douban.com/subject/1756393/&#34;&gt;Intermediate
 Perl&lt;/a&gt;属于同一类，算是进阶阶段的书，有编程基础的话，这种才是最好的入门书。R
-Inferno讲了R的各种陷阱，ggplot2是关于画图，比如上面的拆线图，就是用ggplot画的，从一开始用ggplot2就开始翻看这本书，N长时间过去了，也没看完，直到今年要出中文版，我也帮忙较对了一下，才把它看完。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+Inferno讲了R的各种陷阱，ggplot2是关于画图，比如上面的拆线图，就是用ggplot画的，从一开始用ggplot2就开始翻看这本书，N长时间过去了，也没看完，直到今年要出中文版，我也帮忙较对了一下，才把它看完。&lt;/p&gt;</description>
     </item>
     
   </channel>
